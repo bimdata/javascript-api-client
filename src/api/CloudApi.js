@@ -34,7 +34,7 @@
   /**
    * Cloud service.
    * @module api/CloudApi
-   * @version 1.0.2
+   * @version 1.0.3
    */
 
   /**
@@ -47,6 +47,52 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
+
+    /**
+     * Callback function to receive the result of the createCloud operation.
+     * @callback module:api/CloudApi~createCloudCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Cloud} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {module:model/Cloud} data 
+     * @param {module:api/CloudApi~createCloudCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Cloud}
+     */
+    this.createCloud = function(data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createCloud");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Cloud;
+
+      return this.apiClient.callApi(
+        '/cloud', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the createCloudUser operation.
@@ -111,27 +157,27 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/CloudApi~deleteCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteCloudUser = function(cloudPk, id, callback) {
+    this.deleteCloudUser = function(id, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteCloudUser");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteCloudUser");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteCloudUser");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -155,6 +201,59 @@
     }
 
     /**
+     * Callback function to receive the result of the fullUpdateCloud operation.
+     * @callback module:api/CloudApi~fullUpdateCloudCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Cloud} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} id 
+     * @param {module:model/Cloud} data 
+     * @param {module:api/CloudApi~fullUpdateCloudCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Cloud}
+     */
+    this.fullUpdateCloud = function(id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateCloud");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateCloud");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Cloud;
+
+      return this.apiClient.callApi(
+        '/cloud/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the fullUpdateCloudUser operation.
      * @callback module:api/CloudApi~fullUpdateCloudUserCallback
      * @param {String} error Error message, if any.
@@ -164,23 +263,23 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:model/FosUserWrite} data 
      * @param {module:api/CloudApi~fullUpdateCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FosUserWrite}
      */
-    this.fullUpdateCloudUser = function(cloudPk, id, data, callback) {
+    this.fullUpdateCloudUser = function(id, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateCloudUser");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling fullUpdateCloudUser");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateCloudUser");
       }
 
       // verify the required parameter 'data' is set
@@ -190,8 +289,8 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -318,28 +417,28 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/CloudApi~getCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FosUser}
      */
-    this.getCloudUser = function(cloudPk, id, callback) {
+    this.getCloudUser = function(id, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getCloudUser");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getCloudUser");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getCloudUser");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -450,6 +549,59 @@
     }
 
     /**
+     * Callback function to receive the result of the updateCloud operation.
+     * @callback module:api/CloudApi~updateCloudCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Cloud} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} id 
+     * @param {module:model/Cloud} data 
+     * @param {module:api/CloudApi~updateCloudCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Cloud}
+     */
+    this.updateCloud = function(id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateCloud");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateCloud");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Cloud;
+
+      return this.apiClient.callApi(
+        '/cloud/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the updateCloudUser operation.
      * @callback module:api/CloudApi~updateCloudUserCallback
      * @param {String} error Error message, if any.
@@ -459,23 +611,23 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:model/FosUserWrite} data 
      * @param {module:api/CloudApi~updateCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FosUserWrite}
      */
-    this.updateCloudUser = function(cloudPk, id, data, callback) {
+    this.updateCloudUser = function(id, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateCloudUser");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling updateCloudUser");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateCloudUser");
       }
 
       // verify the required parameter 'data' is set
@@ -485,8 +637,8 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };

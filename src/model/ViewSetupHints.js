@@ -37,7 +37,7 @@
   /**
    * The ViewSetupHints model module.
    * @module model/ViewSetupHints
-   * @version 1.0.2
+   * @version 1.0.3
    */
 
   /**

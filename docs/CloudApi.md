@@ -4,16 +4,72 @@ All URIs are relative to *http://api-staging.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createCloud**](CloudApi.md#createCloud) | **POST** /cloud | 
 [**createCloudUser**](CloudApi.md#createCloudUser) | **POST** /cloud/{cloud_pk}/user | 
 [**deleteCloudUser**](CloudApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | 
+[**fullUpdateCloud**](CloudApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | 
 [**fullUpdateCloudUser**](CloudApi.md#fullUpdateCloudUser) | **PUT** /cloud/{cloud_pk}/user/{id} | 
 [**getCloud**](CloudApi.md#getCloud) | **GET** /cloud/{id} | 
 [**getCloudSize**](CloudApi.md#getCloudSize) | **GET** /cloud/{id}/size | 
 [**getCloudUser**](CloudApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | 
 [**getCloudUsers**](CloudApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | 
 [**getClouds**](CloudApi.md#getClouds) | **GET** /cloud | 
+[**updateCloud**](CloudApi.md#updateCloud) | **PATCH** /cloud/{id} | 
 [**updateCloudUser**](CloudApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | 
 
+
+<a name="createCloud"></a>
+# **createCloud**
+> Cloud createCloud(data)
+
+
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
+
+var data = new bimdata.Cloud(); // Cloud | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createCloud(data, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**Cloud**](Cloud.md)|  | 
+
+### Return type
+
+[**Cloud**](Cloud.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="createCloudUser"></a>
 # **createCloudUser**
@@ -73,7 +129,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteCloudUser"></a>
 # **deleteCloudUser**
-> deleteCloudUser(cloudPk, id, )
+> deleteCloudUser(id, cloudPk, )
 
 
 
@@ -92,9 +148,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CloudApi();
 
-var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
+
+var cloudPk = "cloudPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -104,15 +160,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteCloudUser(cloudPk, id, , callback);
+apiInstance.deleteCloudUser(id, cloudPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
  **id** | **String**|  | 
+ **cloudPk** | **String**|  | 
 
 ### Return type
 
@@ -127,9 +183,9 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="fullUpdateCloudUser"></a>
-# **fullUpdateCloudUser**
-> FosUserWrite fullUpdateCloudUser(cloudPk, id, data)
+<a name="fullUpdateCloud"></a>
+# **fullUpdateCloud**
+> Cloud fullUpdateCloud(id, data)
 
 
 
@@ -148,9 +204,65 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CloudApi();
 
-var cloudPk = "cloudPk_example"; // String | 
+var id = "id_example"; // String | 
+
+var data = new bimdata.Cloud(); // Cloud | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.fullUpdateCloud(id, data, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **data** | [**Cloud**](Cloud.md)|  | 
+
+### Return type
+
+[**Cloud**](Cloud.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="fullUpdateCloudUser"></a>
+# **fullUpdateCloudUser**
+> FosUserWrite fullUpdateCloudUser(id, cloudPk, data)
+
+
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
 
 var id = "id_example"; // String | 
+
+var cloudPk = "cloudPk_example"; // String | 
 
 var data = new bimdata.FosUserWrite(); // FosUserWrite | 
 
@@ -162,15 +274,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateCloudUser(cloudPk, id, data, callback);
+apiInstance.fullUpdateCloudUser(id, cloudPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
  **id** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **data** | [**FosUserWrite**](FosUserWrite.md)|  | 
 
 ### Return type
@@ -188,7 +300,7 @@ Name | Type | Description  | Notes
 
 <a name="getCloud"></a>
 # **getCloud**
-> Cloud getCloud(id)
+> Cloud getCloud(id, )
 
 
 
@@ -217,7 +329,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCloud(id, callback);
+apiInstance.getCloud(id, , callback);
 ```
 
 ### Parameters
@@ -294,7 +406,7 @@ Name | Type | Description  | Notes
 
 <a name="getCloudUser"></a>
 # **getCloudUser**
-> FosUser getCloudUser(cloudPk, id, )
+> FosUser getCloudUser(id, cloudPk, )
 
 
 
@@ -313,9 +425,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CloudApi();
 
-var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
+
+var cloudPk = "cloudPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -325,15 +437,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCloudUser(cloudPk, id, , callback);
+apiInstance.getCloudUser(id, cloudPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
  **id** | **String**|  | 
+ **cloudPk** | **String**|  | 
 
 ### Return type
 
@@ -448,9 +560,9 @@ This endpoint does not need any parameter.
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="updateCloudUser"></a>
-# **updateCloudUser**
-> FosUserWrite updateCloudUser(cloudPk, id, data)
+<a name="updateCloud"></a>
+# **updateCloud**
+> Cloud updateCloud(id, data)
 
 
 
@@ -469,9 +581,65 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CloudApi();
 
-var cloudPk = "cloudPk_example"; // String | 
+var id = "id_example"; // String | 
+
+var data = new bimdata.Cloud(); // Cloud | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateCloud(id, data, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **data** | [**Cloud**](Cloud.md)|  | 
+
+### Return type
+
+[**Cloud**](Cloud.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateCloudUser"></a>
+# **updateCloudUser**
+> FosUserWrite updateCloudUser(id, cloudPk, data)
+
+
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
 
 var id = "id_example"; // String | 
+
+var cloudPk = "cloudPk_example"; // String | 
 
 var data = new bimdata.FosUserWrite(); // FosUserWrite | 
 
@@ -483,15 +651,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateCloudUser(cloudPk, id, data, callback);
+apiInstance.updateCloudUser(id, cloudPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
  **id** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **data** | [**FosUserWrite**](FosUserWrite.md)|  | 
 
 ### Return type

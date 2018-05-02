@@ -34,7 +34,7 @@
   /**
    * Ifc service.
    * @module api/IfcApi
-   * @version 1.0.2
+   * @version 1.0.3
    */
 
   /**
@@ -58,22 +58,22 @@
 
     /**
      *              Delete relation between filtered classifications (eg. /classifications?name&#x3D;untec) and all ifc&#39;s elements.             No classification will be deleted on this endpoint, only the relation between ifc&#39;s elements and their classification.         
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~bulkDeleteIfcClassificationsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bulkDeleteIfcClassifications = function(ifcPk, projectPk, cloudPk, callback) {
+    this.bulkDeleteIfcClassifications = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeleteIfcClassifications");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcClassifications");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeleteIfcClassifications");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -83,8 +83,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -118,22 +118,22 @@
 
     /**
      *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~bulkDeleteIfcPropertiesCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bulkDeleteIfcProperties = function(ifcPk, projectPk, cloudPk, callback) {
+    this.bulkDeleteIfcProperties = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeleteIfcProperties");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcProperties");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeleteIfcProperties");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -143,8 +143,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -178,22 +178,22 @@
 
     /**
      *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~bulkDeleteIfcPropertyDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bulkDeleteIfcPropertyDefinitions = function(ifcPk, projectPk, cloudPk, callback) {
+    this.bulkDeleteIfcPropertyDefinitions = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeleteIfcPropertyDefinitions");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcPropertyDefinitions");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeleteIfcPropertyDefinitions");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -203,8 +203,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -238,22 +238,22 @@
 
     /**
      *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~bulkDeleteIfcUnitsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bulkDeleteIfcUnits = function(ifcPk, projectPk, cloudPk, callback) {
+    this.bulkDeleteIfcUnits = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeleteIfcUnits");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcUnits");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeleteIfcUnits");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -263,8 +263,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -298,22 +298,22 @@
 
     /**
      *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~bulkDeletePropertySetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bulkDeletePropertySet = function(ifcPk, projectPk, cloudPk, callback) {
+    this.bulkDeletePropertySet = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeletePropertySet");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkDeletePropertySet");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeletePropertySet");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -323,8 +323,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -358,18 +358,18 @@
 
     /**
      *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} elementUuid 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~bulkRemoveClassificationsOfElementCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bulkRemoveClassificationsOfElement = function(ifcPk, projectPk, cloudPk, elementUuid, callback) {
+    this.bulkRemoveClassificationsOfElement = function(elementUuid, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkRemoveClassificationsOfElement");
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling bulkRemoveClassificationsOfElement");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -377,22 +377,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveClassificationsOfElement");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling bulkRemoveClassificationsOfElement");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkRemoveClassificationsOfElement");
       }
 
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling bulkRemoveClassificationsOfElement");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'element_uuid': elementUuid,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'element_uuid': elementUuid
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -425,18 +425,18 @@
 
     /**
      *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
      * @param {String} ifcClassificationPk 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~bulkRemoveElementsFromClassificationCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bulkRemoveElementsFromClassification = function(ifcPk, projectPk, ifcClassificationPk, cloudPk, callback) {
+    this.bulkRemoveElementsFromClassification = function(ifcClassificationPk, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkRemoveElementsFromClassification");
+      // verify the required parameter 'ifcClassificationPk' is set
+      if (ifcClassificationPk === undefined || ifcClassificationPk === null) {
+        throw new Error("Missing the required parameter 'ifcClassificationPk' when calling bulkRemoveElementsFromClassification");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -444,9 +444,9 @@
         throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveElementsFromClassification");
       }
 
-      // verify the required parameter 'ifcClassificationPk' is set
-      if (ifcClassificationPk === undefined || ifcClassificationPk === null) {
-        throw new Error("Missing the required parameter 'ifcClassificationPk' when calling bulkRemoveElementsFromClassification");
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling bulkRemoveElementsFromClassification");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -456,9 +456,9 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk,
         'ifc_classification_pk': ifcClassificationPk,
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -492,23 +492,23 @@
 
     /**
      *          create association between existing classification and existing element     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {Array.<module:model/ElementClassificationRelation>} data 
      * @param {module:api/IfcApi~createClassificationElementRelationsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.createClassificationElementRelations = function(ifcPk, projectPk, cloudPk, data, callback) {
+    this.createClassificationElementRelations = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createClassificationElementRelations");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createClassificationElementRelations");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createClassificationElementRelations");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -523,8 +523,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -558,20 +558,20 @@
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} elementUuid 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {Array.<module:model/Classification>} data 
      * @param {module:api/IfcApi~createClassificationsOfElementCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Classification>}
      */
-    this.createClassificationsOfElement = function(ifcPk, projectPk, cloudPk, elementUuid, data, callback) {
+    this.createClassificationsOfElement = function(elementUuid, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createClassificationsOfElement");
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling createClassificationsOfElement");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -579,14 +579,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling createClassificationsOfElement");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createClassificationsOfElement");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createClassificationsOfElement");
-      }
-
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling createClassificationsOfElement");
       }
 
       // verify the required parameter 'data' is set
@@ -596,10 +596,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'element_uuid': elementUuid,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'element_uuid': elementUuid
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -632,24 +632,24 @@
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {Array.<module:model/Element>} data 
      * @param {module:api/IfcApi~createElementCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Element>}
      */
-    this.createElement = function(ifcPk, projectPk, cloudPk, data, callback) {
+    this.createElement = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createElement");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createElement");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createElement");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -664,8 +664,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -699,19 +699,19 @@
 
     /**
      *          Create an property_set that will be automatically linked to the element     
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} elementUuid 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:model/PropertySet} data 
      * @param {module:api/IfcApi~createElementPropertySetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.createElementPropertySet = function(ifcPk, projectPk, cloudPk, elementUuid, data, callback) {
+    this.createElementPropertySet = function(elementUuid, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createElementPropertySet");
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySet");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -719,14 +719,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySet");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createElementPropertySet");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySet");
-      }
-
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySet");
       }
 
       // verify the required parameter 'data' is set
@@ -736,10 +736,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'element_uuid': elementUuid,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'element_uuid': elementUuid
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -772,17 +772,32 @@
 
     /**
      * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} projectPk 
      * @param {String} ifcPk 
      * @param {String} propertysetPk 
-     * @param {String} projectPk 
-     * @param {String} elementUuid 
-     * @param {String} cloudPk 
      * @param {module:model/Property} data 
      * @param {module:api/IfcApi~createElementPropertySetPropertyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Property}
      */
-    this.createElementPropertySetProperty = function(ifcPk, propertysetPk, projectPk, elementUuid, cloudPk, data, callback) {
+    this.createElementPropertySetProperty = function(cloudPk, elementUuid, projectPk, ifcPk, propertysetPk, data, callback) {
       var postBody = data;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySetProperty");
+      }
+
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySetProperty");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySetProperty");
+      }
 
       // verify the required parameter 'ifcPk' is set
       if (ifcPk === undefined || ifcPk === null) {
@@ -794,21 +809,6 @@
         throw new Error("Missing the required parameter 'propertysetPk' when calling createElementPropertySetProperty");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySetProperty");
-      }
-
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySetProperty");
-      }
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySetProperty");
-      }
-
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling createElementPropertySetProperty");
@@ -816,11 +816,11 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
-        'propertyset_pk': propertysetPk,
-        'project_pk': projectPk,
+        'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'cloud_pk': cloudPk
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk,
+        'propertyset_pk': propertysetPk
       };
       var queryParams = {
       };
@@ -853,18 +853,38 @@
 
     /**
      * 
+     * @param {String} propertyPk 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} projectPk 
      * @param {String} ifcPk 
      * @param {String} propertysetPk 
-     * @param {String} propertyPk 
-     * @param {String} projectPk 
-     * @param {String} elementUuid 
-     * @param {String} cloudPk 
      * @param {module:model/PropertyDefinition} data 
      * @param {module:api/IfcApi~createElementPropertySetPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PropertyDefinition}
      */
-    this.createElementPropertySetPropertyDefinition = function(ifcPk, propertysetPk, propertyPk, projectPk, elementUuid, cloudPk, data, callback) {
+    this.createElementPropertySetPropertyDefinition = function(propertyPk, cloudPk, elementUuid, projectPk, ifcPk, propertysetPk, data, callback) {
       var postBody = data;
+
+      // verify the required parameter 'propertyPk' is set
+      if (propertyPk === undefined || propertyPk === null) {
+        throw new Error("Missing the required parameter 'propertyPk' when calling createElementPropertySetPropertyDefinition");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySetPropertyDefinition");
+      }
+
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySetPropertyDefinition");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySetPropertyDefinition");
+      }
 
       // verify the required parameter 'ifcPk' is set
       if (ifcPk === undefined || ifcPk === null) {
@@ -876,26 +896,6 @@
         throw new Error("Missing the required parameter 'propertysetPk' when calling createElementPropertySetPropertyDefinition");
       }
 
-      // verify the required parameter 'propertyPk' is set
-      if (propertyPk === undefined || propertyPk === null) {
-        throw new Error("Missing the required parameter 'propertyPk' when calling createElementPropertySetPropertyDefinition");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySetPropertyDefinition");
-      }
-
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySetPropertyDefinition");
-      }
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySetPropertyDefinition");
-      }
-
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling createElementPropertySetPropertyDefinition");
@@ -903,12 +903,12 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
-        'propertyset_pk': propertysetPk,
         'property_pk': propertyPk,
-        'project_pk': projectPk,
+        'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'cloud_pk': cloudPk
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk,
+        'propertyset_pk': propertysetPk
       };
       var queryParams = {
       };
@@ -941,33 +941,23 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} propertydefinitionPk 
-     * @param {String} propertysetPk 
-     * @param {String} propertyPk 
-     * @param {String} projectPk 
      * @param {String} elementUuid 
+     * @param {String} propertyPk 
      * @param {String} cloudPk 
+     * @param {String} propertydefinitionPk 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} propertysetPk 
      * @param {module:model/Unit} data 
      * @param {module:api/IfcApi~createElementPropertySetPropertyDefinitionUnitCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Unit}
      */
-    this.createElementPropertySetPropertyDefinitionUnit = function(ifcPk, propertydefinitionPk, propertysetPk, propertyPk, projectPk, elementUuid, cloudPk, data, callback) {
+    this.createElementPropertySetPropertyDefinitionUnit = function(elementUuid, propertyPk, cloudPk, propertydefinitionPk, projectPk, ifcPk, propertysetPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createElementPropertySetPropertyDefinitionUnit");
-      }
-
-      // verify the required parameter 'propertydefinitionPk' is set
-      if (propertydefinitionPk === undefined || propertydefinitionPk === null) {
-        throw new Error("Missing the required parameter 'propertydefinitionPk' when calling createElementPropertySetPropertyDefinitionUnit");
-      }
-
-      // verify the required parameter 'propertysetPk' is set
-      if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling createElementPropertySetPropertyDefinitionUnit");
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySetPropertyDefinitionUnit");
       }
 
       // verify the required parameter 'propertyPk' is set
@@ -975,19 +965,29 @@
         throw new Error("Missing the required parameter 'propertyPk' when calling createElementPropertySetPropertyDefinitionUnit");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySetPropertyDefinitionUnit");
+      }
+
+      // verify the required parameter 'propertydefinitionPk' is set
+      if (propertydefinitionPk === undefined || propertydefinitionPk === null) {
+        throw new Error("Missing the required parameter 'propertydefinitionPk' when calling createElementPropertySetPropertyDefinitionUnit");
+      }
+
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySetPropertyDefinitionUnit");
       }
 
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySetPropertyDefinitionUnit");
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createElementPropertySetPropertyDefinitionUnit");
       }
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySetPropertyDefinitionUnit");
+      // verify the required parameter 'propertysetPk' is set
+      if (propertysetPk === undefined || propertysetPk === null) {
+        throw new Error("Missing the required parameter 'propertysetPk' when calling createElementPropertySetPropertyDefinitionUnit");
       }
 
       // verify the required parameter 'data' is set
@@ -997,13 +997,13 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
-        'propertydefinition_pk': propertydefinitionPk,
-        'propertyset_pk': propertysetPk,
-        'property_pk': propertyPk,
-        'project_pk': projectPk,
         'element_uuid': elementUuid,
-        'cloud_pk': cloudPk
+        'property_pk': propertyPk,
+        'cloud_pk': cloudPk,
+        'propertydefinition_pk': propertydefinitionPk,
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk,
+        'propertyset_pk': propertysetPk
       };
       var queryParams = {
       };
@@ -1036,23 +1036,23 @@
 
     /**
      *          You can use the same optimized structure to post multiple elements ,property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination will be returned         
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:model/Element} data 
      * @param {module:api/IfcApi~createElement_0Callback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.createElement_0 = function(ifcPk, projectPk, cloudPk, data, callback) {
+    this.createElement_0 = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createElement_0");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createElement_0");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createElement_0");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -1067,8 +1067,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -1102,24 +1102,24 @@
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {Array.<module:model/PropertyDefinition>} data 
      * @param {module:api/IfcApi~createIfcPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/PropertyDefinition>}
      */
-    this.createIfcPropertyDefinition = function(ifcPk, projectPk, cloudPk, data, callback) {
+    this.createIfcPropertyDefinition = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createIfcPropertyDefinition");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createIfcPropertyDefinition");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createIfcPropertyDefinition");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -1134,8 +1134,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -1169,24 +1169,24 @@
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {Array.<module:model/Unit>} data 
      * @param {module:api/IfcApi~createIfcUnitCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Unit>}
      */
-    this.createIfcUnit = function(ifcPk, projectPk, cloudPk, data, callback) {
+    this.createIfcUnit = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createIfcUnit");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createIfcUnit");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createIfcUnit");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -1201,8 +1201,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -1236,24 +1236,24 @@
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {Array.<module:model/PropertySet>} data 
      * @param {module:api/IfcApi~createPropertySetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/PropertySet>}
      */
-    this.createPropertySet = function(ifcPk, projectPk, cloudPk, data, callback) {
+    this.createPropertySet = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createPropertySet");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createPropertySet");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createPropertySet");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -1268,8 +1268,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -1303,23 +1303,23 @@
 
     /**
      *          create association between existing classification and existing element     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {Array.<module:model/ElementPropertySetRelation>} data 
      * @param {module:api/IfcApi~createPropertySetElementRelationsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.createPropertySetElementRelations = function(ifcPk, projectPk, cloudPk, data, callback) {
+    this.createPropertySetElementRelations = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createPropertySetElementRelations");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createPropertySetElementRelations");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createPropertySetElementRelations");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -1334,8 +1334,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -1369,24 +1369,24 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:model/Space} data 
      * @param {module:api/IfcApi~createSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Space}
      */
-    this.createSpace = function(ifcPk, projectPk, cloudPk, data, callback) {
+    this.createSpace = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createSpace");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createSpace");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createSpace");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -1401,8 +1401,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -1436,24 +1436,24 @@
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {Array.<module:model/Element>} data 
      * @param {module:api/IfcApi~createZoneCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Zone>}
      */
-    this.createZone = function(ifcPk, projectPk, cloudPk, data, callback) {
+    this.createZone = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createZone");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createZone");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createZone");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -1468,8 +1468,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -1503,35 +1503,35 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {String} cloudPk 
+     * @param {String} ifcPk 
      * @param {String} zonePk 
+     * @param {String} cloudPk 
      * @param {module:model/ZoneSpace} data 
      * @param {module:api/IfcApi~createZoneSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ZoneSpace}
      */
-    this.createZoneSpace = function(ifcPk, projectPk, cloudPk, zonePk, data, callback) {
+    this.createZoneSpace = function(projectPk, ifcPk, zonePk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createZoneSpace");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createZoneSpace");
       }
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createZoneSpace");
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createZoneSpace");
       }
 
       // verify the required parameter 'zonePk' is set
       if (zonePk === undefined || zonePk === null) {
         throw new Error("Missing the required parameter 'zonePk' when calling createZoneSpace");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createZoneSpace");
       }
 
       // verify the required parameter 'data' is set
@@ -1541,10 +1541,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'zone_pk': zonePk
+        'ifc_pk': ifcPk,
+        'zone_pk': zonePk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1577,14 +1577,19 @@
 
     /**
      * 
+     * @param {String} projectPk 
      * @param {String} ifcPk 
      * @param {String} uuid 
-     * @param {String} projectPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~deleteElementCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteElement = function(ifcPk, uuid, projectPk, cloudPk, callback) {
+    this.deleteElement = function(projectPk, ifcPk, uuid, cloudPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteElement");
+      }
 
       // verify the required parameter 'ifcPk' is set
       if (ifcPk === undefined || ifcPk === null) {
@@ -1596,11 +1601,6 @@
         throw new Error("Missing the required parameter 'uuid' when calling deleteElement");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteElement");
-      }
-
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteElement");
@@ -1608,9 +1608,9 @@
 
 
       var pathParams = {
+        'project_pk': projectPk,
         'ifc_pk': ifcPk,
         'uuid': uuid,
-        'project_pk': projectPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -1644,13 +1644,18 @@
 
     /**
      * 
+     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} cloudPk 
-     * @param {String} id 
      * @param {module:api/IfcApi~deleteIfcCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteIfc = function(projectPk, cloudPk, id, callback) {
+    this.deleteIfc = function(id, projectPk, cloudPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteIfc");
+      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1662,16 +1667,11 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfc");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteIfc");
-      }
-
 
       var pathParams = {
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1704,18 +1704,18 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~deleteIfcPropertyCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteIfcProperty = function(ifcPk, projectPk, cloudPk, id, callback) {
+    this.deleteIfcProperty = function(id, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteIfcProperty");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteIfcProperty");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -1723,22 +1723,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcProperty");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling deleteIfcProperty");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcProperty");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteIfcProperty");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1771,18 +1771,18 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~deleteIfcPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteIfcPropertyDefinition = function(ifcPk, projectPk, cloudPk, id, callback) {
+    this.deleteIfcPropertyDefinition = function(id, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteIfcPropertyDefinition");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteIfcPropertyDefinition");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -1790,22 +1790,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcPropertyDefinition");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling deleteIfcPropertyDefinition");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcPropertyDefinition");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteIfcPropertyDefinition");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1838,18 +1838,18 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~deleteIfcUnitCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteIfcUnit = function(ifcPk, projectPk, cloudPk, id, callback) {
+    this.deleteIfcUnit = function(id, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteIfcUnit");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteIfcUnit");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -1857,22 +1857,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcUnit");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling deleteIfcUnit");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcUnit");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteIfcUnit");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1905,18 +1905,18 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~deletePropertySetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deletePropertySet = function(ifcPk, projectPk, cloudPk, id, callback) {
+    this.deletePropertySet = function(id, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deletePropertySet");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deletePropertySet");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -1924,22 +1924,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling deletePropertySet");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling deletePropertySet");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deletePropertySet");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deletePropertySet");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1972,18 +1972,18 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~deleteSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteSpace = function(ifcPk, projectPk, cloudPk, id, callback) {
+    this.deleteSpace = function(id, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteSpace");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteSpace");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -1991,22 +1991,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling deleteSpace");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling deleteSpace");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteSpace");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteSpace");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -2039,18 +2039,18 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~deleteZoneCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteZone = function(ifcPk, projectPk, cloudPk, id, callback) {
+    this.deleteZone = function(id, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteZone");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteZone");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -2058,22 +2058,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling deleteZone");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling deleteZone");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteZone");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteZone");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -2106,19 +2106,19 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} zonePk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} zonePk 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {module:api/IfcApi~deleteZoneSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteZoneSpace = function(ifcPk, zonePk, projectPk, cloudPk, id, callback) {
+    this.deleteZoneSpace = function(id, zonePk, cloudPk, projectPk, ifcPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteZoneSpace");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteZoneSpace");
       }
 
       // verify the required parameter 'zonePk' is set
@@ -2126,28 +2126,28 @@
         throw new Error("Missing the required parameter 'zonePk' when calling deleteZoneSpace");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteZoneSpace");
-      }
-
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteZoneSpace");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteZoneSpace");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteZoneSpace");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling deleteZoneSpace");
       }
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'zone_pk': zonePk,
-        'project_pk': projectPk,
         'cloud_pk': cloudPk,
-        'id': id
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk
       };
       var queryParams = {
       };
@@ -2180,24 +2180,24 @@
 
     /**
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {Array.<module:model/Element>} data 
      * @param {module:api/IfcApi~fullUpdateElementCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Element>}
      */
-    this.fullUpdateElement = function(ifcPk, projectPk, cloudPk, data, callback) {
+    this.fullUpdateElement = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateElement");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateElement");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateElement");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -2212,8 +2212,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -2247,16 +2247,21 @@
 
     /**
      * 
+     * @param {String} projectPk 
      * @param {String} ifcPk 
      * @param {String} uuid 
-     * @param {String} projectPk 
      * @param {String} cloudPk 
      * @param {module:model/Element} data 
      * @param {module:api/IfcApi~fullUpdateElement_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Element}
      */
-    this.fullUpdateElement_0 = function(ifcPk, uuid, projectPk, cloudPk, data, callback) {
+    this.fullUpdateElement_0 = function(projectPk, ifcPk, uuid, cloudPk, data, callback) {
       var postBody = data;
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateElement_0");
+      }
 
       // verify the required parameter 'ifcPk' is set
       if (ifcPk === undefined || ifcPk === null) {
@@ -2266,11 +2271,6 @@
       // verify the required parameter 'uuid' is set
       if (uuid === undefined || uuid === null) {
         throw new Error("Missing the required parameter 'uuid' when calling fullUpdateElement_0");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateElement_0");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -2285,9 +2285,9 @@
 
 
       var pathParams = {
+        'project_pk': projectPk,
         'ifc_pk': ifcPk,
         'uuid': uuid,
-        'project_pk': projectPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -2321,15 +2321,20 @@
 
     /**
      * 
+     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} cloudPk 
-     * @param {String} id 
      * @param {module:model/Ifc} data 
      * @param {module:api/IfcApi~fullUpdateIfcCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Ifc}
      */
-    this.fullUpdateIfc = function(projectPk, cloudPk, id, data, callback) {
+    this.fullUpdateIfc = function(id, projectPk, cloudPk, data, callback) {
       var postBody = data;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateIfc");
+      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -2341,11 +2346,6 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateIfc");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateIfc");
-      }
-
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling fullUpdateIfc");
@@ -2353,9 +2353,9 @@
 
 
       var pathParams = {
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -2388,24 +2388,24 @@
 
     /**
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {Array.<module:model/Property>} data 
      * @param {module:api/IfcApi~fullUpdateIfcPropertyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Property>}
      */
-    this.fullUpdateIfcProperty = function(ifcPk, projectPk, cloudPk, data, callback) {
+    this.fullUpdateIfcProperty = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateIfcProperty");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateIfcProperty");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateIfcProperty");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -2420,8 +2420,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -2455,20 +2455,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:model/PropertyDefinition} data 
      * @param {module:api/IfcApi~fullUpdateIfcPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PropertyDefinition}
      */
-    this.fullUpdateIfcPropertyDefinition = function(ifcPk, projectPk, cloudPk, id, data, callback) {
+    this.fullUpdateIfcPropertyDefinition = function(id, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateIfcPropertyDefinition");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateIfcPropertyDefinition");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -2476,14 +2476,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateIfcPropertyDefinition");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateIfcPropertyDefinition");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateIfcPropertyDefinition");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateIfcPropertyDefinition");
       }
 
       // verify the required parameter 'data' is set
@@ -2493,10 +2493,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -2529,20 +2529,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:model/Property} data 
      * @param {module:api/IfcApi~fullUpdateIfcProperty_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Property}
      */
-    this.fullUpdateIfcProperty_0 = function(ifcPk, projectPk, cloudPk, id, data, callback) {
+    this.fullUpdateIfcProperty_0 = function(id, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateIfcProperty_0");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateIfcProperty_0");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -2550,14 +2550,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateIfcProperty_0");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateIfcProperty_0");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateIfcProperty_0");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateIfcProperty_0");
       }
 
       // verify the required parameter 'data' is set
@@ -2567,10 +2567,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -2603,20 +2603,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:model/Unit} data 
      * @param {module:api/IfcApi~fullUpdateIfcUnitCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Unit}
      */
-    this.fullUpdateIfcUnit = function(ifcPk, projectPk, cloudPk, id, data, callback) {
+    this.fullUpdateIfcUnit = function(id, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateIfcUnit");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateIfcUnit");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -2624,14 +2624,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateIfcUnit");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateIfcUnit");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateIfcUnit");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateIfcUnit");
       }
 
       // verify the required parameter 'data' is set
@@ -2641,10 +2641,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -2677,20 +2677,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:model/PropertySet} data 
      * @param {module:api/IfcApi~fullUpdatePropertySetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PropertySet}
      */
-    this.fullUpdatePropertySet = function(ifcPk, projectPk, cloudPk, id, data, callback) {
+    this.fullUpdatePropertySet = function(id, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdatePropertySet");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdatePropertySet");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -2698,14 +2698,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling fullUpdatePropertySet");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdatePropertySet");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdatePropertySet");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdatePropertySet");
       }
 
       // verify the required parameter 'data' is set
@@ -2715,10 +2715,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -2751,20 +2751,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:model/Space} data 
      * @param {module:api/IfcApi~fullUpdateSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Space}
      */
-    this.fullUpdateSpace = function(ifcPk, projectPk, cloudPk, id, data, callback) {
+    this.fullUpdateSpace = function(id, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateSpace");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateSpace");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -2772,14 +2772,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateSpace");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateSpace");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateSpace");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateSpace");
       }
 
       // verify the required parameter 'data' is set
@@ -2789,10 +2789,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -2825,20 +2825,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:model/Zone} data 
      * @param {module:api/IfcApi~fullUpdateZoneCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Zone}
      */
-    this.fullUpdateZone = function(ifcPk, projectPk, cloudPk, id, data, callback) {
+    this.fullUpdateZone = function(id, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateZone");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateZone");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -2846,14 +2846,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateZone");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateZone");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateZone");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateZone");
       }
 
       // verify the required parameter 'data' is set
@@ -2863,10 +2863,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -2899,21 +2899,21 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} zonePk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} zonePk 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {module:model/ZoneSpace} data 
      * @param {module:api/IfcApi~fullUpdateZoneSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ZoneSpace}
      */
-    this.fullUpdateZoneSpace = function(ifcPk, zonePk, projectPk, cloudPk, id, data, callback) {
+    this.fullUpdateZoneSpace = function(id, zonePk, cloudPk, projectPk, ifcPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateZoneSpace");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateZoneSpace");
       }
 
       // verify the required parameter 'zonePk' is set
@@ -2921,19 +2921,19 @@
         throw new Error("Missing the required parameter 'zonePk' when calling fullUpdateZoneSpace");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateZoneSpace");
-      }
-
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateZoneSpace");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateZoneSpace");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateZoneSpace");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateZoneSpace");
       }
 
       // verify the required parameter 'data' is set
@@ -2943,11 +2943,11 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'zone_pk': zonePk,
-        'project_pk': projectPk,
         'cloud_pk': cloudPk,
-        'id': id
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk
       };
       var queryParams = {
       };
@@ -2980,19 +2980,19 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} elementUuid 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~getClassificationsOfElementCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Classification>}
      */
-    this.getClassificationsOfElement = function(ifcPk, projectPk, cloudPk, elementUuid, callback) {
+    this.getClassificationsOfElement = function(elementUuid, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getClassificationsOfElement");
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling getClassificationsOfElement");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -3000,22 +3000,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling getClassificationsOfElement");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getClassificationsOfElement");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getClassificationsOfElement");
       }
 
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getClassificationsOfElement");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'element_uuid': elementUuid,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'element_uuid': elementUuid
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -3048,22 +3048,22 @@
 
     /**
      *          Returns elements ,property_sets, properties, definitions and units in a optimized structure         
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~getElementCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getElement = function(ifcPk, projectPk, cloudPk, callback) {
+    this.getElement = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElement");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getElement");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getElement");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -3073,8 +3073,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -3108,35 +3108,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} id 
-     * @param {String} projectPk 
-     * @param {String} elementUuid 
      * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {module:api/IfcApi~getElementPropertySetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PropertySet}
      */
-    this.getElementPropertySet = function(ifcPk, id, projectPk, elementUuid, cloudPk, callback) {
+    this.getElementPropertySet = function(id, cloudPk, elementUuid, projectPk, ifcPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySet");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getElementPropertySet");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySet");
-      }
-
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySet");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -3144,13 +3129,28 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySet");
       }
 
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySet");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySet");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySet");
+      }
+
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'id': id,
-        'project_pk': projectPk,
+        'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'cloud_pk': cloudPk
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk
       };
       var queryParams = {
       };
@@ -3183,16 +3183,31 @@
 
     /**
      * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} projectPk 
      * @param {String} ifcPk 
      * @param {String} propertysetPk 
-     * @param {String} projectPk 
-     * @param {String} elementUuid 
-     * @param {String} cloudPk 
      * @param {module:api/IfcApi~getElementPropertySetPropertiesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Property>}
      */
-    this.getElementPropertySetProperties = function(ifcPk, propertysetPk, projectPk, elementUuid, cloudPk, callback) {
+    this.getElementPropertySetProperties = function(cloudPk, elementUuid, projectPk, ifcPk, propertysetPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetProperties");
+      }
+
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetProperties");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetProperties");
+      }
 
       // verify the required parameter 'ifcPk' is set
       if (ifcPk === undefined || ifcPk === null) {
@@ -3204,28 +3219,13 @@
         throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetProperties");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetProperties");
-      }
-
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetProperties");
-      }
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetProperties");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
-        'propertyset_pk': propertysetPk,
-        'project_pk': projectPk,
+        'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'cloud_pk': cloudPk
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk,
+        'propertyset_pk': propertysetPk
       };
       var queryParams = {
       };
@@ -3258,17 +3258,37 @@
 
     /**
      * 
+     * @param {String} id 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} projectPk 
      * @param {String} ifcPk 
      * @param {String} propertysetPk 
-     * @param {String} id 
-     * @param {String} projectPk 
-     * @param {String} elementUuid 
-     * @param {String} cloudPk 
      * @param {module:api/IfcApi~getElementPropertySetPropertyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Property}
      */
-    this.getElementPropertySetProperty = function(ifcPk, propertysetPk, id, projectPk, elementUuid, cloudPk, callback) {
+    this.getElementPropertySetProperty = function(id, cloudPk, elementUuid, projectPk, ifcPk, propertysetPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getElementPropertySetProperty");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetProperty");
+      }
+
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetProperty");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetProperty");
+      }
 
       // verify the required parameter 'ifcPk' is set
       if (ifcPk === undefined || ifcPk === null) {
@@ -3280,34 +3300,14 @@
         throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetProperty");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getElementPropertySetProperty");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetProperty");
-      }
-
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetProperty");
-      }
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetProperty");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
-        'propertyset_pk': propertysetPk,
         'id': id,
-        'project_pk': projectPk,
+        'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'cloud_pk': cloudPk
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk,
+        'propertyset_pk': propertysetPk
       };
       var queryParams = {
       };
@@ -3340,28 +3340,18 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} propertysetPk 
      * @param {String} id 
      * @param {String} propertyPk 
-     * @param {String} projectPk 
-     * @param {String} elementUuid 
      * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} propertysetPk 
      * @param {module:api/IfcApi~getElementPropertySetPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PropertyDefinition}
      */
-    this.getElementPropertySetPropertyDefinition = function(ifcPk, propertysetPk, id, propertyPk, projectPk, elementUuid, cloudPk, callback) {
+    this.getElementPropertySetPropertyDefinition = function(id, propertyPk, cloudPk, elementUuid, projectPk, ifcPk, propertysetPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetPropertyDefinition");
-      }
-
-      // verify the required parameter 'propertysetPk' is set
-      if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDefinition");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -3373,9 +3363,9 @@
         throw new Error("Missing the required parameter 'propertyPk' when calling getElementPropertySetPropertyDefinition");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinition");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinition");
       }
 
       // verify the required parameter 'elementUuid' is set
@@ -3383,20 +3373,30 @@
         throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDefinition");
       }
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinition");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinition");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetPropertyDefinition");
+      }
+
+      // verify the required parameter 'propertysetPk' is set
+      if (propertysetPk === undefined || propertysetPk === null) {
+        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDefinition");
       }
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
-        'propertyset_pk': propertysetPk,
         'id': id,
         'property_pk': propertyPk,
-        'project_pk': projectPk,
+        'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'cloud_pk': cloudPk
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk,
+        'propertyset_pk': propertysetPk
       };
       var queryParams = {
       };
@@ -3429,23 +3429,23 @@
 
     /**
      * 
-     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {String} propertydefinitionPk 
      * @param {String} elementUuid 
      * @param {String} propertysetPk 
      * @param {String} id 
+     * @param {String} ifcPk 
      * @param {String} propertyPk 
      * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {module:api/IfcApi~getElementPropertySetPropertyDefinitionUnitCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Unit}
      */
-    this.getElementPropertySetPropertyDefinitionUnit = function(ifcPk, propertydefinitionPk, elementUuid, propertysetPk, id, propertyPk, projectPk, cloudPk, callback) {
+    this.getElementPropertySetPropertyDefinitionUnit = function(cloudPk, propertydefinitionPk, elementUuid, propertysetPk, id, ifcPk, propertyPk, projectPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetPropertyDefinitionUnit");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinitionUnit");
       }
 
       // verify the required parameter 'propertydefinitionPk' is set
@@ -3468,6 +3468,11 @@
         throw new Error("Missing the required parameter 'id' when calling getElementPropertySetPropertyDefinitionUnit");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetPropertyDefinitionUnit");
+      }
+
       // verify the required parameter 'propertyPk' is set
       if (propertyPk === undefined || propertyPk === null) {
         throw new Error("Missing the required parameter 'propertyPk' when calling getElementPropertySetPropertyDefinitionUnit");
@@ -3478,21 +3483,16 @@
         throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinitionUnit");
       }
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinitionUnit");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk,
         'propertydefinition_pk': propertydefinitionPk,
         'element_uuid': elementUuid,
         'propertyset_pk': propertysetPk,
         'id': id,
+        'ifc_pk': ifcPk,
         'property_pk': propertyPk,
-        'project_pk': projectPk,
-        'cloud_pk': cloudPk
+        'project_pk': projectPk
       };
       var queryParams = {
       };
@@ -3525,32 +3525,22 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} propertydefinitionPk 
-     * @param {String} propertysetPk 
-     * @param {String} propertyPk 
-     * @param {String} projectPk 
      * @param {String} elementUuid 
+     * @param {String} propertyPk 
      * @param {String} cloudPk 
+     * @param {String} propertydefinitionPk 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} propertysetPk 
      * @param {module:api/IfcApi~getElementPropertySetPropertyDefinitionUnitsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Unit>}
      */
-    this.getElementPropertySetPropertyDefinitionUnits = function(ifcPk, propertydefinitionPk, propertysetPk, propertyPk, projectPk, elementUuid, cloudPk, callback) {
+    this.getElementPropertySetPropertyDefinitionUnits = function(elementUuid, propertyPk, cloudPk, propertydefinitionPk, projectPk, ifcPk, propertysetPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetPropertyDefinitionUnits");
-      }
-
-      // verify the required parameter 'propertydefinitionPk' is set
-      if (propertydefinitionPk === undefined || propertydefinitionPk === null) {
-        throw new Error("Missing the required parameter 'propertydefinitionPk' when calling getElementPropertySetPropertyDefinitionUnits");
-      }
-
-      // verify the required parameter 'propertysetPk' is set
-      if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDefinitionUnits");
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDefinitionUnits");
       }
 
       // verify the required parameter 'propertyPk' is set
@@ -3558,30 +3548,40 @@
         throw new Error("Missing the required parameter 'propertyPk' when calling getElementPropertySetPropertyDefinitionUnits");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinitionUnits");
-      }
-
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDefinitionUnits");
-      }
-
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinitionUnits");
       }
 
+      // verify the required parameter 'propertydefinitionPk' is set
+      if (propertydefinitionPk === undefined || propertydefinitionPk === null) {
+        throw new Error("Missing the required parameter 'propertydefinitionPk' when calling getElementPropertySetPropertyDefinitionUnits");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinitionUnits");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetPropertyDefinitionUnits");
+      }
+
+      // verify the required parameter 'propertysetPk' is set
+      if (propertysetPk === undefined || propertysetPk === null) {
+        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDefinitionUnits");
+      }
+
 
       var pathParams = {
-        'ifc_pk': ifcPk,
-        'propertydefinition_pk': propertydefinitionPk,
-        'propertyset_pk': propertysetPk,
-        'property_pk': propertyPk,
-        'project_pk': projectPk,
         'element_uuid': elementUuid,
-        'cloud_pk': cloudPk
+        'property_pk': propertyPk,
+        'cloud_pk': cloudPk,
+        'propertydefinition_pk': propertydefinitionPk,
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk,
+        'propertyset_pk': propertysetPk
       };
       var queryParams = {
       };
@@ -3614,17 +3614,37 @@
 
     /**
      * 
+     * @param {String} propertyPk 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} projectPk 
      * @param {String} ifcPk 
      * @param {String} propertysetPk 
-     * @param {String} propertyPk 
-     * @param {String} projectPk 
-     * @param {String} elementUuid 
-     * @param {String} cloudPk 
      * @param {module:api/IfcApi~getElementPropertySetPropertyDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/PropertyDefinition>}
      */
-    this.getElementPropertySetPropertyDefinitions = function(ifcPk, propertysetPk, propertyPk, projectPk, elementUuid, cloudPk, callback) {
+    this.getElementPropertySetPropertyDefinitions = function(propertyPk, cloudPk, elementUuid, projectPk, ifcPk, propertysetPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'propertyPk' is set
+      if (propertyPk === undefined || propertyPk === null) {
+        throw new Error("Missing the required parameter 'propertyPk' when calling getElementPropertySetPropertyDefinitions");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinitions");
+      }
+
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDefinitions");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinitions");
+      }
 
       // verify the required parameter 'ifcPk' is set
       if (ifcPk === undefined || ifcPk === null) {
@@ -3636,34 +3656,14 @@
         throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDefinitions");
       }
 
-      // verify the required parameter 'propertyPk' is set
-      if (propertyPk === undefined || propertyPk === null) {
-        throw new Error("Missing the required parameter 'propertyPk' when calling getElementPropertySetPropertyDefinitions");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinitions");
-      }
-
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDefinitions");
-      }
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinitions");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
-        'propertyset_pk': propertysetPk,
         'property_pk': propertyPk,
-        'project_pk': projectPk,
+        'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'cloud_pk': cloudPk
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk,
+        'propertyset_pk': propertysetPk
       };
       var queryParams = {
       };
@@ -3696,19 +3696,19 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} elementUuid 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~getElementPropertySetsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/PropertySet>}
      */
-    this.getElementPropertySets = function(ifcPk, projectPk, cloudPk, elementUuid, callback) {
+    this.getElementPropertySets = function(elementUuid, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySets");
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySets");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -3716,22 +3716,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySets");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySets");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySets");
       }
 
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySets");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'element_uuid': elementUuid,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'element_uuid': elementUuid
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -3764,15 +3764,20 @@
 
     /**
      * 
+     * @param {String} projectPk 
      * @param {String} ifcPk 
      * @param {String} uuid 
-     * @param {String} projectPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~getElement_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Element}
      */
-    this.getElement_0 = function(ifcPk, uuid, projectPk, cloudPk, callback) {
+    this.getElement_0 = function(projectPk, ifcPk, uuid, cloudPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getElement_0");
+      }
 
       // verify the required parameter 'ifcPk' is set
       if (ifcPk === undefined || ifcPk === null) {
@@ -3784,11 +3789,6 @@
         throw new Error("Missing the required parameter 'uuid' when calling getElement_0");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElement_0");
-      }
-
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getElement_0");
@@ -3796,9 +3796,9 @@
 
 
       var pathParams = {
+        'project_pk': projectPk,
         'ifc_pk': ifcPk,
         'uuid': uuid,
-        'project_pk': projectPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -3832,23 +3832,23 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~getElementsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Element>}
      */
-    this.getElements = function(ifcPk, projectPk, cloudPk, callback) {
+    this.getElements = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElements");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getElements");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getElements");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -3858,8 +3858,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -3893,19 +3893,19 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
      * @param {String} ifcClassificationPk 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~getElementsFromClassificationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Element>}
      */
-    this.getElementsFromClassification = function(ifcPk, projectPk, ifcClassificationPk, cloudPk, callback) {
+    this.getElementsFromClassification = function(ifcClassificationPk, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementsFromClassification");
+      // verify the required parameter 'ifcClassificationPk' is set
+      if (ifcClassificationPk === undefined || ifcClassificationPk === null) {
+        throw new Error("Missing the required parameter 'ifcClassificationPk' when calling getElementsFromClassification");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -3913,9 +3913,9 @@
         throw new Error("Missing the required parameter 'projectPk' when calling getElementsFromClassification");
       }
 
-      // verify the required parameter 'ifcClassificationPk' is set
-      if (ifcClassificationPk === undefined || ifcClassificationPk === null) {
-        throw new Error("Missing the required parameter 'ifcClassificationPk' when calling getElementsFromClassification");
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getElementsFromClassification");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -3925,9 +3925,9 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk,
         'ifc_classification_pk': ifcClassificationPk,
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -3961,14 +3961,19 @@
 
     /**
      * 
+     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} cloudPk 
-     * @param {String} id 
      * @param {module:api/IfcApi~getIfcCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Ifc}
      */
-    this.getIfc = function(projectPk, cloudPk, id, callback) {
+    this.getIfc = function(id, projectPk, cloudPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfc");
+      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -3980,16 +3985,11 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling getIfc");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfc");
-      }
-
 
       var pathParams = {
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -4022,13 +4022,18 @@
 
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the bvh file         
+     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} cloudPk 
-     * @param {String} id 
      * @param {module:api/IfcApi~getIfcBVHCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getIfcBVH = function(projectPk, cloudPk, id, callback) {
+    this.getIfcBVH = function(id, projectPk, cloudPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfcBVH");
+      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -4040,16 +4045,11 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling getIfcBVH");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcBVH");
-      }
-
 
       var pathParams = {
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -4082,23 +4082,23 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~getIfcClassificationsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Classification>}
      */
-    this.getIfcClassifications = function(ifcPk, projectPk, cloudPk, callback) {
+    this.getIfcClassifications = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcClassifications");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getIfcClassifications");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcClassifications");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -4108,8 +4108,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -4143,13 +4143,18 @@
 
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the gltf file         
+     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} cloudPk 
-     * @param {String} id 
      * @param {module:api/IfcApi~getIfcGLTFCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getIfcGLTF = function(projectPk, cloudPk, id, callback) {
+    this.getIfcGLTF = function(id, projectPk, cloudPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfcGLTF");
+      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -4161,16 +4166,11 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling getIfcGLTF");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcGLTF");
-      }
-
 
       var pathParams = {
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -4203,13 +4203,18 @@
 
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the map file         
+     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} cloudPk 
-     * @param {String} id 
      * @param {module:api/IfcApi~getIfcMapCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getIfcMap = function(projectPk, cloudPk, id, callback) {
+    this.getIfcMap = function(id, projectPk, cloudPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfcMap");
+      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -4221,16 +4226,11 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling getIfcMap");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcMap");
-      }
-
 
       var pathParams = {
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -4263,23 +4263,23 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~getIfcPropertiesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Property>}
      */
-    this.getIfcProperties = function(ifcPk, projectPk, cloudPk, callback) {
+    this.getIfcProperties = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcProperties");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getIfcProperties");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcProperties");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -4289,8 +4289,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -4324,19 +4324,19 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~getIfcPropertyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Property}
      */
-    this.getIfcProperty = function(ifcPk, projectPk, cloudPk, id, callback) {
+    this.getIfcProperty = function(id, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcProperty");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfcProperty");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -4344,22 +4344,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling getIfcProperty");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcProperty");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getIfcProperty");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcProperty");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -4392,19 +4392,19 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~getIfcPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PropertyDefinition}
      */
-    this.getIfcPropertyDefinition = function(ifcPk, projectPk, cloudPk, id, callback) {
+    this.getIfcPropertyDefinition = function(id, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcPropertyDefinition");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfcPropertyDefinition");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -4412,22 +4412,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling getIfcPropertyDefinition");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcPropertyDefinition");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getIfcPropertyDefinition");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcPropertyDefinition");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -4460,23 +4460,23 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~getIfcPropertyDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/PropertyDefinition>}
      */
-    this.getIfcPropertyDefinitions = function(ifcPk, projectPk, cloudPk, callback) {
+    this.getIfcPropertyDefinitions = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcPropertyDefinitions");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getIfcPropertyDefinitions");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcPropertyDefinitions");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -4486,8 +4486,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -4521,13 +4521,18 @@
 
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the structure file         
+     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} cloudPk 
-     * @param {String} id 
      * @param {module:api/IfcApi~getIfcStructureCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getIfcStructure = function(projectPk, cloudPk, id, callback) {
+    this.getIfcStructure = function(id, projectPk, cloudPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfcStructure");
+      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -4539,16 +4544,11 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling getIfcStructure");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcStructure");
-      }
-
 
       var pathParams = {
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -4581,13 +4581,18 @@
 
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the system file         
+     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} cloudPk 
-     * @param {String} id 
      * @param {module:api/IfcApi~getIfcSystemsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getIfcSystems = function(projectPk, cloudPk, id, callback) {
+    this.getIfcSystems = function(id, projectPk, cloudPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfcSystems");
+      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -4599,16 +4604,11 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling getIfcSystems");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcSystems");
-      }
-
 
       var pathParams = {
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -4641,19 +4641,19 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~getIfcUnitCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Unit}
      */
-    this.getIfcUnit = function(ifcPk, projectPk, cloudPk, id, callback) {
+    this.getIfcUnit = function(id, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcUnit");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfcUnit");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -4661,22 +4661,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling getIfcUnit");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcUnit");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getIfcUnit");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcUnit");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -4709,23 +4709,23 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~getIfcUnitsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Unit>}
      */
-    this.getIfcUnits = function(ifcPk, projectPk, cloudPk, callback) {
+    this.getIfcUnits = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcUnits");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getIfcUnits");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcUnits");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -4735,8 +4735,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -4824,19 +4824,19 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~getPropertySetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PropertySet}
      */
-    this.getPropertySet = function(ifcPk, projectPk, cloudPk, id, callback) {
+    this.getPropertySet = function(id, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getPropertySet");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getPropertySet");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -4844,22 +4844,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling getPropertySet");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getPropertySet");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getPropertySet");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getPropertySet");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -4892,23 +4892,23 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~getPropertySetsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/PropertySet>}
      */
-    this.getPropertySets = function(ifcPk, projectPk, cloudPk, callback) {
+    this.getPropertySets = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getPropertySets");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getPropertySets");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getPropertySets");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -4918,8 +4918,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -4953,19 +4953,19 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~getSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Space}
      */
-    this.getSpace = function(ifcPk, projectPk, cloudPk, id, callback) {
+    this.getSpace = function(id, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getSpace");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getSpace");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -4973,22 +4973,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling getSpace");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getSpace");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getSpace");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getSpace");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -5021,23 +5021,23 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~getSpacesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Space>}
      */
-    this.getSpaces = function(ifcPk, projectPk, cloudPk, callback) {
+    this.getSpaces = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getSpaces");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getSpaces");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getSpaces");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -5047,8 +5047,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -5082,19 +5082,19 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~getZoneCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Zone}
      */
-    this.getZone = function(ifcPk, projectPk, cloudPk, id, callback) {
+    this.getZone = function(id, projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getZone");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getZone");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -5102,22 +5102,22 @@
         throw new Error("Missing the required parameter 'projectPk' when calling getZone");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getZone");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getZone");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getZone");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -5150,20 +5150,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} zonePk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} zonePk 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {module:api/IfcApi~getZoneSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ZoneSpace}
      */
-    this.getZoneSpace = function(ifcPk, zonePk, projectPk, cloudPk, id, callback) {
+    this.getZoneSpace = function(id, zonePk, cloudPk, projectPk, ifcPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getZoneSpace");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getZoneSpace");
       }
 
       // verify the required parameter 'zonePk' is set
@@ -5171,28 +5171,28 @@
         throw new Error("Missing the required parameter 'zonePk' when calling getZoneSpace");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getZoneSpace");
-      }
-
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getZoneSpace");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getZoneSpace");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getZoneSpace");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getZoneSpace");
       }
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'zone_pk': zonePk,
-        'project_pk': projectPk,
         'cloud_pk': cloudPk,
-        'id': id
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk
       };
       var queryParams = {
       };
@@ -5225,29 +5225,24 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {String} cloudPk 
+     * @param {String} ifcPk 
      * @param {String} zonePk 
+     * @param {String} cloudPk 
      * @param {module:api/IfcApi~getZoneSpacesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/ZoneSpace>}
      */
-    this.getZoneSpaces = function(ifcPk, projectPk, cloudPk, zonePk, callback) {
+    this.getZoneSpaces = function(projectPk, ifcPk, zonePk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getZoneSpaces");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getZoneSpaces");
       }
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getZoneSpaces");
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getZoneSpaces");
       }
 
       // verify the required parameter 'zonePk' is set
@@ -5255,12 +5250,17 @@
         throw new Error("Missing the required parameter 'zonePk' when calling getZoneSpaces");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getZoneSpaces");
+      }
+
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'zone_pk': zonePk
+        'ifc_pk': ifcPk,
+        'zone_pk': zonePk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -5293,23 +5293,23 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {module:api/IfcApi~getZonesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Zone>}
      */
-    this.getZones = function(ifcPk, projectPk, cloudPk, callback) {
+    this.getZones = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getZones");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getZones");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getZones");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -5319,8 +5319,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -5354,34 +5354,19 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} id 
-     * @param {String} projectPk 
-     * @param {String} elementUuid 
      * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {module:api/IfcApi~removeClassificationOfElementCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.removeClassificationOfElement = function(ifcPk, id, projectPk, elementUuid, cloudPk, callback) {
+    this.removeClassificationOfElement = function(id, cloudPk, elementUuid, projectPk, ifcPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling removeClassificationOfElement");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling removeClassificationOfElement");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling removeClassificationOfElement");
-      }
-
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling removeClassificationOfElement");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -5389,13 +5374,28 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling removeClassificationOfElement");
       }
 
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling removeClassificationOfElement");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling removeClassificationOfElement");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling removeClassificationOfElement");
+      }
+
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'id': id,
-        'project_pk': projectPk,
+        'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'cloud_pk': cloudPk
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk
       };
       var queryParams = {
       };
@@ -5428,34 +5428,19 @@
 
     /**
      *          Delete the relation between the element and the property set. Does not delete any object     
-     * @param {String} ifcPk 
      * @param {String} id 
-     * @param {String} projectPk 
-     * @param {String} elementUuid 
      * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {module:api/IfcApi~removeElementPropertySetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.removeElementPropertySet = function(ifcPk, id, projectPk, elementUuid, cloudPk, callback) {
+    this.removeElementPropertySet = function(id, cloudPk, elementUuid, projectPk, ifcPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling removeElementPropertySet");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling removeElementPropertySet");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySet");
-      }
-
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling removeElementPropertySet");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -5463,13 +5448,28 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySet");
       }
 
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling removeElementPropertySet");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySet");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling removeElementPropertySet");
+      }
+
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'id': id,
-        'project_pk': projectPk,
+        'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'cloud_pk': cloudPk
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk
       };
       var queryParams = {
       };
@@ -5502,16 +5502,36 @@
 
     /**
      * 
+     * @param {String} id 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} projectPk 
      * @param {String} ifcPk 
      * @param {String} propertysetPk 
-     * @param {String} id 
-     * @param {String} projectPk 
-     * @param {String} elementUuid 
-     * @param {String} cloudPk 
      * @param {module:api/IfcApi~removeElementPropertySetPropertyCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.removeElementPropertySetProperty = function(ifcPk, propertysetPk, id, projectPk, elementUuid, cloudPk, callback) {
+    this.removeElementPropertySetProperty = function(id, cloudPk, elementUuid, projectPk, ifcPk, propertysetPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling removeElementPropertySetProperty");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetProperty");
+      }
+
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling removeElementPropertySetProperty");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySetProperty");
+      }
 
       // verify the required parameter 'ifcPk' is set
       if (ifcPk === undefined || ifcPk === null) {
@@ -5523,34 +5543,14 @@
         throw new Error("Missing the required parameter 'propertysetPk' when calling removeElementPropertySetProperty");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling removeElementPropertySetProperty");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySetProperty");
-      }
-
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling removeElementPropertySetProperty");
-      }
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetProperty");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
-        'propertyset_pk': propertysetPk,
         'id': id,
-        'project_pk': projectPk,
+        'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'cloud_pk': cloudPk
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk,
+        'propertyset_pk': propertysetPk
       };
       var queryParams = {
       };
@@ -5583,27 +5583,17 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} propertysetPk 
      * @param {String} id 
      * @param {String} propertyPk 
-     * @param {String} projectPk 
-     * @param {String} elementUuid 
      * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} propertysetPk 
      * @param {module:api/IfcApi~removeElementPropertySetPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.removeElementPropertySetPropertyDefinition = function(ifcPk, propertysetPk, id, propertyPk, projectPk, elementUuid, cloudPk, callback) {
+    this.removeElementPropertySetPropertyDefinition = function(id, propertyPk, cloudPk, elementUuid, projectPk, ifcPk, propertysetPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling removeElementPropertySetPropertyDefinition");
-      }
-
-      // verify the required parameter 'propertysetPk' is set
-      if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling removeElementPropertySetPropertyDefinition");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -5615,9 +5605,9 @@
         throw new Error("Missing the required parameter 'propertyPk' when calling removeElementPropertySetPropertyDefinition");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySetPropertyDefinition");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDefinition");
       }
 
       // verify the required parameter 'elementUuid' is set
@@ -5625,20 +5615,30 @@
         throw new Error("Missing the required parameter 'elementUuid' when calling removeElementPropertySetPropertyDefinition");
       }
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDefinition");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySetPropertyDefinition");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling removeElementPropertySetPropertyDefinition");
+      }
+
+      // verify the required parameter 'propertysetPk' is set
+      if (propertysetPk === undefined || propertysetPk === null) {
+        throw new Error("Missing the required parameter 'propertysetPk' when calling removeElementPropertySetPropertyDefinition");
       }
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
-        'propertyset_pk': propertysetPk,
         'id': id,
         'property_pk': propertyPk,
-        'project_pk': projectPk,
+        'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'cloud_pk': cloudPk
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk,
+        'propertyset_pk': propertysetPk
       };
       var queryParams = {
       };
@@ -5671,22 +5671,22 @@
 
     /**
      * 
-     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {String} propertydefinitionPk 
      * @param {String} elementUuid 
      * @param {String} propertysetPk 
      * @param {String} id 
+     * @param {String} ifcPk 
      * @param {String} propertyPk 
      * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {module:api/IfcApi~removeElementPropertySetPropertyDefinitionUnitCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.removeElementPropertySetPropertyDefinitionUnit = function(ifcPk, propertydefinitionPk, elementUuid, propertysetPk, id, propertyPk, projectPk, cloudPk, callback) {
+    this.removeElementPropertySetPropertyDefinitionUnit = function(cloudPk, propertydefinitionPk, elementUuid, propertysetPk, id, ifcPk, propertyPk, projectPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling removeElementPropertySetPropertyDefinitionUnit");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDefinitionUnit");
       }
 
       // verify the required parameter 'propertydefinitionPk' is set
@@ -5709,6 +5709,11 @@
         throw new Error("Missing the required parameter 'id' when calling removeElementPropertySetPropertyDefinitionUnit");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling removeElementPropertySetPropertyDefinitionUnit");
+      }
+
       // verify the required parameter 'propertyPk' is set
       if (propertyPk === undefined || propertyPk === null) {
         throw new Error("Missing the required parameter 'propertyPk' when calling removeElementPropertySetPropertyDefinitionUnit");
@@ -5719,21 +5724,16 @@
         throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySetPropertyDefinitionUnit");
       }
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDefinitionUnit");
-      }
-
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk,
         'propertydefinition_pk': propertydefinitionPk,
         'element_uuid': elementUuid,
         'propertyset_pk': propertysetPk,
         'id': id,
+        'ifc_pk': ifcPk,
         'property_pk': propertyPk,
-        'project_pk': projectPk,
-        'cloud_pk': cloudPk
+        'project_pk': projectPk
       };
       var queryParams = {
       };
@@ -5766,24 +5766,24 @@
 
     /**
      * 
-     * @param {String} ifcPk 
      * @param {String} uuid 
+     * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} projectPk 
-     * @param {String} cloudPk 
+     * @param {String} ifcPk 
      * @param {module:api/IfcApi~removeElementsFromClassificationCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.removeElementsFromClassification = function(ifcPk, uuid, ifcClassificationPk, projectPk, cloudPk, callback) {
+    this.removeElementsFromClassification = function(uuid, cloudPk, ifcClassificationPk, projectPk, ifcPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling removeElementsFromClassification");
-      }
 
       // verify the required parameter 'uuid' is set
       if (uuid === undefined || uuid === null) {
         throw new Error("Missing the required parameter 'uuid' when calling removeElementsFromClassification");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementsFromClassification");
       }
 
       // verify the required parameter 'ifcClassificationPk' is set
@@ -5796,18 +5796,18 @@
         throw new Error("Missing the required parameter 'projectPk' when calling removeElementsFromClassification");
       }
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementsFromClassification");
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling removeElementsFromClassification");
       }
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'uuid': uuid,
+        'cloud_pk': cloudPk,
         'ifc_classification_pk': ifcClassificationPk,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk
+        'ifc_pk': ifcPk
       };
       var queryParams = {
       };
@@ -5840,24 +5840,24 @@
 
     /**
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {Array.<module:model/Element>} data 
      * @param {module:api/IfcApi~updateElementCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Element>}
      */
-    this.updateElement = function(ifcPk, projectPk, cloudPk, data, callback) {
+    this.updateElement = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateElement");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling updateElement");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateElement");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -5872,8 +5872,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -5907,16 +5907,21 @@
 
     /**
      * 
+     * @param {String} projectPk 
      * @param {String} ifcPk 
      * @param {String} uuid 
-     * @param {String} projectPk 
      * @param {String} cloudPk 
      * @param {module:model/Element} data 
      * @param {module:api/IfcApi~updateElement_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Element}
      */
-    this.updateElement_0 = function(ifcPk, uuid, projectPk, cloudPk, data, callback) {
+    this.updateElement_0 = function(projectPk, ifcPk, uuid, cloudPk, data, callback) {
       var postBody = data;
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateElement_0");
+      }
 
       // verify the required parameter 'ifcPk' is set
       if (ifcPk === undefined || ifcPk === null) {
@@ -5926,11 +5931,6 @@
       // verify the required parameter 'uuid' is set
       if (uuid === undefined || uuid === null) {
         throw new Error("Missing the required parameter 'uuid' when calling updateElement_0");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateElement_0");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -5945,9 +5945,9 @@
 
 
       var pathParams = {
+        'project_pk': projectPk,
         'ifc_pk': ifcPk,
         'uuid': uuid,
-        'project_pk': projectPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -5981,15 +5981,20 @@
 
     /**
      * 
+     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} cloudPk 
-     * @param {String} id 
      * @param {module:model/Ifc} data 
      * @param {module:api/IfcApi~updateIfcCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Ifc}
      */
-    this.updateIfc = function(projectPk, cloudPk, id, data, callback) {
+    this.updateIfc = function(id, projectPk, cloudPk, data, callback) {
       var postBody = data;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateIfc");
+      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -6001,11 +6006,6 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling updateIfc");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateIfc");
-      }
-
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling updateIfc");
@@ -6013,9 +6013,9 @@
 
 
       var pathParams = {
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -6048,24 +6048,24 @@
 
     /**
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
-     * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {String} cloudPk 
      * @param {Array.<module:model/Property>} data 
      * @param {module:api/IfcApi~updateIfcPropertyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Property>}
      */
-    this.updateIfcProperty = function(ifcPk, projectPk, cloudPk, data, callback) {
+    this.updateIfcProperty = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateIfcProperty");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling updateIfcProperty");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateIfcProperty");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -6080,8 +6080,8 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
         'project_pk': projectPk,
+        'ifc_pk': ifcPk,
         'cloud_pk': cloudPk
       };
       var queryParams = {
@@ -6115,20 +6115,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:model/PropertyDefinition} data 
      * @param {module:api/IfcApi~updateIfcPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PropertyDefinition}
      */
-    this.updateIfcPropertyDefinition = function(ifcPk, projectPk, cloudPk, id, data, callback) {
+    this.updateIfcPropertyDefinition = function(id, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateIfcPropertyDefinition");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateIfcPropertyDefinition");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -6136,14 +6136,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling updateIfcPropertyDefinition");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateIfcPropertyDefinition");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcPropertyDefinition");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateIfcPropertyDefinition");
       }
 
       // verify the required parameter 'data' is set
@@ -6153,10 +6153,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -6189,20 +6189,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:model/Property} data 
      * @param {module:api/IfcApi~updateIfcProperty_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Property}
      */
-    this.updateIfcProperty_0 = function(ifcPk, projectPk, cloudPk, id, data, callback) {
+    this.updateIfcProperty_0 = function(id, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateIfcProperty_0");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateIfcProperty_0");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -6210,14 +6210,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling updateIfcProperty_0");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateIfcProperty_0");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcProperty_0");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateIfcProperty_0");
       }
 
       // verify the required parameter 'data' is set
@@ -6227,10 +6227,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -6263,20 +6263,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:model/Unit} data 
      * @param {module:api/IfcApi~updateIfcUnitCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Unit}
      */
-    this.updateIfcUnit = function(ifcPk, projectPk, cloudPk, id, data, callback) {
+    this.updateIfcUnit = function(id, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateIfcUnit");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateIfcUnit");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -6284,14 +6284,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling updateIfcUnit");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateIfcUnit");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcUnit");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateIfcUnit");
       }
 
       // verify the required parameter 'data' is set
@@ -6301,10 +6301,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -6337,20 +6337,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:model/PropertySet} data 
      * @param {module:api/IfcApi~updatePropertySetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PropertySet}
      */
-    this.updatePropertySet = function(ifcPk, projectPk, cloudPk, id, data, callback) {
+    this.updatePropertySet = function(id, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updatePropertySet");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updatePropertySet");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -6358,14 +6358,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling updatePropertySet");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updatePropertySet");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling updatePropertySet");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updatePropertySet");
       }
 
       // verify the required parameter 'data' is set
@@ -6375,10 +6375,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -6411,20 +6411,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:model/Space} data 
      * @param {module:api/IfcApi~updateSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Space}
      */
-    this.updateSpace = function(ifcPk, projectPk, cloudPk, id, data, callback) {
+    this.updateSpace = function(id, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateSpace");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateSpace");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -6432,14 +6432,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling updateSpace");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateSpace");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling updateSpace");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateSpace");
       }
 
       // verify the required parameter 'data' is set
@@ -6449,10 +6449,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -6485,20 +6485,20 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:model/Zone} data 
      * @param {module:api/IfcApi~updateZoneCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Zone}
      */
-    this.updateZone = function(ifcPk, projectPk, cloudPk, id, data, callback) {
+    this.updateZone = function(id, projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateZone");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateZone");
       }
 
       // verify the required parameter 'projectPk' is set
@@ -6506,14 +6506,14 @@
         throw new Error("Missing the required parameter 'projectPk' when calling updateZone");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateZone");
+      }
+
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling updateZone");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateZone");
       }
 
       // verify the required parameter 'data' is set
@@ -6523,10 +6523,10 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'project_pk': projectPk,
-        'cloud_pk': cloudPk,
-        'id': id
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -6559,21 +6559,21 @@
 
     /**
      * 
-     * @param {String} ifcPk 
-     * @param {String} zonePk 
-     * @param {String} projectPk 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} zonePk 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} ifcPk 
      * @param {module:model/ZoneSpace} data 
      * @param {module:api/IfcApi~updateZoneSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ZoneSpace}
      */
-    this.updateZoneSpace = function(ifcPk, zonePk, projectPk, cloudPk, id, data, callback) {
+    this.updateZoneSpace = function(id, zonePk, cloudPk, projectPk, ifcPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateZoneSpace");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateZoneSpace");
       }
 
       // verify the required parameter 'zonePk' is set
@@ -6581,19 +6581,19 @@
         throw new Error("Missing the required parameter 'zonePk' when calling updateZoneSpace");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateZoneSpace");
-      }
-
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling updateZoneSpace");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateZoneSpace");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateZoneSpace");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateZoneSpace");
       }
 
       // verify the required parameter 'data' is set
@@ -6603,11 +6603,11 @@
 
 
       var pathParams = {
-        'ifc_pk': ifcPk,
+        'id': id,
         'zone_pk': zonePk,
-        'project_pk': projectPk,
         'cloud_pk': cloudPk,
-        'id': id
+        'project_pk': projectPk,
+        'ifc_pk': ifcPk
       };
       var queryParams = {
       };

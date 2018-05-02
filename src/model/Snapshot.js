@@ -37,7 +37,7 @@
   /**
    * The Snapshot model module.
    * @module model/Snapshot
-   * @version 1.0.2
+   * @version 1.0.3
    */
 
   /**
