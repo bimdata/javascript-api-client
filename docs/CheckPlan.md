@@ -1,0 +1,15 @@
+# bimdata.CheckPlan
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **Number** |  | [optional] 
+**projectId** | **Number** |  | 
+**name** | **String** |  | 
+**description** | **String** |  | [optional] 
+**createdAt** | **Date** |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
+**rulesets** | [**[Ruleset]**](Ruleset.md) |  | [optional] 
+**isDefault** | **Boolean** |  | [optional] 
+
+
