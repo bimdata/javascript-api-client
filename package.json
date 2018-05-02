@@ -2,7 +2,7 @@
   "name": "@bimdata/bimdata-api-client",
   "version": "1.0.0",
   "description": "BIMData_API_documentation",
-  "license": "Copyright BIMData",
+  "license": "MIT",
   "main": "src/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"
