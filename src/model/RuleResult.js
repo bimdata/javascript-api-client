@@ -37,7 +37,7 @@
   /**
    * The RuleResult model module.
    * @module model/RuleResult
-   * @version 1.0.1
+   * @version 1.0.2
    */
 
   /**

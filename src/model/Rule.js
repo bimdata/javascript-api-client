@@ -37,7 +37,7 @@
   /**
    * The Rule model module.
    * @module model/Rule
-   * @version 1.0.1
+   * @version 1.0.2
    */
 
   /**

@@ -34,7 +34,7 @@
   /**
    * Bcf service.
    * @module api/BcfApi
-   * @version 1.0.1
+   * @version 1.0.2
    */
 
   /**
@@ -242,27 +242,27 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsDocumentsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsDocumentsDelete = function(id, projectsPk, callback) {
+    this.bcf21ProjectsDocumentsDelete = function(projectsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsDocumentsDelete");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsDocumentsDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsDocumentsDelete");
+      }
+
 
       var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -341,31 +341,31 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {Object} opts Optional parameters
      * @param {String} opts.guid 
      * @param {String} opts.filename 
      * @param {module:api/BcfApi~bcf21ProjectsDocumentsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsDocumentsPartialUpdate = function(id, projectsPk, opts, callback) {
+    this.bcf21ProjectsDocumentsPartialUpdate = function(projectsPk, id, opts, callback) {
       opts = opts || {};
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsDocumentsPartialUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsDocumentsPartialUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsDocumentsPartialUpdate");
+      }
+
 
       var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -400,27 +400,27 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsDocumentsReadCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsDocumentsRead = function(id, projectsPk, callback) {
+    this.bcf21ProjectsDocumentsRead = function(projectsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsDocumentsRead");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsDocumentsRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsDocumentsRead");
+      }
+
 
       var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -453,31 +453,31 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {Object} opts Optional parameters
      * @param {String} opts.guid 
      * @param {String} opts.filename 
      * @param {module:api/BcfApi~bcf21ProjectsDocumentsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsDocumentsUpdate = function(id, projectsPk, opts, callback) {
+    this.bcf21ProjectsDocumentsUpdate = function(projectsPk, id, opts, callback) {
       opts = opts || {};
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsDocumentsUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsDocumentsUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsDocumentsUpdate");
+      }
+
 
       var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -759,18 +759,13 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsCommentsDelete = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsCommentsDelete = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsDelete");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -782,11 +777,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsDelete");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -879,20 +879,15 @@
 
     /**
      * 
-     * @param {String} commentsPk 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} commentsPk 
      * @param {module:model/CommentEvent} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsCreate_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommentEvent}
      */
-    this.bcf21ProjectsTopicsCommentsEventsCreate_0 = function(commentsPk, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsCommentsEventsCreate_0 = function(projectsPk, topicsPk, commentsPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsCreate_0");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -904,6 +899,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsCreate_0");
       }
 
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsCreate_0");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsEventsCreate_0");
@@ -911,9 +911,9 @@
 
 
       var pathParams = {
-        'comments_pk': commentsPk,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'comments_pk': commentsPk
       };
       var queryParams = {
       };
@@ -946,18 +946,13 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsCommentsEventsDelete = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsCommentsEventsDelete = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsDelete");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -969,11 +964,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsDelete");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -1006,24 +1006,14 @@
 
     /**
      * 
-     * @param {String} commentsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} commentsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsDelete_0Callback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsCommentsEventsDelete_0 = function(commentsPk, id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsCommentsEventsDelete_0 = function(projectsPk, topicsPk, commentsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsDelete_0");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsDelete_0");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1035,12 +1025,22 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsDelete_0");
       }
 
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsDelete_0");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsDelete_0");
+      }
+
 
       var pathParams = {
-        'comments_pk': commentsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'comments_pk': commentsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -1174,19 +1174,14 @@
 
     /**
      * 
-     * @param {String} commentsPk 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} commentsPk 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsList_1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/CommentEvent>}
      */
-    this.bcf21ProjectsTopicsCommentsEventsList_1 = function(commentsPk, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsCommentsEventsList_1 = function(projectsPk, topicsPk, commentsPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsList_1");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1198,11 +1193,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsList_1");
       }
 
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsList_1");
+      }
+
 
       var pathParams = {
-        'comments_pk': commentsPk,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'comments_pk': commentsPk
       };
       var queryParams = {
       };
@@ -1235,20 +1235,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/CommentEvent} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommentEvent}
      */
-    this.bcf21ProjectsTopicsCommentsEventsPartialUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsCommentsEventsPartialUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1260,6 +1255,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate");
@@ -1267,9 +1267,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -1302,26 +1302,16 @@
 
     /**
      * 
-     * @param {String} commentsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} commentsPk 
+     * @param {String} id 
      * @param {module:model/CommentEvent} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsPartialUpdate_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommentEvent}
      */
-    this.bcf21ProjectsTopicsCommentsEventsPartialUpdate_0 = function(commentsPk, id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsCommentsEventsPartialUpdate_0 = function(projectsPk, topicsPk, commentsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate_0");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate_0");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1333,6 +1323,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate_0");
       }
 
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate_0");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate_0");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate_0");
@@ -1340,10 +1340,10 @@
 
 
       var pathParams = {
-        'comments_pk': commentsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'comments_pk': commentsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -1376,19 +1376,14 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsReadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommentEvent}
      */
-    this.bcf21ProjectsTopicsCommentsEventsRead = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsCommentsEventsRead = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsRead");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1400,11 +1395,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsRead");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -1437,25 +1437,15 @@
 
     /**
      * 
-     * @param {String} commentsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} commentsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsRead_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommentEvent}
      */
-    this.bcf21ProjectsTopicsCommentsEventsRead_0 = function(commentsPk, id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsCommentsEventsRead_0 = function(projectsPk, topicsPk, commentsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsRead_0");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsRead_0");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1467,12 +1457,22 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsRead_0");
       }
 
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsRead_0");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsRead_0");
+      }
+
 
       var pathParams = {
-        'comments_pk': commentsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'comments_pk': commentsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -1505,20 +1505,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/CommentEvent} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommentEvent}
      */
-    this.bcf21ProjectsTopicsCommentsEventsUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsCommentsEventsUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1530,6 +1525,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsEventsUpdate");
@@ -1537,9 +1537,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -1572,26 +1572,16 @@
 
     /**
      * 
-     * @param {String} commentsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} commentsPk 
+     * @param {String} id 
      * @param {module:model/CommentEvent} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsUpdate_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommentEvent}
      */
-    this.bcf21ProjectsTopicsCommentsEventsUpdate_0 = function(commentsPk, id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsCommentsEventsUpdate_0 = function(projectsPk, topicsPk, commentsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsUpdate_0");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsUpdate_0");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1603,6 +1593,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsUpdate_0");
       }
 
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsUpdate_0");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsUpdate_0");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsEventsUpdate_0");
@@ -1610,10 +1610,10 @@
 
 
       var pathParams = {
-        'comments_pk': commentsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'comments_pk': commentsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -1700,20 +1700,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/Comment} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Comment}
      */
-    this.bcf21ProjectsTopicsCommentsPartialUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsCommentsPartialUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsPartialUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1725,6 +1720,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsPartialUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsPartialUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsPartialUpdate");
@@ -1732,9 +1732,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -1767,19 +1767,14 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsReadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Comment}
      */
-    this.bcf21ProjectsTopicsCommentsRead = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsCommentsRead = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsRead");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1791,11 +1786,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsRead");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -1828,20 +1828,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/Comment} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Comment}
      */
-    this.bcf21ProjectsTopicsCommentsUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsCommentsUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1853,6 +1848,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsUpdate");
@@ -1860,9 +1860,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -1948,27 +1948,27 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsDelete = function(id, projectsPk, callback) {
+    this.bcf21ProjectsTopicsDelete = function(projectsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDelete");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDelete");
+      }
+
 
       var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2061,18 +2061,13 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsDocumentReferencesDelete = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsDocumentReferencesDelete = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDocumentReferencesDelete");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -2084,11 +2079,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsDocumentReferencesDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDocumentReferencesDelete");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2175,20 +2175,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/DocumentReference} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentReference}
      */
-    this.bcf21ProjectsTopicsDocumentReferencesPartialUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsDocumentReferencesPartialUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDocumentReferencesPartialUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -2200,6 +2195,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsDocumentReferencesPartialUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDocumentReferencesPartialUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsDocumentReferencesPartialUpdate");
@@ -2207,9 +2207,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2242,19 +2242,14 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesReadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentReference}
      */
-    this.bcf21ProjectsTopicsDocumentReferencesRead = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsDocumentReferencesRead = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDocumentReferencesRead");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -2266,11 +2261,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsDocumentReferencesRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDocumentReferencesRead");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2303,20 +2303,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/DocumentReference} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentReference}
      */
-    this.bcf21ProjectsTopicsDocumentReferencesUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsDocumentReferencesUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDocumentReferencesUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -2328,6 +2323,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsDocumentReferencesUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDocumentReferencesUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsDocumentReferencesUpdate");
@@ -2335,9 +2335,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2483,27 +2483,27 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsEventsDelete = function(id, projectsPk, callback) {
+    this.bcf21ProjectsTopicsEventsDelete = function(projectsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsDelete");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsDelete");
+      }
+
 
       var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2536,18 +2536,13 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsDelete_0Callback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsEventsDelete_0 = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsEventsDelete_0 = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsDelete_0");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -2559,11 +2554,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsEventsDelete_0");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsDelete_0");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2697,23 +2697,23 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:model/TopicEvents} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TopicEvents}
      */
-    this.bcf21ProjectsTopicsEventsPartialUpdate = function(id, projectsPk, data, callback) {
+    this.bcf21ProjectsTopicsEventsPartialUpdate = function(projectsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsPartialUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsPartialUpdate");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsPartialUpdate");
       }
 
       // verify the required parameter 'data' is set
@@ -2723,8 +2723,8 @@
 
 
       var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2757,20 +2757,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/TopicEvents} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsPartialUpdate_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TopicEvents}
      */
-    this.bcf21ProjectsTopicsEventsPartialUpdate_0 = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsEventsPartialUpdate_0 = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsPartialUpdate_0");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -2782,6 +2777,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsEventsPartialUpdate_0");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsPartialUpdate_0");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsEventsPartialUpdate_0");
@@ -2789,9 +2789,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2824,28 +2824,28 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsReadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TopicEvents}
      */
-    this.bcf21ProjectsTopicsEventsRead = function(id, projectsPk, callback) {
+    this.bcf21ProjectsTopicsEventsRead = function(projectsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsRead");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsRead");
+      }
+
 
       var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2878,19 +2878,14 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsRead_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TopicEvents}
      */
-    this.bcf21ProjectsTopicsEventsRead_0 = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsEventsRead_0 = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsRead_0");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -2902,11 +2897,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsEventsRead_0");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsRead_0");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2939,23 +2939,23 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:model/TopicEvents} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TopicEvents}
      */
-    this.bcf21ProjectsTopicsEventsUpdate = function(id, projectsPk, data, callback) {
+    this.bcf21ProjectsTopicsEventsUpdate = function(projectsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsUpdate");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsUpdate");
       }
 
       // verify the required parameter 'data' is set
@@ -2965,8 +2965,8 @@
 
 
       var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2999,20 +2999,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/TopicEvents} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsUpdate_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TopicEvents}
      */
-    this.bcf21ProjectsTopicsEventsUpdate_0 = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsEventsUpdate_0 = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsUpdate_0");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -3024,6 +3019,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsEventsUpdate_0");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsUpdate_0");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsEventsUpdate_0");
@@ -3031,9 +3031,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -3126,18 +3126,13 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsFileDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsFileDelete = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsFileDelete = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsFileDelete");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -3149,11 +3144,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsFileDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsFileDelete");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -3240,20 +3240,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/BimSnippet} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsFilePartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BimSnippet}
      */
-    this.bcf21ProjectsTopicsFilePartialUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsFilePartialUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsFilePartialUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -3265,6 +3260,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsFilePartialUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsFilePartialUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsFilePartialUpdate");
@@ -3272,9 +3272,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -3307,19 +3307,14 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsFileReadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BimSnippet}
      */
-    this.bcf21ProjectsTopicsFileRead = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsFileRead = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsFileRead");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -3331,11 +3326,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsFileRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsFileRead");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -3368,20 +3368,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/BimSnippet} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsFileUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BimSnippet}
      */
-    this.bcf21ProjectsTopicsFileUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsFileUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsFileUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -3393,6 +3388,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsFileUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsFileUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsFileUpdate");
@@ -3400,9 +3400,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -3482,23 +3482,23 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:model/Topic} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Topic}
      */
-    this.bcf21ProjectsTopicsPartialUpdate = function(id, projectsPk, data, callback) {
+    this.bcf21ProjectsTopicsPartialUpdate = function(projectsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsPartialUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsPartialUpdate");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsPartialUpdate");
       }
 
       // verify the required parameter 'data' is set
@@ -3508,8 +3508,8 @@
 
 
       var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -3542,28 +3542,28 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsReadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Topic}
      */
-    this.bcf21ProjectsTopicsRead = function(id, projectsPk, callback) {
+    this.bcf21ProjectsTopicsRead = function(projectsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRead");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRead");
+      }
+
 
       var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -3656,18 +3656,13 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsRelatedTopicsDelete = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsRelatedTopicsDelete = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRelatedTopicsDelete");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -3679,11 +3674,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsRelatedTopicsDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRelatedTopicsDelete");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -3770,20 +3770,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/RelatedTopic} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RelatedTopic}
      */
-    this.bcf21ProjectsTopicsRelatedTopicsPartialUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsRelatedTopicsPartialUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRelatedTopicsPartialUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -3795,6 +3790,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsRelatedTopicsPartialUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRelatedTopicsPartialUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsRelatedTopicsPartialUpdate");
@@ -3802,9 +3802,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -3837,19 +3837,14 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsReadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RelatedTopic}
      */
-    this.bcf21ProjectsTopicsRelatedTopicsRead = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsRelatedTopicsRead = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRelatedTopicsRead");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -3861,11 +3856,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsRelatedTopicsRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRelatedTopicsRead");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -3898,20 +3898,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/RelatedTopic} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RelatedTopic}
      */
-    this.bcf21ProjectsTopicsRelatedTopicsUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsRelatedTopicsUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRelatedTopicsUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -3923,6 +3918,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsRelatedTopicsUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRelatedTopicsUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsRelatedTopicsUpdate");
@@ -3930,9 +3930,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -4025,18 +4025,13 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsSnippetDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsSnippetDelete = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsSnippetDelete = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsSnippetDelete");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -4048,11 +4043,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsSnippetDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsSnippetDelete");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -4139,20 +4139,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/BimSnippet} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsSnippetPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BimSnippet}
      */
-    this.bcf21ProjectsTopicsSnippetPartialUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsSnippetPartialUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsSnippetPartialUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -4164,6 +4159,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsSnippetPartialUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsSnippetPartialUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsSnippetPartialUpdate");
@@ -4171,9 +4171,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -4206,19 +4206,14 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsSnippetReadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BimSnippet}
      */
-    this.bcf21ProjectsTopicsSnippetRead = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsSnippetRead = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsSnippetRead");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -4230,11 +4225,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsSnippetRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsSnippetRead");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -4267,20 +4267,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/BimSnippet} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsSnippetUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BimSnippet}
      */
-    this.bcf21ProjectsTopicsSnippetUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsSnippetUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsSnippetUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -4292,6 +4287,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsSnippetUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsSnippetUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsSnippetUpdate");
@@ -4299,9 +4299,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -4334,23 +4334,23 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:model/Topic} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Topic}
      */
-    this.bcf21ProjectsTopicsUpdate = function(id, projectsPk, data, callback) {
+    this.bcf21ProjectsTopicsUpdate = function(projectsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsUpdate");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsUpdate");
       }
 
       // verify the required parameter 'data' is set
@@ -4360,8 +4360,8 @@
 
 
       var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -4462,22 +4462,17 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsViewpointsBitmapDelete = function(viewpointsPk, id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsBitmapDelete = function(viewpointsPk, projectsPk, topicsPk, id, callback) {
       var postBody = null;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsBitmapDelete");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsBitmapDelete");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -4490,12 +4485,17 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsBitmapDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsBitmapDelete");
+      }
+
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -4590,24 +4590,19 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/Bitmap} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Bitmap}
      */
-    this.bcf21ProjectsTopicsViewpointsBitmapPartialUpdate = function(viewpointsPk, id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsViewpointsBitmapPartialUpdate = function(viewpointsPk, projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsBitmapPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsBitmapPartialUpdate");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -4620,6 +4615,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsBitmapPartialUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsBitmapPartialUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsBitmapPartialUpdate");
@@ -4628,9 +4628,9 @@
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -4664,23 +4664,18 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapReadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Bitmap}
      */
-    this.bcf21ProjectsTopicsViewpointsBitmapRead = function(viewpointsPk, id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsBitmapRead = function(viewpointsPk, projectsPk, topicsPk, id, callback) {
       var postBody = null;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsBitmapRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsBitmapRead");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -4693,12 +4688,17 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsBitmapRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsBitmapRead");
+      }
+
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -4732,24 +4732,19 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/Bitmap} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Bitmap}
      */
-    this.bcf21ProjectsTopicsViewpointsBitmapUpdate = function(viewpointsPk, id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsViewpointsBitmapUpdate = function(viewpointsPk, projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsBitmapUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsBitmapUpdate");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -4762,6 +4757,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsBitmapUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsBitmapUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsBitmapUpdate");
@@ -4770,9 +4770,9 @@
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -4873,22 +4873,17 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsViewpointsColoringDelete = function(viewpointsPk, id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsColoringDelete = function(viewpointsPk, projectsPk, topicsPk, id, callback) {
       var postBody = null;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsColoringDelete");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsColoringDelete");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -4901,12 +4896,17 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsColoringDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsColoringDelete");
+      }
+
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -5001,24 +5001,19 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/Coloring} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Coloring}
      */
-    this.bcf21ProjectsTopicsViewpointsColoringPartialUpdate = function(viewpointsPk, id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsViewpointsColoringPartialUpdate = function(viewpointsPk, projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsColoringPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsColoringPartialUpdate");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -5031,6 +5026,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsColoringPartialUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsColoringPartialUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsColoringPartialUpdate");
@@ -5039,9 +5039,9 @@
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -5075,23 +5075,18 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringReadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Coloring}
      */
-    this.bcf21ProjectsTopicsViewpointsColoringRead = function(viewpointsPk, id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsColoringRead = function(viewpointsPk, projectsPk, topicsPk, id, callback) {
       var postBody = null;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsColoringRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsColoringRead");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -5104,12 +5099,17 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsColoringRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsColoringRead");
+      }
+
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -5143,24 +5143,19 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/Coloring} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Coloring}
      */
-    this.bcf21ProjectsTopicsViewpointsColoringUpdate = function(viewpointsPk, id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsViewpointsColoringUpdate = function(viewpointsPk, projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsColoringUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsColoringUpdate");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -5173,6 +5168,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsColoringUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsColoringUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsColoringUpdate");
@@ -5181,9 +5181,9 @@
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -5276,18 +5276,13 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsViewpointsDelete = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsDelete = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsDelete");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -5299,11 +5294,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsDelete");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -5390,20 +5390,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/Viewpoint} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Viewpoint}
      */
-    this.bcf21ProjectsTopicsViewpointsPartialUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsViewpointsPartialUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsPartialUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -5415,6 +5410,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsPartialUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsPartialUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsPartialUpdate");
@@ -5422,9 +5422,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -5457,19 +5457,14 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsReadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Viewpoint}
      */
-    this.bcf21ProjectsTopicsViewpointsRead = function(id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsRead = function(projectsPk, topicsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsRead");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -5481,11 +5476,16 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsRead");
+      }
+
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -5586,22 +5586,17 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsViewpointsSelectionDelete = function(viewpointsPk, id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsSelectionDelete = function(viewpointsPk, projectsPk, topicsPk, id, callback) {
       var postBody = null;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsSelectionDelete");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsSelectionDelete");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -5614,12 +5609,17 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsSelectionDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsSelectionDelete");
+      }
+
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -5714,24 +5714,19 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/Component} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Component}
      */
-    this.bcf21ProjectsTopicsViewpointsSelectionPartialUpdate = function(viewpointsPk, id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsViewpointsSelectionPartialUpdate = function(viewpointsPk, projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsSelectionPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsSelectionPartialUpdate");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -5744,6 +5739,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsSelectionPartialUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsSelectionPartialUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsSelectionPartialUpdate");
@@ -5752,9 +5752,9 @@
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -5788,23 +5788,18 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionReadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Component}
      */
-    this.bcf21ProjectsTopicsViewpointsSelectionRead = function(viewpointsPk, id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsSelectionRead = function(viewpointsPk, projectsPk, topicsPk, id, callback) {
       var postBody = null;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsSelectionRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsSelectionRead");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -5817,12 +5812,17 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsSelectionRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsSelectionRead");
+      }
+
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -5856,24 +5856,19 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/Component} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Component}
      */
-    this.bcf21ProjectsTopicsViewpointsSelectionUpdate = function(viewpointsPk, id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsViewpointsSelectionUpdate = function(viewpointsPk, projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsSelectionUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsSelectionUpdate");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -5886,6 +5881,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsSelectionUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsSelectionUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsSelectionUpdate");
@@ -5894,9 +5894,9 @@
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -5990,20 +5990,15 @@
 
     /**
      * 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/Viewpoint} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Viewpoint}
      */
-    this.bcf21ProjectsTopicsViewpointsUpdate = function(id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsViewpointsUpdate = function(projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsUpdate");
-      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -6015,6 +6010,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsUpdate");
@@ -6022,9 +6022,9 @@
 
 
       var pathParams = {
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -6125,22 +6125,17 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsViewpointsVisibilityDelete = function(viewpointsPk, id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsVisibilityDelete = function(viewpointsPk, projectsPk, topicsPk, id, callback) {
       var postBody = null;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityDelete");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsVisibilityDelete");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -6153,12 +6148,17 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsVisibilityDelete");
+      }
+
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -6253,24 +6253,19 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/Visibility} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Visibility}
      */
-    this.bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate = function(viewpointsPk, id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate = function(viewpointsPk, projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -6283,6 +6278,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate");
@@ -6291,9 +6291,9 @@
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -6327,23 +6327,18 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityReadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Visibility}
      */
-    this.bcf21ProjectsTopicsViewpointsVisibilityRead = function(viewpointsPk, id, projectsPk, topicsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsVisibilityRead = function(viewpointsPk, projectsPk, topicsPk, id, callback) {
       var postBody = null;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsVisibilityRead");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -6356,12 +6351,17 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityRead");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsVisibilityRead");
+      }
+
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -6395,24 +6395,19 @@
     /**
      * 
      * @param {String} viewpointsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
+     * @param {String} id 
      * @param {module:model/Visibility} data 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Visibility}
      */
-    this.bcf21ProjectsTopicsViewpointsVisibilityUpdate = function(viewpointsPk, id, projectsPk, topicsPk, data, callback) {
+    this.bcf21ProjectsTopicsViewpointsVisibilityUpdate = function(viewpointsPk, projectsPk, topicsPk, id, data, callback) {
       var postBody = data;
 
       // verify the required parameter 'viewpointsPk' is set
       if (viewpointsPk === undefined || viewpointsPk === null) {
         throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsVisibilityUpdate");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -6425,6 +6420,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityUpdate");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsVisibilityUpdate");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsVisibilityUpdate");
@@ -6433,9 +6433,9 @@
 
       var pathParams = {
         'viewpoints_pk': viewpointsPk,
-        'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk
+        'topics_pk': topicsPk,
+        'id': id
       };
       var queryParams = {
       };
