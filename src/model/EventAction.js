@@ -37,7 +37,7 @@
   /**
    * The EventAction model module.
    * @module model/EventAction
-   * @version 1.0.0
+   * @version 1.0.1
    */
 
   /**

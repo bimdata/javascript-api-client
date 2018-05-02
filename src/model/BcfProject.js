@@ -37,7 +37,7 @@
   /**
    * The BcfProject model module.
    * @module model/BcfProject
-   * @version 1.0.0
+   * @version 1.0.1
    */
 
   /**

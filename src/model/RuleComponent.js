@@ -37,7 +37,7 @@
   /**
    * The RuleComponent model module.
    * @module model/RuleComponent
-   * @version 1.0.0
+   * @version 1.0.1
    */
 
   /**

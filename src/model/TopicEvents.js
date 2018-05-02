@@ -37,7 +37,7 @@
   /**
    * The TopicEvents model module.
    * @module model/TopicEvents
-   * @version 1.0.0
+   * @version 1.0.1
    */
 
   /**

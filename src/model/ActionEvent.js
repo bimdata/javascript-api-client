@@ -37,7 +37,7 @@
   /**
    * The ActionEvent model module.
    * @module model/ActionEvent
-   * @version 1.0.0
+   * @version 1.0.1
    */
 
   /**

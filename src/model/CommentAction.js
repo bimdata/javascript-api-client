@@ -37,7 +37,7 @@
   /**
    * The CommentAction model module.
    * @module model/CommentAction
-   * @version 1.0.0
+   * @version 1.0.1
    */
 
   /**
