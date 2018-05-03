@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **parentId** | **Number** |  | [optional] 
 **creator** | **Number** |  | [optional] 
 **project** | **Number** |  | [optional] 
-**projectId** | **Number** |  | 
+**projectId** | **Number** |  | [optional] 
 **name** | **String** |  | 
 **fileName** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 

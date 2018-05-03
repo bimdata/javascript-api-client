@@ -37,7 +37,7 @@
   /**
    * The Bitmap model module.
    * @module model/Bitmap
-   * @version 1.0.3
+   * @version 1.0.4
    */
 
   /**

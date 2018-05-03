@@ -37,7 +37,7 @@
   /**
    * The ProjectRootFolder model module.
    * @module model/ProjectRootFolder
-   * @version 1.0.3
+   * @version 1.0.4
    */
 
   /**

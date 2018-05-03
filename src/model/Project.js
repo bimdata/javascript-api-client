@@ -37,7 +37,7 @@
   /**
    * The Project model module.
    * @module model/Project
-   * @version 1.0.3
+   * @version 1.0.4
    */
 
   /**
@@ -45,9 +45,8 @@
    * @alias module:model/Project
    * @class
    * @param name {String} 
-   * @param cloudId {Number} 
    */
-  var exports = function(name, cloudId) {
+  var exports = function(name) {
     var _this = this;
 
 
@@ -59,7 +58,7 @@
 
 
 
-    _this['cloud_id'] = cloudId;
+
   };
 
   /**

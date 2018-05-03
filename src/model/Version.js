@@ -37,7 +37,7 @@
   /**
    * The Version model module.
    * @module model/Version
-   * @version 1.0.3
+   * @version 1.0.4
    */
 
   /**

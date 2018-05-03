@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **updatedAt** | **Date** |  | [optional] 
 **rootFolder** | [**ProjectRootFolder**](ProjectRootFolder.md) |  | [optional] 
 **propertyPermissionsEnabled** | **Boolean** |  | [optional] 
-**cloudId** | **Number** |  | 
+**cloudId** | **Number** |  | [optional] 
 
 
 <a name="StatusEnum"></a>

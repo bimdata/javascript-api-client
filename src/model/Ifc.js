@@ -37,7 +37,7 @@
   /**
    * The Ifc model module.
    * @module model/Ifc
-   * @version 1.0.3
+   * @version 1.0.4
    */
 
   /**

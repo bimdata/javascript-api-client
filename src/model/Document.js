@@ -37,17 +37,16 @@
   /**
    * The Document model module.
    * @module model/Document
-   * @version 1.0.3
+   * @version 1.0.4
    */
 
   /**
    * Constructs a new <code>Document</code>.
    * @alias module:model/Document
    * @class
-   * @param projectId {Number} 
    * @param name {String} 
    */
-  var exports = function(projectId, name) {
+  var exports = function(name) {
     var _this = this;
 
 
@@ -55,7 +54,7 @@
 
 
 
-    _this['project_id'] = projectId;
+
     _this['name'] = name;
 
 

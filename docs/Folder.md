@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 **children** | **[String]** |  | [optional] 
-**projectId** | **Number** |  | 
+**projectId** | **Number** |  | [optional] 
 **createdBy** | [**FosUser**](FosUser.md) |  | [optional] 
 
 

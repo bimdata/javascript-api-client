@@ -37,7 +37,7 @@
   /**
    * The LineSeriaizer model module.
    * @module model/LineSeriaizer
-   * @version 1.0.3
+   * @version 1.0.4
    */
 
   /**

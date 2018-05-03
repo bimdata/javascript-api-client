@@ -37,7 +37,7 @@
   /**
    * The Folder model module.
    * @module model/Folder
-   * @version 1.0.3
+   * @version 1.0.4
    */
 
   /**
@@ -45,9 +45,8 @@
    * @alias module:model/Folder
    * @class
    * @param name {String} 
-   * @param projectId {Number} 
    */
-  var exports = function(name, projectId) {
+  var exports = function(name) {
     var _this = this;
 
 
@@ -56,7 +55,7 @@
 
 
 
-    _this['project_id'] = projectId;
+
 
   };
 
