@@ -37,7 +37,7 @@
   /**
    * The Document model module.
    * @module model/Document
-   * @version 1.0.4
+   * @version 1.0.5
    */
 
   /**
@@ -56,6 +56,7 @@
 
 
     _this['name'] = name;
+
 
 
 
@@ -114,6 +115,9 @@
       if (data.hasOwnProperty('updated_at')) {
         obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
       }
+      if (data.hasOwnProperty('ifc_id')) {
+        obj['ifc_id'] = ApiClient.convertToType(data['ifc_id'], 'String');
+      }
     }
     return obj;
   }
@@ -170,6 +174,10 @@
    * @member {Date} updated_at
    */
   exports.prototype['updated_at'] = undefined;
+  /**
+   * @member {String} ifc_id
+   */
+  exports.prototype['ifc_id'] = undefined;
 
 
 

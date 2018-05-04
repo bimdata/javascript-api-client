@@ -33,7 +33,7 @@
 
   /**
    * @module ApiClient
-   * @version 1.0.4
+   * @version 1.0.5
    */
 
   /**
@@ -47,9 +47,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default http://api-staging.bimdata.io
+     * @default https://api-staging.bimdata.io
      */
-    this.basePath = 'http://api-staging.bimdata.io'.replace(/\/+$/, '');
+    this.basePath = 'https://api-staging.bimdata.io'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.

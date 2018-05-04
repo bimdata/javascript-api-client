@@ -1,6 +1,6 @@
 # bimdata.IfcApi
 
-All URIs are relative to *http://api-staging.bimdata.io*
+All URIs are relative to *https://api-staging.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -102,7 +102,7 @@ Method | HTTP request | Description
 
 <a name="bulkDeleteIfcClassifications"></a>
 # **bulkDeleteIfcClassifications**
-> bulkDeleteIfcClassifications(projectPk, cloudPk, ifcPk)
+> bulkDeleteIfcClassifications(cloudPk, projectPk, ifcPk)
 
 
 
@@ -121,9 +121,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -135,15 +135,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.bulkDeleteIfcClassifications(projectPk, cloudPk, ifcPk, callback);
+apiInstance.bulkDeleteIfcClassifications(cloudPk, projectPk, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -161,7 +161,7 @@ null (empty response body)
 
 <a name="bulkDeleteIfcProperties"></a>
 # **bulkDeleteIfcProperties**
-> bulkDeleteIfcProperties(projectPk, cloudPk, ifcPk)
+> bulkDeleteIfcProperties(cloudPk, projectPk, ifcPk)
 
 
 
@@ -180,9 +180,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -194,15 +194,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.bulkDeleteIfcProperties(projectPk, cloudPk, ifcPk, callback);
+apiInstance.bulkDeleteIfcProperties(cloudPk, projectPk, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -220,7 +220,7 @@ null (empty response body)
 
 <a name="bulkDeleteIfcPropertyDefinitions"></a>
 # **bulkDeleteIfcPropertyDefinitions**
-> bulkDeleteIfcPropertyDefinitions(projectPk, cloudPk, ifcPk)
+> bulkDeleteIfcPropertyDefinitions(cloudPk, projectPk, ifcPk)
 
 
 
@@ -239,9 +239,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -253,15 +253,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.bulkDeleteIfcPropertyDefinitions(projectPk, cloudPk, ifcPk, callback);
+apiInstance.bulkDeleteIfcPropertyDefinitions(cloudPk, projectPk, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -279,7 +279,7 @@ null (empty response body)
 
 <a name="bulkDeleteIfcUnits"></a>
 # **bulkDeleteIfcUnits**
-> bulkDeleteIfcUnits(projectPk, cloudPk, ifcPk)
+> bulkDeleteIfcUnits(cloudPk, projectPk, ifcPk)
 
 
 
@@ -298,9 +298,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -312,15 +312,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.bulkDeleteIfcUnits(projectPk, cloudPk, ifcPk, callback);
+apiInstance.bulkDeleteIfcUnits(cloudPk, projectPk, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -338,7 +338,7 @@ null (empty response body)
 
 <a name="bulkDeletePropertySet"></a>
 # **bulkDeletePropertySet**
-> bulkDeletePropertySet(projectPk, cloudPk, ifcPk)
+> bulkDeletePropertySet(cloudPk, projectPk, ifcPk)
 
 
 
@@ -357,9 +357,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -371,15 +371,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.bulkDeletePropertySet(projectPk, cloudPk, ifcPk, callback);
+apiInstance.bulkDeletePropertySet(cloudPk, projectPk, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -397,7 +397,7 @@ null (empty response body)
 
 <a name="bulkRemoveClassificationsOfElement"></a>
 # **bulkRemoveClassificationsOfElement**
-> bulkRemoveClassificationsOfElement(projectPk, cloudPk, elementUuid, ifcPk)
+> bulkRemoveClassificationsOfElement(elementUuid, cloudPk, projectPk, ifcPk)
 
 
 
@@ -416,11 +416,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
+var elementUuid = "elementUuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -432,16 +432,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.bulkRemoveClassificationsOfElement(projectPk, cloudPk, elementUuid, ifcPk, callback);
+apiInstance.bulkRemoveClassificationsOfElement(elementUuid, cloudPk, projectPk, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -459,7 +459,7 @@ null (empty response body)
 
 <a name="bulkRemoveElementsFromClassification"></a>
 # **bulkRemoveElementsFromClassification**
-> bulkRemoveElementsFromClassification(projectPk, cloudPk, ifcClassificationPk, ifcPk)
+> bulkRemoveElementsFromClassification(ifcClassificationPk, cloudPk, projectPk, ifcPk)
 
 
 
@@ -478,11 +478,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
+var ifcClassificationPk = "ifcClassificationPk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var ifcClassificationPk = "ifcClassificationPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -494,16 +494,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.bulkRemoveElementsFromClassification(projectPk, cloudPk, ifcClassificationPk, ifcPk, callback);
+apiInstance.bulkRemoveElementsFromClassification(ifcClassificationPk, cloudPk, projectPk, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
  **ifcClassificationPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -521,7 +521,7 @@ null (empty response body)
 
 <a name="createClassificationElementRelations"></a>
 # **createClassificationElementRelations**
-> createClassificationElementRelations(projectPk, cloudPk, ifcPk, data)
+> createClassificationElementRelations(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -540,9 +540,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -556,15 +556,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.createClassificationElementRelations(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.createClassificationElementRelations(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**[ElementClassificationRelation]**](ElementClassificationRelation.md)|  | 
 
@@ -583,7 +583,7 @@ null (empty response body)
 
 <a name="createClassificationsOfElement"></a>
 # **createClassificationsOfElement**
-> [Classification] createClassificationsOfElement(projectPk, cloudPk, elementUuid, ifcPk, data)
+> [Classification] createClassificationsOfElement(elementUuid, cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -602,11 +602,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
+var elementUuid = "elementUuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -620,16 +620,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createClassificationsOfElement(projectPk, cloudPk, elementUuid, ifcPk, data, callback);
+apiInstance.createClassificationsOfElement(elementUuid, cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**[Classification]**](Classification.md)|  | 
 
@@ -648,7 +648,7 @@ Name | Type | Description  | Notes
 
 <a name="createElement"></a>
 # **createElement**
-> [Element] createElement(projectPk, cloudPk, ifcPk, data)
+> [Element] createElement(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -667,9 +667,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -683,15 +683,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createElement(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.createElement(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**[Element]**](Element.md)|  | 
 
@@ -710,7 +710,7 @@ Name | Type | Description  | Notes
 
 <a name="createElementPropertySet"></a>
 # **createElementPropertySet**
-> createElementPropertySet(projectPk, cloudPk, elementUuid, ifcPk, data)
+> createElementPropertySet(elementUuid, cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -729,11 +729,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
+var elementUuid = "elementUuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -747,16 +747,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.createElementPropertySet(projectPk, cloudPk, elementUuid, ifcPk, data, callback);
+apiInstance.createElementPropertySet(elementUuid, cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**PropertySet**](PropertySet.md)|  | 
 
@@ -775,7 +775,7 @@ null (empty response body)
 
 <a name="createElementPropertySetProperty"></a>
 # **createElementPropertySetProperty**
-> Property createElementPropertySetProperty(cloudPk, propertysetPk, elementUuid, ifcPk, projectPk, data)
+> Property createElementPropertySetProperty(elementUuid, cloudPk, projectPk, propertysetPk, ifcPk, data)
 
 
 
@@ -794,15 +794,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
+var elementUuid = "elementUuid_example"; // String | 
+
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var propertysetPk = "propertysetPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
 
 var data = new bimdata.Property(); // Property | 
 
@@ -814,18 +814,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createElementPropertySetProperty(cloudPk, propertysetPk, elementUuid, ifcPk, projectPk, data, callback);
+apiInstance.createElementPropertySetProperty(elementUuid, cloudPk, projectPk, propertysetPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **propertysetPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **ifcPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **propertysetPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
  **data** | [**Property**](Property.md)|  | 
 
 ### Return type
@@ -843,7 +843,7 @@ Name | Type | Description  | Notes
 
 <a name="createElementPropertySetPropertyDefinition"></a>
 # **createElementPropertySetPropertyDefinition**
-> PropertyDefinition createElementPropertySetPropertyDefinition(cloudPk, propertysetPk, propertyPk, elementUuid, ifcPk, projectPk, data)
+> PropertyDefinition createElementPropertySetPropertyDefinition(elementUuid, cloudPk, projectPk, propertysetPk, propertyPk, ifcPk, data)
 
 
 
@@ -862,17 +862,17 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
+var elementUuid = "elementUuid_example"; // String | 
+
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var propertysetPk = "propertysetPk_example"; // String | 
 
 var propertyPk = "propertyPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
 
 var data = new bimdata.PropertyDefinition(); // PropertyDefinition | 
 
@@ -884,19 +884,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createElementPropertySetPropertyDefinition(cloudPk, propertysetPk, propertyPk, elementUuid, ifcPk, projectPk, data, callback);
+apiInstance.createElementPropertySetPropertyDefinition(elementUuid, cloudPk, projectPk, propertysetPk, propertyPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **elementUuid** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **propertysetPk** | **String**|  | 
  **propertyPk** | **String**|  | 
- **elementUuid** | **String**|  | 
  **ifcPk** | **String**|  | 
- **projectPk** | **String**|  | 
  **data** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
 
 ### Return type
@@ -914,7 +914,7 @@ Name | Type | Description  | Notes
 
 <a name="createElementPropertySetPropertyDefinitionUnit"></a>
 # **createElementPropertySetPropertyDefinitionUnit**
-> Unit createElementPropertySetPropertyDefinitionUnit(cloudPk, propertysetPk, propertyPk, elementUuid, ifcPk, projectPk, propertydefinitionPk, data)
+> Unit createElementPropertySetPropertyDefinitionUnit(elementUuid, cloudPk, projectPk, propertydefinitionPk, propertysetPk, propertyPk, ifcPk, data)
 
 
 
@@ -933,19 +933,19 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
+var elementUuid = "elementUuid_example"; // String | 
+
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
+
+var propertydefinitionPk = "propertydefinitionPk_example"; // String | 
 
 var propertysetPk = "propertysetPk_example"; // String | 
 
 var propertyPk = "propertyPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
-
-var propertydefinitionPk = "propertydefinitionPk_example"; // String | 
 
 var data = new bimdata.Unit(); // Unit | 
 
@@ -957,20 +957,20 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createElementPropertySetPropertyDefinitionUnit(cloudPk, propertysetPk, propertyPk, elementUuid, ifcPk, projectPk, propertydefinitionPk, data, callback);
+apiInstance.createElementPropertySetPropertyDefinitionUnit(elementUuid, cloudPk, projectPk, propertydefinitionPk, propertysetPk, propertyPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **propertysetPk** | **String**|  | 
- **propertyPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **ifcPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **propertydefinitionPk** | **String**|  | 
+ **propertysetPk** | **String**|  | 
+ **propertyPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
  **data** | [**Unit**](Unit.md)|  | 
 
 ### Return type
@@ -988,7 +988,7 @@ Name | Type | Description  | Notes
 
 <a name="createElement_0"></a>
 # **createElement_0**
-> createElement_0(projectPk, cloudPk, ifcPk, data)
+> createElement_0(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -1007,9 +1007,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -1023,15 +1023,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.createElement_0(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.createElement_0(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**Element**](Element.md)|  | 
 
@@ -1050,7 +1050,7 @@ null (empty response body)
 
 <a name="createIfcPropertyDefinition"></a>
 # **createIfcPropertyDefinition**
-> [PropertyDefinition] createIfcPropertyDefinition(projectPk, cloudPk, ifcPk, data)
+> [PropertyDefinition] createIfcPropertyDefinition(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -1069,9 +1069,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -1085,15 +1085,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createIfcPropertyDefinition(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.createIfcPropertyDefinition(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**[PropertyDefinition]**](PropertyDefinition.md)|  | 
 
@@ -1112,7 +1112,7 @@ Name | Type | Description  | Notes
 
 <a name="createIfcUnit"></a>
 # **createIfcUnit**
-> [Unit] createIfcUnit(projectPk, cloudPk, ifcPk, data)
+> [Unit] createIfcUnit(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -1131,9 +1131,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -1147,15 +1147,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createIfcUnit(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.createIfcUnit(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**[Unit]**](Unit.md)|  | 
 
@@ -1174,7 +1174,7 @@ Name | Type | Description  | Notes
 
 <a name="createPropertySet"></a>
 # **createPropertySet**
-> [PropertySet] createPropertySet(projectPk, cloudPk, ifcPk, data)
+> [PropertySet] createPropertySet(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -1193,9 +1193,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -1209,15 +1209,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createPropertySet(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.createPropertySet(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**[PropertySet]**](PropertySet.md)|  | 
 
@@ -1236,7 +1236,7 @@ Name | Type | Description  | Notes
 
 <a name="createPropertySetElementRelations"></a>
 # **createPropertySetElementRelations**
-> createPropertySetElementRelations(projectPk, cloudPk, ifcPk, data)
+> createPropertySetElementRelations(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -1255,9 +1255,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -1271,15 +1271,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.createPropertySetElementRelations(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.createPropertySetElementRelations(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**[ElementPropertySetRelation]**](ElementPropertySetRelation.md)|  | 
 
@@ -1298,7 +1298,7 @@ null (empty response body)
 
 <a name="createSpace"></a>
 # **createSpace**
-> Space createSpace(projectPk, cloudPk, ifcPk, data)
+> Space createSpace(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -1317,9 +1317,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -1333,15 +1333,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createSpace(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.createSpace(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**Space**](Space.md)|  | 
 
@@ -1360,7 +1360,7 @@ Name | Type | Description  | Notes
 
 <a name="createZone"></a>
 # **createZone**
-> [Zone] createZone(projectPk, cloudPk, ifcPk, data)
+> [Zone] createZone(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -1379,9 +1379,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -1395,15 +1395,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createZone(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.createZone(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**[Element]**](Element.md)|  | 
 
@@ -1422,7 +1422,7 @@ Name | Type | Description  | Notes
 
 <a name="createZoneSpace"></a>
 # **createZoneSpace**
-> ZoneSpace createZoneSpace(projectPk, cloudPk, ifcPk, zonePk, data)
+> ZoneSpace createZoneSpace(zonePk, cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -1441,13 +1441,13 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
+var zonePk = "zonePk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var ifcPk = "ifcPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
-var zonePk = "zonePk_example"; // String | 
+var ifcPk = "ifcPk_example"; // String | 
 
 var data = new bimdata.ZoneSpace(); // ZoneSpace | 
 
@@ -1459,17 +1459,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createZoneSpace(projectPk, cloudPk, ifcPk, zonePk, data, callback);
+apiInstance.createZoneSpace(zonePk, cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
  **zonePk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
  **data** | [**ZoneSpace**](ZoneSpace.md)|  | 
 
 ### Return type
@@ -1487,7 +1487,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteElement"></a>
 # **deleteElement**
-> deleteElement(projectPk, cloudPk, ifcPk, uuid, )
+> deleteElement(uuid, cloudPk, projectPk, ifcPk, )
 
 
 
@@ -1506,13 +1506,13 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
+var uuid = "uuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var ifcPk = "ifcPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
-var uuid = "uuid_example"; // String | 
+var ifcPk = "ifcPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1522,17 +1522,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteElement(projectPk, cloudPk, ifcPk, uuid, , callback);
+apiInstance.deleteElement(uuid, cloudPk, projectPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
  **uuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
 
 ### Return type
 
@@ -1549,7 +1549,7 @@ null (empty response body)
 
 <a name="deleteIfc"></a>
 # **deleteIfc**
-> deleteIfc(projectPk, cloudPk, id, )
+> deleteIfc(cloudPk, projectPk, id, )
 
 
 
@@ -1568,9 +1568,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -1582,15 +1582,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteIfc(projectPk, cloudPk, id, , callback);
+apiInstance.deleteIfc(cloudPk, projectPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -1608,7 +1608,7 @@ null (empty response body)
 
 <a name="deleteIfcProperty"></a>
 # **deleteIfcProperty**
-> deleteIfcProperty(projectPk, cloudPk, id, ifcPk, )
+> deleteIfcProperty(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -1627,9 +1627,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -1643,15 +1643,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteIfcProperty(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.deleteIfcProperty(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -1670,7 +1670,7 @@ null (empty response body)
 
 <a name="deleteIfcPropertyDefinition"></a>
 # **deleteIfcPropertyDefinition**
-> deleteIfcPropertyDefinition(projectPk, cloudPk, id, ifcPk, )
+> deleteIfcPropertyDefinition(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -1689,9 +1689,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -1705,15 +1705,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteIfcPropertyDefinition(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.deleteIfcPropertyDefinition(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -1732,7 +1732,7 @@ null (empty response body)
 
 <a name="deleteIfcUnit"></a>
 # **deleteIfcUnit**
-> deleteIfcUnit(projectPk, cloudPk, id, ifcPk, )
+> deleteIfcUnit(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -1751,9 +1751,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -1767,15 +1767,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteIfcUnit(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.deleteIfcUnit(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -1794,7 +1794,7 @@ null (empty response body)
 
 <a name="deletePropertySet"></a>
 # **deletePropertySet**
-> deletePropertySet(projectPk, cloudPk, id, ifcPk, )
+> deletePropertySet(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -1813,9 +1813,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -1829,15 +1829,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deletePropertySet(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.deletePropertySet(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -1856,7 +1856,7 @@ null (empty response body)
 
 <a name="deleteSpace"></a>
 # **deleteSpace**
-> deleteSpace(projectPk, cloudPk, id, ifcPk, )
+> deleteSpace(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -1875,9 +1875,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -1891,15 +1891,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteSpace(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.deleteSpace(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -1918,7 +1918,7 @@ null (empty response body)
 
 <a name="deleteZone"></a>
 # **deleteZone**
-> deleteZone(projectPk, cloudPk, id, ifcPk, )
+> deleteZone(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -1937,9 +1937,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -1953,15 +1953,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteZone(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.deleteZone(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -1980,7 +1980,7 @@ null (empty response body)
 
 <a name="deleteZoneSpace"></a>
 # **deleteZoneSpace**
-> deleteZoneSpace(id, cloudPk, ifcPk, zonePk, projectPk, )
+> deleteZoneSpace(zonePk, cloudPk, projectPk, ifcPk, id, )
 
 
 
@@ -1999,15 +1999,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var id = "id_example"; // String | 
+var zonePk = "zonePk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
+var projectPk = "projectPk_example"; // String | 
+
 var ifcPk = "ifcPk_example"; // String | 
 
-var zonePk = "zonePk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -2017,18 +2017,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteZoneSpace(id, cloudPk, ifcPk, zonePk, projectPk, , callback);
+apiInstance.deleteZoneSpace(zonePk, cloudPk, projectPk, ifcPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
  **zonePk** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -2045,7 +2045,7 @@ null (empty response body)
 
 <a name="fullUpdateElement"></a>
 # **fullUpdateElement**
-> [Element] fullUpdateElement(projectPk, cloudPk, ifcPk, data)
+> [Element] fullUpdateElement(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -2064,9 +2064,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -2080,15 +2080,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateElement(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.fullUpdateElement(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**[Element]**](Element.md)|  | 
 
@@ -2107,7 +2107,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateElement_0"></a>
 # **fullUpdateElement_0**
-> Element fullUpdateElement_0(projectPk, cloudPk, ifcPk, uuid, data)
+> Element fullUpdateElement_0(uuid, cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -2126,13 +2126,13 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
+var uuid = "uuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var ifcPk = "ifcPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
-var uuid = "uuid_example"; // String | 
+var ifcPk = "ifcPk_example"; // String | 
 
 var data = new bimdata.Element(); // Element | 
 
@@ -2144,17 +2144,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateElement_0(projectPk, cloudPk, ifcPk, uuid, data, callback);
+apiInstance.fullUpdateElement_0(uuid, cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
  **uuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
  **data** | [**Element**](Element.md)|  | 
 
 ### Return type
@@ -2172,7 +2172,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateIfc"></a>
 # **fullUpdateIfc**
-> Ifc fullUpdateIfc(projectPk, cloudPk, id, data)
+> Ifc fullUpdateIfc(cloudPk, projectPk, id, data)
 
 
 
@@ -2191,9 +2191,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -2207,15 +2207,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateIfc(projectPk, cloudPk, id, data, callback);
+apiInstance.fullUpdateIfc(cloudPk, projectPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **data** | [**Ifc**](Ifc.md)|  | 
 
@@ -2234,7 +2234,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateIfcProperty"></a>
 # **fullUpdateIfcProperty**
-> [Property] fullUpdateIfcProperty(projectPk, cloudPk, ifcPk, data)
+> [Property] fullUpdateIfcProperty(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -2253,9 +2253,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -2269,15 +2269,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateIfcProperty(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.fullUpdateIfcProperty(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**[Property]**](Property.md)|  | 
 
@@ -2296,7 +2296,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateIfcPropertyDefinition"></a>
 # **fullUpdateIfcPropertyDefinition**
-> PropertyDefinition fullUpdateIfcPropertyDefinition(projectPk, cloudPk, id, ifcPk, data)
+> PropertyDefinition fullUpdateIfcPropertyDefinition(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -2315,9 +2315,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -2333,15 +2333,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateIfcPropertyDefinition(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.fullUpdateIfcPropertyDefinition(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
@@ -2361,7 +2361,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateIfcProperty_0"></a>
 # **fullUpdateIfcProperty_0**
-> Property fullUpdateIfcProperty_0(projectPk, cloudPk, id, ifcPk, data)
+> Property fullUpdateIfcProperty_0(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -2380,9 +2380,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -2398,15 +2398,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateIfcProperty_0(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.fullUpdateIfcProperty_0(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**Property**](Property.md)|  | 
@@ -2426,7 +2426,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateIfcUnit"></a>
 # **fullUpdateIfcUnit**
-> Unit fullUpdateIfcUnit(projectPk, cloudPk, id, ifcPk, data)
+> Unit fullUpdateIfcUnit(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -2445,9 +2445,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -2463,15 +2463,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateIfcUnit(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.fullUpdateIfcUnit(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**Unit**](Unit.md)|  | 
@@ -2491,7 +2491,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdatePropertySet"></a>
 # **fullUpdatePropertySet**
-> PropertySet fullUpdatePropertySet(projectPk, cloudPk, id, ifcPk, data)
+> PropertySet fullUpdatePropertySet(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -2510,9 +2510,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -2528,15 +2528,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdatePropertySet(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.fullUpdatePropertySet(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**PropertySet**](PropertySet.md)|  | 
@@ -2556,7 +2556,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateSpace"></a>
 # **fullUpdateSpace**
-> Space fullUpdateSpace(projectPk, cloudPk, id, ifcPk, data)
+> Space fullUpdateSpace(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -2575,9 +2575,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -2593,15 +2593,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateSpace(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.fullUpdateSpace(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**Space**](Space.md)|  | 
@@ -2621,7 +2621,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateZone"></a>
 # **fullUpdateZone**
-> Zone fullUpdateZone(projectPk, cloudPk, id, ifcPk, data)
+> Zone fullUpdateZone(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -2640,9 +2640,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -2658,15 +2658,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateZone(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.fullUpdateZone(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**Zone**](Zone.md)|  | 
@@ -2686,7 +2686,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateZoneSpace"></a>
 # **fullUpdateZoneSpace**
-> ZoneSpace fullUpdateZoneSpace(id, cloudPk, ifcPk, zonePk, projectPk, data)
+> ZoneSpace fullUpdateZoneSpace(zonePk, cloudPk, projectPk, ifcPk, id, data)
 
 
 
@@ -2705,15 +2705,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var id = "id_example"; // String | 
+var zonePk = "zonePk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
+var projectPk = "projectPk_example"; // String | 
+
 var ifcPk = "ifcPk_example"; // String | 
 
-var zonePk = "zonePk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
 var data = new bimdata.ZoneSpace(); // ZoneSpace | 
 
@@ -2725,18 +2725,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateZoneSpace(id, cloudPk, ifcPk, zonePk, projectPk, data, callback);
+apiInstance.fullUpdateZoneSpace(zonePk, cloudPk, projectPk, ifcPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
  **zonePk** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **id** | **String**|  | 
  **data** | [**ZoneSpace**](ZoneSpace.md)|  | 
 
 ### Return type
@@ -2754,7 +2754,7 @@ Name | Type | Description  | Notes
 
 <a name="getClassificationsOfElement"></a>
 # **getClassificationsOfElement**
-> [Classification] getClassificationsOfElement(projectPk, cloudPk, elementUuid, ifcPk, )
+> [Classification] getClassificationsOfElement(elementUuid, cloudPk, projectPk, ifcPk, )
 
 
 
@@ -2773,11 +2773,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
+var elementUuid = "elementUuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -2789,16 +2789,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClassificationsOfElement(projectPk, cloudPk, elementUuid, ifcPk, , callback);
+apiInstance.getClassificationsOfElement(elementUuid, cloudPk, projectPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -2816,7 +2816,7 @@ Name | Type | Description  | Notes
 
 <a name="getElement"></a>
 # **getElement**
-> getElement(projectPk, cloudPk, ifcPk, )
+> getElement(cloudPk, projectPk, ifcPk, )
 
 
 
@@ -2835,9 +2835,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -2849,15 +2849,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.getElement(projectPk, cloudPk, ifcPk, , callback);
+apiInstance.getElement(cloudPk, projectPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -2875,7 +2875,7 @@ null (empty response body)
 
 <a name="getElementPropertySet"></a>
 # **getElementPropertySet**
-> PropertySet getElementPropertySet(id, cloudPk, elementUuid, ifcPk, projectPk)
+> PropertySet getElementPropertySet(elementUuid, cloudPk, projectPk, ifcPk, id)
 
 
 
@@ -2894,15 +2894,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var id = "id_example"; // String | 
+var elementUuid = "elementUuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -2912,18 +2912,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getElementPropertySet(id, cloudPk, elementUuid, ifcPk, projectPk, callback);
+apiInstance.getElementPropertySet(elementUuid, cloudPk, projectPk, ifcPk, id, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **ifcPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -2940,7 +2940,7 @@ Name | Type | Description  | Notes
 
 <a name="getElementPropertySetProperties"></a>
 # **getElementPropertySetProperties**
-> [Property] getElementPropertySetProperties(cloudPk, propertysetPk, elementUuid, ifcPk, projectPk, )
+> [Property] getElementPropertySetProperties(elementUuid, cloudPk, projectPk, propertysetPk, ifcPk, )
 
 
 
@@ -2959,15 +2959,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
+var elementUuid = "elementUuid_example"; // String | 
+
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var propertysetPk = "propertysetPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -2977,18 +2977,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getElementPropertySetProperties(cloudPk, propertysetPk, elementUuid, ifcPk, projectPk, , callback);
+apiInstance.getElementPropertySetProperties(elementUuid, cloudPk, projectPk, propertysetPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **propertysetPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **ifcPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **propertysetPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
 
 ### Return type
 
@@ -3005,7 +3005,7 @@ Name | Type | Description  | Notes
 
 <a name="getElementPropertySetProperty"></a>
 # **getElementPropertySetProperty**
-> Property getElementPropertySetProperty(id, cloudPk, propertysetPk, elementUuid, ifcPk, projectPk)
+> Property getElementPropertySetProperty(elementUuid, cloudPk, projectPk, propertysetPk, id, ifcPk)
 
 
 
@@ -3024,17 +3024,17 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var id = "id_example"; // String | 
+var elementUuid = "elementUuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
+var projectPk = "projectPk_example"; // String | 
+
 var propertysetPk = "propertysetPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
+var id = "id_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -3044,19 +3044,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getElementPropertySetProperty(id, cloudPk, propertysetPk, elementUuid, ifcPk, projectPk, callback);
+apiInstance.getElementPropertySetProperty(elementUuid, cloudPk, projectPk, propertysetPk, id, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **propertysetPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **ifcPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **propertysetPk** | **String**|  | 
+ **id** | **String**|  | 
+ **ifcPk** | **String**|  | 
 
 ### Return type
 
@@ -3073,7 +3073,7 @@ Name | Type | Description  | Notes
 
 <a name="getElementPropertySetPropertyDefinition"></a>
 # **getElementPropertySetPropertyDefinition**
-> PropertyDefinition getElementPropertySetPropertyDefinition(id, cloudPk, propertysetPk, propertyPk, elementUuid, ifcPk, projectPk)
+> PropertyDefinition getElementPropertySetPropertyDefinition(elementUuid, cloudPk, projectPk, propertysetPk, propertyPk, id, ifcPk)
 
 
 
@@ -3092,19 +3092,19 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var id = "id_example"; // String | 
+var elementUuid = "elementUuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var propertysetPk = "propertysetPk_example"; // String | 
 
 var propertyPk = "propertyPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
+var id = "id_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -3114,20 +3114,20 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getElementPropertySetPropertyDefinition(id, cloudPk, propertysetPk, propertyPk, elementUuid, ifcPk, projectPk, callback);
+apiInstance.getElementPropertySetPropertyDefinition(elementUuid, cloudPk, projectPk, propertysetPk, propertyPk, id, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
+ **elementUuid** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **propertysetPk** | **String**|  | 
  **propertyPk** | **String**|  | 
- **elementUuid** | **String**|  | 
+ **id** | **String**|  | 
  **ifcPk** | **String**|  | 
- **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -3144,7 +3144,7 @@ Name | Type | Description  | Notes
 
 <a name="getElementPropertySetPropertyDefinitionUnit"></a>
 # **getElementPropertySetPropertyDefinitionUnit**
-> Unit getElementPropertySetPropertyDefinitionUnit(cloudPk, propertysetPk, ifcPk, id, propertyPk, elementUuid, projectPk, propertydefinitionPk)
+> Unit getElementPropertySetPropertyDefinitionUnit(propertydefinitionPk, propertysetPk, propertyPk, ifcPk, id, elementUuid, cloudPk, projectPk)
 
 
 
@@ -3163,21 +3163,21 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var cloudPk = "cloudPk_example"; // String | 
+var propertydefinitionPk = "propertydefinitionPk_example"; // String | 
 
 var propertysetPk = "propertysetPk_example"; // String | 
+
+var propertyPk = "propertyPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var propertyPk = "propertyPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
-var propertydefinitionPk = "propertydefinitionPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -3187,21 +3187,21 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getElementPropertySetPropertyDefinitionUnit(cloudPk, propertysetPk, ifcPk, id, propertyPk, elementUuid, projectPk, propertydefinitionPk, callback);
+apiInstance.getElementPropertySetPropertyDefinitionUnit(propertydefinitionPk, propertysetPk, propertyPk, ifcPk, id, elementUuid, cloudPk, projectPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **propertydefinitionPk** | **String**|  | 
  **propertysetPk** | **String**|  | 
+ **propertyPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **id** | **String**|  | 
- **propertyPk** | **String**|  | 
  **elementUuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **propertydefinitionPk** | **String**|  | 
 
 ### Return type
 
@@ -3218,7 +3218,7 @@ Name | Type | Description  | Notes
 
 <a name="getElementPropertySetPropertyDefinitionUnits"></a>
 # **getElementPropertySetPropertyDefinitionUnits**
-> [Unit] getElementPropertySetPropertyDefinitionUnits(cloudPk, propertysetPk, propertyPk, elementUuid, ifcPk, projectPk, propertydefinitionPk, )
+> [Unit] getElementPropertySetPropertyDefinitionUnits(elementUuid, cloudPk, projectPk, propertydefinitionPk, propertysetPk, propertyPk, ifcPk, )
 
 
 
@@ -3237,19 +3237,19 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
+var elementUuid = "elementUuid_example"; // String | 
+
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
+
+var propertydefinitionPk = "propertydefinitionPk_example"; // String | 
 
 var propertysetPk = "propertysetPk_example"; // String | 
 
 var propertyPk = "propertyPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
-
-var propertydefinitionPk = "propertydefinitionPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -3259,20 +3259,20 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getElementPropertySetPropertyDefinitionUnits(cloudPk, propertysetPk, propertyPk, elementUuid, ifcPk, projectPk, propertydefinitionPk, , callback);
+apiInstance.getElementPropertySetPropertyDefinitionUnits(elementUuid, cloudPk, projectPk, propertydefinitionPk, propertysetPk, propertyPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **propertysetPk** | **String**|  | 
- **propertyPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **ifcPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **propertydefinitionPk** | **String**|  | 
+ **propertysetPk** | **String**|  | 
+ **propertyPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
 
 ### Return type
 
@@ -3289,7 +3289,7 @@ Name | Type | Description  | Notes
 
 <a name="getElementPropertySetPropertyDefinitions"></a>
 # **getElementPropertySetPropertyDefinitions**
-> [PropertyDefinition] getElementPropertySetPropertyDefinitions(cloudPk, propertysetPk, propertyPk, elementUuid, ifcPk, projectPk, )
+> [PropertyDefinition] getElementPropertySetPropertyDefinitions(elementUuid, cloudPk, projectPk, propertysetPk, propertyPk, ifcPk, )
 
 
 
@@ -3308,17 +3308,17 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
+var elementUuid = "elementUuid_example"; // String | 
+
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var propertysetPk = "propertysetPk_example"; // String | 
 
 var propertyPk = "propertyPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -3328,19 +3328,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getElementPropertySetPropertyDefinitions(cloudPk, propertysetPk, propertyPk, elementUuid, ifcPk, projectPk, , callback);
+apiInstance.getElementPropertySetPropertyDefinitions(elementUuid, cloudPk, projectPk, propertysetPk, propertyPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **elementUuid** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **propertysetPk** | **String**|  | 
  **propertyPk** | **String**|  | 
- **elementUuid** | **String**|  | 
  **ifcPk** | **String**|  | 
- **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -3357,7 +3357,7 @@ Name | Type | Description  | Notes
 
 <a name="getElementPropertySets"></a>
 # **getElementPropertySets**
-> [PropertySet] getElementPropertySets(projectPk, cloudPk, elementUuid, ifcPk, )
+> [PropertySet] getElementPropertySets(elementUuid, cloudPk, projectPk, ifcPk, )
 
 
 
@@ -3376,11 +3376,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
+var elementUuid = "elementUuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -3392,16 +3392,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getElementPropertySets(projectPk, cloudPk, elementUuid, ifcPk, , callback);
+apiInstance.getElementPropertySets(elementUuid, cloudPk, projectPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -3419,7 +3419,7 @@ Name | Type | Description  | Notes
 
 <a name="getElement_0"></a>
 # **getElement_0**
-> Element getElement_0(projectPk, cloudPk, ifcPk, uuid, )
+> Element getElement_0(uuid, cloudPk, projectPk, ifcPk, )
 
 
 
@@ -3438,13 +3438,13 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
+var uuid = "uuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var ifcPk = "ifcPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
-var uuid = "uuid_example"; // String | 
+var ifcPk = "ifcPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -3454,17 +3454,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getElement_0(projectPk, cloudPk, ifcPk, uuid, , callback);
+apiInstance.getElement_0(uuid, cloudPk, projectPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
  **uuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
 
 ### Return type
 
@@ -3481,7 +3481,7 @@ Name | Type | Description  | Notes
 
 <a name="getElements"></a>
 # **getElements**
-> [Element] getElements(projectPk, cloudPk, ifcPk, )
+> [Element] getElements(cloudPk, projectPk, ifcPk, )
 
 
 
@@ -3500,9 +3500,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -3514,15 +3514,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getElements(projectPk, cloudPk, ifcPk, , callback);
+apiInstance.getElements(cloudPk, projectPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -3540,7 +3540,7 @@ Name | Type | Description  | Notes
 
 <a name="getElementsFromClassification"></a>
 # **getElementsFromClassification**
-> [Element] getElementsFromClassification(projectPk, cloudPk, ifcClassificationPk, ifcPk)
+> [Element] getElementsFromClassification(ifcClassificationPk, cloudPk, projectPk, ifcPk)
 
 
 
@@ -3559,11 +3559,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
+var ifcClassificationPk = "ifcClassificationPk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var ifcClassificationPk = "ifcClassificationPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -3575,16 +3575,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getElementsFromClassification(projectPk, cloudPk, ifcClassificationPk, ifcPk, callback);
+apiInstance.getElementsFromClassification(ifcClassificationPk, cloudPk, projectPk, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
  **ifcClassificationPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -3602,7 +3602,7 @@ Name | Type | Description  | Notes
 
 <a name="getIfc"></a>
 # **getIfc**
-> Ifc getIfc(projectPk, cloudPk, id, )
+> Ifc getIfc(cloudPk, projectPk, id, )
 
 
 
@@ -3621,9 +3621,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -3635,15 +3635,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getIfc(projectPk, cloudPk, id, , callback);
+apiInstance.getIfc(cloudPk, projectPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -3661,7 +3661,7 @@ Name | Type | Description  | Notes
 
 <a name="getIfcBVH"></a>
 # **getIfcBVH**
-> getIfcBVH(projectPk, cloudPk, id)
+> getIfcBVH(cloudPk, projectPk, id)
 
 
 
@@ -3680,9 +3680,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -3694,15 +3694,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.getIfcBVH(projectPk, cloudPk, id, callback);
+apiInstance.getIfcBVH(cloudPk, projectPk, id, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -3720,7 +3720,7 @@ null (empty response body)
 
 <a name="getIfcClassifications"></a>
 # **getIfcClassifications**
-> [Classification] getIfcClassifications(projectPk, cloudPk, ifcPk)
+> [Classification] getIfcClassifications(cloudPk, projectPk, ifcPk)
 
 
 
@@ -3739,9 +3739,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -3753,15 +3753,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getIfcClassifications(projectPk, cloudPk, ifcPk, callback);
+apiInstance.getIfcClassifications(cloudPk, projectPk, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -3779,7 +3779,7 @@ Name | Type | Description  | Notes
 
 <a name="getIfcGLTF"></a>
 # **getIfcGLTF**
-> getIfcGLTF(projectPk, cloudPk, id)
+> getIfcGLTF(cloudPk, projectPk, id)
 
 
 
@@ -3798,9 +3798,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -3812,15 +3812,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.getIfcGLTF(projectPk, cloudPk, id, callback);
+apiInstance.getIfcGLTF(cloudPk, projectPk, id, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -3838,7 +3838,7 @@ null (empty response body)
 
 <a name="getIfcMap"></a>
 # **getIfcMap**
-> getIfcMap(projectPk, cloudPk, id)
+> getIfcMap(cloudPk, projectPk, id)
 
 
 
@@ -3857,9 +3857,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -3871,15 +3871,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.getIfcMap(projectPk, cloudPk, id, callback);
+apiInstance.getIfcMap(cloudPk, projectPk, id, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -3897,7 +3897,7 @@ null (empty response body)
 
 <a name="getIfcProperties"></a>
 # **getIfcProperties**
-> [Property] getIfcProperties(projectPk, cloudPk, ifcPk)
+> [Property] getIfcProperties(cloudPk, projectPk, ifcPk)
 
 
 
@@ -3916,9 +3916,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -3930,15 +3930,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getIfcProperties(projectPk, cloudPk, ifcPk, callback);
+apiInstance.getIfcProperties(cloudPk, projectPk, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -3956,7 +3956,7 @@ Name | Type | Description  | Notes
 
 <a name="getIfcProperty"></a>
 # **getIfcProperty**
-> Property getIfcProperty(projectPk, cloudPk, id, ifcPk, )
+> Property getIfcProperty(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -3975,9 +3975,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -3991,15 +3991,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getIfcProperty(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.getIfcProperty(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -4018,7 +4018,7 @@ Name | Type | Description  | Notes
 
 <a name="getIfcPropertyDefinition"></a>
 # **getIfcPropertyDefinition**
-> PropertyDefinition getIfcPropertyDefinition(projectPk, cloudPk, id, ifcPk, )
+> PropertyDefinition getIfcPropertyDefinition(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -4037,9 +4037,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -4053,15 +4053,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getIfcPropertyDefinition(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.getIfcPropertyDefinition(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -4080,7 +4080,7 @@ Name | Type | Description  | Notes
 
 <a name="getIfcPropertyDefinitions"></a>
 # **getIfcPropertyDefinitions**
-> [PropertyDefinition] getIfcPropertyDefinitions(projectPk, cloudPk, ifcPk, )
+> [PropertyDefinition] getIfcPropertyDefinitions(cloudPk, projectPk, ifcPk, )
 
 
 
@@ -4099,9 +4099,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -4113,15 +4113,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getIfcPropertyDefinitions(projectPk, cloudPk, ifcPk, , callback);
+apiInstance.getIfcPropertyDefinitions(cloudPk, projectPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -4139,7 +4139,7 @@ Name | Type | Description  | Notes
 
 <a name="getIfcStructure"></a>
 # **getIfcStructure**
-> getIfcStructure(projectPk, cloudPk, id)
+> getIfcStructure(cloudPk, projectPk, id)
 
 
 
@@ -4158,9 +4158,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -4172,15 +4172,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.getIfcStructure(projectPk, cloudPk, id, callback);
+apiInstance.getIfcStructure(cloudPk, projectPk, id, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -4198,7 +4198,7 @@ null (empty response body)
 
 <a name="getIfcSystems"></a>
 # **getIfcSystems**
-> getIfcSystems(projectPk, cloudPk, id)
+> getIfcSystems(cloudPk, projectPk, id)
 
 
 
@@ -4217,9 +4217,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -4231,15 +4231,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.getIfcSystems(projectPk, cloudPk, id, callback);
+apiInstance.getIfcSystems(cloudPk, projectPk, id, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -4257,7 +4257,7 @@ null (empty response body)
 
 <a name="getIfcUnit"></a>
 # **getIfcUnit**
-> Unit getIfcUnit(projectPk, cloudPk, id, ifcPk, )
+> Unit getIfcUnit(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -4276,9 +4276,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -4292,15 +4292,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getIfcUnit(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.getIfcUnit(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -4319,7 +4319,7 @@ Name | Type | Description  | Notes
 
 <a name="getIfcUnits"></a>
 # **getIfcUnits**
-> [Unit] getIfcUnits(projectPk, cloudPk, ifcPk, )
+> [Unit] getIfcUnits(cloudPk, projectPk, ifcPk, )
 
 
 
@@ -4338,9 +4338,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -4352,15 +4352,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getIfcUnits(projectPk, cloudPk, ifcPk, , callback);
+apiInstance.getIfcUnits(cloudPk, projectPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -4378,7 +4378,7 @@ Name | Type | Description  | Notes
 
 <a name="getIfcs"></a>
 # **getIfcs**
-> [Ifc] getIfcs(projectPk, cloudPk)
+> [Ifc] getIfcs(cloudPk, projectPk)
 
 
 
@@ -4397,9 +4397,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -4409,15 +4409,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getIfcs(projectPk, cloudPk, callback);
+apiInstance.getIfcs(cloudPk, projectPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -4434,7 +4434,7 @@ Name | Type | Description  | Notes
 
 <a name="getPropertySet"></a>
 # **getPropertySet**
-> PropertySet getPropertySet(projectPk, cloudPk, id, ifcPk, )
+> PropertySet getPropertySet(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -4453,9 +4453,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -4469,15 +4469,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPropertySet(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.getPropertySet(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -4496,7 +4496,7 @@ Name | Type | Description  | Notes
 
 <a name="getPropertySets"></a>
 # **getPropertySets**
-> [PropertySet] getPropertySets(projectPk, cloudPk, ifcPk, )
+> [PropertySet] getPropertySets(cloudPk, projectPk, ifcPk, )
 
 
 
@@ -4515,9 +4515,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -4529,15 +4529,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPropertySets(projectPk, cloudPk, ifcPk, , callback);
+apiInstance.getPropertySets(cloudPk, projectPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -4555,7 +4555,7 @@ Name | Type | Description  | Notes
 
 <a name="getSpace"></a>
 # **getSpace**
-> Space getSpace(projectPk, cloudPk, id, ifcPk, )
+> Space getSpace(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -4574,9 +4574,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -4590,15 +4590,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSpace(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.getSpace(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -4617,7 +4617,7 @@ Name | Type | Description  | Notes
 
 <a name="getSpaces"></a>
 # **getSpaces**
-> [Space] getSpaces(projectPk, cloudPk, ifcPk, )
+> [Space] getSpaces(cloudPk, projectPk, ifcPk, )
 
 
 
@@ -4636,9 +4636,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -4650,15 +4650,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSpaces(projectPk, cloudPk, ifcPk, , callback);
+apiInstance.getSpaces(cloudPk, projectPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -4676,7 +4676,7 @@ Name | Type | Description  | Notes
 
 <a name="getZone"></a>
 # **getZone**
-> Zone getZone(projectPk, cloudPk, id, ifcPk, )
+> Zone getZone(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -4695,9 +4695,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -4711,15 +4711,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getZone(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.getZone(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -4738,7 +4738,7 @@ Name | Type | Description  | Notes
 
 <a name="getZoneSpace"></a>
 # **getZoneSpace**
-> ZoneSpace getZoneSpace(id, cloudPk, ifcPk, zonePk, projectPk, )
+> ZoneSpace getZoneSpace(zonePk, cloudPk, projectPk, ifcPk, id, )
 
 
 
@@ -4757,15 +4757,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var id = "id_example"; // String | 
+var zonePk = "zonePk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
+var projectPk = "projectPk_example"; // String | 
+
 var ifcPk = "ifcPk_example"; // String | 
 
-var zonePk = "zonePk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -4775,18 +4775,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getZoneSpace(id, cloudPk, ifcPk, zonePk, projectPk, , callback);
+apiInstance.getZoneSpace(zonePk, cloudPk, projectPk, ifcPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
  **zonePk** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -4803,7 +4803,7 @@ Name | Type | Description  | Notes
 
 <a name="getZoneSpaces"></a>
 # **getZoneSpaces**
-> [ZoneSpace] getZoneSpaces(projectPk, cloudPk, ifcPk, zonePk, )
+> [ZoneSpace] getZoneSpaces(zonePk, cloudPk, projectPk, ifcPk, )
 
 
 
@@ -4822,13 +4822,13 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
+var zonePk = "zonePk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var ifcPk = "ifcPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
-var zonePk = "zonePk_example"; // String | 
+var ifcPk = "ifcPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -4838,17 +4838,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getZoneSpaces(projectPk, cloudPk, ifcPk, zonePk, , callback);
+apiInstance.getZoneSpaces(zonePk, cloudPk, projectPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
  **zonePk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
 
 ### Return type
 
@@ -4865,7 +4865,7 @@ Name | Type | Description  | Notes
 
 <a name="getZones"></a>
 # **getZones**
-> [Zone] getZones(projectPk, cloudPk, ifcPk, )
+> [Zone] getZones(cloudPk, projectPk, ifcPk, )
 
 
 
@@ -4884,9 +4884,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -4898,15 +4898,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getZones(projectPk, cloudPk, ifcPk, , callback);
+apiInstance.getZones(cloudPk, projectPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -4924,7 +4924,7 @@ Name | Type | Description  | Notes
 
 <a name="removeClassificationOfElement"></a>
 # **removeClassificationOfElement**
-> removeClassificationOfElement(id, cloudPk, elementUuid, ifcPk, projectPk)
+> removeClassificationOfElement(elementUuid, cloudPk, projectPk, ifcPk, id)
 
 
 
@@ -4943,15 +4943,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var id = "id_example"; // String | 
+var elementUuid = "elementUuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -4961,18 +4961,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.removeClassificationOfElement(id, cloudPk, elementUuid, ifcPk, projectPk, callback);
+apiInstance.removeClassificationOfElement(elementUuid, cloudPk, projectPk, ifcPk, id, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **ifcPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -4989,7 +4989,7 @@ null (empty response body)
 
 <a name="removeElementPropertySet"></a>
 # **removeElementPropertySet**
-> removeElementPropertySet(id, cloudPk, elementUuid, ifcPk, projectPk)
+> removeElementPropertySet(elementUuid, cloudPk, projectPk, ifcPk, id)
 
 
 
@@ -5008,15 +5008,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var id = "id_example"; // String | 
+var elementUuid = "elementUuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -5026,18 +5026,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.removeElementPropertySet(id, cloudPk, elementUuid, ifcPk, projectPk, callback);
+apiInstance.removeElementPropertySet(elementUuid, cloudPk, projectPk, ifcPk, id, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **ifcPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -5054,7 +5054,7 @@ null (empty response body)
 
 <a name="removeElementPropertySetProperty"></a>
 # **removeElementPropertySetProperty**
-> removeElementPropertySetProperty(id, cloudPk, propertysetPk, elementUuid, ifcPk, projectPk)
+> removeElementPropertySetProperty(elementUuid, cloudPk, projectPk, propertysetPk, id, ifcPk)
 
 
 
@@ -5073,17 +5073,17 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var id = "id_example"; // String | 
+var elementUuid = "elementUuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
+var projectPk = "projectPk_example"; // String | 
+
 var propertysetPk = "propertysetPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
+var id = "id_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -5093,19 +5093,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.removeElementPropertySetProperty(id, cloudPk, propertysetPk, elementUuid, ifcPk, projectPk, callback);
+apiInstance.removeElementPropertySetProperty(elementUuid, cloudPk, projectPk, propertysetPk, id, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **propertysetPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **ifcPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **propertysetPk** | **String**|  | 
+ **id** | **String**|  | 
+ **ifcPk** | **String**|  | 
 
 ### Return type
 
@@ -5122,7 +5122,7 @@ null (empty response body)
 
 <a name="removeElementPropertySetPropertyDefinition"></a>
 # **removeElementPropertySetPropertyDefinition**
-> removeElementPropertySetPropertyDefinition(id, cloudPk, propertysetPk, propertyPk, elementUuid, ifcPk, projectPk)
+> removeElementPropertySetPropertyDefinition(elementUuid, cloudPk, projectPk, propertysetPk, propertyPk, id, ifcPk)
 
 
 
@@ -5141,19 +5141,19 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var id = "id_example"; // String | 
+var elementUuid = "elementUuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var propertysetPk = "propertysetPk_example"; // String | 
 
 var propertyPk = "propertyPk_example"; // String | 
 
-var elementUuid = "elementUuid_example"; // String | 
+var id = "id_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -5163,20 +5163,20 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.removeElementPropertySetPropertyDefinition(id, cloudPk, propertysetPk, propertyPk, elementUuid, ifcPk, projectPk, callback);
+apiInstance.removeElementPropertySetPropertyDefinition(elementUuid, cloudPk, projectPk, propertysetPk, propertyPk, id, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
+ **elementUuid** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **propertysetPk** | **String**|  | 
  **propertyPk** | **String**|  | 
- **elementUuid** | **String**|  | 
+ **id** | **String**|  | 
  **ifcPk** | **String**|  | 
- **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -5193,7 +5193,7 @@ null (empty response body)
 
 <a name="removeElementPropertySetPropertyDefinitionUnit"></a>
 # **removeElementPropertySetPropertyDefinitionUnit**
-> removeElementPropertySetPropertyDefinitionUnit(cloudPk, propertysetPk, ifcPk, id, propertyPk, elementUuid, projectPk, propertydefinitionPk)
+> removeElementPropertySetPropertyDefinitionUnit(propertydefinitionPk, propertysetPk, propertyPk, ifcPk, id, elementUuid, cloudPk, projectPk)
 
 
 
@@ -5212,21 +5212,21 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var cloudPk = "cloudPk_example"; // String | 
+var propertydefinitionPk = "propertydefinitionPk_example"; // String | 
 
 var propertysetPk = "propertysetPk_example"; // String | 
+
+var propertyPk = "propertyPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var propertyPk = "propertyPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
-var propertydefinitionPk = "propertydefinitionPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -5236,21 +5236,21 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.removeElementPropertySetPropertyDefinitionUnit(cloudPk, propertysetPk, ifcPk, id, propertyPk, elementUuid, projectPk, propertydefinitionPk, callback);
+apiInstance.removeElementPropertySetPropertyDefinitionUnit(propertydefinitionPk, propertysetPk, propertyPk, ifcPk, id, elementUuid, cloudPk, projectPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **propertydefinitionPk** | **String**|  | 
  **propertysetPk** | **String**|  | 
+ **propertyPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **id** | **String**|  | 
- **propertyPk** | **String**|  | 
  **elementUuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **propertydefinitionPk** | **String**|  | 
 
 ### Return type
 
@@ -5267,7 +5267,7 @@ null (empty response body)
 
 <a name="removeElementsFromClassification"></a>
 # **removeElementsFromClassification**
-> removeElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, uuid, projectPk)
+> removeElementsFromClassification(uuid, cloudPk, projectPk, ifcClassificationPk, ifcPk)
 
 
 
@@ -5286,15 +5286,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
+var uuid = "uuid_example"; // String | 
+
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcClassificationPk = "ifcClassificationPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
-
-var uuid = "uuid_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -5304,18 +5304,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.removeElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, uuid, projectPk, callback);
+apiInstance.removeElementsFromClassification(uuid, cloudPk, projectPk, ifcClassificationPk, ifcPk, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **uuid** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcClassificationPk** | **String**|  | 
  **ifcPk** | **String**|  | 
- **uuid** | **String**|  | 
- **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -5332,7 +5332,7 @@ null (empty response body)
 
 <a name="updateElement"></a>
 # **updateElement**
-> [Element] updateElement(projectPk, cloudPk, ifcPk, data)
+> [Element] updateElement(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -5351,9 +5351,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -5367,15 +5367,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateElement(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.updateElement(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**[Element]**](Element.md)|  | 
 
@@ -5394,7 +5394,7 @@ Name | Type | Description  | Notes
 
 <a name="updateElement_0"></a>
 # **updateElement_0**
-> Element updateElement_0(projectPk, cloudPk, ifcPk, uuid, data)
+> Element updateElement_0(uuid, cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -5413,13 +5413,13 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
+var uuid = "uuid_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var ifcPk = "ifcPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
-var uuid = "uuid_example"; // String | 
+var ifcPk = "ifcPk_example"; // String | 
 
 var data = new bimdata.Element(); // Element | 
 
@@ -5431,17 +5431,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateElement_0(projectPk, cloudPk, ifcPk, uuid, data, callback);
+apiInstance.updateElement_0(uuid, cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
  **uuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
  **data** | [**Element**](Element.md)|  | 
 
 ### Return type
@@ -5459,7 +5459,7 @@ Name | Type | Description  | Notes
 
 <a name="updateIfc"></a>
 # **updateIfc**
-> Ifc updateIfc(projectPk, cloudPk, id, data)
+> Ifc updateIfc(cloudPk, projectPk, id, data)
 
 
 
@@ -5478,9 +5478,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -5494,15 +5494,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateIfc(projectPk, cloudPk, id, data, callback);
+apiInstance.updateIfc(cloudPk, projectPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **data** | [**Ifc**](Ifc.md)|  | 
 
@@ -5521,7 +5521,7 @@ Name | Type | Description  | Notes
 
 <a name="updateIfcProperty"></a>
 # **updateIfcProperty**
-> [Property] updateIfcProperty(projectPk, cloudPk, ifcPk, data)
+> [Property] updateIfcProperty(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -5540,9 +5540,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -5556,15 +5556,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateIfcProperty(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.updateIfcProperty(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**[Property]**](Property.md)|  | 
 
@@ -5583,7 +5583,7 @@ Name | Type | Description  | Notes
 
 <a name="updateIfcPropertyDefinition"></a>
 # **updateIfcPropertyDefinition**
-> PropertyDefinition updateIfcPropertyDefinition(projectPk, cloudPk, id, ifcPk, data)
+> PropertyDefinition updateIfcPropertyDefinition(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -5602,9 +5602,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -5620,15 +5620,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateIfcPropertyDefinition(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.updateIfcPropertyDefinition(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
@@ -5648,7 +5648,7 @@ Name | Type | Description  | Notes
 
 <a name="updateIfcProperty_0"></a>
 # **updateIfcProperty_0**
-> Property updateIfcProperty_0(projectPk, cloudPk, id, ifcPk, data)
+> Property updateIfcProperty_0(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -5667,9 +5667,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -5685,15 +5685,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateIfcProperty_0(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.updateIfcProperty_0(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**Property**](Property.md)|  | 
@@ -5713,7 +5713,7 @@ Name | Type | Description  | Notes
 
 <a name="updateIfcUnit"></a>
 # **updateIfcUnit**
-> Unit updateIfcUnit(projectPk, cloudPk, id, ifcPk, data)
+> Unit updateIfcUnit(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -5732,9 +5732,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -5750,15 +5750,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateIfcUnit(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.updateIfcUnit(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**Unit**](Unit.md)|  | 
@@ -5778,7 +5778,7 @@ Name | Type | Description  | Notes
 
 <a name="updatePropertySet"></a>
 # **updatePropertySet**
-> PropertySet updatePropertySet(projectPk, cloudPk, id, ifcPk, data)
+> PropertySet updatePropertySet(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -5797,9 +5797,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -5815,15 +5815,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updatePropertySet(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.updatePropertySet(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**PropertySet**](PropertySet.md)|  | 
@@ -5843,7 +5843,7 @@ Name | Type | Description  | Notes
 
 <a name="updateSpace"></a>
 # **updateSpace**
-> Space updateSpace(projectPk, cloudPk, id, ifcPk, data)
+> Space updateSpace(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -5862,9 +5862,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -5880,15 +5880,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateSpace(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.updateSpace(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**Space**](Space.md)|  | 
@@ -5908,7 +5908,7 @@ Name | Type | Description  | Notes
 
 <a name="updateZone"></a>
 # **updateZone**
-> Zone updateZone(projectPk, cloudPk, id, ifcPk, data)
+> Zone updateZone(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -5927,9 +5927,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -5945,15 +5945,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateZone(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.updateZone(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**Zone**](Zone.md)|  | 
@@ -5973,7 +5973,7 @@ Name | Type | Description  | Notes
 
 <a name="updateZoneSpace"></a>
 # **updateZoneSpace**
-> ZoneSpace updateZoneSpace(id, cloudPk, ifcPk, zonePk, projectPk, data)
+> ZoneSpace updateZoneSpace(zonePk, cloudPk, projectPk, ifcPk, id, data)
 
 
 
@@ -5992,15 +5992,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 
-var id = "id_example"; // String | 
+var zonePk = "zonePk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
+var projectPk = "projectPk_example"; // String | 
+
 var ifcPk = "ifcPk_example"; // String | 
 
-var zonePk = "zonePk_example"; // String | 
-
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
 var data = new bimdata.ZoneSpace(); // ZoneSpace | 
 
@@ -6012,18 +6012,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateZoneSpace(id, cloudPk, ifcPk, zonePk, projectPk, data, callback);
+apiInstance.updateZoneSpace(zonePk, cloudPk, projectPk, ifcPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
  **zonePk** | **String**|  | 
+ **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **id** | **String**|  | 
  **data** | [**ZoneSpace**](ZoneSpace.md)|  | 
 
 ### Return type

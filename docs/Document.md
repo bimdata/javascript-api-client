@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **size** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
+**ifcId** | **String** |  | [optional] 
 
 

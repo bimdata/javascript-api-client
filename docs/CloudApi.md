@@ -1,6 +1,6 @@
 # bimdata.CloudApi
 
-All URIs are relative to *http://api-staging.bimdata.io*
+All URIs are relative to *https://api-staging.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteCloudUser"></a>
 # **deleteCloudUser**
-> deleteCloudUser(id, cloudPk, )
+> deleteCloudUser(cloudPk, id, )
 
 
 
@@ -148,9 +148,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CloudApi();
 
-var id = "id_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -160,15 +160,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteCloudUser(id, cloudPk, , callback);
+apiInstance.deleteCloudUser(cloudPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateCloudUser"></a>
 # **fullUpdateCloudUser**
-> FosUserWrite fullUpdateCloudUser(id, cloudPk, data)
+> FosUserWrite fullUpdateCloudUser(cloudPk, id, data)
 
 
 
@@ -260,9 +260,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CloudApi();
 
-var id = "id_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 var data = new bimdata.FosUserWrite(); // FosUserWrite | 
 
@@ -274,15 +274,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateCloudUser(id, cloudPk, data, callback);
+apiInstance.fullUpdateCloudUser(cloudPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
  **data** | [**FosUserWrite**](FosUserWrite.md)|  | 
 
 ### Return type
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 
 <a name="getCloudUser"></a>
 # **getCloudUser**
-> FosUser getCloudUser(id, cloudPk, )
+> FosUser getCloudUser(cloudPk, id, )
 
 
 
@@ -425,9 +425,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CloudApi();
 
-var id = "id_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -437,15 +437,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCloudUser(id, cloudPk, , callback);
+apiInstance.getCloudUser(cloudPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -618,7 +618,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCloudUser"></a>
 # **updateCloudUser**
-> FosUserWrite updateCloudUser(id, cloudPk, data)
+> FosUserWrite updateCloudUser(cloudPk, id, data)
 
 
 
@@ -637,9 +637,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CloudApi();
 
-var id = "id_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 var data = new bimdata.FosUserWrite(); // FosUserWrite | 
 
@@ -651,15 +651,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateCloudUser(id, cloudPk, data, callback);
+apiInstance.updateCloudUser(cloudPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
  **data** | [**FosUserWrite**](FosUserWrite.md)|  | 
 
 ### Return type

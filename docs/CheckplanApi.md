@@ -1,6 +1,6 @@
 # bimdata.CheckplanApi
 
-All URIs are relative to *http://api-staging.bimdata.io*
+All URIs are relative to *https://api-staging.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -45,7 +45,7 @@ Method | HTTP request | Description
 
 <a name="createCheckPlanResult"></a>
 # **createCheckPlanResult**
-> CheckPlanResult createCheckPlanResult(projectPk, cloudPk, checkerPk, ifcPk, data)
+> CheckPlanResult createCheckPlanResult(cloudPk, projectPk, checkerPk, ifcPk, data)
 
 
 
@@ -64,9 +64,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var checkerPk = "checkerPk_example"; // String | 
 
@@ -82,15 +82,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createCheckPlanResult(projectPk, cloudPk, checkerPk, ifcPk, data, callback);
+apiInstance.createCheckPlanResult(cloudPk, projectPk, checkerPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **checkerPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**CheckPlanResult**](CheckPlanResult.md)|  | 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 <a name="createChecker"></a>
 # **createChecker**
-> IfcChecker createChecker(projectPk, cloudPk, ifcPk, data)
+> IfcChecker createChecker(cloudPk, projectPk, ifcPk, data)
 
 
 
@@ -129,9 +129,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -145,15 +145,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createChecker(projectPk, cloudPk, ifcPk, data, callback);
+apiInstance.createChecker(cloudPk, projectPk, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**IfcChecker**](IfcChecker.md)|  | 
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 <a name="createCheckplan"></a>
 # **createCheckplan**
-> CheckPlan createCheckplan(projectPk, cloudPk, data)
+> CheckPlan createCheckplan(cloudPk, projectPk, data)
 
 
 
@@ -191,9 +191,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var data = new bimdata.CheckPlan(); // CheckPlan | 
 
@@ -205,15 +205,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createCheckplan(projectPk, cloudPk, data, callback);
+apiInstance.createCheckplan(cloudPk, projectPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **data** | [**CheckPlan**](CheckPlan.md)|  | 
 
 ### Return type
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 <a name="createRule"></a>
 # **createRule**
-> Rule createRule(projectPk, cloudPk, rulesetPk, checkPlanPk, data)
+> Rule createRule(rulesetPk, cloudPk, projectPk, checkPlanPk, data)
 
 
 
@@ -250,11 +250,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
+var rulesetPk = "rulesetPk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var rulesetPk = "rulesetPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var checkPlanPk = "checkPlanPk_example"; // String | 
 
@@ -268,16 +268,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createRule(projectPk, cloudPk, rulesetPk, checkPlanPk, data, callback);
+apiInstance.createRule(rulesetPk, cloudPk, projectPk, checkPlanPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **checkPlanPk** | **String**|  | 
  **data** | [**Rule**](Rule.md)|  | 
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 <a name="createRuleComponent"></a>
 # **createRuleComponent**
-> RuleComponent createRuleComponent(cloudPk, rulePk, checkPlanPk, projectPk, rulesetPk, data)
+> RuleComponent createRuleComponent(rulesetPk, cloudPk, projectPk, checkPlanPk, rulePk, data)
 
 
 
@@ -315,15 +315,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
+var rulesetPk = "rulesetPk_example"; // String | 
+
 var cloudPk = "cloudPk_example"; // String | 
-
-var rulePk = "rulePk_example"; // String | 
-
-var checkPlanPk = "checkPlanPk_example"; // String | 
 
 var projectPk = "projectPk_example"; // String | 
 
-var rulesetPk = "rulesetPk_example"; // String | 
+var checkPlanPk = "checkPlanPk_example"; // String | 
+
+var rulePk = "rulePk_example"; // String | 
 
 var data = new bimdata.RuleComponent(); // RuleComponent | 
 
@@ -335,18 +335,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createRuleComponent(cloudPk, rulePk, checkPlanPk, projectPk, rulesetPk, data, callback);
+apiInstance.createRuleComponent(rulesetPk, cloudPk, projectPk, checkPlanPk, rulePk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **rulePk** | **String**|  | 
- **checkPlanPk** | **String**|  | 
- **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **checkPlanPk** | **String**|  | 
+ **rulePk** | **String**|  | 
  **data** | [**RuleComponent**](RuleComponent.md)|  | 
 
 ### Return type
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 <a name="createRuleset"></a>
 # **createRuleset**
-> Ruleset createRuleset(projectPk, cloudPk, checkPlanPk, data)
+> Ruleset createRuleset(cloudPk, projectPk, checkPlanPk, data)
 
 
 
@@ -383,9 +383,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var checkPlanPk = "checkPlanPk_example"; // String | 
 
@@ -399,15 +399,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createRuleset(projectPk, cloudPk, checkPlanPk, data, callback);
+apiInstance.createRuleset(cloudPk, projectPk, checkPlanPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **checkPlanPk** | **String**|  | 
  **data** | [**Ruleset**](Ruleset.md)|  | 
 
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteCheckPlanResult"></a>
 # **deleteCheckPlanResult**
-> deleteCheckPlanResult(id, cloudPk, checkerPk, ifcPk, projectPk, )
+> deleteCheckPlanResult(cloudPk, projectPk, checkerPk, ifcPk, id, )
 
 
 
@@ -445,15 +445,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var id = "id_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var checkerPk = "checkerPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -463,18 +463,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteCheckPlanResult(id, cloudPk, checkerPk, ifcPk, projectPk, , callback);
+apiInstance.deleteCheckPlanResult(cloudPk, projectPk, checkerPk, ifcPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **checkerPk** | **String**|  | 
  **ifcPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -491,7 +491,7 @@ null (empty response body)
 
 <a name="deleteChecker"></a>
 # **deleteChecker**
-> deleteChecker(projectPk, cloudPk, id, ifcPk, )
+> deleteChecker(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -510,9 +510,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -526,15 +526,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteChecker(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.deleteChecker(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -553,7 +553,7 @@ null (empty response body)
 
 <a name="deleteCheckplan"></a>
 # **deleteCheckplan**
-> deleteCheckplan(projectPk, cloudPk, id, )
+> deleteCheckplan(cloudPk, projectPk, id, )
 
 
 
@@ -572,9 +572,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -586,15 +586,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteCheckplan(projectPk, cloudPk, id, , callback);
+apiInstance.deleteCheckplan(cloudPk, projectPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -612,7 +612,7 @@ null (empty response body)
 
 <a name="deleteRule"></a>
 # **deleteRule**
-> deleteRule(id, cloudPk, checkPlanPk, projectPk, rulesetPk, )
+> deleteRule(rulesetPk, cloudPk, projectPk, checkPlanPk, id, )
 
 
 
@@ -631,15 +631,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var id = "id_example"; // String | 
+var rulesetPk = "rulesetPk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
 
-var rulesetPk = "rulesetPk_example"; // String | 
+var checkPlanPk = "checkPlanPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -649,18 +649,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteRule(id, cloudPk, checkPlanPk, projectPk, rulesetPk, , callback);
+apiInstance.deleteRule(rulesetPk, cloudPk, projectPk, checkPlanPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **checkPlanPk** | **String**|  | 
- **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **checkPlanPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -677,7 +677,7 @@ null (empty response body)
 
 <a name="deleteRuleComponent"></a>
 # **deleteRuleComponent**
-> deleteRuleComponent(id, cloudPk, rulePk, checkPlanPk, projectPk, rulesetPk, )
+> deleteRuleComponent(rulesetPk, cloudPk, projectPk, checkPlanPk, id, rulePk, )
 
 
 
@@ -696,17 +696,17 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var id = "id_example"; // String | 
+var rulesetPk = "rulesetPk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var rulePk = "rulePk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var checkPlanPk = "checkPlanPk_example"; // String | 
 
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
-var rulesetPk = "rulesetPk_example"; // String | 
+var rulePk = "rulePk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -716,19 +716,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteRuleComponent(id, cloudPk, rulePk, checkPlanPk, projectPk, rulesetPk, , callback);
+apiInstance.deleteRuleComponent(rulesetPk, cloudPk, projectPk, checkPlanPk, id, rulePk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **rulePk** | **String**|  | 
- **checkPlanPk** | **String**|  | 
- **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **checkPlanPk** | **String**|  | 
+ **id** | **String**|  | 
+ **rulePk** | **String**|  | 
 
 ### Return type
 
@@ -745,7 +745,7 @@ null (empty response body)
 
 <a name="deleteRuleset"></a>
 # **deleteRuleset**
-> deleteRuleset(projectPk, cloudPk, id, checkPlanPk, )
+> deleteRuleset(cloudPk, projectPk, id, checkPlanPk, )
 
 
 
@@ -764,9 +764,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -780,15 +780,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteRuleset(projectPk, cloudPk, id, checkPlanPk, , callback);
+apiInstance.deleteRuleset(cloudPk, projectPk, id, checkPlanPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **checkPlanPk** | **String**|  | 
 
@@ -807,7 +807,7 @@ null (empty response body)
 
 <a name="fullUpdateCheckPlanResult"></a>
 # **fullUpdateCheckPlanResult**
-> CheckPlanResult fullUpdateCheckPlanResult(id, cloudPk, checkerPk, ifcPk, projectPk, data)
+> CheckPlanResult fullUpdateCheckPlanResult(cloudPk, projectPk, checkerPk, ifcPk, id, data)
 
 
 
@@ -826,15 +826,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var id = "id_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var checkerPk = "checkerPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
 var data = new bimdata.CheckPlanResult(); // CheckPlanResult | 
 
@@ -846,18 +846,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateCheckPlanResult(id, cloudPk, checkerPk, ifcPk, projectPk, data, callback);
+apiInstance.fullUpdateCheckPlanResult(cloudPk, projectPk, checkerPk, ifcPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **checkerPk** | **String**|  | 
  **ifcPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **id** | **String**|  | 
  **data** | [**CheckPlanResult**](CheckPlanResult.md)|  | 
 
 ### Return type
@@ -875,7 +875,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateChecker"></a>
 # **fullUpdateChecker**
-> IfcChecker fullUpdateChecker(projectPk, cloudPk, id, ifcPk, data)
+> IfcChecker fullUpdateChecker(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -894,9 +894,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -912,15 +912,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateChecker(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.fullUpdateChecker(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**IfcChecker**](IfcChecker.md)|  | 
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateCheckplan"></a>
 # **fullUpdateCheckplan**
-> CheckPlan fullUpdateCheckplan(projectPk, cloudPk, id, data)
+> CheckPlan fullUpdateCheckplan(cloudPk, projectPk, id, data)
 
 
 
@@ -959,9 +959,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -975,15 +975,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateCheckplan(projectPk, cloudPk, id, data, callback);
+apiInstance.fullUpdateCheckplan(cloudPk, projectPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **data** | [**CheckPlan**](CheckPlan.md)|  | 
 
@@ -1002,7 +1002,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateRule"></a>
 # **fullUpdateRule**
-> Rule fullUpdateRule(id, cloudPk, checkPlanPk, projectPk, rulesetPk, data)
+> Rule fullUpdateRule(rulesetPk, cloudPk, projectPk, checkPlanPk, id, data)
 
 
 
@@ -1021,15 +1021,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var id = "id_example"; // String | 
+var rulesetPk = "rulesetPk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
 
-var rulesetPk = "rulesetPk_example"; // String | 
+var checkPlanPk = "checkPlanPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 var data = new bimdata.Rule(); // Rule | 
 
@@ -1041,18 +1041,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateRule(id, cloudPk, checkPlanPk, projectPk, rulesetPk, data, callback);
+apiInstance.fullUpdateRule(rulesetPk, cloudPk, projectPk, checkPlanPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **checkPlanPk** | **String**|  | 
- **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **checkPlanPk** | **String**|  | 
+ **id** | **String**|  | 
  **data** | [**Rule**](Rule.md)|  | 
 
 ### Return type
@@ -1070,7 +1070,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateRuleComponent"></a>
 # **fullUpdateRuleComponent**
-> RuleComponent fullUpdateRuleComponent(id, cloudPk, rulePk, checkPlanPk, projectPk, rulesetPk, data)
+> RuleComponent fullUpdateRuleComponent(rulesetPk, cloudPk, projectPk, checkPlanPk, id, rulePk, data)
 
 
 
@@ -1089,17 +1089,17 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var id = "id_example"; // String | 
+var rulesetPk = "rulesetPk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var rulePk = "rulePk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var checkPlanPk = "checkPlanPk_example"; // String | 
 
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
-var rulesetPk = "rulesetPk_example"; // String | 
+var rulePk = "rulePk_example"; // String | 
 
 var data = new bimdata.RuleComponent(); // RuleComponent | 
 
@@ -1111,19 +1111,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateRuleComponent(id, cloudPk, rulePk, checkPlanPk, projectPk, rulesetPk, data, callback);
+apiInstance.fullUpdateRuleComponent(rulesetPk, cloudPk, projectPk, checkPlanPk, id, rulePk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **rulePk** | **String**|  | 
- **checkPlanPk** | **String**|  | 
- **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **checkPlanPk** | **String**|  | 
+ **id** | **String**|  | 
+ **rulePk** | **String**|  | 
  **data** | [**RuleComponent**](RuleComponent.md)|  | 
 
 ### Return type
@@ -1141,7 +1141,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateRuleset"></a>
 # **fullUpdateRuleset**
-> Ruleset fullUpdateRuleset(projectPk, cloudPk, id, checkPlanPk, data)
+> Ruleset fullUpdateRuleset(cloudPk, projectPk, id, checkPlanPk, data)
 
 
 
@@ -1160,9 +1160,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -1178,15 +1178,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateRuleset(projectPk, cloudPk, id, checkPlanPk, data, callback);
+apiInstance.fullUpdateRuleset(cloudPk, projectPk, id, checkPlanPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **checkPlanPk** | **String**|  | 
  **data** | [**Ruleset**](Ruleset.md)|  | 
@@ -1206,7 +1206,7 @@ Name | Type | Description  | Notes
 
 <a name="getCheckPlanResult"></a>
 # **getCheckPlanResult**
-> CheckPlanResult getCheckPlanResult(id, cloudPk, checkerPk, ifcPk, projectPk, )
+> CheckPlanResult getCheckPlanResult(cloudPk, projectPk, checkerPk, ifcPk, id, )
 
 
 
@@ -1225,15 +1225,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var id = "id_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var checkerPk = "checkerPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1243,18 +1243,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCheckPlanResult(id, cloudPk, checkerPk, ifcPk, projectPk, , callback);
+apiInstance.getCheckPlanResult(cloudPk, projectPk, checkerPk, ifcPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **checkerPk** | **String**|  | 
  **ifcPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -1271,7 +1271,7 @@ Name | Type | Description  | Notes
 
 <a name="getCheckPlanResults"></a>
 # **getCheckPlanResults**
-> [CheckPlanResult] getCheckPlanResults(projectPk, cloudPk, checkerPk, ifcPk, )
+> [CheckPlanResult] getCheckPlanResults(cloudPk, projectPk, checkerPk, ifcPk, )
 
 
 
@@ -1290,9 +1290,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var checkerPk = "checkerPk_example"; // String | 
 
@@ -1306,15 +1306,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCheckPlanResults(projectPk, cloudPk, checkerPk, ifcPk, , callback);
+apiInstance.getCheckPlanResults(cloudPk, projectPk, checkerPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **checkerPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -1333,7 +1333,7 @@ Name | Type | Description  | Notes
 
 <a name="getChecker"></a>
 # **getChecker**
-> IfcChecker getChecker(projectPk, cloudPk, id, ifcPk, )
+> IfcChecker getChecker(cloudPk, projectPk, id, ifcPk, )
 
 
 
@@ -1352,9 +1352,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -1368,15 +1368,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getChecker(projectPk, cloudPk, id, ifcPk, , callback);
+apiInstance.getChecker(cloudPk, projectPk, id, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
 
@@ -1395,7 +1395,7 @@ Name | Type | Description  | Notes
 
 <a name="getCheckers"></a>
 # **getCheckers**
-> [IfcChecker] getCheckers(projectPk, cloudPk, ifcPk, )
+> [IfcChecker] getCheckers(cloudPk, projectPk, ifcPk, )
 
 
 
@@ -1414,9 +1414,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -1428,15 +1428,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCheckers(projectPk, cloudPk, ifcPk, , callback);
+apiInstance.getCheckers(cloudPk, projectPk, ifcPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **ifcPk** | **String**|  | 
 
 ### Return type
@@ -1454,7 +1454,7 @@ Name | Type | Description  | Notes
 
 <a name="getCheckplan"></a>
 # **getCheckplan**
-> CheckPlan getCheckplan(projectPk, cloudPk, id, )
+> CheckPlan getCheckplan(cloudPk, projectPk, id, )
 
 
 
@@ -1473,9 +1473,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -1487,15 +1487,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCheckplan(projectPk, cloudPk, id, , callback);
+apiInstance.getCheckplan(cloudPk, projectPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -1513,7 +1513,7 @@ Name | Type | Description  | Notes
 
 <a name="getCheckplans"></a>
 # **getCheckplans**
-> [CheckPlan] getCheckplans(projectPk, cloudPk, )
+> [CheckPlan] getCheckplans(cloudPk, projectPk, )
 
 
 
@@ -1532,9 +1532,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1544,15 +1544,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCheckplans(projectPk, cloudPk, , callback);
+apiInstance.getCheckplans(cloudPk, projectPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -1569,7 +1569,7 @@ Name | Type | Description  | Notes
 
 <a name="getRule"></a>
 # **getRule**
-> Rule getRule(id, cloudPk, checkPlanPk, projectPk, rulesetPk, )
+> Rule getRule(rulesetPk, cloudPk, projectPk, checkPlanPk, id, )
 
 
 
@@ -1588,15 +1588,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var id = "id_example"; // String | 
+var rulesetPk = "rulesetPk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
 
-var rulesetPk = "rulesetPk_example"; // String | 
+var checkPlanPk = "checkPlanPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1606,18 +1606,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getRule(id, cloudPk, checkPlanPk, projectPk, rulesetPk, , callback);
+apiInstance.getRule(rulesetPk, cloudPk, projectPk, checkPlanPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **checkPlanPk** | **String**|  | 
- **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **checkPlanPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -1634,7 +1634,7 @@ Name | Type | Description  | Notes
 
 <a name="getRuleComponent"></a>
 # **getRuleComponent**
-> RuleComponent getRuleComponent(id, cloudPk, rulePk, checkPlanPk, projectPk, rulesetPk, )
+> RuleComponent getRuleComponent(rulesetPk, cloudPk, projectPk, checkPlanPk, id, rulePk, )
 
 
 
@@ -1653,17 +1653,17 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var id = "id_example"; // String | 
+var rulesetPk = "rulesetPk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var rulePk = "rulePk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var checkPlanPk = "checkPlanPk_example"; // String | 
 
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
-var rulesetPk = "rulesetPk_example"; // String | 
+var rulePk = "rulePk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1673,19 +1673,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getRuleComponent(id, cloudPk, rulePk, checkPlanPk, projectPk, rulesetPk, , callback);
+apiInstance.getRuleComponent(rulesetPk, cloudPk, projectPk, checkPlanPk, id, rulePk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **rulePk** | **String**|  | 
- **checkPlanPk** | **String**|  | 
- **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **checkPlanPk** | **String**|  | 
+ **id** | **String**|  | 
+ **rulePk** | **String**|  | 
 
 ### Return type
 
@@ -1702,7 +1702,7 @@ Name | Type | Description  | Notes
 
 <a name="getRuleComponents"></a>
 # **getRuleComponents**
-> [RuleComponent] getRuleComponents(cloudPk, rulePk, checkPlanPk, projectPk, rulesetPk, )
+> [RuleComponent] getRuleComponents(rulesetPk, cloudPk, projectPk, checkPlanPk, rulePk, )
 
 
 
@@ -1721,15 +1721,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
+var rulesetPk = "rulesetPk_example"; // String | 
+
 var cloudPk = "cloudPk_example"; // String | 
-
-var rulePk = "rulePk_example"; // String | 
-
-var checkPlanPk = "checkPlanPk_example"; // String | 
 
 var projectPk = "projectPk_example"; // String | 
 
-var rulesetPk = "rulesetPk_example"; // String | 
+var checkPlanPk = "checkPlanPk_example"; // String | 
+
+var rulePk = "rulePk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1739,18 +1739,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getRuleComponents(cloudPk, rulePk, checkPlanPk, projectPk, rulesetPk, , callback);
+apiInstance.getRuleComponents(rulesetPk, cloudPk, projectPk, checkPlanPk, rulePk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **rulePk** | **String**|  | 
- **checkPlanPk** | **String**|  | 
- **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **checkPlanPk** | **String**|  | 
+ **rulePk** | **String**|  | 
 
 ### Return type
 
@@ -1767,7 +1767,7 @@ Name | Type | Description  | Notes
 
 <a name="getRules"></a>
 # **getRules**
-> [Rule] getRules(projectPk, cloudPk, rulesetPk, checkPlanPk, )
+> [Rule] getRules(rulesetPk, cloudPk, projectPk, checkPlanPk, )
 
 
 
@@ -1786,11 +1786,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
+var rulesetPk = "rulesetPk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var rulesetPk = "rulesetPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var checkPlanPk = "checkPlanPk_example"; // String | 
 
@@ -1802,16 +1802,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getRules(projectPk, cloudPk, rulesetPk, checkPlanPk, , callback);
+apiInstance.getRules(rulesetPk, cloudPk, projectPk, checkPlanPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **cloudPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **checkPlanPk** | **String**|  | 
 
 ### Return type
@@ -1829,7 +1829,7 @@ Name | Type | Description  | Notes
 
 <a name="getRuleset"></a>
 # **getRuleset**
-> Ruleset getRuleset(projectPk, cloudPk, id, checkPlanPk, )
+> Ruleset getRuleset(cloudPk, projectPk, id, checkPlanPk, )
 
 
 
@@ -1848,9 +1848,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -1864,15 +1864,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getRuleset(projectPk, cloudPk, id, checkPlanPk, , callback);
+apiInstance.getRuleset(cloudPk, projectPk, id, checkPlanPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **checkPlanPk** | **String**|  | 
 
@@ -1891,7 +1891,7 @@ Name | Type | Description  | Notes
 
 <a name="getRulesets"></a>
 # **getRulesets**
-> [Ruleset] getRulesets(projectPk, cloudPk, checkPlanPk, )
+> [Ruleset] getRulesets(cloudPk, projectPk, checkPlanPk, )
 
 
 
@@ -1910,9 +1910,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var checkPlanPk = "checkPlanPk_example"; // String | 
 
@@ -1924,15 +1924,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getRulesets(projectPk, cloudPk, checkPlanPk, , callback);
+apiInstance.getRulesets(cloudPk, projectPk, checkPlanPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **checkPlanPk** | **String**|  | 
 
 ### Return type
@@ -1950,7 +1950,7 @@ Name | Type | Description  | Notes
 
 <a name="launchNewCheck"></a>
 # **launchNewCheck**
-> launchNewCheck(projectPk, cloudPk, id, ifcPk, data)
+> launchNewCheck(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -1969,9 +1969,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -1987,15 +1987,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.launchNewCheck(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.launchNewCheck(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**IfcChecker**](IfcChecker.md)|  | 
@@ -2015,7 +2015,7 @@ null (empty response body)
 
 <a name="updateCheckPlanResult"></a>
 # **updateCheckPlanResult**
-> CheckPlanResult updateCheckPlanResult(id, cloudPk, checkerPk, ifcPk, projectPk, data)
+> CheckPlanResult updateCheckPlanResult(cloudPk, projectPk, checkerPk, ifcPk, id, data)
 
 
 
@@ -2034,15 +2034,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var id = "id_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var checkerPk = "checkerPk_example"; // String | 
 
 var ifcPk = "ifcPk_example"; // String | 
 
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
 var data = new bimdata.CheckPlanResult(); // CheckPlanResult | 
 
@@ -2054,18 +2054,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateCheckPlanResult(id, cloudPk, checkerPk, ifcPk, projectPk, data, callback);
+apiInstance.updateCheckPlanResult(cloudPk, projectPk, checkerPk, ifcPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **checkerPk** | **String**|  | 
  **ifcPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **id** | **String**|  | 
  **data** | [**CheckPlanResult**](CheckPlanResult.md)|  | 
 
 ### Return type
@@ -2083,7 +2083,7 @@ Name | Type | Description  | Notes
 
 <a name="updateChecker"></a>
 # **updateChecker**
-> IfcChecker updateChecker(projectPk, cloudPk, id, ifcPk, data)
+> IfcChecker updateChecker(cloudPk, projectPk, id, ifcPk, data)
 
 
 
@@ -2102,9 +2102,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -2120,15 +2120,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateChecker(projectPk, cloudPk, id, ifcPk, data, callback);
+apiInstance.updateChecker(cloudPk, projectPk, id, ifcPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **data** | [**IfcChecker**](IfcChecker.md)|  | 
@@ -2148,7 +2148,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCheckplan"></a>
 # **updateCheckplan**
-> CheckPlan updateCheckplan(projectPk, cloudPk, id, data)
+> CheckPlan updateCheckplan(cloudPk, projectPk, id, data)
 
 
 
@@ -2167,9 +2167,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -2183,15 +2183,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateCheckplan(projectPk, cloudPk, id, data, callback);
+apiInstance.updateCheckplan(cloudPk, projectPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **data** | [**CheckPlan**](CheckPlan.md)|  | 
 
@@ -2210,7 +2210,7 @@ Name | Type | Description  | Notes
 
 <a name="updateRule"></a>
 # **updateRule**
-> Rule updateRule(id, cloudPk, checkPlanPk, projectPk, rulesetPk, data)
+> Rule updateRule(rulesetPk, cloudPk, projectPk, checkPlanPk, id, data)
 
 
 
@@ -2229,15 +2229,15 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var id = "id_example"; // String | 
+var rulesetPk = "rulesetPk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
 
-var rulesetPk = "rulesetPk_example"; // String | 
+var checkPlanPk = "checkPlanPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 var data = new bimdata.Rule(); // Rule | 
 
@@ -2249,18 +2249,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateRule(id, cloudPk, checkPlanPk, projectPk, rulesetPk, data, callback);
+apiInstance.updateRule(rulesetPk, cloudPk, projectPk, checkPlanPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **checkPlanPk** | **String**|  | 
- **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **checkPlanPk** | **String**|  | 
+ **id** | **String**|  | 
  **data** | [**Rule**](Rule.md)|  | 
 
 ### Return type
@@ -2278,7 +2278,7 @@ Name | Type | Description  | Notes
 
 <a name="updateRuleComponent"></a>
 # **updateRuleComponent**
-> RuleComponent updateRuleComponent(id, cloudPk, rulePk, checkPlanPk, projectPk, rulesetPk, data)
+> RuleComponent updateRuleComponent(rulesetPk, cloudPk, projectPk, checkPlanPk, id, rulePk, data)
 
 
 
@@ -2297,17 +2297,17 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var id = "id_example"; // String | 
+var rulesetPk = "rulesetPk_example"; // String | 
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var rulePk = "rulePk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var checkPlanPk = "checkPlanPk_example"; // String | 
 
-var projectPk = "projectPk_example"; // String | 
+var id = "id_example"; // String | 
 
-var rulesetPk = "rulesetPk_example"; // String | 
+var rulePk = "rulePk_example"; // String | 
 
 var data = new bimdata.RuleComponent(); // RuleComponent | 
 
@@ -2319,19 +2319,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateRuleComponent(id, cloudPk, rulePk, checkPlanPk, projectPk, rulesetPk, data, callback);
+apiInstance.updateRuleComponent(rulesetPk, cloudPk, projectPk, checkPlanPk, id, rulePk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **cloudPk** | **String**|  | 
- **rulePk** | **String**|  | 
- **checkPlanPk** | **String**|  | 
- **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **checkPlanPk** | **String**|  | 
+ **id** | **String**|  | 
+ **rulePk** | **String**|  | 
  **data** | [**RuleComponent**](RuleComponent.md)|  | 
 
 ### Return type
@@ -2349,7 +2349,7 @@ Name | Type | Description  | Notes
 
 <a name="updateRuleset"></a>
 # **updateRuleset**
-> Ruleset updateRuleset(projectPk, cloudPk, id, checkPlanPk, data)
+> Ruleset updateRuleset(cloudPk, projectPk, id, checkPlanPk, data)
 
 
 
@@ -2368,9 +2368,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CheckplanApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -2386,15 +2386,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateRuleset(projectPk, cloudPk, id, checkPlanPk, data, callback);
+apiInstance.updateRuleset(cloudPk, projectPk, id, checkPlanPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **id** | **String**|  | 
  **checkPlanPk** | **String**|  | 
  **data** | [**Ruleset**](Ruleset.md)|  | 

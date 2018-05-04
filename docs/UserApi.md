@@ -1,6 +1,6 @@
 # bimdata.UserApi
 
-All URIs are relative to *http://api-staging.bimdata.io*
+All URIs are relative to *https://api-staging.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
