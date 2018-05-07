@@ -37,7 +37,7 @@
   /**
    * The Stage model module.
    * @module model/Stage
-   * @version 1.0.7
+   * @version 1.0.8
    */
 
   /**

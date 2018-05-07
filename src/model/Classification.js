@@ -37,7 +37,7 @@
   /**
    * The Classification model module.
    * @module model/Classification
-   * @version 1.0.7
+   * @version 1.0.8
    */
 
   /**

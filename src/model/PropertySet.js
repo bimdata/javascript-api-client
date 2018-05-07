@@ -37,7 +37,7 @@
   /**
    * The PropertySet model module.
    * @module model/PropertySet
-   * @version 1.0.7
+   * @version 1.0.8
    */
 
   /**

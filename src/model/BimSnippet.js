@@ -37,7 +37,7 @@
   /**
    * The BimSnippet model module.
    * @module model/BimSnippet
-   * @version 1.0.7
+   * @version 1.0.8
    */
 
   /**

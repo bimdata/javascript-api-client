@@ -37,7 +37,7 @@
   /**
    * The Coloring model module.
    * @module model/Coloring
-   * @version 1.0.7
+   * @version 1.0.8
    */
 
   /**

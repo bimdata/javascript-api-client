@@ -34,7 +34,7 @@
   /**
    * Ifc service.
    * @module api/IfcApi
-   * @version 1.0.7
+   * @version 1.0.8
    */
 
   /**

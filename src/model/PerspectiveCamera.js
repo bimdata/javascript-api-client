@@ -37,7 +37,7 @@
   /**
    * The PerspectiveCamera model module.
    * @module model/PerspectiveCamera
-   * @version 1.0.7
+   * @version 1.0.8
    */
 
   /**

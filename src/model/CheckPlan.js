@@ -37,7 +37,7 @@
   /**
    * The CheckPlan model module.
    * @module model/CheckPlan
-   * @version 1.0.7
+   * @version 1.0.8
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The Topic model module.
    * @module model/Topic
-   * @version 1.0.7
+   * @version 1.0.8
    */
 
   /**

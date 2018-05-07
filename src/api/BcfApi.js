@@ -34,7 +34,7 @@
   /**
    * Bcf service.
    * @module api/BcfApi
-   * @version 1.0.7
+   * @version 1.0.8
    */
 
   /**

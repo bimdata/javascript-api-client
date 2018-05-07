@@ -37,7 +37,7 @@
   /**
    * The OrthogonalCamera model module.
    * @module model/OrthogonalCamera
-   * @version 1.0.7
+   * @version 1.0.8
    */
 
   /**
