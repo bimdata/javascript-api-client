@@ -37,7 +37,7 @@
   /**
    * The IfcProject model module.
    * @module model/IfcProject
-   * @version 1.0.8
+   * @version 1.0.9
    */
 
   /**

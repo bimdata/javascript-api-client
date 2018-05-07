@@ -37,7 +37,7 @@
   /**
    * The Direction model module.
    * @module model/Direction
-   * @version 1.0.8
+   * @version 1.0.9
    */
 
   /**
