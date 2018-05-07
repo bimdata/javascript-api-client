@@ -37,7 +37,7 @@
   /**
    * The RelatedTopic model module.
    * @module model/RelatedTopic
-   * @version 1.0.5
+   * @version 1.0.7
    */
 
   /**

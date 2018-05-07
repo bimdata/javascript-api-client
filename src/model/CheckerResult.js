@@ -17,32 +17,32 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/RulesetResult'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./RulesetResult'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.IfcCheckerResults = factory(root.bimdata.ApiClient);
+    root.bimdata.CheckerResult = factory(root.bimdata.ApiClient, root.bimdata.RulesetResult);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, RulesetResult) {
   'use strict';
 
 
 
 
   /**
-   * The IfcCheckerResults model module.
-   * @module model/IfcCheckerResults
+   * The CheckerResult model module.
+   * @module model/CheckerResult
    * @version 1.0.7
    */
 
   /**
-   * Constructs a new <code>IfcCheckerResults</code>.
-   * @alias module:model/IfcCheckerResults
+   * Constructs a new <code>CheckerResult</code>.
+   * @alias module:model/CheckerResult
    * @class
    * @param checker {Number} 
    */
@@ -50,21 +50,22 @@
     var _this = this;
 
 
-
-
-
-
-
-
     _this['checker'] = checker;
+
+
+
+
+
+
+
   };
 
   /**
-   * Constructs a <code>IfcCheckerResults</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>CheckerResult</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/IfcCheckerResults} obj Optional instance to populate.
-   * @return {module:model/IfcCheckerResults} The populated <code>IfcCheckerResults</code> instance.
+   * @param {module:model/CheckerResult} obj Optional instance to populate.
+   * @return {module:model/CheckerResult} The populated <code>CheckerResult</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -73,14 +74,17 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-      if (data.hasOwnProperty('error_detail')) {
-        obj['error_detail'] = ApiClient.convertToType(data['error_detail'], 'String');
+      if (data.hasOwnProperty('checker')) {
+        obj['checker'] = ApiClient.convertToType(data['checker'], 'Number');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
       if (data.hasOwnProperty('result')) {
         obj['result'] = ApiClient.convertToType(data['result'], 'String');
+      }
+      if (data.hasOwnProperty('rulesets_results')) {
+        obj['rulesets_results'] = ApiClient.convertToType(data['rulesets_results'], [RulesetResult]);
       }
       if (data.hasOwnProperty('collisions')) {
         obj['collisions'] = ApiClient.convertToType(data['collisions'], 'String');
@@ -91,8 +95,8 @@
       if (data.hasOwnProperty('updated_at')) {
         obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
       }
-      if (data.hasOwnProperty('checker')) {
-        obj['checker'] = ApiClient.convertToType(data['checker'], 'Number');
+      if (data.hasOwnProperty('error_detail')) {
+        obj['error_detail'] = ApiClient.convertToType(data['error_detail'], 'String');
       }
     }
     return obj;
@@ -103,17 +107,21 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * @member {String} error_detail
+   * @member {Number} checker
    */
-  exports.prototype['error_detail'] = undefined;
+  exports.prototype['checker'] = undefined;
   /**
-   * @member {module:model/IfcCheckerResults.StatusEnum} status
+   * @member {module:model/CheckerResult.StatusEnum} status
    */
   exports.prototype['status'] = undefined;
   /**
    * @member {String} result
    */
   exports.prototype['result'] = undefined;
+  /**
+   * @member {Array.<module:model/RulesetResult>} rulesets_results
+   */
+  exports.prototype['rulesets_results'] = undefined;
   /**
    * @member {String} collisions
    */
@@ -127,9 +135,9 @@
    */
   exports.prototype['updated_at'] = undefined;
   /**
-   * @member {Number} checker
+   * @member {String} error_detail
    */
-  exports.prototype['checker'] = undefined;
+  exports.prototype['error_detail'] = undefined;
 
 
   /**

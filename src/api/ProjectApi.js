@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Classification', 'model/Document', 'model/Folder', 'model/FosUser', 'model/FosUserWrite', 'model/Project'], factory);
+    define(['ApiClient', 'model/Classification', 'model/Folder', 'model/FosUser', 'model/FosUserWrite', 'model/Project'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Classification'), require('../model/Document'), require('../model/Folder'), require('../model/FosUser'), require('../model/FosUserWrite'), require('../model/Project'));
+    module.exports = factory(require('../ApiClient'), require('../model/Classification'), require('../model/Folder'), require('../model/FosUser'), require('../model/FosUserWrite'), require('../model/Project'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.ProjectApi = factory(root.bimdata.ApiClient, root.bimdata.Classification, root.bimdata.Document, root.bimdata.Folder, root.bimdata.FosUser, root.bimdata.FosUserWrite, root.bimdata.Project);
+    root.bimdata.ProjectApi = factory(root.bimdata.ApiClient, root.bimdata.Classification, root.bimdata.Folder, root.bimdata.FosUser, root.bimdata.FosUserWrite, root.bimdata.Project);
   }
-}(this, function(ApiClient, Classification, Document, Folder, FosUser, FosUserWrite, Project) {
+}(this, function(ApiClient, Classification, Folder, FosUser, FosUserWrite, Project) {
   'use strict';
 
   /**
    * Project service.
    * @module api/ProjectApi
-   * @version 1.0.5
+   * @version 1.0.7
    */
 
   /**
@@ -58,23 +58,23 @@
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive     
-     * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {String} cloudPk 
      * @param {Array.<module:model/Classification>} data 
      * @param {module:api/ProjectApi~createClassificationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Classification>}
      */
-    this.createClassification = function(cloudPk, projectPk, data, callback) {
+    this.createClassification = function(projectPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createClassification");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createClassification");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createClassification");
       }
 
       // verify the required parameter 'data' is set
@@ -84,8 +84,8 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'project_pk': projectPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -112,40 +112,54 @@
      * Callback function to receive the result of the createDocument operation.
      * @callback module:api/ProjectApi~createDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:model/Document} data 
+     * @param {String} cloudPk 
+     * @param {String} name 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.id 
+     * @param {Number} opts.parent 
+     * @param {Number} opts.parentId 
+     * @param {Number} opts.creator 
+     * @param {Number} opts.project 
+     * @param {Number} opts.projectId 
+     * @param {String} opts.fileName 
+     * @param {String} opts.description 
+     * @param {File} opts.file 
+     * @param {String} opts.size 
+     * @param {Date} opts.createdAt 
+     * @param {Date} opts.updatedAt 
+     * @param {String} opts.ifcId 
      * @param {module:api/ProjectApi~createDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
      */
-    this.createDocument = function(cloudPk, projectPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createDocument");
-      }
+    this.createDocument = function(projectPk, cloudPk, name, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createDocument");
       }
 
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createDocument");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createDocument");
+      }
+
+      // verify the required parameter 'name' is set
+      if (name === undefined || name === null) {
+        throw new Error("Missing the required parameter 'name' when calling createDocument");
       }
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'project_pk': projectPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -154,12 +168,26 @@
       var headerParams = {
       };
       var formParams = {
+        'id': opts['id'],
+        'parent': opts['parent'],
+        'parent_id': opts['parentId'],
+        'creator': opts['creator'],
+        'project': opts['project'],
+        'project_id': opts['projectId'],
+        'name': name,
+        'file_name': opts['fileName'],
+        'description': opts['description'],
+        'file': opts['file'],
+        'size': opts['size'],
+        'created_at': opts['createdAt'],
+        'updated_at': opts['updatedAt'],
+        'ifc_id': opts['ifcId']
       };
 
       var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
+      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = Document;
+      var returnType = null;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document', 'POST',
@@ -178,23 +206,23 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {String} cloudPk 
      * @param {module:model/Folder} data 
      * @param {module:api/ProjectApi~createFolderCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Folder}
      */
-    this.createFolder = function(cloudPk, projectPk, data, callback) {
+    this.createFolder = function(projectPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createFolder");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createFolder");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createFolder");
       }
 
       // verify the required parameter 'data' is set
@@ -204,8 +232,8 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'project_pk': projectPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -291,23 +319,23 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {String} cloudPk 
      * @param {module:model/FosUserWrite} data 
      * @param {module:api/ProjectApi~createProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FosUserWrite}
      */
-    this.createProjectUser = function(cloudPk, projectPk, data, callback) {
+    this.createProjectUser = function(projectPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createProjectUser");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createProjectUser");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createProjectUser");
       }
 
       // verify the required parameter 'data' is set
@@ -317,8 +345,8 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'project_pk': projectPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -351,18 +379,13 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~deleteClassificationCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteClassification = function(cloudPk, projectPk, id, callback) {
+    this.deleteClassification = function(projectPk, id, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteClassification");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -374,11 +397,16 @@
         throw new Error("Missing the required parameter 'id' when calling deleteClassification");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteClassification");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -411,18 +439,13 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~deleteDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteDocument = function(cloudPk, projectPk, id, callback) {
+    this.deleteDocument = function(projectPk, id, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteDocument");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -434,11 +457,16 @@
         throw new Error("Missing the required parameter 'id' when calling deleteDocument");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteDocument");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -450,7 +478,7 @@
       };
 
       var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
+      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -471,18 +499,13 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~deleteFolderCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteFolder = function(cloudPk, projectPk, id, callback) {
+    this.deleteFolder = function(projectPk, id, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteFolder");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -494,11 +517,16 @@
         throw new Error("Missing the required parameter 'id' when calling deleteFolder");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteFolder");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -531,27 +559,27 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~deleteProjectCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteProject = function(cloudPk, id, callback) {
+    this.deleteProject = function(id, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteProject");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteProject");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteProject");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -584,18 +612,13 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~deleteProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteProjectUser = function(cloudPk, projectPk, id, callback) {
+    this.deleteProjectUser = function(projectPk, id, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteProjectUser");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -607,11 +630,16 @@
         throw new Error("Missing the required parameter 'id' when calling deleteProjectUser");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteProjectUser");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -644,20 +672,15 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:model/Classification} data 
      * @param {module:api/ProjectApi~fullUpdateClassificationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Classification}
      */
-    this.fullUpdateClassification = function(cloudPk, projectPk, id, data, callback) {
+    this.fullUpdateClassification = function(projectPk, id, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateClassification");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -669,6 +692,11 @@
         throw new Error("Missing the required parameter 'id' when calling fullUpdateClassification");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateClassification");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling fullUpdateClassification");
@@ -676,9 +704,9 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -705,26 +733,35 @@
      * Callback function to receive the result of the fullUpdateDocument operation.
      * @callback module:api/ProjectApi~fullUpdateDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
-     * @param {module:model/Document} data 
+     * @param {String} cloudPk 
+     * @param {String} name 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.id2 
+     * @param {Number} opts.parent 
+     * @param {Number} opts.parentId 
+     * @param {Number} opts.creator 
+     * @param {Number} opts.project 
+     * @param {Number} opts.projectId 
+     * @param {String} opts.fileName 
+     * @param {String} opts.description 
+     * @param {File} opts.file 
+     * @param {String} opts.size 
+     * @param {Date} opts.createdAt 
+     * @param {Date} opts.updatedAt 
+     * @param {String} opts.ifcId 
      * @param {module:api/ProjectApi~fullUpdateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
      */
-    this.fullUpdateDocument = function(cloudPk, projectPk, id, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateDocument");
-      }
+    this.fullUpdateDocument = function(projectPk, id, cloudPk, name, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -736,16 +773,21 @@
         throw new Error("Missing the required parameter 'id' when calling fullUpdateDocument");
       }
 
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling fullUpdateDocument");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateDocument");
+      }
+
+      // verify the required parameter 'name' is set
+      if (name === undefined || name === null) {
+        throw new Error("Missing the required parameter 'name' when calling fullUpdateDocument");
       }
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -754,12 +796,26 @@
       var headerParams = {
       };
       var formParams = {
+        'id': opts['id2'],
+        'parent': opts['parent'],
+        'parent_id': opts['parentId'],
+        'creator': opts['creator'],
+        'project': opts['project'],
+        'project_id': opts['projectId'],
+        'name': name,
+        'file_name': opts['fileName'],
+        'description': opts['description'],
+        'file': opts['file'],
+        'size': opts['size'],
+        'created_at': opts['createdAt'],
+        'updated_at': opts['updatedAt'],
+        'ifc_id': opts['ifcId']
       };
 
       var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
+      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = Document;
+      var returnType = null;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'PUT',
@@ -778,20 +834,15 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:model/Folder} data 
      * @param {module:api/ProjectApi~fullUpdateFolderCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Folder}
      */
-    this.fullUpdateFolder = function(cloudPk, projectPk, id, data, callback) {
+    this.fullUpdateFolder = function(projectPk, id, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateFolder");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -803,6 +854,11 @@
         throw new Error("Missing the required parameter 'id' when calling fullUpdateFolder");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateFolder");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling fullUpdateFolder");
@@ -810,9 +866,9 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -845,23 +901,23 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:model/Project} data 
      * @param {module:api/ProjectApi~fullUpdateProjectCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Project}
      */
-    this.fullUpdateProject = function(cloudPk, id, data, callback) {
+    this.fullUpdateProject = function(id, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateProject");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling fullUpdateProject");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateProject");
       }
 
       // verify the required parameter 'data' is set
@@ -871,8 +927,8 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -905,20 +961,15 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:model/FosUserWrite} data 
      * @param {module:api/ProjectApi~fullUpdateProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FosUserWrite}
      */
-    this.fullUpdateProjectUser = function(cloudPk, projectPk, id, data, callback) {
+    this.fullUpdateProjectUser = function(projectPk, id, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateProjectUser");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -930,6 +981,11 @@
         throw new Error("Missing the required parameter 'id' when calling fullUpdateProjectUser");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateProjectUser");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling fullUpdateProjectUser");
@@ -937,9 +993,9 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -972,19 +1028,14 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~getClassificationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Classification}
      */
-    this.getClassification = function(cloudPk, projectPk, id, callback) {
+    this.getClassification = function(projectPk, id, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getClassification");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -996,11 +1047,16 @@
         throw new Error("Missing the required parameter 'id' when calling getClassification");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getClassification");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1033,28 +1089,28 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~getClassificationsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Classification>}
      */
-    this.getClassifications = function(cloudPk, projectPk, callback) {
+    this.getClassifications = function(projectPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getClassifications");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getClassifications");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getClassifications");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'project_pk': projectPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1081,25 +1137,19 @@
      * Callback function to receive the result of the getDocument operation.
      * @callback module:api/ProjectApi~getDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~getDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
      */
-    this.getDocument = function(cloudPk, projectPk, id, callback) {
+    this.getDocument = function(projectPk, id, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getDocument");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1111,11 +1161,16 @@
         throw new Error("Missing the required parameter 'id' when calling getDocument");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getDocument");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1127,9 +1182,9 @@
       };
 
       var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
+      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = Document;
+      var returnType = null;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'GET',
@@ -1142,34 +1197,33 @@
      * Callback function to receive the result of the getDocuments operation.
      * @callback module:api/ProjectApi~getDocumentsCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Document>} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~getDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Document>}
      */
-    this.getDocuments = function(cloudPk, projectPk, callback) {
+    this.getDocuments = function(projectPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getDocuments");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getDocuments");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getDocuments");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'project_pk': projectPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1181,9 +1235,9 @@
       };
 
       var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
+      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = [Document];
+      var returnType = null;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document', 'GET',
@@ -1202,19 +1256,14 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~getFolderCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Folder}
      */
-    this.getFolder = function(cloudPk, projectPk, id, callback) {
+    this.getFolder = function(projectPk, id, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getFolder");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1226,11 +1275,16 @@
         throw new Error("Missing the required parameter 'id' when calling getFolder");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getFolder");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1263,28 +1317,28 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~getFoldersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Folder>}
      */
-    this.getFolders = function(cloudPk, projectPk, callback) {
+    this.getFolders = function(projectPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getFolders");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getFolders");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getFolders");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'project_pk': projectPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1317,28 +1371,28 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~getProjectCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Project}
      */
-    this.getProject = function(cloudPk, id, callback) {
+    this.getProject = function(id, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getProject");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getProject");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProject");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1371,28 +1425,28 @@
 
     /**
      * Returns the document tree from root folder
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~getProjectTreeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Folder}
      */
-    this.getProjectTree = function(cloudPk, id, callback) {
+    this.getProjectTree = function(id, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectTree");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getProjectTree");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectTree");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1425,19 +1479,14 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~getProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FosUser}
      */
-    this.getProjectUser = function(cloudPk, projectPk, id, callback) {
+    this.getProjectUser = function(projectPk, id, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectUser");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1449,11 +1498,16 @@
         throw new Error("Missing the required parameter 'id' when calling getProjectUser");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectUser");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1486,28 +1540,28 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {String} cloudPk 
      * @param {module:api/ProjectApi~getProjectUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/FosUser>}
      */
-    this.getProjectUsers = function(cloudPk, projectPk, callback) {
+    this.getProjectUsers = function(projectPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectUsers");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getProjectUsers");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectUsers");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'project_pk': projectPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1587,20 +1641,15 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:model/Classification} data 
      * @param {module:api/ProjectApi~updateClassificationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Classification}
      */
-    this.updateClassification = function(cloudPk, projectPk, id, data, callback) {
+    this.updateClassification = function(projectPk, id, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateClassification");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1612,6 +1661,11 @@
         throw new Error("Missing the required parameter 'id' when calling updateClassification");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateClassification");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling updateClassification");
@@ -1619,9 +1673,9 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1648,26 +1702,35 @@
      * Callback function to receive the result of the updateDocument operation.
      * @callback module:api/ProjectApi~updateDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
-     * @param {module:model/Document} data 
+     * @param {String} cloudPk 
+     * @param {String} name 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.id2 
+     * @param {Number} opts.parent 
+     * @param {Number} opts.parentId 
+     * @param {Number} opts.creator 
+     * @param {Number} opts.project 
+     * @param {Number} opts.projectId 
+     * @param {String} opts.fileName 
+     * @param {String} opts.description 
+     * @param {File} opts.file 
+     * @param {String} opts.size 
+     * @param {Date} opts.createdAt 
+     * @param {Date} opts.updatedAt 
+     * @param {String} opts.ifcId 
      * @param {module:api/ProjectApi~updateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
      */
-    this.updateDocument = function(cloudPk, projectPk, id, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateDocument");
-      }
+    this.updateDocument = function(projectPk, id, cloudPk, name, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1679,16 +1742,21 @@
         throw new Error("Missing the required parameter 'id' when calling updateDocument");
       }
 
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateDocument");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateDocument");
+      }
+
+      // verify the required parameter 'name' is set
+      if (name === undefined || name === null) {
+        throw new Error("Missing the required parameter 'name' when calling updateDocument");
       }
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1697,12 +1765,26 @@
       var headerParams = {
       };
       var formParams = {
+        'id': opts['id2'],
+        'parent': opts['parent'],
+        'parent_id': opts['parentId'],
+        'creator': opts['creator'],
+        'project': opts['project'],
+        'project_id': opts['projectId'],
+        'name': name,
+        'file_name': opts['fileName'],
+        'description': opts['description'],
+        'file': opts['file'],
+        'size': opts['size'],
+        'created_at': opts['createdAt'],
+        'updated_at': opts['updatedAt'],
+        'ifc_id': opts['ifcId']
       };
 
       var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
+      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = Document;
+      var returnType = null;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'PATCH',
@@ -1721,20 +1803,15 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:model/Folder} data 
      * @param {module:api/ProjectApi~updateFolderCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Folder}
      */
-    this.updateFolder = function(cloudPk, projectPk, id, data, callback) {
+    this.updateFolder = function(projectPk, id, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateFolder");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1746,6 +1823,11 @@
         throw new Error("Missing the required parameter 'id' when calling updateFolder");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateFolder");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling updateFolder");
@@ -1753,9 +1835,9 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1788,23 +1870,23 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:model/Project} data 
      * @param {module:api/ProjectApi~updateProjectCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Project}
      */
-    this.updateProject = function(cloudPk, id, data, callback) {
+    this.updateProject = function(id, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateProject");
-      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling updateProject");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateProject");
       }
 
       // verify the required parameter 'data' is set
@@ -1814,8 +1896,8 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1848,20 +1930,15 @@
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:model/FosUserWrite} data 
      * @param {module:api/ProjectApi~updateProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FosUserWrite}
      */
-    this.updateProjectUser = function(cloudPk, projectPk, id, data, callback) {
+    this.updateProjectUser = function(projectPk, id, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateProjectUser");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1873,6 +1950,11 @@
         throw new Error("Missing the required parameter 'id' when calling updateProjectUser");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateProjectUser");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling updateProjectUser");
@@ -1880,9 +1962,9 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'id': id
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };

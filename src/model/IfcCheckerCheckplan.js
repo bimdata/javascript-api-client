@@ -37,7 +37,7 @@
   /**
    * The IfcCheckerCheckplan model module.
    * @module model/IfcCheckerCheckplan
-   * @version 1.0.5
+   * @version 1.0.7
    */
 
   /**
