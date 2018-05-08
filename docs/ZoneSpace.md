@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **longname** | **String** |  | [optional] 
 **uuid** | **String** |  | 
-**ifcId** | **Number** |  | 
+**ifcId** | **Number** |  | [optional] 
 **zoneSet** | **[String]** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
-**zoneId** | **Number** |  | 
+**zoneId** | **Number** |  | [optional] 
 
 

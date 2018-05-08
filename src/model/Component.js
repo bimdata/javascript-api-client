@@ -37,7 +37,7 @@
   /**
    * The Component model module.
    * @module model/Component
-   * @version 1.0.10
+   * @version 1.0.11
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The Viewpoint model module.
    * @module model/Viewpoint
-   * @version 1.0.10
+   * @version 1.0.11
    */
 
   /**

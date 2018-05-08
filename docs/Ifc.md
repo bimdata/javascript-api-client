@@ -10,9 +10,8 @@ Name | Type | Description | Notes
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 **document** | [**IfcDocument**](IfcDocument.md) |  | [optional] 
-**documentId** | **Number** |  | 
 **project** | [**IfcProject**](IfcProject.md) |  | [optional] 
-**projectId** | **Number** |  | 
+**projectId** | **Number** |  | [optional] 
 **zones** | [**[Zone]**](Zone.md) |  | [optional] 
 **structureFile** | **String** |  | [optional] 
 **systemsFile** | **String** |  | [optional] 

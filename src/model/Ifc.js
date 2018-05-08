@@ -37,17 +37,15 @@
   /**
    * The Ifc model module.
    * @module model/Ifc
-   * @version 1.0.10
+   * @version 1.0.11
    */
 
   /**
    * Constructs a new <code>Ifc</code>.
    * @alias module:model/Ifc
    * @class
-   * @param documentId {Number} 
-   * @param projectId {Number} 
    */
-  var exports = function(documentId, projectId) {
+  var exports = function() {
     var _this = this;
 
 
@@ -57,9 +55,8 @@
 
 
 
-    _this['document_id'] = documentId;
 
-    _this['project_id'] = projectId;
+
 
 
 
@@ -100,9 +97,6 @@
       }
       if (data.hasOwnProperty('document')) {
         obj['document'] = IfcDocument.constructFromObject(data['document']);
-      }
-      if (data.hasOwnProperty('document_id')) {
-        obj['document_id'] = ApiClient.convertToType(data['document_id'], 'Number');
       }
       if (data.hasOwnProperty('project')) {
         obj['project'] = IfcProject.constructFromObject(data['project']);
@@ -163,10 +157,6 @@
    * @member {module:model/IfcDocument} document
    */
   exports.prototype['document'] = undefined;
-  /**
-   * @member {Number} document_id
-   */
-  exports.prototype['document_id'] = undefined;
   /**
    * @member {module:model/IfcProject} project
    */

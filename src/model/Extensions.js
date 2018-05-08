@@ -37,7 +37,7 @@
   /**
    * The Extensions model module.
    * @module model/Extensions
-   * @version 1.0.10
+   * @version 1.0.11
    */
 
   /**

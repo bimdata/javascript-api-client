@@ -37,7 +37,7 @@
   /**
    * The Project model module.
    * @module model/Project
-   * @version 1.0.10
+   * @version 1.0.11
    */
 
   /**

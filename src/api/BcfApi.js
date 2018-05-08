@@ -34,7 +34,7 @@
   /**
    * Bcf service.
    * @module api/BcfApi
-   * @version 1.0.10
+   * @version 1.0.11
    */
 
   /**
@@ -89,854 +89,6 @@
     }
 
     /**
-     * Callback function to receive the result of the bcf21ProjectsCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/BcfProject} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {module:model/BcfProject} data 
-     * @param {module:api/BcfApi~bcf21ProjectsCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BcfProject}
-     */
-    this.bcf21ProjectsCreate = function(data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsCreate");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = BcfProject;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsDelete operation.
-     * @callback module:api/BcfApi~bcf21ProjectsDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {module:api/BcfApi~bcf21ProjectsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsDelete = function(id, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsDelete");
-      }
-
-
-      var pathParams = {
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsDocumentsCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsDocumentsCreateCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} projectsPk 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.guid 
-     * @param {String} opts.filename 
-     * @param {module:api/BcfApi~bcf21ProjectsDocumentsCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsDocumentsCreate = function(projectsPk, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsDocumentsCreate");
-      }
-
-
-      var pathParams = {
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-        'guid': opts['guid'],
-        'filename': opts['filename']
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/documents', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsDocumentsDelete operation.
-     * @callback module:api/BcfApi~bcf21ProjectsDocumentsDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsDocumentsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsDocumentsDelete = function(id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsDocumentsDelete");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsDocumentsDelete");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/documents/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsDocumentsList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsDocumentsListCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsDocumentsListCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsDocumentsList = function(projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsDocumentsList");
-      }
-
-
-      var pathParams = {
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/documents', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsDocumentsPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsDocumentsPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.guid 
-     * @param {String} opts.filename 
-     * @param {module:api/BcfApi~bcf21ProjectsDocumentsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsDocumentsPartialUpdate = function(id, projectsPk, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsDocumentsPartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsDocumentsPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-        'guid': opts['guid'],
-        'filename': opts['filename']
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/documents/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsDocumentsRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsDocumentsReadCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsDocumentsReadCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsDocumentsRead = function(id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsDocumentsRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsDocumentsRead");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/documents/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsDocumentsUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsDocumentsUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.guid 
-     * @param {String} opts.filename 
-     * @param {module:api/BcfApi~bcf21ProjectsDocumentsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsDocumentsUpdate = function(id, projectsPk, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsDocumentsUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsDocumentsUpdate");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-        'guid': opts['guid'],
-        'filename': opts['filename']
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/documents/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsExtensionsList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsExtensionsListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Extensions>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsExtensionsListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Extensions>}
-     */
-    this.bcf21ProjectsExtensionsList = function(projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsExtensionsList");
-      }
-
-
-      var pathParams = {
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [Extensions];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/extensions', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/BcfProject>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {module:api/BcfApi~bcf21ProjectsListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/BcfProject>}
-     */
-    this.bcf21ProjectsList = function(callback) {
-      var postBody = null;
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [BcfProject];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/BcfProject} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {module:model/BcfProject} data 
-     * @param {module:api/BcfApi~bcf21ProjectsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BcfProject}
-     */
-    this.bcf21ProjectsPartialUpdate = function(id, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsPartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = BcfProject;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/BcfProject} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {module:api/BcfApi~bcf21ProjectsReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BcfProject}
-     */
-    this.bcf21ProjectsRead = function(id, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsRead");
-      }
-
-
-      var pathParams = {
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = BcfProject;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Comment} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:model/Comment} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Comment}
-     */
-    this.bcf21ProjectsTopicsCommentsCreate = function(topicsPk, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsCreate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsCreate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsCreate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Comment;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsDelete operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsTopicsCommentsDelete = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsDelete");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsDelete");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsDelete");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsEventsCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CommentEvent} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:model/CommentEvent} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CommentEvent}
-     */
-    this.bcf21ProjectsTopicsCommentsEventsCreate = function(topicsPk, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsCreate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsEventsCreate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsEventsCreate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = CommentEvent;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/events', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsEventsCreate_0 operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsCreate_0Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CommentEvent} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {String} commentsPk 
-     * @param {module:model/CommentEvent} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsCreate_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CommentEvent}
-     */
-    this.bcf21ProjectsTopicsCommentsEventsCreate_0 = function(topicsPk, projectsPk, commentsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsCreate_0");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsEventsCreate_0");
-      }
-
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsCreate_0");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsEventsCreate_0");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk,
-        'comments_pk': commentsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = CommentEvent;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{comments_pk}/events', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the bcf21ProjectsTopicsCommentsEventsDelete operation.
      * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsDeleteCallback
      * @param {String} error Error message, if any.
@@ -947,11 +99,11 @@
     /**
      * 
      * @param {String} topicsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsCommentsEventsDelete = function(topicsPk, id, projectsPk, callback) {
+    this.bcf21ProjectsTopicsCommentsEventsDelete = function(topicsPk, projectsPk, id, callback) {
       var postBody = null;
 
       // verify the required parameter 'topicsPk' is set
@@ -959,21 +111,21 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsDelete");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsDelete");
-      }
-
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsEventsDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsDelete");
+      }
+
 
       var pathParams = {
         'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -1007,12 +159,12 @@
     /**
      * 
      * @param {String} topicsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {String} commentsPk 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsDelete_0Callback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsCommentsEventsDelete_0 = function(topicsPk, id, projectsPk, commentsPk, callback) {
+    this.bcf21ProjectsTopicsCommentsEventsDelete_0 = function(topicsPk, projectsPk, id, commentsPk, callback) {
       var postBody = null;
 
       // verify the required parameter 'topicsPk' is set
@@ -1020,14 +172,14 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsDelete_0");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsDelete_0");
-      }
-
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsEventsDelete_0");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsDelete_0");
       }
 
       // verify the required parameter 'commentsPk' is set
@@ -1038,8 +190,8 @@
 
       var pathParams = {
         'topics_pk': topicsPk,
-        'id': id,
         'projects_pk': projectsPk,
+        'id': id,
         'comments_pk': commentsPk
       };
       var queryParams = {
@@ -1064,1416 +216,6 @@
     }
 
     /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsEventsList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/CommentEvent>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/CommentEvent>}
-     */
-    this.bcf21ProjectsTopicsCommentsEventsList = function(projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsEventsList");
-      }
-
-
-      var pathParams = {
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [CommentEvent];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/comments/events', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsEventsList_0 operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsList_0Callback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/CommentEvent>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsList_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/CommentEvent>}
-     */
-    this.bcf21ProjectsTopicsCommentsEventsList_0 = function(topicsPk, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsList_0");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsEventsList_0");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [CommentEvent];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/events', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsEventsList_1 operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsList_1Callback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/CommentEvent>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {String} commentsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsList_1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/CommentEvent>}
-     */
-    this.bcf21ProjectsTopicsCommentsEventsList_1 = function(topicsPk, projectsPk, commentsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsList_1");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsEventsList_1");
-      }
-
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsList_1");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk,
-        'comments_pk': commentsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [CommentEvent];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{comments_pk}/events', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsEventsPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CommentEvent} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/CommentEvent} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CommentEvent}
-     */
-    this.bcf21ProjectsTopicsCommentsEventsPartialUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = CommentEvent;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/events/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsEventsPartialUpdate_0 operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsPartialUpdate_0Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CommentEvent} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {String} commentsPk 
-     * @param {module:model/CommentEvent} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsPartialUpdate_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CommentEvent}
-     */
-    this.bcf21ProjectsTopicsCommentsEventsPartialUpdate_0 = function(topicsPk, id, projectsPk, commentsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate_0");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate_0");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate_0");
-      }
-
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate_0");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsEventsPartialUpdate_0");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk,
-        'comments_pk': commentsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = CommentEvent;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{comments_pk}/events/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsEventsRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CommentEvent} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CommentEvent}
-     */
-    this.bcf21ProjectsTopicsCommentsEventsRead = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsEventsRead");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = CommentEvent;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/events/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsEventsRead_0 operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsRead_0Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CommentEvent} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {String} commentsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsRead_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CommentEvent}
-     */
-    this.bcf21ProjectsTopicsCommentsEventsRead_0 = function(topicsPk, id, projectsPk, commentsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsRead_0");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsRead_0");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsEventsRead_0");
-      }
-
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsRead_0");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk,
-        'comments_pk': commentsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = CommentEvent;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{comments_pk}/events/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsEventsUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CommentEvent} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/CommentEvent} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CommentEvent}
-     */
-    this.bcf21ProjectsTopicsCommentsEventsUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsEventsUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsEventsUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = CommentEvent;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/events/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsEventsUpdate_0 operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsUpdate_0Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CommentEvent} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {String} commentsPk 
-     * @param {module:model/CommentEvent} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsUpdate_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CommentEvent}
-     */
-    this.bcf21ProjectsTopicsCommentsEventsUpdate_0 = function(topicsPk, id, projectsPk, commentsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsUpdate_0");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsEventsUpdate_0");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsEventsUpdate_0");
-      }
-
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsUpdate_0");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsEventsUpdate_0");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk,
-        'comments_pk': commentsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = CommentEvent;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{comments_pk}/events/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Comment>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Comment>}
-     */
-    this.bcf21ProjectsTopicsCommentsList = function(topicsPk, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsList");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsList");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [Comment];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Comment} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Comment} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Comment}
-     */
-    this.bcf21ProjectsTopicsCommentsPartialUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsPartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsPartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Comment;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Comment} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Comment}
-     */
-    this.bcf21ProjectsTopicsCommentsRead = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsRead");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Comment;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCommentsUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCommentsUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Comment} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Comment} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Comment}
-     */
-    this.bcf21ProjectsTopicsCommentsUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsCommentsUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCommentsUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCommentsUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Comment;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Topic} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} projectsPk 
-     * @param {module:model/Topic} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Topic}
-     */
-    this.bcf21ProjectsTopicsCreate = function(projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsCreate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsCreate");
-      }
-
-
-      var pathParams = {
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Topic;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsDelete operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsTopicsDelete = function(id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDelete");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsDelete");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsDocumentReferencesCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DocumentReference} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:model/DocumentReference} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DocumentReference}
-     */
-    this.bcf21ProjectsTopicsDocumentReferencesCreate = function(topicsPk, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsDocumentReferencesCreate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsDocumentReferencesCreate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsDocumentReferencesCreate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = DocumentReference;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/document_references', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsDocumentReferencesDelete operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsTopicsDocumentReferencesDelete = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsDocumentReferencesDelete");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDocumentReferencesDelete");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsDocumentReferencesDelete");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/document_references/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsDocumentReferencesList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/DocumentReference>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/DocumentReference>}
-     */
-    this.bcf21ProjectsTopicsDocumentReferencesList = function(topicsPk, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsDocumentReferencesList");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsDocumentReferencesList");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [DocumentReference];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/document_references', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsDocumentReferencesPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DocumentReference} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/DocumentReference} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DocumentReference}
-     */
-    this.bcf21ProjectsTopicsDocumentReferencesPartialUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsDocumentReferencesPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDocumentReferencesPartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsDocumentReferencesPartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsDocumentReferencesPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = DocumentReference;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/document_references/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsDocumentReferencesRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DocumentReference} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DocumentReference}
-     */
-    this.bcf21ProjectsTopicsDocumentReferencesRead = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsDocumentReferencesRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDocumentReferencesRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsDocumentReferencesRead");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = DocumentReference;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/document_references/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsDocumentReferencesUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DocumentReference} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/DocumentReference} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsDocumentReferencesUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DocumentReference}
-     */
-    this.bcf21ProjectsTopicsDocumentReferencesUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsDocumentReferencesUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsDocumentReferencesUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsDocumentReferencesUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsDocumentReferencesUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = DocumentReference;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/document_references/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsEventsCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsEventsCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TopicEvents} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} projectsPk 
-     * @param {module:model/TopicEvents} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TopicEvents}
-     */
-    this.bcf21ProjectsTopicsEventsCreate = function(projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsCreate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsEventsCreate");
-      }
-
-
-      var pathParams = {
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = TopicEvents;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/events', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsEventsCreate_0 operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsEventsCreate_0Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TopicEvents} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:model/TopicEvents} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsCreate_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TopicEvents}
-     */
-    this.bcf21ProjectsTopicsEventsCreate_0 = function(topicsPk, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsEventsCreate_0");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsCreate_0");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsEventsCreate_0");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = TopicEvents;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/events', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the bcf21ProjectsTopicsEventsDelete operation.
      * @callback module:api/BcfApi~bcf21ProjectsTopicsEventsDeleteCallback
      * @param {String} error Error message, if any.
@@ -2483,16 +225,17 @@
 
     /**
      * 
-     * @param {String} id 
+     * @param {String} topicsPk 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsEventsDelete = function(id, projectsPk, callback) {
+    this.bcf21ProjectsTopicsEventsDelete = function(topicsPk, projectsPk, id, callback) {
       var postBody = null;
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsDelete");
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsEventsDelete");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -2500,70 +243,16 @@
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsDelete");
       }
 
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/events/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsEventsDelete_0 operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsEventsDelete_0Callback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsDelete_0Callback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsTopicsEventsDelete_0 = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsEventsDelete_0");
-      }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsDelete_0");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsDelete_0");
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsDelete");
       }
 
 
       var pathParams = {
         'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2587,1871 +276,6 @@
     }
 
     /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsEventsList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsEventsListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/TopicEvents>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/TopicEvents>}
-     */
-    this.bcf21ProjectsTopicsEventsList = function(projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsList");
-      }
-
-
-      var pathParams = {
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [TopicEvents];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/events', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsEventsList_0 operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsEventsList_0Callback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/TopicEvents>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsList_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/TopicEvents>}
-     */
-    this.bcf21ProjectsTopicsEventsList_0 = function(topicsPk, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsEventsList_0");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsList_0");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [TopicEvents];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/events', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsEventsPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsEventsPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TopicEvents} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/TopicEvents} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TopicEvents}
-     */
-    this.bcf21ProjectsTopicsEventsPartialUpdate = function(id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsPartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsPartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsEventsPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = TopicEvents;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/events/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsEventsPartialUpdate_0 operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsEventsPartialUpdate_0Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TopicEvents} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/TopicEvents} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsPartialUpdate_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TopicEvents}
-     */
-    this.bcf21ProjectsTopicsEventsPartialUpdate_0 = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsEventsPartialUpdate_0");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsPartialUpdate_0");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsPartialUpdate_0");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsEventsPartialUpdate_0");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = TopicEvents;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/events/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsEventsRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsEventsReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TopicEvents} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TopicEvents}
-     */
-    this.bcf21ProjectsTopicsEventsRead = function(id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsRead");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = TopicEvents;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/events/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsEventsRead_0 operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsEventsRead_0Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TopicEvents} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsRead_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TopicEvents}
-     */
-    this.bcf21ProjectsTopicsEventsRead_0 = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsEventsRead_0");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsRead_0");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsRead_0");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = TopicEvents;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/events/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsEventsUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsEventsUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TopicEvents} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/TopicEvents} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TopicEvents}
-     */
-    this.bcf21ProjectsTopicsEventsUpdate = function(id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsEventsUpdate");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = TopicEvents;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/events/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsEventsUpdate_0 operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsEventsUpdate_0Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TopicEvents} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/TopicEvents} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsEventsUpdate_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TopicEvents}
-     */
-    this.bcf21ProjectsTopicsEventsUpdate_0 = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsEventsUpdate_0");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsEventsUpdate_0");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsEventsUpdate_0");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsEventsUpdate_0");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = TopicEvents;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/events/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsFileCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsFileCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/BimSnippet} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:model/BimSnippet} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsFileCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BimSnippet}
-     */
-    this.bcf21ProjectsTopicsFileCreate = function(topicsPk, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsFileCreate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsFileCreate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsFileCreate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = BimSnippet;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/file', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsFileDelete operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsFileDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsFileDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsTopicsFileDelete = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsFileDelete");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsFileDelete");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsFileDelete");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/file/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsFileList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsFileListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/BimSnippet>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsFileListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/BimSnippet>}
-     */
-    this.bcf21ProjectsTopicsFileList = function(topicsPk, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsFileList");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsFileList");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [BimSnippet];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/file', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsFilePartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsFilePartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/BimSnippet} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/BimSnippet} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsFilePartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BimSnippet}
-     */
-    this.bcf21ProjectsTopicsFilePartialUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsFilePartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsFilePartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsFilePartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsFilePartialUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = BimSnippet;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/file/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsFileRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsFileReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/BimSnippet} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsFileReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BimSnippet}
-     */
-    this.bcf21ProjectsTopicsFileRead = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsFileRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsFileRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsFileRead");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = BimSnippet;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/file/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsFileUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsFileUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/BimSnippet} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/BimSnippet} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsFileUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BimSnippet}
-     */
-    this.bcf21ProjectsTopicsFileUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsFileUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsFileUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsFileUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsFileUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = BimSnippet;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/file/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Topic>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Topic>}
-     */
-    this.bcf21ProjectsTopicsList = function(projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsList");
-      }
-
-
-      var pathParams = {
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [Topic];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Topic} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Topic} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Topic}
-     */
-    this.bcf21ProjectsTopicsPartialUpdate = function(id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsPartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsPartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Topic;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Topic} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Topic}
-     */
-    this.bcf21ProjectsTopicsRead = function(id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsRead");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Topic;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsRelatedTopicsCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/RelatedTopic} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:model/RelatedTopic} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RelatedTopic}
-     */
-    this.bcf21ProjectsTopicsRelatedTopicsCreate = function(topicsPk, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsRelatedTopicsCreate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsRelatedTopicsCreate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsRelatedTopicsCreate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = RelatedTopic;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/related_topics', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsRelatedTopicsDelete operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsTopicsRelatedTopicsDelete = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsRelatedTopicsDelete");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRelatedTopicsDelete");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsRelatedTopicsDelete");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/related_topics/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsRelatedTopicsList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/RelatedTopic>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/RelatedTopic>}
-     */
-    this.bcf21ProjectsTopicsRelatedTopicsList = function(topicsPk, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsRelatedTopicsList");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsRelatedTopicsList");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [RelatedTopic];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/related_topics', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsRelatedTopicsPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/RelatedTopic} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/RelatedTopic} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RelatedTopic}
-     */
-    this.bcf21ProjectsTopicsRelatedTopicsPartialUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsRelatedTopicsPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRelatedTopicsPartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsRelatedTopicsPartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsRelatedTopicsPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = RelatedTopic;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/related_topics/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsRelatedTopicsRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/RelatedTopic} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RelatedTopic}
-     */
-    this.bcf21ProjectsTopicsRelatedTopicsRead = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsRelatedTopicsRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRelatedTopicsRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsRelatedTopicsRead");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = RelatedTopic;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/related_topics/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsRelatedTopicsUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/RelatedTopic} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/RelatedTopic} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsRelatedTopicsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RelatedTopic}
-     */
-    this.bcf21ProjectsTopicsRelatedTopicsUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsRelatedTopicsUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsRelatedTopicsUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsRelatedTopicsUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsRelatedTopicsUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = RelatedTopic;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/related_topics/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsSnippetCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsSnippetCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/BimSnippet} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:model/BimSnippet} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsSnippetCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BimSnippet}
-     */
-    this.bcf21ProjectsTopicsSnippetCreate = function(topicsPk, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsSnippetCreate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsSnippetCreate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsSnippetCreate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = BimSnippet;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/snippet', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsSnippetDelete operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsSnippetDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsSnippetDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.bcf21ProjectsTopicsSnippetDelete = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsSnippetDelete");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsSnippetDelete");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsSnippetDelete");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/snippet/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsSnippetList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsSnippetListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/BimSnippet>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsSnippetListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/BimSnippet>}
-     */
-    this.bcf21ProjectsTopicsSnippetList = function(topicsPk, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsSnippetList");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsSnippetList");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [BimSnippet];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/snippet', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsSnippetPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsSnippetPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/BimSnippet} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/BimSnippet} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsSnippetPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BimSnippet}
-     */
-    this.bcf21ProjectsTopicsSnippetPartialUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsSnippetPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsSnippetPartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsSnippetPartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsSnippetPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = BimSnippet;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/snippet/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsSnippetRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsSnippetReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/BimSnippet} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsSnippetReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BimSnippet}
-     */
-    this.bcf21ProjectsTopicsSnippetRead = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsSnippetRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsSnippetRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsSnippetRead");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = BimSnippet;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/snippet/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsSnippetUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsSnippetUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/BimSnippet} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/BimSnippet} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsSnippetUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BimSnippet}
-     */
-    this.bcf21ProjectsTopicsSnippetUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsSnippetUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsSnippetUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsSnippetUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsSnippetUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = BimSnippet;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/snippet/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Topic} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Topic} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Topic}
-     */
-    this.bcf21ProjectsTopicsUpdate = function(id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsUpdate");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Topic;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsBitmapCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Bitmap} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:model/Bitmap} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Bitmap}
-     */
-    this.bcf21ProjectsTopicsViewpointsBitmapCreate = function(viewpointsPk, topicsPk, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsBitmapCreate");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsBitmapCreate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsBitmapCreate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsBitmapCreate");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Bitmap;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/bitmap', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsBitmapDelete operation.
      * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapDeleteCallback
      * @param {String} error Error message, if any.
@@ -4461,28 +285,23 @@
 
     /**
      * 
-     * @param {String} viewpointsPk 
      * @param {String} topicsPk 
-     * @param {String} id 
+     * @param {String} viewpointsPk 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsViewpointsBitmapDelete = function(viewpointsPk, topicsPk, id, projectsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsBitmapDelete = function(topicsPk, viewpointsPk, projectsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsBitmapDelete");
-      }
 
       // verify the required parameter 'topicsPk' is set
       if (topicsPk === undefined || topicsPk === null) {
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsBitmapDelete");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsBitmapDelete");
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsBitmapDelete");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -4490,12 +309,17 @@
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsBitmapDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsBitmapDelete");
+      }
+
 
       var pathParams = {
-        'viewpoints_pk': viewpointsPk,
         'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -4519,350 +343,6 @@
     }
 
     /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsBitmapList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Bitmap>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Bitmap>}
-     */
-    this.bcf21ProjectsTopicsViewpointsBitmapList = function(viewpointsPk, topicsPk, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsBitmapList");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsBitmapList");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsBitmapList");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [Bitmap];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/bitmap', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsBitmapPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Bitmap} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Bitmap} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Bitmap}
-     */
-    this.bcf21ProjectsTopicsViewpointsBitmapPartialUpdate = function(viewpointsPk, topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsBitmapPartialUpdate");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsBitmapPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsBitmapPartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsBitmapPartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsBitmapPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Bitmap;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/bitmap/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsBitmapRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Bitmap} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Bitmap}
-     */
-    this.bcf21ProjectsTopicsViewpointsBitmapRead = function(viewpointsPk, topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsBitmapRead");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsBitmapRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsBitmapRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsBitmapRead");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Bitmap;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/bitmap/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsBitmapUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Bitmap} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Bitmap} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsBitmapUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Bitmap}
-     */
-    this.bcf21ProjectsTopicsViewpointsBitmapUpdate = function(viewpointsPk, topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsBitmapUpdate");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsBitmapUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsBitmapUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsBitmapUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsBitmapUpdate");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Bitmap;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/bitmap/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsColoringCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Coloring} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:model/Coloring} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Coloring}
-     */
-    this.bcf21ProjectsTopicsViewpointsColoringCreate = function(viewpointsPk, topicsPk, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsColoringCreate");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsColoringCreate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsColoringCreate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsColoringCreate");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Coloring;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsColoringDelete operation.
      * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringDeleteCallback
      * @param {String} error Error message, if any.
@@ -4872,28 +352,23 @@
 
     /**
      * 
-     * @param {String} viewpointsPk 
      * @param {String} topicsPk 
-     * @param {String} id 
+     * @param {String} viewpointsPk 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsViewpointsColoringDelete = function(viewpointsPk, topicsPk, id, projectsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsColoringDelete = function(topicsPk, viewpointsPk, projectsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsColoringDelete");
-      }
 
       // verify the required parameter 'topicsPk' is set
       if (topicsPk === undefined || topicsPk === null) {
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsColoringDelete");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsColoringDelete");
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsColoringDelete");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -4901,12 +376,17 @@
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsColoringDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsColoringDelete");
+      }
+
 
       var pathParams = {
-        'viewpoints_pk': viewpointsPk,
         'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -4930,343 +410,6 @@
     }
 
     /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsColoringList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Coloring>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Coloring>}
-     */
-    this.bcf21ProjectsTopicsViewpointsColoringList = function(viewpointsPk, topicsPk, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsColoringList");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsColoringList");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsColoringList");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [Coloring];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsColoringPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Coloring} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Coloring} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Coloring}
-     */
-    this.bcf21ProjectsTopicsViewpointsColoringPartialUpdate = function(viewpointsPk, topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsColoringPartialUpdate");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsColoringPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsColoringPartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsColoringPartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsColoringPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Coloring;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsColoringRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Coloring} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Coloring}
-     */
-    this.bcf21ProjectsTopicsViewpointsColoringRead = function(viewpointsPk, topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsColoringRead");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsColoringRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsColoringRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsColoringRead");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Coloring;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsColoringUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Coloring} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Coloring} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsColoringUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Coloring}
-     */
-    this.bcf21ProjectsTopicsViewpointsColoringUpdate = function(viewpointsPk, topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsColoringUpdate");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsColoringUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsColoringUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsColoringUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsColoringUpdate");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Coloring;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Viewpoint} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:model/Viewpoint} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Viewpoint}
-     */
-    this.bcf21ProjectsTopicsViewpointsCreate = function(topicsPk, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsCreate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsCreate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsCreate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Viewpoint;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsDelete operation.
      * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsDeleteCallback
      * @param {String} error Error message, if any.
@@ -5277,11 +420,11 @@
     /**
      * 
      * @param {String} topicsPk 
-     * @param {String} id 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsViewpointsDelete = function(topicsPk, id, projectsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsDelete = function(topicsPk, projectsPk, id, callback) {
       var postBody = null;
 
       // verify the required parameter 'topicsPk' is set
@@ -5289,21 +432,21 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsDelete");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsDelete");
-      }
-
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsDelete");
+      }
+
 
       var pathParams = {
         'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -5327,255 +470,6 @@
     }
 
     /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Viewpoint>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Viewpoint>}
-     */
-    this.bcf21ProjectsTopicsViewpointsList = function(topicsPk, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsList");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsList");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [Viewpoint];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Viewpoint} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Viewpoint} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Viewpoint}
-     */
-    this.bcf21ProjectsTopicsViewpointsPartialUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsPartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsPartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Viewpoint;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Viewpoint} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Viewpoint}
-     */
-    this.bcf21ProjectsTopicsViewpointsRead = function(topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsRead");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Viewpoint;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsSelectionCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Component} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:model/Component} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Component}
-     */
-    this.bcf21ProjectsTopicsViewpointsSelectionCreate = function(viewpointsPk, topicsPk, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsSelectionCreate");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsSelectionCreate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsSelectionCreate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsSelectionCreate");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Component;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsSelectionDelete operation.
      * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionDeleteCallback
      * @param {String} error Error message, if any.
@@ -5585,28 +479,23 @@
 
     /**
      * 
-     * @param {String} viewpointsPk 
      * @param {String} topicsPk 
-     * @param {String} id 
+     * @param {String} viewpointsPk 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsViewpointsSelectionDelete = function(viewpointsPk, topicsPk, id, projectsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsSelectionDelete = function(topicsPk, viewpointsPk, projectsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsSelectionDelete");
-      }
 
       // verify the required parameter 'topicsPk' is set
       if (topicsPk === undefined || topicsPk === null) {
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsSelectionDelete");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsSelectionDelete");
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsSelectionDelete");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -5614,12 +503,17 @@
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsSelectionDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsSelectionDelete");
+      }
+
 
       var pathParams = {
-        'viewpoints_pk': viewpointsPk,
         'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -5643,478 +537,6 @@
     }
 
     /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsSelectionList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Component>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Component>}
-     */
-    this.bcf21ProjectsTopicsViewpointsSelectionList = function(viewpointsPk, topicsPk, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsSelectionList");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsSelectionList");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsSelectionList");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [Component];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsSelectionPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Component} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Component} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Component}
-     */
-    this.bcf21ProjectsTopicsViewpointsSelectionPartialUpdate = function(viewpointsPk, topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsSelectionPartialUpdate");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsSelectionPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsSelectionPartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsSelectionPartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsSelectionPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Component;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsSelectionRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Component} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Component}
-     */
-    this.bcf21ProjectsTopicsViewpointsSelectionRead = function(viewpointsPk, topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsSelectionRead");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsSelectionRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsSelectionRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsSelectionRead");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Component;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsSelectionUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Component} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Component} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsSelectionUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Component}
-     */
-    this.bcf21ProjectsTopicsViewpointsSelectionUpdate = function(viewpointsPk, topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsSelectionUpdate");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsSelectionUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsSelectionUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsSelectionUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsSelectionUpdate");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Component;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsSnapshotList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsSnapshotListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Snapshot>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsSnapshotListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Snapshot>}
-     */
-    this.bcf21ProjectsTopicsViewpointsSnapshotList = function(viewpointsPk, topicsPk, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsSnapshotList");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsSnapshotList");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsSnapshotList");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [Snapshot];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Viewpoint} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Viewpoint} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Viewpoint}
-     */
-    this.bcf21ProjectsTopicsViewpointsUpdate = function(topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsUpdate");
-      }
-
-
-      var pathParams = {
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Viewpoint;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsVisibilityCreate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Visibility} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:model/Visibility} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Visibility}
-     */
-    this.bcf21ProjectsTopicsViewpointsVisibilityCreate = function(viewpointsPk, topicsPk, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityCreate");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityCreate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityCreate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsVisibilityCreate");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Visibility;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsVisibilityDelete operation.
      * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityDeleteCallback
      * @param {String} error Error message, if any.
@@ -6124,28 +546,23 @@
 
     /**
      * 
-     * @param {String} viewpointsPk 
      * @param {String} topicsPk 
-     * @param {String} id 
+     * @param {String} viewpointsPk 
      * @param {String} projectsPk 
+     * @param {String} id 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsViewpointsVisibilityDelete = function(viewpointsPk, topicsPk, id, projectsPk, callback) {
+    this.bcf21ProjectsTopicsViewpointsVisibilityDelete = function(topicsPk, viewpointsPk, projectsPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityDelete");
-      }
 
       // verify the required parameter 'topicsPk' is set
       if (topicsPk === undefined || topicsPk === null) {
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityDelete");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsVisibilityDelete");
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityDelete");
       }
 
       // verify the required parameter 'projectsPk' is set
@@ -6153,12 +570,17 @@
         throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityDelete");
       }
 
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsVisibilityDelete");
+      }
+
 
       var pathParams = {
-        'viewpoints_pk': viewpointsPk,
         'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -6176,382 +598,6 @@
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsVisibilityList operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityListCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Visibility>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Visibility>}
-     */
-    this.bcf21ProjectsTopicsViewpointsVisibilityList = function(viewpointsPk, topicsPk, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityList");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityList");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityList");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [Visibility];
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityPartialUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Visibility} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Visibility} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Visibility}
-     */
-    this.bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate = function(viewpointsPk, topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsVisibilityPartialUpdate");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Visibility;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsVisibilityRead operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityReadCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Visibility} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityReadCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Visibility}
-     */
-    this.bcf21ProjectsTopicsViewpointsVisibilityRead = function(viewpointsPk, topicsPk, id, projectsPk, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityRead");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityRead");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsVisibilityRead");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityRead");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Visibility;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsTopicsViewpointsVisibilityUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Visibility} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} viewpointsPk 
-     * @param {String} topicsPk 
-     * @param {String} id 
-     * @param {String} projectsPk 
-     * @param {module:model/Visibility} data 
-     * @param {module:api/BcfApi~bcf21ProjectsTopicsViewpointsVisibilityUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Visibility}
-     */
-    this.bcf21ProjectsTopicsViewpointsVisibilityUpdate = function(viewpointsPk, topicsPk, id, projectsPk, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityUpdate");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityUpdate");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsTopicsViewpointsVisibilityUpdate");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsViewpointsVisibilityUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsViewpointsVisibilityUpdate");
-      }
-
-
-      var pathParams = {
-        'viewpoints_pk': viewpointsPk,
-        'topics_pk': topicsPk,
-        'id': id,
-        'projects_pk': projectsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Visibility;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcf21ProjectsUpdate operation.
-     * @callback module:api/BcfApi~bcf21ProjectsUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/BcfProject} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {String} id 
-     * @param {module:model/BcfProject} data 
-     * @param {module:api/BcfApi~bcf21ProjectsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BcfProject}
-     */
-    this.bcf21ProjectsUpdate = function(id, data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcf21ProjectsUpdate");
-      }
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsUpdate");
-      }
-
-
-      var pathParams = {
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = BcfProject;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the bcfVersionsCreate operation.
-     * @callback module:api/BcfApi~bcfVersionsCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Version} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * @param {module:model/Version} data 
-     * @param {module:api/BcfApi~bcfVersionsCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Version}
-     */
-    this.bcfVersionsCreate = function(data, callback) {
-      var postBody = data;
-
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcfVersionsCreate");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Version;
-
-      return this.apiClient.callApi(
-        '/bcf/versions', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -6604,20 +650,78 @@
     }
 
     /**
-     * Callback function to receive the result of the bcfVersionsList operation.
-     * @callback module:api/BcfApi~bcfVersionsListCallback
+     * Callback function to receive the result of the createBcfDocument operation.
+     * @callback module:api/BcfApi~createBcfDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Version>} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {module:api/BcfApi~bcfVersionsListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Version>}
+     * @param {String} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.guid 
+     * @param {String} opts.filename 
+     * @param {module:api/BcfApi~createBcfDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcfVersionsList = function(callback) {
+    this.createBcfDocument = function(projectsPk, opts, callback) {
+      opts = opts || {};
       var postBody = null;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createBcfDocument");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+        'guid': opts['guid'],
+        'filename': opts['filename']
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/documents', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createBcfProject operation.
+     * @callback module:api/BcfApi~createBcfProjectCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BcfProject} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {module:model/BcfProject} data 
+     * @param {module:api/BcfApi~createBcfProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BcfProject}
+     */
+    this.createBcfProject = function(data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createBcfProject");
+      }
 
 
       var pathParams = {
@@ -6634,18 +738,2321 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [Version];
+      var returnType = BcfProject;
 
       return this.apiClient.callApi(
-        '/bcf/versions', 'GET',
+        '/bcf/2.1/projects', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the bcfVersionsPartialUpdate operation.
-     * @callback module:api/BcfApi~bcfVersionsPartialUpdateCallback
+     * Callback function to receive the result of the createBitmap operation.
+     * @callback module:api/BcfApi~createBitmapCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Bitmap} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {module:model/Bitmap} data 
+     * @param {module:api/BcfApi~createBitmapCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Bitmap}
+     */
+    this.createBitmap = function(topicsPk, viewpointsPk, projectsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling createBitmap");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling createBitmap");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createBitmap");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createBitmap");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Bitmap;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/bitmap', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createColoring operation.
+     * @callback module:api/BcfApi~createColoringCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Coloring} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {module:model/Coloring} data 
+     * @param {module:api/BcfApi~createColoringCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Coloring}
+     */
+    this.createColoring = function(topicsPk, viewpointsPk, projectsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling createColoring");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling createColoring");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createColoring");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createColoring");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Coloring;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createComment operation.
+     * @callback module:api/BcfApi~createCommentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Comment} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:model/Comment} data 
+     * @param {module:api/BcfApi~createCommentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Comment}
+     */
+    this.createComment = function(topicsPk, projectsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling createComment");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createComment");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createComment");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Comment;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createCommentEvent operation.
+     * @callback module:api/BcfApi~createCommentEventCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CommentEvent} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:model/CommentEvent} data 
+     * @param {module:api/BcfApi~createCommentEventCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CommentEvent}
+     */
+    this.createCommentEvent = function(topicsPk, projectsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling createCommentEvent");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createCommentEvent");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createCommentEvent");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CommentEvent;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/events', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createCommentEvent_0 operation.
+     * @callback module:api/BcfApi~createCommentEvent_0Callback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CommentEvent} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} commentsPk 
+     * @param {module:model/CommentEvent} data 
+     * @param {module:api/BcfApi~createCommentEvent_0Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CommentEvent}
+     */
+    this.createCommentEvent_0 = function(topicsPk, projectsPk, commentsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling createCommentEvent_0");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createCommentEvent_0");
+      }
+
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling createCommentEvent_0");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createCommentEvent_0");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'comments_pk': commentsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CommentEvent;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{comments_pk}/events', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createDocumentReference operation.
+     * @callback module:api/BcfApi~createDocumentReferenceCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentReference} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:model/DocumentReference} data 
+     * @param {module:api/BcfApi~createDocumentReferenceCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentReference}
+     */
+    this.createDocumentReference = function(topicsPk, projectsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling createDocumentReference");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createDocumentReference");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createDocumentReference");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = DocumentReference;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/document_references', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createFile operation.
+     * @callback module:api/BcfApi~createFileCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BimSnippet} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:model/BimSnippet} data 
+     * @param {module:api/BcfApi~createFileCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BimSnippet}
+     */
+    this.createFile = function(topicsPk, projectsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling createFile");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createFile");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createFile");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = BimSnippet;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/file', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createRelatedTopic operation.
+     * @callback module:api/BcfApi~createRelatedTopicCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/RelatedTopic} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:model/RelatedTopic} data 
+     * @param {module:api/BcfApi~createRelatedTopicCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/RelatedTopic}
+     */
+    this.createRelatedTopic = function(topicsPk, projectsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling createRelatedTopic");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createRelatedTopic");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createRelatedTopic");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = RelatedTopic;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/related_topics', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createSelection operation.
+     * @callback module:api/BcfApi~createSelectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Component} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {module:model/Component} data 
+     * @param {module:api/BcfApi~createSelectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Component}
+     */
+    this.createSelection = function(topicsPk, viewpointsPk, projectsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling createSelection");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling createSelection");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createSelection");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createSelection");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Component;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createSnippet operation.
+     * @callback module:api/BcfApi~createSnippetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BimSnippet} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:model/BimSnippet} data 
+     * @param {module:api/BcfApi~createSnippetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BimSnippet}
+     */
+    this.createSnippet = function(topicsPk, projectsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling createSnippet");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createSnippet");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createSnippet");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = BimSnippet;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/snippet', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createTopic operation.
+     * @callback module:api/BcfApi~createTopicCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Topic} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {module:model/Topic} data 
+     * @param {module:api/BcfApi~createTopicCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Topic}
+     */
+    this.createTopic = function(projectsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createTopic");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createTopic");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Topic;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createTopicEvent operation.
+     * @callback module:api/BcfApi~createTopicEventCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TopicEvents} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:model/TopicEvents} data 
+     * @param {module:api/BcfApi~createTopicEventCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TopicEvents}
+     */
+    this.createTopicEvent = function(topicsPk, projectsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling createTopicEvent");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createTopicEvent");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createTopicEvent");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = TopicEvents;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/events', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createVersion operation.
+     * @callback module:api/BcfApi~createVersionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Version} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {module:model/Version} data 
+     * @param {module:api/BcfApi~createVersionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Version}
+     */
+    this.createVersion = function(data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createVersion");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Version;
+
+      return this.apiClient.callApi(
+        '/bcf/versions', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createViewpoint operation.
+     * @callback module:api/BcfApi~createViewpointCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Viewpoint} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:model/Viewpoint} data 
+     * @param {module:api/BcfApi~createViewpointCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Viewpoint}
+     */
+    this.createViewpoint = function(topicsPk, projectsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling createViewpoint");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createViewpoint");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createViewpoint");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Viewpoint;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createVisibility operation.
+     * @callback module:api/BcfApi~createVisibilityCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Visibility} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {module:model/Visibility} data 
+     * @param {module:api/BcfApi~createVisibilityCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Visibility}
+     */
+    this.createVisibility = function(topicsPk, viewpointsPk, projectsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling createVisibility");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling createVisibility");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createVisibility");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createVisibility");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Visibility;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteBcfDocument operation.
+     * @callback module:api/BcfApi~deleteBcfDocumentCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~deleteBcfDocumentCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteBcfDocument = function(projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling deleteBcfDocument");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteBcfDocument");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/documents/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteBcfProject operation.
+     * @callback module:api/BcfApi~deleteBcfProjectCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} id 
+     * @param {module:api/BcfApi~deleteBcfProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteBcfProject = function(id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteBcfProject");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteComment operation.
+     * @callback module:api/BcfApi~deleteCommentCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~deleteCommentCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteComment = function(topicsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling deleteComment");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling deleteComment");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteComment");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteDocumentReference operation.
+     * @callback module:api/BcfApi~deleteDocumentReferenceCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~deleteDocumentReferenceCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteDocumentReference = function(topicsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling deleteDocumentReference");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling deleteDocumentReference");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteDocumentReference");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/document_references/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteFile operation.
+     * @callback module:api/BcfApi~deleteFileCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~deleteFileCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteFile = function(topicsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling deleteFile");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling deleteFile");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteFile");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/file/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteRelatedTopic operation.
+     * @callback module:api/BcfApi~deleteRelatedTopicCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~deleteRelatedTopicCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteRelatedTopic = function(topicsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling deleteRelatedTopic");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling deleteRelatedTopic");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteRelatedTopic");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/related_topics/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteSnippet operation.
+     * @callback module:api/BcfApi~deleteSnippetCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~deleteSnippetCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteSnippet = function(topicsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling deleteSnippet");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling deleteSnippet");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteSnippet");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/snippet/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteTopic operation.
+     * @callback module:api/BcfApi~deleteTopicCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~deleteTopicCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteTopic = function(projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling deleteTopic");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteTopic");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateBcfDocument operation.
+     * @callback module:api/BcfApi~fullUpdateBcfDocumentCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.guid 
+     * @param {String} opts.filename 
+     * @param {module:api/BcfApi~fullUpdateBcfDocumentCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.fullUpdateBcfDocument = function(projectsPk, id, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateBcfDocument");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateBcfDocument");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+        'guid': opts['guid'],
+        'filename': opts['filename']
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/documents/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateBcfProject operation.
+     * @callback module:api/BcfApi~fullUpdateBcfProjectCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BcfProject} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} id 
+     * @param {module:model/BcfProject} data 
+     * @param {module:api/BcfApi~fullUpdateBcfProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BcfProject}
+     */
+    this.fullUpdateBcfProject = function(id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateBcfProject");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateBcfProject");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = BcfProject;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateBitmap operation.
+     * @callback module:api/BcfApi~fullUpdateBitmapCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Bitmap} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Bitmap} data 
+     * @param {module:api/BcfApi~fullUpdateBitmapCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Bitmap}
+     */
+    this.fullUpdateBitmap = function(topicsPk, viewpointsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateBitmap");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling fullUpdateBitmap");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateBitmap");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateBitmap");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateBitmap");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Bitmap;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/bitmap/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateColoring operation.
+     * @callback module:api/BcfApi~fullUpdateColoringCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Coloring} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Coloring} data 
+     * @param {module:api/BcfApi~fullUpdateColoringCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Coloring}
+     */
+    this.fullUpdateColoring = function(topicsPk, viewpointsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateColoring");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling fullUpdateColoring");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateColoring");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateColoring");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateColoring");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Coloring;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateComment operation.
+     * @callback module:api/BcfApi~fullUpdateCommentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Comment} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Comment} data 
+     * @param {module:api/BcfApi~fullUpdateCommentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Comment}
+     */
+    this.fullUpdateComment = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateComment");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateComment");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateComment");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateComment");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Comment;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateCommentEvent operation.
+     * @callback module:api/BcfApi~fullUpdateCommentEventCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CommentEvent} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/CommentEvent} data 
+     * @param {module:api/BcfApi~fullUpdateCommentEventCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CommentEvent}
+     */
+    this.fullUpdateCommentEvent = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateCommentEvent");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateCommentEvent");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateCommentEvent");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateCommentEvent");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CommentEvent;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/events/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateCommentEvent_0 operation.
+     * @callback module:api/BcfApi~fullUpdateCommentEvent_0Callback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CommentEvent} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {String} commentsPk 
+     * @param {module:model/CommentEvent} data 
+     * @param {module:api/BcfApi~fullUpdateCommentEvent_0Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CommentEvent}
+     */
+    this.fullUpdateCommentEvent_0 = function(topicsPk, projectsPk, id, commentsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateCommentEvent_0");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateCommentEvent_0");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateCommentEvent_0");
+      }
+
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling fullUpdateCommentEvent_0");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateCommentEvent_0");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id,
+        'comments_pk': commentsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CommentEvent;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{comments_pk}/events/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateDocumentReference operation.
+     * @callback module:api/BcfApi~fullUpdateDocumentReferenceCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentReference} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/DocumentReference} data 
+     * @param {module:api/BcfApi~fullUpdateDocumentReferenceCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentReference}
+     */
+    this.fullUpdateDocumentReference = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateDocumentReference");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateDocumentReference");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateDocumentReference");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateDocumentReference");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = DocumentReference;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/document_references/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateFile operation.
+     * @callback module:api/BcfApi~fullUpdateFileCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BimSnippet} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/BimSnippet} data 
+     * @param {module:api/BcfApi~fullUpdateFileCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BimSnippet}
+     */
+    this.fullUpdateFile = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateFile");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateFile");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateFile");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateFile");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = BimSnippet;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/file/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateRelatedTopic operation.
+     * @callback module:api/BcfApi~fullUpdateRelatedTopicCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/RelatedTopic} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/RelatedTopic} data 
+     * @param {module:api/BcfApi~fullUpdateRelatedTopicCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/RelatedTopic}
+     */
+    this.fullUpdateRelatedTopic = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateRelatedTopic");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateRelatedTopic");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateRelatedTopic");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateRelatedTopic");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = RelatedTopic;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/related_topics/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateSelection operation.
+     * @callback module:api/BcfApi~fullUpdateSelectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Component} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Component} data 
+     * @param {module:api/BcfApi~fullUpdateSelectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Component}
+     */
+    this.fullUpdateSelection = function(topicsPk, viewpointsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateSelection");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling fullUpdateSelection");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateSelection");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateSelection");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateSelection");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Component;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateSnippet operation.
+     * @callback module:api/BcfApi~fullUpdateSnippetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BimSnippet} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/BimSnippet} data 
+     * @param {module:api/BcfApi~fullUpdateSnippetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BimSnippet}
+     */
+    this.fullUpdateSnippet = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateSnippet");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateSnippet");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateSnippet");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateSnippet");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = BimSnippet;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/snippet/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateTopic operation.
+     * @callback module:api/BcfApi~fullUpdateTopicCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Topic} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Topic} data 
+     * @param {module:api/BcfApi~fullUpdateTopicCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Topic}
+     */
+    this.fullUpdateTopic = function(projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateTopic");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateTopic");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateTopic");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Topic;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateTopicEvent operation.
+     * @callback module:api/BcfApi~fullUpdateTopicEventCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TopicEvents} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/TopicEvents} data 
+     * @param {module:api/BcfApi~fullUpdateTopicEventCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TopicEvents}
+     */
+    this.fullUpdateTopicEvent = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateTopicEvent");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateTopicEvent");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateTopicEvent");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateTopicEvent");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = TopicEvents;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/events/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateVersion operation.
+     * @callback module:api/BcfApi~fullUpdateVersionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Version} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6655,20 +3062,20 @@
      * 
      * @param {String} id 
      * @param {module:model/Version} data 
-     * @param {module:api/BcfApi~bcfVersionsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/BcfApi~fullUpdateVersionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Version}
      */
-    this.bcfVersionsPartialUpdate = function(id, data, callback) {
+    this.fullUpdateVersion = function(id, data, callback) {
       var postBody = data;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcfVersionsPartialUpdate");
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateVersion");
       }
 
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcfVersionsPartialUpdate");
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateVersion");
       }
 
 
@@ -6690,15 +3097,1966 @@
       var returnType = Version;
 
       return this.apiClient.callApi(
-        '/bcf/versions/{id}', 'PATCH',
+        '/bcf/versions/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the bcfVersionsRead operation.
-     * @callback module:api/BcfApi~bcfVersionsReadCallback
+     * Callback function to receive the result of the fullUpdateViewpoint operation.
+     * @callback module:api/BcfApi~fullUpdateViewpointCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Viewpoint} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Viewpoint} data 
+     * @param {module:api/BcfApi~fullUpdateViewpointCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Viewpoint}
+     */
+    this.fullUpdateViewpoint = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateViewpoint");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateViewpoint");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateViewpoint");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateViewpoint");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Viewpoint;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fullUpdateVisibility operation.
+     * @callback module:api/BcfApi~fullUpdateVisibilityCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Visibility} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Visibility} data 
+     * @param {module:api/BcfApi~fullUpdateVisibilityCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Visibility}
+     */
+    this.fullUpdateVisibility = function(topicsPk, viewpointsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateVisibility");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling fullUpdateVisibility");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateVisibility");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateVisibility");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateVisibility");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Visibility;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getAllCommentsEvents operation.
+     * @callback module:api/BcfApi~getAllCommentsEventsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/CommentEvent>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getAllCommentsEventsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CommentEvent>}
+     */
+    this.getAllCommentsEvents = function(projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getAllCommentsEvents");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [CommentEvent];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/comments/events', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getAllTopicsEvents operation.
+     * @callback module:api/BcfApi~getAllTopicsEventsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/TopicEvents>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getAllTopicsEventsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/TopicEvents>}
+     */
+    this.getAllTopicsEvents = function(projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getAllTopicsEvents");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [TopicEvents];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/events', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getBcfDocument operation.
+     * @callback module:api/BcfApi~getBcfDocumentCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getBcfDocumentCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getBcfDocument = function(projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getBcfDocument");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getBcfDocument");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/documents/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getBcfDocuments operation.
+     * @callback module:api/BcfApi~getBcfDocumentsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getBcfDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getBcfDocuments = function(projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getBcfDocuments");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/documents', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getBcfProject operation.
+     * @callback module:api/BcfApi~getBcfProjectCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BcfProject} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getBcfProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BcfProject}
+     */
+    this.getBcfProject = function(id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getBcfProject");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = BcfProject;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getBcfProjects operation.
+     * @callback module:api/BcfApi~getBcfProjectsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/BcfProject>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {module:api/BcfApi~getBcfProjectsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/BcfProject>}
+     */
+    this.getBcfProjects = function(callback) {
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [BcfProject];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getBitmap operation.
+     * @callback module:api/BcfApi~getBitmapCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Bitmap} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getBitmapCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Bitmap}
+     */
+    this.getBitmap = function(topicsPk, viewpointsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getBitmap");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling getBitmap");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getBitmap");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getBitmap");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Bitmap;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/bitmap/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getBitmaps operation.
+     * @callback module:api/BcfApi~getBitmapsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Bitmap>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getBitmapsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Bitmap>}
+     */
+    this.getBitmaps = function(topicsPk, viewpointsPk, projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getBitmaps");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling getBitmaps");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getBitmaps");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [Bitmap];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/bitmap', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getColoring operation.
+     * @callback module:api/BcfApi~getColoringCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Coloring} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getColoringCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Coloring}
+     */
+    this.getColoring = function(topicsPk, viewpointsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getColoring");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling getColoring");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getColoring");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getColoring");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Coloring;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getColorings operation.
+     * @callback module:api/BcfApi~getColoringsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Coloring>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getColoringsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Coloring>}
+     */
+    this.getColorings = function(topicsPk, viewpointsPk, projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getColorings");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling getColorings");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getColorings");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [Coloring];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getComment operation.
+     * @callback module:api/BcfApi~getCommentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Comment} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getCommentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Comment}
+     */
+    this.getComment = function(topicsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getComment");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getComment");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getComment");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Comment;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getCommentEvent operation.
+     * @callback module:api/BcfApi~getCommentEventCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CommentEvent} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getCommentEventCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CommentEvent}
+     */
+    this.getCommentEvent = function(topicsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getCommentEvent");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getCommentEvent");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getCommentEvent");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CommentEvent;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/events/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getCommentEvent_0 operation.
+     * @callback module:api/BcfApi~getCommentEvent_0Callback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CommentEvent} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {String} commentsPk 
+     * @param {module:api/BcfApi~getCommentEvent_0Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CommentEvent}
+     */
+    this.getCommentEvent_0 = function(topicsPk, projectsPk, id, commentsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getCommentEvent_0");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getCommentEvent_0");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getCommentEvent_0");
+      }
+
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling getCommentEvent_0");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id,
+        'comments_pk': commentsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CommentEvent;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{comments_pk}/events/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getCommentEvents operation.
+     * @callback module:api/BcfApi~getCommentEventsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/CommentEvent>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getCommentEventsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CommentEvent>}
+     */
+    this.getCommentEvents = function(topicsPk, projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getCommentEvents");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getCommentEvents");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [CommentEvent];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/events', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getCommentEvents_0 operation.
+     * @callback module:api/BcfApi~getCommentEvents_0Callback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/CommentEvent>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} commentsPk 
+     * @param {module:api/BcfApi~getCommentEvents_0Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CommentEvent>}
+     */
+    this.getCommentEvents_0 = function(topicsPk, projectsPk, commentsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getCommentEvents_0");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getCommentEvents_0");
+      }
+
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling getCommentEvents_0");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'comments_pk': commentsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [CommentEvent];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{comments_pk}/events', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getComments operation.
+     * @callback module:api/BcfApi~getCommentsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Comment>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getCommentsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Comment>}
+     */
+    this.getComments = function(topicsPk, projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getComments");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getComments");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [Comment];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDocumentReference operation.
+     * @callback module:api/BcfApi~getDocumentReferenceCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentReference} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getDocumentReferenceCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentReference}
+     */
+    this.getDocumentReference = function(topicsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getDocumentReference");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getDocumentReference");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getDocumentReference");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = DocumentReference;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/document_references/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDocumentReferences operation.
+     * @callback module:api/BcfApi~getDocumentReferencesCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/DocumentReference>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getDocumentReferencesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/DocumentReference>}
+     */
+    this.getDocumentReferences = function(topicsPk, projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getDocumentReferences");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getDocumentReferences");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [DocumentReference];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/document_references', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getExtensions operation.
+     * @callback module:api/BcfApi~getExtensionsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Extensions>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getExtensionsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Extensions>}
+     */
+    this.getExtensions = function(projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getExtensions");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [Extensions];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extensions', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getFile operation.
+     * @callback module:api/BcfApi~getFileCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BimSnippet} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getFileCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BimSnippet}
+     */
+    this.getFile = function(topicsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getFile");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getFile");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getFile");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = BimSnippet;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/file/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getFiles operation.
+     * @callback module:api/BcfApi~getFilesCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/BimSnippet>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getFilesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/BimSnippet>}
+     */
+    this.getFiles = function(topicsPk, projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getFiles");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getFiles");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [BimSnippet];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/file', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getRelatedTopic operation.
+     * @callback module:api/BcfApi~getRelatedTopicCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/RelatedTopic} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getRelatedTopicCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/RelatedTopic}
+     */
+    this.getRelatedTopic = function(topicsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getRelatedTopic");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getRelatedTopic");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getRelatedTopic");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = RelatedTopic;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/related_topics/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getRelatedTopics operation.
+     * @callback module:api/BcfApi~getRelatedTopicsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/RelatedTopic>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getRelatedTopicsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/RelatedTopic>}
+     */
+    this.getRelatedTopics = function(topicsPk, projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getRelatedTopics");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getRelatedTopics");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [RelatedTopic];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/related_topics', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getSelection operation.
+     * @callback module:api/BcfApi~getSelectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Component} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getSelectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Component}
+     */
+    this.getSelection = function(topicsPk, viewpointsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getSelection");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling getSelection");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getSelection");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getSelection");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Component;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getSelections operation.
+     * @callback module:api/BcfApi~getSelectionsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Component>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getSelectionsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Component>}
+     */
+    this.getSelections = function(topicsPk, viewpointsPk, projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getSelections");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling getSelections");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getSelections");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [Component];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getSnapshots operation.
+     * @callback module:api/BcfApi~getSnapshotsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Snapshot>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getSnapshotsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Snapshot>}
+     */
+    this.getSnapshots = function(topicsPk, viewpointsPk, projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getSnapshots");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling getSnapshots");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getSnapshots");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [Snapshot];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getSnippet operation.
+     * @callback module:api/BcfApi~getSnippetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BimSnippet} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getSnippetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BimSnippet}
+     */
+    this.getSnippet = function(topicsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getSnippet");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getSnippet");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getSnippet");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = BimSnippet;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/snippet/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getSnippets operation.
+     * @callback module:api/BcfApi~getSnippetsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/BimSnippet>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getSnippetsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/BimSnippet>}
+     */
+    this.getSnippets = function(topicsPk, projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getSnippets");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getSnippets");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [BimSnippet];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/snippet', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getTopic operation.
+     * @callback module:api/BcfApi~getTopicCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Topic} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getTopicCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Topic}
+     */
+    this.getTopic = function(projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getTopic");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getTopic");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Topic;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getTopicEvent operation.
+     * @callback module:api/BcfApi~getTopicEventCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TopicEvents} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getTopicEventCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TopicEvents}
+     */
+    this.getTopicEvent = function(topicsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getTopicEvent");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getTopicEvent");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getTopicEvent");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = TopicEvents;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/events/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getTopicEvents operation.
+     * @callback module:api/BcfApi~getTopicEventsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/TopicEvents>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getTopicEventsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/TopicEvents>}
+     */
+    this.getTopicEvents = function(topicsPk, projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getTopicEvents");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getTopicEvents");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [TopicEvents];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/events', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getTopics operation.
+     * @callback module:api/BcfApi~getTopicsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Topic>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getTopicsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Topic>}
+     */
+    this.getTopics = function(projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getTopics");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [Topic];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getVersion operation.
+     * @callback module:api/BcfApi~getVersionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Version} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6707,15 +5065,15 @@
     /**
      * 
      * @param {String} id 
-     * @param {module:api/BcfApi~bcfVersionsReadCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/BcfApi~getVersionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Version}
      */
-    this.bcfVersionsRead = function(id, callback) {
+    this.getVersion = function(id, callback) {
       var postBody = null;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcfVersionsRead");
+        throw new Error("Missing the required parameter 'id' when calling getVersion");
       }
 
 
@@ -6744,8 +5102,1229 @@
     }
 
     /**
-     * Callback function to receive the result of the bcfVersionsUpdate operation.
-     * @callback module:api/BcfApi~bcfVersionsUpdateCallback
+     * Callback function to receive the result of the getVersions operation.
+     * @callback module:api/BcfApi~getVersionsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Version>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {module:api/BcfApi~getVersionsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Version>}
+     */
+    this.getVersions = function(callback) {
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [Version];
+
+      return this.apiClient.callApi(
+        '/bcf/versions', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getViewpoint operation.
+     * @callback module:api/BcfApi~getViewpointCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Viewpoint} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getViewpointCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Viewpoint}
+     */
+    this.getViewpoint = function(topicsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getViewpoint");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getViewpoint");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getViewpoint");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Viewpoint;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getViewpoints operation.
+     * @callback module:api/BcfApi~getViewpointsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Viewpoint>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getViewpointsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Viewpoint>}
+     */
+    this.getViewpoints = function(topicsPk, projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getViewpoints");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getViewpoints");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [Viewpoint];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getVisibilities operation.
+     * @callback module:api/BcfApi~getVisibilitiesCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Visibility>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {module:api/BcfApi~getVisibilitiesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Visibility>}
+     */
+    this.getVisibilities = function(topicsPk, viewpointsPk, projectsPk, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getVisibilities");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling getVisibilities");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getVisibilities");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [Visibility];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getVisibility operation.
+     * @callback module:api/BcfApi~getVisibilityCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Visibility} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:api/BcfApi~getVisibilityCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Visibility}
+     */
+    this.getVisibility = function(topicsPk, viewpointsPk, projectsPk, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getVisibility");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling getVisibility");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getVisibility");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getVisibility");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Visibility;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateBcfDocument operation.
+     * @callback module:api/BcfApi~updateBcfDocumentCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.guid 
+     * @param {String} opts.filename 
+     * @param {module:api/BcfApi~updateBcfDocumentCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateBcfDocument = function(projectsPk, id, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateBcfDocument");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateBcfDocument");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+        'guid': opts['guid'],
+        'filename': opts['filename']
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/documents/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateBcfProject operation.
+     * @callback module:api/BcfApi~updateBcfProjectCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BcfProject} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} id 
+     * @param {module:model/BcfProject} data 
+     * @param {module:api/BcfApi~updateBcfProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BcfProject}
+     */
+    this.updateBcfProject = function(id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateBcfProject");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateBcfProject");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = BcfProject;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateBitmap operation.
+     * @callback module:api/BcfApi~updateBitmapCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Bitmap} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Bitmap} data 
+     * @param {module:api/BcfApi~updateBitmapCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Bitmap}
+     */
+    this.updateBitmap = function(topicsPk, viewpointsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling updateBitmap");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling updateBitmap");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateBitmap");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateBitmap");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateBitmap");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Bitmap;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/bitmap/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateColoring operation.
+     * @callback module:api/BcfApi~updateColoringCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Coloring} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Coloring} data 
+     * @param {module:api/BcfApi~updateColoringCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Coloring}
+     */
+    this.updateColoring = function(topicsPk, viewpointsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling updateColoring");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling updateColoring");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateColoring");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateColoring");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateColoring");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Coloring;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateComment operation.
+     * @callback module:api/BcfApi~updateCommentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Comment} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Comment} data 
+     * @param {module:api/BcfApi~updateCommentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Comment}
+     */
+    this.updateComment = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling updateComment");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateComment");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateComment");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateComment");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Comment;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateCommentEvent operation.
+     * @callback module:api/BcfApi~updateCommentEventCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CommentEvent} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/CommentEvent} data 
+     * @param {module:api/BcfApi~updateCommentEventCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CommentEvent}
+     */
+    this.updateCommentEvent = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling updateCommentEvent");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateCommentEvent");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateCommentEvent");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateCommentEvent");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CommentEvent;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/events/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateCommentEvent_0 operation.
+     * @callback module:api/BcfApi~updateCommentEvent_0Callback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CommentEvent} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {String} commentsPk 
+     * @param {module:model/CommentEvent} data 
+     * @param {module:api/BcfApi~updateCommentEvent_0Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CommentEvent}
+     */
+    this.updateCommentEvent_0 = function(topicsPk, projectsPk, id, commentsPk, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling updateCommentEvent_0");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateCommentEvent_0");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateCommentEvent_0");
+      }
+
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling updateCommentEvent_0");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateCommentEvent_0");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id,
+        'comments_pk': commentsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CommentEvent;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{comments_pk}/events/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateDocumentReference operation.
+     * @callback module:api/BcfApi~updateDocumentReferenceCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentReference} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/DocumentReference} data 
+     * @param {module:api/BcfApi~updateDocumentReferenceCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentReference}
+     */
+    this.updateDocumentReference = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling updateDocumentReference");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateDocumentReference");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateDocumentReference");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateDocumentReference");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = DocumentReference;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/document_references/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateFile operation.
+     * @callback module:api/BcfApi~updateFileCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BimSnippet} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/BimSnippet} data 
+     * @param {module:api/BcfApi~updateFileCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BimSnippet}
+     */
+    this.updateFile = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling updateFile");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateFile");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateFile");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateFile");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = BimSnippet;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/file/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateRelatedTopic operation.
+     * @callback module:api/BcfApi~updateRelatedTopicCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/RelatedTopic} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/RelatedTopic} data 
+     * @param {module:api/BcfApi~updateRelatedTopicCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/RelatedTopic}
+     */
+    this.updateRelatedTopic = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling updateRelatedTopic");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateRelatedTopic");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateRelatedTopic");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateRelatedTopic");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = RelatedTopic;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/related_topics/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateSelection operation.
+     * @callback module:api/BcfApi~updateSelectionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Component} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Component} data 
+     * @param {module:api/BcfApi~updateSelectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Component}
+     */
+    this.updateSelection = function(topicsPk, viewpointsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling updateSelection");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling updateSelection");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateSelection");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateSelection");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateSelection");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Component;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateSnippet operation.
+     * @callback module:api/BcfApi~updateSnippetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BimSnippet} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/BimSnippet} data 
+     * @param {module:api/BcfApi~updateSnippetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BimSnippet}
+     */
+    this.updateSnippet = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling updateSnippet");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateSnippet");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateSnippet");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateSnippet");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = BimSnippet;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/snippet/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateTopic operation.
+     * @callback module:api/BcfApi~updateTopicCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Topic} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Topic} data 
+     * @param {module:api/BcfApi~updateTopicCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Topic}
+     */
+    this.updateTopic = function(projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateTopic");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateTopic");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateTopic");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Topic;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateTopicEvent operation.
+     * @callback module:api/BcfApi~updateTopicEventCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TopicEvents} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/TopicEvents} data 
+     * @param {module:api/BcfApi~updateTopicEventCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TopicEvents}
+     */
+    this.updateTopicEvent = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling updateTopicEvent");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateTopicEvent");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateTopicEvent");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateTopicEvent");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = TopicEvents;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/events/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateVersion operation.
+     * @callback module:api/BcfApi~updateVersionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Version} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6755,20 +6334,20 @@
      * 
      * @param {String} id 
      * @param {module:model/Version} data 
-     * @param {module:api/BcfApi~bcfVersionsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/BcfApi~updateVersionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Version}
      */
-    this.bcfVersionsUpdate = function(id, data, callback) {
+    this.updateVersion = function(id, data, callback) {
       var postBody = data;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling bcfVersionsUpdate");
+        throw new Error("Missing the required parameter 'id' when calling updateVersion");
       }
 
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcfVersionsUpdate");
+        throw new Error("Missing the required parameter 'data' when calling updateVersion");
       }
 
 
@@ -6790,7 +6369,148 @@
       var returnType = Version;
 
       return this.apiClient.callApi(
-        '/bcf/versions/{id}', 'PUT',
+        '/bcf/versions/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateViewpoint operation.
+     * @callback module:api/BcfApi~updateViewpointCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Viewpoint} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Viewpoint} data 
+     * @param {module:api/BcfApi~updateViewpointCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Viewpoint}
+     */
+    this.updateViewpoint = function(topicsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling updateViewpoint");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateViewpoint");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateViewpoint");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateViewpoint");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Viewpoint;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateVisibility operation.
+     * @callback module:api/BcfApi~updateVisibilityCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Visibility} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * @param {String} topicsPk 
+     * @param {String} viewpointsPk 
+     * @param {String} projectsPk 
+     * @param {String} id 
+     * @param {module:model/Visibility} data 
+     * @param {module:api/BcfApi~updateVisibilityCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Visibility}
+     */
+    this.updateVisibility = function(topicsPk, viewpointsPk, projectsPk, id, data, callback) {
+      var postBody = data;
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling updateVisibility");
+      }
+
+      // verify the required parameter 'viewpointsPk' is set
+      if (viewpointsPk === undefined || viewpointsPk === null) {
+        throw new Error("Missing the required parameter 'viewpointsPk' when calling updateVisibility");
+      }
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateVisibility");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateVisibility");
+      }
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateVisibility");
+      }
+
+
+      var pathParams = {
+        'topics_pk': topicsPk,
+        'viewpoints_pk': viewpointsPk,
+        'projects_pk': projectsPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Visibility;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

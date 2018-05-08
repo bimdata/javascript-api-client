@@ -37,7 +37,7 @@
   /**
    * The ZoneSpace model module.
    * @module model/ZoneSpace
-   * @version 1.0.10
+   * @version 1.0.11
    */
 
   /**
@@ -46,21 +46,19 @@
    * @class
    * @param name {String} 
    * @param uuid {String} 
-   * @param ifcId {Number} 
-   * @param zoneId {Number} 
    */
-  var exports = function(name, uuid, ifcId, zoneId) {
+  var exports = function(name, uuid) {
     var _this = this;
 
 
     _this['name'] = name;
 
     _this['uuid'] = uuid;
-    _this['ifc_id'] = ifcId;
 
 
 
-    _this['zone_id'] = zoneId;
+
+
   };
 
   /**

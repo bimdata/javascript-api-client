@@ -37,25 +37,23 @@
   /**
    * The IfcChecker model module.
    * @module model/IfcChecker
-   * @version 1.0.10
+   * @version 1.0.11
    */
 
   /**
    * Constructs a new <code>IfcChecker</code>.
    * @alias module:model/IfcChecker
    * @class
-   * @param ifcId {Number} 
-   * @param checkplanId {Number} 
    */
-  var exports = function(ifcId, checkplanId) {
+  var exports = function() {
     var _this = this;
 
 
 
 
-    _this['ifc_id'] = ifcId;
 
-    _this['checkplan_id'] = checkplanId;
+
+
 
 
 
