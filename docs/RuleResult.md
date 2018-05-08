@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **id** | **Number** |  | [optional] 
 **name** | **String** |  | 
 **rulesetResult** | **Number** |  | 
-**rulesetResultId** | **Number** |  | 
+**rulesetResultId** | **Number** |  | [optional] 
 **components** | [**[RuleComponentResult]**](RuleComponentResult.md) |  | [optional] 
 **rule** | **Number** |  | 
 **ruleId** | **String** |  | [optional] 

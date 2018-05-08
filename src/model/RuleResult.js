@@ -37,7 +37,7 @@
   /**
    * The RuleResult model module.
    * @module model/RuleResult
-   * @version 1.0.11
+   * @version 1.0.12
    */
 
   /**
@@ -46,16 +46,15 @@
    * @class
    * @param name {String} 
    * @param rulesetResult {Number} 
-   * @param rulesetResultId {Number} 
    * @param rule {Number} 
    */
-  var exports = function(name, rulesetResult, rulesetResultId, rule) {
+  var exports = function(name, rulesetResult, rule) {
     var _this = this;
 
 
     _this['name'] = name;
     _this['ruleset_result'] = rulesetResult;
-    _this['ruleset_result_id'] = rulesetResultId;
+
 
     _this['rule'] = rule;
 

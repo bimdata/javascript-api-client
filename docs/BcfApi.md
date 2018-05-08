@@ -221,7 +221,7 @@ null (empty response body)
 
 <a name="bcf21ProjectsTopicsCommentsEventsDelete_0"></a>
 # **bcf21ProjectsTopicsCommentsEventsDelete_0**
-> bcf21ProjectsTopicsCommentsEventsDelete_0(topicsPk, projectsPk, id, commentsPk, )
+> bcf21ProjectsTopicsCommentsEventsDelete_0(topicsPk, projectsPk, commentsPk, id, )
 
 
 
@@ -244,9 +244,9 @@ var topicsPk = "topicsPk_example"; // String |
 
 var projectsPk = "projectsPk_example"; // String | 
 
-var id = "id_example"; // String | 
-
 var commentsPk = "commentsPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -256,7 +256,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.bcf21ProjectsTopicsCommentsEventsDelete_0(topicsPk, projectsPk, id, commentsPk, , callback);
+apiInstance.bcf21ProjectsTopicsCommentsEventsDelete_0(topicsPk, projectsPk, commentsPk, id, , callback);
 ```
 
 ### Parameters
@@ -265,8 +265,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
- **id** | **String**|  | 
  **commentsPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -342,7 +342,7 @@ null (empty response body)
 
 <a name="bcf21ProjectsTopicsViewpointsBitmapDelete"></a>
 # **bcf21ProjectsTopicsViewpointsBitmapDelete**
-> bcf21ProjectsTopicsViewpointsBitmapDelete(topicsPk, viewpointsPk, projectsPk, id, )
+> bcf21ProjectsTopicsViewpointsBitmapDelete(topicsPk, projectsPk, viewpointsPk, id, )
 
 
 
@@ -363,9 +363,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -377,7 +377,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.bcf21ProjectsTopicsViewpointsBitmapDelete(topicsPk, viewpointsPk, projectsPk, id, , callback);
+apiInstance.bcf21ProjectsTopicsViewpointsBitmapDelete(topicsPk, projectsPk, viewpointsPk, id, , callback);
 ```
 
 ### Parameters
@@ -385,8 +385,8 @@ apiInstance.bcf21ProjectsTopicsViewpointsBitmapDelete(topicsPk, viewpointsPk, pr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -404,7 +404,7 @@ null (empty response body)
 
 <a name="bcf21ProjectsTopicsViewpointsColoringDelete"></a>
 # **bcf21ProjectsTopicsViewpointsColoringDelete**
-> bcf21ProjectsTopicsViewpointsColoringDelete(topicsPk, viewpointsPk, projectsPk, id, )
+> bcf21ProjectsTopicsViewpointsColoringDelete(topicsPk, projectsPk, viewpointsPk, id, )
 
 
 
@@ -425,9 +425,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -439,7 +439,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.bcf21ProjectsTopicsViewpointsColoringDelete(topicsPk, viewpointsPk, projectsPk, id, , callback);
+apiInstance.bcf21ProjectsTopicsViewpointsColoringDelete(topicsPk, projectsPk, viewpointsPk, id, , callback);
 ```
 
 ### Parameters
@@ -447,8 +447,8 @@ apiInstance.bcf21ProjectsTopicsViewpointsColoringDelete(topicsPk, viewpointsPk, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -525,7 +525,7 @@ null (empty response body)
 
 <a name="bcf21ProjectsTopicsViewpointsSelectionDelete"></a>
 # **bcf21ProjectsTopicsViewpointsSelectionDelete**
-> bcf21ProjectsTopicsViewpointsSelectionDelete(topicsPk, viewpointsPk, projectsPk, id, )
+> bcf21ProjectsTopicsViewpointsSelectionDelete(topicsPk, projectsPk, viewpointsPk, id, )
 
 
 
@@ -546,9 +546,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -560,7 +560,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.bcf21ProjectsTopicsViewpointsSelectionDelete(topicsPk, viewpointsPk, projectsPk, id, , callback);
+apiInstance.bcf21ProjectsTopicsViewpointsSelectionDelete(topicsPk, projectsPk, viewpointsPk, id, , callback);
 ```
 
 ### Parameters
@@ -568,8 +568,8 @@ apiInstance.bcf21ProjectsTopicsViewpointsSelectionDelete(topicsPk, viewpointsPk,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -587,7 +587,7 @@ null (empty response body)
 
 <a name="bcf21ProjectsTopicsViewpointsVisibilityDelete"></a>
 # **bcf21ProjectsTopicsViewpointsVisibilityDelete**
-> bcf21ProjectsTopicsViewpointsVisibilityDelete(topicsPk, viewpointsPk, projectsPk, id, )
+> bcf21ProjectsTopicsViewpointsVisibilityDelete(topicsPk, projectsPk, viewpointsPk, id, )
 
 
 
@@ -608,9 +608,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -622,7 +622,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.bcf21ProjectsTopicsViewpointsVisibilityDelete(topicsPk, viewpointsPk, projectsPk, id, , callback);
+apiInstance.bcf21ProjectsTopicsViewpointsVisibilityDelete(topicsPk, projectsPk, viewpointsPk, id, , callback);
 ```
 
 ### Parameters
@@ -630,8 +630,8 @@ apiInstance.bcf21ProjectsTopicsViewpointsVisibilityDelete(topicsPk, viewpointsPk
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -814,7 +814,7 @@ Name | Type | Description  | Notes
 
 <a name="createBitmap"></a>
 # **createBitmap**
-> Bitmap createBitmap(topicsPk, viewpointsPk, projectsPk, data)
+> Bitmap createBitmap(topicsPk, projectsPk, viewpointsPk, data)
 
 
 
@@ -835,9 +835,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var data = new bimdata.Bitmap(); // Bitmap | 
 
@@ -849,7 +849,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createBitmap(topicsPk, viewpointsPk, projectsPk, data, callback);
+apiInstance.createBitmap(topicsPk, projectsPk, viewpointsPk, data, callback);
 ```
 
 ### Parameters
@@ -857,8 +857,8 @@ apiInstance.createBitmap(topicsPk, viewpointsPk, projectsPk, data, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **data** | [**Bitmap**](Bitmap.md)|  | 
 
 ### Return type
@@ -876,7 +876,7 @@ Name | Type | Description  | Notes
 
 <a name="createColoring"></a>
 # **createColoring**
-> Coloring createColoring(topicsPk, viewpointsPk, projectsPk, data)
+> Coloring createColoring(topicsPk, projectsPk, viewpointsPk, data)
 
 
 
@@ -897,9 +897,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var data = new bimdata.Coloring(); // Coloring | 
 
@@ -911,7 +911,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createColoring(topicsPk, viewpointsPk, projectsPk, data, callback);
+apiInstance.createColoring(topicsPk, projectsPk, viewpointsPk, data, callback);
 ```
 
 ### Parameters
@@ -919,8 +919,8 @@ apiInstance.createColoring(topicsPk, viewpointsPk, projectsPk, data, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **data** | [**Coloring**](Coloring.md)|  | 
 
 ### Return type
@@ -1295,7 +1295,7 @@ Name | Type | Description  | Notes
 
 <a name="createSelection"></a>
 # **createSelection**
-> Component createSelection(topicsPk, viewpointsPk, projectsPk, data)
+> Component createSelection(topicsPk, projectsPk, viewpointsPk, data)
 
 
 
@@ -1316,9 +1316,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var data = new bimdata.Component(); // Component | 
 
@@ -1330,7 +1330,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createSelection(topicsPk, viewpointsPk, projectsPk, data, callback);
+apiInstance.createSelection(topicsPk, projectsPk, viewpointsPk, data, callback);
 ```
 
 ### Parameters
@@ -1338,8 +1338,8 @@ apiInstance.createSelection(topicsPk, viewpointsPk, projectsPk, data, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **data** | [**Component**](Component.md)|  | 
 
 ### Return type
@@ -1643,7 +1643,7 @@ Name | Type | Description  | Notes
 
 <a name="createVisibility"></a>
 # **createVisibility**
-> Visibility createVisibility(topicsPk, viewpointsPk, projectsPk, data)
+> Visibility createVisibility(topicsPk, projectsPk, viewpointsPk, data)
 
 
 
@@ -1664,9 +1664,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var data = new bimdata.Visibility(); // Visibility | 
 
@@ -1678,7 +1678,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createVisibility(topicsPk, viewpointsPk, projectsPk, data, callback);
+apiInstance.createVisibility(topicsPk, projectsPk, viewpointsPk, data, callback);
 ```
 
 ### Parameters
@@ -1686,8 +1686,8 @@ apiInstance.createVisibility(topicsPk, viewpointsPk, projectsPk, data, callback)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **data** | [**Visibility**](Visibility.md)|  | 
 
 ### Return type
@@ -2283,7 +2283,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateBitmap"></a>
 # **fullUpdateBitmap**
-> Bitmap fullUpdateBitmap(topicsPk, viewpointsPk, projectsPk, id, data)
+> Bitmap fullUpdateBitmap(topicsPk, projectsPk, viewpointsPk, id, data)
 
 
 
@@ -2304,9 +2304,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -2320,7 +2320,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateBitmap(topicsPk, viewpointsPk, projectsPk, id, data, callback);
+apiInstance.fullUpdateBitmap(topicsPk, projectsPk, viewpointsPk, id, data, callback);
 ```
 
 ### Parameters
@@ -2328,8 +2328,8 @@ apiInstance.fullUpdateBitmap(topicsPk, viewpointsPk, projectsPk, id, data, callb
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
  **data** | [**Bitmap**](Bitmap.md)|  | 
 
@@ -2348,7 +2348,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateColoring"></a>
 # **fullUpdateColoring**
-> Coloring fullUpdateColoring(topicsPk, viewpointsPk, projectsPk, id, data)
+> Coloring fullUpdateColoring(topicsPk, projectsPk, viewpointsPk, id, data)
 
 
 
@@ -2369,9 +2369,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -2385,7 +2385,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateColoring(topicsPk, viewpointsPk, projectsPk, id, data, callback);
+apiInstance.fullUpdateColoring(topicsPk, projectsPk, viewpointsPk, id, data, callback);
 ```
 
 ### Parameters
@@ -2393,8 +2393,8 @@ apiInstance.fullUpdateColoring(topicsPk, viewpointsPk, projectsPk, id, data, cal
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
  **data** | [**Coloring**](Coloring.md)|  | 
 
@@ -2537,7 +2537,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateCommentEvent_0"></a>
 # **fullUpdateCommentEvent_0**
-> CommentEvent fullUpdateCommentEvent_0(topicsPk, projectsPk, id, commentsPk, data)
+> CommentEvent fullUpdateCommentEvent_0(topicsPk, projectsPk, commentsPk, id, data)
 
 
 
@@ -2560,9 +2560,9 @@ var topicsPk = "topicsPk_example"; // String |
 
 var projectsPk = "projectsPk_example"; // String | 
 
-var id = "id_example"; // String | 
-
 var commentsPk = "commentsPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 var data = new bimdata.CommentEvent(); // CommentEvent | 
 
@@ -2574,7 +2574,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateCommentEvent_0(topicsPk, projectsPk, id, commentsPk, data, callback);
+apiInstance.fullUpdateCommentEvent_0(topicsPk, projectsPk, commentsPk, id, data, callback);
 ```
 
 ### Parameters
@@ -2583,8 +2583,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
- **id** | **String**|  | 
  **commentsPk** | **String**|  | 
+ **id** | **String**|  | 
  **data** | [**CommentEvent**](CommentEvent.md)|  | 
 
 ### Return type
@@ -2788,7 +2788,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateSelection"></a>
 # **fullUpdateSelection**
-> Component fullUpdateSelection(topicsPk, viewpointsPk, projectsPk, id, data)
+> Component fullUpdateSelection(topicsPk, projectsPk, viewpointsPk, id, data)
 
 
 
@@ -2809,9 +2809,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -2825,7 +2825,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateSelection(topicsPk, viewpointsPk, projectsPk, id, data, callback);
+apiInstance.fullUpdateSelection(topicsPk, projectsPk, viewpointsPk, id, data, callback);
 ```
 
 ### Parameters
@@ -2833,8 +2833,8 @@ apiInstance.fullUpdateSelection(topicsPk, viewpointsPk, projectsPk, id, data, ca
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
  **data** | [**Component**](Component.md)|  | 
 
@@ -3154,7 +3154,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateVisibility"></a>
 # **fullUpdateVisibility**
-> Visibility fullUpdateVisibility(topicsPk, viewpointsPk, projectsPk, id, data)
+> Visibility fullUpdateVisibility(topicsPk, projectsPk, viewpointsPk, id, data)
 
 
 
@@ -3175,9 +3175,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -3191,7 +3191,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateVisibility(topicsPk, viewpointsPk, projectsPk, id, data, callback);
+apiInstance.fullUpdateVisibility(topicsPk, projectsPk, viewpointsPk, id, data, callback);
 ```
 
 ### Parameters
@@ -3199,8 +3199,8 @@ apiInstance.fullUpdateVisibility(topicsPk, viewpointsPk, projectsPk, id, data, c
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
  **data** | [**Visibility**](Visibility.md)|  | 
 
@@ -3534,7 +3534,7 @@ This endpoint does not need any parameter.
 
 <a name="getBitmap"></a>
 # **getBitmap**
-> Bitmap getBitmap(topicsPk, viewpointsPk, projectsPk, id, )
+> Bitmap getBitmap(topicsPk, projectsPk, viewpointsPk, id, )
 
 
 
@@ -3555,9 +3555,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -3569,7 +3569,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getBitmap(topicsPk, viewpointsPk, projectsPk, id, , callback);
+apiInstance.getBitmap(topicsPk, projectsPk, viewpointsPk, id, , callback);
 ```
 
 ### Parameters
@@ -3577,8 +3577,8 @@ apiInstance.getBitmap(topicsPk, viewpointsPk, projectsPk, id, , callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -3596,7 +3596,7 @@ Name | Type | Description  | Notes
 
 <a name="getBitmaps"></a>
 # **getBitmaps**
-> [Bitmap] getBitmaps(topicsPk, viewpointsPk, projectsPk, )
+> [Bitmap] getBitmaps(topicsPk, projectsPk, viewpointsPk, )
 
 
 
@@ -3617,9 +3617,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -3629,7 +3629,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getBitmaps(topicsPk, viewpointsPk, projectsPk, , callback);
+apiInstance.getBitmaps(topicsPk, projectsPk, viewpointsPk, , callback);
 ```
 
 ### Parameters
@@ -3637,8 +3637,8 @@ apiInstance.getBitmaps(topicsPk, viewpointsPk, projectsPk, , callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
 
 ### Return type
 
@@ -3655,7 +3655,7 @@ Name | Type | Description  | Notes
 
 <a name="getColoring"></a>
 # **getColoring**
-> Coloring getColoring(topicsPk, viewpointsPk, projectsPk, id, )
+> Coloring getColoring(topicsPk, projectsPk, viewpointsPk, id, )
 
 
 
@@ -3676,9 +3676,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -3690,7 +3690,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getColoring(topicsPk, viewpointsPk, projectsPk, id, , callback);
+apiInstance.getColoring(topicsPk, projectsPk, viewpointsPk, id, , callback);
 ```
 
 ### Parameters
@@ -3698,8 +3698,8 @@ apiInstance.getColoring(topicsPk, viewpointsPk, projectsPk, id, , callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -3717,7 +3717,7 @@ Name | Type | Description  | Notes
 
 <a name="getColorings"></a>
 # **getColorings**
-> [Coloring] getColorings(topicsPk, viewpointsPk, projectsPk, )
+> [Coloring] getColorings(topicsPk, projectsPk, viewpointsPk, )
 
 
 
@@ -3738,9 +3738,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -3750,7 +3750,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getColorings(topicsPk, viewpointsPk, projectsPk, , callback);
+apiInstance.getColorings(topicsPk, projectsPk, viewpointsPk, , callback);
 ```
 
 ### Parameters
@@ -3758,8 +3758,8 @@ apiInstance.getColorings(topicsPk, viewpointsPk, projectsPk, , callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
 
 ### Return type
 
@@ -3894,7 +3894,7 @@ Name | Type | Description  | Notes
 
 <a name="getCommentEvent_0"></a>
 # **getCommentEvent_0**
-> CommentEvent getCommentEvent_0(topicsPk, projectsPk, id, commentsPk, )
+> CommentEvent getCommentEvent_0(topicsPk, projectsPk, commentsPk, id, )
 
 
 
@@ -3917,9 +3917,9 @@ var topicsPk = "topicsPk_example"; // String |
 
 var projectsPk = "projectsPk_example"; // String | 
 
-var id = "id_example"; // String | 
-
 var commentsPk = "commentsPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -3929,7 +3929,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCommentEvent_0(topicsPk, projectsPk, id, commentsPk, , callback);
+apiInstance.getCommentEvent_0(topicsPk, projectsPk, commentsPk, id, , callback);
 ```
 
 ### Parameters
@@ -3938,8 +3938,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
- **id** | **String**|  | 
  **commentsPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -4525,7 +4525,7 @@ Name | Type | Description  | Notes
 
 <a name="getSelection"></a>
 # **getSelection**
-> Component getSelection(topicsPk, viewpointsPk, projectsPk, id, )
+> Component getSelection(topicsPk, projectsPk, viewpointsPk, id, )
 
 
 
@@ -4546,9 +4546,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -4560,7 +4560,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSelection(topicsPk, viewpointsPk, projectsPk, id, , callback);
+apiInstance.getSelection(topicsPk, projectsPk, viewpointsPk, id, , callback);
 ```
 
 ### Parameters
@@ -4568,8 +4568,8 @@ apiInstance.getSelection(topicsPk, viewpointsPk, projectsPk, id, , callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -4587,7 +4587,7 @@ Name | Type | Description  | Notes
 
 <a name="getSelections"></a>
 # **getSelections**
-> [Component] getSelections(topicsPk, viewpointsPk, projectsPk, )
+> [Component] getSelections(topicsPk, projectsPk, viewpointsPk, )
 
 
 
@@ -4608,9 +4608,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -4620,7 +4620,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSelections(topicsPk, viewpointsPk, projectsPk, , callback);
+apiInstance.getSelections(topicsPk, projectsPk, viewpointsPk, , callback);
 ```
 
 ### Parameters
@@ -4628,8 +4628,8 @@ apiInstance.getSelections(topicsPk, viewpointsPk, projectsPk, , callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
 
 ### Return type
 
@@ -4646,7 +4646,7 @@ Name | Type | Description  | Notes
 
 <a name="getSnapshots"></a>
 # **getSnapshots**
-> [Snapshot] getSnapshots(topicsPk, viewpointsPk, projectsPk)
+> [Snapshot] getSnapshots(topicsPk, projectsPk, viewpointsPk)
 
 
 
@@ -4667,9 +4667,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -4679,7 +4679,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSnapshots(topicsPk, viewpointsPk, projectsPk, callback);
+apiInstance.getSnapshots(topicsPk, projectsPk, viewpointsPk, callback);
 ```
 
 ### Parameters
@@ -4687,8 +4687,8 @@ apiInstance.getSnapshots(topicsPk, viewpointsPk, projectsPk, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
 
 ### Return type
 
@@ -5259,7 +5259,7 @@ Name | Type | Description  | Notes
 
 <a name="getVisibilities"></a>
 # **getVisibilities**
-> [Visibility] getVisibilities(topicsPk, viewpointsPk, projectsPk, )
+> [Visibility] getVisibilities(topicsPk, projectsPk, viewpointsPk, )
 
 
 
@@ -5280,9 +5280,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -5292,7 +5292,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getVisibilities(topicsPk, viewpointsPk, projectsPk, , callback);
+apiInstance.getVisibilities(topicsPk, projectsPk, viewpointsPk, , callback);
 ```
 
 ### Parameters
@@ -5300,8 +5300,8 @@ apiInstance.getVisibilities(topicsPk, viewpointsPk, projectsPk, , callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
 
 ### Return type
 
@@ -5318,7 +5318,7 @@ Name | Type | Description  | Notes
 
 <a name="getVisibility"></a>
 # **getVisibility**
-> Visibility getVisibility(topicsPk, viewpointsPk, projectsPk, id, )
+> Visibility getVisibility(topicsPk, projectsPk, viewpointsPk, id, )
 
 
 
@@ -5339,9 +5339,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -5353,7 +5353,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getVisibility(topicsPk, viewpointsPk, projectsPk, id, , callback);
+apiInstance.getVisibility(topicsPk, projectsPk, viewpointsPk, id, , callback);
 ```
 
 ### Parameters
@@ -5361,8 +5361,8 @@ apiInstance.getVisibility(topicsPk, viewpointsPk, projectsPk, id, , callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -5498,7 +5498,7 @@ Name | Type | Description  | Notes
 
 <a name="updateBitmap"></a>
 # **updateBitmap**
-> Bitmap updateBitmap(topicsPk, viewpointsPk, projectsPk, id, data)
+> Bitmap updateBitmap(topicsPk, projectsPk, viewpointsPk, id, data)
 
 
 
@@ -5519,9 +5519,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -5535,7 +5535,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateBitmap(topicsPk, viewpointsPk, projectsPk, id, data, callback);
+apiInstance.updateBitmap(topicsPk, projectsPk, viewpointsPk, id, data, callback);
 ```
 
 ### Parameters
@@ -5543,8 +5543,8 @@ apiInstance.updateBitmap(topicsPk, viewpointsPk, projectsPk, id, data, callback)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
  **data** | [**Bitmap**](Bitmap.md)|  | 
 
@@ -5563,7 +5563,7 @@ Name | Type | Description  | Notes
 
 <a name="updateColoring"></a>
 # **updateColoring**
-> Coloring updateColoring(topicsPk, viewpointsPk, projectsPk, id, data)
+> Coloring updateColoring(topicsPk, projectsPk, viewpointsPk, id, data)
 
 
 
@@ -5584,9 +5584,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -5600,7 +5600,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateColoring(topicsPk, viewpointsPk, projectsPk, id, data, callback);
+apiInstance.updateColoring(topicsPk, projectsPk, viewpointsPk, id, data, callback);
 ```
 
 ### Parameters
@@ -5608,8 +5608,8 @@ apiInstance.updateColoring(topicsPk, viewpointsPk, projectsPk, id, data, callbac
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
  **data** | [**Coloring**](Coloring.md)|  | 
 
@@ -5752,7 +5752,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCommentEvent_0"></a>
 # **updateCommentEvent_0**
-> CommentEvent updateCommentEvent_0(topicsPk, projectsPk, id, commentsPk, data)
+> CommentEvent updateCommentEvent_0(topicsPk, projectsPk, commentsPk, id, data)
 
 
 
@@ -5775,9 +5775,9 @@ var topicsPk = "topicsPk_example"; // String |
 
 var projectsPk = "projectsPk_example"; // String | 
 
-var id = "id_example"; // String | 
-
 var commentsPk = "commentsPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 var data = new bimdata.CommentEvent(); // CommentEvent | 
 
@@ -5789,7 +5789,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateCommentEvent_0(topicsPk, projectsPk, id, commentsPk, data, callback);
+apiInstance.updateCommentEvent_0(topicsPk, projectsPk, commentsPk, id, data, callback);
 ```
 
 ### Parameters
@@ -5798,8 +5798,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
- **id** | **String**|  | 
  **commentsPk** | **String**|  | 
+ **id** | **String**|  | 
  **data** | [**CommentEvent**](CommentEvent.md)|  | 
 
 ### Return type
@@ -6003,7 +6003,7 @@ Name | Type | Description  | Notes
 
 <a name="updateSelection"></a>
 # **updateSelection**
-> Component updateSelection(topicsPk, viewpointsPk, projectsPk, id, data)
+> Component updateSelection(topicsPk, projectsPk, viewpointsPk, id, data)
 
 
 
@@ -6024,9 +6024,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -6040,7 +6040,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateSelection(topicsPk, viewpointsPk, projectsPk, id, data, callback);
+apiInstance.updateSelection(topicsPk, projectsPk, viewpointsPk, id, data, callback);
 ```
 
 ### Parameters
@@ -6048,8 +6048,8 @@ apiInstance.updateSelection(topicsPk, viewpointsPk, projectsPk, id, data, callba
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
  **data** | [**Component**](Component.md)|  | 
 
@@ -6369,7 +6369,7 @@ Name | Type | Description  | Notes
 
 <a name="updateVisibility"></a>
 # **updateVisibility**
-> Visibility updateVisibility(topicsPk, viewpointsPk, projectsPk, id, data)
+> Visibility updateVisibility(topicsPk, projectsPk, viewpointsPk, id, data)
 
 
 
@@ -6390,9 +6390,9 @@ var apiInstance = new bimdata.BcfApi();
 
 var topicsPk = "topicsPk_example"; // String | 
 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
+
+var viewpointsPk = "viewpointsPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
@@ -6406,7 +6406,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateVisibility(topicsPk, viewpointsPk, projectsPk, id, data, callback);
+apiInstance.updateVisibility(topicsPk, projectsPk, viewpointsPk, id, data, callback);
 ```
 
 ### Parameters
@@ -6414,8 +6414,8 @@ apiInstance.updateVisibility(topicsPk, viewpointsPk, projectsPk, id, data, callb
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
+ **viewpointsPk** | **String**|  | 
  **id** | **String**|  | 
  **data** | [**Visibility**](Visibility.md)|  | 
 

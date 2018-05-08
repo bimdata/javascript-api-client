@@ -37,7 +37,7 @@
   /**
    * The ReferenceLink model module.
    * @module model/ReferenceLink
-   * @version 1.0.11
+   * @version 1.0.12
    */
 
   /**

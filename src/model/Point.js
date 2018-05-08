@@ -37,7 +37,7 @@
   /**
    * The Point model module.
    * @module model/Point
-   * @version 1.0.11
+   * @version 1.0.12
    */
 
   /**

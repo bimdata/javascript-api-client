@@ -37,7 +37,7 @@
   /**
    * The CommentEvent model module.
    * @module model/CommentEvent
-   * @version 1.0.11
+   * @version 1.0.12
    */
 
   /**

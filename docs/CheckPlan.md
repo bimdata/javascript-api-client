@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
-**projectId** | **Number** |  | 
+**projectId** | **Number** |  | [optional] 
 **name** | **String** |  | 
 **description** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 

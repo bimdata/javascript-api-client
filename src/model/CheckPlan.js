@@ -37,21 +37,20 @@
   /**
    * The CheckPlan model module.
    * @module model/CheckPlan
-   * @version 1.0.11
+   * @version 1.0.12
    */
 
   /**
    * Constructs a new <code>CheckPlan</code>.
    * @alias module:model/CheckPlan
    * @class
-   * @param projectId {Number} 
    * @param name {String} 
    */
-  var exports = function(projectId, name) {
+  var exports = function(name) {
     var _this = this;
 
 
-    _this['project_id'] = projectId;
+
     _this['name'] = name;
 
 

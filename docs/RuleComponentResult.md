@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
 **name** | **String** |  | 
-**ruleResultId** | **Number** |  | 
+**ruleResultId** | **Number** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 **results** | **String** |  | [optional] 

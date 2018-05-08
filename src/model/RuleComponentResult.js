@@ -37,7 +37,7 @@
   /**
    * The RuleComponentResult model module.
    * @module model/RuleComponentResult
-   * @version 1.0.11
+   * @version 1.0.12
    */
 
   /**
@@ -45,14 +45,13 @@
    * @alias module:model/RuleComponentResult
    * @class
    * @param name {String} 
-   * @param ruleResultId {Number} 
    */
-  var exports = function(name, ruleResultId) {
+  var exports = function(name) {
     var _this = this;
 
 
     _this['name'] = name;
-    _this['rule_result_id'] = ruleResultId;
+
 
 
 

@@ -37,7 +37,7 @@
   /**
    * The RulesetResult model module.
    * @module model/RulesetResult
-   * @version 1.0.11
+   * @version 1.0.12
    */
 
   /**
@@ -45,15 +45,14 @@
    * @alias module:model/RulesetResult
    * @class
    * @param name {String} 
-   * @param checkPlanResultId {Number} 
    */
-  var exports = function(name, checkPlanResultId) {
+  var exports = function(name) {
     var _this = this;
 
 
     _this['name'] = name;
 
-    _this['check_plan_result_id'] = checkPlanResultId;
+
 
 
 
