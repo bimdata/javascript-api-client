@@ -37,7 +37,7 @@
   /**
    * The Comment model module.
    * @module model/Comment
-   * @version 1.0.9
+   * @version 1.0.10
    */
 
   /**

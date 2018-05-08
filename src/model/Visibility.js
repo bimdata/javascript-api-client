@@ -37,7 +37,7 @@
   /**
    * The Visibility model module.
    * @module model/Visibility
-   * @version 1.0.9
+   * @version 1.0.10
    */
 
   /**
