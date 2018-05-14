@@ -222,7 +222,7 @@ This endpoint does not need any parameter.
 
 <a name="getSelfProjects"></a>
 # **getSelfProjects**
-> [Project] getSelfProjects()
+> [WrappedClass] getSelfProjects()
 
 
 
@@ -256,7 +256,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[Project]**](Project.md)
+[**[WrappedClass]**](WrappedClass.md)
 
 ### Authorization
 

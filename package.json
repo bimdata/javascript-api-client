@@ -1,6 +1,6 @@
 {
   "name": "@bimdata/bimdata-api-client",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "BIMData_API_documentation",
   "license": "MIT",
   "main": "src/index.js",
