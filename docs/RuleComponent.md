@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
-**ruleId** | **Number** |  | [optional] 
 **type** | **String** |  | [optional] 
 **value** | **String** |  | [optional] 
 **operator** | **String** |  | [optional] 

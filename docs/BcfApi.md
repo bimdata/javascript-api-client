@@ -221,7 +221,7 @@ null (empty response body)
 
 <a name="bcf21ProjectsTopicsCommentsEventsDelete_0"></a>
 # **bcf21ProjectsTopicsCommentsEventsDelete_0**
-> bcf21ProjectsTopicsCommentsEventsDelete_0(id, projectsPk, topicsPk, commentsPk, )
+> bcf21ProjectsTopicsCommentsEventsDelete_0(commentsPk, id, projectsPk, topicsPk, )
 
 
 
@@ -240,13 +240,13 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.BcfApi();
 
+var commentsPk = "commentsPk_example"; // String | 
+
 var id = "id_example"; // String | 
 
 var projectsPk = "projectsPk_example"; // String | 
 
 var topicsPk = "topicsPk_example"; // String | 
-
-var commentsPk = "commentsPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -256,17 +256,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.bcf21ProjectsTopicsCommentsEventsDelete_0(id, projectsPk, topicsPk, commentsPk, , callback);
+apiInstance.bcf21ProjectsTopicsCommentsEventsDelete_0(commentsPk, id, projectsPk, topicsPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **commentsPk** | **String**|  | 
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **commentsPk** | **String**|  | 
 
 ### Return type
 
@@ -761,7 +761,7 @@ null (empty response body)
 
 <a name="createBcfProject"></a>
 # **createBcfProject**
-> WrappedClass createBcfProject(data)
+> BcfProject createBcfProject(data)
 
 
 
@@ -780,7 +780,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.BcfApi();
 
-var data = new bimdata.WrappedClass(); // WrappedClass | 
+var data = new bimdata.BcfProject(); // BcfProject | 
 
 
 var callback = function(error, data, response) {
@@ -797,11 +797,11 @@ apiInstance.createBcfProject(data, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**WrappedClass**](WrappedClass.md)|  | 
+ **data** | [**BcfProject**](BcfProject.md)|  | 
 
 ### Return type
 
-[**WrappedClass**](WrappedClass.md)
+[**BcfProject**](BcfProject.md)
 
 ### Authorization
 
@@ -1056,7 +1056,7 @@ Name | Type | Description  | Notes
 
 <a name="createCommentEvent_0"></a>
 # **createCommentEvent_0**
-> CommentEvent createCommentEvent_0(projectsPk, topicsPk, commentsPk, data)
+> CommentEvent createCommentEvent_0(commentsPk, projectsPk, topicsPk, data)
 
 
 
@@ -1075,11 +1075,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.BcfApi();
 
+var commentsPk = "commentsPk_example"; // String | 
+
 var projectsPk = "projectsPk_example"; // String | 
 
 var topicsPk = "topicsPk_example"; // String | 
-
-var commentsPk = "commentsPk_example"; // String | 
 
 var data = new bimdata.CommentEvent(); // CommentEvent | 
 
@@ -1091,16 +1091,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createCommentEvent_0(projectsPk, topicsPk, commentsPk, data, callback);
+apiInstance.createCommentEvent_0(commentsPk, projectsPk, topicsPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **commentsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **commentsPk** | **String**|  | 
  **data** | [**CommentEvent**](CommentEvent.md)|  | 
 
 ### Return type
@@ -1416,7 +1416,7 @@ Name | Type | Description  | Notes
 
 <a name="createTopic"></a>
 # **createTopic**
-> WrappedClass createTopic(projectsPk, data)
+> Topic createTopic(projectsPk, data)
 
 
 
@@ -1437,7 +1437,7 @@ var apiInstance = new bimdata.BcfApi();
 
 var projectsPk = "projectsPk_example"; // String | 
 
-var data = new bimdata.WrappedClass(); // WrappedClass | 
+var data = new bimdata.Topic(); // Topic | 
 
 
 var callback = function(error, data, response) {
@@ -1455,11 +1455,11 @@ apiInstance.createTopic(projectsPk, data, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
- **data** | [**WrappedClass**](WrappedClass.md)|  | 
+ **data** | [**Topic**](Topic.md)|  | 
 
 ### Return type
 
-[**WrappedClass**](WrappedClass.md)
+[**Topic**](Topic.md)
 
 ### Authorization
 
@@ -2227,7 +2227,7 @@ null (empty response body)
 
 <a name="fullUpdateBcfProject"></a>
 # **fullUpdateBcfProject**
-> WrappedClass fullUpdateBcfProject(id, data)
+> BcfProject fullUpdateBcfProject(id, data)
 
 
 
@@ -2248,7 +2248,7 @@ var apiInstance = new bimdata.BcfApi();
 
 var id = "id_example"; // String | 
 
-var data = new bimdata.WrappedClass(); // WrappedClass | 
+var data = new bimdata.BcfProject(); // BcfProject | 
 
 
 var callback = function(error, data, response) {
@@ -2266,11 +2266,11 @@ apiInstance.fullUpdateBcfProject(id, data, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **data** | [**WrappedClass**](WrappedClass.md)|  | 
+ **data** | [**BcfProject**](BcfProject.md)|  | 
 
 ### Return type
 
-[**WrappedClass**](WrappedClass.md)
+[**BcfProject**](BcfProject.md)
 
 ### Authorization
 
@@ -2537,7 +2537,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateCommentEvent_0"></a>
 # **fullUpdateCommentEvent_0**
-> CommentEvent fullUpdateCommentEvent_0(id, projectsPk, topicsPk, commentsPk, data)
+> CommentEvent fullUpdateCommentEvent_0(commentsPk, id, projectsPk, topicsPk, data)
 
 
 
@@ -2556,13 +2556,13 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.BcfApi();
 
+var commentsPk = "commentsPk_example"; // String | 
+
 var id = "id_example"; // String | 
 
 var projectsPk = "projectsPk_example"; // String | 
 
 var topicsPk = "topicsPk_example"; // String | 
-
-var commentsPk = "commentsPk_example"; // String | 
 
 var data = new bimdata.CommentEvent(); // CommentEvent | 
 
@@ -2574,17 +2574,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateCommentEvent_0(id, projectsPk, topicsPk, commentsPk, data, callback);
+apiInstance.fullUpdateCommentEvent_0(commentsPk, id, projectsPk, topicsPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **commentsPk** | **String**|  | 
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **commentsPk** | **String**|  | 
  **data** | [**CommentEvent**](CommentEvent.md)|  | 
 
 ### Return type
@@ -2915,7 +2915,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateTopic"></a>
 # **fullUpdateTopic**
-> WrappedClass fullUpdateTopic(id, projectsPk, data)
+> Topic fullUpdateTopic(id, projectsPk, data)
 
 
 
@@ -2938,7 +2938,7 @@ var id = "id_example"; // String |
 
 var projectsPk = "projectsPk_example"; // String | 
 
-var data = new bimdata.WrappedClass(); // WrappedClass | 
+var data = new bimdata.Topic(); // Topic | 
 
 
 var callback = function(error, data, response) {
@@ -2957,11 +2957,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
- **data** | [**WrappedClass**](WrappedClass.md)|  | 
+ **data** | [**Topic**](Topic.md)|  | 
 
 ### Return type
 
-[**WrappedClass**](WrappedClass.md)
+[**Topic**](Topic.md)
 
 ### Authorization
 
@@ -3434,7 +3434,7 @@ null (empty response body)
 
 <a name="getBcfProject"></a>
 # **getBcfProject**
-> WrappedClass getBcfProject(id, )
+> BcfProject getBcfProject(id, )
 
 
 
@@ -3474,7 +3474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WrappedClass**](WrappedClass.md)
+[**BcfProject**](BcfProject.md)
 
 ### Authorization
 
@@ -3487,7 +3487,7 @@ Name | Type | Description  | Notes
 
 <a name="getBcfProjects"></a>
 # **getBcfProjects**
-> [WrappedClass] getBcfProjects()
+> [BcfProject] getBcfProjects()
 
 
 
@@ -3521,7 +3521,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[WrappedClass]**](WrappedClass.md)
+[**[BcfProject]**](BcfProject.md)
 
 ### Authorization
 
@@ -3894,7 +3894,7 @@ Name | Type | Description  | Notes
 
 <a name="getCommentEvent_0"></a>
 # **getCommentEvent_0**
-> CommentEvent getCommentEvent_0(id, projectsPk, topicsPk, commentsPk, )
+> CommentEvent getCommentEvent_0(commentsPk, id, projectsPk, topicsPk, )
 
 
 
@@ -3913,13 +3913,13 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.BcfApi();
 
+var commentsPk = "commentsPk_example"; // String | 
+
 var id = "id_example"; // String | 
 
 var projectsPk = "projectsPk_example"; // String | 
 
 var topicsPk = "topicsPk_example"; // String | 
-
-var commentsPk = "commentsPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -3929,17 +3929,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCommentEvent_0(id, projectsPk, topicsPk, commentsPk, , callback);
+apiInstance.getCommentEvent_0(commentsPk, id, projectsPk, topicsPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **commentsPk** | **String**|  | 
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **commentsPk** | **String**|  | 
 
 ### Return type
 
@@ -4012,7 +4012,7 @@ Name | Type | Description  | Notes
 
 <a name="getCommentEvents_0"></a>
 # **getCommentEvents_0**
-> [CommentEvent] getCommentEvents_0(projectsPk, topicsPk, commentsPk, )
+> [CommentEvent] getCommentEvents_0(commentsPk, projectsPk, topicsPk, )
 
 
 
@@ -4031,11 +4031,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.BcfApi();
 
+var commentsPk = "commentsPk_example"; // String | 
+
 var projectsPk = "projectsPk_example"; // String | 
 
 var topicsPk = "topicsPk_example"; // String | 
-
-var commentsPk = "commentsPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -4045,16 +4045,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCommentEvents_0(projectsPk, topicsPk, commentsPk, , callback);
+apiInstance.getCommentEvents_0(commentsPk, projectsPk, topicsPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **commentsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **commentsPk** | **String**|  | 
 
 ### Return type
 
@@ -4820,7 +4820,7 @@ Name | Type | Description  | Notes
 
 <a name="getTopic"></a>
 # **getTopic**
-> WrappedClass getTopic(id, projectsPk, )
+> Topic getTopic(id, projectsPk, )
 
 
 
@@ -4863,7 +4863,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WrappedClass**](WrappedClass.md)
+[**Topic**](Topic.md)
 
 ### Authorization
 
@@ -4991,7 +4991,7 @@ Name | Type | Description  | Notes
 
 <a name="getTopics"></a>
 # **getTopics**
-> [WrappedClass] getTopics(projectsPk, )
+> [Topic] getTopics(projectsPk, )
 
 
 
@@ -5031,7 +5031,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[WrappedClass]**](WrappedClass.md)
+[**[Topic]**](Topic.md)
 
 ### Authorization
 
@@ -5442,7 +5442,7 @@ null (empty response body)
 
 <a name="updateBcfProject"></a>
 # **updateBcfProject**
-> WrappedClass updateBcfProject(id, data)
+> BcfProject updateBcfProject(id, data)
 
 
 
@@ -5463,7 +5463,7 @@ var apiInstance = new bimdata.BcfApi();
 
 var id = "id_example"; // String | 
 
-var data = new bimdata.WrappedClass(); // WrappedClass | 
+var data = new bimdata.BcfProject(); // BcfProject | 
 
 
 var callback = function(error, data, response) {
@@ -5481,11 +5481,11 @@ apiInstance.updateBcfProject(id, data, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **data** | [**WrappedClass**](WrappedClass.md)|  | 
+ **data** | [**BcfProject**](BcfProject.md)|  | 
 
 ### Return type
 
-[**WrappedClass**](WrappedClass.md)
+[**BcfProject**](BcfProject.md)
 
 ### Authorization
 
@@ -5752,7 +5752,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCommentEvent_0"></a>
 # **updateCommentEvent_0**
-> CommentEvent updateCommentEvent_0(id, projectsPk, topicsPk, commentsPk, data)
+> CommentEvent updateCommentEvent_0(commentsPk, id, projectsPk, topicsPk, data)
 
 
 
@@ -5771,13 +5771,13 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.BcfApi();
 
+var commentsPk = "commentsPk_example"; // String | 
+
 var id = "id_example"; // String | 
 
 var projectsPk = "projectsPk_example"; // String | 
 
 var topicsPk = "topicsPk_example"; // String | 
-
-var commentsPk = "commentsPk_example"; // String | 
 
 var data = new bimdata.CommentEvent(); // CommentEvent | 
 
@@ -5789,17 +5789,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateCommentEvent_0(id, projectsPk, topicsPk, commentsPk, data, callback);
+apiInstance.updateCommentEvent_0(commentsPk, id, projectsPk, topicsPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **commentsPk** | **String**|  | 
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **commentsPk** | **String**|  | 
  **data** | [**CommentEvent**](CommentEvent.md)|  | 
 
 ### Return type
@@ -6130,7 +6130,7 @@ Name | Type | Description  | Notes
 
 <a name="updateTopic"></a>
 # **updateTopic**
-> WrappedClass updateTopic(id, projectsPk, data)
+> Topic updateTopic(id, projectsPk, data)
 
 
 
@@ -6153,7 +6153,7 @@ var id = "id_example"; // String |
 
 var projectsPk = "projectsPk_example"; // String | 
 
-var data = new bimdata.WrappedClass(); // WrappedClass | 
+var data = new bimdata.Topic(); // Topic | 
 
 
 var callback = function(error, data, response) {
@@ -6172,11 +6172,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
- **data** | [**WrappedClass**](WrappedClass.md)|  | 
+ **data** | [**Topic**](Topic.md)|  | 
 
 ### Return type
 
-[**WrappedClass**](WrappedClass.md)
+[**Topic**](Topic.md)
 
 ### Authorization
 

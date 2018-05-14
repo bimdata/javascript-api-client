@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Notification', 'model/SignupFosUser', 'model/WrappedClass'], factory);
+    define(['ApiClient', 'model/Notification', 'model/Project', 'model/SignupFosUser'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Notification'), require('../model/SignupFosUser'), require('../model/WrappedClass'));
+    module.exports = factory(require('../ApiClient'), require('../model/Notification'), require('../model/Project'), require('../model/SignupFosUser'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.UserApi = factory(root.bimdata.ApiClient, root.bimdata.Notification, root.bimdata.SignupFosUser, root.bimdata.WrappedClass);
+    root.bimdata.UserApi = factory(root.bimdata.ApiClient, root.bimdata.Notification, root.bimdata.Project, root.bimdata.SignupFosUser);
   }
-}(this, function(ApiClient, Notification, SignupFosUser, WrappedClass) {
+}(this, function(ApiClient, Notification, Project, SignupFosUser) {
   'use strict';
 
   /**
    * User service.
    * @module api/UserApi
-   * @version 1.0.13
+   * @version 1.0.14
    */
 
   /**
@@ -231,14 +231,14 @@
      * Callback function to receive the result of the getSelfProjects operation.
      * @callback module:api/UserApi~getSelfProjectsCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/WrappedClass>} data The data returned by the service call.
+     * @param {Array.<module:model/Project>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
      * @param {module:api/UserApi~getSelfProjectsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/WrappedClass>}
+     * data is of type: {@link Array.<module:model/Project>}
      */
     this.getSelfProjects = function(callback) {
       var postBody = null;
@@ -258,7 +258,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [WrappedClass];
+      var returnType = [Project];
 
       return this.apiClient.callApi(
         '/user/projects', 'GET',

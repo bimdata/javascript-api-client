@@ -22,6 +22,6 @@ Name | Type | Description | Notes
 **dueDate** | **Date** |  | [optional] 
 **autorizationTopicActions** | [**[TopicAction]**](TopicAction.md) |  | [optional] 
 **autorizationTopicStatus** | [**[TopicStatus]**](TopicStatus.md) |  | [optional] 
-**bcfProjectId** | **Number** |  | [optional] 
+**bcfProjectId** | **String** |  | [optional] 
 
 

@@ -37,7 +37,7 @@
   /**
    * The TopicStatus model module.
    * @module model/TopicStatus
-   * @version 1.0.13
+   * @version 1.0.14
    */
 
   /**

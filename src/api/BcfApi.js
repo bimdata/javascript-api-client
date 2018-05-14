@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BimSnippet', 'model/Bitmap', 'model/Coloring', 'model/Comment', 'model/CommentEvent', 'model/Component', 'model/DocumentReference', 'model/Extensions', 'model/RelatedTopic', 'model/SelfUser', 'model/Snapshot', 'model/TopicEvents', 'model/Version', 'model/Viewpoint', 'model/Visibility', 'model/WrappedClass'], factory);
+    define(['ApiClient', 'model/BcfProject', 'model/BimSnippet', 'model/Bitmap', 'model/Coloring', 'model/Comment', 'model/CommentEvent', 'model/Component', 'model/DocumentReference', 'model/Extensions', 'model/RelatedTopic', 'model/SelfUser', 'model/Snapshot', 'model/Topic', 'model/TopicEvents', 'model/Version', 'model/Viewpoint', 'model/Visibility'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/BimSnippet'), require('../model/Bitmap'), require('../model/Coloring'), require('../model/Comment'), require('../model/CommentEvent'), require('../model/Component'), require('../model/DocumentReference'), require('../model/Extensions'), require('../model/RelatedTopic'), require('../model/SelfUser'), require('../model/Snapshot'), require('../model/TopicEvents'), require('../model/Version'), require('../model/Viewpoint'), require('../model/Visibility'), require('../model/WrappedClass'));
+    module.exports = factory(require('../ApiClient'), require('../model/BcfProject'), require('../model/BimSnippet'), require('../model/Bitmap'), require('../model/Coloring'), require('../model/Comment'), require('../model/CommentEvent'), require('../model/Component'), require('../model/DocumentReference'), require('../model/Extensions'), require('../model/RelatedTopic'), require('../model/SelfUser'), require('../model/Snapshot'), require('../model/Topic'), require('../model/TopicEvents'), require('../model/Version'), require('../model/Viewpoint'), require('../model/Visibility'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.BcfApi = factory(root.bimdata.ApiClient, root.bimdata.BimSnippet, root.bimdata.Bitmap, root.bimdata.Coloring, root.bimdata.Comment, root.bimdata.CommentEvent, root.bimdata.Component, root.bimdata.DocumentReference, root.bimdata.Extensions, root.bimdata.RelatedTopic, root.bimdata.SelfUser, root.bimdata.Snapshot, root.bimdata.TopicEvents, root.bimdata.Version, root.bimdata.Viewpoint, root.bimdata.Visibility, root.bimdata.WrappedClass);
+    root.bimdata.BcfApi = factory(root.bimdata.ApiClient, root.bimdata.BcfProject, root.bimdata.BimSnippet, root.bimdata.Bitmap, root.bimdata.Coloring, root.bimdata.Comment, root.bimdata.CommentEvent, root.bimdata.Component, root.bimdata.DocumentReference, root.bimdata.Extensions, root.bimdata.RelatedTopic, root.bimdata.SelfUser, root.bimdata.Snapshot, root.bimdata.Topic, root.bimdata.TopicEvents, root.bimdata.Version, root.bimdata.Viewpoint, root.bimdata.Visibility);
   }
-}(this, function(ApiClient, BimSnippet, Bitmap, Coloring, Comment, CommentEvent, Component, DocumentReference, Extensions, RelatedTopic, SelfUser, Snapshot, TopicEvents, Version, Viewpoint, Visibility, WrappedClass) {
+}(this, function(ApiClient, BcfProject, BimSnippet, Bitmap, Coloring, Comment, CommentEvent, Component, DocumentReference, Extensions, RelatedTopic, SelfUser, Snapshot, Topic, TopicEvents, Version, Viewpoint, Visibility) {
   'use strict';
 
   /**
    * Bcf service.
    * @module api/BcfApi
-   * @version 1.0.13
+   * @version 1.0.14
    */
 
   /**
@@ -158,14 +158,19 @@
 
     /**
      * 
+     * @param {String} commentsPk 
      * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} commentsPk 
      * @param {module:api/BcfApi~bcf21ProjectsTopicsCommentsEventsDelete_0Callback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.bcf21ProjectsTopicsCommentsEventsDelete_0 = function(id, projectsPk, topicsPk, commentsPk, callback) {
+    this.bcf21ProjectsTopicsCommentsEventsDelete_0 = function(commentsPk, id, projectsPk, topicsPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsDelete_0");
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -182,17 +187,12 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsCommentsEventsDelete_0");
       }
 
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling bcf21ProjectsTopicsCommentsEventsDelete_0");
-      }
-
 
       var pathParams = {
+        'comments_pk': commentsPk,
         'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'comments_pk': commentsPk
+        'topics_pk': topicsPk
       };
       var queryParams = {
       };
@@ -705,15 +705,15 @@
      * Callback function to receive the result of the createBcfProject operation.
      * @callback module:api/BcfApi~createBcfProjectCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/BcfProject} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {module:model/WrappedClass} data 
+     * @param {module:model/BcfProject} data 
      * @param {module:api/BcfApi~createBcfProjectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/BcfProject}
      */
     this.createBcfProject = function(data, callback) {
       var postBody = data;
@@ -738,7 +738,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = BcfProject;
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects', 'POST',
@@ -1011,15 +1011,20 @@
 
     /**
      * 
+     * @param {String} commentsPk 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} commentsPk 
      * @param {module:model/CommentEvent} data 
      * @param {module:api/BcfApi~createCommentEvent_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommentEvent}
      */
-    this.createCommentEvent_0 = function(projectsPk, topicsPk, commentsPk, data, callback) {
+    this.createCommentEvent_0 = function(commentsPk, projectsPk, topicsPk, data, callback) {
       var postBody = data;
+
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling createCommentEvent_0");
+      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1031,11 +1036,6 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling createCommentEvent_0");
       }
 
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling createCommentEvent_0");
-      }
-
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling createCommentEvent_0");
@@ -1043,9 +1043,9 @@
 
 
       var pathParams = {
+        'comments_pk': commentsPk,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'comments_pk': commentsPk
+        'topics_pk': topicsPk
       };
       var queryParams = {
       };
@@ -1379,16 +1379,16 @@
      * Callback function to receive the result of the createTopic operation.
      * @callback module:api/BcfApi~createTopicCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/Topic} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
      * @param {String} projectsPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {module:model/Topic} data 
      * @param {module:api/BcfApi~createTopicCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/Topic}
      */
     this.createTopic = function(projectsPk, data, callback) {
       var postBody = data;
@@ -1419,7 +1419,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = Topic;
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/topics', 'POST',
@@ -2176,16 +2176,16 @@
      * Callback function to receive the result of the fullUpdateBcfProject operation.
      * @callback module:api/BcfApi~fullUpdateBcfProjectCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/BcfProject} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
      * @param {String} id 
-     * @param {module:model/WrappedClass} data 
+     * @param {module:model/BcfProject} data 
      * @param {module:api/BcfApi~fullUpdateBcfProjectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/BcfProject}
      */
     this.fullUpdateBcfProject = function(id, data, callback) {
       var postBody = data;
@@ -2216,7 +2216,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = BcfProject;
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{id}', 'PUT',
@@ -2517,16 +2517,21 @@
 
     /**
      * 
+     * @param {String} commentsPk 
      * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} commentsPk 
      * @param {module:model/CommentEvent} data 
      * @param {module:api/BcfApi~fullUpdateCommentEvent_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommentEvent}
      */
-    this.fullUpdateCommentEvent_0 = function(id, projectsPk, topicsPk, commentsPk, data, callback) {
+    this.fullUpdateCommentEvent_0 = function(commentsPk, id, projectsPk, topicsPk, data, callback) {
       var postBody = data;
+
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling fullUpdateCommentEvent_0");
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -2543,11 +2548,6 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateCommentEvent_0");
       }
 
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling fullUpdateCommentEvent_0");
-      }
-
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling fullUpdateCommentEvent_0");
@@ -2555,10 +2555,10 @@
 
 
       var pathParams = {
+        'comments_pk': commentsPk,
         'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'comments_pk': commentsPk
+        'topics_pk': topicsPk
       };
       var queryParams = {
       };
@@ -2927,7 +2927,7 @@
      * Callback function to receive the result of the fullUpdateTopic operation.
      * @callback module:api/BcfApi~fullUpdateTopicCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/Topic} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -2935,9 +2935,9 @@
      * 
      * @param {String} id 
      * @param {String} projectsPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {module:model/Topic} data 
      * @param {module:api/BcfApi~fullUpdateTopicCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/Topic}
      */
     this.fullUpdateTopic = function(id, projectsPk, data, callback) {
       var postBody = data;
@@ -2974,7 +2974,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = Topic;
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/topics/{id}', 'PUT',
@@ -3441,7 +3441,7 @@
      * Callback function to receive the result of the getBcfProject operation.
      * @callback module:api/BcfApi~getBcfProjectCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/BcfProject} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -3449,7 +3449,7 @@
      * 
      * @param {String} id 
      * @param {module:api/BcfApi~getBcfProjectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/BcfProject}
      */
     this.getBcfProject = function(id, callback) {
       var postBody = null;
@@ -3475,7 +3475,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = BcfProject;
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{id}', 'GET',
@@ -3488,14 +3488,14 @@
      * Callback function to receive the result of the getBcfProjects operation.
      * @callback module:api/BcfApi~getBcfProjectsCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/WrappedClass>} data The data returned by the service call.
+     * @param {Array.<module:model/BcfProject>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
      * @param {module:api/BcfApi~getBcfProjectsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/WrappedClass>}
+     * data is of type: {@link Array.<module:model/BcfProject>}
      */
     this.getBcfProjects = function(callback) {
       var postBody = null;
@@ -3515,7 +3515,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [WrappedClass];
+      var returnType = [BcfProject];
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects', 'GET',
@@ -3914,15 +3914,20 @@
 
     /**
      * 
+     * @param {String} commentsPk 
      * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} commentsPk 
      * @param {module:api/BcfApi~getCommentEvent_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommentEvent}
      */
-    this.getCommentEvent_0 = function(id, projectsPk, topicsPk, commentsPk, callback) {
+    this.getCommentEvent_0 = function(commentsPk, id, projectsPk, topicsPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling getCommentEvent_0");
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -3939,17 +3944,12 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling getCommentEvent_0");
       }
 
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling getCommentEvent_0");
-      }
-
 
       var pathParams = {
+        'comments_pk': commentsPk,
         'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'comments_pk': commentsPk
+        'topics_pk': topicsPk
       };
       var queryParams = {
       };
@@ -4036,14 +4036,19 @@
 
     /**
      * 
+     * @param {String} commentsPk 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} commentsPk 
      * @param {module:api/BcfApi~getCommentEvents_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/CommentEvent>}
      */
-    this.getCommentEvents_0 = function(projectsPk, topicsPk, commentsPk, callback) {
+    this.getCommentEvents_0 = function(commentsPk, projectsPk, topicsPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling getCommentEvents_0");
+      }
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -4055,16 +4060,11 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling getCommentEvents_0");
       }
 
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling getCommentEvents_0");
-      }
-
 
       var pathParams = {
+        'comments_pk': commentsPk,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'comments_pk': commentsPk
+        'topics_pk': topicsPk
       };
       var queryParams = {
       };
@@ -4842,7 +4842,7 @@
      * Callback function to receive the result of the getTopic operation.
      * @callback module:api/BcfApi~getTopicCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/Topic} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -4851,7 +4851,7 @@
      * @param {String} id 
      * @param {String} projectsPk 
      * @param {module:api/BcfApi~getTopicCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/Topic}
      */
     this.getTopic = function(id, projectsPk, callback) {
       var postBody = null;
@@ -4883,7 +4883,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = Topic;
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/topics/{id}', 'GET',
@@ -5011,7 +5011,7 @@
      * Callback function to receive the result of the getTopics operation.
      * @callback module:api/BcfApi~getTopicsCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/WrappedClass>} data The data returned by the service call.
+     * @param {Array.<module:model/Topic>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -5019,7 +5019,7 @@
      * 
      * @param {String} projectsPk 
      * @param {module:api/BcfApi~getTopicsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/WrappedClass>}
+     * data is of type: {@link Array.<module:model/Topic>}
      */
     this.getTopics = function(projectsPk, callback) {
       var postBody = null;
@@ -5045,7 +5045,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [WrappedClass];
+      var returnType = [Topic];
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/topics', 'GET',
@@ -5448,16 +5448,16 @@
      * Callback function to receive the result of the updateBcfProject operation.
      * @callback module:api/BcfApi~updateBcfProjectCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/BcfProject} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
      * @param {String} id 
-     * @param {module:model/WrappedClass} data 
+     * @param {module:model/BcfProject} data 
      * @param {module:api/BcfApi~updateBcfProjectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/BcfProject}
      */
     this.updateBcfProject = function(id, data, callback) {
       var postBody = data;
@@ -5488,7 +5488,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = BcfProject;
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{id}', 'PATCH',
@@ -5789,16 +5789,21 @@
 
     /**
      * 
+     * @param {String} commentsPk 
      * @param {String} id 
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} commentsPk 
      * @param {module:model/CommentEvent} data 
      * @param {module:api/BcfApi~updateCommentEvent_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommentEvent}
      */
-    this.updateCommentEvent_0 = function(id, projectsPk, topicsPk, commentsPk, data, callback) {
+    this.updateCommentEvent_0 = function(commentsPk, id, projectsPk, topicsPk, data, callback) {
       var postBody = data;
+
+      // verify the required parameter 'commentsPk' is set
+      if (commentsPk === undefined || commentsPk === null) {
+        throw new Error("Missing the required parameter 'commentsPk' when calling updateCommentEvent_0");
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -5815,11 +5820,6 @@
         throw new Error("Missing the required parameter 'topicsPk' when calling updateCommentEvent_0");
       }
 
-      // verify the required parameter 'commentsPk' is set
-      if (commentsPk === undefined || commentsPk === null) {
-        throw new Error("Missing the required parameter 'commentsPk' when calling updateCommentEvent_0");
-      }
-
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling updateCommentEvent_0");
@@ -5827,10 +5827,10 @@
 
 
       var pathParams = {
+        'comments_pk': commentsPk,
         'id': id,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'comments_pk': commentsPk
+        'topics_pk': topicsPk
       };
       var queryParams = {
       };
@@ -6199,7 +6199,7 @@
      * Callback function to receive the result of the updateTopic operation.
      * @callback module:api/BcfApi~updateTopicCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/Topic} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -6207,9 +6207,9 @@
      * 
      * @param {String} id 
      * @param {String} projectsPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {module:model/Topic} data 
      * @param {module:api/BcfApi~updateTopicCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/Topic}
      */
     this.updateTopic = function(id, projectsPk, data, callback) {
       var postBody = data;
@@ -6246,7 +6246,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = Topic;
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/topics/{id}', 'PATCH',

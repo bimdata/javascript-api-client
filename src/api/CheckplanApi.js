@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/WrappedClass'], factory);
+    define(['ApiClient', 'model/CheckPlan', 'model/CheckerResult', 'model/IfcChecker', 'model/Rule', 'model/RuleComponent', 'model/Ruleset'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/WrappedClass'));
+    module.exports = factory(require('../ApiClient'), require('../model/CheckPlan'), require('../model/CheckerResult'), require('../model/IfcChecker'), require('../model/Rule'), require('../model/RuleComponent'), require('../model/Ruleset'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.CheckplanApi = factory(root.bimdata.ApiClient, root.bimdata.WrappedClass);
+    root.bimdata.CheckplanApi = factory(root.bimdata.ApiClient, root.bimdata.CheckPlan, root.bimdata.CheckerResult, root.bimdata.IfcChecker, root.bimdata.Rule, root.bimdata.RuleComponent, root.bimdata.Ruleset);
   }
-}(this, function(ApiClient, WrappedClass) {
+}(this, function(ApiClient, CheckPlan, CheckerResult, IfcChecker, Rule, RuleComponent, Ruleset) {
   'use strict';
 
   /**
    * Checkplan service.
    * @module api/CheckplanApi
-   * @version 1.0.13
+   * @version 1.0.14
    */
 
   /**
@@ -52,26 +52,21 @@
      * Callback function to receive the result of the createChecker operation.
      * @callback module:api/CheckplanApi~createCheckerCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/IfcChecker} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} ifcPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} cloudPk 
+     * @param {module:model/IfcChecker} data 
      * @param {module:api/CheckplanApi~createCheckerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/IfcChecker}
      */
-    this.createChecker = function(cloudPk, projectPk, ifcPk, data, callback) {
+    this.createChecker = function(projectPk, ifcPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createChecker");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -83,6 +78,11 @@
         throw new Error("Missing the required parameter 'ifcPk' when calling createChecker");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createChecker");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling createChecker");
@@ -90,9 +90,9 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'ifc_pk': ifcPk
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -106,7 +106,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = IfcChecker;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker', 'POST',
@@ -119,32 +119,22 @@
      * Callback function to receive the result of the createCheckerResult operation.
      * @callback module:api/CheckplanApi~createCheckerResultCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/CheckerResult} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} checkerPk 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} ifcPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} checkerPk 
+     * @param {String} cloudPk 
+     * @param {module:model/CheckerResult} data 
      * @param {module:api/CheckplanApi~createCheckerResultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/CheckerResult}
      */
-    this.createCheckerResult = function(checkerPk, cloudPk, projectPk, ifcPk, data, callback) {
+    this.createCheckerResult = function(projectPk, ifcPk, checkerPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'checkerPk' is set
-      if (checkerPk === undefined || checkerPk === null) {
-        throw new Error("Missing the required parameter 'checkerPk' when calling createCheckerResult");
-      }
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createCheckerResult");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -156,6 +146,16 @@
         throw new Error("Missing the required parameter 'ifcPk' when calling createCheckerResult");
       }
 
+      // verify the required parameter 'checkerPk' is set
+      if (checkerPk === undefined || checkerPk === null) {
+        throw new Error("Missing the required parameter 'checkerPk' when calling createCheckerResult");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createCheckerResult");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling createCheckerResult");
@@ -163,10 +163,10 @@
 
 
       var pathParams = {
-        'checker_pk': checkerPk,
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'ifc_pk': ifcPk
+        'ifc_pk': ifcPk,
+        'checker_pk': checkerPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -180,7 +180,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = CheckerResult;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result', 'POST',
@@ -193,29 +193,29 @@
      * Callback function to receive the result of the createCheckplan operation.
      * @callback module:api/CheckplanApi~createCheckplanCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/CheckPlan} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} cloudPk 
+     * @param {module:model/CheckPlan} data 
      * @param {module:api/CheckplanApi~createCheckplanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/CheckPlan}
      */
-    this.createCheckplan = function(cloudPk, projectPk, data, callback) {
+    this.createCheckplan = function(projectPk, cloudPk, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createCheckplan");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createCheckplan");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createCheckplan");
       }
 
       // verify the required parameter 'data' is set
@@ -225,8 +225,8 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'project_pk': projectPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -240,7 +240,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = CheckPlan;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan', 'POST',
@@ -253,31 +253,31 @@
      * Callback function to receive the result of the createRule operation.
      * @callback module:api/CheckplanApi~createRuleCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/Rule} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} rulesetPk 
-     * @param {String} checkPlanPk 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} rulesetPk 
+     * @param {String} cloudPk 
+     * @param {String} checkPlanPk 
+     * @param {module:model/Rule} data 
      * @param {module:api/CheckplanApi~createRuleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/Rule}
      */
-    this.createRule = function(rulesetPk, checkPlanPk, cloudPk, projectPk, data, callback) {
+    this.createRule = function(projectPk, rulesetPk, cloudPk, checkPlanPk, data, callback) {
       var postBody = data;
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createRule");
+      }
 
       // verify the required parameter 'rulesetPk' is set
       if (rulesetPk === undefined || rulesetPk === null) {
         throw new Error("Missing the required parameter 'rulesetPk' when calling createRule");
-      }
-
-      // verify the required parameter 'checkPlanPk' is set
-      if (checkPlanPk === undefined || checkPlanPk === null) {
-        throw new Error("Missing the required parameter 'checkPlanPk' when calling createRule");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -285,9 +285,9 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling createRule");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createRule");
+      // verify the required parameter 'checkPlanPk' is set
+      if (checkPlanPk === undefined || checkPlanPk === null) {
+        throw new Error("Missing the required parameter 'checkPlanPk' when calling createRule");
       }
 
       // verify the required parameter 'data' is set
@@ -297,10 +297,10 @@
 
 
       var pathParams = {
+        'project_pk': projectPk,
         'ruleset_pk': rulesetPk,
-        'check_plan_pk': checkPlanPk,
         'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'check_plan_pk': checkPlanPk
       };
       var queryParams = {
       };
@@ -314,7 +314,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = Rule;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule', 'POST',
@@ -327,32 +327,27 @@
      * Callback function to receive the result of the createRuleComponent operation.
      * @callback module:api/CheckplanApi~createRuleComponentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/RuleComponent} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} rulesetPk 
-     * @param {String} checkPlanPk 
      * @param {String} projectPk 
+     * @param {String} checkPlanPk 
+     * @param {String} rulesetPk 
      * @param {String} rulePk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} cloudPk 
+     * @param {module:model/RuleComponent} data 
      * @param {module:api/CheckplanApi~createRuleComponentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/RuleComponent}
      */
-    this.createRuleComponent = function(cloudPk, rulesetPk, checkPlanPk, projectPk, rulePk, data, callback) {
+    this.createRuleComponent = function(projectPk, checkPlanPk, rulesetPk, rulePk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createRuleComponent");
-      }
-
-      // verify the required parameter 'rulesetPk' is set
-      if (rulesetPk === undefined || rulesetPk === null) {
-        throw new Error("Missing the required parameter 'rulesetPk' when calling createRuleComponent");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createRuleComponent");
       }
 
       // verify the required parameter 'checkPlanPk' is set
@@ -360,14 +355,19 @@
         throw new Error("Missing the required parameter 'checkPlanPk' when calling createRuleComponent");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createRuleComponent");
+      // verify the required parameter 'rulesetPk' is set
+      if (rulesetPk === undefined || rulesetPk === null) {
+        throw new Error("Missing the required parameter 'rulesetPk' when calling createRuleComponent");
       }
 
       // verify the required parameter 'rulePk' is set
       if (rulePk === undefined || rulePk === null) {
         throw new Error("Missing the required parameter 'rulePk' when calling createRuleComponent");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createRuleComponent");
       }
 
       // verify the required parameter 'data' is set
@@ -377,11 +377,11 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'ruleset_pk': rulesetPk,
-        'check_plan_pk': checkPlanPk,
         'project_pk': projectPk,
-        'rule_pk': rulePk
+        'check_plan_pk': checkPlanPk,
+        'ruleset_pk': rulesetPk,
+        'rule_pk': rulePk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -395,7 +395,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = RuleComponent;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent', 'POST',
@@ -408,25 +408,25 @@
      * Callback function to receive the result of the createRuleset operation.
      * @callback module:api/CheckplanApi~createRulesetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/Ruleset} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} checkPlanPk 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} cloudPk 
+     * @param {String} checkPlanPk 
+     * @param {module:model/Ruleset} data 
      * @param {module:api/CheckplanApi~createRulesetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/Ruleset}
      */
-    this.createRuleset = function(checkPlanPk, cloudPk, projectPk, data, callback) {
+    this.createRuleset = function(projectPk, cloudPk, checkPlanPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'checkPlanPk' is set
-      if (checkPlanPk === undefined || checkPlanPk === null) {
-        throw new Error("Missing the required parameter 'checkPlanPk' when calling createRuleset");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createRuleset");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -434,9 +434,9 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling createRuleset");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createRuleset");
+      // verify the required parameter 'checkPlanPk' is set
+      if (checkPlanPk === undefined || checkPlanPk === null) {
+        throw new Error("Missing the required parameter 'checkPlanPk' when calling createRuleset");
       }
 
       // verify the required parameter 'data' is set
@@ -446,9 +446,9 @@
 
 
       var pathParams = {
-        'check_plan_pk': checkPlanPk,
+        'project_pk': projectPk,
         'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'check_plan_pk': checkPlanPk
       };
       var queryParams = {
       };
@@ -462,7 +462,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = Ruleset;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset', 'POST',
@@ -481,24 +481,14 @@
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} ifcPk 
+     * @param {String} cloudPk 
+     * @param {String} id 
      * @param {module:api/CheckplanApi~deleteCheckerCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteChecker = function(cloudPk, id, projectPk, ifcPk, callback) {
+    this.deleteChecker = function(projectPk, ifcPk, cloudPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteChecker");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteChecker");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -510,12 +500,22 @@
         throw new Error("Missing the required parameter 'ifcPk' when calling deleteChecker");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteChecker");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteChecker");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
         'project_pk': projectPk,
-        'ifc_pk': ifcPk
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -548,19 +548,19 @@
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} checkerPk 
      * @param {String} projectPk 
+     * @param {String} id 
      * @param {String} ifcPk 
+     * @param {String} checkerPk 
+     * @param {String} cloudPk 
      * @param {module:api/CheckplanApi~deleteCheckerResultCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteCheckerResult = function(cloudPk, id, checkerPk, projectPk, ifcPk, callback) {
+    this.deleteCheckerResult = function(projectPk, id, ifcPk, checkerPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteCheckerResult");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteCheckerResult");
       }
 
       // verify the required parameter 'id' is set
@@ -568,28 +568,28 @@
         throw new Error("Missing the required parameter 'id' when calling deleteCheckerResult");
       }
 
-      // verify the required parameter 'checkerPk' is set
-      if (checkerPk === undefined || checkerPk === null) {
-        throw new Error("Missing the required parameter 'checkerPk' when calling deleteCheckerResult");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteCheckerResult");
-      }
-
       // verify the required parameter 'ifcPk' is set
       if (ifcPk === undefined || ifcPk === null) {
         throw new Error("Missing the required parameter 'ifcPk' when calling deleteCheckerResult");
       }
 
+      // verify the required parameter 'checkerPk' is set
+      if (checkerPk === undefined || checkerPk === null) {
+        throw new Error("Missing the required parameter 'checkerPk' when calling deleteCheckerResult");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteCheckerResult");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'checker_pk': checkerPk,
         'project_pk': projectPk,
-        'ifc_pk': ifcPk
+        'id': id,
+        'ifc_pk': ifcPk,
+        'checker_pk': checkerPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -622,17 +622,17 @@
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
      * @param {String} projectPk 
+     * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/CheckplanApi~deleteCheckplanCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteCheckplan = function(cloudPk, id, projectPk, callback) {
+    this.deleteCheckplan = function(projectPk, id, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteCheckplan");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteCheckplan");
       }
 
       // verify the required parameter 'id' is set
@@ -640,16 +640,16 @@
         throw new Error("Missing the required parameter 'id' when calling deleteCheckplan");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteCheckplan");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteCheckplan");
       }
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
+        'project_pk': projectPk,
         'id': id,
-        'project_pk': projectPk
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -682,29 +682,19 @@
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} rulesetPk 
-     * @param {String} checkPlanPk 
      * @param {String} projectPk 
+     * @param {String} checkPlanPk 
+     * @param {String} rulesetPk 
+     * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/CheckplanApi~deleteRuleCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteRule = function(cloudPk, id, rulesetPk, checkPlanPk, projectPk, callback) {
+    this.deleteRule = function(projectPk, checkPlanPk, rulesetPk, id, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteRule");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteRule");
-      }
-
-      // verify the required parameter 'rulesetPk' is set
-      if (rulesetPk === undefined || rulesetPk === null) {
-        throw new Error("Missing the required parameter 'rulesetPk' when calling deleteRule");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteRule");
       }
 
       // verify the required parameter 'checkPlanPk' is set
@@ -712,18 +702,28 @@
         throw new Error("Missing the required parameter 'checkPlanPk' when calling deleteRule");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteRule");
+      // verify the required parameter 'rulesetPk' is set
+      if (rulesetPk === undefined || rulesetPk === null) {
+        throw new Error("Missing the required parameter 'rulesetPk' when calling deleteRule");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteRule");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteRule");
       }
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ruleset_pk': rulesetPk,
+        'project_pk': projectPk,
         'check_plan_pk': checkPlanPk,
-        'project_pk': projectPk
+        'ruleset_pk': rulesetPk,
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -756,30 +756,20 @@
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} rulesetPk 
-     * @param {String} checkPlanPk 
      * @param {String} projectPk 
+     * @param {String} checkPlanPk 
+     * @param {String} rulesetPk 
+     * @param {String} id 
      * @param {String} rulePk 
+     * @param {String} cloudPk 
      * @param {module:api/CheckplanApi~deleteRuleComponentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteRuleComponent = function(cloudPk, id, rulesetPk, checkPlanPk, projectPk, rulePk, callback) {
+    this.deleteRuleComponent = function(projectPk, checkPlanPk, rulesetPk, id, rulePk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteRuleComponent");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteRuleComponent");
-      }
-
-      // verify the required parameter 'rulesetPk' is set
-      if (rulesetPk === undefined || rulesetPk === null) {
-        throw new Error("Missing the required parameter 'rulesetPk' when calling deleteRuleComponent");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteRuleComponent");
       }
 
       // verify the required parameter 'checkPlanPk' is set
@@ -787,9 +777,14 @@
         throw new Error("Missing the required parameter 'checkPlanPk' when calling deleteRuleComponent");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteRuleComponent");
+      // verify the required parameter 'rulesetPk' is set
+      if (rulesetPk === undefined || rulesetPk === null) {
+        throw new Error("Missing the required parameter 'rulesetPk' when calling deleteRuleComponent");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteRuleComponent");
       }
 
       // verify the required parameter 'rulePk' is set
@@ -797,14 +792,19 @@
         throw new Error("Missing the required parameter 'rulePk' when calling deleteRuleComponent");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteRuleComponent");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ruleset_pk': rulesetPk,
-        'check_plan_pk': checkPlanPk,
         'project_pk': projectPk,
-        'rule_pk': rulePk
+        'check_plan_pk': checkPlanPk,
+        'ruleset_pk': rulesetPk,
+        'id': id,
+        'rule_pk': rulePk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -837,23 +837,18 @@
 
     /**
      * 
-     * @param {String} checkPlanPk 
-     * @param {String} cloudPk 
-     * @param {String} id 
      * @param {String} projectPk 
+     * @param {String} id 
+     * @param {String} cloudPk 
+     * @param {String} checkPlanPk 
      * @param {module:api/CheckplanApi~deleteRulesetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteRuleset = function(checkPlanPk, cloudPk, id, projectPk, callback) {
+    this.deleteRuleset = function(projectPk, id, cloudPk, checkPlanPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'checkPlanPk' is set
-      if (checkPlanPk === undefined || checkPlanPk === null) {
-        throw new Error("Missing the required parameter 'checkPlanPk' when calling deleteRuleset");
-      }
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteRuleset");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteRuleset");
       }
 
       // verify the required parameter 'id' is set
@@ -861,17 +856,22 @@
         throw new Error("Missing the required parameter 'id' when calling deleteRuleset");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteRuleset");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteRuleset");
+      }
+
+      // verify the required parameter 'checkPlanPk' is set
+      if (checkPlanPk === undefined || checkPlanPk === null) {
+        throw new Error("Missing the required parameter 'checkPlanPk' when calling deleteRuleset");
       }
 
 
       var pathParams = {
-        'check_plan_pk': checkPlanPk,
-        'cloud_pk': cloudPk,
+        'project_pk': projectPk,
         'id': id,
-        'project_pk': projectPk
+        'cloud_pk': cloudPk,
+        'check_plan_pk': checkPlanPk
       };
       var queryParams = {
       };
@@ -898,32 +898,22 @@
      * Callback function to receive the result of the fullUpdateChecker operation.
      * @callback module:api/CheckplanApi~fullUpdateCheckerCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/IfcChecker} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} ifcPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/IfcChecker} data 
      * @param {module:api/CheckplanApi~fullUpdateCheckerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/IfcChecker}
      */
-    this.fullUpdateChecker = function(cloudPk, id, projectPk, ifcPk, data, callback) {
+    this.fullUpdateChecker = function(projectPk, ifcPk, cloudPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateChecker");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateChecker");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -935,6 +925,16 @@
         throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateChecker");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateChecker");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateChecker");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling fullUpdateChecker");
@@ -942,10 +942,10 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
         'project_pk': projectPk,
-        'ifc_pk': ifcPk
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -959,7 +959,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = IfcChecker;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}', 'PUT',
@@ -972,27 +972,27 @@
      * Callback function to receive the result of the fullUpdateCheckerResult operation.
      * @callback module:api/CheckplanApi~fullUpdateCheckerResultCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/CheckerResult} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} checkerPk 
      * @param {String} projectPk 
+     * @param {String} id 
      * @param {String} ifcPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} checkerPk 
+     * @param {String} cloudPk 
+     * @param {module:model/CheckerResult} data 
      * @param {module:api/CheckplanApi~fullUpdateCheckerResultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/CheckerResult}
      */
-    this.fullUpdateCheckerResult = function(cloudPk, id, checkerPk, projectPk, ifcPk, data, callback) {
+    this.fullUpdateCheckerResult = function(projectPk, id, ifcPk, checkerPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateCheckerResult");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateCheckerResult");
       }
 
       // verify the required parameter 'id' is set
@@ -1000,19 +1000,19 @@
         throw new Error("Missing the required parameter 'id' when calling fullUpdateCheckerResult");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateCheckerResult");
+      }
+
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
         throw new Error("Missing the required parameter 'checkerPk' when calling fullUpdateCheckerResult");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateCheckerResult");
-      }
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateCheckerResult");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateCheckerResult");
       }
 
       // verify the required parameter 'data' is set
@@ -1022,11 +1022,11 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'checker_pk': checkerPk,
         'project_pk': projectPk,
-        'ifc_pk': ifcPk
+        'id': id,
+        'ifc_pk': ifcPk,
+        'checker_pk': checkerPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1040,7 +1040,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = CheckerResult;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id}', 'PUT',
@@ -1053,25 +1053,25 @@
      * Callback function to receive the result of the fullUpdateCheckplan operation.
      * @callback module:api/CheckplanApi~fullUpdateCheckplanCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/CheckPlan} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} id 
+     * @param {String} cloudPk 
+     * @param {module:model/CheckPlan} data 
      * @param {module:api/CheckplanApi~fullUpdateCheckplanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/CheckPlan}
      */
-    this.fullUpdateCheckplan = function(cloudPk, id, projectPk, data, callback) {
+    this.fullUpdateCheckplan = function(projectPk, id, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateCheckplan");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateCheckplan");
       }
 
       // verify the required parameter 'id' is set
@@ -1079,9 +1079,9 @@
         throw new Error("Missing the required parameter 'id' when calling fullUpdateCheckplan");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateCheckplan");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateCheckplan");
       }
 
       // verify the required parameter 'data' is set
@@ -1091,9 +1091,9 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
+        'project_pk': projectPk,
         'id': id,
-        'project_pk': projectPk
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1107,7 +1107,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = CheckPlan;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{id}', 'PUT',
@@ -1120,37 +1120,27 @@
      * Callback function to receive the result of the fullUpdateRule operation.
      * @callback module:api/CheckplanApi~fullUpdateRuleCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/Rule} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} rulesetPk 
-     * @param {String} checkPlanPk 
      * @param {String} projectPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} checkPlanPk 
+     * @param {String} rulesetPk 
+     * @param {String} id 
+     * @param {String} cloudPk 
+     * @param {module:model/Rule} data 
      * @param {module:api/CheckplanApi~fullUpdateRuleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/Rule}
      */
-    this.fullUpdateRule = function(cloudPk, id, rulesetPk, checkPlanPk, projectPk, data, callback) {
+    this.fullUpdateRule = function(projectPk, checkPlanPk, rulesetPk, id, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateRule");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateRule");
-      }
-
-      // verify the required parameter 'rulesetPk' is set
-      if (rulesetPk === undefined || rulesetPk === null) {
-        throw new Error("Missing the required parameter 'rulesetPk' when calling fullUpdateRule");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateRule");
       }
 
       // verify the required parameter 'checkPlanPk' is set
@@ -1158,9 +1148,19 @@
         throw new Error("Missing the required parameter 'checkPlanPk' when calling fullUpdateRule");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateRule");
+      // verify the required parameter 'rulesetPk' is set
+      if (rulesetPk === undefined || rulesetPk === null) {
+        throw new Error("Missing the required parameter 'rulesetPk' when calling fullUpdateRule");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateRule");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateRule");
       }
 
       // verify the required parameter 'data' is set
@@ -1170,11 +1170,11 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ruleset_pk': rulesetPk,
+        'project_pk': projectPk,
         'check_plan_pk': checkPlanPk,
-        'project_pk': projectPk
+        'ruleset_pk': rulesetPk,
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1188,7 +1188,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = Rule;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id}', 'PUT',
@@ -1201,38 +1201,28 @@
      * Callback function to receive the result of the fullUpdateRuleComponent operation.
      * @callback module:api/CheckplanApi~fullUpdateRuleComponentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/RuleComponent} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} rulesetPk 
-     * @param {String} checkPlanPk 
      * @param {String} projectPk 
+     * @param {String} checkPlanPk 
+     * @param {String} rulesetPk 
+     * @param {String} id 
      * @param {String} rulePk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} cloudPk 
+     * @param {module:model/RuleComponent} data 
      * @param {module:api/CheckplanApi~fullUpdateRuleComponentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/RuleComponent}
      */
-    this.fullUpdateRuleComponent = function(cloudPk, id, rulesetPk, checkPlanPk, projectPk, rulePk, data, callback) {
+    this.fullUpdateRuleComponent = function(projectPk, checkPlanPk, rulesetPk, id, rulePk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateRuleComponent");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateRuleComponent");
-      }
-
-      // verify the required parameter 'rulesetPk' is set
-      if (rulesetPk === undefined || rulesetPk === null) {
-        throw new Error("Missing the required parameter 'rulesetPk' when calling fullUpdateRuleComponent");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateRuleComponent");
       }
 
       // verify the required parameter 'checkPlanPk' is set
@@ -1240,14 +1230,24 @@
         throw new Error("Missing the required parameter 'checkPlanPk' when calling fullUpdateRuleComponent");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateRuleComponent");
+      // verify the required parameter 'rulesetPk' is set
+      if (rulesetPk === undefined || rulesetPk === null) {
+        throw new Error("Missing the required parameter 'rulesetPk' when calling fullUpdateRuleComponent");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateRuleComponent");
       }
 
       // verify the required parameter 'rulePk' is set
       if (rulePk === undefined || rulePk === null) {
         throw new Error("Missing the required parameter 'rulePk' when calling fullUpdateRuleComponent");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateRuleComponent");
       }
 
       // verify the required parameter 'data' is set
@@ -1257,12 +1257,12 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ruleset_pk': rulesetPk,
-        'check_plan_pk': checkPlanPk,
         'project_pk': projectPk,
-        'rule_pk': rulePk
+        'check_plan_pk': checkPlanPk,
+        'ruleset_pk': rulesetPk,
+        'id': id,
+        'rule_pk': rulePk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1276,7 +1276,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = RuleComponent;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id}', 'PUT',
@@ -1289,31 +1289,26 @@
      * Callback function to receive the result of the fullUpdateRuleset operation.
      * @callback module:api/CheckplanApi~fullUpdateRulesetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/Ruleset} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} checkPlanPk 
-     * @param {String} cloudPk 
-     * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} id 
+     * @param {String} cloudPk 
+     * @param {String} checkPlanPk 
+     * @param {module:model/Ruleset} data 
      * @param {module:api/CheckplanApi~fullUpdateRulesetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/Ruleset}
      */
-    this.fullUpdateRuleset = function(checkPlanPk, cloudPk, id, projectPk, data, callback) {
+    this.fullUpdateRuleset = function(projectPk, id, cloudPk, checkPlanPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'checkPlanPk' is set
-      if (checkPlanPk === undefined || checkPlanPk === null) {
-        throw new Error("Missing the required parameter 'checkPlanPk' when calling fullUpdateRuleset");
-      }
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateRuleset");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateRuleset");
       }
 
       // verify the required parameter 'id' is set
@@ -1321,9 +1316,14 @@
         throw new Error("Missing the required parameter 'id' when calling fullUpdateRuleset");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateRuleset");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateRuleset");
+      }
+
+      // verify the required parameter 'checkPlanPk' is set
+      if (checkPlanPk === undefined || checkPlanPk === null) {
+        throw new Error("Missing the required parameter 'checkPlanPk' when calling fullUpdateRuleset");
       }
 
       // verify the required parameter 'data' is set
@@ -1333,10 +1333,10 @@
 
 
       var pathParams = {
-        'check_plan_pk': checkPlanPk,
-        'cloud_pk': cloudPk,
+        'project_pk': projectPk,
         'id': id,
-        'project_pk': projectPk
+        'cloud_pk': cloudPk,
+        'check_plan_pk': checkPlanPk
       };
       var queryParams = {
       };
@@ -1350,7 +1350,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = Ruleset;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id}', 'PUT',
@@ -1363,31 +1363,21 @@
      * Callback function to receive the result of the getChecker operation.
      * @callback module:api/CheckplanApi~getCheckerCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/IfcChecker} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} ifcPk 
+     * @param {String} cloudPk 
+     * @param {String} id 
      * @param {module:api/CheckplanApi~getCheckerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/IfcChecker}
      */
-    this.getChecker = function(cloudPk, id, projectPk, ifcPk, callback) {
+    this.getChecker = function(projectPk, ifcPk, cloudPk, id, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getChecker");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getChecker");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1399,12 +1389,22 @@
         throw new Error("Missing the required parameter 'ifcPk' when calling getChecker");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getChecker");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getChecker");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
         'project_pk': projectPk,
-        'ifc_pk': ifcPk
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -1418,7 +1418,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = IfcChecker;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}', 'GET',
@@ -1431,26 +1431,26 @@
      * Callback function to receive the result of the getCheckerResult operation.
      * @callback module:api/CheckplanApi~getCheckerResultCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/CheckerResult} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} checkerPk 
      * @param {String} projectPk 
+     * @param {String} id 
      * @param {String} ifcPk 
+     * @param {String} checkerPk 
+     * @param {String} cloudPk 
      * @param {module:api/CheckplanApi~getCheckerResultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/CheckerResult}
      */
-    this.getCheckerResult = function(cloudPk, id, checkerPk, projectPk, ifcPk, callback) {
+    this.getCheckerResult = function(projectPk, id, ifcPk, checkerPk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckerResult");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getCheckerResult");
       }
 
       // verify the required parameter 'id' is set
@@ -1458,28 +1458,28 @@
         throw new Error("Missing the required parameter 'id' when calling getCheckerResult");
       }
 
-      // verify the required parameter 'checkerPk' is set
-      if (checkerPk === undefined || checkerPk === null) {
-        throw new Error("Missing the required parameter 'checkerPk' when calling getCheckerResult");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getCheckerResult");
-      }
-
       // verify the required parameter 'ifcPk' is set
       if (ifcPk === undefined || ifcPk === null) {
         throw new Error("Missing the required parameter 'ifcPk' when calling getCheckerResult");
       }
 
+      // verify the required parameter 'checkerPk' is set
+      if (checkerPk === undefined || checkerPk === null) {
+        throw new Error("Missing the required parameter 'checkerPk' when calling getCheckerResult");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckerResult");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'checker_pk': checkerPk,
         'project_pk': projectPk,
-        'ifc_pk': ifcPk
+        'id': id,
+        'ifc_pk': ifcPk,
+        'checker_pk': checkerPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1493,7 +1493,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = CheckerResult;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id}', 'GET',
@@ -1506,31 +1506,21 @@
      * Callback function to receive the result of the getCheckerResults operation.
      * @callback module:api/CheckplanApi~getCheckerResultsCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/WrappedClass>} data The data returned by the service call.
+     * @param {Array.<module:model/CheckerResult>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} checkerPk 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} ifcPk 
+     * @param {String} checkerPk 
+     * @param {String} cloudPk 
      * @param {module:api/CheckplanApi~getCheckerResultsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/WrappedClass>}
+     * data is of type: {@link Array.<module:model/CheckerResult>}
      */
-    this.getCheckerResults = function(checkerPk, cloudPk, projectPk, ifcPk, callback) {
+    this.getCheckerResults = function(projectPk, ifcPk, checkerPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'checkerPk' is set
-      if (checkerPk === undefined || checkerPk === null) {
-        throw new Error("Missing the required parameter 'checkerPk' when calling getCheckerResults");
-      }
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckerResults");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1542,12 +1532,22 @@
         throw new Error("Missing the required parameter 'ifcPk' when calling getCheckerResults");
       }
 
+      // verify the required parameter 'checkerPk' is set
+      if (checkerPk === undefined || checkerPk === null) {
+        throw new Error("Missing the required parameter 'checkerPk' when calling getCheckerResults");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckerResults");
+      }
+
 
       var pathParams = {
-        'checker_pk': checkerPk,
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'ifc_pk': ifcPk
+        'ifc_pk': ifcPk,
+        'checker_pk': checkerPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1561,7 +1561,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [WrappedClass];
+      var returnType = [CheckerResult];
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result', 'GET',
@@ -1574,25 +1574,20 @@
      * Callback function to receive the result of the getCheckers operation.
      * @callback module:api/CheckplanApi~getCheckersCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/WrappedClass>} data The data returned by the service call.
+     * @param {Array.<module:model/IfcChecker>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} ifcPk 
+     * @param {String} cloudPk 
      * @param {module:api/CheckplanApi~getCheckersCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/WrappedClass>}
+     * data is of type: {@link Array.<module:model/IfcChecker>}
      */
-    this.getCheckers = function(cloudPk, projectPk, ifcPk, callback) {
+    this.getCheckers = function(projectPk, ifcPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckers");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1604,11 +1599,16 @@
         throw new Error("Missing the required parameter 'ifcPk' when calling getCheckers");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckers");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
         'project_pk': projectPk,
-        'ifc_pk': ifcPk
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1622,7 +1622,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [WrappedClass];
+      var returnType = [IfcChecker];
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker', 'GET',
@@ -1635,24 +1635,24 @@
      * Callback function to receive the result of the getCheckplan operation.
      * @callback module:api/CheckplanApi~getCheckplanCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/CheckPlan} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
      * @param {String} projectPk 
+     * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/CheckplanApi~getCheckplanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/CheckPlan}
      */
-    this.getCheckplan = function(cloudPk, id, projectPk, callback) {
+    this.getCheckplan = function(projectPk, id, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckplan");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getCheckplan");
       }
 
       // verify the required parameter 'id' is set
@@ -1660,16 +1660,16 @@
         throw new Error("Missing the required parameter 'id' when calling getCheckplan");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getCheckplan");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckplan");
       }
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
+        'project_pk': projectPk,
         'id': id,
-        'project_pk': projectPk
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1683,7 +1683,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = CheckPlan;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{id}', 'GET',
@@ -1696,34 +1696,34 @@
      * Callback function to receive the result of the getCheckplans operation.
      * @callback module:api/CheckplanApi~getCheckplansCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/WrappedClass>} data The data returned by the service call.
+     * @param {Array.<module:model/CheckPlan>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {String} cloudPk 
      * @param {module:api/CheckplanApi~getCheckplansCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/WrappedClass>}
+     * data is of type: {@link Array.<module:model/CheckPlan>}
      */
-    this.getCheckplans = function(cloudPk, projectPk, callback) {
+    this.getCheckplans = function(projectPk, cloudPk, callback) {
       var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckplans");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getCheckplans");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckplans");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'project_pk': projectPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1737,7 +1737,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [WrappedClass];
+      var returnType = [CheckPlan];
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan', 'GET',
@@ -1750,36 +1750,26 @@
      * Callback function to receive the result of the getRule operation.
      * @callback module:api/CheckplanApi~getRuleCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/Rule} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} rulesetPk 
-     * @param {String} checkPlanPk 
      * @param {String} projectPk 
+     * @param {String} checkPlanPk 
+     * @param {String} rulesetPk 
+     * @param {String} id 
+     * @param {String} cloudPk 
      * @param {module:api/CheckplanApi~getRuleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/Rule}
      */
-    this.getRule = function(cloudPk, id, rulesetPk, checkPlanPk, projectPk, callback) {
+    this.getRule = function(projectPk, checkPlanPk, rulesetPk, id, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getRule");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getRule");
-      }
-
-      // verify the required parameter 'rulesetPk' is set
-      if (rulesetPk === undefined || rulesetPk === null) {
-        throw new Error("Missing the required parameter 'rulesetPk' when calling getRule");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getRule");
       }
 
       // verify the required parameter 'checkPlanPk' is set
@@ -1787,18 +1777,28 @@
         throw new Error("Missing the required parameter 'checkPlanPk' when calling getRule");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getRule");
+      // verify the required parameter 'rulesetPk' is set
+      if (rulesetPk === undefined || rulesetPk === null) {
+        throw new Error("Missing the required parameter 'rulesetPk' when calling getRule");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getRule");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getRule");
       }
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ruleset_pk': rulesetPk,
+        'project_pk': projectPk,
         'check_plan_pk': checkPlanPk,
-        'project_pk': projectPk
+        'ruleset_pk': rulesetPk,
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1812,7 +1812,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = Rule;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id}', 'GET',
@@ -1825,37 +1825,27 @@
      * Callback function to receive the result of the getRuleComponent operation.
      * @callback module:api/CheckplanApi~getRuleComponentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/RuleComponent} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} rulesetPk 
-     * @param {String} checkPlanPk 
      * @param {String} projectPk 
+     * @param {String} checkPlanPk 
+     * @param {String} rulesetPk 
+     * @param {String} id 
      * @param {String} rulePk 
+     * @param {String} cloudPk 
      * @param {module:api/CheckplanApi~getRuleComponentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/RuleComponent}
      */
-    this.getRuleComponent = function(cloudPk, id, rulesetPk, checkPlanPk, projectPk, rulePk, callback) {
+    this.getRuleComponent = function(projectPk, checkPlanPk, rulesetPk, id, rulePk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getRuleComponent");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getRuleComponent");
-      }
-
-      // verify the required parameter 'rulesetPk' is set
-      if (rulesetPk === undefined || rulesetPk === null) {
-        throw new Error("Missing the required parameter 'rulesetPk' when calling getRuleComponent");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getRuleComponent");
       }
 
       // verify the required parameter 'checkPlanPk' is set
@@ -1863,9 +1853,14 @@
         throw new Error("Missing the required parameter 'checkPlanPk' when calling getRuleComponent");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getRuleComponent");
+      // verify the required parameter 'rulesetPk' is set
+      if (rulesetPk === undefined || rulesetPk === null) {
+        throw new Error("Missing the required parameter 'rulesetPk' when calling getRuleComponent");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getRuleComponent");
       }
 
       // verify the required parameter 'rulePk' is set
@@ -1873,14 +1868,19 @@
         throw new Error("Missing the required parameter 'rulePk' when calling getRuleComponent");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getRuleComponent");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ruleset_pk': rulesetPk,
-        'check_plan_pk': checkPlanPk,
         'project_pk': projectPk,
-        'rule_pk': rulePk
+        'check_plan_pk': checkPlanPk,
+        'ruleset_pk': rulesetPk,
+        'id': id,
+        'rule_pk': rulePk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1894,7 +1894,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = RuleComponent;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id}', 'GET',
@@ -1907,31 +1907,26 @@
      * Callback function to receive the result of the getRuleComponents operation.
      * @callback module:api/CheckplanApi~getRuleComponentsCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/WrappedClass>} data The data returned by the service call.
+     * @param {Array.<module:model/RuleComponent>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} rulesetPk 
-     * @param {String} checkPlanPk 
      * @param {String} projectPk 
+     * @param {String} checkPlanPk 
+     * @param {String} rulesetPk 
      * @param {String} rulePk 
+     * @param {String} cloudPk 
      * @param {module:api/CheckplanApi~getRuleComponentsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/WrappedClass>}
+     * data is of type: {@link Array.<module:model/RuleComponent>}
      */
-    this.getRuleComponents = function(cloudPk, rulesetPk, checkPlanPk, projectPk, rulePk, callback) {
+    this.getRuleComponents = function(projectPk, checkPlanPk, rulesetPk, rulePk, cloudPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getRuleComponents");
-      }
-
-      // verify the required parameter 'rulesetPk' is set
-      if (rulesetPk === undefined || rulesetPk === null) {
-        throw new Error("Missing the required parameter 'rulesetPk' when calling getRuleComponents");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getRuleComponents");
       }
 
       // verify the required parameter 'checkPlanPk' is set
@@ -1939,9 +1934,9 @@
         throw new Error("Missing the required parameter 'checkPlanPk' when calling getRuleComponents");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getRuleComponents");
+      // verify the required parameter 'rulesetPk' is set
+      if (rulesetPk === undefined || rulesetPk === null) {
+        throw new Error("Missing the required parameter 'rulesetPk' when calling getRuleComponents");
       }
 
       // verify the required parameter 'rulePk' is set
@@ -1949,13 +1944,18 @@
         throw new Error("Missing the required parameter 'rulePk' when calling getRuleComponents");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getRuleComponents");
+      }
+
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'ruleset_pk': rulesetPk,
-        'check_plan_pk': checkPlanPk,
         'project_pk': projectPk,
-        'rule_pk': rulePk
+        'check_plan_pk': checkPlanPk,
+        'ruleset_pk': rulesetPk,
+        'rule_pk': rulePk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -1969,7 +1969,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [WrappedClass];
+      var returnType = [RuleComponent];
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent', 'GET',
@@ -1982,30 +1982,30 @@
      * Callback function to receive the result of the getRules operation.
      * @callback module:api/CheckplanApi~getRulesCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/WrappedClass>} data The data returned by the service call.
+     * @param {Array.<module:model/Rule>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} rulesetPk 
-     * @param {String} checkPlanPk 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {String} rulesetPk 
+     * @param {String} cloudPk 
+     * @param {String} checkPlanPk 
      * @param {module:api/CheckplanApi~getRulesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/WrappedClass>}
+     * data is of type: {@link Array.<module:model/Rule>}
      */
-    this.getRules = function(rulesetPk, checkPlanPk, cloudPk, projectPk, callback) {
+    this.getRules = function(projectPk, rulesetPk, cloudPk, checkPlanPk, callback) {
       var postBody = null;
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getRules");
+      }
 
       // verify the required parameter 'rulesetPk' is set
       if (rulesetPk === undefined || rulesetPk === null) {
         throw new Error("Missing the required parameter 'rulesetPk' when calling getRules");
-      }
-
-      // verify the required parameter 'checkPlanPk' is set
-      if (checkPlanPk === undefined || checkPlanPk === null) {
-        throw new Error("Missing the required parameter 'checkPlanPk' when calling getRules");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -2013,17 +2013,17 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling getRules");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getRules");
+      // verify the required parameter 'checkPlanPk' is set
+      if (checkPlanPk === undefined || checkPlanPk === null) {
+        throw new Error("Missing the required parameter 'checkPlanPk' when calling getRules");
       }
 
 
       var pathParams = {
+        'project_pk': projectPk,
         'ruleset_pk': rulesetPk,
-        'check_plan_pk': checkPlanPk,
         'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'check_plan_pk': checkPlanPk
       };
       var queryParams = {
       };
@@ -2037,7 +2037,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [WrappedClass];
+      var returnType = [Rule];
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule', 'GET',
@@ -2050,30 +2050,25 @@
      * Callback function to receive the result of the getRuleset operation.
      * @callback module:api/CheckplanApi~getRulesetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/Ruleset} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} checkPlanPk 
-     * @param {String} cloudPk 
-     * @param {String} id 
      * @param {String} projectPk 
+     * @param {String} id 
+     * @param {String} cloudPk 
+     * @param {String} checkPlanPk 
      * @param {module:api/CheckplanApi~getRulesetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/Ruleset}
      */
-    this.getRuleset = function(checkPlanPk, cloudPk, id, projectPk, callback) {
+    this.getRuleset = function(projectPk, id, cloudPk, checkPlanPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'checkPlanPk' is set
-      if (checkPlanPk === undefined || checkPlanPk === null) {
-        throw new Error("Missing the required parameter 'checkPlanPk' when calling getRuleset");
-      }
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getRuleset");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getRuleset");
       }
 
       // verify the required parameter 'id' is set
@@ -2081,17 +2076,22 @@
         throw new Error("Missing the required parameter 'id' when calling getRuleset");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getRuleset");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getRuleset");
+      }
+
+      // verify the required parameter 'checkPlanPk' is set
+      if (checkPlanPk === undefined || checkPlanPk === null) {
+        throw new Error("Missing the required parameter 'checkPlanPk' when calling getRuleset");
       }
 
 
       var pathParams = {
-        'check_plan_pk': checkPlanPk,
-        'cloud_pk': cloudPk,
+        'project_pk': projectPk,
         'id': id,
-        'project_pk': projectPk
+        'cloud_pk': cloudPk,
+        'check_plan_pk': checkPlanPk
       };
       var queryParams = {
       };
@@ -2105,7 +2105,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = Ruleset;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id}', 'GET',
@@ -2118,24 +2118,24 @@
      * Callback function to receive the result of the getRulesets operation.
      * @callback module:api/CheckplanApi~getRulesetsCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/WrappedClass>} data The data returned by the service call.
+     * @param {Array.<module:model/Ruleset>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} checkPlanPk 
-     * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {String} cloudPk 
+     * @param {String} checkPlanPk 
      * @param {module:api/CheckplanApi~getRulesetsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/WrappedClass>}
+     * data is of type: {@link Array.<module:model/Ruleset>}
      */
-    this.getRulesets = function(checkPlanPk, cloudPk, projectPk, callback) {
+    this.getRulesets = function(projectPk, cloudPk, checkPlanPk, callback) {
       var postBody = null;
 
-      // verify the required parameter 'checkPlanPk' is set
-      if (checkPlanPk === undefined || checkPlanPk === null) {
-        throw new Error("Missing the required parameter 'checkPlanPk' when calling getRulesets");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getRulesets");
       }
 
       // verify the required parameter 'cloudPk' is set
@@ -2143,16 +2143,16 @@
         throw new Error("Missing the required parameter 'cloudPk' when calling getRulesets");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getRulesets");
+      // verify the required parameter 'checkPlanPk' is set
+      if (checkPlanPk === undefined || checkPlanPk === null) {
+        throw new Error("Missing the required parameter 'checkPlanPk' when calling getRulesets");
       }
 
 
       var pathParams = {
-        'check_plan_pk': checkPlanPk,
+        'project_pk': projectPk,
         'cloud_pk': cloudPk,
-        'project_pk': projectPk
+        'check_plan_pk': checkPlanPk
       };
       var queryParams = {
       };
@@ -2166,7 +2166,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [WrappedClass];
+      var returnType = [Ruleset];
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset', 'GET',
@@ -2185,25 +2185,15 @@
 
     /**
      * Starts a new check in the checker
-     * @param {String} cloudPk 
-     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} ifcPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/IfcChecker} data 
      * @param {module:api/CheckplanApi~launchNewCheckCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.launchNewCheck = function(cloudPk, id, projectPk, ifcPk, data, callback) {
+    this.launchNewCheck = function(projectPk, ifcPk, cloudPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling launchNewCheck");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling launchNewCheck");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -2215,6 +2205,16 @@
         throw new Error("Missing the required parameter 'ifcPk' when calling launchNewCheck");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling launchNewCheck");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling launchNewCheck");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling launchNewCheck");
@@ -2222,10 +2222,10 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
         'project_pk': projectPk,
-        'ifc_pk': ifcPk
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2252,32 +2252,22 @@
      * Callback function to receive the result of the updateChecker operation.
      * @callback module:api/CheckplanApi~updateCheckerCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/IfcChecker} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
      * @param {String} projectPk 
      * @param {String} ifcPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/IfcChecker} data 
      * @param {module:api/CheckplanApi~updateCheckerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/IfcChecker}
      */
-    this.updateChecker = function(cloudPk, id, projectPk, ifcPk, data, callback) {
+    this.updateChecker = function(projectPk, ifcPk, cloudPk, id, data, callback) {
       var postBody = data;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateChecker");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateChecker");
-      }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -2289,6 +2279,16 @@
         throw new Error("Missing the required parameter 'ifcPk' when calling updateChecker");
       }
 
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateChecker");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateChecker");
+      }
+
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling updateChecker");
@@ -2296,10 +2296,10 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
         'project_pk': projectPk,
-        'ifc_pk': ifcPk
+        'ifc_pk': ifcPk,
+        'cloud_pk': cloudPk,
+        'id': id
       };
       var queryParams = {
       };
@@ -2313,7 +2313,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = IfcChecker;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}', 'PATCH',
@@ -2326,27 +2326,27 @@
      * Callback function to receive the result of the updateCheckerResult operation.
      * @callback module:api/CheckplanApi~updateCheckerResultCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/CheckerResult} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} checkerPk 
      * @param {String} projectPk 
+     * @param {String} id 
      * @param {String} ifcPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} checkerPk 
+     * @param {String} cloudPk 
+     * @param {module:model/CheckerResult} data 
      * @param {module:api/CheckplanApi~updateCheckerResultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/CheckerResult}
      */
-    this.updateCheckerResult = function(cloudPk, id, checkerPk, projectPk, ifcPk, data, callback) {
+    this.updateCheckerResult = function(projectPk, id, ifcPk, checkerPk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateCheckerResult");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateCheckerResult");
       }
 
       // verify the required parameter 'id' is set
@@ -2354,19 +2354,19 @@
         throw new Error("Missing the required parameter 'id' when calling updateCheckerResult");
       }
 
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateCheckerResult");
+      }
+
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
         throw new Error("Missing the required parameter 'checkerPk' when calling updateCheckerResult");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateCheckerResult");
-      }
-
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateCheckerResult");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateCheckerResult");
       }
 
       // verify the required parameter 'data' is set
@@ -2376,11 +2376,11 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'checker_pk': checkerPk,
         'project_pk': projectPk,
-        'ifc_pk': ifcPk
+        'id': id,
+        'ifc_pk': ifcPk,
+        'checker_pk': checkerPk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -2394,7 +2394,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = CheckerResult;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id}', 'PATCH',
@@ -2407,25 +2407,25 @@
      * Callback function to receive the result of the updateCheckplan operation.
      * @callback module:api/CheckplanApi~updateCheckplanCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/CheckPlan} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} id 
+     * @param {String} cloudPk 
+     * @param {module:model/CheckPlan} data 
      * @param {module:api/CheckplanApi~updateCheckplanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/CheckPlan}
      */
-    this.updateCheckplan = function(cloudPk, id, projectPk, data, callback) {
+    this.updateCheckplan = function(projectPk, id, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateCheckplan");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateCheckplan");
       }
 
       // verify the required parameter 'id' is set
@@ -2433,9 +2433,9 @@
         throw new Error("Missing the required parameter 'id' when calling updateCheckplan");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateCheckplan");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateCheckplan");
       }
 
       // verify the required parameter 'data' is set
@@ -2445,9 +2445,9 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
+        'project_pk': projectPk,
         'id': id,
-        'project_pk': projectPk
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -2461,7 +2461,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = CheckPlan;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{id}', 'PATCH',
@@ -2474,37 +2474,27 @@
      * Callback function to receive the result of the updateRule operation.
      * @callback module:api/CheckplanApi~updateRuleCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/Rule} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} rulesetPk 
-     * @param {String} checkPlanPk 
      * @param {String} projectPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} checkPlanPk 
+     * @param {String} rulesetPk 
+     * @param {String} id 
+     * @param {String} cloudPk 
+     * @param {module:model/Rule} data 
      * @param {module:api/CheckplanApi~updateRuleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/Rule}
      */
-    this.updateRule = function(cloudPk, id, rulesetPk, checkPlanPk, projectPk, data, callback) {
+    this.updateRule = function(projectPk, checkPlanPk, rulesetPk, id, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateRule");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateRule");
-      }
-
-      // verify the required parameter 'rulesetPk' is set
-      if (rulesetPk === undefined || rulesetPk === null) {
-        throw new Error("Missing the required parameter 'rulesetPk' when calling updateRule");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateRule");
       }
 
       // verify the required parameter 'checkPlanPk' is set
@@ -2512,9 +2502,19 @@
         throw new Error("Missing the required parameter 'checkPlanPk' when calling updateRule");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateRule");
+      // verify the required parameter 'rulesetPk' is set
+      if (rulesetPk === undefined || rulesetPk === null) {
+        throw new Error("Missing the required parameter 'rulesetPk' when calling updateRule");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateRule");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateRule");
       }
 
       // verify the required parameter 'data' is set
@@ -2524,11 +2524,11 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ruleset_pk': rulesetPk,
+        'project_pk': projectPk,
         'check_plan_pk': checkPlanPk,
-        'project_pk': projectPk
+        'ruleset_pk': rulesetPk,
+        'id': id,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -2542,7 +2542,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = Rule;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id}', 'PATCH',
@@ -2555,38 +2555,28 @@
      * Callback function to receive the result of the updateRuleComponent operation.
      * @callback module:api/CheckplanApi~updateRuleComponentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/RuleComponent} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} rulesetPk 
-     * @param {String} checkPlanPk 
      * @param {String} projectPk 
+     * @param {String} checkPlanPk 
+     * @param {String} rulesetPk 
+     * @param {String} id 
      * @param {String} rulePk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} cloudPk 
+     * @param {module:model/RuleComponent} data 
      * @param {module:api/CheckplanApi~updateRuleComponentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/RuleComponent}
      */
-    this.updateRuleComponent = function(cloudPk, id, rulesetPk, checkPlanPk, projectPk, rulePk, data, callback) {
+    this.updateRuleComponent = function(projectPk, checkPlanPk, rulesetPk, id, rulePk, cloudPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateRuleComponent");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateRuleComponent");
-      }
-
-      // verify the required parameter 'rulesetPk' is set
-      if (rulesetPk === undefined || rulesetPk === null) {
-        throw new Error("Missing the required parameter 'rulesetPk' when calling updateRuleComponent");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateRuleComponent");
       }
 
       // verify the required parameter 'checkPlanPk' is set
@@ -2594,14 +2584,24 @@
         throw new Error("Missing the required parameter 'checkPlanPk' when calling updateRuleComponent");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateRuleComponent");
+      // verify the required parameter 'rulesetPk' is set
+      if (rulesetPk === undefined || rulesetPk === null) {
+        throw new Error("Missing the required parameter 'rulesetPk' when calling updateRuleComponent");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateRuleComponent");
       }
 
       // verify the required parameter 'rulePk' is set
       if (rulePk === undefined || rulePk === null) {
         throw new Error("Missing the required parameter 'rulePk' when calling updateRuleComponent");
+      }
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateRuleComponent");
       }
 
       // verify the required parameter 'data' is set
@@ -2611,12 +2611,12 @@
 
 
       var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ruleset_pk': rulesetPk,
-        'check_plan_pk': checkPlanPk,
         'project_pk': projectPk,
-        'rule_pk': rulePk
+        'check_plan_pk': checkPlanPk,
+        'ruleset_pk': rulesetPk,
+        'id': id,
+        'rule_pk': rulePk,
+        'cloud_pk': cloudPk
       };
       var queryParams = {
       };
@@ -2630,7 +2630,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = RuleComponent;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id}', 'PATCH',
@@ -2643,31 +2643,26 @@
      * Callback function to receive the result of the updateRuleset operation.
      * @callback module:api/CheckplanApi~updateRulesetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/WrappedClass} data The data returned by the service call.
+     * @param {module:model/Ruleset} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * 
-     * @param {String} checkPlanPk 
-     * @param {String} cloudPk 
-     * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:model/WrappedClass} data 
+     * @param {String} id 
+     * @param {String} cloudPk 
+     * @param {String} checkPlanPk 
+     * @param {module:model/Ruleset} data 
      * @param {module:api/CheckplanApi~updateRulesetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WrappedClass}
+     * data is of type: {@link module:model/Ruleset}
      */
-    this.updateRuleset = function(checkPlanPk, cloudPk, id, projectPk, data, callback) {
+    this.updateRuleset = function(projectPk, id, cloudPk, checkPlanPk, data, callback) {
       var postBody = data;
 
-      // verify the required parameter 'checkPlanPk' is set
-      if (checkPlanPk === undefined || checkPlanPk === null) {
-        throw new Error("Missing the required parameter 'checkPlanPk' when calling updateRuleset");
-      }
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateRuleset");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateRuleset");
       }
 
       // verify the required parameter 'id' is set
@@ -2675,9 +2670,14 @@
         throw new Error("Missing the required parameter 'id' when calling updateRuleset");
       }
 
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateRuleset");
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateRuleset");
+      }
+
+      // verify the required parameter 'checkPlanPk' is set
+      if (checkPlanPk === undefined || checkPlanPk === null) {
+        throw new Error("Missing the required parameter 'checkPlanPk' when calling updateRuleset");
       }
 
       // verify the required parameter 'data' is set
@@ -2687,10 +2687,10 @@
 
 
       var pathParams = {
-        'check_plan_pk': checkPlanPk,
-        'cloud_pk': cloudPk,
+        'project_pk': projectPk,
         'id': id,
-        'project_pk': projectPk
+        'cloud_pk': cloudPk,
+        'check_plan_pk': checkPlanPk
       };
       var queryParams = {
       };
@@ -2704,7 +2704,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = WrappedClass;
+      var returnType = Ruleset;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id}', 'PATCH',

@@ -37,7 +37,7 @@
   /**
    * The DocumentReference model module.
    * @module model/DocumentReference
-   * @version 1.0.13
+   * @version 1.0.14
    */
 
   /**

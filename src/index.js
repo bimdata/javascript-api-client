@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ActionEvent', 'model/BimSnippet', 'model/Bitmap', 'model/ClippingPlane', 'model/Cloud', 'model/Coloring', 'model/Comment', 'model/CommentAction', 'model/CommentEvent', 'model/Component', 'model/ComponentsParent', 'model/Direction', 'model/DocumentReference', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/EventAction', 'model/Extensions', 'model/Feature', 'model/FosUser', 'model/FosUserWrite', 'model/IfcFiles', 'model/Label', 'model/LineSeriaizer', 'model/Notification', 'model/OrthogonalCamera', 'model/PerspectiveCamera', 'model/Point', 'model/Priority', 'model/ProjectAction', 'model/RelatedTopic', 'model/SelfUser', 'model/SignupFosUser', 'model/Snapshot', 'model/SnippetType', 'model/Stage', 'model/TopicAction', 'model/TopicEvents', 'model/TopicStatus', 'model/TopicType', 'model/User', 'model/Version', 'model/ViewSetupHints', 'model/Viewpoint', 'model/Visibility', 'model/WrappedClass', 'api/BcfApi', 'api/CheckplanApi', 'api/CloudApi', 'api/IfcApi', 'api/ProjectApi', 'api/UserApi'], factory);
+    define(['ApiClient', 'model/ActionEvent', 'model/BcfProject', 'model/BimSnippet', 'model/Bitmap', 'model/CheckPlan', 'model/CheckerResult', 'model/Classification', 'model/ClippingPlane', 'model/Cloud', 'model/Coloring', 'model/Comment', 'model/CommentAction', 'model/CommentEvent', 'model/Component', 'model/ComponentsParent', 'model/Direction', 'model/Document', 'model/DocumentReference', 'model/Element', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/EventAction', 'model/Extensions', 'model/Feature', 'model/Folder', 'model/FosUser', 'model/FosUserWrite', 'model/Ifc', 'model/IfcChecker', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults', 'model/IfcCreator', 'model/IfcDocument', 'model/IfcFiles', 'model/Label', 'model/LineSeriaizer', 'model/Notification', 'model/OrthogonalCamera', 'model/PerspectiveCamera', 'model/Point', 'model/Priority', 'model/Project', 'model/ProjectAction', 'model/ProjectRootFolder', 'model/Property', 'model/PropertyDefinition', 'model/PropertySet', 'model/ReferenceLink', 'model/RelatedTopic', 'model/Rule', 'model/RuleComponent', 'model/Ruleset', 'model/SelfUser', 'model/SignupFosUser', 'model/Snapshot', 'model/SnippetType', 'model/Space', 'model/Stage', 'model/Topic', 'model/TopicAction', 'model/TopicEvents', 'model/TopicStatus', 'model/TopicType', 'model/Unit', 'model/User', 'model/Version', 'model/ViewSetupHints', 'model/Viewpoint', 'model/Visibility', 'model/Zone', 'model/ZoneSpace', 'api/BcfApi', 'api/CheckplanApi', 'api/CloudApi', 'api/IfcApi', 'api/ProjectApi', 'api/UserApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ActionEvent'), require('./model/BimSnippet'), require('./model/Bitmap'), require('./model/ClippingPlane'), require('./model/Cloud'), require('./model/Coloring'), require('./model/Comment'), require('./model/CommentAction'), require('./model/CommentEvent'), require('./model/Component'), require('./model/ComponentsParent'), require('./model/Direction'), require('./model/DocumentReference'), require('./model/ElementClassificationRelation'), require('./model/ElementPropertySetRelation'), require('./model/EventAction'), require('./model/Extensions'), require('./model/Feature'), require('./model/FosUser'), require('./model/FosUserWrite'), require('./model/IfcFiles'), require('./model/Label'), require('./model/LineSeriaizer'), require('./model/Notification'), require('./model/OrthogonalCamera'), require('./model/PerspectiveCamera'), require('./model/Point'), require('./model/Priority'), require('./model/ProjectAction'), require('./model/RelatedTopic'), require('./model/SelfUser'), require('./model/SignupFosUser'), require('./model/Snapshot'), require('./model/SnippetType'), require('./model/Stage'), require('./model/TopicAction'), require('./model/TopicEvents'), require('./model/TopicStatus'), require('./model/TopicType'), require('./model/User'), require('./model/Version'), require('./model/ViewSetupHints'), require('./model/Viewpoint'), require('./model/Visibility'), require('./model/WrappedClass'), require('./api/BcfApi'), require('./api/CheckplanApi'), require('./api/CloudApi'), require('./api/IfcApi'), require('./api/ProjectApi'), require('./api/UserApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ActionEvent'), require('./model/BcfProject'), require('./model/BimSnippet'), require('./model/Bitmap'), require('./model/CheckPlan'), require('./model/CheckerResult'), require('./model/Classification'), require('./model/ClippingPlane'), require('./model/Cloud'), require('./model/Coloring'), require('./model/Comment'), require('./model/CommentAction'), require('./model/CommentEvent'), require('./model/Component'), require('./model/ComponentsParent'), require('./model/Direction'), require('./model/Document'), require('./model/DocumentReference'), require('./model/Element'), require('./model/ElementClassificationRelation'), require('./model/ElementPropertySetRelation'), require('./model/EventAction'), require('./model/Extensions'), require('./model/Feature'), require('./model/Folder'), require('./model/FosUser'), require('./model/FosUserWrite'), require('./model/Ifc'), require('./model/IfcChecker'), require('./model/IfcCheckerCheckplan'), require('./model/IfcCheckerResults'), require('./model/IfcCreator'), require('./model/IfcDocument'), require('./model/IfcFiles'), require('./model/Label'), require('./model/LineSeriaizer'), require('./model/Notification'), require('./model/OrthogonalCamera'), require('./model/PerspectiveCamera'), require('./model/Point'), require('./model/Priority'), require('./model/Project'), require('./model/ProjectAction'), require('./model/ProjectRootFolder'), require('./model/Property'), require('./model/PropertyDefinition'), require('./model/PropertySet'), require('./model/ReferenceLink'), require('./model/RelatedTopic'), require('./model/Rule'), require('./model/RuleComponent'), require('./model/Ruleset'), require('./model/SelfUser'), require('./model/SignupFosUser'), require('./model/Snapshot'), require('./model/SnippetType'), require('./model/Space'), require('./model/Stage'), require('./model/Topic'), require('./model/TopicAction'), require('./model/TopicEvents'), require('./model/TopicStatus'), require('./model/TopicType'), require('./model/Unit'), require('./model/User'), require('./model/Version'), require('./model/ViewSetupHints'), require('./model/Viewpoint'), require('./model/Visibility'), require('./model/Zone'), require('./model/ZoneSpace'), require('./api/BcfApi'), require('./api/CheckplanApi'), require('./api/CloudApi'), require('./api/IfcApi'), require('./api/ProjectApi'), require('./api/UserApi'));
   }
-}(function(ApiClient, ActionEvent, BimSnippet, Bitmap, ClippingPlane, Cloud, Coloring, Comment, CommentAction, CommentEvent, Component, ComponentsParent, Direction, DocumentReference, ElementClassificationRelation, ElementPropertySetRelation, EventAction, Extensions, Feature, FosUser, FosUserWrite, IfcFiles, Label, LineSeriaizer, Notification, OrthogonalCamera, PerspectiveCamera, Point, Priority, ProjectAction, RelatedTopic, SelfUser, SignupFosUser, Snapshot, SnippetType, Stage, TopicAction, TopicEvents, TopicStatus, TopicType, User, Version, ViewSetupHints, Viewpoint, Visibility, WrappedClass, BcfApi, CheckplanApi, CloudApi, IfcApi, ProjectApi, UserApi) {
+}(function(ApiClient, ActionEvent, BcfProject, BimSnippet, Bitmap, CheckPlan, CheckerResult, Classification, ClippingPlane, Cloud, Coloring, Comment, CommentAction, CommentEvent, Component, ComponentsParent, Direction, Document, DocumentReference, Element, ElementClassificationRelation, ElementPropertySetRelation, EventAction, Extensions, Feature, Folder, FosUser, FosUserWrite, Ifc, IfcChecker, IfcCheckerCheckplan, IfcCheckerResults, IfcCreator, IfcDocument, IfcFiles, Label, LineSeriaizer, Notification, OrthogonalCamera, PerspectiveCamera, Point, Priority, Project, ProjectAction, ProjectRootFolder, Property, PropertyDefinition, PropertySet, ReferenceLink, RelatedTopic, Rule, RuleComponent, Ruleset, SelfUser, SignupFosUser, Snapshot, SnippetType, Space, Stage, Topic, TopicAction, TopicEvents, TopicStatus, TopicType, Unit, User, Version, ViewSetupHints, Viewpoint, Visibility, Zone, ZoneSpace, BcfApi, CheckplanApi, CloudApi, IfcApi, ProjectApi, UserApi) {
   'use strict';
 
   /**
@@ -54,7 +54,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 1.0.13
+   * @version 1.0.14
    */
   var exports = {
     /**
@@ -68,6 +68,11 @@
      */
     ActionEvent: ActionEvent,
     /**
+     * The BcfProject model constructor.
+     * @property {module:model/BcfProject}
+     */
+    BcfProject: BcfProject,
+    /**
      * The BimSnippet model constructor.
      * @property {module:model/BimSnippet}
      */
@@ -77,6 +82,21 @@
      * @property {module:model/Bitmap}
      */
     Bitmap: Bitmap,
+    /**
+     * The CheckPlan model constructor.
+     * @property {module:model/CheckPlan}
+     */
+    CheckPlan: CheckPlan,
+    /**
+     * The CheckerResult model constructor.
+     * @property {module:model/CheckerResult}
+     */
+    CheckerResult: CheckerResult,
+    /**
+     * The Classification model constructor.
+     * @property {module:model/Classification}
+     */
+    Classification: Classification,
     /**
      * The ClippingPlane model constructor.
      * @property {module:model/ClippingPlane}
@@ -123,10 +143,20 @@
      */
     Direction: Direction,
     /**
+     * The Document model constructor.
+     * @property {module:model/Document}
+     */
+    Document: Document,
+    /**
      * The DocumentReference model constructor.
      * @property {module:model/DocumentReference}
      */
     DocumentReference: DocumentReference,
+    /**
+     * The Element model constructor.
+     * @property {module:model/Element}
+     */
+    Element: Element,
     /**
      * The ElementClassificationRelation model constructor.
      * @property {module:model/ElementClassificationRelation}
@@ -153,6 +183,11 @@
      */
     Feature: Feature,
     /**
+     * The Folder model constructor.
+     * @property {module:model/Folder}
+     */
+    Folder: Folder,
+    /**
      * The FosUser model constructor.
      * @property {module:model/FosUser}
      */
@@ -162,6 +197,36 @@
      * @property {module:model/FosUserWrite}
      */
     FosUserWrite: FosUserWrite,
+    /**
+     * The Ifc model constructor.
+     * @property {module:model/Ifc}
+     */
+    Ifc: Ifc,
+    /**
+     * The IfcChecker model constructor.
+     * @property {module:model/IfcChecker}
+     */
+    IfcChecker: IfcChecker,
+    /**
+     * The IfcCheckerCheckplan model constructor.
+     * @property {module:model/IfcCheckerCheckplan}
+     */
+    IfcCheckerCheckplan: IfcCheckerCheckplan,
+    /**
+     * The IfcCheckerResults model constructor.
+     * @property {module:model/IfcCheckerResults}
+     */
+    IfcCheckerResults: IfcCheckerResults,
+    /**
+     * The IfcCreator model constructor.
+     * @property {module:model/IfcCreator}
+     */
+    IfcCreator: IfcCreator,
+    /**
+     * The IfcDocument model constructor.
+     * @property {module:model/IfcDocument}
+     */
+    IfcDocument: IfcDocument,
     /**
      * The IfcFiles model constructor.
      * @property {module:model/IfcFiles}
@@ -203,15 +268,60 @@
      */
     Priority: Priority,
     /**
+     * The Project model constructor.
+     * @property {module:model/Project}
+     */
+    Project: Project,
+    /**
      * The ProjectAction model constructor.
      * @property {module:model/ProjectAction}
      */
     ProjectAction: ProjectAction,
     /**
+     * The ProjectRootFolder model constructor.
+     * @property {module:model/ProjectRootFolder}
+     */
+    ProjectRootFolder: ProjectRootFolder,
+    /**
+     * The Property model constructor.
+     * @property {module:model/Property}
+     */
+    Property: Property,
+    /**
+     * The PropertyDefinition model constructor.
+     * @property {module:model/PropertyDefinition}
+     */
+    PropertyDefinition: PropertyDefinition,
+    /**
+     * The PropertySet model constructor.
+     * @property {module:model/PropertySet}
+     */
+    PropertySet: PropertySet,
+    /**
+     * The ReferenceLink model constructor.
+     * @property {module:model/ReferenceLink}
+     */
+    ReferenceLink: ReferenceLink,
+    /**
      * The RelatedTopic model constructor.
      * @property {module:model/RelatedTopic}
      */
     RelatedTopic: RelatedTopic,
+    /**
+     * The Rule model constructor.
+     * @property {module:model/Rule}
+     */
+    Rule: Rule,
+    /**
+     * The RuleComponent model constructor.
+     * @property {module:model/RuleComponent}
+     */
+    RuleComponent: RuleComponent,
+    /**
+     * The Ruleset model constructor.
+     * @property {module:model/Ruleset}
+     */
+    Ruleset: Ruleset,
     /**
      * The SelfUser model constructor.
      * @property {module:model/SelfUser}
@@ -233,10 +343,20 @@
      */
     SnippetType: SnippetType,
     /**
+     * The Space model constructor.
+     * @property {module:model/Space}
+     */
+    Space: Space,
+    /**
      * The Stage model constructor.
      * @property {module:model/Stage}
      */
     Stage: Stage,
+    /**
+     * The Topic model constructor.
+     * @property {module:model/Topic}
+     */
+    Topic: Topic,
     /**
      * The TopicAction model constructor.
      * @property {module:model/TopicAction}
@@ -257,6 +377,11 @@
      * @property {module:model/TopicType}
      */
     TopicType: TopicType,
+    /**
+     * The Unit model constructor.
+     * @property {module:model/Unit}
+     */
+    Unit: Unit,
     /**
      * The User model constructor.
      * @property {module:model/User}
@@ -283,10 +408,15 @@
      */
     Visibility: Visibility,
     /**
-     * The WrappedClass model constructor.
-     * @property {module:model/WrappedClass}
+     * The Zone model constructor.
+     * @property {module:model/Zone}
      */
-    WrappedClass: WrappedClass,
+    Zone: Zone,
+    /**
+     * The ZoneSpace model constructor.
+     * @property {module:model/ZoneSpace}
+     */
+    ZoneSpace: ZoneSpace,
     /**
      * The BcfApi service constructor.
      * @property {module:api/BcfApi}

@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **uuid** | **String** |  | 
 **zones** | **[String]** |  | [optional] 
 **parentId** | **Number** |  | [optional] 
-**ifcId** | **Number** |  | [optional] 
 **spaces** | [**[Space]**](Space.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 

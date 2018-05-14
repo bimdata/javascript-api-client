@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
-**ifcId** | **Number** |  | [optional] 
 **unit** | [**Unit**](Unit.md) |  | [optional] 
 **name** | **String** |  | 
 **description** | **String** |  | [optional] 
