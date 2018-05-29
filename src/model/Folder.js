@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/FosUser'], factory);
+    define(['ApiClient', 'model/Folder', 'model/FosUser'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./FosUser'));
+    module.exports = factory(require('../ApiClient'), require('./Folder'), require('./FosUser'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.Folder = factory(root.bimdata.ApiClient, root.bimdata.FosUser);
+    root.bimdata.Folder = factory(root.bimdata.ApiClient, root.bimdata.Folder, root.bimdata.FosUser);
   }
-}(this, function(ApiClient, FosUser) {
+}(this, function(ApiClient, Folder, FosUser) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The Folder model module.
    * @module model/Folder
-   * @version 1.0.14
+   * @version 1.0.15
    */
 
   /**
@@ -85,7 +85,7 @@
         obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
       }
       if (data.hasOwnProperty('children')) {
-        obj['children'] = ApiClient.convertToType(data['children'], ['String']);
+        obj['children'] = ApiClient.convertToType(data['children'], [Folder]);
       }
       if (data.hasOwnProperty('created_by')) {
         obj['created_by'] = FosUser.constructFromObject(data['created_by']);
@@ -115,7 +115,7 @@
    */
   exports.prototype['updated_at'] = undefined;
   /**
-   * @member {Array.<String>} children
+   * @member {Array.<module:model/Folder>} children
    */
   exports.prototype['children'] = undefined;
   /**

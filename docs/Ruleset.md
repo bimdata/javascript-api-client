@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **description** | **String** |  | [optional] 
 **rules** | [**[Rule]**](Rule.md) |  | [optional] 
-**rulesets** | **[String]** |  | [optional] 
+**rulesets** | [**[Ruleset]**](Ruleset.md) |  | [optional] 
 
 

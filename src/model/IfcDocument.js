@@ -37,7 +37,7 @@
   /**
    * The IfcDocument model module.
    * @module model/IfcDocument
-   * @version 1.0.14
+   * @version 1.0.15
    */
 
   /**

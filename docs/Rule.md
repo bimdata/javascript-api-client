@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **condition** | **String** |  | 
 **ruleComponents** | [**[RuleComponent]**](RuleComponent.md) |  | [optional] 
-**on** | **String** |  | [optional] 
+**on** | [**Rule**](Rule.md) |  | [optional] 
 
 

@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/RuleComponent'], factory);
+    define(['ApiClient', 'model/Rule', 'model/RuleComponent'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./RuleComponent'));
+    module.exports = factory(require('../ApiClient'), require('./Rule'), require('./RuleComponent'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.Rule = factory(root.bimdata.ApiClient, root.bimdata.RuleComponent);
+    root.bimdata.Rule = factory(root.bimdata.ApiClient, root.bimdata.Rule, root.bimdata.RuleComponent);
   }
-}(this, function(ApiClient, RuleComponent) {
+}(this, function(ApiClient, Rule, RuleComponent) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The Rule model module.
    * @module model/Rule
-   * @version 1.0.14
+   * @version 1.0.15
    */
 
   /**
@@ -80,7 +80,7 @@
         obj['rule_components'] = ApiClient.convertToType(data['rule_components'], [RuleComponent]);
       }
       if (data.hasOwnProperty('on')) {
-        obj['on'] = ApiClient.convertToType(data['on'], 'String');
+        obj['on'] = Rule.constructFromObject(data['on']);
       }
     }
     return obj;
@@ -103,7 +103,7 @@
    */
   exports.prototype['rule_components'] = undefined;
   /**
-   * @member {String} on
+   * @member {module:model/Rule} on
    */
   exports.prototype['on'] = undefined;
 

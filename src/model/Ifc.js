@@ -37,7 +37,7 @@
   /**
    * The Ifc model module.
    * @module model/Ifc
-   * @version 1.0.14
+   * @version 1.0.15
    */
 
   /**
@@ -47,6 +47,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -92,6 +94,9 @@
       if (data.hasOwnProperty('updated_at')) {
         obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
       }
+      if (data.hasOwnProperty('document_id')) {
+        obj['document_id'] = ApiClient.convertToType(data['document_id'], 'String');
+      }
       if (data.hasOwnProperty('document')) {
         obj['document'] = IfcDocument.constructFromObject(data['document']);
       }
@@ -112,6 +117,9 @@
       }
       if (data.hasOwnProperty('error_detail')) {
         obj['error_detail'] = ApiClient.convertToType(data['error_detail'], 'String');
+      }
+      if (data.hasOwnProperty('project_id')) {
+        obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
       }
     }
     return obj;
@@ -142,6 +150,10 @@
    */
   exports.prototype['updated_at'] = undefined;
   /**
+   * @member {String} document_id
+   */
+  exports.prototype['document_id'] = undefined;
+  /**
    * @member {module:model/IfcDocument} document
    */
   exports.prototype['document'] = undefined;
@@ -169,6 +181,10 @@
    * @member {String} error_detail
    */
   exports.prototype['error_detail'] = undefined;
+  /**
+   * @member {String} project_id
+   */
+  exports.prototype['project_id'] = undefined;
 
 
   /**

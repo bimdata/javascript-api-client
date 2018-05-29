@@ -34,7 +34,7 @@
   /**
    * User service.
    * @module api/UserApi
-   * @version 1.0.14
+   * @version 1.0.15
    */
 
   /**

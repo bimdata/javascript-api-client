@@ -39,7 +39,7 @@ Method | HTTP request | Description
 
 <a name="createClassification"></a>
 # **createClassification**
-> [Classification] createClassification(projectPk, cloudPk, data)
+> [Classification] createClassification(cloudPk, projectPk, data)
 
 
 
@@ -58,9 +58,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var data = [new bimdata.Classification()]; // [Classification] | 
 
@@ -72,15 +72,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createClassification(projectPk, cloudPk, data, callback);
+apiInstance.createClassification(cloudPk, projectPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **data** | [**[Classification]**](Classification.md)|  | 
 
 ### Return type
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 <a name="createDocument"></a>
 # **createDocument**
-> Document createDocument(projectPk, cloudPk, name, opts)
+> Document createDocument(cloudPk, projectPk, name, opts)
 
 
 
@@ -117,9 +117,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var name = "name_example"; // String | 
 
@@ -145,15 +145,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createDocument(projectPk, cloudPk, name, opts, callback);
+apiInstance.createDocument(cloudPk, projectPk, name, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **name** | **String**|  | 
  **id** | **Number**|  | [optional] 
  **parent** | **Number**|  | [optional] 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 <a name="createFolder"></a>
 # **createFolder**
-> Folder createFolder(projectPk, cloudPk, data)
+> Folder createFolder(cloudPk, projectPk, data)
 
 
 
@@ -202,9 +202,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var data = new bimdata.Folder(); // Folder | 
 
@@ -216,15 +216,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createFolder(projectPk, cloudPk, data, callback);
+apiInstance.createFolder(cloudPk, projectPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **data** | [**Folder**](Folder.md)|  | 
 
 ### Return type
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 <a name="createProjectUser"></a>
 # **createProjectUser**
-> FosUserWrite createProjectUser(projectPk, cloudPk, data)
+> FosUserWrite createProjectUser(cloudPk, projectPk, data)
 
 
 
@@ -317,9 +317,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 var data = new bimdata.FosUserWrite(); // FosUserWrite | 
 
@@ -331,15 +331,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createProjectUser(projectPk, cloudPk, data, callback);
+apiInstance.createProjectUser(cloudPk, projectPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
  **data** | [**FosUserWrite**](FosUserWrite.md)|  | 
 
 ### Return type
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteClassification"></a>
 # **deleteClassification**
-> deleteClassification(projectPk, id, cloudPk, )
+> deleteClassification(cloudPk, id, projectPk, )
 
 
 
@@ -376,11 +376,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -390,16 +390,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteClassification(projectPk, id, cloudPk, , callback);
+apiInstance.deleteClassification(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -416,7 +416,7 @@ null (empty response body)
 
 <a name="deleteDocument"></a>
 # **deleteDocument**
-> Document deleteDocument(projectPk, id, cloudPk, )
+> Document deleteDocument(cloudPk, id, projectPk, )
 
 
 
@@ -435,11 +435,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -449,16 +449,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteDocument(projectPk, id, cloudPk, , callback);
+apiInstance.deleteDocument(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteFolder"></a>
 # **deleteFolder**
-> deleteFolder(projectPk, id, cloudPk, )
+> deleteFolder(cloudPk, id, projectPk, )
 
 
 
@@ -494,11 +494,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -508,16 +508,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteFolder(projectPk, id, cloudPk, , callback);
+apiInstance.deleteFolder(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -534,7 +534,7 @@ null (empty response body)
 
 <a name="deleteProject"></a>
 # **deleteProject**
-> deleteProject(id, cloudPk, )
+> deleteProject(cloudPk, id, )
 
 
 
@@ -553,9 +553,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var id = "id_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -565,15 +565,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteProject(id, cloudPk, , callback);
+apiInstance.deleteProject(cloudPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -590,7 +590,7 @@ null (empty response body)
 
 <a name="deleteProjectUser"></a>
 # **deleteProjectUser**
-> deleteProjectUser(projectPk, id, cloudPk, )
+> deleteProjectUser(cloudPk, id, projectPk, )
 
 
 
@@ -609,11 +609,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -623,16 +623,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteProjectUser(projectPk, id, cloudPk, , callback);
+apiInstance.deleteProjectUser(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -649,7 +649,7 @@ null (empty response body)
 
 <a name="fullUpdateClassification"></a>
 # **fullUpdateClassification**
-> Classification fullUpdateClassification(projectPk, id, cloudPk, data)
+> Classification fullUpdateClassification(cloudPk, id, projectPk, data)
 
 
 
@@ -668,11 +668,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var data = new bimdata.Classification(); // Classification | 
 
@@ -684,16 +684,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateClassification(projectPk, id, cloudPk, data, callback);
+apiInstance.fullUpdateClassification(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
  **data** | [**Classification**](Classification.md)|  | 
 
 ### Return type
@@ -711,7 +711,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateDocument"></a>
 # **fullUpdateDocument**
-> Document fullUpdateDocument(projectPk, id, cloudPk, name, opts)
+> Document fullUpdateDocument(cloudPk, id, projectPk, name, opts)
 
 
 
@@ -730,11 +730,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var name = "name_example"; // String | 
 
@@ -760,16 +760,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateDocument(projectPk, id, cloudPk, name, opts, callback);
+apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
  **name** | **String**|  | 
  **id2** | **Number**|  | [optional] 
  **parent** | **Number**|  | [optional] 
@@ -799,7 +799,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateFolder"></a>
 # **fullUpdateFolder**
-> Folder fullUpdateFolder(projectPk, id, cloudPk, data)
+> Folder fullUpdateFolder(cloudPk, id, projectPk, data)
 
 
 
@@ -818,11 +818,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var data = new bimdata.Folder(); // Folder | 
 
@@ -834,16 +834,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateFolder(projectPk, id, cloudPk, data, callback);
+apiInstance.fullUpdateFolder(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
  **data** | [**Folder**](Folder.md)|  | 
 
 ### Return type
@@ -861,7 +861,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateProject"></a>
 # **fullUpdateProject**
-> Project fullUpdateProject(id, cloudPk, data)
+> Project fullUpdateProject(cloudPk, id, data)
 
 
 
@@ -880,9 +880,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var id = "id_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 var data = new bimdata.Project(); // Project | 
 
@@ -894,15 +894,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateProject(id, cloudPk, data, callback);
+apiInstance.fullUpdateProject(cloudPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
  **data** | [**Project**](Project.md)|  | 
 
 ### Return type
@@ -920,7 +920,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateProjectUser"></a>
 # **fullUpdateProjectUser**
-> FosUserWrite fullUpdateProjectUser(projectPk, id, cloudPk, data)
+> FosUserWrite fullUpdateProjectUser(cloudPk, id, projectPk, data)
 
 
 
@@ -939,11 +939,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var data = new bimdata.FosUserWrite(); // FosUserWrite | 
 
@@ -955,16 +955,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fullUpdateProjectUser(projectPk, id, cloudPk, data, callback);
+apiInstance.fullUpdateProjectUser(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
  **data** | [**FosUserWrite**](FosUserWrite.md)|  | 
 
 ### Return type
@@ -982,7 +982,7 @@ Name | Type | Description  | Notes
 
 <a name="getClassification"></a>
 # **getClassification**
-> Classification getClassification(projectPk, id, cloudPk, )
+> Classification getClassification(cloudPk, id, projectPk, )
 
 
 
@@ -1001,11 +1001,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1015,16 +1015,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClassification(projectPk, id, cloudPk, , callback);
+apiInstance.getClassification(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -1041,7 +1041,7 @@ Name | Type | Description  | Notes
 
 <a name="getClassifications"></a>
 # **getClassifications**
-> [Classification] getClassifications(projectPk, cloudPk, )
+> [Classification] getClassifications(cloudPk, projectPk, )
 
 
 
@@ -1060,9 +1060,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1072,15 +1072,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClassifications(projectPk, cloudPk, , callback);
+apiInstance.getClassifications(cloudPk, projectPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -1097,7 +1097,7 @@ Name | Type | Description  | Notes
 
 <a name="getDocument"></a>
 # **getDocument**
-> Document getDocument(projectPk, id, cloudPk, )
+> Document getDocument(cloudPk, id, projectPk, )
 
 
 
@@ -1116,11 +1116,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1130,16 +1130,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getDocument(projectPk, id, cloudPk, , callback);
+apiInstance.getDocument(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -1156,7 +1156,7 @@ Name | Type | Description  | Notes
 
 <a name="getDocuments"></a>
 # **getDocuments**
-> Document getDocuments(projectPk, cloudPk, )
+> Document getDocuments(cloudPk, projectPk, )
 
 
 
@@ -1175,9 +1175,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1187,15 +1187,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getDocuments(projectPk, cloudPk, , callback);
+apiInstance.getDocuments(cloudPk, projectPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -1212,7 +1212,7 @@ Name | Type | Description  | Notes
 
 <a name="getFolder"></a>
 # **getFolder**
-> Folder getFolder(projectPk, id, cloudPk, )
+> Folder getFolder(cloudPk, id, projectPk, )
 
 
 
@@ -1231,11 +1231,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1245,16 +1245,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getFolder(projectPk, id, cloudPk, , callback);
+apiInstance.getFolder(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -1271,7 +1271,7 @@ Name | Type | Description  | Notes
 
 <a name="getFolders"></a>
 # **getFolders**
-> [Folder] getFolders(projectPk, cloudPk, )
+> [Folder] getFolders(cloudPk, projectPk, )
 
 
 
@@ -1290,9 +1290,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1302,15 +1302,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getFolders(projectPk, cloudPk, , callback);
+apiInstance.getFolders(cloudPk, projectPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -1327,7 +1327,7 @@ Name | Type | Description  | Notes
 
 <a name="getProject"></a>
 # **getProject**
-> Project getProject(id, cloudPk, )
+> Project getProject(cloudPk, id, )
 
 
 
@@ -1346,9 +1346,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var id = "id_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1358,15 +1358,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getProject(id, cloudPk, , callback);
+apiInstance.getProject(cloudPk, id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -1383,7 +1383,7 @@ Name | Type | Description  | Notes
 
 <a name="getProjectTree"></a>
 # **getProjectTree**
-> Folder getProjectTree(id, cloudPk)
+> Folder getProjectTree(cloudPk, id)
 
 
 
@@ -1402,9 +1402,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var id = "id_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1414,15 +1414,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getProjectTree(id, cloudPk, callback);
+apiInstance.getProjectTree(cloudPk, id, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -1439,7 +1439,7 @@ Name | Type | Description  | Notes
 
 <a name="getProjectUser"></a>
 # **getProjectUser**
-> FosUser getProjectUser(projectPk, id, cloudPk, )
+> FosUser getProjectUser(cloudPk, id, projectPk, )
 
 
 
@@ -1458,11 +1458,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1472,16 +1472,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getProjectUser(projectPk, id, cloudPk, , callback);
+apiInstance.getProjectUser(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -1498,7 +1498,7 @@ Name | Type | Description  | Notes
 
 <a name="getProjectUsers"></a>
 # **getProjectUsers**
-> [FosUser] getProjectUsers(projectPk, cloudPk, )
+> [FosUser] getProjectUsers(cloudPk, projectPk, )
 
 
 
@@ -1517,9 +1517,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -1529,15 +1529,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getProjectUsers(projectPk, cloudPk, , callback);
+apiInstance.getProjectUsers(cloudPk, projectPk, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -1607,7 +1607,7 @@ Name | Type | Description  | Notes
 
 <a name="updateClassification"></a>
 # **updateClassification**
-> Classification updateClassification(projectPk, id, cloudPk, data)
+> Classification updateClassification(cloudPk, id, projectPk, data)
 
 
 
@@ -1626,11 +1626,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var data = new bimdata.Classification(); // Classification | 
 
@@ -1642,16 +1642,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateClassification(projectPk, id, cloudPk, data, callback);
+apiInstance.updateClassification(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
  **data** | [**Classification**](Classification.md)|  | 
 
 ### Return type
@@ -1669,7 +1669,7 @@ Name | Type | Description  | Notes
 
 <a name="updateDocument"></a>
 # **updateDocument**
-> Document updateDocument(projectPk, id, cloudPk, data)
+> Document updateDocument(cloudPk, id, projectPk, data)
 
 
 
@@ -1688,11 +1688,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var data = new bimdata.Document(); // Document | 
 
@@ -1704,16 +1704,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateDocument(projectPk, id, cloudPk, data, callback);
+apiInstance.updateDocument(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
  **data** | [**Document**](Document.md)|  | 
 
 ### Return type
@@ -1731,7 +1731,7 @@ Name | Type | Description  | Notes
 
 <a name="updateFolder"></a>
 # **updateFolder**
-> Folder updateFolder(projectPk, id, cloudPk, data)
+> Folder updateFolder(cloudPk, id, projectPk, data)
 
 
 
@@ -1750,11 +1750,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var data = new bimdata.Folder(); // Folder | 
 
@@ -1766,16 +1766,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateFolder(projectPk, id, cloudPk, data, callback);
+apiInstance.updateFolder(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
  **data** | [**Folder**](Folder.md)|  | 
 
 ### Return type
@@ -1793,7 +1793,7 @@ Name | Type | Description  | Notes
 
 <a name="updateProject"></a>
 # **updateProject**
-> Project updateProject(id, cloudPk, data)
+> Project updateProject(cloudPk, id, data)
 
 
 
@@ -1812,9 +1812,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var id = "id_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
+
+var id = "id_example"; // String | 
 
 var data = new bimdata.Project(); // Project | 
 
@@ -1826,15 +1826,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateProject(id, cloudPk, data, callback);
+apiInstance.updateProject(cloudPk, id, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
  **data** | [**Project**](Project.md)|  | 
 
 ### Return type
@@ -1852,7 +1852,7 @@ Name | Type | Description  | Notes
 
 <a name="updateProjectUser"></a>
 # **updateProjectUser**
-> FosUserWrite updateProjectUser(projectPk, id, cloudPk, data)
+> FosUserWrite updateProjectUser(cloudPk, id, projectPk, data)
 
 
 
@@ -1871,11 +1871,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 
-var projectPk = "projectPk_example"; // String | 
+var cloudPk = "cloudPk_example"; // String | 
 
 var id = "id_example"; // String | 
 
-var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
 
 var data = new bimdata.FosUserWrite(); // FosUserWrite | 
 
@@ -1887,16 +1887,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateProjectUser(projectPk, id, cloudPk, data, callback);
+apiInstance.updateProjectUser(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectPk** | **String**|  | 
- **id** | **String**|  | 
  **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **projectPk** | **String**|  | 
  **data** | [**FosUserWrite**](FosUserWrite.md)|  | 
 
 ### Return type

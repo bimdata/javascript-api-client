@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Rule'], factory);
+    define(['ApiClient', 'model/Rule', 'model/Ruleset'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Rule'));
+    module.exports = factory(require('../ApiClient'), require('./Rule'), require('./Ruleset'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.Ruleset = factory(root.bimdata.ApiClient, root.bimdata.Rule);
+    root.bimdata.Ruleset = factory(root.bimdata.ApiClient, root.bimdata.Rule, root.bimdata.Ruleset);
   }
-}(this, function(ApiClient, Rule) {
+}(this, function(ApiClient, Rule, Ruleset) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The Ruleset model module.
    * @module model/Ruleset
-   * @version 1.0.14
+   * @version 1.0.15
    */
 
   /**
@@ -84,7 +84,7 @@
         obj['rules'] = ApiClient.convertToType(data['rules'], [Rule]);
       }
       if (data.hasOwnProperty('rulesets')) {
-        obj['rulesets'] = ApiClient.convertToType(data['rulesets'], ['String']);
+        obj['rulesets'] = ApiClient.convertToType(data['rulesets'], [Ruleset]);
       }
     }
     return obj;
@@ -111,7 +111,7 @@
    */
   exports.prototype['rules'] = undefined;
   /**
-   * @member {Array.<String>} rulesets
+   * @member {Array.<module:model/Ruleset>} rulesets
    */
   exports.prototype['rulesets'] = undefined;
 

@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Space'], factory);
+    define(['ApiClient', 'model/Space', 'model/Zone'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Space'));
+    module.exports = factory(require('../ApiClient'), require('./Space'), require('./Zone'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.Zone = factory(root.bimdata.ApiClient, root.bimdata.Space);
+    root.bimdata.Zone = factory(root.bimdata.ApiClient, root.bimdata.Space, root.bimdata.Zone);
   }
-}(this, function(ApiClient, Space) {
+}(this, function(ApiClient, Space, Zone) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The Zone model module.
    * @module model/Zone
-   * @version 1.0.14
+   * @version 1.0.15
    */
 
   /**
@@ -82,7 +82,7 @@
         obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
       }
       if (data.hasOwnProperty('zones')) {
-        obj['zones'] = ApiClient.convertToType(data['zones'], ['String']);
+        obj['zones'] = ApiClient.convertToType(data['zones'], [Zone]);
       }
       if (data.hasOwnProperty('parent_id')) {
         obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
@@ -116,7 +116,7 @@
    */
   exports.prototype['uuid'] = undefined;
   /**
-   * @member {Array.<String>} zones
+   * @member {Array.<module:model/Zone>} zones
    */
   exports.prototype['zones'] = undefined;
   /**

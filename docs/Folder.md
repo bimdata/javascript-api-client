@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
-**children** | **[String]** |  | [optional] 
+**children** | [**[Folder]**](Folder.md) |  | [optional] 
 **createdBy** | [**FosUser**](FosUser.md) |  | [optional] 
 
 

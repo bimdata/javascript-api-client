@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Unit'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Unit'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.Unit = factory(root.bimdata.ApiClient);
+    root.bimdata.Unit = factory(root.bimdata.ApiClient, root.bimdata.Unit);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Unit) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The Unit model module.
    * @module model/Unit
-   * @version 1.0.14
+   * @version 1.0.15
    */
 
   /**
@@ -93,7 +93,7 @@
         obj['conversion_factor'] = ApiClient.convertToType(data['conversion_factor'], 'Number');
       }
       if (data.hasOwnProperty('conversion_baseunit')) {
-        obj['conversion_baseunit'] = ApiClient.convertToType(data['conversion_baseunit'], 'String');
+        obj['conversion_baseunit'] = Unit.constructFromObject(data['conversion_baseunit']);
       }
       if (data.hasOwnProperty('elements')) {
         obj['elements'] = ApiClient.convertToType(data['elements'], 'String');
@@ -137,7 +137,7 @@
    */
   exports.prototype['conversion_factor'] = undefined;
   /**
-   * @member {String} conversion_baseunit
+   * @member {module:model/Unit} conversion_baseunit
    */
   exports.prototype['conversion_baseunit'] = undefined;
   /**

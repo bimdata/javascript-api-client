@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **status** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
+**documentId** | **String** |  | [optional] 
 **document** | [**IfcDocument**](IfcDocument.md) |  | [optional] 
 **structureFile** | **String** |  | [optional] 
 **systemsFile** | **String** |  | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **gltfFile** | **String** |  | [optional] 
 **bvhTreeFile** | **String** |  | [optional] 
 **errorDetail** | **String** |  | [optional] 
+**projectId** | **String** |  | [optional] 
 
 
 <a name="StatusEnum"></a>
