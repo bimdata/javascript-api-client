@@ -37,7 +37,7 @@
   /**
    * The Unit model module.
    * @module model/Unit
-   * @version 1.0.15
+   * @version 1.0.17
    */
 
   /**

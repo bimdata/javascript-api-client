@@ -37,7 +37,7 @@
   /**
    * The ElementPropertySetRelation model module.
    * @module model/ElementPropertySetRelation
-   * @version 1.0.15
+   * @version 1.0.17
    */
 
   /**
