@@ -37,7 +37,7 @@
   /**
    * The Element model module.
    * @module model/Element
-   * @version 1.0.17
+   * @version 1.0.22
    */
 
   /**

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **status** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
-**rootFolder** | [**ProjectRootFolder**](ProjectRootFolder.md) |  | [optional] 
+**rootFolderId** | **String** |  | [optional] 
 **propertyPermissionsEnabled** | **Boolean** |  | [optional] 
 
 

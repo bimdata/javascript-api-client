@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CheckPlan', 'model/CheckerResult', 'model/Classification', 'model/Cloud', 'model/Document', 'model/Element', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/Feature', 'model/Folder', 'model/FosUser', 'model/FosUserWrite', 'model/Ifc', 'model/IfcChecker', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults', 'model/IfcCreator', 'model/IfcDocument', 'model/IfcFiles', 'model/Notification', 'model/Project', 'model/ProjectRootFolder', 'model/Property', 'model/PropertyDefinition', 'model/PropertySet', 'model/Rule', 'model/RuleComponent', 'model/Ruleset', 'model/SignupFosUser', 'model/Space', 'model/Unit', 'model/Zone', 'model/ZoneSpace', 'api/CheckplanApi', 'api/CloudApi', 'api/IfcApi', 'api/ProjectApi', 'api/UserApi'], factory);
+    define(['ApiClient', 'model/CheckPlan', 'model/CheckerResult', 'model/Classification', 'model/Cloud', 'model/Document', 'model/Element', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/Feature', 'model/Folder', 'model/FosUser', 'model/FosUserWrite', 'model/Ifc', 'model/IfcChecker', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults', 'model/IfcCreator', 'model/IfcDocument', 'model/IfcFiles', 'model/Notification', 'model/Project', 'model/Property', 'model/PropertyDefinition', 'model/PropertySet', 'model/Rule', 'model/RuleComponent', 'model/Ruleset', 'model/SignupFosUser', 'model/Space', 'model/Unit', 'model/Zone', 'model/ZoneSpace', 'api/CheckplanApi', 'api/CloudApi', 'api/IfcApi', 'api/ProjectApi', 'api/UserApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/CheckPlan'), require('./model/CheckerResult'), require('./model/Classification'), require('./model/Cloud'), require('./model/Document'), require('./model/Element'), require('./model/ElementClassificationRelation'), require('./model/ElementPropertySetRelation'), require('./model/Feature'), require('./model/Folder'), require('./model/FosUser'), require('./model/FosUserWrite'), require('./model/Ifc'), require('./model/IfcChecker'), require('./model/IfcCheckerCheckplan'), require('./model/IfcCheckerResults'), require('./model/IfcCreator'), require('./model/IfcDocument'), require('./model/IfcFiles'), require('./model/Notification'), require('./model/Project'), require('./model/ProjectRootFolder'), require('./model/Property'), require('./model/PropertyDefinition'), require('./model/PropertySet'), require('./model/Rule'), require('./model/RuleComponent'), require('./model/Ruleset'), require('./model/SignupFosUser'), require('./model/Space'), require('./model/Unit'), require('./model/Zone'), require('./model/ZoneSpace'), require('./api/CheckplanApi'), require('./api/CloudApi'), require('./api/IfcApi'), require('./api/ProjectApi'), require('./api/UserApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/CheckPlan'), require('./model/CheckerResult'), require('./model/Classification'), require('./model/Cloud'), require('./model/Document'), require('./model/Element'), require('./model/ElementClassificationRelation'), require('./model/ElementPropertySetRelation'), require('./model/Feature'), require('./model/Folder'), require('./model/FosUser'), require('./model/FosUserWrite'), require('./model/Ifc'), require('./model/IfcChecker'), require('./model/IfcCheckerCheckplan'), require('./model/IfcCheckerResults'), require('./model/IfcCreator'), require('./model/IfcDocument'), require('./model/IfcFiles'), require('./model/Notification'), require('./model/Project'), require('./model/Property'), require('./model/PropertyDefinition'), require('./model/PropertySet'), require('./model/Rule'), require('./model/RuleComponent'), require('./model/Ruleset'), require('./model/SignupFosUser'), require('./model/Space'), require('./model/Unit'), require('./model/Zone'), require('./model/ZoneSpace'), require('./api/CheckplanApi'), require('./api/CloudApi'), require('./api/IfcApi'), require('./api/ProjectApi'), require('./api/UserApi'));
   }
-}(function(ApiClient, CheckPlan, CheckerResult, Classification, Cloud, Document, Element, ElementClassificationRelation, ElementPropertySetRelation, Feature, Folder, FosUser, FosUserWrite, Ifc, IfcChecker, IfcCheckerCheckplan, IfcCheckerResults, IfcCreator, IfcDocument, IfcFiles, Notification, Project, ProjectRootFolder, Property, PropertyDefinition, PropertySet, Rule, RuleComponent, Ruleset, SignupFosUser, Space, Unit, Zone, ZoneSpace, CheckplanApi, CloudApi, IfcApi, ProjectApi, UserApi) {
+}(function(ApiClient, CheckPlan, CheckerResult, Classification, Cloud, Document, Element, ElementClassificationRelation, ElementPropertySetRelation, Feature, Folder, FosUser, FosUserWrite, Ifc, IfcChecker, IfcCheckerCheckplan, IfcCheckerResults, IfcCreator, IfcDocument, IfcFiles, Notification, Project, Property, PropertyDefinition, PropertySet, Rule, RuleComponent, Ruleset, SignupFosUser, Space, Unit, Zone, ZoneSpace, CheckplanApi, CloudApi, IfcApi, ProjectApi, UserApi) {
   'use strict';
 
   /**
@@ -54,7 +54,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 1.0.17
+   * @version 1.0.22
    */
   var exports = {
     /**
@@ -167,11 +167,6 @@
      * @property {module:model/Project}
      */
     Project: Project,
-    /**
-     * The ProjectRootFolder model constructor.
-     * @property {module:model/ProjectRootFolder}
-     */
-    ProjectRootFolder: ProjectRootFolder,
     /**
      * The Property model constructor.
      * @property {module:model/Property}

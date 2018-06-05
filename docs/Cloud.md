@@ -6,10 +6,7 @@ Name | Type | Description | Notes
 **id** | **Number** |  | [optional] 
 **name** | **String** |  | 
 **features** | [**[Feature]**](Feature.md) |  | [optional] 
-**address** | **String** |  | [optional] 
 **creator** | [**FosUser**](FosUser.md) |  | [optional] 
-**postalCode** | **String** |  | [optional] 
-**city** | **String** |  | [optional] 
 **isDefault** | **Boolean** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 

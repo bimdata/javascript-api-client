@@ -37,7 +37,7 @@
   /**
    * The Ruleset model module.
    * @module model/Ruleset
-   * @version 1.0.17
+   * @version 1.0.22
    */
 
   /**
@@ -72,7 +72,7 @@
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
       if (data.hasOwnProperty('parent_ruleset_id')) {
-        obj['parent_ruleset_id'] = ApiClient.convertToType(data['parent_ruleset_id'], 'Number');
+        obj['parent_ruleset_id'] = ApiClient.convertToType(data['parent_ruleset_id'], 'String');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -95,7 +95,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * @member {Number} parent_ruleset_id
+   * @member {String} parent_ruleset_id
    */
   exports.prototype['parent_ruleset_id'] = undefined;
   /**

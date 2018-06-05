@@ -37,7 +37,7 @@
   /**
    * The ElementClassificationRelation model module.
    * @module model/ElementClassificationRelation
-   * @version 1.0.17
+   * @version 1.0.22
    */
 
   /**

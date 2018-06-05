@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Cloud', 'model/ProjectRootFolder'], factory);
+    define(['ApiClient', 'model/Cloud'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Cloud'), require('./ProjectRootFolder'));
+    module.exports = factory(require('../ApiClient'), require('./Cloud'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.Project = factory(root.bimdata.ApiClient, root.bimdata.Cloud, root.bimdata.ProjectRootFolder);
+    root.bimdata.Project = factory(root.bimdata.ApiClient, root.bimdata.Cloud);
   }
-}(this, function(ApiClient, Cloud, ProjectRootFolder) {
+}(this, function(ApiClient, Cloud) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The Project model module.
    * @module model/Project
-   * @version 1.0.17
+   * @version 1.0.22
    */
 
   /**
@@ -92,8 +92,8 @@
       if (data.hasOwnProperty('updated_at')) {
         obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
       }
-      if (data.hasOwnProperty('root_folder')) {
-        obj['root_folder'] = ProjectRootFolder.constructFromObject(data['root_folder']);
+      if (data.hasOwnProperty('root_folder_id')) {
+        obj['root_folder_id'] = ApiClient.convertToType(data['root_folder_id'], 'String');
       }
       if (data.hasOwnProperty('property_permissions_enabled')) {
         obj['property_permissions_enabled'] = ApiClient.convertToType(data['property_permissions_enabled'], 'Boolean');
@@ -131,9 +131,9 @@
    */
   exports.prototype['updated_at'] = undefined;
   /**
-   * @member {module:model/ProjectRootFolder} root_folder
+   * @member {String} root_folder_id
    */
-  exports.prototype['root_folder'] = undefined;
+  exports.prototype['root_folder_id'] = undefined;
   /**
    * @member {Boolean} property_permissions_enabled
    */

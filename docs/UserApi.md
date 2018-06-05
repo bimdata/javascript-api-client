@@ -269,7 +269,7 @@ This endpoint does not need any parameter.
 
 <a name="getSelfUser"></a>
 # **getSelfUser**
-> getSelfUser()
+> FosUser getSelfUser()
 
 
 
@@ -292,7 +292,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.getSelfUser(callback);
@@ -303,7 +303,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+[**FosUser**](FosUser.md)
 
 ### Authorization
 
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 
 <a name="updateSelfUser"></a>
 # **updateSelfUser**
-> updateSelfUser()
+> FosUser updateSelfUser()
 
 
 
@@ -542,7 +542,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.updateSelfUser(callback);
@@ -553,7 +553,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+[**FosUser**](FosUser.md)
 
 ### Authorization
 

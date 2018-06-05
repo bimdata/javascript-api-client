@@ -37,7 +37,7 @@
   /**
    * The Cloud model module.
    * @module model/Cloud
-   * @version 1.0.17
+   * @version 1.0.22
    */
 
   /**
@@ -51,9 +51,6 @@
 
 
     _this['name'] = name;
-
-
-
 
 
 
@@ -81,17 +78,8 @@
       if (data.hasOwnProperty('features')) {
         obj['features'] = ApiClient.convertToType(data['features'], [Feature]);
       }
-      if (data.hasOwnProperty('address')) {
-        obj['address'] = ApiClient.convertToType(data['address'], 'String');
-      }
       if (data.hasOwnProperty('creator')) {
         obj['creator'] = FosUser.constructFromObject(data['creator']);
-      }
-      if (data.hasOwnProperty('postal_code')) {
-        obj['postal_code'] = ApiClient.convertToType(data['postal_code'], 'String');
-      }
-      if (data.hasOwnProperty('city')) {
-        obj['city'] = ApiClient.convertToType(data['city'], 'String');
       }
       if (data.hasOwnProperty('is_default')) {
         obj['is_default'] = ApiClient.convertToType(data['is_default'], 'Boolean');
@@ -119,21 +107,9 @@
    */
   exports.prototype['features'] = undefined;
   /**
-   * @member {String} address
-   */
-  exports.prototype['address'] = undefined;
-  /**
    * @member {module:model/FosUser} creator
    */
   exports.prototype['creator'] = undefined;
-  /**
-   * @member {String} postal_code
-   */
-  exports.prototype['postal_code'] = undefined;
-  /**
-   * @member {String} city
-   */
-  exports.prototype['city'] = undefined;
   /**
    * @member {Boolean} is_default
    */
