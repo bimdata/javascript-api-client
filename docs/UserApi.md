@@ -37,15 +37,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
+apiInstance.askResetPasswordToken().then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.askResetPasswordToken(callback);
 ```
 
 ### Parameters
@@ -89,15 +86,12 @@ var id = "id_example"; // String |
 
 var data = new bimdata.Notification(); // Notification | 
 
+apiInstance.fullUpdateNotification(id, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateNotification(id, data, callback);
 ```
 
 ### Parameters
@@ -143,15 +137,12 @@ var apiInstance = new bimdata.UserApi();
 
 var id = "id_example"; // String | 
 
+apiInstance.getNotification(id, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getNotification(id, , callback);
 ```
 
 ### Parameters
@@ -193,15 +184,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
+apiInstance.getSelfNotifications().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getSelfNotifications(callback);
 ```
 
 ### Parameters
@@ -240,15 +228,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
+apiInstance.getSelfProjects().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getSelfProjects(callback);
 ```
 
 ### Parameters
@@ -287,15 +272,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
+apiInstance.getSelfUser().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getSelfUser(callback);
 ```
 
 ### Parameters
@@ -334,15 +316,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
+apiInstance.resetPassword().then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.resetPassword(callback);
 ```
 
 ### Parameters
@@ -384,15 +363,12 @@ var apiInstance = new bimdata.UserApi();
 
 var data = new bimdata.SignupFosUser(); // SignupFosUser | 
 
+apiInstance.signUp(data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.signUp(data, callback);
 ```
 
 ### Parameters
@@ -434,15 +410,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
+apiInstance.signUpWithInvitationToken().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.signUpWithInvitationToken(callback);
 ```
 
 ### Parameters
@@ -486,15 +459,12 @@ var id = "id_example"; // String |
 
 var data = new bimdata.Notification(); // Notification | 
 
+apiInstance.updateNotification(id, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateNotification(id, data, callback);
 ```
 
 ### Parameters
@@ -537,15 +507,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
+apiInstance.updateSelfUser().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateSelfUser(callback);
 ```
 
 ### Parameters

@@ -37,7 +37,7 @@
   /**
    * The Feature model module.
    * @module model/Feature
-   * @version 1.0.22
+   * @version 1.0.23
    */
 
   /**

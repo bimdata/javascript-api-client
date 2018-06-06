@@ -37,7 +37,7 @@
   /**
    * The Folder model module.
    * @module model/Folder
-   * @version 1.0.22
+   * @version 1.0.23
    */
 
   /**

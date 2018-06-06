@@ -34,7 +34,7 @@
   /**
    * Ifc service.
    * @module api/IfcApi
-   * @version 1.0.22
+   * @version 1.0.23
    */
 
   /**
@@ -48,22 +48,15 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the bulkDeleteIfcClassifications operation.
-     * @callback module:api/IfcApi~bulkDeleteIfcClassificationsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      *              Delete relation between filtered classifications (eg. /classifications?name&#x3D;untec) and all ifc&#39;s elements.             No classification will be deleted on this endpoint, only the relation between ifc&#39;s elements and their classification.         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~bulkDeleteIfcClassificationsCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.bulkDeleteIfcClassifications = function(cloudPk, ifcPk, projectPk, callback) {
+    this.bulkDeleteIfcClassificationsWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -104,26 +97,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/list_destroy', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the bulkDeleteIfcProperties operation.
-     * @callback module:api/IfcApi~bulkDeleteIfcPropertiesCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     *              Delete relation between filtered classifications (eg. /classifications?name&#x3D;untec) and all ifc&#39;s elements.             No classification will be deleted on this endpoint, only the relation between ifc&#39;s elements and their classification.         
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.bulkDeleteIfcClassifications = function(cloudPk, ifcPk, projectPk) {
+      return this.bulkDeleteIfcClassificationsWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~bulkDeleteIfcPropertiesCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.bulkDeleteIfcProperties = function(cloudPk, ifcPk, projectPk, callback) {
+    this.bulkDeleteIfcPropertiesWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -164,26 +164,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_destroy', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the bulkDeleteIfcPropertyDefinitions operation.
-     * @callback module:api/IfcApi~bulkDeleteIfcPropertyDefinitionsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~bulkDeleteIfcPropertyDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.bulkDeleteIfcPropertyDefinitions = function(cloudPk, ifcPk, projectPk, callback) {
+    this.bulkDeleteIfcProperties = function(cloudPk, ifcPk, projectPk) {
+      return this.bulkDeleteIfcPropertiesWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.bulkDeleteIfcPropertyDefinitionsWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -224,26 +231,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/bulk_destroy', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the bulkDeleteIfcUnits operation.
-     * @callback module:api/IfcApi~bulkDeleteIfcUnitsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~bulkDeleteIfcUnitsCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.bulkDeleteIfcUnits = function(cloudPk, ifcPk, projectPk, callback) {
+    this.bulkDeleteIfcPropertyDefinitions = function(cloudPk, ifcPk, projectPk) {
+      return this.bulkDeleteIfcPropertyDefinitionsWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.bulkDeleteIfcUnitsWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -284,26 +298,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/bulk_destroy', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the bulkDeletePropertySet operation.
-     * @callback module:api/IfcApi~bulkDeletePropertySetCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~bulkDeletePropertySetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.bulkDeletePropertySet = function(cloudPk, ifcPk, projectPk, callback) {
+    this.bulkDeleteIfcUnits = function(cloudPk, ifcPk, projectPk) {
+      return this.bulkDeleteIfcUnitsWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.bulkDeletePropertySetWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -344,17 +365,24 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/bulk_destroy', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the bulkFullUpdateElements operation.
-     * @callback module:api/IfcApi~bulkFullUpdateElementsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Element>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.bulkDeletePropertySet = function(cloudPk, ifcPk, projectPk) {
+      return this.bulkDeletePropertySetWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
@@ -362,10 +390,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Element>} data 
-     * @param {module:api/IfcApi~bulkFullUpdateElementsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Element>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Element>} and HTTP response
      */
-    this.bulkFullUpdateElements = function(cloudPk, ifcPk, projectPk, data, callback) {
+    this.bulkFullUpdateElementsWithHttpInfo = function(cloudPk, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -411,17 +438,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the bulkFullUpdateIfcProperty operation.
-     * @callback module:api/IfcApi~bulkFullUpdateIfcPropertyCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Property>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/Element>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Element>}
      */
+    this.bulkFullUpdateElements = function(cloudPk, ifcPk, projectPk, data) {
+      return this.bulkFullUpdateElementsWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
@@ -429,10 +464,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Property>} data 
-     * @param {module:api/IfcApi~bulkFullUpdateIfcPropertyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Property>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Property>} and HTTP response
      */
-    this.bulkFullUpdateIfcProperty = function(cloudPk, ifcPk, projectPk, data, callback) {
+    this.bulkFullUpdateIfcPropertyWithHttpInfo = function(cloudPk, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -478,17 +512,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the bulkRemoveClassificationsOfElement operation.
-     * @callback module:api/IfcApi~bulkRemoveClassificationsOfElementCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/Property>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Property>}
      */
+    this.bulkFullUpdateIfcProperty = function(cloudPk, ifcPk, projectPk, data) {
+      return this.bulkFullUpdateIfcPropertyWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
@@ -496,9 +538,9 @@
      * @param {String} elementUuid 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~bulkRemoveClassificationsOfElementCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.bulkRemoveClassificationsOfElement = function(cloudPk, elementUuid, ifcPk, projectPk, callback) {
+    this.bulkRemoveClassificationsOfElementWithHttpInfo = function(cloudPk, elementUuid, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -545,17 +587,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/bulk_destroy', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the bulkRemoveElementsFromClassification operation.
-     * @callback module:api/IfcApi~bulkRemoveElementsFromClassificationCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.bulkRemoveClassificationsOfElement = function(cloudPk, elementUuid, ifcPk, projectPk) {
+      return this.bulkRemoveClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
@@ -563,9 +613,9 @@
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~bulkRemoveElementsFromClassificationCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.bulkRemoveElementsFromClassification = function(cloudPk, ifcClassificationPk, ifcPk, projectPk, callback) {
+    this.bulkRemoveElementsFromClassificationWithHttpInfo = function(cloudPk, ifcClassificationPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -612,17 +662,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/bulk_destroy', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the bulkUpdateElements operation.
-     * @callback module:api/IfcApi~bulkUpdateElementsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Element>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * @param {String} cloudPk 
+     * @param {String} ifcClassificationPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.bulkRemoveElementsFromClassification = function(cloudPk, ifcClassificationPk, ifcPk, projectPk) {
+      return this.bulkRemoveElementsFromClassificationWithHttpInfo(cloudPk, ifcClassificationPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
@@ -630,10 +688,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Element>} data 
-     * @param {module:api/IfcApi~bulkUpdateElementsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Element>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Element>} and HTTP response
      */
-    this.bulkUpdateElements = function(cloudPk, ifcPk, projectPk, data, callback) {
+    this.bulkUpdateElementsWithHttpInfo = function(cloudPk, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -679,17 +736,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the bulkUpdateIfcProperty operation.
-     * @callback module:api/IfcApi~bulkUpdateIfcPropertyCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Property>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/Element>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Element>}
      */
+    this.bulkUpdateElements = function(cloudPk, ifcPk, projectPk, data) {
+      return this.bulkUpdateElementsWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
@@ -697,10 +762,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Property>} data 
-     * @param {module:api/IfcApi~bulkUpdateIfcPropertyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Property>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Property>} and HTTP response
      */
-    this.bulkUpdateIfcProperty = function(cloudPk, ifcPk, projectPk, data, callback) {
+    this.bulkUpdateIfcPropertyWithHttpInfo = function(cloudPk, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -746,17 +810,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createClassificationElementRelations operation.
-     * @callback module:api/IfcApi~createClassificationElementRelationsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/Property>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Property>}
      */
+    this.bulkUpdateIfcProperty = function(cloudPk, ifcPk, projectPk, data) {
+      return this.bulkUpdateIfcPropertyWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          create association between existing classification and existing element     
@@ -764,9 +836,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/ElementClassificationRelation>} data 
-     * @param {module:api/IfcApi~createClassificationElementRelationsCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.createClassificationElementRelations = function(cloudPk, ifcPk, projectPk, data, callback) {
+    this.createClassificationElementRelationsWithHttpInfo = function(cloudPk, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -812,17 +884,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createClassificationsOfElement operation.
-     * @callback module:api/IfcApi~createClassificationsOfElementCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Classification>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          create association between existing classification and existing element     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/ElementClassificationRelation>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.createClassificationElementRelations = function(cloudPk, ifcPk, projectPk, data) {
+      return this.createClassificationElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
@@ -831,10 +911,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Classification>} data 
-     * @param {module:api/IfcApi~createClassificationsOfElementCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Classification>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
      */
-    this.createClassificationsOfElement = function(cloudPk, elementUuid, ifcPk, projectPk, data, callback) {
+    this.createClassificationsOfElementWithHttpInfo = function(cloudPk, elementUuid, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -886,17 +965,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createElement operation.
-     * @callback module:api/IfcApi~createElementCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Element>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/Classification>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
      */
+    this.createClassificationsOfElement = function(cloudPk, elementUuid, ifcPk, projectPk, data) {
+      return this.createClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
@@ -904,10 +992,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Element>} data 
-     * @param {module:api/IfcApi~createElementCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Element>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Element>} and HTTP response
      */
-    this.createElement = function(cloudPk, ifcPk, projectPk, data, callback) {
+    this.createElementWithHttpInfo = function(cloudPk, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -953,17 +1040,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createElementPropertySet operation.
-     * @callback module:api/IfcApi~createElementPropertySetCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/Element>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Element>}
      */
+    this.createElement = function(cloudPk, ifcPk, projectPk, data) {
+      return this.createElementWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Create an property_set that will be automatically linked to the element     
@@ -972,9 +1067,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertySet} data 
-     * @param {module:api/IfcApi~createElementPropertySetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.createElementPropertySet = function(cloudPk, elementUuid, ifcPk, projectPk, data, callback) {
+    this.createElementPropertySetWithHttpInfo = function(cloudPk, elementUuid, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1026,17 +1121,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createElementPropertySetProperty operation.
-     * @callback module:api/IfcApi~createElementPropertySetPropertyCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Property} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          Create an property_set that will be automatically linked to the element     
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/PropertySet} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.createElementPropertySet = function(cloudPk, elementUuid, ifcPk, projectPk, data) {
+      return this.createElementPropertySetWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -1046,10 +1150,9 @@
      * @param {String} projectPk 
      * @param {String} propertysetPk 
      * @param {module:model/Property} data 
-     * @param {module:api/IfcApi~createElementPropertySetPropertyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Property}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
      */
-    this.createElementPropertySetProperty = function(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, data, callback) {
+    this.createElementPropertySetPropertyWithHttpInfo = function(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1107,17 +1210,27 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createElementPropertySetPropertyDefinition operation.
-     * @callback module:api/IfcApi~createElementPropertySetPropertyDefinitionCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PropertyDefinition} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @param {module:model/Property} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
      */
+    this.createElementPropertySetProperty = function(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, data) {
+      return this.createElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -1128,10 +1241,9 @@
      * @param {String} propertyPk 
      * @param {String} propertysetPk 
      * @param {module:model/PropertyDefinition} data 
-     * @param {module:api/IfcApi~createElementPropertySetPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PropertyDefinition}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
      */
-    this.createElementPropertySetPropertyDefinition = function(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, data, callback) {
+    this.createElementPropertySetPropertyDefinitionWithHttpInfo = function(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1195,17 +1307,28 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createElementPropertySetPropertyDefinitionUnit operation.
-     * @callback module:api/IfcApi~createElementPropertySetPropertyDefinitionUnitCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Unit} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertyPk 
+     * @param {String} propertysetPk 
+     * @param {module:model/PropertyDefinition} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
      */
+    this.createElementPropertySetPropertyDefinition = function(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, data) {
+      return this.createElementPropertySetPropertyDefinitionWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -1217,10 +1340,9 @@
      * @param {String} propertydefinitionPk 
      * @param {String} propertysetPk 
      * @param {module:model/Unit} data 
-     * @param {module:api/IfcApi~createElementPropertySetPropertyDefinitionUnitCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Unit}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
      */
-    this.createElementPropertySetPropertyDefinitionUnit = function(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data, callback) {
+    this.createElementPropertySetPropertyDefinitionUnitWithHttpInfo = function(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1290,17 +1412,29 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createIfcPropertyDefinition operation.
-     * @callback module:api/IfcApi~createIfcPropertyDefinitionCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/PropertyDefinition>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertyPk 
+     * @param {String} propertydefinitionPk 
+     * @param {String} propertysetPk 
+     * @param {module:model/Unit} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
      */
+    this.createElementPropertySetPropertyDefinitionUnit = function(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data) {
+      return this.createElementPropertySetPropertyDefinitionUnitWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
@@ -1308,10 +1442,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/PropertyDefinition>} data 
-     * @param {module:api/IfcApi~createIfcPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/PropertyDefinition>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyDefinition>} and HTTP response
      */
-    this.createIfcPropertyDefinition = function(cloudPk, ifcPk, projectPk, data, callback) {
+    this.createIfcPropertyDefinitionWithHttpInfo = function(cloudPk, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1357,17 +1490,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createIfcUnit operation.
-     * @callback module:api/IfcApi~createIfcUnitCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Unit>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/PropertyDefinition>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyDefinition>}
      */
+    this.createIfcPropertyDefinition = function(cloudPk, ifcPk, projectPk, data) {
+      return this.createIfcPropertyDefinitionWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
@@ -1375,10 +1516,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Unit>} data 
-     * @param {module:api/IfcApi~createIfcUnitCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Unit>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Unit>} and HTTP response
      */
-    this.createIfcUnit = function(cloudPk, ifcPk, projectPk, data, callback) {
+    this.createIfcUnitWithHttpInfo = function(cloudPk, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1424,17 +1564,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createPropertySet operation.
-     * @callback module:api/IfcApi~createPropertySetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/PropertySet>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/Unit>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Unit>}
      */
+    this.createIfcUnit = function(cloudPk, ifcPk, projectPk, data) {
+      return this.createIfcUnitWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
@@ -1442,10 +1590,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/PropertySet>} data 
-     * @param {module:api/IfcApi~createPropertySetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/PropertySet>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertySet>} and HTTP response
      */
-    this.createPropertySet = function(cloudPk, ifcPk, projectPk, data, callback) {
+    this.createPropertySetWithHttpInfo = function(cloudPk, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1491,17 +1638,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createPropertySetElementRelations operation.
-     * @callback module:api/IfcApi~createPropertySetElementRelationsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/PropertySet>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertySet>}
      */
+    this.createPropertySet = function(cloudPk, ifcPk, projectPk, data) {
+      return this.createPropertySetWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          create association between existing classification and existing element     
@@ -1509,9 +1664,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/ElementPropertySetRelation>} data 
-     * @param {module:api/IfcApi~createPropertySetElementRelationsCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.createPropertySetElementRelations = function(cloudPk, ifcPk, projectPk, data, callback) {
+    this.createPropertySetElementRelationsWithHttpInfo = function(cloudPk, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1557,17 +1712,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset-element', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createRawElements operation.
-     * @callback module:api/IfcApi~createRawElementsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     *          create association between existing classification and existing element     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/ElementPropertySetRelation>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.createPropertySetElementRelations = function(cloudPk, ifcPk, projectPk, data) {
+      return this.createPropertySetElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          You can use the same optimized structure to post multiple elements ,property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination will be returned         
@@ -1575,9 +1738,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Element} data 
-     * @param {module:api/IfcApi~createRawElementsCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.createRawElements = function(cloudPk, ifcPk, projectPk, data, callback) {
+    this.createRawElementsWithHttpInfo = function(cloudPk, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1623,17 +1786,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createSpace operation.
-     * @callback module:api/IfcApi~createSpaceCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Space>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          You can use the same optimized structure to post multiple elements ,property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination will be returned         
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Element} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.createRawElements = function(cloudPk, ifcPk, projectPk, data) {
+      return this.createRawElementsWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
@@ -1641,10 +1812,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Space>} data 
-     * @param {module:api/IfcApi~createSpaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Space>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Space>} and HTTP response
      */
-    this.createSpace = function(cloudPk, ifcPk, projectPk, data, callback) {
+    this.createSpaceWithHttpInfo = function(cloudPk, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1690,17 +1860,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createZone operation.
-     * @callback module:api/IfcApi~createZoneCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Zone>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/Space>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Space>}
      */
+    this.createSpace = function(cloudPk, ifcPk, projectPk, data) {
+      return this.createSpaceWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
@@ -1708,10 +1886,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Zone>} data 
-     * @param {module:api/IfcApi~createZoneCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Zone>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Zone>} and HTTP response
      */
-    this.createZone = function(cloudPk, ifcPk, projectPk, data, callback) {
+    this.createZoneWithHttpInfo = function(cloudPk, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1757,17 +1934,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createZoneSpace operation.
-     * @callback module:api/IfcApi~createZoneSpaceCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ZoneSpace} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/Zone>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Zone>}
      */
+    this.createZone = function(cloudPk, ifcPk, projectPk, data) {
+      return this.createZoneWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -1776,10 +1961,9 @@
      * @param {String} projectPk 
      * @param {String} zonePk 
      * @param {module:model/ZoneSpace} data 
-     * @param {module:api/IfcApi~createZoneSpaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ZoneSpace}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ZoneSpace} and HTTP response
      */
-    this.createZoneSpace = function(cloudPk, ifcPk, projectPk, zonePk, data, callback) {
+    this.createZoneSpaceWithHttpInfo = function(cloudPk, ifcPk, projectPk, zonePk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1831,17 +2015,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteElement operation.
-     * @callback module:api/IfcApi~deleteElementCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} zonePk 
+     * @param {module:model/ZoneSpace} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ZoneSpace}
      */
+    this.createZoneSpace = function(cloudPk, ifcPk, projectPk, zonePk, data) {
+      return this.createZoneSpaceWithHttpInfo(cloudPk, ifcPk, projectPk, zonePk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -1849,9 +2042,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} uuid 
-     * @param {module:api/IfcApi~deleteElementCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteElement = function(cloudPk, ifcPk, projectPk, uuid, callback) {
+    this.deleteElementWithHttpInfo = function(cloudPk, ifcPk, projectPk, uuid) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -1898,26 +2091,34 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteIfc operation.
-     * @callback module:api/IfcApi~deleteIfcCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteElement = function(cloudPk, ifcPk, projectPk, uuid) {
+      return this.deleteElementWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~deleteIfcCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteIfc = function(cloudPk, id, projectPk, callback) {
+    this.deleteIfcWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -1958,17 +2159,24 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteIfcProperty operation.
-     * @callback module:api/IfcApi~deleteIfcPropertyCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteIfc = function(cloudPk, id, projectPk) {
+      return this.deleteIfcWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -1976,9 +2184,9 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~deleteIfcPropertyCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteIfcProperty = function(cloudPk, id, ifcPk, projectPk, callback) {
+    this.deleteIfcPropertyWithHttpInfo = function(cloudPk, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -2025,17 +2233,9 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the deleteIfcPropertyDefinition operation.
-     * @callback module:api/IfcApi~deleteIfcPropertyDefinitionCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
@@ -2043,9 +2243,25 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~deleteIfcPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteIfcPropertyDefinition = function(cloudPk, id, ifcPk, projectPk, callback) {
+    this.deleteIfcProperty = function(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteIfcPropertyWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deleteIfcPropertyDefinitionWithHttpInfo = function(cloudPk, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -2092,17 +2308,9 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the deleteIfcUnit operation.
-     * @callback module:api/IfcApi~deleteIfcUnitCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
@@ -2110,9 +2318,25 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~deleteIfcUnitCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteIfcUnit = function(cloudPk, id, ifcPk, projectPk, callback) {
+    this.deleteIfcPropertyDefinition = function(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteIfcPropertyDefinitionWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deleteIfcUnitWithHttpInfo = function(cloudPk, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -2159,17 +2383,9 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the deletePropertySet operation.
-     * @callback module:api/IfcApi~deletePropertySetCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
@@ -2177,9 +2393,25 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~deletePropertySetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deletePropertySet = function(cloudPk, id, ifcPk, projectPk, callback) {
+    this.deleteIfcUnit = function(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteIfcUnitWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deletePropertySetWithHttpInfo = function(cloudPk, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -2226,17 +2458,9 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the deleteSpace operation.
-     * @callback module:api/IfcApi~deleteSpaceCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
@@ -2244,9 +2468,25 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~deleteSpaceCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteSpace = function(cloudPk, id, ifcPk, projectPk, callback) {
+    this.deletePropertySet = function(cloudPk, id, ifcPk, projectPk) {
+      return this.deletePropertySetWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deleteSpaceWithHttpInfo = function(cloudPk, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -2293,17 +2533,9 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the deleteZone operation.
-     * @callback module:api/IfcApi~deleteZoneCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
@@ -2311,9 +2543,25 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~deleteZoneCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteZone = function(cloudPk, id, ifcPk, projectPk, callback) {
+    this.deleteSpace = function(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteSpaceWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deleteZoneWithHttpInfo = function(cloudPk, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -2360,17 +2608,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteZoneSpace operation.
-     * @callback module:api/IfcApi~deleteZoneSpaceCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteZone = function(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteZoneWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -2379,9 +2635,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
-     * @param {module:api/IfcApi~deleteZoneSpaceCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteZoneSpace = function(cloudPk, id, ifcPk, projectPk, zonePk, callback) {
+    this.deleteZoneSpaceWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, zonePk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -2434,17 +2690,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateElement operation.
-     * @callback module:api/IfcApi~fullUpdateElementCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Element} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} zonePk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteZoneSpace = function(cloudPk, id, ifcPk, projectPk, zonePk) {
+      return this.deleteZoneSpaceWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -2453,10 +2718,9 @@
      * @param {String} projectPk 
      * @param {String} uuid 
      * @param {module:model/Element} data 
-     * @param {module:api/IfcApi~fullUpdateElementCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Element}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Element} and HTTP response
      */
-    this.fullUpdateElement = function(cloudPk, ifcPk, projectPk, uuid, data, callback) {
+    this.fullUpdateElementWithHttpInfo = function(cloudPk, ifcPk, projectPk, uuid, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -2508,17 +2772,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateIfc operation.
-     * @callback module:api/IfcApi~fullUpdateIfcCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ifc} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid 
+     * @param {module:model/Element} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Element}
      */
+    this.fullUpdateElement = function(cloudPk, ifcPk, projectPk, uuid, data) {
+      return this.fullUpdateElementWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -2526,10 +2799,9 @@
      * @param {String} id 
      * @param {String} projectPk 
      * @param {module:model/Ifc} data 
-     * @param {module:api/IfcApi~fullUpdateIfcCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ifc}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ifc} and HTTP response
      */
-    this.fullUpdateIfc = function(cloudPk, id, projectPk, data, callback) {
+    this.fullUpdateIfcWithHttpInfo = function(cloudPk, id, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -2575,17 +2847,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateIfcProperty operation.
-     * @callback module:api/IfcApi~fullUpdateIfcPropertyCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Property} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {module:model/Ifc} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ifc}
      */
+    this.fullUpdateIfc = function(cloudPk, id, projectPk, data) {
+      return this.fullUpdateIfcWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -2594,10 +2874,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Property} data 
-     * @param {module:api/IfcApi~fullUpdateIfcPropertyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Property}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
      */
-    this.fullUpdateIfcProperty = function(cloudPk, id, ifcPk, projectPk, data, callback) {
+    this.fullUpdateIfcPropertyWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -2649,17 +2928,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateIfcPropertyDefinition operation.
-     * @callback module:api/IfcApi~fullUpdateIfcPropertyDefinitionCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PropertyDefinition} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Property} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
      */
+    this.fullUpdateIfcProperty = function(cloudPk, id, ifcPk, projectPk, data) {
+      return this.fullUpdateIfcPropertyWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -2668,10 +2956,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertyDefinition} data 
-     * @param {module:api/IfcApi~fullUpdateIfcPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PropertyDefinition}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
      */
-    this.fullUpdateIfcPropertyDefinition = function(cloudPk, id, ifcPk, projectPk, data, callback) {
+    this.fullUpdateIfcPropertyDefinitionWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -2723,17 +3010,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateIfcUnit operation.
-     * @callback module:api/IfcApi~fullUpdateIfcUnitCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Unit} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/PropertyDefinition} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
      */
+    this.fullUpdateIfcPropertyDefinition = function(cloudPk, id, ifcPk, projectPk, data) {
+      return this.fullUpdateIfcPropertyDefinitionWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -2742,10 +3038,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Unit} data 
-     * @param {module:api/IfcApi~fullUpdateIfcUnitCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Unit}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
      */
-    this.fullUpdateIfcUnit = function(cloudPk, id, ifcPk, projectPk, data, callback) {
+    this.fullUpdateIfcUnitWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -2797,17 +3092,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdatePropertySet operation.
-     * @callback module:api/IfcApi~fullUpdatePropertySetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PropertySet} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Unit} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
      */
+    this.fullUpdateIfcUnit = function(cloudPk, id, ifcPk, projectPk, data) {
+      return this.fullUpdateIfcUnitWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -2816,10 +3120,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertySet} data 
-     * @param {module:api/IfcApi~fullUpdatePropertySetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PropertySet}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertySet} and HTTP response
      */
-    this.fullUpdatePropertySet = function(cloudPk, id, ifcPk, projectPk, data, callback) {
+    this.fullUpdatePropertySetWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -2871,17 +3174,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateSpace operation.
-     * @callback module:api/IfcApi~fullUpdateSpaceCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Space} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/PropertySet} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertySet}
      */
+    this.fullUpdatePropertySet = function(cloudPk, id, ifcPk, projectPk, data) {
+      return this.fullUpdatePropertySetWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -2890,10 +3202,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Space} data 
-     * @param {module:api/IfcApi~fullUpdateSpaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Space}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Space} and HTTP response
      */
-    this.fullUpdateSpace = function(cloudPk, id, ifcPk, projectPk, data, callback) {
+    this.fullUpdateSpaceWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -2945,17 +3256,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateZone operation.
-     * @callback module:api/IfcApi~fullUpdateZoneCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Zone} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Space} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Space}
      */
+    this.fullUpdateSpace = function(cloudPk, id, ifcPk, projectPk, data) {
+      return this.fullUpdateSpaceWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -2964,10 +3284,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Zone} data 
-     * @param {module:api/IfcApi~fullUpdateZoneCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Zone}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Zone} and HTTP response
      */
-    this.fullUpdateZone = function(cloudPk, id, ifcPk, projectPk, data, callback) {
+    this.fullUpdateZoneWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -3019,17 +3338,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateZoneSpace operation.
-     * @callback module:api/IfcApi~fullUpdateZoneSpaceCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ZoneSpace} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Zone} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Zone}
      */
+    this.fullUpdateZone = function(cloudPk, id, ifcPk, projectPk, data) {
+      return this.fullUpdateZoneWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -3039,10 +3367,9 @@
      * @param {String} projectPk 
      * @param {String} zonePk 
      * @param {module:model/ZoneSpace} data 
-     * @param {module:api/IfcApi~fullUpdateZoneSpaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ZoneSpace}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ZoneSpace} and HTTP response
      */
-    this.fullUpdateZoneSpace = function(cloudPk, id, ifcPk, projectPk, zonePk, data, callback) {
+    this.fullUpdateZoneSpaceWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, zonePk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -3100,17 +3427,27 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getClassificationsOfElement operation.
-     * @callback module:api/IfcApi~getClassificationsOfElementCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Classification>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} zonePk 
+     * @param {module:model/ZoneSpace} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ZoneSpace}
      */
+    this.fullUpdateZoneSpace = function(cloudPk, id, ifcPk, projectPk, zonePk, data) {
+      return this.fullUpdateZoneSpaceWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -3118,10 +3455,9 @@
      * @param {String} elementUuid 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getClassificationsOfElementCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Classification>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
      */
-    this.getClassificationsOfElement = function(cloudPk, elementUuid, ifcPk, projectPk, callback) {
+    this.getClassificationsOfElementWithHttpInfo = function(cloudPk, elementUuid, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -3168,17 +3504,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getElement operation.
-     * @callback module:api/IfcApi~getElementCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Element} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
      */
+    this.getClassificationsOfElement = function(cloudPk, elementUuid, ifcPk, projectPk) {
+      return this.getClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -3186,10 +3530,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} uuid 
-     * @param {module:api/IfcApi~getElementCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Element}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Element} and HTTP response
      */
-    this.getElement = function(cloudPk, ifcPk, projectPk, uuid, callback) {
+    this.getElementWithHttpInfo = function(cloudPk, ifcPk, projectPk, uuid) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -3236,17 +3579,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getElementPropertySet operation.
-     * @callback module:api/IfcApi~getElementPropertySetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PropertySet} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Element}
      */
+    this.getElement = function(cloudPk, ifcPk, projectPk, uuid) {
+      return this.getElementWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -3255,10 +3606,9 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getElementPropertySetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PropertySet}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertySet} and HTTP response
      */
-    this.getElementPropertySet = function(cloudPk, elementUuid, id, ifcPk, projectPk, callback) {
+    this.getElementPropertySetWithHttpInfo = function(cloudPk, elementUuid, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -3311,17 +3661,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getElementPropertySetProperties operation.
-     * @callback module:api/IfcApi~getElementPropertySetPropertiesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Property>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertySet}
      */
+    this.getElementPropertySet = function(cloudPk, elementUuid, id, ifcPk, projectPk) {
+      return this.getElementPropertySetWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -3330,10 +3689,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertysetPk 
-     * @param {module:api/IfcApi~getElementPropertySetPropertiesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Property>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Property>} and HTTP response
      */
-    this.getElementPropertySetProperties = function(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, callback) {
+    this.getElementPropertySetPropertiesWithHttpInfo = function(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -3386,17 +3744,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getElementPropertySetProperty operation.
-     * @callback module:api/IfcApi~getElementPropertySetPropertyCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Property} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Property>}
      */
+    this.getElementPropertySetProperties = function(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk) {
+      return this.getElementPropertySetPropertiesWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -3406,10 +3773,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertysetPk 
-     * @param {module:api/IfcApi~getElementPropertySetPropertyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Property}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
      */
-    this.getElementPropertySetProperty = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, callback) {
+    this.getElementPropertySetPropertyWithHttpInfo = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -3468,17 +3834,27 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getElementPropertySetPropertyDefinition operation.
-     * @callback module:api/IfcApi~getElementPropertySetPropertyDefinitionCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PropertyDefinition} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
      */
+    this.getElementPropertySetProperty = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk) {
+      return this.getElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -3489,10 +3865,9 @@
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertysetPk 
-     * @param {module:api/IfcApi~getElementPropertySetPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PropertyDefinition}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
      */
-    this.getElementPropertySetPropertyDefinition = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk, callback) {
+    this.getElementPropertySetPropertyDefinitionWithHttpInfo = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -3557,17 +3932,28 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getElementPropertySetPropertyDefinitionUnit operation.
-     * @callback module:api/IfcApi~getElementPropertySetPropertyDefinitionUnitCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Unit} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertyPk 
+     * @param {String} propertysetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
      */
+    this.getElementPropertySetPropertyDefinition = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk) {
+      return this.getElementPropertySetPropertyDefinitionWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -3579,10 +3965,9 @@
      * @param {String} propertyPk 
      * @param {String} propertydefinitionPk 
      * @param {String} propertysetPk 
-     * @param {module:api/IfcApi~getElementPropertySetPropertyDefinitionUnitCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Unit}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
      */
-    this.getElementPropertySetPropertyDefinitionUnit = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, callback) {
+    this.getElementPropertySetPropertyDefinitionUnitWithHttpInfo = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -3653,17 +4038,29 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getElementPropertySetPropertyDefinitionUnits operation.
-     * @callback module:api/IfcApi~getElementPropertySetPropertyDefinitionUnitsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Unit>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertyPk 
+     * @param {String} propertydefinitionPk 
+     * @param {String} propertysetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
      */
+    this.getElementPropertySetPropertyDefinitionUnit = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
+      return this.getElementPropertySetPropertyDefinitionUnitWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -3674,10 +4071,9 @@
      * @param {String} propertyPk 
      * @param {String} propertydefinitionPk 
      * @param {String} propertysetPk 
-     * @param {module:api/IfcApi~getElementPropertySetPropertyDefinitionUnitsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Unit>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Unit>} and HTTP response
      */
-    this.getElementPropertySetPropertyDefinitionUnits = function(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, callback) {
+    this.getElementPropertySetPropertyDefinitionUnitsWithHttpInfo = function(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -3742,17 +4138,28 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getElementPropertySetPropertyDefinitions operation.
-     * @callback module:api/IfcApi~getElementPropertySetPropertyDefinitionsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/PropertyDefinition>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertyPk 
+     * @param {String} propertydefinitionPk 
+     * @param {String} propertysetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Unit>}
      */
+    this.getElementPropertySetPropertyDefinitionUnits = function(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
+      return this.getElementPropertySetPropertyDefinitionUnitsWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -3762,10 +4169,9 @@
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertysetPk 
-     * @param {module:api/IfcApi~getElementPropertySetPropertyDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/PropertyDefinition>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyDefinition>} and HTTP response
      */
-    this.getElementPropertySetPropertyDefinitions = function(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, callback) {
+    this.getElementPropertySetPropertyDefinitionsWithHttpInfo = function(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -3824,17 +4230,9 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the getElementPropertySets operation.
-     * @callback module:api/IfcApi~getElementPropertySetsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/PropertySet>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
@@ -3842,10 +4240,27 @@
      * @param {String} elementUuid 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getElementPropertySetsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/PropertySet>}
+     * @param {String} propertyPk 
+     * @param {String} propertysetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyDefinition>}
      */
-    this.getElementPropertySets = function(cloudPk, elementUuid, ifcPk, projectPk, callback) {
+    this.getElementPropertySetPropertyDefinitions = function(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk) {
+      return this.getElementPropertySetPropertyDefinitionsWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertySet>} and HTTP response
+     */
+    this.getElementPropertySetsWithHttpInfo = function(cloudPk, elementUuid, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -3892,27 +4307,34 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getElements operation.
-     * @callback module:api/IfcApi~getElementsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Element>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertySet>}
      */
+    this.getElementPropertySets = function(cloudPk, elementUuid, ifcPk, projectPk) {
+      return this.getElementPropertySetsWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getElementsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Element>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Element>} and HTTP response
      */
-    this.getElements = function(cloudPk, ifcPk, projectPk, callback) {
+    this.getElementsWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -3953,17 +4375,24 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getElementsFromClassification operation.
-     * @callback module:api/IfcApi~getElementsFromClassificationCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Element>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Element>}
      */
+    this.getElements = function(cloudPk, ifcPk, projectPk) {
+      return this.getElementsWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -3971,10 +4400,9 @@
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getElementsFromClassificationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Element>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Element>} and HTTP response
      */
-    this.getElementsFromClassification = function(cloudPk, ifcClassificationPk, ifcPk, projectPk, callback) {
+    this.getElementsFromClassificationWithHttpInfo = function(cloudPk, ifcClassificationPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4021,27 +4449,34 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getIfc operation.
-     * @callback module:api/IfcApi~getIfcCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ifc} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcClassificationPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Element>}
      */
+    this.getElementsFromClassification = function(cloudPk, ifcClassificationPk, ifcPk, projectPk) {
+      return this.getElementsFromClassificationWithHttpInfo(cloudPk, ifcClassificationPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ifc}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ifc} and HTTP response
      */
-    this.getIfc = function(cloudPk, id, projectPk, callback) {
+    this.getIfcWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4082,26 +4517,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getIfcBVH operation.
-     * @callback module:api/IfcApi~getIfcBVHCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ifc}
      */
+    this.getIfc = function(cloudPk, id, projectPk) {
+      return this.getIfcWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the bvh file         
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcBVHCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.getIfcBVH = function(cloudPk, id, projectPk, callback) {
+    this.getIfcBVHWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4142,27 +4584,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/bvh', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getIfcClassifications operation.
-     * @callback module:api/IfcApi~getIfcClassificationsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Classification>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the bvh file         
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.getIfcBVH = function(cloudPk, id, projectPk) {
+      return this.getIfcBVHWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcClassificationsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Classification>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
      */
-    this.getIfcClassifications = function(cloudPk, ifcPk, projectPk, callback) {
+    this.getIfcClassificationsWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4203,26 +4651,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getIfcGLTF operation.
-     * @callback module:api/IfcApi~getIfcGLTFCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
      */
+    this.getIfcClassifications = function(cloudPk, ifcPk, projectPk) {
+      return this.getIfcClassificationsWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the gltf file         
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcGLTFCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.getIfcGLTF = function(cloudPk, id, projectPk, callback) {
+    this.getIfcGLTFWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4263,26 +4718,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/gltf', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getIfcMap operation.
-     * @callback module:api/IfcApi~getIfcMapCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the gltf file         
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.getIfcGLTF = function(cloudPk, id, projectPk) {
+      return this.getIfcGLTFWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the map file         
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcMapCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.getIfcMap = function(cloudPk, id, projectPk, callback) {
+    this.getIfcMapWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4323,27 +4785,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/map', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getIfcProperties operation.
-     * @callback module:api/IfcApi~getIfcPropertiesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Property>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the map file         
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.getIfcMap = function(cloudPk, id, projectPk) {
+      return this.getIfcMapWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcPropertiesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Property>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Property>} and HTTP response
      */
-    this.getIfcProperties = function(cloudPk, ifcPk, projectPk, callback) {
+    this.getIfcPropertiesWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4384,17 +4852,24 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getIfcProperty operation.
-     * @callback module:api/IfcApi~getIfcPropertyCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Property} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Property>}
      */
+    this.getIfcProperties = function(cloudPk, ifcPk, projectPk) {
+      return this.getIfcPropertiesWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -4402,10 +4877,9 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcPropertyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Property}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
      */
-    this.getIfcProperty = function(cloudPk, id, ifcPk, projectPk, callback) {
+    this.getIfcPropertyWithHttpInfo = function(cloudPk, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4452,17 +4926,9 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the getIfcPropertyDefinition operation.
-     * @callback module:api/IfcApi~getIfcPropertyDefinitionCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PropertyDefinition} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
@@ -4470,10 +4936,25 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PropertyDefinition}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
      */
-    this.getIfcPropertyDefinition = function(cloudPk, id, ifcPk, projectPk, callback) {
+    this.getIfcProperty = function(cloudPk, id, ifcPk, projectPk) {
+      return this.getIfcPropertyWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
+     */
+    this.getIfcPropertyDefinitionWithHttpInfo = function(cloudPk, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4520,27 +5001,34 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getIfcPropertyDefinitions operation.
-     * @callback module:api/IfcApi~getIfcPropertyDefinitionsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/PropertyDefinition>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
      */
+    this.getIfcPropertyDefinition = function(cloudPk, id, ifcPk, projectPk) {
+      return this.getIfcPropertyDefinitionWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcPropertyDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/PropertyDefinition>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyDefinition>} and HTTP response
      */
-    this.getIfcPropertyDefinitions = function(cloudPk, ifcPk, projectPk, callback) {
+    this.getIfcPropertyDefinitionsWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4581,26 +5069,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getIfcStructure operation.
-     * @callback module:api/IfcApi~getIfcStructureCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyDefinition>}
      */
+    this.getIfcPropertyDefinitions = function(cloudPk, ifcPk, projectPk) {
+      return this.getIfcPropertyDefinitionsWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the structure file         
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcStructureCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.getIfcStructure = function(cloudPk, id, projectPk, callback) {
+    this.getIfcStructureWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4641,26 +5136,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/structure', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getIfcSystems operation.
-     * @callback module:api/IfcApi~getIfcSystemsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the structure file         
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.getIfcStructure = function(cloudPk, id, projectPk) {
+      return this.getIfcStructureWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the system file         
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcSystemsCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.getIfcSystems = function(cloudPk, id, projectPk, callback) {
+    this.getIfcSystemsWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4701,17 +5203,24 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/systems', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getIfcUnit operation.
-     * @callback module:api/IfcApi~getIfcUnitCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Unit} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the system file         
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.getIfcSystems = function(cloudPk, id, projectPk) {
+      return this.getIfcSystemsWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -4719,10 +5228,9 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcUnitCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Unit}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
      */
-    this.getIfcUnit = function(cloudPk, id, ifcPk, projectPk, callback) {
+    this.getIfcUnitWithHttpInfo = function(cloudPk, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4769,27 +5277,34 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getIfcUnits operation.
-     * @callback module:api/IfcApi~getIfcUnitsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Unit>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
      */
+    this.getIfcUnit = function(cloudPk, id, ifcPk, projectPk) {
+      return this.getIfcUnitWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcUnitsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Unit>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Unit>} and HTTP response
      */
-    this.getIfcUnits = function(cloudPk, ifcPk, projectPk, callback) {
+    this.getIfcUnitsWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4830,26 +5345,32 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getIfcs operation.
-     * @callback module:api/IfcApi~getIfcsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Ifc>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Unit>}
      */
+    this.getIfcUnits = function(cloudPk, ifcPk, projectPk) {
+      return this.getIfcUnitsWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getIfcsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Ifc>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Ifc>} and HTTP response
      */
-    this.getIfcs = function(cloudPk, projectPk, callback) {
+    this.getIfcsWithHttpInfo = function(cloudPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4884,17 +5405,23 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getPropertySet operation.
-     * @callback module:api/IfcApi~getPropertySetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PropertySet} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Ifc>}
      */
+    this.getIfcs = function(cloudPk, projectPk) {
+      return this.getIfcsWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -4902,10 +5429,9 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getPropertySetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PropertySet}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertySet} and HTTP response
      */
-    this.getPropertySet = function(cloudPk, id, ifcPk, projectPk, callback) {
+    this.getPropertySetWithHttpInfo = function(cloudPk, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4952,27 +5478,34 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getPropertySets operation.
-     * @callback module:api/IfcApi~getPropertySetsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/PropertySet>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertySet}
      */
+    this.getPropertySet = function(cloudPk, id, ifcPk, projectPk) {
+      return this.getPropertySetWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getPropertySetsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/PropertySet>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertySet>} and HTTP response
      */
-    this.getPropertySets = function(cloudPk, ifcPk, projectPk, callback) {
+    this.getPropertySetsWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5013,26 +5546,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getRawElements operation.
-     * @callback module:api/IfcApi~getRawElementsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertySet>}
      */
+    this.getPropertySets = function(cloudPk, ifcPk, projectPk) {
+      return this.getPropertySetsWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Returns elements ,property_sets, properties, definitions and units in a optimized structure         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getRawElementsCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.getRawElements = function(cloudPk, ifcPk, projectPk, callback) {
+    this.getRawElementsWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5073,17 +5613,24 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getSpace operation.
-     * @callback module:api/IfcApi~getSpaceCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Space} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          Returns elements ,property_sets, properties, definitions and units in a optimized structure         
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.getRawElements = function(cloudPk, ifcPk, projectPk) {
+      return this.getRawElementsWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -5091,10 +5638,9 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getSpaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Space}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Space} and HTTP response
      */
-    this.getSpace = function(cloudPk, id, ifcPk, projectPk, callback) {
+    this.getSpaceWithHttpInfo = function(cloudPk, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5141,27 +5687,34 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getSpaces operation.
-     * @callback module:api/IfcApi~getSpacesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Space>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Space}
      */
+    this.getSpace = function(cloudPk, id, ifcPk, projectPk) {
+      return this.getSpaceWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getSpacesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Space>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Space>} and HTTP response
      */
-    this.getSpaces = function(cloudPk, ifcPk, projectPk, callback) {
+    this.getSpacesWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5202,17 +5755,24 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getZone operation.
-     * @callback module:api/IfcApi~getZoneCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Zone} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Space>}
      */
+    this.getSpaces = function(cloudPk, ifcPk, projectPk) {
+      return this.getSpacesWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -5220,10 +5780,9 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getZoneCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Zone}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Zone} and HTTP response
      */
-    this.getZone = function(cloudPk, id, ifcPk, projectPk, callback) {
+    this.getZoneWithHttpInfo = function(cloudPk, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5270,17 +5829,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getZoneSpace operation.
-     * @callback module:api/IfcApi~getZoneSpaceCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ZoneSpace} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Zone}
      */
+    this.getZone = function(cloudPk, id, ifcPk, projectPk) {
+      return this.getZoneWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -5289,10 +5856,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
-     * @param {module:api/IfcApi~getZoneSpaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ZoneSpace}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ZoneSpace} and HTTP response
      */
-    this.getZoneSpace = function(cloudPk, id, ifcPk, projectPk, zonePk, callback) {
+    this.getZoneSpaceWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, zonePk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5345,17 +5911,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getZoneSpaces operation.
-     * @callback module:api/IfcApi~getZoneSpacesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/ZoneSpace>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} zonePk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ZoneSpace}
      */
+    this.getZoneSpace = function(cloudPk, id, ifcPk, projectPk, zonePk) {
+      return this.getZoneSpaceWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -5363,10 +5938,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
-     * @param {module:api/IfcApi~getZoneSpacesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/ZoneSpace>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ZoneSpace>} and HTTP response
      */
-    this.getZoneSpaces = function(cloudPk, ifcPk, projectPk, zonePk, callback) {
+    this.getZoneSpacesWithHttpInfo = function(cloudPk, ifcPk, projectPk, zonePk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5413,27 +5987,34 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the getZones operation.
-     * @callback module:api/IfcApi~getZonesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Zone>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~getZonesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Zone>}
+     * @param {String} zonePk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ZoneSpace>}
      */
-    this.getZones = function(cloudPk, ifcPk, projectPk, callback) {
+    this.getZoneSpaces = function(cloudPk, ifcPk, projectPk, zonePk) {
+      return this.getZoneSpacesWithHttpInfo(cloudPk, ifcPk, projectPk, zonePk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Zone>} and HTTP response
+     */
+    this.getZonesWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5474,17 +6055,24 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the removeClassificationOfElement operation.
-     * @callback module:api/IfcApi~removeClassificationOfElementCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Zone>}
      */
+    this.getZones = function(cloudPk, ifcPk, projectPk) {
+      return this.getZonesWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -5493,9 +6081,9 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~removeClassificationOfElementCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.removeClassificationOfElement = function(cloudPk, elementUuid, id, ifcPk, projectPk, callback) {
+    this.removeClassificationOfElementWithHttpInfo = function(cloudPk, elementUuid, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5548,17 +6136,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the removeElementPropertySet operation.
-     * @callback module:api/IfcApi~removeElementPropertySetCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.removeClassificationOfElement = function(cloudPk, elementUuid, id, ifcPk, projectPk) {
+      return this.removeClassificationOfElementWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Delete the relation between the element and the property set. Does not delete any object     
@@ -5567,9 +6164,9 @@
      * @param {String} id 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/IfcApi~removeElementPropertySetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.removeElementPropertySet = function(cloudPk, elementUuid, id, ifcPk, projectPk, callback) {
+    this.removeElementPropertySetWithHttpInfo = function(cloudPk, elementUuid, id, ifcPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5622,17 +6219,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the removeElementPropertySetProperty operation.
-     * @callback module:api/IfcApi~removeElementPropertySetPropertyCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     *          Delete the relation between the element and the property set. Does not delete any object     
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.removeElementPropertySet = function(cloudPk, elementUuid, id, ifcPk, projectPk) {
+      return this.removeElementPropertySetWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -5642,9 +6248,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertysetPk 
-     * @param {module:api/IfcApi~removeElementPropertySetPropertyCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.removeElementPropertySetProperty = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, callback) {
+    this.removeElementPropertySetPropertyWithHttpInfo = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5703,17 +6309,27 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the removeElementPropertySetPropertyDefinition operation.
-     * @callback module:api/IfcApi~removeElementPropertySetPropertyDefinitionCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.removeElementPropertySetProperty = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk) {
+      return this.removeElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -5724,9 +6340,9 @@
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertysetPk 
-     * @param {module:api/IfcApi~removeElementPropertySetPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.removeElementPropertySetPropertyDefinition = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk, callback) {
+    this.removeElementPropertySetPropertyDefinitionWithHttpInfo = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5791,17 +6407,28 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the removeElementPropertySetPropertyDefinitionUnit operation.
-     * @callback module:api/IfcApi~removeElementPropertySetPropertyDefinitionUnitCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertyPk 
+     * @param {String} propertysetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.removeElementPropertySetPropertyDefinition = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk) {
+      return this.removeElementPropertySetPropertyDefinitionWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -5813,9 +6440,9 @@
      * @param {String} propertyPk 
      * @param {String} propertydefinitionPk 
      * @param {String} propertysetPk 
-     * @param {module:api/IfcApi~removeElementPropertySetPropertyDefinitionUnitCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.removeElementPropertySetPropertyDefinitionUnit = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, callback) {
+    this.removeElementPropertySetPropertyDefinitionUnitWithHttpInfo = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5886,17 +6513,29 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the removeElementsFromClassification operation.
-     * @callback module:api/IfcApi~removeElementsFromClassificationCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertyPk 
+     * @param {String} propertydefinitionPk 
+     * @param {String} propertysetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.removeElementPropertySetPropertyDefinitionUnit = function(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
+      return this.removeElementPropertySetPropertyDefinitionUnitWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -5905,9 +6544,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} uuid 
-     * @param {module:api/IfcApi~removeElementsFromClassificationCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.removeElementsFromClassification = function(cloudPk, ifcClassificationPk, ifcPk, projectPk, uuid, callback) {
+    this.removeElementsFromClassificationWithHttpInfo = function(cloudPk, ifcClassificationPk, ifcPk, projectPk, uuid) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5960,17 +6599,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/{uuid}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateElement operation.
-     * @callback module:api/IfcApi~updateElementCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Element} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcClassificationPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.removeElementsFromClassification = function(cloudPk, ifcClassificationPk, ifcPk, projectPk, uuid) {
+      return this.removeElementsFromClassificationWithHttpInfo(cloudPk, ifcClassificationPk, ifcPk, projectPk, uuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -5979,10 +6627,9 @@
      * @param {String} projectPk 
      * @param {String} uuid 
      * @param {module:model/Element} data 
-     * @param {module:api/IfcApi~updateElementCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Element}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Element} and HTTP response
      */
-    this.updateElement = function(cloudPk, ifcPk, projectPk, uuid, data, callback) {
+    this.updateElementWithHttpInfo = function(cloudPk, ifcPk, projectPk, uuid, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -6034,17 +6681,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateIfc operation.
-     * @callback module:api/IfcApi~updateIfcCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ifc} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid 
+     * @param {module:model/Element} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Element}
      */
+    this.updateElement = function(cloudPk, ifcPk, projectPk, uuid, data) {
+      return this.updateElementWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -6052,10 +6708,9 @@
      * @param {String} id 
      * @param {String} projectPk 
      * @param {module:model/Ifc} data 
-     * @param {module:api/IfcApi~updateIfcCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ifc}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ifc} and HTTP response
      */
-    this.updateIfc = function(cloudPk, id, projectPk, data, callback) {
+    this.updateIfcWithHttpInfo = function(cloudPk, id, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -6101,17 +6756,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateIfcFiles operation.
-     * @callback module:api/IfcApi~updateIfcFilesCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/IfcFiles} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {module:model/Ifc} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ifc}
      */
+    this.updateIfc = function(cloudPk, id, projectPk, data) {
+      return this.updateIfcWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      *          Patch ifc files (gltf, structure, svg, etc)         
@@ -6124,10 +6787,9 @@
      * @param {File} opts.mapFile 
      * @param {File} opts.gltfFile 
      * @param {File} opts.bvhTreeFile 
-     * @param {module:api/IfcApi~updateIfcFilesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/IfcFiles}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcFiles} and HTTP response
      */
-    this.updateIfcFiles = function(cloudPk, id, projectPk, opts, callback) {
+    this.updateIfcFilesWithHttpInfo = function(cloudPk, id, projectPk, opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -6174,17 +6836,30 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/files', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateIfcProperty operation.
-     * @callback module:api/IfcApi~updateIfcPropertyCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Property} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          Patch ifc files (gltf, structure, svg, etc)         
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {File} opts.structureFile 
+     * @param {File} opts.systemsFile 
+     * @param {File} opts.mapFile 
+     * @param {File} opts.gltfFile 
+     * @param {File} opts.bvhTreeFile 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcFiles}
      */
+    this.updateIfcFiles = function(cloudPk, id, projectPk, opts) {
+      return this.updateIfcFilesWithHttpInfo(cloudPk, id, projectPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -6193,10 +6868,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Property} data 
-     * @param {module:api/IfcApi~updateIfcPropertyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Property}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
      */
-    this.updateIfcProperty = function(cloudPk, id, ifcPk, projectPk, data, callback) {
+    this.updateIfcPropertyWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -6248,17 +6922,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateIfcPropertyDefinition operation.
-     * @callback module:api/IfcApi~updateIfcPropertyDefinitionCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PropertyDefinition} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Property} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
      */
+    this.updateIfcProperty = function(cloudPk, id, ifcPk, projectPk, data) {
+      return this.updateIfcPropertyWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -6267,10 +6950,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertyDefinition} data 
-     * @param {module:api/IfcApi~updateIfcPropertyDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PropertyDefinition}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
      */
-    this.updateIfcPropertyDefinition = function(cloudPk, id, ifcPk, projectPk, data, callback) {
+    this.updateIfcPropertyDefinitionWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -6322,17 +7004,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateIfcUnit operation.
-     * @callback module:api/IfcApi~updateIfcUnitCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Unit} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/PropertyDefinition} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
      */
+    this.updateIfcPropertyDefinition = function(cloudPk, id, ifcPk, projectPk, data) {
+      return this.updateIfcPropertyDefinitionWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -6341,10 +7032,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Unit} data 
-     * @param {module:api/IfcApi~updateIfcUnitCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Unit}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
      */
-    this.updateIfcUnit = function(cloudPk, id, ifcPk, projectPk, data, callback) {
+    this.updateIfcUnitWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -6396,17 +7086,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updatePropertySet operation.
-     * @callback module:api/IfcApi~updatePropertySetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PropertySet} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Unit} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
      */
+    this.updateIfcUnit = function(cloudPk, id, ifcPk, projectPk, data) {
+      return this.updateIfcUnitWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -6415,10 +7114,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertySet} data 
-     * @param {module:api/IfcApi~updatePropertySetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PropertySet}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertySet} and HTTP response
      */
-    this.updatePropertySet = function(cloudPk, id, ifcPk, projectPk, data, callback) {
+    this.updatePropertySetWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -6470,17 +7168,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateSpace operation.
-     * @callback module:api/IfcApi~updateSpaceCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Space} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/PropertySet} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertySet}
      */
+    this.updatePropertySet = function(cloudPk, id, ifcPk, projectPk, data) {
+      return this.updatePropertySetWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -6489,10 +7196,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Space} data 
-     * @param {module:api/IfcApi~updateSpaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Space}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Space} and HTTP response
      */
-    this.updateSpace = function(cloudPk, id, ifcPk, projectPk, data, callback) {
+    this.updateSpaceWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -6544,17 +7250,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateZone operation.
-     * @callback module:api/IfcApi~updateZoneCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Zone} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Space} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Space}
      */
+    this.updateSpace = function(cloudPk, id, ifcPk, projectPk, data) {
+      return this.updateSpaceWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -6563,10 +7278,9 @@
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Zone} data 
-     * @param {module:api/IfcApi~updateZoneCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Zone}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Zone} and HTTP response
      */
-    this.updateZone = function(cloudPk, id, ifcPk, projectPk, data, callback) {
+    this.updateZoneWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -6618,17 +7332,26 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateZoneSpace operation.
-     * @callback module:api/IfcApi~updateZoneSpaceCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ZoneSpace} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Zone} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Zone}
      */
+    this.updateZone = function(cloudPk, id, ifcPk, projectPk, data) {
+      return this.updateZoneWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -6638,10 +7361,9 @@
      * @param {String} projectPk 
      * @param {String} zonePk 
      * @param {module:model/ZoneSpace} data 
-     * @param {module:api/IfcApi~updateZoneSpaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ZoneSpace}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ZoneSpace} and HTTP response
      */
-    this.updateZoneSpace = function(cloudPk, id, ifcPk, projectPk, zonePk, data, callback) {
+    this.updateZoneSpaceWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, zonePk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -6699,8 +7421,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} zonePk 
+     * @param {module:model/ZoneSpace} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ZoneSpace}
+     */
+    this.updateZoneSpace = function(cloudPk, id, ifcPk, projectPk, zonePk, data) {
+      return this.updateZoneSpaceWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

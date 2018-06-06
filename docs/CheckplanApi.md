@@ -72,15 +72,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.IfcChecker(); // IfcChecker | 
 
+apiInstance.createChecker(cloudPk, ifcPk, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createChecker(cloudPk, ifcPk, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -136,15 +133,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.CheckerResult(); // CheckerResult | 
 
+apiInstance.createCheckerResult(checkerPk, cloudPk, ifcPk, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createCheckerResult(checkerPk, cloudPk, ifcPk, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -197,15 +191,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.CheckPlan(); // CheckPlan | 
 
+apiInstance.createCheckplan(cloudPk, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createCheckplan(cloudPk, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -260,15 +251,12 @@ var rulesetPk = "rulesetPk_example"; // String |
 
 var data = new bimdata.Rule(); // Rule | 
 
+apiInstance.createRule(checkPlanPk, cloudPk, projectPk, rulesetPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createRule(checkPlanPk, cloudPk, projectPk, rulesetPk, data, callback);
 ```
 
 ### Parameters
@@ -327,15 +315,12 @@ var rulesetPk = "rulesetPk_example"; // String |
 
 var data = new bimdata.RuleComponent(); // RuleComponent | 
 
+apiInstance.createRuleComponent(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createRuleComponent(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, data, callback);
 ```
 
 ### Parameters
@@ -391,15 +376,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.Ruleset(); // Ruleset | 
 
+apiInstance.createRuleset(checkPlanPk, cloudPk, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createRuleset(checkPlanPk, cloudPk, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -453,15 +435,12 @@ var ifcPk = "ifcPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.deleteChecker(cloudPk, id, ifcPk, projectPk, ).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteChecker(cloudPk, id, ifcPk, projectPk, , callback);
 ```
 
 ### Parameters
@@ -517,15 +496,12 @@ var ifcPk = "ifcPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.deleteCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, ).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, , callback);
 ```
 
 ### Parameters
@@ -578,15 +554,12 @@ var id = "id_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.deleteCheckplan(cloudPk, id, projectPk, ).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteCheckplan(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
@@ -641,15 +614,12 @@ var projectPk = "projectPk_example"; // String |
 
 var rulesetPk = "rulesetPk_example"; // String | 
 
+apiInstance.deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, ).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, , callback);
 ```
 
 ### Parameters
@@ -708,15 +678,12 @@ var rulePk = "rulePk_example"; // String |
 
 var rulesetPk = "rulesetPk_example"; // String | 
 
+apiInstance.deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, ).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, , callback);
 ```
 
 ### Parameters
@@ -772,15 +739,12 @@ var id = "id_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.deleteRuleset(checkPlanPk, cloudPk, id, projectPk, ).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteRuleset(checkPlanPk, cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
@@ -836,15 +800,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.IfcChecker(); // IfcChecker | 
 
+apiInstance.fullUpdateChecker(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateChecker(cloudPk, id, ifcPk, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -903,15 +864,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.CheckerResult(); // CheckerResult | 
 
+apiInstance.fullUpdateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -967,15 +925,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.CheckPlan(); // CheckPlan | 
 
+apiInstance.fullUpdateCheckplan(cloudPk, id, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateCheckplan(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -1033,15 +988,12 @@ var rulesetPk = "rulesetPk_example"; // String |
 
 var data = new bimdata.Rule(); // Rule | 
 
+apiInstance.fullUpdateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data, callback);
 ```
 
 ### Parameters
@@ -1103,15 +1055,12 @@ var rulesetPk = "rulesetPk_example"; // String |
 
 var data = new bimdata.RuleComponent(); // RuleComponent | 
 
+apiInstance.fullUpdateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data, callback);
 ```
 
 ### Parameters
@@ -1170,15 +1119,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.Ruleset(); // Ruleset | 
 
+apiInstance.fullUpdateRuleset(checkPlanPk, cloudPk, id, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateRuleset(checkPlanPk, cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -1233,15 +1179,12 @@ var ifcPk = "ifcPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getChecker(cloudPk, id, ifcPk, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getChecker(cloudPk, id, ifcPk, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1297,15 +1240,12 @@ var ifcPk = "ifcPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1360,15 +1300,12 @@ var ifcPk = "ifcPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getCheckerResults(checkerPk, cloudPk, ifcPk, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCheckerResults(checkerPk, cloudPk, ifcPk, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1420,15 +1357,12 @@ var ifcPk = "ifcPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getCheckers(cloudPk, ifcPk, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCheckers(cloudPk, ifcPk, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1479,15 +1413,12 @@ var id = "id_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getCheckplan(cloudPk, id, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCheckplan(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1536,15 +1467,12 @@ var cloudPk = "cloudPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getCheckplans(cloudPk, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCheckplans(cloudPk, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1598,15 +1526,12 @@ var projectPk = "projectPk_example"; // String |
 
 var rulesetPk = "rulesetPk_example"; // String | 
 
+apiInstance.getRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, , callback);
 ```
 
 ### Parameters
@@ -1665,15 +1590,12 @@ var rulePk = "rulePk_example"; // String |
 
 var rulesetPk = "rulesetPk_example"; // String | 
 
+apiInstance.getRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, , callback);
 ```
 
 ### Parameters
@@ -1731,15 +1653,12 @@ var rulePk = "rulePk_example"; // String |
 
 var rulesetPk = "rulesetPk_example"; // String | 
 
+apiInstance.getRuleComponents(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getRuleComponents(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, , callback);
 ```
 
 ### Parameters
@@ -1794,15 +1713,12 @@ var projectPk = "projectPk_example"; // String |
 
 var rulesetPk = "rulesetPk_example"; // String | 
 
+apiInstance.getRules(checkPlanPk, cloudPk, projectPk, rulesetPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getRules(checkPlanPk, cloudPk, projectPk, rulesetPk, , callback);
 ```
 
 ### Parameters
@@ -1856,15 +1772,12 @@ var id = "id_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getRuleset(checkPlanPk, cloudPk, id, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getRuleset(checkPlanPk, cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1916,15 +1829,12 @@ var cloudPk = "cloudPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getRulesets(checkPlanPk, cloudPk, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getRulesets(checkPlanPk, cloudPk, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1979,15 +1889,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.IfcChecker(); // IfcChecker | 
 
+apiInstance.launchNewCheck(cloudPk, id, ifcPk, projectPk, data).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.launchNewCheck(cloudPk, id, ifcPk, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -2044,15 +1951,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.IfcChecker(); // IfcChecker | 
 
+apiInstance.updateChecker(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateChecker(cloudPk, id, ifcPk, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -2111,15 +2015,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.CheckerResult(); // CheckerResult | 
 
+apiInstance.updateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -2175,15 +2076,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.CheckPlan(); // CheckPlan | 
 
+apiInstance.updateCheckplan(cloudPk, id, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateCheckplan(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -2241,15 +2139,12 @@ var rulesetPk = "rulesetPk_example"; // String |
 
 var data = new bimdata.Rule(); // Rule | 
 
+apiInstance.updateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data, callback);
 ```
 
 ### Parameters
@@ -2311,15 +2206,12 @@ var rulesetPk = "rulesetPk_example"; // String |
 
 var data = new bimdata.RuleComponent(); // RuleComponent | 
 
+apiInstance.updateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data, callback);
 ```
 
 ### Parameters
@@ -2378,15 +2270,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.Ruleset(); // Ruleset | 
 
+apiInstance.updateRuleset(checkPlanPk, cloudPk, id, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateRuleset(checkPlanPk, cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters

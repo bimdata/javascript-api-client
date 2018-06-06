@@ -64,15 +64,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = [new bimdata.Classification()]; // [Classification] | 
 
+apiInstance.createClassification(cloudPk, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createClassification(cloudPk, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -137,15 +134,12 @@ var opts = {
   'updatedAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'ifcId': "ifcId_example" // String | 
 };
+apiInstance.createDocument(cloudPk, projectPk, name, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createDocument(cloudPk, projectPk, name, opts, callback);
 ```
 
 ### Parameters
@@ -208,15 +202,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.Folder(); // Folder | 
 
+apiInstance.createFolder(cloudPk, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createFolder(cloudPk, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -265,15 +256,12 @@ var cloudPk = "cloudPk_example"; // String |
 
 var data = new bimdata.Project(); // Project | 
 
+apiInstance.createProject(cloudPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createProject(cloudPk, data, callback);
 ```
 
 ### Parameters
@@ -323,15 +311,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.FosUserWrite(); // FosUserWrite | 
 
+apiInstance.createProjectUser(cloudPk, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createProjectUser(cloudPk, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -382,15 +367,12 @@ var id = "id_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.deleteClassification(cloudPk, id, projectPk, ).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteClassification(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
@@ -441,15 +423,12 @@ var id = "id_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.deleteDocument(cloudPk, id, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.deleteDocument(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
@@ -500,15 +479,12 @@ var id = "id_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.deleteFolder(cloudPk, id, projectPk, ).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteFolder(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
@@ -557,15 +533,12 @@ var cloudPk = "cloudPk_example"; // String |
 
 var id = "id_example"; // String | 
 
+apiInstance.deleteProject(cloudPk, id, ).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteProject(cloudPk, id, , callback);
 ```
 
 ### Parameters
@@ -615,15 +588,12 @@ var id = "id_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.deleteProjectUser(cloudPk, id, projectPk, ).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteProjectUser(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
@@ -676,15 +646,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.Classification(); // Classification | 
 
+apiInstance.fullUpdateClassification(cloudPk, id, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateClassification(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -752,15 +719,12 @@ var opts = {
   'updatedAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'ifcId': "ifcId_example" // String | 
 };
+apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, opts, callback);
 ```
 
 ### Parameters
@@ -826,15 +790,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.Folder(); // Folder | 
 
+apiInstance.fullUpdateFolder(cloudPk, id, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateFolder(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -886,15 +847,12 @@ var id = "id_example"; // String |
 
 var data = new bimdata.Project(); // Project | 
 
+apiInstance.fullUpdateProject(cloudPk, id, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateProject(cloudPk, id, data, callback);
 ```
 
 ### Parameters
@@ -947,15 +905,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.FosUserWrite(); // FosUserWrite | 
 
+apiInstance.fullUpdateProjectUser(cloudPk, id, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateProjectUser(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -1007,15 +962,12 @@ var id = "id_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getClassification(cloudPk, id, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getClassification(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1064,15 +1016,12 @@ var cloudPk = "cloudPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getClassifications(cloudPk, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getClassifications(cloudPk, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1122,15 +1071,12 @@ var id = "id_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getDocument(cloudPk, id, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getDocument(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1179,15 +1125,12 @@ var cloudPk = "cloudPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getDocuments(cloudPk, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getDocuments(cloudPk, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1237,15 +1180,12 @@ var id = "id_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getFolder(cloudPk, id, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getFolder(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1294,15 +1234,12 @@ var cloudPk = "cloudPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getFolders(cloudPk, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getFolders(cloudPk, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1350,15 +1287,12 @@ var cloudPk = "cloudPk_example"; // String |
 
 var id = "id_example"; // String | 
 
+apiInstance.getProject(cloudPk, id, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getProject(cloudPk, id, , callback);
 ```
 
 ### Parameters
@@ -1406,15 +1340,12 @@ var cloudPk = "cloudPk_example"; // String |
 
 var id = "id_example"; // String | 
 
+apiInstance.getProjectTree(cloudPk, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getProjectTree(cloudPk, id, callback);
 ```
 
 ### Parameters
@@ -1464,15 +1395,12 @@ var id = "id_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getProjectUser(cloudPk, id, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getProjectUser(cloudPk, id, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1521,15 +1449,12 @@ var cloudPk = "cloudPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
+apiInstance.getProjectUsers(cloudPk, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getProjectUsers(cloudPk, projectPk, , callback);
 ```
 
 ### Parameters
@@ -1575,15 +1500,12 @@ var apiInstance = new bimdata.ProjectApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
+apiInstance.getProjects(cloudPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getProjects(cloudPk, , callback);
 ```
 
 ### Parameters
@@ -1634,15 +1556,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.Classification(); // Classification | 
 
+apiInstance.updateClassification(cloudPk, id, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateClassification(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -1696,15 +1615,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.Document(); // Document | 
 
+apiInstance.updateDocument(cloudPk, id, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateDocument(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -1758,15 +1674,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.Folder(); // Folder | 
 
+apiInstance.updateFolder(cloudPk, id, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateFolder(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters
@@ -1818,15 +1731,12 @@ var id = "id_example"; // String |
 
 var data = new bimdata.Project(); // Project | 
 
+apiInstance.updateProject(cloudPk, id, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateProject(cloudPk, id, data, callback);
 ```
 
 ### Parameters
@@ -1879,15 +1789,12 @@ var projectPk = "projectPk_example"; // String |
 
 var data = new bimdata.FosUserWrite(); // FosUserWrite | 
 
+apiInstance.updateProjectUser(cloudPk, id, projectPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateProjectUser(cloudPk, id, projectPk, data, callback);
 ```
 
 ### Parameters

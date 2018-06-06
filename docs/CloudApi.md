@@ -41,15 +41,12 @@ var apiInstance = new bimdata.CloudApi();
 
 var data = new bimdata.Cloud(); // Cloud | 
 
+apiInstance.createCloud(data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createCloud(data, callback);
 ```
 
 ### Parameters
@@ -96,15 +93,12 @@ var cloudPk = "cloudPk_example"; // String |
 
 var data = new bimdata.FosUserWrite(); // FosUserWrite | 
 
+apiInstance.createCloudUser(cloudPk, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createCloudUser(cloudPk, data, callback);
 ```
 
 ### Parameters
@@ -152,15 +146,12 @@ var cloudPk = "cloudPk_example"; // String |
 
 var id = "id_example"; // String | 
 
+apiInstance.deleteCloudUser(cloudPk, id, ).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteCloudUser(cloudPk, id, , callback);
 ```
 
 ### Parameters
@@ -208,15 +199,12 @@ var id = "id_example"; // String |
 
 var data = new bimdata.Cloud(); // Cloud | 
 
+apiInstance.fullUpdateCloud(id, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateCloud(id, data, callback);
 ```
 
 ### Parameters
@@ -266,15 +254,12 @@ var id = "id_example"; // String |
 
 var data = new bimdata.FosUserWrite(); // FosUserWrite | 
 
+apiInstance.fullUpdateCloudUser(cloudPk, id, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fullUpdateCloudUser(cloudPk, id, data, callback);
 ```
 
 ### Parameters
@@ -321,15 +306,12 @@ var apiInstance = new bimdata.CloudApi();
 
 var id = "id_example"; // String | 
 
+apiInstance.getCloud(id, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCloud(id, , callback);
 ```
 
 ### Parameters
@@ -374,15 +356,12 @@ var apiInstance = new bimdata.CloudApi();
 
 var id = "id_example"; // String | 
 
+apiInstance.getCloudSize(id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCloudSize(id, callback);
 ```
 
 ### Parameters
@@ -429,15 +408,12 @@ var cloudPk = "cloudPk_example"; // String |
 
 var id = "id_example"; // String | 
 
+apiInstance.getCloudUser(cloudPk, id, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCloudUser(cloudPk, id, , callback);
 ```
 
 ### Parameters
@@ -483,15 +459,12 @@ var apiInstance = new bimdata.CloudApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
+apiInstance.getCloudUsers(cloudPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCloudUsers(cloudPk, , callback);
 ```
 
 ### Parameters
@@ -533,15 +506,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
+apiInstance.getClouds().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getClouds(callback);
 ```
 
 ### Parameters
@@ -585,15 +555,12 @@ var id = "id_example"; // String |
 
 var data = new bimdata.Cloud(); // Cloud | 
 
+apiInstance.updateCloud(id, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateCloud(id, data, callback);
 ```
 
 ### Parameters
@@ -643,15 +610,12 @@ var id = "id_example"; // String |
 
 var data = new bimdata.FosUserWrite(); // FosUserWrite | 
 
+apiInstance.updateCloudUser(cloudPk, id, data).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateCloudUser(cloudPk, id, data, callback);
 ```
 
 ### Parameters

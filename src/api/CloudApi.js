@@ -34,7 +34,7 @@
   /**
    * Cloud service.
    * @module api/CloudApi
-   * @version 1.0.22
+   * @version 1.0.23
    */
 
   /**
@@ -48,21 +48,13 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the createCloud operation.
-     * @callback module:api/CloudApi~createCloudCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Cloud} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
      * @param {module:model/Cloud} data 
-     * @param {module:api/CloudApi~createCloudCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Cloud}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
      */
-    this.createCloud = function(data, callback) {
+    this.createCloudWithHttpInfo = function(data) {
       var postBody = data;
 
       // verify the required parameter 'data' is set
@@ -90,26 +82,30 @@
       return this.apiClient.callApi(
         '/cloud', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createCloudUser operation.
-     * @callback module:api/CloudApi~createCloudUserCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FosUserWrite} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
      */
+    this.createCloud = function(data) {
+      return this.createCloudWithHttpInfo(data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {module:model/FosUserWrite} data 
-     * @param {module:api/CloudApi~createCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FosUserWrite}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FosUserWrite} and HTTP response
      */
-    this.createCloudUser = function(cloudPk, data, callback) {
+    this.createCloudUserWithHttpInfo = function(cloudPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -143,25 +139,31 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/user', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteCloudUser operation.
-     * @callback module:api/CloudApi~deleteCloudUserCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {module:model/FosUserWrite} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FosUserWrite}
      */
+    this.createCloudUser = function(cloudPk, data) {
+      return this.createCloudUserWithHttpInfo(cloudPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
-     * @param {module:api/CloudApi~deleteCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteCloudUser = function(cloudPk, id, callback) {
+    this.deleteCloudUserWithHttpInfo = function(cloudPk, id) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -196,26 +198,31 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/user/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateCloud operation.
-     * @callback module:api/CloudApi~fullUpdateCloudCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Cloud} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteCloudUser = function(cloudPk, id) {
+      return this.deleteCloudUserWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} id 
      * @param {module:model/Cloud} data 
-     * @param {module:api/CloudApi~fullUpdateCloudCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Cloud}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
      */
-    this.fullUpdateCloud = function(id, data, callback) {
+    this.fullUpdateCloudWithHttpInfo = function(id, data) {
       var postBody = data;
 
       // verify the required parameter 'id' is set
@@ -249,27 +256,32 @@
       return this.apiClient.callApi(
         '/cloud/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateCloudUser operation.
-     * @callback module:api/CloudApi~fullUpdateCloudUserCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FosUserWrite} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} id 
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
      */
+    this.fullUpdateCloud = function(id, data) {
+      return this.fullUpdateCloudWithHttpInfo(id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/FosUserWrite} data 
-     * @param {module:api/CloudApi~fullUpdateCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FosUserWrite}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FosUserWrite} and HTTP response
      */
-    this.fullUpdateCloudUser = function(cloudPk, id, data, callback) {
+    this.fullUpdateCloudUserWithHttpInfo = function(cloudPk, id, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -309,25 +321,31 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/user/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getCloud operation.
-     * @callback module:api/CloudApi~getCloudCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Cloud} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/FosUserWrite} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FosUserWrite}
      */
+    this.fullUpdateCloudUser = function(cloudPk, id, data) {
+      return this.fullUpdateCloudUserWithHttpInfo(cloudPk, id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns user and his cloud role
      * @param {String} id 
-     * @param {module:api/CloudApi~getCloudCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Cloud}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
      */
-    this.getCloud = function(id, callback) {
+    this.getCloudWithHttpInfo = function(id) {
       var postBody = null;
 
       // verify the required parameter 'id' is set
@@ -356,25 +374,29 @@
       return this.apiClient.callApi(
         '/cloud/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getCloudSize operation.
-     * @callback module:api/CloudApi~getCloudSizeCallback
-     * @param {String} error Error message, if any.
-     * @param {'Number'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns user and his cloud role
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
      */
+    this.getCloud = function(id) {
+      return this.getCloudWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns the size of the cloud in Bytes
      * @param {String} id 
-     * @param {module:api/CloudApi~getCloudSizeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'Number'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'Number'} and HTTP response
      */
-    this.getCloudSize = function(id, callback) {
+    this.getCloudSizeWithHttpInfo = function(id) {
       var postBody = null;
 
       // verify the required parameter 'id' is set
@@ -403,26 +425,30 @@
       return this.apiClient.callApi(
         '/cloud/{id}/size', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getCloudUser operation.
-     * @callback module:api/CloudApi~getCloudUserCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FosUser} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns the size of the cloud in Bytes
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'Number'}
      */
+    this.getCloudSize = function(id) {
+      return this.getCloudSizeWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
-     * @param {module:api/CloudApi~getCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FosUser}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FosUser} and HTTP response
      */
-    this.getCloudUser = function(cloudPk, id, callback) {
+    this.getCloudUserWithHttpInfo = function(cloudPk, id) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -457,25 +483,30 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/user/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getCloudUsers operation.
-     * @callback module:api/CloudApi~getCloudUsersCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/FosUser>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FosUser}
      */
+    this.getCloudUser = function(cloudPk, id) {
+      return this.getCloudUserWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
-     * @param {module:api/CloudApi~getCloudUsersCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/FosUser>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FosUser>} and HTTP response
      */
-    this.getCloudUsers = function(cloudPk, callback) {
+    this.getCloudUsersWithHttpInfo = function(cloudPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -504,24 +535,28 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/user', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getClouds operation.
-     * @callback module:api/CloudApi~getCloudsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Cloud>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FosUser>}
      */
+    this.getCloudUsers = function(cloudPk) {
+      return this.getCloudUsersWithHttpInfo(cloudPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns user&#39;s cloud only
-     * @param {module:api/CloudApi~getCloudsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Cloud>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Cloud>} and HTTP response
      */
-    this.getClouds = function(callback) {
+    this.getCloudsWithHttpInfo = function() {
       var postBody = null;
 
 
@@ -544,26 +579,29 @@
       return this.apiClient.callApi(
         '/cloud', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateCloud operation.
-     * @callback module:api/CloudApi~updateCloudCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Cloud} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns user&#39;s cloud only
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Cloud>}
      */
+    this.getClouds = function() {
+      return this.getCloudsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} id 
      * @param {module:model/Cloud} data 
-     * @param {module:api/CloudApi~updateCloudCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Cloud}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
      */
-    this.updateCloud = function(id, data, callback) {
+    this.updateCloudWithHttpInfo = function(id, data) {
       var postBody = data;
 
       // verify the required parameter 'id' is set
@@ -597,27 +635,32 @@
       return this.apiClient.callApi(
         '/cloud/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateCloudUser operation.
-     * @callback module:api/CloudApi~updateCloudUserCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FosUserWrite} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} id 
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
      */
+    this.updateCloud = function(id, data) {
+      return this.updateCloudWithHttpInfo(id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/FosUserWrite} data 
-     * @param {module:api/CloudApi~updateCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FosUserWrite}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FosUserWrite} and HTTP response
      */
-    this.updateCloudUser = function(cloudPk, id, data, callback) {
+    this.updateCloudUserWithHttpInfo = function(cloudPk, id, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -657,8 +700,22 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/user/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/FosUserWrite} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FosUserWrite}
+     */
+    this.updateCloudUser = function(cloudPk, id, data) {
+      return this.updateCloudUserWithHttpInfo(cloudPk, id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

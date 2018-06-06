@@ -34,7 +34,7 @@
   /**
    * Project service.
    * @module api/ProjectApi
-   * @version 1.0.22
+   * @version 1.0.23
    */
 
   /**
@@ -48,23 +48,15 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the createClassification operation.
-     * @callback module:api/ProjectApi~createClassificationCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Classification>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive     
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Classification>} data 
-     * @param {module:api/ProjectApi~createClassificationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Classification>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
      */
-    this.createClassification = function(cloudPk, projectPk, data, callback) {
+    this.createClassificationWithHttpInfo = function(cloudPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -104,17 +96,24 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/classification', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createDocument operation.
-     * @callback module:api/ProjectApi~createDocumentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive     
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/Classification>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
      */
+    this.createClassification = function(cloudPk, projectPk, data) {
+      return this.createClassificationWithHttpInfo(cloudPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -134,10 +133,9 @@
      * @param {Date} opts.createdAt 
      * @param {Date} opts.updatedAt 
      * @param {String} opts.ifcId 
-     * @param {module:api/ProjectApi~createDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
-    this.createDocument = function(cloudPk, projectPk, name, opts, callback) {
+    this.createDocumentWithHttpInfo = function(cloudPk, projectPk, name, opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -191,27 +189,46 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createFolder operation.
-     * @callback module:api/ProjectApi~createFolderCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Folder} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} name 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.id 
+     * @param {Number} opts.parent 
+     * @param {Number} opts.parentId 
+     * @param {Number} opts.creator 
+     * @param {Number} opts.project 
+     * @param {String} opts.fileName 
+     * @param {String} opts.description 
+     * @param {File} opts.file 
+     * @param {String} opts.size 
+     * @param {Date} opts.createdAt 
+     * @param {Date} opts.updatedAt 
+     * @param {String} opts.ifcId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
+    this.createDocument = function(cloudPk, projectPk, name, opts) {
+      return this.createDocumentWithHttpInfo(cloudPk, projectPk, name, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/Folder} data 
-     * @param {module:api/ProjectApi~createFolderCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Folder}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
      */
-    this.createFolder = function(cloudPk, projectPk, data, callback) {
+    this.createFolderWithHttpInfo = function(cloudPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -251,26 +268,32 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createProject operation.
-     * @callback module:api/ProjectApi~createProjectCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Project} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/Folder} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
      */
+    this.createFolder = function(cloudPk, projectPk, data) {
+      return this.createFolderWithHttpInfo(cloudPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {module:model/Project} data 
-     * @param {module:api/ProjectApi~createProjectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Project}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    this.createProject = function(cloudPk, data, callback) {
+    this.createProjectWithHttpInfo = function(cloudPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -304,27 +327,32 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createProjectUser operation.
-     * @callback module:api/ProjectApi~createProjectUserCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FosUserWrite} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {module:model/Project} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
+    this.createProject = function(cloudPk, data) {
+      return this.createProjectWithHttpInfo(cloudPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/FosUserWrite} data 
-     * @param {module:api/ProjectApi~createProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FosUserWrite}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FosUserWrite} and HTTP response
      */
-    this.createProjectUser = function(cloudPk, projectPk, data, callback) {
+    this.createProjectUserWithHttpInfo = function(cloudPk, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -364,26 +392,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/user', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteClassification operation.
-     * @callback module:api/ProjectApi~deleteClassificationCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/FosUserWrite} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FosUserWrite}
      */
+    this.createProjectUser = function(cloudPk, projectPk, data) {
+      return this.createProjectUserWithHttpInfo(cloudPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/ProjectApi~deleteClassificationCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteClassification = function(cloudPk, id, projectPk, callback) {
+    this.deleteClassificationWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -424,27 +459,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/classification/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the deleteDocument operation.
-     * @callback module:api/ProjectApi~deleteDocumentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/ProjectApi~deleteDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteDocument = function(cloudPk, id, projectPk, callback) {
+    this.deleteClassification = function(cloudPk, id, projectPk) {
+      return this.deleteClassificationWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
+     */
+    this.deleteDocumentWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -485,26 +526,33 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the deleteFolder operation.
-     * @callback module:api/ProjectApi~deleteFolderCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/ProjectApi~deleteFolderCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
-    this.deleteFolder = function(cloudPk, id, projectPk, callback) {
+    this.deleteDocument = function(cloudPk, id, projectPk) {
+      return this.deleteDocumentWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deleteFolderWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -545,25 +593,32 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the deleteProject operation.
-     * @callback module:api/ProjectApi~deleteProjectCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
-     * @param {module:api/ProjectApi~deleteProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteProject = function(cloudPk, id, callback) {
+    this.deleteFolder = function(cloudPk, id, projectPk) {
+      return this.deleteFolderWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deleteProjectWithHttpInfo = function(cloudPk, id) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -598,26 +653,32 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteProjectUser operation.
-     * @callback module:api/ProjectApi~deleteProjectUserCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteProject = function(cloudPk, id) {
+      return this.deleteProjectWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/ProjectApi~deleteProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteProjectUser = function(cloudPk, id, projectPk, callback) {
+    this.deleteProjectUserWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -658,17 +719,24 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateClassification operation.
-     * @callback module:api/ProjectApi~fullUpdateClassificationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Classification} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteProjectUser = function(cloudPk, id, projectPk) {
+      return this.deleteProjectUserWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -676,10 +744,9 @@
      * @param {String} id 
      * @param {String} projectPk 
      * @param {module:model/Classification} data 
-     * @param {module:api/ProjectApi~fullUpdateClassificationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Classification}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
      */
-    this.fullUpdateClassification = function(cloudPk, id, projectPk, data, callback) {
+    this.fullUpdateClassificationWithHttpInfo = function(cloudPk, id, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -725,17 +792,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/classification/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateDocument operation.
-     * @callback module:api/ProjectApi~fullUpdateDocumentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {module:model/Classification} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
      */
+    this.fullUpdateClassification = function(cloudPk, id, projectPk, data) {
+      return this.fullUpdateClassificationWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -756,10 +831,9 @@
      * @param {Date} opts.createdAt 
      * @param {Date} opts.updatedAt 
      * @param {String} opts.ifcId 
-     * @param {module:api/ProjectApi~fullUpdateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
-    this.fullUpdateDocument = function(cloudPk, id, projectPk, name, opts, callback) {
+    this.fullUpdateDocumentWithHttpInfo = function(cloudPk, id, projectPk, name, opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -819,17 +893,38 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateFolder operation.
-     * @callback module:api/ProjectApi~fullUpdateFolderCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Folder} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {String} name 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.id2 
+     * @param {Number} opts.parent 
+     * @param {Number} opts.parentId 
+     * @param {Number} opts.creator 
+     * @param {Number} opts.project 
+     * @param {String} opts.fileName 
+     * @param {String} opts.description 
+     * @param {File} opts.file 
+     * @param {String} opts.size 
+     * @param {Date} opts.createdAt 
+     * @param {Date} opts.updatedAt 
+     * @param {String} opts.ifcId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
+    this.fullUpdateDocument = function(cloudPk, id, projectPk, name, opts) {
+      return this.fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, name, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -837,10 +932,9 @@
      * @param {String} id 
      * @param {String} projectPk 
      * @param {module:model/Folder} data 
-     * @param {module:api/ProjectApi~fullUpdateFolderCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Folder}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
      */
-    this.fullUpdateFolder = function(cloudPk, id, projectPk, data, callback) {
+    this.fullUpdateFolderWithHttpInfo = function(cloudPk, id, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -886,27 +980,34 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateProject operation.
-     * @callback module:api/ProjectApi~fullUpdateProjectCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Project} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {module:model/Folder} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
      */
+    this.fullUpdateFolder = function(cloudPk, id, projectPk, data) {
+      return this.fullUpdateFolderWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/Project} data 
-     * @param {module:api/ProjectApi~fullUpdateProjectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Project}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    this.fullUpdateProject = function(cloudPk, id, data, callback) {
+    this.fullUpdateProjectWithHttpInfo = function(cloudPk, id, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -946,17 +1047,24 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateProjectUser operation.
-     * @callback module:api/ProjectApi~fullUpdateProjectUserCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FosUserWrite} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/Project} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
+    this.fullUpdateProject = function(cloudPk, id, data) {
+      return this.fullUpdateProjectWithHttpInfo(cloudPk, id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -964,10 +1072,9 @@
      * @param {String} id 
      * @param {String} projectPk 
      * @param {module:model/FosUserWrite} data 
-     * @param {module:api/ProjectApi~fullUpdateProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FosUserWrite}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FosUserWrite} and HTTP response
      */
-    this.fullUpdateProjectUser = function(cloudPk, id, projectPk, data, callback) {
+    this.fullUpdateProjectUserWithHttpInfo = function(cloudPk, id, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1013,27 +1120,34 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the getClassification operation.
-     * @callback module:api/ProjectApi~getClassificationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Classification} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/ProjectApi~getClassificationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Classification}
+     * @param {module:model/FosUserWrite} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FosUserWrite}
      */
-    this.getClassification = function(cloudPk, id, projectPk, callback) {
+    this.fullUpdateProjectUser = function(cloudPk, id, projectPk, data) {
+      return this.fullUpdateProjectUserWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
+     */
+    this.getClassificationWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -1074,26 +1188,32 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/classification/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getClassifications operation.
-     * @callback module:api/ProjectApi~getClassificationsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Classification>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
      */
+    this.getClassification = function(cloudPk, id, projectPk) {
+      return this.getClassificationWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:api/ProjectApi~getClassificationsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Classification>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
      */
-    this.getClassifications = function(cloudPk, projectPk, callback) {
+    this.getClassificationsWithHttpInfo = function(cloudPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -1128,27 +1248,32 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/classification', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getDocument operation.
-     * @callback module:api/ProjectApi~getDocumentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
      */
+    this.getClassifications = function(cloudPk, projectPk) {
+      return this.getClassificationsWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/ProjectApi~getDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
-    this.getDocument = function(cloudPk, id, projectPk, callback) {
+    this.getDocumentWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -1189,26 +1314,32 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getDocuments operation.
-     * @callback module:api/ProjectApi~getDocumentsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
+    this.getDocument = function(cloudPk, id, projectPk) {
+      return this.getDocumentWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:api/ProjectApi~getDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
-    this.getDocuments = function(cloudPk, projectPk, callback) {
+    this.getDocumentsWithHttpInfo = function(cloudPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -1243,27 +1374,32 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getFolder operation.
-     * @callback module:api/ProjectApi~getFolderCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Folder} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
+    this.getDocuments = function(cloudPk, projectPk) {
+      return this.getDocumentsWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/ProjectApi~getFolderCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Folder}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
      */
-    this.getFolder = function(cloudPk, id, projectPk, callback) {
+    this.getFolderWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -1304,26 +1440,32 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getFolders operation.
-     * @callback module:api/ProjectApi~getFoldersCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Folder>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
      */
+    this.getFolder = function(cloudPk, id, projectPk) {
+      return this.getFolderWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:api/ProjectApi~getFoldersCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Folder>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Folder>} and HTTP response
      */
-    this.getFolders = function(cloudPk, projectPk, callback) {
+    this.getFoldersWithHttpInfo = function(cloudPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -1358,26 +1500,31 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getProject operation.
-     * @callback module:api/ProjectApi~getProjectCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Project} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Folder>}
      */
+    this.getFolders = function(cloudPk, projectPk) {
+      return this.getFoldersWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
-     * @param {module:api/ProjectApi~getProjectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Project}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    this.getProject = function(cloudPk, id, callback) {
+    this.getProjectWithHttpInfo = function(cloudPk, id) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -1412,26 +1559,31 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getProjectTree operation.
-     * @callback module:api/ProjectApi~getProjectTreeCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Folder} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
+    this.getProject = function(cloudPk, id) {
+      return this.getProjectWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns the document tree from root folder
      * @param {String} cloudPk 
      * @param {String} id 
-     * @param {module:api/ProjectApi~getProjectTreeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Folder}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
      */
-    this.getProjectTree = function(cloudPk, id, callback) {
+    this.getProjectTreeWithHttpInfo = function(cloudPk, id) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -1466,27 +1618,32 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}/tree', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getProjectUser operation.
-     * @callback module:api/ProjectApi~getProjectUserCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FosUser} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns the document tree from root folder
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
      */
+    this.getProjectTree = function(cloudPk, id) {
+      return this.getProjectTreeWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
-     * @param {module:api/ProjectApi~getProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FosUser}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FosUser} and HTTP response
      */
-    this.getProjectUser = function(cloudPk, id, projectPk, callback) {
+    this.getProjectUserWithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -1527,26 +1684,32 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getProjectUsers operation.
-     * @callback module:api/ProjectApi~getProjectUsersCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/FosUser>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FosUser}
      */
+    this.getProjectUser = function(cloudPk, id, projectPk) {
+      return this.getProjectUserWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:api/ProjectApi~getProjectUsersCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/FosUser>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FosUser>} and HTTP response
      */
-    this.getProjectUsers = function(cloudPk, projectPk, callback) {
+    this.getProjectUsersWithHttpInfo = function(cloudPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -1581,25 +1744,30 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/user', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getProjects operation.
-     * @callback module:api/ProjectApi~getProjectsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Project>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FosUser>}
      */
+    this.getProjectUsers = function(cloudPk, projectPk) {
+      return this.getProjectUsersWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
-     * @param {module:api/ProjectApi~getProjectsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Project>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
      */
-    this.getProjects = function(cloudPk, callback) {
+    this.getProjectsWithHttpInfo = function(cloudPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -1628,17 +1796,22 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateClassification operation.
-     * @callback module:api/ProjectApi~updateClassificationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Classification} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
      */
+    this.getProjects = function(cloudPk) {
+      return this.getProjectsWithHttpInfo(cloudPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -1646,10 +1819,9 @@
      * @param {String} id 
      * @param {String} projectPk 
      * @param {module:model/Classification} data 
-     * @param {module:api/ProjectApi~updateClassificationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Classification}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
      */
-    this.updateClassification = function(cloudPk, id, projectPk, data, callback) {
+    this.updateClassificationWithHttpInfo = function(cloudPk, id, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1695,17 +1867,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/classification/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateDocument operation.
-     * @callback module:api/ProjectApi~updateDocumentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Document} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {module:model/Classification} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
      */
+    this.updateClassification = function(cloudPk, id, projectPk, data) {
+      return this.updateClassificationWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -1713,10 +1893,9 @@
      * @param {String} id 
      * @param {String} projectPk 
      * @param {module:model/Document} data 
-     * @param {module:api/ProjectApi~updateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Document}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
-    this.updateDocument = function(cloudPk, id, projectPk, data, callback) {
+    this.updateDocumentWithHttpInfo = function(cloudPk, id, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1762,17 +1941,25 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateFolder operation.
-     * @callback module:api/ProjectApi~updateFolderCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Folder} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {module:model/Document} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
+    this.updateDocument = function(cloudPk, id, projectPk, data) {
+      return this.updateDocumentWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -1780,10 +1967,9 @@
      * @param {String} id 
      * @param {String} projectPk 
      * @param {module:model/Folder} data 
-     * @param {module:api/ProjectApi~updateFolderCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Folder}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
      */
-    this.updateFolder = function(cloudPk, id, projectPk, data, callback) {
+    this.updateFolderWithHttpInfo = function(cloudPk, id, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1829,27 +2015,34 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateProject operation.
-     * @callback module:api/ProjectApi~updateProjectCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Project} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {module:model/Folder} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
      */
+    this.updateFolder = function(cloudPk, id, projectPk, data) {
+      return this.updateFolderWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/Project} data 
-     * @param {module:api/ProjectApi~updateProjectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Project}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    this.updateProject = function(cloudPk, id, data, callback) {
+    this.updateProjectWithHttpInfo = function(cloudPk, id, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1889,17 +2082,24 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateProjectUser operation.
-     * @callback module:api/ProjectApi~updateProjectUserCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FosUserWrite} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/Project} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
+    this.updateProject = function(cloudPk, id, data) {
+      return this.updateProjectWithHttpInfo(cloudPk, id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
@@ -1907,10 +2107,9 @@
      * @param {String} id 
      * @param {String} projectPk 
      * @param {module:model/FosUserWrite} data 
-     * @param {module:api/ProjectApi~updateProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FosUserWrite}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FosUserWrite} and HTTP response
      */
-    this.updateProjectUser = function(cloudPk, id, projectPk, data, callback) {
+    this.updateProjectUserWithHttpInfo = function(cloudPk, id, projectPk, data) {
       var postBody = data;
 
       // verify the required parameter 'cloudPk' is set
@@ -1956,8 +2155,23 @@
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * 
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {module:model/FosUserWrite} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FosUserWrite}
+     */
+    this.updateProjectUser = function(cloudPk, id, projectPk, data) {
+      return this.updateProjectUserWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

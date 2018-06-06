@@ -34,7 +34,7 @@
   /**
    * User service.
    * @module api/UserApi
-   * @version 1.0.22
+   * @version 1.0.23
    */
 
   /**
@@ -48,19 +48,12 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the askResetPasswordToken operation.
-     * @callback module:api/UserApi~askResetPasswordTokenCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * 
-     * @param {module:api/UserApi~askResetPasswordTokenCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.askResetPasswordToken = function(callback) {
+    this.askResetPasswordTokenWithHttpInfo = function() {
       var postBody = null;
 
 
@@ -83,26 +76,29 @@
       return this.apiClient.callApi(
         '/user/forgot-password', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateNotification operation.
-     * @callback module:api/UserApi~fullUpdateNotificationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Notification} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.askResetPasswordToken = function() {
+      return this.askResetPasswordTokenWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} id 
      * @param {module:model/Notification} data 
-     * @param {module:api/UserApi~fullUpdateNotificationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Notification}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Notification} and HTTP response
      */
-    this.fullUpdateNotification = function(id, data, callback) {
+    this.fullUpdateNotificationWithHttpInfo = function(id, data) {
       var postBody = data;
 
       // verify the required parameter 'id' is set
@@ -136,25 +132,30 @@
       return this.apiClient.callApi(
         '/user/notification/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getNotification operation.
-     * @callback module:api/UserApi~getNotificationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Notification} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} id 
+     * @param {module:model/Notification} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Notification}
      */
+    this.fullUpdateNotification = function(id, data) {
+      return this.fullUpdateNotificationWithHttpInfo(id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} id 
-     * @param {module:api/UserApi~getNotificationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Notification}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Notification} and HTTP response
      */
-    this.getNotification = function(id, callback) {
+    this.getNotificationWithHttpInfo = function(id) {
       var postBody = null;
 
       // verify the required parameter 'id' is set
@@ -183,24 +184,28 @@
       return this.apiClient.callApi(
         '/user/notification/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getSelfNotifications operation.
-     * @callback module:api/UserApi~getSelfNotificationsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Notification>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Notification}
      */
+    this.getNotification = function(id) {
+      return this.getNotificationWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
-     * @param {module:api/UserApi~getSelfNotificationsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Notification>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Notification>} and HTTP response
      */
-    this.getSelfNotifications = function(callback) {
+    this.getSelfNotificationsWithHttpInfo = function() {
       var postBody = null;
 
 
@@ -223,24 +228,27 @@
       return this.apiClient.callApi(
         '/user/notification', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getSelfProjects operation.
-     * @callback module:api/UserApi~getSelfProjectsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Project>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Notification>}
      */
+    this.getSelfNotifications = function() {
+      return this.getSelfNotificationsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
-     * @param {module:api/UserApi~getSelfProjectsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Project>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
      */
-    this.getSelfProjects = function(callback) {
+    this.getSelfProjectsWithHttpInfo = function() {
       var postBody = null;
 
 
@@ -263,24 +271,27 @@
       return this.apiClient.callApi(
         '/user/projects', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getSelfUser operation.
-     * @callback module:api/UserApi~getSelfUserCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FosUser} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
      */
+    this.getSelfProjects = function() {
+      return this.getSelfProjectsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
-     * @param {module:api/UserApi~getSelfUserCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FosUser}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FosUser} and HTTP response
      */
-    this.getSelfUser = function(callback) {
+    this.getSelfUserWithHttpInfo = function() {
       var postBody = null;
 
 
@@ -303,23 +314,27 @@
       return this.apiClient.callApi(
         '/user', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the resetPassword operation.
-     * @callback module:api/UserApi~resetPasswordCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FosUser}
      */
+    this.getSelfUser = function() {
+      return this.getSelfUserWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
-     * @param {module:api/UserApi~resetPasswordCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.resetPassword = function(callback) {
+    this.resetPasswordWithHttpInfo = function() {
       var postBody = null;
 
 
@@ -342,25 +357,28 @@
       return this.apiClient.callApi(
         '/user/reset-password', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the signUp operation.
-     * @callback module:api/UserApi~signUpCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/SignupFosUser} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.resetPassword = function() {
+      return this.resetPasswordWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {module:model/SignupFosUser} data 
-     * @param {module:api/UserApi~signUpCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/SignupFosUser}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignupFosUser} and HTTP response
      */
-    this.signUp = function(data, callback) {
+    this.signUpWithHttpInfo = function(data) {
       var postBody = data;
 
       // verify the required parameter 'data' is set
@@ -388,24 +406,28 @@
       return this.apiClient.callApi(
         '/user/signup', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the signUpWithInvitationToken operation.
-     * @callback module:api/UserApi~signUpWithInvitationTokenCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/SignupFosUser} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {module:model/SignupFosUser} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SignupFosUser}
      */
+    this.signUp = function(data) {
+      return this.signUpWithHttpInfo(data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
-     * @param {module:api/UserApi~signUpWithInvitationTokenCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/SignupFosUser}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignupFosUser} and HTTP response
      */
-    this.signUpWithInvitationToken = function(callback) {
+    this.signUpWithInvitationTokenWithHttpInfo = function() {
       var postBody = null;
 
 
@@ -428,26 +450,29 @@
       return this.apiClient.callApi(
         '/user/invited-signup', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateNotification operation.
-     * @callback module:api/UserApi~updateNotificationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Notification} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SignupFosUser}
      */
+    this.signUpWithInvitationToken = function() {
+      return this.signUpWithInvitationTokenWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
      * @param {String} id 
      * @param {module:model/Notification} data 
-     * @param {module:api/UserApi~updateNotificationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Notification}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Notification} and HTTP response
      */
-    this.updateNotification = function(id, data, callback) {
+    this.updateNotificationWithHttpInfo = function(id, data) {
       var postBody = data;
 
       // verify the required parameter 'id' is set
@@ -481,24 +506,29 @@
       return this.apiClient.callApi(
         '/user/notification/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateSelfUser operation.
-     * @callback module:api/UserApi~updateSelfUserCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FosUser} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 
+     * @param {String} id 
+     * @param {module:model/Notification} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Notification}
      */
+    this.updateNotification = function(id, data) {
+      return this.updateNotificationWithHttpInfo(id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 
-     * @param {module:api/UserApi~updateSelfUserCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FosUser}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FosUser} and HTTP response
      */
-    this.updateSelfUser = function(callback) {
+    this.updateSelfUserWithHttpInfo = function() {
       var postBody = null;
 
 
@@ -521,8 +551,19 @@
       return this.apiClient.callApi(
         '/user', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FosUser}
+     */
+    this.updateSelfUser = function() {
+      return this.updateSelfUserWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

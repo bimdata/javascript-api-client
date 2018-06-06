@@ -37,7 +37,7 @@
   /**
    * The IfcChecker model module.
    * @module model/IfcChecker
-   * @version 1.0.22
+   * @version 1.0.23
    */
 
   /**
