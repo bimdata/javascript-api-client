@@ -37,7 +37,7 @@
   /**
    * The ZoneSpace model module.
    * @module model/ZoneSpace
-   * @version 1.0.24
+   * @version 1.0.25
    */
 
   /**

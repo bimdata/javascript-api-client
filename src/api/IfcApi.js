@@ -34,7 +34,7 @@
   /**
    * Ifc service.
    * @module api/IfcApi
-   * @version 1.0.24
+   * @version 1.0.25
    */
 
   /**
@@ -4332,9 +4332,14 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.type Filter the returned list by type
+     * @param {String} opts.classification Filter the returned list by classification
+     * @param {String} opts.classificationNotation Filter the returned list by classification__notation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Element>} and HTTP response
      */
-    this.getElementsWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
+    this.getElementsWithHttpInfo = function(cloudPk, ifcPk, projectPk, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -4359,6 +4364,9 @@
         'project_pk': projectPk
       };
       var queryParams = {
+        'type': opts['type'],
+        'classification': opts['classification'],
+        'classification__notation': opts['classificationNotation'],
       };
       var collectionQueryParams = {
       };
@@ -4384,10 +4392,14 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.type Filter the returned list by type
+     * @param {String} opts.classification Filter the returned list by classification
+     * @param {String} opts.classificationNotation Filter the returned list by classification__notation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Element>}
      */
-    this.getElements = function(cloudPk, ifcPk, projectPk) {
-      return this.getElementsWithHttpInfo(cloudPk, ifcPk, projectPk)
+    this.getElements = function(cloudPk, ifcPk, projectPk, opts) {
+      return this.getElementsWithHttpInfo(cloudPk, ifcPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5368,9 +5380,12 @@
      * 
      * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.status Filter the returned list by status
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Ifc>} and HTTP response
      */
-    this.getIfcsWithHttpInfo = function(cloudPk, projectPk) {
+    this.getIfcsWithHttpInfo = function(cloudPk, projectPk, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5389,6 +5404,7 @@
         'project_pk': projectPk
       };
       var queryParams = {
+        'status': opts['status'],
       };
       var collectionQueryParams = {
       };
@@ -5413,10 +5429,12 @@
      * 
      * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.status Filter the returned list by status
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Ifc>}
      */
-    this.getIfcs = function(cloudPk, projectPk) {
-      return this.getIfcsWithHttpInfo(cloudPk, projectPk)
+    this.getIfcs = function(cloudPk, projectPk, opts) {
+      return this.getIfcsWithHttpInfo(cloudPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5570,9 +5588,14 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.type Filter the returned list by type
+     * @param {String} opts.classification Filter the returned list by classification
+     * @param {String} opts.classificationNotation Filter the returned list by classification__notation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.getRawElementsWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
+    this.getRawElementsWithHttpInfo = function(cloudPk, ifcPk, projectPk, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -5597,6 +5620,9 @@
         'project_pk': projectPk
       };
       var queryParams = {
+        'type': opts['type'],
+        'classification': opts['classification'],
+        'classification__notation': opts['classificationNotation'],
       };
       var collectionQueryParams = {
       };
@@ -5622,10 +5648,14 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.type Filter the returned list by type
+     * @param {String} opts.classification Filter the returned list by classification
+     * @param {String} opts.classificationNotation Filter the returned list by classification__notation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.getRawElements = function(cloudPk, ifcPk, projectPk) {
-      return this.getRawElementsWithHttpInfo(cloudPk, ifcPk, projectPk)
+    this.getRawElements = function(cloudPk, ifcPk, projectPk, opts) {
+      return this.getRawElementsWithHttpInfo(cloudPk, ifcPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6012,9 +6042,12 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.color Filter the returned list by color
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Zone>} and HTTP response
      */
-    this.getZonesWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
+    this.getZonesWithHttpInfo = function(cloudPk, ifcPk, projectPk, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
@@ -6039,6 +6072,7 @@
         'project_pk': projectPk
       };
       var queryParams = {
+        'color': opts['color'],
       };
       var collectionQueryParams = {
       };
@@ -6064,10 +6098,12 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.color Filter the returned list by color
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Zone>}
      */
-    this.getZones = function(cloudPk, ifcPk, projectPk) {
-      return this.getZonesWithHttpInfo(cloudPk, ifcPk, projectPk)
+    this.getZones = function(cloudPk, ifcPk, projectPk, opts) {
+      return this.getZonesWithHttpInfo(cloudPk, ifcPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6145,7 +6181,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this classification.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -6211,7 +6247,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this classification.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}

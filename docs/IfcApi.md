@@ -3386,7 +3386,7 @@ Name | Type | Description  | Notes
 
 <a name="getElements"></a>
 # **getElements**
-> [Element] getElements(cloudPk, ifcPk, projectPk, )
+> [Element] getElements(cloudPk, ifcPk, projectPk, , opts)
 
 
 
@@ -3411,7 +3411,12 @@ var ifcPk = "ifcPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
-apiInstance.getElements(cloudPk, ifcPk, projectPk, ).then(function(data) {
+var opts = { 
+  'type': "type_example", // String | Filter the returned list by type
+  'classification': "classification_example", // String | Filter the returned list by classification
+  'classificationNotation': "classificationNotation_example" // String | Filter the returned list by classification__notation
+};
+apiInstance.getElements(cloudPk, ifcPk, projectPk, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3426,6 +3431,9 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **type** | **String**| Filter the returned list by type | [optional] 
+ **classification** | **String**| Filter the returned list by classification | [optional] 
+ **classificationNotation** | **String**| Filter the returned list by classification__notation | [optional] 
 
 ### Return type
 
@@ -4238,7 +4246,7 @@ Name | Type | Description  | Notes
 
 <a name="getIfcs"></a>
 # **getIfcs**
-> [Ifc] getIfcs(cloudPk, projectPk)
+> [Ifc] getIfcs(cloudPk, projectPk, opts)
 
 
 
@@ -4261,7 +4269,10 @@ var cloudPk = "cloudPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
-apiInstance.getIfcs(cloudPk, projectPk).then(function(data) {
+var opts = { 
+  'status': "status_example" // String | Filter the returned list by status
+};
+apiInstance.getIfcs(cloudPk, projectPk, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4275,6 +4286,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **status** | **String**| Filter the returned list by status | [optional] 
 
 ### Return type
 
@@ -4406,7 +4418,7 @@ Name | Type | Description  | Notes
 
 <a name="getRawElements"></a>
 # **getRawElements**
-> getRawElements(cloudPk, ifcPk, projectPk, )
+> getRawElements(cloudPk, ifcPk, projectPk, , opts)
 
 
 
@@ -4431,7 +4443,12 @@ var ifcPk = "ifcPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
-apiInstance.getRawElements(cloudPk, ifcPk, projectPk, ).then(function() {
+var opts = { 
+  'type': "type_example", // String | Filter the returned list by type
+  'classification': "classification_example", // String | Filter the returned list by classification
+  'classificationNotation': "classificationNotation_example" // String | Filter the returned list by classification__notation
+};
+apiInstance.getRawElements(cloudPk, ifcPk, projectPk, , opts).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -4446,6 +4463,9 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **type** | **String**| Filter the returned list by type | [optional] 
+ **classification** | **String**| Filter the returned list by classification | [optional] 
+ **classificationNotation** | **String**| Filter the returned list by classification__notation | [optional] 
 
 ### Return type
 
@@ -4757,7 +4777,7 @@ Name | Type | Description  | Notes
 
 <a name="getZones"></a>
 # **getZones**
-> [Zone] getZones(cloudPk, ifcPk, projectPk, )
+> [Zone] getZones(cloudPk, ifcPk, projectPk, , opts)
 
 
 
@@ -4782,7 +4802,10 @@ var ifcPk = "ifcPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
-apiInstance.getZones(cloudPk, ifcPk, projectPk, ).then(function(data) {
+var opts = { 
+  'color': "color_example" // String | Filter the returned list by color
+};
+apiInstance.getZones(cloudPk, ifcPk, projectPk, , opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4797,6 +4820,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **color** | **String**| Filter the returned list by color | [optional] 
 
 ### Return type
 
@@ -4892,7 +4916,7 @@ var cloudPk = "cloudPk_example"; // String |
 
 var elementUuid = "elementUuid_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this classification.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -4912,7 +4936,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this classification. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
