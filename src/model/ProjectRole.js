@@ -26,7 +26,7 @@
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.Feature = factory(root.bimdata.ApiClient);
+    root.bimdata.ProjectRole = factory(root.bimdata.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,45 +35,53 @@
 
 
   /**
-   * The Feature model module.
-   * @module model/Feature
+   * The ProjectRole model module.
+   * @module model/ProjectRole
    * @version 1.0.24
    */
 
   /**
-   * Constructs a new <code>Feature</code>.
-   * @alias module:model/Feature
+   * Constructs a new <code>ProjectRole</code>.
+   * @alias module:model/ProjectRole
    * @class
-   * @param name {String} 
+   * @param project {Number} 
    */
-  var exports = function(name) {
+  var exports = function(project) {
     var _this = this;
 
-    _this['name'] = name;
+    _this['project'] = project;
+
   };
 
   /**
-   * Constructs a <code>Feature</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ProjectRole</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Feature} obj Optional instance to populate.
-   * @return {module:model/Feature} The populated <code>Feature</code> instance.
+   * @param {module:model/ProjectRole} obj Optional instance to populate.
+   * @return {module:model/ProjectRole} The populated <code>ProjectRole</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('project')) {
+        obj['project'] = ApiClient.convertToType(data['project'], 'Number');
+      }
+      if (data.hasOwnProperty('role')) {
+        obj['role'] = ApiClient.convertToType(data['role'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} name
+   * @member {Number} project
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['project'] = undefined;
+  /**
+   * @member {Number} role
+   */
+  exports.prototype['role'] = undefined;
 
 
 

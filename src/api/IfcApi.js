@@ -34,7 +34,7 @@
   /**
    * Ifc service.
    * @module api/IfcApi
-   * @version 1.0.23
+   * @version 1.0.24
    */
 
   /**
@@ -831,7 +831,7 @@
 
 
     /**
-     *          create association between existing classification and existing element     
+     *              create association between existing classification and existing element         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -889,7 +889,7 @@
     }
 
     /**
-     *          create association between existing classification and existing element     
+     *              create association between existing classification and existing element         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1659,7 +1659,7 @@
 
 
     /**
-     *          create association between existing classification and existing element     
+     *              create association between existing classification and existing element         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1717,7 +1717,7 @@
     }
 
     /**
-     *          create association between existing classification and existing element     
+     *              create association between existing classification and existing element         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -2041,7 +2041,7 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {String} uuid 
+     * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     this.deleteElementWithHttpInfo = function(cloudPk, ifcPk, projectPk, uuid) {
@@ -2100,7 +2100,7 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {String} uuid 
+     * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     this.deleteElement = function(cloudPk, ifcPk, projectPk, uuid) {
@@ -2114,7 +2114,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -2166,7 +2166,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -2481,7 +2481,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -2540,7 +2540,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -2556,7 +2556,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -2615,7 +2615,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -2631,7 +2631,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
@@ -2697,7 +2697,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
@@ -2716,7 +2716,7 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {String} uuid 
+     * @param {String} uuid IFC element or element type UUID
      * @param {module:model/Element} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Element} and HTTP response
      */
@@ -2781,7 +2781,7 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {String} uuid 
+     * @param {String} uuid IFC element or element type UUID
      * @param {module:model/Element} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Element}
      */
@@ -2796,7 +2796,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @param {module:model/Ifc} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ifc} and HTTP response
@@ -2854,7 +2854,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @param {module:model/Ifc} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ifc}
@@ -3198,7 +3198,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Space} data 
@@ -3263,7 +3263,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Space} data 
@@ -3280,7 +3280,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Zone} data 
@@ -3345,7 +3345,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Zone} data 
@@ -3362,7 +3362,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
@@ -3434,7 +3434,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
@@ -3529,7 +3529,7 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {String} uuid 
+     * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Element} and HTTP response
      */
     this.getElementWithHttpInfo = function(cloudPk, ifcPk, projectPk, uuid) {
@@ -3588,7 +3588,7 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {String} uuid 
+     * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Element}
      */
     this.getElement = function(cloudPk, ifcPk, projectPk, uuid) {
@@ -3603,7 +3603,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertySet} and HTTP response
@@ -3669,7 +3669,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertySet}
@@ -3769,7 +3769,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertysetPk 
@@ -3842,7 +3842,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertysetPk 
@@ -3860,7 +3860,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
@@ -3940,7 +3940,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
@@ -3959,7 +3959,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
@@ -4046,7 +4046,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
@@ -4472,7 +4472,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ifc} and HTTP response
      */
@@ -4524,7 +4524,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ifc}
      */
@@ -4539,7 +4539,7 @@
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the bvh file         
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -4591,7 +4591,7 @@
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the bvh file         
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -4673,7 +4673,7 @@
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the gltf file         
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -4725,7 +4725,7 @@
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the gltf file         
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -4740,7 +4740,7 @@
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the map file         
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -4792,7 +4792,7 @@
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the map file         
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -5091,7 +5091,7 @@
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the structure file         
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -5143,7 +5143,7 @@
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the structure file         
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -5158,7 +5158,7 @@
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the system file         
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -5210,7 +5210,7 @@
     /**
      *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the system file         
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -5635,7 +5635,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Space} and HTTP response
@@ -5694,7 +5694,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Space}
@@ -5777,7 +5777,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Zone} and HTTP response
@@ -5836,7 +5836,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Zone}
@@ -5852,7 +5852,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
@@ -5918,7 +5918,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
@@ -6075,6 +6075,73 @@
 
 
     /**
+     *              list association between classifications and elements         
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ElementClassificationRelation>} and HTTP response
+     */
+    this.listClassificationElementRelationsWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
+      var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling listClassificationElementRelations");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling listClassificationElementRelations");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling listClassificationElementRelations");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [ElementClassificationRelation];
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     *              list association between classifications and elements         
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ElementClassificationRelation>}
+     */
+    this.listClassificationElementRelations = function(cloudPk, ifcPk, projectPk) {
+      return this.listClassificationElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
@@ -6161,7 +6228,7 @@
      *          Delete the relation between the element and the property set. Does not delete any object     
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -6227,7 +6294,7 @@
      *          Delete the relation between the element and the property set. Does not delete any object     
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -6244,7 +6311,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertysetPk 
@@ -6317,7 +6384,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertysetPk 
@@ -6335,7 +6402,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
@@ -6415,7 +6482,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
@@ -6434,7 +6501,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
@@ -6521,7 +6588,7 @@
      * 
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
@@ -6625,7 +6692,7 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {String} uuid 
+     * @param {String} uuid IFC element or element type UUID
      * @param {module:model/Element} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Element} and HTTP response
      */
@@ -6690,7 +6757,7 @@
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {String} uuid 
+     * @param {String} uuid IFC element or element type UUID
      * @param {module:model/Element} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Element}
      */
@@ -6705,7 +6772,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @param {module:model/Ifc} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ifc} and HTTP response
@@ -6763,7 +6830,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @param {module:model/Ifc} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ifc}
@@ -6779,7 +6846,7 @@
     /**
      *          Patch ifc files (gltf, structure, svg, etc)         
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {File} opts.structureFile 
@@ -6843,7 +6910,7 @@
     /**
      *          Patch ifc files (gltf, structure, svg, etc)         
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {File} opts.structureFile 
@@ -7192,7 +7259,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Space} data 
@@ -7257,7 +7324,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Space} data 
@@ -7274,7 +7341,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Zone} data 
@@ -7339,7 +7406,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Zone} data 
@@ -7356,7 +7423,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
@@ -7428,7 +7495,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} zonePk 

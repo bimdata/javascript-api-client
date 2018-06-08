@@ -26,7 +26,7 @@
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.Feature = factory(root.bimdata.ApiClient);
+    root.bimdata.ForgotPassword = factory(root.bimdata.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,45 +35,45 @@
 
 
   /**
-   * The Feature model module.
-   * @module model/Feature
+   * The ForgotPassword model module.
+   * @module model/ForgotPassword
    * @version 1.0.24
    */
 
   /**
-   * Constructs a new <code>Feature</code>.
-   * @alias module:model/Feature
+   * Constructs a new <code>ForgotPassword</code>.
+   * @alias module:model/ForgotPassword
    * @class
-   * @param name {String} 
+   * @param email {String} 
    */
-  var exports = function(name) {
+  var exports = function(email) {
     var _this = this;
 
-    _this['name'] = name;
+    _this['email'] = email;
   };
 
   /**
-   * Constructs a <code>Feature</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ForgotPassword</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Feature} obj Optional instance to populate.
-   * @return {module:model/Feature} The populated <code>Feature</code> instance.
+   * @param {module:model/ForgotPassword} obj Optional instance to populate.
+   * @return {module:model/ForgotPassword} The populated <code>ForgotPassword</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} name
+   * @member {String} email
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['email'] = undefined;
 
 
 

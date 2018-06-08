@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CheckPlan', 'model/CheckerResult', 'model/Classification', 'model/Cloud', 'model/Document', 'model/Element', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/Feature', 'model/Folder', 'model/FosUser', 'model/FosUserWrite', 'model/Ifc', 'model/IfcChecker', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults', 'model/IfcCreator', 'model/IfcDocument', 'model/IfcFiles', 'model/Notification', 'model/Project', 'model/Property', 'model/PropertyDefinition', 'model/PropertySet', 'model/Rule', 'model/RuleComponent', 'model/Ruleset', 'model/SignupFosUser', 'model/Space', 'model/Unit', 'model/Zone', 'model/ZoneSpace', 'api/CheckplanApi', 'api/CloudApi', 'api/IfcApi', 'api/ProjectApi', 'api/UserApi'], factory);
+    define(['ApiClient', 'model/CheckPlan', 'model/CheckerResult', 'model/Classification', 'model/Cloud', 'model/CloudRole', 'model/Document', 'model/Element', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/Feature', 'model/Folder', 'model/ForgotPassword', 'model/FosUser', 'model/FosUserWrite', 'model/Ifc', 'model/IfcChecker', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults', 'model/IfcCreator', 'model/IfcDocument', 'model/IfcFiles', 'model/InvitedSignUp', 'model/Notification', 'model/Project', 'model/ProjectRole', 'model/Property', 'model/PropertyDefinition', 'model/PropertySet', 'model/ResetPassword', 'model/Rule', 'model/RuleComponent', 'model/Ruleset', 'model/SelfFosUser', 'model/SignupFosUser', 'model/Space', 'model/Unit', 'model/Zone', 'model/ZoneSpace', 'api/CheckplanApi', 'api/CloudApi', 'api/IfcApi', 'api/ProjectApi', 'api/UserApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/CheckPlan'), require('./model/CheckerResult'), require('./model/Classification'), require('./model/Cloud'), require('./model/Document'), require('./model/Element'), require('./model/ElementClassificationRelation'), require('./model/ElementPropertySetRelation'), require('./model/Feature'), require('./model/Folder'), require('./model/FosUser'), require('./model/FosUserWrite'), require('./model/Ifc'), require('./model/IfcChecker'), require('./model/IfcCheckerCheckplan'), require('./model/IfcCheckerResults'), require('./model/IfcCreator'), require('./model/IfcDocument'), require('./model/IfcFiles'), require('./model/Notification'), require('./model/Project'), require('./model/Property'), require('./model/PropertyDefinition'), require('./model/PropertySet'), require('./model/Rule'), require('./model/RuleComponent'), require('./model/Ruleset'), require('./model/SignupFosUser'), require('./model/Space'), require('./model/Unit'), require('./model/Zone'), require('./model/ZoneSpace'), require('./api/CheckplanApi'), require('./api/CloudApi'), require('./api/IfcApi'), require('./api/ProjectApi'), require('./api/UserApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/CheckPlan'), require('./model/CheckerResult'), require('./model/Classification'), require('./model/Cloud'), require('./model/CloudRole'), require('./model/Document'), require('./model/Element'), require('./model/ElementClassificationRelation'), require('./model/ElementPropertySetRelation'), require('./model/Feature'), require('./model/Folder'), require('./model/ForgotPassword'), require('./model/FosUser'), require('./model/FosUserWrite'), require('./model/Ifc'), require('./model/IfcChecker'), require('./model/IfcCheckerCheckplan'), require('./model/IfcCheckerResults'), require('./model/IfcCreator'), require('./model/IfcDocument'), require('./model/IfcFiles'), require('./model/InvitedSignUp'), require('./model/Notification'), require('./model/Project'), require('./model/ProjectRole'), require('./model/Property'), require('./model/PropertyDefinition'), require('./model/PropertySet'), require('./model/ResetPassword'), require('./model/Rule'), require('./model/RuleComponent'), require('./model/Ruleset'), require('./model/SelfFosUser'), require('./model/SignupFosUser'), require('./model/Space'), require('./model/Unit'), require('./model/Zone'), require('./model/ZoneSpace'), require('./api/CheckplanApi'), require('./api/CloudApi'), require('./api/IfcApi'), require('./api/ProjectApi'), require('./api/UserApi'));
   }
-}(function(ApiClient, CheckPlan, CheckerResult, Classification, Cloud, Document, Element, ElementClassificationRelation, ElementPropertySetRelation, Feature, Folder, FosUser, FosUserWrite, Ifc, IfcChecker, IfcCheckerCheckplan, IfcCheckerResults, IfcCreator, IfcDocument, IfcFiles, Notification, Project, Property, PropertyDefinition, PropertySet, Rule, RuleComponent, Ruleset, SignupFosUser, Space, Unit, Zone, ZoneSpace, CheckplanApi, CloudApi, IfcApi, ProjectApi, UserApi) {
+}(function(ApiClient, CheckPlan, CheckerResult, Classification, Cloud, CloudRole, Document, Element, ElementClassificationRelation, ElementPropertySetRelation, Feature, Folder, ForgotPassword, FosUser, FosUserWrite, Ifc, IfcChecker, IfcCheckerCheckplan, IfcCheckerResults, IfcCreator, IfcDocument, IfcFiles, InvitedSignUp, Notification, Project, ProjectRole, Property, PropertyDefinition, PropertySet, ResetPassword, Rule, RuleComponent, Ruleset, SelfFosUser, SignupFosUser, Space, Unit, Zone, ZoneSpace, CheckplanApi, CloudApi, IfcApi, ProjectApi, UserApi) {
   'use strict';
 
   /**
@@ -54,7 +54,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 1.0.23
+   * @version 1.0.24
    */
   var exports = {
     /**
@@ -82,6 +82,11 @@
      * @property {module:model/Cloud}
      */
     Cloud: Cloud,
+    /**
+     * The CloudRole model constructor.
+     * @property {module:model/CloudRole}
+     */
+    CloudRole: CloudRole,
     /**
      * The Document model constructor.
      * @property {module:model/Document}
@@ -112,6 +117,11 @@
      * @property {module:model/Folder}
      */
     Folder: Folder,
+    /**
+     * The ForgotPassword model constructor.
+     * @property {module:model/ForgotPassword}
+     */
+    ForgotPassword: ForgotPassword,
     /**
      * The FosUser model constructor.
      * @property {module:model/FosUser}
@@ -158,6 +168,11 @@
      */
     IfcFiles: IfcFiles,
     /**
+     * The InvitedSignUp model constructor.
+     * @property {module:model/InvitedSignUp}
+     */
+    InvitedSignUp: InvitedSignUp,
+    /**
      * The Notification model constructor.
      * @property {module:model/Notification}
      */
@@ -167,6 +182,11 @@
      * @property {module:model/Project}
      */
     Project: Project,
+    /**
+     * The ProjectRole model constructor.
+     * @property {module:model/ProjectRole}
+     */
+    ProjectRole: ProjectRole,
     /**
      * The Property model constructor.
      * @property {module:model/Property}
@@ -183,6 +203,11 @@
      */
     PropertySet: PropertySet,
     /**
+     * The ResetPassword model constructor.
+     * @property {module:model/ResetPassword}
+     */
+    ResetPassword: ResetPassword,
+    /**
      * The Rule model constructor.
      * @property {module:model/Rule}
      */
@@ -197,6 +222,11 @@
      * @property {module:model/Ruleset}
      */
     Ruleset: Ruleset,
+    /**
+     * The SelfFosUser model constructor.
+     * @property {module:model/SelfFosUser}
+     */
+    SelfFosUser: SelfFosUser,
     /**
      * The SignupFosUser model constructor.
      * @property {module:model/SignupFosUser}

@@ -83,6 +83,7 @@ Method | HTTP request | Description
 [**getZoneSpace**](IfcApi.md#getZoneSpace) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | 
 [**getZoneSpaces**](IfcApi.md#getZoneSpaces) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | 
 [**getZones**](IfcApi.md#getZones) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | 
+[**listClassificationElementRelations**](IfcApi.md#listClassificationElementRelations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | 
 [**removeClassificationOfElement**](IfcApi.md#removeClassificationOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/{id} | 
 [**removeElementPropertySet**](IfcApi.md#removeElementPropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | 
 [**removeElementPropertySetProperty**](IfcApi.md#removeElementPropertySetProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | 
@@ -741,7 +742,7 @@ Name | Type | Description  | Notes
 
 
 
-         create association between existing classification and existing element     
+             create association between existing classification and existing element         
 
 ### Example
 ```javascript
@@ -1364,7 +1365,7 @@ Name | Type | Description  | Notes
 
 
 
-         create association between existing classification and existing element     
+             create association between existing classification and existing element         
 
 ### Example
 ```javascript
@@ -1683,7 +1684,7 @@ var ifcPk = "ifcPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
-var uuid = "uuid_example"; // String | 
+var uuid = "uuid_example"; // String | IFC element or element type UUID
 
 apiInstance.deleteElement(cloudPk, ifcPk, projectPk, uuid, ).then(function() {
   console.log('API called successfully.');
@@ -1700,7 +1701,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **uuid** | **String**|  | 
+ **uuid** | **String**| IFC element or element type UUID | 
 
 ### Return type
 
@@ -1738,7 +1739,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -1755,7 +1756,7 @@ apiInstance.deleteIfc(cloudPk, id, projectPk, ).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -2030,7 +2031,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this space.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -2049,7 +2050,7 @@ apiInstance.deleteSpace(cloudPk, id, ifcPk, projectPk, ).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this space. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -2089,7 +2090,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this zone.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -2108,7 +2109,7 @@ apiInstance.deleteZone(cloudPk, id, ifcPk, projectPk, ).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this zone. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -2148,7 +2149,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this space.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -2169,7 +2170,7 @@ apiInstance.deleteZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, ).then(functi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this space. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **zonePk** | **String**|  | 
@@ -2214,7 +2215,7 @@ var ifcPk = "ifcPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
-var uuid = "uuid_example"; // String | 
+var uuid = "uuid_example"; // String | IFC element or element type UUID
 
 var data = new bimdata.Element(); // Element | 
 
@@ -2233,7 +2234,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **uuid** | **String**|  | 
+ **uuid** | **String**| IFC element or element type UUID | 
  **data** | [**Element**](Element.md)|  | 
 
 ### Return type
@@ -2272,7 +2273,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -2291,7 +2292,7 @@ apiInstance.fullUpdateIfc(cloudPk, id, projectPk, data).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc. | 
  **projectPk** | **String**|  | 
  **data** | [**Ifc**](Ifc.md)|  | 
 
@@ -2579,7 +2580,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this space.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -2600,7 +2601,7 @@ apiInstance.fullUpdateSpace(cloudPk, id, ifcPk, projectPk, data).then(function(d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this space. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**Space**](Space.md)|  | 
@@ -2641,7 +2642,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this zone.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -2662,7 +2663,7 @@ apiInstance.fullUpdateZone(cloudPk, id, ifcPk, projectPk, data).then(function(da
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this zone. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**Zone**](Zone.md)|  | 
@@ -2703,7 +2704,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this space.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -2726,7 +2727,7 @@ apiInstance.fullUpdateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, data).the
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this space. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **zonePk** | **String**|  | 
@@ -2831,7 +2832,7 @@ var ifcPk = "ifcPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
-var uuid = "uuid_example"; // String | 
+var uuid = "uuid_example"; // String | IFC element or element type UUID
 
 apiInstance.getElement(cloudPk, ifcPk, projectPk, uuid, ).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -2848,7 +2849,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **uuid** | **String**|  | 
+ **uuid** | **String**| IFC element or element type UUID | 
 
 ### Return type
 
@@ -2888,7 +2889,7 @@ var cloudPk = "cloudPk_example"; // String |
 
 var elementUuid = "elementUuid_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property set.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -2908,7 +2909,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property set. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -3012,7 +3013,7 @@ var cloudPk = "cloudPk_example"; // String |
 
 var elementUuid = "elementUuid_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -3034,7 +3035,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **propertysetPk** | **String**|  | 
@@ -3077,7 +3078,7 @@ var cloudPk = "cloudPk_example"; // String |
 
 var elementUuid = "elementUuid_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property definition.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -3101,7 +3102,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property definition. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **propertyPk** | **String**|  | 
@@ -3145,7 +3146,7 @@ var cloudPk = "cloudPk_example"; // String |
 
 var elementUuid = "elementUuid_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this unit.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -3171,7 +3172,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this unit. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **propertyPk** | **String**|  | 
@@ -3521,7 +3522,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -3538,7 +3539,7 @@ apiInstance.getIfc(cloudPk, id, projectPk, ).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -3577,7 +3578,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -3594,7 +3595,7 @@ apiInstance.getIfcBVH(cloudPk, id, projectPk).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -3689,7 +3690,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -3706,7 +3707,7 @@ apiInstance.getIfcGLTF(cloudPk, id, projectPk).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -3745,7 +3746,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -3762,7 +3763,7 @@ apiInstance.getIfcMap(cloudPk, id, projectPk).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -4031,7 +4032,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -4048,7 +4049,7 @@ apiInstance.getIfcStructure(cloudPk, id, projectPk).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -4087,7 +4088,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -4104,7 +4105,7 @@ apiInstance.getIfcSystems(cloudPk, id, projectPk).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -4482,7 +4483,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this space.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -4501,7 +4502,7 @@ apiInstance.getSpace(cloudPk, id, ifcPk, projectPk, ).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this space. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -4597,7 +4598,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this zone.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -4616,7 +4617,7 @@ apiInstance.getZone(cloudPk, id, ifcPk, projectPk, ).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this zone. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -4656,7 +4657,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this space.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -4677,7 +4678,7 @@ apiInstance.getZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, ).then(function(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this space. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **zonePk** | **String**|  | 
@@ -4810,6 +4811,62 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="listClassificationElementRelations"></a>
+# **listClassificationElementRelations**
+> [ElementClassificationRelation] listClassificationElementRelations(cloudPk, ifcPk, projectPk, )
+
+
+
+             list association between classifications and elements         
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.IfcApi();
+
+var cloudPk = "cloudPk_example"; // String | 
+
+var ifcPk = "ifcPk_example"; // String | 
+
+var projectPk = "projectPk_example"; // String | 
+
+apiInstance.listClassificationElementRelations(cloudPk, ifcPk, projectPk, ).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**[ElementClassificationRelation]**](ElementClassificationRelation.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="removeClassificationOfElement"></a>
 # **removeClassificationOfElement**
 > removeClassificationOfElement(cloudPk, elementUuid, id, ifcPk, projectPk)
@@ -4897,7 +4954,7 @@ var cloudPk = "cloudPk_example"; // String |
 
 var elementUuid = "elementUuid_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property set.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -4917,7 +4974,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property set. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -4959,7 +5016,7 @@ var cloudPk = "cloudPk_example"; // String |
 
 var elementUuid = "elementUuid_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -4981,7 +5038,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **propertysetPk** | **String**|  | 
@@ -5024,7 +5081,7 @@ var cloudPk = "cloudPk_example"; // String |
 
 var elementUuid = "elementUuid_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property definition.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -5048,7 +5105,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property definition. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **propertyPk** | **String**|  | 
@@ -5092,7 +5149,7 @@ var cloudPk = "cloudPk_example"; // String |
 
 var elementUuid = "elementUuid_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this unit.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -5118,7 +5175,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this unit. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **propertyPk** | **String**|  | 
@@ -5227,7 +5284,7 @@ var ifcPk = "ifcPk_example"; // String |
 
 var projectPk = "projectPk_example"; // String | 
 
-var uuid = "uuid_example"; // String | 
+var uuid = "uuid_example"; // String | IFC element or element type UUID
 
 var data = new bimdata.Element(); // Element | 
 
@@ -5246,7 +5303,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **uuid** | **String**|  | 
+ **uuid** | **String**| IFC element or element type UUID | 
  **data** | [**Element**](Element.md)|  | 
 
 ### Return type
@@ -5285,7 +5342,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -5304,7 +5361,7 @@ apiInstance.updateIfc(cloudPk, id, projectPk, data).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc. | 
  **projectPk** | **String**|  | 
  **data** | [**Ifc**](Ifc.md)|  | 
 
@@ -5344,7 +5401,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -5368,7 +5425,7 @@ apiInstance.updateIfcFiles(cloudPk, id, projectPk, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc. | 
  **projectPk** | **String**|  | 
  **structureFile** | **File**|  | [optional] 
  **systemsFile** | **File**|  | [optional] 
@@ -5660,7 +5717,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this space.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -5681,7 +5738,7 @@ apiInstance.updateSpace(cloudPk, id, ifcPk, projectPk, data).then(function(data)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this space. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**Space**](Space.md)|  | 
@@ -5722,7 +5779,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this zone.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -5743,7 +5800,7 @@ apiInstance.updateZone(cloudPk, id, ifcPk, projectPk, data).then(function(data) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this zone. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**Zone**](Zone.md)|  | 
@@ -5784,7 +5841,7 @@ var apiInstance = new bimdata.IfcApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this space.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -5807,7 +5864,7 @@ apiInstance.updateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, data).then(fu
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this space. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **zonePk** | **String**|  | 

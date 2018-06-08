@@ -429,7 +429,7 @@ var apiInstance = new bimdata.CheckplanApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc checker.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -448,7 +448,7 @@ apiInstance.deleteChecker(cloudPk, id, ifcPk, projectPk, ).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc checker. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -490,7 +490,7 @@ var checkerPk = "checkerPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this checker result.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -510,7 +510,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkerPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this checker result. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -550,7 +550,7 @@ var apiInstance = new bimdata.CheckplanApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this check plan.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -567,7 +567,7 @@ apiInstance.deleteCheckplan(cloudPk, id, projectPk, ).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this check plan. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -608,7 +608,7 @@ var checkPlanPk = "checkPlanPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this rule.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -628,7 +628,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkPlanPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this rule. | 
  **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
 
@@ -670,7 +670,7 @@ var checkPlanPk = "checkPlanPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this rule component.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkPlanPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this rule component. | 
  **projectPk** | **String**|  | 
  **rulePk** | **String**|  | 
  **rulesetPk** | **String**|  | 
@@ -735,7 +735,7 @@ var checkPlanPk = "checkPlanPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ruleset.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -753,7 +753,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkPlanPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ruleset. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -792,7 +792,7 @@ var apiInstance = new bimdata.CheckplanApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc checker.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -813,7 +813,7 @@ apiInstance.fullUpdateChecker(cloudPk, id, ifcPk, projectPk, data).then(function
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc checker. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**IfcChecker**](IfcChecker.md)|  | 
@@ -856,7 +856,7 @@ var checkerPk = "checkerPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this checker result.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -878,7 +878,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkerPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this checker result. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**CheckerResult**](CheckerResult.md)|  | 
@@ -919,7 +919,7 @@ var apiInstance = new bimdata.CheckplanApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this check plan.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -938,7 +938,7 @@ apiInstance.fullUpdateCheckplan(cloudPk, id, projectPk, data).then(function(data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this check plan. | 
  **projectPk** | **String**|  | 
  **data** | [**CheckPlan**](CheckPlan.md)|  | 
 
@@ -980,7 +980,7 @@ var checkPlanPk = "checkPlanPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this rule.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -1002,7 +1002,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkPlanPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this rule. | 
  **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
  **data** | [**Rule**](Rule.md)|  | 
@@ -1045,7 +1045,7 @@ var checkPlanPk = "checkPlanPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this rule component.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -1069,7 +1069,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkPlanPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this rule component. | 
  **projectPk** | **String**|  | 
  **rulePk** | **String**|  | 
  **rulesetPk** | **String**|  | 
@@ -1113,7 +1113,7 @@ var checkPlanPk = "checkPlanPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ruleset.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -1133,7 +1133,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkPlanPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ruleset. | 
  **projectPk** | **String**|  | 
  **data** | [**Ruleset**](Ruleset.md)|  | 
 
@@ -1173,7 +1173,7 @@ var apiInstance = new bimdata.CheckplanApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc checker.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -1192,7 +1192,7 @@ apiInstance.getChecker(cloudPk, id, ifcPk, projectPk, ).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc checker. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -1234,7 +1234,7 @@ var checkerPk = "checkerPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this checker result.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -1254,7 +1254,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkerPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this checker result. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -1409,7 +1409,7 @@ var apiInstance = new bimdata.CheckplanApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this check plan.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -1426,7 +1426,7 @@ apiInstance.getCheckplan(cloudPk, id, projectPk, ).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this check plan. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -1520,7 +1520,7 @@ var checkPlanPk = "checkPlanPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this rule.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -1540,7 +1540,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkPlanPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this rule. | 
  **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
 
@@ -1582,7 +1582,7 @@ var checkPlanPk = "checkPlanPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this rule component.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -1604,7 +1604,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkPlanPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this rule component. | 
  **projectPk** | **String**|  | 
  **rulePk** | **String**|  | 
  **rulesetPk** | **String**|  | 
@@ -1768,7 +1768,7 @@ var checkPlanPk = "checkPlanPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ruleset.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -1786,7 +1786,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkPlanPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ruleset. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -1881,7 +1881,7 @@ var apiInstance = new bimdata.CheckplanApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc checker.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -1902,7 +1902,7 @@ apiInstance.launchNewCheck(cloudPk, id, ifcPk, projectPk, data).then(function() 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc checker. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**IfcChecker**](IfcChecker.md)|  | 
@@ -1943,7 +1943,7 @@ var apiInstance = new bimdata.CheckplanApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ifc checker.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -1964,7 +1964,7 @@ apiInstance.updateChecker(cloudPk, id, ifcPk, projectPk, data).then(function(dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc checker. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**IfcChecker**](IfcChecker.md)|  | 
@@ -2007,7 +2007,7 @@ var checkerPk = "checkerPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this checker result.
 
 var ifcPk = "ifcPk_example"; // String | 
 
@@ -2029,7 +2029,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkerPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this checker result. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**CheckerResult**](CheckerResult.md)|  | 
@@ -2070,7 +2070,7 @@ var apiInstance = new bimdata.CheckplanApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this check plan.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -2089,7 +2089,7 @@ apiInstance.updateCheckplan(cloudPk, id, projectPk, data).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this check plan. | 
  **projectPk** | **String**|  | 
  **data** | [**CheckPlan**](CheckPlan.md)|  | 
 
@@ -2131,7 +2131,7 @@ var checkPlanPk = "checkPlanPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this rule.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -2153,7 +2153,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkPlanPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this rule. | 
  **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
  **data** | [**Rule**](Rule.md)|  | 
@@ -2196,7 +2196,7 @@ var checkPlanPk = "checkPlanPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this rule component.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -2220,7 +2220,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkPlanPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this rule component. | 
  **projectPk** | **String**|  | 
  **rulePk** | **String**|  | 
  **rulesetPk** | **String**|  | 
@@ -2264,7 +2264,7 @@ var checkPlanPk = "checkPlanPk_example"; // String |
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this ruleset.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -2284,7 +2284,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkPlanPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ruleset. | 
  **projectPk** | **String**|  | 
  **data** | [**Ruleset**](Ruleset.md)|  | 
 

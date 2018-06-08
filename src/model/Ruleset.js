@@ -37,7 +37,7 @@
   /**
    * The Ruleset model module.
    * @module model/Ruleset
-   * @version 1.0.23
+   * @version 1.0.24
    */
 
   /**

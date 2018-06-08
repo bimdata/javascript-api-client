@@ -37,7 +37,7 @@
   /**
    * The Space model module.
    * @module model/Space
-   * @version 1.0.23
+   * @version 1.0.24
    */
 
   /**

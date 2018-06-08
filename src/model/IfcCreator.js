@@ -37,7 +37,7 @@
   /**
    * The IfcCreator model module.
    * @module model/IfcCreator
-   * @version 1.0.23
+   * @version 1.0.24
    */
 
   /**

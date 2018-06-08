@@ -26,7 +26,7 @@
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.Feature = factory(root.bimdata.ApiClient);
+    root.bimdata.CloudRole = factory(root.bimdata.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,45 +35,53 @@
 
 
   /**
-   * The Feature model module.
-   * @module model/Feature
+   * The CloudRole model module.
+   * @module model/CloudRole
    * @version 1.0.24
    */
 
   /**
-   * Constructs a new <code>Feature</code>.
-   * @alias module:model/Feature
+   * Constructs a new <code>CloudRole</code>.
+   * @alias module:model/CloudRole
    * @class
-   * @param name {String} 
+   * @param cloud {Number} 
    */
-  var exports = function(name) {
+  var exports = function(cloud) {
     var _this = this;
 
-    _this['name'] = name;
+    _this['cloud'] = cloud;
+
   };
 
   /**
-   * Constructs a <code>Feature</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>CloudRole</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Feature} obj Optional instance to populate.
-   * @return {module:model/Feature} The populated <code>Feature</code> instance.
+   * @param {module:model/CloudRole} obj Optional instance to populate.
+   * @return {module:model/CloudRole} The populated <code>CloudRole</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('cloud')) {
+        obj['cloud'] = ApiClient.convertToType(data['cloud'], 'Number');
+      }
+      if (data.hasOwnProperty('role')) {
+        obj['role'] = ApiClient.convertToType(data['role'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} name
+   * @member {Number} cloud
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['cloud'] = undefined;
+  /**
+   * @member {Number} role
+   */
+  exports.prototype['role'] = undefined;
 
 
 

@@ -17,32 +17,32 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/CloudRole', 'model/ProjectRole'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./CloudRole'), require('./ProjectRole'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.SignupFosUser = factory(root.bimdata.ApiClient);
+    root.bimdata.SelfFosUser = factory(root.bimdata.ApiClient, root.bimdata.CloudRole, root.bimdata.ProjectRole);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, CloudRole, ProjectRole) {
   'use strict';
 
 
 
 
   /**
-   * The SignupFosUser model module.
-   * @module model/SignupFosUser
+   * The SelfFosUser model module.
+   * @module model/SelfFosUser
    * @version 1.0.24
    */
 
   /**
-   * Constructs a new <code>SignupFosUser</code>.
-   * @alias module:model/SignupFosUser
+   * Constructs a new <code>SelfFosUser</code>.
+   * @alias module:model/SelfFosUser
    * @class
    * @param email {String} 
    * @param firstname {String} 
@@ -60,14 +60,17 @@
     _this['password'] = password;
 
 
+
+
+
   };
 
   /**
-   * Constructs a <code>SignupFosUser</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>SelfFosUser</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/SignupFosUser} obj Optional instance to populate.
-   * @return {module:model/SignupFosUser} The populated <code>SignupFosUser</code> instance.
+   * @param {module:model/SelfFosUser} obj Optional instance to populate.
+   * @return {module:model/SelfFosUser} The populated <code>SelfFosUser</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -96,6 +99,15 @@
       }
       if (data.hasOwnProperty('updated_at')) {
         obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+      }
+      if (data.hasOwnProperty('clouds')) {
+        obj['clouds'] = ApiClient.convertToType(data['clouds'], [CloudRole]);
+      }
+      if (data.hasOwnProperty('projects')) {
+        obj['projects'] = ApiClient.convertToType(data['projects'], [ProjectRole]);
+      }
+      if (data.hasOwnProperty('last_login')) {
+        obj['last_login'] = ApiClient.convertToType(data['last_login'], 'Date');
       }
     }
     return obj;
@@ -133,6 +145,18 @@
    * @member {Date} updated_at
    */
   exports.prototype['updated_at'] = undefined;
+  /**
+   * @member {Array.<module:model/CloudRole>} clouds
+   */
+  exports.prototype['clouds'] = undefined;
+  /**
+   * @member {Array.<module:model/ProjectRole>} projects
+   */
+  exports.prototype['projects'] = undefined;
+  /**
+   * @member {Date} last_login
+   */
+  exports.prototype['last_login'] = undefined;
 
 
 

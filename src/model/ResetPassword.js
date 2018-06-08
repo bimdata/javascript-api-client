@@ -26,7 +26,7 @@
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.Feature = factory(root.bimdata.ApiClient);
+    root.bimdata.ResetPassword = factory(root.bimdata.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,45 +35,54 @@
 
 
   /**
-   * The Feature model module.
-   * @module model/Feature
+   * The ResetPassword model module.
+   * @module model/ResetPassword
    * @version 1.0.24
    */
 
   /**
-   * Constructs a new <code>Feature</code>.
-   * @alias module:model/Feature
+   * Constructs a new <code>ResetPassword</code>.
+   * @alias module:model/ResetPassword
    * @class
-   * @param name {String} 
+   * @param resetToken {String} 
+   * @param newPassword {String} 
    */
-  var exports = function(name) {
+  var exports = function(resetToken, newPassword) {
     var _this = this;
 
-    _this['name'] = name;
+    _this['reset_token'] = resetToken;
+    _this['new_password'] = newPassword;
   };
 
   /**
-   * Constructs a <code>Feature</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ResetPassword</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Feature} obj Optional instance to populate.
-   * @return {module:model/Feature} The populated <code>Feature</code> instance.
+   * @param {module:model/ResetPassword} obj Optional instance to populate.
+   * @return {module:model/ResetPassword} The populated <code>ResetPassword</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('reset_token')) {
+        obj['reset_token'] = ApiClient.convertToType(data['reset_token'], 'String');
+      }
+      if (data.hasOwnProperty('new_password')) {
+        obj['new_password'] = ApiClient.convertToType(data['new_password'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} name
+   * @member {String} reset_token
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['reset_token'] = undefined;
+  /**
+   * @member {String} new_password
+   */
+  exports.prototype['new_password'] = undefined;
 
 
 

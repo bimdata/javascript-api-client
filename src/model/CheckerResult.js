@@ -37,7 +37,7 @@
   /**
    * The CheckerResult model module.
    * @module model/CheckerResult
-   * @version 1.0.23
+   * @version 1.0.24
    */
 
   /**

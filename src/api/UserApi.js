@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/FosUser', 'model/Notification', 'model/Project', 'model/SignupFosUser'], factory);
+    define(['ApiClient', 'model/ForgotPassword', 'model/FosUser', 'model/InvitedSignUp', 'model/Notification', 'model/Project', 'model/ResetPassword', 'model/SelfFosUser', 'model/SignupFosUser'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/FosUser'), require('../model/Notification'), require('../model/Project'), require('../model/SignupFosUser'));
+    module.exports = factory(require('../ApiClient'), require('../model/ForgotPassword'), require('../model/FosUser'), require('../model/InvitedSignUp'), require('../model/Notification'), require('../model/Project'), require('../model/ResetPassword'), require('../model/SelfFosUser'), require('../model/SignupFosUser'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.UserApi = factory(root.bimdata.ApiClient, root.bimdata.FosUser, root.bimdata.Notification, root.bimdata.Project, root.bimdata.SignupFosUser);
+    root.bimdata.UserApi = factory(root.bimdata.ApiClient, root.bimdata.ForgotPassword, root.bimdata.FosUser, root.bimdata.InvitedSignUp, root.bimdata.Notification, root.bimdata.Project, root.bimdata.ResetPassword, root.bimdata.SelfFosUser, root.bimdata.SignupFosUser);
   }
-}(this, function(ApiClient, FosUser, Notification, Project, SignupFosUser) {
+}(this, function(ApiClient, ForgotPassword, FosUser, InvitedSignUp, Notification, Project, ResetPassword, SelfFosUser, SignupFosUser) {
   'use strict';
 
   /**
    * User service.
    * @module api/UserApi
-   * @version 1.0.23
+   * @version 1.0.24
    */
 
   /**
@@ -51,10 +51,16 @@
 
     /**
      * 
+     * @param {module:model/ForgotPassword} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.askResetPasswordTokenWithHttpInfo = function() {
-      var postBody = null;
+    this.askResetPasswordTokenWithHttpInfo = function(data) {
+      var postBody = data;
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling askResetPasswordToken");
+      }
 
 
       var pathParams = {
@@ -82,10 +88,11 @@
 
     /**
      * 
+     * @param {module:model/ForgotPassword} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.askResetPasswordToken = function() {
-      return this.askResetPasswordTokenWithHttpInfo()
+    this.askResetPasswordToken = function(data) {
+      return this.askResetPasswordTokenWithHttpInfo(data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -332,10 +339,16 @@
 
     /**
      * 
+     * @param {module:model/ResetPassword} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.resetPasswordWithHttpInfo = function() {
-      var postBody = null;
+    this.resetPasswordWithHttpInfo = function(data) {
+      var postBody = data;
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling resetPassword");
+      }
 
 
       var pathParams = {
@@ -363,10 +376,11 @@
 
     /**
      * 
+     * @param {module:model/ResetPassword} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.resetPassword = function() {
-      return this.resetPasswordWithHttpInfo()
+    this.resetPassword = function(data) {
+      return this.resetPasswordWithHttpInfo(data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -425,10 +439,16 @@
 
     /**
      * 
+     * @param {module:model/InvitedSignUp} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignupFosUser} and HTTP response
      */
-    this.signUpWithInvitationTokenWithHttpInfo = function() {
-      var postBody = null;
+    this.signUpWithInvitationTokenWithHttpInfo = function(data) {
+      var postBody = data;
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling signUpWithInvitationToken");
+      }
 
 
       var pathParams = {
@@ -456,10 +476,11 @@
 
     /**
      * 
+     * @param {module:model/InvitedSignUp} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SignupFosUser}
      */
-    this.signUpWithInvitationToken = function() {
-      return this.signUpWithInvitationTokenWithHttpInfo()
+    this.signUpWithInvitationToken = function(data) {
+      return this.signUpWithInvitationTokenWithHttpInfo(data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -526,10 +547,16 @@
 
     /**
      * 
+     * @param {module:model/SelfFosUser} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FosUser} and HTTP response
      */
-    this.updateSelfUserWithHttpInfo = function() {
-      var postBody = null;
+    this.updateSelfUserWithHttpInfo = function(data) {
+      var postBody = data;
+
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateSelfUser");
+      }
 
 
       var pathParams = {
@@ -557,10 +584,11 @@
 
     /**
      * 
+     * @param {module:model/SelfFosUser} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FosUser}
      */
-    this.updateSelfUser = function() {
-      return this.updateSelfUserWithHttpInfo()
+    this.updateSelfUser = function(data) {
+      return this.updateSelfUserWithHttpInfo(data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

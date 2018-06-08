@@ -34,7 +34,7 @@
   /**
    * Checkplan service.
    * @module api/CheckplanApi
-   * @version 1.0.23
+   * @version 1.0.24
    */
 
   /**
@@ -520,7 +520,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -579,7 +579,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -596,7 +596,7 @@
      * 
      * @param {String} checkerPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this checker result.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -662,7 +662,7 @@
      * 
      * @param {String} checkerPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this checker result.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -678,7 +678,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -730,7 +730,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -746,7 +746,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule.
      * @param {String} projectPk 
      * @param {String} rulesetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -812,7 +812,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule.
      * @param {String} projectPk 
      * @param {String} rulesetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -829,7 +829,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule component.
      * @param {String} projectPk 
      * @param {String} rulePk 
      * @param {String} rulesetPk 
@@ -902,7 +902,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule component.
      * @param {String} projectPk 
      * @param {String} rulePk 
      * @param {String} rulesetPk 
@@ -920,7 +920,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ruleset.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -979,7 +979,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ruleset.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -994,7 +994,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
@@ -1059,7 +1059,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
@@ -1077,7 +1077,7 @@
      * 
      * @param {String} checkerPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this checker result.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/CheckerResult} data 
@@ -1149,7 +1149,7 @@
      * 
      * @param {String} checkerPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this checker result.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/CheckerResult} data 
@@ -1166,7 +1166,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
      * @param {module:model/CheckPlan} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckPlan} and HTTP response
@@ -1224,7 +1224,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
      * @param {module:model/CheckPlan} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckPlan}
@@ -1241,7 +1241,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule.
      * @param {String} projectPk 
      * @param {String} rulesetPk 
      * @param {module:model/Rule} data 
@@ -1313,7 +1313,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule.
      * @param {String} projectPk 
      * @param {String} rulesetPk 
      * @param {module:model/Rule} data 
@@ -1331,7 +1331,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule component.
      * @param {String} projectPk 
      * @param {String} rulePk 
      * @param {String} rulesetPk 
@@ -1410,7 +1410,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule component.
      * @param {String} projectPk 
      * @param {String} rulePk 
      * @param {String} rulesetPk 
@@ -1429,7 +1429,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ruleset.
      * @param {String} projectPk 
      * @param {module:model/Ruleset} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ruleset} and HTTP response
@@ -1494,7 +1494,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ruleset.
      * @param {String} projectPk 
      * @param {module:model/Ruleset} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ruleset}
@@ -1510,7 +1510,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcChecker} and HTTP response
@@ -1569,7 +1569,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcChecker}
@@ -1586,7 +1586,7 @@
      * 
      * @param {String} checkerPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this checker result.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckerResult} and HTTP response
@@ -1652,7 +1652,7 @@
      * 
      * @param {String} checkerPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this checker result.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckerResult}
@@ -1810,7 +1810,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckPlan} and HTTP response
      */
@@ -1862,7 +1862,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckPlan}
      */
@@ -1937,7 +1937,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule.
      * @param {String} projectPk 
      * @param {String} rulesetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Rule} and HTTP response
@@ -2003,7 +2003,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule.
      * @param {String} projectPk 
      * @param {String} rulesetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Rule}
@@ -2020,7 +2020,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule component.
      * @param {String} projectPk 
      * @param {String} rulePk 
      * @param {String} rulesetPk 
@@ -2093,7 +2093,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule component.
      * @param {String} projectPk 
      * @param {String} rulePk 
      * @param {String} rulesetPk 
@@ -2269,7 +2269,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ruleset.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ruleset} and HTTP response
      */
@@ -2328,7 +2328,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ruleset.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ruleset}
      */
@@ -2410,7 +2410,7 @@
     /**
      * Starts a new check in the checker
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
@@ -2475,7 +2475,7 @@
     /**
      * Starts a new check in the checker
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
@@ -2492,7 +2492,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
@@ -2557,7 +2557,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
@@ -2575,7 +2575,7 @@
      * 
      * @param {String} checkerPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this checker result.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/CheckerResult} data 
@@ -2647,7 +2647,7 @@
      * 
      * @param {String} checkerPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this checker result.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/CheckerResult} data 
@@ -2664,7 +2664,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
      * @param {module:model/CheckPlan} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckPlan} and HTTP response
@@ -2722,7 +2722,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
      * @param {module:model/CheckPlan} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckPlan}
@@ -2739,7 +2739,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule.
      * @param {String} projectPk 
      * @param {String} rulesetPk 
      * @param {module:model/Rule} data 
@@ -2811,7 +2811,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule.
      * @param {String} projectPk 
      * @param {String} rulesetPk 
      * @param {module:model/Rule} data 
@@ -2829,7 +2829,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule component.
      * @param {String} projectPk 
      * @param {String} rulePk 
      * @param {String} rulesetPk 
@@ -2908,7 +2908,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this rule component.
      * @param {String} projectPk 
      * @param {String} rulePk 
      * @param {String} rulesetPk 
@@ -2927,7 +2927,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ruleset.
      * @param {String} projectPk 
      * @param {module:model/Ruleset} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ruleset} and HTTP response
@@ -2992,7 +2992,7 @@
      * 
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this ruleset.
      * @param {String} projectPk 
      * @param {module:model/Ruleset} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ruleset}

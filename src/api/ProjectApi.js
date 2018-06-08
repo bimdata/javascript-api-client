@@ -34,7 +34,7 @@
   /**
    * Project service.
    * @module api/ProjectApi
-   * @version 1.0.23
+   * @version 1.0.24
    */
 
   /**
@@ -414,7 +414,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -466,7 +466,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -481,7 +481,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
@@ -533,7 +533,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
@@ -548,7 +548,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -600,7 +600,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -741,7 +741,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
      * @param {module:model/Classification} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
@@ -799,7 +799,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
      * @param {module:model/Classification} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
@@ -815,7 +815,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
      * @param {String} name 
      * @param {Object} opts Optional parameters
@@ -900,7 +900,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
      * @param {String} name 
      * @param {Object} opts Optional parameters
@@ -929,7 +929,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
      * @param {module:model/Folder} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
@@ -987,7 +987,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
      * @param {module:model/Folder} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
@@ -1143,7 +1143,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
      */
@@ -1195,7 +1195,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
      */
@@ -1269,7 +1269,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
@@ -1321,7 +1321,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
@@ -1395,7 +1395,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
      */
@@ -1447,7 +1447,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
      */
@@ -1816,7 +1816,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
      * @param {module:model/Classification} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
@@ -1874,7 +1874,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
      * @param {module:model/Classification} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
@@ -1890,7 +1890,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
      * @param {module:model/Document} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
@@ -1948,7 +1948,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
      * @param {module:model/Document} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
@@ -1964,7 +1964,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
      * @param {module:model/Folder} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
@@ -2022,7 +2022,7 @@
     /**
      * 
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
      * @param {module:model/Folder} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}

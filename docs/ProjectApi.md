@@ -363,7 +363,7 @@ var apiInstance = new bimdata.ProjectApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this classification.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -380,7 +380,7 @@ apiInstance.deleteClassification(cloudPk, id, projectPk, ).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this classification. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -419,7 +419,7 @@ var apiInstance = new bimdata.ProjectApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this document.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -436,7 +436,7 @@ apiInstance.deleteDocument(cloudPk, id, projectPk, ).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -475,7 +475,7 @@ var apiInstance = new bimdata.ProjectApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this folder.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -492,7 +492,7 @@ apiInstance.deleteFolder(cloudPk, id, projectPk, ).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this folder. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -640,7 +640,7 @@ var apiInstance = new bimdata.ProjectApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this classification.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -659,7 +659,7 @@ apiInstance.fullUpdateClassification(cloudPk, id, projectPk, data).then(function
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this classification. | 
  **projectPk** | **String**|  | 
  **data** | [**Classification**](Classification.md)|  | 
 
@@ -699,7 +699,7 @@ var apiInstance = new bimdata.ProjectApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this document.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -732,7 +732,7 @@ apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, opts).then(function
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **String**|  | 
  **name** | **String**|  | 
  **id2** | **Number**|  | [optional] 
@@ -784,7 +784,7 @@ var apiInstance = new bimdata.ProjectApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this folder.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -803,7 +803,7 @@ apiInstance.fullUpdateFolder(cloudPk, id, projectPk, data).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this folder. | 
  **projectPk** | **String**|  | 
  **data** | [**Folder**](Folder.md)|  | 
 
@@ -958,7 +958,7 @@ var apiInstance = new bimdata.ProjectApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this classification.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -975,7 +975,7 @@ apiInstance.getClassification(cloudPk, id, projectPk, ).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this classification. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -1067,7 +1067,7 @@ var apiInstance = new bimdata.ProjectApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this document.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -1084,7 +1084,7 @@ apiInstance.getDocument(cloudPk, id, projectPk, ).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -1176,7 +1176,7 @@ var apiInstance = new bimdata.ProjectApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this folder.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -1193,7 +1193,7 @@ apiInstance.getFolder(cloudPk, id, projectPk, ).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this folder. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -1550,7 +1550,7 @@ var apiInstance = new bimdata.ProjectApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this classification.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -1569,7 +1569,7 @@ apiInstance.updateClassification(cloudPk, id, projectPk, data).then(function(dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this classification. | 
  **projectPk** | **String**|  | 
  **data** | [**Classification**](Classification.md)|  | 
 
@@ -1609,7 +1609,7 @@ var apiInstance = new bimdata.ProjectApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this document.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -1628,7 +1628,7 @@ apiInstance.updateDocument(cloudPk, id, projectPk, data).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **String**|  | 
  **data** | [**Document**](Document.md)|  | 
 
@@ -1668,7 +1668,7 @@ var apiInstance = new bimdata.ProjectApi();
 
 var cloudPk = "cloudPk_example"; // String | 
 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this folder.
 
 var projectPk = "projectPk_example"; // String | 
 
@@ -1687,7 +1687,7 @@ apiInstance.updateFolder(cloudPk, id, projectPk, data).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this folder. | 
  **projectPk** | **String**|  | 
  **data** | [**Folder**](Folder.md)|  | 
 

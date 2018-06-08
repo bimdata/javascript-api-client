@@ -37,7 +37,7 @@
   /**
    * The FosUser model module.
    * @module model/FosUser
-   * @version 1.0.23
+   * @version 1.0.24
    */
 
   /**

@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 <a name="askResetPasswordToken"></a>
 # **askResetPasswordToken**
-> askResetPasswordToken()
+> askResetPasswordToken(data)
 
 
 
@@ -37,7 +37,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
-apiInstance.askResetPasswordToken().then(function() {
+
+var data = new bimdata.ForgotPassword(); // ForgotPassword | 
+
+apiInstance.askResetPasswordToken(data).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -46,7 +49,10 @@ apiInstance.askResetPasswordToken().then(function() {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**ForgotPassword**](ForgotPassword.md)|  | 
 
 ### Return type
 
@@ -298,7 +304,7 @@ This endpoint does not need any parameter.
 
 <a name="resetPassword"></a>
 # **resetPassword**
-> resetPassword()
+> resetPassword(data)
 
 
 
@@ -316,7 +322,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
-apiInstance.resetPassword().then(function() {
+
+var data = new bimdata.ResetPassword(); // ResetPassword | 
+
+apiInstance.resetPassword(data).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -325,7 +334,10 @@ apiInstance.resetPassword().then(function() {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**ResetPassword**](ResetPassword.md)|  | 
 
 ### Return type
 
@@ -392,7 +404,7 @@ Name | Type | Description  | Notes
 
 <a name="signUpWithInvitationToken"></a>
 # **signUpWithInvitationToken**
-> SignupFosUser signUpWithInvitationToken()
+> SignupFosUser signUpWithInvitationToken(data)
 
 
 
@@ -410,7 +422,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
-apiInstance.signUpWithInvitationToken().then(function(data) {
+
+var data = new bimdata.InvitedSignUp(); // InvitedSignUp | 
+
+apiInstance.signUpWithInvitationToken(data).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -419,7 +434,10 @@ apiInstance.signUpWithInvitationToken().then(function(data) {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**InvitedSignUp**](InvitedSignUp.md)|  | 
 
 ### Return type
 
@@ -489,7 +507,7 @@ Name | Type | Description  | Notes
 
 <a name="updateSelfUser"></a>
 # **updateSelfUser**
-> FosUser updateSelfUser()
+> FosUser updateSelfUser(data)
 
 
 
@@ -507,7 +525,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
-apiInstance.updateSelfUser().then(function(data) {
+
+var data = new bimdata.SelfFosUser(); // SelfFosUser | 
+
+apiInstance.updateSelfUser(data).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -516,7 +537,10 @@ apiInstance.updateSelfUser().then(function(data) {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**SelfFosUser**](SelfFosUser.md)|  | 
 
 ### Return type
 

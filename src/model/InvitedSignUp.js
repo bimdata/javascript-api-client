@@ -26,7 +26,7 @@
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.SignupFosUser = factory(root.bimdata.ApiClient);
+    root.bimdata.InvitedSignUp = factory(root.bimdata.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,52 +35,43 @@
 
 
   /**
-   * The SignupFosUser model module.
-   * @module model/SignupFosUser
+   * The InvitedSignUp model module.
+   * @module model/InvitedSignUp
    * @version 1.0.24
    */
 
   /**
-   * Constructs a new <code>SignupFosUser</code>.
-   * @alias module:model/SignupFosUser
+   * Constructs a new <code>InvitedSignUp</code>.
+   * @alias module:model/InvitedSignUp
    * @class
-   * @param email {String} 
+   * @param invitationToken {String} 
    * @param firstname {String} 
    * @param lastname {String} 
    * @param password {String} 
    */
-  var exports = function(email, firstname, lastname, password) {
+  var exports = function(invitationToken, firstname, lastname, password) {
     var _this = this;
 
-
-    _this['email'] = email;
-
+    _this['invitation_token'] = invitationToken;
     _this['firstname'] = firstname;
     _this['lastname'] = lastname;
     _this['password'] = password;
 
-
   };
 
   /**
-   * Constructs a <code>SignupFosUser</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>InvitedSignUp</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/SignupFosUser} obj Optional instance to populate.
-   * @return {module:model/SignupFosUser} The populated <code>SignupFosUser</code> instance.
+   * @param {module:model/InvitedSignUp} obj Optional instance to populate.
+   * @return {module:model/InvitedSignUp} The populated <code>InvitedSignUp</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-      }
-      if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
-      }
-      if (data.hasOwnProperty('company')) {
-        obj['company'] = ApiClient.convertToType(data['company'], 'String');
+      if (data.hasOwnProperty('invitation_token')) {
+        obj['invitation_token'] = ApiClient.convertToType(data['invitation_token'], 'String');
       }
       if (data.hasOwnProperty('firstname')) {
         obj['firstname'] = ApiClient.convertToType(data['firstname'], 'String');
@@ -91,28 +82,17 @@
       if (data.hasOwnProperty('password')) {
         obj['password'] = ApiClient.convertToType(data['password'], 'String');
       }
-      if (data.hasOwnProperty('created_at')) {
-        obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
-      }
-      if (data.hasOwnProperty('updated_at')) {
-        obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Number} id
+   * @member {String} invitation_token
    */
-  exports.prototype['id'] = undefined;
-  /**
-   * @member {String} email
-   */
-  exports.prototype['email'] = undefined;
-  /**
-   * @member {String} company
-   */
-  exports.prototype['company'] = undefined;
+  exports.prototype['invitation_token'] = undefined;
   /**
    * @member {String} firstname
    */
@@ -126,13 +106,9 @@
    */
   exports.prototype['password'] = undefined;
   /**
-   * @member {Date} created_at
+   * @member {String} email
    */
-  exports.prototype['created_at'] = undefined;
-  /**
-   * @member {Date} updated_at
-   */
-  exports.prototype['updated_at'] = undefined;
+  exports.prototype['email'] = undefined;
 
 
 
