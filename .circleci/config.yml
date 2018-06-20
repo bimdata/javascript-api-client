@@ -54,7 +54,11 @@ jobs:
     steps:
       - *restore_repo
       - *restore_modules
-      - run: npx semantic-release -e ./config/release.config.js
+      - run:
+          name: Avoid hosts unknown for github
+          command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+      - run: npx semantic-release -e ./config/release.config.js --debug
+
 
 
 workflows:
