@@ -1,15 +1,20 @@
 /* eslint-disable no-useless-escape */
 module.exports = {
-  verifyConditions: ["@semantic-release/npm"],
+  verifyConditions: ['@semantic-release/npm', '@semantic-release/github'],
     analyzeCommits: {
-      releaseRules: './config/release-rules.js',
+      preset: 'eslint',
+      releaseRules: [
+        {tag: 'MINOR', release: 'minor'},
+        {tag: 'PATCH', release: 'patch'},
+        {tag: 'MAJOR', release: 'major'},
+      ],
       parserOpts: {
-        headerPattern: /^(\[.+\])(.+)$/,
         headerCorrespondence: [
           'tag',
           'message',
         ],
       },
     },
-    publish: ["@semantic-release/npm"]
+    prepare: ['@semantic-release/npm'],
+    publish: ['@semantic-release/npm', '@semantic-release/github'],
 };

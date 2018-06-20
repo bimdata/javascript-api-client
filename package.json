@@ -11,6 +11,8 @@
     "fs": false
   },
   "dependencies": {
+    "conventional-changelog-eslint": "^3.0.0",
+    "semantic-release": "^15.6.0",
     "superagent": "3.5.2"
   },
   "devDependencies": {
