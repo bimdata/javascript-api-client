@@ -40,11 +40,12 @@ jobs:
           command: |
             npm install
             npm install semantic-release
+            npm install conventional-changelog-eslint
 
       - save_cache:
           paths:
             - ./node_modules
-          key: - v1-dependencies-{{ checksum "package.json" }}
+          key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npm test
 
@@ -53,21 +54,8 @@ jobs:
     steps:
       - *restore_repo
       - *restore_modules
-      - run:
-        environment:
-          GIT_COMMIT_DESC: git log --format=oneline -n 1 $CIRCLE_SHA1
-        command: |
-          . venv/bin/activate
-          if [[ $GIT_COMMIT_DESC == \[PATCH\]* ]];
-          then
-            npx semantic-release publish --patch
-          elif [[ $GIT_COMMIT_DESC == \[MINOR\]* ]];
-          then
-            npx semantic-release publish --minor
-          elif [[ $GIT_COMMIT_DESC == \[MAJOR\]* ]];
-          then
-            npx semantic-release publish --major
-          fi
+      - run: npx semantic-release -e ./config/release.config.js
+
 
 workflows:
   version: 2
