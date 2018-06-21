@@ -6,6 +6,13 @@ references:
       - image: circleci/node:10
     working_directory: ~/repo
 
+
+  restore_npm_cache: &restore_npm_cache
+    restore_cache:
+      keys:
+        - v1-npm-cache-{{ checksum "package.json" }}
+        - v1-npm-cache
+
   restore_repo: &restore_repo
     restore_cache:
       keys:
@@ -34,6 +41,7 @@ jobs:
     steps:
       - *restore_repo
       - *restore_modules
+      - *restore_npm_cache
 
       - run:
           name: install dependencies
@@ -46,6 +54,11 @@ jobs:
           paths:
             - ./node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+
+      - save_cache:
+          paths:
+            - ~/.npm
+          key: v1-npm-cache-{{ checksum "package.json" }}
 
       - run: npm test
 
