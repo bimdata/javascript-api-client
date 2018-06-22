@@ -10,8 +10,8 @@ references:
   restore_npm_cache: &restore_npm_cache
     restore_cache:
       keys:
-        - v1-npm-cache-{{ checksum "package.json" }}
-        - v1-npm-cache
+        - v1-npm-{{ checksum "package.json" }}
+        - v1-npm
 
   restore_repo: &restore_repo
     restore_cache:
@@ -19,12 +19,6 @@ references:
         - v1-repo-{{ .Branch }}-{{ .Revision }}
         - v1-repo-{{ .Branch }}
         - v1-repo
-
-  restore_modules: &restore_modules
-    restore_cache:
-      keys:
-        - v1-dependencies-{{ checksum "package.json" }}
-        - v1-dependencies
 jobs:
   checkout_code:
     <<: *container_config
@@ -40,7 +34,6 @@ jobs:
 
     steps:
       - *restore_repo
-      - *restore_modules
       - *restore_npm_cache
 
       - run:
@@ -51,14 +44,11 @@ jobs:
             npm install conventional-changelog-eslint
 
       - save_cache:
+          key: v1-npm-{{ checksum "package.json" }}
           paths:
-            - ./node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      - save_cache:
-          paths:
+            - node_modules/
             - ~/.npm
-          key: v1-npm-cache-{{ checksum "package.json" }}
+            - ~/.cache
 
       - run: npm test
 
@@ -66,7 +56,7 @@ jobs:
     <<: *container_config
     steps:
       - *restore_repo
-      - *restore_modules
+      - *restore_npm_cache
       - run:
           name: Avoid hosts unknown for github
           command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
