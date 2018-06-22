@@ -37,7 +37,7 @@
   /**
    * The ProjectAction model module.
    * @module model/ProjectAction
-   * @version v1
+   * @version 0.0.0
    */
 
   /**

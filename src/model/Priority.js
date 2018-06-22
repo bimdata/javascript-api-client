@@ -37,7 +37,7 @@
   /**
    * The Priority model module.
    * @module model/Priority
-   * @version v1
+   * @version 0.0.0
    */
 
   /**

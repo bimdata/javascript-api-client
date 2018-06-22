@@ -37,7 +37,7 @@
   /**
    * The ComponentsParent model module.
    * @module model/ComponentsParent
-   * @version v1
+   * @version 0.0.0
    */
 
   /**

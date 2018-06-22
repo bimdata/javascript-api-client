@@ -37,7 +37,7 @@
   /**
    * The TopicType model module.
    * @module model/TopicType
-   * @version v1
+   * @version 0.0.0
    */
 
   /**

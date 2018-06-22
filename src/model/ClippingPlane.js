@@ -37,7 +37,7 @@
   /**
    * The ClippingPlane model module.
    * @module model/ClippingPlane
-   * @version v1
+   * @version 0.0.0
    */
 
   /**

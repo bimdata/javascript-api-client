@@ -37,7 +37,7 @@
   /**
    * The SelfUser model module.
    * @module model/SelfUser
-   * @version v1
+   * @version 0.0.0
    */
 
   /**

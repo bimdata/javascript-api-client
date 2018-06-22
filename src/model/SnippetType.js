@@ -37,7 +37,7 @@
   /**
    * The SnippetType model module.
    * @module model/SnippetType
-   * @version v1
+   * @version 0.0.0
    */
 
   /**

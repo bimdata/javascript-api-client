@@ -37,7 +37,7 @@
   /**
    * The Notification model module.
    * @module model/Notification
-   * @version v1
+   * @version 0.0.0
    */
 
   /**

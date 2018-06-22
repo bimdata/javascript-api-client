@@ -37,7 +37,7 @@
   /**
    * The Cloud model module.
    * @module model/Cloud
-   * @version v1
+   * @version 0.0.0
    */
 
   /**

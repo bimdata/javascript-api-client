@@ -37,7 +37,7 @@
   /**
    * The TopicAction model module.
    * @module model/TopicAction
-   * @version v1
+   * @version 0.0.0
    */
 
   /**

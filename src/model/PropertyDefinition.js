@@ -37,7 +37,7 @@
   /**
    * The PropertyDefinition model module.
    * @module model/PropertyDefinition
-   * @version v1
+   * @version 0.0.0
    */
 
   /**
