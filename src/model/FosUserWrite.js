@@ -37,7 +37,7 @@
   /**
    * The FosUserWrite model module.
    * @module model/FosUserWrite
-   * @version 1.0.25
+   * @version v1
    */
 
   /**

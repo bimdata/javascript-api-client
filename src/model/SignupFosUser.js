@@ -37,7 +37,7 @@
   /**
    * The SignupFosUser model module.
    * @module model/SignupFosUser
-   * @version 1.0.25
+   * @version v1
    */
 
   /**

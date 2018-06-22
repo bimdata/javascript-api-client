@@ -37,7 +37,7 @@
   /**
    * The ProjectRole model module.
    * @module model/ProjectRole
-   * @version 1.0.25
+   * @version v1
    */
 
   /**

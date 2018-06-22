@@ -1,6 +1,6 @@
 {
   "name": "@bimdata/bimdata-api-client",
-  "version": "1.0.25",
+  "version": "v1",
   "description": "BIMData_API_documentation",
   "license": "MIT",
   "main": "src/index.js",
@@ -11,8 +11,6 @@
     "fs": false
   },
   "dependencies": {
-    "conventional-changelog-eslint": "^3.0.0",
-    "semantic-release": "^15.6.0",
     "superagent": "3.5.2"
   },
   "devDependencies": {

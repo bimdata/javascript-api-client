@@ -37,7 +37,7 @@
   /**
    * The SelfFosUser model module.
    * @module model/SelfFosUser
-   * @version 1.0.25
+   * @version v1
    */
 
   /**

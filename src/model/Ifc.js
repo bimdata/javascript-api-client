@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/IfcCreator', 'model/IfcDocument'], factory);
+    define(['ApiClient', 'model/Document', 'model/FosUser'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./IfcCreator'), require('./IfcDocument'));
+    module.exports = factory(require('../ApiClient'), require('./Document'), require('./FosUser'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.Ifc = factory(root.bimdata.ApiClient, root.bimdata.IfcCreator, root.bimdata.IfcDocument);
+    root.bimdata.Ifc = factory(root.bimdata.ApiClient, root.bimdata.Document, root.bimdata.FosUser);
   }
-}(this, function(ApiClient, IfcCreator, IfcDocument) {
+}(this, function(ApiClient, Document, FosUser) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The Ifc model module.
    * @module model/Ifc
-   * @version 1.0.25
+   * @version v1
    */
 
   /**
@@ -83,7 +83,7 @@
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
       if (data.hasOwnProperty('creator')) {
-        obj['creator'] = IfcCreator.constructFromObject(data['creator']);
+        obj['creator'] = FosUser.constructFromObject(data['creator']);
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -98,7 +98,7 @@
         obj['document_id'] = ApiClient.convertToType(data['document_id'], 'String');
       }
       if (data.hasOwnProperty('document')) {
-        obj['document'] = IfcDocument.constructFromObject(data['document']);
+        obj['document'] = Document.constructFromObject(data['document']);
       }
       if (data.hasOwnProperty('structure_file')) {
         obj['structure_file'] = ApiClient.convertToType(data['structure_file'], 'String');
@@ -134,7 +134,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * @member {module:model/IfcCreator} creator
+   * @member {module:model/FosUser} creator
    */
   exports.prototype['creator'] = undefined;
   /**
@@ -154,7 +154,7 @@
    */
   exports.prototype['document_id'] = undefined;
   /**
-   * @member {module:model/IfcDocument} document
+   * @member {module:model/Document} document
    */
   exports.prototype['document'] = undefined;
   /**

@@ -34,7 +34,7 @@
   /**
    * Project service.
    * @module api/ProjectApi
-   * @version 1.0.25
+   * @version v1
    */
 
   /**

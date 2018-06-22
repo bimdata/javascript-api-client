@@ -75,26 +75,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property address (base name: "address")', function() {
-      // uncomment below and update the code to test the property address
-      //var instane = new bimdata.Cloud();
-      //expect(instance).to.be();
-    });
-
     it('should have the property creator (base name: "creator")', function() {
       // uncomment below and update the code to test the property creator
-      //var instane = new bimdata.Cloud();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property postalCode (base name: "postal_code")', function() {
-      // uncomment below and update the code to test the property postalCode
-      //var instane = new bimdata.Cloud();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property city (base name: "city")', function() {
-      // uncomment below and update the code to test the property city
       //var instane = new bimdata.Cloud();
       //expect(instance).to.be();
     });

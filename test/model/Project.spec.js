@@ -99,8 +99,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property rootFolder (base name: "root_folder")', function() {
-      // uncomment below and update the code to test the property rootFolder
+    it('should have the property rootFolderId (base name: "root_folder_id")', function() {
+      // uncomment below and update the code to test the property rootFolderId
       //var instane = new bimdata.Project();
       //expect(instance).to.be();
     });

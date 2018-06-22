@@ -34,7 +34,7 @@
   /**
    * Checkplan service.
    * @module api/CheckplanApi
-   * @version 1.0.25
+   * @version v1
    */
 
   /**

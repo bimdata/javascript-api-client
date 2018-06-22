@@ -37,7 +37,7 @@
   /**
    * The ForgotPassword model module.
    * @module model/ForgotPassword
-   * @version 1.0.25
+   * @version v1
    */
 
   /**

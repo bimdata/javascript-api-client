@@ -34,7 +34,7 @@
   /**
    * Cloud service.
    * @module api/CloudApi
-   * @version 1.0.25
+   * @version v1
    */
 
   /**

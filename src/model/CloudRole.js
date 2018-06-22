@@ -37,7 +37,7 @@
   /**
    * The CloudRole model module.
    * @module model/CloudRole
-   * @version 1.0.25
+   * @version v1
    */
 
   /**

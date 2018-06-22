@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults'], factory);
+    define(['ApiClient', 'model/FosUser', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./IfcCheckerCheckplan'), require('./IfcCheckerResults'));
+    module.exports = factory(require('../ApiClient'), require('./FosUser'), require('./IfcCheckerCheckplan'), require('./IfcCheckerResults'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.IfcChecker = factory(root.bimdata.ApiClient, root.bimdata.IfcCheckerCheckplan, root.bimdata.IfcCheckerResults);
+    root.bimdata.IfcChecker = factory(root.bimdata.ApiClient, root.bimdata.FosUser, root.bimdata.IfcCheckerCheckplan, root.bimdata.IfcCheckerResults);
   }
-}(this, function(ApiClient, IfcCheckerCheckplan, IfcCheckerResults) {
+}(this, function(ApiClient, FosUser, IfcCheckerCheckplan, IfcCheckerResults) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The IfcChecker model module.
    * @module model/IfcChecker
-   * @version 1.0.25
+   * @version v1
    */
 
   /**
@@ -73,7 +73,7 @@
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
       if (data.hasOwnProperty('creator')) {
-        obj['creator'] = ApiClient.convertToType(data['creator'], 'Number');
+        obj['creator'] = FosUser.constructFromObject(data['creator']);
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -102,7 +102,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * @member {Number} creator
+   * @member {module:model/FosUser} creator
    */
   exports.prototype['creator'] = undefined;
   /**

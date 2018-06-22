@@ -37,7 +37,7 @@
   /**
    * The InvitedSignUp model module.
    * @module model/InvitedSignUp
-   * @version 1.0.25
+   * @version v1
    */
 
   /**
