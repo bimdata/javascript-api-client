@@ -1,6 +1,6 @@
 # bimdata.BcfApi
 
-All URIs are relative to *https://api-beta.bimdata.io*
+All URIs are relative to *https://api-beta.bimdata.io/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -113,13 +113,10 @@ Method | HTTP request | Description
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -148,14 +145,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="bcf21ProjectsTopicsCommentsEventsDelete"></a>
 # **bcf21ProjectsTopicsCommentsEventsDelete**
-> bcf21ProjectsTopicsCommentsEventsDelete(id, projectsPk, topicsPk, )
-
-
+> bcf21ProjectsTopicsCommentsEventsDelete(id, projectsPk, topicsPk)
 
 
 
@@ -163,7 +158,6 @@ This endpoint does not need any parameter.
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -171,14 +165,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.bcf21ProjectsTopicsCommentsEventsDelete(id, projectsPk, topicsPk, ).then(function() {
+apiInstance.bcf21ProjectsTopicsCommentsEventsDelete(id, projectsPk, topicsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -204,14 +194,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bcf21ProjectsTopicsCommentsEventsDelete_0"></a>
 # **bcf21ProjectsTopicsCommentsEventsDelete_0**
-> bcf21ProjectsTopicsCommentsEventsDelete_0(commentsPk, id, projectsPk, topicsPk, )
-
-
+> bcf21ProjectsTopicsCommentsEventsDelete_0(commentsPk, id, projectsPk, topicsPk)
 
 
 
@@ -219,7 +207,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -227,16 +214,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var commentsPk = "commentsPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.bcf21ProjectsTopicsCommentsEventsDelete_0(commentsPk, id, projectsPk, topicsPk, ).then(function() {
+apiInstance.bcf21ProjectsTopicsCommentsEventsDelete_0(commentsPk, id, projectsPk, topicsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -263,14 +245,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bcf21ProjectsTopicsEventsDelete"></a>
 # **bcf21ProjectsTopicsEventsDelete**
-> bcf21ProjectsTopicsEventsDelete(id, projectsPk, topicsPk, )
-
-
+> bcf21ProjectsTopicsEventsDelete(id, projectsPk, topicsPk)
 
 
 
@@ -278,7 +258,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -286,14 +265,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.bcf21ProjectsTopicsEventsDelete(id, projectsPk, topicsPk, ).then(function() {
+apiInstance.bcf21ProjectsTopicsEventsDelete(id, projectsPk, topicsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -319,14 +294,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bcf21ProjectsTopicsViewpointsBitmapDelete"></a>
 # **bcf21ProjectsTopicsViewpointsBitmapDelete**
-> bcf21ProjectsTopicsViewpointsBitmapDelete(id, projectsPk, topicsPk, viewpointsPk, )
-
-
+> bcf21ProjectsTopicsViewpointsBitmapDelete(id, projectsPk, topicsPk, viewpointsPk)
 
 
 
@@ -334,7 +307,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -342,16 +314,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-apiInstance.bcf21ProjectsTopicsViewpointsBitmapDelete(id, projectsPk, topicsPk, viewpointsPk, ).then(function() {
+apiInstance.bcf21ProjectsTopicsViewpointsBitmapDelete(id, projectsPk, topicsPk, viewpointsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -378,14 +345,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bcf21ProjectsTopicsViewpointsColoringDelete"></a>
 # **bcf21ProjectsTopicsViewpointsColoringDelete**
-> bcf21ProjectsTopicsViewpointsColoringDelete(id, projectsPk, topicsPk, viewpointsPk, )
-
-
+> bcf21ProjectsTopicsViewpointsColoringDelete(id, projectsPk, topicsPk, viewpointsPk)
 
 
 
@@ -393,7 +358,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -401,16 +365,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-apiInstance.bcf21ProjectsTopicsViewpointsColoringDelete(id, projectsPk, topicsPk, viewpointsPk, ).then(function() {
+apiInstance.bcf21ProjectsTopicsViewpointsColoringDelete(id, projectsPk, topicsPk, viewpointsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -437,14 +396,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bcf21ProjectsTopicsViewpointsDelete"></a>
 # **bcf21ProjectsTopicsViewpointsDelete**
-> bcf21ProjectsTopicsViewpointsDelete(id, projectsPk, topicsPk, )
-
-
+> bcf21ProjectsTopicsViewpointsDelete(id, projectsPk, topicsPk)
 
 
 
@@ -452,7 +409,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -460,14 +416,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.bcf21ProjectsTopicsViewpointsDelete(id, projectsPk, topicsPk, ).then(function() {
+apiInstance.bcf21ProjectsTopicsViewpointsDelete(id, projectsPk, topicsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -493,14 +445,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bcf21ProjectsTopicsViewpointsSelectionDelete"></a>
 # **bcf21ProjectsTopicsViewpointsSelectionDelete**
-> bcf21ProjectsTopicsViewpointsSelectionDelete(id, projectsPk, topicsPk, viewpointsPk, )
-
-
+> bcf21ProjectsTopicsViewpointsSelectionDelete(id, projectsPk, topicsPk, viewpointsPk)
 
 
 
@@ -508,7 +458,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -516,16 +465,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-apiInstance.bcf21ProjectsTopicsViewpointsSelectionDelete(id, projectsPk, topicsPk, viewpointsPk, ).then(function() {
+apiInstance.bcf21ProjectsTopicsViewpointsSelectionDelete(id, projectsPk, topicsPk, viewpointsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -552,14 +496,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bcf21ProjectsTopicsViewpointsVisibilityDelete"></a>
 # **bcf21ProjectsTopicsViewpointsVisibilityDelete**
-> bcf21ProjectsTopicsViewpointsVisibilityDelete(id, projectsPk, topicsPk, viewpointsPk, )
-
-
+> bcf21ProjectsTopicsViewpointsVisibilityDelete(id, projectsPk, topicsPk, viewpointsPk)
 
 
 
@@ -567,7 +509,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -575,16 +516,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-apiInstance.bcf21ProjectsTopicsViewpointsVisibilityDelete(id, projectsPk, topicsPk, viewpointsPk, ).then(function() {
+apiInstance.bcf21ProjectsTopicsViewpointsVisibilityDelete(id, projectsPk, topicsPk, viewpointsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -611,8 +547,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="createBcfDocument"></a>
 # **createBcfDocument**
@@ -620,13 +556,10 @@ null (empty response body)
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -634,11 +567,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
-var opts = { 
-  'guid': "guid_example", // String | 
+var opts = {
+  'guid': null, // String | 
   'filename': "filename_example" // String | 
 };
 apiInstance.createBcfDocument(projectsPk, opts).then(function() {
@@ -654,7 +585,7 @@ apiInstance.createBcfDocument(projectsPk, opts).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
- **guid** | [**String**](.md)|  | [optional] 
+ **guid** | [**String**](String.md)|  | [optional] 
  **filename** | **String**|  | [optional] 
 
 ### Return type
@@ -668,13 +599,11 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="createBcfProject"></a>
 # **createBcfProject**
-> BcfProject createBcfProject(data)
-
-
+> BcfProject createBcfProject(bcfProject)
 
 
 
@@ -682,7 +611,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -690,10 +618,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
-var data = new bimdata.BcfProject(); // BcfProject | 
-
-apiInstance.createBcfProject(data).then(function(data) {
+var bcfProject = new bimdata.BcfProject(); // BcfProject | 
+apiInstance.createBcfProject(bcfProject).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -705,7 +631,7 @@ apiInstance.createBcfProject(data).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**BcfProject**](BcfProject.md)|  | 
+ **bcfProject** | [**BcfProject**](BcfProject.md)|  | 
 
 ### Return type
 
@@ -722,9 +648,7 @@ Name | Type | Description  | Notes
 
 <a name="createBitmap"></a>
 # **createBitmap**
-> Bitmap createBitmap(projectsPk, topicsPk, viewpointsPk, data)
-
-
+> Bitmap createBitmap(projectsPk, topicsPk, viewpointsPk, bitmap)
 
 
 
@@ -732,7 +656,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -740,16 +663,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-var data = new bimdata.Bitmap(); // Bitmap | 
-
-apiInstance.createBitmap(projectsPk, topicsPk, viewpointsPk, data).then(function(data) {
+var bitmap = new bimdata.Bitmap(); // Bitmap | 
+apiInstance.createBitmap(projectsPk, topicsPk, viewpointsPk, bitmap).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -764,7 +682,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
  **viewpointsPk** | **String**|  | 
- **data** | [**Bitmap**](Bitmap.md)|  | 
+ **bitmap** | [**Bitmap**](Bitmap.md)|  | 
 
 ### Return type
 
@@ -781,9 +699,7 @@ Name | Type | Description  | Notes
 
 <a name="createColoring"></a>
 # **createColoring**
-> Coloring createColoring(projectsPk, topicsPk, viewpointsPk, data)
-
-
+> Coloring createColoring(projectsPk, topicsPk, viewpointsPk, coloring)
 
 
 
@@ -791,7 +707,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -799,16 +714,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-var data = new bimdata.Coloring(); // Coloring | 
-
-apiInstance.createColoring(projectsPk, topicsPk, viewpointsPk, data).then(function(data) {
+var coloring = new bimdata.Coloring(); // Coloring | 
+apiInstance.createColoring(projectsPk, topicsPk, viewpointsPk, coloring).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -823,7 +733,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
  **viewpointsPk** | **String**|  | 
- **data** | [**Coloring**](Coloring.md)|  | 
+ **coloring** | [**Coloring**](Coloring.md)|  | 
 
 ### Return type
 
@@ -840,9 +750,7 @@ Name | Type | Description  | Notes
 
 <a name="createComment"></a>
 # **createComment**
-> Comment createComment(projectsPk, topicsPk, data)
-
-
+> Comment createComment(projectsPk, topicsPk, comment)
 
 
 
@@ -850,7 +758,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -858,14 +765,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.Comment(); // Comment | 
-
-apiInstance.createComment(projectsPk, topicsPk, data).then(function(data) {
+var comment = new bimdata.Comment(); // Comment | 
+apiInstance.createComment(projectsPk, topicsPk, comment).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -879,7 +782,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**Comment**](Comment.md)|  | 
+ **comment** | [**Comment**](Comment.md)|  | 
 
 ### Return type
 
@@ -896,9 +799,7 @@ Name | Type | Description  | Notes
 
 <a name="createCommentEvent"></a>
 # **createCommentEvent**
-> CommentEvent createCommentEvent(projectsPk, topicsPk, data)
-
-
+> CommentEvent createCommentEvent(projectsPk, topicsPk, commentEvent)
 
 
 
@@ -906,7 +807,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -914,14 +814,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.CommentEvent(); // CommentEvent | 
-
-apiInstance.createCommentEvent(projectsPk, topicsPk, data).then(function(data) {
+var commentEvent = new bimdata.CommentEvent(); // CommentEvent | 
+apiInstance.createCommentEvent(projectsPk, topicsPk, commentEvent).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -935,7 +831,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**CommentEvent**](CommentEvent.md)|  | 
+ **commentEvent** | [**CommentEvent**](CommentEvent.md)|  | 
 
 ### Return type
 
@@ -952,9 +848,7 @@ Name | Type | Description  | Notes
 
 <a name="createCommentEvent_0"></a>
 # **createCommentEvent_0**
-> CommentEvent createCommentEvent_0(commentsPk, projectsPk, topicsPk, data)
-
-
+> CommentEvent createCommentEvent_0(commentsPk, projectsPk, topicsPk, commentEvent)
 
 
 
@@ -962,7 +856,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -970,16 +863,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var commentsPk = "commentsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.CommentEvent(); // CommentEvent | 
-
-apiInstance.createCommentEvent_0(commentsPk, projectsPk, topicsPk, data).then(function(data) {
+var commentEvent = new bimdata.CommentEvent(); // CommentEvent | 
+apiInstance.createCommentEvent_0(commentsPk, projectsPk, topicsPk, commentEvent).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -994,7 +882,7 @@ Name | Type | Description  | Notes
  **commentsPk** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**CommentEvent**](CommentEvent.md)|  | 
+ **commentEvent** | [**CommentEvent**](CommentEvent.md)|  | 
 
 ### Return type
 
@@ -1011,9 +899,7 @@ Name | Type | Description  | Notes
 
 <a name="createDocumentReference"></a>
 # **createDocumentReference**
-> DocumentReference createDocumentReference(projectsPk, topicsPk, data)
-
-
+> DocumentReference createDocumentReference(projectsPk, topicsPk, documentReference)
 
 
 
@@ -1021,7 +907,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1029,14 +914,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.DocumentReference(); // DocumentReference | 
-
-apiInstance.createDocumentReference(projectsPk, topicsPk, data).then(function(data) {
+var documentReference = new bimdata.DocumentReference(); // DocumentReference | 
+apiInstance.createDocumentReference(projectsPk, topicsPk, documentReference).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1050,7 +931,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**DocumentReference**](DocumentReference.md)|  | 
+ **documentReference** | [**DocumentReference**](DocumentReference.md)|  | 
 
 ### Return type
 
@@ -1067,9 +948,7 @@ Name | Type | Description  | Notes
 
 <a name="createFile"></a>
 # **createFile**
-> BimSnippet createFile(projectsPk, topicsPk, data)
-
-
+> BimSnippet createFile(projectsPk, topicsPk, bimSnippet)
 
 
 
@@ -1077,7 +956,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1085,14 +963,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.BimSnippet(); // BimSnippet | 
-
-apiInstance.createFile(projectsPk, topicsPk, data).then(function(data) {
+var bimSnippet = new bimdata.BimSnippet(); // BimSnippet | 
+apiInstance.createFile(projectsPk, topicsPk, bimSnippet).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1106,7 +980,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**BimSnippet**](BimSnippet.md)|  | 
+ **bimSnippet** | [**BimSnippet**](BimSnippet.md)|  | 
 
 ### Return type
 
@@ -1123,9 +997,7 @@ Name | Type | Description  | Notes
 
 <a name="createRelatedTopic"></a>
 # **createRelatedTopic**
-> RelatedTopic createRelatedTopic(projectsPk, topicsPk, data)
-
-
+> RelatedTopic createRelatedTopic(projectsPk, topicsPk, relatedTopic)
 
 
 
@@ -1133,7 +1005,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1141,14 +1012,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.RelatedTopic(); // RelatedTopic | 
-
-apiInstance.createRelatedTopic(projectsPk, topicsPk, data).then(function(data) {
+var relatedTopic = new bimdata.RelatedTopic(); // RelatedTopic | 
+apiInstance.createRelatedTopic(projectsPk, topicsPk, relatedTopic).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1162,7 +1029,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**RelatedTopic**](RelatedTopic.md)|  | 
+ **relatedTopic** | [**RelatedTopic**](RelatedTopic.md)|  | 
 
 ### Return type
 
@@ -1179,9 +1046,7 @@ Name | Type | Description  | Notes
 
 <a name="createSelection"></a>
 # **createSelection**
-> Component createSelection(projectsPk, topicsPk, viewpointsPk, data)
-
-
+> Component createSelection(projectsPk, topicsPk, viewpointsPk, component)
 
 
 
@@ -1189,7 +1054,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1197,16 +1061,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-var data = new bimdata.Component(); // Component | 
-
-apiInstance.createSelection(projectsPk, topicsPk, viewpointsPk, data).then(function(data) {
+var component = new bimdata.Component(); // Component | 
+apiInstance.createSelection(projectsPk, topicsPk, viewpointsPk, component).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1221,7 +1080,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
  **viewpointsPk** | **String**|  | 
- **data** | [**Component**](Component.md)|  | 
+ **component** | [**Component**](Component.md)|  | 
 
 ### Return type
 
@@ -1238,9 +1097,7 @@ Name | Type | Description  | Notes
 
 <a name="createSnippet"></a>
 # **createSnippet**
-> BimSnippet createSnippet(projectsPk, topicsPk, data)
-
-
+> BimSnippet createSnippet(projectsPk, topicsPk, bimSnippet)
 
 
 
@@ -1248,7 +1105,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1256,14 +1112,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.BimSnippet(); // BimSnippet | 
-
-apiInstance.createSnippet(projectsPk, topicsPk, data).then(function(data) {
+var bimSnippet = new bimdata.BimSnippet(); // BimSnippet | 
+apiInstance.createSnippet(projectsPk, topicsPk, bimSnippet).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1277,7 +1129,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**BimSnippet**](BimSnippet.md)|  | 
+ **bimSnippet** | [**BimSnippet**](BimSnippet.md)|  | 
 
 ### Return type
 
@@ -1294,9 +1146,7 @@ Name | Type | Description  | Notes
 
 <a name="createTopic"></a>
 # **createTopic**
-> Topic createTopic(projectsPk, data)
-
-
+> Topic createTopic(projectsPk, topic)
 
 
 
@@ -1304,7 +1154,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1312,12 +1161,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
-var data = new bimdata.Topic(); // Topic | 
-
-apiInstance.createTopic(projectsPk, data).then(function(data) {
+var topic = new bimdata.Topic(); // Topic | 
+apiInstance.createTopic(projectsPk, topic).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1330,7 +1176,7 @@ apiInstance.createTopic(projectsPk, data).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
- **data** | [**Topic**](Topic.md)|  | 
+ **topic** | [**Topic**](Topic.md)|  | 
 
 ### Return type
 
@@ -1347,9 +1193,7 @@ Name | Type | Description  | Notes
 
 <a name="createTopicEvent"></a>
 # **createTopicEvent**
-> TopicEvents createTopicEvent(projectsPk, topicsPk, data)
-
-
+> TopicEvents createTopicEvent(projectsPk, topicsPk, topicEvents)
 
 
 
@@ -1357,7 +1201,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1365,14 +1208,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.TopicEvents(); // TopicEvents | 
-
-apiInstance.createTopicEvent(projectsPk, topicsPk, data).then(function(data) {
+var topicEvents = new bimdata.TopicEvents(); // TopicEvents | 
+apiInstance.createTopicEvent(projectsPk, topicsPk, topicEvents).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1386,7 +1225,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**TopicEvents**](TopicEvents.md)|  | 
+ **topicEvents** | [**TopicEvents**](TopicEvents.md)|  | 
 
 ### Return type
 
@@ -1403,9 +1242,7 @@ Name | Type | Description  | Notes
 
 <a name="createViewpoint"></a>
 # **createViewpoint**
-> Viewpoint createViewpoint(projectsPk, topicsPk, data)
-
-
+> Viewpoint createViewpoint(projectsPk, topicsPk, viewpoint)
 
 
 
@@ -1413,7 +1250,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1421,14 +1257,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.Viewpoint(); // Viewpoint | 
-
-apiInstance.createViewpoint(projectsPk, topicsPk, data).then(function(data) {
+var viewpoint = new bimdata.Viewpoint(); // Viewpoint | 
+apiInstance.createViewpoint(projectsPk, topicsPk, viewpoint).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1442,7 +1274,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**Viewpoint**](Viewpoint.md)|  | 
+ **viewpoint** | [**Viewpoint**](Viewpoint.md)|  | 
 
 ### Return type
 
@@ -1459,9 +1291,7 @@ Name | Type | Description  | Notes
 
 <a name="createVisibility"></a>
 # **createVisibility**
-> Visibility createVisibility(projectsPk, topicsPk, viewpointsPk, data)
-
-
+> Visibility createVisibility(projectsPk, topicsPk, viewpointsPk, visibility)
 
 
 
@@ -1469,7 +1299,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1477,16 +1306,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-var data = new bimdata.Visibility(); // Visibility | 
-
-apiInstance.createVisibility(projectsPk, topicsPk, viewpointsPk, data).then(function(data) {
+var visibility = new bimdata.Visibility(); // Visibility | 
+apiInstance.createVisibility(projectsPk, topicsPk, viewpointsPk, visibility).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1501,7 +1325,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
  **viewpointsPk** | **String**|  | 
- **data** | [**Visibility**](Visibility.md)|  | 
+ **visibility** | [**Visibility**](Visibility.md)|  | 
 
 ### Return type
 
@@ -1522,13 +1346,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1536,11 +1357,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 apiInstance.deleteBcfDocument(id, projectsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -1566,14 +1384,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteBcfProject"></a>
 # **deleteBcfProject**
-> deleteBcfProject(id, )
-
-
+> deleteBcfProject(id)
 
 
 
@@ -1581,7 +1397,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1589,10 +1404,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
-apiInstance.deleteBcfProject(id, ).then(function() {
+apiInstance.deleteBcfProject(id).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1616,14 +1429,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteComment"></a>
 # **deleteComment**
-> deleteComment(id, projectsPk, topicsPk, )
-
-
+> deleteComment(id, projectsPk, topicsPk)
 
 
 
@@ -1631,7 +1442,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1639,14 +1449,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.deleteComment(id, projectsPk, topicsPk, ).then(function() {
+apiInstance.deleteComment(id, projectsPk, topicsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1672,14 +1478,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteDocumentReference"></a>
 # **deleteDocumentReference**
-> deleteDocumentReference(id, projectsPk, topicsPk, )
-
-
+> deleteDocumentReference(id, projectsPk, topicsPk)
 
 
 
@@ -1687,7 +1491,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1695,14 +1498,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.deleteDocumentReference(id, projectsPk, topicsPk, ).then(function() {
+apiInstance.deleteDocumentReference(id, projectsPk, topicsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1728,14 +1527,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteFile"></a>
 # **deleteFile**
-> deleteFile(id, projectsPk, topicsPk, )
-
-
+> deleteFile(id, projectsPk, topicsPk)
 
 
 
@@ -1743,7 +1540,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1751,14 +1547,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.deleteFile(id, projectsPk, topicsPk, ).then(function() {
+apiInstance.deleteFile(id, projectsPk, topicsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1784,14 +1576,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteRelatedTopic"></a>
 # **deleteRelatedTopic**
-> deleteRelatedTopic(id, projectsPk, topicsPk, )
-
-
+> deleteRelatedTopic(id, projectsPk, topicsPk)
 
 
 
@@ -1799,7 +1589,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1807,14 +1596,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.deleteRelatedTopic(id, projectsPk, topicsPk, ).then(function() {
+apiInstance.deleteRelatedTopic(id, projectsPk, topicsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1840,14 +1625,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteSnippet"></a>
 # **deleteSnippet**
-> deleteSnippet(id, projectsPk, topicsPk, )
-
-
+> deleteSnippet(id, projectsPk, topicsPk)
 
 
 
@@ -1855,7 +1638,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1863,14 +1645,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.deleteSnippet(id, projectsPk, topicsPk, ).then(function() {
+apiInstance.deleteSnippet(id, projectsPk, topicsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1896,14 +1674,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteTopic"></a>
 # **deleteTopic**
-> deleteTopic(id, projectsPk, )
-
-
+> deleteTopic(id, projectsPk)
 
 
 
@@ -1911,7 +1687,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1919,12 +1694,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
-apiInstance.deleteTopic(id, projectsPk, ).then(function() {
+apiInstance.deleteTopic(id, projectsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1949,8 +1721,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="fullUpdateBcfDocument"></a>
 # **fullUpdateBcfDocument**
@@ -1958,13 +1730,10 @@ null (empty response body)
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1972,13 +1741,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
-var opts = { 
-  'guid': "guid_example", // String | 
+var opts = {
+  'guid': null, // String | 
   'filename': "filename_example" // String | 
 };
 apiInstance.fullUpdateBcfDocument(id, projectsPk, opts).then(function() {
@@ -1995,7 +1761,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
- **guid** | [**String**](.md)|  | [optional] 
+ **guid** | [**String**](String.md)|  | [optional] 
  **filename** | **String**|  | [optional] 
 
 ### Return type
@@ -2009,13 +1775,11 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="fullUpdateBcfProject"></a>
 # **fullUpdateBcfProject**
-> BcfProject fullUpdateBcfProject(id, data)
-
-
+> BcfProject fullUpdateBcfProject(id, bcfProject)
 
 
 
@@ -2023,7 +1787,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2031,12 +1794,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
-var data = new bimdata.BcfProject(); // BcfProject | 
-
-apiInstance.fullUpdateBcfProject(id, data).then(function(data) {
+var bcfProject = new bimdata.BcfProject(); // BcfProject | 
+apiInstance.fullUpdateBcfProject(id, bcfProject).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2049,7 +1809,7 @@ apiInstance.fullUpdateBcfProject(id, data).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **data** | [**BcfProject**](BcfProject.md)|  | 
+ **bcfProject** | [**BcfProject**](BcfProject.md)|  | 
 
 ### Return type
 
@@ -2066,9 +1826,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateBitmap"></a>
 # **fullUpdateBitmap**
-> Bitmap fullUpdateBitmap(id, projectsPk, topicsPk, viewpointsPk, data)
-
-
+> Bitmap fullUpdateBitmap(id, projectsPk, topicsPk, viewpointsPk, bitmap)
 
 
 
@@ -2076,7 +1834,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2084,18 +1841,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-var data = new bimdata.Bitmap(); // Bitmap | 
-
-apiInstance.fullUpdateBitmap(id, projectsPk, topicsPk, viewpointsPk, data).then(function(data) {
+var bitmap = new bimdata.Bitmap(); // Bitmap | 
+apiInstance.fullUpdateBitmap(id, projectsPk, topicsPk, viewpointsPk, bitmap).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2111,7 +1862,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
  **viewpointsPk** | **String**|  | 
- **data** | [**Bitmap**](Bitmap.md)|  | 
+ **bitmap** | [**Bitmap**](Bitmap.md)|  | 
 
 ### Return type
 
@@ -2128,9 +1879,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateColoring"></a>
 # **fullUpdateColoring**
-> Coloring fullUpdateColoring(id, projectsPk, topicsPk, viewpointsPk, data)
-
-
+> Coloring fullUpdateColoring(id, projectsPk, topicsPk, viewpointsPk, coloring)
 
 
 
@@ -2138,7 +1887,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2146,18 +1894,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-var data = new bimdata.Coloring(); // Coloring | 
-
-apiInstance.fullUpdateColoring(id, projectsPk, topicsPk, viewpointsPk, data).then(function(data) {
+var coloring = new bimdata.Coloring(); // Coloring | 
+apiInstance.fullUpdateColoring(id, projectsPk, topicsPk, viewpointsPk, coloring).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2173,7 +1915,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
  **viewpointsPk** | **String**|  | 
- **data** | [**Coloring**](Coloring.md)|  | 
+ **coloring** | [**Coloring**](Coloring.md)|  | 
 
 ### Return type
 
@@ -2190,9 +1932,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateComment"></a>
 # **fullUpdateComment**
-> Comment fullUpdateComment(id, projectsPk, topicsPk, data)
-
-
+> Comment fullUpdateComment(id, projectsPk, topicsPk, comment)
 
 
 
@@ -2200,7 +1940,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2208,16 +1947,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.Comment(); // Comment | 
-
-apiInstance.fullUpdateComment(id, projectsPk, topicsPk, data).then(function(data) {
+var comment = new bimdata.Comment(); // Comment | 
+apiInstance.fullUpdateComment(id, projectsPk, topicsPk, comment).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2232,7 +1966,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**Comment**](Comment.md)|  | 
+ **comment** | [**Comment**](Comment.md)|  | 
 
 ### Return type
 
@@ -2249,9 +1983,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateCommentEvent"></a>
 # **fullUpdateCommentEvent**
-> CommentEvent fullUpdateCommentEvent(id, projectsPk, topicsPk, data)
-
-
+> CommentEvent fullUpdateCommentEvent(id, projectsPk, topicsPk, commentEvent)
 
 
 
@@ -2259,7 +1991,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2267,16 +1998,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.CommentEvent(); // CommentEvent | 
-
-apiInstance.fullUpdateCommentEvent(id, projectsPk, topicsPk, data).then(function(data) {
+var commentEvent = new bimdata.CommentEvent(); // CommentEvent | 
+apiInstance.fullUpdateCommentEvent(id, projectsPk, topicsPk, commentEvent).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2291,7 +2017,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**CommentEvent**](CommentEvent.md)|  | 
+ **commentEvent** | [**CommentEvent**](CommentEvent.md)|  | 
 
 ### Return type
 
@@ -2308,9 +2034,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateCommentEvent_0"></a>
 # **fullUpdateCommentEvent_0**
-> CommentEvent fullUpdateCommentEvent_0(commentsPk, id, projectsPk, topicsPk, data)
-
-
+> CommentEvent fullUpdateCommentEvent_0(commentsPk, id, projectsPk, topicsPk, commentEvent)
 
 
 
@@ -2318,7 +2042,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2326,18 +2049,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var commentsPk = "commentsPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.CommentEvent(); // CommentEvent | 
-
-apiInstance.fullUpdateCommentEvent_0(commentsPk, id, projectsPk, topicsPk, data).then(function(data) {
+var commentEvent = new bimdata.CommentEvent(); // CommentEvent | 
+apiInstance.fullUpdateCommentEvent_0(commentsPk, id, projectsPk, topicsPk, commentEvent).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2353,7 +2070,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**CommentEvent**](CommentEvent.md)|  | 
+ **commentEvent** | [**CommentEvent**](CommentEvent.md)|  | 
 
 ### Return type
 
@@ -2370,9 +2087,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateDocumentReference"></a>
 # **fullUpdateDocumentReference**
-> DocumentReference fullUpdateDocumentReference(id, projectsPk, topicsPk, data)
-
-
+> DocumentReference fullUpdateDocumentReference(id, projectsPk, topicsPk, documentReference)
 
 
 
@@ -2380,7 +2095,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2388,16 +2102,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.DocumentReference(); // DocumentReference | 
-
-apiInstance.fullUpdateDocumentReference(id, projectsPk, topicsPk, data).then(function(data) {
+var documentReference = new bimdata.DocumentReference(); // DocumentReference | 
+apiInstance.fullUpdateDocumentReference(id, projectsPk, topicsPk, documentReference).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2412,7 +2121,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**DocumentReference**](DocumentReference.md)|  | 
+ **documentReference** | [**DocumentReference**](DocumentReference.md)|  | 
 
 ### Return type
 
@@ -2429,9 +2138,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateFile"></a>
 # **fullUpdateFile**
-> BimSnippet fullUpdateFile(id, projectsPk, topicsPk, data)
-
-
+> BimSnippet fullUpdateFile(id, projectsPk, topicsPk, bimSnippet)
 
 
 
@@ -2439,7 +2146,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2447,16 +2153,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.BimSnippet(); // BimSnippet | 
-
-apiInstance.fullUpdateFile(id, projectsPk, topicsPk, data).then(function(data) {
+var bimSnippet = new bimdata.BimSnippet(); // BimSnippet | 
+apiInstance.fullUpdateFile(id, projectsPk, topicsPk, bimSnippet).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2471,7 +2172,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**BimSnippet**](BimSnippet.md)|  | 
+ **bimSnippet** | [**BimSnippet**](BimSnippet.md)|  | 
 
 ### Return type
 
@@ -2488,9 +2189,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateRelatedTopic"></a>
 # **fullUpdateRelatedTopic**
-> RelatedTopic fullUpdateRelatedTopic(id, projectsPk, topicsPk, data)
-
-
+> RelatedTopic fullUpdateRelatedTopic(id, projectsPk, topicsPk, relatedTopic)
 
 
 
@@ -2498,7 +2197,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2506,16 +2204,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.RelatedTopic(); // RelatedTopic | 
-
-apiInstance.fullUpdateRelatedTopic(id, projectsPk, topicsPk, data).then(function(data) {
+var relatedTopic = new bimdata.RelatedTopic(); // RelatedTopic | 
+apiInstance.fullUpdateRelatedTopic(id, projectsPk, topicsPk, relatedTopic).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2530,7 +2223,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**RelatedTopic**](RelatedTopic.md)|  | 
+ **relatedTopic** | [**RelatedTopic**](RelatedTopic.md)|  | 
 
 ### Return type
 
@@ -2547,9 +2240,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateSelection"></a>
 # **fullUpdateSelection**
-> Component fullUpdateSelection(id, projectsPk, topicsPk, viewpointsPk, data)
-
-
+> Component fullUpdateSelection(id, projectsPk, topicsPk, viewpointsPk, component)
 
 
 
@@ -2557,7 +2248,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2565,18 +2255,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-var data = new bimdata.Component(); // Component | 
-
-apiInstance.fullUpdateSelection(id, projectsPk, topicsPk, viewpointsPk, data).then(function(data) {
+var component = new bimdata.Component(); // Component | 
+apiInstance.fullUpdateSelection(id, projectsPk, topicsPk, viewpointsPk, component).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2592,7 +2276,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
  **viewpointsPk** | **String**|  | 
- **data** | [**Component**](Component.md)|  | 
+ **component** | [**Component**](Component.md)|  | 
 
 ### Return type
 
@@ -2609,9 +2293,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateSnippet"></a>
 # **fullUpdateSnippet**
-> BimSnippet fullUpdateSnippet(id, projectsPk, topicsPk, data)
-
-
+> BimSnippet fullUpdateSnippet(id, projectsPk, topicsPk, bimSnippet)
 
 
 
@@ -2619,7 +2301,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2627,16 +2308,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.BimSnippet(); // BimSnippet | 
-
-apiInstance.fullUpdateSnippet(id, projectsPk, topicsPk, data).then(function(data) {
+var bimSnippet = new bimdata.BimSnippet(); // BimSnippet | 
+apiInstance.fullUpdateSnippet(id, projectsPk, topicsPk, bimSnippet).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2651,7 +2327,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**BimSnippet**](BimSnippet.md)|  | 
+ **bimSnippet** | [**BimSnippet**](BimSnippet.md)|  | 
 
 ### Return type
 
@@ -2668,9 +2344,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateTopic"></a>
 # **fullUpdateTopic**
-> Topic fullUpdateTopic(id, projectsPk, data)
-
-
+> Topic fullUpdateTopic(id, projectsPk, topic)
 
 
 
@@ -2678,7 +2352,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2686,14 +2359,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
-var data = new bimdata.Topic(); // Topic | 
-
-apiInstance.fullUpdateTopic(id, projectsPk, data).then(function(data) {
+var topic = new bimdata.Topic(); // Topic | 
+apiInstance.fullUpdateTopic(id, projectsPk, topic).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2707,7 +2376,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
- **data** | [**Topic**](Topic.md)|  | 
+ **topic** | [**Topic**](Topic.md)|  | 
 
 ### Return type
 
@@ -2724,9 +2393,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateTopicEvent"></a>
 # **fullUpdateTopicEvent**
-> TopicEvents fullUpdateTopicEvent(id, projectsPk, topicsPk, data)
-
-
+> TopicEvents fullUpdateTopicEvent(id, projectsPk, topicsPk, topicEvents)
 
 
 
@@ -2734,7 +2401,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2742,16 +2408,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.TopicEvents(); // TopicEvents | 
-
-apiInstance.fullUpdateTopicEvent(id, projectsPk, topicsPk, data).then(function(data) {
+var topicEvents = new bimdata.TopicEvents(); // TopicEvents | 
+apiInstance.fullUpdateTopicEvent(id, projectsPk, topicsPk, topicEvents).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2766,7 +2427,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**TopicEvents**](TopicEvents.md)|  | 
+ **topicEvents** | [**TopicEvents**](TopicEvents.md)|  | 
 
 ### Return type
 
@@ -2783,9 +2444,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateViewpoint"></a>
 # **fullUpdateViewpoint**
-> Viewpoint fullUpdateViewpoint(id, projectsPk, topicsPk, data)
-
-
+> Viewpoint fullUpdateViewpoint(id, projectsPk, topicsPk, viewpoint)
 
 
 
@@ -2793,7 +2452,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2801,16 +2459,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.Viewpoint(); // Viewpoint | 
-
-apiInstance.fullUpdateViewpoint(id, projectsPk, topicsPk, data).then(function(data) {
+var viewpoint = new bimdata.Viewpoint(); // Viewpoint | 
+apiInstance.fullUpdateViewpoint(id, projectsPk, topicsPk, viewpoint).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2825,7 +2478,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**Viewpoint**](Viewpoint.md)|  | 
+ **viewpoint** | [**Viewpoint**](Viewpoint.md)|  | 
 
 ### Return type
 
@@ -2842,9 +2495,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateVisibility"></a>
 # **fullUpdateVisibility**
-> Visibility fullUpdateVisibility(id, projectsPk, topicsPk, viewpointsPk, data)
-
-
+> Visibility fullUpdateVisibility(id, projectsPk, topicsPk, viewpointsPk, visibility)
 
 
 
@@ -2852,7 +2503,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2860,18 +2510,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-var data = new bimdata.Visibility(); // Visibility | 
-
-apiInstance.fullUpdateVisibility(id, projectsPk, topicsPk, viewpointsPk, data).then(function(data) {
+var visibility = new bimdata.Visibility(); // Visibility | 
+apiInstance.fullUpdateVisibility(id, projectsPk, topicsPk, viewpointsPk, visibility).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2887,7 +2531,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
  **viewpointsPk** | **String**|  | 
- **data** | [**Visibility**](Visibility.md)|  | 
+ **visibility** | [**Visibility**](Visibility.md)|  | 
 
 ### Return type
 
@@ -2908,13 +2552,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2922,9 +2563,7 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 apiInstance.getAllCommentsEvents(projectsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -2949,7 +2588,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getAllTopicsEvents"></a>
@@ -2958,13 +2597,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2972,9 +2608,7 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 apiInstance.getAllTopicsEvents(projectsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -2999,7 +2633,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBcfDocument"></a>
@@ -3008,13 +2642,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3022,11 +2653,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 apiInstance.getBcfDocument(id, projectsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -3052,8 +2680,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getBcfDocuments"></a>
 # **getBcfDocuments**
@@ -3061,13 +2689,10 @@ null (empty response body)
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3075,9 +2700,7 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 apiInstance.getBcfDocuments(projectsPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -3102,14 +2725,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getBcfProject"></a>
 # **getBcfProject**
-> BcfProject getBcfProject(id, )
-
-
+> BcfProject getBcfProject(id)
 
 
 
@@ -3117,7 +2738,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3125,10 +2745,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
-apiInstance.getBcfProject(id, ).then(function(data) {
+apiInstance.getBcfProject(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3152,7 +2770,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBcfProjects"></a>
@@ -3161,13 +2779,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3196,14 +2811,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBitmap"></a>
 # **getBitmap**
-> Bitmap getBitmap(id, projectsPk, topicsPk, viewpointsPk, )
-
-
+> Bitmap getBitmap(id, projectsPk, topicsPk, viewpointsPk)
 
 
 
@@ -3211,7 +2824,6 @@ This endpoint does not need any parameter.
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3219,16 +2831,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-apiInstance.getBitmap(id, projectsPk, topicsPk, viewpointsPk, ).then(function(data) {
+apiInstance.getBitmap(id, projectsPk, topicsPk, viewpointsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3255,14 +2862,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBitmaps"></a>
 # **getBitmaps**
-> [Bitmap] getBitmaps(projectsPk, topicsPk, viewpointsPk, )
-
-
+> [Bitmap] getBitmaps(projectsPk, topicsPk, viewpointsPk)
 
 
 
@@ -3270,7 +2875,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3278,14 +2882,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-apiInstance.getBitmaps(projectsPk, topicsPk, viewpointsPk, ).then(function(data) {
+apiInstance.getBitmaps(projectsPk, topicsPk, viewpointsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3311,14 +2911,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getColoring"></a>
 # **getColoring**
-> Coloring getColoring(id, projectsPk, topicsPk, viewpointsPk, )
-
-
+> Coloring getColoring(id, projectsPk, topicsPk, viewpointsPk)
 
 
 
@@ -3326,7 +2924,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3334,16 +2931,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-apiInstance.getColoring(id, projectsPk, topicsPk, viewpointsPk, ).then(function(data) {
+apiInstance.getColoring(id, projectsPk, topicsPk, viewpointsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3370,14 +2962,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getColorings"></a>
 # **getColorings**
-> [Coloring] getColorings(projectsPk, topicsPk, viewpointsPk, )
-
-
+> [Coloring] getColorings(projectsPk, topicsPk, viewpointsPk)
 
 
 
@@ -3385,7 +2975,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3393,14 +2982,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-apiInstance.getColorings(projectsPk, topicsPk, viewpointsPk, ).then(function(data) {
+apiInstance.getColorings(projectsPk, topicsPk, viewpointsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3426,14 +3011,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getComment"></a>
 # **getComment**
-> Comment getComment(id, projectsPk, topicsPk, )
-
-
+> Comment getComment(id, projectsPk, topicsPk)
 
 
 
@@ -3441,7 +3024,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3449,14 +3031,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getComment(id, projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getComment(id, projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3482,14 +3060,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCommentEvent"></a>
 # **getCommentEvent**
-> CommentEvent getCommentEvent(id, projectsPk, topicsPk, )
-
-
+> CommentEvent getCommentEvent(id, projectsPk, topicsPk)
 
 
 
@@ -3497,7 +3073,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3505,14 +3080,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getCommentEvent(id, projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getCommentEvent(id, projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3538,14 +3109,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCommentEvent_0"></a>
 # **getCommentEvent_0**
-> CommentEvent getCommentEvent_0(commentsPk, id, projectsPk, topicsPk, )
-
-
+> CommentEvent getCommentEvent_0(commentsPk, id, projectsPk, topicsPk)
 
 
 
@@ -3553,7 +3122,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3561,16 +3129,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var commentsPk = "commentsPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getCommentEvent_0(commentsPk, id, projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getCommentEvent_0(commentsPk, id, projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3597,14 +3160,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCommentEvents"></a>
 # **getCommentEvents**
-> [CommentEvent] getCommentEvents(projectsPk, topicsPk, )
-
-
+> [CommentEvent] getCommentEvents(projectsPk, topicsPk)
 
 
 
@@ -3612,7 +3173,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3620,12 +3180,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getCommentEvents(projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getCommentEvents(projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3650,14 +3207,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCommentEvents_0"></a>
 # **getCommentEvents_0**
-> [CommentEvent] getCommentEvents_0(commentsPk, projectsPk, topicsPk, )
-
-
+> [CommentEvent] getCommentEvents_0(commentsPk, projectsPk, topicsPk)
 
 
 
@@ -3665,7 +3220,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3673,14 +3227,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var commentsPk = "commentsPk_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getCommentEvents_0(commentsPk, projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getCommentEvents_0(commentsPk, projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3706,14 +3256,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getComments"></a>
 # **getComments**
-> [Comment] getComments(projectsPk, topicsPk, )
-
-
+> [Comment] getComments(projectsPk, topicsPk)
 
 
 
@@ -3721,7 +3269,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3729,12 +3276,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getComments(projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getComments(projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3759,14 +3303,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getDocumentReference"></a>
 # **getDocumentReference**
-> DocumentReference getDocumentReference(id, projectsPk, topicsPk, )
-
-
+> DocumentReference getDocumentReference(id, projectsPk, topicsPk)
 
 
 
@@ -3774,7 +3316,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3782,14 +3323,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getDocumentReference(id, projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getDocumentReference(id, projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3815,14 +3352,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getDocumentReferences"></a>
 # **getDocumentReferences**
-> [DocumentReference] getDocumentReferences(projectsPk, topicsPk, )
-
-
+> [DocumentReference] getDocumentReferences(projectsPk, topicsPk)
 
 
 
@@ -3830,7 +3365,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3838,12 +3372,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getDocumentReferences(projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getDocumentReferences(projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3868,7 +3399,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getExtensions"></a>
@@ -3877,13 +3408,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3891,9 +3419,7 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 apiInstance.getExtensions(projectsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -3918,14 +3444,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getFile"></a>
 # **getFile**
-> BimSnippet getFile(id, projectsPk, topicsPk, )
-
-
+> BimSnippet getFile(id, projectsPk, topicsPk)
 
 
 
@@ -3933,7 +3457,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3941,14 +3464,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getFile(id, projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getFile(id, projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3974,14 +3493,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getFiles"></a>
 # **getFiles**
-> [BimSnippet] getFiles(projectsPk, topicsPk, )
-
-
+> [BimSnippet] getFiles(projectsPk, topicsPk)
 
 
 
@@ -3989,7 +3506,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3997,12 +3513,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getFiles(projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getFiles(projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4027,14 +3540,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRelatedTopic"></a>
 # **getRelatedTopic**
-> RelatedTopic getRelatedTopic(id, projectsPk, topicsPk, )
-
-
+> RelatedTopic getRelatedTopic(id, projectsPk, topicsPk)
 
 
 
@@ -4042,7 +3553,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4050,14 +3560,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getRelatedTopic(id, projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getRelatedTopic(id, projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4083,14 +3589,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRelatedTopics"></a>
 # **getRelatedTopics**
-> [RelatedTopic] getRelatedTopics(projectsPk, topicsPk, )
-
-
+> [RelatedTopic] getRelatedTopics(projectsPk, topicsPk)
 
 
 
@@ -4098,7 +3602,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4106,12 +3609,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getRelatedTopics(projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getRelatedTopics(projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4136,14 +3636,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSelection"></a>
 # **getSelection**
-> Component getSelection(id, projectsPk, topicsPk, viewpointsPk, )
-
-
+> Component getSelection(id, projectsPk, topicsPk, viewpointsPk)
 
 
 
@@ -4151,7 +3649,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4159,16 +3656,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-apiInstance.getSelection(id, projectsPk, topicsPk, viewpointsPk, ).then(function(data) {
+apiInstance.getSelection(id, projectsPk, topicsPk, viewpointsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4195,14 +3687,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSelections"></a>
 # **getSelections**
-> [Component] getSelections(projectsPk, topicsPk, viewpointsPk, )
-
-
+> [Component] getSelections(projectsPk, topicsPk, viewpointsPk)
 
 
 
@@ -4210,7 +3700,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4218,14 +3707,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-apiInstance.getSelections(projectsPk, topicsPk, viewpointsPk, ).then(function(data) {
+apiInstance.getSelections(projectsPk, topicsPk, viewpointsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4251,7 +3736,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSnapshots"></a>
@@ -4260,13 +3745,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4274,13 +3756,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
 apiInstance.getSnapshots(projectsPk, topicsPk, viewpointsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -4307,14 +3785,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSnippet"></a>
 # **getSnippet**
-> BimSnippet getSnippet(id, projectsPk, topicsPk, )
-
-
+> BimSnippet getSnippet(id, projectsPk, topicsPk)
 
 
 
@@ -4322,7 +3798,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4330,14 +3805,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getSnippet(id, projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getSnippet(id, projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4363,14 +3834,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSnippets"></a>
 # **getSnippets**
-> [BimSnippet] getSnippets(projectsPk, topicsPk, )
-
-
+> [BimSnippet] getSnippets(projectsPk, topicsPk)
 
 
 
@@ -4378,7 +3847,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4386,12 +3854,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getSnippets(projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getSnippets(projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4416,14 +3881,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getTopic"></a>
 # **getTopic**
-> Topic getTopic(id, projectsPk, )
-
-
+> Topic getTopic(id, projectsPk)
 
 
 
@@ -4431,7 +3894,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4439,12 +3901,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
-apiInstance.getTopic(id, projectsPk, ).then(function(data) {
+apiInstance.getTopic(id, projectsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4469,14 +3928,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getTopicEvent"></a>
 # **getTopicEvent**
-> TopicEvents getTopicEvent(id, projectsPk, topicsPk, )
-
-
+> TopicEvents getTopicEvent(id, projectsPk, topicsPk)
 
 
 
@@ -4484,7 +3941,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4492,14 +3948,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getTopicEvent(id, projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getTopicEvent(id, projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4525,14 +3977,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getTopicEvents"></a>
 # **getTopicEvents**
-> [TopicEvents] getTopicEvents(projectsPk, topicsPk, )
-
-
+> [TopicEvents] getTopicEvents(projectsPk, topicsPk)
 
 
 
@@ -4540,7 +3990,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4548,12 +3997,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getTopicEvents(projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getTopicEvents(projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4578,14 +4024,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getTopics"></a>
 # **getTopics**
-> [Topic] getTopics(projectsPk, )
-
-
+> [Topic] getTopics(projectsPk)
 
 
 
@@ -4593,7 +4037,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4601,10 +4044,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
-apiInstance.getTopics(projectsPk, ).then(function(data) {
+apiInstance.getTopics(projectsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4628,14 +4069,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getViewpoint"></a>
 # **getViewpoint**
-> Viewpoint getViewpoint(id, projectsPk, topicsPk, )
-
-
+> Viewpoint getViewpoint(id, projectsPk, topicsPk)
 
 
 
@@ -4643,7 +4082,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4651,14 +4089,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getViewpoint(id, projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getViewpoint(id, projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4684,14 +4118,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getViewpoints"></a>
 # **getViewpoints**
-> [Viewpoint] getViewpoints(projectsPk, topicsPk, )
-
-
+> [Viewpoint] getViewpoints(projectsPk, topicsPk)
 
 
 
@@ -4699,7 +4131,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4707,12 +4138,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-apiInstance.getViewpoints(projectsPk, topicsPk, ).then(function(data) {
+apiInstance.getViewpoints(projectsPk, topicsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4737,14 +4165,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVisibilities"></a>
 # **getVisibilities**
-> [Visibility] getVisibilities(projectsPk, topicsPk, viewpointsPk, )
-
-
+> [Visibility] getVisibilities(projectsPk, topicsPk, viewpointsPk)
 
 
 
@@ -4752,7 +4178,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4760,14 +4185,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-apiInstance.getVisibilities(projectsPk, topicsPk, viewpointsPk, ).then(function(data) {
+apiInstance.getVisibilities(projectsPk, topicsPk, viewpointsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4793,14 +4214,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVisibility"></a>
 # **getVisibility**
-> Visibility getVisibility(id, projectsPk, topicsPk, viewpointsPk, )
-
-
+> Visibility getVisibility(id, projectsPk, topicsPk, viewpointsPk)
 
 
 
@@ -4808,7 +4227,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4816,16 +4234,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-apiInstance.getVisibility(id, projectsPk, topicsPk, viewpointsPk, ).then(function(data) {
+apiInstance.getVisibility(id, projectsPk, topicsPk, viewpointsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4852,7 +4265,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateBcfDocument"></a>
@@ -4861,13 +4274,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4875,13 +4285,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
-var opts = { 
-  'guid': "guid_example", // String | 
+var opts = {
+  'guid': null, // String | 
   'filename': "filename_example" // String | 
 };
 apiInstance.updateBcfDocument(id, projectsPk, opts).then(function() {
@@ -4898,7 +4305,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
- **guid** | [**String**](.md)|  | [optional] 
+ **guid** | [**String**](String.md)|  | [optional] 
  **filename** | **String**|  | [optional] 
 
 ### Return type
@@ -4912,13 +4319,11 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="updateBcfProject"></a>
 # **updateBcfProject**
-> BcfProject updateBcfProject(id, data)
-
-
+> BcfProject updateBcfProject(id, bcfProject)
 
 
 
@@ -4926,7 +4331,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4934,12 +4338,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
-var data = new bimdata.BcfProject(); // BcfProject | 
-
-apiInstance.updateBcfProject(id, data).then(function(data) {
+var bcfProject = new bimdata.BcfProject(); // BcfProject | 
+apiInstance.updateBcfProject(id, bcfProject).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4952,7 +4353,7 @@ apiInstance.updateBcfProject(id, data).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **data** | [**BcfProject**](BcfProject.md)|  | 
+ **bcfProject** | [**BcfProject**](BcfProject.md)|  | 
 
 ### Return type
 
@@ -4969,9 +4370,7 @@ Name | Type | Description  | Notes
 
 <a name="updateBitmap"></a>
 # **updateBitmap**
-> Bitmap updateBitmap(id, projectsPk, topicsPk, viewpointsPk, data)
-
-
+> Bitmap updateBitmap(id, projectsPk, topicsPk, viewpointsPk, bitmap)
 
 
 
@@ -4979,7 +4378,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4987,18 +4385,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-var data = new bimdata.Bitmap(); // Bitmap | 
-
-apiInstance.updateBitmap(id, projectsPk, topicsPk, viewpointsPk, data).then(function(data) {
+var bitmap = new bimdata.Bitmap(); // Bitmap | 
+apiInstance.updateBitmap(id, projectsPk, topicsPk, viewpointsPk, bitmap).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5014,7 +4406,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
  **viewpointsPk** | **String**|  | 
- **data** | [**Bitmap**](Bitmap.md)|  | 
+ **bitmap** | [**Bitmap**](Bitmap.md)|  | 
 
 ### Return type
 
@@ -5031,9 +4423,7 @@ Name | Type | Description  | Notes
 
 <a name="updateColoring"></a>
 # **updateColoring**
-> Coloring updateColoring(id, projectsPk, topicsPk, viewpointsPk, data)
-
-
+> Coloring updateColoring(id, projectsPk, topicsPk, viewpointsPk, coloring)
 
 
 
@@ -5041,7 +4431,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5049,18 +4438,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-var data = new bimdata.Coloring(); // Coloring | 
-
-apiInstance.updateColoring(id, projectsPk, topicsPk, viewpointsPk, data).then(function(data) {
+var coloring = new bimdata.Coloring(); // Coloring | 
+apiInstance.updateColoring(id, projectsPk, topicsPk, viewpointsPk, coloring).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5076,7 +4459,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
  **viewpointsPk** | **String**|  | 
- **data** | [**Coloring**](Coloring.md)|  | 
+ **coloring** | [**Coloring**](Coloring.md)|  | 
 
 ### Return type
 
@@ -5093,9 +4476,7 @@ Name | Type | Description  | Notes
 
 <a name="updateComment"></a>
 # **updateComment**
-> Comment updateComment(id, projectsPk, topicsPk, data)
-
-
+> Comment updateComment(id, projectsPk, topicsPk, comment)
 
 
 
@@ -5103,7 +4484,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5111,16 +4491,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.Comment(); // Comment | 
-
-apiInstance.updateComment(id, projectsPk, topicsPk, data).then(function(data) {
+var comment = new bimdata.Comment(); // Comment | 
+apiInstance.updateComment(id, projectsPk, topicsPk, comment).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5135,7 +4510,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**Comment**](Comment.md)|  | 
+ **comment** | [**Comment**](Comment.md)|  | 
 
 ### Return type
 
@@ -5152,9 +4527,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCommentEvent"></a>
 # **updateCommentEvent**
-> CommentEvent updateCommentEvent(id, projectsPk, topicsPk, data)
-
-
+> CommentEvent updateCommentEvent(id, projectsPk, topicsPk, commentEvent)
 
 
 
@@ -5162,7 +4535,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5170,16 +4542,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.CommentEvent(); // CommentEvent | 
-
-apiInstance.updateCommentEvent(id, projectsPk, topicsPk, data).then(function(data) {
+var commentEvent = new bimdata.CommentEvent(); // CommentEvent | 
+apiInstance.updateCommentEvent(id, projectsPk, topicsPk, commentEvent).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5194,7 +4561,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**CommentEvent**](CommentEvent.md)|  | 
+ **commentEvent** | [**CommentEvent**](CommentEvent.md)|  | 
 
 ### Return type
 
@@ -5211,9 +4578,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCommentEvent_0"></a>
 # **updateCommentEvent_0**
-> CommentEvent updateCommentEvent_0(commentsPk, id, projectsPk, topicsPk, data)
-
-
+> CommentEvent updateCommentEvent_0(commentsPk, id, projectsPk, topicsPk, commentEvent)
 
 
 
@@ -5221,7 +4586,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5229,18 +4593,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var commentsPk = "commentsPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.CommentEvent(); // CommentEvent | 
-
-apiInstance.updateCommentEvent_0(commentsPk, id, projectsPk, topicsPk, data).then(function(data) {
+var commentEvent = new bimdata.CommentEvent(); // CommentEvent | 
+apiInstance.updateCommentEvent_0(commentsPk, id, projectsPk, topicsPk, commentEvent).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5256,7 +4614,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**CommentEvent**](CommentEvent.md)|  | 
+ **commentEvent** | [**CommentEvent**](CommentEvent.md)|  | 
 
 ### Return type
 
@@ -5273,9 +4631,7 @@ Name | Type | Description  | Notes
 
 <a name="updateDocumentReference"></a>
 # **updateDocumentReference**
-> DocumentReference updateDocumentReference(id, projectsPk, topicsPk, data)
-
-
+> DocumentReference updateDocumentReference(id, projectsPk, topicsPk, documentReference)
 
 
 
@@ -5283,7 +4639,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5291,16 +4646,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.DocumentReference(); // DocumentReference | 
-
-apiInstance.updateDocumentReference(id, projectsPk, topicsPk, data).then(function(data) {
+var documentReference = new bimdata.DocumentReference(); // DocumentReference | 
+apiInstance.updateDocumentReference(id, projectsPk, topicsPk, documentReference).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5315,7 +4665,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**DocumentReference**](DocumentReference.md)|  | 
+ **documentReference** | [**DocumentReference**](DocumentReference.md)|  | 
 
 ### Return type
 
@@ -5332,9 +4682,7 @@ Name | Type | Description  | Notes
 
 <a name="updateFile"></a>
 # **updateFile**
-> BimSnippet updateFile(id, projectsPk, topicsPk, data)
-
-
+> BimSnippet updateFile(id, projectsPk, topicsPk, bimSnippet)
 
 
 
@@ -5342,7 +4690,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5350,16 +4697,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.BimSnippet(); // BimSnippet | 
-
-apiInstance.updateFile(id, projectsPk, topicsPk, data).then(function(data) {
+var bimSnippet = new bimdata.BimSnippet(); // BimSnippet | 
+apiInstance.updateFile(id, projectsPk, topicsPk, bimSnippet).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5374,7 +4716,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**BimSnippet**](BimSnippet.md)|  | 
+ **bimSnippet** | [**BimSnippet**](BimSnippet.md)|  | 
 
 ### Return type
 
@@ -5391,9 +4733,7 @@ Name | Type | Description  | Notes
 
 <a name="updateRelatedTopic"></a>
 # **updateRelatedTopic**
-> RelatedTopic updateRelatedTopic(id, projectsPk, topicsPk, data)
-
-
+> RelatedTopic updateRelatedTopic(id, projectsPk, topicsPk, relatedTopic)
 
 
 
@@ -5401,7 +4741,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5409,16 +4748,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.RelatedTopic(); // RelatedTopic | 
-
-apiInstance.updateRelatedTopic(id, projectsPk, topicsPk, data).then(function(data) {
+var relatedTopic = new bimdata.RelatedTopic(); // RelatedTopic | 
+apiInstance.updateRelatedTopic(id, projectsPk, topicsPk, relatedTopic).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5433,7 +4767,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**RelatedTopic**](RelatedTopic.md)|  | 
+ **relatedTopic** | [**RelatedTopic**](RelatedTopic.md)|  | 
 
 ### Return type
 
@@ -5450,9 +4784,7 @@ Name | Type | Description  | Notes
 
 <a name="updateSelection"></a>
 # **updateSelection**
-> Component updateSelection(id, projectsPk, topicsPk, viewpointsPk, data)
-
-
+> Component updateSelection(id, projectsPk, topicsPk, viewpointsPk, component)
 
 
 
@@ -5460,7 +4792,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5468,18 +4799,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-var data = new bimdata.Component(); // Component | 
-
-apiInstance.updateSelection(id, projectsPk, topicsPk, viewpointsPk, data).then(function(data) {
+var component = new bimdata.Component(); // Component | 
+apiInstance.updateSelection(id, projectsPk, topicsPk, viewpointsPk, component).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5495,7 +4820,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
  **viewpointsPk** | **String**|  | 
- **data** | [**Component**](Component.md)|  | 
+ **component** | [**Component**](Component.md)|  | 
 
 ### Return type
 
@@ -5512,9 +4837,7 @@ Name | Type | Description  | Notes
 
 <a name="updateSnippet"></a>
 # **updateSnippet**
-> BimSnippet updateSnippet(id, projectsPk, topicsPk, data)
-
-
+> BimSnippet updateSnippet(id, projectsPk, topicsPk, bimSnippet)
 
 
 
@@ -5522,7 +4845,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5530,16 +4852,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.BimSnippet(); // BimSnippet | 
-
-apiInstance.updateSnippet(id, projectsPk, topicsPk, data).then(function(data) {
+var bimSnippet = new bimdata.BimSnippet(); // BimSnippet | 
+apiInstance.updateSnippet(id, projectsPk, topicsPk, bimSnippet).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5554,7 +4871,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**BimSnippet**](BimSnippet.md)|  | 
+ **bimSnippet** | [**BimSnippet**](BimSnippet.md)|  | 
 
 ### Return type
 
@@ -5571,9 +4888,7 @@ Name | Type | Description  | Notes
 
 <a name="updateTopic"></a>
 # **updateTopic**
-> Topic updateTopic(id, projectsPk, data)
-
-
+> Topic updateTopic(id, projectsPk, topic)
 
 
 
@@ -5581,7 +4896,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5589,14 +4903,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
-var data = new bimdata.Topic(); // Topic | 
-
-apiInstance.updateTopic(id, projectsPk, data).then(function(data) {
+var topic = new bimdata.Topic(); // Topic | 
+apiInstance.updateTopic(id, projectsPk, topic).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5610,7 +4920,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
- **data** | [**Topic**](Topic.md)|  | 
+ **topic** | [**Topic**](Topic.md)|  | 
 
 ### Return type
 
@@ -5627,9 +4937,7 @@ Name | Type | Description  | Notes
 
 <a name="updateTopicEvent"></a>
 # **updateTopicEvent**
-> TopicEvents updateTopicEvent(id, projectsPk, topicsPk, data)
-
-
+> TopicEvents updateTopicEvent(id, projectsPk, topicsPk, topicEvents)
 
 
 
@@ -5637,7 +4945,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5645,16 +4952,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.TopicEvents(); // TopicEvents | 
-
-apiInstance.updateTopicEvent(id, projectsPk, topicsPk, data).then(function(data) {
+var topicEvents = new bimdata.TopicEvents(); // TopicEvents | 
+apiInstance.updateTopicEvent(id, projectsPk, topicsPk, topicEvents).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5669,7 +4971,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**TopicEvents**](TopicEvents.md)|  | 
+ **topicEvents** | [**TopicEvents**](TopicEvents.md)|  | 
 
 ### Return type
 
@@ -5686,9 +4988,7 @@ Name | Type | Description  | Notes
 
 <a name="updateViewpoint"></a>
 # **updateViewpoint**
-> Viewpoint updateViewpoint(id, projectsPk, topicsPk, data)
-
-
+> Viewpoint updateViewpoint(id, projectsPk, topicsPk, viewpoint)
 
 
 
@@ -5696,7 +4996,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5704,16 +5003,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
-var data = new bimdata.Viewpoint(); // Viewpoint | 
-
-apiInstance.updateViewpoint(id, projectsPk, topicsPk, data).then(function(data) {
+var viewpoint = new bimdata.Viewpoint(); // Viewpoint | 
+apiInstance.updateViewpoint(id, projectsPk, topicsPk, viewpoint).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5728,7 +5022,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **data** | [**Viewpoint**](Viewpoint.md)|  | 
+ **viewpoint** | [**Viewpoint**](Viewpoint.md)|  | 
 
 ### Return type
 
@@ -5745,9 +5039,7 @@ Name | Type | Description  | Notes
 
 <a name="updateVisibility"></a>
 # **updateVisibility**
-> Visibility updateVisibility(id, projectsPk, topicsPk, viewpointsPk, data)
-
-
+> Visibility updateVisibility(id, projectsPk, topicsPk, viewpointsPk, visibility)
 
 
 
@@ -5755,7 +5047,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5763,18 +5054,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-
 var id = "id_example"; // String | 
-
 var projectsPk = "projectsPk_example"; // String | 
-
 var topicsPk = "topicsPk_example"; // String | 
-
 var viewpointsPk = "viewpointsPk_example"; // String | 
-
-var data = new bimdata.Visibility(); // Visibility | 
-
-apiInstance.updateVisibility(id, projectsPk, topicsPk, viewpointsPk, data).then(function(data) {
+var visibility = new bimdata.Visibility(); // Visibility | 
+apiInstance.updateVisibility(id, projectsPk, topicsPk, viewpointsPk, visibility).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5790,7 +5075,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
  **viewpointsPk** | **String**|  | 
- **data** | [**Visibility**](Visibility.md)|  | 
+ **visibility** | [**Visibility**](Visibility.md)|  | 
 
 ### Return type
 

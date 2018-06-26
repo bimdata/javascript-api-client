@@ -1,6 +1,6 @@
 # bimdata.UserApi
 
-All URIs are relative to *https://api-beta.bimdata.io*
+All URIs are relative to *https://api-beta.bimdata.io/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,9 +19,7 @@ Method | HTTP request | Description
 
 <a name="askResetPasswordToken"></a>
 # **askResetPasswordToken**
-> askResetPasswordToken(data)
-
-
+> askResetPasswordToken(forgotPassword)
 
 
 
@@ -29,7 +27,6 @@ Method | HTTP request | Description
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -37,10 +34,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
-
-var data = new bimdata.ForgotPassword(); // ForgotPassword | 
-
-apiInstance.askResetPasswordToken(data).then(function() {
+var forgotPassword = new bimdata.ForgotPassword(); // ForgotPassword | 
+apiInstance.askResetPasswordToken(forgotPassword).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -52,7 +47,7 @@ apiInstance.askResetPasswordToken(data).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**ForgotPassword**](ForgotPassword.md)|  | 
+ **forgotPassword** | [**ForgotPassword**](ForgotPassword.md)|  | 
 
 ### Return type
 
@@ -65,13 +60,11 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="fullUpdateNotification"></a>
 # **fullUpdateNotification**
-> Notification fullUpdateNotification(id, data)
-
-
+> Notification fullUpdateNotification(id, notification)
 
 
 
@@ -79,7 +72,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -87,12 +79,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
-
 var id = "id_example"; // String | 
-
-var data = new bimdata.Notification(); // Notification | 
-
-apiInstance.fullUpdateNotification(id, data).then(function(data) {
+var notification = new bimdata.Notification(); // Notification | 
+apiInstance.fullUpdateNotification(id, notification).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -105,7 +94,7 @@ apiInstance.fullUpdateNotification(id, data).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **data** | [**Notification**](Notification.md)|  | 
+ **notification** | [**Notification**](Notification.md)|  | 
 
 ### Return type
 
@@ -122,9 +111,7 @@ Name | Type | Description  | Notes
 
 <a name="getNotification"></a>
 # **getNotification**
-> Notification getNotification(id, )
-
-
+> Notification getNotification(id)
 
 
 
@@ -132,7 +119,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -140,10 +126,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
-
 var id = "id_example"; // String | 
-
-apiInstance.getNotification(id, ).then(function(data) {
+apiInstance.getNotification(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -167,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSelfNotifications"></a>
@@ -176,13 +160,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -211,7 +192,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSelfProjects"></a>
@@ -220,13 +201,10 @@ This endpoint does not need any parameter.
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -255,7 +233,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSelfUser"></a>
@@ -264,13 +242,10 @@ This endpoint does not need any parameter.
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -299,14 +274,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="resetPassword"></a>
 # **resetPassword**
-> resetPassword(data)
-
-
+> resetPassword(resetPassword)
 
 
 
@@ -314,7 +287,6 @@ This endpoint does not need any parameter.
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -322,10 +294,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
-
-var data = new bimdata.ResetPassword(); // ResetPassword | 
-
-apiInstance.resetPassword(data).then(function() {
+var resetPassword = new bimdata.ResetPassword(); // ResetPassword | 
+apiInstance.resetPassword(resetPassword).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -337,7 +307,7 @@ apiInstance.resetPassword(data).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**ResetPassword**](ResetPassword.md)|  | 
+ **resetPassword** | [**ResetPassword**](ResetPassword.md)|  | 
 
 ### Return type
 
@@ -350,13 +320,11 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="signUp"></a>
 # **signUp**
-> SignupFosUser signUp(data)
-
-
+> SignupFosUser signUp(signupFosUser)
 
 
 
@@ -364,7 +332,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -372,10 +339,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
-
-var data = new bimdata.SignupFosUser(); // SignupFosUser | 
-
-apiInstance.signUp(data).then(function(data) {
+var signupFosUser = new bimdata.SignupFosUser(); // SignupFosUser | 
+apiInstance.signUp(signupFosUser).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -387,7 +352,7 @@ apiInstance.signUp(data).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**SignupFosUser**](SignupFosUser.md)|  | 
+ **signupFosUser** | [**SignupFosUser**](SignupFosUser.md)|  | 
 
 ### Return type
 
@@ -404,9 +369,7 @@ Name | Type | Description  | Notes
 
 <a name="signUpWithInvitationToken"></a>
 # **signUpWithInvitationToken**
-> SignupFosUser signUpWithInvitationToken(data)
-
-
+> SignupFosUser signUpWithInvitationToken(invitedSignUp)
 
 
 
@@ -414,7 +377,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -422,10 +384,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
-
-var data = new bimdata.InvitedSignUp(); // InvitedSignUp | 
-
-apiInstance.signUpWithInvitationToken(data).then(function(data) {
+var invitedSignUp = new bimdata.InvitedSignUp(); // InvitedSignUp | 
+apiInstance.signUpWithInvitationToken(invitedSignUp).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -437,7 +397,7 @@ apiInstance.signUpWithInvitationToken(data).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**InvitedSignUp**](InvitedSignUp.md)|  | 
+ **invitedSignUp** | [**InvitedSignUp**](InvitedSignUp.md)|  | 
 
 ### Return type
 
@@ -454,9 +414,7 @@ Name | Type | Description  | Notes
 
 <a name="updateNotification"></a>
 # **updateNotification**
-> Notification updateNotification(id, data)
-
-
+> Notification updateNotification(id, notification)
 
 
 
@@ -464,7 +422,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -472,12 +429,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
-
 var id = "id_example"; // String | 
-
-var data = new bimdata.Notification(); // Notification | 
-
-apiInstance.updateNotification(id, data).then(function(data) {
+var notification = new bimdata.Notification(); // Notification | 
+apiInstance.updateNotification(id, notification).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -490,7 +444,7 @@ apiInstance.updateNotification(id, data).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **data** | [**Notification**](Notification.md)|  | 
+ **notification** | [**Notification**](Notification.md)|  | 
 
 ### Return type
 
@@ -507,9 +461,7 @@ Name | Type | Description  | Notes
 
 <a name="updateSelfUser"></a>
 # **updateSelfUser**
-> FosUser updateSelfUser(data)
-
-
+> FosUser updateSelfUser(selfFosUser)
 
 
 
@@ -517,7 +469,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -525,10 +476,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.UserApi();
-
-var data = new bimdata.SelfFosUser(); // SelfFosUser | 
-
-apiInstance.updateSelfUser(data).then(function(data) {
+var selfFosUser = new bimdata.SelfFosUser(); // SelfFosUser | 
+apiInstance.updateSelfUser(selfFosUser).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -540,7 +489,7 @@ apiInstance.updateSelfUser(data).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**SelfFosUser**](SelfFosUser.md)|  | 
+ **selfFosUser** | [**SelfFosUser**](SelfFosUser.md)|  | 
 
 ### Return type
 
