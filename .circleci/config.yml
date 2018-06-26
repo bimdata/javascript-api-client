@@ -57,9 +57,10 @@ jobs:
     steps:
       - *restore_repo
       - *restore_npm_cache
+      - add_ssh_keys
       - run:
           name: Avoid hosts unknown for github
-          command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+          command: echo -e " StrictHostKeyChecking no\n" >> ~/.ssh/config
       - run: npx semantic-release -e ./config/release.config.js --debug
 
 
