@@ -123,6 +123,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property defaultCloudId (base name: "default_cloud_id")', function() {
+      // uncomment below and update the code to test the property defaultCloudId
+      //var instance = new bimdata.SelfFosUser();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property defaultProjectId (base name: "default_project_id")', function() {
+      // uncomment below and update the code to test the property defaultProjectId
+      //var instance = new bimdata.SelfFosUser();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

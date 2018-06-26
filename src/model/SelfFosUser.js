@@ -63,6 +63,8 @@
 
 
 
+
+
   };
 
   /**
@@ -108,6 +110,12 @@
       }
       if (data.hasOwnProperty('last_login')) {
         obj['last_login'] = ApiClient.convertToType(data['last_login'], 'Date');
+      }
+      if (data.hasOwnProperty('default_cloud_id')) {
+        obj['default_cloud_id'] = ApiClient.convertToType(data['default_cloud_id'], 'String');
+      }
+      if (data.hasOwnProperty('default_project_id')) {
+        obj['default_project_id'] = ApiClient.convertToType(data['default_project_id'], 'String');
       }
     }
     return obj;
@@ -157,6 +165,14 @@
    * @member {Date} last_login
    */
   exports.prototype['last_login'] = undefined;
+  /**
+   * @member {String} default_cloud_id
+   */
+  exports.prototype['default_cloud_id'] = undefined;
+  /**
+   * @member {String} default_project_id
+   */
+  exports.prototype['default_project_id'] = undefined;
 
 
 
