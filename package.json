@@ -5,7 +5,8 @@
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --recursive"
+    "test": "./node_modules/mocha/bin/mocha --recursive",
+    "build": "webpack"
   },
   "browser": {
     "fs": false
