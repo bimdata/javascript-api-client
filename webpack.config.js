@@ -1,8 +1,8 @@
 const path = require('path')
 const webpack = require("webpack");
-const env = process.env.NODE_ENV || 'dev';
 
 let config = {
+    mode: 'production',
     entry: {
         'javascript-api-client': './src/index.js',
     },

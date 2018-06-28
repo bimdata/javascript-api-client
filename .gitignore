@@ -77,4 +77,4 @@ typings/
 .serverless
 
 # Build directory
-./dist
+dist/
