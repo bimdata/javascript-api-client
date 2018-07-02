@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **creator** | [**FosUser**](FosUser.md) |  | [optional] 
 **name** | **String** |  | [optional] 
 **checkplanId** | **Number** |  | [optional] 
-**results** | **[Object]** |  | [optional] 
+**results** | [**[IfcCheckerResults]**](IfcCheckerResults.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
-**checkplan** | **Object** |  | [optional] 
+**checkplan** | [**IfcCheckerCheckplan**](IfcCheckerCheckplan.md) |  | [optional] 
 
 
