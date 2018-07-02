@@ -44,14 +44,13 @@
    * Constructs a new <code>Space</code>.
    * @alias module:model/Space
    * @class
-   * @param name {String} 
    * @param uuid {String} 
    */
-  var exports = function(name, uuid) {
+  var exports = function(uuid) {
     var _this = this;
 
 
-    _this['name'] = name;
+
 
     _this['uuid'] = uuid;
 
