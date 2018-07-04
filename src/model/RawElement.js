@@ -46,18 +46,15 @@
    * @class
    * @param uuid {String} 
    * @param type {String} 
-   * @param attributes {Number} 
-   * @param psets {Array.<Number>} 
-   * @param classifications {Array.<Number>} 
    */
-  var exports = function(uuid, type, attributes, psets, classifications) {
+  var exports = function(uuid, type) {
     var _this = this;
 
     _this['uuid'] = uuid;
     _this['type'] = type;
-    _this['attributes'] = attributes;
-    _this['psets'] = psets;
-    _this['classifications'] = classifications;
+
+
+
   };
 
   /**

@@ -44,19 +44,15 @@
    * Constructs a new <code>RawElements</code>.
    * @alias module:model/RawElements
    * @class
-   * @param units {Array.<module:model/RawUnit>} 
-   * @param definitions {Array.<module:model/RawDefinition>} 
-   * @param propertySets {Array.<module:model/RawPropertySet>} 
-   * @param classifications {Array.<module:model/Classification>} 
    * @param elements {Array.<module:model/RawElement>} 
    */
-  var exports = function(units, definitions, propertySets, classifications, elements) {
+  var exports = function(elements) {
     var _this = this;
 
-    _this['units'] = units;
-    _this['definitions'] = definitions;
-    _this['property_sets'] = propertySets;
-    _this['classifications'] = classifications;
+
+
+
+
     _this['elements'] = elements;
   };
 

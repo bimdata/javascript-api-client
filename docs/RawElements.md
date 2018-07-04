@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**units** | [**[RawUnit]**](RawUnit.md) |  | 
-**definitions** | [**[RawDefinition]**](RawDefinition.md) |  | 
-**propertySets** | [**[RawPropertySet]**](RawPropertySet.md) |  | 
-**classifications** | [**[Classification]**](Classification.md) |  | 
+**units** | [**[RawUnit]**](RawUnit.md) |  | [optional] 
+**definitions** | [**[RawDefinition]**](RawDefinition.md) |  | [optional] 
+**propertySets** | [**[RawPropertySet]**](RawPropertySet.md) |  | [optional] 
+**classifications** | [**[Classification]**](Classification.md) |  | [optional] 
 **elements** | [**[RawElement]**](RawElement.md) |  | 
 
 

@@ -45,14 +45,13 @@
    * @alias module:model/RawUnit
    * @class
    * @param type {String} 
-   * @param unitType {String} 
    */
-  var exports = function(type, unitType) {
+  var exports = function(type) {
     var _this = this;
 
 
     _this['type'] = type;
-    _this['unit_type'] = unitType;
+
 
 
 

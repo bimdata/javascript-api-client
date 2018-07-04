@@ -44,14 +44,13 @@
    * Constructs a new <code>PropertyDefinition</code>.
    * @alias module:model/PropertyDefinition
    * @class
-   * @param name {String} 
    */
-  var exports = function(name) {
+  var exports = function() {
     var _this = this;
 
 
 
-    _this['name'] = name;
+
 
 
 

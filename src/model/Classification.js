@@ -44,15 +44,13 @@
    * Constructs a new <code>Classification</code>.
    * @alias module:model/Classification
    * @class
-   * @param name {String} 
-   * @param notation {String} 
    */
-  var exports = function(name, notation) {
+  var exports = function() {
     var _this = this;
 
 
-    _this['name'] = name;
-    _this['notation'] = notation;
+
+
 
   };
 
