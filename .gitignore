@@ -78,3 +78,5 @@ typings/
 
 # Build directory
 dist/
+
+.idea

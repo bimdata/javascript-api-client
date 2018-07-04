@@ -24,3 +24,4 @@
 
 package.json
 webpack.config.js
+src/global.js

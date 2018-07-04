@@ -6,7 +6,10 @@
   "main": "src/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive",
-    "build": "webpack"
+    "build": "npm run browserify && npm run min",
+    "min": "uglifyjs  ./dist/javascript-api-client.js -c -m  -o ./dist/javascript-api-client.min.js",
+    "browserify": "browserify ./src/global.js > ./dist/bundle.js",
+    "build:webpack": "webpack"
   },
   "browser": {
     "fs": false
@@ -16,9 +19,11 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "superagent": "^3.5.2",
+    "uglify-js": "^3.4.3",
     "webpack": "^4.12.2"
   },
   "devDependencies": {
+    "browserify": "^16.2.2",
     "expect.js": "~0.3.1",
     "mocha": "~2.3.4",
     "sinon": "1.17.3",
