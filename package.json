@@ -8,7 +8,7 @@
     "test": "./node_modules/mocha/bin/mocha --recursive",
     "build": "npm run browserify && npm run min",
     "min": "uglifyjs  ./dist/javascript-api-client.js -c -m  -o ./dist/javascript-api-client.min.js",
-    "browserify": "browserify ./src/global.js > ./dist/bundle.js",
+    "browserify": "browserify ./src/global.js > ./dist/javascript-api-client.js",
     "build:webpack": "webpack"
   },
   "browser": {
