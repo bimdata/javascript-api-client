@@ -44,13 +44,12 @@
    * Constructs a new <code>RawDefinition</code>.
    * @alias module:model/RawDefinition
    * @class
-   * @param name {String} 
    */
-  var exports = function(name) {
+  var exports = function() {
     var _this = this;
 
 
-    _this['name'] = name;
+
 
 
 
