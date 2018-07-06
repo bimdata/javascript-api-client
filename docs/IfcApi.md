@@ -1,6 +1,6 @@
 # bimdata.IfcApi
 
-All URIs are relative to *https://api-staging.bimdata.io*
+All URIs are relative to *https://api-beta.bimdata.io/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -114,7 +114,6 @@ Method | HTTP request | Description
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -122,13 +121,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.bulkDeleteIfcClassifications(cloudPk, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -155,8 +150,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bulkDeleteIfcProperties"></a>
 # **bulkDeleteIfcProperties**
@@ -170,7 +165,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -178,13 +172,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.bulkDeleteIfcProperties(cloudPk, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -211,8 +201,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bulkDeleteIfcPropertyDefinitions"></a>
 # **bulkDeleteIfcPropertyDefinitions**
@@ -226,7 +216,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -234,13 +223,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.bulkDeleteIfcPropertyDefinitions(cloudPk, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -267,8 +252,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bulkDeleteIfcUnits"></a>
 # **bulkDeleteIfcUnits**
@@ -282,7 +267,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -290,13 +274,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.bulkDeleteIfcUnits(cloudPk, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -323,8 +303,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bulkDeletePropertySet"></a>
 # **bulkDeletePropertySet**
@@ -338,7 +318,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -346,13 +325,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.bulkDeletePropertySet(cloudPk, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -379,12 +354,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bulkFullUpdateElements"></a>
 # **bulkFullUpdateElements**
-> [Element] bulkFullUpdateElements(cloudPk, ifcPk, projectPk, data)
+> [Element] bulkFullUpdateElements(cloudPk, ifcPk, projectPk, element)
 
 
 
@@ -394,7 +369,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -402,16 +376,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.Element()]; // [Element] | 
-
-apiInstance.bulkFullUpdateElements(cloudPk, ifcPk, projectPk, data).then(function(data) {
+var element = [new bimdata.Element()]; // [Element] | 
+apiInstance.bulkFullUpdateElements(cloudPk, ifcPk, projectPk, element).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -426,7 +395,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Element]**](Element.md)|  | 
+ **element** | [**[Element]**](Array.md)|  | 
 
 ### Return type
 
@@ -443,7 +412,7 @@ Name | Type | Description  | Notes
 
 <a name="bulkFullUpdateIfcProperty"></a>
 # **bulkFullUpdateIfcProperty**
-> [Property] bulkFullUpdateIfcProperty(cloudPk, ifcPk, projectPk, data)
+> [Property] bulkFullUpdateIfcProperty(cloudPk, ifcPk, projectPk, property)
 
 
 
@@ -453,7 +422,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -461,16 +429,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.Property()]; // [Property] | 
-
-apiInstance.bulkFullUpdateIfcProperty(cloudPk, ifcPk, projectPk, data).then(function(data) {
+var property = [new bimdata.Property()]; // [Property] | 
+apiInstance.bulkFullUpdateIfcProperty(cloudPk, ifcPk, projectPk, property).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -485,7 +448,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Property]**](Property.md)|  | 
+ **property** | [**[Property]**](Array.md)|  | 
 
 ### Return type
 
@@ -512,7 +475,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -520,15 +482,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.bulkRemoveClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -556,8 +513,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bulkRemoveElementsFromClassification"></a>
 # **bulkRemoveElementsFromClassification**
@@ -571,7 +528,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -579,15 +535,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcClassificationPk = "ifcClassificationPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.bulkRemoveElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -615,12 +566,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="bulkUpdateElements"></a>
 # **bulkUpdateElements**
-> [Element] bulkUpdateElements(cloudPk, ifcPk, projectPk, data)
+> [Element] bulkUpdateElements(cloudPk, ifcPk, projectPk, element)
 
 
 
@@ -630,7 +581,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -638,16 +588,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.Element()]; // [Element] | 
-
-apiInstance.bulkUpdateElements(cloudPk, ifcPk, projectPk, data).then(function(data) {
+var element = [new bimdata.Element()]; // [Element] | 
+apiInstance.bulkUpdateElements(cloudPk, ifcPk, projectPk, element).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -662,7 +607,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Element]**](Element.md)|  | 
+ **element** | [**[Element]**](Array.md)|  | 
 
 ### Return type
 
@@ -679,7 +624,7 @@ Name | Type | Description  | Notes
 
 <a name="bulkUpdateIfcProperty"></a>
 # **bulkUpdateIfcProperty**
-> [Property] bulkUpdateIfcProperty(cloudPk, ifcPk, projectPk, data)
+> [Property] bulkUpdateIfcProperty(cloudPk, ifcPk, projectPk, property)
 
 
 
@@ -689,7 +634,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -697,16 +641,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.Property()]; // [Property] | 
-
-apiInstance.bulkUpdateIfcProperty(cloudPk, ifcPk, projectPk, data).then(function(data) {
+var property = [new bimdata.Property()]; // [Property] | 
+apiInstance.bulkUpdateIfcProperty(cloudPk, ifcPk, projectPk, property).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -721,7 +660,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Property]**](Property.md)|  | 
+ **property** | [**[Property]**](Array.md)|  | 
 
 ### Return type
 
@@ -738,7 +677,7 @@ Name | Type | Description  | Notes
 
 <a name="createClassificationElementRelations"></a>
 # **createClassificationElementRelations**
-> createClassificationElementRelations(cloudPk, ifcPk, projectPk, data)
+> createClassificationElementRelations(cloudPk, ifcPk, projectPk, elementClassificationRelation)
 
 
 
@@ -748,7 +687,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -756,16 +694,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.ElementClassificationRelation()]; // [ElementClassificationRelation] | 
-
-apiInstance.createClassificationElementRelations(cloudPk, ifcPk, projectPk, data).then(function() {
+var elementClassificationRelation = [new bimdata.ElementClassificationRelation()]; // [ElementClassificationRelation] | 
+apiInstance.createClassificationElementRelations(cloudPk, ifcPk, projectPk, elementClassificationRelation).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -780,7 +713,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[ElementClassificationRelation]**](ElementClassificationRelation.md)|  | 
+ **elementClassificationRelation** | [**[ElementClassificationRelation]**](Array.md)|  | 
 
 ### Return type
 
@@ -793,11 +726,11 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="createClassificationsOfElement"></a>
 # **createClassificationsOfElement**
-> [Classification] createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data)
+> [Classification] createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, classification)
 
 
 
@@ -807,7 +740,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -815,18 +747,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.Classification()]; // [Classification] | 
-
-apiInstance.createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data).then(function(data) {
+var classification = [new bimdata.Classification()]; // [Classification] | 
+apiInstance.createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, classification).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -842,7 +768,7 @@ Name | Type | Description  | Notes
  **elementUuid** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Classification]**](Classification.md)|  | 
+ **classification** | [**[Classification]**](Array.md)|  | 
 
 ### Return type
 
@@ -859,7 +785,7 @@ Name | Type | Description  | Notes
 
 <a name="createElement"></a>
 # **createElement**
-> [Element] createElement(cloudPk, ifcPk, projectPk, data)
+> [Element] createElement(cloudPk, ifcPk, projectPk, element)
 
 
 
@@ -869,7 +795,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -877,16 +802,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.Element()]; // [Element] | 
-
-apiInstance.createElement(cloudPk, ifcPk, projectPk, data).then(function(data) {
+var element = [new bimdata.Element()]; // [Element] | 
+apiInstance.createElement(cloudPk, ifcPk, projectPk, element).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -901,7 +821,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Element]**](Element.md)|  | 
+ **element** | [**[Element]**](Array.md)|  | 
 
 ### Return type
 
@@ -918,7 +838,7 @@ Name | Type | Description  | Notes
 
 <a name="createElementPropertySet"></a>
 # **createElementPropertySet**
-> createElementPropertySet(cloudPk, elementUuid, ifcPk, projectPk, data)
+> createElementPropertySet(cloudPk, elementUuid, ifcPk, projectPk, propertySet)
 
 
 
@@ -928,7 +848,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -936,18 +855,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.PropertySet(); // PropertySet | 
-
-apiInstance.createElementPropertySet(cloudPk, elementUuid, ifcPk, projectPk, data).then(function() {
+var propertySet = new bimdata.PropertySet(); // PropertySet | 
+apiInstance.createElementPropertySet(cloudPk, elementUuid, ifcPk, projectPk, propertySet).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -963,7 +876,7 @@ Name | Type | Description  | Notes
  **elementUuid** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**PropertySet**](PropertySet.md)|  | 
+ **propertySet** | [**PropertySet**](PropertySet.md)|  | 
 
 ### Return type
 
@@ -976,13 +889,11 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="createElementPropertySetProperty"></a>
 # **createElementPropertySetProperty**
-> Property createElementPropertySetProperty(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, data)
-
-
+> Property createElementPropertySetProperty(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, property)
 
 
 
@@ -990,7 +901,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -998,20 +908,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var propertysetPk = "propertysetPk_example"; // String | 
-
-var data = new bimdata.Property(); // Property | 
-
-apiInstance.createElementPropertySetProperty(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, data).then(function(data) {
+var property = new bimdata.Property(); // Property | 
+apiInstance.createElementPropertySetProperty(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, property).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1028,7 +931,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **propertysetPk** | **String**|  | 
- **data** | [**Property**](Property.md)|  | 
+ **property** | [**Property**](Property.md)|  | 
 
 ### Return type
 
@@ -1045,9 +948,7 @@ Name | Type | Description  | Notes
 
 <a name="createElementPropertySetPropertyDefinition"></a>
 # **createElementPropertySetPropertyDefinition**
-> PropertyDefinition createElementPropertySetPropertyDefinition(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, data)
-
-
+> PropertyDefinition createElementPropertySetPropertyDefinition(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, propertyDefinition)
 
 
 
@@ -1055,7 +956,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1063,22 +963,14 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var propertyPk = "propertyPk_example"; // String | 
-
 var propertysetPk = "propertysetPk_example"; // String | 
-
-var data = new bimdata.PropertyDefinition(); // PropertyDefinition | 
-
-apiInstance.createElementPropertySetPropertyDefinition(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, data).then(function(data) {
+var propertyDefinition = new bimdata.PropertyDefinition(); // PropertyDefinition | 
+apiInstance.createElementPropertySetPropertyDefinition(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, propertyDefinition).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1096,7 +988,7 @@ Name | Type | Description  | Notes
  **projectPk** | **String**|  | 
  **propertyPk** | **String**|  | 
  **propertysetPk** | **String**|  | 
- **data** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
+ **propertyDefinition** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
 
 ### Return type
 
@@ -1113,9 +1005,7 @@ Name | Type | Description  | Notes
 
 <a name="createElementPropertySetPropertyDefinitionUnit"></a>
 # **createElementPropertySetPropertyDefinitionUnit**
-> Unit createElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data)
-
-
+> Unit createElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, unit)
 
 
 
@@ -1123,7 +1013,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1131,24 +1020,15 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var propertyPk = "propertyPk_example"; // String | 
-
 var propertydefinitionPk = "propertydefinitionPk_example"; // String | 
-
 var propertysetPk = "propertysetPk_example"; // String | 
-
-var data = new bimdata.Unit(); // Unit | 
-
-apiInstance.createElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data).then(function(data) {
+var unit = new bimdata.Unit(); // Unit | 
+apiInstance.createElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, unit).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1167,7 +1047,7 @@ Name | Type | Description  | Notes
  **propertyPk** | **String**|  | 
  **propertydefinitionPk** | **String**|  | 
  **propertysetPk** | **String**|  | 
- **data** | [**Unit**](Unit.md)|  | 
+ **unit** | [**Unit**](Unit.md)|  | 
 
 ### Return type
 
@@ -1184,7 +1064,7 @@ Name | Type | Description  | Notes
 
 <a name="createIfcPropertyDefinition"></a>
 # **createIfcPropertyDefinition**
-> [PropertyDefinition] createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, data)
+> [PropertyDefinition] createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, propertyDefinition)
 
 
 
@@ -1194,7 +1074,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1202,16 +1081,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.PropertyDefinition()]; // [PropertyDefinition] | 
-
-apiInstance.createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, data).then(function(data) {
+var propertyDefinition = [new bimdata.PropertyDefinition()]; // [PropertyDefinition] | 
+apiInstance.createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, propertyDefinition).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1226,7 +1100,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[PropertyDefinition]**](PropertyDefinition.md)|  | 
+ **propertyDefinition** | [**[PropertyDefinition]**](Array.md)|  | 
 
 ### Return type
 
@@ -1243,7 +1117,7 @@ Name | Type | Description  | Notes
 
 <a name="createIfcUnit"></a>
 # **createIfcUnit**
-> [Unit] createIfcUnit(cloudPk, ifcPk, projectPk, data)
+> [Unit] createIfcUnit(cloudPk, ifcPk, projectPk, unit)
 
 
 
@@ -1253,7 +1127,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1261,16 +1134,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.Unit()]; // [Unit] | 
-
-apiInstance.createIfcUnit(cloudPk, ifcPk, projectPk, data).then(function(data) {
+var unit = [new bimdata.Unit()]; // [Unit] | 
+apiInstance.createIfcUnit(cloudPk, ifcPk, projectPk, unit).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1285,7 +1153,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Unit]**](Unit.md)|  | 
+ **unit** | [**[Unit]**](Array.md)|  | 
 
 ### Return type
 
@@ -1302,7 +1170,7 @@ Name | Type | Description  | Notes
 
 <a name="createPropertySet"></a>
 # **createPropertySet**
-> [PropertySet] createPropertySet(cloudPk, ifcPk, projectPk, data)
+> [PropertySet] createPropertySet(cloudPk, ifcPk, projectPk, propertySet)
 
 
 
@@ -1312,7 +1180,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1320,16 +1187,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.PropertySet()]; // [PropertySet] | 
-
-apiInstance.createPropertySet(cloudPk, ifcPk, projectPk, data).then(function(data) {
+var propertySet = [new bimdata.PropertySet()]; // [PropertySet] | 
+apiInstance.createPropertySet(cloudPk, ifcPk, projectPk, propertySet).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1344,7 +1206,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[PropertySet]**](PropertySet.md)|  | 
+ **propertySet** | [**[PropertySet]**](Array.md)|  | 
 
 ### Return type
 
@@ -1361,7 +1223,7 @@ Name | Type | Description  | Notes
 
 <a name="createPropertySetElementRelations"></a>
 # **createPropertySetElementRelations**
-> createPropertySetElementRelations(cloudPk, ifcPk, projectPk, data)
+> createPropertySetElementRelations(cloudPk, ifcPk, projectPk, elementPropertySetRelation)
 
 
 
@@ -1371,7 +1233,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1379,16 +1240,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.ElementPropertySetRelation()]; // [ElementPropertySetRelation] | 
-
-apiInstance.createPropertySetElementRelations(cloudPk, ifcPk, projectPk, data).then(function() {
+var elementPropertySetRelation = [new bimdata.ElementPropertySetRelation()]; // [ElementPropertySetRelation] | 
+apiInstance.createPropertySetElementRelations(cloudPk, ifcPk, projectPk, elementPropertySetRelation).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1403,7 +1259,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[ElementPropertySetRelation]**](ElementPropertySetRelation.md)|  | 
+ **elementPropertySetRelation** | [**[ElementPropertySetRelation]**](Array.md)|  | 
 
 ### Return type
 
@@ -1416,11 +1272,11 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="createRawElements"></a>
 # **createRawElements**
-> createRawElements(cloudPk, ifcPk, projectPk, data)
+> createRawElements(cloudPk, ifcPk, projectPk, element)
 
 
 
@@ -1430,7 +1286,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1438,16 +1293,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.RawElements(); // RawElements | 
-
-apiInstance.createRawElements(cloudPk, ifcPk, projectPk, data).then(function() {
+var element = new bimdata.Element(); // Element | 
+apiInstance.createRawElements(cloudPk, ifcPk, projectPk, element).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1462,7 +1312,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**RawElements**](RawElements.md)|  | 
+ **element** | [**Element**](Element.md)|  | 
 
 ### Return type
 
@@ -1475,11 +1325,11 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="createSpace"></a>
 # **createSpace**
-> [Space] createSpace(cloudPk, ifcPk, projectPk, data)
+> [Space] createSpace(cloudPk, ifcPk, projectPk, space)
 
 
 
@@ -1489,7 +1339,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1497,16 +1346,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.Space()]; // [Space] | 
-
-apiInstance.createSpace(cloudPk, ifcPk, projectPk, data).then(function(data) {
+var space = [new bimdata.Space()]; // [Space] | 
+apiInstance.createSpace(cloudPk, ifcPk, projectPk, space).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1521,7 +1365,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Space]**](Space.md)|  | 
+ **space** | [**[Space]**](Array.md)|  | 
 
 ### Return type
 
@@ -1538,7 +1382,7 @@ Name | Type | Description  | Notes
 
 <a name="createZone"></a>
 # **createZone**
-> [Zone] createZone(cloudPk, ifcPk, projectPk, data)
+> [Zone] createZone(cloudPk, ifcPk, projectPk, zone)
 
 
 
@@ -1548,7 +1392,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1556,16 +1399,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.Zone()]; // [Zone] | 
-
-apiInstance.createZone(cloudPk, ifcPk, projectPk, data).then(function(data) {
+var zone = [new bimdata.Zone()]; // [Zone] | 
+apiInstance.createZone(cloudPk, ifcPk, projectPk, zone).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1580,7 +1418,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Zone]**](Zone.md)|  | 
+ **zone** | [**[Zone]**](Array.md)|  | 
 
 ### Return type
 
@@ -1597,9 +1435,7 @@ Name | Type | Description  | Notes
 
 <a name="createZoneSpace"></a>
 # **createZoneSpace**
-> ZoneSpace createZoneSpace(cloudPk, ifcPk, projectPk, zonePk, data)
-
-
+> ZoneSpace createZoneSpace(cloudPk, ifcPk, projectPk, zonePk, zoneSpace)
 
 
 
@@ -1607,7 +1443,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1615,18 +1450,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var zonePk = "zonePk_example"; // String | 
-
-var data = new bimdata.ZoneSpace(); // ZoneSpace | 
-
-apiInstance.createZoneSpace(cloudPk, ifcPk, projectPk, zonePk, data).then(function(data) {
+var zoneSpace = new bimdata.ZoneSpace(); // ZoneSpace | 
+apiInstance.createZoneSpace(cloudPk, ifcPk, projectPk, zonePk, zoneSpace).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1642,7 +1471,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **zonePk** | **String**|  | 
- **data** | [**ZoneSpace**](ZoneSpace.md)|  | 
+ **zoneSpace** | [**ZoneSpace**](ZoneSpace.md)|  | 
 
 ### Return type
 
@@ -1659,9 +1488,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteElement"></a>
 # **deleteElement**
-> deleteElement(cloudPk, ifcPk, projectPk, uuid, )
-
-
+> deleteElement(cloudPk, ifcPk, projectPk, uuid)
 
 
 
@@ -1669,7 +1496,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1677,16 +1503,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var uuid = "uuid_example"; // String | IFC element or element type UUID
-
-apiInstance.deleteElement(cloudPk, ifcPk, projectPk, uuid, ).then(function() {
+apiInstance.deleteElement(cloudPk, ifcPk, projectPk, uuid).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1713,14 +1534,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteIfc"></a>
 # **deleteIfc**
-> deleteIfc(cloudPk, id, projectPk, )
-
-
+> deleteIfc(cloudPk, id, projectPk)
 
 
 
@@ -1728,7 +1547,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1736,14 +1554,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc.
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteIfc(cloudPk, id, projectPk, ).then(function() {
+apiInstance.deleteIfc(cloudPk, id, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1769,14 +1583,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteIfcProperty"></a>
 # **deleteIfcProperty**
-> deleteIfcProperty(cloudPk, id, ifcPk, projectPk, )
-
-
+> deleteIfcProperty(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -1784,7 +1596,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1792,16 +1603,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteIfcProperty(cloudPk, id, ifcPk, projectPk, ).then(function() {
+apiInstance.deleteIfcProperty(cloudPk, id, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1828,14 +1634,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteIfcPropertyDefinition"></a>
 # **deleteIfcPropertyDefinition**
-> deleteIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, )
-
-
+> deleteIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -1843,7 +1647,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1851,16 +1654,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, ).then(function() {
+apiInstance.deleteIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1887,14 +1685,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteIfcUnit"></a>
 # **deleteIfcUnit**
-> deleteIfcUnit(cloudPk, id, ifcPk, projectPk, )
-
-
+> deleteIfcUnit(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -1902,7 +1698,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1910,16 +1705,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteIfcUnit(cloudPk, id, ifcPk, projectPk, ).then(function() {
+apiInstance.deleteIfcUnit(cloudPk, id, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1946,14 +1736,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deletePropertySet"></a>
 # **deletePropertySet**
-> deletePropertySet(cloudPk, id, ifcPk, projectPk, )
-
-
+> deletePropertySet(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -1961,7 +1749,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1969,16 +1756,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deletePropertySet(cloudPk, id, ifcPk, projectPk, ).then(function() {
+apiInstance.deletePropertySet(cloudPk, id, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -2005,14 +1787,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteSpace"></a>
 # **deleteSpace**
-> deleteSpace(cloudPk, id, ifcPk, projectPk, )
-
-
+> deleteSpace(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -2020,7 +1800,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2028,16 +1807,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this space.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteSpace(cloudPk, id, ifcPk, projectPk, ).then(function() {
+apiInstance.deleteSpace(cloudPk, id, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -2064,14 +1838,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteZone"></a>
 # **deleteZone**
-> deleteZone(cloudPk, id, ifcPk, projectPk, )
-
-
+> deleteZone(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -2079,7 +1851,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2087,16 +1858,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this zone.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteZone(cloudPk, id, ifcPk, projectPk, ).then(function() {
+apiInstance.deleteZone(cloudPk, id, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -2123,14 +1889,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteZoneSpace"></a>
 # **deleteZoneSpace**
-> deleteZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, )
-
-
+> deleteZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk)
 
 
 
@@ -2138,7 +1902,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2146,18 +1909,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this space.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var zonePk = "zonePk_example"; // String | 
-
-apiInstance.deleteZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, ).then(function() {
+apiInstance.deleteZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -2185,14 +1942,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="fullUpdateElement"></a>
 # **fullUpdateElement**
-> Element fullUpdateElement(cloudPk, ifcPk, projectPk, uuid, data)
-
-
+> Element fullUpdateElement(cloudPk, ifcPk, projectPk, uuid, element)
 
 
 
@@ -2200,7 +1955,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2208,18 +1962,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var uuid = "uuid_example"; // String | IFC element or element type UUID
-
-var data = new bimdata.Element(); // Element | 
-
-apiInstance.fullUpdateElement(cloudPk, ifcPk, projectPk, uuid, data).then(function(data) {
+var element = new bimdata.Element(); // Element | 
+apiInstance.fullUpdateElement(cloudPk, ifcPk, projectPk, uuid, element).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2235,7 +1983,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **uuid** | **String**| IFC element or element type UUID | 
- **data** | [**Element**](Element.md)|  | 
+ **element** | [**Element**](Element.md)|  | 
 
 ### Return type
 
@@ -2252,9 +2000,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateIfc"></a>
 # **fullUpdateIfc**
-> Ifc fullUpdateIfc(cloudPk, id, projectPk, data)
-
-
+> Ifc fullUpdateIfc(cloudPk, id, projectPk, ifc)
 
 
 
@@ -2262,7 +2008,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2270,16 +2015,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc.
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Ifc(); // Ifc | 
-
-apiInstance.fullUpdateIfc(cloudPk, id, projectPk, data).then(function(data) {
+var ifc = new bimdata.Ifc(); // Ifc | 
+apiInstance.fullUpdateIfc(cloudPk, id, projectPk, ifc).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2294,7 +2034,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this ifc. | 
  **projectPk** | **String**|  | 
- **data** | [**Ifc**](Ifc.md)|  | 
+ **ifc** | [**Ifc**](Ifc.md)|  | 
 
 ### Return type
 
@@ -2311,9 +2051,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateIfcProperty"></a>
 # **fullUpdateIfcProperty**
-> Property fullUpdateIfcProperty(cloudPk, id, ifcPk, projectPk, data)
-
-
+> Property fullUpdateIfcProperty(cloudPk, id, ifcPk, projectPk, property)
 
 
 
@@ -2321,7 +2059,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2329,18 +2066,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Property(); // Property | 
-
-apiInstance.fullUpdateIfcProperty(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var property = new bimdata.Property(); // Property | 
+apiInstance.fullUpdateIfcProperty(cloudPk, id, ifcPk, projectPk, property).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2356,7 +2087,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Property**](Property.md)|  | 
+ **property** | [**Property**](Property.md)|  | 
 
 ### Return type
 
@@ -2373,9 +2104,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateIfcPropertyDefinition"></a>
 # **fullUpdateIfcPropertyDefinition**
-> PropertyDefinition fullUpdateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, data)
-
-
+> PropertyDefinition fullUpdateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, propertyDefinition)
 
 
 
@@ -2383,7 +2112,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2391,18 +2119,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.PropertyDefinition(); // PropertyDefinition | 
-
-apiInstance.fullUpdateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var propertyDefinition = new bimdata.PropertyDefinition(); // PropertyDefinition | 
+apiInstance.fullUpdateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, propertyDefinition).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2418,7 +2140,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
+ **propertyDefinition** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
 
 ### Return type
 
@@ -2435,9 +2157,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateIfcUnit"></a>
 # **fullUpdateIfcUnit**
-> Unit fullUpdateIfcUnit(cloudPk, id, ifcPk, projectPk, data)
-
-
+> Unit fullUpdateIfcUnit(cloudPk, id, ifcPk, projectPk, unit)
 
 
 
@@ -2445,7 +2165,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2453,18 +2172,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Unit(); // Unit | 
-
-apiInstance.fullUpdateIfcUnit(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var unit = new bimdata.Unit(); // Unit | 
+apiInstance.fullUpdateIfcUnit(cloudPk, id, ifcPk, projectPk, unit).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2480,7 +2193,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Unit**](Unit.md)|  | 
+ **unit** | [**Unit**](Unit.md)|  | 
 
 ### Return type
 
@@ -2497,9 +2210,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdatePropertySet"></a>
 # **fullUpdatePropertySet**
-> PropertySet fullUpdatePropertySet(cloudPk, id, ifcPk, projectPk, data)
-
-
+> PropertySet fullUpdatePropertySet(cloudPk, id, ifcPk, projectPk, propertySet)
 
 
 
@@ -2507,7 +2218,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2515,18 +2225,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.PropertySet(); // PropertySet | 
-
-apiInstance.fullUpdatePropertySet(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var propertySet = new bimdata.PropertySet(); // PropertySet | 
+apiInstance.fullUpdatePropertySet(cloudPk, id, ifcPk, projectPk, propertySet).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2542,7 +2246,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**PropertySet**](PropertySet.md)|  | 
+ **propertySet** | [**PropertySet**](PropertySet.md)|  | 
 
 ### Return type
 
@@ -2559,9 +2263,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateSpace"></a>
 # **fullUpdateSpace**
-> Space fullUpdateSpace(cloudPk, id, ifcPk, projectPk, data)
-
-
+> Space fullUpdateSpace(cloudPk, id, ifcPk, projectPk, space)
 
 
 
@@ -2569,7 +2271,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2577,18 +2278,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this space.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Space(); // Space | 
-
-apiInstance.fullUpdateSpace(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var space = new bimdata.Space(); // Space | 
+apiInstance.fullUpdateSpace(cloudPk, id, ifcPk, projectPk, space).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2604,7 +2299,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this space. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Space**](Space.md)|  | 
+ **space** | [**Space**](Space.md)|  | 
 
 ### Return type
 
@@ -2621,9 +2316,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateZone"></a>
 # **fullUpdateZone**
-> Zone fullUpdateZone(cloudPk, id, ifcPk, projectPk, data)
-
-
+> Zone fullUpdateZone(cloudPk, id, ifcPk, projectPk, zone)
 
 
 
@@ -2631,7 +2324,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2639,18 +2331,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this zone.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Zone(); // Zone | 
-
-apiInstance.fullUpdateZone(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var zone = new bimdata.Zone(); // Zone | 
+apiInstance.fullUpdateZone(cloudPk, id, ifcPk, projectPk, zone).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2666,7 +2352,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this zone. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Zone**](Zone.md)|  | 
+ **zone** | [**Zone**](Zone.md)|  | 
 
 ### Return type
 
@@ -2683,9 +2369,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateZoneSpace"></a>
 # **fullUpdateZoneSpace**
-> ZoneSpace fullUpdateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, data)
-
-
+> ZoneSpace fullUpdateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, zoneSpace)
 
 
 
@@ -2693,7 +2377,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2701,20 +2384,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this space.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var zonePk = "zonePk_example"; // String | 
-
-var data = new bimdata.ZoneSpace(); // ZoneSpace | 
-
-apiInstance.fullUpdateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, data).then(function(data) {
+var zoneSpace = new bimdata.ZoneSpace(); // ZoneSpace | 
+apiInstance.fullUpdateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, zoneSpace).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2731,7 +2407,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **zonePk** | **String**|  | 
- **data** | [**ZoneSpace**](ZoneSpace.md)|  | 
+ **zoneSpace** | [**ZoneSpace**](ZoneSpace.md)|  | 
 
 ### Return type
 
@@ -2748,9 +2424,7 @@ Name | Type | Description  | Notes
 
 <a name="getClassificationsOfElement"></a>
 # **getClassificationsOfElement**
-> [Classification] getClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, )
-
-
+> [Classification] getClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk)
 
 
 
@@ -2758,7 +2432,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2766,16 +2439,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2802,14 +2470,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getElement"></a>
 # **getElement**
-> Element getElement(cloudPk, ifcPk, projectPk, uuid, )
-
-
+> Element getElement(cloudPk, ifcPk, projectPk, uuid)
 
 
 
@@ -2817,7 +2483,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2825,16 +2490,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var uuid = "uuid_example"; // String | IFC element or element type UUID
-
-apiInstance.getElement(cloudPk, ifcPk, projectPk, uuid, ).then(function(data) {
+apiInstance.getElement(cloudPk, ifcPk, projectPk, uuid).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2861,7 +2521,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getElementPropertySet"></a>
@@ -2870,13 +2530,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2884,17 +2541,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this property set.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.getElementPropertySet(cloudPk, elementUuid, id, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -2923,14 +2574,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getElementPropertySetProperties"></a>
 # **getElementPropertySetProperties**
-> [Property] getElementPropertySetProperties(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, )
-
-
+> [Property] getElementPropertySetProperties(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk)
 
 
 
@@ -2938,7 +2587,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2946,18 +2594,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var propertysetPk = "propertysetPk_example"; // String | 
-
-apiInstance.getElementPropertySetProperties(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, ).then(function(data) {
+apiInstance.getElementPropertySetProperties(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2985,7 +2627,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getElementPropertySetProperty"></a>
@@ -2994,13 +2636,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3008,19 +2647,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this property.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var propertysetPk = "propertysetPk_example"; // String | 
-
 apiInstance.getElementPropertySetProperty(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -3050,7 +2682,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getElementPropertySetPropertyDefinition"></a>
@@ -3059,13 +2691,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3073,21 +2702,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this property definition.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var propertyPk = "propertyPk_example"; // String | 
-
 var propertysetPk = "propertysetPk_example"; // String | 
-
 apiInstance.getElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -3118,7 +2739,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getElementPropertySetPropertyDefinitionUnit"></a>
@@ -3127,13 +2748,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3141,23 +2759,14 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this unit.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var propertyPk = "propertyPk_example"; // String | 
-
 var propertydefinitionPk = "propertydefinitionPk_example"; // String | 
-
 var propertysetPk = "propertysetPk_example"; // String | 
-
 apiInstance.getElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -3189,14 +2798,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getElementPropertySetPropertyDefinitionUnits"></a>
 # **getElementPropertySetPropertyDefinitionUnits**
-> [Unit] getElementPropertySetPropertyDefinitionUnits(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, )
-
-
+> [Unit] getElementPropertySetPropertyDefinitionUnits(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
 
 
 
@@ -3204,7 +2811,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3212,22 +2818,14 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var propertyPk = "propertyPk_example"; // String | 
-
 var propertydefinitionPk = "propertydefinitionPk_example"; // String | 
-
 var propertysetPk = "propertysetPk_example"; // String | 
-
-apiInstance.getElementPropertySetPropertyDefinitionUnits(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, ).then(function(data) {
+apiInstance.getElementPropertySetPropertyDefinitionUnits(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3257,14 +2855,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getElementPropertySetPropertyDefinitions"></a>
 # **getElementPropertySetPropertyDefinitions**
-> [PropertyDefinition] getElementPropertySetPropertyDefinitions(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, )
-
-
+> [PropertyDefinition] getElementPropertySetPropertyDefinitions(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk)
 
 
 
@@ -3272,7 +2868,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3280,20 +2875,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var propertyPk = "propertyPk_example"; // String | 
-
 var propertysetPk = "propertysetPk_example"; // String | 
-
-apiInstance.getElementPropertySetPropertyDefinitions(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, ).then(function(data) {
+apiInstance.getElementPropertySetPropertyDefinitions(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3322,14 +2910,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getElementPropertySets"></a>
 # **getElementPropertySets**
-> [PropertySet] getElementPropertySets(cloudPk, elementUuid, ifcPk, projectPk, )
-
-
+> [PropertySet] getElementPropertySets(cloudPk, elementUuid, ifcPk, projectPk)
 
 
 
@@ -3337,7 +2923,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3345,16 +2930,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getElementPropertySets(cloudPk, elementUuid, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getElementPropertySets(cloudPk, elementUuid, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3381,14 +2961,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getElements"></a>
 # **getElements**
-> [Element] getElements(cloudPk, ifcPk, projectPk, , opts)
-
-
+> [Element] getElements(cloudPk, ifcPk, projectPk, opts)
 
 
 
@@ -3396,7 +2974,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3404,19 +2981,15 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var opts = { 
+var opts = {
   'type': "type_example", // String | Filter the returned list by type
   'classification': "classification_example", // String | Filter the returned list by classification
   'classificationNotation': "classificationNotation_example" // String | Filter the returned list by classification__notation
 };
-apiInstance.getElements(cloudPk, ifcPk, projectPk, , opts).then(function(data) {
+apiInstance.getElements(cloudPk, ifcPk, projectPk, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3445,7 +3018,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getElementsFromClassification"></a>
@@ -3454,13 +3027,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3468,15 +3038,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcClassificationPk = "ifcClassificationPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.getElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -3504,14 +3069,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getIfc"></a>
 # **getIfc**
-> Ifc getIfc(cloudPk, id, projectPk, )
-
-
+> Ifc getIfc(cloudPk, id, projectPk)
 
 
 
@@ -3519,7 +3082,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3527,14 +3089,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc.
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getIfc(cloudPk, id, projectPk, ).then(function(data) {
+apiInstance.getIfc(cloudPk, id, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3560,7 +3118,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getIfcBVH"></a>
@@ -3575,7 +3133,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3583,13 +3140,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc.
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.getIfcBVH(cloudPk, id, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -3616,8 +3169,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getIfcClassifications"></a>
 # **getIfcClassifications**
@@ -3625,13 +3178,10 @@ null (empty response body)
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3639,13 +3189,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.getIfcClassifications(cloudPk, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -3672,7 +3218,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getIfcGLTF"></a>
@@ -3687,7 +3233,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3695,13 +3240,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc.
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.getIfcGLTF(cloudPk, id, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -3728,8 +3269,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getIfcMap"></a>
 # **getIfcMap**
@@ -3743,7 +3284,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3751,13 +3291,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc.
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.getIfcMap(cloudPk, id, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -3784,8 +3320,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getIfcProperties"></a>
 # **getIfcProperties**
@@ -3793,13 +3329,10 @@ null (empty response body)
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3807,13 +3340,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.getIfcProperties(cloudPk, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -3840,14 +3369,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getIfcProperty"></a>
 # **getIfcProperty**
-> Property getIfcProperty(cloudPk, id, ifcPk, projectPk, )
-
-
+> Property getIfcProperty(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -3855,7 +3382,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3863,16 +3389,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getIfcProperty(cloudPk, id, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getIfcProperty(cloudPk, id, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3899,14 +3420,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getIfcPropertyDefinition"></a>
 # **getIfcPropertyDefinition**
-> PropertyDefinition getIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, )
-
-
+> PropertyDefinition getIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -3914,7 +3433,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3922,16 +3440,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -3958,14 +3471,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getIfcPropertyDefinitions"></a>
 # **getIfcPropertyDefinitions**
-> [PropertyDefinition] getIfcPropertyDefinitions(cloudPk, ifcPk, projectPk, )
-
-
+> [PropertyDefinition] getIfcPropertyDefinitions(cloudPk, ifcPk, projectPk)
 
 
 
@@ -3973,7 +3484,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3981,14 +3491,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getIfcPropertyDefinitions(cloudPk, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getIfcPropertyDefinitions(cloudPk, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4014,7 +3520,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getIfcStructure"></a>
@@ -4029,7 +3535,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4037,13 +3542,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc.
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.getIfcStructure(cloudPk, id, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -4070,8 +3571,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getIfcSystems"></a>
 # **getIfcSystems**
@@ -4085,7 +3586,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4093,13 +3593,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc.
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.getIfcSystems(cloudPk, id, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -4126,14 +3622,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getIfcUnit"></a>
 # **getIfcUnit**
-> Unit getIfcUnit(cloudPk, id, ifcPk, projectPk, )
-
-
+> Unit getIfcUnit(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -4141,7 +3635,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4149,16 +3642,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getIfcUnit(cloudPk, id, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getIfcUnit(cloudPk, id, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4185,14 +3673,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getIfcUnits"></a>
 # **getIfcUnits**
-> [Unit] getIfcUnits(cloudPk, ifcPk, projectPk, )
-
-
+> [Unit] getIfcUnits(cloudPk, ifcPk, projectPk)
 
 
 
@@ -4200,7 +3686,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4208,14 +3693,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getIfcUnits(cloudPk, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getIfcUnits(cloudPk, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4241,7 +3722,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getIfcs"></a>
@@ -4250,13 +3731,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4264,12 +3742,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var opts = { 
+var opts = {
   'status': "status_example" // String | Filter the returned list by status
 };
 apiInstance.getIfcs(cloudPk, projectPk, opts).then(function(data) {
@@ -4298,14 +3773,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPropertySet"></a>
 # **getPropertySet**
-> PropertySet getPropertySet(cloudPk, id, ifcPk, projectPk, )
-
-
+> PropertySet getPropertySet(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -4313,7 +3786,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4321,16 +3793,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getPropertySet(cloudPk, id, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getPropertySet(cloudPk, id, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4357,14 +3824,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPropertySets"></a>
 # **getPropertySets**
-> [PropertySet] getPropertySets(cloudPk, ifcPk, projectPk, )
-
-
+> [PropertySet] getPropertySets(cloudPk, ifcPk, projectPk)
 
 
 
@@ -4372,7 +3837,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4380,14 +3844,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getPropertySets(cloudPk, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getPropertySets(cloudPk, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4413,12 +3873,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRawElements"></a>
 # **getRawElements**
-> RawElements getRawElements(cloudPk, ifcPk, projectPk, , opts)
+> getRawElements(cloudPk, ifcPk, projectPk, opts)
 
 
 
@@ -4428,7 +3888,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4436,20 +3895,16 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var opts = { 
+var opts = {
   'type': "type_example", // String | Filter the returned list by type
   'classification': "classification_example", // String | Filter the returned list by classification
   'classificationNotation': "classificationNotation_example" // String | Filter the returned list by classification__notation
 };
-apiInstance.getRawElements(cloudPk, ifcPk, projectPk, , opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
+apiInstance.getRawElements(cloudPk, ifcPk, projectPk, opts).then(function() {
+  console.log('API called successfully.');
 }, function(error) {
   console.error(error);
 });
@@ -4469,7 +3924,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RawElements**](RawElements.md)
+null (empty response body)
 
 ### Authorization
 
@@ -4477,14 +3932,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getSpace"></a>
 # **getSpace**
-> Space getSpace(cloudPk, id, ifcPk, projectPk, )
-
-
+> Space getSpace(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -4492,7 +3945,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4500,16 +3952,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this space.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getSpace(cloudPk, id, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getSpace(cloudPk, id, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4536,14 +3983,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSpaces"></a>
 # **getSpaces**
-> [Space] getSpaces(cloudPk, ifcPk, projectPk, )
-
-
+> [Space] getSpaces(cloudPk, ifcPk, projectPk)
 
 
 
@@ -4551,7 +3996,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4559,14 +4003,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getSpaces(cloudPk, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getSpaces(cloudPk, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4592,14 +4032,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getZone"></a>
 # **getZone**
-> Zone getZone(cloudPk, id, ifcPk, projectPk, )
-
-
+> Zone getZone(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -4607,7 +4045,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4615,16 +4052,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this zone.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getZone(cloudPk, id, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getZone(cloudPk, id, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4651,14 +4083,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getZoneSpace"></a>
 # **getZoneSpace**
-> ZoneSpace getZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, )
-
-
+> ZoneSpace getZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk)
 
 
 
@@ -4666,7 +4096,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4674,18 +4103,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this space.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var zonePk = "zonePk_example"; // String | 
-
-apiInstance.getZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, ).then(function(data) {
+apiInstance.getZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4713,14 +4136,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getZoneSpaces"></a>
 # **getZoneSpaces**
-> [ZoneSpace] getZoneSpaces(cloudPk, ifcPk, projectPk, zonePk, )
-
-
+> [ZoneSpace] getZoneSpaces(cloudPk, ifcPk, projectPk, zonePk)
 
 
 
@@ -4728,7 +4149,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4736,16 +4156,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var zonePk = "zonePk_example"; // String | 
-
-apiInstance.getZoneSpaces(cloudPk, ifcPk, projectPk, zonePk, ).then(function(data) {
+apiInstance.getZoneSpaces(cloudPk, ifcPk, projectPk, zonePk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4772,14 +4187,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getZones"></a>
 # **getZones**
-> [Zone] getZones(cloudPk, ifcPk, projectPk, , opts)
-
-
+> [Zone] getZones(cloudPk, ifcPk, projectPk, opts)
 
 
 
@@ -4787,7 +4200,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4795,17 +4207,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var opts = { 
+var opts = {
   'color': "color_example" // String | Filter the returned list by color
 };
-apiInstance.getZones(cloudPk, ifcPk, projectPk, , opts).then(function(data) {
+apiInstance.getZones(cloudPk, ifcPk, projectPk, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4832,12 +4240,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listClassificationElementRelations"></a>
 # **listClassificationElementRelations**
-> [ElementClassificationRelation] listClassificationElementRelations(cloudPk, ifcPk, projectPk, )
+> [ElementClassificationRelation] listClassificationElementRelations(cloudPk, ifcPk, projectPk)
 
 
 
@@ -4847,7 +4255,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4855,14 +4262,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.listClassificationElementRelations(cloudPk, ifcPk, projectPk, ).then(function(data) {
+apiInstance.listClassificationElementRelations(cloudPk, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -4888,7 +4291,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="removeClassificationOfElement"></a>
@@ -4897,13 +4300,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4911,17 +4311,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this classification.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.removeClassificationOfElement(cloudPk, elementUuid, id, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -4950,8 +4344,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="removeElementPropertySet"></a>
 # **removeElementPropertySet**
@@ -4965,7 +4359,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4973,17 +4366,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this property set.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 apiInstance.removeElementPropertySet(cloudPk, elementUuid, id, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -5012,8 +4399,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="removeElementPropertySetProperty"></a>
 # **removeElementPropertySetProperty**
@@ -5021,13 +4408,10 @@ null (empty response body)
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5035,19 +4419,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this property.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var propertysetPk = "propertysetPk_example"; // String | 
-
 apiInstance.removeElementPropertySetProperty(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -5077,8 +4454,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="removeElementPropertySetPropertyDefinition"></a>
 # **removeElementPropertySetPropertyDefinition**
@@ -5086,13 +4463,10 @@ null (empty response body)
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5100,21 +4474,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this property definition.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var propertyPk = "propertyPk_example"; // String | 
-
 var propertysetPk = "propertysetPk_example"; // String | 
-
 apiInstance.removeElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -5145,8 +4511,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="removeElementPropertySetPropertyDefinitionUnit"></a>
 # **removeElementPropertySetPropertyDefinitionUnit**
@@ -5154,13 +4520,10 @@ null (empty response body)
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5168,23 +4531,14 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var elementUuid = "elementUuid_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this unit.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var propertyPk = "propertyPk_example"; // String | 
-
 var propertydefinitionPk = "propertydefinitionPk_example"; // String | 
-
 var propertysetPk = "propertysetPk_example"; // String | 
-
 apiInstance.removeElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -5216,8 +4570,8 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="removeElementsFromClassification"></a>
 # **removeElementsFromClassification**
@@ -5225,13 +4579,10 @@ null (empty response body)
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5239,17 +4590,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcClassificationPk = "ifcClassificationPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var uuid = "uuid_example"; // String | 
-
 apiInstance.removeElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk, uuid).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -5278,14 +4623,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="updateElement"></a>
 # **updateElement**
-> Element updateElement(cloudPk, ifcPk, projectPk, uuid, data)
-
-
+> Element updateElement(cloudPk, ifcPk, projectPk, uuid, element)
 
 
 
@@ -5293,7 +4636,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5301,18 +4643,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var uuid = "uuid_example"; // String | IFC element or element type UUID
-
-var data = new bimdata.Element(); // Element | 
-
-apiInstance.updateElement(cloudPk, ifcPk, projectPk, uuid, data).then(function(data) {
+var element = new bimdata.Element(); // Element | 
+apiInstance.updateElement(cloudPk, ifcPk, projectPk, uuid, element).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5328,7 +4664,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **uuid** | **String**| IFC element or element type UUID | 
- **data** | [**Element**](Element.md)|  | 
+ **element** | [**Element**](Element.md)|  | 
 
 ### Return type
 
@@ -5345,9 +4681,7 @@ Name | Type | Description  | Notes
 
 <a name="updateIfc"></a>
 # **updateIfc**
-> Ifc updateIfc(cloudPk, id, projectPk, data)
-
-
+> Ifc updateIfc(cloudPk, id, projectPk, ifc)
 
 
 
@@ -5355,7 +4689,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5363,16 +4696,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc.
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Ifc(); // Ifc | 
-
-apiInstance.updateIfc(cloudPk, id, projectPk, data).then(function(data) {
+var ifc = new bimdata.Ifc(); // Ifc | 
+apiInstance.updateIfc(cloudPk, id, projectPk, ifc).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5387,7 +4715,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this ifc. | 
  **projectPk** | **String**|  | 
- **data** | [**Ifc**](Ifc.md)|  | 
+ **ifc** | [**Ifc**](Ifc.md)|  | 
 
 ### Return type
 
@@ -5414,7 +4742,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5422,19 +4749,15 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc.
-
 var projectPk = "projectPk_example"; // String | 
-
-var opts = { 
-  'structureFile': "/path/to/file.txt", // File | 
-  'systemsFile': "/path/to/file.txt", // File | 
-  'mapFile': "/path/to/file.txt", // File | 
-  'gltfFile': "/path/to/file.txt", // File | 
-  'bvhTreeFile': "/path/to/file.txt" // File | 
+var opts = {
+  'structureFile': "/path/to/file", // File | 
+  'systemsFile': "/path/to/file", // File | 
+  'mapFile': "/path/to/file", // File | 
+  'gltfFile': "/path/to/file", // File | 
+  'bvhTreeFile': "/path/to/file" // File | 
 };
 apiInstance.updateIfcFiles(cloudPk, id, projectPk, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -5472,9 +4795,7 @@ Name | Type | Description  | Notes
 
 <a name="updateIfcProperty"></a>
 # **updateIfcProperty**
-> Property updateIfcProperty(cloudPk, id, ifcPk, projectPk, data)
-
-
+> Property updateIfcProperty(cloudPk, id, ifcPk, projectPk, property)
 
 
 
@@ -5482,7 +4803,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5490,18 +4810,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Property(); // Property | 
-
-apiInstance.updateIfcProperty(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var property = new bimdata.Property(); // Property | 
+apiInstance.updateIfcProperty(cloudPk, id, ifcPk, projectPk, property).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5517,7 +4831,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Property**](Property.md)|  | 
+ **property** | [**Property**](Property.md)|  | 
 
 ### Return type
 
@@ -5534,9 +4848,7 @@ Name | Type | Description  | Notes
 
 <a name="updateIfcPropertyDefinition"></a>
 # **updateIfcPropertyDefinition**
-> PropertyDefinition updateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, data)
-
-
+> PropertyDefinition updateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, propertyDefinition)
 
 
 
@@ -5544,7 +4856,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5552,18 +4863,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.PropertyDefinition(); // PropertyDefinition | 
-
-apiInstance.updateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var propertyDefinition = new bimdata.PropertyDefinition(); // PropertyDefinition | 
+apiInstance.updateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, propertyDefinition).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5579,7 +4884,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
+ **propertyDefinition** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
 
 ### Return type
 
@@ -5596,9 +4901,7 @@ Name | Type | Description  | Notes
 
 <a name="updateIfcUnit"></a>
 # **updateIfcUnit**
-> Unit updateIfcUnit(cloudPk, id, ifcPk, projectPk, data)
-
-
+> Unit updateIfcUnit(cloudPk, id, ifcPk, projectPk, unit)
 
 
 
@@ -5606,7 +4909,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5614,18 +4916,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Unit(); // Unit | 
-
-apiInstance.updateIfcUnit(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var unit = new bimdata.Unit(); // Unit | 
+apiInstance.updateIfcUnit(cloudPk, id, ifcPk, projectPk, unit).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5641,7 +4937,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Unit**](Unit.md)|  | 
+ **unit** | [**Unit**](Unit.md)|  | 
 
 ### Return type
 
@@ -5658,9 +4954,7 @@ Name | Type | Description  | Notes
 
 <a name="updatePropertySet"></a>
 # **updatePropertySet**
-> PropertySet updatePropertySet(cloudPk, id, ifcPk, projectPk, data)
-
-
+> PropertySet updatePropertySet(cloudPk, id, ifcPk, projectPk, propertySet)
 
 
 
@@ -5668,7 +4962,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5676,18 +4969,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.PropertySet(); // PropertySet | 
-
-apiInstance.updatePropertySet(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var propertySet = new bimdata.PropertySet(); // PropertySet | 
+apiInstance.updatePropertySet(cloudPk, id, ifcPk, projectPk, propertySet).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5703,7 +4990,7 @@ Name | Type | Description  | Notes
  **id** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**PropertySet**](PropertySet.md)|  | 
+ **propertySet** | [**PropertySet**](PropertySet.md)|  | 
 
 ### Return type
 
@@ -5720,9 +5007,7 @@ Name | Type | Description  | Notes
 
 <a name="updateSpace"></a>
 # **updateSpace**
-> Space updateSpace(cloudPk, id, ifcPk, projectPk, data)
-
-
+> Space updateSpace(cloudPk, id, ifcPk, projectPk, space)
 
 
 
@@ -5730,7 +5015,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5738,18 +5022,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this space.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Space(); // Space | 
-
-apiInstance.updateSpace(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var space = new bimdata.Space(); // Space | 
+apiInstance.updateSpace(cloudPk, id, ifcPk, projectPk, space).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5765,7 +5043,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this space. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Space**](Space.md)|  | 
+ **space** | [**Space**](Space.md)|  | 
 
 ### Return type
 
@@ -5782,9 +5060,7 @@ Name | Type | Description  | Notes
 
 <a name="updateZone"></a>
 # **updateZone**
-> Zone updateZone(cloudPk, id, ifcPk, projectPk, data)
-
-
+> Zone updateZone(cloudPk, id, ifcPk, projectPk, zone)
 
 
 
@@ -5792,7 +5068,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5800,18 +5075,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this zone.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Zone(); // Zone | 
-
-apiInstance.updateZone(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var zone = new bimdata.Zone(); // Zone | 
+apiInstance.updateZone(cloudPk, id, ifcPk, projectPk, zone).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5827,7 +5096,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this zone. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Zone**](Zone.md)|  | 
+ **zone** | [**Zone**](Zone.md)|  | 
 
 ### Return type
 
@@ -5844,9 +5113,7 @@ Name | Type | Description  | Notes
 
 <a name="updateZoneSpace"></a>
 # **updateZoneSpace**
-> ZoneSpace updateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, data)
-
-
+> ZoneSpace updateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, zoneSpace)
 
 
 
@@ -5854,7 +5121,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5862,20 +5128,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.IfcApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this space.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var zonePk = "zonePk_example"; // String | 
-
-var data = new bimdata.ZoneSpace(); // ZoneSpace | 
-
-apiInstance.updateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, data).then(function(data) {
+var zoneSpace = new bimdata.ZoneSpace(); // ZoneSpace | 
+apiInstance.updateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, zoneSpace).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -5892,7 +5151,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **zonePk** | **String**|  | 
- **data** | [**ZoneSpace**](ZoneSpace.md)|  | 
+ **zoneSpace** | [**ZoneSpace**](ZoneSpace.md)|  | 
 
 ### Return type
 

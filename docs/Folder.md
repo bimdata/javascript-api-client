@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 **children** | [**[Folder]**](Folder.md) |  | [optional] 
-**createdBy** | [**FosUser**](FosUser.md) |  | [optional] 
+**createdBy** | [**User**](User.md) |  | [optional] 
 
 

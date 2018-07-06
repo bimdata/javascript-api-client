@@ -1,6 +1,6 @@
 # bimdata.CheckplanApi
 
-All URIs are relative to *https://api-staging.bimdata.io*
+All URIs are relative to *https://api-beta.bimdata.io/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -45,9 +45,7 @@ Method | HTTP request | Description
 
 <a name="createChecker"></a>
 # **createChecker**
-> IfcChecker createChecker(cloudPk, ifcPk, projectPk, data)
-
-
+> IfcChecker createChecker(cloudPk, ifcPk, projectPk, ifcChecker)
 
 
 
@@ -55,7 +53,6 @@ Method | HTTP request | Description
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -63,16 +60,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.IfcChecker(); // IfcChecker | 
-
-apiInstance.createChecker(cloudPk, ifcPk, projectPk, data).then(function(data) {
+var ifcChecker = new bimdata.IfcChecker(); // IfcChecker | 
+apiInstance.createChecker(cloudPk, ifcPk, projectPk, ifcChecker).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -87,7 +79,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**IfcChecker**](IfcChecker.md)|  | 
+ **ifcChecker** | [**IfcChecker**](IfcChecker.md)|  | 
 
 ### Return type
 
@@ -104,9 +96,7 @@ Name | Type | Description  | Notes
 
 <a name="createCheckerResult"></a>
 # **createCheckerResult**
-> CheckerResult createCheckerResult(checkerPk, cloudPk, ifcPk, projectPk, data)
-
-
+> CheckerResult createCheckerResult(checkerPk, cloudPk, ifcPk, projectPk, checkerResult)
 
 
 
@@ -114,7 +104,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -122,18 +111,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkerPk = "checkerPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.CheckerResult(); // CheckerResult | 
-
-apiInstance.createCheckerResult(checkerPk, cloudPk, ifcPk, projectPk, data).then(function(data) {
+var checkerResult = new bimdata.CheckerResult(); // CheckerResult | 
+apiInstance.createCheckerResult(checkerPk, cloudPk, ifcPk, projectPk, checkerResult).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -149,7 +132,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**CheckerResult**](CheckerResult.md)|  | 
+ **checkerResult** | [**CheckerResult**](CheckerResult.md)|  | 
 
 ### Return type
 
@@ -166,9 +149,7 @@ Name | Type | Description  | Notes
 
 <a name="createCheckplan"></a>
 # **createCheckplan**
-> CheckPlan createCheckplan(cloudPk, projectPk, data)
-
-
+> CheckPlan createCheckplan(cloudPk, projectPk, checkPlan)
 
 
 
@@ -176,7 +157,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -184,14 +164,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.CheckPlan(); // CheckPlan | 
-
-apiInstance.createCheckplan(cloudPk, projectPk, data).then(function(data) {
+var checkPlan = new bimdata.CheckPlan(); // CheckPlan | 
+apiInstance.createCheckplan(cloudPk, projectPk, checkPlan).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -205,7 +181,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**CheckPlan**](CheckPlan.md)|  | 
+ **checkPlan** | [**CheckPlan**](CheckPlan.md)|  | 
 
 ### Return type
 
@@ -222,9 +198,7 @@ Name | Type | Description  | Notes
 
 <a name="createRule"></a>
 # **createRule**
-> Rule createRule(checkPlanPk, cloudPk, projectPk, rulesetPk, data)
-
-
+> Rule createRule(checkPlanPk, cloudPk, projectPk, rulesetPk, rule)
 
 
 
@@ -232,7 +206,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -240,18 +213,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var rulesetPk = "rulesetPk_example"; // String | 
-
-var data = new bimdata.Rule(); // Rule | 
-
-apiInstance.createRule(checkPlanPk, cloudPk, projectPk, rulesetPk, data).then(function(data) {
+var rule = new bimdata.Rule(); // Rule | 
+apiInstance.createRule(checkPlanPk, cloudPk, projectPk, rulesetPk, rule).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -267,7 +234,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
- **data** | [**Rule**](Rule.md)|  | 
+ **rule** | [**Rule**](Rule.md)|  | 
 
 ### Return type
 
@@ -284,9 +251,7 @@ Name | Type | Description  | Notes
 
 <a name="createRuleComponent"></a>
 # **createRuleComponent**
-> RuleComponent createRuleComponent(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, data)
-
-
+> RuleComponent createRuleComponent(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, ruleComponent)
 
 
 
@@ -294,7 +259,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -302,20 +266,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var rulePk = "rulePk_example"; // String | 
-
 var rulesetPk = "rulesetPk_example"; // String | 
-
-var data = new bimdata.RuleComponent(); // RuleComponent | 
-
-apiInstance.createRuleComponent(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, data).then(function(data) {
+var ruleComponent = new bimdata.RuleComponent(); // RuleComponent | 
+apiInstance.createRuleComponent(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, ruleComponent).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -332,7 +289,7 @@ Name | Type | Description  | Notes
  **projectPk** | **String**|  | 
  **rulePk** | **String**|  | 
  **rulesetPk** | **String**|  | 
- **data** | [**RuleComponent**](RuleComponent.md)|  | 
+ **ruleComponent** | [**RuleComponent**](RuleComponent.md)|  | 
 
 ### Return type
 
@@ -349,9 +306,7 @@ Name | Type | Description  | Notes
 
 <a name="createRuleset"></a>
 # **createRuleset**
-> Ruleset createRuleset(checkPlanPk, cloudPk, projectPk, data)
-
-
+> Ruleset createRuleset(checkPlanPk, cloudPk, projectPk, ruleset)
 
 
 
@@ -359,7 +314,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -367,16 +321,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Ruleset(); // Ruleset | 
-
-apiInstance.createRuleset(checkPlanPk, cloudPk, projectPk, data).then(function(data) {
+var ruleset = new bimdata.Ruleset(); // Ruleset | 
+apiInstance.createRuleset(checkPlanPk, cloudPk, projectPk, ruleset).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -391,7 +340,7 @@ Name | Type | Description  | Notes
  **checkPlanPk** | **String**|  | 
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Ruleset**](Ruleset.md)|  | 
+ **ruleset** | [**Ruleset**](Ruleset.md)|  | 
 
 ### Return type
 
@@ -408,9 +357,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteChecker"></a>
 # **deleteChecker**
-> deleteChecker(cloudPk, id, ifcPk, projectPk, )
-
-
+> deleteChecker(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -418,7 +365,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -426,16 +372,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc checker.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteChecker(cloudPk, id, ifcPk, projectPk, ).then(function() {
+apiInstance.deleteChecker(cloudPk, id, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -462,14 +403,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteCheckerResult"></a>
 # **deleteCheckerResult**
-> deleteCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, )
-
-
+> deleteCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -477,7 +416,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -485,18 +423,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkerPk = "checkerPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this checker result.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, ).then(function() {
+apiInstance.deleteCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -524,14 +456,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteCheckplan"></a>
 # **deleteCheckplan**
-> deleteCheckplan(cloudPk, id, projectPk, )
-
-
+> deleteCheckplan(cloudPk, id, projectPk)
 
 
 
@@ -539,7 +469,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -547,14 +476,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this check plan.
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteCheckplan(cloudPk, id, projectPk, ).then(function() {
+apiInstance.deleteCheckplan(cloudPk, id, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -580,14 +505,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteRule"></a>
 # **deleteRule**
-> deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, )
-
-
+> deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk)
 
 
 
@@ -595,7 +518,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -603,18 +525,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this rule.
-
 var projectPk = "projectPk_example"; // String | 
-
 var rulesetPk = "rulesetPk_example"; // String | 
-
-apiInstance.deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, ).then(function() {
+apiInstance.deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -642,14 +558,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteRuleComponent"></a>
 # **deleteRuleComponent**
-> deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, )
-
-
+> deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk)
 
 
 
@@ -657,7 +571,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -665,20 +578,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this rule component.
-
 var projectPk = "projectPk_example"; // String | 
-
 var rulePk = "rulePk_example"; // String | 
-
 var rulesetPk = "rulesetPk_example"; // String | 
-
-apiInstance.deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, ).then(function() {
+apiInstance.deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -707,14 +613,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteRuleset"></a>
 # **deleteRuleset**
-> deleteRuleset(checkPlanPk, cloudPk, id, projectPk, )
-
-
+> deleteRuleset(checkPlanPk, cloudPk, id, projectPk)
 
 
 
@@ -722,7 +626,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -730,16 +633,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ruleset.
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteRuleset(checkPlanPk, cloudPk, id, projectPk, ).then(function() {
+apiInstance.deleteRuleset(checkPlanPk, cloudPk, id, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -766,14 +664,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="fullUpdateChecker"></a>
 # **fullUpdateChecker**
-> IfcChecker fullUpdateChecker(cloudPk, id, ifcPk, projectPk, data)
-
-
+> IfcChecker fullUpdateChecker(cloudPk, id, ifcPk, projectPk, ifcChecker)
 
 
 
@@ -781,7 +677,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -789,18 +684,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc checker.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.IfcChecker(); // IfcChecker | 
-
-apiInstance.fullUpdateChecker(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var ifcChecker = new bimdata.IfcChecker(); // IfcChecker | 
+apiInstance.fullUpdateChecker(cloudPk, id, ifcPk, projectPk, ifcChecker).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -816,7 +705,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this ifc checker. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**IfcChecker**](IfcChecker.md)|  | 
+ **ifcChecker** | [**IfcChecker**](IfcChecker.md)|  | 
 
 ### Return type
 
@@ -833,9 +722,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateCheckerResult"></a>
 # **fullUpdateCheckerResult**
-> CheckerResult fullUpdateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data)
-
-
+> CheckerResult fullUpdateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, checkerResult)
 
 
 
@@ -843,7 +730,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -851,20 +737,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkerPk = "checkerPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this checker result.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.CheckerResult(); // CheckerResult | 
-
-apiInstance.fullUpdateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var checkerResult = new bimdata.CheckerResult(); // CheckerResult | 
+apiInstance.fullUpdateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, checkerResult).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -881,7 +760,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this checker result. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**CheckerResult**](CheckerResult.md)|  | 
+ **checkerResult** | [**CheckerResult**](CheckerResult.md)|  | 
 
 ### Return type
 
@@ -898,9 +777,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateCheckplan"></a>
 # **fullUpdateCheckplan**
-> CheckPlan fullUpdateCheckplan(cloudPk, id, projectPk, data)
-
-
+> CheckPlan fullUpdateCheckplan(cloudPk, id, projectPk, checkPlan)
 
 
 
@@ -908,7 +785,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -916,16 +792,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this check plan.
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.CheckPlan(); // CheckPlan | 
-
-apiInstance.fullUpdateCheckplan(cloudPk, id, projectPk, data).then(function(data) {
+var checkPlan = new bimdata.CheckPlan(); // CheckPlan | 
+apiInstance.fullUpdateCheckplan(cloudPk, id, projectPk, checkPlan).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -940,7 +811,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this check plan. | 
  **projectPk** | **String**|  | 
- **data** | [**CheckPlan**](CheckPlan.md)|  | 
+ **checkPlan** | [**CheckPlan**](CheckPlan.md)|  | 
 
 ### Return type
 
@@ -957,9 +828,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateRule"></a>
 # **fullUpdateRule**
-> Rule fullUpdateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data)
-
-
+> Rule fullUpdateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, rule)
 
 
 
@@ -967,7 +836,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -975,20 +843,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this rule.
-
 var projectPk = "projectPk_example"; // String | 
-
 var rulesetPk = "rulesetPk_example"; // String | 
-
-var data = new bimdata.Rule(); // Rule | 
-
-apiInstance.fullUpdateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data).then(function(data) {
+var rule = new bimdata.Rule(); // Rule | 
+apiInstance.fullUpdateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, rule).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1005,7 +866,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this rule. | 
  **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
- **data** | [**Rule**](Rule.md)|  | 
+ **rule** | [**Rule**](Rule.md)|  | 
 
 ### Return type
 
@@ -1022,9 +883,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateRuleComponent"></a>
 # **fullUpdateRuleComponent**
-> RuleComponent fullUpdateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data)
-
-
+> RuleComponent fullUpdateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, ruleComponent)
 
 
 
@@ -1032,7 +891,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1040,22 +898,14 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this rule component.
-
 var projectPk = "projectPk_example"; // String | 
-
 var rulePk = "rulePk_example"; // String | 
-
 var rulesetPk = "rulesetPk_example"; // String | 
-
-var data = new bimdata.RuleComponent(); // RuleComponent | 
-
-apiInstance.fullUpdateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data).then(function(data) {
+var ruleComponent = new bimdata.RuleComponent(); // RuleComponent | 
+apiInstance.fullUpdateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, ruleComponent).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1073,7 +923,7 @@ Name | Type | Description  | Notes
  **projectPk** | **String**|  | 
  **rulePk** | **String**|  | 
  **rulesetPk** | **String**|  | 
- **data** | [**RuleComponent**](RuleComponent.md)|  | 
+ **ruleComponent** | [**RuleComponent**](RuleComponent.md)|  | 
 
 ### Return type
 
@@ -1090,9 +940,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateRuleset"></a>
 # **fullUpdateRuleset**
-> Ruleset fullUpdateRuleset(checkPlanPk, cloudPk, id, projectPk, data)
-
-
+> Ruleset fullUpdateRuleset(checkPlanPk, cloudPk, id, projectPk, ruleset)
 
 
 
@@ -1100,7 +948,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1108,18 +955,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ruleset.
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Ruleset(); // Ruleset | 
-
-apiInstance.fullUpdateRuleset(checkPlanPk, cloudPk, id, projectPk, data).then(function(data) {
+var ruleset = new bimdata.Ruleset(); // Ruleset | 
+apiInstance.fullUpdateRuleset(checkPlanPk, cloudPk, id, projectPk, ruleset).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1135,7 +976,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this ruleset. | 
  **projectPk** | **String**|  | 
- **data** | [**Ruleset**](Ruleset.md)|  | 
+ **ruleset** | [**Ruleset**](Ruleset.md)|  | 
 
 ### Return type
 
@@ -1152,9 +993,7 @@ Name | Type | Description  | Notes
 
 <a name="getChecker"></a>
 # **getChecker**
-> IfcChecker getChecker(cloudPk, id, ifcPk, projectPk, )
-
-
+> IfcChecker getChecker(cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -1162,7 +1001,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1170,16 +1008,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc checker.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getChecker(cloudPk, id, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getChecker(cloudPk, id, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1206,14 +1039,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCheckerResult"></a>
 # **getCheckerResult**
-> CheckerResult getCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, )
-
-
+> CheckerResult getCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk)
 
 
 
@@ -1221,7 +1052,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1229,18 +1059,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkerPk = "checkerPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this checker result.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1268,14 +1092,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCheckerResults"></a>
 # **getCheckerResults**
-> [CheckerResult] getCheckerResults(checkerPk, cloudPk, ifcPk, projectPk, )
-
-
+> [CheckerResult] getCheckerResults(checkerPk, cloudPk, ifcPk, projectPk)
 
 
 
@@ -1283,7 +1105,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1291,16 +1112,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkerPk = "checkerPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getCheckerResults(checkerPk, cloudPk, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getCheckerResults(checkerPk, cloudPk, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1327,14 +1143,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCheckers"></a>
 # **getCheckers**
-> [IfcChecker] getCheckers(cloudPk, ifcPk, projectPk, )
-
-
+> [IfcChecker] getCheckers(cloudPk, ifcPk, projectPk)
 
 
 
@@ -1342,7 +1156,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1350,14 +1163,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getCheckers(cloudPk, ifcPk, projectPk, ).then(function(data) {
+apiInstance.getCheckers(cloudPk, ifcPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1383,14 +1192,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCheckplan"></a>
 # **getCheckplan**
-> CheckPlan getCheckplan(cloudPk, id, projectPk, )
-
-
+> CheckPlan getCheckplan(cloudPk, id, projectPk)
 
 
 
@@ -1398,7 +1205,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1406,14 +1212,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this check plan.
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getCheckplan(cloudPk, id, projectPk, ).then(function(data) {
+apiInstance.getCheckplan(cloudPk, id, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1439,14 +1241,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCheckplans"></a>
 # **getCheckplans**
-> [CheckPlan] getCheckplans(cloudPk, projectPk, )
-
-
+> [CheckPlan] getCheckplans(cloudPk, projectPk)
 
 
 
@@ -1454,7 +1254,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1462,12 +1261,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getCheckplans(cloudPk, projectPk, ).then(function(data) {
+apiInstance.getCheckplans(cloudPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1492,14 +1288,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRule"></a>
 # **getRule**
-> Rule getRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, )
-
-
+> Rule getRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk)
 
 
 
@@ -1507,7 +1301,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1515,18 +1308,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this rule.
-
 var projectPk = "projectPk_example"; // String | 
-
 var rulesetPk = "rulesetPk_example"; // String | 
-
-apiInstance.getRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, ).then(function(data) {
+apiInstance.getRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1554,14 +1341,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRuleComponent"></a>
 # **getRuleComponent**
-> RuleComponent getRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, )
-
-
+> RuleComponent getRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk)
 
 
 
@@ -1569,7 +1354,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1577,20 +1361,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this rule component.
-
 var projectPk = "projectPk_example"; // String | 
-
 var rulePk = "rulePk_example"; // String | 
-
 var rulesetPk = "rulesetPk_example"; // String | 
-
-apiInstance.getRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, ).then(function(data) {
+apiInstance.getRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1619,14 +1396,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRuleComponents"></a>
 # **getRuleComponents**
-> [RuleComponent] getRuleComponents(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, )
-
-
+> [RuleComponent] getRuleComponents(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk)
 
 
 
@@ -1634,7 +1409,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1642,18 +1416,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var rulePk = "rulePk_example"; // String | 
-
 var rulesetPk = "rulesetPk_example"; // String | 
-
-apiInstance.getRuleComponents(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, ).then(function(data) {
+apiInstance.getRuleComponents(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1681,14 +1449,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRules"></a>
 # **getRules**
-> [Rule] getRules(checkPlanPk, cloudPk, projectPk, rulesetPk, )
-
-
+> [Rule] getRules(checkPlanPk, cloudPk, projectPk, rulesetPk)
 
 
 
@@ -1696,7 +1462,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1704,16 +1469,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var rulesetPk = "rulesetPk_example"; // String | 
-
-apiInstance.getRules(checkPlanPk, cloudPk, projectPk, rulesetPk, ).then(function(data) {
+apiInstance.getRules(checkPlanPk, cloudPk, projectPk, rulesetPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1740,14 +1500,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRuleset"></a>
 # **getRuleset**
-> Ruleset getRuleset(checkPlanPk, cloudPk, id, projectPk, )
-
-
+> Ruleset getRuleset(checkPlanPk, cloudPk, id, projectPk)
 
 
 
@@ -1755,7 +1513,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1763,16 +1520,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ruleset.
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getRuleset(checkPlanPk, cloudPk, id, projectPk, ).then(function(data) {
+apiInstance.getRuleset(checkPlanPk, cloudPk, id, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1799,14 +1551,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRulesets"></a>
 # **getRulesets**
-> [Ruleset] getRulesets(checkPlanPk, cloudPk, projectPk, )
-
-
+> [Ruleset] getRulesets(checkPlanPk, cloudPk, projectPk)
 
 
 
@@ -1814,7 +1564,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1822,14 +1571,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getRulesets(checkPlanPk, cloudPk, projectPk, ).then(function(data) {
+apiInstance.getRulesets(checkPlanPk, cloudPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1855,12 +1600,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="launchNewCheck"></a>
 # **launchNewCheck**
-> launchNewCheck(cloudPk, id, ifcPk, projectPk, data)
+> launchNewCheck(cloudPk, id, ifcPk, projectPk, ifcChecker)
 
 
 
@@ -1870,7 +1615,6 @@ Starts a new check in the checker
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1878,18 +1622,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc checker.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.IfcChecker(); // IfcChecker | 
-
-apiInstance.launchNewCheck(cloudPk, id, ifcPk, projectPk, data).then(function() {
+var ifcChecker = new bimdata.IfcChecker(); // IfcChecker | 
+apiInstance.launchNewCheck(cloudPk, id, ifcPk, projectPk, ifcChecker).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1905,7 +1643,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this ifc checker. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**IfcChecker**](IfcChecker.md)|  | 
+ **ifcChecker** | [**IfcChecker**](IfcChecker.md)|  | 
 
 ### Return type
 
@@ -1918,13 +1656,11 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="updateChecker"></a>
 # **updateChecker**
-> IfcChecker updateChecker(cloudPk, id, ifcPk, projectPk, data)
-
-
+> IfcChecker updateChecker(cloudPk, id, ifcPk, projectPk, ifcChecker)
 
 
 
@@ -1932,7 +1668,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1940,18 +1675,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ifc checker.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.IfcChecker(); // IfcChecker | 
-
-apiInstance.updateChecker(cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var ifcChecker = new bimdata.IfcChecker(); // IfcChecker | 
+apiInstance.updateChecker(cloudPk, id, ifcPk, projectPk, ifcChecker).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1967,7 +1696,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this ifc checker. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**IfcChecker**](IfcChecker.md)|  | 
+ **ifcChecker** | [**IfcChecker**](IfcChecker.md)|  | 
 
 ### Return type
 
@@ -1984,9 +1713,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCheckerResult"></a>
 # **updateCheckerResult**
-> CheckerResult updateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data)
-
-
+> CheckerResult updateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, checkerResult)
 
 
 
@@ -1994,7 +1721,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2002,20 +1728,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkerPk = "checkerPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this checker result.
-
 var ifcPk = "ifcPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.CheckerResult(); // CheckerResult | 
-
-apiInstance.updateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data).then(function(data) {
+var checkerResult = new bimdata.CheckerResult(); // CheckerResult | 
+apiInstance.updateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, checkerResult).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2032,7 +1751,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this checker result. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**CheckerResult**](CheckerResult.md)|  | 
+ **checkerResult** | [**CheckerResult**](CheckerResult.md)|  | 
 
 ### Return type
 
@@ -2049,9 +1768,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCheckplan"></a>
 # **updateCheckplan**
-> CheckPlan updateCheckplan(cloudPk, id, projectPk, data)
-
-
+> CheckPlan updateCheckplan(cloudPk, id, projectPk, checkPlan)
 
 
 
@@ -2059,7 +1776,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2067,16 +1783,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this check plan.
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.CheckPlan(); // CheckPlan | 
-
-apiInstance.updateCheckplan(cloudPk, id, projectPk, data).then(function(data) {
+var checkPlan = new bimdata.CheckPlan(); // CheckPlan | 
+apiInstance.updateCheckplan(cloudPk, id, projectPk, checkPlan).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2091,7 +1802,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this check plan. | 
  **projectPk** | **String**|  | 
- **data** | [**CheckPlan**](CheckPlan.md)|  | 
+ **checkPlan** | [**CheckPlan**](CheckPlan.md)|  | 
 
 ### Return type
 
@@ -2108,9 +1819,7 @@ Name | Type | Description  | Notes
 
 <a name="updateRule"></a>
 # **updateRule**
-> Rule updateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data)
-
-
+> Rule updateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, rule)
 
 
 
@@ -2118,7 +1827,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2126,20 +1834,13 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this rule.
-
 var projectPk = "projectPk_example"; // String | 
-
 var rulesetPk = "rulesetPk_example"; // String | 
-
-var data = new bimdata.Rule(); // Rule | 
-
-apiInstance.updateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data).then(function(data) {
+var rule = new bimdata.Rule(); // Rule | 
+apiInstance.updateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, rule).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2156,7 +1857,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this rule. | 
  **projectPk** | **String**|  | 
  **rulesetPk** | **String**|  | 
- **data** | [**Rule**](Rule.md)|  | 
+ **rule** | [**Rule**](Rule.md)|  | 
 
 ### Return type
 
@@ -2173,9 +1874,7 @@ Name | Type | Description  | Notes
 
 <a name="updateRuleComponent"></a>
 # **updateRuleComponent**
-> RuleComponent updateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data)
-
-
+> RuleComponent updateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, ruleComponent)
 
 
 
@@ -2183,7 +1882,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2191,22 +1889,14 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this rule component.
-
 var projectPk = "projectPk_example"; // String | 
-
 var rulePk = "rulePk_example"; // String | 
-
 var rulesetPk = "rulesetPk_example"; // String | 
-
-var data = new bimdata.RuleComponent(); // RuleComponent | 
-
-apiInstance.updateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data).then(function(data) {
+var ruleComponent = new bimdata.RuleComponent(); // RuleComponent | 
+apiInstance.updateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, ruleComponent).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2224,7 +1914,7 @@ Name | Type | Description  | Notes
  **projectPk** | **String**|  | 
  **rulePk** | **String**|  | 
  **rulesetPk** | **String**|  | 
- **data** | [**RuleComponent**](RuleComponent.md)|  | 
+ **ruleComponent** | [**RuleComponent**](RuleComponent.md)|  | 
 
 ### Return type
 
@@ -2241,9 +1931,7 @@ Name | Type | Description  | Notes
 
 <a name="updateRuleset"></a>
 # **updateRuleset**
-> Ruleset updateRuleset(checkPlanPk, cloudPk, id, projectPk, data)
-
-
+> Ruleset updateRuleset(checkPlanPk, cloudPk, id, projectPk, ruleset)
 
 
 
@@ -2251,7 +1939,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2259,18 +1946,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CheckplanApi();
-
 var checkPlanPk = "checkPlanPk_example"; // String | 
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this ruleset.
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Ruleset(); // Ruleset | 
-
-apiInstance.updateRuleset(checkPlanPk, cloudPk, id, projectPk, data).then(function(data) {
+var ruleset = new bimdata.Ruleset(); // Ruleset | 
+apiInstance.updateRuleset(checkPlanPk, cloudPk, id, projectPk, ruleset).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2286,7 +1967,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this ruleset. | 
  **projectPk** | **String**|  | 
- **data** | [**Ruleset**](Ruleset.md)|  | 
+ **ruleset** | [**Ruleset**](Ruleset.md)|  | 
 
 ### Return type
 

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
 **name** | **String** |  | [optional] 
-**creator** | [**FosUser**](FosUser.md) |  | [optional] 
+**creator** | [**User**](User.md) |  | [optional] 
 **status** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 

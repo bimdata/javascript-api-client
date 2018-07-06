@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
-**name** | **String** |  | [optional] 
-**notation** | **String** |  | [optional] 
+**name** | **String** |  | 
+**notation** | **String** |  | 
 **title** | **String** |  | [optional] 
 
 

@@ -1,6 +1,6 @@
 # bimdata.ProjectApi
 
-All URIs are relative to *https://api-staging.bimdata.io*
+All URIs are relative to *https://api-beta.bimdata.io/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -39,7 +39,7 @@ Method | HTTP request | Description
 
 <a name="createClassification"></a>
 # **createClassification**
-> [Classification] createClassification(cloudPk, projectPk, data)
+> [Classification] createClassification(cloudPk, projectPk, classification)
 
 
 
@@ -49,7 +49,6 @@ Method | HTTP request | Description
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -57,14 +56,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = [new bimdata.Classification()]; // [Classification] | 
-
-apiInstance.createClassification(cloudPk, projectPk, data).then(function(data) {
+var classification = [new bimdata.Classification()]; // [Classification] | 
+apiInstance.createClassification(cloudPk, projectPk, classification).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -78,7 +73,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Classification]**](Classification.md)|  | 
+ **classification** | [**[Classification]**](Array.md)|  | 
 
 ### Return type
 
@@ -99,13 +94,10 @@ Name | Type | Description  | Notes
 
 
 
-
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -113,14 +105,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
 var name = "name_example"; // String | 
-
-var opts = { 
+var opts = {
   'id': 56, // Number | 
   'parent': 56, // Number | 
   'parentId': 56, // Number | 
@@ -128,7 +116,7 @@ var opts = {
   'project': 56, // Number | 
   'fileName': "fileName_example", // String | 
   'description': "description_example", // String | 
-  'file': "/path/to/file.txt", // File | 
+  'file': "/path/to/file", // File | 
   'size': "size_example", // String | 
   'createdAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'updatedAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
@@ -177,9 +165,7 @@ Name | Type | Description  | Notes
 
 <a name="createFolder"></a>
 # **createFolder**
-> Folder createFolder(cloudPk, projectPk, data)
-
-
+> Folder createFolder(cloudPk, projectPk, folder)
 
 
 
@@ -187,7 +173,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -195,14 +180,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Folder(); // Folder | 
-
-apiInstance.createFolder(cloudPk, projectPk, data).then(function(data) {
+var folder = new bimdata.Folder(); // Folder | 
+apiInstance.createFolder(cloudPk, projectPk, folder).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -216,7 +197,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Folder**](Folder.md)|  | 
+ **folder** | [**Folder**](Folder.md)|  | 
 
 ### Return type
 
@@ -233,9 +214,7 @@ Name | Type | Description  | Notes
 
 <a name="createProject"></a>
 # **createProject**
-> Project createProject(cloudPk, data)
-
-
+> Project createProject(cloudPk, project)
 
 
 
@@ -243,7 +222,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -251,12 +229,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
-var data = new bimdata.Project(); // Project | 
-
-apiInstance.createProject(cloudPk, data).then(function(data) {
+var project = new bimdata.Project(); // Project | 
+apiInstance.createProject(cloudPk, project).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -269,7 +244,7 @@ apiInstance.createProject(cloudPk, data).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **data** | [**Project**](Project.md)|  | 
+ **project** | [**Project**](Project.md)|  | 
 
 ### Return type
 
@@ -286,9 +261,7 @@ Name | Type | Description  | Notes
 
 <a name="createProjectUser"></a>
 # **createProjectUser**
-> FosUserWrite createProjectUser(cloudPk, projectPk, data)
-
-
+> InviteUser createProjectUser(cloudPk, projectPk, inviteUser)
 
 
 
@@ -296,7 +269,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -304,14 +276,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.FosUserWrite(); // FosUserWrite | 
-
-apiInstance.createProjectUser(cloudPk, projectPk, data).then(function(data) {
+var inviteUser = new bimdata.InviteUser(); // InviteUser | 
+apiInstance.createProjectUser(cloudPk, projectPk, inviteUser).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -325,11 +293,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**FosUserWrite**](FosUserWrite.md)|  | 
+ **inviteUser** | [**InviteUser**](InviteUser.md)|  | 
 
 ### Return type
 
-[**FosUserWrite**](FosUserWrite.md)
+[**InviteUser**](InviteUser.md)
 
 ### Authorization
 
@@ -342,9 +310,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteClassification"></a>
 # **deleteClassification**
-> deleteClassification(cloudPk, id, projectPk, )
-
-
+> deleteClassification(cloudPk, id, projectPk)
 
 
 
@@ -352,7 +318,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -360,14 +325,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this classification.
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteClassification(cloudPk, id, projectPk, ).then(function() {
+apiInstance.deleteClassification(cloudPk, id, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -393,14 +354,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteDocument"></a>
 # **deleteDocument**
-> Document deleteDocument(cloudPk, id, projectPk, )
-
-
+> Document deleteDocument(cloudPk, id, projectPk)
 
 
 
@@ -408,7 +367,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -416,14 +374,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this document.
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteDocument(cloudPk, id, projectPk, ).then(function(data) {
+apiInstance.deleteDocument(cloudPk, id, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -449,14 +403,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteFolder"></a>
 # **deleteFolder**
-> deleteFolder(cloudPk, id, projectPk, )
-
-
+> deleteFolder(cloudPk, id, projectPk)
 
 
 
@@ -464,7 +416,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -472,14 +423,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this folder.
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteFolder(cloudPk, id, projectPk, ).then(function() {
+apiInstance.deleteFolder(cloudPk, id, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -505,14 +452,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteProject"></a>
 # **deleteProject**
-> deleteProject(cloudPk, id, )
-
-
+> deleteProject(cloudPk, id)
 
 
 
@@ -520,7 +465,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -528,12 +472,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
-apiInstance.deleteProject(cloudPk, id, ).then(function() {
+apiInstance.deleteProject(cloudPk, id).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -558,14 +499,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteProjectUser"></a>
 # **deleteProjectUser**
-> deleteProjectUser(cloudPk, id, projectPk, )
-
-
+> deleteProjectUser(cloudPk, id, projectPk)
 
 
 
@@ -573,7 +512,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -581,14 +519,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.deleteProjectUser(cloudPk, id, projectPk, ).then(function() {
+apiInstance.deleteProjectUser(cloudPk, id, projectPk).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -614,14 +548,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="fullUpdateClassification"></a>
 # **fullUpdateClassification**
-> Classification fullUpdateClassification(cloudPk, id, projectPk, data)
-
-
+> Classification fullUpdateClassification(cloudPk, id, projectPk, classification)
 
 
 
@@ -629,7 +561,6 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -637,16 +568,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this classification.
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Classification(); // Classification | 
-
-apiInstance.fullUpdateClassification(cloudPk, id, projectPk, data).then(function(data) {
+var classification = new bimdata.Classification(); // Classification | 
+apiInstance.fullUpdateClassification(cloudPk, id, projectPk, classification).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -661,7 +587,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this classification. | 
  **projectPk** | **String**|  | 
- **data** | [**Classification**](Classification.md)|  | 
+ **classification** | [**Classification**](Classification.md)|  | 
 
 ### Return type
 
@@ -678,9 +604,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateDocument"></a>
 # **fullUpdateDocument**
-> Document fullUpdateDocument(cloudPk, id, projectPk, name, opts)
-
-
+> Document fullUpdateDocument(cloudPk, id2, projectPk, name, opts)
 
 
 
@@ -688,7 +612,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -696,30 +619,25 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
-var id = 56; // Number | A unique integer value identifying this document.
-
+var id2 = 56; // Number | A unique integer value identifying this document.
 var projectPk = "projectPk_example"; // String | 
-
 var name = "name_example"; // String | 
-
-var opts = { 
-  'id2': 56, // Number | 
+var opts = {
+  'id': 56, // Number | 
   'parent': 56, // Number | 
   'parentId': 56, // Number | 
   'creator': 56, // Number | 
   'project': 56, // Number | 
   'fileName': "fileName_example", // String | 
   'description': "description_example", // String | 
-  'file': "/path/to/file.txt", // File | 
+  'file': "/path/to/file", // File | 
   'size': "size_example", // String | 
   'createdAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'updatedAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'ifcId': "ifcId_example" // String | 
 };
-apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, opts).then(function(data) {
+apiInstance.fullUpdateDocument(cloudPk, id2, projectPk, name, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -732,10 +650,10 @@ apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, opts).then(function
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this document. | 
+ **id2** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **String**|  | 
  **name** | **String**|  | 
- **id2** | **Number**|  | [optional] 
+ **id** | **Number**|  | [optional] 
  **parent** | **Number**|  | [optional] 
  **parentId** | **Number**|  | [optional] 
  **creator** | **Number**|  | [optional] 
@@ -763,9 +681,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateFolder"></a>
 # **fullUpdateFolder**
-> Folder fullUpdateFolder(cloudPk, id, projectPk, data)
-
-
+> Folder fullUpdateFolder(cloudPk, id, projectPk, folder)
 
 
 
@@ -773,7 +689,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -781,16 +696,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this folder.
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Folder(); // Folder | 
-
-apiInstance.fullUpdateFolder(cloudPk, id, projectPk, data).then(function(data) {
+var folder = new bimdata.Folder(); // Folder | 
+apiInstance.fullUpdateFolder(cloudPk, id, projectPk, folder).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -805,7 +715,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this folder. | 
  **projectPk** | **String**|  | 
- **data** | [**Folder**](Folder.md)|  | 
+ **folder** | [**Folder**](Folder.md)|  | 
 
 ### Return type
 
@@ -822,9 +732,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateProject"></a>
 # **fullUpdateProject**
-> Project fullUpdateProject(cloudPk, id, data)
-
-
+> Project fullUpdateProject(cloudPk, id, project)
 
 
 
@@ -832,7 +740,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -840,14 +747,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
-var data = new bimdata.Project(); // Project | 
-
-apiInstance.fullUpdateProject(cloudPk, id, data).then(function(data) {
+var project = new bimdata.Project(); // Project | 
+apiInstance.fullUpdateProject(cloudPk, id, project).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -861,7 +764,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **String**|  | 
- **data** | [**Project**](Project.md)|  | 
+ **project** | [**Project**](Project.md)|  | 
 
 ### Return type
 
@@ -878,9 +781,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateProjectUser"></a>
 # **fullUpdateProjectUser**
-> FosUserWrite fullUpdateProjectUser(cloudPk, id, projectPk, data)
-
-
+> InviteUser fullUpdateProjectUser(cloudPk, id, projectPk, inviteUser)
 
 
 
@@ -888,7 +789,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -896,16 +796,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.FosUserWrite(); // FosUserWrite | 
-
-apiInstance.fullUpdateProjectUser(cloudPk, id, projectPk, data).then(function(data) {
+var inviteUser = new bimdata.InviteUser(); // InviteUser | 
+apiInstance.fullUpdateProjectUser(cloudPk, id, projectPk, inviteUser).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -920,11 +815,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**FosUserWrite**](FosUserWrite.md)|  | 
+ **inviteUser** | [**InviteUser**](InviteUser.md)|  | 
 
 ### Return type
 
-[**FosUserWrite**](FosUserWrite.md)
+[**InviteUser**](InviteUser.md)
 
 ### Authorization
 
@@ -937,9 +832,7 @@ Name | Type | Description  | Notes
 
 <a name="getClassification"></a>
 # **getClassification**
-> Classification getClassification(cloudPk, id, projectPk, )
-
-
+> Classification getClassification(cloudPk, id, projectPk)
 
 
 
@@ -947,7 +840,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -955,14 +847,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this classification.
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getClassification(cloudPk, id, projectPk, ).then(function(data) {
+apiInstance.getClassification(cloudPk, id, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -988,14 +876,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getClassifications"></a>
 # **getClassifications**
-> [Classification] getClassifications(cloudPk, projectPk, )
-
-
+> [Classification] getClassifications(cloudPk, projectPk)
 
 
 
@@ -1003,7 +889,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1011,12 +896,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getClassifications(cloudPk, projectPk, ).then(function(data) {
+apiInstance.getClassifications(cloudPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1041,14 +923,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getDocument"></a>
 # **getDocument**
-> Document getDocument(cloudPk, id, projectPk, )
-
-
+> Document getDocument(cloudPk, id, projectPk)
 
 
 
@@ -1056,7 +936,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1064,14 +943,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this document.
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getDocument(cloudPk, id, projectPk, ).then(function(data) {
+apiInstance.getDocument(cloudPk, id, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1097,14 +972,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getDocuments"></a>
 # **getDocuments**
-> Document getDocuments(cloudPk, projectPk, )
-
-
+> Document getDocuments(cloudPk, projectPk)
 
 
 
@@ -1112,7 +985,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1120,12 +992,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getDocuments(cloudPk, projectPk, ).then(function(data) {
+apiInstance.getDocuments(cloudPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1150,14 +1019,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getFolder"></a>
 # **getFolder**
-> Folder getFolder(cloudPk, id, projectPk, )
-
-
+> Folder getFolder(cloudPk, id, projectPk)
 
 
 
@@ -1165,7 +1032,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1173,14 +1039,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this folder.
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getFolder(cloudPk, id, projectPk, ).then(function(data) {
+apiInstance.getFolder(cloudPk, id, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1206,14 +1068,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getFolders"></a>
 # **getFolders**
-> [Folder] getFolders(cloudPk, projectPk, )
-
-
+> [Folder] getFolders(cloudPk, projectPk)
 
 
 
@@ -1221,7 +1081,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1229,12 +1088,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getFolders(cloudPk, projectPk, ).then(function(data) {
+apiInstance.getFolders(cloudPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1259,14 +1115,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProject"></a>
 # **getProject**
-> Project getProject(cloudPk, id, )
-
-
+> Project getProject(cloudPk, id)
 
 
 
@@ -1274,7 +1128,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1282,12 +1135,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
-apiInstance.getProject(cloudPk, id, ).then(function(data) {
+apiInstance.getProject(cloudPk, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1312,7 +1162,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProjectTree"></a>
@@ -1327,7 +1177,6 @@ Returns the document tree from root folder
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1335,11 +1184,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 apiInstance.getProjectTree(cloudPk, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -1365,14 +1211,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProjectUser"></a>
 # **getProjectUser**
-> FosUser getProjectUser(cloudPk, id, projectPk, )
-
-
+> User getProjectUser(cloudPk, id, projectPk)
 
 
 
@@ -1380,7 +1224,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1388,14 +1231,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getProjectUser(cloudPk, id, projectPk, ).then(function(data) {
+apiInstance.getProjectUser(cloudPk, id, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1413,7 +1252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FosUser**](FosUser.md)
+[**User**](User.md)
 
 ### Authorization
 
@@ -1421,14 +1260,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProjectUsers"></a>
 # **getProjectUsers**
-> [FosUser] getProjectUsers(cloudPk, projectPk, )
-
-
+> [User] getProjectUsers(cloudPk, projectPk)
 
 
 
@@ -1436,7 +1273,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1444,12 +1280,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-apiInstance.getProjectUsers(cloudPk, projectPk, ).then(function(data) {
+apiInstance.getProjectUsers(cloudPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1466,7 +1299,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[FosUser]**](FosUser.md)
+[**[User]**](User.md)
 
 ### Authorization
 
@@ -1474,14 +1307,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getProjects"></a>
 # **getProjects**
-> [Project] getProjects(cloudPk, )
-
-
+> [Project] getProjects(cloudPk)
 
 
 
@@ -1489,7 +1320,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1497,10 +1327,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
-apiInstance.getProjects(cloudPk, ).then(function(data) {
+apiInstance.getProjects(cloudPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1524,14 +1352,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateClassification"></a>
 # **updateClassification**
-> Classification updateClassification(cloudPk, id, projectPk, data)
-
-
+> Classification updateClassification(cloudPk, id, projectPk, classification)
 
 
 
@@ -1539,7 +1365,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1547,16 +1372,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this classification.
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Classification(); // Classification | 
-
-apiInstance.updateClassification(cloudPk, id, projectPk, data).then(function(data) {
+var classification = new bimdata.Classification(); // Classification | 
+apiInstance.updateClassification(cloudPk, id, projectPk, classification).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1571,7 +1391,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this classification. | 
  **projectPk** | **String**|  | 
- **data** | [**Classification**](Classification.md)|  | 
+ **classification** | [**Classification**](Classification.md)|  | 
 
 ### Return type
 
@@ -1588,9 +1408,7 @@ Name | Type | Description  | Notes
 
 <a name="updateDocument"></a>
 # **updateDocument**
-> Document updateDocument(cloudPk, id, projectPk, data)
-
-
+> Document updateDocument(cloudPk, id, projectPk, document)
 
 
 
@@ -1598,7 +1416,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1606,16 +1423,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this document.
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Document(); // Document | 
-
-apiInstance.updateDocument(cloudPk, id, projectPk, data).then(function(data) {
+var document = new bimdata.Document(); // Document | 
+apiInstance.updateDocument(cloudPk, id, projectPk, document).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1630,7 +1442,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **String**|  | 
- **data** | [**Document**](Document.md)|  | 
+ **document** | [**Document**](Document.md)|  | 
 
 ### Return type
 
@@ -1647,9 +1459,7 @@ Name | Type | Description  | Notes
 
 <a name="updateFolder"></a>
 # **updateFolder**
-> Folder updateFolder(cloudPk, id, projectPk, data)
-
-
+> Folder updateFolder(cloudPk, id, projectPk, folder)
 
 
 
@@ -1657,7 +1467,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1665,16 +1474,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = 56; // Number | A unique integer value identifying this folder.
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.Folder(); // Folder | 
-
-apiInstance.updateFolder(cloudPk, id, projectPk, data).then(function(data) {
+var folder = new bimdata.Folder(); // Folder | 
+apiInstance.updateFolder(cloudPk, id, projectPk, folder).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1689,7 +1493,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this folder. | 
  **projectPk** | **String**|  | 
- **data** | [**Folder**](Folder.md)|  | 
+ **folder** | [**Folder**](Folder.md)|  | 
 
 ### Return type
 
@@ -1706,9 +1510,7 @@ Name | Type | Description  | Notes
 
 <a name="updateProject"></a>
 # **updateProject**
-> Project updateProject(cloudPk, id, data)
-
-
+> Project updateProject(cloudPk, id, project)
 
 
 
@@ -1716,7 +1518,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1724,14 +1525,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
-var data = new bimdata.Project(); // Project | 
-
-apiInstance.updateProject(cloudPk, id, data).then(function(data) {
+var project = new bimdata.Project(); // Project | 
+apiInstance.updateProject(cloudPk, id, project).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1745,7 +1542,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **String**|  | 
- **data** | [**Project**](Project.md)|  | 
+ **project** | [**Project**](Project.md)|  | 
 
 ### Return type
 
@@ -1762,9 +1559,7 @@ Name | Type | Description  | Notes
 
 <a name="updateProjectUser"></a>
 # **updateProjectUser**
-> FosUserWrite updateProjectUser(cloudPk, id, projectPk, data)
-
-
+> InviteUser updateProjectUser(cloudPk, id, projectPk, inviteUser)
 
 
 
@@ -1772,7 +1567,6 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
-
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1780,16 +1574,11 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.ProjectApi();
-
 var cloudPk = "cloudPk_example"; // String | 
-
 var id = "id_example"; // String | 
-
 var projectPk = "projectPk_example"; // String | 
-
-var data = new bimdata.FosUserWrite(); // FosUserWrite | 
-
-apiInstance.updateProjectUser(cloudPk, id, projectPk, data).then(function(data) {
+var inviteUser = new bimdata.InviteUser(); // InviteUser | 
+apiInstance.updateProjectUser(cloudPk, id, projectPk, inviteUser).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1804,11 +1593,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**FosUserWrite**](FosUserWrite.md)|  | 
+ **inviteUser** | [**InviteUser**](InviteUser.md)|  | 
 
 ### Return type
 
-[**FosUserWrite**](FosUserWrite.md)
+[**InviteUser**](InviteUser.md)
 
 ### Authorization
 
