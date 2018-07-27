@@ -1,6 +1,6 @@
 # bimdata.CloudApi
 
-All URIs are relative to *https://api-beta.bimdata.io/*
+All URIs are relative to *https://api-beta.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,7 +20,9 @@ Method | HTTP request | Description
 
 <a name="createCloud"></a>
 # **createCloud**
-> Cloud createCloud(cloud)
+> Cloud createCloud(data)
+
+
 
 
 
@@ -28,6 +30,7 @@ Method | HTTP request | Description
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
+
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -35,8 +38,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
-var cloud = new bimdata.Cloud(); // Cloud | 
-apiInstance.createCloud(cloud).then(function(data) {
+
+var data = new bimdata.Cloud(); // Cloud | 
+
+apiInstance.createCloud(data).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -48,7 +53,7 @@ apiInstance.createCloud(cloud).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud** | [**Cloud**](Cloud.md)|  | 
+ **data** | [**Cloud**](Cloud.md)|  | 
 
 ### Return type
 
@@ -65,7 +70,9 @@ Name | Type | Description  | Notes
 
 <a name="createCloudUser"></a>
 # **createCloudUser**
-> InviteUser createCloudUser(cloudPk, inviteUser)
+> InviteUser createCloudUser(cloudPk, data)
+
+
 
 
 
@@ -73,6 +80,7 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
+
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -80,9 +88,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
+
 var cloudPk = "cloudPk_example"; // String | 
-var inviteUser = new bimdata.InviteUser(); // InviteUser | 
-apiInstance.createCloudUser(cloudPk, inviteUser).then(function(data) {
+
+var data = new bimdata.InviteUser(); // InviteUser | 
+
+apiInstance.createCloudUser(cloudPk, data).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -95,7 +106,7 @@ apiInstance.createCloudUser(cloudPk, inviteUser).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **inviteUser** | [**InviteUser**](InviteUser.md)|  | 
+ **data** | [**InviteUser**](InviteUser.md)|  | 
 
 ### Return type
 
@@ -112,7 +123,9 @@ Name | Type | Description  | Notes
 
 <a name="deleteCloudUser"></a>
 # **deleteCloudUser**
-> deleteCloudUser(cloudPk, id)
+> deleteCloudUser(cloudPk, id, )
+
+
 
 
 
@@ -120,6 +133,7 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
+
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -127,9 +141,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
+
 var cloudPk = "cloudPk_example"; // String | 
+
 var id = "id_example"; // String | 
-apiInstance.deleteCloudUser(cloudPk, id).then(function() {
+
+apiInstance.deleteCloudUser(cloudPk, id, ).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -154,12 +171,14 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="fullUpdateCloud"></a>
 # **fullUpdateCloud**
-> Cloud fullUpdateCloud(id, cloud)
+> Cloud fullUpdateCloud(id, data)
+
+
 
 
 
@@ -167,6 +186,7 @@ null (empty response body)
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
+
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -174,9 +194,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
+
 var id = "id_example"; // String | 
-var cloud = new bimdata.Cloud(); // Cloud | 
-apiInstance.fullUpdateCloud(id, cloud).then(function(data) {
+
+var data = new bimdata.Cloud(); // Cloud | 
+
+apiInstance.fullUpdateCloud(id, data).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -189,7 +212,7 @@ apiInstance.fullUpdateCloud(id, cloud).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **cloud** | [**Cloud**](Cloud.md)|  | 
+ **data** | [**Cloud**](Cloud.md)|  | 
 
 ### Return type
 
@@ -206,7 +229,9 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateCloudUser"></a>
 # **fullUpdateCloudUser**
-> InviteUser fullUpdateCloudUser(cloudPk, id, inviteUser)
+> InviteUser fullUpdateCloudUser(cloudPk, id, data)
+
+
 
 
 
@@ -214,6 +239,7 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
+
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -221,10 +247,14 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
+
 var cloudPk = "cloudPk_example"; // String | 
+
 var id = "id_example"; // String | 
-var inviteUser = new bimdata.InviteUser(); // InviteUser | 
-apiInstance.fullUpdateCloudUser(cloudPk, id, inviteUser).then(function(data) {
+
+var data = new bimdata.InviteUser(); // InviteUser | 
+
+apiInstance.fullUpdateCloudUser(cloudPk, id, data).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -238,7 +268,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **String**|  | 
- **inviteUser** | [**InviteUser**](InviteUser.md)|  | 
+ **data** | [**InviteUser**](InviteUser.md)|  | 
 
 ### Return type
 
@@ -255,7 +285,7 @@ Name | Type | Description  | Notes
 
 <a name="getCloud"></a>
 # **getCloud**
-> Cloud getCloud(id)
+> Cloud getCloud(id, )
 
 
 
@@ -265,6 +295,7 @@ Returns user and his cloud role
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
+
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -272,8 +303,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
+
 var id = "id_example"; // String | 
-apiInstance.getCloud(id).then(function(data) {
+
+apiInstance.getCloud(id, ).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -297,12 +330,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getCloudSize"></a>
 # **getCloudSize**
-> Number getCloudSize(id)
+> &#39;Number&#39; getCloudSize(id)
 
 
 
@@ -312,6 +345,7 @@ Returns the size of the cloud in Bytes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
+
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -319,7 +353,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
+
 var id = "id_example"; // String | 
+
 apiInstance.getCloudSize(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -336,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Number**
+**&#39;Number&#39;**
 
 ### Authorization
 
@@ -344,12 +380,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getCloudUser"></a>
 # **getCloudUser**
-> User getCloudUser(cloudPk, id)
+> User getCloudUser(cloudPk, id, )
+
+
 
 
 
@@ -357,6 +395,7 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
+
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -364,9 +403,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
+
 var cloudPk = "cloudPk_example"; // String | 
+
 var id = "id_example"; // String | 
-apiInstance.getCloudUser(cloudPk, id).then(function(data) {
+
+apiInstance.getCloudUser(cloudPk, id, ).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -391,12 +433,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getCloudUsers"></a>
 # **getCloudUsers**
-> [User] getCloudUsers(cloudPk)
+> [User] getCloudUsers(cloudPk, )
+
+
 
 
 
@@ -404,6 +448,7 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
+
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -411,8 +456,10 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
+
 var cloudPk = "cloudPk_example"; // String | 
-apiInstance.getCloudUsers(cloudPk).then(function(data) {
+
+apiInstance.getCloudUsers(cloudPk, ).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -436,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getClouds"></a>
@@ -451,6 +498,7 @@ Returns user&#39;s cloud only
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
+
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -479,12 +527,14 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateCloud"></a>
 # **updateCloud**
-> Cloud updateCloud(id, cloud)
+> Cloud updateCloud(id, data)
+
+
 
 
 
@@ -492,6 +542,7 @@ This endpoint does not need any parameter.
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
+
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -499,9 +550,12 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
+
 var id = "id_example"; // String | 
-var cloud = new bimdata.Cloud(); // Cloud | 
-apiInstance.updateCloud(id, cloud).then(function(data) {
+
+var data = new bimdata.Cloud(); // Cloud | 
+
+apiInstance.updateCloud(id, data).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -514,7 +568,7 @@ apiInstance.updateCloud(id, cloud).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **cloud** | [**Cloud**](Cloud.md)|  | 
+ **data** | [**Cloud**](Cloud.md)|  | 
 
 ### Return type
 
@@ -531,7 +585,9 @@ Name | Type | Description  | Notes
 
 <a name="updateCloudUser"></a>
 # **updateCloudUser**
-> InviteUser updateCloudUser(cloudPk, id, inviteUser)
+> InviteUser updateCloudUser(cloudPk, id, data)
+
+
 
 
 
@@ -539,6 +595,7 @@ Name | Type | Description  | Notes
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
 var defaultClient = bimdata.ApiClient.instance;
+
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -546,10 +603,14 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
+
 var cloudPk = "cloudPk_example"; // String | 
+
 var id = "id_example"; // String | 
-var inviteUser = new bimdata.InviteUser(); // InviteUser | 
-apiInstance.updateCloudUser(cloudPk, id, inviteUser).then(function(data) {
+
+var data = new bimdata.InviteUser(); // InviteUser | 
+
+apiInstance.updateCloudUser(cloudPk, id, data).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -563,7 +624,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **String**|  | 
- **inviteUser** | [**InviteUser**](InviteUser.md)|  | 
+ **data** | [**InviteUser**](InviteUser.md)|  | 
 
 ### Return type
 
