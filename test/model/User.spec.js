@@ -75,12 +75,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property enabled (base name: "enabled")', function() {
-      // uncomment below and update the code to test the property enabled
-      //var instance = new bimdata.User();
-      //expect(instance).to.be();
-    });
-
     it('should have the property firstname (base name: "firstname")', function() {
       // uncomment below and update the code to test the property firstname
       //var instance = new bimdata.User();

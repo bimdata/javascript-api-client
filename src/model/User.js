@@ -56,7 +56,6 @@
 
 
 
-
   };
 
   /**
@@ -78,9 +77,6 @@
       }
       if (data.hasOwnProperty('company')) {
         obj['company'] = ApiClient.convertToType(data['company'], 'String');
-      }
-      if (data.hasOwnProperty('enabled')) {
-        obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
       }
       if (data.hasOwnProperty('firstname')) {
         obj['firstname'] = ApiClient.convertToType(data['firstname'], 'String');
@@ -113,10 +109,6 @@
    * @member {String} company
    */
   exports.prototype['company'] = undefined;
-  /**
-   * @member {Boolean} enabled
-   */
-  exports.prototype['enabled'] = undefined;
   /**
    * @member {String} firstname
    */
