@@ -119,7 +119,7 @@ api.createChecker(cloudPk, ifcPk, projectPk, ifcChecker).then(function(data) {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api-beta.bimdata.io/*
+All URIs are relative to *https://api-beta.bimdata.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -328,6 +328,8 @@ Class | Method | HTTP request | Description
  - [bimdata.ForgotPassword](docs/ForgotPassword.md)
  - [bimdata.Ifc](docs/Ifc.md)
  - [bimdata.IfcChecker](docs/IfcChecker.md)
+ - [bimdata.IfcCheckerCheckplan](docs/IfcCheckerCheckplan.md)
+ - [bimdata.IfcCheckerResults](docs/IfcCheckerResults.md)
  - [bimdata.IfcFiles](docs/IfcFiles.md)
  - [bimdata.InviteUser](docs/InviteUser.md)
  - [bimdata.InvitedSignUpUser](docs/InvitedSignUpUser.md)

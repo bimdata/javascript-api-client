@@ -1,6 +1,6 @@
 # bimdata.ProjectApi
 
-All URIs are relative to *https://api-beta.bimdata.io/*
+All URIs are relative to *https://api-beta.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -604,7 +604,7 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateDocument"></a>
 # **fullUpdateDocument**
-> Document fullUpdateDocument(cloudPk, id2, projectPk, name, opts)
+> Document fullUpdateDocument(cloudPk, id, projectPk, name, opts)
 
 
 
@@ -620,7 +620,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id2 = 56; // Number | A unique integer value identifying this document.
+var id = 56; // Number | A unique integer value identifying this document.
 var projectPk = "projectPk_example"; // String | 
 var name = "name_example"; // String | 
 var opts = {
@@ -637,7 +637,7 @@ var opts = {
   'updatedAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'ifcId': "ifcId_example" // String | 
 };
-apiInstance.fullUpdateDocument(cloudPk, id2, projectPk, name, opts).then(function(data) {
+apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -650,7 +650,7 @@ apiInstance.fullUpdateDocument(cloudPk, id2, projectPk, name, opts).then(functio
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id2** | **Number**| A unique integer value identifying this document. | 
+ **id** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **String**|  | 
  **name** | **String**|  | 
  **id** | **Number**|  | [optional] 

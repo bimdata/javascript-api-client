@@ -26,7 +26,7 @@
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.CheckerResult = factory(root.bimdata.ApiClient);
+    root.bimdata.IfcCheckerResults = factory(root.bimdata.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,14 +35,14 @@
 
 
   /**
-   * The CheckerResult model module.
-   * @module model/CheckerResult
+   * The IfcCheckerResults model module.
+   * @module model/IfcCheckerResults
    * @version 0.0.0
    */
 
   /**
-   * Constructs a new <code>CheckerResult</code>.
-   * @alias module:model/CheckerResult
+   * Constructs a new <code>IfcCheckerResults</code>.
+   * @alias module:model/IfcCheckerResults
    * @class
    */
   var exports = function() {
@@ -55,33 +55,25 @@
 
 
 
+
   };
 
   /**
-   * Constructs a <code>CheckerResult</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>IfcCheckerResults</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/CheckerResult} obj Optional instance to populate.
-   * @return {module:model/CheckerResult} The populated <code>CheckerResult</code> instance.
+   * @param {module:model/IfcCheckerResults} obj Optional instance to populate.
+   * @return {module:model/IfcCheckerResults} The populated <code>IfcCheckerResults</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-      }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
       if (data.hasOwnProperty('result')) {
         obj['result'] = ApiClient.convertToType(data['result'], 'String');
       }
       if (data.hasOwnProperty('collisions')) {
         obj['collisions'] = ApiClient.convertToType(data['collisions'], 'String');
-      }
-      if (data.hasOwnProperty('created_at')) {
-        obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
       }
       if (data.hasOwnProperty('updated_at')) {
         obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
@@ -89,18 +81,22 @@
       if (data.hasOwnProperty('error_detail')) {
         obj['error_detail'] = ApiClient.convertToType(data['error_detail'], 'String');
       }
+      if (data.hasOwnProperty('created_at')) {
+        obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+      }
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+      }
+      if (data.hasOwnProperty('checker')) {
+        obj['checker'] = ApiClient.convertToType(data['checker'], 'Number');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
     }
     return obj;
   }
 
-  /**
-   * @member {Number} id
-   */
-  exports.prototype['id'] = undefined;
-  /**
-   * @member {module:model/CheckerResult.StatusEnum} status
-   */
-  exports.prototype['status'] = undefined;
   /**
    * @member {String} result
    */
@@ -110,10 +106,6 @@
    */
   exports.prototype['collisions'] = undefined;
   /**
-   * @member {Date} created_at
-   */
-  exports.prototype['created_at'] = undefined;
-  /**
    * @member {Date} updated_at
    */
   exports.prototype['updated_at'] = undefined;
@@ -121,6 +113,22 @@
    * @member {String} error_detail
    */
   exports.prototype['error_detail'] = undefined;
+  /**
+   * @member {Date} created_at
+   */
+  exports.prototype['created_at'] = undefined;
+  /**
+   * @member {Number} id
+   */
+  exports.prototype['id'] = undefined;
+  /**
+   * @member {Number} checker
+   */
+  exports.prototype['checker'] = undefined;
+  /**
+   * @member {module:model/IfcCheckerResults.StatusEnum} status
+   */
+  exports.prototype['status'] = undefined;
 
 
   /**
