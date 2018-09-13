@@ -103,12 +103,10 @@ Bearer.apiKey = "YOUR API KEY"
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix['Authorization'] = "Token"
 
-var api = new bimdata.CheckplanApi()
+var api = new bimdata.ApplicationApi()
 var cloudPk = "cloudPk_example"; // {String} 
-var ifcPk = "ifcPk_example"; // {String} 
-var projectPk = "projectPk_example"; // {String} 
-var ifcChecker = new bimdata.IfcChecker(); // {IfcChecker} 
-api.createChecker(cloudPk, ifcPk, projectPk, ifcChecker).then(function(data) {
+var webHook = new bimdata.WebHook(); // {WebHook} 
+api.createWebHook(cloudPk, webHook).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -123,6 +121,12 @@ All URIs are relative to *https://api-beta.bimdata.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*bimdata.ApplicationApi* | [**createWebHook**](docs/ApplicationApi.md#createWebHook) | **POST** /cloud/{cloud_pk}/webhook | 
+*bimdata.ApplicationApi* | [**deleteWebHook**](docs/ApplicationApi.md#deleteWebHook) | **DELETE** /cloud/{cloud_pk}/webhook/{id} | 
+*bimdata.ApplicationApi* | [**fullUpdateWebHook**](docs/ApplicationApi.md#fullUpdateWebHook) | **PUT** /cloud/{cloud_pk}/webhook/{id} | 
+*bimdata.ApplicationApi* | [**getWebHook**](docs/ApplicationApi.md#getWebHook) | **GET** /cloud/{cloud_pk}/webhook/{id} | 
+*bimdata.ApplicationApi* | [**getWebHooks**](docs/ApplicationApi.md#getWebHooks) | **GET** /cloud/{cloud_pk}/webhook | 
+*bimdata.ApplicationApi* | [**updateWebHook**](docs/ApplicationApi.md#updateWebHook) | **PATCH** /cloud/{cloud_pk}/webhook/{id} | 
 *bimdata.CheckplanApi* | [**createChecker**](docs/CheckplanApi.md#createChecker) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker | 
 *bimdata.CheckplanApi* | [**createCheckerResult**](docs/CheckplanApi.md#createCheckerResult) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result | 
 *bimdata.CheckplanApi* | [**createCheckplan**](docs/CheckplanApi.md#createCheckplan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan | 
@@ -354,6 +358,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Space](docs/Space.md)
  - [bimdata.Unit](docs/Unit.md)
  - [bimdata.User](docs/User.md)
+ - [bimdata.WebHook](docs/WebHook.md)
  - [bimdata.Zone](docs/Zone.md)
  - [bimdata.ZoneSpace](docs/ZoneSpace.md)
 

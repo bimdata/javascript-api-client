@@ -259,8 +259,6 @@ Name | Type | Description  | Notes
 
 
 
-Returns user and his cloud role
-
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');

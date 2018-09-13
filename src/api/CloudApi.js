@@ -331,7 +331,6 @@
 
 
     /**
-     * Returns user and his cloud role
      * @param {String} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
      */
@@ -369,7 +368,6 @@
     }
 
     /**
-     * Returns user and his cloud role
      * @param {String} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
      */

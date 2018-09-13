@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CheckPlan', 'model/CheckerResult', 'model/Classification', 'model/Cloud', 'model/CloudRole', 'model/Document', 'model/Element', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/Feature', 'model/Folder', 'model/ForgotPassword', 'model/Ifc', 'model/IfcChecker', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults', 'model/IfcFiles', 'model/InviteUser', 'model/InvitedSignUpUser', 'model/Notification', 'model/Project', 'model/ProjectRole', 'model/Property', 'model/PropertyDefinition', 'model/PropertySet', 'model/RawDefinition', 'model/RawElement', 'model/RawElements', 'model/RawProperty', 'model/RawPropertySet', 'model/RawUnit', 'model/ResetPassword', 'model/Rule', 'model/RuleComponent', 'model/Ruleset', 'model/SelfUser', 'model/SignUpUser', 'model/Space', 'model/Unit', 'model/User', 'model/Zone', 'model/ZoneSpace', 'api/CheckplanApi', 'api/CloudApi', 'api/IfcApi', 'api/ProjectApi', 'api/UserApi'], factory);
+    define(['ApiClient', 'model/CheckPlan', 'model/CheckerResult', 'model/Classification', 'model/Cloud', 'model/CloudRole', 'model/Document', 'model/Element', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/Feature', 'model/Folder', 'model/ForgotPassword', 'model/Ifc', 'model/IfcChecker', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults', 'model/IfcFiles', 'model/InviteUser', 'model/InvitedSignUpUser', 'model/Notification', 'model/Project', 'model/ProjectRole', 'model/Property', 'model/PropertyDefinition', 'model/PropertySet', 'model/RawDefinition', 'model/RawElement', 'model/RawElements', 'model/RawProperty', 'model/RawPropertySet', 'model/RawUnit', 'model/ResetPassword', 'model/Rule', 'model/RuleComponent', 'model/Ruleset', 'model/SelfUser', 'model/SignUpUser', 'model/Space', 'model/Unit', 'model/User', 'model/WebHook', 'model/Zone', 'model/ZoneSpace', 'api/ApplicationApi', 'api/CheckplanApi', 'api/CloudApi', 'api/IfcApi', 'api/ProjectApi', 'api/UserApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/CheckPlan'), require('./model/CheckerResult'), require('./model/Classification'), require('./model/Cloud'), require('./model/CloudRole'), require('./model/Document'), require('./model/Element'), require('./model/ElementClassificationRelation'), require('./model/ElementPropertySetRelation'), require('./model/Feature'), require('./model/Folder'), require('./model/ForgotPassword'), require('./model/Ifc'), require('./model/IfcChecker'), require('./model/IfcCheckerCheckplan'), require('./model/IfcCheckerResults'), require('./model/IfcFiles'), require('./model/InviteUser'), require('./model/InvitedSignUpUser'), require('./model/Notification'), require('./model/Project'), require('./model/ProjectRole'), require('./model/Property'), require('./model/PropertyDefinition'), require('./model/PropertySet'), require('./model/RawDefinition'), require('./model/RawElement'), require('./model/RawElements'), require('./model/RawProperty'), require('./model/RawPropertySet'), require('./model/RawUnit'), require('./model/ResetPassword'), require('./model/Rule'), require('./model/RuleComponent'), require('./model/Ruleset'), require('./model/SelfUser'), require('./model/SignUpUser'), require('./model/Space'), require('./model/Unit'), require('./model/User'), require('./model/Zone'), require('./model/ZoneSpace'), require('./api/CheckplanApi'), require('./api/CloudApi'), require('./api/IfcApi'), require('./api/ProjectApi'), require('./api/UserApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/CheckPlan'), require('./model/CheckerResult'), require('./model/Classification'), require('./model/Cloud'), require('./model/CloudRole'), require('./model/Document'), require('./model/Element'), require('./model/ElementClassificationRelation'), require('./model/ElementPropertySetRelation'), require('./model/Feature'), require('./model/Folder'), require('./model/ForgotPassword'), require('./model/Ifc'), require('./model/IfcChecker'), require('./model/IfcCheckerCheckplan'), require('./model/IfcCheckerResults'), require('./model/IfcFiles'), require('./model/InviteUser'), require('./model/InvitedSignUpUser'), require('./model/Notification'), require('./model/Project'), require('./model/ProjectRole'), require('./model/Property'), require('./model/PropertyDefinition'), require('./model/PropertySet'), require('./model/RawDefinition'), require('./model/RawElement'), require('./model/RawElements'), require('./model/RawProperty'), require('./model/RawPropertySet'), require('./model/RawUnit'), require('./model/ResetPassword'), require('./model/Rule'), require('./model/RuleComponent'), require('./model/Ruleset'), require('./model/SelfUser'), require('./model/SignUpUser'), require('./model/Space'), require('./model/Unit'), require('./model/User'), require('./model/WebHook'), require('./model/Zone'), require('./model/ZoneSpace'), require('./api/ApplicationApi'), require('./api/CheckplanApi'), require('./api/CloudApi'), require('./api/IfcApi'), require('./api/ProjectApi'), require('./api/UserApi'));
   }
-}(function(ApiClient, CheckPlan, CheckerResult, Classification, Cloud, CloudRole, Document, Element, ElementClassificationRelation, ElementPropertySetRelation, Feature, Folder, ForgotPassword, Ifc, IfcChecker, IfcCheckerCheckplan, IfcCheckerResults, IfcFiles, InviteUser, InvitedSignUpUser, Notification, Project, ProjectRole, Property, PropertyDefinition, PropertySet, RawDefinition, RawElement, RawElements, RawProperty, RawPropertySet, RawUnit, ResetPassword, Rule, RuleComponent, Ruleset, SelfUser, SignUpUser, Space, Unit, User, Zone, ZoneSpace, CheckplanApi, CloudApi, IfcApi, ProjectApi, UserApi) {
+}(function(ApiClient, CheckPlan, CheckerResult, Classification, Cloud, CloudRole, Document, Element, ElementClassificationRelation, ElementPropertySetRelation, Feature, Folder, ForgotPassword, Ifc, IfcChecker, IfcCheckerCheckplan, IfcCheckerResults, IfcFiles, InviteUser, InvitedSignUpUser, Notification, Project, ProjectRole, Property, PropertyDefinition, PropertySet, RawDefinition, RawElement, RawElements, RawProperty, RawPropertySet, RawUnit, ResetPassword, Rule, RuleComponent, Ruleset, SelfUser, SignUpUser, Space, Unit, User, WebHook, Zone, ZoneSpace, ApplicationApi, CheckplanApi, CloudApi, IfcApi, ProjectApi, UserApi) {
   'use strict';
 
   /**
@@ -263,6 +263,11 @@
      */
     User: User,
     /**
+     * The WebHook model constructor.
+     * @property {module:model/WebHook}
+     */
+    WebHook: WebHook,
+    /**
      * The Zone model constructor.
      * @property {module:model/Zone}
      */
@@ -272,6 +277,11 @@
      * @property {module:model/ZoneSpace}
      */
     ZoneSpace: ZoneSpace,
+    /**
+     * The ApplicationApi service constructor.
+     * @property {module:api/ApplicationApi}
+     */
+    ApplicationApi: ApplicationApi,
     /**
      * The CheckplanApi service constructor.
      * @property {module:api/CheckplanApi}
