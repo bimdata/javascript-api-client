@@ -103,7 +103,7 @@
         obj['file'] = ApiClient.convertToType(data['file'], 'String');
       }
       if (data.hasOwnProperty('size')) {
-        obj['size'] = ApiClient.convertToType(data['size'], 'String');
+        obj['size'] = ApiClient.convertToType(data['size'], 'Number');
       }
       if (data.hasOwnProperty('created_at')) {
         obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -155,7 +155,7 @@
    */
   exports.prototype['file'] = undefined;
   /**
-   * @member {String} size
+   * @member {Number} size
    */
   exports.prototype['size'] = undefined;
   /**

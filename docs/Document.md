@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **fileName** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **file** | **String** |  | [optional] 
-**size** | **String** |  | [optional] 
+**size** | **Number** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 **ifcId** | **String** |  | [optional] 

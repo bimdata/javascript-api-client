@@ -71,6 +71,16 @@
         done();
       });
     });
+    describe('createDemo', function() {
+      it('should call createDemo successfully', function(done) {
+        //uncomment below and update the code to test createDemo
+        //instance.createDemo(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteCloudUser', function() {
       it('should call deleteCloudUser successfully', function(done) {
         //uncomment below and update the code to test deleteCloudUser

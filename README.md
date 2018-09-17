@@ -166,6 +166,7 @@ Class | Method | HTTP request | Description
 *bimdata.CheckplanApi* | [**updateRuleset**](docs/CheckplanApi.md#updateRuleset) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | 
 *bimdata.CloudApi* | [**createCloud**](docs/CloudApi.md#createCloud) | **POST** /cloud | 
 *bimdata.CloudApi* | [**createCloudUser**](docs/CloudApi.md#createCloudUser) | **POST** /cloud/{cloud_pk}/user | 
+*bimdata.CloudApi* | [**createDemo**](docs/CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | 
 *bimdata.CloudApi* | [**deleteCloudUser**](docs/CloudApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | 
 *bimdata.CloudApi* | [**fullUpdateCloud**](docs/CloudApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | 
 *bimdata.CloudApi* | [**fullUpdateCloudUser**](docs/CloudApi.md#fullUpdateCloudUser) | **PUT** /cloud/{cloud_pk}/user/{id} | 

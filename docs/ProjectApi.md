@@ -117,7 +117,7 @@ var opts = {
   'fileName': "fileName_example", // String | 
   'description': "description_example", // String | 
   'file': "/path/to/file", // File | 
-  'size': "size_example", // String | 
+  'size': 56, // Number | 
   'createdAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'updatedAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'ifcId': "ifcId_example" // String | 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
  **fileName** | **String**|  | [optional] 
  **description** | **String**|  | [optional] 
  **file** | **File**|  | [optional] 
- **size** | **String**|  | [optional] 
+ **size** | **Number**|  | [optional] 
  **createdAt** | **Date**|  | [optional] 
  **updatedAt** | **Date**|  | [optional] 
  **ifcId** | **String**|  | [optional] 
@@ -632,7 +632,7 @@ var opts = {
   'fileName': "fileName_example", // String | 
   'description': "description_example", // String | 
   'file': "/path/to/file", // File | 
-  'size': "size_example", // String | 
+  'size': 56, // Number | 
   'createdAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'updatedAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'ifcId': "ifcId_example" // String | 
@@ -661,7 +661,7 @@ Name | Type | Description  | Notes
  **fileName** | **String**|  | [optional] 
  **description** | **String**|  | [optional] 
  **file** | **File**|  | [optional] 
- **size** | **String**|  | [optional] 
+ **size** | **Number**|  | [optional] 
  **createdAt** | **Date**|  | [optional] 
  **updatedAt** | **Date**|  | [optional] 
  **ifcId** | **String**|  | [optional] 

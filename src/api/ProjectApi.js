@@ -128,7 +128,7 @@
      * @param {String} opts.fileName 
      * @param {String} opts.description 
      * @param {File} opts.file 
-     * @param {String} opts.size 
+     * @param {Number} opts.size 
      * @param {Date} opts.createdAt 
      * @param {Date} opts.updatedAt 
      * @param {String} opts.ifcId 
@@ -205,7 +205,7 @@
      * @param {String} opts.fileName 
      * @param {String} opts.description 
      * @param {File} opts.file 
-     * @param {String} opts.size 
+     * @param {Number} opts.size 
      * @param {Date} opts.createdAt 
      * @param {Date} opts.updatedAt 
      * @param {String} opts.ifcId 
@@ -806,7 +806,7 @@
      * @param {String} opts.fileName 
      * @param {String} opts.description 
      * @param {File} opts.file 
-     * @param {String} opts.size 
+     * @param {Number} opts.size 
      * @param {Date} opts.createdAt 
      * @param {Date} opts.updatedAt 
      * @param {String} opts.ifcId 
@@ -890,7 +890,7 @@
      * @param {String} opts.fileName 
      * @param {String} opts.description 
      * @param {File} opts.file 
-     * @param {String} opts.size 
+     * @param {Number} opts.size 
      * @param {Date} opts.createdAt 
      * @param {Date} opts.updatedAt 
      * @param {String} opts.ifcId 

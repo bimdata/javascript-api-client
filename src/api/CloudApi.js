@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Cloud', 'model/InviteUser', 'model/User'], factory);
+    define(['ApiClient', 'model/Cloud', 'model/InviteUser', 'model/Project', 'model/User'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Cloud'), require('../model/InviteUser'), require('../model/User'));
+    module.exports = factory(require('../ApiClient'), require('../model/Cloud'), require('../model/InviteUser'), require('../model/Project'), require('../model/User'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.CloudApi = factory(root.bimdata.ApiClient, root.bimdata.Cloud, root.bimdata.InviteUser, root.bimdata.User);
+    root.bimdata.CloudApi = factory(root.bimdata.ApiClient, root.bimdata.Cloud, root.bimdata.InviteUser, root.bimdata.Project, root.bimdata.User);
   }
-}(this, function(ApiClient, Cloud, InviteUser, User) {
+}(this, function(ApiClient, Cloud, InviteUser, Project, User) {
   'use strict';
 
   /**
@@ -147,6 +147,64 @@
      */
     this.createCloudUser = function(cloudPk, inviteUser) {
       return this.createCloudUserWithHttpInfo(cloudPk, inviteUser)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a demo project with a pre-populated IFC and its data
+     * @param {String} id 
+     * @param {module:model/Cloud} cloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     */
+    this.createDemoWithHttpInfo = function(id, cloud) {
+      var postBody = cloud;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling createDemo");
+      }
+
+      // verify the required parameter 'cloud' is set
+      if (cloud === undefined || cloud === null) {
+        throw new Error("Missing the required parameter 'cloud' when calling createDemo");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Project;
+
+      return this.apiClient.callApi(
+        '/cloud/{id}/create-demo', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Create a demo project with a pre-populated IFC and its data
+     * @param {String} id 
+     * @param {module:model/Cloud} cloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     */
+    this.createDemo = function(id, cloud) {
+      return this.createDemoWithHttpInfo(id, cloud)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createCloud**](CloudApi.md#createCloud) | **POST** /cloud | 
 [**createCloudUser**](CloudApi.md#createCloudUser) | **POST** /cloud/{cloud_pk}/user | 
+[**createDemo**](CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | 
 [**deleteCloudUser**](CloudApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | 
 [**fullUpdateCloud**](CloudApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | 
 [**fullUpdateCloudUser**](CloudApi.md#fullUpdateCloudUser) | **PUT** /cloud/{cloud_pk}/user/{id} | 
@@ -100,6 +101,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InviteUser**](InviteUser.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="createDemo"></a>
+# **createDemo**
+> Project createDemo(id, cloud)
+
+
+
+Create a demo project with a pre-populated IFC and its data
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
+var id = "id_example"; // String | 
+var cloud = new bimdata.Cloud(); // Cloud | 
+apiInstance.createDemo(id, cloud).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **cloud** | [**Cloud**](Cloud.md)|  | 
+
+### Return type
+
+[**Project**](Project.md)
 
 ### Authorization
 
