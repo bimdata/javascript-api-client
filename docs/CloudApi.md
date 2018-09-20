@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 <a name="createDemo"></a>
 # **createDemo**
-> Project createDemo(id, cloud)
+> Project createDemo(id)
 
 
 
@@ -131,8 +131,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.CloudApi();
 var id = "id_example"; // String | 
-var cloud = new bimdata.Cloud(); // Cloud | 
-apiInstance.createDemo(id, cloud).then(function(data) {
+apiInstance.createDemo(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -145,7 +144,6 @@ apiInstance.createDemo(id, cloud).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **cloud** | [**Cloud**](Cloud.md)|  | 
 
 ### Return type
 
@@ -157,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteCloudUser"></a>

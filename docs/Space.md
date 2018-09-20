@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **longname** | **String** |  | [optional] 
 **uuid** | **String** |  | 
-**zoneSet** | **[String]** |  | [optional] 
+**zoneSet** | **[Number]** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 

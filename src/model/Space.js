@@ -82,7 +82,7 @@
         obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
       }
       if (data.hasOwnProperty('zone_set')) {
-        obj['zone_set'] = ApiClient.convertToType(data['zone_set'], ['String']);
+        obj['zone_set'] = ApiClient.convertToType(data['zone_set'], ['Number']);
       }
       if (data.hasOwnProperty('created_at')) {
         obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -111,7 +111,7 @@
    */
   exports.prototype['uuid'] = undefined;
   /**
-   * @member {Array.<String>} zone_set
+   * @member {Array.<Number>} zone_set
    */
   exports.prototype['zone_set'] = undefined;
   /**

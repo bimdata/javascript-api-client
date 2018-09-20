@@ -156,20 +156,14 @@
     /**
      * Create a demo project with a pre-populated IFC and its data
      * @param {String} id 
-     * @param {module:model/Cloud} cloud 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    this.createDemoWithHttpInfo = function(id, cloud) {
-      var postBody = cloud;
+    this.createDemoWithHttpInfo = function(id) {
+      var postBody = null;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling createDemo");
-      }
-
-      // verify the required parameter 'cloud' is set
-      if (cloud === undefined || cloud === null) {
-        throw new Error("Missing the required parameter 'cloud' when calling createDemo");
       }
 
 
@@ -186,7 +180,7 @@
       };
 
       var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Project;
 
@@ -200,11 +194,10 @@
     /**
      * Create a demo project with a pre-populated IFC and its data
      * @param {String} id 
-     * @param {module:model/Cloud} cloud 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
-    this.createDemo = function(id, cloud) {
-      return this.createDemoWithHttpInfo(id, cloud)
+    this.createDemo = function(id) {
+      return this.createDemoWithHttpInfo(id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
