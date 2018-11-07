@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.SelfUser();
+    instance = new bimdata.Snapshot();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,28 +50,22 @@
       object[property] = value;
   }
 
-  describe('SelfUser', function() {
-    it('should create an instance of SelfUser', function() {
-      // uncomment below and update the code to test SelfUser
-      //var instance = new bimdata.SelfUser();
-      //expect(instance).to.be.a(bimdata.SelfUser);
+  describe('Snapshot', function() {
+    it('should create an instance of Snapshot', function() {
+      // uncomment below and update the code to test Snapshot
+      //var instance = new bimdata.Snapshot();
+      //expect(instance).to.be.a(bimdata.Snapshot);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new bimdata.SelfUser();
+    it('should have the property snapshotType (base name: "snapshot_type")', function() {
+      // uncomment below and update the code to test the property snapshotType
+      //var instance = new bimdata.Snapshot();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.SelfUser();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property email (base name: "email")', function() {
-      // uncomment below and update the code to test the property email
-      //var instance = new bimdata.SelfUser();
+    it('should have the property snapshotData (base name: "snapshot_data")', function() {
+      // uncomment below and update the code to test the property snapshotData
+      //var instance = new bimdata.Snapshot();
       //expect(instance).to.be();
     });
 

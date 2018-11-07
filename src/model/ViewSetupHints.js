@@ -26,7 +26,7 @@
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.SelfUser = factory(root.bimdata.ApiClient);
+    root.bimdata.ViewSetupHints = factory(root.bimdata.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,62 +35,60 @@
 
 
   /**
-   * The SelfUser model module.
-   * @module model/SelfUser
+   * The ViewSetupHints model module.
+   * @module model/ViewSetupHints
    * @version 0.0.0
    */
 
   /**
-   * Constructs a new <code>SelfUser</code>.
-   * @alias module:model/SelfUser
+   * Constructs a new <code>ViewSetupHints</code>.
+   * @alias module:model/ViewSetupHints
    * @class
-   * @param id {String} 
-   * @param email {String} 
    */
-  var exports = function(id, email) {
+  var exports = function() {
     var _this = this;
 
-    _this['id'] = id;
 
-    _this['email'] = email;
+
+
   };
 
   /**
-   * Constructs a <code>SelfUser</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ViewSetupHints</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/SelfUser} obj Optional instance to populate.
-   * @return {module:model/SelfUser} The populated <code>SelfUser</code> instance.
+   * @param {module:model/ViewSetupHints} obj Optional instance to populate.
+   * @return {module:model/ViewSetupHints} The populated <code>ViewSetupHints</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('spaces_visible')) {
+        obj['spaces_visible'] = ApiClient.convertToType(data['spaces_visible'], 'Boolean');
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('space_boundaries_visible')) {
+        obj['space_boundaries_visible'] = ApiClient.convertToType(data['space_boundaries_visible'], 'Boolean');
       }
-      if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      if (data.hasOwnProperty('openings_visible')) {
+        obj['openings_visible'] = ApiClient.convertToType(data['openings_visible'], 'Boolean');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} id
+   * @member {Boolean} spaces_visible
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['spaces_visible'] = undefined;
   /**
-   * @member {String} name
+   * @member {Boolean} space_boundaries_visible
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['space_boundaries_visible'] = undefined;
   /**
-   * @member {String} email
+   * @member {Boolean} openings_visible
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype['openings_visible'] = undefined;
 
 
 

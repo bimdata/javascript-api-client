@@ -51,6 +51,7 @@
 
 
 
+
     _this['name'] = name;
 
 
@@ -74,6 +75,9 @@
       }
       if (data.hasOwnProperty('parent_id')) {
         obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -102,6 +106,11 @@
    * @member {Number} parent_id
    */
   exports.prototype['parent_id'] = undefined;
+  /**
+   * Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
   /**
    * @member {String} name
    */

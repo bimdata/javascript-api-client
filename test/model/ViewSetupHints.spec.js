@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.SelfUser();
+    instance = new bimdata.ViewSetupHints();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,28 +50,28 @@
       object[property] = value;
   }
 
-  describe('SelfUser', function() {
-    it('should create an instance of SelfUser', function() {
-      // uncomment below and update the code to test SelfUser
-      //var instance = new bimdata.SelfUser();
-      //expect(instance).to.be.a(bimdata.SelfUser);
+  describe('ViewSetupHints', function() {
+    it('should create an instance of ViewSetupHints', function() {
+      // uncomment below and update the code to test ViewSetupHints
+      //var instance = new bimdata.ViewSetupHints();
+      //expect(instance).to.be.a(bimdata.ViewSetupHints);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new bimdata.SelfUser();
+    it('should have the property spacesVisible (base name: "spaces_visible")', function() {
+      // uncomment below and update the code to test the property spacesVisible
+      //var instance = new bimdata.ViewSetupHints();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.SelfUser();
+    it('should have the property spaceBoundariesVisible (base name: "space_boundaries_visible")', function() {
+      // uncomment below and update the code to test the property spaceBoundariesVisible
+      //var instance = new bimdata.ViewSetupHints();
       //expect(instance).to.be();
     });
 
-    it('should have the property email (base name: "email")', function() {
-      // uncomment below and update the code to test the property email
-      //var instance = new bimdata.SelfUser();
+    it('should have the property openingsVisible (base name: "openings_visible")', function() {
+      // uncomment below and update the code to test the property openingsVisible
+      //var instance = new bimdata.ViewSetupHints();
       //expect(instance).to.be();
     });
 

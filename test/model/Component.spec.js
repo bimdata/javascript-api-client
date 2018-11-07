@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.CloudRole();
+    instance = new bimdata.Component();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,28 @@
       object[property] = value;
   }
 
-  describe('CloudRole', function() {
-    it('should create an instance of CloudRole', function() {
-      // uncomment below and update the code to test CloudRole
-      //var instance = new bimdata.CloudRole();
-      //expect(instance).to.be.a(bimdata.CloudRole);
+  describe('Component', function() {
+    it('should create an instance of Component', function() {
+      // uncomment below and update the code to test Component
+      //var instance = new bimdata.Component();
+      //expect(instance).to.be.a(bimdata.Component);
     });
 
-    it('should have the property cloud (base name: "cloud")', function() {
-      // uncomment below and update the code to test the property cloud
-      //var instance = new bimdata.CloudRole();
+    it('should have the property ifcGuid (base name: "ifc_guid")', function() {
+      // uncomment below and update the code to test the property ifcGuid
+      //var instance = new bimdata.Component();
       //expect(instance).to.be();
     });
 
-    it('should have the property role (base name: "role")', function() {
-      // uncomment below and update the code to test the property role
-      //var instance = new bimdata.CloudRole();
+    it('should have the property originatingSystem (base name: "originating_system")', function() {
+      // uncomment below and update the code to test the property originatingSystem
+      //var instance = new bimdata.Component();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property authoringToolId (base name: "authoring_tool_id")', function() {
+      // uncomment below and update the code to test the property authoringToolId
+      //var instance = new bimdata.Component();
       //expect(instance).to.be();
     });
 

@@ -26,7 +26,7 @@
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.SelfUser = factory(root.bimdata.ApiClient);
+    root.bimdata.Snapshot = factory(root.bimdata.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,62 +35,53 @@
 
 
   /**
-   * The SelfUser model module.
-   * @module model/SelfUser
+   * The Snapshot model module.
+   * @module model/Snapshot
    * @version 0.0.0
    */
 
   /**
-   * Constructs a new <code>SelfUser</code>.
-   * @alias module:model/SelfUser
+   * Constructs a new <code>Snapshot</code>.
+   * @alias module:model/Snapshot
    * @class
-   * @param id {String} 
-   * @param email {String} 
+   * @param snapshotType {String} 
    */
-  var exports = function(id, email) {
+  var exports = function(snapshotType) {
     var _this = this;
 
-    _this['id'] = id;
+    _this['snapshot_type'] = snapshotType;
 
-    _this['email'] = email;
   };
 
   /**
-   * Constructs a <code>SelfUser</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Snapshot</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/SelfUser} obj Optional instance to populate.
-   * @return {module:model/SelfUser} The populated <code>SelfUser</code> instance.
+   * @param {module:model/Snapshot} obj Optional instance to populate.
+   * @return {module:model/Snapshot} The populated <code>Snapshot</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('snapshot_type')) {
+        obj['snapshot_type'] = ApiClient.convertToType(data['snapshot_type'], 'String');
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      if (data.hasOwnProperty('snapshot_data')) {
+        obj['snapshot_data'] = ApiClient.convertToType(data['snapshot_data'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} id
+   * @member {String} snapshot_type
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['snapshot_type'] = undefined;
   /**
-   * @member {String} name
+   * @member {String} snapshot_data
    */
-  exports.prototype['name'] = undefined;
-  /**
-   * @member {String} email
-   */
-  exports.prototype['email'] = undefined;
+  exports.prototype['snapshot_data'] = undefined;
 
 
 

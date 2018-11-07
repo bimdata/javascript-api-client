@@ -1,9 +1,9 @@
-# bimdata.CloudRole
+# bimdata.LineSeriaizer
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cloud** | **Number** |  | 
-**role** | **Number** |  | [optional] 
+**endPoint** | [**Point**](Point.md) |  | 
+**startPoint** | [**Point**](Point.md) |  | 
 
 

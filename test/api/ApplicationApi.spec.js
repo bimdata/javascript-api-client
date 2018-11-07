@@ -51,6 +51,16 @@
   }
 
   describe('ApplicationApi', function() {
+    describe('cloudWebhookPing', function() {
+      it('should call cloudWebhookPing successfully', function(done) {
+        //uncomment below and update the code to test cloudWebhookPing
+        //instance.cloudWebhookPing(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createWebHook', function() {
       it('should call createWebHook successfully', function(done) {
         //uncomment below and update the code to test createWebHook

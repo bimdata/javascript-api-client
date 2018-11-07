@@ -1,9 +1,10 @@
-# bimdata.ProjectRole
+# bimdata.Direction
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**project** | **Number** |  | 
-**role** | **Number** |  | [optional] 
+**x** | **Number** |  | 
+**y** | **Number** |  | 
+**z** | **Number** |  | 
 
 

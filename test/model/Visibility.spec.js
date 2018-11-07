@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.ProjectRole();
+    instance = new bimdata.Visibility();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,28 @@
       object[property] = value;
   }
 
-  describe('ProjectRole', function() {
-    it('should create an instance of ProjectRole', function() {
-      // uncomment below and update the code to test ProjectRole
-      //var instance = new bimdata.ProjectRole();
-      //expect(instance).to.be.a(bimdata.ProjectRole);
+  describe('Visibility', function() {
+    it('should create an instance of Visibility', function() {
+      // uncomment below and update the code to test Visibility
+      //var instance = new bimdata.Visibility();
+      //expect(instance).to.be.a(bimdata.Visibility);
     });
 
-    it('should have the property project (base name: "project")', function() {
-      // uncomment below and update the code to test the property project
-      //var instance = new bimdata.ProjectRole();
+    it('should have the property defaultVisibility (base name: "default_visibility")', function() {
+      // uncomment below and update the code to test the property defaultVisibility
+      //var instance = new bimdata.Visibility();
       //expect(instance).to.be();
     });
 
-    it('should have the property role (base name: "role")', function() {
-      // uncomment below and update the code to test the property role
-      //var instance = new bimdata.ProjectRole();
+    it('should have the property exceptions (base name: "exceptions")', function() {
+      // uncomment below and update the code to test the property exceptions
+      //var instance = new bimdata.Visibility();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property viewSetupHints (base name: "view_setup_hints")', function() {
+      // uncomment below and update the code to test the property viewSetupHints
+      //var instance = new bimdata.Visibility();
       //expect(instance).to.be();
     });
 

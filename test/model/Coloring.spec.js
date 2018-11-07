@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.SelfUser();
+    instance = new bimdata.Coloring();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,28 +50,22 @@
       object[property] = value;
   }
 
-  describe('SelfUser', function() {
-    it('should create an instance of SelfUser', function() {
-      // uncomment below and update the code to test SelfUser
-      //var instance = new bimdata.SelfUser();
-      //expect(instance).to.be.a(bimdata.SelfUser);
+  describe('Coloring', function() {
+    it('should create an instance of Coloring', function() {
+      // uncomment below and update the code to test Coloring
+      //var instance = new bimdata.Coloring();
+      //expect(instance).to.be.a(bimdata.Coloring);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new bimdata.SelfUser();
+    it('should have the property color (base name: "color")', function() {
+      // uncomment below and update the code to test the property color
+      //var instance = new bimdata.Coloring();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.SelfUser();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property email (base name: "email")', function() {
-      // uncomment below and update the code to test the property email
-      //var instance = new bimdata.SelfUser();
+    it('should have the property components (base name: "components")', function() {
+      // uncomment below and update the code to test the property components
+      //var instance = new bimdata.Coloring();
       //expect(instance).to.be();
     });
 

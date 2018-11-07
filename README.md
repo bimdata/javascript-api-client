@@ -105,8 +105,9 @@ Bearer.apiKey = "YOUR API KEY"
 
 var api = new bimdata.ApplicationApi()
 var cloudPk = "cloudPk_example"; // {String} 
+var id = "id_example"; // {String} 
 var webHook = new bimdata.WebHook(); // {WebHook} 
-api.createWebHook(cloudPk, webHook).then(function(data) {
+api.cloudWebhookPing(cloudPk, id, webHook).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -121,12 +122,61 @@ All URIs are relative to *https://api-beta.bimdata.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*bimdata.ApplicationApi* | [**cloudWebhookPing**](docs/ApplicationApi.md#cloudWebhookPing) | **POST** /cloud/{cloud_pk}/webhook/{id}/ping | 
 *bimdata.ApplicationApi* | [**createWebHook**](docs/ApplicationApi.md#createWebHook) | **POST** /cloud/{cloud_pk}/webhook | 
 *bimdata.ApplicationApi* | [**deleteWebHook**](docs/ApplicationApi.md#deleteWebHook) | **DELETE** /cloud/{cloud_pk}/webhook/{id} | 
 *bimdata.ApplicationApi* | [**fullUpdateWebHook**](docs/ApplicationApi.md#fullUpdateWebHook) | **PUT** /cloud/{cloud_pk}/webhook/{id} | 
 *bimdata.ApplicationApi* | [**getWebHook**](docs/ApplicationApi.md#getWebHook) | **GET** /cloud/{cloud_pk}/webhook/{id} | 
 *bimdata.ApplicationApi* | [**getWebHooks**](docs/ApplicationApi.md#getWebHooks) | **GET** /cloud/{cloud_pk}/webhook | 
 *bimdata.ApplicationApi* | [**updateWebHook**](docs/ApplicationApi.md#updateWebHook) | **PATCH** /cloud/{cloud_pk}/webhook/{id} | 
+*bimdata.BcfApi* | [**createColoring**](docs/BcfApi.md#createColoring) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring | 
+*bimdata.BcfApi* | [**createComment**](docs/BcfApi.md#createComment) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | 
+*bimdata.BcfApi* | [**createFullTopic**](docs/BcfApi.md#createFullTopic) | **POST** /bcf/2.1/projects/{projects_pk}/full-topic | 
+*bimdata.BcfApi* | [**createSelection**](docs/BcfApi.md#createSelection) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection | 
+*bimdata.BcfApi* | [**createTopic**](docs/BcfApi.md#createTopic) | **POST** /bcf/2.1/projects/{projects_pk}/topics | 
+*bimdata.BcfApi* | [**createViewpoint**](docs/BcfApi.md#createViewpoint) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints | 
+*bimdata.BcfApi* | [**createVisibility**](docs/BcfApi.md#createVisibility) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility | 
+*bimdata.BcfApi* | [**deleteColoring**](docs/BcfApi.md#deleteColoring) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id} | 
+*bimdata.BcfApi* | [**deleteComment**](docs/BcfApi.md#deleteComment) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
+*bimdata.BcfApi* | [**deleteSelection**](docs/BcfApi.md#deleteSelection) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
+*bimdata.BcfApi* | [**deleteTopic**](docs/BcfApi.md#deleteTopic) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
+*bimdata.BcfApi* | [**deleteViewpoint**](docs/BcfApi.md#deleteViewpoint) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 
+*bimdata.BcfApi* | [**deleteVisibility**](docs/BcfApi.md#deleteVisibility) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id} | 
+*bimdata.BcfApi* | [**fullUpdateBcfProject**](docs/BcfApi.md#fullUpdateBcfProject) | **PUT** /bcf/2.1/projects/{id} | 
+*bimdata.BcfApi* | [**fullUpdateColoring**](docs/BcfApi.md#fullUpdateColoring) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id} | 
+*bimdata.BcfApi* | [**fullUpdateComment**](docs/BcfApi.md#fullUpdateComment) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
+*bimdata.BcfApi* | [**fullUpdateFullTopic**](docs/BcfApi.md#fullUpdateFullTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | 
+*bimdata.BcfApi* | [**fullUpdateSelection**](docs/BcfApi.md#fullUpdateSelection) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
+*bimdata.BcfApi* | [**fullUpdateTopic**](docs/BcfApi.md#fullUpdateTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
+*bimdata.BcfApi* | [**fullUpdateViewpoint**](docs/BcfApi.md#fullUpdateViewpoint) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 
+*bimdata.BcfApi* | [**fullUpdateVisibility**](docs/BcfApi.md#fullUpdateVisibility) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id} | 
+*bimdata.BcfApi* | [**getBcfProject**](docs/BcfApi.md#getBcfProject) | **GET** /bcf/2.1/projects/{id} | 
+*bimdata.BcfApi* | [**getBcfProjects**](docs/BcfApi.md#getBcfProjects) | **GET** /bcf/2.1/projects | 
+*bimdata.BcfApi* | [**getColoring**](docs/BcfApi.md#getColoring) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id} | 
+*bimdata.BcfApi* | [**getColorings**](docs/BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring | 
+*bimdata.BcfApi* | [**getComment**](docs/BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
+*bimdata.BcfApi* | [**getComments**](docs/BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | 
+*bimdata.BcfApi* | [**getExtension**](docs/BcfApi.md#getExtension) | **GET** /bcf/2.1/projects/{projects_pk}/extensions | 
+*bimdata.BcfApi* | [**getFullTopic**](docs/BcfApi.md#getFullTopic) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | 
+*bimdata.BcfApi* | [**getFullTopics**](docs/BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | 
+*bimdata.BcfApi* | [**getSelection**](docs/BcfApi.md#getSelection) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
+*bimdata.BcfApi* | [**getSelections**](docs/BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection | 
+*bimdata.BcfApi* | [**getSnapshots**](docs/BcfApi.md#getSnapshots) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot | 
+*bimdata.BcfApi* | [**getTopic**](docs/BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
+*bimdata.BcfApi* | [**getTopics**](docs/BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | 
+*bimdata.BcfApi* | [**getUser**](docs/BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | 
+*bimdata.BcfApi* | [**getViewpoint**](docs/BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 
+*bimdata.BcfApi* | [**getViewpoints**](docs/BcfApi.md#getViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints | 
+*bimdata.BcfApi* | [**getVisibilities**](docs/BcfApi.md#getVisibilities) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility | 
+*bimdata.BcfApi* | [**getVisibility**](docs/BcfApi.md#getVisibility) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id} | 
+*bimdata.BcfApi* | [**updateBcfProject**](docs/BcfApi.md#updateBcfProject) | **PATCH** /bcf/2.1/projects/{id} | 
+*bimdata.BcfApi* | [**updateColoring**](docs/BcfApi.md#updateColoring) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id} | 
+*bimdata.BcfApi* | [**updateComment**](docs/BcfApi.md#updateComment) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
+*bimdata.BcfApi* | [**updateFullTopic**](docs/BcfApi.md#updateFullTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | 
+*bimdata.BcfApi* | [**updateSelection**](docs/BcfApi.md#updateSelection) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
+*bimdata.BcfApi* | [**updateTopic**](docs/BcfApi.md#updateTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
+*bimdata.BcfApi* | [**updateViewpoint**](docs/BcfApi.md#updateViewpoint) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 
+*bimdata.BcfApi* | [**updateVisibility**](docs/BcfApi.md#updateVisibility) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id} | 
 *bimdata.CheckplanApi* | [**createChecker**](docs/CheckplanApi.md#createChecker) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker | 
 *bimdata.CheckplanApi* | [**createCheckerResult**](docs/CheckplanApi.md#createCheckerResult) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result | 
 *bimdata.CheckplanApi* | [**createCheckplan**](docs/CheckplanApi.md#createCheckplan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan | 
@@ -319,15 +369,22 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [bimdata.BcfProject](docs/BcfProject.md)
  - [bimdata.CheckPlan](docs/CheckPlan.md)
  - [bimdata.CheckerResult](docs/CheckerResult.md)
  - [bimdata.Classification](docs/Classification.md)
+ - [bimdata.ClippingPlane](docs/ClippingPlane.md)
  - [bimdata.Cloud](docs/Cloud.md)
- - [bimdata.CloudRole](docs/CloudRole.md)
+ - [bimdata.Coloring](docs/Coloring.md)
+ - [bimdata.Comment](docs/Comment.md)
+ - [bimdata.Component](docs/Component.md)
+ - [bimdata.ComponentsParent](docs/ComponentsParent.md)
+ - [bimdata.Direction](docs/Direction.md)
  - [bimdata.Document](docs/Document.md)
  - [bimdata.Element](docs/Element.md)
  - [bimdata.ElementClassificationRelation](docs/ElementClassificationRelation.md)
  - [bimdata.ElementPropertySetRelation](docs/ElementPropertySetRelation.md)
+ - [bimdata.Extensions](docs/Extensions.md)
  - [bimdata.Feature](docs/Feature.md)
  - [bimdata.Folder](docs/Folder.md)
  - [bimdata.ForgotPassword](docs/ForgotPassword.md)
@@ -338,9 +395,12 @@ Class | Method | HTTP request | Description
  - [bimdata.IfcFiles](docs/IfcFiles.md)
  - [bimdata.InviteUser](docs/InviteUser.md)
  - [bimdata.InvitedSignUpUser](docs/InvitedSignUpUser.md)
+ - [bimdata.LineSeriaizer](docs/LineSeriaizer.md)
  - [bimdata.Notification](docs/Notification.md)
+ - [bimdata.OrthogonalCamera](docs/OrthogonalCamera.md)
+ - [bimdata.PerspectiveCamera](docs/PerspectiveCamera.md)
+ - [bimdata.Point](docs/Point.md)
  - [bimdata.Project](docs/Project.md)
- - [bimdata.ProjectRole](docs/ProjectRole.md)
  - [bimdata.Property](docs/Property.md)
  - [bimdata.PropertyDefinition](docs/PropertyDefinition.md)
  - [bimdata.PropertySet](docs/PropertySet.md)
@@ -356,9 +416,15 @@ Class | Method | HTTP request | Description
  - [bimdata.Ruleset](docs/Ruleset.md)
  - [bimdata.SelfUser](docs/SelfUser.md)
  - [bimdata.SignUpUser](docs/SignUpUser.md)
+ - [bimdata.SingleJsonTopic](docs/SingleJsonTopic.md)
+ - [bimdata.Snapshot](docs/Snapshot.md)
  - [bimdata.Space](docs/Space.md)
+ - [bimdata.Topic](docs/Topic.md)
  - [bimdata.Unit](docs/Unit.md)
  - [bimdata.User](docs/User.md)
+ - [bimdata.ViewSetupHints](docs/ViewSetupHints.md)
+ - [bimdata.Viewpoint](docs/Viewpoint.md)
+ - [bimdata.Visibility](docs/Visibility.md)
  - [bimdata.WebHook](docs/WebHook.md)
  - [bimdata.Zone](docs/Zone.md)
  - [bimdata.ZoneSpace](docs/ZoneSpace.md)

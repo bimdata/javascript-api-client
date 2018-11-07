@@ -26,7 +26,7 @@
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.WebHook = factory(root.bimdata.ApiClient);
+    root.bimdata.BcfProject = factory(root.bimdata.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,34 +35,30 @@
 
 
   /**
-   * The WebHook model module.
-   * @module model/WebHook
+   * The BcfProject model module.
+   * @module model/BcfProject
    * @version 0.0.0
    */
 
   /**
-   * Constructs a new <code>WebHook</code>.
-   * @alias module:model/WebHook
+   * Constructs a new <code>BcfProject</code>.
+   * @alias module:model/BcfProject
    * @class
-   * @param events {Array.<String>} 
-   * @param url {String} 
-   * @param secret {String} 
+   * @param name {String} 
    */
-  var exports = function(events, url, secret) {
+  var exports = function(name) {
     var _this = this;
 
 
-    _this['events'] = events;
-    _this['url'] = url;
-    _this['secret'] = secret;
+    _this['name'] = name;
   };
 
   /**
-   * Constructs a <code>WebHook</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>BcfProject</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/WebHook} obj Optional instance to populate.
-   * @return {module:model/WebHook} The populated <code>WebHook</code> instance.
+   * @param {module:model/BcfProject} obj Optional instance to populate.
+   * @return {module:model/BcfProject} The populated <code>BcfProject</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -71,14 +67,8 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-      if (data.hasOwnProperty('events')) {
-        obj['events'] = ApiClient.convertToType(data['events'], ['String']);
-      }
-      if (data.hasOwnProperty('url')) {
-        obj['url'] = ApiClient.convertToType(data['url'], 'String');
-      }
-      if (data.hasOwnProperty('secret')) {
-        obj['secret'] = ApiClient.convertToType(data['secret'], 'String');
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
     }
     return obj;
@@ -89,17 +79,9 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * @member {Array.<String>} events
+   * @member {String} name
    */
-  exports.prototype['events'] = undefined;
-  /**
-   * @member {String} url
-   */
-  exports.prototype['url'] = undefined;
-  /**
-   * @member {String} secret
-   */
-  exports.prototype['secret'] = undefined;
+  exports.prototype['name'] = undefined;
 
 
 

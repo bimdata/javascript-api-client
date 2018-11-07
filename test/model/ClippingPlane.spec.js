@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.SelfUser();
+    instance = new bimdata.ClippingPlane();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,28 +50,22 @@
       object[property] = value;
   }
 
-  describe('SelfUser', function() {
-    it('should create an instance of SelfUser', function() {
-      // uncomment below and update the code to test SelfUser
-      //var instance = new bimdata.SelfUser();
-      //expect(instance).to.be.a(bimdata.SelfUser);
+  describe('ClippingPlane', function() {
+    it('should create an instance of ClippingPlane', function() {
+      // uncomment below and update the code to test ClippingPlane
+      //var instance = new bimdata.ClippingPlane();
+      //expect(instance).to.be.a(bimdata.ClippingPlane);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new bimdata.SelfUser();
+    it('should have the property location (base name: "location")', function() {
+      // uncomment below and update the code to test the property location
+      //var instance = new bimdata.ClippingPlane();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.SelfUser();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property email (base name: "email")', function() {
-      // uncomment below and update the code to test the property email
-      //var instance = new bimdata.SelfUser();
+    it('should have the property direction (base name: "direction")', function() {
+      // uncomment below and update the code to test the property direction
+      //var instance = new bimdata.ClippingPlane();
       //expect(instance).to.be();
     });
 

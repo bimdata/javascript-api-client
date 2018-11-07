@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.SelfUser();
+    instance = new bimdata.PerspectiveCamera();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,28 +50,34 @@
       object[property] = value;
   }
 
-  describe('SelfUser', function() {
-    it('should create an instance of SelfUser', function() {
-      // uncomment below and update the code to test SelfUser
-      //var instance = new bimdata.SelfUser();
-      //expect(instance).to.be.a(bimdata.SelfUser);
+  describe('PerspectiveCamera', function() {
+    it('should create an instance of PerspectiveCamera', function() {
+      // uncomment below and update the code to test PerspectiveCamera
+      //var instance = new bimdata.PerspectiveCamera();
+      //expect(instance).to.be.a(bimdata.PerspectiveCamera);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new bimdata.SelfUser();
+    it('should have the property fieldOfView (base name: "field_of_view")', function() {
+      // uncomment below and update the code to test the property fieldOfView
+      //var instance = new bimdata.PerspectiveCamera();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.SelfUser();
+    it('should have the property cameraDirection (base name: "camera_direction")', function() {
+      // uncomment below and update the code to test the property cameraDirection
+      //var instance = new bimdata.PerspectiveCamera();
       //expect(instance).to.be();
     });
 
-    it('should have the property email (base name: "email")', function() {
-      // uncomment below and update the code to test the property email
-      //var instance = new bimdata.SelfUser();
+    it('should have the property cameraUpVector (base name: "camera_up_vector")', function() {
+      // uncomment below and update the code to test the property cameraUpVector
+      //var instance = new bimdata.PerspectiveCamera();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cameraViewPoint (base name: "camera_view_point")', function() {
+      // uncomment below and update the code to test the property cameraViewPoint
+      //var instance = new bimdata.PerspectiveCamera();
       //expect(instance).to.be();
     });
 

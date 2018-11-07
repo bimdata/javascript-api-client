@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CheckPlan', 'model/CheckerResult', 'model/Classification', 'model/Cloud', 'model/CloudRole', 'model/Document', 'model/Element', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/Feature', 'model/Folder', 'model/ForgotPassword', 'model/Ifc', 'model/IfcChecker', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults', 'model/IfcFiles', 'model/InviteUser', 'model/InvitedSignUpUser', 'model/Notification', 'model/Project', 'model/ProjectRole', 'model/Property', 'model/PropertyDefinition', 'model/PropertySet', 'model/RawDefinition', 'model/RawElement', 'model/RawElements', 'model/RawProperty', 'model/RawPropertySet', 'model/RawUnit', 'model/ResetPassword', 'model/Rule', 'model/RuleComponent', 'model/Ruleset', 'model/SelfUser', 'model/SignUpUser', 'model/Space', 'model/Unit', 'model/User', 'model/WebHook', 'model/Zone', 'model/ZoneSpace', 'api/ApplicationApi', 'api/CheckplanApi', 'api/CloudApi', 'api/IfcApi', 'api/ProjectApi', 'api/UserApi'], factory);
+    define(['ApiClient', 'model/BcfProject', 'model/CheckPlan', 'model/CheckerResult', 'model/Classification', 'model/ClippingPlane', 'model/Cloud', 'model/Coloring', 'model/Comment', 'model/Component', 'model/ComponentsParent', 'model/Direction', 'model/Document', 'model/Element', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/Extensions', 'model/Feature', 'model/Folder', 'model/ForgotPassword', 'model/Ifc', 'model/IfcChecker', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults', 'model/IfcFiles', 'model/InviteUser', 'model/InvitedSignUpUser', 'model/LineSeriaizer', 'model/Notification', 'model/OrthogonalCamera', 'model/PerspectiveCamera', 'model/Point', 'model/Project', 'model/Property', 'model/PropertyDefinition', 'model/PropertySet', 'model/RawDefinition', 'model/RawElement', 'model/RawElements', 'model/RawProperty', 'model/RawPropertySet', 'model/RawUnit', 'model/ResetPassword', 'model/Rule', 'model/RuleComponent', 'model/Ruleset', 'model/SelfUser', 'model/SignUpUser', 'model/SingleJsonTopic', 'model/Snapshot', 'model/Space', 'model/Topic', 'model/Unit', 'model/User', 'model/ViewSetupHints', 'model/Viewpoint', 'model/Visibility', 'model/WebHook', 'model/Zone', 'model/ZoneSpace', 'api/ApplicationApi', 'api/BcfApi', 'api/CheckplanApi', 'api/CloudApi', 'api/IfcApi', 'api/ProjectApi', 'api/UserApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/CheckPlan'), require('./model/CheckerResult'), require('./model/Classification'), require('./model/Cloud'), require('./model/CloudRole'), require('./model/Document'), require('./model/Element'), require('./model/ElementClassificationRelation'), require('./model/ElementPropertySetRelation'), require('./model/Feature'), require('./model/Folder'), require('./model/ForgotPassword'), require('./model/Ifc'), require('./model/IfcChecker'), require('./model/IfcCheckerCheckplan'), require('./model/IfcCheckerResults'), require('./model/IfcFiles'), require('./model/InviteUser'), require('./model/InvitedSignUpUser'), require('./model/Notification'), require('./model/Project'), require('./model/ProjectRole'), require('./model/Property'), require('./model/PropertyDefinition'), require('./model/PropertySet'), require('./model/RawDefinition'), require('./model/RawElement'), require('./model/RawElements'), require('./model/RawProperty'), require('./model/RawPropertySet'), require('./model/RawUnit'), require('./model/ResetPassword'), require('./model/Rule'), require('./model/RuleComponent'), require('./model/Ruleset'), require('./model/SelfUser'), require('./model/SignUpUser'), require('./model/Space'), require('./model/Unit'), require('./model/User'), require('./model/WebHook'), require('./model/Zone'), require('./model/ZoneSpace'), require('./api/ApplicationApi'), require('./api/CheckplanApi'), require('./api/CloudApi'), require('./api/IfcApi'), require('./api/ProjectApi'), require('./api/UserApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/BcfProject'), require('./model/CheckPlan'), require('./model/CheckerResult'), require('./model/Classification'), require('./model/ClippingPlane'), require('./model/Cloud'), require('./model/Coloring'), require('./model/Comment'), require('./model/Component'), require('./model/ComponentsParent'), require('./model/Direction'), require('./model/Document'), require('./model/Element'), require('./model/ElementClassificationRelation'), require('./model/ElementPropertySetRelation'), require('./model/Extensions'), require('./model/Feature'), require('./model/Folder'), require('./model/ForgotPassword'), require('./model/Ifc'), require('./model/IfcChecker'), require('./model/IfcCheckerCheckplan'), require('./model/IfcCheckerResults'), require('./model/IfcFiles'), require('./model/InviteUser'), require('./model/InvitedSignUpUser'), require('./model/LineSeriaizer'), require('./model/Notification'), require('./model/OrthogonalCamera'), require('./model/PerspectiveCamera'), require('./model/Point'), require('./model/Project'), require('./model/Property'), require('./model/PropertyDefinition'), require('./model/PropertySet'), require('./model/RawDefinition'), require('./model/RawElement'), require('./model/RawElements'), require('./model/RawProperty'), require('./model/RawPropertySet'), require('./model/RawUnit'), require('./model/ResetPassword'), require('./model/Rule'), require('./model/RuleComponent'), require('./model/Ruleset'), require('./model/SelfUser'), require('./model/SignUpUser'), require('./model/SingleJsonTopic'), require('./model/Snapshot'), require('./model/Space'), require('./model/Topic'), require('./model/Unit'), require('./model/User'), require('./model/ViewSetupHints'), require('./model/Viewpoint'), require('./model/Visibility'), require('./model/WebHook'), require('./model/Zone'), require('./model/ZoneSpace'), require('./api/ApplicationApi'), require('./api/BcfApi'), require('./api/CheckplanApi'), require('./api/CloudApi'), require('./api/IfcApi'), require('./api/ProjectApi'), require('./api/UserApi'));
   }
-}(function(ApiClient, CheckPlan, CheckerResult, Classification, Cloud, CloudRole, Document, Element, ElementClassificationRelation, ElementPropertySetRelation, Feature, Folder, ForgotPassword, Ifc, IfcChecker, IfcCheckerCheckplan, IfcCheckerResults, IfcFiles, InviteUser, InvitedSignUpUser, Notification, Project, ProjectRole, Property, PropertyDefinition, PropertySet, RawDefinition, RawElement, RawElements, RawProperty, RawPropertySet, RawUnit, ResetPassword, Rule, RuleComponent, Ruleset, SelfUser, SignUpUser, Space, Unit, User, WebHook, Zone, ZoneSpace, ApplicationApi, CheckplanApi, CloudApi, IfcApi, ProjectApi, UserApi) {
+}(function(ApiClient, BcfProject, CheckPlan, CheckerResult, Classification, ClippingPlane, Cloud, Coloring, Comment, Component, ComponentsParent, Direction, Document, Element, ElementClassificationRelation, ElementPropertySetRelation, Extensions, Feature, Folder, ForgotPassword, Ifc, IfcChecker, IfcCheckerCheckplan, IfcCheckerResults, IfcFiles, InviteUser, InvitedSignUpUser, LineSeriaizer, Notification, OrthogonalCamera, PerspectiveCamera, Point, Project, Property, PropertyDefinition, PropertySet, RawDefinition, RawElement, RawElements, RawProperty, RawPropertySet, RawUnit, ResetPassword, Rule, RuleComponent, Ruleset, SelfUser, SignUpUser, SingleJsonTopic, Snapshot, Space, Topic, Unit, User, ViewSetupHints, Viewpoint, Visibility, WebHook, Zone, ZoneSpace, ApplicationApi, BcfApi, CheckplanApi, CloudApi, IfcApi, ProjectApi, UserApi) {
   'use strict';
 
   /**
@@ -63,6 +63,11 @@
      */
     ApiClient: ApiClient,
     /**
+     * The BcfProject model constructor.
+     * @property {module:model/BcfProject}
+     */
+    BcfProject: BcfProject,
+    /**
      * The CheckPlan model constructor.
      * @property {module:model/CheckPlan}
      */
@@ -78,15 +83,40 @@
      */
     Classification: Classification,
     /**
+     * The ClippingPlane model constructor.
+     * @property {module:model/ClippingPlane}
+     */
+    ClippingPlane: ClippingPlane,
+    /**
      * The Cloud model constructor.
      * @property {module:model/Cloud}
      */
     Cloud: Cloud,
     /**
-     * The CloudRole model constructor.
-     * @property {module:model/CloudRole}
+     * The Coloring model constructor.
+     * @property {module:model/Coloring}
      */
-    CloudRole: CloudRole,
+    Coloring: Coloring,
+    /**
+     * The Comment model constructor.
+     * @property {module:model/Comment}
+     */
+    Comment: Comment,
+    /**
+     * The Component model constructor.
+     * @property {module:model/Component}
+     */
+    Component: Component,
+    /**
+     * The ComponentsParent model constructor.
+     * @property {module:model/ComponentsParent}
+     */
+    ComponentsParent: ComponentsParent,
+    /**
+     * The Direction model constructor.
+     * @property {module:model/Direction}
+     */
+    Direction: Direction,
     /**
      * The Document model constructor.
      * @property {module:model/Document}
@@ -107,6 +137,11 @@
      * @property {module:model/ElementPropertySetRelation}
      */
     ElementPropertySetRelation: ElementPropertySetRelation,
+    /**
+     * The Extensions model constructor.
+     * @property {module:model/Extensions}
+     */
+    Extensions: Extensions,
     /**
      * The Feature model constructor.
      * @property {module:model/Feature}
@@ -158,20 +193,35 @@
      */
     InvitedSignUpUser: InvitedSignUpUser,
     /**
+     * The LineSeriaizer model constructor.
+     * @property {module:model/LineSeriaizer}
+     */
+    LineSeriaizer: LineSeriaizer,
+    /**
      * The Notification model constructor.
      * @property {module:model/Notification}
      */
     Notification: Notification,
     /**
+     * The OrthogonalCamera model constructor.
+     * @property {module:model/OrthogonalCamera}
+     */
+    OrthogonalCamera: OrthogonalCamera,
+    /**
+     * The PerspectiveCamera model constructor.
+     * @property {module:model/PerspectiveCamera}
+     */
+    PerspectiveCamera: PerspectiveCamera,
+    /**
+     * The Point model constructor.
+     * @property {module:model/Point}
+     */
+    Point: Point,
+    /**
      * The Project model constructor.
      * @property {module:model/Project}
      */
     Project: Project,
-    /**
-     * The ProjectRole model constructor.
-     * @property {module:model/ProjectRole}
-     */
-    ProjectRole: ProjectRole,
     /**
      * The Property model constructor.
      * @property {module:model/Property}
@@ -248,10 +298,25 @@
      */
     SignUpUser: SignUpUser,
     /**
+     * The SingleJsonTopic model constructor.
+     * @property {module:model/SingleJsonTopic}
+     */
+    SingleJsonTopic: SingleJsonTopic,
+    /**
+     * The Snapshot model constructor.
+     * @property {module:model/Snapshot}
+     */
+    Snapshot: Snapshot,
+    /**
      * The Space model constructor.
      * @property {module:model/Space}
      */
     Space: Space,
+    /**
+     * The Topic model constructor.
+     * @property {module:model/Topic}
+     */
+    Topic: Topic,
     /**
      * The Unit model constructor.
      * @property {module:model/Unit}
@@ -262,6 +327,21 @@
      * @property {module:model/User}
      */
     User: User,
+    /**
+     * The ViewSetupHints model constructor.
+     * @property {module:model/ViewSetupHints}
+     */
+    ViewSetupHints: ViewSetupHints,
+    /**
+     * The Viewpoint model constructor.
+     * @property {module:model/Viewpoint}
+     */
+    Viewpoint: Viewpoint,
+    /**
+     * The Visibility model constructor.
+     * @property {module:model/Visibility}
+     */
+    Visibility: Visibility,
     /**
      * The WebHook model constructor.
      * @property {module:model/WebHook}
@@ -282,6 +362,11 @@
      * @property {module:api/ApplicationApi}
      */
     ApplicationApi: ApplicationApi,
+    /**
+     * The BcfApi service constructor.
+     * @property {module:api/BcfApi}
+     */
+    BcfApi: BcfApi,
     /**
      * The CheckplanApi service constructor.
      * @property {module:api/CheckplanApi}

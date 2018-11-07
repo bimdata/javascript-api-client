@@ -26,7 +26,7 @@
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.SelfUser = factory(root.bimdata.ApiClient);
+    root.bimdata.Component = factory(root.bimdata.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,62 +35,60 @@
 
 
   /**
-   * The SelfUser model module.
-   * @module model/SelfUser
+   * The Component model module.
+   * @module model/Component
    * @version 0.0.0
    */
 
   /**
-   * Constructs a new <code>SelfUser</code>.
-   * @alias module:model/SelfUser
+   * Constructs a new <code>Component</code>.
+   * @alias module:model/Component
    * @class
-   * @param id {String} 
-   * @param email {String} 
    */
-  var exports = function(id, email) {
+  var exports = function() {
     var _this = this;
 
-    _this['id'] = id;
 
-    _this['email'] = email;
+
+
   };
 
   /**
-   * Constructs a <code>SelfUser</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Component</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/SelfUser} obj Optional instance to populate.
-   * @return {module:model/SelfUser} The populated <code>SelfUser</code> instance.
+   * @param {module:model/Component} obj Optional instance to populate.
+   * @return {module:model/Component} The populated <code>Component</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('ifc_guid')) {
+        obj['ifc_guid'] = ApiClient.convertToType(data['ifc_guid'], 'String');
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('originating_system')) {
+        obj['originating_system'] = ApiClient.convertToType(data['originating_system'], 'String');
       }
-      if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      if (data.hasOwnProperty('authoring_tool_id')) {
+        obj['authoring_tool_id'] = ApiClient.convertToType(data['authoring_tool_id'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} id
+   * @member {String} ifc_guid
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['ifc_guid'] = undefined;
   /**
-   * @member {String} name
+   * @member {String} originating_system
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['originating_system'] = undefined;
   /**
-   * @member {String} email
+   * @member {String} authoring_tool_id
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype['authoring_tool_id'] = undefined;
 
 
 

@@ -26,7 +26,7 @@
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.SelfUser = factory(root.bimdata.ApiClient);
+    root.bimdata.Point = factory(root.bimdata.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,62 +35,63 @@
 
 
   /**
-   * The SelfUser model module.
-   * @module model/SelfUser
+   * The Point model module.
+   * @module model/Point
    * @version 0.0.0
    */
 
   /**
-   * Constructs a new <code>SelfUser</code>.
-   * @alias module:model/SelfUser
+   * Constructs a new <code>Point</code>.
+   * @alias module:model/Point
    * @class
-   * @param id {String} 
-   * @param email {String} 
+   * @param x {Number} 
+   * @param y {Number} 
+   * @param z {Number} 
    */
-  var exports = function(id, email) {
+  var exports = function(x, y, z) {
     var _this = this;
 
-    _this['id'] = id;
-
-    _this['email'] = email;
+    _this['x'] = x;
+    _this['y'] = y;
+    _this['z'] = z;
   };
 
   /**
-   * Constructs a <code>SelfUser</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Point</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/SelfUser} obj Optional instance to populate.
-   * @return {module:model/SelfUser} The populated <code>SelfUser</code> instance.
+   * @param {module:model/Point} obj Optional instance to populate.
+   * @return {module:model/Point} The populated <code>Point</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('x')) {
+        obj['x'] = ApiClient.convertToType(data['x'], 'Number');
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('y')) {
+        obj['y'] = ApiClient.convertToType(data['y'], 'Number');
       }
-      if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      if (data.hasOwnProperty('z')) {
+        obj['z'] = ApiClient.convertToType(data['z'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} id
+   * @member {Number} x
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['x'] = undefined;
   /**
-   * @member {String} name
+   * @member {Number} y
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['y'] = undefined;
   /**
-   * @member {String} email
+   * @member {Number} z
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype['z'] = undefined;
 
 
 
