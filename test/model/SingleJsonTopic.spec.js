@@ -159,6 +159,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property dueDate (base name: "due_date")', function() {
+      // uncomment below and update the code to test the property dueDate
+      //var instance = new bimdata.SingleJsonTopic();
+      //expect(instance).to.be();
+    });
+
     it('should have the property comments (base name: "comments")', function() {
       // uncomment below and update the code to test the property comments
       //var instance = new bimdata.SingleJsonTopic();

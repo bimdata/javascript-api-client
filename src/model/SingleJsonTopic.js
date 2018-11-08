@@ -68,6 +68,7 @@
 
 
 
+
   };
 
   /**
@@ -131,6 +132,9 @@
       }
       if (data.hasOwnProperty('format')) {
         obj['format'] = ApiClient.convertToType(data['format'], 'String');
+      }
+      if (data.hasOwnProperty('due_date')) {
+        obj['due_date'] = ApiClient.convertToType(data['due_date'], 'Date');
       }
       if (data.hasOwnProperty('comments')) {
         obj['comments'] = ApiClient.convertToType(data['comments'], [Comment]);
@@ -210,6 +214,10 @@
    * @member {String} format
    */
   exports.prototype['format'] = undefined;
+  /**
+   * @member {Date} due_date
+   */
+  exports.prototype['due_date'] = undefined;
   /**
    * @member {Array.<module:model/Comment>} comments
    */
