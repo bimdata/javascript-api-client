@@ -128,8 +128,8 @@
       if (data.hasOwnProperty('ifcs')) {
         obj['ifcs'] = ApiClient.convertToType(data['ifcs'], ['Number']);
       }
-      if (data.hasOwnProperty('topic_format')) {
-        obj['topic_format'] = ApiClient.convertToType(data['topic_format'], 'String');
+      if (data.hasOwnProperty('format')) {
+        obj['format'] = ApiClient.convertToType(data['format'], 'String');
       }
       if (data.hasOwnProperty('index')) {
         obj['index'] = ApiClient.convertToType(data['index'], 'Number');
@@ -203,9 +203,9 @@
    */
   exports.prototype['ifcs'] = undefined;
   /**
-   * @member {String} topic_format
+   * @member {String} format
    */
-  exports.prototype['topic_format'] = undefined;
+  exports.prototype['format'] = undefined;
   /**
    * @member {Number} index
    */

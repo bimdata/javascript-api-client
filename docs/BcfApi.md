@@ -1479,7 +1479,7 @@ Name | Type | Description  | Notes
 
 <a name="getFullTopics"></a>
 # **getFullTopics**
-> [SingleJsonTopic] getFullTopics(projectsPk)
+> [SingleJsonTopic] getFullTopics(projectsPk, opts)
 
 
 
@@ -1495,7 +1495,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.BcfApi();
 var projectsPk = "projectsPk_example"; // String | 
-apiInstance.getFullTopics(projectsPk).then(function(data) {
+var opts = {
+  'ifcs': "ifcs_example", // String | Filter the returned list by ifcs
+  'format': "format_example" // String | Filter the returned list by format
+};
+apiInstance.getFullTopics(projectsPk, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1508,6 +1512,8 @@ apiInstance.getFullTopics(projectsPk).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
+ **ifcs** | **String**| Filter the returned list by ifcs | [optional] 
+ **format** | **String**| Filter the returned list by format | [optional] 
 
 ### Return type
 
@@ -1737,7 +1743,8 @@ Bearer.apiKey = 'YOUR API KEY';
 var apiInstance = new bimdata.BcfApi();
 var projectsPk = "projectsPk_example"; // String | 
 var opts = {
-  'ifcs': "ifcs_example" // String | Filter the returned list by ifcs
+  'ifcs': "ifcs_example", // String | Filter the returned list by ifcs
+  'format': "format_example" // String | Filter the returned list by format
 };
 apiInstance.getTopics(projectsPk, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1753,6 +1760,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
  **ifcs** | **String**| Filter the returned list by ifcs | [optional] 
+ **format** | **String**| Filter the returned list by format | [optional] 
 
 ### Return type
 

@@ -153,8 +153,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property topicFormat (base name: "topic_format")', function() {
-      // uncomment below and update the code to test the property topicFormat
+    it('should have the property format (base name: "format")', function() {
+      // uncomment below and update the code to test the property format
       //var instance = new bimdata.Topic();
       //expect(instance).to.be();
     });

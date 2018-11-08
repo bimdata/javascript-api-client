@@ -153,6 +153,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property format (base name: "format")', function() {
+      // uncomment below and update the code to test the property format
+      //var instance = new bimdata.SingleJsonTopic();
+      //expect(instance).to.be();
+    });
+
     it('should have the property comments (base name: "comments")', function() {
       // uncomment below and update the code to test the property comments
       //var instance = new bimdata.SingleJsonTopic();

@@ -67,6 +67,7 @@
 
 
 
+
   };
 
   /**
@@ -127,6 +128,9 @@
       }
       if (data.hasOwnProperty('assigned_to')) {
         obj['assigned_to'] = ApiClient.convertToType(data['assigned_to'], 'String');
+      }
+      if (data.hasOwnProperty('format')) {
+        obj['format'] = ApiClient.convertToType(data['format'], 'String');
       }
       if (data.hasOwnProperty('comments')) {
         obj['comments'] = ApiClient.convertToType(data['comments'], [Comment]);
@@ -202,6 +206,10 @@
    * @member {String} assigned_to
    */
   exports.prototype['assigned_to'] = undefined;
+  /**
+   * @member {String} format
+   */
+  exports.prototype['format'] = undefined;
   /**
    * @member {Array.<module:model/Comment>} comments
    */

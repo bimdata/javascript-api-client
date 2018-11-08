@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **dueDate** | **Date** |  | [optional] 
 **ifcs** | **[Number]** |  | [optional] 
-**topicFormat** | **String** |  | [optional] 
+**format** | **String** |  | [optional] 
 **index** | **Number** |  | [optional] 
 
 

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **priority** | **String** |  | [optional] 
 **index** | **Number** |  | [optional] 
 **assignedTo** | **String** |  | [optional] 
+**format** | **String** |  | [optional] 
 **comments** | [**[Comment]**](Comment.md) |  | [optional] 
 **viewpoints** | [**[Viewpoint]**](Viewpoint.md) |  | [optional] 
 

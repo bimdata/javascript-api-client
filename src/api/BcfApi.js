@@ -1937,9 +1937,13 @@
 
     /**
      * @param {String} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.ifcs Filter the returned list by ifcs
+     * @param {String} opts.format Filter the returned list by format
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SingleJsonTopic>} and HTTP response
      */
-    this.getFullTopicsWithHttpInfo = function(projectsPk) {
+    this.getFullTopicsWithHttpInfo = function(projectsPk, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'projectsPk' is set
@@ -1952,6 +1956,8 @@
         'projects_pk': projectsPk
       };
       var queryParams = {
+        'ifcs': opts['ifcs'],
+        'format': opts['format'],
       };
       var collectionQueryParams = {
       };
@@ -1974,10 +1980,13 @@
 
     /**
      * @param {String} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.ifcs Filter the returned list by ifcs
+     * @param {String} opts.format Filter the returned list by format
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SingleJsonTopic>}
      */
-    this.getFullTopics = function(projectsPk) {
-      return this.getFullTopicsWithHttpInfo(projectsPk)
+    this.getFullTopics = function(projectsPk, opts) {
+      return this.getFullTopicsWithHttpInfo(projectsPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2248,6 +2257,7 @@
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.ifcs Filter the returned list by ifcs
+     * @param {String} opts.format Filter the returned list by format
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Topic>} and HTTP response
      */
     this.getTopicsWithHttpInfo = function(projectsPk, opts) {
@@ -2265,6 +2275,7 @@
       };
       var queryParams = {
         'ifcs': opts['ifcs'],
+        'format': opts['format'],
       };
       var collectionQueryParams = {
       };
@@ -2289,6 +2300,7 @@
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.ifcs Filter the returned list by ifcs
+     * @param {String} opts.format Filter the returned list by format
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Topic>}
      */
     this.getTopics = function(projectsPk, opts) {
