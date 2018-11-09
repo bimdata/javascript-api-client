@@ -161,7 +161,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**getFullTopics**](docs/BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | 
 *bimdata.BcfApi* | [**getSelection**](docs/BcfApi.md#getSelection) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
 *bimdata.BcfApi* | [**getSelections**](docs/BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection | 
-*bimdata.BcfApi* | [**getSnapshots**](docs/BcfApi.md#getSnapshots) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot | 
+*bimdata.BcfApi* | [**getSnapshot**](docs/BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot | 
 *bimdata.BcfApi* | [**getTopic**](docs/BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
 *bimdata.BcfApi* | [**getTopics**](docs/BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | 
 *bimdata.BcfApi* | [**getUser**](docs/BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | 

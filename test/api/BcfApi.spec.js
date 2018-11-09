@@ -371,10 +371,10 @@
         done();
       });
     });
-    describe('getSnapshots', function() {
-      it('should call getSnapshots successfully', function(done) {
-        //uncomment below and update the code to test getSnapshots
-        //instance.getSnapshots(function(error) {
+    describe('getSnapshot', function() {
+      it('should call getSnapshot successfully', function(done) {
+        //uncomment below and update the code to test getSnapshot
+        //instance.getSnapshot(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

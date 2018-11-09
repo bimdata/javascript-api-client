@@ -36,7 +36,7 @@ Method | HTTP request | Description
 [**getFullTopics**](BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | 
 [**getSelection**](BcfApi.md#getSelection) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
 [**getSelections**](BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection | 
-[**getSnapshots**](BcfApi.md#getSnapshots) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot | 
+[**getSnapshot**](BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot | 
 [**getTopic**](BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
 [**getTopics**](BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | 
 [**getUser**](BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | 
@@ -1628,11 +1628,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="getSnapshots"></a>
-# **getSnapshots**
-> [Snapshot] getSnapshots(projectsPk, topicsPk, viewpointsPk)
+<a name="getSnapshot"></a>
+# **getSnapshot**
+> File getSnapshot(projectsPk, topicsPk, viewpointsPk)
 
 
+
+Retrieve the viewpoint&#39; snapshot
 
 ### Example
 ```javascript
@@ -1648,7 +1650,7 @@ var apiInstance = new bimdata.BcfApi();
 var projectsPk = "projectsPk_example"; // String | 
 var topicsPk = "topicsPk_example"; // String | 
 var viewpointsPk = "viewpointsPk_example"; // String | 
-apiInstance.getSnapshots(projectsPk, topicsPk, viewpointsPk).then(function(data) {
+apiInstance.getSnapshot(projectsPk, topicsPk, viewpointsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1666,7 +1668,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Snapshot]**](Snapshot.md)
+**File**
 
 ### Authorization
 
