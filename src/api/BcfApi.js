@@ -1833,12 +1833,12 @@
      * @param {String} projectsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Extensions} and HTTP response
      */
-    this.getExtensionWithHttpInfo = function(projectsPk) {
+    this.getExtensionsWithHttpInfo = function(projectsPk) {
       var postBody = null;
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling getExtension");
+        throw new Error("Missing the required parameter 'projectsPk' when calling getExtensions");
       }
 
 
@@ -1870,8 +1870,8 @@
      * @param {String} projectsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Extensions}
      */
-    this.getExtension = function(projectsPk) {
-      return this.getExtensionWithHttpInfo(projectsPk)
+    this.getExtensions = function(projectsPk) {
+      return this.getExtensionsWithHttpInfo(projectsPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

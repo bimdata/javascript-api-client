@@ -156,7 +156,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**getColorings**](docs/BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring | 
 *bimdata.BcfApi* | [**getComment**](docs/BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
 *bimdata.BcfApi* | [**getComments**](docs/BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | 
-*bimdata.BcfApi* | [**getExtension**](docs/BcfApi.md#getExtension) | **GET** /bcf/2.1/projects/{projects_pk}/extensions | 
+*bimdata.BcfApi* | [**getExtensions**](docs/BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{projects_pk}/extensions | 
 *bimdata.BcfApi* | [**getFullTopic**](docs/BcfApi.md#getFullTopic) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | 
 *bimdata.BcfApi* | [**getFullTopics**](docs/BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | 
 *bimdata.BcfApi* | [**getSelection**](docs/BcfApi.md#getSelection) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 

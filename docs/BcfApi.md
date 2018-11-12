@@ -31,7 +31,7 @@ Method | HTTP request | Description
 [**getColorings**](BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring | 
 [**getComment**](BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
 [**getComments**](BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | 
-[**getExtension**](BcfApi.md#getExtension) | **GET** /bcf/2.1/projects/{projects_pk}/extensions | 
+[**getExtensions**](BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{projects_pk}/extensions | 
 [**getFullTopic**](BcfApi.md#getFullTopic) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | 
 [**getFullTopics**](BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | 
 [**getSelection**](BcfApi.md#getSelection) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
@@ -1385,9 +1385,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="getExtension"></a>
-# **getExtension**
-> Extensions getExtension(projectsPk)
+<a name="getExtensions"></a>
+# **getExtensions**
+> Extensions getExtensions(projectsPk)
 
 
 
@@ -1403,7 +1403,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.BcfApi();
 var projectsPk = "projectsPk_example"; // String | 
-apiInstance.getExtension(projectsPk).then(function(data) {
+apiInstance.getExtensions(projectsPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);

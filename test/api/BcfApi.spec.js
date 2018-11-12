@@ -321,10 +321,10 @@
         done();
       });
     });
-    describe('getExtension', function() {
-      it('should call getExtension successfully', function(done) {
-        //uncomment below and update the code to test getExtension
-        //instance.getExtension(function(error) {
+    describe('getExtensions', function() {
+      it('should call getExtensions successfully', function(done) {
+        //uncomment below and update the code to test getExtensions
+        //instance.getExtensions(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
