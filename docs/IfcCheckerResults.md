@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **errorDetail** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **id** | **Number** |  | [optional] 
-**checker** | **Number** |  | [optional] 
+**checker** | **Number** |  | 
 **status** | **String** |  | [optional] 
 
 

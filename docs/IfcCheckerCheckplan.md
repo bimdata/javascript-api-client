@@ -5,10 +5,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **updatedAt** | **Date** |  | [optional] 
 **_protected** | **Boolean** |  | [optional] 
-**name** | **String** |  | [optional] 
+**name** | **String** |  | 
 **description** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
-**project** | **Number** |  | [optional] 
+**project** | **Number** |  | 
 **id** | **Number** |  | [optional] 
 
 
