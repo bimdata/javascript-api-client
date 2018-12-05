@@ -38,6 +38,7 @@ Method | HTTP request | Description
 [**getSelections**](BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection | 
 [**getSnapshot**](BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot | 
 [**getTopic**](BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
+[**getTopicViewpoints**](BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/topic-viewpoints | 
 [**getTopics**](BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | 
 [**getUser**](BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | 
 [**getViewpoint**](BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 
@@ -1716,6 +1717,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Topic**](Topic.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getTopicViewpoints"></a>
+# **getTopicViewpoints**
+> [Viewpoint] getTopicViewpoints(projectsPk, topicsPk)
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.BcfApi();
+var projectsPk = "projectsPk_example"; // String | 
+var topicsPk = "topicsPk_example"; // String | 
+apiInstance.getTopicViewpoints(projectsPk, topicsPk).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectsPk** | **String**|  | 
+ **topicsPk** | **String**|  | 
+
+### Return type
+
+[**[Viewpoint]**](Viewpoint.md)
 
 ### Authorization
 

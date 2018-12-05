@@ -163,6 +163,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**getSelections**](docs/BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection | 
 *bimdata.BcfApi* | [**getSnapshot**](docs/BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot | 
 *bimdata.BcfApi* | [**getTopic**](docs/BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
+*bimdata.BcfApi* | [**getTopicViewpoints**](docs/BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/topic-viewpoints | 
 *bimdata.BcfApi* | [**getTopics**](docs/BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | 
 *bimdata.BcfApi* | [**getUser**](docs/BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | 
 *bimdata.BcfApi* | [**getViewpoint**](docs/BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 

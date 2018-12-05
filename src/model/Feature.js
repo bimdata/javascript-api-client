@@ -64,6 +64,9 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('viewer_url')) {
+        obj['viewer_url'] = ApiClient.convertToType(data['viewer_url'], 'String');
+      }
     }
     return obj;
   }
@@ -72,6 +75,10 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * @member {String} viewer_url
+   */
+  exports.prototype['viewer_url'] = undefined;
 
 
 

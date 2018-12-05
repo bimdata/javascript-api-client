@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property viewerUrl (base name: "viewer_url")', function() {
+      // uncomment below and update the code to test the property viewerUrl
+      //var instance = new bimdata.Feature();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

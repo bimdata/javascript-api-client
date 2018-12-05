@@ -391,6 +391,16 @@
         done();
       });
     });
+    describe('getTopicViewpoints', function() {
+      it('should call getTopicViewpoints successfully', function(done) {
+        //uncomment below and update the code to test getTopicViewpoints
+        //instance.getTopicViewpoints(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getTopics', function() {
       it('should call getTopics successfully', function(done) {
         //uncomment below and update the code to test getTopics

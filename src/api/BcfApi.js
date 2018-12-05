@@ -2257,6 +2257,63 @@
 
     /**
      * @param {String} projectsPk 
+     * @param {String} topicsPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Viewpoint>} and HTTP response
+     */
+    this.getTopicViewpointsWithHttpInfo = function(projectsPk, topicsPk) {
+      var postBody = null;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getTopicViewpoints");
+      }
+
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling getTopicViewpoints");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk,
+        'topics_pk': topicsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Viewpoint];
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/topic-viewpoints', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * @param {String} projectsPk 
+     * @param {String} topicsPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Viewpoint>}
+     */
+    this.getTopicViewpoints = function(projectsPk, topicsPk) {
+      return this.getTopicViewpointsWithHttpInfo(projectsPk, topicsPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.ifcs Filter the returned list by ifcs
      * @param {String} opts.format Filter the returned list by format
