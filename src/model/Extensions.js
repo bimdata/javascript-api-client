@@ -43,10 +43,20 @@
    * Constructs a new <code>Extensions</code>.
    * @alias module:model/Extensions
    * @class
+   * @param topicType {Array.<String>} 
+   * @param topicStatus {Array.<String>} 
+   * @param topicLabel {Array.<String>} 
+   * @param priority {Array.<String>} 
+   * @param stage {Array.<String>} 
    */
-  var exports = function() {
+  var exports = function(topicType, topicStatus, topicLabel, priority, stage) {
     var _this = this;
 
+    _this['topic_type'] = topicType;
+    _this['topic_status'] = topicStatus;
+    _this['topic_label'] = topicLabel;
+    _this['priority'] = priority;
+    _this['stage'] = stage;
   };
 
   /**

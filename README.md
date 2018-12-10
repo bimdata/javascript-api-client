@@ -173,6 +173,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**updateBcfProject**](docs/BcfApi.md#updateBcfProject) | **PATCH** /bcf/2.1/projects/{id} | 
 *bimdata.BcfApi* | [**updateColoring**](docs/BcfApi.md#updateColoring) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id} | 
 *bimdata.BcfApi* | [**updateComment**](docs/BcfApi.md#updateComment) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
+*bimdata.BcfApi* | [**updateExtensions**](docs/BcfApi.md#updateExtensions) | **PATCH** /bcf/2.1/projects/{projects_pk}/extensions | 
 *bimdata.BcfApi* | [**updateFullTopic**](docs/BcfApi.md#updateFullTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | 
 *bimdata.BcfApi* | [**updateSelection**](docs/BcfApi.md#updateSelection) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
 *bimdata.BcfApi* | [**updateTopic**](docs/BcfApi.md#updateTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 

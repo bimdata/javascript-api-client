@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**topicType** | **[String]** |  | [optional] 
-**topicStatus** | **[String]** |  | [optional] 
-**topicLabel** | **[String]** |  | [optional] 
-**priority** | **[String]** |  | [optional] 
+**topicType** | **[String]** |  | 
+**topicStatus** | **[String]** |  | 
+**topicLabel** | **[String]** |  | 
+**priority** | **[String]** |  | 
 **userIdType** | **[String]** |  | [optional] 
-**stage** | **[String]** |  | [optional] 
+**stage** | **[String]** |  | 
 
 

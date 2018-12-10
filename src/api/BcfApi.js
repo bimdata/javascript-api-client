@@ -2880,6 +2880,62 @@
 
 
     /**
+     * @param {String} projectsPk 
+     * @param {module:model/Extensions} extensions 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Extensions} and HTTP response
+     */
+    this.updateExtensionsWithHttpInfo = function(projectsPk, extensions) {
+      var postBody = extensions;
+
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateExtensions");
+      }
+
+      // verify the required parameter 'extensions' is set
+      if (extensions === undefined || extensions === null) {
+        throw new Error("Missing the required parameter 'extensions' when calling updateExtensions");
+      }
+
+
+      var pathParams = {
+        'projects_pk': projectsPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Extensions;
+
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extensions', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * @param {String} projectsPk 
+     * @param {module:model/Extensions} extensions 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Extensions}
+     */
+    this.updateExtensions = function(projectsPk, extensions) {
+      return this.updateExtensionsWithHttpInfo(projectsPk, extensions)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
      * @param {module:model/SingleJsonTopic} singleJsonTopic 

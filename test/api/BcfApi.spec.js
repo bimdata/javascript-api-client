@@ -491,6 +491,16 @@
         done();
       });
     });
+    describe('updateExtensions', function() {
+      it('should call updateExtensions successfully', function(done) {
+        //uncomment below and update the code to test updateExtensions
+        //instance.updateExtensions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateFullTopic', function() {
       it('should call updateFullTopic successfully', function(done) {
         //uncomment below and update the code to test updateFullTopic
