@@ -98,6 +98,9 @@
       if (data.hasOwnProperty('bvh_tree_file')) {
         obj['bvh_tree_file'] = ApiClient.convertToType(data['bvh_tree_file'], 'String');
       }
+      if (data.hasOwnProperty('viewer_360_file')) {
+        obj['viewer_360_file'] = ApiClient.convertToType(data['viewer_360_file'], 'String');
+      }
       if (data.hasOwnProperty('error_detail')) {
         obj['error_detail'] = ApiClient.convertToType(data['error_detail'], 'String');
       }
@@ -160,6 +163,10 @@
    * @member {String} bvh_tree_file
    */
   exports.prototype['bvh_tree_file'] = undefined;
+  /**
+   * @member {String} viewer_360_file
+   */
+  exports.prototype['viewer_360_file'] = undefined;
   /**
    * @member {String} error_detail
    */

@@ -1061,7 +1061,7 @@
 
 
     /**
-     *          Create an property_set that will be automatically linked to the element     
+     *          Create an property_set that will be automatically linked to the element         
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1126,7 +1126,7 @@
     }
 
     /**
-     *          Create an property_set that will be automatically linked to the element     
+     *          Create an property_set that will be automatically linked to the element         
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1431,7 +1431,7 @@
 
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1489,7 +1489,7 @@
     }
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1505,7 +1505,7 @@
 
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1563,7 +1563,7 @@
     }
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1579,7 +1579,7 @@
 
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1637,7 +1637,7 @@
     }
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1727,7 +1727,7 @@
 
 
     /**
-     *          You can use the same optimized structure to post multiple elements ,property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination will be returned         
+     *          You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination may be returned         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1785,7 +1785,7 @@
     }
 
     /**
-     *          You can use the same optimized structure to post multiple elements ,property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination will be returned         
+     *          You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination may be returned         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -2102,6 +2102,7 @@
 
 
     /**
+     * Delete IFC. Will also delete all properties and generated files. If the IFC is heavy, it can take several seconds.
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -2153,6 +2154,7 @@
     }
 
     /**
+     * Delete IFC. Will also delete all properties and generated files. If the IFC is heavy, it can take several seconds.
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -2766,6 +2768,7 @@
 
 
     /**
+     * Update all IFC attributes
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -2823,6 +2826,7 @@
     }
 
     /**
+     * Update all IFC attributes
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -4414,6 +4418,7 @@
 
 
     /**
+     * Get one IFC details
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -4465,6 +4470,7 @@
     }
 
     /**
+     * Get one IFC details
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5293,6 +5299,7 @@
 
 
     /**
+     * Returns all IFCs of the project
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
@@ -5341,6 +5348,7 @@
     }
 
     /**
+     * Returns all IFCs of the project
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
@@ -5494,7 +5502,7 @@
 
 
     /**
-     *          Returns elements ,property_sets, properties, definitions and units in a optimized structure         
+     *          Returns elements, property_sets, properties, definitions and units in a JSON optimized structure         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5554,7 +5562,7 @@
     }
 
     /**
-     *          Returns elements ,property_sets, properties, definitions and units in a optimized structure         
+     *          Returns elements, property_sets, properties, definitions and units in a JSON optimized structure         
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6157,7 +6165,7 @@
 
 
     /**
-     *          Delete the relation between the element and the property set. Does not delete any object     
+     *          Delete the relation between the element and the property set. Does not delete any object         
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property set.
@@ -6223,7 +6231,7 @@
     }
 
     /**
-     *          Delete the relation between the element and the property set. Does not delete any object     
+     *          Delete the relation between the element and the property set. Does not delete any object         
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property set.
@@ -6692,6 +6700,7 @@
 
 
     /**
+     * Update some IFC attributes
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -6749,6 +6758,7 @@
     }
 
     /**
+     * Update some IFC attributes
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -6774,6 +6784,7 @@
      * @param {File} opts.mapFile 
      * @param {File} opts.gltfFile 
      * @param {File} opts.bvhTreeFile 
+     * @param {File} opts.viewer360File 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcFiles} and HTTP response
      */
     this.updateIfcFilesWithHttpInfo = function(cloudPk, id, projectPk, opts) {
@@ -6812,7 +6823,8 @@
         'systems_file': opts['systemsFile'],
         'map_file': opts['mapFile'],
         'gltf_file': opts['gltfFile'],
-        'bvh_tree_file': opts['bvhTreeFile']
+        'bvh_tree_file': opts['bvhTreeFile'],
+        'viewer_360_file': opts['viewer360File']
       };
 
       var authNames = ['Bearer'];
@@ -6838,6 +6850,7 @@
      * @param {File} opts.mapFile 
      * @param {File} opts.gltfFile 
      * @param {File} opts.bvhTreeFile 
+     * @param {File} opts.viewer360File 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcFiles}
      */
     this.updateIfcFiles = function(cloudPk, id, projectPk, opts) {

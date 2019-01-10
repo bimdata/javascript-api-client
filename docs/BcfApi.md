@@ -716,7 +716,7 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this project.
+var id = "id_example"; // String | 
 var bcfProject = new bimdata.BcfProject(); // BcfProject | 
 apiInstance.fullUpdateBcfProject(id, bcfProject).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -730,7 +730,7 @@ apiInstance.fullUpdateBcfProject(id, bcfProject).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this project. | 
+ **id** | **String**|  | 
  **bcfProject** | [**BcfProject**](BcfProject.md)|  | 
 
 ### Return type
@@ -1122,7 +1122,7 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this project.
+var id = "id_example"; // String | 
 apiInstance.getBcfProject(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -1135,7 +1135,7 @@ apiInstance.getBcfProject(id).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this project. | 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -2080,7 +2080,7 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this project.
+var id = "id_example"; // String | 
 var bcfProject = new bimdata.BcfProject(); // BcfProject | 
 apiInstance.updateBcfProject(id, bcfProject).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -2094,7 +2094,7 @@ apiInstance.updateBcfProject(id, bcfProject).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this project. | 
+ **id** | **String**|  | 
  **bcfProject** | [**BcfProject**](BcfProject.md)|  | 
 
 ### Return type

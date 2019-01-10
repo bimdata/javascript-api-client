@@ -135,6 +135,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property viewer360File (base name: "viewer_360_file")', function() {
+      // uncomment below and update the code to test the property viewer360File
+      //var instance = new bimdata.Ifc();
+      //expect(instance).to.be();
+    });
+
     it('should have the property errorDetail (base name: "error_detail")', function() {
       // uncomment below and update the code to test the property errorDetail
       //var instance = new bimdata.Ifc();

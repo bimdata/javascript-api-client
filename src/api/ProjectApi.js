@@ -120,7 +120,6 @@
      * @param {String} projectPk 
      * @param {String} name 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.id 
      * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
@@ -129,9 +128,6 @@
      * @param {String} opts.description 
      * @param {File} opts.file 
      * @param {Number} opts.size 
-     * @param {Date} opts.createdAt 
-     * @param {Date} opts.updatedAt 
-     * @param {String} opts.ifcId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
     this.createDocumentWithHttpInfo = function(cloudPk, projectPk, name, opts) {
@@ -165,7 +161,6 @@
       var headerParams = {
       };
       var formParams = {
-        'id': opts['id'],
         'parent': opts['parent'],
         'parent_id': opts['parentId'],
         'creator': opts['creator'],
@@ -174,10 +169,7 @@
         'file_name': opts['fileName'],
         'description': opts['description'],
         'file': opts['file'],
-        'size': opts['size'],
-        'created_at': opts['createdAt'],
-        'updated_at': opts['updatedAt'],
-        'ifc_id': opts['ifcId']
+        'size': opts['size']
       };
 
       var authNames = ['Bearer'];
@@ -197,7 +189,6 @@
      * @param {String} projectPk 
      * @param {String} name 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.id 
      * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
@@ -206,9 +197,6 @@
      * @param {String} opts.description 
      * @param {File} opts.file 
      * @param {Number} opts.size 
-     * @param {Date} opts.createdAt 
-     * @param {Date} opts.updatedAt 
-     * @param {String} opts.ifcId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
     this.createDocument = function(cloudPk, projectPk, name, opts) {
@@ -798,7 +786,6 @@
      * @param {String} projectPk 
      * @param {String} name 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.id 
      * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
@@ -807,9 +794,6 @@
      * @param {String} opts.description 
      * @param {File} opts.file 
      * @param {Number} opts.size 
-     * @param {Date} opts.createdAt 
-     * @param {Date} opts.updatedAt 
-     * @param {String} opts.ifcId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
     this.fullUpdateDocumentWithHttpInfo = function(cloudPk, id, projectPk, name, opts) {
@@ -849,7 +833,6 @@
       var headerParams = {
       };
       var formParams = {
-        'id': opts['id'],
         'parent': opts['parent'],
         'parent_id': opts['parentId'],
         'creator': opts['creator'],
@@ -858,10 +841,7 @@
         'file_name': opts['fileName'],
         'description': opts['description'],
         'file': opts['file'],
-        'size': opts['size'],
-        'created_at': opts['createdAt'],
-        'updated_at': opts['updatedAt'],
-        'ifc_id': opts['ifcId']
+        'size': opts['size']
       };
 
       var authNames = ['Bearer'];
@@ -882,7 +862,6 @@
      * @param {String} projectPk 
      * @param {String} name 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.id 
      * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
@@ -891,9 +870,6 @@
      * @param {String} opts.description 
      * @param {File} opts.file 
      * @param {Number} opts.size 
-     * @param {Date} opts.createdAt 
-     * @param {Date} opts.updatedAt 
-     * @param {String} opts.ifcId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
     this.fullUpdateDocument = function(cloudPk, id, projectPk, name, opts) {

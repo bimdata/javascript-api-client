@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **mapFile** | **String** |  | [optional] 
 **gltfFile** | **String** |  | [optional] 
 **bvhTreeFile** | **String** |  | [optional] 
+**viewer360File** | **String** |  | [optional] 
 **errorDetail** | **String** |  | [optional] 
 **projectId** | **String** |  | [optional] 
 

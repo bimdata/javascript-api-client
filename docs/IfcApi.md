@@ -842,7 +842,7 @@ Name | Type | Description  | Notes
 
 
 
-         Create an property_set that will be automatically linked to the element     
+         Create an property_set that will be automatically linked to the element         
 
 ### Example
 ```javascript
@@ -1068,7 +1068,7 @@ Name | Type | Description  | Notes
 
 
 
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
 
 ### Example
 ```javascript
@@ -1121,7 +1121,7 @@ Name | Type | Description  | Notes
 
 
 
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
 
 ### Example
 ```javascript
@@ -1174,7 +1174,7 @@ Name | Type | Description  | Notes
 
 
 
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
 
 ### Example
 ```javascript
@@ -1280,7 +1280,7 @@ null (empty response body)
 
 
 
-         You can use the same optimized structure to post multiple elements ,property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination will be returned         
+         You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination may be returned         
 
 ### Example
 ```javascript
@@ -1542,6 +1542,8 @@ null (empty response body)
 > deleteIfc(cloudPk, id, projectPk)
 
 
+
+Delete IFC. Will also delete all properties and generated files. If the IFC is heavy, it can take several seconds.
 
 ### Example
 ```javascript
@@ -2003,6 +2005,8 @@ Name | Type | Description  | Notes
 > Ifc fullUpdateIfc(cloudPk, id, projectPk, ifc)
 
 
+
+Update all IFC attributes
 
 ### Example
 ```javascript
@@ -3078,6 +3082,8 @@ Name | Type | Description  | Notes
 
 
 
+Get one IFC details
+
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
@@ -3731,6 +3737,8 @@ Name | Type | Description  | Notes
 
 
 
+Returns all IFCs of the project
+
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
@@ -3882,7 +3890,7 @@ Name | Type | Description  | Notes
 
 
 
-         Returns elements ,property_sets, properties, definitions and units in a optimized structure         
+         Returns elements, property_sets, properties, definitions and units in a JSON optimized structure         
 
 ### Example
 ```javascript
@@ -4353,7 +4361,7 @@ null (empty response body)
 
 
 
-         Delete the relation between the element and the property set. Does not delete any object     
+         Delete the relation between the element and the property set. Does not delete any object         
 
 ### Example
 ```javascript
@@ -4685,6 +4693,8 @@ Name | Type | Description  | Notes
 
 
 
+Update some IFC attributes
+
 ### Example
 ```javascript
 var bimdata = require('@bimdata/bimdata-api-client');
@@ -4757,7 +4767,8 @@ var opts = {
   'systemsFile': "/path/to/file", // File | 
   'mapFile': "/path/to/file", // File | 
   'gltfFile': "/path/to/file", // File | 
-  'bvhTreeFile': "/path/to/file" // File | 
+  'bvhTreeFile': "/path/to/file", // File | 
+  'viewer360File': "/path/to/file" // File | 
 };
 apiInstance.updateIfcFiles(cloudPk, id, projectPk, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -4779,6 +4790,7 @@ Name | Type | Description  | Notes
  **mapFile** | **File**|  | [optional] 
  **gltfFile** | **File**|  | [optional] 
  **bvhTreeFile** | **File**|  | [optional] 
+ **viewer360File** | **File**|  | [optional] 
 
 ### Return type
 

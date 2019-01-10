@@ -109,7 +109,6 @@ var cloudPk = "cloudPk_example"; // String |
 var projectPk = "projectPk_example"; // String | 
 var name = "name_example"; // String | 
 var opts = {
-  'id': 56, // Number | 
   'parent': 56, // Number | 
   'parentId': 56, // Number | 
   'creator': 56, // Number | 
@@ -117,10 +116,7 @@ var opts = {
   'fileName': "fileName_example", // String | 
   'description': "description_example", // String | 
   'file': "/path/to/file", // File | 
-  'size': 56, // Number | 
-  'createdAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'updatedAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'ifcId': "ifcId_example" // String | 
+  'size': 56 // Number | 
 };
 apiInstance.createDocument(cloudPk, projectPk, name, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -137,7 +133,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **name** | **String**|  | 
- **id** | **Number**|  | [optional] 
  **parent** | **Number**|  | [optional] 
  **parentId** | **Number**|  | [optional] 
  **creator** | **Number**|  | [optional] 
@@ -146,9 +141,6 @@ Name | Type | Description  | Notes
  **description** | **String**|  | [optional] 
  **file** | **File**|  | [optional] 
  **size** | **Number**|  | [optional] 
- **createdAt** | **Date**|  | [optional] 
- **updatedAt** | **Date**|  | [optional] 
- **ifcId** | **String**|  | [optional] 
 
 ### Return type
 
@@ -624,7 +616,6 @@ var id = 56; // Number | A unique integer value identifying this document.
 var projectPk = "projectPk_example"; // String | 
 var name = "name_example"; // String | 
 var opts = {
-  'id': 56, // Number | 
   'parent': 56, // Number | 
   'parentId': 56, // Number | 
   'creator': 56, // Number | 
@@ -632,10 +623,7 @@ var opts = {
   'fileName': "fileName_example", // String | 
   'description': "description_example", // String | 
   'file': "/path/to/file", // File | 
-  'size': 56, // Number | 
-  'createdAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'updatedAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'ifcId': "ifcId_example" // String | 
+  'size': 56 // Number | 
 };
 apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -653,7 +641,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **String**|  | 
  **name** | **String**|  | 
- **id** | **Number**|  | [optional] 
  **parent** | **Number**|  | [optional] 
  **parentId** | **Number**|  | [optional] 
  **creator** | **Number**|  | [optional] 
@@ -662,9 +649,6 @@ Name | Type | Description  | Notes
  **description** | **String**|  | [optional] 
  **file** | **File**|  | [optional] 
  **size** | **Number**|  | [optional] 
- **createdAt** | **Date**|  | [optional] 
- **updatedAt** | **Date**|  | [optional] 
- **ifcId** | **String**|  | [optional] 
 
 ### Return type
 
