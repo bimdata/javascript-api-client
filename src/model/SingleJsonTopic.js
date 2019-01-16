@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BcfUser', 'model/Comment', 'model/Label', 'model/Priority', 'model/Stage', 'model/TopicStatus', 'model/TopicType', 'model/Viewpoint'], factory);
+    define(['ApiClient', 'model/Comment', 'model/Viewpoint'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./BcfUser'), require('./Comment'), require('./Label'), require('./Priority'), require('./Stage'), require('./TopicStatus'), require('./TopicType'), require('./Viewpoint'));
+    module.exports = factory(require('../ApiClient'), require('./Comment'), require('./Viewpoint'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.SingleJsonTopic = factory(root.bimdata.ApiClient, root.bimdata.BcfUser, root.bimdata.Comment, root.bimdata.Label, root.bimdata.Priority, root.bimdata.Stage, root.bimdata.TopicStatus, root.bimdata.TopicType, root.bimdata.Viewpoint);
+    root.bimdata.SingleJsonTopic = factory(root.bimdata.ApiClient, root.bimdata.Comment, root.bimdata.Viewpoint);
   }
-}(this, function(ApiClient, BcfUser, Comment, Label, Priority, Stage, TopicStatus, TopicType, Viewpoint) {
+}(this, function(ApiClient, Comment, Viewpoint) {
   'use strict';
 
 
@@ -68,13 +68,13 @@
         obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
       }
       if (data.hasOwnProperty('creation_author')) {
-        obj['creation_author'] = BcfUser.constructFromObject(data['creation_author']);
+        obj['creation_author'] = ApiClient.convertToType(data['creation_author'], 'String');
       }
       if (data.hasOwnProperty('modified_date')) {
         obj['modified_date'] = ApiClient.convertToType(data['modified_date'], 'Date');
       }
       if (data.hasOwnProperty('modified_author')) {
-        obj['modified_author'] = BcfUser.constructFromObject(data['modified_author']);
+        obj['modified_author'] = ApiClient.convertToType(data['modified_author'], 'String');
       }
       if (data.hasOwnProperty('title')) {
         obj['title'] = ApiClient.convertToType(data['title'], 'String');
@@ -89,25 +89,25 @@
         obj['ifcs'] = ApiClient.convertToType(data['ifcs'], ['Number']);
       }
       if (data.hasOwnProperty('labels')) {
-        obj['labels'] = ApiClient.convertToType(data['labels'], [Label]);
+        obj['labels'] = ApiClient.convertToType(data['labels'], ['String']);
       }
       if (data.hasOwnProperty('topic_type')) {
-        obj['topic_type'] = TopicType.constructFromObject(data['topic_type']);
+        obj['topic_type'] = ApiClient.convertToType(data['topic_type'], 'String');
       }
       if (data.hasOwnProperty('topic_status')) {
-        obj['topic_status'] = TopicStatus.constructFromObject(data['topic_status']);
+        obj['topic_status'] = ApiClient.convertToType(data['topic_status'], 'String');
       }
       if (data.hasOwnProperty('stage')) {
-        obj['stage'] = Stage.constructFromObject(data['stage']);
+        obj['stage'] = ApiClient.convertToType(data['stage'], 'String');
       }
       if (data.hasOwnProperty('priority')) {
-        obj['priority'] = Priority.constructFromObject(data['priority']);
+        obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
       }
       if (data.hasOwnProperty('index')) {
         obj['index'] = ApiClient.convertToType(data['index'], 'Number');
       }
       if (data.hasOwnProperty('assigned_to')) {
-        obj['assigned_to'] = BcfUser.constructFromObject(data['assigned_to']);
+        obj['assigned_to'] = ApiClient.convertToType(data['assigned_to'], 'String');
       }
       if (data.hasOwnProperty('format')) {
         obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -134,7 +134,7 @@
    */
   exports.prototype['creation_date'] = undefined;
   /**
-   * @member {module:model/BcfUser} creation_author
+   * @member {String} creation_author
    */
   exports.prototype['creation_author'] = undefined;
   /**
@@ -142,7 +142,7 @@
    */
   exports.prototype['modified_date'] = undefined;
   /**
-   * @member {module:model/BcfUser} modified_author
+   * @member {String} modified_author
    */
   exports.prototype['modified_author'] = undefined;
   /**
@@ -162,23 +162,23 @@
    */
   exports.prototype['ifcs'] = undefined;
   /**
-   * @member {Array.<module:model/Label>} labels
+   * @member {Array.<String>} labels
    */
   exports.prototype['labels'] = undefined;
   /**
-   * @member {module:model/TopicType} topic_type
+   * @member {String} topic_type
    */
   exports.prototype['topic_type'] = undefined;
   /**
-   * @member {module:model/TopicStatus} topic_status
+   * @member {String} topic_status
    */
   exports.prototype['topic_status'] = undefined;
   /**
-   * @member {module:model/Stage} stage
+   * @member {String} stage
    */
   exports.prototype['stage'] = undefined;
   /**
-   * @member {module:model/Priority} priority
+   * @member {String} priority
    */
   exports.prototype['priority'] = undefined;
   /**
@@ -186,7 +186,7 @@
    */
   exports.prototype['index'] = undefined;
   /**
-   * @member {module:model/BcfUser} assigned_to
+   * @member {String} assigned_to
    */
   exports.prototype['assigned_to'] = undefined;
   /**
