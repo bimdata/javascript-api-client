@@ -465,7 +465,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this project.
 apiInstance.deleteProject(cloudPk, id).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -479,7 +479,7 @@ apiInstance.deleteProject(cloudPk, id).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -732,7 +732,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this project.
 var project = new bimdata.Project(); // Project | 
 apiInstance.fullUpdateProject(cloudPk, id, project).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -747,7 +747,7 @@ apiInstance.fullUpdateProject(cloudPk, id, project).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this project. | 
  **project** | [**Project**](Project.md)|  | 
 
 ### Return type
@@ -1120,7 +1120,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this project.
 apiInstance.getProject(cloudPk, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -1134,7 +1134,7 @@ apiInstance.getProject(cloudPk, id).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -1169,7 +1169,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this project.
 apiInstance.getProjectTree(cloudPk, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -1183,7 +1183,7 @@ apiInstance.getProjectTree(cloudPk, id).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -1510,7 +1510,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this project.
 var project = new bimdata.Project(); // Project | 
 apiInstance.updateProject(cloudPk, id, project).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1525,7 +1525,7 @@ apiInstance.updateProject(cloudPk, id, project).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this project. | 
  **project** | [**Project**](Project.md)|  | 
 
 ### Return type

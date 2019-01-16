@@ -912,7 +912,7 @@
 
 
     /**
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/BcfProject} bcfProject 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BcfProject} and HTTP response
      */
@@ -955,7 +955,7 @@
     }
 
     /**
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/BcfProject} bcfProject 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BcfProject}
      */
@@ -1480,7 +1480,7 @@
 
 
     /**
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BcfProject} and HTTP response
      */
     this.getBcfProjectWithHttpInfo = function(id) {
@@ -1517,7 +1517,7 @@
     }
 
     /**
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BcfProject}
      */
     this.getBcfProject = function(id) {
@@ -2672,7 +2672,7 @@
 
 
     /**
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/BcfProject} bcfProject 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BcfProject} and HTTP response
      */
@@ -2715,7 +2715,7 @@
     }
 
     /**
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/BcfProject} bcfProject 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BcfProject}
      */

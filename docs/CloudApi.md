@@ -130,7 +130,7 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this cloud.
 apiInstance.createDemo(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -143,7 +143,7 @@ apiInstance.createDemo(id).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this cloud. | 
 
 ### Return type
 
@@ -222,7 +222,7 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this cloud.
 var cloud = new bimdata.Cloud(); // Cloud | 
 apiInstance.fullUpdateCloud(id, cloud).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -236,7 +236,7 @@ apiInstance.fullUpdateCloud(id, cloud).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this cloud. | 
  **cloud** | [**Cloud**](Cloud.md)|  | 
 
 ### Return type
@@ -318,7 +318,7 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this cloud.
 apiInstance.getCloud(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -331,7 +331,7 @@ apiInstance.getCloud(id).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this cloud. | 
 
 ### Return type
 
@@ -365,7 +365,7 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this cloud.
 apiInstance.getCloudSize(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
@@ -378,7 +378,7 @@ apiInstance.getCloudSize(id).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this cloud. | 
 
 ### Return type
 
@@ -545,7 +545,7 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this cloud.
 var cloud = new bimdata.Cloud(); // Cloud | 
 apiInstance.updateCloud(id, cloud).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -559,7 +559,7 @@ apiInstance.updateCloud(id, cloud).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this cloud. | 
  **cloud** | [**Cloud**](Cloud.md)|  | 
 
 ### Return type

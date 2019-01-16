@@ -155,7 +155,7 @@
 
     /**
      * Create a demo project with a pre-populated IFC and its data
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
     this.createDemoWithHttpInfo = function(id) {
@@ -193,7 +193,7 @@
 
     /**
      * Create a demo project with a pre-populated IFC and its data
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
     this.createDemo = function(id) {
@@ -262,7 +262,7 @@
 
 
     /**
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this cloud.
      * @param {module:model/Cloud} cloud 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
      */
@@ -305,7 +305,7 @@
     }
 
     /**
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this cloud.
      * @param {module:model/Cloud} cloud 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
      */
@@ -382,7 +382,7 @@
 
 
     /**
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
      */
     this.getCloudWithHttpInfo = function(id) {
@@ -419,7 +419,7 @@
     }
 
     /**
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
      */
     this.getCloud = function(id) {
@@ -432,7 +432,7 @@
 
     /**
      * Returns the size of the cloud in Bytes
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Number} and HTTP response
      */
     this.getCloudSizeWithHttpInfo = function(id) {
@@ -470,7 +470,7 @@
 
     /**
      * Returns the size of the cloud in Bytes
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Number}
      */
     this.getCloudSize = function(id) {
@@ -631,7 +631,7 @@
 
 
     /**
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this cloud.
      * @param {module:model/Cloud} cloud 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
      */
@@ -674,7 +674,7 @@
     }
 
     /**
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this cloud.
      * @param {module:model/Cloud} cloud 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
      */

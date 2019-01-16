@@ -1606,7 +1606,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 apiInstance.deleteIfcProperty(cloudPk, id, ifcPk, projectPk).then(function() {
@@ -1622,7 +1622,7 @@ apiInstance.deleteIfcProperty(cloudPk, id, ifcPk, projectPk).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -1657,7 +1657,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property definition.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 apiInstance.deleteIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk).then(function() {
@@ -1673,7 +1673,7 @@ apiInstance.deleteIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk).then(func
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property definition. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -1708,7 +1708,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this unit.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 apiInstance.deleteIfcUnit(cloudPk, id, ifcPk, projectPk).then(function() {
@@ -1724,7 +1724,7 @@ apiInstance.deleteIfcUnit(cloudPk, id, ifcPk, projectPk).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this unit. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -1759,7 +1759,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property set.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 apiInstance.deletePropertySet(cloudPk, id, ifcPk, projectPk).then(function() {
@@ -1775,7 +1775,7 @@ apiInstance.deletePropertySet(cloudPk, id, ifcPk, projectPk).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property set. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -2071,7 +2071,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 var property = new bimdata.Property(); // Property | 
@@ -2088,7 +2088,7 @@ apiInstance.fullUpdateIfcProperty(cloudPk, id, ifcPk, projectPk, property).then(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **property** | [**Property**](Property.md)|  | 
@@ -2124,7 +2124,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property definition.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 var propertyDefinition = new bimdata.PropertyDefinition(); // PropertyDefinition | 
@@ -2141,7 +2141,7 @@ apiInstance.fullUpdateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, prope
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property definition. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **propertyDefinition** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
@@ -2177,7 +2177,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this unit.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 var unit = new bimdata.Unit(); // Unit | 
@@ -2194,7 +2194,7 @@ apiInstance.fullUpdateIfcUnit(cloudPk, id, ifcPk, projectPk, unit).then(function
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this unit. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **unit** | [**Unit**](Unit.md)|  | 
@@ -2230,7 +2230,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property set.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 var propertySet = new bimdata.PropertySet(); // PropertySet | 
@@ -2247,7 +2247,7 @@ apiInstance.fullUpdatePropertySet(cloudPk, id, ifcPk, projectPk, propertySet).th
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property set. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **propertySet** | [**PropertySet**](PropertySet.md)|  | 
@@ -3396,7 +3396,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 apiInstance.getIfcProperty(cloudPk, id, ifcPk, projectPk).then(function(data) {
@@ -3412,7 +3412,7 @@ apiInstance.getIfcProperty(cloudPk, id, ifcPk, projectPk).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -3447,7 +3447,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property definition.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 apiInstance.getIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk).then(function(data) {
@@ -3463,7 +3463,7 @@ apiInstance.getIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk).then(functio
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property definition. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -3649,7 +3649,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this unit.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 apiInstance.getIfcUnit(cloudPk, id, ifcPk, projectPk).then(function(data) {
@@ -3665,7 +3665,7 @@ apiInstance.getIfcUnit(cloudPk, id, ifcPk, projectPk).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this unit. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -3802,7 +3802,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property set.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 apiInstance.getPropertySet(cloudPk, id, ifcPk, projectPk).then(function(data) {
@@ -3818,7 +3818,7 @@ apiInstance.getPropertySet(cloudPk, id, ifcPk, projectPk).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property set. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
@@ -4602,7 +4602,7 @@ var cloudPk = "cloudPk_example"; // String |
 var ifcClassificationPk = "ifcClassificationPk_example"; // String | 
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
-var uuid = "uuid_example"; // String | 
+var uuid = "uuid_example"; // String | IFC element or element type UUID
 apiInstance.removeElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk, uuid).then(function() {
   console.log('API called successfully.');
 }, function(error) {
@@ -4619,7 +4619,7 @@ Name | Type | Description  | Notes
  **ifcClassificationPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **uuid** | **String**|  | 
+ **uuid** | **String**| IFC element or element type UUID | 
 
 ### Return type
 
@@ -4823,7 +4823,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 var property = new bimdata.Property(); // Property | 
@@ -4840,7 +4840,7 @@ apiInstance.updateIfcProperty(cloudPk, id, ifcPk, projectPk, property).then(func
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **property** | [**Property**](Property.md)|  | 
@@ -4876,7 +4876,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property definition.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 var propertyDefinition = new bimdata.PropertyDefinition(); // PropertyDefinition | 
@@ -4893,7 +4893,7 @@ apiInstance.updateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, propertyD
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property definition. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **propertyDefinition** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
@@ -4929,7 +4929,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this unit.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 var unit = new bimdata.Unit(); // Unit | 
@@ -4946,7 +4946,7 @@ apiInstance.updateIfcUnit(cloudPk, id, ifcPk, projectPk, unit).then(function(dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this unit. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **unit** | [**Unit**](Unit.md)|  | 
@@ -4982,7 +4982,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.IfcApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this property set.
 var ifcPk = "ifcPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
 var propertySet = new bimdata.PropertySet(); // PropertySet | 
@@ -4999,7 +4999,7 @@ apiInstance.updatePropertySet(cloudPk, id, ifcPk, projectPk, propertySet).then(f
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property set. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **propertySet** | [**PropertySet**](PropertySet.md)|  | 

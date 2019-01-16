@@ -588,7 +588,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     this.deleteProjectWithHttpInfo = function(cloudPk, id) {
@@ -632,7 +632,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     this.deleteProject = function(cloudPk, id) {
@@ -954,7 +954,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/Project} project 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
@@ -1004,7 +1004,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/Project} project 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
@@ -1456,7 +1456,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
     this.getProjectWithHttpInfo = function(cloudPk, id) {
@@ -1500,7 +1500,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
     this.getProject = function(cloudPk, id) {
@@ -1514,7 +1514,7 @@
     /**
      * Returns the document tree from root folder
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
      */
     this.getProjectTreeWithHttpInfo = function(cloudPk, id) {
@@ -1559,7 +1559,7 @@
     /**
      * Returns the document tree from root folder
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
      */
     this.getProjectTree = function(cloudPk, id) {
@@ -1959,7 +1959,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/Project} project 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
@@ -2009,7 +2009,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/Project} project 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */

@@ -2170,7 +2170,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -2228,7 +2228,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -2243,7 +2243,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -2301,7 +2301,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -2316,7 +2316,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -2374,7 +2374,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -2389,7 +2389,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -2447,7 +2447,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -2843,7 +2843,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Property} property 
@@ -2907,7 +2907,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Property} property 
@@ -2923,7 +2923,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertyDefinition} propertyDefinition 
@@ -2987,7 +2987,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertyDefinition} propertyDefinition 
@@ -3003,7 +3003,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Unit} unit 
@@ -3067,7 +3067,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Unit} unit 
@@ -3083,7 +3083,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertySet} propertySet 
@@ -3147,7 +3147,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertySet} propertySet 
@@ -4817,7 +4817,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
@@ -4875,7 +4875,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
@@ -4890,7 +4890,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
@@ -4948,7 +4948,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
@@ -5162,7 +5162,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
@@ -5220,7 +5220,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
@@ -5365,7 +5365,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertySet} and HTTP response
@@ -5423,7 +5423,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertySet}
@@ -6543,7 +6543,7 @@
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {String} uuid 
+     * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     this.removeElementsFromClassificationWithHttpInfo = function(cloudPk, ifcClassificationPk, ifcPk, projectPk, uuid) {
@@ -6608,7 +6608,7 @@
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {String} uuid 
+     * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     this.removeElementsFromClassification = function(cloudPk, ifcClassificationPk, ifcPk, projectPk, uuid) {
@@ -6863,7 +6863,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Property} property 
@@ -6927,7 +6927,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Property} property 
@@ -6943,7 +6943,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertyDefinition} propertyDefinition 
@@ -7007,7 +7007,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertyDefinition} propertyDefinition 
@@ -7023,7 +7023,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Unit} unit 
@@ -7087,7 +7087,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/Unit} unit 
@@ -7103,7 +7103,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertySet} propertySet 
@@ -7167,7 +7167,7 @@
 
     /**
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertySet} propertySet 
