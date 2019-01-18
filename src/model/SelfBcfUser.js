@@ -26,7 +26,7 @@
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.ProjectRole = factory(root.bimdata.ApiClient);
+    root.bimdata.SelfBcfUser = factory(root.bimdata.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,51 +34,60 @@
 
 
   /**
-   * The ProjectRole model module.
-   * @module model/ProjectRole
+   * The SelfBcfUser model module.
+   * @module model/SelfBcfUser
    * @version 0.0.0
    */
 
   /**
-   * Constructs a new <code>ProjectRole</code>.
-   * @alias module:model/ProjectRole
+   * Constructs a new <code>SelfBcfUser</code>.
+   * @alias module:model/SelfBcfUser
    * @class
-   * @param project {Number} 
+   * @param id {String} 
+   * @param email {String} 
    */
-  var exports = function(project) {
+  var exports = function(id, email) {
     var _this = this;
 
-    _this['project'] = project;
+    _this['id'] = id;
+    _this['email'] = email;
   };
 
   /**
-   * Constructs a <code>ProjectRole</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>SelfBcfUser</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ProjectRole} obj Optional instance to populate.
-   * @return {module:model/ProjectRole} The populated <code>ProjectRole</code> instance.
+   * @param {module:model/SelfBcfUser} obj Optional instance to populate.
+   * @return {module:model/SelfBcfUser} The populated <code>SelfBcfUser</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('project')) {
-        obj['project'] = ApiClient.convertToType(data['project'], 'Number');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
-      if (data.hasOwnProperty('role')) {
-        obj['role'] = ApiClient.convertToType(data['role'], 'Number');
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Number} project
+   * @member {String} id
    */
-  exports.prototype['project'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
-   * @member {Number} role
+   * @member {String} name
    */
-  exports.prototype['role'] = undefined;
+  exports.prototype['name'] = undefined;
+  /**
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
 
 
 

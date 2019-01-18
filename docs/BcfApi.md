@@ -1828,7 +1828,7 @@ Name | Type | Description  | Notes
 
 <a name="getUser"></a>
 # **getUser**
-> SelfUser getUser()
+> SelfBcfUser getUser()
 
 
 
@@ -1856,7 +1856,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**SelfUser**](SelfUser.md)
+[**SelfBcfUser**](SelfBcfUser.md)
 
 ### Authorization
 

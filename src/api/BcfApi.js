@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BcfProject', 'model/Coloring', 'model/Comment', 'model/Component', 'model/Extensions', 'model/SelfUser', 'model/SingleJsonTopic', 'model/Topic', 'model/Viewpoint', 'model/Visibility'], factory);
+    define(['ApiClient', 'model/BcfProject', 'model/Coloring', 'model/Comment', 'model/Component', 'model/Extensions', 'model/SelfBcfUser', 'model/SingleJsonTopic', 'model/Topic', 'model/Viewpoint', 'model/Visibility'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/BcfProject'), require('../model/Coloring'), require('../model/Comment'), require('../model/Component'), require('../model/Extensions'), require('../model/SelfUser'), require('../model/SingleJsonTopic'), require('../model/Topic'), require('../model/Viewpoint'), require('../model/Visibility'));
+    module.exports = factory(require('../ApiClient'), require('../model/BcfProject'), require('../model/Coloring'), require('../model/Comment'), require('../model/Component'), require('../model/Extensions'), require('../model/SelfBcfUser'), require('../model/SingleJsonTopic'), require('../model/Topic'), require('../model/Viewpoint'), require('../model/Visibility'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.BcfApi = factory(root.bimdata.ApiClient, root.bimdata.BcfProject, root.bimdata.Coloring, root.bimdata.Comment, root.bimdata.Component, root.bimdata.Extensions, root.bimdata.SelfUser, root.bimdata.SingleJsonTopic, root.bimdata.Topic, root.bimdata.Viewpoint, root.bimdata.Visibility);
+    root.bimdata.BcfApi = factory(root.bimdata.ApiClient, root.bimdata.BcfProject, root.bimdata.Coloring, root.bimdata.Comment, root.bimdata.Component, root.bimdata.Extensions, root.bimdata.SelfBcfUser, root.bimdata.SingleJsonTopic, root.bimdata.Topic, root.bimdata.Viewpoint, root.bimdata.Visibility);
   }
-}(this, function(ApiClient, BcfProject, Coloring, Comment, Component, Extensions, SelfUser, SingleJsonTopic, Topic, Viewpoint, Visibility) {
+}(this, function(ApiClient, BcfProject, Coloring, Comment, Component, Extensions, SelfBcfUser, SingleJsonTopic, Topic, Viewpoint, Visibility) {
   'use strict';
 
   /**
@@ -2371,7 +2371,7 @@
 
 
     /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SelfUser} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SelfBcfUser} and HTTP response
      */
     this.getUserWithHttpInfo = function() {
       var postBody = null;
@@ -2391,7 +2391,7 @@
       var authNames = ['Bearer'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = SelfUser;
+      var returnType = SelfBcfUser;
 
       return this.apiClient.callApi(
         '/bcf/2.1/current-user', 'GET',
@@ -2401,7 +2401,7 @@
     }
 
     /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SelfUser}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SelfBcfUser}
      */
     this.getUser = function() {
       return this.getUserWithHttpInfo()
