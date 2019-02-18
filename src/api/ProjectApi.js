@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Classification', 'model/Document', 'model/Folder', 'model/InviteUser', 'model/Project', 'model/User'], factory);
+    define(['ApiClient', 'model/Classification', 'model/Document', 'model/Folder', 'model/Project', 'model/ProjectInvitation', 'model/User'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Classification'), require('../model/Document'), require('../model/Folder'), require('../model/InviteUser'), require('../model/Project'), require('../model/User'));
+    module.exports = factory(require('../ApiClient'), require('../model/Classification'), require('../model/Document'), require('../model/Folder'), require('../model/Project'), require('../model/ProjectInvitation'), require('../model/User'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.ProjectApi = factory(root.bimdata.ApiClient, root.bimdata.Classification, root.bimdata.Document, root.bimdata.Folder, root.bimdata.InviteUser, root.bimdata.Project, root.bimdata.User);
+    root.bimdata.ProjectApi = factory(root.bimdata.ApiClient, root.bimdata.Classification, root.bimdata.Document, root.bimdata.Folder, root.bimdata.Project, root.bimdata.ProjectInvitation, root.bimdata.User);
   }
-}(this, function(ApiClient, Classification, Document, Folder, InviteUser, Project, User) {
+}(this, function(ApiClient, Classification, Document, Folder, Project, ProjectInvitation, User) {
   'use strict';
 
   /**
@@ -321,70 +321,6 @@
      */
     this.createProject = function(cloudPk, project) {
       return this.createProjectWithHttpInfo(cloudPk, project)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @param {module:model/InviteUser} inviteUser 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InviteUser} and HTTP response
-     */
-    this.createProjectUserWithHttpInfo = function(cloudPk, projectPk, inviteUser) {
-      var postBody = inviteUser;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createProjectUser");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createProjectUser");
-      }
-
-      // verify the required parameter 'inviteUser' is set
-      if (inviteUser === undefined || inviteUser === null) {
-        throw new Error("Missing the required parameter 'inviteUser' when calling createProjectUser");
-      }
-
-
-      var pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InviteUser;
-
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/user', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @param {module:model/InviteUser} inviteUser 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InviteUser}
-     */
-    this.createProjectUser = function(cloudPk, projectPk, inviteUser) {
-      return this.createProjectUserWithHttpInfo(cloudPk, projectPk, inviteUser)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1010,78 +946,6 @@
      */
     this.fullUpdateProject = function(cloudPk, id, project) {
       return this.fullUpdateProjectWithHttpInfo(cloudPk, id, project)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} projectPk 
-     * @param {module:model/InviteUser} inviteUser 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InviteUser} and HTTP response
-     */
-    this.fullUpdateProjectUserWithHttpInfo = function(cloudPk, id, projectPk, inviteUser) {
-      var postBody = inviteUser;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateProjectUser");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateProjectUser");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateProjectUser");
-      }
-
-      // verify the required parameter 'inviteUser' is set
-      if (inviteUser === undefined || inviteUser === null) {
-        throw new Error("Missing the required parameter 'inviteUser' when calling fullUpdateProjectUser");
-      }
-
-
-      var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'project_pk': projectPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InviteUser;
-
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} projectPk 
-     * @param {module:model/InviteUser} inviteUser 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InviteUser}
-     */
-    this.fullUpdateProjectUser = function(cloudPk, id, projectPk, inviteUser) {
-      return this.fullUpdateProjectUserWithHttpInfo(cloudPk, id, projectPk, inviteUser)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1742,6 +1606,72 @@
 
 
     /**
+     * Invite a user to collaborate in the project. The cloud role will be USER
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @param {module:model/ProjectInvitation} projectInvitation 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.projectInviteWithHttpInfo = function(cloudPk, id, projectInvitation) {
+      var postBody = projectInvitation;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling projectInvite");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling projectInvite");
+      }
+
+      // verify the required parameter 'projectInvitation' is set
+      if (projectInvitation === undefined || projectInvitation === null) {
+        throw new Error("Missing the required parameter 'projectInvitation' when calling projectInvite");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{id}/invite', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Invite a user to collaborate in the project. The cloud role will be USER
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @param {module:model/ProjectInvitation} projectInvitation 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.projectInvite = function(cloudPk, id, projectInvitation) {
+      return this.projectInviteWithHttpInfo(cloudPk, id, projectInvitation)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -2015,78 +1945,6 @@
      */
     this.updateProject = function(cloudPk, id, project) {
       return this.updateProjectWithHttpInfo(cloudPk, id, project)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} projectPk 
-     * @param {module:model/InviteUser} inviteUser 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InviteUser} and HTTP response
-     */
-    this.updateProjectUserWithHttpInfo = function(cloudPk, id, projectPk, inviteUser) {
-      var postBody = inviteUser;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateProjectUser");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateProjectUser");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateProjectUser");
-      }
-
-      // verify the required parameter 'inviteUser' is set
-      if (inviteUser === undefined || inviteUser === null) {
-        throw new Error("Missing the required parameter 'inviteUser' when calling updateProjectUser");
-      }
-
-
-      var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'project_pk': projectPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = InviteUser;
-
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {String} projectPk 
-     * @param {module:model/InviteUser} inviteUser 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InviteUser}
-     */
-    this.updateProjectUser = function(cloudPk, id, projectPk, inviteUser) {
-      return this.updateProjectUserWithHttpInfo(cloudPk, id, projectPk, inviteUser)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

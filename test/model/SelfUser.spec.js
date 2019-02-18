@@ -87,12 +87,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property password (base name: "password")', function() {
-      // uncomment below and update the code to test the property password
-      //var instance = new bimdata.SelfUser();
-      //expect(instance).to.be();
-    });
-
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instance = new bimdata.SelfUser();
@@ -113,24 +107,6 @@
 
     it('should have the property projects (base name: "projects")', function() {
       // uncomment below and update the code to test the property projects
-      //var instance = new bimdata.SelfUser();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property lastLogin (base name: "last_login")', function() {
-      // uncomment below and update the code to test the property lastLogin
-      //var instance = new bimdata.SelfUser();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property defaultCloudId (base name: "default_cloud_id")', function() {
-      // uncomment below and update the code to test the property defaultCloudId
-      //var instance = new bimdata.SelfUser();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property defaultProjectId (base name: "default_project_id")', function() {
-      // uncomment below and update the code to test the property defaultProjectId
       //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });

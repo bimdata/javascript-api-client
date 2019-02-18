@@ -51,20 +51,20 @@
   }
 
   describe('CloudApi', function() {
-    describe('createCloud', function() {
-      it('should call createCloud successfully', function(done) {
-        //uncomment below and update the code to test createCloud
-        //instance.createCloud(function(error) {
+    describe('cloudInvite', function() {
+      it('should call cloudInvite successfully', function(done) {
+        //uncomment below and update the code to test cloudInvite
+        //instance.cloudInvite(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createCloudUser', function() {
-      it('should call createCloudUser successfully', function(done) {
-        //uncomment below and update the code to test createCloudUser
-        //instance.createCloudUser(function(error) {
+    describe('createCloud', function() {
+      it('should call createCloud successfully', function(done) {
+        //uncomment below and update the code to test createCloud
+        //instance.createCloud(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -95,16 +95,6 @@
       it('should call fullUpdateCloud successfully', function(done) {
         //uncomment below and update the code to test fullUpdateCloud
         //instance.fullUpdateCloud(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateCloudUser', function() {
-      it('should call fullUpdateCloudUser successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateCloudUser
-        //instance.fullUpdateCloudUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -165,16 +155,6 @@
       it('should call updateCloud successfully', function(done) {
         //uncomment below and update the code to test updateCloud
         //instance.updateCloud(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateCloudUser', function() {
-      it('should call updateCloudUser successfully', function(done) {
-        //uncomment below and update the code to test updateCloudUser
-        //instance.updateCloudUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

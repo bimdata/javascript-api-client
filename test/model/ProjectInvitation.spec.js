@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.InvitedSignUpUser();
+    instance = new bimdata.ProjectInvitation();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,40 +50,28 @@
       object[property] = value;
   }
 
-  describe('InvitedSignUpUser', function() {
-    it('should create an instance of InvitedSignUpUser', function() {
-      // uncomment below and update the code to test InvitedSignUpUser
-      //var instance = new bimdata.InvitedSignUpUser();
-      //expect(instance).to.be.a(bimdata.InvitedSignUpUser);
-    });
-
-    it('should have the property invitationToken (base name: "invitation_token")', function() {
-      // uncomment below and update the code to test the property invitationToken
-      //var instance = new bimdata.InvitedSignUpUser();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property firstname (base name: "firstname")', function() {
-      // uncomment below and update the code to test the property firstname
-      //var instance = new bimdata.InvitedSignUpUser();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property lastname (base name: "lastname")', function() {
-      // uncomment below and update the code to test the property lastname
-      //var instance = new bimdata.InvitedSignUpUser();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property password (base name: "password")', function() {
-      // uncomment below and update the code to test the property password
-      //var instance = new bimdata.InvitedSignUpUser();
-      //expect(instance).to.be();
+  describe('ProjectInvitation', function() {
+    it('should create an instance of ProjectInvitation', function() {
+      // uncomment below and update the code to test ProjectInvitation
+      //var instance = new bimdata.ProjectInvitation();
+      //expect(instance).to.be.a(bimdata.ProjectInvitation);
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instance = new bimdata.InvitedSignUpUser();
+      //var instance = new bimdata.ProjectInvitation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property role (base name: "role")', function() {
+      // uncomment below and update the code to test the property role
+      //var instance = new bimdata.ProjectInvitation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property redirectUri (base name: "redirect_uri")', function() {
+      // uncomment below and update the code to test the property redirectUri
+      //var instance = new bimdata.ProjectInvitation();
       //expect(instance).to.be();
     });
 

@@ -51,46 +51,6 @@
   }
 
   describe('UserApi', function() {
-    describe('askResetPasswordToken', function() {
-      it('should call askResetPasswordToken successfully', function(done) {
-        //uncomment below and update the code to test askResetPasswordToken
-        //instance.askResetPasswordToken(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateNotification', function() {
-      it('should call fullUpdateNotification successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateNotification
-        //instance.fullUpdateNotification(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getNotification', function() {
-      it('should call getNotification successfully', function(done) {
-        //uncomment below and update the code to test getNotification
-        //instance.getNotification(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getSelfNotifications', function() {
-      it('should call getSelfNotifications successfully', function(done) {
-        //uncomment below and update the code to test getSelfNotifications
-        //instance.getSelfNotifications(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getSelfProjects', function() {
       it('should call getSelfProjects successfully', function(done) {
         //uncomment below and update the code to test getSelfProjects
@@ -105,46 +65,6 @@
       it('should call getSelfUser successfully', function(done) {
         //uncomment below and update the code to test getSelfUser
         //instance.getSelfUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('resetPassword', function() {
-      it('should call resetPassword successfully', function(done) {
-        //uncomment below and update the code to test resetPassword
-        //instance.resetPassword(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('signUp', function() {
-      it('should call signUp successfully', function(done) {
-        //uncomment below and update the code to test signUp
-        //instance.signUp(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('signUpWithInvitationToken', function() {
-      it('should call signUpWithInvitationToken successfully', function(done) {
-        //uncomment below and update the code to test signUpWithInvitationToken
-        //instance.signUpWithInvitationToken(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateNotification', function() {
-      it('should call updateNotification successfully', function(done) {
-        //uncomment below and update the code to test updateNotification
-        //instance.updateNotification(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

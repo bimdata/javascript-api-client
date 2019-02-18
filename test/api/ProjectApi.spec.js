@@ -91,16 +91,6 @@
         done();
       });
     });
-    describe('createProjectUser', function() {
-      it('should call createProjectUser successfully', function(done) {
-        //uncomment below and update the code to test createProjectUser
-        //instance.createProjectUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('deleteClassification', function() {
       it('should call deleteClassification successfully', function(done) {
         //uncomment below and update the code to test deleteClassification
@@ -185,16 +175,6 @@
       it('should call fullUpdateProject successfully', function(done) {
         //uncomment below and update the code to test fullUpdateProject
         //instance.fullUpdateProject(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateProjectUser', function() {
-      it('should call fullUpdateProjectUser successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateProjectUser
-        //instance.fullUpdateProjectUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -311,6 +291,16 @@
         done();
       });
     });
+    describe('projectInvite', function() {
+      it('should call projectInvite successfully', function(done) {
+        //uncomment below and update the code to test projectInvite
+        //instance.projectInvite(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateClassification', function() {
       it('should call updateClassification successfully', function(done) {
         //uncomment below and update the code to test updateClassification
@@ -345,16 +335,6 @@
       it('should call updateProject successfully', function(done) {
         //uncomment below and update the code to test updateProject
         //instance.updateProject(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateProjectUser', function() {
-      it('should call updateProjectUser successfully', function(done) {
-        //uncomment below and update the code to test updateProjectUser
-        //instance.updateProjectUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

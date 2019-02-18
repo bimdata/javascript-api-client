@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.ResetPassword();
+    instance = new bimdata.CloudInvitation();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,22 @@
       object[property] = value;
   }
 
-  describe('ResetPassword', function() {
-    it('should create an instance of ResetPassword', function() {
-      // uncomment below and update the code to test ResetPassword
-      //var instance = new bimdata.ResetPassword();
-      //expect(instance).to.be.a(bimdata.ResetPassword);
+  describe('CloudInvitation', function() {
+    it('should create an instance of CloudInvitation', function() {
+      // uncomment below and update the code to test CloudInvitation
+      //var instance = new bimdata.CloudInvitation();
+      //expect(instance).to.be.a(bimdata.CloudInvitation);
     });
 
-    it('should have the property resetToken (base name: "reset_token")', function() {
-      // uncomment below and update the code to test the property resetToken
-      //var instance = new bimdata.ResetPassword();
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instance = new bimdata.CloudInvitation();
       //expect(instance).to.be();
     });
 
-    it('should have the property newPassword (base name: "new_password")', function() {
-      // uncomment below and update the code to test the property newPassword
-      //var instance = new bimdata.ResetPassword();
+    it('should have the property redirectUri (base name: "redirect_uri")', function() {
+      // uncomment below and update the code to test the property redirectUri
+      //var instance = new bimdata.CloudInvitation();
       //expect(instance).to.be();
     });
 

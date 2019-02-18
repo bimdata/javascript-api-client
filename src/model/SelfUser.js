@@ -46,15 +46,13 @@
    * @param email {String} 
    * @param firstname {String} 
    * @param lastname {String} 
-   * @param password {String} 
    */
-  var exports = function(email, firstname, lastname, password) {
+  var exports = function(email, firstname, lastname) {
     var _this = this;
 
     _this['email'] = email;
     _this['firstname'] = firstname;
     _this['lastname'] = lastname;
-    _this['password'] = password;
   };
 
   /**
@@ -82,9 +80,6 @@
       if (data.hasOwnProperty('lastname')) {
         obj['lastname'] = ApiClient.convertToType(data['lastname'], 'String');
       }
-      if (data.hasOwnProperty('password')) {
-        obj['password'] = ApiClient.convertToType(data['password'], 'String');
-      }
       if (data.hasOwnProperty('created_at')) {
         obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
       }
@@ -96,15 +91,6 @@
       }
       if (data.hasOwnProperty('projects')) {
         obj['projects'] = ApiClient.convertToType(data['projects'], [ProjectRole]);
-      }
-      if (data.hasOwnProperty('last_login')) {
-        obj['last_login'] = ApiClient.convertToType(data['last_login'], 'Date');
-      }
-      if (data.hasOwnProperty('default_cloud_id')) {
-        obj['default_cloud_id'] = ApiClient.convertToType(data['default_cloud_id'], 'String');
-      }
-      if (data.hasOwnProperty('default_project_id')) {
-        obj['default_project_id'] = ApiClient.convertToType(data['default_project_id'], 'String');
       }
       if (data.hasOwnProperty('oidc_sub')) {
         obj['oidc_sub'] = ApiClient.convertToType(data['oidc_sub'], 'String');
@@ -134,10 +120,6 @@
    */
   exports.prototype['lastname'] = undefined;
   /**
-   * @member {String} password
-   */
-  exports.prototype['password'] = undefined;
-  /**
    * @member {Date} created_at
    */
   exports.prototype['created_at'] = undefined;
@@ -153,18 +135,6 @@
    * @member {Array.<module:model/ProjectRole>} projects
    */
   exports.prototype['projects'] = undefined;
-  /**
-   * @member {Date} last_login
-   */
-  exports.prototype['last_login'] = undefined;
-  /**
-   * @member {String} default_cloud_id
-   */
-  exports.prototype['default_cloud_id'] = undefined;
-  /**
-   * @member {String} default_project_id
-   */
-  exports.prototype['default_project_id'] = undefined;
   /**
    * @member {String} oidc_sub
    */

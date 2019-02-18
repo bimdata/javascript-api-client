@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**createDocument**](ProjectApi.md#createDocument) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | 
 [**createFolder**](ProjectApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | 
 [**createProject**](ProjectApi.md#createProject) | **POST** /cloud/{cloud_pk}/project | 
-[**createProjectUser**](ProjectApi.md#createProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/user | 
 [**deleteClassification**](ProjectApi.md#deleteClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | 
 [**deleteDocument**](ProjectApi.md#deleteDocument) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
 [**deleteFolder**](ProjectApi.md#deleteFolder) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
@@ -18,7 +17,6 @@ Method | HTTP request | Description
 [**fullUpdateDocument**](ProjectApi.md#fullUpdateDocument) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
 [**fullUpdateFolder**](ProjectApi.md#fullUpdateFolder) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
 [**fullUpdateProject**](ProjectApi.md#fullUpdateProject) | **PUT** /cloud/{cloud_pk}/project/{id} | 
-[**fullUpdateProjectUser**](ProjectApi.md#fullUpdateProjectUser) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
 [**getClassification**](ProjectApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | 
 [**getClassifications**](ProjectApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | 
 [**getDocument**](ProjectApi.md#getDocument) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
@@ -30,11 +28,11 @@ Method | HTTP request | Description
 [**getProjectUser**](ProjectApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
 [**getProjectUsers**](ProjectApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | 
 [**getProjects**](ProjectApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | 
+[**projectInvite**](ProjectApi.md#projectInvite) | **POST** /cloud/{cloud_pk}/project/{id}/invite | 
 [**updateClassification**](ProjectApi.md#updateClassification) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | 
 [**updateDocument**](ProjectApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
 [**updateFolder**](ProjectApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
 [**updateProject**](ProjectApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | 
-[**updateProjectUser**](ProjectApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
 
 
 <a name="createClassification"></a>
@@ -241,55 +239,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Project**](Project.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="createProjectUser"></a>
-# **createProjectUser**
-> InviteUser createProjectUser(cloudPk, projectPk, inviteUser)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-var inviteUser = new bimdata.InviteUser(); // InviteUser | 
-apiInstance.createProjectUser(cloudPk, projectPk, inviteUser).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **inviteUser** | [**InviteUser**](InviteUser.md)|  | 
-
-### Return type
-
-[**InviteUser**](InviteUser.md)
 
 ### Authorization
 
@@ -753,57 +702,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Project**](Project.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="fullUpdateProjectUser"></a>
-# **fullUpdateProjectUser**
-> InviteUser fullUpdateProjectUser(cloudPk, id, projectPk, inviteUser)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-var inviteUser = new bimdata.InviteUser(); // InviteUser | 
-apiInstance.fullUpdateProjectUser(cloudPk, id, projectPk, inviteUser).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **String**|  | 
- **projectPk** | **String**|  | 
- **inviteUser** | [**InviteUser**](InviteUser.md)|  | 
-
-### Return type
-
-[**InviteUser**](InviteUser.md)
 
 ### Authorization
 
@@ -1339,6 +1237,57 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="projectInvite"></a>
+# **projectInvite**
+> projectInvite(cloudPk, id, projectInvitation)
+
+
+
+Invite a user to collaborate in the project. The cloud role will be USER
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.ProjectApi();
+var cloudPk = "cloudPk_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this project.
+var projectInvitation = new bimdata.ProjectInvitation(); // ProjectInvitation | 
+apiInstance.projectInvite(cloudPk, id, projectInvitation).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this project. | 
+ **projectInvitation** | [**ProjectInvitation**](ProjectInvitation.md)|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
 <a name="updateClassification"></a>
 # **updateClassification**
 > Classification updateClassification(cloudPk, id, projectPk, classification)
@@ -1531,57 +1480,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Project**](Project.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="updateProjectUser"></a>
-# **updateProjectUser**
-> InviteUser updateProjectUser(cloudPk, id, projectPk, inviteUser)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-var inviteUser = new bimdata.InviteUser(); // InviteUser | 
-apiInstance.updateProjectUser(cloudPk, id, projectPk, inviteUser).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **String**|  | 
- **projectPk** | **String**|  | 
- **inviteUser** | [**InviteUser**](InviteUser.md)|  | 
-
-### Return type
-
-[**InviteUser**](InviteUser.md)
 
 ### Authorization
 
