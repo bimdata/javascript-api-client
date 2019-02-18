@@ -26,7 +26,7 @@
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.Snapshot = factory(root.bimdata.ApiClient);
+    root.bimdata.UserProjectUpdate = factory(root.bimdata.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,51 +34,44 @@
 
 
   /**
-   * The Snapshot model module.
-   * @module model/Snapshot
+   * The UserProjectUpdate model module.
+   * @module model/UserProjectUpdate
    * @version 0.0.0
    */
 
   /**
-   * Constructs a new <code>Snapshot</code>.
-   * @alias module:model/Snapshot
+   * Constructs a new <code>UserProjectUpdate</code>.
+   * @alias module:model/UserProjectUpdate
    * @class
-   * @param snapshotType {String} 
+   * @param role {Number} 
    */
-  var exports = function(snapshotType) {
+  var exports = function(role) {
     var _this = this;
 
-    _this['snapshot_type'] = snapshotType;
+    _this['role'] = role;
   };
 
   /**
-   * Constructs a <code>Snapshot</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>UserProjectUpdate</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Snapshot} obj Optional instance to populate.
-   * @return {module:model/Snapshot} The populated <code>Snapshot</code> instance.
+   * @param {module:model/UserProjectUpdate} obj Optional instance to populate.
+   * @return {module:model/UserProjectUpdate} The populated <code>UserProjectUpdate</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('snapshot_type')) {
-        obj['snapshot_type'] = ApiClient.convertToType(data['snapshot_type'], 'String');
-      }
-      if (data.hasOwnProperty('snapshot_data')) {
-        obj['snapshot_data'] = ApiClient.convertToType(data['snapshot_data'], 'String');
+      if (data.hasOwnProperty('role')) {
+        obj['role'] = ApiClient.convertToType(data['role'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} snapshot_type
+   * @member {Number} role
    */
-  exports.prototype['snapshot_type'] = undefined;
-  /**
-   * @member {String} snapshot_data
-   */
-  exports.prototype['snapshot_data'] = undefined;
+  exports.prototype['role'] = undefined;
 
 
 

@@ -9,12 +9,14 @@ Method | HTTP request | Description
 [**createDemo**](CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | 
 [**deleteCloudUser**](CloudApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | 
 [**fullUpdateCloud**](CloudApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | 
+[**fullUpdateCloudUser**](CloudApi.md#fullUpdateCloudUser) | **PUT** /cloud/{cloud_pk}/user/{id} | 
 [**getCloud**](CloudApi.md#getCloud) | **GET** /cloud/{id} | 
 [**getCloudSize**](CloudApi.md#getCloudSize) | **GET** /cloud/{id}/size | 
 [**getCloudUser**](CloudApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | 
 [**getCloudUsers**](CloudApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | 
 [**getClouds**](CloudApi.md#getClouds) | **GET** /cloud | 
 [**updateCloud**](CloudApi.md#updateCloud) | **PATCH** /cloud/{id} | 
+[**updateCloudUser**](CloudApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | 
 
 
 <a name="cloudInvite"></a>
@@ -242,6 +244,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Cloud**](Cloud.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="fullUpdateCloudUser"></a>
+# **fullUpdateCloudUser**
+> User fullUpdateCloudUser(cloudPk, id, userCloudUpdate)
+
+
+
+Change the user role in the cloud
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
+var cloudPk = "cloudPk_example"; // String | 
+var id = "id_example"; // String | 
+var userCloudUpdate = new bimdata.UserCloudUpdate(); // UserCloudUpdate | 
+apiInstance.fullUpdateCloudUser(cloudPk, id, userCloudUpdate).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **userCloudUpdate** | [**UserCloudUpdate**](UserCloudUpdate.md)|  | 
+
+### Return type
+
+[**User**](User.md)
 
 ### Authorization
 
@@ -516,6 +569,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Cloud**](Cloud.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateCloudUser"></a>
+# **updateCloudUser**
+> User updateCloudUser(cloudPk, id, userCloudUpdate)
+
+
+
+Change the user role in the cloud
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
+var cloudPk = "cloudPk_example"; // String | 
+var id = "id_example"; // String | 
+var userCloudUpdate = new bimdata.UserCloudUpdate(); // UserCloudUpdate | 
+apiInstance.updateCloudUser(cloudPk, id, userCloudUpdate).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **userCloudUpdate** | [**UserCloudUpdate**](UserCloudUpdate.md)|  | 
+
+### Return type
+
+[**User**](User.md)
 
 ### Authorization
 

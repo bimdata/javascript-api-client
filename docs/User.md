@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **lastname** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
-**lastLogin** | **Date** |  | [optional] 
+**cloudRole** | **Number** |  | [optional] 
+**projectRole** | **Number** |  | [optional] 
 
 

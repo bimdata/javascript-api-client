@@ -1,6 +1,6 @@
 /**
  * BIMData API
- * BIMData API documentation
+ * BIMData API is a tool to interact with your models stored on BIMData’s servers.     Through the API, you can manage your projects, the clouds, upload your IFC files and manage them through endpoints.
  *
  * OpenAPI spec version: v1
  * Contact: contact@bimdata.io
@@ -80,8 +80,11 @@
       if (data.hasOwnProperty('updated_at')) {
         obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
       }
-      if (data.hasOwnProperty('last_login')) {
-        obj['last_login'] = ApiClient.convertToType(data['last_login'], 'Date');
+      if (data.hasOwnProperty('cloud_role')) {
+        obj['cloud_role'] = ApiClient.convertToType(data['cloud_role'], 'Number');
+      }
+      if (data.hasOwnProperty('project_role')) {
+        obj['project_role'] = ApiClient.convertToType(data['project_role'], 'Number');
       }
     }
     return obj;
@@ -116,9 +119,13 @@
    */
   exports.prototype['updated_at'] = undefined;
   /**
-   * @member {Date} last_login
+   * @member {Number} cloud_role
    */
-  exports.prototype['last_login'] = undefined;
+  exports.prototype['cloud_role'] = undefined;
+  /**
+   * @member {Number} project_role
+   */
+  exports.prototype['project_role'] = undefined;
 
 
 

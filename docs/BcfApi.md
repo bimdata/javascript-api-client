@@ -702,7 +702,7 @@ null (empty response body)
 
 <a name="downloadBcfExport"></a>
 # **downloadBcfExport**
-> downloadBcfExport(id)
+> downloadBcfExport(id, opts)
 
 
 
@@ -720,7 +720,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.BcfApi();
 var id = 56; // Number | A unique integer value identifying this project.
-apiInstance.downloadBcfExport(id).then(function() {
+var opts = {
+  'topics': "topics_example", // String | topic guids to export, comma separated. Default = all
+  'format': "format_example" // String | topic format to export, comma separated. Default = all
+};
+apiInstance.downloadBcfExport(id, opts).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -733,6 +737,8 @@ apiInstance.downloadBcfExport(id).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this project. | 
+ **topics** | **String**| topic guids to export, comma separated. Default &#x3D; all | [optional] 
+ **format** | **String**| topic format to export, comma separated. Default &#x3D; all | [optional] 
 
 ### Return type
 

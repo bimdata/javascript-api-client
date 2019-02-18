@@ -1,6 +1,6 @@
 /**
  * BIMData API
- * BIMData API documentation
+ * BIMData API is a tool to interact with your models stored on BIMData’s servers.     Through the API, you can manage your projects, the clouds, upload your IFC files and manage them through endpoints.
  *
  * OpenAPI spec version: v1
  * Contact: contact@bimdata.io
@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Classification', 'model/Document', 'model/Folder', 'model/Project', 'model/ProjectInvitation', 'model/User'], factory);
+    define(['ApiClient', 'model/Classification', 'model/Document', 'model/Folder', 'model/Project', 'model/ProjectInvitation', 'model/User', 'model/UserProjectUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Classification'), require('../model/Document'), require('../model/Folder'), require('../model/Project'), require('../model/ProjectInvitation'), require('../model/User'));
+    module.exports = factory(require('../ApiClient'), require('../model/Classification'), require('../model/Document'), require('../model/Folder'), require('../model/Project'), require('../model/ProjectInvitation'), require('../model/User'), require('../model/UserProjectUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.ProjectApi = factory(root.bimdata.ApiClient, root.bimdata.Classification, root.bimdata.Document, root.bimdata.Folder, root.bimdata.Project, root.bimdata.ProjectInvitation, root.bimdata.User);
+    root.bimdata.ProjectApi = factory(root.bimdata.ApiClient, root.bimdata.Classification, root.bimdata.Document, root.bimdata.Folder, root.bimdata.Project, root.bimdata.ProjectInvitation, root.bimdata.User, root.bimdata.UserProjectUpdate);
   }
-}(this, function(ApiClient, Classification, Document, Folder, Project, ProjectInvitation, User) {
+}(this, function(ApiClient, Classification, Document, Folder, Project, ProjectInvitation, User, UserProjectUpdate) {
   'use strict';
 
   /**
@@ -946,6 +946,80 @@
      */
     this.fullUpdateProject = function(cloudPk, id, project) {
       return this.fullUpdateProjectWithHttpInfo(cloudPk, id, project)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Change the user role in the cloud
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {module:model/UserProjectUpdate} userProjectUpdate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     */
+    this.fullUpdateProjectUserWithHttpInfo = function(cloudPk, id, projectPk, userProjectUpdate) {
+      var postBody = userProjectUpdate;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateProjectUser");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateProjectUser");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateProjectUser");
+      }
+
+      // verify the required parameter 'userProjectUpdate' is set
+      if (userProjectUpdate === undefined || userProjectUpdate === null) {
+        throw new Error("Missing the required parameter 'userProjectUpdate' when calling fullUpdateProjectUser");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = User;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Change the user role in the cloud
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {module:model/UserProjectUpdate} userProjectUpdate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     */
+    this.fullUpdateProjectUser = function(cloudPk, id, projectPk, userProjectUpdate) {
+      return this.fullUpdateProjectUserWithHttpInfo(cloudPk, id, projectPk, userProjectUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1945,6 +2019,80 @@
      */
     this.updateProject = function(cloudPk, id, project) {
       return this.updateProjectWithHttpInfo(cloudPk, id, project)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Change the user role in the cloud
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {module:model/UserProjectUpdate} userProjectUpdate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     */
+    this.updateProjectUserWithHttpInfo = function(cloudPk, id, projectPk, userProjectUpdate) {
+      var postBody = userProjectUpdate;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateProjectUser");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateProjectUser");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateProjectUser");
+      }
+
+      // verify the required parameter 'userProjectUpdate' is set
+      if (userProjectUpdate === undefined || userProjectUpdate === null) {
+        throw new Error("Missing the required parameter 'userProjectUpdate' when calling updateProjectUser");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = User;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Change the user role in the cloud
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {String} projectPk 
+     * @param {module:model/UserProjectUpdate} userProjectUpdate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     */
+    this.updateProjectUser = function(cloudPk, id, projectPk, userProjectUpdate) {
+      return this.updateProjectUserWithHttpInfo(cloudPk, id, projectPk, userProjectUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

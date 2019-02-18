@@ -1,6 +1,6 @@
 /**
  * BIMData API
- * BIMData API documentation
+ * BIMData API is a tool to interact with your models stored on BIMData’s servers.     Through the API, you can manage your projects, the clouds, upload your IFC files and manage them through endpoints.
  *
  * OpenAPI spec version: v1
  * Contact: contact@bimdata.io
@@ -914,9 +914,13 @@
     /**
      *          export project&#39;s topics in bcf-xml format         
      * @param {Number} id A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.topics topic guids to export, comma separated. Default &#x3D; all
+     * @param {String} opts.format topic format to export, comma separated. Default &#x3D; all
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.downloadBcfExportWithHttpInfo = function(id) {
+    this.downloadBcfExportWithHttpInfo = function(id, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'id' is set
@@ -929,6 +933,8 @@
         'id': id
       };
       var queryParams = {
+        'topics': opts['topics'],
+        'format': opts['format'],
       };
       var collectionQueryParams = {
       };
@@ -952,10 +958,13 @@
     /**
      *          export project&#39;s topics in bcf-xml format         
      * @param {Number} id A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.topics topic guids to export, comma separated. Default &#x3D; all
+     * @param {String} opts.format topic format to export, comma separated. Default &#x3D; all
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.downloadBcfExport = function(id) {
-      return this.downloadBcfExportWithHttpInfo(id)
+    this.downloadBcfExport = function(id, opts) {
+      return this.downloadBcfExportWithHttpInfo(id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

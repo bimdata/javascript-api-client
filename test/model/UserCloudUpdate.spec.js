@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Label();
+    instance = new bimdata.UserCloudUpdate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,16 +50,16 @@
       object[property] = value;
   }
 
-  describe('Label', function() {
-    it('should create an instance of Label', function() {
-      // uncomment below and update the code to test Label
-      //var instance = new bimdata.Label();
-      //expect(instance).to.be.a(bimdata.Label);
+  describe('UserCloudUpdate', function() {
+    it('should create an instance of UserCloudUpdate', function() {
+      // uncomment below and update the code to test UserCloudUpdate
+      //var instance = new bimdata.UserCloudUpdate();
+      //expect(instance).to.be.a(bimdata.UserCloudUpdate);
     });
 
-    it('should have the property label (base name: "label")', function() {
-      // uncomment below and update the code to test the property label
-      //var instance = new bimdata.Label();
+    it('should have the property role (base name: "role")', function() {
+      // uncomment below and update the code to test the property role
+      //var instance = new bimdata.UserCloudUpdate();
       //expect(instance).to.be();
     });
 

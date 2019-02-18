@@ -1,6 +1,6 @@
 /**
  * BIMData API
- * BIMData API documentation
+ * BIMData API is a tool to interact with your models stored on BIMData’s servers.     Through the API, you can manage your projects, the clouds, upload your IFC files and manage them through endpoints.
  *
  * OpenAPI spec version: v1
  * Contact: contact@bimdata.io
@@ -101,6 +101,16 @@
         done();
       });
     });
+    describe('fullUpdateCloudUser', function() {
+      it('should call fullUpdateCloudUser successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateCloudUser
+        //instance.fullUpdateCloudUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getCloud', function() {
       it('should call getCloud successfully', function(done) {
         //uncomment below and update the code to test getCloud
@@ -155,6 +165,16 @@
       it('should call updateCloud successfully', function(done) {
         //uncomment below and update the code to test updateCloud
         //instance.updateCloud(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateCloudUser', function() {
+      it('should call updateCloudUser successfully', function(done) {
+        //uncomment below and update the code to test updateCloudUser
+        //instance.updateCloudUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
