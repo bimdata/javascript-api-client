@@ -220,6 +220,7 @@ Class | Method | HTTP request | Description
 *bimdata.CloudApi* | [**cloudInvite**](docs/CloudApi.md#cloudInvite) | **POST** /cloud/{id}/invite | 
 *bimdata.CloudApi* | [**createCloud**](docs/CloudApi.md#createCloud) | **POST** /cloud | 
 *bimdata.CloudApi* | [**createDemo**](docs/CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | 
+*bimdata.CloudApi* | [**deleteCloud**](docs/CloudApi.md#deleteCloud) | **DELETE** /cloud/{id} | 
 *bimdata.CloudApi* | [**deleteCloudUser**](docs/CloudApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | 
 *bimdata.CloudApi* | [**fullUpdateCloud**](docs/CloudApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | 
 *bimdata.CloudApi* | [**fullUpdateCloudUser**](docs/CloudApi.md#fullUpdateCloudUser) | **PUT** /cloud/{cloud_pk}/user/{id} | 

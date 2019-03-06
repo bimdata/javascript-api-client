@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**cloudInvite**](CloudApi.md#cloudInvite) | **POST** /cloud/{id}/invite | 
 [**createCloud**](CloudApi.md#createCloud) | **POST** /cloud | 
 [**createDemo**](CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | 
+[**deleteCloud**](CloudApi.md#deleteCloud) | **DELETE** /cloud/{id} | 
 [**deleteCloudUser**](CloudApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | 
 [**fullUpdateCloud**](CloudApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | 
 [**fullUpdateCloudUser**](CloudApi.md#fullUpdateCloudUser) | **PUT** /cloud/{cloud_pk}/user/{id} | 
@@ -159,6 +160,51 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+<a name="deleteCloud"></a>
+# **deleteCloud**
+> deleteCloud(id)
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
+var id = 56; // Number | A unique integer value identifying this cloud.
+apiInstance.deleteCloud(id).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Number**| A unique integer value identifying this cloud. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="deleteCloudUser"></a>
 # **deleteCloudUser**

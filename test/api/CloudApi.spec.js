@@ -81,6 +81,16 @@
         done();
       });
     });
+    describe('deleteCloud', function() {
+      it('should call deleteCloud successfully', function(done) {
+        //uncomment below and update the code to test deleteCloud
+        //instance.deleteCloud(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteCloudUser', function() {
       it('should call deleteCloudUser successfully', function(done) {
         //uncomment below and update the code to test deleteCloudUser
