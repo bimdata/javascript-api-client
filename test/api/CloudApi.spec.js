@@ -51,10 +51,10 @@
   }
 
   describe('CloudApi', function() {
-    describe('cloudInvite', function() {
-      it('should call cloudInvite successfully', function(done) {
-        //uncomment below and update the code to test cloudInvite
-        //instance.cloudInvite(function(error) {
+    describe('cancelCloudUserInvitation', function() {
+      it('should call cancelCloudUserInvitation successfully', function(done) {
+        //uncomment below and update the code to test cancelCloudUserInvitation
+        //instance.cancelCloudUserInvitation(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -131,6 +131,16 @@
         done();
       });
     });
+    describe('getCloudInvitations', function() {
+      it('should call getCloudInvitations successfully', function(done) {
+        //uncomment below and update the code to test getCloudInvitations
+        //instance.getCloudInvitations(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getCloudSize', function() {
       it('should call getCloudSize successfully', function(done) {
         //uncomment below and update the code to test getCloudSize
@@ -165,6 +175,16 @@
       it('should call getClouds successfully', function(done) {
         //uncomment below and update the code to test getClouds
         //instance.getClouds(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('inviteCloudUser', function() {
+      it('should call inviteCloudUser successfully', function(done) {
+        //uncomment below and update the code to test inviteCloudUser
+        //instance.inviteCloudUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

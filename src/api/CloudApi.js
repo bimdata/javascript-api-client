@@ -50,26 +50,26 @@
 
 
     /**
-     * Invite a cloud administrator. They will have the ADMIN role on the cloud and on each project of the cloud
-     * @param {Number} id A unique integer value identifying this cloud.
-     * @param {module:model/CloudInvitation} cloudInvitation 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this invitation.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.cloudInviteWithHttpInfo = function(id, cloudInvitation) {
-      var postBody = cloudInvitation;
+    this.cancelCloudUserInvitationWithHttpInfo = function(cloudPk, id) {
+      var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling cancelCloudUserInvitation");
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling cloudInvite");
-      }
-
-      // verify the required parameter 'cloudInvitation' is set
-      if (cloudInvitation === undefined || cloudInvitation === null) {
-        throw new Error("Missing the required parameter 'cloudInvitation' when calling cloudInvite");
+        throw new Error("Missing the required parameter 'id' when calling cancelCloudUserInvitation");
       }
 
 
       var pathParams = {
+        'cloud_pk': cloudPk,
         'id': id
       };
       var queryParams = {
@@ -82,25 +82,24 @@
       };
 
       var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = [];
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/cloud/{id}/invite', 'POST',
+        '/cloud/{cloud_pk}/invitation/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Invite a cloud administrator. They will have the ADMIN role on the cloud and on each project of the cloud
-     * @param {Number} id A unique integer value identifying this cloud.
-     * @param {module:model/CloudInvitation} cloudInvitation 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this invitation.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.cloudInvite = function(id, cloudInvitation) {
-      return this.cloudInviteWithHttpInfo(id, cloudInvitation)
+    this.cancelCloudUserInvitation = function(cloudPk, id) {
+      return this.cancelCloudUserInvitationWithHttpInfo(cloudPk, id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -484,6 +483,55 @@
 
 
     /**
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CloudInvitation>} and HTTP response
+     */
+    this.getCloudInvitationsWithHttpInfo = function(cloudPk) {
+      var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getCloudInvitations");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [CloudInvitation];
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/invitation', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CloudInvitation>}
+     */
+    this.getCloudInvitations = function(cloudPk) {
+      return this.getCloudInvitationsWithHttpInfo(cloudPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Returns the size of the cloud in Bytes
      * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Number} and HTTP response
@@ -677,6 +725,64 @@
      */
     this.getClouds = function() {
       return this.getCloudsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     *              When inviting someone already having a pending invitation, it will not update the invitation but simply send the user a new invitation mail         
+     * @param {String} cloudPk 
+     * @param {module:model/CloudInvitation} cloudInvitation 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CloudInvitation} and HTTP response
+     */
+    this.inviteCloudUserWithHttpInfo = function(cloudPk, cloudInvitation) {
+      var postBody = cloudInvitation;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling inviteCloudUser");
+      }
+
+      // verify the required parameter 'cloudInvitation' is set
+      if (cloudInvitation === undefined || cloudInvitation === null) {
+        throw new Error("Missing the required parameter 'cloudInvitation' when calling inviteCloudUser");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CloudInvitation;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/invitation', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     *              When inviting someone already having a pending invitation, it will not update the invitation but simply send the user a new invitation mail         
+     * @param {String} cloudPk 
+     * @param {module:model/CloudInvitation} cloudInvitation 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CloudInvitation}
+     */
+    this.inviteCloudUser = function(cloudPk, cloudInvitation) {
+      return this.inviteCloudUserWithHttpInfo(cloudPk, cloudInvitation)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

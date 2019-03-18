@@ -51,6 +51,16 @@
   }
 
   describe('ProjectApi', function() {
+    describe('cancelProjectUserInvitation', function() {
+      it('should call cancelProjectUserInvitation successfully', function(done) {
+        //uncomment below and update the code to test cancelProjectUserInvitation
+        //instance.cancelProjectUserInvitation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createClassification', function() {
       it('should call createClassification successfully', function(done) {
         //uncomment below and update the code to test createClassification
@@ -261,6 +271,16 @@
         done();
       });
     });
+    describe('getProjectInvitations', function() {
+      it('should call getProjectInvitations successfully', function(done) {
+        //uncomment below and update the code to test getProjectInvitations
+        //instance.getProjectInvitations(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getProjectTree', function() {
       it('should call getProjectTree successfully', function(done) {
         //uncomment below and update the code to test getProjectTree
@@ -301,10 +321,10 @@
         done();
       });
     });
-    describe('projectInvite', function() {
-      it('should call projectInvite successfully', function(done) {
-        //uncomment below and update the code to test projectInvite
-        //instance.projectInvite(function(error) {
+    describe('inviteProjectUser', function() {
+      it('should call inviteProjectUser successfully', function(done) {
+        //uncomment below and update the code to test inviteProjectUser
+        //instance.inviteProjectUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

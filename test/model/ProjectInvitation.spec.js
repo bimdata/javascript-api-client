@@ -63,14 +63,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property role (base name: "role")', function() {
-      // uncomment below and update the code to test the property role
+    it('should have the property redirectUri (base name: "redirect_uri")', function() {
+      // uncomment below and update the code to test the property redirectUri
       //var instance = new bimdata.ProjectInvitation();
       //expect(instance).to.be();
     });
 
-    it('should have the property redirectUri (base name: "redirect_uri")', function() {
-      // uncomment below and update the code to test the property redirectUri
+    it('should have the property role (base name: "role")', function() {
+      // uncomment below and update the code to test the property role
       //var instance = new bimdata.ProjectInvitation();
       //expect(instance).to.be();
     });

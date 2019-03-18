@@ -4,6 +4,7 @@ All URIs are relative to *https://api-beta.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**cancelProjectUserInvitation**](ProjectApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | 
 [**createClassification**](ProjectApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | 
 [**createDocument**](ProjectApi.md#createDocument) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | 
 [**createFolder**](ProjectApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | 
@@ -25,17 +26,67 @@ Method | HTTP request | Description
 [**getFolder**](ProjectApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
 [**getFolders**](ProjectApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | 
 [**getProject**](ProjectApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | 
+[**getProjectInvitations**](ProjectApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | 
 [**getProjectTree**](ProjectApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | 
 [**getProjectUser**](ProjectApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
 [**getProjectUsers**](ProjectApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | 
 [**getProjects**](ProjectApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | 
-[**projectInvite**](ProjectApi.md#projectInvite) | **POST** /cloud/{cloud_pk}/project/{id}/invite | 
+[**inviteProjectUser**](ProjectApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | 
 [**updateClassification**](ProjectApi.md#updateClassification) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | 
 [**updateDocument**](ProjectApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
 [**updateFolder**](ProjectApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
 [**updateProject**](ProjectApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | 
 [**updateProjectUser**](ProjectApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
 
+
+<a name="cancelProjectUserInvitation"></a>
+# **cancelProjectUserInvitation**
+> cancelProjectUserInvitation(cloudPk, id, projectPk)
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.ProjectApi();
+var cloudPk = "cloudPk_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this invitation.
+var projectPk = "projectPk_example"; // String | 
+apiInstance.cancelProjectUserInvitation(cloudPk, id, projectPk).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this invitation. | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="createClassification"></a>
 # **createClassification**
@@ -1102,6 +1153,53 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="getProjectInvitations"></a>
+# **getProjectInvitations**
+> [ProjectInvitation] getProjectInvitations(cloudPk, projectPk)
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.ProjectApi();
+var cloudPk = "cloudPk_example"; // String | 
+var projectPk = "projectPk_example"; // String | 
+apiInstance.getProjectInvitations(cloudPk, projectPk).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**[ProjectInvitation]**](ProjectInvitation.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="getProjectTree"></a>
 # **getProjectTree**
 > Folder getProjectTree(cloudPk, id)
@@ -1292,13 +1390,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="projectInvite"></a>
-# **projectInvite**
-> projectInvite(cloudPk, id, projectInvitation)
+<a name="inviteProjectUser"></a>
+# **inviteProjectUser**
+> ProjectInvitation inviteProjectUser(cloudPk, projectPk, projectInvitation)
 
 
 
-Invite a user to collaborate in the project. The cloud role will be USER
+             When inviting someone already having a pending invitation, it will not update the invitation but simply send the user a new invitation mail         
 
 ### Example
 ```javascript
@@ -1312,10 +1410,10 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.ProjectApi();
 var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this project.
+var projectPk = "projectPk_example"; // String | 
 var projectInvitation = new bimdata.ProjectInvitation(); // ProjectInvitation | 
-apiInstance.projectInvite(cloudPk, id, projectInvitation).then(function() {
-  console.log('API called successfully.');
+apiInstance.inviteProjectUser(cloudPk, projectPk, projectInvitation).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
 });
@@ -1327,12 +1425,12 @@ apiInstance.projectInvite(cloudPk, id, projectInvitation).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this project. | 
+ **projectPk** | **String**|  | 
  **projectInvitation** | [**ProjectInvitation**](ProjectInvitation.md)|  | 
 
 ### Return type
 
-null (empty response body)
+[**ProjectInvitation**](ProjectInvitation.md)
 
 ### Authorization
 
@@ -1341,7 +1439,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 <a name="updateClassification"></a>
 # **updateClassification**

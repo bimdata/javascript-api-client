@@ -43,12 +43,10 @@
    * Constructs a new <code>UserProjectUpdate</code>.
    * @alias module:model/UserProjectUpdate
    * @class
-   * @param role {Number} 
    */
-  var exports = function(role) {
+  var exports = function() {
     var _this = this;
 
-    _this['role'] = role;
   };
 
   /**

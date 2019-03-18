@@ -217,7 +217,7 @@ Class | Method | HTTP request | Description
 *bimdata.CheckplanApi* | [**updateRule**](docs/CheckplanApi.md#updateRule) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | 
 *bimdata.CheckplanApi* | [**updateRuleComponent**](docs/CheckplanApi.md#updateRuleComponent) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | 
 *bimdata.CheckplanApi* | [**updateRuleset**](docs/CheckplanApi.md#updateRuleset) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | 
-*bimdata.CloudApi* | [**cloudInvite**](docs/CloudApi.md#cloudInvite) | **POST** /cloud/{id}/invite | 
+*bimdata.CloudApi* | [**cancelCloudUserInvitation**](docs/CloudApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | 
 *bimdata.CloudApi* | [**createCloud**](docs/CloudApi.md#createCloud) | **POST** /cloud | 
 *bimdata.CloudApi* | [**createDemo**](docs/CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | 
 *bimdata.CloudApi* | [**deleteCloud**](docs/CloudApi.md#deleteCloud) | **DELETE** /cloud/{id} | 
@@ -225,10 +225,12 @@ Class | Method | HTTP request | Description
 *bimdata.CloudApi* | [**fullUpdateCloud**](docs/CloudApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | 
 *bimdata.CloudApi* | [**fullUpdateCloudUser**](docs/CloudApi.md#fullUpdateCloudUser) | **PUT** /cloud/{cloud_pk}/user/{id} | 
 *bimdata.CloudApi* | [**getCloud**](docs/CloudApi.md#getCloud) | **GET** /cloud/{id} | 
+*bimdata.CloudApi* | [**getCloudInvitations**](docs/CloudApi.md#getCloudInvitations) | **GET** /cloud/{cloud_pk}/invitation | 
 *bimdata.CloudApi* | [**getCloudSize**](docs/CloudApi.md#getCloudSize) | **GET** /cloud/{id}/size | 
 *bimdata.CloudApi* | [**getCloudUser**](docs/CloudApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | 
 *bimdata.CloudApi* | [**getCloudUsers**](docs/CloudApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | 
 *bimdata.CloudApi* | [**getClouds**](docs/CloudApi.md#getClouds) | **GET** /cloud | 
+*bimdata.CloudApi* | [**inviteCloudUser**](docs/CloudApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | 
 *bimdata.CloudApi* | [**updateCloud**](docs/CloudApi.md#updateCloud) | **PATCH** /cloud/{id} | 
 *bimdata.CloudApi* | [**updateCloudUser**](docs/CloudApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | 
 *bimdata.IfcApi* | [**bulkDeleteIfcClassifications**](docs/IfcApi.md#bulkDeleteIfcClassifications) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/list_destroy | 
@@ -327,6 +329,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**updateSpace**](docs/IfcApi.md#updateSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | 
 *bimdata.IfcApi* | [**updateZone**](docs/IfcApi.md#updateZone) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | 
 *bimdata.IfcApi* | [**updateZoneSpace**](docs/IfcApi.md#updateZoneSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | 
+*bimdata.ProjectApi* | [**cancelProjectUserInvitation**](docs/ProjectApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | 
 *bimdata.ProjectApi* | [**createClassification**](docs/ProjectApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | 
 *bimdata.ProjectApi* | [**createDocument**](docs/ProjectApi.md#createDocument) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | 
 *bimdata.ProjectApi* | [**createFolder**](docs/ProjectApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | 
@@ -348,11 +351,12 @@ Class | Method | HTTP request | Description
 *bimdata.ProjectApi* | [**getFolder**](docs/ProjectApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
 *bimdata.ProjectApi* | [**getFolders**](docs/ProjectApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | 
 *bimdata.ProjectApi* | [**getProject**](docs/ProjectApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | 
+*bimdata.ProjectApi* | [**getProjectInvitations**](docs/ProjectApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | 
 *bimdata.ProjectApi* | [**getProjectTree**](docs/ProjectApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | 
 *bimdata.ProjectApi* | [**getProjectUser**](docs/ProjectApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
 *bimdata.ProjectApi* | [**getProjectUsers**](docs/ProjectApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | 
 *bimdata.ProjectApi* | [**getProjects**](docs/ProjectApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | 
-*bimdata.ProjectApi* | [**projectInvite**](docs/ProjectApi.md#projectInvite) | **POST** /cloud/{cloud_pk}/project/{id}/invite | 
+*bimdata.ProjectApi* | [**inviteProjectUser**](docs/ProjectApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | 
 *bimdata.ProjectApi* | [**updateClassification**](docs/ProjectApi.md#updateClassification) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | 
 *bimdata.ProjectApi* | [**updateDocument**](docs/ProjectApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
 *bimdata.ProjectApi* | [**updateFolder**](docs/ProjectApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 

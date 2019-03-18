@@ -44,7 +44,7 @@
    * @alias module:model/CloudInvitation
    * @class
    * @param email {String} 
-   * @param redirectUri {String} User will be redirected to this uri when he accepts the invitation
+   * @param redirectUri {String} User will be redirected to this uri when they accept the invitation
    */
   var exports = function(email, redirectUri) {
     var _this = this;
@@ -78,7 +78,7 @@
    */
   exports.prototype['email'] = undefined;
   /**
-   * User will be redirected to this uri when he accepts the invitation
+   * User will be redirected to this uri when they accept the invitation
    * @member {String} redirect_uri
    */
   exports.prototype['redirect_uri'] = undefined;

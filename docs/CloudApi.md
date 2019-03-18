@@ -4,7 +4,7 @@ All URIs are relative to *https://api-beta.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cloudInvite**](CloudApi.md#cloudInvite) | **POST** /cloud/{id}/invite | 
+[**cancelCloudUserInvitation**](CloudApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | 
 [**createCloud**](CloudApi.md#createCloud) | **POST** /cloud | 
 [**createDemo**](CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | 
 [**deleteCloud**](CloudApi.md#deleteCloud) | **DELETE** /cloud/{id} | 
@@ -12,21 +12,21 @@ Method | HTTP request | Description
 [**fullUpdateCloud**](CloudApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | 
 [**fullUpdateCloudUser**](CloudApi.md#fullUpdateCloudUser) | **PUT** /cloud/{cloud_pk}/user/{id} | 
 [**getCloud**](CloudApi.md#getCloud) | **GET** /cloud/{id} | 
+[**getCloudInvitations**](CloudApi.md#getCloudInvitations) | **GET** /cloud/{cloud_pk}/invitation | 
 [**getCloudSize**](CloudApi.md#getCloudSize) | **GET** /cloud/{id}/size | 
 [**getCloudUser**](CloudApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | 
 [**getCloudUsers**](CloudApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | 
 [**getClouds**](CloudApi.md#getClouds) | **GET** /cloud | 
+[**inviteCloudUser**](CloudApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | 
 [**updateCloud**](CloudApi.md#updateCloud) | **PATCH** /cloud/{id} | 
 [**updateCloudUser**](CloudApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | 
 
 
-<a name="cloudInvite"></a>
-# **cloudInvite**
-> cloudInvite(id, cloudInvitation)
+<a name="cancelCloudUserInvitation"></a>
+# **cancelCloudUserInvitation**
+> cancelCloudUserInvitation(cloudPk, id)
 
 
-
-Invite a cloud administrator. They will have the ADMIN role on the cloud and on each project of the cloud
 
 ### Example
 ```javascript
@@ -39,9 +39,9 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 var apiInstance = new bimdata.CloudApi();
-var id = 56; // Number | A unique integer value identifying this cloud.
-var cloudInvitation = new bimdata.CloudInvitation(); // CloudInvitation | 
-apiInstance.cloudInvite(id, cloudInvitation).then(function() {
+var cloudPk = "cloudPk_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this invitation.
+apiInstance.cancelCloudUserInvitation(cloudPk, id).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -53,8 +53,8 @@ apiInstance.cloudInvite(id, cloudInvitation).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this cloud. | 
- **cloudInvitation** | [**CloudInvitation**](CloudInvitation.md)|  | 
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this invitation. | 
 
 ### Return type
 
@@ -66,7 +66,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 <a name="createCloud"></a>
@@ -396,6 +396,51 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="getCloudInvitations"></a>
+# **getCloudInvitations**
+> [CloudInvitation] getCloudInvitations(cloudPk)
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
+var cloudPk = "cloudPk_example"; // String | 
+apiInstance.getCloudInvitations(cloudPk).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+
+### Return type
+
+[**[CloudInvitation]**](CloudInvitation.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="getCloudSize"></a>
 # **getCloudSize**
 > Number getCloudSize(id)
@@ -576,6 +621,55 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="inviteCloudUser"></a>
+# **inviteCloudUser**
+> CloudInvitation inviteCloudUser(cloudPk, cloudInvitation)
+
+
+
+             When inviting someone already having a pending invitation, it will not update the invitation but simply send the user a new invitation mail         
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
+var cloudPk = "cloudPk_example"; // String | 
+var cloudInvitation = new bimdata.CloudInvitation(); // CloudInvitation | 
+apiInstance.inviteCloudUser(cloudPk, cloudInvitation).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **cloudInvitation** | [**CloudInvitation**](CloudInvitation.md)|  | 
+
+### Return type
+
+[**CloudInvitation**](CloudInvitation.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateCloud"></a>

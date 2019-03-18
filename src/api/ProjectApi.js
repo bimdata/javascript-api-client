@@ -50,6 +50,71 @@
 
 
     /**
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this invitation.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.cancelProjectUserInvitationWithHttpInfo = function(cloudPk, id, projectPk) {
+      var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling cancelProjectUserInvitation");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling cancelProjectUserInvitation");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling cancelProjectUserInvitation");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/invitation/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this invitation.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.cancelProjectUserInvitation = function(cloudPk, id, projectPk) {
+      return this.cancelProjectUserInvitationWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive     
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -1450,6 +1515,63 @@
 
 
     /**
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectInvitation>} and HTTP response
+     */
+    this.getProjectInvitationsWithHttpInfo = function(cloudPk, projectPk) {
+      var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectInvitations");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getProjectInvitations");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [ProjectInvitation];
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/invitation', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectInvitation>}
+     */
+    this.getProjectInvitations = function(cloudPk, projectPk) {
+      return this.getProjectInvitationsWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Returns the document tree from root folder
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
@@ -1680,34 +1802,34 @@
 
 
     /**
-     * Invite a user to collaborate in the project. The cloud role will be USER
+     *              When inviting someone already having a pending invitation, it will not update the invitation but simply send the user a new invitation mail         
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this project.
+     * @param {String} projectPk 
      * @param {module:model/ProjectInvitation} projectInvitation 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectInvitation} and HTTP response
      */
-    this.projectInviteWithHttpInfo = function(cloudPk, id, projectInvitation) {
+    this.inviteProjectUserWithHttpInfo = function(cloudPk, projectPk, projectInvitation) {
       var postBody = projectInvitation;
 
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling projectInvite");
+        throw new Error("Missing the required parameter 'cloudPk' when calling inviteProjectUser");
       }
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling projectInvite");
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling inviteProjectUser");
       }
 
       // verify the required parameter 'projectInvitation' is set
       if (projectInvitation === undefined || projectInvitation === null) {
-        throw new Error("Missing the required parameter 'projectInvitation' when calling projectInvite");
+        throw new Error("Missing the required parameter 'projectInvitation' when calling inviteProjectUser");
       }
 
 
       var pathParams = {
         'cloud_pk': cloudPk,
-        'id': id
+        'project_pk': projectPk
       };
       var queryParams = {
       };
@@ -1720,25 +1842,25 @@
 
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
-      var accepts = [];
-      var returnType = null;
+      var accepts = ['application/json'];
+      var returnType = ProjectInvitation;
 
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{id}/invite', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/invitation', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Invite a user to collaborate in the project. The cloud role will be USER
+     *              When inviting someone already having a pending invitation, it will not update the invitation but simply send the user a new invitation mail         
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this project.
+     * @param {String} projectPk 
      * @param {module:model/ProjectInvitation} projectInvitation 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectInvitation}
      */
-    this.projectInvite = function(cloudPk, id, projectInvitation) {
-      return this.projectInviteWithHttpInfo(cloudPk, id, projectInvitation)
+    this.inviteProjectUser = function(cloudPk, projectPk, projectInvitation) {
+      return this.inviteProjectUserWithHttpInfo(cloudPk, projectPk, projectInvitation)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

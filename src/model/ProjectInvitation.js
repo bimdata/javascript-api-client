@@ -44,15 +44,15 @@
    * @alias module:model/ProjectInvitation
    * @class
    * @param email {String} 
+   * @param redirectUri {String} User will be redirected to this uri when they accept the invitation
    * @param role {Number} 
-   * @param redirectUri {String} User will be redirected to this uri when he accepts the invitation
    */
-  var exports = function(email, role, redirectUri) {
+  var exports = function(email, redirectUri, role) {
     var _this = this;
 
     _this['email'] = email;
-    _this['role'] = role;
     _this['redirect_uri'] = redirectUri;
+    _this['role'] = role;
   };
 
   /**
@@ -68,11 +68,11 @@
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
-      if (data.hasOwnProperty('role')) {
-        obj['role'] = ApiClient.convertToType(data['role'], 'Number');
-      }
       if (data.hasOwnProperty('redirect_uri')) {
         obj['redirect_uri'] = ApiClient.convertToType(data['redirect_uri'], 'String');
+      }
+      if (data.hasOwnProperty('role')) {
+        obj['role'] = ApiClient.convertToType(data['role'], 'Number');
       }
     }
     return obj;
@@ -83,14 +83,14 @@
    */
   exports.prototype['email'] = undefined;
   /**
-   * @member {Number} role
-   */
-  exports.prototype['role'] = undefined;
-  /**
-   * User will be redirected to this uri when he accepts the invitation
+   * User will be redirected to this uri when they accept the invitation
    * @member {String} redirect_uri
    */
   exports.prototype['redirect_uri'] = undefined;
+  /**
+   * @member {Number} role
+   */
+  exports.prototype['role'] = undefined;
 
 
 

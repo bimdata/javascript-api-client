@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**role** | **Number** |  | 
+**role** | **Number** |  | [optional] 
 
 

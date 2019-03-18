@@ -43,12 +43,10 @@
    * Constructs a new <code>UserCloudUpdate</code>.
    * @alias module:model/UserCloudUpdate
    * @class
-   * @param role {Number} 
    */
-  var exports = function(role) {
+  var exports = function() {
     var _this = this;
 
-    _this['role'] = role;
   };
 
   /**
