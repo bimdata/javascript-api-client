@@ -69,6 +69,9 @@
       if (data.hasOwnProperty('redirect_uri')) {
         obj['redirect_uri'] = ApiClient.convertToType(data['redirect_uri'], 'String');
       }
+      if (data.hasOwnProperty('role')) {
+        obj['role'] = ApiClient.convertToType(data['role'], 'String');
+      }
     }
     return obj;
   }
@@ -82,7 +85,28 @@
    * @member {String} redirect_uri
    */
   exports.prototype['redirect_uri'] = undefined;
+  /**
+   * @member {module:model/CloudInvitation.RoleEnum} role
+   */
+  exports.prototype['role'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>role</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.RoleEnum = {
+    /**
+     * value: "100"
+     * @const
+     */
+    "100": "100",
+    /**
+     * value: "50"
+     * @const
+     */
+    "50": "50"  };
 
 
   return exports;

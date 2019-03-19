@@ -69,6 +69,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property role (base name: "role")', function() {
+      // uncomment below and update the code to test the property role
+      //var instance = new bimdata.CloudInvitation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
