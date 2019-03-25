@@ -407,6 +407,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Property](docs/Property.md)
  - [bimdata.PropertyDefinition](docs/PropertyDefinition.md)
  - [bimdata.PropertySet](docs/PropertySet.md)
+ - [bimdata.RawClassification](docs/RawClassification.md)
  - [bimdata.RawDefinition](docs/RawDefinition.md)
  - [bimdata.RawElement](docs/RawElement.md)
  - [bimdata.RawElements](docs/RawElements.md)

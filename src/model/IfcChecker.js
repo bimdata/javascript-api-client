@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults', 'model/User'], factory);
+    define(['ApiClient', 'model/Ifc', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults', 'model/User'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./IfcCheckerCheckplan'), require('./IfcCheckerResults'), require('./User'));
+    module.exports = factory(require('../ApiClient'), require('./Ifc'), require('./IfcCheckerCheckplan'), require('./IfcCheckerResults'), require('./User'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.IfcChecker = factory(root.bimdata.ApiClient, root.bimdata.IfcCheckerCheckplan, root.bimdata.IfcCheckerResults, root.bimdata.User);
+    root.bimdata.IfcChecker = factory(root.bimdata.ApiClient, root.bimdata.Ifc, root.bimdata.IfcCheckerCheckplan, root.bimdata.IfcCheckerResults, root.bimdata.User);
   }
-}(this, function(ApiClient, IfcCheckerCheckplan, IfcCheckerResults, User) {
+}(this, function(ApiClient, Ifc, IfcCheckerCheckplan, IfcCheckerResults, User) {
   'use strict';
 
 
@@ -62,6 +62,9 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
+      if (data.hasOwnProperty('ifc')) {
+        obj['ifc'] = Ifc.constructFromObject(data['ifc']);
+      }
       if (data.hasOwnProperty('creator')) {
         obj['creator'] = User.constructFromObject(data['creator']);
       }
@@ -91,6 +94,10 @@
    * @member {Number} id
    */
   exports.prototype['id'] = undefined;
+  /**
+   * @member {module:model/Ifc} ifc
+   */
+  exports.prototype['ifc'] = undefined;
   /**
    * @member {module:model/User} creator
    */

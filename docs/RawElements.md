@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **units** | [**[RawUnit]**](RawUnit.md) |  | [optional] 
 **definitions** | [**[RawDefinition]**](RawDefinition.md) |  | [optional] 
 **propertySets** | [**[RawPropertySet]**](RawPropertySet.md) |  | [optional] 
-**classifications** | [**[Classification]**](Classification.md) |  | [optional] 
+**classifications** | [**[RawClassification]**](RawClassification.md) |  | [optional] 
 **elements** | [**[RawElement]**](RawElement.md) |  | 
 
 

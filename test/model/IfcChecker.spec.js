@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property ifc (base name: "ifc")', function() {
+      // uncomment below and update the code to test the property ifc
+      //var instance = new bimdata.IfcChecker();
+      //expect(instance).to.be();
+    });
+
     it('should have the property creator (base name: "creator")', function() {
       // uncomment below and update the code to test the property creator
       //var instance = new bimdata.IfcChecker();

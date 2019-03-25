@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Classification', 'model/RawDefinition', 'model/RawElement', 'model/RawPropertySet', 'model/RawUnit'], factory);
+    define(['ApiClient', 'model/RawClassification', 'model/RawDefinition', 'model/RawElement', 'model/RawPropertySet', 'model/RawUnit'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Classification'), require('./RawDefinition'), require('./RawElement'), require('./RawPropertySet'), require('./RawUnit'));
+    module.exports = factory(require('../ApiClient'), require('./RawClassification'), require('./RawDefinition'), require('./RawElement'), require('./RawPropertySet'), require('./RawUnit'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.RawElements = factory(root.bimdata.ApiClient, root.bimdata.Classification, root.bimdata.RawDefinition, root.bimdata.RawElement, root.bimdata.RawPropertySet, root.bimdata.RawUnit);
+    root.bimdata.RawElements = factory(root.bimdata.ApiClient, root.bimdata.RawClassification, root.bimdata.RawDefinition, root.bimdata.RawElement, root.bimdata.RawPropertySet, root.bimdata.RawUnit);
   }
-}(this, function(ApiClient, Classification, RawDefinition, RawElement, RawPropertySet, RawUnit) {
+}(this, function(ApiClient, RawClassification, RawDefinition, RawElement, RawPropertySet, RawUnit) {
   'use strict';
 
 
@@ -71,7 +71,7 @@
         obj['property_sets'] = ApiClient.convertToType(data['property_sets'], [RawPropertySet]);
       }
       if (data.hasOwnProperty('classifications')) {
-        obj['classifications'] = ApiClient.convertToType(data['classifications'], [Classification]);
+        obj['classifications'] = ApiClient.convertToType(data['classifications'], [RawClassification]);
       }
       if (data.hasOwnProperty('elements')) {
         obj['elements'] = ApiClient.convertToType(data['elements'], [RawElement]);
@@ -93,7 +93,7 @@
    */
   exports.prototype['property_sets'] = undefined;
   /**
-   * @member {Array.<module:model/Classification>} classifications
+   * @member {Array.<module:model/RawClassification>} classifications
    */
   exports.prototype['classifications'] = undefined;
   /**
