@@ -79,6 +79,9 @@
       if (data.hasOwnProperty('camera_view_point')) {
         obj['camera_view_point'] = Point.constructFromObject(data['camera_view_point']);
       }
+      if (data.hasOwnProperty('bimdata_camera_direction')) {
+        obj['bimdata_camera_direction'] = Direction.constructFromObject(data['bimdata_camera_direction']);
+      }
     }
     return obj;
   }
@@ -99,6 +102,10 @@
    * @member {module:model/Point} camera_view_point
    */
   exports.prototype['camera_view_point'] = undefined;
+  /**
+   * @member {module:model/Direction} bimdata_camera_direction
+   */
+  exports.prototype['bimdata_camera_direction'] = undefined;
 
 
 

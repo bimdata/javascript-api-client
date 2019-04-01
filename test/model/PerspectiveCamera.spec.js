@@ -81,6 +81,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bimdataCameraDirection (base name: "bimdata_camera_direction")', function() {
+      // uncomment below and update the code to test the property bimdataCameraDirection
+      //var instance = new bimdata.PerspectiveCamera();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

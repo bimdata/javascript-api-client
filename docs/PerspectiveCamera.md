@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **cameraDirection** | [**Direction**](Direction.md) |  | 
 **cameraUpVector** | [**Direction**](Direction.md) |  | 
 **cameraViewPoint** | [**Point**](Point.md) |  | 
+**bimdataCameraDirection** | [**Direction**](Direction.md) |  | [optional] 
 
 
