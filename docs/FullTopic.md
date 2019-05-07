@@ -1,4 +1,4 @@
-# bimdata.SingleJsonTopic
+# bimdata.FullTopic
 
 ## Properties
 Name | Type | Description | Notes

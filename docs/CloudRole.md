@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cloud** | **Number** |  | 
-**role** | **Number** |  | [optional] 
+**role** | **Number** | Role of the user in the cloud | [optional] 
 
 

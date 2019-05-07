@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BcfProject', 'model/Coloring', 'model/Comment', 'model/Component', 'model/Extensions', 'model/SelfBcfUser', 'model/SingleJsonTopic', 'model/Topic', 'model/Viewpoint', 'model/Visibility'], factory);
+    define(['ApiClient', 'model/BcfProject', 'model/Coloring', 'model/Comment', 'model/Component', 'model/Extensions', 'model/FullTopic', 'model/SelfBcfUser', 'model/Topic', 'model/Viewpoint', 'model/Visibility'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/BcfProject'), require('../model/Coloring'), require('../model/Comment'), require('../model/Component'), require('../model/Extensions'), require('../model/SelfBcfUser'), require('../model/SingleJsonTopic'), require('../model/Topic'), require('../model/Viewpoint'), require('../model/Visibility'));
+    module.exports = factory(require('../ApiClient'), require('../model/BcfProject'), require('../model/Coloring'), require('../model/Comment'), require('../model/Component'), require('../model/Extensions'), require('../model/FullTopic'), require('../model/SelfBcfUser'), require('../model/Topic'), require('../model/Viewpoint'), require('../model/Visibility'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.BcfApi = factory(root.bimdata.ApiClient, root.bimdata.BcfProject, root.bimdata.Coloring, root.bimdata.Comment, root.bimdata.Component, root.bimdata.Extensions, root.bimdata.SelfBcfUser, root.bimdata.SingleJsonTopic, root.bimdata.Topic, root.bimdata.Viewpoint, root.bimdata.Visibility);
+    root.bimdata.BcfApi = factory(root.bimdata.ApiClient, root.bimdata.BcfProject, root.bimdata.Coloring, root.bimdata.Comment, root.bimdata.Component, root.bimdata.Extensions, root.bimdata.FullTopic, root.bimdata.SelfBcfUser, root.bimdata.Topic, root.bimdata.Viewpoint, root.bimdata.Visibility);
   }
-}(this, function(ApiClient, BcfProject, Coloring, Comment, Component, Extensions, SelfBcfUser, SingleJsonTopic, Topic, Viewpoint, Visibility) {
+}(this, function(ApiClient, BcfProject, Coloring, Comment, Component, Extensions, FullTopic, SelfBcfUser, Topic, Viewpoint, Visibility) {
   'use strict';
 
   /**
@@ -50,78 +50,8 @@
 
 
     /**
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Coloring} coloring 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Coloring} and HTTP response
-     */
-    this.createColoringWithHttpInfo = function(projectsPk, topicsPk, viewpointsPk, coloring) {
-      var postBody = coloring;
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling createColoring");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling createColoring");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling createColoring");
-      }
-
-      // verify the required parameter 'coloring' is set
-      if (coloring === undefined || coloring === null) {
-        throw new Error("Missing the required parameter 'coloring' when calling createColoring");
-      }
-
-
-      var pathParams = {
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Coloring;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Coloring} coloring 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Coloring}
-     */
-    this.createColoring = function(projectsPk, topicsPk, viewpointsPk, coloring) {
-      return this.createColoringWithHttpInfo(projectsPk, topicsPk, viewpointsPk, coloring)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
+     * Create a comment
+     * Create a comment Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {module:model/Comment} comment 
@@ -172,6 +102,8 @@
     }
 
     /**
+     * Create a comment
+     * Create a comment Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {module:model/Comment} comment 
@@ -186,21 +118,23 @@
 
 
     /**
+     * Create a Topic with viewpoints and comments
+     * This is not a standard route. You can send a topic, viewpoints and comments in a single call Required scopes: bcf:write
      * @param {String} projectsPk 
-     * @param {module:model/SingleJsonTopic} singleJsonTopic 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SingleJsonTopic} and HTTP response
+     * @param {module:model/FullTopic} fullTopic 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FullTopic} and HTTP response
      */
-    this.createFullTopicWithHttpInfo = function(projectsPk, singleJsonTopic) {
-      var postBody = singleJsonTopic;
+    this.createFullTopicWithHttpInfo = function(projectsPk, fullTopic) {
+      var postBody = fullTopic;
 
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling createFullTopic");
       }
 
-      // verify the required parameter 'singleJsonTopic' is set
-      if (singleJsonTopic === undefined || singleJsonTopic === null) {
-        throw new Error("Missing the required parameter 'singleJsonTopic' when calling createFullTopic");
+      // verify the required parameter 'fullTopic' is set
+      if (fullTopic === undefined || fullTopic === null) {
+        throw new Error("Missing the required parameter 'fullTopic' when calling createFullTopic");
       }
 
 
@@ -219,7 +153,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = SingleJsonTopic;
+      var returnType = FullTopic;
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/full-topic', 'POST',
@@ -229,12 +163,14 @@
     }
 
     /**
+     * Create a Topic with viewpoints and comments
+     * This is not a standard route. You can send a topic, viewpoints and comments in a single call Required scopes: bcf:write
      * @param {String} projectsPk 
-     * @param {module:model/SingleJsonTopic} singleJsonTopic 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SingleJsonTopic}
+     * @param {module:model/FullTopic} fullTopic 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FullTopic}
      */
-    this.createFullTopic = function(projectsPk, singleJsonTopic) {
-      return this.createFullTopicWithHttpInfo(projectsPk, singleJsonTopic)
+    this.createFullTopic = function(projectsPk, fullTopic) {
+      return this.createFullTopicWithHttpInfo(projectsPk, fullTopic)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -242,78 +178,8 @@
 
 
     /**
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Component} component 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Component} and HTTP response
-     */
-    this.createSelectionWithHttpInfo = function(projectsPk, topicsPk, viewpointsPk, component) {
-      var postBody = component;
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling createSelection");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling createSelection");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling createSelection");
-      }
-
-      // verify the required parameter 'component' is set
-      if (component === undefined || component === null) {
-        throw new Error("Missing the required parameter 'component' when calling createSelection");
-      }
-
-
-      var pathParams = {
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Component;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Component} component 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Component}
-     */
-    this.createSelection = function(projectsPk, topicsPk, viewpointsPk, component) {
-      return this.createSelectionWithHttpInfo(projectsPk, topicsPk, viewpointsPk, component)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
+     * Create a topic
+     * Create a topic Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {module:model/Topic} topic 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Topic} and HTTP response
@@ -357,6 +223,8 @@
     }
 
     /**
+     * Create a topic
+     * Create a topic Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {module:model/Topic} topic 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Topic}
@@ -370,6 +238,8 @@
 
 
     /**
+     * Create a Viewpoint
+     * Create a Viewpoint Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {module:model/Viewpoint} viewpoint 
@@ -420,6 +290,8 @@
     }
 
     /**
+     * Create a Viewpoint
+     * Create a Viewpoint Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {module:model/Viewpoint} viewpoint 
@@ -434,151 +306,8 @@
 
 
     /**
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Visibility} visibility 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Visibility} and HTTP response
-     */
-    this.createVisibilityWithHttpInfo = function(projectsPk, topicsPk, viewpointsPk, visibility) {
-      var postBody = visibility;
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling createVisibility");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling createVisibility");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling createVisibility");
-      }
-
-      // verify the required parameter 'visibility' is set
-      if (visibility === undefined || visibility === null) {
-        throw new Error("Missing the required parameter 'visibility' when calling createVisibility");
-      }
-
-
-      var pathParams = {
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Visibility;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Visibility} visibility 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Visibility}
-     */
-    this.createVisibility = function(projectsPk, topicsPk, viewpointsPk, visibility) {
-      return this.createVisibilityWithHttpInfo(projectsPk, topicsPk, viewpointsPk, visibility)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {Number} id A unique integer value identifying this coloring.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.deleteColoringWithHttpInfo = function(id, projectsPk, topicsPk, viewpointsPk) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteColoring");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling deleteColoring");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling deleteColoring");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling deleteColoring");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {Number} id A unique integer value identifying this coloring.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.deleteColoring = function(id, projectsPk, topicsPk, viewpointsPk) {
-      return this.deleteColoringWithHttpInfo(id, projectsPk, topicsPk, viewpointsPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
+     * Delete a comment
+     * Delete a comment Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this comment.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -630,6 +359,8 @@
     }
 
     /**
+     * Delete a comment
+     * Delete a comment Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this comment.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -644,79 +375,8 @@
 
 
     /**
-     * @param {Number} id A unique integer value identifying this component.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.deleteSelectionWithHttpInfo = function(id, projectsPk, topicsPk, viewpointsPk) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteSelection");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling deleteSelection");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling deleteSelection");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling deleteSelection");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {Number} id A unique integer value identifying this component.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.deleteSelection = function(id, projectsPk, topicsPk, viewpointsPk) {
-      return this.deleteSelectionWithHttpInfo(id, projectsPk, topicsPk, viewpointsPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
+     * Delete a topic
+     * Delete a topic Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -761,6 +421,8 @@
     }
 
     /**
+     * Delete a topic
+     * Delete a topic Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -774,6 +436,8 @@
 
 
     /**
+     * Delete a Viewpoint
+     * This is not a standard route. Delete a Viewpoint Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -825,6 +489,8 @@
     }
 
     /**
+     * Delete a Viewpoint
+     * This is not a standard route. Delete a Viewpoint Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -839,80 +505,8 @@
 
 
     /**
-     * @param {Number} id A unique integer value identifying this visibility.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.deleteVisibilityWithHttpInfo = function(id, projectsPk, topicsPk, viewpointsPk) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteVisibility");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling deleteVisibility");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling deleteVisibility");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling deleteVisibility");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {Number} id A unique integer value identifying this visibility.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.deleteVisibility = function(id, projectsPk, topicsPk, viewpointsPk) {
-      return this.deleteVisibilityWithHttpInfo(id, projectsPk, topicsPk, viewpointsPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     *          export project&#39;s topics in bcf-xml format         
+     * Export project&#39;s topics in bcf-xml format
+     * Export project&#39;s topics in bcf-xml format Required scopes: bcf:read
      * @param {Number} id A unique integer value identifying this project.
      * @param {Object} opts Optional parameters
      * @param {String} opts.topics topic guids to export, comma separated. Default &#x3D; all
@@ -956,7 +550,8 @@
     }
 
     /**
-     *          export project&#39;s topics in bcf-xml format         
+     * Export project&#39;s topics in bcf-xml format
+     * Export project&#39;s topics in bcf-xml format Required scopes: bcf:read
      * @param {Number} id A unique integer value identifying this project.
      * @param {Object} opts Optional parameters
      * @param {String} opts.topics topic guids to export, comma separated. Default &#x3D; all
@@ -972,6 +567,8 @@
 
 
     /**
+     * Update all fields of a BCF project
+     * Update all fields of a BCF project Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/BcfProject} bcfProject 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BcfProject} and HTTP response
@@ -1015,6 +612,8 @@
     }
 
     /**
+     * Update all fields of a BCF project
+     * Update all fields of a BCF project Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/BcfProject} bcfProject 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BcfProject}
@@ -1028,86 +627,8 @@
 
 
     /**
-     * @param {Number} id A unique integer value identifying this coloring.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Coloring} coloring 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Coloring} and HTTP response
-     */
-    this.fullUpdateColoringWithHttpInfo = function(id, projectsPk, topicsPk, viewpointsPk, coloring) {
-      var postBody = coloring;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateColoring");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateColoring");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateColoring");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling fullUpdateColoring");
-      }
-
-      // verify the required parameter 'coloring' is set
-      if (coloring === undefined || coloring === null) {
-        throw new Error("Missing the required parameter 'coloring' when calling fullUpdateColoring");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Coloring;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {Number} id A unique integer value identifying this coloring.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Coloring} coloring 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Coloring}
-     */
-    this.fullUpdateColoring = function(id, projectsPk, topicsPk, viewpointsPk, coloring) {
-      return this.fullUpdateColoringWithHttpInfo(id, projectsPk, topicsPk, viewpointsPk, coloring)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
+     * Update all fields of a comment
+     * Update all fields of a comment Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this comment.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -1165,6 +686,8 @@
     }
 
     /**
+     * Update all fields of a comment
+     * Update all fields of a comment Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this comment.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -1180,13 +703,15 @@
 
 
     /**
+     * Update all fields of a topic
+     * This is not a standard route. You can update topic, viewpoints and comment is a signle call Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
-     * @param {module:model/SingleJsonTopic} singleJsonTopic 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SingleJsonTopic} and HTTP response
+     * @param {module:model/FullTopic} fullTopic 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FullTopic} and HTTP response
      */
-    this.fullUpdateFullTopicWithHttpInfo = function(guid, projectsPk, singleJsonTopic) {
-      var postBody = singleJsonTopic;
+    this.fullUpdateFullTopicWithHttpInfo = function(guid, projectsPk, fullTopic) {
+      var postBody = fullTopic;
 
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
@@ -1198,9 +723,9 @@
         throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateFullTopic");
       }
 
-      // verify the required parameter 'singleJsonTopic' is set
-      if (singleJsonTopic === undefined || singleJsonTopic === null) {
-        throw new Error("Missing the required parameter 'singleJsonTopic' when calling fullUpdateFullTopic");
+      // verify the required parameter 'fullTopic' is set
+      if (fullTopic === undefined || fullTopic === null) {
+        throw new Error("Missing the required parameter 'fullTopic' when calling fullUpdateFullTopic");
       }
 
 
@@ -1220,7 +745,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = SingleJsonTopic;
+      var returnType = FullTopic;
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/full-topic/{guid}', 'PUT',
@@ -1230,13 +755,15 @@
     }
 
     /**
+     * Update all fields of a topic
+     * This is not a standard route. You can update topic, viewpoints and comment is a signle call Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
-     * @param {module:model/SingleJsonTopic} singleJsonTopic 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SingleJsonTopic}
+     * @param {module:model/FullTopic} fullTopic 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FullTopic}
      */
-    this.fullUpdateFullTopic = function(guid, projectsPk, singleJsonTopic) {
-      return this.fullUpdateFullTopicWithHttpInfo(guid, projectsPk, singleJsonTopic)
+    this.fullUpdateFullTopic = function(guid, projectsPk, fullTopic) {
+      return this.fullUpdateFullTopicWithHttpInfo(guid, projectsPk, fullTopic)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1244,86 +771,8 @@
 
 
     /**
-     * @param {Number} id A unique integer value identifying this component.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Component} component 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Component} and HTTP response
-     */
-    this.fullUpdateSelectionWithHttpInfo = function(id, projectsPk, topicsPk, viewpointsPk, component) {
-      var postBody = component;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateSelection");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateSelection");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateSelection");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling fullUpdateSelection");
-      }
-
-      // verify the required parameter 'component' is set
-      if (component === undefined || component === null) {
-        throw new Error("Missing the required parameter 'component' when calling fullUpdateSelection");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Component;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {Number} id A unique integer value identifying this component.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Component} component 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Component}
-     */
-    this.fullUpdateSelection = function(id, projectsPk, topicsPk, viewpointsPk, component) {
-      return this.fullUpdateSelectionWithHttpInfo(id, projectsPk, topicsPk, viewpointsPk, component)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
+     * Update all fields of a topic
+     * Update all fields of a topic Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
      * @param {module:model/Topic} topic 
@@ -1374,6 +823,8 @@
     }
 
     /**
+     * Update all fields of a topic
+     * Update all fields of a topic Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
      * @param {module:model/Topic} topic 
@@ -1388,6 +839,8 @@
 
 
     /**
+     * Update all fields of a Viewpoint
+     * This is not a standard route. Update all fields of a Viewpoint Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -1445,6 +898,8 @@
     }
 
     /**
+     * Update all fields of a Viewpoint
+     * This is not a standard route. Update all fields of a Viewpoint Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -1460,86 +915,8 @@
 
 
     /**
-     * @param {Number} id A unique integer value identifying this visibility.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Visibility} visibility 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Visibility} and HTTP response
-     */
-    this.fullUpdateVisibilityWithHttpInfo = function(id, projectsPk, topicsPk, viewpointsPk, visibility) {
-      var postBody = visibility;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateVisibility");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateVisibility");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling fullUpdateVisibility");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling fullUpdateVisibility");
-      }
-
-      // verify the required parameter 'visibility' is set
-      if (visibility === undefined || visibility === null) {
-        throw new Error("Missing the required parameter 'visibility' when calling fullUpdateVisibility");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Visibility;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {Number} id A unique integer value identifying this visibility.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Visibility} visibility 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Visibility}
-     */
-    this.fullUpdateVisibility = function(id, projectsPk, topicsPk, viewpointsPk, visibility) {
-      return this.fullUpdateVisibilityWithHttpInfo(id, projectsPk, topicsPk, viewpointsPk, visibility)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
+     * Retrieve a BCF project
+     * Retrieve a BCF project Required scopes: bcf:read
      * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BcfProject} and HTTP response
      */
@@ -1577,6 +954,8 @@
     }
 
     /**
+     * Retrieve a BCF project
+     * Retrieve a BCF project Required scopes: bcf:read
      * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BcfProject}
      */
@@ -1589,6 +968,8 @@
 
 
     /**
+     * Retrieve all BCF projects
+     * Retrieve all BCF projects Required scopes: bcf:read
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/BcfProject>} and HTTP response
      */
     this.getBcfProjectsWithHttpInfo = function() {
@@ -1619,6 +1000,8 @@
     }
 
     /**
+     * Retrieve all BCF projects
+     * Retrieve all BCF projects Required scopes: bcf:read
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/BcfProject>}
      */
     this.getBcfProjects = function() {
@@ -1630,79 +1013,8 @@
 
 
     /**
-     * @param {Number} id A unique integer value identifying this coloring.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Coloring} and HTTP response
-     */
-    this.getColoringWithHttpInfo = function(id, projectsPk, topicsPk, viewpointsPk) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getColoring");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling getColoring");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling getColoring");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling getColoring");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Coloring;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {Number} id A unique integer value identifying this coloring.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Coloring}
-     */
-    this.getColoring = function(id, projectsPk, topicsPk, viewpointsPk) {
-      return this.getColoringWithHttpInfo(id, projectsPk, topicsPk, viewpointsPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
+     * Retrieve all colorings of a viewpoint
+     * Retrieve all colorings of a viewpoint Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {String} viewpointsPk 
@@ -1754,6 +1066,8 @@
     }
 
     /**
+     * Retrieve all colorings of a viewpoint
+     * Retrieve all colorings of a viewpoint Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {String} viewpointsPk 
@@ -1768,6 +1082,8 @@
 
 
     /**
+     * Retrieve a comment
+     * Retrieve a comment Required scopes: bcf:read
      * @param {String} guid A UUID string identifying this comment.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -1819,6 +1135,8 @@
     }
 
     /**
+     * Retrieve a comment
+     * Retrieve a comment Required scopes: bcf:read
      * @param {String} guid A UUID string identifying this comment.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -1833,6 +1151,8 @@
 
 
     /**
+     * Retrieve all comments
+     * Retrieve all comments Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Comment>} and HTTP response
@@ -1877,6 +1197,8 @@
     }
 
     /**
+     * Retrieve all comments
+     * Retrieve all comments Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Comment>}
@@ -1890,6 +1212,8 @@
 
 
     /**
+     * Retrieve project extensions
+     * Retrieve project extensions
      * @param {String} projectsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Extensions} and HTTP response
      */
@@ -1927,6 +1251,8 @@
     }
 
     /**
+     * Retrieve project extensions
+     * Retrieve project extensions
      * @param {String} projectsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Extensions}
      */
@@ -1939,9 +1265,11 @@
 
 
     /**
+     * Retrieve a full topic
+     * This is not a standard route. It responds with a topic, its viewpoints and its comments Required scopes: bcf:read
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SingleJsonTopic} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FullTopic} and HTTP response
      */
     this.getFullTopicWithHttpInfo = function(guid, projectsPk) {
       var postBody = null;
@@ -1973,7 +1301,7 @@
       var authNames = ['Bearer'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = SingleJsonTopic;
+      var returnType = FullTopic;
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/full-topic/{guid}', 'GET',
@@ -1983,9 +1311,11 @@
     }
 
     /**
+     * Retrieve a full topic
+     * This is not a standard route. It responds with a topic, its viewpoints and its comments Required scopes: bcf:read
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SingleJsonTopic}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FullTopic}
      */
     this.getFullTopic = function(guid, projectsPk) {
       return this.getFullTopicWithHttpInfo(guid, projectsPk)
@@ -1996,11 +1326,13 @@
 
 
     /**
+     * Retrieve all full topics
+     * This is not a standard route. It responds with all topics, their viewpoints and their comments Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.ifcs Filter the returned list by ifcs
      * @param {String} opts.format Filter the returned list by format
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SingleJsonTopic>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FullTopic>} and HTTP response
      */
     this.getFullTopicsWithHttpInfo = function(projectsPk, opts) {
       opts = opts || {};
@@ -2029,7 +1361,7 @@
       var authNames = ['Bearer'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [SingleJsonTopic];
+      var returnType = [FullTopic];
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/full-topic', 'GET',
@@ -2039,11 +1371,13 @@
     }
 
     /**
+     * Retrieve all full topics
+     * This is not a standard route. It responds with all topics, their viewpoints and their comments Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.ifcs Filter the returned list by ifcs
      * @param {String} opts.format Filter the returned list by format
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SingleJsonTopic>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FullTopic>}
      */
     this.getFullTopics = function(projectsPk, opts) {
       return this.getFullTopicsWithHttpInfo(projectsPk, opts)
@@ -2054,79 +1388,8 @@
 
 
     /**
-     * @param {Number} id A unique integer value identifying this component.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Component} and HTTP response
-     */
-    this.getSelectionWithHttpInfo = function(id, projectsPk, topicsPk, viewpointsPk) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getSelection");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling getSelection");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling getSelection");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling getSelection");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Component;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {Number} id A unique integer value identifying this component.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Component}
-     */
-    this.getSelection = function(id, projectsPk, topicsPk, viewpointsPk) {
-      return this.getSelectionWithHttpInfo(id, projectsPk, topicsPk, viewpointsPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
+     * Retrieve all selections of a viewpoint
+     * Retrieve all selections of a viewpoint Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {String} viewpointsPk 
@@ -2178,6 +1441,8 @@
     }
 
     /**
+     * Retrieve all selections of a viewpoint
+     * Retrieve all selections of a viewpoint Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {String} viewpointsPk 
@@ -2192,6 +1457,7 @@
 
 
     /**
+     * Retrieve the viewpoint&#39; snapshot
      * Retrieve the viewpoint&#39; snapshot
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -2245,6 +1511,7 @@
 
     /**
      * Retrieve the viewpoint&#39; snapshot
+     * Retrieve the viewpoint&#39; snapshot
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {String} viewpointsPk 
@@ -2259,6 +1526,8 @@
 
 
     /**
+     * Retrieve a topic
+     * Retrieve a topic Required scopes: bcf:read
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Topic} and HTTP response
@@ -2303,6 +1572,8 @@
     }
 
     /**
+     * Retrieve a topic
+     * Retrieve a topic Required scopes: bcf:read
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Topic}
@@ -2316,6 +1587,8 @@
 
 
     /**
+     * Retrieve all viewpoints attached to the topic
+     * This is not a standard route. It returns all viewpoints of the topic that are not attached to a comment. Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Viewpoint>} and HTTP response
@@ -2360,6 +1633,8 @@
     }
 
     /**
+     * Retrieve all viewpoints attached to the topic
+     * This is not a standard route. It returns all viewpoints of the topic that are not attached to a comment. Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Viewpoint>}
@@ -2373,6 +1648,8 @@
 
 
     /**
+     * Retrieve all topics
+     * Retrieve all topics Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.ifcs Filter the returned list by ifcs
@@ -2416,6 +1693,8 @@
     }
 
     /**
+     * Retrieve all topics
+     * Retrieve all topics Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.ifcs Filter the returned list by ifcs
@@ -2431,6 +1710,8 @@
 
 
     /**
+     * Get current user info
+     * Get current user info Required scopes: bcf:read
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SelfBcfUser} and HTTP response
      */
     this.getUserWithHttpInfo = function() {
@@ -2461,6 +1742,8 @@
     }
 
     /**
+     * Get current user info
+     * Get current user info Required scopes: bcf:read
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SelfBcfUser}
      */
     this.getUser = function() {
@@ -2472,6 +1755,8 @@
 
 
     /**
+     * Retrieve a Viewpoint
+     * Retrieve a Viewpoint Required scopes: bcf:read
      * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -2523,6 +1808,8 @@
     }
 
     /**
+     * Retrieve a Viewpoint
+     * Retrieve a Viewpoint Required scopes: bcf:read
      * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -2537,6 +1824,8 @@
 
 
     /**
+     * Retrieve all Viewpoints of a topic
+     * Retrieve all Viewpoints of a topic Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Viewpoint>} and HTTP response
@@ -2581,6 +1870,8 @@
     }
 
     /**
+     * Retrieve all Viewpoints of a topic
+     * Retrieve all Viewpoints of a topic Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Viewpoint>}
@@ -2594,6 +1885,8 @@
 
 
     /**
+     * Retrieve all visibilities of a viewpoint
+     * Retrieve all visibilities of a viewpoint Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {String} viewpointsPk 
@@ -2645,6 +1938,8 @@
     }
 
     /**
+     * Retrieve all visibilities of a viewpoint
+     * Retrieve all visibilities of a viewpoint Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {String} viewpointsPk 
@@ -2659,79 +1954,8 @@
 
 
     /**
-     * @param {Number} id A unique integer value identifying this visibility.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Visibility} and HTTP response
-     */
-    this.getVisibilityWithHttpInfo = function(id, projectsPk, topicsPk, viewpointsPk) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getVisibility");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling getVisibility");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling getVisibility");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling getVisibility");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Visibility;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {Number} id A unique integer value identifying this visibility.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Visibility}
-     */
-    this.getVisibility = function(id, projectsPk, topicsPk, viewpointsPk) {
-      return this.getVisibilityWithHttpInfo(id, projectsPk, topicsPk, viewpointsPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
+     * Update some fields of a BCF project
+     * Update some fields of a BCF project Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/BcfProject} bcfProject 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BcfProject} and HTTP response
@@ -2775,6 +1999,8 @@
     }
 
     /**
+     * Update some fields of a BCF project
+     * Update some fields of a BCF project Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/BcfProject} bcfProject 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BcfProject}
@@ -2788,86 +2014,8 @@
 
 
     /**
-     * @param {Number} id A unique integer value identifying this coloring.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Coloring} coloring 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Coloring} and HTTP response
-     */
-    this.updateColoringWithHttpInfo = function(id, projectsPk, topicsPk, viewpointsPk, coloring) {
-      var postBody = coloring;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateColoring");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling updateColoring");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling updateColoring");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling updateColoring");
-      }
-
-      // verify the required parameter 'coloring' is set
-      if (coloring === undefined || coloring === null) {
-        throw new Error("Missing the required parameter 'coloring' when calling updateColoring");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Coloring;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {Number} id A unique integer value identifying this coloring.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Coloring} coloring 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Coloring}
-     */
-    this.updateColoring = function(id, projectsPk, topicsPk, viewpointsPk, coloring) {
-      return this.updateColoringWithHttpInfo(id, projectsPk, topicsPk, viewpointsPk, coloring)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
+     * Update some fields of a comment
+     * Update some fields of a comment Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this comment.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -2925,6 +2073,8 @@
     }
 
     /**
+     * Update some fields of a comment
+     * Update some fields of a comment Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this comment.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -2940,6 +2090,8 @@
 
 
     /**
+     * Update project extensions
+     * Update project extensions
      * @param {String} projectsPk 
      * @param {module:model/Extensions} extensions 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Extensions} and HTTP response
@@ -2983,6 +2135,8 @@
     }
 
     /**
+     * Update project extensions
+     * Update project extensions
      * @param {String} projectsPk 
      * @param {module:model/Extensions} extensions 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Extensions}
@@ -2996,13 +2150,15 @@
 
 
     /**
+     * Update some fields of a topic
+     * This is not a standard route. You can update topic, viewpoints and comment is a signle call Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
-     * @param {module:model/SingleJsonTopic} singleJsonTopic 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SingleJsonTopic} and HTTP response
+     * @param {module:model/FullTopic} fullTopic 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FullTopic} and HTTP response
      */
-    this.updateFullTopicWithHttpInfo = function(guid, projectsPk, singleJsonTopic) {
-      var postBody = singleJsonTopic;
+    this.updateFullTopicWithHttpInfo = function(guid, projectsPk, fullTopic) {
+      var postBody = fullTopic;
 
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
@@ -3014,9 +2170,9 @@
         throw new Error("Missing the required parameter 'projectsPk' when calling updateFullTopic");
       }
 
-      // verify the required parameter 'singleJsonTopic' is set
-      if (singleJsonTopic === undefined || singleJsonTopic === null) {
-        throw new Error("Missing the required parameter 'singleJsonTopic' when calling updateFullTopic");
+      // verify the required parameter 'fullTopic' is set
+      if (fullTopic === undefined || fullTopic === null) {
+        throw new Error("Missing the required parameter 'fullTopic' when calling updateFullTopic");
       }
 
 
@@ -3036,7 +2192,7 @@
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = SingleJsonTopic;
+      var returnType = FullTopic;
 
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/full-topic/{guid}', 'PATCH',
@@ -3046,13 +2202,15 @@
     }
 
     /**
+     * Update some fields of a topic
+     * This is not a standard route. You can update topic, viewpoints and comment is a signle call Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
-     * @param {module:model/SingleJsonTopic} singleJsonTopic 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SingleJsonTopic}
+     * @param {module:model/FullTopic} fullTopic 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FullTopic}
      */
-    this.updateFullTopic = function(guid, projectsPk, singleJsonTopic) {
-      return this.updateFullTopicWithHttpInfo(guid, projectsPk, singleJsonTopic)
+    this.updateFullTopic = function(guid, projectsPk, fullTopic) {
+      return this.updateFullTopicWithHttpInfo(guid, projectsPk, fullTopic)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3060,86 +2218,8 @@
 
 
     /**
-     * @param {Number} id A unique integer value identifying this component.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Component} component 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Component} and HTTP response
-     */
-    this.updateSelectionWithHttpInfo = function(id, projectsPk, topicsPk, viewpointsPk, component) {
-      var postBody = component;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateSelection");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling updateSelection");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling updateSelection");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling updateSelection");
-      }
-
-      // verify the required parameter 'component' is set
-      if (component === undefined || component === null) {
-        throw new Error("Missing the required parameter 'component' when calling updateSelection");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Component;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {Number} id A unique integer value identifying this component.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Component} component 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Component}
-     */
-    this.updateSelection = function(id, projectsPk, topicsPk, viewpointsPk, component) {
-      return this.updateSelectionWithHttpInfo(id, projectsPk, topicsPk, viewpointsPk, component)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
+     * Update some fields of a topic
+     * Update some fields of a topic Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
      * @param {module:model/Topic} topic 
@@ -3190,6 +2270,8 @@
     }
 
     /**
+     * Update some fields of a topic
+     * Update some fields of a topic Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this topic.
      * @param {String} projectsPk 
      * @param {module:model/Topic} topic 
@@ -3204,6 +2286,8 @@
 
 
     /**
+     * Update some fields of a Viewpoint
+     * This is not a standard route. Update some fields of a Viewpoint Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -3261,6 +2345,8 @@
     }
 
     /**
+     * Update some fields of a Viewpoint
+     * This is not a standard route. Update some fields of a Viewpoint Required scopes: bcf:write
      * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
@@ -3269,86 +2355,6 @@
      */
     this.updateViewpoint = function(guid, projectsPk, topicsPk, viewpoint) {
       return this.updateViewpointWithHttpInfo(guid, projectsPk, topicsPk, viewpoint)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {Number} id A unique integer value identifying this visibility.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Visibility} visibility 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Visibility} and HTTP response
-     */
-    this.updateVisibilityWithHttpInfo = function(id, projectsPk, topicsPk, viewpointsPk, visibility) {
-      var postBody = visibility;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateVisibility");
-      }
-
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling updateVisibility");
-      }
-
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling updateVisibility");
-      }
-
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling updateVisibility");
-      }
-
-      // verify the required parameter 'visibility' is set
-      if (visibility === undefined || visibility === null) {
-        throw new Error("Missing the required parameter 'visibility' when calling updateVisibility");
-      }
-
-
-      var pathParams = {
-        'id': id,
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Visibility;
-
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {Number} id A unique integer value identifying this visibility.
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @param {module:model/Visibility} visibility 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Visibility}
-     */
-    this.updateVisibility = function(id, projectsPk, topicsPk, viewpointsPk, visibility) {
-      return this.updateVisibilityWithHttpInfo(id, projectsPk, topicsPk, viewpointsPk, visibility)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

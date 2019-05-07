@@ -4,115 +4,51 @@ All URIs are relative to *https://api-beta.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createColoring**](BcfApi.md#createColoring) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring | 
-[**createComment**](BcfApi.md#createComment) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | 
-[**createFullTopic**](BcfApi.md#createFullTopic) | **POST** /bcf/2.1/projects/{projects_pk}/full-topic | 
-[**createSelection**](BcfApi.md#createSelection) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection | 
-[**createTopic**](BcfApi.md#createTopic) | **POST** /bcf/2.1/projects/{projects_pk}/topics | 
-[**createViewpoint**](BcfApi.md#createViewpoint) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints | 
-[**createVisibility**](BcfApi.md#createVisibility) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility | 
-[**deleteColoring**](BcfApi.md#deleteColoring) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id} | 
-[**deleteComment**](BcfApi.md#deleteComment) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
-[**deleteSelection**](BcfApi.md#deleteSelection) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
-[**deleteTopic**](BcfApi.md#deleteTopic) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
-[**deleteViewpoint**](BcfApi.md#deleteViewpoint) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 
-[**deleteVisibility**](BcfApi.md#deleteVisibility) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id} | 
-[**downloadBcfExport**](BcfApi.md#downloadBcfExport) | **GET** /bcf/2.1/projects/{id}/export | 
-[**fullUpdateBcfProject**](BcfApi.md#fullUpdateBcfProject) | **PUT** /bcf/2.1/projects/{id} | 
-[**fullUpdateColoring**](BcfApi.md#fullUpdateColoring) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id} | 
-[**fullUpdateComment**](BcfApi.md#fullUpdateComment) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
-[**fullUpdateFullTopic**](BcfApi.md#fullUpdateFullTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | 
-[**fullUpdateSelection**](BcfApi.md#fullUpdateSelection) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
-[**fullUpdateTopic**](BcfApi.md#fullUpdateTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
-[**fullUpdateViewpoint**](BcfApi.md#fullUpdateViewpoint) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 
-[**fullUpdateVisibility**](BcfApi.md#fullUpdateVisibility) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id} | 
-[**getBcfProject**](BcfApi.md#getBcfProject) | **GET** /bcf/2.1/projects/{id} | 
-[**getBcfProjects**](BcfApi.md#getBcfProjects) | **GET** /bcf/2.1/projects | 
-[**getColoring**](BcfApi.md#getColoring) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id} | 
-[**getColorings**](BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring | 
-[**getComment**](BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
-[**getComments**](BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | 
-[**getExtensions**](BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{projects_pk}/extensions | 
-[**getFullTopic**](BcfApi.md#getFullTopic) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | 
-[**getFullTopics**](BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | 
-[**getSelection**](BcfApi.md#getSelection) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
-[**getSelections**](BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection | 
-[**getSnapshot**](BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot | 
-[**getTopic**](BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
-[**getTopicViewpoints**](BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/topic-viewpoints | 
-[**getTopics**](BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | 
-[**getUser**](BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | 
-[**getViewpoint**](BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 
-[**getViewpoints**](BcfApi.md#getViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints | 
-[**getVisibilities**](BcfApi.md#getVisibilities) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility | 
-[**getVisibility**](BcfApi.md#getVisibility) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id} | 
-[**updateBcfProject**](BcfApi.md#updateBcfProject) | **PATCH** /bcf/2.1/projects/{id} | 
-[**updateColoring**](BcfApi.md#updateColoring) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id} | 
-[**updateComment**](BcfApi.md#updateComment) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
-[**updateExtensions**](BcfApi.md#updateExtensions) | **PATCH** /bcf/2.1/projects/{projects_pk}/extensions | 
-[**updateFullTopic**](BcfApi.md#updateFullTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | 
-[**updateSelection**](BcfApi.md#updateSelection) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
-[**updateTopic**](BcfApi.md#updateTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
-[**updateViewpoint**](BcfApi.md#updateViewpoint) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 
-[**updateVisibility**](BcfApi.md#updateVisibility) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id} | 
+[**createComment**](BcfApi.md#createComment) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | Create a comment
+[**createFullTopic**](BcfApi.md#createFullTopic) | **POST** /bcf/2.1/projects/{projects_pk}/full-topic | Create a Topic with viewpoints and comments
+[**createTopic**](BcfApi.md#createTopic) | **POST** /bcf/2.1/projects/{projects_pk}/topics | Create a topic
+[**createViewpoint**](BcfApi.md#createViewpoint) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints | Create a Viewpoint
+[**deleteComment**](BcfApi.md#deleteComment) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Delete a comment
+[**deleteTopic**](BcfApi.md#deleteTopic) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Delete a topic
+[**deleteViewpoint**](BcfApi.md#deleteViewpoint) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Delete a Viewpoint
+[**downloadBcfExport**](BcfApi.md#downloadBcfExport) | **GET** /bcf/2.1/projects/{id}/export | Export project&#39;s topics in bcf-xml format
+[**fullUpdateBcfProject**](BcfApi.md#fullUpdateBcfProject) | **PUT** /bcf/2.1/projects/{id} | Update all fields of a BCF project
+[**fullUpdateComment**](BcfApi.md#fullUpdateComment) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Update all fields of a comment
+[**fullUpdateFullTopic**](BcfApi.md#fullUpdateFullTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update all fields of a topic
+[**fullUpdateTopic**](BcfApi.md#fullUpdateTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update all fields of a topic
+[**fullUpdateViewpoint**](BcfApi.md#fullUpdateViewpoint) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Update all fields of a Viewpoint
+[**getBcfProject**](BcfApi.md#getBcfProject) | **GET** /bcf/2.1/projects/{id} | Retrieve a BCF project
+[**getBcfProjects**](BcfApi.md#getBcfProjects) | **GET** /bcf/2.1/projects | Retrieve all BCF projects
+[**getColorings**](BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring | Retrieve all colorings of a viewpoint
+[**getComment**](BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Retrieve a comment
+[**getComments**](BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | Retrieve all comments
+[**getExtensions**](BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{projects_pk}/extensions | Retrieve project extensions
+[**getFullTopic**](BcfApi.md#getFullTopic) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Retrieve a full topic
+[**getFullTopics**](BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | Retrieve all full topics
+[**getSelections**](BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection | Retrieve all selections of a viewpoint
+[**getSnapshot**](BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot | Retrieve the viewpoint&#39; snapshot
+[**getTopic**](BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Retrieve a topic
+[**getTopicViewpoints**](BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/topic-viewpoints | Retrieve all viewpoints attached to the topic
+[**getTopics**](BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | Retrieve all topics
+[**getUser**](BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | Get current user info
+[**getViewpoint**](BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Retrieve a Viewpoint
+[**getViewpoints**](BcfApi.md#getViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints | Retrieve all Viewpoints of a topic
+[**getVisibilities**](BcfApi.md#getVisibilities) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility | Retrieve all visibilities of a viewpoint
+[**updateBcfProject**](BcfApi.md#updateBcfProject) | **PATCH** /bcf/2.1/projects/{id} | Update some fields of a BCF project
+[**updateComment**](BcfApi.md#updateComment) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Update some fields of a comment
+[**updateExtensions**](BcfApi.md#updateExtensions) | **PATCH** /bcf/2.1/projects/{projects_pk}/extensions | Update project extensions
+[**updateFullTopic**](BcfApi.md#updateFullTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update some fields of a topic
+[**updateTopic**](BcfApi.md#updateTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update some fields of a topic
+[**updateViewpoint**](BcfApi.md#updateViewpoint) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Update some fields of a Viewpoint
 
-
-<a name="createColoring"></a>
-# **createColoring**
-> Coloring createColoring(projectsPk, topicsPk, viewpointsPk, coloring)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-var coloring = new bimdata.Coloring(); // Coloring | 
-apiInstance.createColoring(projectsPk, topicsPk, viewpointsPk, coloring).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
- **coloring** | [**Coloring**](Coloring.md)|  | 
-
-### Return type
-
-[**Coloring**](Coloring.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
 
 <a name="createComment"></a>
 # **createComment**
 > Comment createComment(projectsPk, topicsPk, comment)
 
+Create a comment
 
+Create a comment Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -159,56 +95,11 @@ Name | Type | Description  | Notes
 
 <a name="createFullTopic"></a>
 # **createFullTopic**
-> SingleJsonTopic createFullTopic(projectsPk, singleJsonTopic)
+> FullTopic createFullTopic(projectsPk, fullTopic)
 
+Create a Topic with viewpoints and comments
 
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var projectsPk = "projectsPk_example"; // String | 
-var singleJsonTopic = new bimdata.SingleJsonTopic(); // SingleJsonTopic | 
-apiInstance.createFullTopic(projectsPk, singleJsonTopic).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **singleJsonTopic** | [**SingleJsonTopic**](SingleJsonTopic.md)|  | 
-
-### Return type
-
-[**SingleJsonTopic**](SingleJsonTopic.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="createSelection"></a>
-# **createSelection**
-> Component createSelection(projectsPk, topicsPk, viewpointsPk, component)
-
-
+This is not a standard route. You can send a topic, viewpoints and comments in a single call Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -222,10 +113,8 @@ Bearer.apiKey = 'YOUR API KEY';
 
 var apiInstance = new bimdata.BcfApi();
 var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-var component = new bimdata.Component(); // Component | 
-apiInstance.createSelection(projectsPk, topicsPk, viewpointsPk, component).then(function(data) {
+var fullTopic = new bimdata.FullTopic(); // FullTopic | 
+apiInstance.createFullTopic(projectsPk, fullTopic).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -238,13 +127,11 @@ apiInstance.createSelection(projectsPk, topicsPk, viewpointsPk, component).then(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
- **component** | [**Component**](Component.md)|  | 
+ **fullTopic** | [**FullTopic**](FullTopic.md)|  | 
 
 ### Return type
 
-[**Component**](Component.md)
+[**FullTopic**](FullTopic.md)
 
 ### Authorization
 
@@ -259,7 +146,9 @@ Name | Type | Description  | Notes
 # **createTopic**
 > Topic createTopic(projectsPk, topic)
 
+Create a topic
 
+Create a topic Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -306,7 +195,9 @@ Name | Type | Description  | Notes
 # **createViewpoint**
 > Viewpoint createViewpoint(projectsPk, topicsPk, viewpoint)
 
+Create a Viewpoint
 
+Create a Viewpoint Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -351,113 +242,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="createVisibility"></a>
-# **createVisibility**
-> Visibility createVisibility(projectsPk, topicsPk, viewpointsPk, visibility)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-var visibility = new bimdata.Visibility(); // Visibility | 
-apiInstance.createVisibility(projectsPk, topicsPk, viewpointsPk, visibility).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
- **visibility** | [**Visibility**](Visibility.md)|  | 
-
-### Return type
-
-[**Visibility**](Visibility.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="deleteColoring"></a>
-# **deleteColoring**
-> deleteColoring(id, projectsPk, topicsPk, viewpointsPk)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this coloring.
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-apiInstance.deleteColoring(id, projectsPk, topicsPk, viewpointsPk).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this coloring. | 
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="deleteComment"></a>
 # **deleteComment**
 > deleteComment(guid, projectsPk, topicsPk)
 
+Delete a comment
 
+Delete a comment Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -502,62 +293,13 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="deleteSelection"></a>
-# **deleteSelection**
-> deleteSelection(id, projectsPk, topicsPk, viewpointsPk)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this component.
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-apiInstance.deleteSelection(id, projectsPk, topicsPk, viewpointsPk).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this component. | 
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="deleteTopic"></a>
 # **deleteTopic**
 > deleteTopic(guid, projectsPk)
 
+Delete a topic
 
+Delete a topic Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -604,7 +346,9 @@ null (empty response body)
 # **deleteViewpoint**
 > deleteViewpoint(guid, projectsPk, topicsPk)
 
+Delete a Viewpoint
 
+This is not a standard route. Delete a Viewpoint Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -649,64 +393,13 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="deleteVisibility"></a>
-# **deleteVisibility**
-> deleteVisibility(id, projectsPk, topicsPk, viewpointsPk)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this visibility.
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-apiInstance.deleteVisibility(id, projectsPk, topicsPk, viewpointsPk).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this visibility. | 
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="downloadBcfExport"></a>
 # **downloadBcfExport**
 > downloadBcfExport(id, opts)
 
+Export project&#39;s topics in bcf-xml format
 
-
-         export project&#39;s topics in bcf-xml format         
+Export project&#39;s topics in bcf-xml format Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -757,7 +450,9 @@ null (empty response body)
 # **fullUpdateBcfProject**
 > BcfProject fullUpdateBcfProject(id, bcfProject)
 
+Update all fields of a BCF project
 
+Update all fields of a BCF project Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -800,64 +495,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="fullUpdateColoring"></a>
-# **fullUpdateColoring**
-> Coloring fullUpdateColoring(id, projectsPk, topicsPk, viewpointsPk, coloring)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this coloring.
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-var coloring = new bimdata.Coloring(); // Coloring | 
-apiInstance.fullUpdateColoring(id, projectsPk, topicsPk, viewpointsPk, coloring).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this coloring. | 
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
- **coloring** | [**Coloring**](Coloring.md)|  | 
-
-### Return type
-
-[**Coloring**](Coloring.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="fullUpdateComment"></a>
 # **fullUpdateComment**
 > Comment fullUpdateComment(guid, projectsPk, topicsPk, comment)
 
+Update all fields of a comment
 
+Update all fields of a comment Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -906,9 +550,11 @@ Name | Type | Description  | Notes
 
 <a name="fullUpdateFullTopic"></a>
 # **fullUpdateFullTopic**
-> SingleJsonTopic fullUpdateFullTopic(guid, projectsPk, singleJsonTopic)
+> FullTopic fullUpdateFullTopic(guid, projectsPk, fullTopic)
 
+Update all fields of a topic
 
+This is not a standard route. You can update topic, viewpoints and comment is a signle call Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -923,8 +569,8 @@ Bearer.apiKey = 'YOUR API KEY';
 var apiInstance = new bimdata.BcfApi();
 var guid = null; // String | A UUID string identifying this topic.
 var projectsPk = "projectsPk_example"; // String | 
-var singleJsonTopic = new bimdata.SingleJsonTopic(); // SingleJsonTopic | 
-apiInstance.fullUpdateFullTopic(guid, projectsPk, singleJsonTopic).then(function(data) {
+var fullTopic = new bimdata.FullTopic(); // FullTopic | 
+apiInstance.fullUpdateFullTopic(guid, projectsPk, fullTopic).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -938,64 +584,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)| A UUID string identifying this topic. | 
  **projectsPk** | **String**|  | 
- **singleJsonTopic** | [**SingleJsonTopic**](SingleJsonTopic.md)|  | 
+ **fullTopic** | [**FullTopic**](FullTopic.md)|  | 
 
 ### Return type
 
-[**SingleJsonTopic**](SingleJsonTopic.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="fullUpdateSelection"></a>
-# **fullUpdateSelection**
-> Component fullUpdateSelection(id, projectsPk, topicsPk, viewpointsPk, component)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this component.
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-var component = new bimdata.Component(); // Component | 
-apiInstance.fullUpdateSelection(id, projectsPk, topicsPk, viewpointsPk, component).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this component. | 
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
- **component** | [**Component**](Component.md)|  | 
-
-### Return type
-
-[**Component**](Component.md)
+[**FullTopic**](FullTopic.md)
 
 ### Authorization
 
@@ -1010,7 +603,9 @@ Name | Type | Description  | Notes
 # **fullUpdateTopic**
 > Topic fullUpdateTopic(guid, projectsPk, topic)
 
+Update all fields of a topic
 
+Update all fields of a topic Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -1059,7 +654,9 @@ Name | Type | Description  | Notes
 # **fullUpdateViewpoint**
 > Viewpoint fullUpdateViewpoint(guid, projectsPk, topicsPk, viewpoint)
 
+Update all fields of a Viewpoint
 
+This is not a standard route. Update all fields of a Viewpoint Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -1106,64 +703,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="fullUpdateVisibility"></a>
-# **fullUpdateVisibility**
-> Visibility fullUpdateVisibility(id, projectsPk, topicsPk, viewpointsPk, visibility)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this visibility.
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-var visibility = new bimdata.Visibility(); // Visibility | 
-apiInstance.fullUpdateVisibility(id, projectsPk, topicsPk, viewpointsPk, visibility).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this visibility. | 
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
- **visibility** | [**Visibility**](Visibility.md)|  | 
-
-### Return type
-
-[**Visibility**](Visibility.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="getBcfProject"></a>
 # **getBcfProject**
 > BcfProject getBcfProject(id)
 
+Retrieve a BCF project
 
+Retrieve a BCF project Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -1208,7 +754,9 @@ Name | Type | Description  | Notes
 # **getBcfProjects**
 > [BcfProject] getBcfProjects()
 
+Retrieve all BCF projects
 
+Retrieve all BCF projects Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -1245,62 +793,13 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="getColoring"></a>
-# **getColoring**
-> Coloring getColoring(id, projectsPk, topicsPk, viewpointsPk)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this coloring.
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-apiInstance.getColoring(id, projectsPk, topicsPk, viewpointsPk).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this coloring. | 
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
-
-### Return type
-
-[**Coloring**](Coloring.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="getColorings"></a>
 # **getColorings**
 > [Coloring] getColorings(projectsPk, topicsPk, viewpointsPk)
 
+Retrieve all colorings of a viewpoint
 
+Retrieve all colorings of a viewpoint Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -1349,7 +848,9 @@ Name | Type | Description  | Notes
 # **getComment**
 > Comment getComment(guid, projectsPk, topicsPk)
 
+Retrieve a comment
 
+Retrieve a comment Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -1398,7 +899,9 @@ Name | Type | Description  | Notes
 # **getComments**
 > [Comment] getComments(projectsPk, topicsPk)
 
+Retrieve all comments
 
+Retrieve all comments Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -1445,7 +948,9 @@ Name | Type | Description  | Notes
 # **getExtensions**
 > Extensions getExtensions(projectsPk)
 
+Retrieve project extensions
 
+Retrieve project extensions
 
 ### Example
 ```javascript
@@ -1488,9 +993,11 @@ Name | Type | Description  | Notes
 
 <a name="getFullTopic"></a>
 # **getFullTopic**
-> SingleJsonTopic getFullTopic(guid, projectsPk)
+> FullTopic getFullTopic(guid, projectsPk)
 
+Retrieve a full topic
 
+This is not a standard route. It responds with a topic, its viewpoints and its comments Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -1522,7 +1029,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SingleJsonTopic**](SingleJsonTopic.md)
+[**FullTopic**](FullTopic.md)
 
 ### Authorization
 
@@ -1535,9 +1042,11 @@ Name | Type | Description  | Notes
 
 <a name="getFullTopics"></a>
 # **getFullTopics**
-> [SingleJsonTopic] getFullTopics(projectsPk, opts)
+> [FullTopic] getFullTopics(projectsPk, opts)
 
+Retrieve all full topics
 
+This is not a standard route. It responds with all topics, their viewpoints and their comments Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -1573,58 +1082,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[SingleJsonTopic]**](SingleJsonTopic.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getSelection"></a>
-# **getSelection**
-> Component getSelection(id, projectsPk, topicsPk, viewpointsPk)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this component.
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-apiInstance.getSelection(id, projectsPk, topicsPk, viewpointsPk).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this component. | 
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
-
-### Return type
-
-[**Component**](Component.md)
+[**[FullTopic]**](FullTopic.md)
 
 ### Authorization
 
@@ -1639,7 +1097,9 @@ Name | Type | Description  | Notes
 # **getSelections**
 > [Component] getSelections(projectsPk, topicsPk, viewpointsPk)
 
+Retrieve all selections of a viewpoint
 
+Retrieve all selections of a viewpoint Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -1688,7 +1148,7 @@ Name | Type | Description  | Notes
 # **getSnapshot**
 > File getSnapshot(projectsPk, topicsPk, viewpointsPk)
 
-
+Retrieve the viewpoint&#39; snapshot
 
 Retrieve the viewpoint&#39; snapshot
 
@@ -1739,7 +1199,9 @@ Name | Type | Description  | Notes
 # **getTopic**
 > Topic getTopic(guid, projectsPk)
 
+Retrieve a topic
 
+Retrieve a topic Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -1786,7 +1248,9 @@ Name | Type | Description  | Notes
 # **getTopicViewpoints**
 > [Viewpoint] getTopicViewpoints(projectsPk, topicsPk)
 
+Retrieve all viewpoints attached to the topic
 
+This is not a standard route. It returns all viewpoints of the topic that are not attached to a comment. Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -1833,7 +1297,9 @@ Name | Type | Description  | Notes
 # **getTopics**
 > [Topic] getTopics(projectsPk, opts)
 
+Retrieve all topics
 
+Retrieve all topics Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -1884,7 +1350,9 @@ Name | Type | Description  | Notes
 # **getUser**
 > SelfBcfUser getUser()
 
+Get current user info
 
+Get current user info Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -1925,7 +1393,9 @@ This endpoint does not need any parameter.
 # **getViewpoint**
 > Viewpoint getViewpoint(guid, projectsPk, topicsPk)
 
+Retrieve a Viewpoint
 
+Retrieve a Viewpoint Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -1974,7 +1444,9 @@ Name | Type | Description  | Notes
 # **getViewpoints**
 > [Viewpoint] getViewpoints(projectsPk, topicsPk)
 
+Retrieve all Viewpoints of a topic
 
+Retrieve all Viewpoints of a topic Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -2021,7 +1493,9 @@ Name | Type | Description  | Notes
 # **getVisibilities**
 > [Visibility] getVisibilities(projectsPk, topicsPk, viewpointsPk)
 
+Retrieve all visibilities of a viewpoint
 
+Retrieve all visibilities of a viewpoint Required scopes: bcf:read
 
 ### Example
 ```javascript
@@ -2066,62 +1540,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="getVisibility"></a>
-# **getVisibility**
-> Visibility getVisibility(id, projectsPk, topicsPk, viewpointsPk)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this visibility.
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-apiInstance.getVisibility(id, projectsPk, topicsPk, viewpointsPk).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this visibility. | 
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
-
-### Return type
-
-[**Visibility**](Visibility.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="updateBcfProject"></a>
 # **updateBcfProject**
 > BcfProject updateBcfProject(id, bcfProject)
 
+Update some fields of a BCF project
 
+Update some fields of a BCF project Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -2164,64 +1589,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="updateColoring"></a>
-# **updateColoring**
-> Coloring updateColoring(id, projectsPk, topicsPk, viewpointsPk, coloring)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this coloring.
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-var coloring = new bimdata.Coloring(); // Coloring | 
-apiInstance.updateColoring(id, projectsPk, topicsPk, viewpointsPk, coloring).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this coloring. | 
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
- **coloring** | [**Coloring**](Coloring.md)|  | 
-
-### Return type
-
-[**Coloring**](Coloring.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="updateComment"></a>
 # **updateComment**
 > Comment updateComment(guid, projectsPk, topicsPk, comment)
 
+Update some fields of a comment
 
+Update some fields of a comment Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -2272,7 +1646,9 @@ Name | Type | Description  | Notes
 # **updateExtensions**
 > Extensions updateExtensions(projectsPk, extensions)
 
+Update project extensions
 
+Update project extensions
 
 ### Example
 ```javascript
@@ -2317,9 +1693,11 @@ Name | Type | Description  | Notes
 
 <a name="updateFullTopic"></a>
 # **updateFullTopic**
-> SingleJsonTopic updateFullTopic(guid, projectsPk, singleJsonTopic)
+> FullTopic updateFullTopic(guid, projectsPk, fullTopic)
 
+Update some fields of a topic
 
+This is not a standard route. You can update topic, viewpoints and comment is a signle call Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -2334,8 +1712,8 @@ Bearer.apiKey = 'YOUR API KEY';
 var apiInstance = new bimdata.BcfApi();
 var guid = null; // String | A UUID string identifying this topic.
 var projectsPk = "projectsPk_example"; // String | 
-var singleJsonTopic = new bimdata.SingleJsonTopic(); // SingleJsonTopic | 
-apiInstance.updateFullTopic(guid, projectsPk, singleJsonTopic).then(function(data) {
+var fullTopic = new bimdata.FullTopic(); // FullTopic | 
+apiInstance.updateFullTopic(guid, projectsPk, fullTopic).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2349,64 +1727,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)| A UUID string identifying this topic. | 
  **projectsPk** | **String**|  | 
- **singleJsonTopic** | [**SingleJsonTopic**](SingleJsonTopic.md)|  | 
+ **fullTopic** | [**FullTopic**](FullTopic.md)|  | 
 
 ### Return type
 
-[**SingleJsonTopic**](SingleJsonTopic.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="updateSelection"></a>
-# **updateSelection**
-> Component updateSelection(id, projectsPk, topicsPk, viewpointsPk, component)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this component.
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-var component = new bimdata.Component(); // Component | 
-apiInstance.updateSelection(id, projectsPk, topicsPk, viewpointsPk, component).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this component. | 
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
- **component** | [**Component**](Component.md)|  | 
-
-### Return type
-
-[**Component**](Component.md)
+[**FullTopic**](FullTopic.md)
 
 ### Authorization
 
@@ -2421,7 +1746,9 @@ Name | Type | Description  | Notes
 # **updateTopic**
 > Topic updateTopic(guid, projectsPk, topic)
 
+Update some fields of a topic
 
+Update some fields of a topic Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -2470,7 +1797,9 @@ Name | Type | Description  | Notes
 # **updateViewpoint**
 > Viewpoint updateViewpoint(guid, projectsPk, topicsPk, viewpoint)
 
+Update some fields of a Viewpoint
 
+This is not a standard route. Update some fields of a Viewpoint Required scopes: bcf:write
 
 ### Example
 ```javascript
@@ -2507,59 +1836,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Viewpoint**](Viewpoint.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="updateVisibility"></a>
-# **updateVisibility**
-> Visibility updateVisibility(id, projectsPk, topicsPk, viewpointsPk, visibility)
-
-
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.BcfApi();
-var id = 56; // Number | A unique integer value identifying this visibility.
-var projectsPk = "projectsPk_example"; // String | 
-var topicsPk = "topicsPk_example"; // String | 
-var viewpointsPk = "viewpointsPk_example"; // String | 
-var visibility = new bimdata.Visibility(); // Visibility | 
-apiInstance.updateVisibility(id, projectsPk, topicsPk, viewpointsPk, visibility).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Number**| A unique integer value identifying this visibility. | 
- **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
- **visibility** | [**Visibility**](Visibility.md)|  | 
-
-### Return type
-
-[**Visibility**](Visibility.md)
 
 ### Authorization
 

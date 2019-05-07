@@ -43,7 +43,7 @@
    * Constructs a new <code>Cloud</code>.
    * @alias module:model/Cloud
    * @class
-   * @param name {String} 
+   * @param name {String} Name of the cloud
    */
   var exports = function(name) {
     var _this = this;
@@ -91,6 +91,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
+   * Name of the cloud
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
@@ -107,10 +108,12 @@
    */
   exports.prototype['is_default'] = undefined;
   /**
+   * Creation date
    * @member {Date} created_at
    */
   exports.prototype['created_at'] = undefined;
   /**
+   * Date of the last update
    * @member {Date} updated_at
    */
   exports.prototype['updated_at'] = undefined;

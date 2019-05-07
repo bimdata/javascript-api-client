@@ -51,16 +51,6 @@
   }
 
   describe('UserApi', function() {
-    describe('getSelfProjects', function() {
-      it('should call getSelfProjects successfully', function(done) {
-        //uncomment below and update the code to test getSelfProjects
-        //instance.getSelfProjects(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getSelfUser', function() {
       it('should call getSelfUser successfully', function(done) {
         //uncomment below and update the code to test getSelfUser
@@ -75,6 +65,16 @@
       it('should call updateSelfUser successfully', function(done) {
         //uncomment below and update the code to test updateSelfUser
         //instance.updateSelfUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('userProjectsList', function() {
+      it('should call userProjectsList successfully', function(done) {
+        //uncomment below and update the code to test userProjectsList
+        //instance.userProjectsList(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

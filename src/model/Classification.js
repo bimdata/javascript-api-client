@@ -80,14 +80,17 @@
    */
   exports.prototype['id'] = undefined;
   /**
+   * Name of the clasification (uniformat, Untec, custom, etc)
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
+   * Code of the classification
    * @member {String} notation
    */
   exports.prototype['notation'] = undefined;
   /**
+   * Full title of the classification
    * @member {String} title
    */
   exports.prototype['title'] = undefined;

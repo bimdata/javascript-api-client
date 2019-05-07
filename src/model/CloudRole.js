@@ -76,6 +76,7 @@
    */
   exports.prototype['cloud'] = undefined;
   /**
+   * Role of the user in the cloud
    * @member {Number} role
    */
   exports.prototype['role'] = undefined;

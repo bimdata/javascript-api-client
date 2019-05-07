@@ -43,7 +43,7 @@
    * Constructs a new <code>CloudInvitation</code>.
    * @alias module:model/CloudInvitation
    * @class
-   * @param email {String} 
+   * @param email {String} email of the user to invite
    * @param redirectUri {String} User will be redirected to this uri when they accept the invitation
    */
   var exports = function(email, redirectUri) {
@@ -84,6 +84,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
+   * email of the user to invite
    * @member {String} email
    */
   exports.prototype['email'] = undefined;

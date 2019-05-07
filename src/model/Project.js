@@ -43,7 +43,7 @@
    * Constructs a new <code>Project</code>.
    * @alias module:model/Project
    * @class
-   * @param name {String} 
+   * @param name {String} Name of the project
    */
   var exports = function(name) {
     var _this = this;
@@ -105,6 +105,7 @@
    */
   exports.prototype['cloud'] = undefined;
   /**
+   * Name of the project
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
@@ -113,10 +114,12 @@
    */
   exports.prototype['status'] = undefined;
   /**
+   * Creation date
    * @member {Date} created_at
    */
   exports.prototype['created_at'] = undefined;
   /**
+   * Date of the last update
    * @member {Date} updated_at
    */
   exports.prototype['updated_at'] = undefined;

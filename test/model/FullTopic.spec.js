@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.SingleJsonTopic();
+    instance = new bimdata.FullTopic();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,130 +50,130 @@
       object[property] = value;
   }
 
-  describe('SingleJsonTopic', function() {
-    it('should create an instance of SingleJsonTopic', function() {
-      // uncomment below and update the code to test SingleJsonTopic
-      //var instance = new bimdata.SingleJsonTopic();
-      //expect(instance).to.be.a(bimdata.SingleJsonTopic);
+  describe('FullTopic', function() {
+    it('should create an instance of FullTopic', function() {
+      // uncomment below and update the code to test FullTopic
+      //var instance = new bimdata.FullTopic();
+      //expect(instance).to.be.a(bimdata.FullTopic);
     });
 
     it('should have the property guid (base name: "guid")', function() {
       // uncomment below and update the code to test the property guid
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property creationDate (base name: "creation_date")', function() {
       // uncomment below and update the code to test the property creationDate
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property creationAuthor (base name: "creation_author")', function() {
       // uncomment below and update the code to test the property creationAuthor
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property modifiedDate (base name: "modified_date")', function() {
       // uncomment below and update the code to test the property modifiedDate
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property modifiedAuthor (base name: "modified_author")', function() {
       // uncomment below and update the code to test the property modifiedAuthor
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property referenceLinks (base name: "reference_links")', function() {
       // uncomment below and update the code to test the property referenceLinks
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property ifcs (base name: "ifcs")', function() {
       // uncomment below and update the code to test the property ifcs
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property labels (base name: "labels")', function() {
       // uncomment below and update the code to test the property labels
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property topicType (base name: "topic_type")', function() {
       // uncomment below and update the code to test the property topicType
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property topicStatus (base name: "topic_status")', function() {
       // uncomment below and update the code to test the property topicStatus
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property stage (base name: "stage")', function() {
       // uncomment below and update the code to test the property stage
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property priority (base name: "priority")', function() {
       // uncomment below and update the code to test the property priority
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property index (base name: "index")', function() {
       // uncomment below and update the code to test the property index
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property assignedTo (base name: "assigned_to")', function() {
       // uncomment below and update the code to test the property assignedTo
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property format (base name: "format")', function() {
       // uncomment below and update the code to test the property format
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property dueDate (base name: "due_date")', function() {
       // uncomment below and update the code to test the property dueDate
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property comments (base name: "comments")', function() {
       // uncomment below and update the code to test the property comments
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 
     it('should have the property viewpoints (base name: "viewpoints")', function() {
       // uncomment below and update the code to test the property viewpoints
-      //var instance = new bimdata.SingleJsonTopic();
+      //var instance = new bimdata.FullTopic();
       //expect(instance).to.be();
     });
 

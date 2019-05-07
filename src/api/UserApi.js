@@ -50,47 +50,6 @@
 
 
     /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
-     */
-    this.getSelfProjectsWithHttpInfo = function() {
-      var postBody = null;
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [Project];
-
-      return this.apiClient.callApi(
-        '/user/projects', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
-     */
-    this.getSelfProjects = function() {
-      return this.getSelfProjectsWithHttpInfo()
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SelfUser} and HTTP response
      */
     this.getSelfUserWithHttpInfo = function() {
@@ -173,6 +132,47 @@
      */
     this.updateSelfUser = function(selfUser) {
       return this.updateSelfUserWithHttpInfo(selfUser)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
+     */
+    this.userProjectsListWithHttpInfo = function() {
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Project];
+
+      return this.apiClient.callApi(
+        '/user/projects', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
+     */
+    this.userProjectsList = function() {
+      return this.userProjectsListWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

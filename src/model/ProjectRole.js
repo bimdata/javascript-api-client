@@ -76,6 +76,7 @@
    */
   exports.prototype['project'] = undefined;
   /**
+   * User's role in the project
    * @member {Number} role
    */
   exports.prototype['role'] = undefined;

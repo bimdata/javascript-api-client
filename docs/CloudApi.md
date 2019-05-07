@@ -4,29 +4,31 @@ All URIs are relative to *https://api-beta.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelCloudUserInvitation**](CloudApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | 
-[**createCloud**](CloudApi.md#createCloud) | **POST** /cloud | 
-[**createDemo**](CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | 
-[**deleteCloud**](CloudApi.md#deleteCloud) | **DELETE** /cloud/{id} | 
-[**deleteCloudUser**](CloudApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | 
-[**fullUpdateCloud**](CloudApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | 
-[**fullUpdateCloudUser**](CloudApi.md#fullUpdateCloudUser) | **PUT** /cloud/{cloud_pk}/user/{id} | 
-[**getCloud**](CloudApi.md#getCloud) | **GET** /cloud/{id} | 
-[**getCloudInvitations**](CloudApi.md#getCloudInvitations) | **GET** /cloud/{cloud_pk}/invitation | 
-[**getCloudSize**](CloudApi.md#getCloudSize) | **GET** /cloud/{id}/size | 
-[**getCloudUser**](CloudApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | 
-[**getCloudUsers**](CloudApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | 
-[**getClouds**](CloudApi.md#getClouds) | **GET** /cloud | 
-[**inviteCloudUser**](CloudApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | 
-[**updateCloud**](CloudApi.md#updateCloud) | **PATCH** /cloud/{id} | 
-[**updateCloudUser**](CloudApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | 
+[**cancelCloudUserInvitation**](CloudApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | Cancel a pending invitation
+[**createCloud**](CloudApi.md#createCloud) | **POST** /cloud | Create a cloud
+[**createDemo**](CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | Create a Demo project in a cloud
+[**deleteCloud**](CloudApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
+[**deleteCloudUser**](CloudApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | Remove a user from a cloud
+[**fullUpdateCloud**](CloudApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | Update all fields of a cloud
+[**fullUpdateCloudUser**](CloudApi.md#fullUpdateCloudUser) | **PUT** /cloud/{cloud_pk}/user/{id} | Update all fields of a cloud user
+[**getCloud**](CloudApi.md#getCloud) | **GET** /cloud/{id} | Retrieve one cloud
+[**getCloudInvitations**](CloudApi.md#getCloudInvitations) | **GET** /cloud/{cloud_pk}/invitation | Retrieve all pending invitations in the cloud
+[**getCloudSize**](CloudApi.md#getCloudSize) | **GET** /cloud/{id}/size | Get size of all files in the cloud
+[**getCloudUser**](CloudApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | Retrieve a user in a cloud
+[**getCloudUsers**](CloudApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | Retrieve all users in a cloud
+[**getClouds**](CloudApi.md#getClouds) | **GET** /cloud | Retrieve all clouds
+[**inviteCloudUser**](CloudApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | Invite a cloud administrator
+[**updateCloud**](CloudApi.md#updateCloud) | **PATCH** /cloud/{id} | Update some fields of a cloud
+[**updateCloudUser**](CloudApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | Update some fields of a cloud user
 
 
 <a name="cancelCloudUserInvitation"></a>
 # **cancelCloudUserInvitation**
 > cancelCloudUserInvitation(cloudPk, id)
 
+Cancel a pending invitation
 
+Cancel a pending invitation Required scopes: org:manage
 
 ### Example
 ```javascript
@@ -73,7 +75,9 @@ null (empty response body)
 # **createCloud**
 > Cloud createCloud(cloud)
 
+Create a cloud
 
+ Required scopes: cloud:manage
 
 ### Example
 ```javascript
@@ -118,9 +122,9 @@ Name | Type | Description  | Notes
 # **createDemo**
 > Project createDemo(id)
 
+Create a Demo project in a cloud
 
-
-Create a demo project with a pre-populated IFC and its data
+Create a demo project with a pre-populated IFC and its data Required scopes: cloud:manage
 
 ### Example
 ```javascript
@@ -165,7 +169,9 @@ Name | Type | Description  | Notes
 # **deleteCloud**
 > deleteCloud(id)
 
+Delete a cloud
 
+ Required scopes: cloud:manage
 
 ### Example
 ```javascript
@@ -210,7 +216,9 @@ null (empty response body)
 # **deleteCloudUser**
 > deleteCloudUser(cloudPk, id)
 
+Remove a user from a cloud
 
+The user will also be removed from all the projects of the cloud Required scopes: cloud:manage
 
 ### Example
 ```javascript
@@ -257,7 +265,9 @@ null (empty response body)
 # **fullUpdateCloud**
 > Cloud fullUpdateCloud(id, cloud)
 
+Update all fields of a cloud
 
+ Required scopes: cloud:manage
 
 ### Example
 ```javascript
@@ -304,9 +314,9 @@ Name | Type | Description  | Notes
 # **fullUpdateCloudUser**
 > User fullUpdateCloudUser(cloudPk, id, userCloudUpdate)
 
+Update all fields of a cloud user
 
-
-Change the user role in the cloud
+Change the user role in the cloud Required scopes: cloud:manage
 
 ### Example
 ```javascript
@@ -355,7 +365,7 @@ Name | Type | Description  | Notes
 # **getCloud**
 > Cloud getCloud(id)
 
-
+Retrieve one cloud
 
 ### Example
 ```javascript
@@ -400,7 +410,9 @@ Name | Type | Description  | Notes
 # **getCloudInvitations**
 > [CloudInvitation] getCloudInvitations(cloudPk)
 
+Retrieve all pending invitations in the cloud
 
+Returns app&#39;s invitations only Required scopes: org:manage
 
 ### Example
 ```javascript
@@ -445,7 +457,7 @@ Name | Type | Description  | Notes
 # **getCloudSize**
 > Number getCloudSize(id)
 
-
+Get size of all files in the cloud
 
 Returns the size of the cloud in Bytes
 
@@ -492,7 +504,9 @@ Name | Type | Description  | Notes
 # **getCloudUser**
 > User getCloudUser(cloudPk, id)
 
+Retrieve a user in a cloud
 
+Only administrators can see a cloud member Required scopes: cloud:read
 
 ### Example
 ```javascript
@@ -539,7 +553,9 @@ Name | Type | Description  | Notes
 # **getCloudUsers**
 > [User] getCloudUsers(cloudPk)
 
+Retrieve all users in a cloud
 
+Only administrators can see all cloud members Required scopes: cloud:read
 
 ### Example
 ```javascript
@@ -584,9 +600,9 @@ Name | Type | Description  | Notes
 # **getClouds**
 > [Cloud] getClouds()
 
+Retrieve all clouds
 
-
-Returns user&#39;s cloud only
+Returns user&#39;s (or app&#39;s) clouds only
 
 ### Example
 ```javascript
@@ -627,9 +643,9 @@ This endpoint does not need any parameter.
 # **inviteCloudUser**
 > CloudInvitation inviteCloudUser(cloudPk, cloudInvitation)
 
+Invite a cloud administrator
 
-
-             When inviting someone already having a pending invitation, it will not update the invitation but simply send the user a new invitation mail         
+Invite cloud administrators only. To invite in a project, see inviteProjectUser. You can&#39;t invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object Required scopes: org:manage
 
 ### Example
 ```javascript
@@ -676,7 +692,9 @@ Name | Type | Description  | Notes
 # **updateCloud**
 > Cloud updateCloud(id, cloud)
 
+Update some fields of a cloud
 
+Update some fields of a cloud Required scopes: cloud:manage
 
 ### Example
 ```javascript
@@ -723,9 +741,9 @@ Name | Type | Description  | Notes
 # **updateCloudUser**
 > User updateCloudUser(cloudPk, id, userCloudUpdate)
 
+Update some fields of a cloud user
 
-
-Change the user role in the cloud
+Change the user role in the cloud Required scopes: cloud:manage
 
 ### Example
 ```javascript

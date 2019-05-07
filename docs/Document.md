@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **parentId** | **Number** |  | [optional] 
 **creator** | **Number** |  | [optional] 
 **project** | **Number** |  | [optional] 
-**name** | **String** |  | 
-**fileName** | **String** |  | [optional] 
-**description** | **String** |  | [optional] 
+**name** | **String** | Shown name of the file | 
+**fileName** | **String** | Full name of the file | [optional] 
+**description** | **String** | Description of the file | [optional] 
 **file** | **String** |  | [optional] 
-**size** | **Number** |  | [optional] 
-**createdAt** | **Date** |  | [optional] 
-**updatedAt** | **Date** |  | [optional] 
+**size** | **Number** | Size of the file. The file may be compressed and show a smaller size | [optional] 
+**createdAt** | **Date** | Creation date | [optional] 
+**updatedAt** | **Date** | Date of the last update | [optional] 
 **ifcId** | **String** |  | [optional] 
 
 

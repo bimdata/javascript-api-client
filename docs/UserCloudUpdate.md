@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**role** | **Number** |  | [optional] 
+**role** | **Number** | Role of the user in the cloud | [optional] 
 
 

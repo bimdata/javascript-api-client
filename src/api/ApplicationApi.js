@@ -50,70 +50,8 @@
 
 
     /**
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {module:model/WebHook} webHook 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
-     */
-    this.cloudWebhookPingWithHttpInfo = function(cloudPk, id, webHook) {
-      var postBody = webHook;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling cloudWebhookPing");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling cloudWebhookPing");
-      }
-
-      // verify the required parameter 'webHook' is set
-      if (webHook === undefined || webHook === null) {
-        throw new Error("Missing the required parameter 'webHook' when calling cloudWebhookPing");
-      }
-
-
-      var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = WebHook;
-
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/webhook/{id}/ping', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {module:model/WebHook} webHook 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
-     */
-    this.cloudWebhookPing = function(cloudPk, id, webHook) {
-      return this.cloudWebhookPingWithHttpInfo(cloudPk, id, webHook)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
+     * Create a new Webhook
+     * Create a new Webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @param {module:model/WebHook} webHook 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
@@ -157,6 +95,8 @@
     }
 
     /**
+     * Create a new Webhook
+     * Create a new Webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @param {module:model/WebHook} webHook 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
@@ -170,6 +110,8 @@
 
 
     /**
+     * Delete a webhook
+     * Delete a webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -214,6 +156,8 @@
     }
 
     /**
+     * Delete a webhook
+     * Delete a webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -227,6 +171,8 @@
 
 
     /**
+     * Update all field of a webhook
+     * Update all field of a webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/WebHook} webHook 
@@ -277,6 +223,8 @@
     }
 
     /**
+     * Update all field of a webhook
+     * Update all field of a webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/WebHook} webHook 
@@ -291,6 +239,8 @@
 
 
     /**
+     * Retrieve one configured webhook
+     * Retrieve one configured webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
@@ -335,6 +285,8 @@
     }
 
     /**
+     * Retrieve one configured webhook
+     * Retrieve one configured webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
@@ -348,6 +300,8 @@
 
 
     /**
+     * Retrieve all configured webhooks
+     * Retrieve all configured webhooks Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/WebHook>} and HTTP response
      */
@@ -385,6 +339,8 @@
     }
 
     /**
+     * Retrieve all configured webhooks
+     * Retrieve all configured webhooks Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/WebHook>}
      */
@@ -397,6 +353,76 @@
 
 
     /**
+     * Test a webhook
+     * Trigger a Ping Event sending {\&quot;ok\&quot;: true} to the webhook URL. Useful to test your app Required scopes: webhook:manage
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/WebHook} webHook 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
+     */
+    this.pingWebHookWithHttpInfo = function(cloudPk, id, webHook) {
+      var postBody = webHook;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling pingWebHook");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling pingWebHook");
+      }
+
+      // verify the required parameter 'webHook' is set
+      if (webHook === undefined || webHook === null) {
+        throw new Error("Missing the required parameter 'webHook' when calling pingWebHook");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = WebHook;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/webhook/{id}/ping', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Test a webhook
+     * Trigger a Ping Event sending {\&quot;ok\&quot;: true} to the webhook URL. Useful to test your app Required scopes: webhook:manage
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/WebHook} webHook 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
+     */
+    this.pingWebHook = function(cloudPk, id, webHook) {
+      return this.pingWebHookWithHttpInfo(cloudPk, id, webHook)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some field of a webhook
+     * Update some field of a webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/WebHook} webHook 
@@ -447,6 +473,8 @@
     }
 
     /**
+     * Update some field of a webhook
+     * Update some field of a webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/WebHook} webHook 

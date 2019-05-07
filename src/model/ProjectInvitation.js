@@ -43,7 +43,7 @@
    * Constructs a new <code>ProjectInvitation</code>.
    * @alias module:model/ProjectInvitation
    * @class
-   * @param email {String} 
+   * @param email {String} email of the user to invite
    * @param redirectUri {String} User will be redirected to this uri when they accept the invitation
    * @param role {Number} 
    */
@@ -86,6 +86,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
+   * email of the user to invite
    * @member {String} email
    */
   exports.prototype['email'] = undefined;

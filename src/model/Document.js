@@ -43,7 +43,7 @@
    * Constructs a new <code>Document</code>.
    * @alias module:model/Document
    * @class
-   * @param name {String} 
+   * @param name {String} Shown name of the file
    */
   var exports = function(name) {
     var _this = this;
@@ -125,14 +125,17 @@
    */
   exports.prototype['project'] = undefined;
   /**
+   * Shown name of the file
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
+   * Full name of the file
    * @member {String} file_name
    */
   exports.prototype['file_name'] = undefined;
   /**
+   * Description of the file
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
@@ -141,14 +144,17 @@
    */
   exports.prototype['file'] = undefined;
   /**
+   * Size of the file. The file may be compressed and show a smaller size
    * @member {Number} size
    */
   exports.prototype['size'] = undefined;
   /**
+   * Creation date
    * @member {Date} created_at
    */
   exports.prototype['created_at'] = undefined;
   /**
+   * Date of the last update
    * @member {Date} updated_at
    */
   exports.prototype['updated_at'] = undefined;

@@ -51,16 +51,6 @@
   }
 
   describe('ApplicationApi', function() {
-    describe('cloudWebhookPing', function() {
-      it('should call cloudWebhookPing successfully', function(done) {
-        //uncomment below and update the code to test cloudWebhookPing
-        //instance.cloudWebhookPing(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('createWebHook', function() {
       it('should call createWebHook successfully', function(done) {
         //uncomment below and update the code to test createWebHook
@@ -105,6 +95,16 @@
       it('should call getWebHooks successfully', function(done) {
         //uncomment below and update the code to test getWebHooks
         //instance.getWebHooks(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('pingWebHook', function() {
+      it('should call pingWebHook successfully', function(done) {
+        //uncomment below and update the code to test pingWebHook
+        //instance.pingWebHook(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -43,7 +43,7 @@
    * Constructs a new <code>BcfProject</code>.
    * @alias module:model/BcfProject
    * @class
-   * @param name {String} 
+   * @param name {String} Name of the project
    */
   var exports = function(name) {
     var _this = this;
@@ -76,6 +76,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
+   * Name of the project
    * @member {String} name
    */
   exports.prototype['name'] = undefined;

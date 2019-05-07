@@ -4,46 +4,48 @@ All URIs are relative to *https://api-beta.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelProjectUserInvitation**](ProjectApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | 
-[**createClassification**](ProjectApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | 
-[**createDocument**](ProjectApi.md#createDocument) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | 
-[**createFolder**](ProjectApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | 
-[**createProject**](ProjectApi.md#createProject) | **POST** /cloud/{cloud_pk}/project | 
-[**deleteClassification**](ProjectApi.md#deleteClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | 
-[**deleteDocument**](ProjectApi.md#deleteDocument) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
-[**deleteFolder**](ProjectApi.md#deleteFolder) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
-[**deleteProject**](ProjectApi.md#deleteProject) | **DELETE** /cloud/{cloud_pk}/project/{id} | 
-[**deleteProjectUser**](ProjectApi.md#deleteProjectUser) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
-[**fullUpdateClassification**](ProjectApi.md#fullUpdateClassification) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | 
-[**fullUpdateDocument**](ProjectApi.md#fullUpdateDocument) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
-[**fullUpdateFolder**](ProjectApi.md#fullUpdateFolder) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
-[**fullUpdateProject**](ProjectApi.md#fullUpdateProject) | **PUT** /cloud/{cloud_pk}/project/{id} | 
-[**fullUpdateProjectUser**](ProjectApi.md#fullUpdateProjectUser) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
-[**getClassification**](ProjectApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | 
-[**getClassifications**](ProjectApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | 
-[**getDocument**](ProjectApi.md#getDocument) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
-[**getDocuments**](ProjectApi.md#getDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document | 
-[**getFolder**](ProjectApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
-[**getFolders**](ProjectApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | 
-[**getProject**](ProjectApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | 
-[**getProjectInvitations**](ProjectApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | 
-[**getProjectTree**](ProjectApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | 
-[**getProjectUser**](ProjectApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
-[**getProjectUsers**](ProjectApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | 
-[**getProjects**](ProjectApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | 
-[**inviteProjectUser**](ProjectApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | 
-[**updateClassification**](ProjectApi.md#updateClassification) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | 
-[**updateDocument**](ProjectApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
-[**updateFolder**](ProjectApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
-[**updateProject**](ProjectApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | 
-[**updateProjectUser**](ProjectApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
+[**cancelProjectUserInvitation**](ProjectApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
+[**createClassification**](ProjectApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | Create a classification
+[**createClassification_0**](ProjectApi.md#createClassification_0) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | Create a classification
+[**createFolder**](ProjectApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | Create a folder
+[**createProject**](ProjectApi.md#createProject) | **POST** /cloud/{cloud_pk}/project | Create a project
+[**deleteClassification**](ProjectApi.md#deleteClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Delete a classification
+[**deleteClassification_0**](ProjectApi.md#deleteClassification_0) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Delete a classification
+[**deleteFolder**](ProjectApi.md#deleteFolder) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Delete a folder
+[**deleteProject**](ProjectApi.md#deleteProject) | **DELETE** /cloud/{cloud_pk}/project/{id} | Delete a project
+[**deleteProjectUser**](ProjectApi.md#deleteProjectUser) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Remove a user from a project
+[**fullUpdateClassification**](ProjectApi.md#fullUpdateClassification) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Update all fields of a classification
+[**fullUpdateClassification_0**](ProjectApi.md#fullUpdateClassification_0) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update all fields of a classification
+[**fullUpdateFolder**](ProjectApi.md#fullUpdateFolder) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update all fields of a folder
+[**fullUpdateProject**](ProjectApi.md#fullUpdateProject) | **PUT** /cloud/{cloud_pk}/project/{id} | Update all fields of a project
+[**fullUpdateProjectUser**](ProjectApi.md#fullUpdateProjectUser) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update all fields of a project user
+[**getClassification**](ProjectApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Retrieve a classification
+[**getClassification_0**](ProjectApi.md#getClassification_0) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Retrieve a classification
+[**getClassifications**](ProjectApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
+[**getClassifications_0**](ProjectApi.md#getClassifications_0) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document | Retrieve all classifications
+[**getFolder**](ProjectApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Retrieve a folder
+[**getFolders**](ProjectApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | Retrieve all folders
+[**getProject**](ProjectApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | Retrieve a project
+[**getProjectInvitations**](ProjectApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
+[**getProjectTree**](ProjectApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | Retrieve the complete DMS tree
+[**getProjectUser**](ProjectApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Retrieve a user in a project
+[**getProjectUsers**](ProjectApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | Retrieve all users in a project
+[**getProjects**](ProjectApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | Retrieve all projects
+[**inviteProjectUser**](ProjectApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | Invite a project member
+[**updateClassification**](ProjectApi.md#updateClassification) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Update some fields of a classification
+[**updateClassification_0**](ProjectApi.md#updateClassification_0) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update some fields of a classification
+[**updateFolder**](ProjectApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update some fields of a folder
+[**updateProject**](ProjectApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
+[**updateProjectUser**](ProjectApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update some fields of a project user
 
 
 <a name="cancelProjectUserInvitation"></a>
 # **cancelProjectUserInvitation**
 > cancelProjectUserInvitation(cloudPk, id, projectPk)
 
+Cancel a pending invitation
 
+ Required scopes: org:manage
 
 ### Example
 ```javascript
@@ -92,9 +94,9 @@ null (empty response body)
 # **createClassification**
 > [Classification] createClassification(cloudPk, projectPk, classification)
 
+Create a classification
 
-
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive     
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive      Required scopes: ifc:write
 
 ### Example
 ```javascript
@@ -139,11 +141,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="createDocument"></a>
-# **createDocument**
-> Document createDocument(cloudPk, projectPk, name, opts)
+<a name="createClassification_0"></a>
+# **createClassification_0**
+> Document createClassification_0(cloudPk, projectPk, name, opts)
 
+Create a classification
 
+ Required scopes: document:write
 
 ### Example
 ```javascript
@@ -158,18 +162,18 @@ Bearer.apiKey = 'YOUR API KEY';
 var apiInstance = new bimdata.ProjectApi();
 var cloudPk = "cloudPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
-var name = "name_example"; // String | 
+var name = "name_example"; // String | Shown name of the file
 var opts = {
   'parent': 56, // Number | 
   'parentId': 56, // Number | 
   'creator': 56, // Number | 
   'project': 56, // Number | 
-  'fileName': "fileName_example", // String | 
-  'description': "description_example", // String | 
+  'fileName': "fileName_example", // String | Full name of the file
+  'description': "description_example", // String | Description of the file
   'file': "/path/to/file", // File | 
-  'size': 56 // Number | 
+  'size': 56 // Number | Size of the file. The file may be compressed and show a smaller size
 };
-apiInstance.createDocument(cloudPk, projectPk, name, opts).then(function(data) {
+apiInstance.createClassification_0(cloudPk, projectPk, name, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -183,15 +187,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **name** | **String**|  | 
+ **name** | **String**| Shown name of the file | 
  **parent** | **Number**|  | [optional] 
  **parentId** | **Number**|  | [optional] 
  **creator** | **Number**|  | [optional] 
  **project** | **Number**|  | [optional] 
- **fileName** | **String**|  | [optional] 
- **description** | **String**|  | [optional] 
+ **fileName** | **String**| Full name of the file | [optional] 
+ **description** | **String**| Description of the file | [optional] 
  **file** | **File**|  | [optional] 
- **size** | **Number**|  | [optional] 
+ **size** | **Number**| Size of the file. The file may be compressed and show a smaller size | [optional] 
 
 ### Return type
 
@@ -210,7 +214,9 @@ Name | Type | Description  | Notes
 # **createFolder**
 > Folder createFolder(cloudPk, projectPk, folder)
 
+Create a folder
 
+If the created folder have no parent, it will be put as a child of the default root folder of the project Required scopes: document:write
 
 ### Example
 ```javascript
@@ -259,7 +265,9 @@ Name | Type | Description  | Notes
 # **createProject**
 > Project createProject(cloudPk, project)
 
+Create a project
 
+Create a project Required scopes: org:manage
 
 ### Example
 ```javascript
@@ -306,7 +314,9 @@ Name | Type | Description  | Notes
 # **deleteClassification**
 > deleteClassification(cloudPk, id, projectPk)
 
+Delete a classification
 
+All elements having this classification will lose it Required scopes: ifc:write
 
 ### Example
 ```javascript
@@ -351,11 +361,13 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="deleteDocument"></a>
-# **deleteDocument**
-> Document deleteDocument(cloudPk, id, projectPk)
+<a name="deleteClassification_0"></a>
+# **deleteClassification_0**
+> deleteClassification_0(cloudPk, id, projectPk)
 
+Delete a classification
 
+All elements having this classification will lose it Required scopes: document:write
 
 ### Example
 ```javascript
@@ -371,8 +383,8 @@ var apiInstance = new bimdata.ProjectApi();
 var cloudPk = "cloudPk_example"; // String | 
 var id = 56; // Number | A unique integer value identifying this document.
 var projectPk = "projectPk_example"; // String | 
-apiInstance.deleteDocument(cloudPk, id, projectPk).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
+apiInstance.deleteClassification_0(cloudPk, id, projectPk).then(function() {
+  console.log('API called successfully.');
 }, function(error) {
   console.error(error);
 });
@@ -389,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Document**](Document.md)
+null (empty response body)
 
 ### Authorization
 
@@ -398,13 +410,15 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="deleteFolder"></a>
 # **deleteFolder**
 > deleteFolder(cloudPk, id, projectPk)
 
+Delete a folder
 
+All files and subfolders will be deleted too Required scopes: document:write
 
 ### Example
 ```javascript
@@ -453,7 +467,9 @@ null (empty response body)
 # **deleteProject**
 > deleteProject(cloudPk, id)
 
+Delete a project
 
+It can take a long time to respond because we may need to delete all properties of all elements of all models in the project Required scopes: org:manage
 
 ### Example
 ```javascript
@@ -500,7 +516,9 @@ null (empty response body)
 # **deleteProjectUser**
 > deleteProjectUser(cloudPk, id, projectPk)
 
+Remove a user from a project
 
+Remove a user from a project Required scopes: cloud:manage
 
 ### Example
 ```javascript
@@ -549,7 +567,9 @@ null (empty response body)
 # **fullUpdateClassification**
 > Classification fullUpdateClassification(cloudPk, id, projectPk, classification)
 
+Update all fields of a classification
 
+Update all fields of a classification Required scopes: ifc:write
 
 ### Example
 ```javascript
@@ -596,11 +616,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="fullUpdateDocument"></a>
-# **fullUpdateDocument**
-> Document fullUpdateDocument(cloudPk, id, projectPk, name, opts)
+<a name="fullUpdateClassification_0"></a>
+# **fullUpdateClassification_0**
+> Document fullUpdateClassification_0(cloudPk, id, projectPk, name, opts)
 
+Update all fields of a classification
 
+Update all fields of a classification Required scopes: document:write
 
 ### Example
 ```javascript
@@ -616,18 +638,18 @@ var apiInstance = new bimdata.ProjectApi();
 var cloudPk = "cloudPk_example"; // String | 
 var id = 56; // Number | A unique integer value identifying this document.
 var projectPk = "projectPk_example"; // String | 
-var name = "name_example"; // String | 
+var name = "name_example"; // String | Shown name of the file
 var opts = {
   'parent': 56, // Number | 
   'parentId': 56, // Number | 
   'creator': 56, // Number | 
   'project': 56, // Number | 
-  'fileName': "fileName_example", // String | 
-  'description': "description_example", // String | 
+  'fileName': "fileName_example", // String | Full name of the file
+  'description': "description_example", // String | Description of the file
   'file': "/path/to/file", // File | 
-  'size': 56 // Number | 
+  'size': 56 // Number | Size of the file. The file may be compressed and show a smaller size
 };
-apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, opts).then(function(data) {
+apiInstance.fullUpdateClassification_0(cloudPk, id, projectPk, name, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -642,15 +664,15 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **String**|  | 
- **name** | **String**|  | 
+ **name** | **String**| Shown name of the file | 
  **parent** | **Number**|  | [optional] 
  **parentId** | **Number**|  | [optional] 
  **creator** | **Number**|  | [optional] 
  **project** | **Number**|  | [optional] 
- **fileName** | **String**|  | [optional] 
- **description** | **String**|  | [optional] 
+ **fileName** | **String**| Full name of the file | [optional] 
+ **description** | **String**| Description of the file | [optional] 
  **file** | **File**|  | [optional] 
- **size** | **Number**|  | [optional] 
+ **size** | **Number**| Size of the file. The file may be compressed and show a smaller size | [optional] 
 
 ### Return type
 
@@ -669,7 +691,9 @@ Name | Type | Description  | Notes
 # **fullUpdateFolder**
 > Folder fullUpdateFolder(cloudPk, id, projectPk, folder)
 
+Update all fields of a folder
 
+Update all fields of a folder Required scopes: document:write
 
 ### Example
 ```javascript
@@ -720,7 +744,9 @@ Name | Type | Description  | Notes
 # **fullUpdateProject**
 > Project fullUpdateProject(cloudPk, id, project)
 
+Update all fields of a project
 
+Update all fields of a project Required scopes: org:manage
 
 ### Example
 ```javascript
@@ -769,9 +795,9 @@ Name | Type | Description  | Notes
 # **fullUpdateProjectUser**
 > User fullUpdateProjectUser(cloudPk, id, projectPk, userProjectUpdate)
 
+Update all fields of a project user
 
-
-Change the user role in the cloud
+Change the user role in the cloud Required scopes: cloud:manage
 
 ### Example
 ```javascript
@@ -822,7 +848,9 @@ Name | Type | Description  | Notes
 # **getClassification**
 > Classification getClassification(cloudPk, id, projectPk)
 
+Retrieve a classification
 
+Retrieve a classification Required scopes: ifc:read
 
 ### Example
 ```javascript
@@ -867,11 +895,64 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="getClassification_0"></a>
+# **getClassification_0**
+> Document getClassification_0(cloudPk, id, projectPk)
+
+Retrieve a classification
+
+Retrieve a classification Required scopes: document:read
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.ProjectApi();
+var cloudPk = "cloudPk_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this document.
+var projectPk = "projectPk_example"; // String | 
+apiInstance.getClassification_0(cloudPk, id, projectPk).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this document. | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**Document**](Document.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="getClassifications"></a>
 # **getClassifications**
 > [Classification] getClassifications(cloudPk, projectPk)
 
+Retrieve all classifications
 
+Retrieve all classifications of all models in the project Required scopes: ifc:read
 
 ### Example
 ```javascript
@@ -914,60 +995,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="getDocument"></a>
-# **getDocument**
-> Document getDocument(cloudPk, id, projectPk)
+<a name="getClassifications_0"></a>
+# **getClassifications_0**
+> [Document] getClassifications_0(cloudPk, projectPk)
 
+Retrieve all classifications
 
-
-### Example
-```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this document.
-var projectPk = "projectPk_example"; // String | 
-apiInstance.getDocument(cloudPk, id, projectPk).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this document. | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-[**Document**](Document.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getDocuments"></a>
-# **getDocuments**
-> Document getDocuments(cloudPk, projectPk)
-
-
+Retrieve all classifications of all models in the project Required scopes: document:read
 
 ### Example
 ```javascript
@@ -982,7 +1016,7 @@ Bearer.apiKey = 'YOUR API KEY';
 var apiInstance = new bimdata.ProjectApi();
 var cloudPk = "cloudPk_example"; // String | 
 var projectPk = "projectPk_example"; // String | 
-apiInstance.getDocuments(cloudPk, projectPk).then(function(data) {
+apiInstance.getClassifications_0(cloudPk, projectPk).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -999,7 +1033,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Document**](Document.md)
+[**[Document]**](Document.md)
 
 ### Authorization
 
@@ -1014,7 +1048,9 @@ Name | Type | Description  | Notes
 # **getFolder**
 > Folder getFolder(cloudPk, id, projectPk)
 
+Retrieve a folder
 
+Retrieve a folder Required scopes: document:read
 
 ### Example
 ```javascript
@@ -1063,7 +1099,9 @@ Name | Type | Description  | Notes
 # **getFolders**
 > [Folder] getFolders(cloudPk, projectPk)
 
+Retrieve all folders
 
+Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree Required scopes: document:read
 
 ### Example
 ```javascript
@@ -1110,7 +1148,9 @@ Name | Type | Description  | Notes
 # **getProject**
 > Project getProject(cloudPk, id)
 
+Retrieve a project
 
+Retrieve a project
 
 ### Example
 ```javascript
@@ -1157,7 +1197,9 @@ Name | Type | Description  | Notes
 # **getProjectInvitations**
 > [ProjectInvitation] getProjectInvitations(cloudPk, projectPk)
 
+Retrieve all pending invitations in the project
 
+Returns app&#39;s invitations only Required scopes: org:manage
 
 ### Example
 ```javascript
@@ -1204,7 +1246,7 @@ Name | Type | Description  | Notes
 # **getProjectTree**
 > Folder getProjectTree(cloudPk, id)
 
-
+Retrieve the complete DMS tree
 
 Returns the document tree from root folder
 
@@ -1253,7 +1295,9 @@ Name | Type | Description  | Notes
 # **getProjectUser**
 > User getProjectUser(cloudPk, id, projectPk)
 
+Retrieve a user in a project
 
+Each member of a project can see other members of the project Required scopes: cloud:read
 
 ### Example
 ```javascript
@@ -1302,7 +1346,9 @@ Name | Type | Description  | Notes
 # **getProjectUsers**
 > [User] getProjectUsers(cloudPk, projectPk)
 
+Retrieve all users in a project
 
+Each member of a project can see other members of the project Required scopes: cloud:read
 
 ### Example
 ```javascript
@@ -1349,7 +1395,9 @@ Name | Type | Description  | Notes
 # **getProjects**
 > [Project] getProjects(cloudPk)
 
+Retrieve all projects
 
+Retrieve all projects of the cloud
 
 ### Example
 ```javascript
@@ -1394,9 +1442,9 @@ Name | Type | Description  | Notes
 # **inviteProjectUser**
 > ProjectInvitation inviteProjectUser(cloudPk, projectPk, projectInvitation)
 
+Invite a project member
 
-
-             When inviting someone already having a pending invitation, it will not update the invitation but simply send the user a new invitation mail         
+Invite a project member. If the user is not already a cloud member, they will also be invited in the cloud with USER role. Required scopes: org:manage
 
 ### Example
 ```javascript
@@ -1445,7 +1493,9 @@ Name | Type | Description  | Notes
 # **updateClassification**
 > Classification updateClassification(cloudPk, id, projectPk, classification)
 
+Update some fields of a classification
 
+Update some fields of a classification Required scopes: ifc:write
 
 ### Example
 ```javascript
@@ -1492,11 +1542,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="updateDocument"></a>
-# **updateDocument**
-> Document updateDocument(cloudPk, id, projectPk, document)
+<a name="updateClassification_0"></a>
+# **updateClassification_0**
+> Document updateClassification_0(cloudPk, id, projectPk, document)
 
+Update some fields of a classification
 
+Update some fields of a classification Required scopes: document:write
 
 ### Example
 ```javascript
@@ -1513,7 +1565,7 @@ var cloudPk = "cloudPk_example"; // String |
 var id = 56; // Number | A unique integer value identifying this document.
 var projectPk = "projectPk_example"; // String | 
 var document = new bimdata.Document(); // Document | 
-apiInstance.updateDocument(cloudPk, id, projectPk, document).then(function(data) {
+apiInstance.updateClassification_0(cloudPk, id, projectPk, document).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1547,7 +1599,9 @@ Name | Type | Description  | Notes
 # **updateFolder**
 > Folder updateFolder(cloudPk, id, projectPk, folder)
 
+Update some fields of a folder
 
+Update some fields of a folder Required scopes: document:write
 
 ### Example
 ```javascript
@@ -1598,7 +1652,9 @@ Name | Type | Description  | Notes
 # **updateProject**
 > Project updateProject(cloudPk, id, project)
 
+Update some fields of a project
 
+Update some fields of a project Required scopes: org:manage
 
 ### Example
 ```javascript
@@ -1647,9 +1703,9 @@ Name | Type | Description  | Notes
 # **updateProjectUser**
 > User updateProjectUser(cloudPk, id, projectPk, userProjectUpdate)
 
+Update some fields of a project user
 
-
-Change the user role in the cloud
+Change the user role in the cloud Required scopes: cloud:manage
 
 ### Example
 ```javascript

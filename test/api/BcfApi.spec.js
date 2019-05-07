@@ -51,16 +51,6 @@
   }
 
   describe('BcfApi', function() {
-    describe('createColoring', function() {
-      it('should call createColoring successfully', function(done) {
-        //uncomment below and update the code to test createColoring
-        //instance.createColoring(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('createComment', function() {
       it('should call createComment successfully', function(done) {
         //uncomment below and update the code to test createComment
@@ -75,16 +65,6 @@
       it('should call createFullTopic successfully', function(done) {
         //uncomment below and update the code to test createFullTopic
         //instance.createFullTopic(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('createSelection', function() {
-      it('should call createSelection successfully', function(done) {
-        //uncomment below and update the code to test createSelection
-        //instance.createSelection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -111,40 +91,10 @@
         done();
       });
     });
-    describe('createVisibility', function() {
-      it('should call createVisibility successfully', function(done) {
-        //uncomment below and update the code to test createVisibility
-        //instance.createVisibility(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteColoring', function() {
-      it('should call deleteColoring successfully', function(done) {
-        //uncomment below and update the code to test deleteColoring
-        //instance.deleteColoring(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('deleteComment', function() {
       it('should call deleteComment successfully', function(done) {
         //uncomment below and update the code to test deleteComment
         //instance.deleteComment(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteSelection', function() {
-      it('should call deleteSelection successfully', function(done) {
-        //uncomment below and update the code to test deleteSelection
-        //instance.deleteSelection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -171,16 +121,6 @@
         done();
       });
     });
-    describe('deleteVisibility', function() {
-      it('should call deleteVisibility successfully', function(done) {
-        //uncomment below and update the code to test deleteVisibility
-        //instance.deleteVisibility(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('downloadBcfExport', function() {
       it('should call downloadBcfExport successfully', function(done) {
         //uncomment below and update the code to test downloadBcfExport
@@ -195,16 +135,6 @@
       it('should call fullUpdateBcfProject successfully', function(done) {
         //uncomment below and update the code to test fullUpdateBcfProject
         //instance.fullUpdateBcfProject(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateColoring', function() {
-      it('should call fullUpdateColoring successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateColoring
-        //instance.fullUpdateColoring(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -231,16 +161,6 @@
         done();
       });
     });
-    describe('fullUpdateSelection', function() {
-      it('should call fullUpdateSelection successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateSelection
-        //instance.fullUpdateSelection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('fullUpdateTopic', function() {
       it('should call fullUpdateTopic successfully', function(done) {
         //uncomment below and update the code to test fullUpdateTopic
@@ -261,16 +181,6 @@
         done();
       });
     });
-    describe('fullUpdateVisibility', function() {
-      it('should call fullUpdateVisibility successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateVisibility
-        //instance.fullUpdateVisibility(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getBcfProject', function() {
       it('should call getBcfProject successfully', function(done) {
         //uncomment below and update the code to test getBcfProject
@@ -285,16 +195,6 @@
       it('should call getBcfProjects successfully', function(done) {
         //uncomment below and update the code to test getBcfProjects
         //instance.getBcfProjects(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getColoring', function() {
-      it('should call getColoring successfully', function(done) {
-        //uncomment below and update the code to test getColoring
-        //instance.getColoring(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -355,16 +255,6 @@
       it('should call getFullTopics successfully', function(done) {
         //uncomment below and update the code to test getFullTopics
         //instance.getFullTopics(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getSelection', function() {
-      it('should call getSelection successfully', function(done) {
-        //uncomment below and update the code to test getSelection
-        //instance.getSelection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -461,30 +351,10 @@
         done();
       });
     });
-    describe('getVisibility', function() {
-      it('should call getVisibility successfully', function(done) {
-        //uncomment below and update the code to test getVisibility
-        //instance.getVisibility(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('updateBcfProject', function() {
       it('should call updateBcfProject successfully', function(done) {
         //uncomment below and update the code to test updateBcfProject
         //instance.updateBcfProject(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateColoring', function() {
-      it('should call updateColoring successfully', function(done) {
-        //uncomment below and update the code to test updateColoring
-        //instance.updateColoring(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -521,16 +391,6 @@
         done();
       });
     });
-    describe('updateSelection', function() {
-      it('should call updateSelection successfully', function(done) {
-        //uncomment below and update the code to test updateSelection
-        //instance.updateSelection(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('updateTopic', function() {
       it('should call updateTopic successfully', function(done) {
         //uncomment below and update the code to test updateTopic
@@ -545,16 +405,6 @@
       it('should call updateViewpoint successfully', function(done) {
         //uncomment below and update the code to test updateViewpoint
         //instance.updateViewpoint(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateVisibility', function() {
-      it('should call updateVisibility successfully', function(done) {
-        //uncomment below and update the code to test updateVisibility
-        //instance.updateVisibility(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -50,6 +50,8 @@
 
 
     /**
+     * Cancel a pending invitation
+     * Cancel a pending invitation Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this invitation.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -94,6 +96,8 @@
     }
 
     /**
+     * Cancel a pending invitation
+     * Cancel a pending invitation Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this invitation.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -107,6 +111,8 @@
 
 
     /**
+     * Create a cloud
+     *  Required scopes: cloud:manage
      * @param {module:model/Cloud} cloud 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
      */
@@ -143,6 +149,8 @@
     }
 
     /**
+     * Create a cloud
+     *  Required scopes: cloud:manage
      * @param {module:model/Cloud} cloud 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
      */
@@ -155,7 +163,8 @@
 
 
     /**
-     * Create a demo project with a pre-populated IFC and its data
+     * Create a Demo project in a cloud
+     * Create a demo project with a pre-populated IFC and its data Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
@@ -193,7 +202,8 @@
     }
 
     /**
-     * Create a demo project with a pre-populated IFC and its data
+     * Create a Demo project in a cloud
+     * Create a demo project with a pre-populated IFC and its data Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
@@ -206,6 +216,8 @@
 
 
     /**
+     * Delete a cloud
+     *  Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -243,6 +255,8 @@
     }
 
     /**
+     * Delete a cloud
+     *  Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -255,6 +269,8 @@
 
 
     /**
+     * Remove a user from a cloud
+     * The user will also be removed from all the projects of the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -299,6 +315,8 @@
     }
 
     /**
+     * Remove a user from a cloud
+     * The user will also be removed from all the projects of the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -312,6 +330,8 @@
 
 
     /**
+     * Update all fields of a cloud
+     *  Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
      * @param {module:model/Cloud} cloud 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
@@ -355,6 +375,8 @@
     }
 
     /**
+     * Update all fields of a cloud
+     *  Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
      * @param {module:model/Cloud} cloud 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
@@ -368,7 +390,8 @@
 
 
     /**
-     * Change the user role in the cloud
+     * Update all fields of a cloud user
+     * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/UserCloudUpdate} userCloudUpdate 
@@ -419,7 +442,8 @@
     }
 
     /**
-     * Change the user role in the cloud
+     * Update all fields of a cloud user
+     * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/UserCloudUpdate} userCloudUpdate 
@@ -434,6 +458,7 @@
 
 
     /**
+     * Retrieve one cloud
      * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
      */
@@ -471,6 +496,7 @@
     }
 
     /**
+     * Retrieve one cloud
      * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
      */
@@ -483,6 +509,8 @@
 
 
     /**
+     * Retrieve all pending invitations in the cloud
+     * Returns app&#39;s invitations only Required scopes: org:manage
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CloudInvitation>} and HTTP response
      */
@@ -520,6 +548,8 @@
     }
 
     /**
+     * Retrieve all pending invitations in the cloud
+     * Returns app&#39;s invitations only Required scopes: org:manage
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CloudInvitation>}
      */
@@ -532,6 +562,7 @@
 
 
     /**
+     * Get size of all files in the cloud
      * Returns the size of the cloud in Bytes
      * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Number} and HTTP response
@@ -570,6 +601,7 @@
     }
 
     /**
+     * Get size of all files in the cloud
      * Returns the size of the cloud in Bytes
      * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Number}
@@ -583,6 +615,8 @@
 
 
     /**
+     * Retrieve a user in a cloud
+     * Only administrators can see a cloud member Required scopes: cloud:read
      * @param {String} cloudPk 
      * @param {String} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
@@ -627,6 +661,8 @@
     }
 
     /**
+     * Retrieve a user in a cloud
+     * Only administrators can see a cloud member Required scopes: cloud:read
      * @param {String} cloudPk 
      * @param {String} id 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
@@ -640,6 +676,8 @@
 
 
     /**
+     * Retrieve all users in a cloud
+     * Only administrators can see all cloud members Required scopes: cloud:read
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/User>} and HTTP response
      */
@@ -677,6 +715,8 @@
     }
 
     /**
+     * Retrieve all users in a cloud
+     * Only administrators can see all cloud members Required scopes: cloud:read
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/User>}
      */
@@ -689,7 +729,8 @@
 
 
     /**
-     * Returns user&#39;s cloud only
+     * Retrieve all clouds
+     * Returns user&#39;s (or app&#39;s) clouds only
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Cloud>} and HTTP response
      */
     this.getCloudsWithHttpInfo = function() {
@@ -720,7 +761,8 @@
     }
 
     /**
-     * Returns user&#39;s cloud only
+     * Retrieve all clouds
+     * Returns user&#39;s (or app&#39;s) clouds only
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Cloud>}
      */
     this.getClouds = function() {
@@ -732,7 +774,8 @@
 
 
     /**
-     *              When inviting someone already having a pending invitation, it will not update the invitation but simply send the user a new invitation mail         
+     * Invite a cloud administrator
+     * Invite cloud administrators only. To invite in a project, see inviteProjectUser. You can&#39;t invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {module:model/CloudInvitation} cloudInvitation 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CloudInvitation} and HTTP response
@@ -776,7 +819,8 @@
     }
 
     /**
-     *              When inviting someone already having a pending invitation, it will not update the invitation but simply send the user a new invitation mail         
+     * Invite a cloud administrator
+     * Invite cloud administrators only. To invite in a project, see inviteProjectUser. You can&#39;t invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {module:model/CloudInvitation} cloudInvitation 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CloudInvitation}
@@ -790,6 +834,8 @@
 
 
     /**
+     * Update some fields of a cloud
+     * Update some fields of a cloud Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
      * @param {module:model/Cloud} cloud 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
@@ -833,6 +879,8 @@
     }
 
     /**
+     * Update some fields of a cloud
+     * Update some fields of a cloud Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
      * @param {module:model/Cloud} cloud 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
@@ -846,7 +894,8 @@
 
 
     /**
-     * Change the user role in the cloud
+     * Update some fields of a cloud user
+     * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/UserCloudUpdate} userCloudUpdate 
@@ -897,7 +946,8 @@
     }
 
     /**
-     * Change the user role in the cloud
+     * Update some fields of a cloud user
+     * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/UserCloudUpdate} userCloudUpdate 

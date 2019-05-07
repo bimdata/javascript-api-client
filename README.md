@@ -105,9 +105,8 @@ Bearer.apiKey = "YOUR API KEY"
 
 var api = new bimdata.ApplicationApi()
 var cloudPk = "cloudPk_example"; // {String} 
-var id = "id_example"; // {String} 
 var webHook = new bimdata.WebHook(); // {WebHook} 
-api.cloudWebhookPing(cloudPk, id, webHook).then(function(data) {
+api.createWebHook(cloudPk, webHook).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -122,249 +121,234 @@ All URIs are relative to *https://api-beta.bimdata.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*bimdata.ApplicationApi* | [**cloudWebhookPing**](docs/ApplicationApi.md#cloudWebhookPing) | **POST** /cloud/{cloud_pk}/webhook/{id}/ping | 
-*bimdata.ApplicationApi* | [**createWebHook**](docs/ApplicationApi.md#createWebHook) | **POST** /cloud/{cloud_pk}/webhook | 
-*bimdata.ApplicationApi* | [**deleteWebHook**](docs/ApplicationApi.md#deleteWebHook) | **DELETE** /cloud/{cloud_pk}/webhook/{id} | 
-*bimdata.ApplicationApi* | [**fullUpdateWebHook**](docs/ApplicationApi.md#fullUpdateWebHook) | **PUT** /cloud/{cloud_pk}/webhook/{id} | 
-*bimdata.ApplicationApi* | [**getWebHook**](docs/ApplicationApi.md#getWebHook) | **GET** /cloud/{cloud_pk}/webhook/{id} | 
-*bimdata.ApplicationApi* | [**getWebHooks**](docs/ApplicationApi.md#getWebHooks) | **GET** /cloud/{cloud_pk}/webhook | 
-*bimdata.ApplicationApi* | [**updateWebHook**](docs/ApplicationApi.md#updateWebHook) | **PATCH** /cloud/{cloud_pk}/webhook/{id} | 
-*bimdata.BcfApi* | [**createColoring**](docs/BcfApi.md#createColoring) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring | 
-*bimdata.BcfApi* | [**createComment**](docs/BcfApi.md#createComment) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | 
-*bimdata.BcfApi* | [**createFullTopic**](docs/BcfApi.md#createFullTopic) | **POST** /bcf/2.1/projects/{projects_pk}/full-topic | 
-*bimdata.BcfApi* | [**createSelection**](docs/BcfApi.md#createSelection) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection | 
-*bimdata.BcfApi* | [**createTopic**](docs/BcfApi.md#createTopic) | **POST** /bcf/2.1/projects/{projects_pk}/topics | 
-*bimdata.BcfApi* | [**createViewpoint**](docs/BcfApi.md#createViewpoint) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints | 
-*bimdata.BcfApi* | [**createVisibility**](docs/BcfApi.md#createVisibility) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility | 
-*bimdata.BcfApi* | [**deleteColoring**](docs/BcfApi.md#deleteColoring) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id} | 
-*bimdata.BcfApi* | [**deleteComment**](docs/BcfApi.md#deleteComment) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
-*bimdata.BcfApi* | [**deleteSelection**](docs/BcfApi.md#deleteSelection) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
-*bimdata.BcfApi* | [**deleteTopic**](docs/BcfApi.md#deleteTopic) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
-*bimdata.BcfApi* | [**deleteViewpoint**](docs/BcfApi.md#deleteViewpoint) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 
-*bimdata.BcfApi* | [**deleteVisibility**](docs/BcfApi.md#deleteVisibility) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id} | 
-*bimdata.BcfApi* | [**downloadBcfExport**](docs/BcfApi.md#downloadBcfExport) | **GET** /bcf/2.1/projects/{id}/export | 
-*bimdata.BcfApi* | [**fullUpdateBcfProject**](docs/BcfApi.md#fullUpdateBcfProject) | **PUT** /bcf/2.1/projects/{id} | 
-*bimdata.BcfApi* | [**fullUpdateColoring**](docs/BcfApi.md#fullUpdateColoring) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id} | 
-*bimdata.BcfApi* | [**fullUpdateComment**](docs/BcfApi.md#fullUpdateComment) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
-*bimdata.BcfApi* | [**fullUpdateFullTopic**](docs/BcfApi.md#fullUpdateFullTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | 
-*bimdata.BcfApi* | [**fullUpdateSelection**](docs/BcfApi.md#fullUpdateSelection) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
-*bimdata.BcfApi* | [**fullUpdateTopic**](docs/BcfApi.md#fullUpdateTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
-*bimdata.BcfApi* | [**fullUpdateViewpoint**](docs/BcfApi.md#fullUpdateViewpoint) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 
-*bimdata.BcfApi* | [**fullUpdateVisibility**](docs/BcfApi.md#fullUpdateVisibility) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id} | 
-*bimdata.BcfApi* | [**getBcfProject**](docs/BcfApi.md#getBcfProject) | **GET** /bcf/2.1/projects/{id} | 
-*bimdata.BcfApi* | [**getBcfProjects**](docs/BcfApi.md#getBcfProjects) | **GET** /bcf/2.1/projects | 
-*bimdata.BcfApi* | [**getColoring**](docs/BcfApi.md#getColoring) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id} | 
-*bimdata.BcfApi* | [**getColorings**](docs/BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring | 
-*bimdata.BcfApi* | [**getComment**](docs/BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
-*bimdata.BcfApi* | [**getComments**](docs/BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | 
-*bimdata.BcfApi* | [**getExtensions**](docs/BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{projects_pk}/extensions | 
-*bimdata.BcfApi* | [**getFullTopic**](docs/BcfApi.md#getFullTopic) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | 
-*bimdata.BcfApi* | [**getFullTopics**](docs/BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | 
-*bimdata.BcfApi* | [**getSelection**](docs/BcfApi.md#getSelection) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
-*bimdata.BcfApi* | [**getSelections**](docs/BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection | 
-*bimdata.BcfApi* | [**getSnapshot**](docs/BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot | 
-*bimdata.BcfApi* | [**getTopic**](docs/BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
-*bimdata.BcfApi* | [**getTopicViewpoints**](docs/BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/topic-viewpoints | 
-*bimdata.BcfApi* | [**getTopics**](docs/BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | 
-*bimdata.BcfApi* | [**getUser**](docs/BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | 
-*bimdata.BcfApi* | [**getViewpoint**](docs/BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 
-*bimdata.BcfApi* | [**getViewpoints**](docs/BcfApi.md#getViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints | 
-*bimdata.BcfApi* | [**getVisibilities**](docs/BcfApi.md#getVisibilities) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility | 
-*bimdata.BcfApi* | [**getVisibility**](docs/BcfApi.md#getVisibility) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id} | 
-*bimdata.BcfApi* | [**updateBcfProject**](docs/BcfApi.md#updateBcfProject) | **PATCH** /bcf/2.1/projects/{id} | 
-*bimdata.BcfApi* | [**updateColoring**](docs/BcfApi.md#updateColoring) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring/{id} | 
-*bimdata.BcfApi* | [**updateComment**](docs/BcfApi.md#updateComment) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | 
-*bimdata.BcfApi* | [**updateExtensions**](docs/BcfApi.md#updateExtensions) | **PATCH** /bcf/2.1/projects/{projects_pk}/extensions | 
-*bimdata.BcfApi* | [**updateFullTopic**](docs/BcfApi.md#updateFullTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | 
-*bimdata.BcfApi* | [**updateSelection**](docs/BcfApi.md#updateSelection) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection/{id} | 
-*bimdata.BcfApi* | [**updateTopic**](docs/BcfApi.md#updateTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{guid} | 
-*bimdata.BcfApi* | [**updateViewpoint**](docs/BcfApi.md#updateViewpoint) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | 
-*bimdata.BcfApi* | [**updateVisibility**](docs/BcfApi.md#updateVisibility) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility/{id} | 
-*bimdata.CheckplanApi* | [**createChecker**](docs/CheckplanApi.md#createChecker) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker | 
-*bimdata.CheckplanApi* | [**createCheckerResult**](docs/CheckplanApi.md#createCheckerResult) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result | 
-*bimdata.CheckplanApi* | [**createCheckplan**](docs/CheckplanApi.md#createCheckplan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan | 
-*bimdata.CheckplanApi* | [**createRule**](docs/CheckplanApi.md#createRule) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule | 
-*bimdata.CheckplanApi* | [**createRuleComponent**](docs/CheckplanApi.md#createRuleComponent) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent | 
-*bimdata.CheckplanApi* | [**createRuleset**](docs/CheckplanApi.md#createRuleset) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset | 
-*bimdata.CheckplanApi* | [**deleteChecker**](docs/CheckplanApi.md#deleteChecker) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | 
-*bimdata.CheckplanApi* | [**deleteCheckerResult**](docs/CheckplanApi.md#deleteCheckerResult) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | 
-*bimdata.CheckplanApi* | [**deleteCheckplan**](docs/CheckplanApi.md#deleteCheckplan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | 
-*bimdata.CheckplanApi* | [**deleteRule**](docs/CheckplanApi.md#deleteRule) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | 
-*bimdata.CheckplanApi* | [**deleteRuleComponent**](docs/CheckplanApi.md#deleteRuleComponent) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | 
-*bimdata.CheckplanApi* | [**deleteRuleset**](docs/CheckplanApi.md#deleteRuleset) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | 
-*bimdata.CheckplanApi* | [**fullUpdateChecker**](docs/CheckplanApi.md#fullUpdateChecker) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | 
-*bimdata.CheckplanApi* | [**fullUpdateCheckerResult**](docs/CheckplanApi.md#fullUpdateCheckerResult) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | 
-*bimdata.CheckplanApi* | [**fullUpdateCheckplan**](docs/CheckplanApi.md#fullUpdateCheckplan) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | 
-*bimdata.CheckplanApi* | [**fullUpdateRule**](docs/CheckplanApi.md#fullUpdateRule) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | 
-*bimdata.CheckplanApi* | [**fullUpdateRuleComponent**](docs/CheckplanApi.md#fullUpdateRuleComponent) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | 
-*bimdata.CheckplanApi* | [**fullUpdateRuleset**](docs/CheckplanApi.md#fullUpdateRuleset) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | 
-*bimdata.CheckplanApi* | [**getChecker**](docs/CheckplanApi.md#getChecker) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | 
-*bimdata.CheckplanApi* | [**getCheckerResult**](docs/CheckplanApi.md#getCheckerResult) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | 
-*bimdata.CheckplanApi* | [**getCheckerResults**](docs/CheckplanApi.md#getCheckerResults) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result | 
-*bimdata.CheckplanApi* | [**getCheckers**](docs/CheckplanApi.md#getCheckers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker | 
-*bimdata.CheckplanApi* | [**getCheckplan**](docs/CheckplanApi.md#getCheckplan) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | 
-*bimdata.CheckplanApi* | [**getCheckplans**](docs/CheckplanApi.md#getCheckplans) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan | 
-*bimdata.CheckplanApi* | [**getRule**](docs/CheckplanApi.md#getRule) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | 
-*bimdata.CheckplanApi* | [**getRuleComponent**](docs/CheckplanApi.md#getRuleComponent) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | 
-*bimdata.CheckplanApi* | [**getRuleComponents**](docs/CheckplanApi.md#getRuleComponents) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent | 
-*bimdata.CheckplanApi* | [**getRules**](docs/CheckplanApi.md#getRules) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule | 
-*bimdata.CheckplanApi* | [**getRuleset**](docs/CheckplanApi.md#getRuleset) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | 
-*bimdata.CheckplanApi* | [**getRulesets**](docs/CheckplanApi.md#getRulesets) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset | 
-*bimdata.CheckplanApi* | [**launchNewCheck**](docs/CheckplanApi.md#launchNewCheck) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}/launch-check | 
-*bimdata.CheckplanApi* | [**updateChecker**](docs/CheckplanApi.md#updateChecker) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | 
-*bimdata.CheckplanApi* | [**updateCheckerResult**](docs/CheckplanApi.md#updateCheckerResult) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | 
-*bimdata.CheckplanApi* | [**updateCheckplan**](docs/CheckplanApi.md#updateCheckplan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | 
-*bimdata.CheckplanApi* | [**updateRule**](docs/CheckplanApi.md#updateRule) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | 
-*bimdata.CheckplanApi* | [**updateRuleComponent**](docs/CheckplanApi.md#updateRuleComponent) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | 
-*bimdata.CheckplanApi* | [**updateRuleset**](docs/CheckplanApi.md#updateRuleset) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | 
-*bimdata.CloudApi* | [**cancelCloudUserInvitation**](docs/CloudApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | 
-*bimdata.CloudApi* | [**createCloud**](docs/CloudApi.md#createCloud) | **POST** /cloud | 
-*bimdata.CloudApi* | [**createDemo**](docs/CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | 
-*bimdata.CloudApi* | [**deleteCloud**](docs/CloudApi.md#deleteCloud) | **DELETE** /cloud/{id} | 
-*bimdata.CloudApi* | [**deleteCloudUser**](docs/CloudApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | 
-*bimdata.CloudApi* | [**fullUpdateCloud**](docs/CloudApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | 
-*bimdata.CloudApi* | [**fullUpdateCloudUser**](docs/CloudApi.md#fullUpdateCloudUser) | **PUT** /cloud/{cloud_pk}/user/{id} | 
-*bimdata.CloudApi* | [**getCloud**](docs/CloudApi.md#getCloud) | **GET** /cloud/{id} | 
-*bimdata.CloudApi* | [**getCloudInvitations**](docs/CloudApi.md#getCloudInvitations) | **GET** /cloud/{cloud_pk}/invitation | 
-*bimdata.CloudApi* | [**getCloudSize**](docs/CloudApi.md#getCloudSize) | **GET** /cloud/{id}/size | 
-*bimdata.CloudApi* | [**getCloudUser**](docs/CloudApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | 
-*bimdata.CloudApi* | [**getCloudUsers**](docs/CloudApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | 
-*bimdata.CloudApi* | [**getClouds**](docs/CloudApi.md#getClouds) | **GET** /cloud | 
-*bimdata.CloudApi* | [**inviteCloudUser**](docs/CloudApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | 
-*bimdata.CloudApi* | [**updateCloud**](docs/CloudApi.md#updateCloud) | **PATCH** /cloud/{id} | 
-*bimdata.CloudApi* | [**updateCloudUser**](docs/CloudApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | 
-*bimdata.IfcApi* | [**bulkDeleteIfcClassifications**](docs/IfcApi.md#bulkDeleteIfcClassifications) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/list_destroy | 
-*bimdata.IfcApi* | [**bulkDeleteIfcProperties**](docs/IfcApi.md#bulkDeleteIfcProperties) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_destroy | 
-*bimdata.IfcApi* | [**bulkDeleteIfcPropertyDefinitions**](docs/IfcApi.md#bulkDeleteIfcPropertyDefinitions) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/bulk_destroy | 
-*bimdata.IfcApi* | [**bulkDeleteIfcUnits**](docs/IfcApi.md#bulkDeleteIfcUnits) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/bulk_destroy | 
-*bimdata.IfcApi* | [**bulkDeletePropertySet**](docs/IfcApi.md#bulkDeletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/bulk_destroy | 
-*bimdata.IfcApi* | [**bulkFullUpdateElements**](docs/IfcApi.md#bulkFullUpdateElements) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update | 
-*bimdata.IfcApi* | [**bulkFullUpdateIfcProperty**](docs/IfcApi.md#bulkFullUpdateIfcProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update | 
-*bimdata.IfcApi* | [**bulkRemoveClassificationsOfElement**](docs/IfcApi.md#bulkRemoveClassificationsOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/bulk_destroy | 
-*bimdata.IfcApi* | [**bulkRemoveElementsFromClassification**](docs/IfcApi.md#bulkRemoveElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/bulk_destroy | 
-*bimdata.IfcApi* | [**bulkUpdateElements**](docs/IfcApi.md#bulkUpdateElements) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update | 
-*bimdata.IfcApi* | [**bulkUpdateIfcProperty**](docs/IfcApi.md#bulkUpdateIfcProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update | 
-*bimdata.IfcApi* | [**createClassificationElementRelations**](docs/IfcApi.md#createClassificationElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | 
-*bimdata.IfcApi* | [**createClassificationsOfElement**](docs/IfcApi.md#createClassificationsOfElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | 
-*bimdata.IfcApi* | [**createElement**](docs/IfcApi.md#createElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element | 
-*bimdata.IfcApi* | [**createElementPropertySet**](docs/IfcApi.md#createElementPropertySet) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset | 
-*bimdata.IfcApi* | [**createElementPropertySetProperty**](docs/IfcApi.md#createElementPropertySetProperty) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property | 
-*bimdata.IfcApi* | [**createElementPropertySetPropertyDefinition**](docs/IfcApi.md#createElementPropertySetPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition | 
-*bimdata.IfcApi* | [**createElementPropertySetPropertyDefinitionUnit**](docs/IfcApi.md#createElementPropertySetPropertyDefinitionUnit) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit | 
-*bimdata.IfcApi* | [**createIfcPropertyDefinition**](docs/IfcApi.md#createIfcPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition | 
-*bimdata.IfcApi* | [**createIfcUnit**](docs/IfcApi.md#createIfcUnit) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit | 
-*bimdata.IfcApi* | [**createPropertySet**](docs/IfcApi.md#createPropertySet) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset | 
-*bimdata.IfcApi* | [**createPropertySetElementRelations**](docs/IfcApi.md#createPropertySetElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset-element | 
-*bimdata.IfcApi* | [**createRawElements**](docs/IfcApi.md#createRawElements) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw | 
-*bimdata.IfcApi* | [**createSpace**](docs/IfcApi.md#createSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space | 
-*bimdata.IfcApi* | [**createZone**](docs/IfcApi.md#createZone) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | 
-*bimdata.IfcApi* | [**createZoneSpace**](docs/IfcApi.md#createZoneSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | 
-*bimdata.IfcApi* | [**deleteElement**](docs/IfcApi.md#deleteElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | 
-*bimdata.IfcApi* | [**deleteIfc**](docs/IfcApi.md#deleteIfc) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | 
-*bimdata.IfcApi* | [**deleteIfcProperty**](docs/IfcApi.md#deleteIfcProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | 
-*bimdata.IfcApi* | [**deleteIfcPropertyDefinition**](docs/IfcApi.md#deleteIfcPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | 
-*bimdata.IfcApi* | [**deleteIfcUnit**](docs/IfcApi.md#deleteIfcUnit) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | 
-*bimdata.IfcApi* | [**deletePropertySet**](docs/IfcApi.md#deletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | 
-*bimdata.IfcApi* | [**deleteSpace**](docs/IfcApi.md#deleteSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | 
-*bimdata.IfcApi* | [**deleteZone**](docs/IfcApi.md#deleteZone) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | 
-*bimdata.IfcApi* | [**deleteZoneSpace**](docs/IfcApi.md#deleteZoneSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | 
-*bimdata.IfcApi* | [**fullUpdateElement**](docs/IfcApi.md#fullUpdateElement) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | 
-*bimdata.IfcApi* | [**fullUpdateIfc**](docs/IfcApi.md#fullUpdateIfc) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | 
-*bimdata.IfcApi* | [**fullUpdateIfcProperty**](docs/IfcApi.md#fullUpdateIfcProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | 
-*bimdata.IfcApi* | [**fullUpdateIfcPropertyDefinition**](docs/IfcApi.md#fullUpdateIfcPropertyDefinition) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | 
-*bimdata.IfcApi* | [**fullUpdateIfcUnit**](docs/IfcApi.md#fullUpdateIfcUnit) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | 
-*bimdata.IfcApi* | [**fullUpdatePropertySet**](docs/IfcApi.md#fullUpdatePropertySet) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | 
-*bimdata.IfcApi* | [**fullUpdateSpace**](docs/IfcApi.md#fullUpdateSpace) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | 
-*bimdata.IfcApi* | [**fullUpdateZone**](docs/IfcApi.md#fullUpdateZone) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | 
-*bimdata.IfcApi* | [**fullUpdateZoneSpace**](docs/IfcApi.md#fullUpdateZoneSpace) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | 
-*bimdata.IfcApi* | [**getClassificationsOfElement**](docs/IfcApi.md#getClassificationsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | 
-*bimdata.IfcApi* | [**getElement**](docs/IfcApi.md#getElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | 
-*bimdata.IfcApi* | [**getElementPropertySet**](docs/IfcApi.md#getElementPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | 
-*bimdata.IfcApi* | [**getElementPropertySetProperties**](docs/IfcApi.md#getElementPropertySetProperties) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property | 
-*bimdata.IfcApi* | [**getElementPropertySetProperty**](docs/IfcApi.md#getElementPropertySetProperty) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | 
-*bimdata.IfcApi* | [**getElementPropertySetPropertyDefinition**](docs/IfcApi.md#getElementPropertySetPropertyDefinition) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id} | 
-*bimdata.IfcApi* | [**getElementPropertySetPropertyDefinitionUnit**](docs/IfcApi.md#getElementPropertySetPropertyDefinitionUnit) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit/{id} | 
-*bimdata.IfcApi* | [**getElementPropertySetPropertyDefinitionUnits**](docs/IfcApi.md#getElementPropertySetPropertyDefinitionUnits) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit | 
-*bimdata.IfcApi* | [**getElementPropertySetPropertyDefinitions**](docs/IfcApi.md#getElementPropertySetPropertyDefinitions) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition | 
-*bimdata.IfcApi* | [**getElementPropertySets**](docs/IfcApi.md#getElementPropertySets) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset | 
-*bimdata.IfcApi* | [**getElements**](docs/IfcApi.md#getElements) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element | 
-*bimdata.IfcApi* | [**getElementsFromClassification**](docs/IfcApi.md#getElementsFromClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element | 
-*bimdata.IfcApi* | [**getIfc**](docs/IfcApi.md#getIfc) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | 
-*bimdata.IfcApi* | [**getIfcBVH**](docs/IfcApi.md#getIfcBVH) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/bvh | 
-*bimdata.IfcApi* | [**getIfcClassifications**](docs/IfcApi.md#getIfcClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification | 
-*bimdata.IfcApi* | [**getIfcGLTF**](docs/IfcApi.md#getIfcGLTF) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/gltf | 
-*bimdata.IfcApi* | [**getIfcMap**](docs/IfcApi.md#getIfcMap) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/map | 
-*bimdata.IfcApi* | [**getIfcProperties**](docs/IfcApi.md#getIfcProperties) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property | 
-*bimdata.IfcApi* | [**getIfcProperty**](docs/IfcApi.md#getIfcProperty) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | 
-*bimdata.IfcApi* | [**getIfcPropertyDefinition**](docs/IfcApi.md#getIfcPropertyDefinition) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | 
-*bimdata.IfcApi* | [**getIfcPropertyDefinitions**](docs/IfcApi.md#getIfcPropertyDefinitions) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition | 
-*bimdata.IfcApi* | [**getIfcStructure**](docs/IfcApi.md#getIfcStructure) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/structure | 
-*bimdata.IfcApi* | [**getIfcSystems**](docs/IfcApi.md#getIfcSystems) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/systems | 
-*bimdata.IfcApi* | [**getIfcUnit**](docs/IfcApi.md#getIfcUnit) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | 
-*bimdata.IfcApi* | [**getIfcUnits**](docs/IfcApi.md#getIfcUnits) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit | 
-*bimdata.IfcApi* | [**getIfcs**](docs/IfcApi.md#getIfcs) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc | 
-*bimdata.IfcApi* | [**getPropertySet**](docs/IfcApi.md#getPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | 
-*bimdata.IfcApi* | [**getPropertySets**](docs/IfcApi.md#getPropertySets) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset | 
-*bimdata.IfcApi* | [**getRawElements**](docs/IfcApi.md#getRawElements) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw | 
-*bimdata.IfcApi* | [**getSpace**](docs/IfcApi.md#getSpace) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | 
-*bimdata.IfcApi* | [**getSpaces**](docs/IfcApi.md#getSpaces) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space | 
-*bimdata.IfcApi* | [**getZone**](docs/IfcApi.md#getZone) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | 
-*bimdata.IfcApi* | [**getZoneSpace**](docs/IfcApi.md#getZoneSpace) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | 
-*bimdata.IfcApi* | [**getZoneSpaces**](docs/IfcApi.md#getZoneSpaces) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | 
-*bimdata.IfcApi* | [**getZones**](docs/IfcApi.md#getZones) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | 
-*bimdata.IfcApi* | [**listClassificationElementRelations**](docs/IfcApi.md#listClassificationElementRelations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | 
-*bimdata.IfcApi* | [**removeClassificationOfElement**](docs/IfcApi.md#removeClassificationOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/{id} | 
-*bimdata.IfcApi* | [**removeElementPropertySet**](docs/IfcApi.md#removeElementPropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | 
-*bimdata.IfcApi* | [**removeElementPropertySetProperty**](docs/IfcApi.md#removeElementPropertySetProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | 
-*bimdata.IfcApi* | [**removeElementPropertySetPropertyDefinition**](docs/IfcApi.md#removeElementPropertySetPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id} | 
-*bimdata.IfcApi* | [**removeElementPropertySetPropertyDefinitionUnit**](docs/IfcApi.md#removeElementPropertySetPropertyDefinitionUnit) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit/{id} | 
-*bimdata.IfcApi* | [**removeElementsFromClassification**](docs/IfcApi.md#removeElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/{uuid} | 
-*bimdata.IfcApi* | [**updateElement**](docs/IfcApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | 
-*bimdata.IfcApi* | [**updateIfc**](docs/IfcApi.md#updateIfc) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | 
-*bimdata.IfcApi* | [**updateIfcFiles**](docs/IfcApi.md#updateIfcFiles) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/files | 
-*bimdata.IfcApi* | [**updateIfcProperty**](docs/IfcApi.md#updateIfcProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | 
-*bimdata.IfcApi* | [**updateIfcPropertyDefinition**](docs/IfcApi.md#updateIfcPropertyDefinition) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | 
-*bimdata.IfcApi* | [**updateIfcUnit**](docs/IfcApi.md#updateIfcUnit) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | 
-*bimdata.IfcApi* | [**updatePropertySet**](docs/IfcApi.md#updatePropertySet) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | 
-*bimdata.IfcApi* | [**updateSpace**](docs/IfcApi.md#updateSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | 
-*bimdata.IfcApi* | [**updateZone**](docs/IfcApi.md#updateZone) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | 
-*bimdata.IfcApi* | [**updateZoneSpace**](docs/IfcApi.md#updateZoneSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | 
-*bimdata.ProjectApi* | [**cancelProjectUserInvitation**](docs/ProjectApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | 
-*bimdata.ProjectApi* | [**createClassification**](docs/ProjectApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | 
-*bimdata.ProjectApi* | [**createDocument**](docs/ProjectApi.md#createDocument) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | 
-*bimdata.ProjectApi* | [**createFolder**](docs/ProjectApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | 
-*bimdata.ProjectApi* | [**createProject**](docs/ProjectApi.md#createProject) | **POST** /cloud/{cloud_pk}/project | 
-*bimdata.ProjectApi* | [**deleteClassification**](docs/ProjectApi.md#deleteClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | 
-*bimdata.ProjectApi* | [**deleteDocument**](docs/ProjectApi.md#deleteDocument) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
-*bimdata.ProjectApi* | [**deleteFolder**](docs/ProjectApi.md#deleteFolder) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
-*bimdata.ProjectApi* | [**deleteProject**](docs/ProjectApi.md#deleteProject) | **DELETE** /cloud/{cloud_pk}/project/{id} | 
-*bimdata.ProjectApi* | [**deleteProjectUser**](docs/ProjectApi.md#deleteProjectUser) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
-*bimdata.ProjectApi* | [**fullUpdateClassification**](docs/ProjectApi.md#fullUpdateClassification) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | 
-*bimdata.ProjectApi* | [**fullUpdateDocument**](docs/ProjectApi.md#fullUpdateDocument) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
-*bimdata.ProjectApi* | [**fullUpdateFolder**](docs/ProjectApi.md#fullUpdateFolder) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
-*bimdata.ProjectApi* | [**fullUpdateProject**](docs/ProjectApi.md#fullUpdateProject) | **PUT** /cloud/{cloud_pk}/project/{id} | 
-*bimdata.ProjectApi* | [**fullUpdateProjectUser**](docs/ProjectApi.md#fullUpdateProjectUser) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
-*bimdata.ProjectApi* | [**getClassification**](docs/ProjectApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | 
-*bimdata.ProjectApi* | [**getClassifications**](docs/ProjectApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | 
-*bimdata.ProjectApi* | [**getDocument**](docs/ProjectApi.md#getDocument) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
-*bimdata.ProjectApi* | [**getDocuments**](docs/ProjectApi.md#getDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document | 
-*bimdata.ProjectApi* | [**getFolder**](docs/ProjectApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
-*bimdata.ProjectApi* | [**getFolders**](docs/ProjectApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | 
-*bimdata.ProjectApi* | [**getProject**](docs/ProjectApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | 
-*bimdata.ProjectApi* | [**getProjectInvitations**](docs/ProjectApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | 
-*bimdata.ProjectApi* | [**getProjectTree**](docs/ProjectApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | 
-*bimdata.ProjectApi* | [**getProjectUser**](docs/ProjectApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
-*bimdata.ProjectApi* | [**getProjectUsers**](docs/ProjectApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | 
-*bimdata.ProjectApi* | [**getProjects**](docs/ProjectApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | 
-*bimdata.ProjectApi* | [**inviteProjectUser**](docs/ProjectApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | 
-*bimdata.ProjectApi* | [**updateClassification**](docs/ProjectApi.md#updateClassification) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | 
-*bimdata.ProjectApi* | [**updateDocument**](docs/ProjectApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | 
-*bimdata.ProjectApi* | [**updateFolder**](docs/ProjectApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | 
-*bimdata.ProjectApi* | [**updateProject**](docs/ProjectApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | 
-*bimdata.ProjectApi* | [**updateProjectUser**](docs/ProjectApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | 
-*bimdata.UserApi* | [**getSelfProjects**](docs/UserApi.md#getSelfProjects) | **GET** /user/projects | 
+*bimdata.ApplicationApi* | [**createWebHook**](docs/ApplicationApi.md#createWebHook) | **POST** /cloud/{cloud_pk}/webhook | Create a new Webhook
+*bimdata.ApplicationApi* | [**deleteWebHook**](docs/ApplicationApi.md#deleteWebHook) | **DELETE** /cloud/{cloud_pk}/webhook/{id} | Delete a webhook
+*bimdata.ApplicationApi* | [**fullUpdateWebHook**](docs/ApplicationApi.md#fullUpdateWebHook) | **PUT** /cloud/{cloud_pk}/webhook/{id} | Update all field of a webhook
+*bimdata.ApplicationApi* | [**getWebHook**](docs/ApplicationApi.md#getWebHook) | **GET** /cloud/{cloud_pk}/webhook/{id} | Retrieve one configured webhook
+*bimdata.ApplicationApi* | [**getWebHooks**](docs/ApplicationApi.md#getWebHooks) | **GET** /cloud/{cloud_pk}/webhook | Retrieve all configured webhooks
+*bimdata.ApplicationApi* | [**pingWebHook**](docs/ApplicationApi.md#pingWebHook) | **POST** /cloud/{cloud_pk}/webhook/{id}/ping | Test a webhook
+*bimdata.ApplicationApi* | [**updateWebHook**](docs/ApplicationApi.md#updateWebHook) | **PATCH** /cloud/{cloud_pk}/webhook/{id} | Update some field of a webhook
+*bimdata.BcfApi* | [**createComment**](docs/BcfApi.md#createComment) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | Create a comment
+*bimdata.BcfApi* | [**createFullTopic**](docs/BcfApi.md#createFullTopic) | **POST** /bcf/2.1/projects/{projects_pk}/full-topic | Create a Topic with viewpoints and comments
+*bimdata.BcfApi* | [**createTopic**](docs/BcfApi.md#createTopic) | **POST** /bcf/2.1/projects/{projects_pk}/topics | Create a topic
+*bimdata.BcfApi* | [**createViewpoint**](docs/BcfApi.md#createViewpoint) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints | Create a Viewpoint
+*bimdata.BcfApi* | [**deleteComment**](docs/BcfApi.md#deleteComment) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Delete a comment
+*bimdata.BcfApi* | [**deleteTopic**](docs/BcfApi.md#deleteTopic) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Delete a topic
+*bimdata.BcfApi* | [**deleteViewpoint**](docs/BcfApi.md#deleteViewpoint) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Delete a Viewpoint
+*bimdata.BcfApi* | [**downloadBcfExport**](docs/BcfApi.md#downloadBcfExport) | **GET** /bcf/2.1/projects/{id}/export | Export project&#39;s topics in bcf-xml format
+*bimdata.BcfApi* | [**fullUpdateBcfProject**](docs/BcfApi.md#fullUpdateBcfProject) | **PUT** /bcf/2.1/projects/{id} | Update all fields of a BCF project
+*bimdata.BcfApi* | [**fullUpdateComment**](docs/BcfApi.md#fullUpdateComment) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Update all fields of a comment
+*bimdata.BcfApi* | [**fullUpdateFullTopic**](docs/BcfApi.md#fullUpdateFullTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update all fields of a topic
+*bimdata.BcfApi* | [**fullUpdateTopic**](docs/BcfApi.md#fullUpdateTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update all fields of a topic
+*bimdata.BcfApi* | [**fullUpdateViewpoint**](docs/BcfApi.md#fullUpdateViewpoint) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Update all fields of a Viewpoint
+*bimdata.BcfApi* | [**getBcfProject**](docs/BcfApi.md#getBcfProject) | **GET** /bcf/2.1/projects/{id} | Retrieve a BCF project
+*bimdata.BcfApi* | [**getBcfProjects**](docs/BcfApi.md#getBcfProjects) | **GET** /bcf/2.1/projects | Retrieve all BCF projects
+*bimdata.BcfApi* | [**getColorings**](docs/BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring | Retrieve all colorings of a viewpoint
+*bimdata.BcfApi* | [**getComment**](docs/BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Retrieve a comment
+*bimdata.BcfApi* | [**getComments**](docs/BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | Retrieve all comments
+*bimdata.BcfApi* | [**getExtensions**](docs/BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{projects_pk}/extensions | Retrieve project extensions
+*bimdata.BcfApi* | [**getFullTopic**](docs/BcfApi.md#getFullTopic) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Retrieve a full topic
+*bimdata.BcfApi* | [**getFullTopics**](docs/BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | Retrieve all full topics
+*bimdata.BcfApi* | [**getSelections**](docs/BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection | Retrieve all selections of a viewpoint
+*bimdata.BcfApi* | [**getSnapshot**](docs/BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot | Retrieve the viewpoint&#39; snapshot
+*bimdata.BcfApi* | [**getTopic**](docs/BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Retrieve a topic
+*bimdata.BcfApi* | [**getTopicViewpoints**](docs/BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/topic-viewpoints | Retrieve all viewpoints attached to the topic
+*bimdata.BcfApi* | [**getTopics**](docs/BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | Retrieve all topics
+*bimdata.BcfApi* | [**getUser**](docs/BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | Get current user info
+*bimdata.BcfApi* | [**getViewpoint**](docs/BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Retrieve a Viewpoint
+*bimdata.BcfApi* | [**getViewpoints**](docs/BcfApi.md#getViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints | Retrieve all Viewpoints of a topic
+*bimdata.BcfApi* | [**getVisibilities**](docs/BcfApi.md#getVisibilities) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility | Retrieve all visibilities of a viewpoint
+*bimdata.BcfApi* | [**updateBcfProject**](docs/BcfApi.md#updateBcfProject) | **PATCH** /bcf/2.1/projects/{id} | Update some fields of a BCF project
+*bimdata.BcfApi* | [**updateComment**](docs/BcfApi.md#updateComment) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Update some fields of a comment
+*bimdata.BcfApi* | [**updateExtensions**](docs/BcfApi.md#updateExtensions) | **PATCH** /bcf/2.1/projects/{projects_pk}/extensions | Update project extensions
+*bimdata.BcfApi* | [**updateFullTopic**](docs/BcfApi.md#updateFullTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update some fields of a topic
+*bimdata.BcfApi* | [**updateTopic**](docs/BcfApi.md#updateTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update some fields of a topic
+*bimdata.BcfApi* | [**updateViewpoint**](docs/BcfApi.md#updateViewpoint) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Update some fields of a Viewpoint
+*bimdata.CheckplanApi* | [**createChecker**](docs/CheckplanApi.md#createChecker) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker | Create a checker to a model
+*bimdata.CheckplanApi* | [**createCheckerResult**](docs/CheckplanApi.md#createCheckerResult) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result | Create a CheckerResult
+*bimdata.CheckplanApi* | [**createCheckplan**](docs/CheckplanApi.md#createCheckplan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan | Create a Checkplan
+*bimdata.CheckplanApi* | [**createRule**](docs/CheckplanApi.md#createRule) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule | Create a Rule
+*bimdata.CheckplanApi* | [**createRuleComponent**](docs/CheckplanApi.md#createRuleComponent) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent | Create a RuleComponent
+*bimdata.CheckplanApi* | [**createRuleset**](docs/CheckplanApi.md#createRuleset) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset | Create a Ruleset
+*bimdata.CheckplanApi* | [**deleteChecker**](docs/CheckplanApi.md#deleteChecker) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | Delete a checker of a model
+*bimdata.CheckplanApi* | [**deleteCheckerResult**](docs/CheckplanApi.md#deleteCheckerResult) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | Delete a CheckerResult
+*bimdata.CheckplanApi* | [**deleteCheckplan**](docs/CheckplanApi.md#deleteCheckplan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | Delete a Checkplan
+*bimdata.CheckplanApi* | [**deleteRule**](docs/CheckplanApi.md#deleteRule) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | Delete a Rule
+*bimdata.CheckplanApi* | [**deleteRuleComponent**](docs/CheckplanApi.md#deleteRuleComponent) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Delete a RuleComponent
+*bimdata.CheckplanApi* | [**deleteRuleset**](docs/CheckplanApi.md#deleteRuleset) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Delete a Ruleset
+*bimdata.CheckplanApi* | [**fullUpdateChecker**](docs/CheckplanApi.md#fullUpdateChecker) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | Update all fields of a checker of a model
+*bimdata.CheckplanApi* | [**fullUpdateCheckerResult**](docs/CheckplanApi.md#fullUpdateCheckerResult) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | Update all fields of a CheckerResult
+*bimdata.CheckplanApi* | [**fullUpdateCheckplan**](docs/CheckplanApi.md#fullUpdateCheckplan) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | Update all fields of a Checkplan
+*bimdata.CheckplanApi* | [**fullUpdateRule**](docs/CheckplanApi.md#fullUpdateRule) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | Update all fields of a Rule
+*bimdata.CheckplanApi* | [**fullUpdateRuleComponent**](docs/CheckplanApi.md#fullUpdateRuleComponent) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Update all fields of a RuleComponent
+*bimdata.CheckplanApi* | [**fullUpdateRuleset**](docs/CheckplanApi.md#fullUpdateRuleset) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Update all fields of a Ruleset
+*bimdata.CheckplanApi* | [**getChecker**](docs/CheckplanApi.md#getChecker) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | Retrieve a checker of a model
+*bimdata.CheckplanApi* | [**getCheckerResult**](docs/CheckplanApi.md#getCheckerResult) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | Retrieve one CheckerResult
+*bimdata.CheckplanApi* | [**getCheckerResults**](docs/CheckplanApi.md#getCheckerResults) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result | Retrieve all CheckerResults
+*bimdata.CheckplanApi* | [**getCheckers**](docs/CheckplanApi.md#getCheckers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker | Retrieve all checkers of a model
+*bimdata.CheckplanApi* | [**getCheckplan**](docs/CheckplanApi.md#getCheckplan) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | Retrieve one Checkplan
+*bimdata.CheckplanApi* | [**getCheckplans**](docs/CheckplanApi.md#getCheckplans) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan | Retrieve all Checkplans
+*bimdata.CheckplanApi* | [**getRule**](docs/CheckplanApi.md#getRule) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | Retrieve one Rule
+*bimdata.CheckplanApi* | [**getRuleComponent**](docs/CheckplanApi.md#getRuleComponent) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Retrieve one RuleComponent
+*bimdata.CheckplanApi* | [**getRuleComponents**](docs/CheckplanApi.md#getRuleComponents) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent | Retrieve all RuleComponents
+*bimdata.CheckplanApi* | [**getRules**](docs/CheckplanApi.md#getRules) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule | Retrieve all Rules
+*bimdata.CheckplanApi* | [**getRuleset**](docs/CheckplanApi.md#getRuleset) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Retrieve one Ruleset
+*bimdata.CheckplanApi* | [**getRulesets**](docs/CheckplanApi.md#getRulesets) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset | Retrieve all Rulesets
+*bimdata.CheckplanApi* | [**launchNewCheck**](docs/CheckplanApi.md#launchNewCheck) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}/launch-check | Launch a new check on the model
+*bimdata.CheckplanApi* | [**updateChecker**](docs/CheckplanApi.md#updateChecker) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | Update some fields of a checker of a model
+*bimdata.CheckplanApi* | [**updateCheckerResult**](docs/CheckplanApi.md#updateCheckerResult) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | Update some fields of a CheckerResult
+*bimdata.CheckplanApi* | [**updateCheckplan**](docs/CheckplanApi.md#updateCheckplan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | Update some fields of a Checkplan
+*bimdata.CheckplanApi* | [**updateRule**](docs/CheckplanApi.md#updateRule) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | Update some fields of a Rule
+*bimdata.CheckplanApi* | [**updateRuleComponent**](docs/CheckplanApi.md#updateRuleComponent) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Update some fields of a RuleComponent
+*bimdata.CheckplanApi* | [**updateRuleset**](docs/CheckplanApi.md#updateRuleset) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Update some fields of a Ruleset
+*bimdata.CloudApi* | [**cancelCloudUserInvitation**](docs/CloudApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | Cancel a pending invitation
+*bimdata.CloudApi* | [**createCloud**](docs/CloudApi.md#createCloud) | **POST** /cloud | Create a cloud
+*bimdata.CloudApi* | [**createDemo**](docs/CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | Create a Demo project in a cloud
+*bimdata.CloudApi* | [**deleteCloud**](docs/CloudApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
+*bimdata.CloudApi* | [**deleteCloudUser**](docs/CloudApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | Remove a user from a cloud
+*bimdata.CloudApi* | [**fullUpdateCloud**](docs/CloudApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | Update all fields of a cloud
+*bimdata.CloudApi* | [**fullUpdateCloudUser**](docs/CloudApi.md#fullUpdateCloudUser) | **PUT** /cloud/{cloud_pk}/user/{id} | Update all fields of a cloud user
+*bimdata.CloudApi* | [**getCloud**](docs/CloudApi.md#getCloud) | **GET** /cloud/{id} | Retrieve one cloud
+*bimdata.CloudApi* | [**getCloudInvitations**](docs/CloudApi.md#getCloudInvitations) | **GET** /cloud/{cloud_pk}/invitation | Retrieve all pending invitations in the cloud
+*bimdata.CloudApi* | [**getCloudSize**](docs/CloudApi.md#getCloudSize) | **GET** /cloud/{id}/size | Get size of all files in the cloud
+*bimdata.CloudApi* | [**getCloudUser**](docs/CloudApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | Retrieve a user in a cloud
+*bimdata.CloudApi* | [**getCloudUsers**](docs/CloudApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | Retrieve all users in a cloud
+*bimdata.CloudApi* | [**getClouds**](docs/CloudApi.md#getClouds) | **GET** /cloud | Retrieve all clouds
+*bimdata.CloudApi* | [**inviteCloudUser**](docs/CloudApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | Invite a cloud administrator
+*bimdata.CloudApi* | [**updateCloud**](docs/CloudApi.md#updateCloud) | **PATCH** /cloud/{id} | Update some fields of a cloud
+*bimdata.CloudApi* | [**updateCloudUser**](docs/CloudApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | Update some fields of a cloud user
+*bimdata.IfcApi* | [**bulkDeleteIfcClassifications**](docs/IfcApi.md#bulkDeleteIfcClassifications) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/list_destroy | Remove all classifications from model&#39;s elements
+*bimdata.IfcApi* | [**bulkDeleteIfcProperties**](docs/IfcApi.md#bulkDeleteIfcProperties) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_destroy | Delete many Property of a model
+*bimdata.IfcApi* | [**bulkDeleteIfcPropertyDefinitions**](docs/IfcApi.md#bulkDeleteIfcPropertyDefinitions) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/bulk_destroy | Delete many PropertyDefinitions of a model
+*bimdata.IfcApi* | [**bulkDeleteIfcUnits**](docs/IfcApi.md#bulkDeleteIfcUnits) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/bulk_destroy | Delete many Units of a model
+*bimdata.IfcApi* | [**bulkDeletePropertySet**](docs/IfcApi.md#bulkDeletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/bulk_destroy | Delete many PropertySet of a model
+*bimdata.IfcApi* | [**bulkFullUpdateElements**](docs/IfcApi.md#bulkFullUpdateElements) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update | Update many elements at once (only changing fields may be defined)
+*bimdata.IfcApi* | [**bulkFullUpdateIfcProperty**](docs/IfcApi.md#bulkFullUpdateIfcProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update | Update some fields of many properties of a model
+*bimdata.IfcApi* | [**bulkRemoveClassificationsOfElement**](docs/IfcApi.md#bulkRemoveClassificationsOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/bulk_destroy | Remove many classifications from an element
+*bimdata.IfcApi* | [**bulkRemoveElementsFromClassification**](docs/IfcApi.md#bulkRemoveElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/bulk_destroy | Remove the classifications from all elements
+*bimdata.IfcApi* | [**bulkUpdateElements**](docs/IfcApi.md#bulkUpdateElements) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update | Update many elements at once (all field must be defined)
+*bimdata.IfcApi* | [**bulkUpdateIfcProperty**](docs/IfcApi.md#bulkUpdateIfcProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update | Update all fields of many properties of a model
+*bimdata.IfcApi* | [**createClassificationElementRelations**](docs/IfcApi.md#createClassificationElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | Create association between existing classification and existing element
+*bimdata.IfcApi* | [**createClassificationsOfElement**](docs/IfcApi.md#createClassificationsOfElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Create one or many classifications to an element
+*bimdata.IfcApi* | [**createElement**](docs/IfcApi.md#createElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element | Create an element in the model
+*bimdata.IfcApi* | [**createElementPropertySet**](docs/IfcApi.md#createElementPropertySet) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset | Create a PropertySets to an element
+*bimdata.IfcApi* | [**createElementPropertySetProperty**](docs/IfcApi.md#createElementPropertySetProperty) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property | Create a property to a PropertySet
+*bimdata.IfcApi* | [**createElementPropertySetPropertyDefinition**](docs/IfcApi.md#createElementPropertySetPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition | Create a Definition to a Property
+*bimdata.IfcApi* | [**createElementPropertySetPropertyDefinitionUnit**](docs/IfcApi.md#createElementPropertySetPropertyDefinitionUnit) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit | Create a Unit to a Definition
+*bimdata.IfcApi* | [**createIfcPropertyDefinition**](docs/IfcApi.md#createIfcPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition | Create a PropertyDefinition on the model
+*bimdata.IfcApi* | [**createIfcUnit**](docs/IfcApi.md#createIfcUnit) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit | Create a Unit on a model
+*bimdata.IfcApi* | [**createPropertySet**](docs/IfcApi.md#createPropertySet) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset | Create a PropertySet
+*bimdata.IfcApi* | [**createPropertySetElementRelations**](docs/IfcApi.md#createPropertySetElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset-element | Create association between PropertySet and element
+*bimdata.IfcApi* | [**createRawElements**](docs/IfcApi.md#createRawElements) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw | Create elements in an optimized format
+*bimdata.IfcApi* | [**createSpace**](docs/IfcApi.md#createSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space | Create a space in the model
+*bimdata.IfcApi* | [**createZone**](docs/IfcApi.md#createZone) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Create a zone in the model
+*bimdata.IfcApi* | [**createZoneSpace**](docs/IfcApi.md#createZoneSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Create a space in a zone
+*bimdata.IfcApi* | [**deleteElement**](docs/IfcApi.md#deleteElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Delete a zone of a model
+*bimdata.IfcApi* | [**deleteIfc**](docs/IfcApi.md#deleteIfc) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Delete a model
+*bimdata.IfcApi* | [**deleteIfcProperty**](docs/IfcApi.md#deleteIfcProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | Delete a Property of a model
+*bimdata.IfcApi* | [**deleteIfcPropertyDefinition**](docs/IfcApi.md#deleteIfcPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | Delete a PropertyDefinitions of a model
+*bimdata.IfcApi* | [**deleteIfcUnit**](docs/IfcApi.md#deleteIfcUnit) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | Delete a Unit of a model
+*bimdata.IfcApi* | [**deletePropertySet**](docs/IfcApi.md#deletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Delete a PropertySet of a model
+*bimdata.IfcApi* | [**deleteSpace**](docs/IfcApi.md#deleteSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Delete a space
+*bimdata.IfcApi* | [**deleteZone**](docs/IfcApi.md#deleteZone) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Delete a zone of a model
+*bimdata.IfcApi* | [**deleteZoneSpace**](docs/IfcApi.md#deleteZoneSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Delete a space of a zone
+*bimdata.IfcApi* | [**fullUpdateElement**](docs/IfcApi.md#fullUpdateElement) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update all fields of an element
+*bimdata.IfcApi* | [**fullUpdateIfc**](docs/IfcApi.md#fullUpdateIfc) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Update all fields of a model
+*bimdata.IfcApi* | [**fullUpdateIfcProperty**](docs/IfcApi.md#fullUpdateIfcProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | Update some fields of a Property
+*bimdata.IfcApi* | [**fullUpdateIfcPropertyDefinition**](docs/IfcApi.md#fullUpdateIfcPropertyDefinition) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | Update all fields of many PropertyDefinitions of a model
+*bimdata.IfcApi* | [**fullUpdateIfcUnit**](docs/IfcApi.md#fullUpdateIfcUnit) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | Update all fields of a Unit of a model
+*bimdata.IfcApi* | [**fullUpdatePropertySet**](docs/IfcApi.md#fullUpdatePropertySet) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Update all fields of a PropertySet
+*bimdata.IfcApi* | [**fullUpdateSpace**](docs/IfcApi.md#fullUpdateSpace) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Update all fields of a space
+*bimdata.IfcApi* | [**fullUpdateZone**](docs/IfcApi.md#fullUpdateZone) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Update all fields of a zone
+*bimdata.IfcApi* | [**fullUpdateZoneSpace**](docs/IfcApi.md#fullUpdateZoneSpace) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Update all fields of a space
+*bimdata.IfcApi* | [**getClassificationsOfElement**](docs/IfcApi.md#getClassificationsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Retrieve all classifications of an element
+*bimdata.IfcApi* | [**getElement**](docs/IfcApi.md#getElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Retrieve an element of a model
+*bimdata.IfcApi* | [**getElementPropertySet**](docs/IfcApi.md#getElementPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | Retrieve a PropertySet of an element
+*bimdata.IfcApi* | [**getElementPropertySetProperties**](docs/IfcApi.md#getElementPropertySetProperties) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property | Retrieve all Properties of a PropertySet
+*bimdata.IfcApi* | [**getElementPropertySetProperty**](docs/IfcApi.md#getElementPropertySetProperty) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Retrieve a Property of a PropertySet
+*bimdata.IfcApi* | [**getElementPropertySetPropertyDefinition**](docs/IfcApi.md#getElementPropertySetPropertyDefinition) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id} | Retrieve a Definition of a Property
+*bimdata.IfcApi* | [**getElementPropertySetPropertyDefinitionUnit**](docs/IfcApi.md#getElementPropertySetPropertyDefinitionUnit) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit/{id} | Retrieve a Unit of a Definition
+*bimdata.IfcApi* | [**getElementPropertySetPropertyDefinitionUnits**](docs/IfcApi.md#getElementPropertySetPropertyDefinitionUnits) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit | Retrieve all Units of a Definition
+*bimdata.IfcApi* | [**getElementPropertySetPropertyDefinitions**](docs/IfcApi.md#getElementPropertySetPropertyDefinitions) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition | Retrieve all Definitions of a PropertySet
+*bimdata.IfcApi* | [**getElementPropertySets**](docs/IfcApi.md#getElementPropertySets) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset | Retrieve all PropertySets of an element
+*bimdata.IfcApi* | [**getElements**](docs/IfcApi.md#getElements) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element | Retrieve all elements of a model
+*bimdata.IfcApi* | [**getElementsFromClassification**](docs/IfcApi.md#getElementsFromClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element | Retrieve all elements with the classification
+*bimdata.IfcApi* | [**getIfc**](docs/IfcApi.md#getIfc) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Retrieve one model
+*bimdata.IfcApi* | [**getIfcBVH**](docs/IfcApi.md#getIfcBVH) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/map | Get svg file
+*bimdata.IfcApi* | [**getIfcClassifications**](docs/IfcApi.md#getIfcClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification | Retrieve all classifications in a model
+*bimdata.IfcApi* | [**getIfcGLTF**](docs/IfcApi.md#getIfcGLTF) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/gltf | Get gltf file
+*bimdata.IfcApi* | [**getIfcMap**](docs/IfcApi.md#getIfcMap) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/bvh | Get bvh file
+*bimdata.IfcApi* | [**getIfcProperties**](docs/IfcApi.md#getIfcProperties) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property | Retrieve all Properties of a model
+*bimdata.IfcApi* | [**getIfcProperty**](docs/IfcApi.md#getIfcProperty) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | Retrieve a Property of a model
+*bimdata.IfcApi* | [**getIfcPropertyDefinition**](docs/IfcApi.md#getIfcPropertyDefinition) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | Retrieve a PropertyDefinition of a model
+*bimdata.IfcApi* | [**getIfcPropertyDefinitions**](docs/IfcApi.md#getIfcPropertyDefinitions) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition | Retrieve all PropertyDefinitions of a model
+*bimdata.IfcApi* | [**getIfcStructure**](docs/IfcApi.md#getIfcStructure) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/structure | Get structure file
+*bimdata.IfcApi* | [**getIfcSystems**](docs/IfcApi.md#getIfcSystems) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/systems | Get systems file
+*bimdata.IfcApi* | [**getIfcUnit**](docs/IfcApi.md#getIfcUnit) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | Retrieve a Unit of a model
+*bimdata.IfcApi* | [**getIfcUnits**](docs/IfcApi.md#getIfcUnits) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit | Retrieve all Units of a model
+*bimdata.IfcApi* | [**getIfcs**](docs/IfcApi.md#getIfcs) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc | Retrieve all models
+*bimdata.IfcApi* | [**getPropertySet**](docs/IfcApi.md#getPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Retrieve a PropertySet of a model
+*bimdata.IfcApi* | [**getPropertySets**](docs/IfcApi.md#getPropertySets) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset | Retrieve all PropertySets of a model
+*bimdata.IfcApi* | [**getRawElements**](docs/IfcApi.md#getRawElements) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw | Retrieve all elements in a optimized format
+*bimdata.IfcApi* | [**getSpace**](docs/IfcApi.md#getSpace) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Retrieve one space of the model
+*bimdata.IfcApi* | [**getSpaces**](docs/IfcApi.md#getSpaces) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space | Retrieve all spaces of the model
+*bimdata.IfcApi* | [**getZone**](docs/IfcApi.md#getZone) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Retrieve one zone of a model
+*bimdata.IfcApi* | [**getZoneSpace**](docs/IfcApi.md#getZoneSpace) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Retrieve one space of a zone
+*bimdata.IfcApi* | [**getZoneSpaces**](docs/IfcApi.md#getZoneSpaces) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Retrieve all spaces of a zone
+*bimdata.IfcApi* | [**getZones**](docs/IfcApi.md#getZones) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Retrieve all zones of a model
+*bimdata.IfcApi* | [**listClassificationElementRelations**](docs/IfcApi.md#listClassificationElementRelations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | List all associations between classifications and elements
+*bimdata.IfcApi* | [**removeClassificationOfElement**](docs/IfcApi.md#removeClassificationOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/{id} | Remove a classification from an element
+*bimdata.IfcApi* | [**removeElementPropertySet**](docs/IfcApi.md#removeElementPropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | Remove a PropertySet from an element
+*bimdata.IfcApi* | [**removeElementPropertySetProperty**](docs/IfcApi.md#removeElementPropertySetProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Remove a property from a PropertySet
+*bimdata.IfcApi* | [**removeElementPropertySetPropertyDefinition**](docs/IfcApi.md#removeElementPropertySetPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id} | Remove a Definition from a Property
+*bimdata.IfcApi* | [**removeElementPropertySetPropertyDefinitionUnit**](docs/IfcApi.md#removeElementPropertySetPropertyDefinitionUnit) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit/{id} | Remove a Unit from a Definition
+*bimdata.IfcApi* | [**removeElementsFromClassification**](docs/IfcApi.md#removeElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/{uuid} | Remove the classification from all elements
+*bimdata.IfcApi* | [**updateElement**](docs/IfcApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update some fields of a zone
+*bimdata.IfcApi* | [**updateIfc**](docs/IfcApi.md#updateIfc) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Update some fields of a model
+*bimdata.IfcApi* | [**updateIfcFiles**](docs/IfcApi.md#updateIfcFiles) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/files | Update models file (gltf, svg, structure, etc)
+*bimdata.IfcApi* | [**updateIfcProperty**](docs/IfcApi.md#updateIfcProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | Update some fields of a Property
+*bimdata.IfcApi* | [**updateIfcPropertyDefinition**](docs/IfcApi.md#updateIfcPropertyDefinition) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | Update some fields of many PropertyDefinitions of a model
+*bimdata.IfcApi* | [**updateIfcUnit**](docs/IfcApi.md#updateIfcUnit) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | Update some fields of a Unit of a model
+*bimdata.IfcApi* | [**updatePropertySet**](docs/IfcApi.md#updatePropertySet) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Update some fields of a PropertySet
+*bimdata.IfcApi* | [**updateSpace**](docs/IfcApi.md#updateSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Update some fields of a space
+*bimdata.IfcApi* | [**updateZone**](docs/IfcApi.md#updateZone) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Update some fields of a zone
+*bimdata.IfcApi* | [**updateZoneSpace**](docs/IfcApi.md#updateZoneSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Update some fields of a space
+*bimdata.ProjectApi* | [**cancelProjectUserInvitation**](docs/ProjectApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
+*bimdata.ProjectApi* | [**createClassification**](docs/ProjectApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | Create a classification
+*bimdata.ProjectApi* | [**createClassification_0**](docs/ProjectApi.md#createClassification_0) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | Create a classification
+*bimdata.ProjectApi* | [**createFolder**](docs/ProjectApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | Create a folder
+*bimdata.ProjectApi* | [**createProject**](docs/ProjectApi.md#createProject) | **POST** /cloud/{cloud_pk}/project | Create a project
+*bimdata.ProjectApi* | [**deleteClassification**](docs/ProjectApi.md#deleteClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Delete a classification
+*bimdata.ProjectApi* | [**deleteClassification_0**](docs/ProjectApi.md#deleteClassification_0) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Delete a classification
+*bimdata.ProjectApi* | [**deleteFolder**](docs/ProjectApi.md#deleteFolder) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Delete a folder
+*bimdata.ProjectApi* | [**deleteProject**](docs/ProjectApi.md#deleteProject) | **DELETE** /cloud/{cloud_pk}/project/{id} | Delete a project
+*bimdata.ProjectApi* | [**deleteProjectUser**](docs/ProjectApi.md#deleteProjectUser) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Remove a user from a project
+*bimdata.ProjectApi* | [**fullUpdateClassification**](docs/ProjectApi.md#fullUpdateClassification) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Update all fields of a classification
+*bimdata.ProjectApi* | [**fullUpdateClassification_0**](docs/ProjectApi.md#fullUpdateClassification_0) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update all fields of a classification
+*bimdata.ProjectApi* | [**fullUpdateFolder**](docs/ProjectApi.md#fullUpdateFolder) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update all fields of a folder
+*bimdata.ProjectApi* | [**fullUpdateProject**](docs/ProjectApi.md#fullUpdateProject) | **PUT** /cloud/{cloud_pk}/project/{id} | Update all fields of a project
+*bimdata.ProjectApi* | [**fullUpdateProjectUser**](docs/ProjectApi.md#fullUpdateProjectUser) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update all fields of a project user
+*bimdata.ProjectApi* | [**getClassification**](docs/ProjectApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Retrieve a classification
+*bimdata.ProjectApi* | [**getClassification_0**](docs/ProjectApi.md#getClassification_0) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Retrieve a classification
+*bimdata.ProjectApi* | [**getClassifications**](docs/ProjectApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
+*bimdata.ProjectApi* | [**getClassifications_0**](docs/ProjectApi.md#getClassifications_0) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document | Retrieve all classifications
+*bimdata.ProjectApi* | [**getFolder**](docs/ProjectApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Retrieve a folder
+*bimdata.ProjectApi* | [**getFolders**](docs/ProjectApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | Retrieve all folders
+*bimdata.ProjectApi* | [**getProject**](docs/ProjectApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | Retrieve a project
+*bimdata.ProjectApi* | [**getProjectInvitations**](docs/ProjectApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
+*bimdata.ProjectApi* | [**getProjectTree**](docs/ProjectApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | Retrieve the complete DMS tree
+*bimdata.ProjectApi* | [**getProjectUser**](docs/ProjectApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Retrieve a user in a project
+*bimdata.ProjectApi* | [**getProjectUsers**](docs/ProjectApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | Retrieve all users in a project
+*bimdata.ProjectApi* | [**getProjects**](docs/ProjectApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | Retrieve all projects
+*bimdata.ProjectApi* | [**inviteProjectUser**](docs/ProjectApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | Invite a project member
+*bimdata.ProjectApi* | [**updateClassification**](docs/ProjectApi.md#updateClassification) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Update some fields of a classification
+*bimdata.ProjectApi* | [**updateClassification_0**](docs/ProjectApi.md#updateClassification_0) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update some fields of a classification
+*bimdata.ProjectApi* | [**updateFolder**](docs/ProjectApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update some fields of a folder
+*bimdata.ProjectApi* | [**updateProject**](docs/ProjectApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
+*bimdata.ProjectApi* | [**updateProjectUser**](docs/ProjectApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update some fields of a project user
 *bimdata.UserApi* | [**getSelfUser**](docs/UserApi.md#getSelfUser) | **GET** /user | 
 *bimdata.UserApi* | [**updateSelfUser**](docs/UserApi.md#updateSelfUser) | **PATCH** /user | 
+*bimdata.UserApi* | [**userProjectsList**](docs/UserApi.md#userProjectsList) | **GET** /user/projects | 
 
 
 ## Documentation for Models
@@ -390,6 +374,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Extensions](docs/Extensions.md)
  - [bimdata.Feature](docs/Feature.md)
  - [bimdata.Folder](docs/Folder.md)
+ - [bimdata.FullTopic](docs/FullTopic.md)
  - [bimdata.Ifc](docs/Ifc.md)
  - [bimdata.IfcChecker](docs/IfcChecker.md)
  - [bimdata.IfcCheckerCheckplan](docs/IfcCheckerCheckplan.md)
@@ -419,7 +404,6 @@ Class | Method | HTTP request | Description
  - [bimdata.Ruleset](docs/Ruleset.md)
  - [bimdata.SelfBcfUser](docs/SelfBcfUser.md)
  - [bimdata.SelfUser](docs/SelfUser.md)
- - [bimdata.SingleJsonTopic](docs/SingleJsonTopic.md)
  - [bimdata.Snapshot](docs/Snapshot.md)
  - [bimdata.Space](docs/Space.md)
  - [bimdata.Stage](docs/Stage.md)

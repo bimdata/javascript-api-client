@@ -50,6 +50,8 @@
 
 
     /**
+     * Create a checker to a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -107,6 +109,8 @@
     }
 
     /**
+     * Create a checker to a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -122,6 +126,8 @@
 
 
     /**
+     * Create a CheckerResult
+     * TCreate a CheckerResult Required scopes: check:write
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
@@ -186,6 +192,8 @@
     }
 
     /**
+     * Create a CheckerResult
+     * TCreate a CheckerResult Required scopes: check:write
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
@@ -202,6 +210,8 @@
 
 
     /**
+     * Create a Checkplan
+     * TCreate a Checkplan Required scopes: check:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/CheckPlan} checkPlan 
@@ -252,6 +262,8 @@
     }
 
     /**
+     * Create a Checkplan
+     * TCreate a Checkplan Required scopes: check:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/CheckPlan} checkPlan 
@@ -266,6 +278,8 @@
 
 
     /**
+     * Create a Rule
+     * TCreate a Rule Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -330,6 +344,8 @@
     }
 
     /**
+     * Create a Rule
+     * TCreate a Rule Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -346,6 +362,8 @@
 
 
     /**
+     * Create a RuleComponent
+     * TCreate a RuleComponent Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -417,6 +435,8 @@
     }
 
     /**
+     * Create a RuleComponent
+     * TCreate a RuleComponent Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -434,6 +454,8 @@
 
 
     /**
+     * Create a Ruleset
+     * TCreate a Ruleset Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -491,6 +513,8 @@
     }
 
     /**
+     * Create a Ruleset
+     * TCreate a Ruleset Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -506,6 +530,8 @@
 
 
     /**
+     * Delete a checker of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
@@ -564,6 +590,8 @@
     }
 
     /**
+     * Delete a checker of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
@@ -579,6 +607,8 @@
 
 
     /**
+     * Delete a CheckerResult
+     * Delete a CheckerResult Required scopes: check:write
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
@@ -644,6 +674,8 @@
     }
 
     /**
+     * Delete a CheckerResult
+     * Delete a CheckerResult Required scopes: check:write
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
@@ -660,6 +692,8 @@
 
 
     /**
+     * Delete a Checkplan
+     * Delete a Checkplan Required scopes: check:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
@@ -711,6 +745,8 @@
     }
 
     /**
+     * Delete a Checkplan
+     * Delete a Checkplan Required scopes: check:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
@@ -725,6 +761,8 @@
 
 
     /**
+     * Delete a Rule
+     * Delete a Rule Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule.
@@ -790,6 +828,8 @@
     }
 
     /**
+     * Delete a Rule
+     * Delete a Rule Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule.
@@ -806,6 +846,8 @@
 
 
     /**
+     * Delete a RuleComponent
+     * Delete a RuleComponent Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule component.
@@ -878,6 +920,8 @@
     }
 
     /**
+     * Delete a RuleComponent
+     * Delete a RuleComponent Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule component.
@@ -895,6 +939,8 @@
 
 
     /**
+     * Delete a Ruleset
+     * Delete a Ruleset Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ruleset.
@@ -953,6 +999,8 @@
     }
 
     /**
+     * Delete a Ruleset
+     * Delete a Ruleset Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ruleset.
@@ -968,6 +1016,8 @@
 
 
     /**
+     * Update all fields of a checker of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
@@ -1032,6 +1082,8 @@
     }
 
     /**
+     * Update all fields of a checker of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
@@ -1048,6 +1100,8 @@
 
 
     /**
+     * Update all fields of a CheckerResult
+     * Update all fields of a CheckerResult Required scopes: check:write
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
@@ -1119,6 +1173,8 @@
     }
 
     /**
+     * Update all fields of a CheckerResult
+     * Update all fields of a CheckerResult Required scopes: check:write
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
@@ -1136,6 +1192,8 @@
 
 
     /**
+     * Update all fields of a Checkplan
+     * Update all fields of a Checkplan Required scopes: check:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
@@ -1193,6 +1251,8 @@
     }
 
     /**
+     * Update all fields of a Checkplan
+     * Update all fields of a Checkplan Required scopes: check:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
@@ -1208,6 +1268,8 @@
 
 
     /**
+     * Update all fields of a Rule
+     * Update all fields of a Rule Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule.
@@ -1279,6 +1341,8 @@
     }
 
     /**
+     * Update all fields of a Rule
+     * Update all fields of a Rule Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule.
@@ -1296,6 +1360,8 @@
 
 
     /**
+     * Update all fields of a RuleComponent
+     * Update all fields of a RuleComponent Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule component.
@@ -1374,6 +1440,8 @@
     }
 
     /**
+     * Update all fields of a RuleComponent
+     * Update all fields of a RuleComponent Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule component.
@@ -1392,6 +1460,8 @@
 
 
     /**
+     * Update all fields of a Ruleset
+     * Update all fields of a Ruleset Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ruleset.
@@ -1456,6 +1526,8 @@
     }
 
     /**
+     * Update all fields of a Ruleset
+     * Update all fields of a Ruleset Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ruleset.
@@ -1472,6 +1544,8 @@
 
 
     /**
+     * Retrieve a checker of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
@@ -1530,6 +1604,8 @@
     }
 
     /**
+     * Retrieve a checker of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
@@ -1545,6 +1621,8 @@
 
 
     /**
+     * Retrieve one CheckerResult
+     * Retrieve one CheckerResult Required scopes: check:read
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
@@ -1610,6 +1688,8 @@
     }
 
     /**
+     * Retrieve one CheckerResult
+     * Retrieve one CheckerResult Required scopes: check:read
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
@@ -1626,6 +1706,8 @@
 
 
     /**
+     * Retrieve all CheckerResults
+     * Retrieve all CheckerResults Required scopes: check:read
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
@@ -1684,6 +1766,8 @@
     }
 
     /**
+     * Retrieve all CheckerResults
+     * Retrieve all CheckerResults Required scopes: check:read
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
@@ -1699,6 +1783,8 @@
 
 
     /**
+     * Retrieve all checkers of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1750,6 +1836,8 @@
     }
 
     /**
+     * Retrieve all checkers of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1764,6 +1852,8 @@
 
 
     /**
+     * Retrieve one Checkplan
+     * Retrieve one Checkplan Required scopes: check:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
@@ -1815,6 +1905,8 @@
     }
 
     /**
+     * Retrieve one Checkplan
+     * Retrieve one Checkplan Required scopes: check:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
@@ -1829,6 +1921,8 @@
 
 
     /**
+     * Retrieve all Checkplans
+     * Retrieve all Checkplans Required scopes: check:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CheckPlan>} and HTTP response
@@ -1873,6 +1967,8 @@
     }
 
     /**
+     * Retrieve all Checkplans
+     * Retrieve all Checkplans Required scopes: check:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CheckPlan>}
@@ -1886,6 +1982,8 @@
 
 
     /**
+     * Retrieve one Rule
+     * Retrieve one Rule Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule.
@@ -1951,6 +2049,8 @@
     }
 
     /**
+     * Retrieve one Rule
+     * Retrieve one Rule Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule.
@@ -1967,6 +2067,8 @@
 
 
     /**
+     * Retrieve one RuleComponent
+     * Retrieve one RuleComponent Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule component.
@@ -2039,6 +2141,8 @@
     }
 
     /**
+     * Retrieve one RuleComponent
+     * Retrieve one RuleComponent Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule component.
@@ -2056,6 +2160,8 @@
 
 
     /**
+     * Retrieve all RuleComponents
+     * Retrieve all RuleComponents Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -2121,6 +2227,8 @@
     }
 
     /**
+     * Retrieve all RuleComponents
+     * Retrieve all RuleComponents Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -2137,6 +2245,8 @@
 
 
     /**
+     * Retrieve all Rules
+     * Retrieve all Rules Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -2195,6 +2305,8 @@
     }
 
     /**
+     * Retrieve all Rules
+     * Retrieve all Rules Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -2210,6 +2322,8 @@
 
 
     /**
+     * Retrieve one Ruleset
+     * Retrieve one Ruleset Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ruleset.
@@ -2268,6 +2382,8 @@
     }
 
     /**
+     * Retrieve one Ruleset
+     * Retrieve one Ruleset Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ruleset.
@@ -2283,6 +2399,8 @@
 
 
     /**
+     * Retrieve all Rulesets
+     * Retrieve all Rulesets Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -2334,6 +2452,8 @@
     }
 
     /**
+     * Retrieve all Rulesets
+     * Retrieve all Rulesets Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -2348,7 +2468,8 @@
 
 
     /**
-     * Starts a new check in the checker
+     * Launch a new check on the model
+     * Starts a new check in the checker Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
@@ -2413,7 +2534,8 @@
     }
 
     /**
-     * Starts a new check in the checker
+     * Launch a new check on the model
+     * Starts a new check in the checker Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
@@ -2430,6 +2552,8 @@
 
 
     /**
+     * Update some fields of a checker of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
@@ -2494,6 +2618,8 @@
     }
 
     /**
+     * Update some fields of a checker of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
@@ -2510,6 +2636,8 @@
 
 
     /**
+     * Update some fields of a CheckerResult
+     * Update some fields of a CheckerResult Required scopes: check:write
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
@@ -2581,6 +2709,8 @@
     }
 
     /**
+     * Update some fields of a CheckerResult
+     * Update some fields of a CheckerResult Required scopes: check:write
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
@@ -2598,6 +2728,8 @@
 
 
     /**
+     * Update some fields of a Checkplan
+     * Update some fields of a Checkplan Required scopes: check:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
@@ -2655,6 +2787,8 @@
     }
 
     /**
+     * Update some fields of a Checkplan
+     * Update some fields of a Checkplan Required scopes: check:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
@@ -2670,6 +2804,8 @@
 
 
     /**
+     * Update some fields of a Rule
+     * Update some fields of a Rule Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule.
@@ -2741,6 +2877,8 @@
     }
 
     /**
+     * Update some fields of a Rule
+     * Update some fields of a Rule Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule.
@@ -2758,6 +2896,8 @@
 
 
     /**
+     * Update some fields of a RuleComponent
+     * Update some fields of a RuleComponent Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule component.
@@ -2836,6 +2976,8 @@
     }
 
     /**
+     * Update some fields of a RuleComponent
+     * Update some fields of a RuleComponent Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this rule component.
@@ -2854,6 +2996,8 @@
 
 
     /**
+     * Update some fields of a Ruleset
+     * Update some fields of a Ruleset Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ruleset.
@@ -2918,6 +3062,8 @@
     }
 
     /**
+     * Update some fields of a Ruleset
+     * Update some fields of a Ruleset Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ruleset.

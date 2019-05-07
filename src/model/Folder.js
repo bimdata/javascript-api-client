@@ -43,7 +43,7 @@
    * Constructs a new <code>Folder</code>.
    * @alias module:model/Folder
    * @class
-   * @param name {String} 
+   * @param name {String} Name of the folder
    */
   var exports = function(name) {
     var _this = this;
@@ -103,14 +103,17 @@
    */
   exports.prototype['type'] = undefined;
   /**
+   * Name of the folder
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
+   * Creation date
    * @member {Date} created_at
    */
   exports.prototype['created_at'] = undefined;
   /**
+   * Date of the last update
    * @member {Date} updated_at
    */
   exports.prototype['updated_at'] = undefined;

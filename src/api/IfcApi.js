@@ -50,7 +50,8 @@
 
 
     /**
-     *              Delete relation between filtered classifications (eg. /classifications?name&#x3D;untec) and all ifc&#39;s elements.             No classification will be deleted on this endpoint, only the relation between ifc&#39;s elements and their classification.         
+     * Remove all classifications from model&#39;s elements
+     *              Delete relation between filtered classifications (eg. /classifications?name&#x3D;untec) and all ifc&#39;s elements.             No classification will be deleted on this endpoint, only the relation between ifc&#39;s elements and their classification.          Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -102,7 +103,8 @@
     }
 
     /**
-     *              Delete relation between filtered classifications (eg. /classifications?name&#x3D;untec) and all ifc&#39;s elements.             No classification will be deleted on this endpoint, only the relation between ifc&#39;s elements and their classification.         
+     * Remove all classifications from model&#39;s elements
+     *              Delete relation between filtered classifications (eg. /classifications?name&#x3D;untec) and all ifc&#39;s elements.             No classification will be deleted on this endpoint, only the relation between ifc&#39;s elements and their classification.          Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -117,7 +119,8 @@
 
 
     /**
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * Delete many Property of a model
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -169,7 +172,8 @@
     }
 
     /**
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * Delete many Property of a model
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -184,7 +188,8 @@
 
 
     /**
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * Delete many PropertyDefinitions of a model
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -236,7 +241,8 @@
     }
 
     /**
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * Delete many PropertyDefinitions of a model
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -251,7 +257,8 @@
 
 
     /**
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * Delete many Units of a model
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -303,7 +310,8 @@
     }
 
     /**
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * Delete many Units of a model
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -318,7 +326,8 @@
 
 
     /**
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * Delete many PropertySet of a model
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -370,7 +379,8 @@
     }
 
     /**
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * Delete many PropertySet of a model
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -385,7 +395,8 @@
 
 
     /**
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
+     * Update many elements at once (only changing fields may be defined)
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -443,7 +454,8 @@
     }
 
     /**
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
+     * Update many elements at once (only changing fields may be defined)
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -459,7 +471,8 @@
 
 
     /**
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
+     * Update some fields of many properties of a model
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -517,7 +530,8 @@
     }
 
     /**
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
+     * Update some fields of many properties of a model
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -533,7 +547,8 @@
 
 
     /**
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * Remove many classifications from an element
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -592,7 +607,8 @@
     }
 
     /**
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * Remove many classifications from an element
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -608,7 +624,8 @@
 
 
     /**
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * Remove the classifications from all elements
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
@@ -667,7 +684,8 @@
     }
 
     /**
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted     
+     * Remove the classifications from all elements
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
@@ -683,7 +701,8 @@
 
 
     /**
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
+     * Update many elements at once (all field must be defined)
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -741,7 +760,8 @@
     }
 
     /**
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
+     * Update many elements at once (all field must be defined)
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -757,7 +777,8 @@
 
 
     /**
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
+     * Update all fields of many properties of a model
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -815,7 +836,8 @@
     }
 
     /**
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors     
+     * Update all fields of many properties of a model
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -831,7 +853,8 @@
 
 
     /**
-     *              create association between existing classification and existing element         
+     * Create association between existing classification and existing element
+     * Create association between existing classification and existing element Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -889,7 +912,8 @@
     }
 
     /**
-     *              create association between existing classification and existing element         
+     * Create association between existing classification and existing element
+     * Create association between existing classification and existing element Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -905,7 +929,8 @@
 
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+     * Create one or many classifications to an element
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -970,7 +995,8 @@
     }
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated     
+     * Create one or many classifications to an element
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -987,7 +1013,8 @@
 
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
+     * Create an element in the model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1045,7 +1072,8 @@
     }
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
+     * Create an element in the model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1061,13 +1089,14 @@
 
 
     /**
-     *          Create an property_set that will be automatically linked to the element         
+     * Create a PropertySets to an element
+     * Create a PropertySets that will be automatically linked to the element Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertySet} propertySet 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertySet} and HTTP response
      */
     this.createElementPropertySetWithHttpInfo = function(cloudPk, elementUuid, ifcPk, projectPk, propertySet) {
       var postBody = propertySet;
@@ -1115,8 +1144,8 @@
 
       var authNames = ['Bearer'];
       var contentTypes = ['application/json'];
-      var accepts = [];
-      var returnType = null;
+      var accepts = ['application/json'];
+      var returnType = PropertySet;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset', 'POST',
@@ -1126,13 +1155,14 @@
     }
 
     /**
-     *          Create an property_set that will be automatically linked to the element         
+     * Create a PropertySets to an element
+     * Create a PropertySets that will be automatically linked to the element Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/PropertySet} propertySet 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertySet}
      */
     this.createElementPropertySet = function(cloudPk, elementUuid, ifcPk, projectPk, propertySet) {
       return this.createElementPropertySetWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertySet)
@@ -1143,6 +1173,8 @@
 
 
     /**
+     * Create a property to a PropertySet
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1214,6 +1246,8 @@
     }
 
     /**
+     * Create a property to a PropertySet
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1231,6 +1265,8 @@
 
 
     /**
+     * Create a Definition to a Property
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1309,6 +1345,8 @@
     }
 
     /**
+     * Create a Definition to a Property
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1327,6 +1365,8 @@
 
 
     /**
+     * Create a Unit to a Definition
+     * Create a Unit to a Definition Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1412,6 +1452,8 @@
     }
 
     /**
+     * Create a Unit to a Definition
+     * Create a Unit to a Definition Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1431,7 +1473,8 @@
 
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
+     * Create a PropertyDefinition on the model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1489,7 +1532,8 @@
     }
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
+     * Create a PropertyDefinition on the model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1505,7 +1549,8 @@
 
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
+     * Create a Unit on a model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1563,7 +1608,8 @@
     }
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
+     * Create a Unit on a model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1579,7 +1625,8 @@
 
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
+     * Create a PropertySet
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1637,7 +1684,8 @@
     }
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors              If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated         
+     * Create a PropertySet
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1653,7 +1701,8 @@
 
 
     /**
-     *              create association between existing classification and existing element         
+     * Create association between PropertySet and element
+     * Create association between existing PropertySet and existing element Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1711,7 +1760,8 @@
     }
 
     /**
-     *              create association between existing classification and existing element         
+     * Create association between PropertySet and element
+     * Create association between existing PropertySet and existing element Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1727,7 +1777,8 @@
 
 
     /**
-     *          You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination may be returned         
+     * Create elements in an optimized format
+     *          You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination may be returned          Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1785,7 +1836,8 @@
     }
 
     /**
-     *          You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination may be returned         
+     * Create elements in an optimized format
+     *          You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination may be returned          Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1801,7 +1853,8 @@
 
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
+     * Create a space in the model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1859,7 +1912,8 @@
     }
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
+     * Create a space in the model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1875,7 +1929,8 @@
 
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
+     * Create a zone in the model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1933,7 +1988,8 @@
     }
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors     
+     * Create a zone in the model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1949,6 +2005,8 @@
 
 
     /**
+     * Create a space in a zone
+     * The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -2013,6 +2071,8 @@
     }
 
     /**
+     * Create a space in a zone
+     * The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -2029,6 +2089,8 @@
 
 
     /**
+     * Delete a zone of a model
+     * The IFC file will not be updated. The remaining elements are available in API and will be available when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -2087,6 +2149,8 @@
     }
 
     /**
+     * Delete a zone of a model
+     * The IFC file will not be updated. The remaining elements are available in API and will be available when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -2102,7 +2166,8 @@
 
 
     /**
-     * Delete IFC. Will also delete all properties and generated files. If the IFC is heavy, it can take several seconds.
+     * Delete a model
+     * It will delete the related document too Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -2154,7 +2219,8 @@
     }
 
     /**
-     * Delete IFC. Will also delete all properties and generated files. If the IFC is heavy, it can take several seconds.
+     * Delete a model
+     * It will delete the related document too Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -2169,6 +2235,8 @@
 
 
     /**
+     * Delete a Property of a model
+     * Delete a Property of a model Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
@@ -2227,6 +2295,8 @@
     }
 
     /**
+     * Delete a Property of a model
+     * Delete a Property of a model Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
@@ -2242,6 +2312,8 @@
 
 
     /**
+     * Delete a PropertyDefinitions of a model
+     * Delete a PropertyDefinitions of a model Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
@@ -2300,6 +2372,8 @@
     }
 
     /**
+     * Delete a PropertyDefinitions of a model
+     * Delete a PropertyDefinitions of a model Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
@@ -2315,6 +2389,8 @@
 
 
     /**
+     * Delete a Unit of a model
+     * Delete a Unit of a model Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
@@ -2373,6 +2449,8 @@
     }
 
     /**
+     * Delete a Unit of a model
+     * Delete a Unit of a model Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
@@ -2388,6 +2466,8 @@
 
 
     /**
+     * Delete a PropertySet of a model
+     * Delete a PropertySet of a model Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
@@ -2446,6 +2526,8 @@
     }
 
     /**
+     * Delete a PropertySet of a model
+     * Delete a PropertySet of a model Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
@@ -2461,6 +2543,8 @@
 
 
     /**
+     * Delete a space
+     * It will not delete related zones. The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -2519,6 +2603,8 @@
     }
 
     /**
+     * Delete a space
+     * It will not delete related zones. The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -2534,6 +2620,8 @@
 
 
     /**
+     * Delete a zone of a model
+     * The IFC file will not be updated. The remaining zones are available in API and will be available when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
@@ -2592,6 +2680,8 @@
     }
 
     /**
+     * Delete a zone of a model
+     * The IFC file will not be updated. The remaining zones are available in API and will be available when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
@@ -2607,6 +2697,8 @@
 
 
     /**
+     * Delete a space of a zone
+     * The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -2672,6 +2764,8 @@
     }
 
     /**
+     * Delete a space of a zone
+     * The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -2688,6 +2782,8 @@
 
 
     /**
+     * Update all fields of an element
+     * Update all fields of a element. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -2752,6 +2848,8 @@
     }
 
     /**
+     * Update all fields of an element
+     * Update all fields of a element. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -2768,7 +2866,8 @@
 
 
     /**
-     * Update all IFC attributes
+     * Update all fields of a model
+     * Update all fields of a model Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -2826,7 +2925,8 @@
     }
 
     /**
-     * Update all IFC attributes
+     * Update all fields of a model
+     * Update all fields of a model Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -2842,6 +2942,8 @@
 
 
     /**
+     * Update some fields of a Property
+     * Update some fields of a Property Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
@@ -2906,6 +3008,8 @@
     }
 
     /**
+     * Update some fields of a Property
+     * Update some fields of a Property Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
@@ -2922,6 +3026,8 @@
 
 
     /**
+     * Update all fields of many PropertyDefinitions of a model
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
@@ -2986,6 +3092,8 @@
     }
 
     /**
+     * Update all fields of many PropertyDefinitions of a model
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
@@ -3002,6 +3110,8 @@
 
 
     /**
+     * Update all fields of a Unit of a model
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
@@ -3066,6 +3176,8 @@
     }
 
     /**
+     * Update all fields of a Unit of a model
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
@@ -3082,6 +3194,8 @@
 
 
     /**
+     * Update all fields of a PropertySet
+     * Update all fields of a PropertySet Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
@@ -3146,6 +3260,8 @@
     }
 
     /**
+     * Update all fields of a PropertySet
+     * Update all fields of a PropertySet Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
@@ -3162,6 +3278,8 @@
 
 
     /**
+     * Update all fields of a space
+     * Update all fields of a space. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -3226,6 +3344,8 @@
     }
 
     /**
+     * Update all fields of a space
+     * Update all fields of a space. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -3242,6 +3362,8 @@
 
 
     /**
+     * Update all fields of a zone
+     * Update all fields of a zone. The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
@@ -3306,6 +3428,8 @@
     }
 
     /**
+     * Update all fields of a zone
+     * Update all fields of a zone. The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
@@ -3322,6 +3446,8 @@
 
 
     /**
+     * Update all fields of a space
+     * Update all fields of a space. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -3393,6 +3519,8 @@
     }
 
     /**
+     * Update all fields of a space
+     * Update all fields of a space. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -3410,6 +3538,8 @@
 
 
     /**
+     * Retrieve all classifications of an element
+     * Retrieve all classifications of an element Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -3468,6 +3598,8 @@
     }
 
     /**
+     * Retrieve all classifications of an element
+     * Retrieve all classifications of an element Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -3483,6 +3615,8 @@
 
 
     /**
+     * Retrieve an element of a model
+     * Retrieve an element of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -3541,6 +3675,8 @@
     }
 
     /**
+     * Retrieve an element of a model
+     * Retrieve an element of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -3556,6 +3692,8 @@
 
 
     /**
+     * Retrieve a PropertySet of an element
+     * Retrieve a PropertySet of an element Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property set.
@@ -3621,6 +3759,8 @@
     }
 
     /**
+     * Retrieve a PropertySet of an element
+     * Retrieve a PropertySet of an element Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property set.
@@ -3637,6 +3777,8 @@
 
 
     /**
+     * Retrieve all Properties of a PropertySet
+     * Retrieve all Properties of a PropertySet Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -3702,6 +3844,8 @@
     }
 
     /**
+     * Retrieve all Properties of a PropertySet
+     * Retrieve all Properties of a PropertySet Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -3718,6 +3862,8 @@
 
 
     /**
+     * Retrieve a Property of a PropertySet
+     * Retrieve a Property of a PropertySet Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property.
@@ -3790,6 +3936,8 @@
     }
 
     /**
+     * Retrieve a Property of a PropertySet
+     * Retrieve a Property of a PropertySet Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property.
@@ -3807,6 +3955,8 @@
 
 
     /**
+     * Retrieve a Definition of a Property
+     * Retrieve a Definition of a Property Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property definition.
@@ -3886,6 +4036,8 @@
     }
 
     /**
+     * Retrieve a Definition of a Property
+     * Retrieve a Definition of a Property Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property definition.
@@ -3904,6 +4056,8 @@
 
 
     /**
+     * Retrieve a Unit of a Definition
+     * Retrieve a Unit of a Definition Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this unit.
@@ -3990,6 +4144,8 @@
     }
 
     /**
+     * Retrieve a Unit of a Definition
+     * Retrieve a Unit of a Definition Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this unit.
@@ -4009,6 +4165,8 @@
 
 
     /**
+     * Retrieve all Units of a Definition
+     * Retrieve all Units of a Definition Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4088,6 +4246,8 @@
     }
 
     /**
+     * Retrieve all Units of a Definition
+     * Retrieve all Units of a Definition Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4106,6 +4266,8 @@
 
 
     /**
+     * Retrieve all Definitions of a PropertySet
+     * Retrieve all Definitions of a PropertySet Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4178,6 +4340,8 @@
     }
 
     /**
+     * Retrieve all Definitions of a PropertySet
+     * Retrieve all Definitions of a PropertySet Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4195,6 +4359,8 @@
 
 
     /**
+     * Retrieve all PropertySets of an element
+     * Retrieve all PropertySets of an element Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4253,6 +4419,8 @@
     }
 
     /**
+     * Retrieve all PropertySets of an element
+     * Retrieve all PropertySets of an element Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4268,6 +4436,8 @@
 
 
     /**
+     * Retrieve all elements of a model
+     * Retrieve all elements of a model. If not filtered, the json may be very large. To efficently retrieve all elements and their data, see getRawElements Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4327,6 +4497,8 @@
     }
 
     /**
+     * Retrieve all elements of a model
+     * Retrieve all elements of a model. If not filtered, the json may be very large. To efficently retrieve all elements and their data, see getRawElements Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4345,6 +4517,8 @@
 
 
     /**
+     * Retrieve all elements with the classification
+     * Retrieve all elements with the classification Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
@@ -4403,6 +4577,8 @@
     }
 
     /**
+     * Retrieve all elements with the classification
+     * Retrieve all elements with the classification Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
@@ -4418,7 +4594,8 @@
 
 
     /**
-     * Get one IFC details
+     * Retrieve one model
+     *  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -4470,7 +4647,8 @@
     }
 
     /**
-     * Get one IFC details
+     * Retrieve one model
+     *  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -4485,7 +4663,8 @@
 
 
     /**
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the bvh file         
+     * Get svg file
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the map file          Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -4530,14 +4709,15 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/bvh', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/map', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the bvh file         
+     * Get svg file
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the map file          Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -4552,6 +4732,8 @@
 
 
     /**
+     * Retrieve all classifications in a model
+     * Retrieve all classifications in a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4603,6 +4785,8 @@
     }
 
     /**
+     * Retrieve all classifications in a model
+     * Retrieve all classifications in a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4617,7 +4801,8 @@
 
 
     /**
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the gltf file         
+     * Get gltf file
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the gltf file          Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -4669,7 +4854,8 @@
     }
 
     /**
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the gltf file         
+     * Get gltf file
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the gltf file          Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -4684,7 +4870,8 @@
 
 
     /**
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the map file         
+     * Get bvh file
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the bvh file          Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -4729,14 +4916,15 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/map', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/bvh', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the map file         
+     * Get bvh file
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the bvh file          Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -4751,6 +4939,8 @@
 
 
     /**
+     * Retrieve all Properties of a model
+     * Retrieve all PropertySets of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4802,6 +4992,8 @@
     }
 
     /**
+     * Retrieve all Properties of a model
+     * Retrieve all PropertySets of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4816,6 +5008,8 @@
 
 
     /**
+     * Retrieve a Property of a model
+     * Retrieve a Property of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
@@ -4874,6 +5068,8 @@
     }
 
     /**
+     * Retrieve a Property of a model
+     * Retrieve a Property of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
@@ -4889,6 +5085,8 @@
 
 
     /**
+     * Retrieve a PropertyDefinition of a model
+     * Retrieve a PropertyDefinition of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
@@ -4947,6 +5145,8 @@
     }
 
     /**
+     * Retrieve a PropertyDefinition of a model
+     * Retrieve a PropertyDefinition of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
@@ -4962,6 +5162,8 @@
 
 
     /**
+     * Retrieve all PropertyDefinitions of a model
+     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5013,6 +5215,8 @@
     }
 
     /**
+     * Retrieve all PropertyDefinitions of a model
+     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5027,7 +5231,8 @@
 
 
     /**
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the structure file         
+     * Get structure file
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the structure file          Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5079,7 +5284,8 @@
     }
 
     /**
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the structure file         
+     * Get structure file
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the structure file          Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5094,7 +5300,8 @@
 
 
     /**
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the system file         
+     * Get systems file
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the system file          Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5146,7 +5353,8 @@
     }
 
     /**
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the system file         
+     * Get systems file
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the system file          Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5161,6 +5369,8 @@
 
 
     /**
+     * Retrieve a Unit of a model
+     * Retrieve a Unit of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
@@ -5219,6 +5429,8 @@
     }
 
     /**
+     * Retrieve a Unit of a model
+     * Retrieve a Unit of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
@@ -5234,6 +5446,8 @@
 
 
     /**
+     * Retrieve all Units of a model
+     * Retrieve all Units of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5285,6 +5499,8 @@
     }
 
     /**
+     * Retrieve all Units of a model
+     * Retrieve all Units of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5299,7 +5515,8 @@
 
 
     /**
-     * Returns all IFCs of the project
+     * Retrieve all models
+     * Retrieve all models Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
@@ -5348,7 +5565,8 @@
     }
 
     /**
-     * Returns all IFCs of the project
+     * Retrieve all models
+     * Retrieve all models Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
@@ -5364,6 +5582,8 @@
 
 
     /**
+     * Retrieve a PropertySet of a model
+     * Retrieve a PropertySet of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
@@ -5422,6 +5642,8 @@
     }
 
     /**
+     * Retrieve a PropertySet of a model
+     * Retrieve a PropertySet of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
@@ -5437,6 +5659,8 @@
 
 
     /**
+     * Retrieve all PropertySets of a model
+     * Retrieve all PropertySets of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5488,6 +5712,8 @@
     }
 
     /**
+     * Retrieve all PropertySets of a model
+     * Retrieve all PropertySets of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5502,7 +5728,8 @@
 
 
     /**
-     *          Returns elements, property_sets, properties, definitions and units in a JSON optimized structure         
+     * Retrieve all elements in a optimized format
+     *          Returns elements, property_sets, properties, definitions and units in a JSON optimized structure          Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5562,7 +5789,8 @@
     }
 
     /**
-     *          Returns elements, property_sets, properties, definitions and units in a JSON optimized structure         
+     * Retrieve all elements in a optimized format
+     *          Returns elements, property_sets, properties, definitions and units in a JSON optimized structure          Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5581,6 +5809,8 @@
 
 
     /**
+     * Retrieve one space of the model
+     * Retrieve one space of the model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -5639,6 +5869,8 @@
     }
 
     /**
+     * Retrieve one space of the model
+     * Retrieve one space of the model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -5654,6 +5886,8 @@
 
 
     /**
+     * Retrieve all spaces of the model
+     * Retrieve all spaces of the model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5705,6 +5939,8 @@
     }
 
     /**
+     * Retrieve all spaces of the model
+     * Retrieve all spaces of the model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5719,6 +5955,8 @@
 
 
     /**
+     * Retrieve one zone of a model
+     * Retrieve one zone of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
@@ -5777,6 +6015,8 @@
     }
 
     /**
+     * Retrieve one zone of a model
+     * Retrieve one zone of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
@@ -5792,6 +6032,8 @@
 
 
     /**
+     * Retrieve one space of a zone
+     * Retrieve one space of a zone Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -5857,6 +6099,8 @@
     }
 
     /**
+     * Retrieve one space of a zone
+     * Retrieve one space of a zone Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -5873,6 +6117,8 @@
 
 
     /**
+     * Retrieve all spaces of a zone
+     * Retrieve all spaces of a zone Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5931,6 +6177,8 @@
     }
 
     /**
+     * Retrieve all spaces of a zone
+     * Retrieve all spaces of a zone Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5946,6 +6194,8 @@
 
 
     /**
+     * Retrieve all zones of a model
+     * Retrieve all zones of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6001,6 +6251,8 @@
     }
 
     /**
+     * Retrieve all zones of a model
+     * Retrieve all zones of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6017,7 +6269,8 @@
 
 
     /**
-     *              list association between classifications and elements         
+     * List all associations between classifications and elements
+     * List all associations between classifications and elements Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6069,7 +6322,8 @@
     }
 
     /**
-     *              list association between classifications and elements         
+     * List all associations between classifications and elements
+     * List all associations between classifications and elements Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6084,6 +6338,8 @@
 
 
     /**
+     * Remove a classification from an element
+     * The classification will not be deleted Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this classification.
@@ -6149,6 +6405,8 @@
     }
 
     /**
+     * Remove a classification from an element
+     * The classification will not be deleted Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this classification.
@@ -6165,7 +6423,8 @@
 
 
     /**
-     *          Delete the relation between the element and the property set. Does not delete any object         
+     * Remove a PropertySet from an element
+     * Delete the relation between the element and the property set. Does not delete any object Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property set.
@@ -6231,7 +6490,8 @@
     }
 
     /**
-     *          Delete the relation between the element and the property set. Does not delete any object         
+     * Remove a PropertySet from an element
+     * Delete the relation between the element and the property set. Does not delete any object Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property set.
@@ -6248,6 +6508,8 @@
 
 
     /**
+     * Remove a property from a PropertySet
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property.
@@ -6320,6 +6582,8 @@
     }
 
     /**
+     * Remove a property from a PropertySet
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property.
@@ -6337,6 +6601,8 @@
 
 
     /**
+     * Remove a Definition from a Property
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property definition.
@@ -6416,6 +6682,8 @@
     }
 
     /**
+     * Remove a Definition from a Property
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property definition.
@@ -6434,6 +6702,8 @@
 
 
     /**
+     * Remove a Unit from a Definition
+     * Remove a Unit from a Definition Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this unit.
@@ -6520,6 +6790,8 @@
     }
 
     /**
+     * Remove a Unit from a Definition
+     * Remove a Unit from a Definition Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this unit.
@@ -6539,6 +6811,8 @@
 
 
     /**
+     * Remove the classification from all elements
+     * Remove the classification from all elements. No element nor classification will be deleted Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
@@ -6604,6 +6878,8 @@
     }
 
     /**
+     * Remove the classification from all elements
+     * Remove the classification from all elements. No element nor classification will be deleted Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
@@ -6620,6 +6896,8 @@
 
 
     /**
+     * Update some fields of a zone
+     * Update some fields of a zone. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6684,6 +6962,8 @@
     }
 
     /**
+     * Update some fields of a zone
+     * Update some fields of a zone. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6700,7 +6980,8 @@
 
 
     /**
-     * Update some IFC attributes
+     * Update some fields of a model
+     * Update some fields of a model Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -6758,7 +7039,8 @@
     }
 
     /**
-     * Update some IFC attributes
+     * Update some fields of a model
+     * Update some fields of a model Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -6774,7 +7056,8 @@
 
 
     /**
-     *          Patch ifc files (gltf, structure, svg, etc)         
+     * Update models file (gltf, svg, structure, etc)
+     *          Patch ifc files (gltf, structure, svg, etc)          Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -6840,7 +7123,8 @@
     }
 
     /**
-     *          Patch ifc files (gltf, structure, svg, etc)         
+     * Update models file (gltf, svg, structure, etc)
+     *          Patch ifc files (gltf, structure, svg, etc)          Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -6862,6 +7146,8 @@
 
 
     /**
+     * Update some fields of a Property
+     * Update some fields of a Property Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
@@ -6926,6 +7212,8 @@
     }
 
     /**
+     * Update some fields of a Property
+     * Update some fields of a Property Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property.
      * @param {String} ifcPk 
@@ -6942,6 +7230,8 @@
 
 
     /**
+     * Update some fields of many PropertyDefinitions of a model
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
@@ -7006,6 +7296,8 @@
     }
 
     /**
+     * Update some fields of many PropertyDefinitions of a model
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property definition.
      * @param {String} ifcPk 
@@ -7022,6 +7314,8 @@
 
 
     /**
+     * Update some fields of a Unit of a model
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
@@ -7086,6 +7380,8 @@
     }
 
     /**
+     * Update some fields of a Unit of a model
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this unit.
      * @param {String} ifcPk 
@@ -7102,6 +7398,8 @@
 
 
     /**
+     * Update some fields of a PropertySet
+     * Update some fields of a PropertySet Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
@@ -7166,6 +7464,8 @@
     }
 
     /**
+     * Update some fields of a PropertySet
+     * Update some fields of a PropertySet Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
      * @param {String} ifcPk 
@@ -7182,6 +7482,8 @@
 
 
     /**
+     * Update some fields of a space
+     * Update some fields of a space. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -7246,6 +7548,8 @@
     }
 
     /**
+     * Update some fields of a space
+     * Update some fields of a space. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -7262,6 +7566,8 @@
 
 
     /**
+     * Update some fields of a zone
+     * Update some fields of a zone. The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
@@ -7326,6 +7632,8 @@
     }
 
     /**
+     * Update some fields of a zone
+     * Update some fields of a zone. The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
      * @param {String} ifcPk 
@@ -7342,6 +7650,8 @@
 
 
     /**
+     * Update some fields of a space
+     * Update some fields of a space. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 
@@ -7413,6 +7723,8 @@
     }
 
     /**
+     * Update some fields of a space
+     * Update some fields of a space. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
      * @param {String} ifcPk 

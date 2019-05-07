@@ -43,7 +43,7 @@
    * Constructs a new <code>Feature</code>.
    * @alias module:model/Feature
    * @class
-   * @param name {String} 
+   * @param name {String} Name of the feature
    */
   var exports = function(name) {
     var _this = this;
@@ -72,10 +72,12 @@
   }
 
   /**
+   * Name of the feature
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
+   * Viewer's url to load instead of standard's one
    * @member {String} viewer_url
    */
   exports.prototype['viewer_url'] = undefined;

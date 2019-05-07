@@ -50,6 +50,8 @@
 
 
     /**
+     * Cancel a pending invitation
+     *  Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this invitation.
      * @param {String} projectPk 
@@ -101,6 +103,8 @@
     }
 
     /**
+     * Cancel a pending invitation
+     *  Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this invitation.
      * @param {String} projectPk 
@@ -115,7 +119,8 @@
 
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive     
+     * Create a classification
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Array.<Classification>} classification 
@@ -166,7 +171,8 @@
     }
 
     /**
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive     
+     * Create a classification
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Array.<Classification>} classification 
@@ -181,37 +187,39 @@
 
 
     /**
+     * Create a classification
+     *  Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {String} name 
+     * @param {String} name Shown name of the file
      * @param {Object} opts Optional parameters
      * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
      * @param {Number} opts.project 
-     * @param {String} opts.fileName 
-     * @param {String} opts.description 
+     * @param {String} opts.fileName Full name of the file
+     * @param {String} opts.description Description of the file
      * @param {File} opts.file 
-     * @param {Number} opts.size 
+     * @param {Number} opts.size Size of the file. The file may be compressed and show a smaller size
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
-    this.createDocumentWithHttpInfo = function(cloudPk, projectPk, name, opts) {
+    this.createClassification_0WithHttpInfo = function(cloudPk, projectPk, name, opts) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createDocument");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createClassification_0");
       }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createDocument");
+        throw new Error("Missing the required parameter 'projectPk' when calling createClassification_0");
       }
 
       // verify the required parameter 'name' is set
       if (name === undefined || name === null) {
-        throw new Error("Missing the required parameter 'name' when calling createDocument");
+        throw new Error("Missing the required parameter 'name' when calling createClassification_0");
       }
 
 
@@ -250,22 +258,24 @@
     }
 
     /**
+     * Create a classification
+     *  Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {String} name 
+     * @param {String} name Shown name of the file
      * @param {Object} opts Optional parameters
      * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
      * @param {Number} opts.project 
-     * @param {String} opts.fileName 
-     * @param {String} opts.description 
+     * @param {String} opts.fileName Full name of the file
+     * @param {String} opts.description Description of the file
      * @param {File} opts.file 
-     * @param {Number} opts.size 
+     * @param {Number} opts.size Size of the file. The file may be compressed and show a smaller size
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
-    this.createDocument = function(cloudPk, projectPk, name, opts) {
-      return this.createDocumentWithHttpInfo(cloudPk, projectPk, name, opts)
+    this.createClassification_0 = function(cloudPk, projectPk, name, opts) {
+      return this.createClassification_0WithHttpInfo(cloudPk, projectPk, name, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -273,6 +283,8 @@
 
 
     /**
+     * Create a folder
+     * If the created folder have no parent, it will be put as a child of the default root folder of the project Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/Folder} folder 
@@ -323,6 +335,8 @@
     }
 
     /**
+     * Create a folder
+     * If the created folder have no parent, it will be put as a child of the default root folder of the project Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/Folder} folder 
@@ -337,6 +351,8 @@
 
 
     /**
+     * Create a project
+     * Create a project Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {module:model/Project} project 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
@@ -380,6 +396,8 @@
     }
 
     /**
+     * Create a project
+     * Create a project Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {module:model/Project} project 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
@@ -393,6 +411,8 @@
 
 
     /**
+     * Delete a classification
+     * All elements having this classification will lose it Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -444,6 +464,8 @@
     }
 
     /**
+     * Delete a classification
+     * All elements having this classification will lose it Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -458,27 +480,29 @@
 
 
     /**
+     * Delete a classification
+     * All elements having this classification will lose it Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteDocumentWithHttpInfo = function(cloudPk, id, projectPk) {
+    this.deleteClassification_0WithHttpInfo = function(cloudPk, id, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteDocument");
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteClassification_0");
       }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteDocument");
+        throw new Error("Missing the required parameter 'id' when calling deleteClassification_0");
       }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteDocument");
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteClassification_0");
       }
 
 
@@ -498,8 +522,8 @@
 
       var authNames = ['Bearer'];
       var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Document;
+      var accepts = [];
+      var returnType = null;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'DELETE',
@@ -509,13 +533,15 @@
     }
 
     /**
+     * Delete a classification
+     * All elements having this classification will lose it Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteDocument = function(cloudPk, id, projectPk) {
-      return this.deleteDocumentWithHttpInfo(cloudPk, id, projectPk)
+    this.deleteClassification_0 = function(cloudPk, id, projectPk) {
+      return this.deleteClassification_0WithHttpInfo(cloudPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -523,6 +549,8 @@
 
 
     /**
+     * Delete a folder
+     * All files and subfolders will be deleted too Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
@@ -574,6 +602,8 @@
     }
 
     /**
+     * Delete a folder
+     * All files and subfolders will be deleted too Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
@@ -588,6 +618,8 @@
 
 
     /**
+     * Delete a project
+     * It can take a long time to respond because we may need to delete all properties of all elements of all models in the project Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -632,6 +664,8 @@
     }
 
     /**
+     * Delete a project
+     * It can take a long time to respond because we may need to delete all properties of all elements of all models in the project Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -645,6 +679,8 @@
 
 
     /**
+     * Remove a user from a project
+     * Remove a user from a project Required scopes: cloud:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
@@ -696,6 +732,8 @@
     }
 
     /**
+     * Remove a user from a project
+     * Remove a user from a project Required scopes: cloud:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
@@ -710,6 +748,8 @@
 
 
     /**
+     * Update all fields of a classification
+     * Update all fields of a classification Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -767,6 +807,8 @@
     }
 
     /**
+     * Update all fields of a classification
+     * Update all fields of a classification Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -782,43 +824,45 @@
 
 
     /**
+     * Update all fields of a classification
+     * Update all fields of a classification Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
-     * @param {String} name 
+     * @param {String} name Shown name of the file
      * @param {Object} opts Optional parameters
      * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
      * @param {Number} opts.project 
-     * @param {String} opts.fileName 
-     * @param {String} opts.description 
+     * @param {String} opts.fileName Full name of the file
+     * @param {String} opts.description Description of the file
      * @param {File} opts.file 
-     * @param {Number} opts.size 
+     * @param {Number} opts.size Size of the file. The file may be compressed and show a smaller size
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
-    this.fullUpdateDocumentWithHttpInfo = function(cloudPk, id, projectPk, name, opts) {
+    this.fullUpdateClassification_0WithHttpInfo = function(cloudPk, id, projectPk, name, opts) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateDocument");
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateClassification_0");
       }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateDocument");
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateClassification_0");
       }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateDocument");
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateClassification_0");
       }
 
       // verify the required parameter 'name' is set
       if (name === undefined || name === null) {
-        throw new Error("Missing the required parameter 'name' when calling fullUpdateDocument");
+        throw new Error("Missing the required parameter 'name' when calling fullUpdateClassification_0");
       }
 
 
@@ -858,23 +902,25 @@
     }
 
     /**
+     * Update all fields of a classification
+     * Update all fields of a classification Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
-     * @param {String} name 
+     * @param {String} name Shown name of the file
      * @param {Object} opts Optional parameters
      * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
      * @param {Number} opts.project 
-     * @param {String} opts.fileName 
-     * @param {String} opts.description 
+     * @param {String} opts.fileName Full name of the file
+     * @param {String} opts.description Description of the file
      * @param {File} opts.file 
-     * @param {Number} opts.size 
+     * @param {Number} opts.size Size of the file. The file may be compressed and show a smaller size
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
-    this.fullUpdateDocument = function(cloudPk, id, projectPk, name, opts) {
-      return this.fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, name, opts)
+    this.fullUpdateClassification_0 = function(cloudPk, id, projectPk, name, opts) {
+      return this.fullUpdateClassification_0WithHttpInfo(cloudPk, id, projectPk, name, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -882,6 +928,8 @@
 
 
     /**
+     * Update all fields of a folder
+     * Update all fields of a folder Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
@@ -939,6 +987,8 @@
     }
 
     /**
+     * Update all fields of a folder
+     * Update all fields of a folder Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
@@ -954,6 +1004,8 @@
 
 
     /**
+     * Update all fields of a project
+     * Update all fields of a project Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/Project} project 
@@ -1004,6 +1056,8 @@
     }
 
     /**
+     * Update all fields of a project
+     * Update all fields of a project Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/Project} project 
@@ -1018,7 +1072,8 @@
 
 
     /**
-     * Change the user role in the cloud
+     * Update all fields of a project user
+     * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
@@ -1076,7 +1131,8 @@
     }
 
     /**
-     * Change the user role in the cloud
+     * Update all fields of a project user
+     * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
@@ -1092,6 +1148,8 @@
 
 
     /**
+     * Retrieve a classification
+     * Retrieve a classification Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -1143,6 +1201,8 @@
     }
 
     /**
+     * Retrieve a classification
+     * Retrieve a classification Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -1157,6 +1217,77 @@
 
 
     /**
+     * Retrieve a classification
+     * Retrieve a classification Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
+     */
+    this.getClassification_0WithHttpInfo = function(cloudPk, id, projectPk) {
+      var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getClassification_0");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getClassification_0");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getClassification_0");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Document;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Retrieve a classification
+     * Retrieve a classification Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
+     */
+    this.getClassification_0 = function(cloudPk, id, projectPk) {
+      return this.getClassification_0WithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all classifications
+     * Retrieve all classifications of all models in the project Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
@@ -1201,6 +1332,8 @@
     }
 
     /**
+     * Retrieve all classifications
+     * Retrieve all classifications of all models in the project Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
@@ -1214,86 +1347,23 @@
 
 
     /**
+     * Retrieve all classifications
+     * Retrieve all classifications of all models in the project Required scopes: document:read
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
      */
-    this.getDocumentWithHttpInfo = function(cloudPk, id, projectPk) {
+    this.getClassifications_0WithHttpInfo = function(cloudPk, projectPk) {
       var postBody = null;
 
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getDocument");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getDocument");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getClassifications_0");
       }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getDocument");
-      }
-
-
-      var pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'project_pk': projectPk
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Bearer'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Document;
-
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this document.
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
-     */
-    this.getDocument = function(cloudPk, id, projectPk) {
-      return this.getDocumentWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
-     */
-    this.getDocumentsWithHttpInfo = function(cloudPk, projectPk) {
-      var postBody = null;
-
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getDocuments");
-      }
-
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getDocuments");
+        throw new Error("Missing the required parameter 'projectPk' when calling getClassifications_0");
       }
 
 
@@ -1313,7 +1383,7 @@
       var authNames = ['Bearer'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = Document;
+      var returnType = [Document];
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document', 'GET',
@@ -1323,12 +1393,14 @@
     }
 
     /**
+     * Retrieve all classifications
+     * Retrieve all classifications of all models in the project Required scopes: document:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
      */
-    this.getDocuments = function(cloudPk, projectPk) {
-      return this.getDocumentsWithHttpInfo(cloudPk, projectPk)
+    this.getClassifications_0 = function(cloudPk, projectPk) {
+      return this.getClassifications_0WithHttpInfo(cloudPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1336,6 +1408,8 @@
 
 
     /**
+     * Retrieve a folder
+     * Retrieve a folder Required scopes: document:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
@@ -1387,6 +1461,8 @@
     }
 
     /**
+     * Retrieve a folder
+     * Retrieve a folder Required scopes: document:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
@@ -1401,6 +1477,8 @@
 
 
     /**
+     * Retrieve all folders
+     * Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree Required scopes: document:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Folder>} and HTTP response
@@ -1445,6 +1523,8 @@
     }
 
     /**
+     * Retrieve all folders
+     * Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree Required scopes: document:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Folder>}
@@ -1458,6 +1538,8 @@
 
 
     /**
+     * Retrieve a project
+     * Retrieve a project
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
@@ -1502,6 +1584,8 @@
     }
 
     /**
+     * Retrieve a project
+     * Retrieve a project
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
@@ -1515,6 +1599,8 @@
 
 
     /**
+     * Retrieve all pending invitations in the project
+     * Returns app&#39;s invitations only Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectInvitation>} and HTTP response
@@ -1559,6 +1645,8 @@
     }
 
     /**
+     * Retrieve all pending invitations in the project
+     * Returns app&#39;s invitations only Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectInvitation>}
@@ -1572,6 +1660,7 @@
 
 
     /**
+     * Retrieve the complete DMS tree
      * Returns the document tree from root folder
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
@@ -1617,6 +1706,7 @@
     }
 
     /**
+     * Retrieve the complete DMS tree
      * Returns the document tree from root folder
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
@@ -1631,6 +1721,8 @@
 
 
     /**
+     * Retrieve a user in a project
+     * Each member of a project can see other members of the project Required scopes: cloud:read
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
@@ -1682,6 +1774,8 @@
     }
 
     /**
+     * Retrieve a user in a project
+     * Each member of a project can see other members of the project Required scopes: cloud:read
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
@@ -1696,6 +1790,8 @@
 
 
     /**
+     * Retrieve all users in a project
+     * Each member of a project can see other members of the project Required scopes: cloud:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/User>} and HTTP response
@@ -1740,6 +1836,8 @@
     }
 
     /**
+     * Retrieve all users in a project
+     * Each member of a project can see other members of the project Required scopes: cloud:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/User>}
@@ -1753,6 +1851,8 @@
 
 
     /**
+     * Retrieve all projects
+     * Retrieve all projects of the cloud
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
      */
@@ -1790,6 +1890,8 @@
     }
 
     /**
+     * Retrieve all projects
+     * Retrieve all projects of the cloud
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
      */
@@ -1802,7 +1904,8 @@
 
 
     /**
-     *              When inviting someone already having a pending invitation, it will not update the invitation but simply send the user a new invitation mail         
+     * Invite a project member
+     * Invite a project member. If the user is not already a cloud member, they will also be invited in the cloud with USER role. Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/ProjectInvitation} projectInvitation 
@@ -1853,7 +1956,8 @@
     }
 
     /**
-     *              When inviting someone already having a pending invitation, it will not update the invitation but simply send the user a new invitation mail         
+     * Invite a project member
+     * Invite a project member. If the user is not already a cloud member, they will also be invited in the cloud with USER role. Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/ProjectInvitation} projectInvitation 
@@ -1868,6 +1972,8 @@
 
 
     /**
+     * Update some fields of a classification
+     * Update some fields of a classification Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -1925,6 +2031,8 @@
     }
 
     /**
+     * Update some fields of a classification
+     * Update some fields of a classification Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -1940,33 +2048,35 @@
 
 
     /**
+     * Update some fields of a classification
+     * Update some fields of a classification Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
      * @param {module:model/Document} document 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
-    this.updateDocumentWithHttpInfo = function(cloudPk, id, projectPk, document) {
+    this.updateClassification_0WithHttpInfo = function(cloudPk, id, projectPk, document) {
       var postBody = document;
 
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateDocument");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateClassification_0");
       }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateDocument");
+        throw new Error("Missing the required parameter 'id' when calling updateClassification_0");
       }
 
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateDocument");
+        throw new Error("Missing the required parameter 'projectPk' when calling updateClassification_0");
       }
 
       // verify the required parameter 'document' is set
       if (document === undefined || document === null) {
-        throw new Error("Missing the required parameter 'document' when calling updateDocument");
+        throw new Error("Missing the required parameter 'document' when calling updateClassification_0");
       }
 
 
@@ -1997,14 +2107,16 @@
     }
 
     /**
+     * Update some fields of a classification
+     * Update some fields of a classification Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
      * @param {module:model/Document} document 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
-    this.updateDocument = function(cloudPk, id, projectPk, document) {
-      return this.updateDocumentWithHttpInfo(cloudPk, id, projectPk, document)
+    this.updateClassification_0 = function(cloudPk, id, projectPk, document) {
+      return this.updateClassification_0WithHttpInfo(cloudPk, id, projectPk, document)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2012,6 +2124,8 @@
 
 
     /**
+     * Update some fields of a folder
+     * Update some fields of a folder Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
@@ -2069,6 +2183,8 @@
     }
 
     /**
+     * Update some fields of a folder
+     * Update some fields of a folder Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
@@ -2084,6 +2200,8 @@
 
 
     /**
+     * Update some fields of a project
+     * Update some fields of a project Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/Project} project 
@@ -2134,6 +2252,8 @@
     }
 
     /**
+     * Update some fields of a project
+     * Update some fields of a project Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/Project} project 
@@ -2148,7 +2268,8 @@
 
 
     /**
-     * Change the user role in the cloud
+     * Update some fields of a project user
+     * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
@@ -2206,7 +2327,8 @@
     }
 
     /**
-     * Change the user role in the cloud
+     * Update some fields of a project user
+     * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {String} projectPk 
