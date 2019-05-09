@@ -71,10 +71,10 @@
         done();
       });
     });
-    describe('createClassification_0', function() {
-      it('should call createClassification_0 successfully', function(done) {
-        //uncomment below and update the code to test createClassification_0
-        //instance.createClassification_0(function(error) {
+    describe('createDocument', function() {
+      it('should call createDocument successfully', function(done) {
+        //uncomment below and update the code to test createDocument
+        //instance.createDocument(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -111,10 +111,10 @@
         done();
       });
     });
-    describe('deleteClassification_0', function() {
-      it('should call deleteClassification_0 successfully', function(done) {
-        //uncomment below and update the code to test deleteClassification_0
-        //instance.deleteClassification_0(function(error) {
+    describe('deleteDocument', function() {
+      it('should call deleteDocument successfully', function(done) {
+        //uncomment below and update the code to test deleteDocument
+        //instance.deleteDocument(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -161,10 +161,10 @@
         done();
       });
     });
-    describe('fullUpdateClassification_0', function() {
-      it('should call fullUpdateClassification_0 successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateClassification_0
-        //instance.fullUpdateClassification_0(function(error) {
+    describe('fullUpdateDocument', function() {
+      it('should call fullUpdateDocument successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateDocument
+        //instance.fullUpdateDocument(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -211,16 +211,6 @@
         done();
       });
     });
-    describe('getClassification_0', function() {
-      it('should call getClassification_0 successfully', function(done) {
-        //uncomment below and update the code to test getClassification_0
-        //instance.getClassification_0(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getClassifications', function() {
       it('should call getClassifications successfully', function(done) {
         //uncomment below and update the code to test getClassifications
@@ -231,10 +221,20 @@
         done();
       });
     });
-    describe('getClassifications_0', function() {
-      it('should call getClassifications_0 successfully', function(done) {
-        //uncomment below and update the code to test getClassifications_0
-        //instance.getClassifications_0(function(error) {
+    describe('getDocument', function() {
+      it('should call getDocument successfully', function(done) {
+        //uncomment below and update the code to test getDocument
+        //instance.getDocument(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getDocuments', function() {
+      it('should call getDocuments successfully', function(done) {
+        //uncomment below and update the code to test getDocuments
+        //instance.getDocuments(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -341,10 +341,10 @@
         done();
       });
     });
-    describe('updateClassification_0', function() {
-      it('should call updateClassification_0 successfully', function(done) {
-        //uncomment below and update the code to test updateClassification_0
-        //instance.updateClassification_0(function(error) {
+    describe('updateDocument', function() {
+      it('should call updateDocument successfully', function(done) {
+        //uncomment below and update the code to test updateDocument
+        //instance.updateDocument(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

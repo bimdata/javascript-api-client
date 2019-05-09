@@ -315,23 +315,23 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**updateZoneSpace**](docs/IfcApi.md#updateZoneSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Update some fields of a space
 *bimdata.ProjectApi* | [**cancelProjectUserInvitation**](docs/ProjectApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
 *bimdata.ProjectApi* | [**createClassification**](docs/ProjectApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | Create a classification
-*bimdata.ProjectApi* | [**createClassification_0**](docs/ProjectApi.md#createClassification_0) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | Create a classification
+*bimdata.ProjectApi* | [**createDocument**](docs/ProjectApi.md#createDocument) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | Create a document
 *bimdata.ProjectApi* | [**createFolder**](docs/ProjectApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | Create a folder
 *bimdata.ProjectApi* | [**createProject**](docs/ProjectApi.md#createProject) | **POST** /cloud/{cloud_pk}/project | Create a project
 *bimdata.ProjectApi* | [**deleteClassification**](docs/ProjectApi.md#deleteClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Delete a classification
-*bimdata.ProjectApi* | [**deleteClassification_0**](docs/ProjectApi.md#deleteClassification_0) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Delete a classification
+*bimdata.ProjectApi* | [**deleteDocument**](docs/ProjectApi.md#deleteDocument) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Delete the document
 *bimdata.ProjectApi* | [**deleteFolder**](docs/ProjectApi.md#deleteFolder) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Delete a folder
 *bimdata.ProjectApi* | [**deleteProject**](docs/ProjectApi.md#deleteProject) | **DELETE** /cloud/{cloud_pk}/project/{id} | Delete a project
 *bimdata.ProjectApi* | [**deleteProjectUser**](docs/ProjectApi.md#deleteProjectUser) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Remove a user from a project
 *bimdata.ProjectApi* | [**fullUpdateClassification**](docs/ProjectApi.md#fullUpdateClassification) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Update all fields of a classification
-*bimdata.ProjectApi* | [**fullUpdateClassification_0**](docs/ProjectApi.md#fullUpdateClassification_0) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update all fields of a classification
+*bimdata.ProjectApi* | [**fullUpdateDocument**](docs/ProjectApi.md#fullUpdateDocument) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update all fields of the document
 *bimdata.ProjectApi* | [**fullUpdateFolder**](docs/ProjectApi.md#fullUpdateFolder) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update all fields of a folder
 *bimdata.ProjectApi* | [**fullUpdateProject**](docs/ProjectApi.md#fullUpdateProject) | **PUT** /cloud/{cloud_pk}/project/{id} | Update all fields of a project
 *bimdata.ProjectApi* | [**fullUpdateProjectUser**](docs/ProjectApi.md#fullUpdateProjectUser) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update all fields of a project user
 *bimdata.ProjectApi* | [**getClassification**](docs/ProjectApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Retrieve a classification
-*bimdata.ProjectApi* | [**getClassification_0**](docs/ProjectApi.md#getClassification_0) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Retrieve a classification
 *bimdata.ProjectApi* | [**getClassifications**](docs/ProjectApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
-*bimdata.ProjectApi* | [**getClassifications_0**](docs/ProjectApi.md#getClassifications_0) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document | Retrieve all classifications
+*bimdata.ProjectApi* | [**getDocument**](docs/ProjectApi.md#getDocument) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Retrieve a document
+*bimdata.ProjectApi* | [**getDocuments**](docs/ProjectApi.md#getDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document | Retrieve all documents
 *bimdata.ProjectApi* | [**getFolder**](docs/ProjectApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Retrieve a folder
 *bimdata.ProjectApi* | [**getFolders**](docs/ProjectApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | Retrieve all folders
 *bimdata.ProjectApi* | [**getProject**](docs/ProjectApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | Retrieve a project
@@ -342,7 +342,7 @@ Class | Method | HTTP request | Description
 *bimdata.ProjectApi* | [**getProjects**](docs/ProjectApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | Retrieve all projects
 *bimdata.ProjectApi* | [**inviteProjectUser**](docs/ProjectApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | Invite a project member
 *bimdata.ProjectApi* | [**updateClassification**](docs/ProjectApi.md#updateClassification) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Update some fields of a classification
-*bimdata.ProjectApi* | [**updateClassification_0**](docs/ProjectApi.md#updateClassification_0) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update some fields of a classification
+*bimdata.ProjectApi* | [**updateDocument**](docs/ProjectApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update some fields of the document
 *bimdata.ProjectApi* | [**updateFolder**](docs/ProjectApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update some fields of a folder
 *bimdata.ProjectApi* | [**updateProject**](docs/ProjectApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
 *bimdata.ProjectApi* | [**updateProjectUser**](docs/ProjectApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update some fields of a project user
