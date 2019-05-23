@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Project();
+    instance = new bimdata.ProcessorHandler();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,64 +50,34 @@
       object[property] = value;
   }
 
-  describe('Project', function() {
-    it('should create an instance of Project', function() {
-      // uncomment below and update the code to test Project
-      //var instance = new bimdata.Project();
-      //expect(instance).to.be.a(bimdata.Project);
+  describe('ProcessorHandler', function() {
+    it('should create an instance of ProcessorHandler', function() {
+      // uncomment below and update the code to test ProcessorHandler
+      //var instance = new bimdata.ProcessorHandler();
+      //expect(instance).to.be.a(bimdata.ProcessorHandler);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instance = new bimdata.Project();
+      //var instance = new bimdata.ProcessorHandler();
       //expect(instance).to.be();
     });
 
-    it('should have the property logo (base name: "logo")', function() {
-      // uncomment below and update the code to test the property logo
-      //var instance = new bimdata.Project();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property cloud (base name: "cloud")', function() {
-      // uncomment below and update the code to test the property cloud
-      //var instance = new bimdata.Project();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.Project();
+    it('should have the property processor (base name: "processor")', function() {
+      // uncomment below and update the code to test the property processor
+      //var instance = new bimdata.ProcessorHandler();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instance = new bimdata.Project();
+      //var instance = new bimdata.ProcessorHandler();
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "created_at")', function() {
-      // uncomment below and update the code to test the property createdAt
-      //var instance = new bimdata.Project();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property updatedAt (base name: "updated_at")', function() {
-      // uncomment below and update the code to test the property updatedAt
-      //var instance = new bimdata.Project();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
-      //var instance = new bimdata.Project();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property rootFolderId (base name: "root_folder_id")', function() {
-      // uncomment below and update the code to test the property rootFolderId
-      //var instance = new bimdata.Project();
+    it('should have the property detailMessage (base name: "detail_message")', function() {
+      // uncomment below and update the code to test the property detailMessage
+      //var instance = new bimdata.ProcessorHandler();
       //expect(instance).to.be();
     });
 

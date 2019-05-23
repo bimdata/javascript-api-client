@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Cloud', 'model/CloudInvitation', 'model/Project', 'model/User', 'model/UserCloudUpdate'], factory);
+    define(['ApiClient', 'model/Cloud', 'model/CloudInvitation', 'model/Processor', 'model/Project', 'model/User', 'model/UserCloudUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Cloud'), require('../model/CloudInvitation'), require('../model/Project'), require('../model/User'), require('../model/UserCloudUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/Cloud'), require('../model/CloudInvitation'), require('../model/Processor'), require('../model/Project'), require('../model/User'), require('../model/UserCloudUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.CloudApi = factory(root.bimdata.ApiClient, root.bimdata.Cloud, root.bimdata.CloudInvitation, root.bimdata.Project, root.bimdata.User, root.bimdata.UserCloudUpdate);
+    root.bimdata.CloudApi = factory(root.bimdata.ApiClient, root.bimdata.Cloud, root.bimdata.CloudInvitation, root.bimdata.Processor, root.bimdata.Project, root.bimdata.User, root.bimdata.UserCloudUpdate);
   }
-}(this, function(ApiClient, Cloud, CloudInvitation, Project, User, UserCloudUpdate) {
+}(this, function(ApiClient, Cloud, CloudInvitation, Processor, Project, User, UserCloudUpdate) {
   'use strict';
 
   /**
@@ -104,6 +104,353 @@
      */
     this.cancelCloudUserInvitation = function(cloudPk, id) {
       return this.cancelCloudUserInvitationWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {String} cloudPk 
+     * @param {module:model/Processor} processor 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Processor} and HTTP response
+     */
+    this.cloudProcessorCreateWithHttpInfo = function(cloudPk, processor) {
+      var postBody = processor;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProcessorCreate");
+      }
+
+      // verify the required parameter 'processor' is set
+      if (processor === undefined || processor === null) {
+        throw new Error("Missing the required parameter 'processor' when calling cloudProcessorCreate");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Processor;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/processor', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * @param {String} cloudPk 
+     * @param {module:model/Processor} processor 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Processor}
+     */
+    this.cloudProcessorCreate = function(cloudPk, processor) {
+      return this.cloudProcessorCreateWithHttpInfo(cloudPk, processor)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.cloudProcessorDeleteWithHttpInfo = function(cloudPk, id) {
+      var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProcessorDelete");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling cloudProcessorDelete");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/processor/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.cloudProcessorDelete = function(cloudPk, id) {
+      return this.cloudProcessorDeleteWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Processor>} and HTTP response
+     */
+    this.cloudProcessorListWithHttpInfo = function(cloudPk) {
+      var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProcessorList");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Processor];
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/processor', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Processor>}
+     */
+    this.cloudProcessorList = function(cloudPk) {
+      return this.cloudProcessorListWithHttpInfo(cloudPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/Processor} processor 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Processor} and HTTP response
+     */
+    this.cloudProcessorPartialUpdateWithHttpInfo = function(cloudPk, id, processor) {
+      var postBody = processor;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProcessorPartialUpdate");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling cloudProcessorPartialUpdate");
+      }
+
+      // verify the required parameter 'processor' is set
+      if (processor === undefined || processor === null) {
+        throw new Error("Missing the required parameter 'processor' when calling cloudProcessorPartialUpdate");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Processor;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/processor/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/Processor} processor 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Processor}
+     */
+    this.cloudProcessorPartialUpdate = function(cloudPk, id, processor) {
+      return this.cloudProcessorPartialUpdateWithHttpInfo(cloudPk, id, processor)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Processor} and HTTP response
+     */
+    this.cloudProcessorReadWithHttpInfo = function(cloudPk, id) {
+      var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProcessorRead");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling cloudProcessorRead");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Processor;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/processor/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Processor}
+     */
+    this.cloudProcessorRead = function(cloudPk, id) {
+      return this.cloudProcessorReadWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/Processor} processor 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Processor} and HTTP response
+     */
+    this.cloudProcessorUpdateWithHttpInfo = function(cloudPk, id, processor) {
+      var postBody = processor;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProcessorUpdate");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling cloudProcessorUpdate");
+      }
+
+      // verify the required parameter 'processor' is set
+      if (processor === undefined || processor === null) {
+        throw new Error("Missing the required parameter 'processor' when calling cloudProcessorUpdate");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Processor;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/processor/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/Processor} processor 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Processor}
+     */
+    this.cloudProcessorUpdate = function(cloudPk, id, processor) {
+      return this.cloudProcessorUpdateWithHttpInfo(cloudPk, id, processor)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

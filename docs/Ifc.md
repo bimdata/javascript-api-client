@@ -21,20 +21,3 @@ Name | Type | Description | Notes
 **projectId** | **String** |  | [optional] 
 
 
-<a name="StatusEnum"></a>
-## Enum: StatusEnum
-
-
-* `C` (value: `"C"`)
-
-* `D` (value: `"D"`)
-
-* `P` (value: `"P"`)
-
-* `I` (value: `"I"`)
-
-* `E` (value: `"E"`)
-
-
-
-

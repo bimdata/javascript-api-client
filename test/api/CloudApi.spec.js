@@ -61,6 +61,66 @@
         done();
       });
     });
+    describe('cloudProcessorCreate', function() {
+      it('should call cloudProcessorCreate successfully', function(done) {
+        //uncomment below and update the code to test cloudProcessorCreate
+        //instance.cloudProcessorCreate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cloudProcessorDelete', function() {
+      it('should call cloudProcessorDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudProcessorDelete
+        //instance.cloudProcessorDelete(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cloudProcessorList', function() {
+      it('should call cloudProcessorList successfully', function(done) {
+        //uncomment below and update the code to test cloudProcessorList
+        //instance.cloudProcessorList(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cloudProcessorPartialUpdate', function() {
+      it('should call cloudProcessorPartialUpdate successfully', function(done) {
+        //uncomment below and update the code to test cloudProcessorPartialUpdate
+        //instance.cloudProcessorPartialUpdate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cloudProcessorRead', function() {
+      it('should call cloudProcessorRead successfully', function(done) {
+        //uncomment below and update the code to test cloudProcessorRead
+        //instance.cloudProcessorRead(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cloudProcessorUpdate', function() {
+      it('should call cloudProcessorUpdate successfully', function(done) {
+        //uncomment below and update the code to test cloudProcessorUpdate
+        //instance.cloudProcessorUpdate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createCloud', function() {
       it('should call createCloud successfully', function(done) {
         //uncomment below and update the code to test createCloud

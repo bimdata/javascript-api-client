@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Classification', 'model/Element', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/Ifc', 'model/IfcFiles', 'model/Property', 'model/PropertyDefinition', 'model/PropertySet', 'model/RawElements', 'model/Space', 'model/Unit', 'model/Zone', 'model/ZoneSpace'], factory);
+    define(['ApiClient', 'model/Classification', 'model/Element', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/Ifc', 'model/IfcExport', 'model/IfcFiles', 'model/ProcessorHandler', 'model/Property', 'model/PropertyDefinition', 'model/PropertySet', 'model/RawElements', 'model/Space', 'model/Unit', 'model/Zone', 'model/ZoneSpace'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Classification'), require('../model/Element'), require('../model/ElementClassificationRelation'), require('../model/ElementPropertySetRelation'), require('../model/Ifc'), require('../model/IfcFiles'), require('../model/Property'), require('../model/PropertyDefinition'), require('../model/PropertySet'), require('../model/RawElements'), require('../model/Space'), require('../model/Unit'), require('../model/Zone'), require('../model/ZoneSpace'));
+    module.exports = factory(require('../ApiClient'), require('../model/Classification'), require('../model/Element'), require('../model/ElementClassificationRelation'), require('../model/ElementPropertySetRelation'), require('../model/Ifc'), require('../model/IfcExport'), require('../model/IfcFiles'), require('../model/ProcessorHandler'), require('../model/Property'), require('../model/PropertyDefinition'), require('../model/PropertySet'), require('../model/RawElements'), require('../model/Space'), require('../model/Unit'), require('../model/Zone'), require('../model/ZoneSpace'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.IfcApi = factory(root.bimdata.ApiClient, root.bimdata.Classification, root.bimdata.Element, root.bimdata.ElementClassificationRelation, root.bimdata.ElementPropertySetRelation, root.bimdata.Ifc, root.bimdata.IfcFiles, root.bimdata.Property, root.bimdata.PropertyDefinition, root.bimdata.PropertySet, root.bimdata.RawElements, root.bimdata.Space, root.bimdata.Unit, root.bimdata.Zone, root.bimdata.ZoneSpace);
+    root.bimdata.IfcApi = factory(root.bimdata.ApiClient, root.bimdata.Classification, root.bimdata.Element, root.bimdata.ElementClassificationRelation, root.bimdata.ElementPropertySetRelation, root.bimdata.Ifc, root.bimdata.IfcExport, root.bimdata.IfcFiles, root.bimdata.ProcessorHandler, root.bimdata.Property, root.bimdata.PropertyDefinition, root.bimdata.PropertySet, root.bimdata.RawElements, root.bimdata.Space, root.bimdata.Unit, root.bimdata.Zone, root.bimdata.ZoneSpace);
   }
-}(this, function(ApiClient, Classification, Element, ElementClassificationRelation, ElementPropertySetRelation, Ifc, IfcFiles, Property, PropertyDefinition, PropertySet, RawElements, Space, Unit, Zone, ZoneSpace) {
+}(this, function(ApiClient, Classification, Element, ElementClassificationRelation, ElementPropertySetRelation, Ifc, IfcExport, IfcFiles, ProcessorHandler, Property, PropertyDefinition, PropertySet, RawElements, Space, Unit, Zone, ZoneSpace) {
   'use strict';
 
   /**
@@ -846,6 +846,88 @@
      */
     this.bulkUpdateIfcProperty = function(cloudPk, ifcPk, projectPk, property) {
       return this.bulkUpdateIfcPropertyWithHttpInfo(cloudPk, ifcPk, projectPk, property)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     *  Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this processor handler.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/ProcessorHandler} processorHandler 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProcessorHandler} and HTTP response
+     */
+    this.cloudProjectIfcProcessorhandlerPartialUpdateWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, processorHandler) {
+      var postBody = processorHandler;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProjectIfcProcessorhandlerPartialUpdate");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling cloudProjectIfcProcessorhandlerPartialUpdate");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling cloudProjectIfcProcessorhandlerPartialUpdate");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling cloudProjectIfcProcessorhandlerPartialUpdate");
+      }
+
+      // verify the required parameter 'processorHandler' is set
+      if (processorHandler === undefined || processorHandler === null) {
+        throw new Error("Missing the required parameter 'processorHandler' when calling cloudProjectIfcProcessorhandlerPartialUpdate");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = ProcessorHandler;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     *  Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this processor handler.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/ProcessorHandler} processorHandler 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProcessorHandler}
+     */
+    this.cloudProjectIfcProcessorhandlerPartialUpdate = function(cloudPk, id, ifcPk, projectPk, processorHandler) {
+      return this.cloudProjectIfcProcessorhandlerPartialUpdateWithHttpInfo(cloudPk, id, ifcPk, projectPk, processorHandler)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2775,6 +2857,82 @@
      */
     this.deleteZoneSpace = function(cloudPk, id, ifcPk, projectPk, zonePk) {
       return this.deleteZoneSpaceWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Export IFC
+     * Export IFC as requested in parameters. This call doesn&#39;t return the IFC. When the export is finished, a new IFC file with &#39;_export_DD_MM_YYYY&#39; suffix will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ifc.
+     * @param {String} projectPk 
+     * @param {module:model/IfcExport} ifcExport 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcExport} and HTTP response
+     */
+    this.exportIfcWithHttpInfo = function(cloudPk, id, projectPk, ifcExport) {
+      var postBody = ifcExport;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling exportIfc");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling exportIfc");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling exportIfc");
+      }
+
+      // verify the required parameter 'ifcExport' is set
+      if (ifcExport === undefined || ifcExport === null) {
+        throw new Error("Missing the required parameter 'ifcExport' when calling exportIfc");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = IfcExport;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/export', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Export IFC
+     * Export IFC as requested in parameters. This call doesn&#39;t return the IFC. When the export is finished, a new IFC file with &#39;_export_DD_MM_YYYY&#39; suffix will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ifc.
+     * @param {String} projectPk 
+     * @param {module:model/IfcExport} ifcExport 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcExport}
+     */
+    this.exportIfc = function(cloudPk, id, projectPk, ifcExport) {
+      return this.exportIfcWithHttpInfo(cloudPk, id, projectPk, ifcExport)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5582,6 +5740,152 @@
 
 
     /**
+     * Retrieve a processor handler
+     *  Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this processor handler.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProcessorHandler} and HTTP response
+     */
+    this.getProcessorHandlerWithHttpInfo = function(cloudPk, id, ifcPk, projectPk) {
+      var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProcessorHandler");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getProcessorHandler");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getProcessorHandler");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getProcessorHandler");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ProcessorHandler;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Retrieve a processor handler
+     *  Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this processor handler.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProcessorHandler}
+     */
+    this.getProcessorHandler = function(cloudPk, id, ifcPk, projectPk) {
+      return this.getProcessorHandlerWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get all processor handlers
+     *  Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProcessorHandler>} and HTTP response
+     */
+    this.getProcessorHandlersWithHttpInfo = function(cloudPk, ifcPk, projectPk) {
+      var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProcessorHandlers");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getProcessorHandlers");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getProcessorHandlers");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [ProcessorHandler];
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get all processor handlers
+     *  Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProcessorHandler>}
+     */
+    this.getProcessorHandlers = function(cloudPk, ifcPk, projectPk) {
+      return this.getProcessorHandlersWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve a PropertySet of a model
      * Retrieve a PropertySet of a model Required scopes: ifc:read
      * @param {String} cloudPk 
@@ -7391,6 +7695,90 @@
      */
     this.updateIfcUnit = function(cloudPk, id, ifcPk, projectPk, unit) {
       return this.updateIfcUnitWithHttpInfo(cloudPk, id, ifcPk, projectPk, unit)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update the status of a processor handler
+     *  Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this processor handler.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/ProcessorHandler} processorHandler 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProcessorHandler} and HTTP response
+     */
+    this.updateProcessorHandlerWithHttpInfo = function(cloudPk, id, ifcPk, projectPk, processorHandler) {
+      var postBody = processorHandler;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateProcessorHandler");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateProcessorHandler");
+      }
+
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateProcessorHandler");
+      }
+
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateProcessorHandler");
+      }
+
+      // verify the required parameter 'processorHandler' is set
+      if (processorHandler === undefined || processorHandler === null) {
+        throw new Error("Missing the required parameter 'processorHandler' when calling updateProcessorHandler");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = ProcessorHandler;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Update the status of a processor handler
+     *  Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this processor handler.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/ProcessorHandler} processorHandler 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProcessorHandler}
+     */
+    this.updateProcessorHandler = function(cloudPk, id, ifcPk, projectPk, processorHandler) {
+      return this.updateProcessorHandlerWithHttpInfo(cloudPk, id, ifcPk, projectPk, processorHandler)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

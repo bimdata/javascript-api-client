@@ -271,10 +271,30 @@
         done();
       });
     });
+    describe('getProjectDMSTree', function() {
+      it('should call getProjectDMSTree successfully', function(done) {
+        //uncomment below and update the code to test getProjectDMSTree
+        //instance.getProjectDMSTree(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getProjectInvitations', function() {
       it('should call getProjectInvitations successfully', function(done) {
         //uncomment below and update the code to test getProjectInvitations
         //instance.getProjectInvitations(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getProjectSubTree', function() {
+      it('should call getProjectSubTree successfully', function(done) {
+        //uncomment below and update the code to test getProjectSubTree
+        //instance.getProjectSubTree(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

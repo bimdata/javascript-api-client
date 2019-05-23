@@ -161,6 +161,16 @@
         done();
       });
     });
+    describe('cloudProjectIfcProcessorhandlerPartialUpdate', function() {
+      it('should call cloudProjectIfcProcessorhandlerPartialUpdate successfully', function(done) {
+        //uncomment below and update the code to test cloudProjectIfcProcessorhandlerPartialUpdate
+        //instance.cloudProjectIfcProcessorhandlerPartialUpdate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createClassificationElementRelations', function() {
       it('should call createClassificationElementRelations successfully', function(done) {
         //uncomment below and update the code to test createClassificationElementRelations
@@ -395,6 +405,16 @@
       it('should call deleteZoneSpace successfully', function(done) {
         //uncomment below and update the code to test deleteZoneSpace
         //instance.deleteZoneSpace(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('exportIfc', function() {
+      it('should call exportIfc successfully', function(done) {
+        //uncomment below and update the code to test exportIfc
+        //instance.exportIfc(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -751,6 +771,26 @@
         done();
       });
     });
+    describe('getProcessorHandler', function() {
+      it('should call getProcessorHandler successfully', function(done) {
+        //uncomment below and update the code to test getProcessorHandler
+        //instance.getProcessorHandler(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getProcessorHandlers', function() {
+      it('should call getProcessorHandlers successfully', function(done) {
+        //uncomment below and update the code to test getProcessorHandlers
+        //instance.getProcessorHandlers(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getPropertySet', function() {
       it('should call getPropertySet successfully', function(done) {
         //uncomment below and update the code to test getPropertySet
@@ -965,6 +1005,16 @@
       it('should call updateIfcUnit successfully', function(done) {
         //uncomment below and update the code to test updateIfcUnit
         //instance.updateIfcUnit(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateProcessorHandler', function() {
+      it('should call updateProcessorHandler successfully', function(done) {
+        //uncomment below and update the code to test updateProcessorHandler
+        //instance.updateProcessorHandler(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -26,7 +26,9 @@ Method | HTTP request | Description
 [**getFolder**](ProjectApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Retrieve a folder
 [**getFolders**](ProjectApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | Retrieve all folders
 [**getProject**](ProjectApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | Retrieve a project
+[**getProjectDMSTree**](ProjectApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
 [**getProjectInvitations**](ProjectApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
+[**getProjectSubTree**](ProjectApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
 [**getProjectTree**](ProjectApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | Retrieve the complete DMS tree
 [**getProjectUser**](ProjectApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Retrieve a user in a project
 [**getProjectUsers**](ProjectApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | Retrieve all users in a project
@@ -1146,7 +1148,7 @@ Name | Type | Description  | Notes
 
 <a name="getProject"></a>
 # **getProject**
-> Project getProject(cloudPk, id)
+> ProjectWithChildren getProject(cloudPk, id)
 
 Retrieve a project
 
@@ -1182,7 +1184,56 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Project**](Project.md)
+[**ProjectWithChildren**](ProjectWithChildren.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getProjectDMSTree"></a>
+# **getProjectDMSTree**
+> Folder getProjectDMSTree(cloudPk, id)
+
+Retrieve the complete DMS tree
+
+Retrieve the complete DMS tree (all folders and all documents in the project)
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.ProjectApi();
+var cloudPk = "cloudPk_example"; // String | 
+var id = 56; // Number | A unique integer value identifying this project.
+apiInstance.getProjectDMSTree(cloudPk, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this project. | 
+
+### Return type
+
+[**Folder**](Folder.md)
 
 ### Authorization
 
@@ -1242,13 +1293,60 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="getProjectSubTree"></a>
+# **getProjectSubTree**
+> [ProjectWithChildren] getProjectSubTree(cloudPk)
+
+Retrieve the complete projects tree of the cloud
+
+Retrieve the complete projects tree of the cloud
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.ProjectApi();
+var cloudPk = "cloudPk_example"; // String | 
+apiInstance.getProjectSubTree(cloudPk).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+
+### Return type
+
+[**[ProjectWithChildren]**](ProjectWithChildren.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="getProjectTree"></a>
 # **getProjectTree**
 > Folder getProjectTree(cloudPk, id)
 
 Retrieve the complete DMS tree
 
-Returns the document tree from root folder
+Retrieve the complete DMS tree (all folders and all documents in the project). DEPRECATED: renamed to getProjectDMSTree
 
 ### Example
 ```javascript
@@ -1397,7 +1495,7 @@ Name | Type | Description  | Notes
 
 Retrieve all projects
 
-Retrieve all projects of the cloud
+Retrieve all projects of the cloud. All project are shown at the same level. see #getProjectSubTree
 
 ### Example
 ```javascript

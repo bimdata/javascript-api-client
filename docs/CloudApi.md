@@ -5,6 +5,12 @@ All URIs are relative to *https://api-beta.bimdata.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancelCloudUserInvitation**](CloudApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | Cancel a pending invitation
+[**cloudProcessorCreate**](CloudApi.md#cloudProcessorCreate) | **POST** /cloud/{cloud_pk}/processor | 
+[**cloudProcessorDelete**](CloudApi.md#cloudProcessorDelete) | **DELETE** /cloud/{cloud_pk}/processor/{id} | 
+[**cloudProcessorList**](CloudApi.md#cloudProcessorList) | **GET** /cloud/{cloud_pk}/processor | 
+[**cloudProcessorPartialUpdate**](CloudApi.md#cloudProcessorPartialUpdate) | **PATCH** /cloud/{cloud_pk}/processor/{id} | 
+[**cloudProcessorRead**](CloudApi.md#cloudProcessorRead) | **GET** /cloud/{cloud_pk}/processor/{id} | 
+[**cloudProcessorUpdate**](CloudApi.md#cloudProcessorUpdate) | **PUT** /cloud/{cloud_pk}/processor/{id} | 
 [**createCloud**](CloudApi.md#createCloud) | **POST** /cloud | Create a cloud
 [**createDemo**](CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | Create a Demo project in a cloud
 [**deleteCloud**](CloudApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
@@ -70,6 +76,290 @@ null (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+<a name="cloudProcessorCreate"></a>
+# **cloudProcessorCreate**
+> Processor cloudProcessorCreate(cloudPk, processor)
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
+var cloudPk = "cloudPk_example"; // String | 
+var processor = new bimdata.Processor(); // Processor | 
+apiInstance.cloudProcessorCreate(cloudPk, processor).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **processor** | [**Processor**](Processor.md)|  | 
+
+### Return type
+
+[**Processor**](Processor.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cloudProcessorDelete"></a>
+# **cloudProcessorDelete**
+> cloudProcessorDelete(cloudPk, id)
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
+var cloudPk = "cloudPk_example"; // String | 
+var id = "id_example"; // String | 
+apiInstance.cloudProcessorDelete(cloudPk, id).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="cloudProcessorList"></a>
+# **cloudProcessorList**
+> [Processor] cloudProcessorList(cloudPk)
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
+var cloudPk = "cloudPk_example"; // String | 
+apiInstance.cloudProcessorList(cloudPk).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+
+### Return type
+
+[**[Processor]**](Processor.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="cloudProcessorPartialUpdate"></a>
+# **cloudProcessorPartialUpdate**
+> Processor cloudProcessorPartialUpdate(cloudPk, id, processor)
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
+var cloudPk = "cloudPk_example"; // String | 
+var id = "id_example"; // String | 
+var processor = new bimdata.Processor(); // Processor | 
+apiInstance.cloudProcessorPartialUpdate(cloudPk, id, processor).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **processor** | [**Processor**](Processor.md)|  | 
+
+### Return type
+
+[**Processor**](Processor.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cloudProcessorRead"></a>
+# **cloudProcessorRead**
+> Processor cloudProcessorRead(cloudPk, id)
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
+var cloudPk = "cloudPk_example"; // String | 
+var id = "id_example"; // String | 
+apiInstance.cloudProcessorRead(cloudPk, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+
+### Return type
+
+[**Processor**](Processor.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="cloudProcessorUpdate"></a>
+# **cloudProcessorUpdate**
+> Processor cloudProcessorUpdate(cloudPk, id, processor)
+
+
+
+### Example
+```javascript
+var bimdata = require('@bimdata/bimdata-api-client');
+var defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+var Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+var apiInstance = new bimdata.CloudApi();
+var cloudPk = "cloudPk_example"; // String | 
+var id = "id_example"; // String | 
+var processor = new bimdata.Processor(); // Processor | 
+apiInstance.cloudProcessorUpdate(cloudPk, id, processor).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **String**|  | 
+ **processor** | [**Processor**](Processor.md)|  | 
+
+### Return type
+
+[**Processor**](Processor.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="createCloud"></a>
 # **createCloud**

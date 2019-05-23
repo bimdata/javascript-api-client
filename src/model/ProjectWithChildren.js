@@ -17,31 +17,31 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Cloud'], factory);
+    define(['ApiClient', 'model/ProjectWithChildren'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Cloud'));
+    module.exports = factory(require('../ApiClient'), require('./ProjectWithChildren'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.Project = factory(root.bimdata.ApiClient, root.bimdata.Cloud);
+    root.bimdata.ProjectWithChildren = factory(root.bimdata.ApiClient, root.bimdata.ProjectWithChildren);
   }
-}(this, function(ApiClient, Cloud) {
+}(this, function(ApiClient, ProjectWithChildren) {
   'use strict';
 
 
 
   /**
-   * The Project model module.
-   * @module model/Project
+   * The ProjectWithChildren model module.
+   * @module model/ProjectWithChildren
    * @version 0.0.0
    */
 
   /**
-   * Constructs a new <code>Project</code>.
-   * @alias module:model/Project
+   * Constructs a new <code>ProjectWithChildren</code>.
+   * @alias module:model/ProjectWithChildren
    * @class
    * @param name {String} Name of the project
    */
@@ -52,11 +52,11 @@
   };
 
   /**
-   * Constructs a <code>Project</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ProjectWithChildren</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Project} obj Optional instance to populate.
-   * @return {module:model/Project} The populated <code>Project</code> instance.
+   * @param {module:model/ProjectWithChildren} obj Optional instance to populate.
+   * @return {module:model/ProjectWithChildren} The populated <code>ProjectWithChildren</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -66,9 +66,6 @@
       }
       if (data.hasOwnProperty('logo')) {
         obj['logo'] = ApiClient.convertToType(data['logo'], 'String');
-      }
-      if (data.hasOwnProperty('cloud')) {
-        obj['cloud'] = Cloud.constructFromObject(data['cloud']);
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -84,6 +81,9 @@
       }
       if (data.hasOwnProperty('parent_id')) {
         obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
+      }
+      if (data.hasOwnProperty('children')) {
+        obj['children'] = ApiClient.convertToType(data['children'], [ProjectWithChildren]);
       }
       if (data.hasOwnProperty('root_folder_id')) {
         obj['root_folder_id'] = ApiClient.convertToType(data['root_folder_id'], 'String');
@@ -101,16 +101,12 @@
    */
   exports.prototype['logo'] = undefined;
   /**
-   * @member {module:model/Cloud} cloud
-   */
-  exports.prototype['cloud'] = undefined;
-  /**
    * Name of the project
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * @member {module:model/Project.StatusEnum} status
+   * @member {module:model/ProjectWithChildren.StatusEnum} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -127,6 +123,10 @@
    * @member {Number} parent_id
    */
   exports.prototype['parent_id'] = undefined;
+  /**
+   * @member {Array.<module:model/ProjectWithChildren>} children
+   */
+  exports.prototype['children'] = undefined;
   /**
    * @member {String} root_folder_id
    */

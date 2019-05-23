@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Classification', 'model/Document', 'model/Folder', 'model/Project', 'model/ProjectInvitation', 'model/User', 'model/UserProjectUpdate'], factory);
+    define(['ApiClient', 'model/Classification', 'model/Document', 'model/Folder', 'model/Project', 'model/ProjectInvitation', 'model/ProjectWithChildren', 'model/User', 'model/UserProjectUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Classification'), require('../model/Document'), require('../model/Folder'), require('../model/Project'), require('../model/ProjectInvitation'), require('../model/User'), require('../model/UserProjectUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/Classification'), require('../model/Document'), require('../model/Folder'), require('../model/Project'), require('../model/ProjectInvitation'), require('../model/ProjectWithChildren'), require('../model/User'), require('../model/UserProjectUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.bimdata) {
       root.bimdata = {};
     }
-    root.bimdata.ProjectApi = factory(root.bimdata.ApiClient, root.bimdata.Classification, root.bimdata.Document, root.bimdata.Folder, root.bimdata.Project, root.bimdata.ProjectInvitation, root.bimdata.User, root.bimdata.UserProjectUpdate);
+    root.bimdata.ProjectApi = factory(root.bimdata.ApiClient, root.bimdata.Classification, root.bimdata.Document, root.bimdata.Folder, root.bimdata.Project, root.bimdata.ProjectInvitation, root.bimdata.ProjectWithChildren, root.bimdata.User, root.bimdata.UserProjectUpdate);
   }
-}(this, function(ApiClient, Classification, Document, Folder, Project, ProjectInvitation, User, UserProjectUpdate) {
+}(this, function(ApiClient, Classification, Document, Folder, Project, ProjectInvitation, ProjectWithChildren, User, UserProjectUpdate) {
   'use strict';
 
   /**
@@ -1542,7 +1542,7 @@
      * Retrieve a project
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectWithChildren} and HTTP response
      */
     this.getProjectWithHttpInfo = function(cloudPk, id) {
       var postBody = null;
@@ -1574,7 +1574,7 @@
       var authNames = ['Bearer'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = Project;
+      var returnType = ProjectWithChildren;
 
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}', 'GET',
@@ -1588,10 +1588,71 @@
      * Retrieve a project
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectWithChildren}
      */
     this.getProject = function(cloudPk, id) {
       return this.getProjectWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve the complete DMS tree
+     * Retrieve the complete DMS tree (all folders and all documents in the project)
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
+     */
+    this.getProjectDMSTreeWithHttpInfo = function(cloudPk, id) {
+      var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectDMSTree");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getProjectDMSTree");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Folder;
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{id}/dms-tree', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Retrieve the complete DMS tree
+     * Retrieve the complete DMS tree (all folders and all documents in the project)
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
+     */
+    this.getProjectDMSTree = function(cloudPk, id) {
+      return this.getProjectDMSTreeWithHttpInfo(cloudPk, id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1660,8 +1721,61 @@
 
 
     /**
+     * Retrieve the complete projects tree of the cloud
+     * Retrieve the complete projects tree of the cloud
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectWithChildren>} and HTTP response
+     */
+    this.getProjectSubTreeWithHttpInfo = function(cloudPk) {
+      var postBody = null;
+
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectSubTree");
+      }
+
+
+      var pathParams = {
+        'cloud_pk': cloudPk
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Bearer'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [ProjectWithChildren];
+
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/subtree', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Retrieve the complete projects tree of the cloud
+     * Retrieve the complete projects tree of the cloud
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectWithChildren>}
+     */
+    this.getProjectSubTree = function(cloudPk) {
+      return this.getProjectSubTreeWithHttpInfo(cloudPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve the complete DMS tree
-     * Returns the document tree from root folder
+     * Retrieve the complete DMS tree (all folders and all documents in the project). DEPRECATED: renamed to getProjectDMSTree
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
@@ -1707,7 +1821,7 @@
 
     /**
      * Retrieve the complete DMS tree
-     * Returns the document tree from root folder
+     * Retrieve the complete DMS tree (all folders and all documents in the project). DEPRECATED: renamed to getProjectDMSTree
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
@@ -1852,7 +1966,7 @@
 
     /**
      * Retrieve all projects
-     * Retrieve all projects of the cloud
+     * Retrieve all projects of the cloud. All project are shown at the same level. see #getProjectSubTree
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
      */
@@ -1891,7 +2005,7 @@
 
     /**
      * Retrieve all projects
-     * Retrieve all projects of the cloud
+     * Retrieve all projects of the cloud. All project are shown at the same level. see #getProjectSubTree
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
      */

@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BcfProject', 'model/BcfUser', 'model/CheckPlan', 'model/CheckerResult', 'model/Classification', 'model/ClippingPlane', 'model/Cloud', 'model/CloudInvitation', 'model/CloudRole', 'model/Coloring', 'model/Comment', 'model/Component', 'model/ComponentsParent', 'model/Direction', 'model/Document', 'model/Element', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/Extensions', 'model/Feature', 'model/Folder', 'model/FullTopic', 'model/Ifc', 'model/IfcChecker', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults', 'model/IfcFiles', 'model/Label', 'model/LineSeriaizer', 'model/OrthogonalCamera', 'model/PerspectiveCamera', 'model/Point', 'model/Priority', 'model/Project', 'model/ProjectInvitation', 'model/ProjectRole', 'model/Property', 'model/PropertyDefinition', 'model/PropertySet', 'model/RawClassification', 'model/RawDefinition', 'model/RawElement', 'model/RawElements', 'model/RawProperty', 'model/RawPropertySet', 'model/RawUnit', 'model/Rule', 'model/RuleComponent', 'model/Ruleset', 'model/SelfBcfUser', 'model/SelfUser', 'model/Snapshot', 'model/Space', 'model/Stage', 'model/Topic', 'model/TopicStatus', 'model/TopicType', 'model/Unit', 'model/User', 'model/UserCloudUpdate', 'model/UserProjectUpdate', 'model/ViewSetupHints', 'model/Viewpoint', 'model/Visibility', 'model/WebHook', 'model/Zone', 'model/ZoneSpace', 'api/ApplicationApi', 'api/BcfApi', 'api/CheckplanApi', 'api/CloudApi', 'api/IfcApi', 'api/ProjectApi', 'api/UserApi'], factory);
+    define(['ApiClient', 'model/BcfProject', 'model/BcfUser', 'model/CheckPlan', 'model/CheckerResult', 'model/Classification', 'model/ClippingPlane', 'model/Cloud', 'model/CloudInvitation', 'model/CloudRole', 'model/Coloring', 'model/Comment', 'model/Component', 'model/ComponentsParent', 'model/Direction', 'model/Document', 'model/Element', 'model/ElementClassificationRelation', 'model/ElementPropertySetRelation', 'model/Extensions', 'model/Feature', 'model/Folder', 'model/FullTopic', 'model/Ifc', 'model/IfcChecker', 'model/IfcCheckerCheckplan', 'model/IfcCheckerResults', 'model/IfcExport', 'model/IfcFiles', 'model/Label', 'model/LineSeriaizer', 'model/OrthogonalCamera', 'model/PerspectiveCamera', 'model/Point', 'model/Priority', 'model/Processor', 'model/ProcessorHandler', 'model/Project', 'model/ProjectInvitation', 'model/ProjectRole', 'model/ProjectWithChildren', 'model/Property', 'model/PropertyDefinition', 'model/PropertySet', 'model/RawClassification', 'model/RawDefinition', 'model/RawElement', 'model/RawElements', 'model/RawProperty', 'model/RawPropertySet', 'model/RawUnit', 'model/Rule', 'model/RuleComponent', 'model/Ruleset', 'model/SelfBcfUser', 'model/SelfUser', 'model/Snapshot', 'model/Space', 'model/Stage', 'model/Topic', 'model/TopicStatus', 'model/TopicType', 'model/Unit', 'model/User', 'model/UserCloudUpdate', 'model/UserProjectUpdate', 'model/ViewSetupHints', 'model/Viewpoint', 'model/Visibility', 'model/WebHook', 'model/Zone', 'model/ZoneSpace', 'api/ApplicationApi', 'api/BcfApi', 'api/CheckplanApi', 'api/CloudApi', 'api/IfcApi', 'api/ProjectApi', 'api/UserApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/BcfProject'), require('./model/BcfUser'), require('./model/CheckPlan'), require('./model/CheckerResult'), require('./model/Classification'), require('./model/ClippingPlane'), require('./model/Cloud'), require('./model/CloudInvitation'), require('./model/CloudRole'), require('./model/Coloring'), require('./model/Comment'), require('./model/Component'), require('./model/ComponentsParent'), require('./model/Direction'), require('./model/Document'), require('./model/Element'), require('./model/ElementClassificationRelation'), require('./model/ElementPropertySetRelation'), require('./model/Extensions'), require('./model/Feature'), require('./model/Folder'), require('./model/FullTopic'), require('./model/Ifc'), require('./model/IfcChecker'), require('./model/IfcCheckerCheckplan'), require('./model/IfcCheckerResults'), require('./model/IfcFiles'), require('./model/Label'), require('./model/LineSeriaizer'), require('./model/OrthogonalCamera'), require('./model/PerspectiveCamera'), require('./model/Point'), require('./model/Priority'), require('./model/Project'), require('./model/ProjectInvitation'), require('./model/ProjectRole'), require('./model/Property'), require('./model/PropertyDefinition'), require('./model/PropertySet'), require('./model/RawClassification'), require('./model/RawDefinition'), require('./model/RawElement'), require('./model/RawElements'), require('./model/RawProperty'), require('./model/RawPropertySet'), require('./model/RawUnit'), require('./model/Rule'), require('./model/RuleComponent'), require('./model/Ruleset'), require('./model/SelfBcfUser'), require('./model/SelfUser'), require('./model/Snapshot'), require('./model/Space'), require('./model/Stage'), require('./model/Topic'), require('./model/TopicStatus'), require('./model/TopicType'), require('./model/Unit'), require('./model/User'), require('./model/UserCloudUpdate'), require('./model/UserProjectUpdate'), require('./model/ViewSetupHints'), require('./model/Viewpoint'), require('./model/Visibility'), require('./model/WebHook'), require('./model/Zone'), require('./model/ZoneSpace'), require('./api/ApplicationApi'), require('./api/BcfApi'), require('./api/CheckplanApi'), require('./api/CloudApi'), require('./api/IfcApi'), require('./api/ProjectApi'), require('./api/UserApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/BcfProject'), require('./model/BcfUser'), require('./model/CheckPlan'), require('./model/CheckerResult'), require('./model/Classification'), require('./model/ClippingPlane'), require('./model/Cloud'), require('./model/CloudInvitation'), require('./model/CloudRole'), require('./model/Coloring'), require('./model/Comment'), require('./model/Component'), require('./model/ComponentsParent'), require('./model/Direction'), require('./model/Document'), require('./model/Element'), require('./model/ElementClassificationRelation'), require('./model/ElementPropertySetRelation'), require('./model/Extensions'), require('./model/Feature'), require('./model/Folder'), require('./model/FullTopic'), require('./model/Ifc'), require('./model/IfcChecker'), require('./model/IfcCheckerCheckplan'), require('./model/IfcCheckerResults'), require('./model/IfcExport'), require('./model/IfcFiles'), require('./model/Label'), require('./model/LineSeriaizer'), require('./model/OrthogonalCamera'), require('./model/PerspectiveCamera'), require('./model/Point'), require('./model/Priority'), require('./model/Processor'), require('./model/ProcessorHandler'), require('./model/Project'), require('./model/ProjectInvitation'), require('./model/ProjectRole'), require('./model/ProjectWithChildren'), require('./model/Property'), require('./model/PropertyDefinition'), require('./model/PropertySet'), require('./model/RawClassification'), require('./model/RawDefinition'), require('./model/RawElement'), require('./model/RawElements'), require('./model/RawProperty'), require('./model/RawPropertySet'), require('./model/RawUnit'), require('./model/Rule'), require('./model/RuleComponent'), require('./model/Ruleset'), require('./model/SelfBcfUser'), require('./model/SelfUser'), require('./model/Snapshot'), require('./model/Space'), require('./model/Stage'), require('./model/Topic'), require('./model/TopicStatus'), require('./model/TopicType'), require('./model/Unit'), require('./model/User'), require('./model/UserCloudUpdate'), require('./model/UserProjectUpdate'), require('./model/ViewSetupHints'), require('./model/Viewpoint'), require('./model/Visibility'), require('./model/WebHook'), require('./model/Zone'), require('./model/ZoneSpace'), require('./api/ApplicationApi'), require('./api/BcfApi'), require('./api/CheckplanApi'), require('./api/CloudApi'), require('./api/IfcApi'), require('./api/ProjectApi'), require('./api/UserApi'));
   }
-}(function(ApiClient, BcfProject, BcfUser, CheckPlan, CheckerResult, Classification, ClippingPlane, Cloud, CloudInvitation, CloudRole, Coloring, Comment, Component, ComponentsParent, Direction, Document, Element, ElementClassificationRelation, ElementPropertySetRelation, Extensions, Feature, Folder, FullTopic, Ifc, IfcChecker, IfcCheckerCheckplan, IfcCheckerResults, IfcFiles, Label, LineSeriaizer, OrthogonalCamera, PerspectiveCamera, Point, Priority, Project, ProjectInvitation, ProjectRole, Property, PropertyDefinition, PropertySet, RawClassification, RawDefinition, RawElement, RawElements, RawProperty, RawPropertySet, RawUnit, Rule, RuleComponent, Ruleset, SelfBcfUser, SelfUser, Snapshot, Space, Stage, Topic, TopicStatus, TopicType, Unit, User, UserCloudUpdate, UserProjectUpdate, ViewSetupHints, Viewpoint, Visibility, WebHook, Zone, ZoneSpace, ApplicationApi, BcfApi, CheckplanApi, CloudApi, IfcApi, ProjectApi, UserApi) {
+}(function(ApiClient, BcfProject, BcfUser, CheckPlan, CheckerResult, Classification, ClippingPlane, Cloud, CloudInvitation, CloudRole, Coloring, Comment, Component, ComponentsParent, Direction, Document, Element, ElementClassificationRelation, ElementPropertySetRelation, Extensions, Feature, Folder, FullTopic, Ifc, IfcChecker, IfcCheckerCheckplan, IfcCheckerResults, IfcExport, IfcFiles, Label, LineSeriaizer, OrthogonalCamera, PerspectiveCamera, Point, Priority, Processor, ProcessorHandler, Project, ProjectInvitation, ProjectRole, ProjectWithChildren, Property, PropertyDefinition, PropertySet, RawClassification, RawDefinition, RawElement, RawElements, RawProperty, RawPropertySet, RawUnit, Rule, RuleComponent, Ruleset, SelfBcfUser, SelfUser, Snapshot, Space, Stage, Topic, TopicStatus, TopicType, Unit, User, UserCloudUpdate, UserProjectUpdate, ViewSetupHints, Viewpoint, Visibility, WebHook, Zone, ZoneSpace, ApplicationApi, BcfApi, CheckplanApi, CloudApi, IfcApi, ProjectApi, UserApi) {
   'use strict';
 
   /**
@@ -193,6 +193,11 @@
      */
     IfcCheckerResults: IfcCheckerResults,
     /**
+     * The IfcExport model constructor.
+     * @property {module:model/IfcExport}
+     */
+    IfcExport: IfcExport,
+    /**
      * The IfcFiles model constructor.
      * @property {module:model/IfcFiles}
      */
@@ -228,6 +233,16 @@
      */
     Priority: Priority,
     /**
+     * The Processor model constructor.
+     * @property {module:model/Processor}
+     */
+    Processor: Processor,
+    /**
+     * The ProcessorHandler model constructor.
+     * @property {module:model/ProcessorHandler}
+     */
+    ProcessorHandler: ProcessorHandler,
+    /**
      * The Project model constructor.
      * @property {module:model/Project}
      */
@@ -242,6 +257,11 @@
      * @property {module:model/ProjectRole}
      */
     ProjectRole: ProjectRole,
+    /**
+     * The ProjectWithChildren model constructor.
+     * @property {module:model/ProjectWithChildren}
+     */
+    ProjectWithChildren: ProjectWithChildren,
     /**
      * The Property model constructor.
      * @property {module:model/Property}

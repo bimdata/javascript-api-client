@@ -202,6 +202,12 @@ Class | Method | HTTP request | Description
 *bimdata.CheckplanApi* | [**updateRuleComponent**](docs/CheckplanApi.md#updateRuleComponent) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Update some fields of a RuleComponent
 *bimdata.CheckplanApi* | [**updateRuleset**](docs/CheckplanApi.md#updateRuleset) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Update some fields of a Ruleset
 *bimdata.CloudApi* | [**cancelCloudUserInvitation**](docs/CloudApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | Cancel a pending invitation
+*bimdata.CloudApi* | [**cloudProcessorCreate**](docs/CloudApi.md#cloudProcessorCreate) | **POST** /cloud/{cloud_pk}/processor | 
+*bimdata.CloudApi* | [**cloudProcessorDelete**](docs/CloudApi.md#cloudProcessorDelete) | **DELETE** /cloud/{cloud_pk}/processor/{id} | 
+*bimdata.CloudApi* | [**cloudProcessorList**](docs/CloudApi.md#cloudProcessorList) | **GET** /cloud/{cloud_pk}/processor | 
+*bimdata.CloudApi* | [**cloudProcessorPartialUpdate**](docs/CloudApi.md#cloudProcessorPartialUpdate) | **PATCH** /cloud/{cloud_pk}/processor/{id} | 
+*bimdata.CloudApi* | [**cloudProcessorRead**](docs/CloudApi.md#cloudProcessorRead) | **GET** /cloud/{cloud_pk}/processor/{id} | 
+*bimdata.CloudApi* | [**cloudProcessorUpdate**](docs/CloudApi.md#cloudProcessorUpdate) | **PUT** /cloud/{cloud_pk}/processor/{id} | 
 *bimdata.CloudApi* | [**createCloud**](docs/CloudApi.md#createCloud) | **POST** /cloud | Create a cloud
 *bimdata.CloudApi* | [**createDemo**](docs/CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | Create a Demo project in a cloud
 *bimdata.CloudApi* | [**deleteCloud**](docs/CloudApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
@@ -228,6 +234,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**bulkRemoveElementsFromClassification**](docs/IfcApi.md#bulkRemoveElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/bulk_destroy | Remove the classifications from all elements
 *bimdata.IfcApi* | [**bulkUpdateElements**](docs/IfcApi.md#bulkUpdateElements) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update | Update many elements at once (all field must be defined)
 *bimdata.IfcApi* | [**bulkUpdateIfcProperty**](docs/IfcApi.md#bulkUpdateIfcProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update | Update all fields of many properties of a model
+*bimdata.IfcApi* | [**cloudProjectIfcProcessorhandlerPartialUpdate**](docs/IfcApi.md#cloudProjectIfcProcessorhandlerPartialUpdate) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | 
 *bimdata.IfcApi* | [**createClassificationElementRelations**](docs/IfcApi.md#createClassificationElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | Create association between existing classification and existing element
 *bimdata.IfcApi* | [**createClassificationsOfElement**](docs/IfcApi.md#createClassificationsOfElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Create one or many classifications to an element
 *bimdata.IfcApi* | [**createElement**](docs/IfcApi.md#createElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element | Create an element in the model
@@ -252,6 +259,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**deleteSpace**](docs/IfcApi.md#deleteSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Delete a space
 *bimdata.IfcApi* | [**deleteZone**](docs/IfcApi.md#deleteZone) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Delete a zone of a model
 *bimdata.IfcApi* | [**deleteZoneSpace**](docs/IfcApi.md#deleteZoneSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Delete a space of a zone
+*bimdata.IfcApi* | [**exportIfc**](docs/IfcApi.md#exportIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/export | Export IFC
 *bimdata.IfcApi* | [**fullUpdateElement**](docs/IfcApi.md#fullUpdateElement) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update all fields of an element
 *bimdata.IfcApi* | [**fullUpdateIfc**](docs/IfcApi.md#fullUpdateIfc) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Update all fields of a model
 *bimdata.IfcApi* | [**fullUpdateIfcProperty**](docs/IfcApi.md#fullUpdateIfcProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | Update some fields of a Property
@@ -287,6 +295,8 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**getIfcUnit**](docs/IfcApi.md#getIfcUnit) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | Retrieve a Unit of a model
 *bimdata.IfcApi* | [**getIfcUnits**](docs/IfcApi.md#getIfcUnits) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit | Retrieve all Units of a model
 *bimdata.IfcApi* | [**getIfcs**](docs/IfcApi.md#getIfcs) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc | Retrieve all models
+*bimdata.IfcApi* | [**getProcessorHandler**](docs/IfcApi.md#getProcessorHandler) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | Retrieve a processor handler
+*bimdata.IfcApi* | [**getProcessorHandlers**](docs/IfcApi.md#getProcessorHandlers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler | Get all processor handlers
 *bimdata.IfcApi* | [**getPropertySet**](docs/IfcApi.md#getPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Retrieve a PropertySet of a model
 *bimdata.IfcApi* | [**getPropertySets**](docs/IfcApi.md#getPropertySets) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset | Retrieve all PropertySets of a model
 *bimdata.IfcApi* | [**getRawElements**](docs/IfcApi.md#getRawElements) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw | Retrieve all elements in a optimized format
@@ -309,6 +319,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**updateIfcProperty**](docs/IfcApi.md#updateIfcProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | Update some fields of a Property
 *bimdata.IfcApi* | [**updateIfcPropertyDefinition**](docs/IfcApi.md#updateIfcPropertyDefinition) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | Update some fields of many PropertyDefinitions of a model
 *bimdata.IfcApi* | [**updateIfcUnit**](docs/IfcApi.md#updateIfcUnit) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | Update some fields of a Unit of a model
+*bimdata.IfcApi* | [**updateProcessorHandler**](docs/IfcApi.md#updateProcessorHandler) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | Update the status of a processor handler
 *bimdata.IfcApi* | [**updatePropertySet**](docs/IfcApi.md#updatePropertySet) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Update some fields of a PropertySet
 *bimdata.IfcApi* | [**updateSpace**](docs/IfcApi.md#updateSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Update some fields of a space
 *bimdata.IfcApi* | [**updateZone**](docs/IfcApi.md#updateZone) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Update some fields of a zone
@@ -335,7 +346,9 @@ Class | Method | HTTP request | Description
 *bimdata.ProjectApi* | [**getFolder**](docs/ProjectApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Retrieve a folder
 *bimdata.ProjectApi* | [**getFolders**](docs/ProjectApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | Retrieve all folders
 *bimdata.ProjectApi* | [**getProject**](docs/ProjectApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | Retrieve a project
+*bimdata.ProjectApi* | [**getProjectDMSTree**](docs/ProjectApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
 *bimdata.ProjectApi* | [**getProjectInvitations**](docs/ProjectApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
+*bimdata.ProjectApi* | [**getProjectSubTree**](docs/ProjectApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
 *bimdata.ProjectApi* | [**getProjectTree**](docs/ProjectApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | Retrieve the complete DMS tree
 *bimdata.ProjectApi* | [**getProjectUser**](docs/ProjectApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Retrieve a user in a project
 *bimdata.ProjectApi* | [**getProjectUsers**](docs/ProjectApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | Retrieve all users in a project
@@ -379,6 +392,7 @@ Class | Method | HTTP request | Description
  - [bimdata.IfcChecker](docs/IfcChecker.md)
  - [bimdata.IfcCheckerCheckplan](docs/IfcCheckerCheckplan.md)
  - [bimdata.IfcCheckerResults](docs/IfcCheckerResults.md)
+ - [bimdata.IfcExport](docs/IfcExport.md)
  - [bimdata.IfcFiles](docs/IfcFiles.md)
  - [bimdata.Label](docs/Label.md)
  - [bimdata.LineSeriaizer](docs/LineSeriaizer.md)
@@ -386,9 +400,12 @@ Class | Method | HTTP request | Description
  - [bimdata.PerspectiveCamera](docs/PerspectiveCamera.md)
  - [bimdata.Point](docs/Point.md)
  - [bimdata.Priority](docs/Priority.md)
+ - [bimdata.Processor](docs/Processor.md)
+ - [bimdata.ProcessorHandler](docs/ProcessorHandler.md)
  - [bimdata.Project](docs/Project.md)
  - [bimdata.ProjectInvitation](docs/ProjectInvitation.md)
  - [bimdata.ProjectRole](docs/ProjectRole.md)
+ - [bimdata.ProjectWithChildren](docs/ProjectWithChildren.md)
  - [bimdata.Property](docs/Property.md)
  - [bimdata.PropertyDefinition](docs/PropertyDefinition.md)
  - [bimdata.PropertySet](docs/PropertySet.md)

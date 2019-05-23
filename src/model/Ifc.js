@@ -124,7 +124,7 @@
    */
   exports.prototype['creator'] = undefined;
   /**
-   * @member {module:model/Ifc.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -176,38 +176,6 @@
    */
   exports.prototype['project_id'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "C"
-     * @const
-     */
-    "C": "C",
-    /**
-     * value: "D"
-     * @const
-     */
-    "D": "D",
-    /**
-     * value: "P"
-     * @const
-     */
-    "P": "P",
-    /**
-     * value: "I"
-     * @const
-     */
-    "I": "I",
-    /**
-     * value: "E"
-     * @const
-     */
-    "E": "E"  };
 
 
   return exports;
