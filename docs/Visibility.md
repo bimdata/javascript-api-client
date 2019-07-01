@@ -1,6 +1,7 @@
 # bimdata.Visibility
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **defaultVisibility** | **Boolean** |  | [optional] 

@@ -1,6 +1,7 @@
 # bimdata.IfcCheckerCheckplan
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **updatedAt** | **Date** |  | [optional] 

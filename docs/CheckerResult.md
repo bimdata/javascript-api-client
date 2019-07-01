@@ -1,6 +1,7 @@
 # bimdata.CheckerResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
@@ -12,7 +13,7 @@ Name | Type | Description | Notes
 **errorDetail** | **String** |  | [optional] 
 
 
-<a name="StatusEnum"></a>
+
 ## Enum: StatusEnum
 
 

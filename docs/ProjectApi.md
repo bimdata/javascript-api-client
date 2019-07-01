@@ -41,8 +41,9 @@ Method | HTTP request | Description
 [**updateProjectUser**](ProjectApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update some fields of a project user
 
 
-<a name="cancelProjectUserInvitation"></a>
-# **cancelProjectUserInvitation**
+
+## cancelProjectUserInvitation
+
 > cancelProjectUserInvitation(cloudPk, id, projectPk)
 
 Cancel a pending invitation
@@ -50,28 +51,36 @@ Cancel a pending invitation
  Required scopes: org:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this invitation.
-var projectPk = "projectPk_example"; // String | 
-apiInstance.cancelProjectUserInvitation(cloudPk, id, projectPk).then(function() {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this invitation.
+let projectPk = "projectPk_example"; // String | 
+apiInstance.cancelProjectUserInvitation(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -85,38 +94,46 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="createClassification"></a>
-# **createClassification**
-> [Classification] createClassification(cloudPk, projectPk, classification)
+
+## createClassification
+
+> [Classification] createClassification(cloudPk, projectPk, data)
 
 Create a classification
 
          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive      Required scopes: ifc:write
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-var classification = [new bimdata.Classification()]; // [Classification] | 
-apiInstance.createClassification(cloudPk, projectPk, classification).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = [new bimdata.Classification()]; // [Classification] | 
+apiInstance.createClassification(cloudPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -124,11 +141,12 @@ apiInstance.createClassification(cloudPk, projectPk, classification).then(functi
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **classification** | [**[Classification]**](Array.md)|  | 
+ **data** | [**[Classification]**](Classification.md)|  | 
 
 ### Return type
 
@@ -136,15 +154,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="createDocument"></a>
-# **createDocument**
+
+## createDocument
+
 > Document createDocument(cloudPk, projectPk, name, opts)
 
 Create a document
@@ -152,20 +171,27 @@ Create a document
 RCreate a document. If the document is an IFC, an IFC model will be created and attached to this document Required scopes: document:write
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-var name = "name_example"; // String | Shown name of the file
-var opts = {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let name = "name_example"; // String | Shown name of the file
+let opts = {
   'parent': 56, // Number | 
   'parentId': 56, // Number | 
   'creator': 56, // Number | 
@@ -175,15 +201,16 @@ var opts = {
   'file': "/path/to/file", // File | 
   'size': 56 // Number | Size of the file. The file may be compressed and show a smaller size
 };
-apiInstance.createDocument(cloudPk, projectPk, name, opts).then(function(data) {
+apiInstance.createDocument(cloudPk, projectPk, name, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -205,38 +232,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
- - **Accept**: application/json
+- **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
+- **Accept**: application/json
 
-<a name="createFolder"></a>
-# **createFolder**
-> Folder createFolder(cloudPk, projectPk, folder)
+
+## createFolder
+
+> Folder createFolder(cloudPk, projectPk, data)
 
 Create a folder
 
 If the created folder have no parent, it will be put as a child of the default root folder of the project Required scopes: document:write
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-var folder = new bimdata.Folder(); // Folder | 
-apiInstance.createFolder(cloudPk, projectPk, folder).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.Folder(); // Folder | 
+apiInstance.createFolder(cloudPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -244,11 +279,12 @@ apiInstance.createFolder(cloudPk, projectPk, folder).then(function(data) {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **folder** | [**Folder**](Folder.md)|  | 
+ **data** | [**Folder**](Folder.md)|  | 
 
 ### Return type
 
@@ -256,37 +292,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="createProject"></a>
-# **createProject**
-> Project createProject(cloudPk, project)
+
+## createProject
+
+> Project createProject(cloudPk, data)
 
 Create a project
 
 Create a project Required scopes: org:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var project = new bimdata.Project(); // Project | 
-apiInstance.createProject(cloudPk, project).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let data = new bimdata.Project(); // Project | 
+apiInstance.createProject(cloudPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -294,10 +338,11 @@ apiInstance.createProject(cloudPk, project).then(function(data) {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **project** | [**Project**](Project.md)|  | 
+ **data** | [**Project**](Project.md)|  | 
 
 ### Return type
 
@@ -305,15 +350,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="deleteClassification"></a>
-# **deleteClassification**
+
+## deleteClassification
+
 > deleteClassification(cloudPk, id, projectPk)
 
 Delete a classification
@@ -321,28 +367,36 @@ Delete a classification
 All elements having this classification will lose it Required scopes: ifc:write
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this classification.
-var projectPk = "projectPk_example"; // String | 
-apiInstance.deleteClassification(cloudPk, id, projectPk).then(function() {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this classification.
+let projectPk = "projectPk_example"; // String | 
+apiInstance.deleteClassification(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -356,15 +410,16 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteDocument"></a>
-# **deleteDocument**
+
+## deleteDocument
+
 > deleteDocument(cloudPk, id, projectPk)
 
 Delete the document
@@ -372,28 +427,36 @@ Delete the document
 Delete the document Required scopes: document:write
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this document.
-var projectPk = "projectPk_example"; // String | 
-apiInstance.deleteDocument(cloudPk, id, projectPk).then(function() {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this document.
+let projectPk = "projectPk_example"; // String | 
+apiInstance.deleteDocument(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -407,15 +470,16 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteFolder"></a>
-# **deleteFolder**
+
+## deleteFolder
+
 > deleteFolder(cloudPk, id, projectPk)
 
 Delete a folder
@@ -423,28 +487,36 @@ Delete a folder
 All files and subfolders will be deleted too Required scopes: document:write
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this folder.
-var projectPk = "projectPk_example"; // String | 
-apiInstance.deleteFolder(cloudPk, id, projectPk).then(function() {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this folder.
+let projectPk = "projectPk_example"; // String | 
+apiInstance.deleteFolder(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -458,15 +530,16 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteProject"></a>
-# **deleteProject**
+
+## deleteProject
+
 > deleteProject(cloudPk, id)
 
 Delete a project
@@ -474,27 +547,35 @@ Delete a project
 It can take a long time to respond because we may need to delete all properties of all elements of all models in the project Required scopes: org:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this project.
-apiInstance.deleteProject(cloudPk, id).then(function() {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this project.
+apiInstance.deleteProject(cloudPk, id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -507,15 +588,16 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteProjectUser"></a>
-# **deleteProjectUser**
+
+## deleteProjectUser
+
 > deleteProjectUser(cloudPk, id, projectPk)
 
 Remove a user from a project
@@ -523,28 +605,36 @@ Remove a user from a project
 Remove a user from a project Required scopes: cloud:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-apiInstance.deleteProjectUser(cloudPk, id, projectPk).then(function() {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = "id_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.deleteProjectUser(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -558,39 +648,47 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="fullUpdateClassification"></a>
-# **fullUpdateClassification**
-> Classification fullUpdateClassification(cloudPk, id, projectPk, classification)
+
+## fullUpdateClassification
+
+> Classification fullUpdateClassification(cloudPk, id, projectPk, data)
 
 Update all fields of a classification
 
 Update all fields of a classification Required scopes: ifc:write
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this classification.
-var projectPk = "projectPk_example"; // String | 
-var classification = new bimdata.Classification(); // Classification | 
-apiInstance.fullUpdateClassification(cloudPk, id, projectPk, classification).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this classification.
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.Classification(); // Classification | 
+apiInstance.fullUpdateClassification(cloudPk, id, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -598,12 +696,13 @@ apiInstance.fullUpdateClassification(cloudPk, id, projectPk, classification).the
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this classification. | 
  **projectPk** | **String**|  | 
- **classification** | [**Classification**](Classification.md)|  | 
+ **data** | [**Classification**](Classification.md)|  | 
 
 ### Return type
 
@@ -611,15 +710,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="fullUpdateDocument"></a>
-# **fullUpdateDocument**
+
+## fullUpdateDocument
+
 > Document fullUpdateDocument(cloudPk, id, projectPk, name, opts)
 
 Update all fields of the document
@@ -627,21 +727,28 @@ Update all fields of the document
 Update all fields of the document Required scopes: document:write
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this document.
-var projectPk = "projectPk_example"; // String | 
-var name = "name_example"; // String | Shown name of the file
-var opts = {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this document.
+let projectPk = "projectPk_example"; // String | 
+let name = "name_example"; // String | Shown name of the file
+let opts = {
   'parent': 56, // Number | 
   'parentId': 56, // Number | 
   'creator': 56, // Number | 
@@ -651,15 +758,16 @@ var opts = {
   'file': "/path/to/file", // File | 
   'size': 56 // Number | Size of the file. The file may be compressed and show a smaller size
 };
-apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, opts).then(function(data) {
+apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -682,39 +790,47 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
- - **Accept**: application/json
+- **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
+- **Accept**: application/json
 
-<a name="fullUpdateFolder"></a>
-# **fullUpdateFolder**
-> Folder fullUpdateFolder(cloudPk, id, projectPk, folder)
+
+## fullUpdateFolder
+
+> Folder fullUpdateFolder(cloudPk, id, projectPk, data)
 
 Update all fields of a folder
 
 Update all fields of a folder Required scopes: document:write
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this folder.
-var projectPk = "projectPk_example"; // String | 
-var folder = new bimdata.Folder(); // Folder | 
-apiInstance.fullUpdateFolder(cloudPk, id, projectPk, folder).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this folder.
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.Folder(); // Folder | 
+apiInstance.fullUpdateFolder(cloudPk, id, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -722,12 +838,13 @@ apiInstance.fullUpdateFolder(cloudPk, id, projectPk, folder).then(function(data)
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this folder. | 
  **projectPk** | **String**|  | 
- **folder** | [**Folder**](Folder.md)|  | 
+ **data** | [**Folder**](Folder.md)|  | 
 
 ### Return type
 
@@ -735,38 +852,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="fullUpdateProject"></a>
-# **fullUpdateProject**
-> Project fullUpdateProject(cloudPk, id, project)
+
+## fullUpdateProject
+
+> Project fullUpdateProject(cloudPk, id, data)
 
 Update all fields of a project
 
 Update all fields of a project Required scopes: org:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this project.
-var project = new bimdata.Project(); // Project | 
-apiInstance.fullUpdateProject(cloudPk, id, project).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this project.
+let data = new bimdata.Project(); // Project | 
+apiInstance.fullUpdateProject(cloudPk, id, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -774,11 +899,12 @@ apiInstance.fullUpdateProject(cloudPk, id, project).then(function(data) {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
- **project** | [**Project**](Project.md)|  | 
+ **data** | [**Project**](Project.md)|  | 
 
 ### Return type
 
@@ -786,39 +912,47 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="fullUpdateProjectUser"></a>
-# **fullUpdateProjectUser**
-> User fullUpdateProjectUser(cloudPk, id, projectPk, userProjectUpdate)
+
+## fullUpdateProjectUser
+
+> User fullUpdateProjectUser(cloudPk, id, projectPk, data)
 
 Update all fields of a project user
 
 Change the user role in the cloud Required scopes: cloud:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-var userProjectUpdate = new bimdata.UserProjectUpdate(); // UserProjectUpdate | 
-apiInstance.fullUpdateProjectUser(cloudPk, id, projectPk, userProjectUpdate).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = "id_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.UserProjectUpdate(); // UserProjectUpdate | 
+apiInstance.fullUpdateProjectUser(cloudPk, id, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -826,12 +960,13 @@ apiInstance.fullUpdateProjectUser(cloudPk, id, projectPk, userProjectUpdate).the
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **String**|  | 
  **projectPk** | **String**|  | 
- **userProjectUpdate** | [**UserProjectUpdate**](UserProjectUpdate.md)|  | 
+ **data** | [**UserProjectUpdate**](UserProjectUpdate.md)|  | 
 
 ### Return type
 
@@ -839,15 +974,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="getClassification"></a>
-# **getClassification**
+
+## getClassification
+
 > Classification getClassification(cloudPk, id, projectPk)
 
 Retrieve a classification
@@ -855,28 +991,36 @@ Retrieve a classification
 Retrieve a classification Required scopes: ifc:read
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this classification.
-var projectPk = "projectPk_example"; // String | 
-apiInstance.getClassification(cloudPk, id, projectPk).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this classification.
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getClassification(cloudPk, id, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -890,15 +1034,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getClassifications"></a>
-# **getClassifications**
+
+## getClassifications
+
 > [Classification] getClassifications(cloudPk, projectPk)
 
 Retrieve all classifications
@@ -906,27 +1051,35 @@ Retrieve all classifications
 Retrieve all classifications of all models in the project Required scopes: ifc:read
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-apiInstance.getClassifications(cloudPk, projectPk).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getClassifications(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -939,15 +1092,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getDocument"></a>
-# **getDocument**
+
+## getDocument
+
 > Document getDocument(cloudPk, id, projectPk)
 
 Retrieve a document
@@ -955,28 +1109,36 @@ Retrieve a document
 Retrieve a document in the project Required scopes: document:read
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this document.
-var projectPk = "projectPk_example"; // String | 
-apiInstance.getDocument(cloudPk, id, projectPk).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this document.
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getDocument(cloudPk, id, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -990,15 +1152,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getDocuments"></a>
-# **getDocuments**
+
+## getDocuments
+
 > [Document] getDocuments(cloudPk, projectPk)
 
 Retrieve all documents
@@ -1006,27 +1169,35 @@ Retrieve all documents
 Retrieve all documents in the project Required scopes: document:read
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-apiInstance.getDocuments(cloudPk, projectPk).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getDocuments(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1039,15 +1210,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getFolder"></a>
-# **getFolder**
+
+## getFolder
+
 > Folder getFolder(cloudPk, id, projectPk)
 
 Retrieve a folder
@@ -1055,28 +1227,36 @@ Retrieve a folder
 Retrieve a folder Required scopes: document:read
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this folder.
-var projectPk = "projectPk_example"; // String | 
-apiInstance.getFolder(cloudPk, id, projectPk).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this folder.
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getFolder(cloudPk, id, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1090,15 +1270,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getFolders"></a>
-# **getFolders**
+
+## getFolders
+
 > [Folder] getFolders(cloudPk, projectPk)
 
 Retrieve all folders
@@ -1106,27 +1287,35 @@ Retrieve all folders
 Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree Required scopes: document:read
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-apiInstance.getFolders(cloudPk, projectPk).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getFolders(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1139,15 +1328,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getProject"></a>
-# **getProject**
+
+## getProject
+
 > ProjectWithChildren getProject(cloudPk, id)
 
 Retrieve a project
@@ -1155,27 +1345,35 @@ Retrieve a project
 Retrieve a project
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this project.
-apiInstance.getProject(cloudPk, id).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this project.
+apiInstance.getProject(cloudPk, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1188,15 +1386,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getProjectDMSTree"></a>
-# **getProjectDMSTree**
+
+## getProjectDMSTree
+
 > Folder getProjectDMSTree(cloudPk, id)
 
 Retrieve the complete DMS tree
@@ -1204,27 +1403,35 @@ Retrieve the complete DMS tree
 Retrieve the complete DMS tree (all folders and all documents in the project)
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this project.
-apiInstance.getProjectDMSTree(cloudPk, id).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this project.
+apiInstance.getProjectDMSTree(cloudPk, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1237,15 +1444,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getProjectInvitations"></a>
-# **getProjectInvitations**
+
+## getProjectInvitations
+
 > [ProjectInvitation] getProjectInvitations(cloudPk, projectPk)
 
 Retrieve all pending invitations in the project
@@ -1253,27 +1461,35 @@ Retrieve all pending invitations in the project
 Returns app&#39;s invitations only Required scopes: org:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-apiInstance.getProjectInvitations(cloudPk, projectPk).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getProjectInvitations(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1286,15 +1502,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getProjectSubTree"></a>
-# **getProjectSubTree**
+
+## getProjectSubTree
+
 > [ProjectWithChildren] getProjectSubTree(cloudPk)
 
 Retrieve the complete projects tree of the cloud
@@ -1302,26 +1519,34 @@ Retrieve the complete projects tree of the cloud
 Retrieve the complete projects tree of the cloud
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-apiInstance.getProjectSubTree(cloudPk).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+apiInstance.getProjectSubTree(cloudPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1333,15 +1558,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getProjectTree"></a>
-# **getProjectTree**
+
+## getProjectTree
+
 > Folder getProjectTree(cloudPk, id)
 
 Retrieve the complete DMS tree
@@ -1349,27 +1575,35 @@ Retrieve the complete DMS tree
 Retrieve the complete DMS tree (all folders and all documents in the project). DEPRECATED: renamed to getProjectDMSTree
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this project.
-apiInstance.getProjectTree(cloudPk, id).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this project.
+apiInstance.getProjectTree(cloudPk, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1382,15 +1616,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getProjectUser"></a>
-# **getProjectUser**
+
+## getProjectUser
+
 > User getProjectUser(cloudPk, id, projectPk)
 
 Retrieve a user in a project
@@ -1398,28 +1633,36 @@ Retrieve a user in a project
 Each member of a project can see other members of the project Required scopes: cloud:read
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-apiInstance.getProjectUser(cloudPk, id, projectPk).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = "id_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getProjectUser(cloudPk, id, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1433,15 +1676,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getProjectUsers"></a>
-# **getProjectUsers**
+
+## getProjectUsers
+
 > [User] getProjectUsers(cloudPk, projectPk)
 
 Retrieve all users in a project
@@ -1449,27 +1693,35 @@ Retrieve all users in a project
 Each member of a project can see other members of the project Required scopes: cloud:read
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-apiInstance.getProjectUsers(cloudPk, projectPk).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getProjectUsers(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1482,15 +1734,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getProjects"></a>
-# **getProjects**
+
+## getProjects
+
 > [Project] getProjects(cloudPk)
 
 Retrieve all projects
@@ -1498,26 +1751,34 @@ Retrieve all projects
 Retrieve all projects of the cloud. All project are shown at the same level. see #getProjectSubTree
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-apiInstance.getProjects(cloudPk).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+apiInstance.getProjects(cloudPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1529,38 +1790,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="inviteProjectUser"></a>
-# **inviteProjectUser**
-> ProjectInvitation inviteProjectUser(cloudPk, projectPk, projectInvitation)
+
+## inviteProjectUser
+
+> ProjectInvitation inviteProjectUser(cloudPk, projectPk, data)
 
 Invite a project member
 
 Invite a project member. If the user is not already a cloud member, they will also be invited in the cloud with USER role. Required scopes: org:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-var projectInvitation = new bimdata.ProjectInvitation(); // ProjectInvitation | 
-apiInstance.inviteProjectUser(cloudPk, projectPk, projectInvitation).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.ProjectInvitation(); // ProjectInvitation | 
+apiInstance.inviteProjectUser(cloudPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1568,11 +1837,12 @@ apiInstance.inviteProjectUser(cloudPk, projectPk, projectInvitation).then(functi
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **projectInvitation** | [**ProjectInvitation**](ProjectInvitation.md)|  | 
+ **data** | [**ProjectInvitation**](ProjectInvitation.md)|  | 
 
 ### Return type
 
@@ -1580,39 +1850,47 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="updateClassification"></a>
-# **updateClassification**
-> Classification updateClassification(cloudPk, id, projectPk, classification)
+
+## updateClassification
+
+> Classification updateClassification(cloudPk, id, projectPk, data)
 
 Update some fields of a classification
 
 Update some fields of a classification Required scopes: ifc:write
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this classification.
-var projectPk = "projectPk_example"; // String | 
-var classification = new bimdata.Classification(); // Classification | 
-apiInstance.updateClassification(cloudPk, id, projectPk, classification).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this classification.
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.Classification(); // Classification | 
+apiInstance.updateClassification(cloudPk, id, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1620,12 +1898,13 @@ apiInstance.updateClassification(cloudPk, id, projectPk, classification).then(fu
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this classification. | 
  **projectPk** | **String**|  | 
- **classification** | [**Classification**](Classification.md)|  | 
+ **data** | [**Classification**](Classification.md)|  | 
 
 ### Return type
 
@@ -1633,39 +1912,47 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="updateDocument"></a>
-# **updateDocument**
-> Document updateDocument(cloudPk, id, projectPk, document)
+
+## updateDocument
+
+> Document updateDocument(cloudPk, id, projectPk, data)
 
 Update some fields of the document
 
 Update some fields of the document Required scopes: document:write
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this document.
-var projectPk = "projectPk_example"; // String | 
-var document = new bimdata.Document(); // Document | 
-apiInstance.updateDocument(cloudPk, id, projectPk, document).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this document.
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.Document(); // Document | 
+apiInstance.updateDocument(cloudPk, id, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1673,12 +1960,13 @@ apiInstance.updateDocument(cloudPk, id, projectPk, document).then(function(data)
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **String**|  | 
- **document** | [**Document**](Document.md)|  | 
+ **data** | [**Document**](Document.md)|  | 
 
 ### Return type
 
@@ -1686,39 +1974,47 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="updateFolder"></a>
-# **updateFolder**
-> Folder updateFolder(cloudPk, id, projectPk, folder)
+
+## updateFolder
+
+> Folder updateFolder(cloudPk, id, projectPk, data)
 
 Update some fields of a folder
 
 Update some fields of a folder Required scopes: document:write
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this folder.
-var projectPk = "projectPk_example"; // String | 
-var folder = new bimdata.Folder(); // Folder | 
-apiInstance.updateFolder(cloudPk, id, projectPk, folder).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this folder.
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.Folder(); // Folder | 
+apiInstance.updateFolder(cloudPk, id, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1726,12 +2022,13 @@ apiInstance.updateFolder(cloudPk, id, projectPk, folder).then(function(data) {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this folder. | 
  **projectPk** | **String**|  | 
- **folder** | [**Folder**](Folder.md)|  | 
+ **data** | [**Folder**](Folder.md)|  | 
 
 ### Return type
 
@@ -1739,38 +2036,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="updateProject"></a>
-# **updateProject**
-> Project updateProject(cloudPk, id, project)
+
+## updateProject
+
+> Project updateProject(cloudPk, id, data)
 
 Update some fields of a project
 
 Update some fields of a project Required scopes: org:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = 56; // Number | A unique integer value identifying this project.
-var project = new bimdata.Project(); // Project | 
-apiInstance.updateProject(cloudPk, id, project).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this project.
+let data = new bimdata.Project(); // Project | 
+apiInstance.updateProject(cloudPk, id, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1778,11 +2083,12 @@ apiInstance.updateProject(cloudPk, id, project).then(function(data) {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
- **project** | [**Project**](Project.md)|  | 
+ **data** | [**Project**](Project.md)|  | 
 
 ### Return type
 
@@ -1790,39 +2096,47 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="updateProjectUser"></a>
-# **updateProjectUser**
-> User updateProjectUser(cloudPk, id, projectPk, userProjectUpdate)
+
+## updateProjectUser
+
+> User updateProjectUser(cloudPk, id, projectPk, data)
 
 Update some fields of a project user
 
 Change the user role in the cloud Required scopes: cloud:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ProjectApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
-var projectPk = "projectPk_example"; // String | 
-var userProjectUpdate = new bimdata.UserProjectUpdate(); // UserProjectUpdate | 
-apiInstance.updateProjectUser(cloudPk, id, projectPk, userProjectUpdate).then(function(data) {
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = "id_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.UserProjectUpdate(); // UserProjectUpdate | 
+apiInstance.updateProjectUser(cloudPk, id, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1830,12 +2144,13 @@ apiInstance.updateProjectUser(cloudPk, id, projectPk, userProjectUpdate).then(fu
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **String**|  | 
  **projectPk** | **String**|  | 
- **userProjectUpdate** | [**UserProjectUpdate**](UserProjectUpdate.md)|  | 
+ **data** | [**UserProjectUpdate**](UserProjectUpdate.md)|  | 
 
 ### Return type
 
@@ -1843,10 +2158,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

@@ -1,6 +1,7 @@
 # bimdata.OrthogonalCamera
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **viewToWorldScale** | **Number** |  | 

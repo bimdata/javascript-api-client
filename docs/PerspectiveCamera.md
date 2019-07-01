@@ -1,6 +1,7 @@
 # bimdata.PerspectiveCamera
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fieldOfView** | **Number** |  | 

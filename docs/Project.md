@@ -1,6 +1,7 @@
 # bimdata.Project
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
@@ -14,7 +15,7 @@ Name | Type | Description | Notes
 **rootFolderId** | **String** |  | [optional] 
 
 
-<a name="StatusEnum"></a>
+
 ## Enum: StatusEnum
 
 

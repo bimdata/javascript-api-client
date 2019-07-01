@@ -1,6 +1,7 @@
 # bimdata.Component
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ifcGuid** | **String** |  | [optional] 

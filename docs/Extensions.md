@@ -1,6 +1,7 @@
 # bimdata.Extensions
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **topicType** | **[String]** |  | 

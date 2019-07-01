@@ -13,30 +13,38 @@ Method | HTTP request | Description
 [**updateWebHook**](ApplicationApi.md#updateWebHook) | **PATCH** /cloud/{cloud_pk}/webhook/{id} | Update some field of a webhook
 
 
-<a name="createWebHook"></a>
-# **createWebHook**
-> WebHook createWebHook(cloudPk, webHook)
+
+## createWebHook
+
+> WebHook createWebHook(cloudPk, data)
 
 Create a new Webhook
 
 Create a new Webhook Required scopes: webhook:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ApplicationApi();
-var cloudPk = "cloudPk_example"; // String | 
-var webHook = new bimdata.WebHook(); // WebHook | 
-apiInstance.createWebHook(cloudPk, webHook).then(function(data) {
+let apiInstance = new bimdata.ApplicationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let data = new bimdata.WebHook(); // WebHook | 
+apiInstance.createWebHook(cloudPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -44,10 +52,11 @@ apiInstance.createWebHook(cloudPk, webHook).then(function(data) {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **webHook** | [**WebHook**](WebHook.md)|  | 
+ **data** | [**WebHook**](WebHook.md)|  | 
 
 ### Return type
 
@@ -55,15 +64,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="deleteWebHook"></a>
-# **deleteWebHook**
+
+## deleteWebHook
+
 > deleteWebHook(cloudPk, id)
 
 Delete a webhook
@@ -71,27 +81,35 @@ Delete a webhook
 Delete a webhook Required scopes: webhook:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ApplicationApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
-apiInstance.deleteWebHook(cloudPk, id).then(function() {
+let apiInstance = new bimdata.ApplicationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = "id_example"; // String | 
+apiInstance.deleteWebHook(cloudPk, id).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -104,38 +122,46 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="fullUpdateWebHook"></a>
-# **fullUpdateWebHook**
-> WebHook fullUpdateWebHook(cloudPk, id, webHook)
+
+## fullUpdateWebHook
+
+> WebHook fullUpdateWebHook(cloudPk, id, data)
 
 Update all field of a webhook
 
 Update all field of a webhook Required scopes: webhook:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ApplicationApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
-var webHook = new bimdata.WebHook(); // WebHook | 
-apiInstance.fullUpdateWebHook(cloudPk, id, webHook).then(function(data) {
+let apiInstance = new bimdata.ApplicationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = "id_example"; // String | 
+let data = new bimdata.WebHook(); // WebHook | 
+apiInstance.fullUpdateWebHook(cloudPk, id, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -143,11 +169,12 @@ apiInstance.fullUpdateWebHook(cloudPk, id, webHook).then(function(data) {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **String**|  | 
- **webHook** | [**WebHook**](WebHook.md)|  | 
+ **data** | [**WebHook**](WebHook.md)|  | 
 
 ### Return type
 
@@ -155,15 +182,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="getWebHook"></a>
-# **getWebHook**
+
+## getWebHook
+
 > WebHook getWebHook(cloudPk, id)
 
 Retrieve one configured webhook
@@ -171,27 +199,35 @@ Retrieve one configured webhook
 Retrieve one configured webhook Required scopes: webhook:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ApplicationApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
-apiInstance.getWebHook(cloudPk, id).then(function(data) {
+let apiInstance = new bimdata.ApplicationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = "id_example"; // String | 
+apiInstance.getWebHook(cloudPk, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -204,15 +240,16 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getWebHooks"></a>
-# **getWebHooks**
+
+## getWebHooks
+
 > [WebHook] getWebHooks(cloudPk)
 
 Retrieve all configured webhooks
@@ -220,26 +257,34 @@ Retrieve all configured webhooks
 Retrieve all configured webhooks Required scopes: webhook:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ApplicationApi();
-var cloudPk = "cloudPk_example"; // String | 
-apiInstance.getWebHooks(cloudPk).then(function(data) {
+let apiInstance = new bimdata.ApplicationApi();
+let cloudPk = "cloudPk_example"; // String | 
+apiInstance.getWebHooks(cloudPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -251,38 +296,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="pingWebHook"></a>
-# **pingWebHook**
-> WebHook pingWebHook(cloudPk, id, webHook)
+
+## pingWebHook
+
+> WebHook pingWebHook(cloudPk, id, data)
 
 Test a webhook
 
 Trigger a Ping Event sending {\&quot;ok\&quot;: true} to the webhook URL. Useful to test your app Required scopes: webhook:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ApplicationApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
-var webHook = new bimdata.WebHook(); // WebHook | 
-apiInstance.pingWebHook(cloudPk, id, webHook).then(function(data) {
+let apiInstance = new bimdata.ApplicationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = "id_example"; // String | 
+let data = new bimdata.WebHook(); // WebHook | 
+apiInstance.pingWebHook(cloudPk, id, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -290,11 +343,12 @@ apiInstance.pingWebHook(cloudPk, id, webHook).then(function(data) {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **String**|  | 
- **webHook** | [**WebHook**](WebHook.md)|  | 
+ **data** | [**WebHook**](WebHook.md)|  | 
 
 ### Return type
 
@@ -302,38 +356,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="updateWebHook"></a>
-# **updateWebHook**
-> WebHook updateWebHook(cloudPk, id, webHook)
+
+## updateWebHook
+
+> WebHook updateWebHook(cloudPk, id, data)
 
 Update some field of a webhook
 
 Update some field of a webhook Required scopes: webhook:manage
 
 ### Example
+
 ```javascript
-var bimdata = require('@bimdata/bimdata-api-client');
-var defaultClient = bimdata.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
-var Bearer = defaultClient.authentications['Bearer'];
+let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new bimdata.ApplicationApi();
-var cloudPk = "cloudPk_example"; // String | 
-var id = "id_example"; // String | 
-var webHook = new bimdata.WebHook(); // WebHook | 
-apiInstance.updateWebHook(cloudPk, id, webHook).then(function(data) {
+let apiInstance = new bimdata.ApplicationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = "id_example"; // String | 
+let data = new bimdata.WebHook(); // WebHook | 
+apiInstance.updateWebHook(cloudPk, id, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -341,11 +403,12 @@ apiInstance.updateWebHook(cloudPk, id, webHook).then(function(data) {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **String**|  | 
- **webHook** | [**WebHook**](WebHook.md)|  | 
+ **data** | [**WebHook**](WebHook.md)|  | 
 
 ### Return type
 
@@ -353,10 +416,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

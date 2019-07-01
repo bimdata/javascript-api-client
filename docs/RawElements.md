@@ -1,6 +1,7 @@
 # bimdata.RawElements
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **units** | [**[RawUnit]**](RawUnit.md) |  | [optional] 

@@ -1,6 +1,7 @@
 # bimdata.IfcFiles
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **structureFile** | **String** |  | [optional] 

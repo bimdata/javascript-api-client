@@ -1,6 +1,7 @@
 # bimdata.ProcessorHandler
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
@@ -9,7 +10,7 @@ Name | Type | Description | Notes
 **detailMessage** | **String** |  | [optional] 
 
 
-<a name="StatusEnum"></a>
+
 ## Enum: StatusEnum
 
 
