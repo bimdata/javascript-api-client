@@ -1,32 +1,31 @@
 {
   "name": "@bimdata/bimdata-api-client",
   "version": "0.0.0",
-  "description": "BIMData_API_documentation",
+  "description": "BIMData API is a tool to interact with your models stored on BIMDatas servers. Through the API you can manage your projects the clouds upload your IFC files and manage them through endpoints",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "dist/javascript-api-client.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --recursive",
-    "build": "npm run browserify && npm run min",
+    "babelify": "babel src -d dist",
+    "browserify": "browserify dist/global.js -o dist/javascript-api-client.js",
     "min": "uglifyjs  ./dist/javascript-api-client.js -c -m  -o ./dist/javascript-api-client.min.js",
-    "browserify": "browserify ./src/global.js > ./dist/javascript-api-client.js",
-    "build:webpack": "webpack"
+    "build": "npm run babelify && npm run browserify && npm run min",
+    "test": "mocha --compilers js:babel-core/register --recursive"
   },
   "browser": {
     "fs": false
   },
   "dependencies": {
-    "@babel/core": "^7.2.2",
-    "babel-core": "^7.0.0-0",
-    "babel-loader": "^8.0.5",
-    "superagent": "^3.5.2",
-    "uglify-js": "^3.4.3",
-    "webpack": "^4.12.2"
+    "babel-cli": "^6.26.0",
+    "superagent": "3.7.0"
   },
   "devDependencies": {
-    "browserify": "^16.2.2",
-    "expect.js": "~0.3.1",
-    "mocha": "~2.3.4",
-    "sinon": "1.17.3",
-    "webpack-cli": "^3.0.8"
+    "babel-core": "6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "browserify": "^16.2.3",
+    "expect.js": "^0.3.1",
+    "mocha": "^5.2.0",
+    "sinon": "^7.2.0",
+    "uglify-js": "^3.6.0"
   }
 }

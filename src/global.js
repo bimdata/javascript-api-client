@@ -1,3 +1,2 @@
-var bimdata = require('./index')
-
-window['bimdata'] = bimdata;
+// Only used as CDN
+window['bimdata'] = require('./index');

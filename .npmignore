@@ -1,5 +1,4 @@
 .circleci/
-.swagger-codegen
 .openapi-generator
 .openapi-generator-ignore
 git_push.sh
