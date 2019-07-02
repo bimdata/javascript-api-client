@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "BIMData API is a tool to interact with your models stored on BIMDatas servers. Through the API you can manage your projects the clouds upload your IFC files and manage them through endpoints",
   "license": "MIT",
-  "main": "dist/javascript-api-client.js",
+  "main": "src/index.js",
   "scripts": {
     "babelify": "babel src -d dist",
     "browserify": "browserify dist/global.js -o dist/javascript-api-client.js",
