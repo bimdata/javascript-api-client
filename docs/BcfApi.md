@@ -4,6 +4,7 @@ All URIs are relative to *https://api-beta.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**bcf21ProjectsTopicsTopicViewpointsCreate**](BcfApi.md#bcf21ProjectsTopicsTopicViewpointsCreate) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/topic-viewpoints | 
 [**createComment**](BcfApi.md#createComment) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | Create a comment
 [**createFullTopic**](BcfApi.md#createFullTopic) | **POST** /bcf/2.1/projects/{projects_pk}/full-topic | Create a Topic with viewpoints and comments
 [**createTopic**](BcfApi.md#createTopic) | **POST** /bcf/2.1/projects/{projects_pk}/topics | Create a topic
@@ -19,21 +20,21 @@ Method | HTTP request | Description
 [**fullUpdateViewpoint**](BcfApi.md#fullUpdateViewpoint) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Update all fields of a Viewpoint
 [**getBcfProject**](BcfApi.md#getBcfProject) | **GET** /bcf/2.1/projects/{id} | Retrieve a BCF project
 [**getBcfProjects**](BcfApi.md#getBcfProjects) | **GET** /bcf/2.1/projects | Retrieve all BCF projects
-[**getColorings**](BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring | Retrieve all colorings of a viewpoint
+[**getColorings**](BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid}/coloring | Retrieve all colorings of a viewpoint
 [**getComment**](BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Retrieve a comment
 [**getComments**](BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | Retrieve all comments
 [**getExtensions**](BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{projects_pk}/extensions | Retrieve project extensions
 [**getFullTopic**](BcfApi.md#getFullTopic) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Retrieve a full topic
 [**getFullTopics**](BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | Retrieve all full topics
-[**getSelections**](BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection | Retrieve all selections of a viewpoint
-[**getSnapshot**](BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot | Retrieve the viewpoint&#39; snapshot
+[**getSelections**](BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid}/selection | Retrieve all selections of a viewpoint
+[**getSnapshot**](BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid}/snapshot | Retrieve the viewpoint&#39; snapshot
 [**getTopic**](BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Retrieve a topic
 [**getTopicViewpoints**](BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/topic-viewpoints | Retrieve all viewpoints attached to the topic
 [**getTopics**](BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | Retrieve all topics
 [**getUser**](BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | Get current user info
 [**getViewpoint**](BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Retrieve a Viewpoint
 [**getViewpoints**](BcfApi.md#getViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints | Retrieve all Viewpoints of a topic
-[**getVisibilities**](BcfApi.md#getVisibilities) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility | Retrieve all visibilities of a viewpoint
+[**getVisibilities**](BcfApi.md#getVisibilities) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid}/visibility | Retrieve all visibilities of a viewpoint
 [**updateBcfProject**](BcfApi.md#updateBcfProject) | **PATCH** /bcf/2.1/projects/{id} | Update some fields of a BCF project
 [**updateComment**](BcfApi.md#updateComment) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Update some fields of a comment
 [**updateExtensions**](BcfApi.md#updateExtensions) | **PATCH** /bcf/2.1/projects/{projects_pk}/extensions | Update project extensions
@@ -41,6 +42,64 @@ Method | HTTP request | Description
 [**updateTopic**](BcfApi.md#updateTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update some fields of a topic
 [**updateViewpoint**](BcfApi.md#updateViewpoint) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Update some fields of a Viewpoint
 
+
+
+## bcf21ProjectsTopicsTopicViewpointsCreate
+
+> Viewpoint bcf21ProjectsTopicsTopicViewpointsCreate(projectsPk, topicsPk, data)
+
+
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.BcfApi();
+let projectsPk = "projectsPk_example"; // String | 
+let topicsPk = "topicsPk_example"; // String | 
+let data = new bimdata.Viewpoint(); // Viewpoint | 
+apiInstance.bcf21ProjectsTopicsTopicViewpointsCreate(projectsPk, topicsPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectsPk** | **String**|  | 
+ **topicsPk** | **String**|  | 
+ **data** | [**Viewpoint**](Viewpoint.md)|  | 
+
+### Return type
+
+[**Viewpoint**](Viewpoint.md)
+
+### Authorization
+
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## createComment
@@ -931,7 +990,7 @@ This endpoint does not need any parameter.
 
 ## getColorings
 
-> [Coloring] getColorings(projectsPk, topicsPk, viewpointsPk)
+> [Coloring] getColorings(guid, projectsPk, topicsPk)
 
 Retrieve all colorings of a viewpoint
 
@@ -955,10 +1014,10 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
+let guid = null; // String | A UUID string identifying this viewpoint.
 let projectsPk = "projectsPk_example"; // String | 
 let topicsPk = "topicsPk_example"; // String | 
-let viewpointsPk = "viewpointsPk_example"; // String | 
-apiInstance.getColorings(projectsPk, topicsPk, viewpointsPk).then((data) => {
+apiInstance.getColorings(guid, projectsPk, topicsPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -971,9 +1030,9 @@ apiInstance.getColorings(projectsPk, topicsPk, viewpointsPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **guid** | [**String**](.md)| A UUID string identifying this viewpoint. | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
 
 ### Return type
 
@@ -1285,7 +1344,7 @@ Name | Type | Description  | Notes
 
 ## getSelections
 
-> [Component] getSelections(projectsPk, topicsPk, viewpointsPk)
+> [Component] getSelections(guid, projectsPk, topicsPk)
 
 Retrieve all selections of a viewpoint
 
@@ -1309,10 +1368,10 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
+let guid = null; // String | A UUID string identifying this viewpoint.
 let projectsPk = "projectsPk_example"; // String | 
 let topicsPk = "topicsPk_example"; // String | 
-let viewpointsPk = "viewpointsPk_example"; // String | 
-apiInstance.getSelections(projectsPk, topicsPk, viewpointsPk).then((data) => {
+apiInstance.getSelections(guid, projectsPk, topicsPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1325,9 +1384,9 @@ apiInstance.getSelections(projectsPk, topicsPk, viewpointsPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **guid** | [**String**](.md)| A UUID string identifying this viewpoint. | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
 
 ### Return type
 
@@ -1345,11 +1404,11 @@ Name | Type | Description  | Notes
 
 ## getSnapshot
 
-> File getSnapshot(projectsPk, topicsPk, viewpointsPk)
+> File getSnapshot(guid, projectsPk, topicsPk)
 
 Retrieve the viewpoint&#39; snapshot
 
-Retrieve the viewpoint&#39; snapshot
+Retrieve the viewpoint&#39; snapshot Required scopes: bcf:read
 
 ### Example
 
@@ -1369,10 +1428,10 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
+let guid = null; // String | A UUID string identifying this viewpoint.
 let projectsPk = "projectsPk_example"; // String | 
 let topicsPk = "topicsPk_example"; // String | 
-let viewpointsPk = "viewpointsPk_example"; // String | 
-apiInstance.getSnapshot(projectsPk, topicsPk, viewpointsPk).then((data) => {
+apiInstance.getSnapshot(guid, projectsPk, topicsPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1385,9 +1444,9 @@ apiInstance.getSnapshot(projectsPk, topicsPk, viewpointsPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **guid** | [**String**](.md)| A UUID string identifying this viewpoint. | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
 
 ### Return type
 
@@ -1753,7 +1812,7 @@ Name | Type | Description  | Notes
 
 ## getVisibilities
 
-> [Visibility] getVisibilities(projectsPk, topicsPk, viewpointsPk)
+> Visibility getVisibilities(guid, projectsPk, topicsPk)
 
 Retrieve all visibilities of a viewpoint
 
@@ -1777,10 +1836,10 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
+let guid = null; // String | A UUID string identifying this viewpoint.
 let projectsPk = "projectsPk_example"; // String | 
 let topicsPk = "topicsPk_example"; // String | 
-let viewpointsPk = "viewpointsPk_example"; // String | 
-apiInstance.getVisibilities(projectsPk, topicsPk, viewpointsPk).then((data) => {
+apiInstance.getVisibilities(guid, projectsPk, topicsPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1793,13 +1852,13 @@ apiInstance.getVisibilities(projectsPk, topicsPk, viewpointsPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **guid** | [**String**](.md)| A UUID string identifying this viewpoint. | 
  **projectsPk** | **String**|  | 
  **topicsPk** | **String**|  | 
- **viewpointsPk** | **String**|  | 
 
 ### Return type
 
-[**[Visibility]**](Visibility.md)
+[**Visibility**](Visibility.md)
 
 ### Authorization
 

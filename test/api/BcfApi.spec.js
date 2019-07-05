@@ -48,6 +48,16 @@
   }
 
   describe('BcfApi', function() {
+    describe('bcf21ProjectsTopicsTopicViewpointsCreate', function() {
+      it('should call bcf21ProjectsTopicsTopicViewpointsCreate successfully', function(done) {
+        //uncomment below and update the code to test bcf21ProjectsTopicsTopicViewpointsCreate
+        //instance.bcf21ProjectsTopicsTopicViewpointsCreate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createComment', function() {
       it('should call createComment successfully', function(done) {
         //uncomment below and update the code to test createComment

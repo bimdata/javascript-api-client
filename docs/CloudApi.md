@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**cloudProcessorPartialUpdate**](CloudApi.md#cloudProcessorPartialUpdate) | **PATCH** /cloud/{cloud_pk}/processor/{id} | 
 [**cloudProcessorRead**](CloudApi.md#cloudProcessorRead) | **GET** /cloud/{cloud_pk}/processor/{id} | 
 [**cloudProcessorUpdate**](CloudApi.md#cloudProcessorUpdate) | **PUT** /cloud/{cloud_pk}/processor/{id} | 
+[**cloudUserCreate**](CloudApi.md#cloudUserCreate) | **POST** /cloud/{cloud_pk}/user | 
 [**createCloud**](CloudApi.md#createCloud) | **POST** /cloud | Create a cloud
 [**createDemo**](CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | Create a Demo project in a cloud
 [**deleteCloud**](CloudApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
@@ -425,6 +426,62 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## cloudUserCreate
+
+> User cloudUserCreate(cloudPk, data)
+
+
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CloudApi();
+let cloudPk = "cloudPk_example"; // String | 
+let data = new bimdata.User(); // User | 
+apiInstance.cloudUserCreate(cloudPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **data** | [**User**](User.md)|  | 
+
+### Return type
+
+[**User**](User.md)
+
+### Authorization
+
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## createCloud
 
 > Cloud createCloud(data)
@@ -620,7 +677,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CloudApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = "id_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this fos user.
 apiInstance.deleteCloudUser(cloudPk, id).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -635,7 +692,7 @@ apiInstance.deleteCloudUser(cloudPk, id).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this fos user. | 
 
 ### Return type
 
@@ -736,7 +793,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CloudApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = "id_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this fos user.
 let data = new bimdata.UserCloudUpdate(); // UserCloudUpdate | 
 apiInstance.fullUpdateCloudUser(cloudPk, id, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -752,7 +809,7 @@ apiInstance.fullUpdateCloudUser(cloudPk, id, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this fos user. | 
  **data** | [**UserCloudUpdate**](UserCloudUpdate.md)|  | 
 
 ### Return type
@@ -962,7 +1019,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CloudApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = "id_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this fos user.
 apiInstance.getCloudUser(cloudPk, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -977,7 +1034,7 @@ apiInstance.getCloudUser(cloudPk, id).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this fos user. | 
 
 ### Return type
 
@@ -1244,7 +1301,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CloudApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = "id_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this fos user.
 let data = new bimdata.UserCloudUpdate(); // UserCloudUpdate | 
 apiInstance.updateCloudUser(cloudPk, id, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1260,7 +1317,7 @@ apiInstance.updateCloudUser(cloudPk, id, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this fos user. | 
  **data** | [**UserCloudUpdate**](UserCloudUpdate.md)|  | 
 
 ### Return type

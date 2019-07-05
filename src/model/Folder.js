@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import FolderChildren from './FolderChildren';
 import User from './User';
 
 /**
@@ -69,7 +70,7 @@ class Folder {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('children')) {
-                obj['children'] = ApiClient.convertToType(data['children'], [Folder]);
+                obj['children'] = ApiClient.convertToType(data['children'], [FolderChildren]);
             }
             if (data.hasOwnProperty('created_by')) {
                 obj['created_by'] = User.constructFromObject(data['created_by']);
@@ -116,7 +117,7 @@ Folder.prototype['created_at'] = undefined;
 Folder.prototype['updated_at'] = undefined;
 
 /**
- * @member {Array.<module:model/Folder>} children
+ * @member {Array.<module:model/FolderChildren>} children
  */
 Folder.prototype['children'] = undefined;
 

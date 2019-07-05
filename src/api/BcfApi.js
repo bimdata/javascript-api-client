@@ -45,6 +45,63 @@ export default class BcfApi {
 
 
     /**
+     * @param {String} projectsPk 
+     * @param {String} topicsPk 
+     * @param {module:model/Viewpoint} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Viewpoint} and HTTP response
+     */
+    bcf21ProjectsTopicsTopicViewpointsCreateWithHttpInfo(projectsPk, topicsPk, data) {
+      let postBody = data;
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsTopicViewpointsCreate");
+      }
+      // verify the required parameter 'topicsPk' is set
+      if (topicsPk === undefined || topicsPk === null) {
+        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsTopicViewpointsCreate");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsTopicViewpointsCreate");
+      }
+
+      let pathParams = {
+        'projects_pk': projectsPk,
+        'topics_pk': topicsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Viewpoint;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/topic-viewpoints', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {String} projectsPk 
+     * @param {String} topicsPk 
+     * @param {module:model/Viewpoint} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Viewpoint}
+     */
+    bcf21ProjectsTopicsTopicViewpointsCreate(projectsPk, topicsPk, data) {
+      return this.bcf21ProjectsTopicsTopicViewpointsCreateWithHttpInfo(projectsPk, topicsPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create a comment
      * Create a comment Required scopes: bcf:write
      * @param {String} projectsPk 
@@ -914,13 +971,17 @@ export default class BcfApi {
     /**
      * Retrieve all colorings of a viewpoint
      * Retrieve all colorings of a viewpoint Required scopes: bcf:read
+     * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Coloring>} and HTTP response
      */
-    getColoringsWithHttpInfo(projectsPk, topicsPk, viewpointsPk) {
+    getColoringsWithHttpInfo(guid, projectsPk, topicsPk) {
       let postBody = null;
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling getColorings");
+      }
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling getColorings");
@@ -929,15 +990,11 @@ export default class BcfApi {
       if (topicsPk === undefined || topicsPk === null) {
         throw new Error("Missing the required parameter 'topicsPk' when calling getColorings");
       }
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling getColorings");
-      }
 
       let pathParams = {
+        'guid': guid,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
+        'topics_pk': topicsPk
       };
       let queryParams = {
       };
@@ -951,7 +1008,7 @@ export default class BcfApi {
       let accepts = ['application/json'];
       let returnType = [Coloring];
       return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/coloring', 'GET',
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid}/coloring', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -960,13 +1017,13 @@ export default class BcfApi {
     /**
      * Retrieve all colorings of a viewpoint
      * Retrieve all colorings of a viewpoint Required scopes: bcf:read
+     * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Coloring>}
      */
-    getColorings(projectsPk, topicsPk, viewpointsPk) {
-      return this.getColoringsWithHttpInfo(projectsPk, topicsPk, viewpointsPk)
+    getColorings(guid, projectsPk, topicsPk) {
+      return this.getColoringsWithHttpInfo(guid, projectsPk, topicsPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1253,13 +1310,17 @@ export default class BcfApi {
     /**
      * Retrieve all selections of a viewpoint
      * Retrieve all selections of a viewpoint Required scopes: bcf:read
+     * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Component>} and HTTP response
      */
-    getSelectionsWithHttpInfo(projectsPk, topicsPk, viewpointsPk) {
+    getSelectionsWithHttpInfo(guid, projectsPk, topicsPk) {
       let postBody = null;
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling getSelections");
+      }
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling getSelections");
@@ -1268,15 +1329,11 @@ export default class BcfApi {
       if (topicsPk === undefined || topicsPk === null) {
         throw new Error("Missing the required parameter 'topicsPk' when calling getSelections");
       }
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling getSelections");
-      }
 
       let pathParams = {
+        'guid': guid,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
+        'topics_pk': topicsPk
       };
       let queryParams = {
       };
@@ -1290,7 +1347,7 @@ export default class BcfApi {
       let accepts = ['application/json'];
       let returnType = [Component];
       return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/selection', 'GET',
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid}/selection', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1299,13 +1356,13 @@ export default class BcfApi {
     /**
      * Retrieve all selections of a viewpoint
      * Retrieve all selections of a viewpoint Required scopes: bcf:read
+     * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Component>}
      */
-    getSelections(projectsPk, topicsPk, viewpointsPk) {
-      return this.getSelectionsWithHttpInfo(projectsPk, topicsPk, viewpointsPk)
+    getSelections(guid, projectsPk, topicsPk) {
+      return this.getSelectionsWithHttpInfo(guid, projectsPk, topicsPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1314,14 +1371,18 @@ export default class BcfApi {
 
     /**
      * Retrieve the viewpoint' snapshot
-     * Retrieve the viewpoint' snapshot
+     * Retrieve the viewpoint' snapshot Required scopes: bcf:read
+     * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link File} and HTTP response
      */
-    getSnapshotWithHttpInfo(projectsPk, topicsPk, viewpointsPk) {
+    getSnapshotWithHttpInfo(guid, projectsPk, topicsPk) {
       let postBody = null;
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling getSnapshot");
+      }
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling getSnapshot");
@@ -1330,15 +1391,11 @@ export default class BcfApi {
       if (topicsPk === undefined || topicsPk === null) {
         throw new Error("Missing the required parameter 'topicsPk' when calling getSnapshot");
       }
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling getSnapshot");
-      }
 
       let pathParams = {
+        'guid': guid,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
+        'topics_pk': topicsPk
       };
       let queryParams = {
       };
@@ -1352,7 +1409,7 @@ export default class BcfApi {
       let accepts = ['application/json'];
       let returnType = File;
       return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/snapshot', 'GET',
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid}/snapshot', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1360,14 +1417,14 @@ export default class BcfApi {
 
     /**
      * Retrieve the viewpoint' snapshot
-     * Retrieve the viewpoint' snapshot
+     * Retrieve the viewpoint' snapshot Required scopes: bcf:read
+     * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link File}
      */
-    getSnapshot(projectsPk, topicsPk, viewpointsPk) {
-      return this.getSnapshotWithHttpInfo(projectsPk, topicsPk, viewpointsPk)
+    getSnapshot(guid, projectsPk, topicsPk) {
+      return this.getSnapshotWithHttpInfo(guid, projectsPk, topicsPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1702,13 +1759,17 @@ export default class BcfApi {
     /**
      * Retrieve all visibilities of a viewpoint
      * Retrieve all visibilities of a viewpoint Required scopes: bcf:read
+     * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Visibility>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Visibility} and HTTP response
      */
-    getVisibilitiesWithHttpInfo(projectsPk, topicsPk, viewpointsPk) {
+    getVisibilitiesWithHttpInfo(guid, projectsPk, topicsPk) {
       let postBody = null;
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling getVisibilities");
+      }
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling getVisibilities");
@@ -1717,15 +1778,11 @@ export default class BcfApi {
       if (topicsPk === undefined || topicsPk === null) {
         throw new Error("Missing the required parameter 'topicsPk' when calling getVisibilities");
       }
-      // verify the required parameter 'viewpointsPk' is set
-      if (viewpointsPk === undefined || viewpointsPk === null) {
-        throw new Error("Missing the required parameter 'viewpointsPk' when calling getVisibilities");
-      }
 
       let pathParams = {
+        'guid': guid,
         'projects_pk': projectsPk,
-        'topics_pk': topicsPk,
-        'viewpoints_pk': viewpointsPk
+        'topics_pk': topicsPk
       };
       let queryParams = {
       };
@@ -1737,9 +1794,9 @@ export default class BcfApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Visibility];
+      let returnType = Visibility;
       return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{viewpoints_pk}/visibility', 'GET',
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid}/visibility', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1748,13 +1805,13 @@ export default class BcfApi {
     /**
      * Retrieve all visibilities of a viewpoint
      * Retrieve all visibilities of a viewpoint Required scopes: bcf:read
+     * @param {String} guid A UUID string identifying this viewpoint.
      * @param {String} projectsPk 
      * @param {String} topicsPk 
-     * @param {String} viewpointsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Visibility>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Visibility}
      */
-    getVisibilities(projectsPk, topicsPk, viewpointsPk) {
-      return this.getVisibilitiesWithHttpInfo(projectsPk, topicsPk, viewpointsPk)
+    getVisibilities(guid, projectsPk, topicsPk) {
+      return this.getVisibilitiesWithHttpInfo(guid, projectsPk, topicsPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

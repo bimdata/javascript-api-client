@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('cloudProjectUserCreate', function() {
+      it('should call cloudProjectUserCreate successfully', function(done) {
+        //uncomment below and update the code to test cloudProjectUserCreate
+        //instance.cloudProjectUserCreate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createClassification', function() {
       it('should call createClassification successfully', function(done) {
         //uncomment below and update the code to test createClassification

@@ -5,6 +5,7 @@ All URIs are relative to *https://api-beta.bimdata.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancelProjectUserInvitation**](ProjectApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
+[**cloudProjectUserCreate**](ProjectApi.md#cloudProjectUserCreate) | **POST** /cloud/{cloud_pk}/project/{project_pk}/user | 
 [**createClassification**](ProjectApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | Create a classification
 [**createDocument**](ProjectApi.md#createDocument) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | Create a document
 [**createFolder**](ProjectApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | Create a folder
@@ -100,6 +101,64 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+
+## cloudProjectUserCreate
+
+> User cloudProjectUserCreate(cloudPk, projectPk, data)
+
+
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure OAuth2 access token for authorization: BIMDataConnect
+let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
+BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ProjectApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.User(); // User | 
+apiInstance.cloudProjectUserCreate(cloudPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**User**](User.md)|  | 
+
+### Return type
+
+[**User**](User.md)
+
+### Authorization
+
+[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## createClassification
@@ -623,7 +682,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.ProjectApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = "id_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this fos user.
 let projectPk = "projectPk_example"; // String | 
 apiInstance.deleteProjectUser(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
@@ -639,7 +698,7 @@ apiInstance.deleteProjectUser(cloudPk, id, projectPk).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this fos user. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -947,7 +1006,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.ProjectApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = "id_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this fos user.
 let projectPk = "projectPk_example"; // String | 
 let data = new bimdata.UserProjectUpdate(); // UserProjectUpdate | 
 apiInstance.fullUpdateProjectUser(cloudPk, id, projectPk, data).then((data) => {
@@ -964,7 +1023,7 @@ apiInstance.fullUpdateProjectUser(cloudPk, id, projectPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this fos user. | 
  **projectPk** | **String**|  | 
  **data** | [**UserProjectUpdate**](UserProjectUpdate.md)|  | 
 
@@ -1651,7 +1710,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.ProjectApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = "id_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this fos user.
 let projectPk = "projectPk_example"; // String | 
 apiInstance.getProjectUser(cloudPk, id, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1667,7 +1726,7 @@ apiInstance.getProjectUser(cloudPk, id, projectPk).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this fos user. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -2131,7 +2190,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.ProjectApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = "id_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this fos user.
 let projectPk = "projectPk_example"; // String | 
 let data = new bimdata.UserProjectUpdate(); // UserProjectUpdate | 
 apiInstance.updateProjectUser(cloudPk, id, projectPk, data).then((data) => {
@@ -2148,7 +2207,7 @@ apiInstance.updateProjectUser(cloudPk, id, projectPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this fos user. | 
  **projectPk** | **String**|  | 
  **data** | [**UserProjectUpdate**](UserProjectUpdate.md)|  | 
 

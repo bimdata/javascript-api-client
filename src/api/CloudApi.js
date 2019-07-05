@@ -406,6 +406,56 @@ export default class CloudApi {
 
 
     /**
+     * @param {String} cloudPk 
+     * @param {module:model/User} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     */
+    cloudUserCreateWithHttpInfo(cloudPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling cloudUserCreate");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling cloudUserCreate");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = User;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/user', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {String} cloudPk 
+     * @param {module:model/User} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     */
+    cloudUserCreate(cloudPk, data) {
+      return this.cloudUserCreateWithHttpInfo(cloudPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create a cloud
      *  Required scopes: cloud:manage
      * @param {module:model/Cloud} data 
@@ -552,7 +602,7 @@ export default class CloudApi {
      * Remove a user from a cloud
      * The user will also be removed from all the projects of the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteCloudUserWithHttpInfo(cloudPk, id) {
@@ -592,7 +642,7 @@ export default class CloudApi {
      * Remove a user from a cloud
      * The user will also be removed from all the projects of the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteCloudUser(cloudPk, id) {
@@ -661,7 +711,7 @@ export default class CloudApi {
      * Update all fields of a cloud user
      * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @param {module:model/UserCloudUpdate} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
      */
@@ -706,7 +756,7 @@ export default class CloudApi {
      * Update all fields of a cloud user
      * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @param {module:model/UserCloudUpdate} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
      */
@@ -864,7 +914,7 @@ export default class CloudApi {
      * Retrieve a user in a cloud
      * Only administrators can see a cloud member Required scopes: cloud:read
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
      */
     getCloudUserWithHttpInfo(cloudPk, id) {
@@ -904,7 +954,7 @@ export default class CloudApi {
      * Retrieve a user in a cloud
      * Only administrators can see a cloud member Required scopes: cloud:read
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
      */
     getCloudUser(cloudPk, id) {
@@ -1116,7 +1166,7 @@ export default class CloudApi {
      * Update some fields of a cloud user
      * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @param {module:model/UserCloudUpdate} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
      */
@@ -1161,7 +1211,7 @@ export default class CloudApi {
      * Update some fields of a cloud user
      * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @param {module:model/UserCloudUpdate} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
      */

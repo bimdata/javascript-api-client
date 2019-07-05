@@ -34,6 +34,7 @@ import ElementPropertySetRelation from './model/ElementPropertySetRelation';
 import Extensions from './model/Extensions';
 import Feature from './model/Feature';
 import Folder from './model/Folder';
+import FolderChildren from './model/FolderChildren';
 import FullTopic from './model/FullTopic';
 import Ifc from './model/Ifc';
 import IfcChecker from './model/IfcChecker';
@@ -256,6 +257,12 @@ export {
      * @property {module:model/Folder}
      */
     Folder,
+
+    /**
+     * The FolderChildren model constructor.
+     * @property {module:model/FolderChildren}
+     */
+    FolderChildren,
 
     /**
      * The FullTopic model constructor.

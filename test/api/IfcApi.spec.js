@@ -158,10 +158,60 @@
         done();
       });
     });
+    describe('cloudProjectIfcClassificationCreate', function() {
+      it('should call cloudProjectIfcClassificationCreate successfully', function(done) {
+        //uncomment below and update the code to test cloudProjectIfcClassificationCreate
+        //instance.cloudProjectIfcClassificationCreate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cloudProjectIfcClassificationElementCreate', function() {
+      it('should call cloudProjectIfcClassificationElementCreate successfully', function(done) {
+        //uncomment below and update the code to test cloudProjectIfcClassificationElementCreate
+        //instance.cloudProjectIfcClassificationElementCreate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cloudProjectIfcCreate', function() {
+      it('should call cloudProjectIfcCreate successfully', function(done) {
+        //uncomment below and update the code to test cloudProjectIfcCreate
+        //instance.cloudProjectIfcCreate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cloudProjectIfcProcessorhandlerCreate', function() {
+      it('should call cloudProjectIfcProcessorhandlerCreate successfully', function(done) {
+        //uncomment below and update the code to test cloudProjectIfcProcessorhandlerCreate
+        //instance.cloudProjectIfcProcessorhandlerCreate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('cloudProjectIfcProcessorhandlerPartialUpdate', function() {
       it('should call cloudProjectIfcProcessorhandlerPartialUpdate successfully', function(done) {
         //uncomment below and update the code to test cloudProjectIfcProcessorhandlerPartialUpdate
         //instance.cloudProjectIfcProcessorhandlerPartialUpdate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cloudProjectIfcPropertyCreate', function() {
+      it('should call cloudProjectIfcPropertyCreate successfully', function(done) {
+        //uncomment below and update the code to test cloudProjectIfcPropertyCreate
+        //instance.cloudProjectIfcPropertyCreate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

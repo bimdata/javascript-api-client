@@ -105,6 +105,63 @@ export default class ProjectApi {
 
 
     /**
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/User} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     */
+    cloudProjectUserCreateWithHttpInfo(cloudPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProjectUserCreate");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling cloudProjectUserCreate");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling cloudProjectUserCreate");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = User;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/user', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/User} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     */
+    cloudProjectUserCreate(cloudPk, projectPk, data) {
+      return this.cloudProjectUserCreateWithHttpInfo(cloudPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create a classification
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a 'classification' filter on this endpoint. By ex: /classification?name='untec'. The name is case sensitive      Required scopes: ifc:write
      * @param {String} cloudPk 
@@ -614,7 +671,7 @@ export default class ProjectApi {
      * Remove a user from a project
      * Remove a user from a project Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -660,7 +717,7 @@ export default class ProjectApi {
      * Remove a user from a project
      * Remove a user from a project Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -969,7 +1026,7 @@ export default class ProjectApi {
      * Update all fields of a project user
      * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
      * @param {module:model/UserProjectUpdate} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
@@ -1020,7 +1077,7 @@ export default class ProjectApi {
      * Update all fields of a project user
      * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
      * @param {module:model/UserProjectUpdate} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
@@ -1656,7 +1713,7 @@ export default class ProjectApi {
      * Retrieve a user in a project
      * Each member of a project can see other members of the project Required scopes: cloud:read
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
      */
@@ -1702,7 +1759,7 @@ export default class ProjectApi {
      * Retrieve a user in a project
      * Each member of a project can see other members of the project Required scopes: cloud:read
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
      */
@@ -2147,7 +2204,7 @@ export default class ProjectApi {
      * Update some fields of a project user
      * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
      * @param {module:model/UserProjectUpdate} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
@@ -2198,7 +2255,7 @@ export default class ProjectApi {
      * Update some fields of a project user
      * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {String} id 
+     * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
      * @param {module:model/UserProjectUpdate} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
