@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **size** | **Number** |  | [optional] 
 **ifcId** | **Number** |  | [optional] 
 **file** | **String** |  | [optional] 
-**children** | **[{String: String}]** |  | [optional] 
+**children** | [**[FolderChildren]**](FolderChildren.md) |  | 
 
 
 

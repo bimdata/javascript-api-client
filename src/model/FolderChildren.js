@@ -30,10 +30,11 @@ class FolderChildren {
      * @param name {String} 
      * @param createdAt {Date} 
      * @param updatedAt {Date} 
+     * @param children {Array.<module:model/FolderChildren>} 
      */
-    constructor(id, parentId, createdBy, creator, name, createdAt, updatedAt) { 
+    constructor(id, parentId, createdBy, creator, name, createdAt, updatedAt, children) { 
         
-        FolderChildren.initialize(this, id, parentId, createdBy, creator, name, createdAt, updatedAt);
+        FolderChildren.initialize(this, id, parentId, createdBy, creator, name, createdAt, updatedAt, children);
     }
 
     /**
@@ -41,7 +42,7 @@ class FolderChildren {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, parentId, createdBy, creator, name, createdAt, updatedAt) { 
+    static initialize(obj, id, parentId, createdBy, creator, name, createdAt, updatedAt, children) { 
         obj['id'] = id;
         obj['parent_id'] = parentId;
         obj['created_by'] = createdBy;
@@ -49,6 +50,7 @@ class FolderChildren {
         obj['name'] = name;
         obj['created_at'] = createdAt;
         obj['updated_at'] = updatedAt;
+        obj['children'] = children;
     }
 
     /**
@@ -102,7 +104,7 @@ class FolderChildren {
                 obj['file'] = ApiClient.convertToType(data['file'], 'String');
             }
             if (data.hasOwnProperty('children')) {
-                obj['children'] = ApiClient.convertToType(data['children'], [{'String': 'String'}]);
+                obj['children'] = ApiClient.convertToType(data['children'], [FolderChildren]);
             }
         }
         return obj;
@@ -178,7 +180,7 @@ FolderChildren.prototype['ifc_id'] = undefined;
 FolderChildren.prototype['file'] = undefined;
 
 /**
- * @member {Array.<Object.<String, String>>} children
+ * @member {Array.<module:model/FolderChildren>} children
  */
 FolderChildren.prototype['children'] = undefined;
 
