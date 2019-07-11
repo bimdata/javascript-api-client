@@ -138,7 +138,6 @@ Class | Method | HTTP request | Description
 *bimdata.ApplicationApi* | [**getWebHooks**](docs/ApplicationApi.md#getWebHooks) | **GET** /cloud/{cloud_pk}/webhook | Retrieve all configured webhooks
 *bimdata.ApplicationApi* | [**pingWebHook**](docs/ApplicationApi.md#pingWebHook) | **POST** /cloud/{cloud_pk}/webhook/{id}/ping | Test a webhook
 *bimdata.ApplicationApi* | [**updateWebHook**](docs/ApplicationApi.md#updateWebHook) | **PATCH** /cloud/{cloud_pk}/webhook/{id} | Update some field of a webhook
-*bimdata.BcfApi* | [**bcf21ProjectsTopicsTopicViewpointsCreate**](docs/BcfApi.md#bcf21ProjectsTopicsTopicViewpointsCreate) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/topic-viewpoints | 
 *bimdata.BcfApi* | [**createComment**](docs/BcfApi.md#createComment) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | Create a comment
 *bimdata.BcfApi* | [**createFullTopic**](docs/BcfApi.md#createFullTopic) | **POST** /bcf/2.1/projects/{projects_pk}/full-topic | Create a Topic with viewpoints and comments
 *bimdata.BcfApi* | [**createTopic**](docs/BcfApi.md#createTopic) | **POST** /bcf/2.1/projects/{projects_pk}/topics | Create a topic
@@ -219,7 +218,6 @@ Class | Method | HTTP request | Description
 *bimdata.CloudApi* | [**cloudProcessorPartialUpdate**](docs/CloudApi.md#cloudProcessorPartialUpdate) | **PATCH** /cloud/{cloud_pk}/processor/{id} | 
 *bimdata.CloudApi* | [**cloudProcessorRead**](docs/CloudApi.md#cloudProcessorRead) | **GET** /cloud/{cloud_pk}/processor/{id} | 
 *bimdata.CloudApi* | [**cloudProcessorUpdate**](docs/CloudApi.md#cloudProcessorUpdate) | **PUT** /cloud/{cloud_pk}/processor/{id} | 
-*bimdata.CloudApi* | [**cloudUserCreate**](docs/CloudApi.md#cloudUserCreate) | **POST** /cloud/{cloud_pk}/user | 
 *bimdata.CloudApi* | [**createCloud**](docs/CloudApi.md#createCloud) | **POST** /cloud | Create a cloud
 *bimdata.CloudApi* | [**createDemo**](docs/CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | Create a Demo project in a cloud
 *bimdata.CloudApi* | [**deleteCloud**](docs/CloudApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
@@ -246,12 +244,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**bulkRemoveElementsFromClassification**](docs/IfcApi.md#bulkRemoveElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/bulk_destroy | Remove the classifications from all elements
 *bimdata.IfcApi* | [**bulkUpdateElements**](docs/IfcApi.md#bulkUpdateElements) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update | Update many elements at once (all field must be defined)
 *bimdata.IfcApi* | [**bulkUpdateIfcProperty**](docs/IfcApi.md#bulkUpdateIfcProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update | Update all fields of many properties of a model
-*bimdata.IfcApi* | [**cloudProjectIfcClassificationCreate**](docs/IfcApi.md#cloudProjectIfcClassificationCreate) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification | 
-*bimdata.IfcApi* | [**cloudProjectIfcClassificationElementCreate**](docs/IfcApi.md#cloudProjectIfcClassificationElementCreate) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element | 
-*bimdata.IfcApi* | [**cloudProjectIfcCreate**](docs/IfcApi.md#cloudProjectIfcCreate) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc | 
-*bimdata.IfcApi* | [**cloudProjectIfcProcessorhandlerCreate**](docs/IfcApi.md#cloudProjectIfcProcessorhandlerCreate) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler | 
 *bimdata.IfcApi* | [**cloudProjectIfcProcessorhandlerPartialUpdate**](docs/IfcApi.md#cloudProjectIfcProcessorhandlerPartialUpdate) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | 
-*bimdata.IfcApi* | [**cloudProjectIfcPropertyCreate**](docs/IfcApi.md#cloudProjectIfcPropertyCreate) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property | 
 *bimdata.IfcApi* | [**createClassificationElementRelations**](docs/IfcApi.md#createClassificationElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | Create association between existing classification and existing element
 *bimdata.IfcApi* | [**createClassificationsOfElement**](docs/IfcApi.md#createClassificationsOfElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Create one or many classifications to an element
 *bimdata.IfcApi* | [**createElement**](docs/IfcApi.md#createElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element | Create an element in the model
@@ -342,7 +335,6 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**updateZone**](docs/IfcApi.md#updateZone) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Update some fields of a zone
 *bimdata.IfcApi* | [**updateZoneSpace**](docs/IfcApi.md#updateZoneSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Update some fields of a space
 *bimdata.ProjectApi* | [**cancelProjectUserInvitation**](docs/ProjectApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
-*bimdata.ProjectApi* | [**cloudProjectUserCreate**](docs/ProjectApi.md#cloudProjectUserCreate) | **POST** /cloud/{cloud_pk}/project/{project_pk}/user | 
 *bimdata.ProjectApi* | [**createClassification**](docs/ProjectApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | Create a classification
 *bimdata.ProjectApi* | [**createDocument**](docs/ProjectApi.md#createDocument) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | Create a document
 *bimdata.ProjectApi* | [**createFolder**](docs/ProjectApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | Create a folder

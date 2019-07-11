@@ -5,7 +5,6 @@ All URIs are relative to *https://api-beta.bimdata.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancelProjectUserInvitation**](ProjectApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
-[**cloudProjectUserCreate**](ProjectApi.md#cloudProjectUserCreate) | **POST** /cloud/{cloud_pk}/project/{project_pk}/user | 
 [**createClassification**](ProjectApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | Create a classification
 [**createDocument**](ProjectApi.md#createDocument) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | Create a document
 [**createFolder**](ProjectApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | Create a folder
@@ -103,71 +102,13 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudProjectUserCreate
-
-> User cloudProjectUserCreate(cloudPk, projectPk, data)
-
-
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure OAuth2 access token for authorization: BIMDataConnect
-let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
-BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ProjectApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.User(); // User | 
-apiInstance.cloudProjectUserCreate(cloudPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**User**](User.md)|  | 
-
-### Return type
-
-[**User**](User.md)
-
-### Authorization
-
-[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
 ## createClassification
 
-> [Classification] createClassification(cloudPk, projectPk, data)
+> Classification createClassification(cloudPk, projectPk, data)
 
 Create a classification
 
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive      Required scopes: ifc:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: ifc:write
 
 ### Example
 
@@ -189,7 +130,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.ProjectApi();
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.Classification()]; // [Classification] | 
+let data = new bimdata.Classification(); // Classification | 
 apiInstance.createClassification(cloudPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -205,11 +146,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Classification]**](Classification.md)|  | 
+ **data** | [**Classification**](Classification.md)|  | 
 
 ### Return type
 
-[**[Classification]**](Classification.md)
+[**Classification**](Classification.md)
 
 ### Authorization
 
@@ -227,7 +168,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-RCreate a document. If the document is an IFC, an IFC model will be created and attached to this document Required scopes: document:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: document:write
 
 ### Example
 
@@ -305,7 +246,7 @@ Name | Type | Description  | Notes
 
 Create a folder
 
-If the created folder have no parent, it will be put as a child of the default root folder of the project Required scopes: document:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: document:write
 
 ### Example
 
@@ -1107,7 +1048,7 @@ Name | Type | Description  | Notes
 
 Retrieve all classifications
 
-Retrieve all classifications of all models in the project Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -1225,7 +1166,7 @@ Name | Type | Description  | Notes
 
 Retrieve all documents
 
-Retrieve all documents in the project Required scopes: document:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: document:read
 
 ### Example
 
@@ -1343,7 +1284,7 @@ Name | Type | Description  | Notes
 
 Retrieve all folders
 
-Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree Required scopes: document:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: document:read
 
 ### Example
 
@@ -1749,7 +1690,7 @@ Name | Type | Description  | Notes
 
 Retrieve all users in a project
 
-Each member of a project can see other members of the project Required scopes: cloud:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: cloud:read
 
 ### Example
 

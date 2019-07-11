@@ -105,69 +105,12 @@ export default class ProjectApi {
 
 
     /**
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @param {module:model/User} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
-     */
-    cloudProjectUserCreateWithHttpInfo(cloudPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProjectUserCreate");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling cloudProjectUserCreate");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling cloudProjectUserCreate");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = User;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/user', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @param {module:model/User} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
-     */
-    cloudProjectUserCreate(cloudPk, projectPk, data) {
-      return this.cloudProjectUserCreateWithHttpInfo(cloudPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Create a classification
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a 'classification' filter on this endpoint. By ex: /classification?name='untec'. The name is case sensitive      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/Classification>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
+     * @param {module:model/Classification} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
      */
     createClassificationWithHttpInfo(cloudPk, projectPk, data) {
       let postBody = data;
@@ -198,7 +141,7 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = [Classification];
+      let returnType = Classification;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/classification', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -208,11 +151,11 @@ export default class ProjectApi {
 
     /**
      * Create a classification
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a 'classification' filter on this endpoint. By ex: /classification?name='untec'. The name is case sensitive      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/Classification>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
+     * @param {module:model/Classification} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
      */
     createClassification(cloudPk, projectPk, data) {
       return this.createClassificationWithHttpInfo(cloudPk, projectPk, data)
@@ -224,7 +167,7 @@ export default class ProjectApi {
 
     /**
      * Create a document
-     * RCreate a document. If the document is an IFC, an IFC model will be created and attached to this document Required scopes: document:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} name Shown name of the file
@@ -288,7 +231,7 @@ export default class ProjectApi {
 
     /**
      * Create a document
-     * RCreate a document. If the document is an IFC, an IFC model will be created and attached to this document Required scopes: document:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} name Shown name of the file
@@ -313,7 +256,7 @@ export default class ProjectApi {
 
     /**
      * Create a folder
-     * If the created folder have no parent, it will be put as a child of the default root folder of the project Required scopes: document:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/Folder} data 
@@ -358,7 +301,7 @@ export default class ProjectApi {
 
     /**
      * Create a folder
-     * If the created folder have no parent, it will be put as a child of the default root folder of the project Required scopes: document:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/Folder} data 
@@ -1154,7 +1097,7 @@ export default class ProjectApi {
 
     /**
      * Retrieve all classifications
-     * Retrieve all classifications of all models in the project Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
@@ -1194,7 +1137,7 @@ export default class ProjectApi {
 
     /**
      * Retrieve all classifications
-     * Retrieve all classifications of all models in the project Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
@@ -1271,7 +1214,7 @@ export default class ProjectApi {
 
     /**
      * Retrieve all documents
-     * Retrieve all documents in the project Required scopes: document:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: document:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
@@ -1311,7 +1254,7 @@ export default class ProjectApi {
 
     /**
      * Retrieve all documents
-     * Retrieve all documents in the project Required scopes: document:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: document:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
@@ -1388,7 +1331,7 @@ export default class ProjectApi {
 
     /**
      * Retrieve all folders
-     * Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree Required scopes: document:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: document:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Folder>} and HTTP response
@@ -1428,7 +1371,7 @@ export default class ProjectApi {
 
     /**
      * Retrieve all folders
-     * Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree Required scopes: document:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: document:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Folder>}
@@ -1773,7 +1716,7 @@ export default class ProjectApi {
 
     /**
      * Retrieve all users in a project
-     * Each member of a project can see other members of the project Required scopes: cloud:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: cloud:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/User>} and HTTP response
@@ -1813,7 +1756,7 @@ export default class ProjectApi {
 
     /**
      * Retrieve all users in a project
-     * Each member of a project can see other members of the project Required scopes: cloud:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: cloud:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/User>}

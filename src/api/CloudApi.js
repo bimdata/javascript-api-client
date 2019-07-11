@@ -406,56 +406,6 @@ export default class CloudApi {
 
 
     /**
-     * @param {String} cloudPk 
-     * @param {module:model/User} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
-     */
-    cloudUserCreateWithHttpInfo(cloudPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling cloudUserCreate");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling cloudUserCreate");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = User;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/user', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {String} cloudPk 
-     * @param {module:model/User} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
-     */
-    cloudUserCreate(cloudPk, data) {
-      return this.cloudUserCreateWithHttpInfo(cloudPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Create a cloud
      *  Required scopes: cloud:manage
      * @param {module:model/Cloud} data 
@@ -967,7 +917,7 @@ export default class CloudApi {
 
     /**
      * Retrieve all users in a cloud
-     * Only administrators can see all cloud members Required scopes: cloud:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: cloud:read
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/User>} and HTTP response
      */
@@ -1001,7 +951,7 @@ export default class CloudApi {
 
     /**
      * Retrieve all users in a cloud
-     * Only administrators can see all cloud members Required scopes: cloud:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: cloud:read
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/User>}
      */

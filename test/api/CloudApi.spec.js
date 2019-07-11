@@ -118,16 +118,6 @@
         done();
       });
     });
-    describe('cloudUserCreate', function() {
-      it('should call cloudUserCreate successfully', function(done) {
-        //uncomment below and update the code to test cloudUserCreate
-        //instance.cloudUserCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('createCloud', function() {
       it('should call createCloud successfully', function(done) {
         //uncomment below and update the code to test createCloud

@@ -15,12 +15,7 @@ Method | HTTP request | Description
 [**bulkRemoveElementsFromClassification**](IfcApi.md#bulkRemoveElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/bulk_destroy | Remove the classifications from all elements
 [**bulkUpdateElements**](IfcApi.md#bulkUpdateElements) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update | Update many elements at once (all field must be defined)
 [**bulkUpdateIfcProperty**](IfcApi.md#bulkUpdateIfcProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update | Update all fields of many properties of a model
-[**cloudProjectIfcClassificationCreate**](IfcApi.md#cloudProjectIfcClassificationCreate) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification | 
-[**cloudProjectIfcClassificationElementCreate**](IfcApi.md#cloudProjectIfcClassificationElementCreate) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element | 
-[**cloudProjectIfcCreate**](IfcApi.md#cloudProjectIfcCreate) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc | 
-[**cloudProjectIfcProcessorhandlerCreate**](IfcApi.md#cloudProjectIfcProcessorhandlerCreate) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler | 
 [**cloudProjectIfcProcessorhandlerPartialUpdate**](IfcApi.md#cloudProjectIfcProcessorhandlerPartialUpdate) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | 
-[**cloudProjectIfcPropertyCreate**](IfcApi.md#cloudProjectIfcPropertyCreate) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property | 
 [**createClassificationElementRelations**](IfcApi.md#createClassificationElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | Create association between existing classification and existing element
 [**createClassificationsOfElement**](IfcApi.md#createClassificationsOfElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Create one or many classifications to an element
 [**createElement**](IfcApi.md#createElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element | Create an element in the model
@@ -785,248 +780,6 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## cloudProjectIfcClassificationCreate
-
-> Classification cloudProjectIfcClassificationCreate(cloudPk, ifcPk, projectPk, data)
-
-
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure OAuth2 access token for authorization: BIMDataConnect
-let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
-BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.IfcApi();
-let cloudPk = "cloudPk_example"; // String | 
-let ifcPk = "ifcPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Classification(); // Classification | 
-apiInstance.cloudProjectIfcClassificationCreate(cloudPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**Classification**](Classification.md)|  | 
-
-### Return type
-
-[**Classification**](Classification.md)
-
-### Authorization
-
-[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## cloudProjectIfcClassificationElementCreate
-
-> Element cloudProjectIfcClassificationElementCreate(cloudPk, ifcClassificationPk, ifcPk, projectPk, data)
-
-
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure OAuth2 access token for authorization: BIMDataConnect
-let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
-BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.IfcApi();
-let cloudPk = "cloudPk_example"; // String | 
-let ifcClassificationPk = "ifcClassificationPk_example"; // String | 
-let ifcPk = "ifcPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Element(); // Element | 
-apiInstance.cloudProjectIfcClassificationElementCreate(cloudPk, ifcClassificationPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **ifcClassificationPk** | **String**|  | 
- **ifcPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**Element**](Element.md)|  | 
-
-### Return type
-
-[**Element**](Element.md)
-
-### Authorization
-
-[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## cloudProjectIfcCreate
-
-> Ifc cloudProjectIfcCreate(cloudPk, projectPk, data)
-
-
-
- Required scopes: ifc:write
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure OAuth2 access token for authorization: BIMDataConnect
-let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
-BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.IfcApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Ifc(); // Ifc | 
-apiInstance.cloudProjectIfcCreate(cloudPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**Ifc**](Ifc.md)|  | 
-
-### Return type
-
-[**Ifc**](Ifc.md)
-
-### Authorization
-
-[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## cloudProjectIfcProcessorhandlerCreate
-
-> ProcessorHandler cloudProjectIfcProcessorhandlerCreate(cloudPk, ifcPk, projectPk, data)
-
-
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure OAuth2 access token for authorization: BIMDataConnect
-let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
-BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.IfcApi();
-let cloudPk = "cloudPk_example"; // String | 
-let ifcPk = "ifcPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.ProcessorHandler(); // ProcessorHandler | 
-apiInstance.cloudProjectIfcProcessorhandlerCreate(cloudPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**ProcessorHandler**](ProcessorHandler.md)|  | 
-
-### Return type
-
-[**ProcessorHandler**](ProcessorHandler.md)
-
-### Authorization
-
-[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
 ## cloudProjectIfcProcessorhandlerPartialUpdate
 
 > ProcessorHandler cloudProjectIfcProcessorhandlerPartialUpdate(cloudPk, id, ifcPk, projectPk, data)
@@ -1080,66 +833,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProcessorHandler**](ProcessorHandler.md)
-
-### Authorization
-
-[BIMDataConnect](../README.md#BIMDataConnect), [Bearer](../README.md#Bearer), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## cloudProjectIfcPropertyCreate
-
-> Property cloudProjectIfcPropertyCreate(cloudPk, ifcPk, projectPk, data)
-
-
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure OAuth2 access token for authorization: BIMDataConnect
-let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
-BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.IfcApi();
-let cloudPk = "cloudPk_example"; // String | 
-let ifcPk = "ifcPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Property(); // Property | 
-apiInstance.cloudProjectIfcPropertyCreate(cloudPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**Property**](Property.md)|  | 
-
-### Return type
-
-[**Property**](Property.md)
 
 ### Authorization
 
@@ -1215,11 +908,11 @@ null (empty response body)
 
 ## createClassificationsOfElement
 
-> [Classification] createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data)
+> Classification createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data)
 
 Create one or many classifications to an element
 
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated      Required scopes: ifc:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: ifc:write
 
 ### Example
 
@@ -1243,7 +936,7 @@ let cloudPk = "cloudPk_example"; // String |
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.Classification()]; // [Classification] | 
+let data = new bimdata.Classification(); // Classification | 
 apiInstance.createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1261,11 +954,11 @@ Name | Type | Description  | Notes
  **elementUuid** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Classification]**](Classification.md)|  | 
+ **data** | [**Classification**](Classification.md)|  | 
 
 ### Return type
 
-[**[Classification]**](Classification.md)
+[**Classification**](Classification.md)
 
 ### Authorization
 
@@ -1279,11 +972,11 @@ Name | Type | Description  | Notes
 
 ## createElement
 
-> [Element] createElement(cloudPk, ifcPk, projectPk, data)
+> Element createElement(cloudPk, ifcPk, projectPk, data)
 
 Create an element in the model
 
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: ifc:write
 
 ### Example
 
@@ -1306,7 +999,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.Element()]; // [Element] | 
+let data = new bimdata.Element(); // Element | 
 apiInstance.createElement(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1323,11 +1016,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Element]**](Element.md)|  | 
+ **data** | [**Element**](Element.md)|  | 
 
 ### Return type
 
-[**[Element]**](Element.md)
+[**Element**](Element.md)
 
 ### Authorization
 
@@ -1345,7 +1038,7 @@ Name | Type | Description  | Notes
 
 Create a PropertySets to an element
 
-Create a PropertySets that will be automatically linked to the element Required scopes: ifc:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: ifc:write
 
 ### Example
 
@@ -1409,7 +1102,7 @@ Name | Type | Description  | Notes
 
 Create a property to a PropertySet
 
- Required scopes: ifc:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: ifc:write
 
 ### Example
 
@@ -1475,7 +1168,7 @@ Name | Type | Description  | Notes
 
 Create a Definition to a Property
 
- Required scopes: ifc:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: ifc:write
 
 ### Example
 
@@ -1543,7 +1236,7 @@ Name | Type | Description  | Notes
 
 Create a Unit to a Definition
 
-Create a Unit to a Definition Required scopes: ifc:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: ifc:write
 
 ### Example
 
@@ -1609,11 +1302,11 @@ Name | Type | Description  | Notes
 
 ## createIfcPropertyDefinition
 
-> [PropertyDefinition] createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, data)
+> PropertyDefinition createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, data)
 
 Create a PropertyDefinition on the model
 
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: ifc:write
 
 ### Example
 
@@ -1636,7 +1329,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.PropertyDefinition()]; // [PropertyDefinition] | 
+let data = new bimdata.PropertyDefinition(); // PropertyDefinition | 
 apiInstance.createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1653,11 +1346,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[PropertyDefinition]**](PropertyDefinition.md)|  | 
+ **data** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
 
 ### Return type
 
-[**[PropertyDefinition]**](PropertyDefinition.md)
+[**PropertyDefinition**](PropertyDefinition.md)
 
 ### Authorization
 
@@ -1671,11 +1364,11 @@ Name | Type | Description  | Notes
 
 ## createIfcUnit
 
-> [Unit] createIfcUnit(cloudPk, ifcPk, projectPk, data)
+> Unit createIfcUnit(cloudPk, ifcPk, projectPk, data)
 
 Create a Unit on a model
 
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: ifc:write
 
 ### Example
 
@@ -1698,7 +1391,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.Unit()]; // [Unit] | 
+let data = new bimdata.Unit(); // Unit | 
 apiInstance.createIfcUnit(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1715,11 +1408,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Unit]**](Unit.md)|  | 
+ **data** | [**Unit**](Unit.md)|  | 
 
 ### Return type
 
-[**[Unit]**](Unit.md)
+[**Unit**](Unit.md)
 
 ### Authorization
 
@@ -1733,11 +1426,11 @@ Name | Type | Description  | Notes
 
 ## createPropertySet
 
-> [PropertySet] createPropertySet(cloudPk, ifcPk, projectPk, data)
+> PropertySet createPropertySet(cloudPk, ifcPk, projectPk, data)
 
 Create a PropertySet
 
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: ifc:write
 
 ### Example
 
@@ -1760,7 +1453,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.PropertySet()]; // [PropertySet] | 
+let data = new bimdata.PropertySet(); // PropertySet | 
 apiInstance.createPropertySet(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1777,11 +1470,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[PropertySet]**](PropertySet.md)|  | 
+ **data** | [**PropertySet**](PropertySet.md)|  | 
 
 ### Return type
 
-[**[PropertySet]**](PropertySet.md)
+[**PropertySet**](PropertySet.md)
 
 ### Authorization
 
@@ -1919,11 +1612,11 @@ null (empty response body)
 
 ## createSpace
 
-> [Space] createSpace(cloudPk, ifcPk, projectPk, data)
+> Space createSpace(cloudPk, ifcPk, projectPk, data)
 
 Create a space in the model
 
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: ifc:write
 
 ### Example
 
@@ -1946,7 +1639,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.Space()]; // [Space] | 
+let data = new bimdata.Space(); // Space | 
 apiInstance.createSpace(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1963,11 +1656,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Space]**](Space.md)|  | 
+ **data** | [**Space**](Space.md)|  | 
 
 ### Return type
 
-[**[Space]**](Space.md)
+[**Space**](Space.md)
 
 ### Authorization
 
@@ -1981,11 +1674,11 @@ Name | Type | Description  | Notes
 
 ## createZone
 
-> [Zone] createZone(cloudPk, ifcPk, projectPk, data)
+> Zone createZone(cloudPk, ifcPk, projectPk, data)
 
 Create a zone in the model
 
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: ifc:write
 
 ### Example
 
@@ -2008,7 +1701,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.Zone()]; // [Zone] | 
+let data = new bimdata.Zone(); // Zone | 
 apiInstance.createZone(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2025,11 +1718,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[Zone]**](Zone.md)|  | 
+ **data** | [**Zone**](Zone.md)|  | 
 
 ### Return type
 
-[**[Zone]**](Zone.md)
+[**Zone**](Zone.md)
 
 ### Authorization
 
@@ -2047,7 +1740,7 @@ Name | Type | Description  | Notes
 
 Create a space in a zone
 
-The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: ifc:write
 
 ### Example
 
@@ -3307,7 +3000,7 @@ Name | Type | Description  | Notes
 
 Retrieve all classifications of an element
 
-Retrieve all classifications of an element Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -3495,7 +3188,7 @@ Name | Type | Description  | Notes
 
 Retrieve all Properties of a PropertySet
 
-Retrieve all Properties of a PropertySet Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -3763,7 +3456,7 @@ Name | Type | Description  | Notes
 
 Retrieve all Units of a Definition
 
-Retrieve all Units of a Definition Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -3831,7 +3524,7 @@ Name | Type | Description  | Notes
 
 Retrieve all Definitions of a PropertySet
 
-Retrieve all Definitions of a PropertySet Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -3897,7 +3590,7 @@ Name | Type | Description  | Notes
 
 Retrieve all PropertySets of an element
 
-Retrieve all PropertySets of an element Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -3959,7 +3652,7 @@ Name | Type | Description  | Notes
 
 Retrieve all elements of a model
 
-Retrieve all elements of a model. If not filtered, the json may be very large. To efficently retrieve all elements and their data, see getRawElements Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -4027,7 +3720,7 @@ Name | Type | Description  | Notes
 
 Retrieve all elements with the classification
 
-Retrieve all elements with the classification Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -4209,7 +3902,7 @@ null (empty response body)
 
 Retrieve all classifications in a model
 
-Retrieve all classifications in a model Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -4389,7 +4082,7 @@ null (empty response body)
 
 Retrieve all Properties of a model
 
-Retrieve all PropertySets of a model Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -4573,7 +4266,7 @@ Name | Type | Description  | Notes
 
 Retrieve all PropertyDefinitions of a model
 
-Retrieve all PropertyDefinitions of a model Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -4815,7 +4508,7 @@ Name | Type | Description  | Notes
 
 Retrieve all Units of a model
 
-Retrieve all Units of a model Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -4875,7 +4568,7 @@ Name | Type | Description  | Notes
 
 Retrieve all models
 
-Retrieve all models Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -4999,7 +4692,7 @@ Name | Type | Description  | Notes
 
 Get all processor handlers
 
- Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -5121,7 +4814,7 @@ Name | Type | Description  | Notes
 
 Retrieve all PropertySets of a model
 
-Retrieve all PropertySets of a model Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -5311,7 +5004,7 @@ Name | Type | Description  | Notes
 
 Retrieve all spaces of the model
 
-Retrieve all spaces of the model Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -5497,7 +5190,7 @@ Name | Type | Description  | Notes
 
 Retrieve all spaces of a zone
 
-Retrieve all spaces of a zone Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 
@@ -5559,7 +5252,7 @@ Name | Type | Description  | Notes
 
 Retrieve zones of a model
 
-Retrieve parent zones of a model. Children zones we&#39;ll be in the &#39;zones&#39; field Required scopes: ifc:read
+Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
 
 ### Example
 

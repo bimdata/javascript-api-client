@@ -771,264 +771,6 @@ export default class IfcApi {
 
 
     /**
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/Classification} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
-     */
-    cloudProjectIfcClassificationCreateWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProjectIfcClassificationCreate");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling cloudProjectIfcClassificationCreate");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling cloudProjectIfcClassificationCreate");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling cloudProjectIfcClassificationCreate");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Classification;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/Classification} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
-     */
-    cloudProjectIfcClassificationCreate(cloudPk, ifcPk, projectPk, data) {
-      return this.cloudProjectIfcClassificationCreateWithHttpInfo(cloudPk, ifcPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} ifcClassificationPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/Element} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Element} and HTTP response
-     */
-    cloudProjectIfcClassificationElementCreateWithHttpInfo(cloudPk, ifcClassificationPk, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProjectIfcClassificationElementCreate");
-      }
-      // verify the required parameter 'ifcClassificationPk' is set
-      if (ifcClassificationPk === undefined || ifcClassificationPk === null) {
-        throw new Error("Missing the required parameter 'ifcClassificationPk' when calling cloudProjectIfcClassificationElementCreate");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling cloudProjectIfcClassificationElementCreate");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling cloudProjectIfcClassificationElementCreate");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling cloudProjectIfcClassificationElementCreate");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'ifc_classification_pk': ifcClassificationPk,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Element;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} ifcClassificationPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/Element} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Element}
-     */
-    cloudProjectIfcClassificationElementCreate(cloudPk, ifcClassificationPk, ifcPk, projectPk, data) {
-      return this.cloudProjectIfcClassificationElementCreateWithHttpInfo(cloudPk, ifcClassificationPk, ifcPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     *  Required scopes: ifc:write
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @param {module:model/Ifc} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ifc} and HTTP response
-     */
-    cloudProjectIfcCreateWithHttpInfo(cloudPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProjectIfcCreate");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling cloudProjectIfcCreate");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling cloudProjectIfcCreate");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Ifc;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     *  Required scopes: ifc:write
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @param {module:model/Ifc} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ifc}
-     */
-    cloudProjectIfcCreate(cloudPk, projectPk, data) {
-      return this.cloudProjectIfcCreateWithHttpInfo(cloudPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/ProcessorHandler} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProcessorHandler} and HTTP response
-     */
-    cloudProjectIfcProcessorhandlerCreateWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProjectIfcProcessorhandlerCreate");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling cloudProjectIfcProcessorhandlerCreate");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling cloudProjectIfcProcessorhandlerCreate");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling cloudProjectIfcProcessorhandlerCreate");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = ProcessorHandler;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/ProcessorHandler} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProcessorHandler}
-     */
-    cloudProjectIfcProcessorhandlerCreate(cloudPk, ifcPk, projectPk, data) {
-      return this.cloudProjectIfcProcessorhandlerCreateWithHttpInfo(cloudPk, ifcPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this processor handler.
@@ -1095,70 +837,6 @@ export default class IfcApi {
      */
     cloudProjectIfcProcessorhandlerPartialUpdate(cloudPk, id, ifcPk, projectPk, data) {
       return this.cloudProjectIfcProcessorhandlerPartialUpdateWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/Property} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
-     */
-    cloudProjectIfcPropertyCreateWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProjectIfcPropertyCreate");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling cloudProjectIfcPropertyCreate");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling cloudProjectIfcPropertyCreate");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling cloudProjectIfcPropertyCreate");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Property;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/Property} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
-     */
-    cloudProjectIfcPropertyCreate(cloudPk, ifcPk, projectPk, data) {
-      return this.cloudProjectIfcPropertyCreateWithHttpInfo(cloudPk, ifcPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1235,13 +913,13 @@ export default class IfcApi {
 
     /**
      * Create one or many classifications to an element
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors          If classification created already exists, it will just be added to item's classifications and will not be duplicated      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/Classification>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
+     * @param {module:model/Classification} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
      */
     createClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data) {
       let postBody = data;
@@ -1282,7 +960,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = [Classification];
+      let returnType = Classification;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1292,13 +970,13 @@ export default class IfcApi {
 
     /**
      * Create one or many classifications to an element
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors          If classification created already exists, it will just be added to item's classifications and will not be duplicated      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/Classification>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
+     * @param {module:model/Classification} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
      */
     createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data) {
       return this.createClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data)
@@ -1310,12 +988,12 @@ export default class IfcApi {
 
     /**
      * Create an element in the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/Element>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Element>} and HTTP response
+     * @param {module:model/Element} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Element} and HTTP response
      */
     createElementWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
@@ -1351,7 +1029,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = [Element];
+      let returnType = Element;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1361,12 +1039,12 @@ export default class IfcApi {
 
     /**
      * Create an element in the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/Element>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Element>}
+     * @param {module:model/Element} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Element}
      */
     createElement(cloudPk, ifcPk, projectPk, data) {
       return this.createElementWithHttpInfo(cloudPk, ifcPk, projectPk, data)
@@ -1378,7 +1056,7 @@ export default class IfcApi {
 
     /**
      * Create a PropertySets to an element
-     * Create a PropertySets that will be automatically linked to the element Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1435,7 +1113,7 @@ export default class IfcApi {
 
     /**
      * Create a PropertySets to an element
-     * Create a PropertySets that will be automatically linked to the element Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1453,7 +1131,7 @@ export default class IfcApi {
 
     /**
      * Create a property to a PropertySet
-     *  Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1516,7 +1194,7 @@ export default class IfcApi {
 
     /**
      * Create a property to a PropertySet
-     *  Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1535,7 +1213,7 @@ export default class IfcApi {
 
     /**
      * Create a Definition to a Property
-     *  Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1604,7 +1282,7 @@ export default class IfcApi {
 
     /**
      * Create a Definition to a Property
-     *  Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1624,7 +1302,7 @@ export default class IfcApi {
 
     /**
      * Create a Unit to a Definition
-     * Create a Unit to a Definition Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1699,7 +1377,7 @@ export default class IfcApi {
 
     /**
      * Create a Unit to a Definition
-     * Create a Unit to a Definition Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1720,12 +1398,12 @@ export default class IfcApi {
 
     /**
      * Create a PropertyDefinition on the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/PropertyDefinition>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyDefinition>} and HTTP response
+     * @param {module:model/PropertyDefinition} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
      */
     createIfcPropertyDefinitionWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
@@ -1761,7 +1439,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = [PropertyDefinition];
+      let returnType = PropertyDefinition;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1771,12 +1449,12 @@ export default class IfcApi {
 
     /**
      * Create a PropertyDefinition on the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/PropertyDefinition>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyDefinition>}
+     * @param {module:model/PropertyDefinition} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
      */
     createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, data) {
       return this.createIfcPropertyDefinitionWithHttpInfo(cloudPk, ifcPk, projectPk, data)
@@ -1788,12 +1466,12 @@ export default class IfcApi {
 
     /**
      * Create a Unit on a model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/Unit>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Unit>} and HTTP response
+     * @param {module:model/Unit} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
      */
     createIfcUnitWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
@@ -1829,7 +1507,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = [Unit];
+      let returnType = Unit;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1839,12 +1517,12 @@ export default class IfcApi {
 
     /**
      * Create a Unit on a model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/Unit>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Unit>}
+     * @param {module:model/Unit} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
      */
     createIfcUnit(cloudPk, ifcPk, projectPk, data) {
       return this.createIfcUnitWithHttpInfo(cloudPk, ifcPk, projectPk, data)
@@ -1856,12 +1534,12 @@ export default class IfcApi {
 
     /**
      * Create a PropertySet
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/PropertySet>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertySet>} and HTTP response
+     * @param {module:model/PropertySet} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertySet} and HTTP response
      */
     createPropertySetWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
@@ -1897,7 +1575,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = [PropertySet];
+      let returnType = PropertySet;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1907,12 +1585,12 @@ export default class IfcApi {
 
     /**
      * Create a PropertySet
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/PropertySet>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertySet>}
+     * @param {module:model/PropertySet} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertySet}
      */
     createPropertySet(cloudPk, ifcPk, projectPk, data) {
       return this.createPropertySetWithHttpInfo(cloudPk, ifcPk, projectPk, data)
@@ -2060,12 +1738,12 @@ export default class IfcApi {
 
     /**
      * Create a space in the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/Space>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Space>} and HTTP response
+     * @param {module:model/Space} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Space} and HTTP response
      */
     createSpaceWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
@@ -2101,7 +1779,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = [Space];
+      let returnType = Space;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2111,12 +1789,12 @@ export default class IfcApi {
 
     /**
      * Create a space in the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/Space>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Space>}
+     * @param {module:model/Space} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Space}
      */
     createSpace(cloudPk, ifcPk, projectPk, data) {
       return this.createSpaceWithHttpInfo(cloudPk, ifcPk, projectPk, data)
@@ -2128,12 +1806,12 @@ export default class IfcApi {
 
     /**
      * Create a zone in the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/Zone>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Zone>} and HTTP response
+     * @param {module:model/Zone} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Zone} and HTTP response
      */
     createZoneWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
@@ -2169,7 +1847,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = [Zone];
+      let returnType = Zone;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2179,12 +1857,12 @@ export default class IfcApi {
 
     /**
      * Create a zone in the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {Array.<module:model/Zone>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Zone>}
+     * @param {module:model/Zone} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Zone}
      */
     createZone(cloudPk, ifcPk, projectPk, data) {
       return this.createZoneWithHttpInfo(cloudPk, ifcPk, projectPk, data)
@@ -2196,7 +1874,7 @@ export default class IfcApi {
 
     /**
      * Create a space in a zone
-     * The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -2253,7 +1931,7 @@ export default class IfcApi {
 
     /**
      * Create a space in a zone
-     * The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -3635,7 +3313,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all classifications of an element
-     * Retrieve all classifications of an element Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -3687,7 +3365,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all classifications of an element
-     * Retrieve all classifications of an element Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -3849,7 +3527,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Properties of a PropertySet
-     * Retrieve all Properties of a PropertySet Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -3907,7 +3585,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Properties of a PropertySet
-     * Retrieve all Properties of a PropertySet Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4195,7 +3873,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Units of a Definition
-     * Retrieve all Units of a Definition Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4265,7 +3943,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Units of a Definition
-     * Retrieve all Units of a Definition Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4285,7 +3963,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Definitions of a PropertySet
-     * Retrieve all Definitions of a PropertySet Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4349,7 +4027,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Definitions of a PropertySet
-     * Retrieve all Definitions of a PropertySet Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4368,7 +4046,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all PropertySets of an element
-     * Retrieve all PropertySets of an element Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4420,7 +4098,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all PropertySets of an element
-     * Retrieve all PropertySets of an element Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4437,7 +4115,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all elements of a model
-     * Retrieve all elements of a model. If not filtered, the json may be very large. To efficently retrieve all elements and their data, see getRawElements Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4491,7 +4169,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all elements of a model
-     * Retrieve all elements of a model. If not filtered, the json may be very large. To efficently retrieve all elements and their data, see getRawElements Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4511,7 +4189,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all elements with the classification
-     * Retrieve all elements with the classification Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
@@ -4563,7 +4241,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all elements with the classification
-     * Retrieve all elements with the classification Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
@@ -4704,7 +4382,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all classifications in a model
-     * Retrieve all classifications in a model Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4750,7 +4428,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all classifications in a model
-     * Retrieve all classifications in a model Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4890,7 +4568,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Properties of a model
-     * Retrieve all PropertySets of a model Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4936,7 +4614,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Properties of a model
-     * Retrieve all PropertySets of a model Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5090,7 +4768,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all PropertyDefinitions of a model
-     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5136,7 +4814,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all PropertyDefinitions of a model
-     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5345,7 +5023,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Units of a model
-     * Retrieve all Units of a model Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5391,7 +5069,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Units of a model
-     * Retrieve all Units of a model Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5407,7 +5085,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all models
-     * Retrieve all models Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
@@ -5451,7 +5129,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all models
-     * Retrieve all models Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
@@ -5537,7 +5215,7 @@ export default class IfcApi {
 
     /**
      * Get all processor handlers
-     *  Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5583,7 +5261,7 @@ export default class IfcApi {
 
     /**
      * Get all processor handlers
-     *  Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5668,7 +5346,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all PropertySets of a model
-     * Retrieve all PropertySets of a model Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5714,7 +5392,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all PropertySets of a model
-     * Retrieve all PropertySets of a model Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5873,7 +5551,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all spaces of the model
-     * Retrieve all spaces of the model Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5919,7 +5597,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all spaces of the model
-     * Retrieve all spaces of the model Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6080,7 +5758,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all spaces of a zone
-     * Retrieve all spaces of a zone Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6132,7 +5810,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all spaces of a zone
-     * Retrieve all spaces of a zone Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6149,7 +5827,7 @@ export default class IfcApi {
 
     /**
      * Retrieve zones of a model
-     * Retrieve parent zones of a model. Children zones we'll be in the 'zones' field Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6199,7 +5877,7 @@ export default class IfcApi {
 
     /**
      * Retrieve zones of a model
-     * Retrieve parent zones of a model. Children zones we'll be in the 'zones' field Required scopes: ifc:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 

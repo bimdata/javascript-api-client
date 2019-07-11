@@ -45,65 +45,8 @@ export default class BcfApi {
 
 
     /**
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {module:model/Viewpoint} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Viewpoint} and HTTP response
-     */
-    bcf21ProjectsTopicsTopicViewpointsCreateWithHttpInfo(projectsPk, topicsPk, data) {
-      let postBody = data;
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling bcf21ProjectsTopicsTopicViewpointsCreate");
-      }
-      // verify the required parameter 'topicsPk' is set
-      if (topicsPk === undefined || topicsPk === null) {
-        throw new Error("Missing the required parameter 'topicsPk' when calling bcf21ProjectsTopicsTopicViewpointsCreate");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bcf21ProjectsTopicsTopicViewpointsCreate");
-      }
-
-      let pathParams = {
-        'projects_pk': projectsPk,
-        'topics_pk': topicsPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Viewpoint;
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/topic-viewpoints', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {String} projectsPk 
-     * @param {String} topicsPk 
-     * @param {module:model/Viewpoint} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Viewpoint}
-     */
-    bcf21ProjectsTopicsTopicViewpointsCreate(projectsPk, topicsPk, data) {
-      return this.bcf21ProjectsTopicsTopicViewpointsCreateWithHttpInfo(projectsPk, topicsPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Create a comment
-     * Create a comment Required scopes: bcf:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {module:model/Comment} data 
@@ -148,7 +91,7 @@ export default class BcfApi {
 
     /**
      * Create a comment
-     * Create a comment Required scopes: bcf:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {module:model/Comment} data 
@@ -164,7 +107,7 @@ export default class BcfApi {
 
     /**
      * Create a Topic with viewpoints and comments
-     * This is not a standard route. You can send a topic, viewpoints and comments in a single call Required scopes: bcf:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {module:model/FullTopic} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FullTopic} and HTTP response
@@ -203,7 +146,7 @@ export default class BcfApi {
 
     /**
      * Create a Topic with viewpoints and comments
-     * This is not a standard route. You can send a topic, viewpoints and comments in a single call Required scopes: bcf:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {module:model/FullTopic} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FullTopic}
@@ -218,7 +161,7 @@ export default class BcfApi {
 
     /**
      * Create a topic
-     * Create a topic Required scopes: bcf:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {module:model/Topic} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Topic} and HTTP response
@@ -257,7 +200,7 @@ export default class BcfApi {
 
     /**
      * Create a topic
-     * Create a topic Required scopes: bcf:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {module:model/Topic} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Topic}
@@ -272,7 +215,7 @@ export default class BcfApi {
 
     /**
      * Create a Viewpoint
-     * Create a Viewpoint Required scopes: bcf:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {module:model/Viewpoint} data 
@@ -317,7 +260,7 @@ export default class BcfApi {
 
     /**
      * Create a Viewpoint
-     * Create a Viewpoint Required scopes: bcf:write
+     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @param {module:model/Viewpoint} data 
@@ -1094,7 +1037,7 @@ export default class BcfApi {
 
     /**
      * Retrieve all comments
-     * Retrieve all comments Required scopes: bcf:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Comment>} and HTTP response
@@ -1134,7 +1077,7 @@ export default class BcfApi {
 
     /**
      * Retrieve all comments
-     * Retrieve all comments Required scopes: bcf:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Comment>}
@@ -1252,7 +1195,7 @@ export default class BcfApi {
 
     /**
      * Retrieve all full topics
-     * This is not a standard route. It responds with all topics, their viewpoints and their comments Required scopes: bcf:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.ifcs Filter the returned list by ifcs
@@ -1292,7 +1235,7 @@ export default class BcfApi {
 
     /**
      * Retrieve all full topics
-     * This is not a standard route. It responds with all topics, their viewpoints and their comments Required scopes: bcf:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.ifcs Filter the returned list by ifcs
@@ -1488,7 +1431,7 @@ export default class BcfApi {
 
     /**
      * Retrieve all viewpoints attached to the topic
-     * This is not a standard route. It returns all viewpoints of the topic that are not attached to a comment. Required scopes: bcf:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Viewpoint>} and HTTP response
@@ -1528,7 +1471,7 @@ export default class BcfApi {
 
     /**
      * Retrieve all viewpoints attached to the topic
-     * This is not a standard route. It returns all viewpoints of the topic that are not attached to a comment. Required scopes: bcf:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Viewpoint>}
@@ -1543,7 +1486,7 @@ export default class BcfApi {
 
     /**
      * Retrieve all topics
-     * Retrieve all topics Required scopes: bcf:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.ifcs Filter the returned list by ifcs
@@ -1583,7 +1526,7 @@ export default class BcfApi {
 
     /**
      * Retrieve all topics
-     * Retrieve all topics Required scopes: bcf:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.ifcs Filter the returned list by ifcs
@@ -1703,7 +1646,7 @@ export default class BcfApi {
 
     /**
      * Retrieve all Viewpoints of a topic
-     * Retrieve all Viewpoints of a topic Required scopes: bcf:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Viewpoint>} and HTTP response
@@ -1743,7 +1686,7 @@ export default class BcfApi {
 
     /**
      * Retrieve all Viewpoints of a topic
-     * Retrieve all Viewpoints of a topic Required scopes: bcf:read
+     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Viewpoint>}
