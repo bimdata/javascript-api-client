@@ -1,4 +1,4 @@
-# bimdata.FolderChildren
+# bimdata.RecursiveFolderChildren
 
 ## Properties
 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **size** | **Number** |  | [optional] 
 **ifcId** | **Number** |  | [optional] 
 **file** | **String** |  | [optional] 
-**children** | [**[FolderChildren]**](FolderChildren.md) |  | 
+**children** | [**[RecursiveFolderChildren]**](RecursiveFolderChildren.md) |  | 
 
 
 

@@ -15,10 +15,10 @@
 import ApiClient from "../ApiClient";
 import Classification from '../model/Classification';
 import Document from '../model/Document';
-import Folder from '../model/Folder';
 import Project from '../model/Project';
 import ProjectInvitation from '../model/ProjectInvitation';
 import ProjectWithChildren from '../model/ProjectWithChildren';
+import RecursiveFolder from '../model/RecursiveFolder';
 import User from '../model/User';
 import UserProjectUpdate from '../model/UserProjectUpdate';
 
@@ -259,8 +259,8 @@ export default class ProjectApi {
      * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:model/Folder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
+     * @param {module:model/RecursiveFolder} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RecursiveFolder} and HTTP response
      */
     createFolderWithHttpInfo(cloudPk, projectPk, data) {
       let postBody = data;
@@ -291,7 +291,7 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Folder;
+      let returnType = RecursiveFolder;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -304,8 +304,8 @@ export default class ProjectApi {
      * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:model/Folder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
+     * @param {module:model/RecursiveFolder} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RecursiveFolder}
      */
     createFolder(cloudPk, projectPk, data) {
       return this.createFolderWithHttpInfo(cloudPk, projectPk, data)
@@ -842,8 +842,8 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @param {module:model/Folder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
+     * @param {module:model/RecursiveFolder} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RecursiveFolder} and HTTP response
      */
     fullUpdateFolderWithHttpInfo(cloudPk, id, projectPk, data) {
       let postBody = data;
@@ -879,7 +879,7 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Folder;
+      let returnType = RecursiveFolder;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -893,8 +893,8 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @param {module:model/Folder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
+     * @param {module:model/RecursiveFolder} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RecursiveFolder}
      */
     fullUpdateFolder(cloudPk, id, projectPk, data) {
       return this.fullUpdateFolderWithHttpInfo(cloudPk, id, projectPk, data)
@@ -1273,7 +1273,7 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RecursiveFolder} and HTTP response
      */
     getFolderWithHttpInfo(cloudPk, id, projectPk) {
       let postBody = null;
@@ -1305,7 +1305,7 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Folder;
+      let returnType = RecursiveFolder;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1319,7 +1319,7 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RecursiveFolder}
      */
     getFolder(cloudPk, id, projectPk) {
       return this.getFolderWithHttpInfo(cloudPk, id, projectPk)
@@ -1334,7 +1334,7 @@ export default class ProjectApi {
      * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: document:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Folder>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RecursiveFolder>} and HTTP response
      */
     getFoldersWithHttpInfo(cloudPk, projectPk) {
       let postBody = null;
@@ -1361,7 +1361,7 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Folder];
+      let returnType = [RecursiveFolder];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1374,7 +1374,7 @@ export default class ProjectApi {
      * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: document:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Folder>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RecursiveFolder>}
      */
     getFolders(cloudPk, projectPk) {
       return this.getFoldersWithHttpInfo(cloudPk, projectPk)
@@ -1444,7 +1444,7 @@ export default class ProjectApi {
      * Retrieve the complete DMS tree (all folders and all documents in the project)
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RecursiveFolder} and HTTP response
      */
     getProjectDMSTreeWithHttpInfo(cloudPk, id) {
       let postBody = null;
@@ -1471,7 +1471,7 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Folder;
+      let returnType = RecursiveFolder;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}/dms-tree', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1484,7 +1484,7 @@ export default class ProjectApi {
      * Retrieve the complete DMS tree (all folders and all documents in the project)
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RecursiveFolder}
      */
     getProjectDMSTree(cloudPk, id) {
       return this.getProjectDMSTreeWithHttpInfo(cloudPk, id)
@@ -1602,7 +1602,7 @@ export default class ProjectApi {
      * Retrieve the complete DMS tree (all folders and all documents in the project). DEPRECATED: renamed to getProjectDMSTree
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RecursiveFolder} and HTTP response
      */
     getProjectTreeWithHttpInfo(cloudPk, id) {
       let postBody = null;
@@ -1629,7 +1629,7 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Folder;
+      let returnType = RecursiveFolder;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}/tree', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1642,7 +1642,7 @@ export default class ProjectApi {
      * Retrieve the complete DMS tree (all folders and all documents in the project). DEPRECATED: renamed to getProjectDMSTree
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RecursiveFolder}
      */
     getProjectTree(cloudPk, id) {
       return this.getProjectTreeWithHttpInfo(cloudPk, id)
@@ -2020,8 +2020,8 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @param {module:model/Folder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
+     * @param {module:model/RecursiveFolder} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RecursiveFolder} and HTTP response
      */
     updateFolderWithHttpInfo(cloudPk, id, projectPk, data) {
       let postBody = data;
@@ -2057,7 +2057,7 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Folder;
+      let returnType = RecursiveFolder;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2071,8 +2071,8 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @param {module:model/Folder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
+     * @param {module:model/RecursiveFolder} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RecursiveFolder}
      */
     updateFolder(cloudPk, id, projectPk, data) {
       return this.updateFolderWithHttpInfo(cloudPk, id, projectPk, data)

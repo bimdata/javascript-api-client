@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Project from '../model/Project';
+import ProjectWithCloud from '../model/ProjectWithCloud';
 import SelfUser from '../model/SelfUser';
 
 /**
@@ -117,7 +117,7 @@ export default class UserApi {
 
 
     /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectWithCloud>} and HTTP response
      */
     userProjectsListWithHttpInfo() {
       let postBody = null;
@@ -134,7 +134,7 @@ export default class UserApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Project];
+      let returnType = [ProjectWithCloud];
       return this.apiClient.callApi(
         '/user/projects', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -143,7 +143,7 @@ export default class UserApi {
     }
 
     /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectWithCloud>}
      */
     userProjectsList() {
       return this.userProjectsListWithHttpInfo()

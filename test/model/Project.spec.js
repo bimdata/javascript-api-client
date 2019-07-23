@@ -66,14 +66,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property cloud (base name: "cloud")', function() {
-      // uncomment below and update the code to test the property cloud
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instane = new bimdata.Project();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property cloudId (base name: "cloud_id")', function() {
+      // uncomment below and update the code to test the property cloudId
       //var instane = new bimdata.Project();
       //expect(instance).to.be();
     });

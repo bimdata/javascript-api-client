@@ -1,4 +1,4 @@
-# bimdata.Project
+# bimdata.ProjectWithCloud
 
 ## Properties
 
@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **updatedAt** | **Date** | Date of the last update | [optional] 
 **parentId** | **Number** |  | [optional] 
 **rootFolderId** | **String** |  | [optional] 
+**cloud** | [**Cloud**](Cloud.md) |  | [optional] 
 
 
 

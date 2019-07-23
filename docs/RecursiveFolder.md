@@ -1,4 +1,4 @@
-# bimdata.Folder
+# bimdata.RecursiveFolder
 
 ## Properties
 
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **name** | **String** | Name of the folder | 
 **createdAt** | **Date** | Creation date | [optional] 
 **updatedAt** | **Date** | Date of the last update | [optional] 
-**children** | [**[FolderChildren]**](FolderChildren.md) |  | [optional] 
 **createdBy** | [**User**](User.md) |  | [optional] 
+**children** | [**[RecursiveFolderChildren]**](RecursiveFolderChildren.md) |  | [optional] 
 
 

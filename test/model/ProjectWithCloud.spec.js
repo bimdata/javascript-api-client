@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Folder();
+    instance = new bimdata.ProjectWithCloud();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,58 +47,70 @@
       object[property] = value;
   }
 
-  describe('Folder', function() {
-    it('should create an instance of Folder', function() {
-      // uncomment below and update the code to test Folder
-      //var instane = new bimdata.Folder();
-      //expect(instance).to.be.a(bimdata.Folder);
+  describe('ProjectWithCloud', function() {
+    it('should create an instance of ProjectWithCloud', function() {
+      // uncomment below and update the code to test ProjectWithCloud
+      //var instane = new bimdata.ProjectWithCloud();
+      //expect(instance).to.be.a(bimdata.ProjectWithCloud);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Folder();
+      //var instane = new bimdata.ProjectWithCloud();
       //expect(instance).to.be();
     });
 
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
-      //var instane = new bimdata.Folder();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new bimdata.Folder();
+    it('should have the property logo (base name: "logo")', function() {
+      // uncomment below and update the code to test the property logo
+      //var instane = new bimdata.ProjectWithCloud();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Folder();
+      //var instane = new bimdata.ProjectWithCloud();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cloudId (base name: "cloud_id")', function() {
+      // uncomment below and update the code to test the property cloudId
+      //var instane = new bimdata.ProjectWithCloud();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instane = new bimdata.ProjectWithCloud();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.Folder();
+      //var instane = new bimdata.ProjectWithCloud();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.Folder();
+      //var instane = new bimdata.ProjectWithCloud();
       //expect(instance).to.be();
     });
 
-    it('should have the property children (base name: "children")', function() {
-      // uncomment below and update the code to test the property children
-      //var instane = new bimdata.Folder();
+    it('should have the property parentId (base name: "parent_id")', function() {
+      // uncomment below and update the code to test the property parentId
+      //var instane = new bimdata.ProjectWithCloud();
       //expect(instance).to.be();
     });
 
-    it('should have the property createdBy (base name: "created_by")', function() {
-      // uncomment below and update the code to test the property createdBy
-      //var instane = new bimdata.Folder();
+    it('should have the property rootFolderId (base name: "root_folder_id")', function() {
+      // uncomment below and update the code to test the property rootFolderId
+      //var instane = new bimdata.ProjectWithCloud();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cloud (base name: "cloud")', function() {
+      // uncomment below and update the code to test the property cloud
+      //var instane = new bimdata.ProjectWithCloud();
       //expect(instance).to.be();
     });
 

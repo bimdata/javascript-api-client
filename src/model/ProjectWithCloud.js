@@ -12,21 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
+import Cloud from './Cloud';
 
 /**
- * The Project model module.
- * @module model/Project
+ * The ProjectWithCloud model module.
+ * @module model/ProjectWithCloud
  * @version 0.0.0
  */
-class Project {
+class ProjectWithCloud {
     /**
-     * Constructs a new <code>Project</code>.
-     * @alias module:model/Project
+     * Constructs a new <code>ProjectWithCloud</code>.
+     * @alias module:model/ProjectWithCloud
      * @param name {String} Name of the project
      */
     constructor(name) { 
         
-        Project.initialize(this, name);
+        ProjectWithCloud.initialize(this, name);
     }
 
     /**
@@ -39,15 +40,15 @@ class Project {
     }
 
     /**
-     * Constructs a <code>Project</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ProjectWithCloud</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Project} obj Optional instance to populate.
-     * @return {module:model/Project} The populated <code>Project</code> instance.
+     * @param {module:model/ProjectWithCloud} obj Optional instance to populate.
+     * @return {module:model/ProjectWithCloud} The populated <code>ProjectWithCloud</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Project();
+            obj = obj || new ProjectWithCloud();
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
@@ -76,6 +77,9 @@ class Project {
             if (data.hasOwnProperty('root_folder_id')) {
                 obj['root_folder_id'] = ApiClient.convertToType(data['root_folder_id'], 'String');
             }
+            if (data.hasOwnProperty('cloud')) {
+                obj['cloud'] = Cloud.constructFromObject(data['cloud']);
+            }
         }
         return obj;
     }
@@ -86,50 +90,55 @@ class Project {
 /**
  * @member {Number} id
  */
-Project.prototype['id'] = undefined;
+ProjectWithCloud.prototype['id'] = undefined;
 
 /**
  * @member {String} logo
  */
-Project.prototype['logo'] = undefined;
+ProjectWithCloud.prototype['logo'] = undefined;
 
 /**
  * Name of the project
  * @member {String} name
  */
-Project.prototype['name'] = undefined;
+ProjectWithCloud.prototype['name'] = undefined;
 
 /**
  * @member {String} cloud_id
  */
-Project.prototype['cloud_id'] = undefined;
+ProjectWithCloud.prototype['cloud_id'] = undefined;
 
 /**
- * @member {module:model/Project.StatusEnum} status
+ * @member {module:model/ProjectWithCloud.StatusEnum} status
  */
-Project.prototype['status'] = undefined;
+ProjectWithCloud.prototype['status'] = undefined;
 
 /**
  * Creation date
  * @member {Date} created_at
  */
-Project.prototype['created_at'] = undefined;
+ProjectWithCloud.prototype['created_at'] = undefined;
 
 /**
  * Date of the last update
  * @member {Date} updated_at
  */
-Project.prototype['updated_at'] = undefined;
+ProjectWithCloud.prototype['updated_at'] = undefined;
 
 /**
  * @member {Number} parent_id
  */
-Project.prototype['parent_id'] = undefined;
+ProjectWithCloud.prototype['parent_id'] = undefined;
 
 /**
  * @member {String} root_folder_id
  */
-Project.prototype['root_folder_id'] = undefined;
+ProjectWithCloud.prototype['root_folder_id'] = undefined;
+
+/**
+ * @member {module:model/Cloud} cloud
+ */
+ProjectWithCloud.prototype['cloud'] = undefined;
 
 
 
@@ -140,7 +149,7 @@ Project.prototype['root_folder_id'] = undefined;
  * @enum {String}
  * @readonly
  */
-Project['StatusEnum'] = {
+ProjectWithCloud['StatusEnum'] = {
 
     /**
      * value: "A"
@@ -157,5 +166,5 @@ Project['StatusEnum'] = {
 
 
 
-export default Project;
+export default ProjectWithCloud;
 

@@ -212,12 +212,6 @@ Class | Method | HTTP request | Description
 *bimdata.CheckplanApi* | [**updateRuleComponent**](docs/CheckplanApi.md#updateRuleComponent) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Update some fields of a RuleComponent
 *bimdata.CheckplanApi* | [**updateRuleset**](docs/CheckplanApi.md#updateRuleset) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Update some fields of a Ruleset
 *bimdata.CloudApi* | [**cancelCloudUserInvitation**](docs/CloudApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | Cancel a pending invitation
-*bimdata.CloudApi* | [**cloudProcessorCreate**](docs/CloudApi.md#cloudProcessorCreate) | **POST** /cloud/{cloud_pk}/processor | 
-*bimdata.CloudApi* | [**cloudProcessorDelete**](docs/CloudApi.md#cloudProcessorDelete) | **DELETE** /cloud/{cloud_pk}/processor/{id} | 
-*bimdata.CloudApi* | [**cloudProcessorList**](docs/CloudApi.md#cloudProcessorList) | **GET** /cloud/{cloud_pk}/processor | 
-*bimdata.CloudApi* | [**cloudProcessorPartialUpdate**](docs/CloudApi.md#cloudProcessorPartialUpdate) | **PATCH** /cloud/{cloud_pk}/processor/{id} | 
-*bimdata.CloudApi* | [**cloudProcessorRead**](docs/CloudApi.md#cloudProcessorRead) | **GET** /cloud/{cloud_pk}/processor/{id} | 
-*bimdata.CloudApi* | [**cloudProcessorUpdate**](docs/CloudApi.md#cloudProcessorUpdate) | **PUT** /cloud/{cloud_pk}/processor/{id} | 
 *bimdata.CloudApi* | [**createCloud**](docs/CloudApi.md#createCloud) | **POST** /cloud | Create a cloud
 *bimdata.CloudApi* | [**createDemo**](docs/CloudApi.md#createDemo) | **POST** /cloud/{id}/create-demo | Create a Demo project in a cloud
 *bimdata.CloudApi* | [**deleteCloud**](docs/CloudApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
@@ -396,8 +390,6 @@ Class | Method | HTTP request | Description
  - [bimdata.ElementPropertySetRelation](docs/ElementPropertySetRelation.md)
  - [bimdata.Extensions](docs/Extensions.md)
  - [bimdata.Feature](docs/Feature.md)
- - [bimdata.Folder](docs/Folder.md)
- - [bimdata.FolderChildren](docs/FolderChildren.md)
  - [bimdata.FullTopic](docs/FullTopic.md)
  - [bimdata.Ifc](docs/Ifc.md)
  - [bimdata.IfcChecker](docs/IfcChecker.md)
@@ -411,12 +403,12 @@ Class | Method | HTTP request | Description
  - [bimdata.PerspectiveCamera](docs/PerspectiveCamera.md)
  - [bimdata.Point](docs/Point.md)
  - [bimdata.Priority](docs/Priority.md)
- - [bimdata.Processor](docs/Processor.md)
  - [bimdata.ProcessorHandler](docs/ProcessorHandler.md)
  - [bimdata.Project](docs/Project.md)
  - [bimdata.ProjectInvitation](docs/ProjectInvitation.md)
  - [bimdata.ProjectRole](docs/ProjectRole.md)
  - [bimdata.ProjectWithChildren](docs/ProjectWithChildren.md)
+ - [bimdata.ProjectWithCloud](docs/ProjectWithCloud.md)
  - [bimdata.Property](docs/Property.md)
  - [bimdata.PropertyDefinition](docs/PropertyDefinition.md)
  - [bimdata.PropertySet](docs/PropertySet.md)
@@ -427,6 +419,8 @@ Class | Method | HTTP request | Description
  - [bimdata.RawProperty](docs/RawProperty.md)
  - [bimdata.RawPropertySet](docs/RawPropertySet.md)
  - [bimdata.RawUnit](docs/RawUnit.md)
+ - [bimdata.RecursiveFolder](docs/RecursiveFolder.md)
+ - [bimdata.RecursiveFolderChildren](docs/RecursiveFolderChildren.md)
  - [bimdata.Rule](docs/Rule.md)
  - [bimdata.RuleComponent](docs/RuleComponent.md)
  - [bimdata.Ruleset](docs/Ruleset.md)

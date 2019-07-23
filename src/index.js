@@ -33,8 +33,6 @@ import ElementClassificationRelation from './model/ElementClassificationRelation
 import ElementPropertySetRelation from './model/ElementPropertySetRelation';
 import Extensions from './model/Extensions';
 import Feature from './model/Feature';
-import Folder from './model/Folder';
-import FolderChildren from './model/FolderChildren';
 import FullTopic from './model/FullTopic';
 import Ifc from './model/Ifc';
 import IfcChecker from './model/IfcChecker';
@@ -48,12 +46,12 @@ import OrthogonalCamera from './model/OrthogonalCamera';
 import PerspectiveCamera from './model/PerspectiveCamera';
 import Point from './model/Point';
 import Priority from './model/Priority';
-import Processor from './model/Processor';
 import ProcessorHandler from './model/ProcessorHandler';
 import Project from './model/Project';
 import ProjectInvitation from './model/ProjectInvitation';
 import ProjectRole from './model/ProjectRole';
 import ProjectWithChildren from './model/ProjectWithChildren';
+import ProjectWithCloud from './model/ProjectWithCloud';
 import Property from './model/Property';
 import PropertyDefinition from './model/PropertyDefinition';
 import PropertySet from './model/PropertySet';
@@ -64,6 +62,8 @@ import RawElements from './model/RawElements';
 import RawProperty from './model/RawProperty';
 import RawPropertySet from './model/RawPropertySet';
 import RawUnit from './model/RawUnit';
+import RecursiveFolder from './model/RecursiveFolder';
+import RecursiveFolderChildren from './model/RecursiveFolderChildren';
 import Rule from './model/Rule';
 import RuleComponent from './model/RuleComponent';
 import Ruleset from './model/Ruleset';
@@ -253,18 +253,6 @@ export {
     Feature,
 
     /**
-     * The Folder model constructor.
-     * @property {module:model/Folder}
-     */
-    Folder,
-
-    /**
-     * The FolderChildren model constructor.
-     * @property {module:model/FolderChildren}
-     */
-    FolderChildren,
-
-    /**
      * The FullTopic model constructor.
      * @property {module:model/FullTopic}
      */
@@ -343,12 +331,6 @@ export {
     Priority,
 
     /**
-     * The Processor model constructor.
-     * @property {module:model/Processor}
-     */
-    Processor,
-
-    /**
      * The ProcessorHandler model constructor.
      * @property {module:model/ProcessorHandler}
      */
@@ -377,6 +359,12 @@ export {
      * @property {module:model/ProjectWithChildren}
      */
     ProjectWithChildren,
+
+    /**
+     * The ProjectWithCloud model constructor.
+     * @property {module:model/ProjectWithCloud}
+     */
+    ProjectWithCloud,
 
     /**
      * The Property model constructor.
@@ -437,6 +425,18 @@ export {
      * @property {module:model/RawUnit}
      */
     RawUnit,
+
+    /**
+     * The RecursiveFolder model constructor.
+     * @property {module:model/RecursiveFolder}
+     */
+    RecursiveFolder,
+
+    /**
+     * The RecursiveFolderChildren model constructor.
+     * @property {module:model/RecursiveFolderChildren}
+     */
+    RecursiveFolderChildren,
 
     /**
      * The Rule model constructor.

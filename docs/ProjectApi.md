@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ## createFolder
 
-> Folder createFolder(cloudPk, projectPk, data)
+> RecursiveFolder createFolder(cloudPk, projectPk, data)
 
 Create a folder
 
@@ -268,7 +268,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.ProjectApi();
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Folder(); // Folder | 
+let data = new bimdata.RecursiveFolder(); // RecursiveFolder | 
 apiInstance.createFolder(cloudPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -284,11 +284,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Folder**](Folder.md)|  | 
+ **data** | [**RecursiveFolder**](RecursiveFolder.md)|  | 
 
 ### Return type
 
-[**Folder**](Folder.md)
+[**RecursiveFolder**](RecursiveFolder.md)
 
 ### Authorization
 
@@ -800,7 +800,7 @@ Name | Type | Description  | Notes
 
 ## fullUpdateFolder
 
-> Folder fullUpdateFolder(cloudPk, id, projectPk, data)
+> RecursiveFolder fullUpdateFolder(cloudPk, id, projectPk, data)
 
 Update all fields of a folder
 
@@ -827,7 +827,7 @@ let apiInstance = new bimdata.ProjectApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this folder.
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Folder(); // Folder | 
+let data = new bimdata.RecursiveFolder(); // RecursiveFolder | 
 apiInstance.fullUpdateFolder(cloudPk, id, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -844,11 +844,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this folder. | 
  **projectPk** | **String**|  | 
- **data** | [**Folder**](Folder.md)|  | 
+ **data** | [**RecursiveFolder**](RecursiveFolder.md)|  | 
 
 ### Return type
 
-[**Folder**](Folder.md)
+[**RecursiveFolder**](RecursiveFolder.md)
 
 ### Authorization
 
@@ -1220,7 +1220,7 @@ Name | Type | Description  | Notes
 
 ## getFolder
 
-> Folder getFolder(cloudPk, id, projectPk)
+> RecursiveFolder getFolder(cloudPk, id, projectPk)
 
 Retrieve a folder
 
@@ -1266,7 +1266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Folder**](Folder.md)
+[**RecursiveFolder**](RecursiveFolder.md)
 
 ### Authorization
 
@@ -1280,7 +1280,7 @@ Name | Type | Description  | Notes
 
 ## getFolders
 
-> [Folder] getFolders(cloudPk, projectPk)
+> [RecursiveFolder] getFolders(cloudPk, projectPk)
 
 Retrieve all folders
 
@@ -1324,7 +1324,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Folder]**](Folder.md)
+[**[RecursiveFolder]**](RecursiveFolder.md)
 
 ### Authorization
 
@@ -1396,7 +1396,7 @@ Name | Type | Description  | Notes
 
 ## getProjectDMSTree
 
-> Folder getProjectDMSTree(cloudPk, id)
+> RecursiveFolder getProjectDMSTree(cloudPk, id)
 
 Retrieve the complete DMS tree
 
@@ -1440,7 +1440,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Folder**](Folder.md)
+[**RecursiveFolder**](RecursiveFolder.md)
 
 ### Authorization
 
@@ -1568,7 +1568,7 @@ Name | Type | Description  | Notes
 
 ## getProjectTree
 
-> Folder getProjectTree(cloudPk, id)
+> RecursiveFolder getProjectTree(cloudPk, id)
 
 Retrieve the complete DMS tree
 
@@ -1612,7 +1612,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Folder**](Folder.md)
+[**RecursiveFolder**](RecursiveFolder.md)
 
 ### Authorization
 
@@ -1984,7 +1984,7 @@ Name | Type | Description  | Notes
 
 ## updateFolder
 
-> Folder updateFolder(cloudPk, id, projectPk, data)
+> RecursiveFolder updateFolder(cloudPk, id, projectPk, data)
 
 Update some fields of a folder
 
@@ -2011,7 +2011,7 @@ let apiInstance = new bimdata.ProjectApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this folder.
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Folder(); // Folder | 
+let data = new bimdata.RecursiveFolder(); // RecursiveFolder | 
 apiInstance.updateFolder(cloudPk, id, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2028,11 +2028,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this folder. | 
  **projectPk** | **String**|  | 
- **data** | [**Folder**](Folder.md)|  | 
+ **data** | [**RecursiveFolder**](RecursiveFolder.md)|  | 
 
 ### Return type
 
-[**Folder**](Folder.md)
+[**RecursiveFolder**](RecursiveFolder.md)
 
 ### Authorization
 
