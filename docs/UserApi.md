@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ## userProjectsList
 
-> [ProjectWithCloud] userProjectsList()
+> [Project] userProjectsList()
 
 
 
@@ -152,7 +152,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[ProjectWithCloud]**](ProjectWithCloud.md)
+[**[Project]**](Project.md)
 
 ### Authorization
 

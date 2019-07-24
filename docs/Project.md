@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **Number** |  | [optional] 
 **logo** | **String** |  | [optional] 
 **name** | **String** | Name of the project | 
-**cloudId** | **String** |  | [optional] 
+**cloud** | [**Cloud**](Cloud.md) |  | [optional] 
 **status** | **String** |  | [optional] 
 **createdAt** | **Date** | Creation date | [optional] 
 **updatedAt** | **Date** | Date of the last update | [optional] 

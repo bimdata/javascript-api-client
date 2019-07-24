@@ -408,7 +408,6 @@ Class | Method | HTTP request | Description
  - [bimdata.ProjectInvitation](docs/ProjectInvitation.md)
  - [bimdata.ProjectRole](docs/ProjectRole.md)
  - [bimdata.ProjectWithChildren](docs/ProjectWithChildren.md)
- - [bimdata.ProjectWithCloud](docs/ProjectWithCloud.md)
  - [bimdata.Property](docs/Property.md)
  - [bimdata.PropertyDefinition](docs/PropertyDefinition.md)
  - [bimdata.PropertySet](docs/PropertySet.md)

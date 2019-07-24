@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Cloud from './Cloud';
 
 /**
  * The Project model module.
@@ -58,8 +59,8 @@ class Project {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('cloud_id')) {
-                obj['cloud_id'] = ApiClient.convertToType(data['cloud_id'], 'String');
+            if (data.hasOwnProperty('cloud')) {
+                obj['cloud'] = Cloud.constructFromObject(data['cloud']);
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -100,9 +101,9 @@ Project.prototype['logo'] = undefined;
 Project.prototype['name'] = undefined;
 
 /**
- * @member {String} cloud_id
+ * @member {module:model/Cloud} cloud
  */
-Project.prototype['cloud_id'] = undefined;
+Project.prototype['cloud'] = undefined;
 
 /**
  * @member {module:model/Project.StatusEnum} status

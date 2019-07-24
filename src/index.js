@@ -51,7 +51,6 @@ import Project from './model/Project';
 import ProjectInvitation from './model/ProjectInvitation';
 import ProjectRole from './model/ProjectRole';
 import ProjectWithChildren from './model/ProjectWithChildren';
-import ProjectWithCloud from './model/ProjectWithCloud';
 import Property from './model/Property';
 import PropertyDefinition from './model/PropertyDefinition';
 import PropertySet from './model/PropertySet';
@@ -359,12 +358,6 @@ export {
      * @property {module:model/ProjectWithChildren}
      */
     ProjectWithChildren,
-
-    /**
-     * The ProjectWithCloud model constructor.
-     * @property {module:model/ProjectWithCloud}
-     */
-    ProjectWithCloud,
 
     /**
      * The Property model constructor.
