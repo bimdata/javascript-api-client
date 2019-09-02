@@ -1,4 +1,4 @@
-# bimdata.Feature
+# BimDataApi.Feature
 
 ## Properties
 

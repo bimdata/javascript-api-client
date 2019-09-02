@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Component model module.
  * @module model/Component
- * @version 0.0.0
+ * @version v1
  */
 class Component {
     /**

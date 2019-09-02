@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Unit model module.
  * @module model/Unit
- * @version 0.0.0
+ * @version v1
  */
 class Unit {
     /**

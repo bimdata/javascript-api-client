@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.ZoneSpace();
+    instance = new BimDataApi.ZoneSpace();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('ZoneSpace', function() {
     it('should create an instance of ZoneSpace', function() {
       // uncomment below and update the code to test ZoneSpace
-      //var instane = new bimdata.ZoneSpace();
-      //expect(instance).to.be.a(bimdata.ZoneSpace);
+      //var instane = new BimDataApi.ZoneSpace();
+      //expect(instance).to.be.a(BimDataApi.ZoneSpace);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.ZoneSpace();
+      //var instane = new BimDataApi.ZoneSpace();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.ZoneSpace();
+      //var instane = new BimDataApi.ZoneSpace();
       //expect(instance).to.be();
     });
 
     it('should have the property longname (base name: "longname")', function() {
       // uncomment below and update the code to test the property longname
-      //var instane = new bimdata.ZoneSpace();
+      //var instane = new BimDataApi.ZoneSpace();
       //expect(instance).to.be();
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.ZoneSpace();
+      //var instane = new BimDataApi.ZoneSpace();
       //expect(instance).to.be();
     });
 
     it('should have the property zoneSet (base name: "zone_set")', function() {
       // uncomment below and update the code to test the property zoneSet
-      //var instane = new bimdata.ZoneSpace();
+      //var instane = new BimDataApi.ZoneSpace();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.ZoneSpace();
+      //var instane = new BimDataApi.ZoneSpace();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.ZoneSpace();
+      //var instane = new BimDataApi.ZoneSpace();
       //expect(instance).to.be();
     });
 

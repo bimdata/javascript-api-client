@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Viewpoint();
+    instance = new BimDataApi.Viewpoint();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,61 +50,61 @@
   describe('Viewpoint', function() {
     it('should create an instance of Viewpoint', function() {
       // uncomment below and update the code to test Viewpoint
-      //var instane = new bimdata.Viewpoint();
-      //expect(instance).to.be.a(bimdata.Viewpoint);
+      //var instane = new BimDataApi.Viewpoint();
+      //expect(instance).to.be.a(BimDataApi.Viewpoint);
     });
 
     it('should have the property index (base name: "index")', function() {
       // uncomment below and update the code to test the property index
-      //var instane = new bimdata.Viewpoint();
+      //var instane = new BimDataApi.Viewpoint();
       //expect(instance).to.be();
     });
 
     it('should have the property guid (base name: "guid")', function() {
       // uncomment below and update the code to test the property guid
-      //var instane = new bimdata.Viewpoint();
+      //var instane = new BimDataApi.Viewpoint();
       //expect(instance).to.be();
     });
 
     it('should have the property orthogonalCamera (base name: "orthogonal_camera")', function() {
       // uncomment below and update the code to test the property orthogonalCamera
-      //var instane = new bimdata.Viewpoint();
+      //var instane = new BimDataApi.Viewpoint();
       //expect(instance).to.be();
     });
 
     it('should have the property perspectiveCamera (base name: "perspective_camera")', function() {
       // uncomment below and update the code to test the property perspectiveCamera
-      //var instane = new bimdata.Viewpoint();
+      //var instane = new BimDataApi.Viewpoint();
       //expect(instance).to.be();
     });
 
     it('should have the property lines (base name: "lines")', function() {
       // uncomment below and update the code to test the property lines
-      //var instane = new bimdata.Viewpoint();
+      //var instane = new BimDataApi.Viewpoint();
       //expect(instance).to.be();
     });
 
     it('should have the property clippingPlanes (base name: "clipping_planes")', function() {
       // uncomment below and update the code to test the property clippingPlanes
-      //var instane = new bimdata.Viewpoint();
+      //var instane = new BimDataApi.Viewpoint();
       //expect(instance).to.be();
     });
 
     it('should have the property snapshot (base name: "snapshot")', function() {
       // uncomment below and update the code to test the property snapshot
-      //var instane = new bimdata.Viewpoint();
+      //var instane = new BimDataApi.Viewpoint();
       //expect(instance).to.be();
     });
 
     it('should have the property components (base name: "components")', function() {
       // uncomment below and update the code to test the property components
-      //var instane = new bimdata.Viewpoint();
+      //var instane = new BimDataApi.Viewpoint();
       //expect(instance).to.be();
     });
 
     it('should have the property tempId (base name: "temp_id")', function() {
       // uncomment below and update the code to test the property tempId
-      //var instane = new bimdata.Viewpoint();
+      //var instane = new BimDataApi.Viewpoint();
       //expect(instance).to.be();
     });
 

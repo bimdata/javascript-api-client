@@ -33,6 +33,7 @@ import ElementClassificationRelation from './model/ElementClassificationRelation
 import ElementPropertySetRelation from './model/ElementPropertySetRelation';
 import Extensions from './model/Extensions';
 import Feature from './model/Feature';
+import Folder from './model/Folder';
 import FullTopic from './model/FullTopic';
 import Ifc from './model/Ifc';
 import IfcChecker from './model/IfcChecker';
@@ -61,7 +62,6 @@ import RawElements from './model/RawElements';
 import RawProperty from './model/RawProperty';
 import RawPropertySet from './model/RawPropertySet';
 import RawUnit from './model/RawUnit';
-import RecursiveFolder from './model/RecursiveFolder';
 import RecursiveFolderChildren from './model/RecursiveFolderChildren';
 import Rule from './model/Rule';
 import RuleComponent from './model/RuleComponent';
@@ -99,9 +99,9 @@ import UserApi from './api/UserApi';
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var bimdata = require('index'); // See note below*.
-* var xxxSvc = new bimdata.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new bimdata.Yyy(); // Construct a model instance.
+* var BimDataApi = require('index'); // See note below*.
+* var xxxSvc = new BimDataApi.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new BimDataApi.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -113,8 +113,8 @@ import UserApi from './api/UserApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new bimdata.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new bimdata.Yyy(); // Construct a model instance.
+* var xxxSvc = new BimDataApi.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new BimDataApi.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -122,7 +122,7 @@ import UserApi from './api/UserApi';
 * </pre>
 * </p>
 * @module index
-* @version 0.0.0
+* @version v1
 */
 export {
     /**
@@ -250,6 +250,12 @@ export {
      * @property {module:model/Feature}
      */
     Feature,
+
+    /**
+     * The Folder model constructor.
+     * @property {module:model/Folder}
+     */
+    Folder,
 
     /**
      * The FullTopic model constructor.
@@ -418,12 +424,6 @@ export {
      * @property {module:model/RawUnit}
      */
     RawUnit,
-
-    /**
-     * The RecursiveFolder model constructor.
-     * @property {module:model/RecursiveFolder}
-     */
-    RecursiveFolder,
 
     /**
      * The RecursiveFolderChildren model constructor.

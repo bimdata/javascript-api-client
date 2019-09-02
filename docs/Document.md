@@ -1,4 +1,4 @@
-# bimdata.Document
+# BimDataApi.Document
 
 ## Properties
 

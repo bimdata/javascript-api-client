@@ -17,7 +17,7 @@ import Cloud from './Cloud';
 /**
  * The Project model module.
  * @module model/Project
- * @version 0.0.0
+ * @version v1
  */
 class Project {
     /**

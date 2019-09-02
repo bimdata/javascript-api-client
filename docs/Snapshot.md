@@ -1,4 +1,4 @@
-# bimdata.Snapshot
+# BimDataApi.Snapshot
 
 ## Properties
 

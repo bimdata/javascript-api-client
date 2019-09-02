@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Rule();
+    instance = new BimDataApi.Rule();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('Rule', function() {
     it('should create an instance of Rule', function() {
       // uncomment below and update the code to test Rule
-      //var instane = new bimdata.Rule();
-      //expect(instance).to.be.a(bimdata.Rule);
+      //var instane = new BimDataApi.Rule();
+      //expect(instance).to.be.a(BimDataApi.Rule);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Rule();
+      //var instane = new BimDataApi.Rule();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Rule();
+      //var instane = new BimDataApi.Rule();
       //expect(instance).to.be();
     });
 
     it('should have the property condition (base name: "condition")', function() {
       // uncomment below and update the code to test the property condition
-      //var instane = new bimdata.Rule();
+      //var instane = new BimDataApi.Rule();
       //expect(instance).to.be();
     });
 
     it('should have the property ruleComponents (base name: "rule_components")', function() {
       // uncomment below and update the code to test the property ruleComponents
-      //var instane = new bimdata.Rule();
+      //var instane = new BimDataApi.Rule();
       //expect(instance).to.be();
     });
 
     it('should have the property on (base name: "on")', function() {
       // uncomment below and update the code to test the property on
-      //var instane = new bimdata.Rule();
+      //var instane = new BimDataApi.Rule();
       //expect(instance).to.be();
     });
 

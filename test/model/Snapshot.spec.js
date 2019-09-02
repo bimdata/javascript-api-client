@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Snapshot();
+    instance = new BimDataApi.Snapshot();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('Snapshot', function() {
     it('should create an instance of Snapshot', function() {
       // uncomment below and update the code to test Snapshot
-      //var instane = new bimdata.Snapshot();
-      //expect(instance).to.be.a(bimdata.Snapshot);
+      //var instane = new BimDataApi.Snapshot();
+      //expect(instance).to.be.a(BimDataApi.Snapshot);
     });
 
     it('should have the property snapshotType (base name: "snapshot_type")', function() {
       // uncomment below and update the code to test the property snapshotType
-      //var instane = new bimdata.Snapshot();
+      //var instane = new BimDataApi.Snapshot();
       //expect(instance).to.be();
     });
 
     it('should have the property snapshotData (base name: "snapshot_data")', function() {
       // uncomment below and update the code to test the property snapshotData
-      //var instane = new bimdata.Snapshot();
+      //var instane = new BimDataApi.Snapshot();
       //expect(instance).to.be();
     });
 

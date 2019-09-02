@@ -12,13 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import FolderChildren from './FolderChildren';
+import RecursiveFolderChildren from './RecursiveFolderChildren';
 import User from './User';
 
 /**
  * The Folder model module.
  * @module model/Folder
- * @version 0.0.0
+ * @version v1
  */
 class Folder {
     /**
@@ -69,11 +69,11 @@ class Folder {
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
-            if (data.hasOwnProperty('children')) {
-                obj['children'] = ApiClient.convertToType(data['children'], [FolderChildren]);
-            }
             if (data.hasOwnProperty('created_by')) {
                 obj['created_by'] = User.constructFromObject(data['created_by']);
+            }
+            if (data.hasOwnProperty('children')) {
+                obj['children'] = ApiClient.convertToType(data['children'], [RecursiveFolderChildren]);
             }
         }
         return obj;
@@ -117,14 +117,14 @@ Folder.prototype['created_at'] = undefined;
 Folder.prototype['updated_at'] = undefined;
 
 /**
- * @member {Array.<module:model/FolderChildren>} children
- */
-Folder.prototype['children'] = undefined;
-
-/**
  * @member {module:model/User} created_by
  */
 Folder.prototype['created_by'] = undefined;
+
+/**
+ * @member {Array.<module:model/RecursiveFolderChildren>} children
+ */
+Folder.prototype['children'] = undefined;
 
 
 

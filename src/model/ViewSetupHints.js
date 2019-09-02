@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ViewSetupHints model module.
  * @module model/ViewSetupHints
- * @version 0.0.0
+ * @version v1
  */
 class ViewSetupHints {
     /**

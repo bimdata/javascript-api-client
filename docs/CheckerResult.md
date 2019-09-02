@@ -1,4 +1,4 @@
-# bimdata.CheckerResult
+# BimDataApi.CheckerResult
 
 ## Properties
 

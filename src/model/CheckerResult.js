@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CheckerResult model module.
  * @module model/CheckerResult
- * @version 0.0.0
+ * @version v1
  */
 class CheckerResult {
     /**

@@ -1,4 +1,4 @@
-# bimdata.Classification
+# BimDataApi.Classification
 
 ## Properties
 

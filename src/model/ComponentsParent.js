@@ -19,7 +19,7 @@ import Visibility from './Visibility';
 /**
  * The ComponentsParent model module.
  * @module model/ComponentsParent
- * @version 0.0.0
+ * @version v1
  */
 class ComponentsParent {
     /**

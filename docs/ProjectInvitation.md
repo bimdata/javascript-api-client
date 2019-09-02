@@ -1,4 +1,4 @@
-# bimdata.ProjectInvitation
+# BimDataApi.ProjectInvitation
 
 ## Properties
 

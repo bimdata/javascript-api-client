@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.IfcExport();
+    instance = new BimDataApi.IfcExport();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('IfcExport', function() {
     it('should create an instance of IfcExport', function() {
       // uncomment below and update the code to test IfcExport
-      //var instane = new bimdata.IfcExport();
-      //expect(instance).to.be.a(bimdata.IfcExport);
+      //var instane = new BimDataApi.IfcExport();
+      //expect(instance).to.be.a(BimDataApi.IfcExport);
     });
 
     it('should have the property classifications (base name: "classifications")', function() {
       // uncomment below and update the code to test the property classifications
-      //var instane = new bimdata.IfcExport();
+      //var instane = new BimDataApi.IfcExport();
       //expect(instance).to.be();
     });
 

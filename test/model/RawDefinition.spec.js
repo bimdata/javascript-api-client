@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.RawDefinition();
+    instance = new BimDataApi.RawDefinition();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('RawDefinition', function() {
     it('should create an instance of RawDefinition', function() {
       // uncomment below and update the code to test RawDefinition
-      //var instane = new bimdata.RawDefinition();
-      //expect(instance).to.be.a(bimdata.RawDefinition);
+      //var instane = new BimDataApi.RawDefinition();
+      //expect(instance).to.be.a(BimDataApi.RawDefinition);
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.RawDefinition();
+      //var instane = new BimDataApi.RawDefinition();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.RawDefinition();
+      //var instane = new BimDataApi.RawDefinition();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.RawDefinition();
+      //var instane = new BimDataApi.RawDefinition();
       //expect(instance).to.be();
     });
 
     it('should have the property valueType (base name: "value_type")', function() {
       // uncomment below and update the code to test the property valueType
-      //var instane = new bimdata.RawDefinition();
+      //var instane = new BimDataApi.RawDefinition();
       //expect(instance).to.be();
     });
 
     it('should have the property unitId (base name: "unit_id")', function() {
       // uncomment below and update the code to test the property unitId
-      //var instane = new bimdata.RawDefinition();
+      //var instane = new BimDataApi.RawDefinition();
       //expect(instance).to.be();
     });
 

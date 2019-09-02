@@ -15,17 +15,17 @@
 import ApiClient from "../ApiClient";
 import Classification from '../model/Classification';
 import Document from '../model/Document';
+import Folder from '../model/Folder';
 import Project from '../model/Project';
 import ProjectInvitation from '../model/ProjectInvitation';
 import ProjectWithChildren from '../model/ProjectWithChildren';
-import RecursiveFolder from '../model/RecursiveFolder';
 import User from '../model/User';
 import UserProjectUpdate from '../model/UserProjectUpdate';
 
 /**
 * Project service.
 * @module api/ProjectApi
-* @version 0.0.0
+* @version v1
 */
 export default class ProjectApi {
 
@@ -41,6 +41,13 @@ export default class ProjectApi {
     }
 
 
+    /**
+     * Callback function to receive the result of the cancelProjectUserInvitation operation.
+     * @callback module:api/ProjectApi~cancelProjectUserInvitationCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
 
     /**
      * Cancel a pending invitation
@@ -48,9 +55,9 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this invitation.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/ProjectApi~cancelProjectUserInvitationCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    cancelProjectUserInvitationWithHttpInfo(cloudPk, id, projectPk) {
+    cancelProjectUserInvitation(cloudPk, id, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -84,25 +91,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/invitation/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Cancel a pending invitation
-     *  Required scopes: org:manage
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this invitation.
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * Callback function to receive the result of the createClassification operation.
+     * @callback module:api/ProjectApi~createClassificationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Classification} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    cancelProjectUserInvitation(cloudPk, id, projectPk) {
-      return this.cancelProjectUserInvitationWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Create a classification
@@ -110,9 +109,10 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/Classification} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
+     * @param {module:api/ProjectApi~createClassificationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Classification}
      */
-    createClassificationWithHttpInfo(cloudPk, projectPk, data) {
+    createClassification(cloudPk, projectPk, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -145,25 +145,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/classification', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Create a classification
-     *  Required scopes: ifc:write
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @param {module:model/Classification} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
+     * Callback function to receive the result of the createDocument operation.
+     * @callback module:api/ProjectApi~createDocumentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Document} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    createClassification(cloudPk, projectPk, data) {
-      return this.createClassificationWithHttpInfo(cloudPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Create a document
@@ -180,9 +172,10 @@ export default class ProjectApi {
      * @param {String} opts.description Description of the file
      * @param {File} opts.file 
      * @param {Number} opts.size Size of the file. The file may be compressed and show a smaller size
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
+     * @param {module:api/ProjectApi~createDocumentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Document}
      */
-    createDocumentWithHttpInfo(cloudPk, projectPk, name, opts) {
+    createDocument(cloudPk, projectPk, name, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
@@ -225,44 +218,28 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Create a document
-     * RCreate a document. If the document is an IFC, an IFC model will be created and attached to this document Required scopes: document:write
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @param {String} name Shown name of the file
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.parent 
-     * @param {Number} opts.parentId 
-     * @param {Number} opts.creator 
-     * @param {Number} opts.project 
-     * @param {String} opts.fileName Full name of the file
-     * @param {String} opts.description Description of the file
-     * @param {File} opts.file 
-     * @param {Number} opts.size Size of the file. The file may be compressed and show a smaller size
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
+     * Callback function to receive the result of the createFolder operation.
+     * @callback module:api/ProjectApi~createFolderCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Folder} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    createDocument(cloudPk, projectPk, name, opts) {
-      return this.createDocumentWithHttpInfo(cloudPk, projectPk, name, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Create a folder
      * If the created folder have no parent, it will be put as a child of the default root folder of the project Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:model/RecursiveFolder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RecursiveFolder} and HTTP response
+     * @param {module:model/Folder} data 
+     * @param {module:api/ProjectApi~createFolderCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Folder}
      */
-    createFolderWithHttpInfo(cloudPk, projectPk, data) {
+    createFolder(cloudPk, projectPk, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -291,38 +268,31 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = RecursiveFolder;
+      let returnType = Folder;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Create a folder
-     * If the created folder have no parent, it will be put as a child of the default root folder of the project Required scopes: document:write
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @param {module:model/RecursiveFolder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RecursiveFolder}
+     * Callback function to receive the result of the createProject operation.
+     * @callback module:api/ProjectApi~createProjectCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    createFolder(cloudPk, projectPk, data) {
-      return this.createFolderWithHttpInfo(cloudPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Create a project
      * Create a project Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {module:model/Project} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     * @param {module:api/ProjectApi~createProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Project}
      */
-    createProjectWithHttpInfo(cloudPk, data) {
+    createProject(cloudPk, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -350,24 +320,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Create a project
-     * Create a project Required scopes: org:manage
-     * @param {String} cloudPk 
-     * @param {module:model/Project} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     * Callback function to receive the result of the deleteClassification operation.
+     * @callback module:api/ProjectApi~deleteClassificationCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-    createProject(cloudPk, data) {
-      return this.createProjectWithHttpInfo(cloudPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Delete a classification
@@ -375,9 +338,9 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/ProjectApi~deleteClassificationCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    deleteClassificationWithHttpInfo(cloudPk, id, projectPk) {
+    deleteClassification(cloudPk, id, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -411,25 +374,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/classification/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Delete a classification
-     * All elements having this classification will lose it Required scopes: ifc:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this classification.
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * Callback function to receive the result of the deleteDocument operation.
+     * @callback module:api/ProjectApi~deleteDocumentCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-    deleteClassification(cloudPk, id, projectPk) {
-      return this.deleteClassificationWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Delete the document
@@ -437,9 +392,9 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/ProjectApi~deleteDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    deleteDocumentWithHttpInfo(cloudPk, id, projectPk) {
+    deleteDocument(cloudPk, id, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -473,25 +428,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Delete the document
-     * Delete the document Required scopes: document:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this document.
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * Callback function to receive the result of the deleteFolder operation.
+     * @callback module:api/ProjectApi~deleteFolderCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-    deleteDocument(cloudPk, id, projectPk) {
-      return this.deleteDocumentWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Delete a folder
@@ -499,9 +446,9 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/ProjectApi~deleteFolderCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    deleteFolderWithHttpInfo(cloudPk, id, projectPk) {
+    deleteFolder(cloudPk, id, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -535,34 +482,26 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Delete a folder
-     * All files and subfolders will be deleted too Required scopes: document:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this folder.
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * Callback function to receive the result of the deleteProject operation.
+     * @callback module:api/ProjectApi~deleteProjectCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-    deleteFolder(cloudPk, id, projectPk) {
-      return this.deleteFolderWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Delete a project
      * It can take a long time to respond because we may need to delete all properties of all elements of all models in the project Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/ProjectApi~deleteProjectCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    deleteProjectWithHttpInfo(cloudPk, id) {
+    deleteProject(cloudPk, id, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -591,24 +530,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Delete a project
-     * It can take a long time to respond because we may need to delete all properties of all elements of all models in the project Required scopes: org:manage
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * Callback function to receive the result of the deleteProjectUser operation.
+     * @callback module:api/ProjectApi~deleteProjectUserCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-    deleteProject(cloudPk, id) {
-      return this.deleteProjectWithHttpInfo(cloudPk, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Remove a user from a project
@@ -616,9 +548,9 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/ProjectApi~deleteProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    deleteProjectUserWithHttpInfo(cloudPk, id, projectPk) {
+    deleteProjectUser(cloudPk, id, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -652,25 +584,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Remove a user from a project
-     * Remove a user from a project Required scopes: cloud:manage
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * Callback function to receive the result of the fullUpdateClassification operation.
+     * @callback module:api/ProjectApi~fullUpdateClassificationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Classification} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    deleteProjectUser(cloudPk, id, projectPk) {
-      return this.deleteProjectUserWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update all fields of a classification
@@ -679,9 +603,10 @@ export default class ProjectApi {
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
      * @param {module:model/Classification} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
+     * @param {module:api/ProjectApi~fullUpdateClassificationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Classification}
      */
-    fullUpdateClassificationWithHttpInfo(cloudPk, id, projectPk, data) {
+    fullUpdateClassification(cloudPk, id, projectPk, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -719,26 +644,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/classification/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Update all fields of a classification
-     * Update all fields of a classification Required scopes: ifc:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this classification.
-     * @param {String} projectPk 
-     * @param {module:model/Classification} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
+     * Callback function to receive the result of the fullUpdateDocument operation.
+     * @callback module:api/ProjectApi~fullUpdateDocumentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Document} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    fullUpdateClassification(cloudPk, id, projectPk, data) {
-      return this.fullUpdateClassificationWithHttpInfo(cloudPk, id, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update all fields of the document
@@ -756,9 +672,10 @@ export default class ProjectApi {
      * @param {String} opts.description Description of the file
      * @param {File} opts.file 
      * @param {Number} opts.size Size of the file. The file may be compressed and show a smaller size
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
+     * @param {module:api/ProjectApi~fullUpdateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Document}
      */
-    fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, name, opts) {
+    fullUpdateDocument(cloudPk, id, projectPk, name, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
@@ -806,35 +723,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Update all fields of the document
-     * Update all fields of the document Required scopes: document:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this document.
-     * @param {String} projectPk 
-     * @param {String} name Shown name of the file
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.parent 
-     * @param {Number} opts.parentId 
-     * @param {Number} opts.creator 
-     * @param {Number} opts.project 
-     * @param {String} opts.fileName Full name of the file
-     * @param {String} opts.description Description of the file
-     * @param {File} opts.file 
-     * @param {Number} opts.size Size of the file. The file may be compressed and show a smaller size
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
+     * Callback function to receive the result of the fullUpdateFolder operation.
+     * @callback module:api/ProjectApi~fullUpdateFolderCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Folder} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    fullUpdateDocument(cloudPk, id, projectPk, name, opts) {
-      return this.fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, name, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update all fields of a folder
@@ -842,10 +741,11 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @param {module:model/RecursiveFolder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RecursiveFolder} and HTTP response
+     * @param {module:model/Folder} data 
+     * @param {module:api/ProjectApi~fullUpdateFolderCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Folder}
      */
-    fullUpdateFolderWithHttpInfo(cloudPk, id, projectPk, data) {
+    fullUpdateFolder(cloudPk, id, projectPk, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -879,30 +779,21 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = RecursiveFolder;
+      let returnType = Folder;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Update all fields of a folder
-     * Update all fields of a folder Required scopes: document:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this folder.
-     * @param {String} projectPk 
-     * @param {module:model/RecursiveFolder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RecursiveFolder}
+     * Callback function to receive the result of the fullUpdateProject operation.
+     * @callback module:api/ProjectApi~fullUpdateProjectCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    fullUpdateFolder(cloudPk, id, projectPk, data) {
-      return this.fullUpdateFolderWithHttpInfo(cloudPk, id, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update all fields of a project
@@ -910,9 +801,10 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/Project} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     * @param {module:api/ProjectApi~fullUpdateProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Project}
      */
-    fullUpdateProjectWithHttpInfo(cloudPk, id, data) {
+    fullUpdateProject(cloudPk, id, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -945,25 +837,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Update all fields of a project
-     * Update all fields of a project Required scopes: org:manage
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this project.
-     * @param {module:model/Project} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     * Callback function to receive the result of the fullUpdateProjectUser operation.
+     * @callback module:api/ProjectApi~fullUpdateProjectUserCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/User} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    fullUpdateProject(cloudPk, id, data) {
-      return this.fullUpdateProjectWithHttpInfo(cloudPk, id, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update all fields of a project user
@@ -972,9 +856,10 @@ export default class ProjectApi {
      * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
      * @param {module:model/UserProjectUpdate} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     * @param {module:api/ProjectApi~fullUpdateProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/User}
      */
-    fullUpdateProjectUserWithHttpInfo(cloudPk, id, projectPk, data) {
+    fullUpdateProjectUser(cloudPk, id, projectPk, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1012,26 +897,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Update all fields of a project user
-     * Change the user role in the cloud Required scopes: cloud:manage
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
-     * @param {String} projectPk 
-     * @param {module:model/UserProjectUpdate} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     * Callback function to receive the result of the getClassification operation.
+     * @callback module:api/ProjectApi~getClassificationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Classification} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    fullUpdateProjectUser(cloudPk, id, projectPk, data) {
-      return this.fullUpdateProjectUserWithHttpInfo(cloudPk, id, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve a classification
@@ -1039,9 +915,10 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
+     * @param {module:api/ProjectApi~getClassificationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Classification}
      */
-    getClassificationWithHttpInfo(cloudPk, id, projectPk) {
+    getClassification(cloudPk, id, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1075,34 +952,27 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/classification/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve a classification
-     * Retrieve a classification Required scopes: ifc:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this classification.
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
+     * Callback function to receive the result of the getClassifications operation.
+     * @callback module:api/ProjectApi~getClassificationsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Classification>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getClassification(cloudPk, id, projectPk) {
-      return this.getClassificationWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve all classifications
      * Retrieve all classifications of all models in the project Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
+     * @param {module:api/ProjectApi~getClassificationsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Classification>}
      */
-    getClassificationsWithHttpInfo(cloudPk, projectPk) {
+    getClassifications(cloudPk, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1131,24 +1001,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/classification', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve all classifications
-     * Retrieve all classifications of all models in the project Required scopes: ifc:read
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
+     * Callback function to receive the result of the getDocument operation.
+     * @callback module:api/ProjectApi~getDocumentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Document} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getClassifications(cloudPk, projectPk) {
-      return this.getClassificationsWithHttpInfo(cloudPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve a document
@@ -1156,9 +1019,10 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
+     * @param {module:api/ProjectApi~getDocumentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Document}
      */
-    getDocumentWithHttpInfo(cloudPk, id, projectPk) {
+    getDocument(cloudPk, id, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1192,34 +1056,27 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve a document
-     * Retrieve a document in the project Required scopes: document:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this document.
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
+     * Callback function to receive the result of the getDocuments operation.
+     * @callback module:api/ProjectApi~getDocumentsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Document>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getDocument(cloudPk, id, projectPk) {
-      return this.getDocumentWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve all documents
      * Retrieve all documents in the project Required scopes: document:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
+     * @param {module:api/ProjectApi~getDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Document>}
      */
-    getDocumentsWithHttpInfo(cloudPk, projectPk) {
+    getDocuments(cloudPk, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1248,24 +1105,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve all documents
-     * Retrieve all documents in the project Required scopes: document:read
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
+     * Callback function to receive the result of the getFolder operation.
+     * @callback module:api/ProjectApi~getFolderCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Folder} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getDocuments(cloudPk, projectPk) {
-      return this.getDocumentsWithHttpInfo(cloudPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve a folder
@@ -1273,9 +1123,10 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RecursiveFolder} and HTTP response
+     * @param {module:api/ProjectApi~getFolderCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Folder}
      */
-    getFolderWithHttpInfo(cloudPk, id, projectPk) {
+    getFolder(cloudPk, id, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1305,38 +1156,31 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = RecursiveFolder;
+      let returnType = Folder;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve a folder
-     * Retrieve a folder Required scopes: document:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this folder.
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RecursiveFolder}
+     * Callback function to receive the result of the getFolders operation.
+     * @callback module:api/ProjectApi~getFoldersCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Folder>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getFolder(cloudPk, id, projectPk) {
-      return this.getFolderWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve all folders
      * Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree Required scopes: document:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RecursiveFolder>} and HTTP response
+     * @param {module:api/ProjectApi~getFoldersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Folder>}
      */
-    getFoldersWithHttpInfo(cloudPk, projectPk) {
+    getFolders(cloudPk, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1361,37 +1205,31 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [RecursiveFolder];
+      let returnType = [Folder];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve all folders
-     * Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree Required scopes: document:read
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RecursiveFolder>}
+     * Callback function to receive the result of the getProject operation.
+     * @callback module:api/ProjectApi~getProjectCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ProjectWithChildren} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getFolders(cloudPk, projectPk) {
-      return this.getFoldersWithHttpInfo(cloudPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve a project
      * Retrieve a project
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectWithChildren} and HTTP response
+     * @param {module:api/ProjectApi~getProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ProjectWithChildren}
      */
-    getProjectWithHttpInfo(cloudPk, id) {
+    getProject(cloudPk, id, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1420,33 +1258,27 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve a project
-     * Retrieve a project
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectWithChildren}
+     * Callback function to receive the result of the getProjectDMSTree operation.
+     * @callback module:api/ProjectApi~getProjectDMSTreeCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Folder} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getProject(cloudPk, id) {
-      return this.getProjectWithHttpInfo(cloudPk, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve the complete DMS tree
      * Retrieve the complete DMS tree (all folders and all documents in the project)
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RecursiveFolder} and HTTP response
+     * @param {module:api/ProjectApi~getProjectDMSTreeCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Folder}
      */
-    getProjectDMSTreeWithHttpInfo(cloudPk, id) {
+    getProjectDMSTree(cloudPk, id, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1471,37 +1303,31 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = RecursiveFolder;
+      let returnType = Folder;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}/dms-tree', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve the complete DMS tree
-     * Retrieve the complete DMS tree (all folders and all documents in the project)
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RecursiveFolder}
+     * Callback function to receive the result of the getProjectInvitations operation.
+     * @callback module:api/ProjectApi~getProjectInvitationsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/ProjectInvitation>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getProjectDMSTree(cloudPk, id) {
-      return this.getProjectDMSTreeWithHttpInfo(cloudPk, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve all pending invitations in the project
      * Returns app's invitations only Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectInvitation>} and HTTP response
+     * @param {module:api/ProjectApi~getProjectInvitationsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/ProjectInvitation>}
      */
-    getProjectInvitationsWithHttpInfo(cloudPk, projectPk) {
+    getProjectInvitations(cloudPk, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1530,32 +1356,26 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/invitation', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve all pending invitations in the project
-     * Returns app's invitations only Required scopes: org:manage
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectInvitation>}
+     * Callback function to receive the result of the getProjectSubTree operation.
+     * @callback module:api/ProjectApi~getProjectSubTreeCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/ProjectWithChildren>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getProjectInvitations(cloudPk, projectPk) {
-      return this.getProjectInvitationsWithHttpInfo(cloudPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve the complete projects tree of the cloud
      * Retrieve the complete projects tree of the cloud
      * @param {String} cloudPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectWithChildren>} and HTTP response
+     * @param {module:api/ProjectApi~getProjectSubTreeCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/ProjectWithChildren>}
      */
-    getProjectSubTreeWithHttpInfo(cloudPk) {
+    getProjectSubTree(cloudPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1579,32 +1399,27 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/subtree', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve the complete projects tree of the cloud
-     * Retrieve the complete projects tree of the cloud
-     * @param {String} cloudPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectWithChildren>}
+     * Callback function to receive the result of the getProjectTree operation.
+     * @callback module:api/ProjectApi~getProjectTreeCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Folder} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getProjectSubTree(cloudPk) {
-      return this.getProjectSubTreeWithHttpInfo(cloudPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve the complete DMS tree
      * Retrieve the complete DMS tree (all folders and all documents in the project). DEPRECATED: renamed to getProjectDMSTree
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RecursiveFolder} and HTTP response
+     * @param {module:api/ProjectApi~getProjectTreeCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Folder}
      */
-    getProjectTreeWithHttpInfo(cloudPk, id) {
+    getProjectTree(cloudPk, id, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1629,28 +1444,21 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = RecursiveFolder;
+      let returnType = Folder;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}/tree', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve the complete DMS tree
-     * Retrieve the complete DMS tree (all folders and all documents in the project). DEPRECATED: renamed to getProjectDMSTree
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RecursiveFolder}
+     * Callback function to receive the result of the getProjectUser operation.
+     * @callback module:api/ProjectApi~getProjectUserCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/User} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getProjectTree(cloudPk, id) {
-      return this.getProjectTreeWithHttpInfo(cloudPk, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve a user in a project
@@ -1658,9 +1466,10 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     * @param {module:api/ProjectApi~getProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/User}
      */
-    getProjectUserWithHttpInfo(cloudPk, id, projectPk) {
+    getProjectUser(cloudPk, id, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1694,34 +1503,27 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve a user in a project
-     * Each member of a project can see other members of the project Required scopes: cloud:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     * Callback function to receive the result of the getProjectUsers operation.
+     * @callback module:api/ProjectApi~getProjectUsersCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/User>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getProjectUser(cloudPk, id, projectPk) {
-      return this.getProjectUserWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve all users in a project
      * Each member of a project can see other members of the project Required scopes: cloud:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/User>} and HTTP response
+     * @param {module:api/ProjectApi~getProjectUsersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/User>}
      */
-    getProjectUsersWithHttpInfo(cloudPk, projectPk) {
+    getProjectUsers(cloudPk, projectPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1750,32 +1552,26 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/user', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve all users in a project
-     * Each member of a project can see other members of the project Required scopes: cloud:read
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/User>}
+     * Callback function to receive the result of the getProjects operation.
+     * @callback module:api/ProjectApi~getProjectsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Project>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getProjectUsers(cloudPk, projectPk) {
-      return this.getProjectUsersWithHttpInfo(cloudPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve all projects
      * Retrieve all projects of the cloud. All project are shown at the same level. see #getProjectSubTree
      * @param {String} cloudPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
+     * @param {module:api/ProjectApi~getProjectsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Project>}
      */
-    getProjectsWithHttpInfo(cloudPk) {
+    getProjects(cloudPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1799,23 +1595,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve all projects
-     * Retrieve all projects of the cloud. All project are shown at the same level. see #getProjectSubTree
-     * @param {String} cloudPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
+     * Callback function to receive the result of the inviteProjectUser operation.
+     * @callback module:api/ProjectApi~inviteProjectUserCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ProjectInvitation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getProjects(cloudPk) {
-      return this.getProjectsWithHttpInfo(cloudPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Invite a project member
@@ -1823,9 +1613,10 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/ProjectInvitation} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectInvitation} and HTTP response
+     * @param {module:api/ProjectApi~inviteProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ProjectInvitation}
      */
-    inviteProjectUserWithHttpInfo(cloudPk, projectPk, data) {
+    inviteProjectUser(cloudPk, projectPk, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1858,25 +1649,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/invitation', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Invite a project member
-     * Invite a project member. If the user is not already a cloud member, they will also be invited in the cloud with USER role. Required scopes: org:manage
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @param {module:model/ProjectInvitation} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectInvitation}
+     * Callback function to receive the result of the updateClassification operation.
+     * @callback module:api/ProjectApi~updateClassificationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Classification} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    inviteProjectUser(cloudPk, projectPk, data) {
-      return this.inviteProjectUserWithHttpInfo(cloudPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update some fields of a classification
@@ -1885,9 +1668,10 @@ export default class ProjectApi {
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
      * @param {module:model/Classification} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
+     * @param {module:api/ProjectApi~updateClassificationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Classification}
      */
-    updateClassificationWithHttpInfo(cloudPk, id, projectPk, data) {
+    updateClassification(cloudPk, id, projectPk, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1925,26 +1709,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/classification/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Update some fields of a classification
-     * Update some fields of a classification Required scopes: ifc:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this classification.
-     * @param {String} projectPk 
-     * @param {module:model/Classification} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
+     * Callback function to receive the result of the updateDocument operation.
+     * @callback module:api/ProjectApi~updateDocumentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Document} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    updateClassification(cloudPk, id, projectPk, data) {
-      return this.updateClassificationWithHttpInfo(cloudPk, id, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update some fields of the document
@@ -1953,9 +1728,10 @@ export default class ProjectApi {
      * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
      * @param {module:model/Document} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
+     * @param {module:api/ProjectApi~updateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Document}
      */
-    updateDocumentWithHttpInfo(cloudPk, id, projectPk, data) {
+    updateDocument(cloudPk, id, projectPk, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1993,26 +1769,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Update some fields of the document
-     * Update some fields of the document Required scopes: document:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this document.
-     * @param {String} projectPk 
-     * @param {module:model/Document} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
+     * Callback function to receive the result of the updateFolder operation.
+     * @callback module:api/ProjectApi~updateFolderCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Folder} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    updateDocument(cloudPk, id, projectPk, data) {
-      return this.updateDocumentWithHttpInfo(cloudPk, id, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update some fields of a folder
@@ -2020,10 +1787,11 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @param {module:model/RecursiveFolder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RecursiveFolder} and HTTP response
+     * @param {module:model/Folder} data 
+     * @param {module:api/ProjectApi~updateFolderCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Folder}
      */
-    updateFolderWithHttpInfo(cloudPk, id, projectPk, data) {
+    updateFolder(cloudPk, id, projectPk, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -2057,30 +1825,21 @@ export default class ProjectApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = RecursiveFolder;
+      let returnType = Folder;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Update some fields of a folder
-     * Update some fields of a folder Required scopes: document:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this folder.
-     * @param {String} projectPk 
-     * @param {module:model/RecursiveFolder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RecursiveFolder}
+     * Callback function to receive the result of the updateProject operation.
+     * @callback module:api/ProjectApi~updateProjectCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    updateFolder(cloudPk, id, projectPk, data) {
-      return this.updateFolderWithHttpInfo(cloudPk, id, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update some fields of a project
@@ -2088,9 +1847,10 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/Project} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     * @param {module:api/ProjectApi~updateProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Project}
      */
-    updateProjectWithHttpInfo(cloudPk, id, data) {
+    updateProject(cloudPk, id, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -2123,25 +1883,17 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Update some fields of a project
-     * Update some fields of a project Required scopes: org:manage
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this project.
-     * @param {module:model/Project} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     * Callback function to receive the result of the updateProjectUser operation.
+     * @callback module:api/ProjectApi~updateProjectUserCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/User} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    updateProject(cloudPk, id, data) {
-      return this.updateProjectWithHttpInfo(cloudPk, id, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update some fields of a project user
@@ -2150,9 +1902,10 @@ export default class ProjectApi {
      * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
      * @param {module:model/UserProjectUpdate} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     * @param {module:api/ProjectApi~updateProjectUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/User}
      */
-    updateProjectUserWithHttpInfo(cloudPk, id, projectPk, data) {
+    updateProjectUser(cloudPk, id, projectPk, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -2190,24 +1943,8 @@ export default class ProjectApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
-    }
-
-    /**
-     * Update some fields of a project user
-     * Change the user role in the cloud Required scopes: cloud:manage
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
-     * @param {String} projectPk 
-     * @param {module:model/UserProjectUpdate} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
-     */
-    updateProjectUser(cloudPk, id, projectPk, data) {
-      return this.updateProjectUserWithHttpInfo(cloudPk, id, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
     }
 
 

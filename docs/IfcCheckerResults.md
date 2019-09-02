@@ -1,17 +1,17 @@
-# bimdata.IfcCheckerResults
+# BimDataApi.IfcCheckerResults
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **Number** |  | [optional] 
+**errorDetail** | **String** |  | [optional] 
+**status** | **String** |  | [optional] 
 **result** | **String** |  | [optional] 
 **collisions** | **String** |  | [optional] 
-**updatedAt** | **Date** |  | [optional] 
-**errorDetail** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
-**id** | **Number** |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 **checker** | **Number** |  | 
-**status** | **String** |  | [optional] 
 
 
 

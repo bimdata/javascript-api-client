@@ -17,7 +17,7 @@ import RuleComponent from './RuleComponent';
 /**
  * The Rule model module.
  * @module model/Rule
- * @version 0.0.0
+ * @version v1
  */
 class Rule {
     /**

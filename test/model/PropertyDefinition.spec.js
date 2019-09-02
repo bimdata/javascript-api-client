@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.PropertyDefinition();
+    instance = new BimDataApi.PropertyDefinition();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('PropertyDefinition', function() {
     it('should create an instance of PropertyDefinition', function() {
       // uncomment below and update the code to test PropertyDefinition
-      //var instane = new bimdata.PropertyDefinition();
-      //expect(instance).to.be.a(bimdata.PropertyDefinition);
+      //var instane = new BimDataApi.PropertyDefinition();
+      //expect(instance).to.be.a(BimDataApi.PropertyDefinition);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.PropertyDefinition();
+      //var instane = new BimDataApi.PropertyDefinition();
       //expect(instance).to.be();
     });
 
     it('should have the property unit (base name: "unit")', function() {
       // uncomment below and update the code to test the property unit
-      //var instane = new bimdata.PropertyDefinition();
+      //var instane = new BimDataApi.PropertyDefinition();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PropertyDefinition();
+      //var instane = new BimDataApi.PropertyDefinition();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.PropertyDefinition();
+      //var instane = new BimDataApi.PropertyDefinition();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.PropertyDefinition();
+      //var instane = new BimDataApi.PropertyDefinition();
       //expect(instance).to.be();
     });
 
     it('should have the property valueType (base name: "value_type")', function() {
       // uncomment below and update the code to test the property valueType
-      //var instane = new bimdata.PropertyDefinition();
+      //var instane = new BimDataApi.PropertyDefinition();
       //expect(instance).to.be();
     });
 

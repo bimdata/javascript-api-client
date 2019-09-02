@@ -1,4 +1,4 @@
-# bimdata.Coloring
+# BimDataApi.Coloring
 
 ## Properties
 

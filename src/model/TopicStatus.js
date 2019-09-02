@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TopicStatus model module.
  * @module model/TopicStatus
- * @version 0.0.0
+ * @version v1
  */
 class TopicStatus {
     /**

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.RawPropertySet();
+    instance = new BimDataApi.RawPropertySet();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('RawPropertySet', function() {
     it('should create an instance of RawPropertySet', function() {
       // uncomment below and update the code to test RawPropertySet
-      //var instane = new bimdata.RawPropertySet();
-      //expect(instance).to.be.a(bimdata.RawPropertySet);
+      //var instane = new BimDataApi.RawPropertySet();
+      //expect(instance).to.be.a(BimDataApi.RawPropertySet);
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.RawPropertySet();
+      //var instane = new BimDataApi.RawPropertySet();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.RawPropertySet();
+      //var instane = new BimDataApi.RawPropertySet();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.RawPropertySet();
+      //var instane = new BimDataApi.RawPropertySet();
       //expect(instance).to.be();
     });
 
     it('should have the property properties (base name: "properties")', function() {
       // uncomment below and update the code to test the property properties
-      //var instane = new bimdata.RawPropertySet();
+      //var instane = new BimDataApi.RawPropertySet();
       //expect(instance).to.be();
     });
 

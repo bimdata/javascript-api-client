@@ -22,7 +22,7 @@ import Snapshot from './Snapshot';
 /**
  * The Viewpoint model module.
  * @module model/Viewpoint
- * @version 0.0.0
+ * @version v1
  */
 class Viewpoint {
     /**

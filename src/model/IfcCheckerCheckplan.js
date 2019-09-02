@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IfcCheckerCheckplan model module.
  * @module model/IfcCheckerCheckplan
- * @version 0.0.0
+ * @version v1
  */
 class IfcCheckerCheckplan {
     /**
@@ -51,11 +51,8 @@ class IfcCheckerCheckplan {
         if (data) {
             obj = obj || new IfcCheckerCheckplan();
 
-            if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
-            }
-            if (data.hasOwnProperty('protected')) {
-                obj['protected'] = ApiClient.convertToType(data['protected'], 'Boolean');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -66,11 +63,14 @@ class IfcCheckerCheckplan {
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+            }
+            if (data.hasOwnProperty('protected')) {
+                obj['protected'] = ApiClient.convertToType(data['protected'], 'Boolean');
+            }
             if (data.hasOwnProperty('project')) {
                 obj['project'] = ApiClient.convertToType(data['project'], 'Number');
-            }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
         }
         return obj;
@@ -80,14 +80,9 @@ class IfcCheckerCheckplan {
 }
 
 /**
- * @member {Date} updated_at
+ * @member {Number} id
  */
-IfcCheckerCheckplan.prototype['updated_at'] = undefined;
-
-/**
- * @member {Boolean} protected
- */
-IfcCheckerCheckplan.prototype['protected'] = undefined;
+IfcCheckerCheckplan.prototype['id'] = undefined;
 
 /**
  * @member {String} name
@@ -105,14 +100,19 @@ IfcCheckerCheckplan.prototype['description'] = undefined;
 IfcCheckerCheckplan.prototype['created_at'] = undefined;
 
 /**
+ * @member {Date} updated_at
+ */
+IfcCheckerCheckplan.prototype['updated_at'] = undefined;
+
+/**
+ * @member {Boolean} protected
+ */
+IfcCheckerCheckplan.prototype['protected'] = undefined;
+
+/**
  * @member {Number} project
  */
 IfcCheckerCheckplan.prototype['project'] = undefined;
-
-/**
- * @member {Number} id
- */
-IfcCheckerCheckplan.prototype['id'] = undefined;
 
 
 

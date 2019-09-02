@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IfcCheckerResults model module.
  * @module model/IfcCheckerResults
- * @version 0.0.0
+ * @version v1
  */
 class IfcCheckerResults {
     /**
@@ -49,29 +49,29 @@ class IfcCheckerResults {
         if (data) {
             obj = obj || new IfcCheckerResults();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
+            if (data.hasOwnProperty('error_detail')) {
+                obj['error_detail'] = ApiClient.convertToType(data['error_detail'], 'String');
+            }
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
             if (data.hasOwnProperty('result')) {
                 obj['result'] = ApiClient.convertToType(data['result'], 'String');
             }
             if (data.hasOwnProperty('collisions')) {
                 obj['collisions'] = ApiClient.convertToType(data['collisions'], 'String');
             }
-            if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
-            }
-            if (data.hasOwnProperty('error_detail')) {
-                obj['error_detail'] = ApiClient.convertToType(data['error_detail'], 'String');
-            }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('checker')) {
                 obj['checker'] = ApiClient.convertToType(data['checker'], 'Number');
-            }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
         }
         return obj;
@@ -79,6 +79,21 @@ class IfcCheckerResults {
 
 
 }
+
+/**
+ * @member {Number} id
+ */
+IfcCheckerResults.prototype['id'] = undefined;
+
+/**
+ * @member {String} error_detail
+ */
+IfcCheckerResults.prototype['error_detail'] = undefined;
+
+/**
+ * @member {module:model/IfcCheckerResults.StatusEnum} status
+ */
+IfcCheckerResults.prototype['status'] = undefined;
 
 /**
  * @member {String} result
@@ -91,34 +106,19 @@ IfcCheckerResults.prototype['result'] = undefined;
 IfcCheckerResults.prototype['collisions'] = undefined;
 
 /**
- * @member {Date} updated_at
- */
-IfcCheckerResults.prototype['updated_at'] = undefined;
-
-/**
- * @member {String} error_detail
- */
-IfcCheckerResults.prototype['error_detail'] = undefined;
-
-/**
  * @member {Date} created_at
  */
 IfcCheckerResults.prototype['created_at'] = undefined;
 
 /**
- * @member {Number} id
+ * @member {Date} updated_at
  */
-IfcCheckerResults.prototype['id'] = undefined;
+IfcCheckerResults.prototype['updated_at'] = undefined;
 
 /**
  * @member {Number} checker
  */
 IfcCheckerResults.prototype['checker'] = undefined;
-
-/**
- * @member {module:model/IfcCheckerResults.StatusEnum} status
- */
-IfcCheckerResults.prototype['status'] = undefined;
 
 
 

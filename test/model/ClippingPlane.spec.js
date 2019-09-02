@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.ClippingPlane();
+    instance = new BimDataApi.ClippingPlane();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ClippingPlane', function() {
     it('should create an instance of ClippingPlane', function() {
       // uncomment below and update the code to test ClippingPlane
-      //var instane = new bimdata.ClippingPlane();
-      //expect(instance).to.be.a(bimdata.ClippingPlane);
+      //var instane = new BimDataApi.ClippingPlane();
+      //expect(instance).to.be.a(BimDataApi.ClippingPlane);
     });
 
     it('should have the property location (base name: "location")', function() {
       // uncomment below and update the code to test the property location
-      //var instane = new bimdata.ClippingPlane();
+      //var instane = new BimDataApi.ClippingPlane();
       //expect(instance).to.be();
     });
 
     it('should have the property direction (base name: "direction")', function() {
       // uncomment below and update the code to test the property direction
-      //var instane = new bimdata.ClippingPlane();
+      //var instane = new BimDataApi.ClippingPlane();
       //expect(instance).to.be();
     });
 

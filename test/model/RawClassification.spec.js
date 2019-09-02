@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.RawClassification();
+    instance = new BimDataApi.RawClassification();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('RawClassification', function() {
     it('should create an instance of RawClassification', function() {
       // uncomment below and update the code to test RawClassification
-      //var instane = new bimdata.RawClassification();
-      //expect(instance).to.be.a(bimdata.RawClassification);
+      //var instane = new BimDataApi.RawClassification();
+      //expect(instance).to.be.a(BimDataApi.RawClassification);
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.RawClassification();
+      //var instane = new BimDataApi.RawClassification();
       //expect(instance).to.be();
     });
 
     it('should have the property notation (base name: "notation")', function() {
       // uncomment below and update the code to test the property notation
-      //var instane = new bimdata.RawClassification();
+      //var instane = new BimDataApi.RawClassification();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.RawClassification();
+      //var instane = new BimDataApi.RawClassification();
       //expect(instance).to.be();
     });
 

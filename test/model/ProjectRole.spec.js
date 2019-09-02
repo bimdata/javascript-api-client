@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.ProjectRole();
+    instance = new BimDataApi.ProjectRole();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ProjectRole', function() {
     it('should create an instance of ProjectRole', function() {
       // uncomment below and update the code to test ProjectRole
-      //var instane = new bimdata.ProjectRole();
-      //expect(instance).to.be.a(bimdata.ProjectRole);
+      //var instane = new BimDataApi.ProjectRole();
+      //expect(instance).to.be.a(BimDataApi.ProjectRole);
     });
 
     it('should have the property project (base name: "project")', function() {
       // uncomment below and update the code to test the property project
-      //var instane = new bimdata.ProjectRole();
+      //var instane = new BimDataApi.ProjectRole();
       //expect(instance).to.be();
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new bimdata.ProjectRole();
+      //var instane = new BimDataApi.ProjectRole();
       //expect(instance).to.be();
     });
 

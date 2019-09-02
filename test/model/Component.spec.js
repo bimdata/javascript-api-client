@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Component();
+    instance = new BimDataApi.Component();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('Component', function() {
     it('should create an instance of Component', function() {
       // uncomment below and update the code to test Component
-      //var instane = new bimdata.Component();
-      //expect(instance).to.be.a(bimdata.Component);
+      //var instane = new BimDataApi.Component();
+      //expect(instance).to.be.a(BimDataApi.Component);
     });
 
     it('should have the property ifcGuid (base name: "ifc_guid")', function() {
       // uncomment below and update the code to test the property ifcGuid
-      //var instane = new bimdata.Component();
+      //var instane = new BimDataApi.Component();
       //expect(instance).to.be();
     });
 
     it('should have the property originatingSystem (base name: "originating_system")', function() {
       // uncomment below and update the code to test the property originatingSystem
-      //var instane = new bimdata.Component();
+      //var instane = new BimDataApi.Component();
       //expect(instance).to.be();
     });
 
     it('should have the property authoringToolId (base name: "authoring_tool_id")', function() {
       // uncomment below and update the code to test the property authoringToolId
-      //var instane = new bimdata.Component();
+      //var instane = new BimDataApi.Component();
       //expect(instance).to.be();
     });
 

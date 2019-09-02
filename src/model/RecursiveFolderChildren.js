@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The RecursiveFolderChildren model module.
  * @module model/RecursiveFolderChildren
- * @version 0.0.0
+ * @version v1
  */
 class RecursiveFolderChildren {
     /**

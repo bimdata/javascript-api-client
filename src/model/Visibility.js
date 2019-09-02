@@ -18,7 +18,7 @@ import ViewSetupHints from './ViewSetupHints';
 /**
  * The Visibility model module.
  * @module model/Visibility
- * @version 0.0.0
+ * @version v1
  */
 class Visibility {
     /**

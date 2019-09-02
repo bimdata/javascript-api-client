@@ -1,4 +1,4 @@
-# bimdata.ProjectWithChildren
+# BimDataApi.ProjectWithChildren
 
 ## Properties
 

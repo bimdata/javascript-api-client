@@ -1,4 +1,4 @@
-# bimdata.IfcChecker
+# BimDataApi.IfcChecker
 
 ## Properties
 

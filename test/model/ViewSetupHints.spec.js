@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.ViewSetupHints();
+    instance = new BimDataApi.ViewSetupHints();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('ViewSetupHints', function() {
     it('should create an instance of ViewSetupHints', function() {
       // uncomment below and update the code to test ViewSetupHints
-      //var instane = new bimdata.ViewSetupHints();
-      //expect(instance).to.be.a(bimdata.ViewSetupHints);
+      //var instane = new BimDataApi.ViewSetupHints();
+      //expect(instance).to.be.a(BimDataApi.ViewSetupHints);
     });
 
     it('should have the property spacesVisible (base name: "spaces_visible")', function() {
       // uncomment below and update the code to test the property spacesVisible
-      //var instane = new bimdata.ViewSetupHints();
+      //var instane = new BimDataApi.ViewSetupHints();
       //expect(instance).to.be();
     });
 
     it('should have the property spaceBoundariesVisible (base name: "space_boundaries_visible")', function() {
       // uncomment below and update the code to test the property spaceBoundariesVisible
-      //var instane = new bimdata.ViewSetupHints();
+      //var instane = new BimDataApi.ViewSetupHints();
       //expect(instance).to.be();
     });
 
     it('should have the property openingsVisible (base name: "openings_visible")', function() {
       // uncomment below and update the code to test the property openingsVisible
-      //var instane = new bimdata.ViewSetupHints();
+      //var instane = new BimDataApi.ViewSetupHints();
       //expect(instance).to.be();
     });
 

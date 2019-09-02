@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Stage();
+    instance = new BimDataApi.Stage();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('Stage', function() {
     it('should create an instance of Stage', function() {
       // uncomment below and update the code to test Stage
-      //var instane = new bimdata.Stage();
-      //expect(instance).to.be.a(bimdata.Stage);
+      //var instane = new BimDataApi.Stage();
+      //expect(instance).to.be.a(BimDataApi.Stage);
     });
 
     it('should have the property stage (base name: "stage")', function() {
       // uncomment below and update the code to test the property stage
-      //var instane = new bimdata.Stage();
+      //var instane = new BimDataApi.Stage();
       //expect(instance).to.be();
     });
 

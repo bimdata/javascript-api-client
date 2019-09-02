@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProjectWithChildren model module.
  * @module model/ProjectWithChildren
- * @version 0.0.0
+ * @version v1
  */
 class ProjectWithChildren {
     /**

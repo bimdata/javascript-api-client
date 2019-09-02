@@ -1,4 +1,4 @@
-# bimdata.Cloud
+# BimDataApi.Cloud
 
 ## Properties
 

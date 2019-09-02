@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Point model module.
  * @module model/Point
- * @version 0.0.0
+ * @version v1
  */
 class Point {
     /**

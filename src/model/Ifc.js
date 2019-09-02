@@ -18,7 +18,7 @@ import User from './User';
 /**
  * The Ifc model module.
  * @module model/Ifc
- * @version 0.0.0
+ * @version v1
  */
 class Ifc {
     /**

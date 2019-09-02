@@ -1,4 +1,4 @@
-# bimdata.ViewSetupHints
+# BimDataApi.ViewSetupHints
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# bimdata.Comment
+# BimDataApi.Comment
 
 ## Properties
 

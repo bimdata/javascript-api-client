@@ -17,7 +17,7 @@ import PropertyDefinition from './PropertyDefinition';
 /**
  * The Property model module.
  * @module model/Property
- * @version 0.0.0
+ * @version v1
  */
 class Property {
     /**

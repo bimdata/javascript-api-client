@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ElementPropertySetRelation model module.
  * @module model/ElementPropertySetRelation
- * @version 0.0.0
+ * @version v1
  */
 class ElementPropertySetRelation {
     /**

@@ -1,4 +1,4 @@
-# bimdata.Ruleset
+# BimDataApi.Ruleset
 
 ## Properties
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Point();
+    instance = new BimDataApi.Point();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('Point', function() {
     it('should create an instance of Point', function() {
       // uncomment below and update the code to test Point
-      //var instane = new bimdata.Point();
-      //expect(instance).to.be.a(bimdata.Point);
+      //var instane = new BimDataApi.Point();
+      //expect(instance).to.be.a(BimDataApi.Point);
     });
 
     it('should have the property x (base name: "x")', function() {
       // uncomment below and update the code to test the property x
-      //var instane = new bimdata.Point();
+      //var instane = new BimDataApi.Point();
       //expect(instance).to.be();
     });
 
     it('should have the property y (base name: "y")', function() {
       // uncomment below and update the code to test the property y
-      //var instane = new bimdata.Point();
+      //var instane = new BimDataApi.Point();
       //expect(instance).to.be();
     });
 
     it('should have the property z (base name: "z")', function() {
       // uncomment below and update the code to test the property z
-      //var instane = new bimdata.Point();
+      //var instane = new BimDataApi.Point();
       //expect(instance).to.be();
     });
 

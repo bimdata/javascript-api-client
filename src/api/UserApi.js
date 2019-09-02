@@ -19,7 +19,7 @@ import SelfUser from '../model/SelfUser';
 /**
 * User service.
 * @module api/UserApi
-* @version 0.0.0
+* @version v1
 */
 export default class UserApi {
 
@@ -35,11 +35,19 @@ export default class UserApi {
     }
 
 
+    /**
+     * Callback function to receive the result of the getSelfUser operation.
+     * @callback module:api/UserApi~getSelfUserCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/SelfUser} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
     /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SelfUser} and HTTP response
+     * @param {module:api/UserApi~getSelfUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/SelfUser}
      */
-    getSelfUserWithHttpInfo() {
+    getSelfUser(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -58,26 +66,24 @@ export default class UserApi {
       return this.apiClient.callApi(
         '/user', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SelfUser}
+     * Callback function to receive the result of the updateSelfUser operation.
+     * @callback module:api/UserApi~updateSelfUserCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/SelfUser} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getSelfUser() {
-      return this.getSelfUserWithHttpInfo()
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * @param {module:model/SelfUser} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SelfUser} and HTTP response
+     * @param {module:api/UserApi~updateSelfUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/SelfUser}
      */
-    updateSelfUserWithHttpInfo(data) {
+    updateSelfUser(data, callback) {
       let postBody = data;
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
@@ -100,26 +106,23 @@ export default class UserApi {
       return this.apiClient.callApi(
         '/user', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * @param {module:model/SelfUser} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SelfUser}
+     * Callback function to receive the result of the userProjectsList operation.
+     * @callback module:api/UserApi~userProjectsListCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Project>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    updateSelfUser(data) {
-      return this.updateSelfUserWithHttpInfo(data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
+     * @param {module:api/UserApi~userProjectsListCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Project>}
      */
-    userProjectsListWithHttpInfo() {
+    userProjectsList(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -138,18 +141,8 @@ export default class UserApi {
       return this.apiClient.callApi(
         '/user/projects', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
-    }
-
-    /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
-     */
-    userProjectsList() {
-      return this.userProjectsListWithHttpInfo()
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
     }
 
 

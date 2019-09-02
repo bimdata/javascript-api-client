@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RawUnit model module.
  * @module model/RawUnit
- * @version 0.0.0
+ * @version v1
  */
 class RawUnit {
     /**

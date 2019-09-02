@@ -1,4 +1,4 @@
-# bimdata.CloudRole
+# BimDataApi.CloudRole
 
 ## Properties
 

@@ -20,7 +20,7 @@ import User from './User';
 /**
  * The IfcChecker model module.
  * @module model/IfcChecker
- * @version 0.0.0
+ * @version v1
  */
 class IfcChecker {
     /**

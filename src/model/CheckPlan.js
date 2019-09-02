@@ -17,7 +17,7 @@ import Ruleset from './Ruleset';
 /**
  * The CheckPlan model module.
  * @module model/CheckPlan
- * @version 0.0.0
+ * @version v1
  */
 class CheckPlan {
     /**

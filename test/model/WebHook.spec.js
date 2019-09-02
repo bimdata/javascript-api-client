@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.WebHook();
+    instance = new BimDataApi.WebHook();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('WebHook', function() {
     it('should create an instance of WebHook', function() {
       // uncomment below and update the code to test WebHook
-      //var instane = new bimdata.WebHook();
-      //expect(instance).to.be.a(bimdata.WebHook);
+      //var instane = new BimDataApi.WebHook();
+      //expect(instance).to.be.a(BimDataApi.WebHook);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.WebHook();
+      //var instane = new BimDataApi.WebHook();
       //expect(instance).to.be();
     });
 
     it('should have the property events (base name: "events")', function() {
       // uncomment below and update the code to test the property events
-      //var instane = new bimdata.WebHook();
+      //var instane = new BimDataApi.WebHook();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new bimdata.WebHook();
+      //var instane = new BimDataApi.WebHook();
       //expect(instance).to.be();
     });
 
     it('should have the property secret (base name: "secret")', function() {
       // uncomment below and update the code to test the property secret
-      //var instane = new bimdata.WebHook();
+      //var instane = new BimDataApi.WebHook();
       //expect(instance).to.be();
     });
 

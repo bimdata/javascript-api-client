@@ -18,7 +18,7 @@ import User from './User';
 /**
  * The Cloud model module.
  * @module model/Cloud
- * @version 0.0.0
+ * @version v1
  */
 class Cloud {
     /**

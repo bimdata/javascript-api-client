@@ -1,4 +1,4 @@
-# bimdata.Priority
+# BimDataApi.Priority
 
 ## Properties
 

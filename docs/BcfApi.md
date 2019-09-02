@@ -1,4 +1,4 @@
-# bimdata.BcfApi
+# BimDataApi.BcfApi
 
 All URIs are relative to *https://api-beta.bimdata.io*
 
@@ -54,8 +54,8 @@ Create a comment Required scopes: bcf:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -68,16 +68,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-let data = new bimdata.Comment(); // Comment | 
-apiInstance.createComment(projectsPk, topicsGuid, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Comment(); // Comment | 
+apiInstance.createComment(projectsPk, topicsGuid, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -114,8 +115,8 @@ This is not a standard route. You can send a topic, viewpoints and comments in a
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -128,15 +129,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.FullTopic(); // FullTopic | 
-apiInstance.createFullTopic(projectsPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.FullTopic(); // FullTopic | 
+apiInstance.createFullTopic(projectsPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -172,8 +174,8 @@ Create a topic Required scopes: bcf:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -186,15 +188,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.Topic(); // Topic | 
-apiInstance.createTopic(projectsPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Topic(); // Topic | 
+apiInstance.createTopic(projectsPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -230,8 +233,8 @@ Create a Viewpoint Required scopes: bcf:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -244,16 +247,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-let data = new bimdata.Viewpoint(); // Viewpoint | 
-apiInstance.createViewpoint(projectsPk, topicsGuid, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Viewpoint(); // Viewpoint | 
+apiInstance.createViewpoint(projectsPk, topicsGuid, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -290,8 +294,8 @@ Delete a comment Required scopes: bcf:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -304,16 +308,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.deleteComment(guid, projectsPk, topicsGuid).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.deleteComment(guid, projectsPk, topicsGuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -350,8 +355,8 @@ Delete a topic Required scopes: bcf:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -364,15 +369,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-apiInstance.deleteTopic(guid, projectsPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.deleteTopic(guid, projectsPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -408,8 +414,8 @@ This is not a standard route. Delete a Viewpoint Required scopes: bcf:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -422,16 +428,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.deleteViewpoint(guid, projectsPk, topicsGuid).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.deleteViewpoint(guid, projectsPk, topicsGuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -468,8 +475,8 @@ Export project&#39;s topics in bcf-xml format Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -482,18 +489,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
 let opts = {
   'topics': "topics_example", // String | topic guids to export, comma separated. Default = all
   'format': "format_example" // String | topic format to export, comma separated. Default = all
 };
-apiInstance.downloadBcfExport(id, opts).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.downloadBcfExport(id, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -530,8 +538,8 @@ Update all fields of a BCF project Required scopes: bcf:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -544,15 +552,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
-let data = new bimdata.BcfProject(); // BcfProject | 
-apiInstance.fullUpdateBcfProject(id, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.BcfProject(); // BcfProject | 
+apiInstance.fullUpdateBcfProject(id, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -588,8 +597,8 @@ Update all fields of a comment Required scopes: bcf:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -602,17 +611,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-let data = new bimdata.Comment(); // Comment | 
-apiInstance.fullUpdateComment(guid, projectsPk, topicsGuid, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Comment(); // Comment | 
+apiInstance.fullUpdateComment(guid, projectsPk, topicsGuid, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -650,8 +660,8 @@ This is not a standard route. You can update topic, viewpoints and comment is a 
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -664,16 +674,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.FullTopic(); // FullTopic | 
-apiInstance.fullUpdateFullTopic(guid, projectsPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.FullTopic(); // FullTopic | 
+apiInstance.fullUpdateFullTopic(guid, projectsPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -710,8 +721,8 @@ Update all fields of a topic Required scopes: bcf:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -724,16 +735,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.Topic(); // Topic | 
-apiInstance.fullUpdateTopic(guid, projectsPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Topic(); // Topic | 
+apiInstance.fullUpdateTopic(guid, projectsPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -770,8 +782,8 @@ This is not a standard route. Update all fields of a Viewpoint Required scopes: 
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -784,17 +796,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-let data = new bimdata.Viewpoint(); // Viewpoint | 
-apiInstance.fullUpdateViewpoint(guid, projectsPk, topicsGuid, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Viewpoint(); // Viewpoint | 
+apiInstance.fullUpdateViewpoint(guid, projectsPk, topicsGuid, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -832,8 +845,8 @@ Retrieve a BCF project Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -846,14 +859,15 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
-apiInstance.getBcfProject(id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getBcfProject(id, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -888,8 +902,8 @@ Retrieve all BCF projects Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -902,13 +916,14 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
-apiInstance.getBcfProjects().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let apiInstance = new BimDataApi.BcfApi();
+apiInstance.getBcfProjects((error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -940,8 +955,8 @@ Retrieve all colorings of a viewpoint Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -954,16 +969,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.getColorings(guid, projectsPk, topicsGuid).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getColorings(guid, projectsPk, topicsGuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1000,8 +1016,8 @@ Retrieve a comment Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1014,16 +1030,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.getComment(guid, projectsPk, topicsGuid).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getComment(guid, projectsPk, topicsGuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1060,8 +1077,8 @@ Retrieve all comments Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1074,15 +1091,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.getComments(projectsPk, topicsGuid).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getComments(projectsPk, topicsGuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1118,8 +1136,8 @@ Retrieve project extensions
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1132,14 +1150,15 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
-apiInstance.getExtensions(projectsPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getExtensions(projectsPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1174,8 +1193,8 @@ This is not a standard route. It responds with a topic, its viewpoints and its c
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1188,15 +1207,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-apiInstance.getFullTopic(guid, projectsPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getFullTopic(guid, projectsPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1232,8 +1252,8 @@ This is not a standard route. It responds with all topics, their viewpoints and 
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1246,18 +1266,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let opts = {
   'ifcs': "ifcs_example", // String | Filter the returned list by ifcs
   'format': "format_example" // String | Filter the returned list by format
 };
-apiInstance.getFullTopics(projectsPk, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getFullTopics(projectsPk, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1294,8 +1315,8 @@ Retrieve all selections of a viewpoint Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1308,16 +1329,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.getSelections(guid, projectsPk, topicsGuid).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getSelections(guid, projectsPk, topicsGuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1354,8 +1376,8 @@ Retrieve the viewpoint&#39; snapshot Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1368,16 +1390,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.getSnapshot(guid, projectsPk, topicsGuid).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getSnapshot(guid, projectsPk, topicsGuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1414,8 +1437,8 @@ Retrieve a topic Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1428,15 +1451,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-apiInstance.getTopic(guid, projectsPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getTopic(guid, projectsPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1472,8 +1496,8 @@ This is not a standard route. It returns all viewpoints of the topic that are no
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1486,15 +1510,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.getTopicViewpoints(projectsPk, topicsGuid).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getTopicViewpoints(projectsPk, topicsGuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1530,8 +1555,8 @@ Retrieve all topics Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1544,18 +1569,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let opts = {
   'ifcs': "ifcs_example", // String | Filter the returned list by ifcs
   'format': "format_example" // String | Filter the returned list by format
 };
-apiInstance.getTopics(projectsPk, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getTopics(projectsPk, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1592,8 +1618,8 @@ Get current user info Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1606,13 +1632,14 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
-apiInstance.getUser().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let apiInstance = new BimDataApi.BcfApi();
+apiInstance.getUser((error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1644,8 +1671,8 @@ Retrieve a Viewpoint Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1658,16 +1685,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.getViewpoint(guid, projectsPk, topicsGuid).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getViewpoint(guid, projectsPk, topicsGuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1704,8 +1732,8 @@ Retrieve all Viewpoints of a topic Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1718,15 +1746,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.getViewpoints(projectsPk, topicsGuid).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getViewpoints(projectsPk, topicsGuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1762,8 +1791,8 @@ Retrieve all visibilities of a viewpoint Required scopes: bcf:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1776,16 +1805,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.getVisibilities(guid, projectsPk, topicsGuid).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getVisibilities(guid, projectsPk, topicsGuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1822,8 +1852,8 @@ Update some fields of a BCF project Required scopes: bcf:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1836,15 +1866,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
-let data = new bimdata.BcfProject(); // BcfProject | 
-apiInstance.updateBcfProject(id, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.BcfProject(); // BcfProject | 
+apiInstance.updateBcfProject(id, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1880,8 +1911,8 @@ Update some fields of a comment Required scopes: bcf:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1894,17 +1925,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-let data = new bimdata.Comment(); // Comment | 
-apiInstance.updateComment(guid, projectsPk, topicsGuid, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Comment(); // Comment | 
+apiInstance.updateComment(guid, projectsPk, topicsGuid, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1942,8 +1974,8 @@ Update project extensions
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1956,15 +1988,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.Extensions(); // Extensions | 
-apiInstance.updateExtensions(projectsPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Extensions(); // Extensions | 
+apiInstance.updateExtensions(projectsPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -2000,8 +2033,8 @@ This is not a standard route. You can update topic, viewpoints and comment is a 
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2014,16 +2047,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.FullTopic(); // FullTopic | 
-apiInstance.updateFullTopic(guid, projectsPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.FullTopic(); // FullTopic | 
+apiInstance.updateFullTopic(guid, projectsPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -2060,8 +2094,8 @@ Update some fields of a topic Required scopes: bcf:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2074,16 +2108,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.Topic(); // Topic | 
-apiInstance.updateTopic(guid, projectsPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Topic(); // Topic | 
+apiInstance.updateTopic(guid, projectsPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -2120,8 +2155,8 @@ This is not a standard route. Update some fields of a Viewpoint Required scopes:
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2134,17 +2169,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.BcfApi();
+let apiInstance = new BimDataApi.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-let data = new bimdata.Viewpoint(); // Viewpoint | 
-apiInstance.updateViewpoint(guid, projectsPk, topicsGuid, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Viewpoint(); // Viewpoint | 
+apiInstance.updateViewpoint(guid, projectsPk, topicsGuid, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters

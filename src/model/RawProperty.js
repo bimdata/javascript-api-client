@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RawProperty model module.
  * @module model/RawProperty
- * @version 0.0.0
+ * @version v1
  */
 class RawProperty {
     /**

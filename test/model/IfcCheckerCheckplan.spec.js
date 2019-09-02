@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.IfcCheckerCheckplan();
+    instance = new BimDataApi.IfcCheckerCheckplan();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('IfcCheckerCheckplan', function() {
     it('should create an instance of IfcCheckerCheckplan', function() {
       // uncomment below and update the code to test IfcCheckerCheckplan
-      //var instane = new bimdata.IfcCheckerCheckplan();
-      //expect(instance).to.be.a(bimdata.IfcCheckerCheckplan);
+      //var instane = new BimDataApi.IfcCheckerCheckplan();
+      //expect(instance).to.be.a(BimDataApi.IfcCheckerCheckplan);
     });
 
-    it('should have the property updatedAt (base name: "updated_at")', function() {
-      // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.IfcCheckerCheckplan();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property _protected (base name: "protected")', function() {
-      // uncomment below and update the code to test the property _protected
-      //var instane = new bimdata.IfcCheckerCheckplan();
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new BimDataApi.IfcCheckerCheckplan();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.IfcCheckerCheckplan();
+      //var instane = new BimDataApi.IfcCheckerCheckplan();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.IfcCheckerCheckplan();
+      //var instane = new BimDataApi.IfcCheckerCheckplan();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.IfcCheckerCheckplan();
+      //var instane = new BimDataApi.IfcCheckerCheckplan();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property updatedAt (base name: "updated_at")', function() {
+      // uncomment below and update the code to test the property updatedAt
+      //var instane = new BimDataApi.IfcCheckerCheckplan();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property _protected (base name: "protected")', function() {
+      // uncomment below and update the code to test the property _protected
+      //var instane = new BimDataApi.IfcCheckerCheckplan();
       //expect(instance).to.be();
     });
 
     it('should have the property project (base name: "project")', function() {
       // uncomment below and update the code to test the property project
-      //var instane = new bimdata.IfcCheckerCheckplan();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new bimdata.IfcCheckerCheckplan();
+      //var instane = new BimDataApi.IfcCheckerCheckplan();
       //expect(instance).to.be();
     });
 

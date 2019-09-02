@@ -18,7 +18,7 @@ import ProjectRole from './ProjectRole';
 /**
  * The SelfUser model module.
  * @module model/SelfUser
- * @version 0.0.0
+ * @version v1
  */
 class SelfUser {
     /**

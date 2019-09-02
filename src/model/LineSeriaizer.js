@@ -17,7 +17,7 @@ import Point from './Point';
 /**
  * The LineSeriaizer model module.
  * @module model/LineSeriaizer
- * @version 0.0.0
+ * @version v1
  */
 class LineSeriaizer {
     /**

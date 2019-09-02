@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Extensions model module.
  * @module model/Extensions
- * @version 0.0.0
+ * @version v1
  */
 class Extensions {
     /**

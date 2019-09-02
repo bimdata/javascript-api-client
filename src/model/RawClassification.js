@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RawClassification model module.
  * @module model/RawClassification
- * @version 0.0.0
+ * @version v1
  */
 class RawClassification {
     /**

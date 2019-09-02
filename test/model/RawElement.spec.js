@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.RawElement();
+    instance = new BimDataApi.RawElement();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('RawElement', function() {
     it('should create an instance of RawElement', function() {
       // uncomment below and update the code to test RawElement
-      //var instane = new bimdata.RawElement();
-      //expect(instance).to.be.a(bimdata.RawElement);
+      //var instane = new BimDataApi.RawElement();
+      //expect(instance).to.be.a(BimDataApi.RawElement);
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.RawElement();
+      //var instane = new BimDataApi.RawElement();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.RawElement();
+      //var instane = new BimDataApi.RawElement();
       //expect(instance).to.be();
     });
 
     it('should have the property attributes (base name: "attributes")', function() {
       // uncomment below and update the code to test the property attributes
-      //var instane = new bimdata.RawElement();
+      //var instane = new BimDataApi.RawElement();
       //expect(instance).to.be();
     });
 
     it('should have the property psets (base name: "psets")', function() {
       // uncomment below and update the code to test the property psets
-      //var instane = new bimdata.RawElement();
+      //var instane = new BimDataApi.RawElement();
       //expect(instance).to.be();
     });
 
     it('should have the property classifications (base name: "classifications")', function() {
       // uncomment below and update the code to test the property classifications
-      //var instane = new bimdata.RawElement();
+      //var instane = new BimDataApi.RawElement();
       //expect(instance).to.be();
     });
 

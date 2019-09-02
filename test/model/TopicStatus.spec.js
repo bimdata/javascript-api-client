@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.TopicStatus();
+    instance = new BimDataApi.TopicStatus();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('TopicStatus', function() {
     it('should create an instance of TopicStatus', function() {
       // uncomment below and update the code to test TopicStatus
-      //var instane = new bimdata.TopicStatus();
-      //expect(instance).to.be.a(bimdata.TopicStatus);
+      //var instane = new BimDataApi.TopicStatus();
+      //expect(instance).to.be.a(BimDataApi.TopicStatus);
     });
 
     it('should have the property topicStatus (base name: "topic_status")', function() {
       // uncomment below and update the code to test the property topicStatus
-      //var instane = new bimdata.TopicStatus();
+      //var instane = new BimDataApi.TopicStatus();
       //expect(instance).to.be();
     });
 

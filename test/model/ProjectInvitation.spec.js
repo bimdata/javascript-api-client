@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.ProjectInvitation();
+    instance = new BimDataApi.ProjectInvitation();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('ProjectInvitation', function() {
     it('should create an instance of ProjectInvitation', function() {
       // uncomment below and update the code to test ProjectInvitation
-      //var instane = new bimdata.ProjectInvitation();
-      //expect(instance).to.be.a(bimdata.ProjectInvitation);
+      //var instane = new BimDataApi.ProjectInvitation();
+      //expect(instance).to.be.a(BimDataApi.ProjectInvitation);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.ProjectInvitation();
+      //var instane = new BimDataApi.ProjectInvitation();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new bimdata.ProjectInvitation();
+      //var instane = new BimDataApi.ProjectInvitation();
       //expect(instance).to.be();
     });
 
     it('should have the property redirectUri (base name: "redirect_uri")', function() {
       // uncomment below and update the code to test the property redirectUri
-      //var instane = new bimdata.ProjectInvitation();
+      //var instane = new BimDataApi.ProjectInvitation();
       //expect(instance).to.be();
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new bimdata.ProjectInvitation();
+      //var instane = new BimDataApi.ProjectInvitation();
       //expect(instance).to.be();
     });
 

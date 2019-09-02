@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RawElement model module.
  * @module model/RawElement
- * @version 0.0.0
+ * @version v1
  */
 class RawElement {
     /**

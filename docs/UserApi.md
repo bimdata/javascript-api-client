@@ -1,4 +1,4 @@
-# bimdata.UserApi
+# BimDataApi.UserApi
 
 All URIs are relative to *https://api-beta.bimdata.io*
 
@@ -19,8 +19,8 @@ Method | HTTP request | Description
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -33,13 +33,14 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.UserApi();
-apiInstance.getSelfUser().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let apiInstance = new BimDataApi.UserApi();
+apiInstance.getSelfUser((error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -69,8 +70,8 @@ This endpoint does not need any parameter.
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -83,14 +84,15 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.UserApi();
-let data = new bimdata.SelfUser(); // SelfUser | 
-apiInstance.updateSelfUser(data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let apiInstance = new BimDataApi.UserApi();
+let data = new BimDataApi.SelfUser(); // SelfUser | 
+apiInstance.updateSelfUser(data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -123,8 +125,8 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -137,13 +139,14 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.UserApi();
-apiInstance.userProjectsList().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let apiInstance = new BimDataApi.UserApi();
+apiInstance.userProjectsList((error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters

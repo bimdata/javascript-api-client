@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TopicType model module.
  * @module model/TopicType
- * @version 0.0.0
+ * @version v1
  */
 class TopicType {
     /**

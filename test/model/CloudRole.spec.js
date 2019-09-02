@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.CloudRole();
+    instance = new BimDataApi.CloudRole();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('CloudRole', function() {
     it('should create an instance of CloudRole', function() {
       // uncomment below and update the code to test CloudRole
-      //var instane = new bimdata.CloudRole();
-      //expect(instance).to.be.a(bimdata.CloudRole);
+      //var instane = new BimDataApi.CloudRole();
+      //expect(instance).to.be.a(BimDataApi.CloudRole);
     });
 
     it('should have the property cloud (base name: "cloud")', function() {
       // uncomment below and update the code to test the property cloud
-      //var instane = new bimdata.CloudRole();
+      //var instane = new BimDataApi.CloudRole();
       //expect(instance).to.be();
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new bimdata.CloudRole();
+      //var instane = new BimDataApi.CloudRole();
       //expect(instance).to.be();
     });
 

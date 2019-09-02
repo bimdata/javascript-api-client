@@ -1,4 +1,4 @@
-# bimdata.Component
+# BimDataApi.Component
 
 ## Properties
 

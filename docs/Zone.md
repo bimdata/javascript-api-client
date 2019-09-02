@@ -1,4 +1,4 @@
-# bimdata.Zone
+# BimDataApi.Zone
 
 ## Properties
 

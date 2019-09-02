@@ -1,4 +1,4 @@
-# bimdata.IfcApi
+# BimDataApi.IfcApi
 
 All URIs are relative to *https://api-beta.bimdata.io*
 
@@ -119,8 +119,8 @@ Remove all classifications from model&#39;s elements
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -133,16 +133,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkDeleteIfcClassifications(cloudPk, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.bulkDeleteIfcClassifications(cloudPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -179,8 +180,8 @@ Delete many Property of a model
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -193,16 +194,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkDeleteIfcProperties(cloudPk, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.bulkDeleteIfcProperties(cloudPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -239,8 +241,8 @@ Delete many PropertyDefinitions of a model
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -253,16 +255,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkDeleteIfcPropertyDefinitions(cloudPk, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.bulkDeleteIfcPropertyDefinitions(cloudPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -299,8 +302,8 @@ Delete many Units of a model
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -313,16 +316,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkDeleteIfcUnits(cloudPk, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.bulkDeleteIfcUnits(cloudPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -359,8 +363,8 @@ Delete many PropertySet of a model
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -373,16 +377,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkDeletePropertySet(cloudPk, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.bulkDeletePropertySet(cloudPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -419,8 +424,8 @@ Update many elements at once (only changing fields may be defined)
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -433,17 +438,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.Element()]; // [Element] | 
-apiInstance.bulkFullUpdateElements(cloudPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = [new BimDataApi.Element()]; // [Element] | 
+apiInstance.bulkFullUpdateElements(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -481,8 +487,8 @@ Update some fields of many properties of a model
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -495,17 +501,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.Property()]; // [Property] | 
-apiInstance.bulkFullUpdateIfcProperty(cloudPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = [new BimDataApi.Property()]; // [Property] | 
+apiInstance.bulkFullUpdateIfcProperty(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -543,8 +550,8 @@ Remove many classifications from an element
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -557,17 +564,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkRemoveClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.bulkRemoveClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -605,8 +613,8 @@ Remove the classifications from all elements
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -619,17 +627,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcClassificationPk = "ifcClassificationPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkRemoveElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.bulkRemoveElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -667,8 +676,8 @@ Update many elements at once (all field must be defined)
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -681,17 +690,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.Element()]; // [Element] | 
-apiInstance.bulkUpdateElements(cloudPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = [new BimDataApi.Element()]; // [Element] | 
+apiInstance.bulkUpdateElements(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -729,8 +739,8 @@ Update all fields of many properties of a model
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -743,17 +753,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.Property()]; // [Property] | 
-apiInstance.bulkUpdateIfcProperty(cloudPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = [new BimDataApi.Property()]; // [Property] | 
+apiInstance.bulkUpdateIfcProperty(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -791,8 +802,8 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -805,18 +816,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this processor handler.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.ProcessorHandler(); // ProcessorHandler | 
-apiInstance.cloudProjectIfcProcessorhandlerPartialUpdate(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.ProcessorHandler(); // ProcessorHandler | 
+apiInstance.cloudProjectIfcProcessorhandlerPartialUpdate(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -855,8 +867,8 @@ Create association between existing classification and existing element Required
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -869,17 +881,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.ElementClassificationRelation()]; // [ElementClassificationRelation] | 
-apiInstance.createClassificationElementRelations(cloudPk, ifcPk, projectPk, data).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+let data = [new BimDataApi.ElementClassificationRelation()]; // [ElementClassificationRelation] | 
+apiInstance.createClassificationElementRelations(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -917,8 +930,8 @@ Create one or many classifications to an element
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -931,18 +944,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Classification(); // Classification | 
-apiInstance.createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Classification(); // Classification | 
+apiInstance.createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -981,8 +995,8 @@ The IFC file will not be updated. The created element will be accessible over th
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -995,17 +1009,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Element(); // Element | 
-apiInstance.createElement(cloudPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Element(); // Element | 
+apiInstance.createElement(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1043,8 +1058,8 @@ Create a PropertySets that will be automatically linked to the element Required 
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1057,18 +1072,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.PropertySet(); // PropertySet | 
-apiInstance.createElementPropertySet(cloudPk, elementUuid, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.PropertySet(); // PropertySet | 
+apiInstance.createElementPropertySet(cloudPk, elementUuid, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1107,8 +1123,8 @@ Create a property to a PropertySet
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1121,19 +1137,20 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let propertysetPk = "propertysetPk_example"; // String | 
-let data = new bimdata.Property(); // Property | 
-apiInstance.createElementPropertySetProperty(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Property(); // Property | 
+apiInstance.createElementPropertySetProperty(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1173,8 +1190,8 @@ Create a Definition to a Property
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1187,20 +1204,21 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let propertyPk = "propertyPk_example"; // String | 
 let propertysetPk = "propertysetPk_example"; // String | 
-let data = new bimdata.PropertyDefinition(); // PropertyDefinition | 
-apiInstance.createElementPropertySetPropertyDefinition(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.PropertyDefinition(); // PropertyDefinition | 
+apiInstance.createElementPropertySetPropertyDefinition(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1241,8 +1259,8 @@ Create a Unit to a Definition Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1255,7 +1273,7 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
@@ -1263,13 +1281,14 @@ let projectPk = "projectPk_example"; // String |
 let propertyPk = "propertyPk_example"; // String | 
 let propertydefinitionPk = "propertydefinitionPk_example"; // String | 
 let propertysetPk = "propertysetPk_example"; // String | 
-let data = new bimdata.Unit(); // Unit | 
-apiInstance.createElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Unit(); // Unit | 
+apiInstance.createElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1311,8 +1330,8 @@ Create a PropertyDefinition on the model
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1325,17 +1344,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.PropertyDefinition(); // PropertyDefinition | 
-apiInstance.createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.PropertyDefinition(); // PropertyDefinition | 
+apiInstance.createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1373,8 +1393,8 @@ Create a Unit on a model
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1387,17 +1407,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Unit(); // Unit | 
-apiInstance.createIfcUnit(cloudPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Unit(); // Unit | 
+apiInstance.createIfcUnit(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1435,8 +1456,8 @@ Create a PropertySet Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1449,17 +1470,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.PropertySet(); // PropertySet | 
-apiInstance.createPropertySet(cloudPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.PropertySet(); // PropertySet | 
+apiInstance.createPropertySet(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1497,8 +1519,8 @@ Create association between existing PropertySet and existing element Required sc
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1511,17 +1533,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.ElementPropertySetRelation()]; // [ElementPropertySetRelation] | 
-apiInstance.createPropertySetElementRelations(cloudPk, ifcPk, projectPk, data).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+let data = [new BimDataApi.ElementPropertySetRelation()]; // [ElementPropertySetRelation] | 
+apiInstance.createPropertySetElementRelations(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -1559,8 +1582,8 @@ Create elements in an optimized format
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1573,17 +1596,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.RawElements(); // RawElements | 
-apiInstance.createRawElements(cloudPk, ifcPk, projectPk, data).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.RawElements(); // RawElements | 
+apiInstance.createRawElements(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -1621,8 +1645,8 @@ The IFC file will not be updated. The created space will be accessible over the 
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1635,17 +1659,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Space(); // Space | 
-apiInstance.createSpace(cloudPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Space(); // Space | 
+apiInstance.createSpace(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1683,8 +1708,8 @@ The IFC file will not be updated. The created zone will be accessible over the A
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1697,17 +1722,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Zone(); // Zone | 
-apiInstance.createZone(cloudPk, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Zone(); // Zone | 
+apiInstance.createZone(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1745,8 +1771,8 @@ The IFC file will not be updated. The created space will be accessible over the 
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1759,18 +1785,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let zonePk = "zonePk_example"; // String | 
-let data = new bimdata.ZoneSpace(); // ZoneSpace | 
-apiInstance.createZoneSpace(cloudPk, ifcPk, projectPk, zonePk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.ZoneSpace(); // ZoneSpace | 
+apiInstance.createZoneSpace(cloudPk, ifcPk, projectPk, zonePk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -1809,8 +1836,8 @@ The IFC file will not be updated. The remaining elements are available in API an
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1823,17 +1850,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let uuid = "uuid_example"; // String | IFC element or element type UUID
-apiInstance.deleteElement(cloudPk, ifcPk, projectPk, uuid).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.deleteElement(cloudPk, ifcPk, projectPk, uuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -1871,8 +1899,8 @@ It will delete the related document too Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1885,16 +1913,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc.
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteIfc(cloudPk, id, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.deleteIfc(cloudPk, id, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -1931,8 +1960,8 @@ Delete a Property of a model Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1945,17 +1974,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteIfcProperty(cloudPk, id, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.deleteIfcProperty(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -1993,8 +2023,8 @@ Delete a PropertyDefinitions of a model Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2007,17 +2037,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property definition.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.deleteIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -2055,8 +2086,8 @@ Delete a Unit of a model Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2069,17 +2100,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this unit.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteIfcUnit(cloudPk, id, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.deleteIfcUnit(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -2117,8 +2149,8 @@ Delete a PropertySet of a model Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2131,17 +2163,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property set.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deletePropertySet(cloudPk, id, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.deletePropertySet(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -2179,8 +2212,8 @@ It will not delete related zones. The IFC file will not be updated. The remainin
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2193,17 +2226,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this space.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteSpace(cloudPk, id, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.deleteSpace(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -2241,8 +2275,8 @@ The IFC file will not be updated. The remaining zones are available in API and w
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2255,17 +2289,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this zone.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteZone(cloudPk, id, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.deleteZone(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -2303,8 +2338,8 @@ The IFC file will not be updated. The remaining spaces are available in API and 
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2317,18 +2352,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this space.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let zonePk = "zonePk_example"; // String | 
-apiInstance.deleteZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.deleteZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -2367,8 +2403,8 @@ Export IFC as requested in parameters. This call doesn&#39;t return the IFC. Whe
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2381,17 +2417,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc.
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.IfcExport(); // IfcExport | 
-apiInstance.exportIfc(cloudPk, id, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.IfcExport(); // IfcExport | 
+apiInstance.exportIfc(cloudPk, id, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -2429,8 +2466,8 @@ Update all fields of a element. The IFC file will not be updated. The created el
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2443,18 +2480,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let uuid = "uuid_example"; // String | IFC element or element type UUID
-let data = new bimdata.Element(); // Element | 
-apiInstance.fullUpdateElement(cloudPk, ifcPk, projectPk, uuid, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Element(); // Element | 
+apiInstance.fullUpdateElement(cloudPk, ifcPk, projectPk, uuid, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -2493,8 +2531,8 @@ Update all fields of a model Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2507,17 +2545,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc.
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Ifc(); // Ifc | 
-apiInstance.fullUpdateIfc(cloudPk, id, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Ifc(); // Ifc | 
+apiInstance.fullUpdateIfc(cloudPk, id, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -2555,8 +2594,8 @@ Update some fields of a Property Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2569,18 +2608,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Property(); // Property | 
-apiInstance.fullUpdateIfcProperty(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Property(); // Property | 
+apiInstance.fullUpdateIfcProperty(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -2619,8 +2659,8 @@ Update all fields of many PropertyDefinitions of a model
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2633,18 +2673,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property definition.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.PropertyDefinition(); // PropertyDefinition | 
-apiInstance.fullUpdateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.PropertyDefinition(); // PropertyDefinition | 
+apiInstance.fullUpdateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -2683,8 +2724,8 @@ Update all fields of a Unit of a model
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2697,18 +2738,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this unit.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Unit(); // Unit | 
-apiInstance.fullUpdateIfcUnit(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Unit(); // Unit | 
+apiInstance.fullUpdateIfcUnit(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -2747,8 +2789,8 @@ Update all fields of a PropertySet Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2761,18 +2803,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property set.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.PropertySet(); // PropertySet | 
-apiInstance.fullUpdatePropertySet(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.PropertySet(); // PropertySet | 
+apiInstance.fullUpdatePropertySet(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -2811,8 +2854,8 @@ Update all fields of a space. The IFC file will not be updated. The created spac
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2825,18 +2868,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this space.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Space(); // Space | 
-apiInstance.fullUpdateSpace(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Space(); // Space | 
+apiInstance.fullUpdateSpace(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -2875,8 +2919,8 @@ Update all fields of a zone. The IFC file will not be updated. The created zone 
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2889,18 +2933,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this zone.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Zone(); // Zone | 
-apiInstance.fullUpdateZone(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Zone(); // Zone | 
+apiInstance.fullUpdateZone(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -2939,8 +2984,8 @@ Update all fields of a space. The IFC file will not be updated. The created spac
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2953,19 +2998,20 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this space.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let zonePk = "zonePk_example"; // String | 
-let data = new bimdata.ZoneSpace(); // ZoneSpace | 
-apiInstance.fullUpdateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.ZoneSpace(); // ZoneSpace | 
+apiInstance.fullUpdateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3005,8 +3051,8 @@ Retrieve all classifications of an element Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3019,17 +3065,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3067,8 +3114,8 @@ Retrieve an element of a model Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3081,17 +3128,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let uuid = "uuid_example"; // String | IFC element or element type UUID
-apiInstance.getElement(cloudPk, ifcPk, projectPk, uuid).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getElement(cloudPk, ifcPk, projectPk, uuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3129,8 +3177,8 @@ Retrieve a PropertySet of an element Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3143,18 +3191,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property set.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getElementPropertySet(cloudPk, elementUuid, id, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getElementPropertySet(cloudPk, elementUuid, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3193,8 +3242,8 @@ Retrieve all Properties of a PropertySet Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3207,18 +3256,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let propertysetPk = "propertysetPk_example"; // String | 
-apiInstance.getElementPropertySetProperties(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getElementPropertySetProperties(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3257,8 +3307,8 @@ Retrieve a Property of a PropertySet Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3271,19 +3321,20 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let propertysetPk = "propertysetPk_example"; // String | 
-apiInstance.getElementPropertySetProperty(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getElementPropertySetProperty(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3323,8 +3374,8 @@ Retrieve a Definition of a Property Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3337,7 +3388,7 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property definition.
@@ -3345,12 +3396,13 @@ let ifcPk = "ifcPk_example"; // String |
 let projectPk = "projectPk_example"; // String | 
 let propertyPk = "propertyPk_example"; // String | 
 let propertysetPk = "propertysetPk_example"; // String | 
-apiInstance.getElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3391,8 +3443,8 @@ Retrieve a Unit of a Definition Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3405,7 +3457,7 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this unit.
@@ -3414,12 +3466,13 @@ let projectPk = "projectPk_example"; // String |
 let propertyPk = "propertyPk_example"; // String | 
 let propertydefinitionPk = "propertydefinitionPk_example"; // String | 
 let propertysetPk = "propertysetPk_example"; // String | 
-apiInstance.getElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3461,8 +3514,8 @@ Retrieve all Units of a Definition Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3475,7 +3528,7 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
@@ -3483,12 +3536,13 @@ let projectPk = "projectPk_example"; // String |
 let propertyPk = "propertyPk_example"; // String | 
 let propertydefinitionPk = "propertydefinitionPk_example"; // String | 
 let propertysetPk = "propertysetPk_example"; // String | 
-apiInstance.getElementPropertySetPropertyDefinitionUnits(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getElementPropertySetPropertyDefinitionUnits(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3529,8 +3583,8 @@ Retrieve all Definitions of a PropertySet Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3543,19 +3597,20 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let propertyPk = "propertyPk_example"; // String | 
 let propertysetPk = "propertysetPk_example"; // String | 
-apiInstance.getElementPropertySetPropertyDefinitions(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getElementPropertySetPropertyDefinitions(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3595,8 +3650,8 @@ Retrieve all PropertySets of an element Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3609,17 +3664,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getElementPropertySets(cloudPk, elementUuid, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getElementPropertySets(cloudPk, elementUuid, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3657,8 +3713,8 @@ Retrieve all elements of a model. If not filtered, the json may be very large. T
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3671,7 +3727,7 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
@@ -3680,12 +3736,13 @@ let opts = {
   'classification': "classification_example", // String | Filter the returned list by classification
   'classificationNotation': "classificationNotation_example" // String | Filter the returned list by classification__notation
 };
-apiInstance.getElements(cloudPk, ifcPk, projectPk, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getElements(cloudPk, ifcPk, projectPk, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3725,8 +3782,8 @@ Retrieve all elements with the classification Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3739,17 +3796,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcClassificationPk = "ifcClassificationPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3787,8 +3845,8 @@ Retrieve one model
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3801,16 +3859,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc.
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfc(cloudPk, id, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getIfc(cloudPk, id, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3847,8 +3906,8 @@ Get svg file
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3861,16 +3920,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc.
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcBVH(cloudPk, id, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.getIfcBVH(cloudPk, id, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -3907,8 +3967,8 @@ Retrieve all classifications in a model Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3921,16 +3981,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcClassifications(cloudPk, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getIfcClassifications(cloudPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -3967,8 +4028,8 @@ Get gltf file
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -3981,16 +4042,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc.
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcGLTF(cloudPk, id, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.getIfcGLTF(cloudPk, id, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -4027,8 +4089,8 @@ Get bvh file
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4041,16 +4103,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc.
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcMap(cloudPk, id, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.getIfcMap(cloudPk, id, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -4087,8 +4150,8 @@ Retrieve all PropertySets of a model Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4101,16 +4164,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcProperties(cloudPk, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getIfcProperties(cloudPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -4147,8 +4211,8 @@ Retrieve a Property of a model Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4161,17 +4225,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcProperty(cloudPk, id, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getIfcProperty(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -4209,8 +4274,8 @@ Retrieve a PropertyDefinition of a model Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4223,17 +4288,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property definition.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -4271,8 +4337,8 @@ Retrieve all PropertyDefinitions of a model Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4285,16 +4351,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcPropertyDefinitions(cloudPk, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getIfcPropertyDefinitions(cloudPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -4331,8 +4398,8 @@ Get structure file
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4345,16 +4412,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc.
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcStructure(cloudPk, id, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.getIfcStructure(cloudPk, id, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -4391,8 +4459,8 @@ Get systems file
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4405,16 +4473,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc.
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcSystems(cloudPk, id, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.getIfcSystems(cloudPk, id, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -4451,8 +4520,8 @@ Retrieve a Unit of a model Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4465,17 +4534,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this unit.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcUnit(cloudPk, id, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getIfcUnit(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -4513,8 +4583,8 @@ Retrieve all Units of a model Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4527,16 +4597,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcUnits(cloudPk, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getIfcUnits(cloudPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -4573,8 +4644,8 @@ Retrieve all models Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4587,18 +4658,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let opts = {
   'status': "status_example" // String | Filter the returned list by status
 };
-apiInstance.getIfcs(cloudPk, projectPk, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getIfcs(cloudPk, projectPk, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -4635,8 +4707,8 @@ Retrieve a processor handler
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4649,17 +4721,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this processor handler.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getProcessorHandler(cloudPk, id, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getProcessorHandler(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -4697,8 +4770,8 @@ Get all processor handlers
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4711,16 +4784,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getProcessorHandlers(cloudPk, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getProcessorHandlers(cloudPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -4757,8 +4831,8 @@ Retrieve a PropertySet of a model Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4771,17 +4845,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property set.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getPropertySet(cloudPk, id, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getPropertySet(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -4819,8 +4894,8 @@ Retrieve all PropertySets of a model Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4833,16 +4908,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getPropertySets(cloudPk, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getPropertySets(cloudPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -4879,8 +4955,8 @@ Retrieve all elements in a optimized format
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4893,7 +4969,7 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
@@ -4902,12 +4978,13 @@ let opts = {
   'classification': "classification_example", // String | Filter the returned list by classification
   'classificationNotation': "classificationNotation_example" // String | Filter the returned list by classification__notation
 };
-apiInstance.getRawElements(cloudPk, ifcPk, projectPk, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getRawElements(cloudPk, ifcPk, projectPk, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -4947,8 +5024,8 @@ Retrieve one space of the model Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -4961,17 +5038,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this space.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getSpace(cloudPk, id, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getSpace(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -5009,8 +5087,8 @@ Retrieve all spaces of the model Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5023,16 +5101,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getSpaces(cloudPk, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getSpaces(cloudPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -5069,8 +5148,8 @@ Retrieve one zone of a model Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5083,17 +5162,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this zone.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getZone(cloudPk, id, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getZone(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -5131,8 +5211,8 @@ Retrieve one space of a zone Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5145,18 +5225,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this space.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let zonePk = "zonePk_example"; // String | 
-apiInstance.getZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -5195,8 +5276,8 @@ Retrieve all spaces of a zone Required scopes: ifc:read
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5209,17 +5290,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let zonePk = "zonePk_example"; // String | 
-apiInstance.getZoneSpaces(cloudPk, ifcPk, projectPk, zonePk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getZoneSpaces(cloudPk, ifcPk, projectPk, zonePk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -5257,8 +5339,8 @@ Retrieve parent zones of a model. Children zones we&#39;ll be in the &#39;zones&
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5271,19 +5353,20 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let opts = {
   'color': "color_example" // String | Filter the returned list by color
 };
-apiInstance.getZones(cloudPk, ifcPk, projectPk, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.getZones(cloudPk, ifcPk, projectPk, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -5321,8 +5404,8 @@ List all associations between classifications and elements Required scopes: ifc:
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5335,16 +5418,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.listClassificationElementRelations(cloudPk, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.listClassificationElementRelations(cloudPk, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -5381,8 +5465,8 @@ The classification will not be deleted Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5395,18 +5479,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this classification.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.removeClassificationOfElement(cloudPk, elementUuid, id, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.removeClassificationOfElement(cloudPk, elementUuid, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -5445,8 +5530,8 @@ Delete the relation between the element and the property set. Does not delete an
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5459,18 +5544,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property set.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.removeElementPropertySet(cloudPk, elementUuid, id, ifcPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.removeElementPropertySet(cloudPk, elementUuid, id, ifcPk, projectPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -5509,8 +5595,8 @@ Remove a property from a PropertySet
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5523,19 +5609,20 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let propertysetPk = "propertysetPk_example"; // String | 
-apiInstance.removeElementPropertySetProperty(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.removeElementPropertySetProperty(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -5575,8 +5662,8 @@ Remove a Definition from a Property
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5589,7 +5676,7 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property definition.
@@ -5597,12 +5684,13 @@ let ifcPk = "ifcPk_example"; // String |
 let projectPk = "projectPk_example"; // String | 
 let propertyPk = "propertyPk_example"; // String | 
 let propertysetPk = "propertysetPk_example"; // String | 
-apiInstance.removeElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.removeElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -5643,8 +5731,8 @@ Remove a Unit from a Definition Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5657,7 +5745,7 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let elementUuid = "elementUuid_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this unit.
@@ -5666,12 +5754,13 @@ let projectPk = "projectPk_example"; // String |
 let propertyPk = "propertyPk_example"; // String | 
 let propertydefinitionPk = "propertydefinitionPk_example"; // String | 
 let propertysetPk = "propertysetPk_example"; // String | 
-apiInstance.removeElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.removeElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -5713,8 +5802,8 @@ Remove the classification from all elements. No element nor classification will 
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5727,18 +5816,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcClassificationPk = "ifcClassificationPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let uuid = "uuid_example"; // String | IFC element or element type UUID
-apiInstance.removeElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk, uuid).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+apiInstance.removeElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk, uuid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
 });
-
 ```
 
 ### Parameters
@@ -5777,8 +5867,8 @@ Update some fields of a zone. The IFC file will not be updated. The created elem
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5791,18 +5881,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let uuid = "uuid_example"; // String | IFC element or element type UUID
-let data = new bimdata.Element(); // Element | 
-apiInstance.updateElement(cloudPk, ifcPk, projectPk, uuid, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Element(); // Element | 
+apiInstance.updateElement(cloudPk, ifcPk, projectPk, uuid, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -5841,8 +5932,8 @@ Update some fields of a model Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5855,17 +5946,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc.
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Ifc(); // Ifc | 
-apiInstance.updateIfc(cloudPk, id, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Ifc(); // Ifc | 
+apiInstance.updateIfc(cloudPk, id, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -5903,8 +5995,8 @@ Update models file (gltf, svg, structure, etc)
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5917,7 +6009,7 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc.
 let projectPk = "projectPk_example"; // String | 
@@ -5929,12 +6021,13 @@ let opts = {
   'bvhTreeFile': "/path/to/file", // File | 
   'viewer360File': "/path/to/file" // File | 
 };
-apiInstance.updateIfcFiles(cloudPk, id, projectPk, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+apiInstance.updateIfcFiles(cloudPk, id, projectPk, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -5977,8 +6070,8 @@ Update some fields of a Property Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -5991,18 +6084,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Property(); // Property | 
-apiInstance.updateIfcProperty(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Property(); // Property | 
+apiInstance.updateIfcProperty(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -6041,8 +6135,8 @@ Update some fields of many PropertyDefinitions of a model
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -6055,18 +6149,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property definition.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.PropertyDefinition(); // PropertyDefinition | 
-apiInstance.updateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.PropertyDefinition(); // PropertyDefinition | 
+apiInstance.updateIfcPropertyDefinition(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -6105,8 +6200,8 @@ Update some fields of a Unit of a model
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -6119,18 +6214,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this unit.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Unit(); // Unit | 
-apiInstance.updateIfcUnit(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Unit(); // Unit | 
+apiInstance.updateIfcUnit(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -6169,8 +6265,8 @@ Update the status of a processor handler
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -6183,18 +6279,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this processor handler.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.ProcessorHandler(); // ProcessorHandler | 
-apiInstance.updateProcessorHandler(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.ProcessorHandler(); // ProcessorHandler | 
+apiInstance.updateProcessorHandler(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -6233,8 +6330,8 @@ Update some fields of a PropertySet Required scopes: ifc:write
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -6247,18 +6344,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this property set.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.PropertySet(); // PropertySet | 
-apiInstance.updatePropertySet(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.PropertySet(); // PropertySet | 
+apiInstance.updatePropertySet(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -6297,8 +6395,8 @@ Update some fields of a space. The IFC file will not be updated. The created spa
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -6311,18 +6409,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this space.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Space(); // Space | 
-apiInstance.updateSpace(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Space(); // Space | 
+apiInstance.updateSpace(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -6361,8 +6460,8 @@ Update some fields of a zone. The IFC file will not be updated. The created zone
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -6375,18 +6474,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this zone.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Zone(); // Zone | 
-apiInstance.updateZone(cloudPk, id, ifcPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.Zone(); // Zone | 
+apiInstance.updateZone(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
@@ -6425,8 +6525,8 @@ Update some fields of a space. The IFC file will not be updated. The created spa
 ### Example
 
 ```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
+import BimDataApi from 'bim_data_api';
+let defaultClient = BimDataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -6439,19 +6539,20 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IfcApi();
+let apiInstance = new BimDataApi.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this space.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let zonePk = "zonePk_example"; // String | 
-let data = new bimdata.ZoneSpace(); // ZoneSpace | 
-apiInstance.updateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let data = new BimDataApi.ZoneSpace(); // ZoneSpace | 
+apiInstance.updateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, data, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters

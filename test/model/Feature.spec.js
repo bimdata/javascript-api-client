@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Feature();
+    instance = new BimDataApi.Feature();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('Feature', function() {
     it('should create an instance of Feature', function() {
       // uncomment below and update the code to test Feature
-      //var instane = new bimdata.Feature();
-      //expect(instance).to.be.a(bimdata.Feature);
+      //var instane = new BimDataApi.Feature();
+      //expect(instance).to.be.a(BimDataApi.Feature);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Feature();
+      //var instane = new BimDataApi.Feature();
       //expect(instance).to.be();
     });
 
     it('should have the property viewerUrl (base name: "viewer_url")', function() {
       // uncomment below and update the code to test the property viewerUrl
-      //var instane = new bimdata.Feature();
+      //var instane = new BimDataApi.Feature();
       //expect(instance).to.be();
     });
 

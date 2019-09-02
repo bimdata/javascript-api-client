@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProcessorHandler model module.
  * @module model/ProcessorHandler
- * @version 0.0.0
+ * @version v1
  */
 class ProcessorHandler {
     /**

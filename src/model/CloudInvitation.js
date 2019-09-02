@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CloudInvitation model module.
  * @module model/CloudInvitation
- * @version 0.0.0
+ * @version v1
  */
 class CloudInvitation {
     /**

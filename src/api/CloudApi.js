@@ -22,7 +22,7 @@ import UserCloudUpdate from '../model/UserCloudUpdate';
 /**
 * Cloud service.
 * @module api/CloudApi
-* @version 0.0.0
+* @version v1
 */
 export default class CloudApi {
 
@@ -38,15 +38,22 @@ export default class CloudApi {
     }
 
 
+    /**
+     * Callback function to receive the result of the cancelCloudUserInvitation operation.
+     * @callback module:api/CloudApi~cancelCloudUserInvitationCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
 
     /**
      * Cancel a pending invitation
      * Cancel a pending invitation Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this invitation.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/CloudApi~cancelCloudUserInvitationCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    cancelCloudUserInvitationWithHttpInfo(cloudPk, id) {
+    cancelCloudUserInvitation(cloudPk, id, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -75,32 +82,26 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/invitation/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Cancel a pending invitation
-     * Cancel a pending invitation Required scopes: org:manage
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this invitation.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * Callback function to receive the result of the createCloud operation.
+     * @callback module:api/CloudApi~createCloudCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Cloud} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    cancelCloudUserInvitation(cloudPk, id) {
-      return this.cancelCloudUserInvitationWithHttpInfo(cloudPk, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Create a cloud
      *  Required scopes: cloud:manage
      * @param {module:model/Cloud} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
+     * @param {module:api/CloudApi~createCloudCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Cloud}
      */
-    createCloudWithHttpInfo(data) {
+    createCloud(data, callback) {
       let postBody = data;
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
@@ -123,31 +124,26 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Create a cloud
-     *  Required scopes: cloud:manage
-     * @param {module:model/Cloud} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
+     * Callback function to receive the result of the createDemo operation.
+     * @callback module:api/CloudApi~createDemoCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    createCloud(data) {
-      return this.createCloudWithHttpInfo(data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Create a Demo project in a cloud
      * Create a demo project with a pre-populated IFC and its data Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     * @param {module:api/CloudApi~createDemoCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Project}
      */
-    createDemoWithHttpInfo(id) {
+    createDemo(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -171,31 +167,25 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{id}/create-demo', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Create a Demo project in a cloud
-     * Create a demo project with a pre-populated IFC and its data Required scopes: cloud:manage
-     * @param {Number} id A unique integer value identifying this cloud.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     * Callback function to receive the result of the deleteCloud operation.
+     * @callback module:api/CloudApi~deleteCloudCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-    createDemo(id) {
-      return this.createDemoWithHttpInfo(id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Delete a cloud
      *  Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/CloudApi~deleteCloudCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    deleteCloudWithHttpInfo(id) {
+    deleteCloud(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -219,32 +209,26 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Delete a cloud
-     *  Required scopes: cloud:manage
-     * @param {Number} id A unique integer value identifying this cloud.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * Callback function to receive the result of the deleteCloudUser operation.
+     * @callback module:api/CloudApi~deleteCloudUserCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-    deleteCloud(id) {
-      return this.deleteCloudWithHttpInfo(id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Remove a user from a cloud
      * The user will also be removed from all the projects of the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this fos user.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/CloudApi~deleteCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    deleteCloudUserWithHttpInfo(cloudPk, id) {
+    deleteCloudUser(cloudPk, id, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -273,33 +257,27 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/user/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Remove a user from a cloud
-     * The user will also be removed from all the projects of the cloud Required scopes: cloud:manage
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * Callback function to receive the result of the fullUpdateCloud operation.
+     * @callback module:api/CloudApi~fullUpdateCloudCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Cloud} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    deleteCloudUser(cloudPk, id) {
-      return this.deleteCloudUserWithHttpInfo(cloudPk, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update all fields of a cloud
      *  Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
      * @param {module:model/Cloud} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
+     * @param {module:api/CloudApi~fullUpdateCloudCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Cloud}
      */
-    fullUpdateCloudWithHttpInfo(id, data) {
+    fullUpdateCloud(id, data, callback) {
       let postBody = data;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -327,24 +305,17 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Update all fields of a cloud
-     *  Required scopes: cloud:manage
-     * @param {Number} id A unique integer value identifying this cloud.
-     * @param {module:model/Cloud} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
+     * Callback function to receive the result of the fullUpdateCloudUser operation.
+     * @callback module:api/CloudApi~fullUpdateCloudUserCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/User} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    fullUpdateCloud(id, data) {
-      return this.fullUpdateCloudWithHttpInfo(id, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update all fields of a cloud user
@@ -352,9 +323,10 @@ export default class CloudApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this fos user.
      * @param {module:model/UserCloudUpdate} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     * @param {module:api/CloudApi~fullUpdateCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/User}
      */
-    fullUpdateCloudUserWithHttpInfo(cloudPk, id, data) {
+    fullUpdateCloudUser(cloudPk, id, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -387,32 +359,25 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/user/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Update all fields of a cloud user
-     * Change the user role in the cloud Required scopes: cloud:manage
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
-     * @param {module:model/UserCloudUpdate} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     * Callback function to receive the result of the getCloud operation.
+     * @callback module:api/CloudApi~getCloudCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Cloud} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    fullUpdateCloudUser(cloudPk, id, data) {
-      return this.fullUpdateCloudUserWithHttpInfo(cloudPk, id, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve one cloud
      * @param {Number} id A unique integer value identifying this cloud.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
+     * @param {module:api/CloudApi~getCloudCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Cloud}
      */
-    getCloudWithHttpInfo(id) {
+    getCloud(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -436,30 +401,26 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve one cloud
-     * @param {Number} id A unique integer value identifying this cloud.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
+     * Callback function to receive the result of the getCloudInvitations operation.
+     * @callback module:api/CloudApi~getCloudInvitationsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/CloudInvitation>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getCloud(id) {
-      return this.getCloudWithHttpInfo(id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve all pending invitations in the cloud
      * Returns app's invitations only Required scopes: org:manage
      * @param {String} cloudPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CloudInvitation>} and HTTP response
+     * @param {module:api/CloudApi~getCloudInvitationsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CloudInvitation>}
      */
-    getCloudInvitationsWithHttpInfo(cloudPk) {
+    getCloudInvitations(cloudPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -483,31 +444,26 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/invitation', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve all pending invitations in the cloud
-     * Returns app's invitations only Required scopes: org:manage
-     * @param {String} cloudPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CloudInvitation>}
+     * Callback function to receive the result of the getCloudSize operation.
+     * @callback module:api/CloudApi~getCloudSizeCallback
+     * @param {String} error Error message, if any.
+     * @param {Number} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getCloudInvitations(cloudPk) {
-      return this.getCloudInvitationsWithHttpInfo(cloudPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Get size of all files in the cloud
      * Returns the size of the cloud in Bytes
      * @param {Number} id A unique integer value identifying this cloud.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Number} and HTTP response
+     * @param {module:api/CloudApi~getCloudSizeCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Number}
      */
-    getCloudSizeWithHttpInfo(id) {
+    getCloudSize(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -531,32 +487,27 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{id}/size', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Get size of all files in the cloud
-     * Returns the size of the cloud in Bytes
-     * @param {Number} id A unique integer value identifying this cloud.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Number}
+     * Callback function to receive the result of the getCloudUser operation.
+     * @callback module:api/CloudApi~getCloudUserCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/User} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getCloudSize(id) {
-      return this.getCloudSizeWithHttpInfo(id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve a user in a cloud
      * Only administrators can see a cloud member Required scopes: cloud:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this fos user.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     * @param {module:api/CloudApi~getCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/User}
      */
-    getCloudUserWithHttpInfo(cloudPk, id) {
+    getCloudUser(cloudPk, id, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -585,32 +536,26 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/user/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve a user in a cloud
-     * Only administrators can see a cloud member Required scopes: cloud:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     * Callback function to receive the result of the getCloudUsers operation.
+     * @callback module:api/CloudApi~getCloudUsersCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/User>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getCloudUser(cloudPk, id) {
-      return this.getCloudUserWithHttpInfo(cloudPk, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve all users in a cloud
      * Only administrators can see all cloud members Required scopes: cloud:read
      * @param {String} cloudPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/User>} and HTTP response
+     * @param {module:api/CloudApi~getCloudUsersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/User>}
      */
-    getCloudUsersWithHttpInfo(cloudPk) {
+    getCloudUsers(cloudPk, callback) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -634,30 +579,25 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/user', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve all users in a cloud
-     * Only administrators can see all cloud members Required scopes: cloud:read
-     * @param {String} cloudPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/User>}
+     * Callback function to receive the result of the getClouds operation.
+     * @callback module:api/CloudApi~getCloudsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Cloud>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getCloudUsers(cloudPk) {
-      return this.getCloudUsersWithHttpInfo(cloudPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Retrieve all clouds
      * Returns user's (or app's) clouds only
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Cloud>} and HTTP response
+     * @param {module:api/CloudApi~getCloudsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Cloud>}
      */
-    getCloudsWithHttpInfo() {
+    getClouds(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -676,31 +616,27 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Retrieve all clouds
-     * Returns user's (or app's) clouds only
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Cloud>}
+     * Callback function to receive the result of the inviteCloudUser operation.
+     * @callback module:api/CloudApi~inviteCloudUserCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CloudInvitation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    getClouds() {
-      return this.getCloudsWithHttpInfo()
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Invite a cloud administrator
      * Invite cloud administrators only. To invite in a project, see inviteProjectUser. You can't invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {module:model/CloudInvitation} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CloudInvitation} and HTTP response
+     * @param {module:api/CloudApi~inviteCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CloudInvitation}
      */
-    inviteCloudUserWithHttpInfo(cloudPk, data) {
+    inviteCloudUser(cloudPk, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -728,33 +664,27 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/invitation', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Invite a cloud administrator
-     * Invite cloud administrators only. To invite in a project, see inviteProjectUser. You can't invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object Required scopes: org:manage
-     * @param {String} cloudPk 
-     * @param {module:model/CloudInvitation} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CloudInvitation}
+     * Callback function to receive the result of the updateCloud operation.
+     * @callback module:api/CloudApi~updateCloudCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Cloud} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    inviteCloudUser(cloudPk, data) {
-      return this.inviteCloudUserWithHttpInfo(cloudPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update some fields of a cloud
      * Update some fields of a cloud Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
      * @param {module:model/Cloud} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
+     * @param {module:api/CloudApi~updateCloudCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Cloud}
      */
-    updateCloudWithHttpInfo(id, data) {
+    updateCloud(id, data, callback) {
       let postBody = data;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -782,24 +712,17 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Update some fields of a cloud
-     * Update some fields of a cloud Required scopes: cloud:manage
-     * @param {Number} id A unique integer value identifying this cloud.
-     * @param {module:model/Cloud} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
+     * Callback function to receive the result of the updateCloudUser operation.
+     * @callback module:api/CloudApi~updateCloudUserCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/User} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    updateCloud(id, data) {
-      return this.updateCloudWithHttpInfo(id, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
 
     /**
      * Update some fields of a cloud user
@@ -807,9 +730,10 @@ export default class CloudApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this fos user.
      * @param {module:model/UserCloudUpdate} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     * @param {module:api/CloudApi~updateCloudUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/User}
      */
-    updateCloudUserWithHttpInfo(cloudPk, id, data) {
+    updateCloudUser(cloudPk, id, data, callback) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -842,23 +766,8 @@ export default class CloudApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/user/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, null, callback
       );
-    }
-
-    /**
-     * Update some fields of a cloud user
-     * Change the user role in the cloud Required scopes: cloud:manage
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
-     * @param {module:model/UserCloudUpdate} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
-     */
-    updateCloudUser(cloudPk, id, data) {
-      return this.updateCloudUserWithHttpInfo(cloudPk, id, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
     }
 
 

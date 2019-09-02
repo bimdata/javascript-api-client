@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ElementClassificationRelation model module.
  * @module model/ElementClassificationRelation
- * @version 0.0.0
+ * @version v1
  */
 class ElementClassificationRelation {
     /**

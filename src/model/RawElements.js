@@ -21,7 +21,7 @@ import RawUnit from './RawUnit';
 /**
  * The RawElements model module.
  * @module model/RawElements
- * @version 0.0.0
+ * @version v1
  */
 class RawElements {
     /**

@@ -17,7 +17,7 @@ import Unit from './Unit';
 /**
  * The PropertyDefinition model module.
  * @module model/PropertyDefinition
- * @version 0.0.0
+ * @version v1
  */
 class PropertyDefinition {
     /**

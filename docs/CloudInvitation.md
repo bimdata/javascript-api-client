@@ -1,4 +1,4 @@
-# bimdata.CloudInvitation
+# BimDataApi.CloudInvitation
 
 ## Properties
 

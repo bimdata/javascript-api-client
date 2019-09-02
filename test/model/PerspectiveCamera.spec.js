@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.PerspectiveCamera();
+    instance = new BimDataApi.PerspectiveCamera();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('PerspectiveCamera', function() {
     it('should create an instance of PerspectiveCamera', function() {
       // uncomment below and update the code to test PerspectiveCamera
-      //var instane = new bimdata.PerspectiveCamera();
-      //expect(instance).to.be.a(bimdata.PerspectiveCamera);
+      //var instane = new BimDataApi.PerspectiveCamera();
+      //expect(instance).to.be.a(BimDataApi.PerspectiveCamera);
     });
 
     it('should have the property fieldOfView (base name: "field_of_view")', function() {
       // uncomment below and update the code to test the property fieldOfView
-      //var instane = new bimdata.PerspectiveCamera();
+      //var instane = new BimDataApi.PerspectiveCamera();
       //expect(instance).to.be();
     });
 
     it('should have the property cameraDirection (base name: "camera_direction")', function() {
       // uncomment below and update the code to test the property cameraDirection
-      //var instane = new bimdata.PerspectiveCamera();
+      //var instane = new BimDataApi.PerspectiveCamera();
       //expect(instance).to.be();
     });
 
     it('should have the property cameraUpVector (base name: "camera_up_vector")', function() {
       // uncomment below and update the code to test the property cameraUpVector
-      //var instane = new bimdata.PerspectiveCamera();
+      //var instane = new BimDataApi.PerspectiveCamera();
       //expect(instance).to.be();
     });
 
     it('should have the property cameraViewPoint (base name: "camera_view_point")', function() {
       // uncomment below and update the code to test the property cameraViewPoint
-      //var instane = new bimdata.PerspectiveCamera();
+      //var instane = new BimDataApi.PerspectiveCamera();
       //expect(instance).to.be();
     });
 
     it('should have the property bimdataCameraDirection (base name: "bimdata_camera_direction")', function() {
       // uncomment below and update the code to test the property bimdataCameraDirection
-      //var instane = new bimdata.PerspectiveCamera();
+      //var instane = new BimDataApi.PerspectiveCamera();
       //expect(instance).to.be();
     });
 

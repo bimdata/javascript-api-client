@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Priority model module.
  * @module model/Priority
- * @version 0.0.0
+ * @version v1
  */
 class Priority {
     /**

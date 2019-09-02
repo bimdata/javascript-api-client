@@ -1,4 +1,4 @@
-# bimdata.PropertySet
+# BimDataApi.PropertySet
 
 ## Properties
 

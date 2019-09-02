@@ -1,4 +1,4 @@
-# bimdata.ComponentsParent
+# BimDataApi.ComponentsParent
 
 ## Properties
 

@@ -18,7 +18,7 @@ import Point from './Point';
 /**
  * The ClippingPlane model module.
  * @module model/ClippingPlane
- * @version 0.0.0
+ * @version v1
  */
 class ClippingPlane {
     /**

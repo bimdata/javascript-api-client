@@ -1,4 +1,4 @@
-# bimdata.Label
+# BimDataApi.Label
 
 ## Properties
 

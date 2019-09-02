@@ -1,4 +1,4 @@
-# bimdata.ClippingPlane
+# BimDataApi.ClippingPlane
 
 ## Properties
 

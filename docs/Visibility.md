@@ -1,4 +1,4 @@
-# bimdata.Visibility
+# BimDataApi.Visibility
 
 ## Properties
 

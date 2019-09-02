@@ -1,4 +1,4 @@
-# bimdata.ProcessorHandler
+# BimDataApi.ProcessorHandler
 
 ## Properties
 

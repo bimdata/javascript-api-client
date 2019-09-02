@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Extensions();
+    instance = new BimDataApi.Extensions();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('Extensions', function() {
     it('should create an instance of Extensions', function() {
       // uncomment below and update the code to test Extensions
-      //var instane = new bimdata.Extensions();
-      //expect(instance).to.be.a(bimdata.Extensions);
+      //var instane = new BimDataApi.Extensions();
+      //expect(instance).to.be.a(BimDataApi.Extensions);
     });
 
     it('should have the property topicType (base name: "topic_type")', function() {
       // uncomment below and update the code to test the property topicType
-      //var instane = new bimdata.Extensions();
+      //var instane = new BimDataApi.Extensions();
       //expect(instance).to.be();
     });
 
     it('should have the property topicStatus (base name: "topic_status")', function() {
       // uncomment below and update the code to test the property topicStatus
-      //var instane = new bimdata.Extensions();
+      //var instane = new BimDataApi.Extensions();
       //expect(instance).to.be();
     });
 
     it('should have the property topicLabel (base name: "topic_label")', function() {
       // uncomment below and update the code to test the property topicLabel
-      //var instane = new bimdata.Extensions();
+      //var instane = new BimDataApi.Extensions();
       //expect(instance).to.be();
     });
 
     it('should have the property priority (base name: "priority")', function() {
       // uncomment below and update the code to test the property priority
-      //var instane = new bimdata.Extensions();
+      //var instane = new BimDataApi.Extensions();
       //expect(instance).to.be();
     });
 
     it('should have the property userIdType (base name: "user_id_type")', function() {
       // uncomment below and update the code to test the property userIdType
-      //var instane = new bimdata.Extensions();
+      //var instane = new BimDataApi.Extensions();
       //expect(instance).to.be();
     });
 
     it('should have the property stage (base name: "stage")', function() {
       // uncomment below and update the code to test the property stage
-      //var instane = new bimdata.Extensions();
+      //var instane = new BimDataApi.Extensions();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# bimdata.Topic
+# BimDataApi.Topic
 
 ## Properties
 

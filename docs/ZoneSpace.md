@@ -1,4 +1,4 @@
-# bimdata.ZoneSpace
+# BimDataApi.ZoneSpace
 
 ## Properties
 

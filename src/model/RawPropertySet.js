@@ -17,7 +17,7 @@ import RawProperty from './RawProperty';
 /**
  * The RawPropertySet model module.
  * @module model/RawPropertySet
- * @version 0.0.0
+ * @version v1
  */
 class RawPropertySet {
     /**

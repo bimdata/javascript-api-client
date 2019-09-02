@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.ElementPropertySetRelation();
+    instance = new BimDataApi.ElementPropertySetRelation();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ElementPropertySetRelation', function() {
     it('should create an instance of ElementPropertySetRelation', function() {
       // uncomment below and update the code to test ElementPropertySetRelation
-      //var instane = new bimdata.ElementPropertySetRelation();
-      //expect(instance).to.be.a(bimdata.ElementPropertySetRelation);
+      //var instane = new BimDataApi.ElementPropertySetRelation();
+      //expect(instance).to.be.a(BimDataApi.ElementPropertySetRelation);
     });
 
     it('should have the property elementUuid (base name: "element_uuid")', function() {
       // uncomment below and update the code to test the property elementUuid
-      //var instane = new bimdata.ElementPropertySetRelation();
+      //var instane = new BimDataApi.ElementPropertySetRelation();
       //expect(instance).to.be();
     });
 
     it('should have the property propertySetId (base name: "property_set_id")', function() {
       // uncomment below and update the code to test the property propertySetId
-      //var instane = new bimdata.ElementPropertySetRelation();
+      //var instane = new BimDataApi.ElementPropertySetRelation();
       //expect(instance).to.be();
     });
 

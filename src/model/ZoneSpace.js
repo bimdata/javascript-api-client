@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ZoneSpace model module.
  * @module model/ZoneSpace
- * @version 0.0.0
+ * @version v1
  */
 class ZoneSpace {
     /**

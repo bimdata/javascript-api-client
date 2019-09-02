@@ -1,15 +1,15 @@
-# bimdata.IfcCheckerCheckplan
+# BimDataApi.IfcCheckerCheckplan
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**updatedAt** | **Date** |  | [optional] 
-**_protected** | **Boolean** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **name** | **String** |  | 
 **description** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
+**_protected** | **Boolean** |  | [optional] 
 **project** | **Number** |  | 
-**id** | **Number** |  | [optional] 
 
 

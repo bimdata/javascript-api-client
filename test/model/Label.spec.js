@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.bimdata);
+    factory(root.expect, root.BimDataApi);
   }
-}(this, function(expect, bimdata) {
+}(this, function(expect, BimDataApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Label();
+    instance = new BimDataApi.Label();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('Label', function() {
     it('should create an instance of Label', function() {
       // uncomment below and update the code to test Label
-      //var instane = new bimdata.Label();
-      //expect(instance).to.be.a(bimdata.Label);
+      //var instane = new BimDataApi.Label();
+      //expect(instance).to.be.a(BimDataApi.Label);
     });
 
     it('should have the property label (base name: "label")', function() {
       // uncomment below and update the code to test the property label
-      //var instane = new bimdata.Label();
+      //var instane = new BimDataApi.Label();
       //expect(instance).to.be();
     });
 

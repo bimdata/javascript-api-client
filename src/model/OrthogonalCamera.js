@@ -18,7 +18,7 @@ import Point from './Point';
 /**
  * The OrthogonalCamera model module.
  * @module model/OrthogonalCamera
- * @version 0.0.0
+ * @version v1
  */
 class OrthogonalCamera {
     /**

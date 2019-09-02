@@ -1,4 +1,4 @@
-# bimdata.RuleComponent
+# BimDataApi.RuleComponent
 
 ## Properties
 

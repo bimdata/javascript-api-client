@@ -1,4 +1,4 @@
-# bimdata.Direction
+# BimDataApi.Direction
 
 ## Properties
 

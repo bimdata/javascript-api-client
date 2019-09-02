@@ -17,7 +17,7 @@ import Component from './Component';
 /**
  * The Coloring model module.
  * @module model/Coloring
- * @version 0.0.0
+ * @version v1
  */
 class Coloring {
     /**

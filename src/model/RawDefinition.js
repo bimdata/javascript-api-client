@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RawDefinition model module.
  * @module model/RawDefinition
- * @version 0.0.0
+ * @version v1
  */
 class RawDefinition {
     /**
