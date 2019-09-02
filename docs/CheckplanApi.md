@@ -50,7 +50,7 @@ Method | HTTP request | Description
 
 Create a checker to a model
 
-Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: check:write, ifc:read
+A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
 
 ### Example
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 Create a CheckerResult
 
-Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: check:write
+TCreate a CheckerResult Required scopes: check:write
 
 ### Example
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 Create a Checkplan
 
-Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: check:write
+TCreate a Checkplan Required scopes: check:write
 
 ### Example
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 Create a Rule
 
-Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: check:write
+TCreate a Rule Required scopes: check:write
 
 ### Example
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 Create a RuleComponent
 
-Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: check:write
+TCreate a RuleComponent Required scopes: check:write
 
 ### Example
 
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 Create a Ruleset
 
-Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: check:write
+TCreate a Ruleset Required scopes: check:write
 
 ### Example
 
@@ -1322,7 +1322,7 @@ Name | Type | Description  | Notes
 
 Retrieve all CheckerResults
 
-Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+Retrieve all CheckerResults Required scopes: check:read
 
 ### Example
 
@@ -1384,7 +1384,7 @@ Name | Type | Description  | Notes
 
 Retrieve all checkers of a model
 
-Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read, ifc:read
+A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
 
 ### Example
 
@@ -1504,7 +1504,7 @@ Name | Type | Description  | Notes
 
 Retrieve all Checkplans
 
-Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+Retrieve all Checkplans Required scopes: check:read
 
 ### Example
 
@@ -1692,7 +1692,7 @@ Name | Type | Description  | Notes
 
 Retrieve all RuleComponents
 
-Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+Retrieve all RuleComponents Required scopes: check:read
 
 ### Example
 
@@ -1756,7 +1756,7 @@ Name | Type | Description  | Notes
 
 Retrieve all Rules
 
-Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+Retrieve all Rules Required scopes: check:read
 
 ### Example
 
@@ -1880,7 +1880,7 @@ Name | Type | Description  | Notes
 
 Retrieve all Rulesets
 
-Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+Retrieve all Rulesets Required scopes: check:read
 
 ### Example
 

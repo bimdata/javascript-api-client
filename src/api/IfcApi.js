@@ -913,7 +913,7 @@ export default class IfcApi {
 
     /**
      * Create one or many classifications to an element
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -970,7 +970,7 @@ export default class IfcApi {
 
     /**
      * Create one or many classifications to an element
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -988,7 +988,7 @@ export default class IfcApi {
 
     /**
      * Create an element in the model
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1039,7 +1039,7 @@ export default class IfcApi {
 
     /**
      * Create an element in the model
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1056,7 +1056,7 @@ export default class IfcApi {
 
     /**
      * Create a PropertySets to an element
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * Create a PropertySets that will be automatically linked to the element Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1113,7 +1113,7 @@ export default class IfcApi {
 
     /**
      * Create a PropertySets to an element
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * Create a PropertySets that will be automatically linked to the element Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1131,7 +1131,7 @@ export default class IfcApi {
 
     /**
      * Create a property to a PropertySet
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1194,7 +1194,7 @@ export default class IfcApi {
 
     /**
      * Create a property to a PropertySet
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1213,7 +1213,7 @@ export default class IfcApi {
 
     /**
      * Create a Definition to a Property
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1282,7 +1282,7 @@ export default class IfcApi {
 
     /**
      * Create a Definition to a Property
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1302,7 +1302,7 @@ export default class IfcApi {
 
     /**
      * Create a Unit to a Definition
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * Create a Unit to a Definition Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1377,7 +1377,7 @@ export default class IfcApi {
 
     /**
      * Create a Unit to a Definition
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * Create a Unit to a Definition Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1398,7 +1398,7 @@ export default class IfcApi {
 
     /**
      * Create a PropertyDefinition on the model
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1449,7 +1449,7 @@ export default class IfcApi {
 
     /**
      * Create a PropertyDefinition on the model
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1466,7 +1466,7 @@ export default class IfcApi {
 
     /**
      * Create a Unit on a model
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1517,7 +1517,7 @@ export default class IfcApi {
 
     /**
      * Create a Unit on a model
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     *  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1534,7 +1534,7 @@ export default class IfcApi {
 
     /**
      * Create a PropertySet
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * Create a PropertySet Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1585,7 +1585,7 @@ export default class IfcApi {
 
     /**
      * Create a PropertySet
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * Create a PropertySet Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1738,7 +1738,7 @@ export default class IfcApi {
 
     /**
      * Create a space in the model
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1789,7 +1789,7 @@ export default class IfcApi {
 
     /**
      * Create a space in the model
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1806,7 +1806,7 @@ export default class IfcApi {
 
     /**
      * Create a zone in the model
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1857,7 +1857,7 @@ export default class IfcApi {
 
     /**
      * Create a zone in the model
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1874,7 +1874,7 @@ export default class IfcApi {
 
     /**
      * Create a space in a zone
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1931,7 +1931,7 @@ export default class IfcApi {
 
     /**
      * Create a space in a zone
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: ifc:write
+     * The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -3313,7 +3313,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all classifications of an element
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all classifications of an element Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -3365,7 +3365,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all classifications of an element
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all classifications of an element Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -3527,7 +3527,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Properties of a PropertySet
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all Properties of a PropertySet Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -3585,7 +3585,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Properties of a PropertySet
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all Properties of a PropertySet Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -3873,7 +3873,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Units of a Definition
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all Units of a Definition Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -3943,7 +3943,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Units of a Definition
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all Units of a Definition Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -3963,7 +3963,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Definitions of a PropertySet
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all Definitions of a PropertySet Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4027,7 +4027,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Definitions of a PropertySet
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all Definitions of a PropertySet Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4046,7 +4046,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all PropertySets of an element
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all PropertySets of an element Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4098,7 +4098,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all PropertySets of an element
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all PropertySets of an element Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -4115,7 +4115,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all elements of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all elements of a model. If not filtered, the json may be very large. To efficently retrieve all elements and their data, see getRawElements Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4169,7 +4169,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all elements of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all elements of a model. If not filtered, the json may be very large. To efficently retrieve all elements and their data, see getRawElements Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4189,7 +4189,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all elements with the classification
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all elements with the classification Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
@@ -4241,7 +4241,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all elements with the classification
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all elements with the classification Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
@@ -4382,7 +4382,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all classifications in a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all classifications in a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4428,7 +4428,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all classifications in a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all classifications in a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4568,7 +4568,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Properties of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all PropertySets of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4614,7 +4614,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Properties of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all PropertySets of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4768,7 +4768,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all PropertyDefinitions of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -4814,7 +4814,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all PropertyDefinitions of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5023,7 +5023,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Units of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all Units of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5069,7 +5069,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all Units of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all Units of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5085,7 +5085,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all models
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all models Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
@@ -5129,7 +5129,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all models
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all models Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
@@ -5215,7 +5215,7 @@ export default class IfcApi {
 
     /**
      * Get all processor handlers
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     *  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5261,7 +5261,7 @@ export default class IfcApi {
 
     /**
      * Get all processor handlers
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     *  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5346,7 +5346,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all PropertySets of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all PropertySets of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5392,7 +5392,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all PropertySets of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all PropertySets of a model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5551,7 +5551,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all spaces of the model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all spaces of the model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5597,7 +5597,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all spaces of the model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all spaces of the model Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5758,7 +5758,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all spaces of a zone
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all spaces of a zone Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5810,7 +5810,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all spaces of a zone
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve all spaces of a zone Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5827,7 +5827,7 @@ export default class IfcApi {
 
     /**
      * Retrieve zones of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve parent zones of a model. Children zones we'll be in the 'zones' field Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5877,7 +5877,7 @@ export default class IfcApi {
 
     /**
      * Retrieve zones of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: ifc:read
+     * Retrieve parent zones of a model. Children zones we'll be in the 'zones' field Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 

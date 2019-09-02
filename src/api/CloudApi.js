@@ -606,7 +606,7 @@ export default class CloudApi {
 
     /**
      * Retrieve all users in a cloud
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: cloud:read
+     * Only administrators can see all cloud members Required scopes: cloud:read
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/User>} and HTTP response
      */
@@ -640,7 +640,7 @@ export default class CloudApi {
 
     /**
      * Retrieve all users in a cloud
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: cloud:read
+     * Only administrators can see all cloud members Required scopes: cloud:read
      * @param {String} cloudPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/User>}
      */

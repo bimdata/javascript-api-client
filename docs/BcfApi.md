@@ -4,52 +4,52 @@ All URIs are relative to *https://api-beta.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createComment**](BcfApi.md#createComment) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | Create a comment
+[**createComment**](BcfApi.md#createComment) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments | Create a comment
 [**createFullTopic**](BcfApi.md#createFullTopic) | **POST** /bcf/2.1/projects/{projects_pk}/full-topic | Create a Topic with viewpoints and comments
 [**createTopic**](BcfApi.md#createTopic) | **POST** /bcf/2.1/projects/{projects_pk}/topics | Create a topic
-[**createViewpoint**](BcfApi.md#createViewpoint) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints | Create a Viewpoint
-[**deleteComment**](BcfApi.md#deleteComment) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Delete a comment
+[**createViewpoint**](BcfApi.md#createViewpoint) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints | Create a Viewpoint
+[**deleteComment**](BcfApi.md#deleteComment) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Delete a comment
 [**deleteTopic**](BcfApi.md#deleteTopic) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Delete a topic
-[**deleteViewpoint**](BcfApi.md#deleteViewpoint) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Delete a Viewpoint
+[**deleteViewpoint**](BcfApi.md#deleteViewpoint) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Delete a Viewpoint
 [**downloadBcfExport**](BcfApi.md#downloadBcfExport) | **GET** /bcf/2.1/projects/{id}/export | Export project&#39;s topics in bcf-xml format
 [**fullUpdateBcfProject**](BcfApi.md#fullUpdateBcfProject) | **PUT** /bcf/2.1/projects/{id} | Update all fields of a BCF project
-[**fullUpdateComment**](BcfApi.md#fullUpdateComment) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Update all fields of a comment
+[**fullUpdateComment**](BcfApi.md#fullUpdateComment) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Update all fields of a comment
 [**fullUpdateFullTopic**](BcfApi.md#fullUpdateFullTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update all fields of a topic
 [**fullUpdateTopic**](BcfApi.md#fullUpdateTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update all fields of a topic
-[**fullUpdateViewpoint**](BcfApi.md#fullUpdateViewpoint) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Update all fields of a Viewpoint
+[**fullUpdateViewpoint**](BcfApi.md#fullUpdateViewpoint) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Update all fields of a Viewpoint
 [**getBcfProject**](BcfApi.md#getBcfProject) | **GET** /bcf/2.1/projects/{id} | Retrieve a BCF project
 [**getBcfProjects**](BcfApi.md#getBcfProjects) | **GET** /bcf/2.1/projects | Retrieve all BCF projects
-[**getColorings**](BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid}/coloring | Retrieve all colorings of a viewpoint
-[**getComment**](BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Retrieve a comment
-[**getComments**](BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments | Retrieve all comments
+[**getColorings**](BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/coloring | Retrieve all colorings of a viewpoint
+[**getComment**](BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Retrieve a comment
+[**getComments**](BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments | Retrieve all comments
 [**getExtensions**](BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{projects_pk}/extensions | Retrieve project extensions
 [**getFullTopic**](BcfApi.md#getFullTopic) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Retrieve a full topic
 [**getFullTopics**](BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | Retrieve all full topics
-[**getSelections**](BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid}/selection | Retrieve all selections of a viewpoint
-[**getSnapshot**](BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid}/snapshot | Retrieve the viewpoint&#39; snapshot
+[**getSelections**](BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/selection | Retrieve all selections of a viewpoint
+[**getSnapshot**](BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/snapshot | Retrieve the viewpoint&#39; snapshot
 [**getTopic**](BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Retrieve a topic
-[**getTopicViewpoints**](BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/topic-viewpoints | Retrieve all viewpoints attached to the topic
+[**getTopicViewpoints**](BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/topic-viewpoints | Retrieve all viewpoints attached to the topic
 [**getTopics**](BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | Retrieve all topics
 [**getUser**](BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | Get current user info
-[**getViewpoint**](BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Retrieve a Viewpoint
-[**getViewpoints**](BcfApi.md#getViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints | Retrieve all Viewpoints of a topic
-[**getVisibilities**](BcfApi.md#getVisibilities) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid}/visibility | Retrieve all visibilities of a viewpoint
+[**getViewpoint**](BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Retrieve a Viewpoint
+[**getViewpoints**](BcfApi.md#getViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints | Retrieve all Viewpoints of a topic
+[**getVisibilities**](BcfApi.md#getVisibilities) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/visibility | Retrieve all visibilities of a viewpoint
 [**updateBcfProject**](BcfApi.md#updateBcfProject) | **PATCH** /bcf/2.1/projects/{id} | Update some fields of a BCF project
-[**updateComment**](BcfApi.md#updateComment) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/comments/{guid} | Update some fields of a comment
+[**updateComment**](BcfApi.md#updateComment) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Update some fields of a comment
 [**updateExtensions**](BcfApi.md#updateExtensions) | **PATCH** /bcf/2.1/projects/{projects_pk}/extensions | Update project extensions
 [**updateFullTopic**](BcfApi.md#updateFullTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update some fields of a topic
 [**updateTopic**](BcfApi.md#updateTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update some fields of a topic
-[**updateViewpoint**](BcfApi.md#updateViewpoint) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_pk}/viewpoints/{guid} | Update some fields of a Viewpoint
+[**updateViewpoint**](BcfApi.md#updateViewpoint) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Update some fields of a Viewpoint
 
 
 
 ## createComment
 
-> Comment createComment(projectsPk, topicsPk, data)
+> Comment createComment(projectsPk, topicsGuid, data)
 
 Create a comment
 
-Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: bcf:write
+Create a comment Required scopes: bcf:write
 
 ### Example
 
@@ -70,9 +70,9 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
+let topicsGuid = "topicsGuid_example"; // String | 
 let data = new bimdata.Comment(); // Comment | 
-apiInstance.createComment(projectsPk, topicsPk, data).then((data) => {
+apiInstance.createComment(projectsPk, topicsGuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -86,7 +86,7 @@ apiInstance.createComment(projectsPk, topicsPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
  **data** | [**Comment**](Comment.md)|  | 
 
 ### Return type
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 Create a Topic with viewpoints and comments
 
-Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: bcf:write
+This is not a standard route. You can send a topic, viewpoints and comments in a single call Required scopes: bcf:write
 
 ### Example
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 Create a topic
 
-Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: bcf:write
+Create a topic Required scopes: bcf:write
 
 ### Example
 
@@ -221,11 +221,11 @@ Name | Type | Description  | Notes
 
 ## createViewpoint
 
-> Viewpoint createViewpoint(projectsPk, topicsPk, data)
+> Viewpoint createViewpoint(projectsPk, topicsGuid, data)
 
 Create a Viewpoint
 
-Verify parent existence before creating to avoid applications of creating objects in a project they don&#39;t own Required scopes: bcf:write
+Create a Viewpoint Required scopes: bcf:write
 
 ### Example
 
@@ -246,9 +246,9 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
+let topicsGuid = "topicsGuid_example"; // String | 
 let data = new bimdata.Viewpoint(); // Viewpoint | 
-apiInstance.createViewpoint(projectsPk, topicsPk, data).then((data) => {
+apiInstance.createViewpoint(projectsPk, topicsGuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -262,7 +262,7 @@ apiInstance.createViewpoint(projectsPk, topicsPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
  **data** | [**Viewpoint**](Viewpoint.md)|  | 
 
 ### Return type
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 ## deleteComment
 
-> deleteComment(guid, projectsPk, topicsPk)
+> deleteComment(guid, projectsPk, topicsGuid)
 
 Delete a comment
 
@@ -305,10 +305,10 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this comment.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
-apiInstance.deleteComment(guid, projectsPk, topicsPk).then(() => {
+let topicsGuid = "topicsGuid_example"; // String | 
+apiInstance.deleteComment(guid, projectsPk, topicsGuid).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -321,9 +321,9 @@ apiInstance.deleteComment(guid, projectsPk, topicsPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this comment. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
 
 ### Return type
 
@@ -365,7 +365,7 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this topic.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 apiInstance.deleteTopic(guid, projectsPk).then(() => {
   console.log('API called successfully.');
@@ -380,7 +380,7 @@ apiInstance.deleteTopic(guid, projectsPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this topic. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
 
 ### Return type
@@ -399,7 +399,7 @@ null (empty response body)
 
 ## deleteViewpoint
 
-> deleteViewpoint(guid, projectsPk, topicsPk)
+> deleteViewpoint(guid, projectsPk, topicsGuid)
 
 Delete a Viewpoint
 
@@ -423,10 +423,10 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this viewpoint.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
-apiInstance.deleteViewpoint(guid, projectsPk, topicsPk).then(() => {
+let topicsGuid = "topicsGuid_example"; // String | 
+apiInstance.deleteViewpoint(guid, projectsPk, topicsGuid).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -439,9 +439,9 @@ apiInstance.deleteViewpoint(guid, projectsPk, topicsPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this viewpoint. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
 
 ### Return type
 
@@ -579,7 +579,7 @@ Name | Type | Description  | Notes
 
 ## fullUpdateComment
 
-> Comment fullUpdateComment(guid, projectsPk, topicsPk, data)
+> Comment fullUpdateComment(guid, projectsPk, topicsGuid, data)
 
 Update all fields of a comment
 
@@ -603,11 +603,11 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this comment.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
+let topicsGuid = "topicsGuid_example"; // String | 
 let data = new bimdata.Comment(); // Comment | 
-apiInstance.fullUpdateComment(guid, projectsPk, topicsPk, data).then((data) => {
+apiInstance.fullUpdateComment(guid, projectsPk, topicsGuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -620,9 +620,9 @@ apiInstance.fullUpdateComment(guid, projectsPk, topicsPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this comment. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
  **data** | [**Comment**](Comment.md)|  | 
 
 ### Return type
@@ -665,7 +665,7 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this topic.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let data = new bimdata.FullTopic(); // FullTopic | 
 apiInstance.fullUpdateFullTopic(guid, projectsPk, data).then((data) => {
@@ -681,7 +681,7 @@ apiInstance.fullUpdateFullTopic(guid, projectsPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this topic. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
  **data** | [**FullTopic**](FullTopic.md)|  | 
 
@@ -725,7 +725,7 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this topic.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let data = new bimdata.Topic(); // Topic | 
 apiInstance.fullUpdateTopic(guid, projectsPk, data).then((data) => {
@@ -741,7 +741,7 @@ apiInstance.fullUpdateTopic(guid, projectsPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this topic. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
  **data** | [**Topic**](Topic.md)|  | 
 
@@ -761,7 +761,7 @@ Name | Type | Description  | Notes
 
 ## fullUpdateViewpoint
 
-> Viewpoint fullUpdateViewpoint(guid, projectsPk, topicsPk, data)
+> Viewpoint fullUpdateViewpoint(guid, projectsPk, topicsGuid, data)
 
 Update all fields of a Viewpoint
 
@@ -785,11 +785,11 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this viewpoint.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
+let topicsGuid = "topicsGuid_example"; // String | 
 let data = new bimdata.Viewpoint(); // Viewpoint | 
-apiInstance.fullUpdateViewpoint(guid, projectsPk, topicsPk, data).then((data) => {
+apiInstance.fullUpdateViewpoint(guid, projectsPk, topicsGuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -802,9 +802,9 @@ apiInstance.fullUpdateViewpoint(guid, projectsPk, topicsPk, data).then((data) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this viewpoint. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
  **data** | [**Viewpoint**](Viewpoint.md)|  | 
 
 ### Return type
@@ -931,7 +931,7 @@ This endpoint does not need any parameter.
 
 ## getColorings
 
-> [Coloring] getColorings(guid, projectsPk, topicsPk)
+> [Coloring] getColorings(guid, projectsPk, topicsGuid)
 
 Retrieve all colorings of a viewpoint
 
@@ -955,10 +955,10 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this viewpoint.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
-apiInstance.getColorings(guid, projectsPk, topicsPk).then((data) => {
+let topicsGuid = "topicsGuid_example"; // String | 
+apiInstance.getColorings(guid, projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -971,9 +971,9 @@ apiInstance.getColorings(guid, projectsPk, topicsPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this viewpoint. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
 
 ### Return type
 
@@ -991,7 +991,7 @@ Name | Type | Description  | Notes
 
 ## getComment
 
-> Comment getComment(guid, projectsPk, topicsPk)
+> Comment getComment(guid, projectsPk, topicsGuid)
 
 Retrieve a comment
 
@@ -1015,10 +1015,10 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this comment.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
-apiInstance.getComment(guid, projectsPk, topicsPk).then((data) => {
+let topicsGuid = "topicsGuid_example"; // String | 
+apiInstance.getComment(guid, projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1031,9 +1031,9 @@ apiInstance.getComment(guid, projectsPk, topicsPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this comment. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
 
 ### Return type
 
@@ -1051,11 +1051,11 @@ Name | Type | Description  | Notes
 
 ## getComments
 
-> [Comment] getComments(projectsPk, topicsPk)
+> [Comment] getComments(projectsPk, topicsGuid)
 
 Retrieve all comments
 
-Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
+Retrieve all comments Required scopes: bcf:read
 
 ### Example
 
@@ -1076,8 +1076,8 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
-apiInstance.getComments(projectsPk, topicsPk).then((data) => {
+let topicsGuid = "topicsGuid_example"; // String | 
+apiInstance.getComments(projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1091,7 +1091,7 @@ apiInstance.getComments(projectsPk, topicsPk).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
 
 ### Return type
 
@@ -1189,7 +1189,7 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this topic.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 apiInstance.getFullTopic(guid, projectsPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1204,7 +1204,7 @@ apiInstance.getFullTopic(guid, projectsPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this topic. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
 
 ### Return type
@@ -1227,7 +1227,7 @@ Name | Type | Description  | Notes
 
 Retrieve all full topics
 
-Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
+This is not a standard route. It responds with all topics, their viewpoints and their comments Required scopes: bcf:read
 
 ### Example
 
@@ -1285,7 +1285,7 @@ Name | Type | Description  | Notes
 
 ## getSelections
 
-> [Component] getSelections(guid, projectsPk, topicsPk)
+> [Component] getSelections(guid, projectsPk, topicsGuid)
 
 Retrieve all selections of a viewpoint
 
@@ -1309,10 +1309,10 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this viewpoint.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
-apiInstance.getSelections(guid, projectsPk, topicsPk).then((data) => {
+let topicsGuid = "topicsGuid_example"; // String | 
+apiInstance.getSelections(guid, projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1325,9 +1325,9 @@ apiInstance.getSelections(guid, projectsPk, topicsPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this viewpoint. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
 
 ### Return type
 
@@ -1345,7 +1345,7 @@ Name | Type | Description  | Notes
 
 ## getSnapshot
 
-> File getSnapshot(guid, projectsPk, topicsPk)
+> File getSnapshot(guid, projectsPk, topicsGuid)
 
 Retrieve the viewpoint&#39; snapshot
 
@@ -1369,10 +1369,10 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this viewpoint.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
-apiInstance.getSnapshot(guid, projectsPk, topicsPk).then((data) => {
+let topicsGuid = "topicsGuid_example"; // String | 
+apiInstance.getSnapshot(guid, projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1385,9 +1385,9 @@ apiInstance.getSnapshot(guid, projectsPk, topicsPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this viewpoint. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
 
 ### Return type
 
@@ -1429,7 +1429,7 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this topic.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 apiInstance.getTopic(guid, projectsPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1444,7 +1444,7 @@ apiInstance.getTopic(guid, projectsPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this topic. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
 
 ### Return type
@@ -1463,11 +1463,11 @@ Name | Type | Description  | Notes
 
 ## getTopicViewpoints
 
-> [Viewpoint] getTopicViewpoints(projectsPk, topicsPk)
+> [Viewpoint] getTopicViewpoints(projectsPk, topicsGuid)
 
 Retrieve all viewpoints attached to the topic
 
-Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
+This is not a standard route. It returns all viewpoints of the topic that are not attached to a comment. Required scopes: bcf:read
 
 ### Example
 
@@ -1488,8 +1488,8 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
-apiInstance.getTopicViewpoints(projectsPk, topicsPk).then((data) => {
+let topicsGuid = "topicsGuid_example"; // String | 
+apiInstance.getTopicViewpoints(projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1503,7 +1503,7 @@ apiInstance.getTopicViewpoints(projectsPk, topicsPk).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
 
 ### Return type
 
@@ -1525,7 +1525,7 @@ Name | Type | Description  | Notes
 
 Retrieve all topics
 
-Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
+Retrieve all topics Required scopes: bcf:read
 
 ### Example
 
@@ -1635,7 +1635,7 @@ This endpoint does not need any parameter.
 
 ## getViewpoint
 
-> Viewpoint getViewpoint(guid, projectsPk, topicsPk)
+> Viewpoint getViewpoint(guid, projectsPk, topicsGuid)
 
 Retrieve a Viewpoint
 
@@ -1659,10 +1659,10 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this viewpoint.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
-apiInstance.getViewpoint(guid, projectsPk, topicsPk).then((data) => {
+let topicsGuid = "topicsGuid_example"; // String | 
+apiInstance.getViewpoint(guid, projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1675,9 +1675,9 @@ apiInstance.getViewpoint(guid, projectsPk, topicsPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this viewpoint. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
 
 ### Return type
 
@@ -1695,11 +1695,11 @@ Name | Type | Description  | Notes
 
 ## getViewpoints
 
-> [Viewpoint] getViewpoints(projectsPk, topicsPk)
+> [Viewpoint] getViewpoints(projectsPk, topicsGuid)
 
 Retrieve all Viewpoints of a topic
 
-Verify parent existence before listing to send a 404 instead of an empty list Required scopes: bcf:read
+Retrieve all Viewpoints of a topic Required scopes: bcf:read
 
 ### Example
 
@@ -1720,8 +1720,8 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
-apiInstance.getViewpoints(projectsPk, topicsPk).then((data) => {
+let topicsGuid = "topicsGuid_example"; // String | 
+apiInstance.getViewpoints(projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1735,7 +1735,7 @@ apiInstance.getViewpoints(projectsPk, topicsPk).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
 
 ### Return type
 
@@ -1753,7 +1753,7 @@ Name | Type | Description  | Notes
 
 ## getVisibilities
 
-> Visibility getVisibilities(guid, projectsPk, topicsPk)
+> Visibility getVisibilities(guid, projectsPk, topicsGuid)
 
 Retrieve all visibilities of a viewpoint
 
@@ -1777,10 +1777,10 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this viewpoint.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
-apiInstance.getVisibilities(guid, projectsPk, topicsPk).then((data) => {
+let topicsGuid = "topicsGuid_example"; // String | 
+apiInstance.getVisibilities(guid, projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1793,9 +1793,9 @@ apiInstance.getVisibilities(guid, projectsPk, topicsPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this viewpoint. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
 
 ### Return type
 
@@ -1871,7 +1871,7 @@ Name | Type | Description  | Notes
 
 ## updateComment
 
-> Comment updateComment(guid, projectsPk, topicsPk, data)
+> Comment updateComment(guid, projectsPk, topicsGuid, data)
 
 Update some fields of a comment
 
@@ -1895,11 +1895,11 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this comment.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
+let topicsGuid = "topicsGuid_example"; // String | 
 let data = new bimdata.Comment(); // Comment | 
-apiInstance.updateComment(guid, projectsPk, topicsPk, data).then((data) => {
+apiInstance.updateComment(guid, projectsPk, topicsGuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1912,9 +1912,9 @@ apiInstance.updateComment(guid, projectsPk, topicsPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this comment. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
  **data** | [**Comment**](Comment.md)|  | 
 
 ### Return type
@@ -2015,7 +2015,7 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this topic.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let data = new bimdata.FullTopic(); // FullTopic | 
 apiInstance.updateFullTopic(guid, projectsPk, data).then((data) => {
@@ -2031,7 +2031,7 @@ apiInstance.updateFullTopic(guid, projectsPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this topic. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
  **data** | [**FullTopic**](FullTopic.md)|  | 
 
@@ -2075,7 +2075,7 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this topic.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let data = new bimdata.Topic(); // Topic | 
 apiInstance.updateTopic(guid, projectsPk, data).then((data) => {
@@ -2091,7 +2091,7 @@ apiInstance.updateTopic(guid, projectsPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this topic. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
  **data** | [**Topic**](Topic.md)|  | 
 
@@ -2111,7 +2111,7 @@ Name | Type | Description  | Notes
 
 ## updateViewpoint
 
-> Viewpoint updateViewpoint(guid, projectsPk, topicsPk, data)
+> Viewpoint updateViewpoint(guid, projectsPk, topicsGuid, data)
 
 Update some fields of a Viewpoint
 
@@ -2135,11 +2135,11 @@ let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let guid = null; // String | A UUID string identifying this viewpoint.
+let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-let topicsPk = "topicsPk_example"; // String | 
+let topicsGuid = "topicsGuid_example"; // String | 
 let data = new bimdata.Viewpoint(); // Viewpoint | 
-apiInstance.updateViewpoint(guid, projectsPk, topicsPk, data).then((data) => {
+apiInstance.updateViewpoint(guid, projectsPk, topicsGuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2152,9 +2152,9 @@ apiInstance.updateViewpoint(guid, projectsPk, topicsPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | [**String**](.md)| A UUID string identifying this viewpoint. | 
+ **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
- **topicsPk** | **String**|  | 
+ **topicsGuid** | **String**|  | 
  **data** | [**Viewpoint**](Viewpoint.md)|  | 
 
 ### Return type

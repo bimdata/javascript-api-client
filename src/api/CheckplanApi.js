@@ -42,7 +42,7 @@ export default class CheckplanApi {
 
     /**
      * Create a checker to a model
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: check:write, ifc:read
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -93,7 +93,7 @@ export default class CheckplanApi {
 
     /**
      * Create a checker to a model
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: check:write, ifc:read
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -110,7 +110,7 @@ export default class CheckplanApi {
 
     /**
      * Create a CheckerResult
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: check:write
+     * TCreate a CheckerResult Required scopes: check:write
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
@@ -167,7 +167,7 @@ export default class CheckplanApi {
 
     /**
      * Create a CheckerResult
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: check:write
+     * TCreate a CheckerResult Required scopes: check:write
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
@@ -185,7 +185,7 @@ export default class CheckplanApi {
 
     /**
      * Create a Checkplan
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: check:write
+     * TCreate a Checkplan Required scopes: check:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/CheckPlan} data 
@@ -230,7 +230,7 @@ export default class CheckplanApi {
 
     /**
      * Create a Checkplan
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: check:write
+     * TCreate a Checkplan Required scopes: check:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/CheckPlan} data 
@@ -246,7 +246,7 @@ export default class CheckplanApi {
 
     /**
      * Create a Rule
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: check:write
+     * TCreate a Rule Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -303,7 +303,7 @@ export default class CheckplanApi {
 
     /**
      * Create a Rule
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: check:write
+     * TCreate a Rule Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -321,7 +321,7 @@ export default class CheckplanApi {
 
     /**
      * Create a RuleComponent
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: check:write
+     * TCreate a RuleComponent Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -384,7 +384,7 @@ export default class CheckplanApi {
 
     /**
      * Create a RuleComponent
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: check:write
+     * TCreate a RuleComponent Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -403,7 +403,7 @@ export default class CheckplanApi {
 
     /**
      * Create a Ruleset
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: check:write
+     * TCreate a Ruleset Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -454,7 +454,7 @@ export default class CheckplanApi {
 
     /**
      * Create a Ruleset
-     * Verify parent existence before creating to avoid applications of creating objects in a project they don't own Required scopes: check:write
+     * TCreate a Ruleset Required scopes: check:write
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -1522,7 +1522,7 @@ export default class CheckplanApi {
 
     /**
      * Retrieve all CheckerResults
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+     * Retrieve all CheckerResults Required scopes: check:read
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
@@ -1574,7 +1574,7 @@ export default class CheckplanApi {
 
     /**
      * Retrieve all CheckerResults
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+     * Retrieve all CheckerResults Required scopes: check:read
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {String} ifcPk 
@@ -1591,7 +1591,7 @@ export default class CheckplanApi {
 
     /**
      * Retrieve all checkers of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read, ifc:read
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1637,7 +1637,7 @@ export default class CheckplanApi {
 
     /**
      * Retrieve all checkers of a model
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read, ifc:read
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1715,7 +1715,7 @@ export default class CheckplanApi {
 
     /**
      * Retrieve all Checkplans
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+     * Retrieve all Checkplans Required scopes: check:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CheckPlan>} and HTTP response
@@ -1755,7 +1755,7 @@ export default class CheckplanApi {
 
     /**
      * Retrieve all Checkplans
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+     * Retrieve all Checkplans Required scopes: check:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CheckPlan>}
@@ -1929,7 +1929,7 @@ export default class CheckplanApi {
 
     /**
      * Retrieve all RuleComponents
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+     * Retrieve all RuleComponents Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -1987,7 +1987,7 @@ export default class CheckplanApi {
 
     /**
      * Retrieve all RuleComponents
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+     * Retrieve all RuleComponents Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -2005,7 +2005,7 @@ export default class CheckplanApi {
 
     /**
      * Retrieve all Rules
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+     * Retrieve all Rules Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -2057,7 +2057,7 @@ export default class CheckplanApi {
 
     /**
      * Retrieve all Rules
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+     * Retrieve all Rules Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -2143,7 +2143,7 @@ export default class CheckplanApi {
 
     /**
      * Retrieve all Rulesets
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+     * Retrieve all Rulesets Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
@@ -2189,7 +2189,7 @@ export default class CheckplanApi {
 
     /**
      * Retrieve all Rulesets
-     * Verify parent existence before listing to send a 404 instead of an empty list Required scopes: check:read
+     * Retrieve all Rulesets Required scopes: check:read
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
