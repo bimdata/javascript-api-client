@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.Priority();
+    instance = new bimdata.Priority();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('Priority', function() {
     it('should create an instance of Priority', function() {
       // uncomment below and update the code to test Priority
-      //var instane = new BimDataApi.Priority();
-      //expect(instance).to.be.a(BimDataApi.Priority);
+      //var instane = new bimdata.Priority();
+      //expect(instance).to.be.a(bimdata.Priority);
     });
 
     it('should have the property priority (base name: "priority")', function() {
       // uncomment below and update the code to test the property priority
-      //var instane = new BimDataApi.Priority();
+      //var instane = new bimdata.Priority();
       //expect(instance).to.be();
     });
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CloudRole model module.
  * @module model/CloudRole
- * @version v1
+ * @version 0.0.0
  */
 class CloudRole {
     /**

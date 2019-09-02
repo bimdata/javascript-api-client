@@ -1,4 +1,4 @@
-# BimDataApi.User
+# bimdata.User
 
 ## Properties
 

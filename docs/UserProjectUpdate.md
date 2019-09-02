@@ -1,4 +1,4 @@
-# BimDataApi.UserProjectUpdate
+# bimdata.UserProjectUpdate
 
 ## Properties
 

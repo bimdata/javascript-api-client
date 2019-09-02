@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Stage model module.
  * @module model/Stage
- * @version v1
+ * @version 0.0.0
  */
 class Stage {
     /**

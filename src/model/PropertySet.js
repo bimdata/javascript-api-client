@@ -17,7 +17,7 @@ import Property from './Property';
 /**
  * The PropertySet model module.
  * @module model/PropertySet
- * @version v1
+ * @version 0.0.0
  */
 class PropertySet {
     /**

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.Classification();
+    instance = new bimdata.Classification();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('Classification', function() {
     it('should create an instance of Classification', function() {
       // uncomment below and update the code to test Classification
-      //var instane = new BimDataApi.Classification();
-      //expect(instance).to.be.a(BimDataApi.Classification);
+      //var instane = new bimdata.Classification();
+      //expect(instance).to.be.a(bimdata.Classification);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new BimDataApi.Classification();
+      //var instane = new bimdata.Classification();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new BimDataApi.Classification();
+      //var instane = new bimdata.Classification();
       //expect(instance).to.be();
     });
 
     it('should have the property notation (base name: "notation")', function() {
       // uncomment below and update the code to test the property notation
-      //var instane = new BimDataApi.Classification();
+      //var instane = new bimdata.Classification();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new BimDataApi.Classification();
+      //var instane = new bimdata.Classification();
       //expect(instance).to.be();
     });
 

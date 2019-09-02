@@ -1,4 +1,4 @@
-# BimDataApi.Space
+# bimdata.Space
 
 ## Properties
 

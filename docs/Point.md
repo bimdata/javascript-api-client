@@ -1,4 +1,4 @@
-# BimDataApi.Point
+# bimdata.Point
 
 ## Properties
 

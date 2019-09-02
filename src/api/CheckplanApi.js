@@ -23,7 +23,7 @@ import Ruleset from '../model/Ruleset';
 /**
 * Checkplan service.
 * @module api/CheckplanApi
-* @version v1
+* @version 0.0.0
 */
 export default class CheckplanApi {
 
@@ -39,13 +39,6 @@ export default class CheckplanApi {
     }
 
 
-    /**
-     * Callback function to receive the result of the createChecker operation.
-     * @callback module:api/CheckplanApi~createCheckerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/IfcChecker} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * Create a checker to a model
@@ -54,10 +47,9 @@ export default class CheckplanApi {
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
-     * @param {module:api/CheckplanApi~createCheckerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/IfcChecker}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcChecker} and HTTP response
      */
-    createChecker(cloudPk, ifcPk, projectPk, data, callback) {
+    createCheckerWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -95,17 +87,26 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createCheckerResult operation.
-     * @callback module:api/CheckplanApi~createCheckerResultCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CheckerResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create a checker to a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/IfcChecker} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcChecker}
      */
+    createChecker(cloudPk, ifcPk, projectPk, data) {
+      return this.createCheckerWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a CheckerResult
@@ -115,10 +116,9 @@ export default class CheckplanApi {
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/CheckerResult} data 
-     * @param {module:api/CheckplanApi~createCheckerResultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CheckerResult}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckerResult} and HTTP response
      */
-    createCheckerResult(checkerPk, cloudPk, ifcPk, projectPk, data, callback) {
+    createCheckerResultWithHttpInfo(checkerPk, cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
@@ -161,17 +161,27 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createCheckplan operation.
-     * @callback module:api/CheckplanApi~createCheckplanCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CheckPlan} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create a CheckerResult
+     * TCreate a CheckerResult Required scopes: check:write
+     * @param {String} checkerPk 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/CheckerResult} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckerResult}
      */
+    createCheckerResult(checkerPk, cloudPk, ifcPk, projectPk, data) {
+      return this.createCheckerResultWithHttpInfo(checkerPk, cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a Checkplan
@@ -179,10 +189,9 @@ export default class CheckplanApi {
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/CheckPlan} data 
-     * @param {module:api/CheckplanApi~createCheckplanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CheckPlan}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckPlan} and HTTP response
      */
-    createCheckplan(cloudPk, projectPk, data, callback) {
+    createCheckplanWithHttpInfo(cloudPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -215,17 +224,25 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createRule operation.
-     * @callback module:api/CheckplanApi~createRuleCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Rule} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create a Checkplan
+     * TCreate a Checkplan Required scopes: check:write
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/CheckPlan} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckPlan}
      */
+    createCheckplan(cloudPk, projectPk, data) {
+      return this.createCheckplanWithHttpInfo(cloudPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a Rule
@@ -235,10 +252,9 @@ export default class CheckplanApi {
      * @param {String} projectPk 
      * @param {String} rulesetPk 
      * @param {module:model/Rule} data 
-     * @param {module:api/CheckplanApi~createRuleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Rule}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Rule} and HTTP response
      */
-    createRule(checkPlanPk, cloudPk, projectPk, rulesetPk, data, callback) {
+    createRuleWithHttpInfo(checkPlanPk, cloudPk, projectPk, rulesetPk, data) {
       let postBody = data;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -281,17 +297,27 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createRuleComponent operation.
-     * @callback module:api/CheckplanApi~createRuleComponentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/RuleComponent} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create a Rule
+     * TCreate a Rule Required scopes: check:write
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} rulesetPk 
+     * @param {module:model/Rule} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Rule}
      */
+    createRule(checkPlanPk, cloudPk, projectPk, rulesetPk, data) {
+      return this.createRuleWithHttpInfo(checkPlanPk, cloudPk, projectPk, rulesetPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a RuleComponent
@@ -302,10 +328,9 @@ export default class CheckplanApi {
      * @param {String} rulePk 
      * @param {String} rulesetPk 
      * @param {module:model/RuleComponent} data 
-     * @param {module:api/CheckplanApi~createRuleComponentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RuleComponent}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RuleComponent} and HTTP response
      */
-    createRuleComponent(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, data, callback) {
+    createRuleComponentWithHttpInfo(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, data) {
       let postBody = data;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -353,17 +378,28 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createRuleset operation.
-     * @callback module:api/CheckplanApi~createRulesetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ruleset} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create a RuleComponent
+     * TCreate a RuleComponent Required scopes: check:write
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} rulePk 
+     * @param {String} rulesetPk 
+     * @param {module:model/RuleComponent} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RuleComponent}
      */
+    createRuleComponent(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, data) {
+      return this.createRuleComponentWithHttpInfo(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a Ruleset
@@ -372,10 +408,9 @@ export default class CheckplanApi {
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/Ruleset} data 
-     * @param {module:api/CheckplanApi~createRulesetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ruleset}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ruleset} and HTTP response
      */
-    createRuleset(checkPlanPk, cloudPk, projectPk, data, callback) {
+    createRulesetWithHttpInfo(checkPlanPk, cloudPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -413,17 +448,26 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteChecker operation.
-     * @callback module:api/CheckplanApi~deleteCheckerCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create a Ruleset
+     * TCreate a Ruleset Required scopes: check:write
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/Ruleset} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ruleset}
      */
+    createRuleset(checkPlanPk, cloudPk, projectPk, data) {
+      return this.createRulesetWithHttpInfo(checkPlanPk, cloudPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete a checker of a model
@@ -432,9 +476,9 @@ export default class CheckplanApi {
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/CheckplanApi~deleteCheckerCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteChecker(cloudPk, id, ifcPk, projectPk, callback) {
+    deleteCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -473,17 +517,26 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteCheckerResult operation.
-     * @callback module:api/CheckplanApi~deleteCheckerResultCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Delete a checker of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ifc checker.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    deleteChecker(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete a CheckerResult
@@ -493,9 +546,9 @@ export default class CheckplanApi {
      * @param {Number} id A unique integer value identifying this checker result.
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/CheckplanApi~deleteCheckerResultCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, callback) {
+    deleteCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
@@ -539,17 +592,27 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteCheckplan operation.
-     * @callback module:api/CheckplanApi~deleteCheckplanCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Delete a CheckerResult
+     * Delete a CheckerResult Required scopes: check:write
+     * @param {String} checkerPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this checker result.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    deleteCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk) {
+      return this.deleteCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete a Checkplan
@@ -557,9 +620,9 @@ export default class CheckplanApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
-     * @param {module:api/CheckplanApi~deleteCheckplanCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteCheckplan(cloudPk, id, projectPk, callback) {
+    deleteCheckplanWithHttpInfo(cloudPk, id, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -593,17 +656,25 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteRule operation.
-     * @callback module:api/CheckplanApi~deleteRuleCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Delete a Checkplan
+     * Delete a Checkplan Required scopes: check:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this check plan.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    deleteCheckplan(cloudPk, id, projectPk) {
+      return this.deleteCheckplanWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete a Rule
@@ -613,9 +684,9 @@ export default class CheckplanApi {
      * @param {Number} id A unique integer value identifying this rule.
      * @param {String} projectPk 
      * @param {String} rulesetPk 
-     * @param {module:api/CheckplanApi~deleteRuleCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, callback) {
+    deleteRuleWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetPk) {
       let postBody = null;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -659,17 +730,27 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteRuleComponent operation.
-     * @callback module:api/CheckplanApi~deleteRuleComponentCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Delete a Rule
+     * Delete a Rule Required scopes: check:write
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this rule.
+     * @param {String} projectPk 
+     * @param {String} rulesetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk) {
+      return this.deleteRuleWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete a RuleComponent
@@ -680,9 +761,9 @@ export default class CheckplanApi {
      * @param {String} projectPk 
      * @param {String} rulePk 
      * @param {String} rulesetPk 
-     * @param {module:api/CheckplanApi~deleteRuleComponentCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, callback) {
+    deleteRuleComponentWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk) {
       let postBody = null;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -731,17 +812,28 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteRuleset operation.
-     * @callback module:api/CheckplanApi~deleteRulesetCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Delete a RuleComponent
+     * Delete a RuleComponent Required scopes: check:write
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this rule component.
+     * @param {String} projectPk 
+     * @param {String} rulePk 
+     * @param {String} rulesetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk) {
+      return this.deleteRuleComponentWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete a Ruleset
@@ -750,9 +842,9 @@ export default class CheckplanApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ruleset.
      * @param {String} projectPk 
-     * @param {module:api/CheckplanApi~deleteRulesetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteRuleset(checkPlanPk, cloudPk, id, projectPk, callback) {
+    deleteRulesetWithHttpInfo(checkPlanPk, cloudPk, id, projectPk) {
       let postBody = null;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -791,17 +883,26 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateChecker operation.
-     * @callback module:api/CheckplanApi~fullUpdateCheckerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/IfcChecker} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete a Ruleset
+     * Delete a Ruleset Required scopes: check:write
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ruleset.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    deleteRuleset(checkPlanPk, cloudPk, id, projectPk) {
+      return this.deleteRulesetWithHttpInfo(checkPlanPk, cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update all fields of a checker of a model
@@ -811,10 +912,9 @@ export default class CheckplanApi {
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
-     * @param {module:api/CheckplanApi~fullUpdateCheckerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/IfcChecker}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcChecker} and HTTP response
      */
-    fullUpdateChecker(cloudPk, id, ifcPk, projectPk, data, callback) {
+    fullUpdateCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -857,17 +957,27 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateCheckerResult operation.
-     * @callback module:api/CheckplanApi~fullUpdateCheckerResultCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CheckerResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update all fields of a checker of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ifc checker.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/IfcChecker} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcChecker}
      */
+    fullUpdateChecker(cloudPk, id, ifcPk, projectPk, data) {
+      return this.fullUpdateCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update all fields of a CheckerResult
@@ -878,10 +988,9 @@ export default class CheckplanApi {
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/CheckerResult} data 
-     * @param {module:api/CheckplanApi~fullUpdateCheckerResultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CheckerResult}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckerResult} and HTTP response
      */
-    fullUpdateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data, callback) {
+    fullUpdateCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
@@ -929,17 +1038,28 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateCheckplan operation.
-     * @callback module:api/CheckplanApi~fullUpdateCheckplanCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CheckPlan} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update all fields of a CheckerResult
+     * Update all fields of a CheckerResult Required scopes: check:write
+     * @param {String} checkerPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this checker result.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/CheckerResult} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckerResult}
      */
+    fullUpdateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data) {
+      return this.fullUpdateCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update all fields of a Checkplan
@@ -948,10 +1068,9 @@ export default class CheckplanApi {
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
      * @param {module:model/CheckPlan} data 
-     * @param {module:api/CheckplanApi~fullUpdateCheckplanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CheckPlan}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckPlan} and HTTP response
      */
-    fullUpdateCheckplan(cloudPk, id, projectPk, data, callback) {
+    fullUpdateCheckplanWithHttpInfo(cloudPk, id, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -989,17 +1108,26 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateRule operation.
-     * @callback module:api/CheckplanApi~fullUpdateRuleCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Rule} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update all fields of a Checkplan
+     * Update all fields of a Checkplan Required scopes: check:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this check plan.
+     * @param {String} projectPk 
+     * @param {module:model/CheckPlan} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckPlan}
      */
+    fullUpdateCheckplan(cloudPk, id, projectPk, data) {
+      return this.fullUpdateCheckplanWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update all fields of a Rule
@@ -1010,10 +1138,9 @@ export default class CheckplanApi {
      * @param {String} projectPk 
      * @param {String} rulesetPk 
      * @param {module:model/Rule} data 
-     * @param {module:api/CheckplanApi~fullUpdateRuleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Rule}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Rule} and HTTP response
      */
-    fullUpdateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data, callback) {
+    fullUpdateRuleWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data) {
       let postBody = data;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -1061,17 +1188,28 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateRuleComponent operation.
-     * @callback module:api/CheckplanApi~fullUpdateRuleComponentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/RuleComponent} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update all fields of a Rule
+     * Update all fields of a Rule Required scopes: check:write
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this rule.
+     * @param {String} projectPk 
+     * @param {String} rulesetPk 
+     * @param {module:model/Rule} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Rule}
      */
+    fullUpdateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data) {
+      return this.fullUpdateRuleWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update all fields of a RuleComponent
@@ -1083,10 +1221,9 @@ export default class CheckplanApi {
      * @param {String} rulePk 
      * @param {String} rulesetPk 
      * @param {module:model/RuleComponent} data 
-     * @param {module:api/CheckplanApi~fullUpdateRuleComponentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RuleComponent}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RuleComponent} and HTTP response
      */
-    fullUpdateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data, callback) {
+    fullUpdateRuleComponentWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data) {
       let postBody = data;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -1139,17 +1276,29 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateRuleset operation.
-     * @callback module:api/CheckplanApi~fullUpdateRulesetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ruleset} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update all fields of a RuleComponent
+     * Update all fields of a RuleComponent Required scopes: check:write
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this rule component.
+     * @param {String} projectPk 
+     * @param {String} rulePk 
+     * @param {String} rulesetPk 
+     * @param {module:model/RuleComponent} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RuleComponent}
      */
+    fullUpdateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data) {
+      return this.fullUpdateRuleComponentWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update all fields of a Ruleset
@@ -1159,10 +1308,9 @@ export default class CheckplanApi {
      * @param {Number} id A unique integer value identifying this ruleset.
      * @param {String} projectPk 
      * @param {module:model/Ruleset} data 
-     * @param {module:api/CheckplanApi~fullUpdateRulesetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ruleset}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ruleset} and HTTP response
      */
-    fullUpdateRuleset(checkPlanPk, cloudPk, id, projectPk, data, callback) {
+    fullUpdateRulesetWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -1205,17 +1353,27 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getChecker operation.
-     * @callback module:api/CheckplanApi~getCheckerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/IfcChecker} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update all fields of a Ruleset
+     * Update all fields of a Ruleset Required scopes: check:write
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ruleset.
+     * @param {String} projectPk 
+     * @param {module:model/Ruleset} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ruleset}
      */
+    fullUpdateRuleset(checkPlanPk, cloudPk, id, projectPk, data) {
+      return this.fullUpdateRulesetWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve a checker of a model
@@ -1224,10 +1382,9 @@ export default class CheckplanApi {
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/CheckplanApi~getCheckerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/IfcChecker}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcChecker} and HTTP response
      */
-    getChecker(cloudPk, id, ifcPk, projectPk, callback) {
+    getCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1266,17 +1423,26 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getCheckerResult operation.
-     * @callback module:api/CheckplanApi~getCheckerResultCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CheckerResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Retrieve a checker of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ifc checker.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcChecker}
      */
+    getChecker(cloudPk, id, ifcPk, projectPk) {
+      return this.getCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve one CheckerResult
@@ -1286,10 +1452,9 @@ export default class CheckplanApi {
      * @param {Number} id A unique integer value identifying this checker result.
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/CheckplanApi~getCheckerResultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CheckerResult}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckerResult} and HTTP response
      */
-    getCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, callback) {
+    getCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
@@ -1333,17 +1498,27 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getCheckerResults operation.
-     * @callback module:api/CheckplanApi~getCheckerResultsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/CheckerResult>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Retrieve one CheckerResult
+     * Retrieve one CheckerResult Required scopes: check:read
+     * @param {String} checkerPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this checker result.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckerResult}
      */
+    getCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk) {
+      return this.getCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve all CheckerResults
@@ -1352,10 +1527,9 @@ export default class CheckplanApi {
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/CheckplanApi~getCheckerResultsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/CheckerResult>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CheckerResult>} and HTTP response
      */
-    getCheckerResults(checkerPk, cloudPk, ifcPk, projectPk, callback) {
+    getCheckerResultsWithHttpInfo(checkerPk, cloudPk, ifcPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
@@ -1394,17 +1568,26 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getCheckers operation.
-     * @callback module:api/CheckplanApi~getCheckersCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IfcChecker>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Retrieve all CheckerResults
+     * Retrieve all CheckerResults Required scopes: check:read
+     * @param {String} checkerPk 
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CheckerResult>}
      */
+    getCheckerResults(checkerPk, cloudPk, ifcPk, projectPk) {
+      return this.getCheckerResultsWithHttpInfo(checkerPk, cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve all checkers of a model
@@ -1412,10 +1595,9 @@ export default class CheckplanApi {
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:api/CheckplanApi~getCheckersCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/IfcChecker>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/IfcChecker>} and HTTP response
      */
-    getCheckers(cloudPk, ifcPk, projectPk, callback) {
+    getCheckersWithHttpInfo(cloudPk, ifcPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1449,17 +1631,25 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getCheckplan operation.
-     * @callback module:api/CheckplanApi~getCheckplanCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CheckPlan} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Retrieve all checkers of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/IfcChecker>}
      */
+    getCheckers(cloudPk, ifcPk, projectPk) {
+      return this.getCheckersWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve one Checkplan
@@ -1467,10 +1657,9 @@ export default class CheckplanApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
-     * @param {module:api/CheckplanApi~getCheckplanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CheckPlan}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckPlan} and HTTP response
      */
-    getCheckplan(cloudPk, id, projectPk, callback) {
+    getCheckplanWithHttpInfo(cloudPk, id, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1504,27 +1693,34 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getCheckplans operation.
-     * @callback module:api/CheckplanApi~getCheckplansCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/CheckPlan>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Retrieve one Checkplan
+     * Retrieve one Checkplan Required scopes: check:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this check plan.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckPlan}
      */
+    getCheckplan(cloudPk, id, projectPk) {
+      return this.getCheckplanWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve all Checkplans
      * Retrieve all Checkplans Required scopes: check:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:api/CheckplanApi~getCheckplansCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/CheckPlan>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CheckPlan>} and HTTP response
      */
-    getCheckplans(cloudPk, projectPk, callback) {
+    getCheckplansWithHttpInfo(cloudPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1553,17 +1749,24 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getRule operation.
-     * @callback module:api/CheckplanApi~getRuleCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Rule} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Retrieve all Checkplans
+     * Retrieve all Checkplans Required scopes: check:read
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CheckPlan>}
      */
+    getCheckplans(cloudPk, projectPk) {
+      return this.getCheckplansWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve one Rule
@@ -1573,10 +1776,9 @@ export default class CheckplanApi {
      * @param {Number} id A unique integer value identifying this rule.
      * @param {String} projectPk 
      * @param {String} rulesetPk 
-     * @param {module:api/CheckplanApi~getRuleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Rule}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Rule} and HTTP response
      */
-    getRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, callback) {
+    getRuleWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetPk) {
       let postBody = null;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -1620,17 +1822,27 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getRuleComponent operation.
-     * @callback module:api/CheckplanApi~getRuleComponentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/RuleComponent} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Retrieve one Rule
+     * Retrieve one Rule Required scopes: check:read
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this rule.
+     * @param {String} projectPk 
+     * @param {String} rulesetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Rule}
      */
+    getRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk) {
+      return this.getRuleWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve one RuleComponent
@@ -1641,10 +1853,9 @@ export default class CheckplanApi {
      * @param {String} projectPk 
      * @param {String} rulePk 
      * @param {String} rulesetPk 
-     * @param {module:api/CheckplanApi~getRuleComponentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RuleComponent}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RuleComponent} and HTTP response
      */
-    getRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, callback) {
+    getRuleComponentWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk) {
       let postBody = null;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -1693,17 +1904,28 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getRuleComponents operation.
-     * @callback module:api/CheckplanApi~getRuleComponentsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/RuleComponent>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Retrieve one RuleComponent
+     * Retrieve one RuleComponent Required scopes: check:read
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this rule component.
+     * @param {String} projectPk 
+     * @param {String} rulePk 
+     * @param {String} rulesetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RuleComponent}
      */
+    getRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk) {
+      return this.getRuleComponentWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve all RuleComponents
@@ -1713,10 +1935,9 @@ export default class CheckplanApi {
      * @param {String} projectPk 
      * @param {String} rulePk 
      * @param {String} rulesetPk 
-     * @param {module:api/CheckplanApi~getRuleComponentsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/RuleComponent>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RuleComponent>} and HTTP response
      */
-    getRuleComponents(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, callback) {
+    getRuleComponentsWithHttpInfo(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk) {
       let postBody = null;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -1760,17 +1981,27 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getRules operation.
-     * @callback module:api/CheckplanApi~getRulesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Rule>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Retrieve all RuleComponents
+     * Retrieve all RuleComponents Required scopes: check:read
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} rulePk 
+     * @param {String} rulesetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RuleComponent>}
      */
+    getRuleComponents(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk) {
+      return this.getRuleComponentsWithHttpInfo(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve all Rules
@@ -1779,10 +2010,9 @@ export default class CheckplanApi {
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {String} rulesetPk 
-     * @param {module:api/CheckplanApi~getRulesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Rule>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Rule>} and HTTP response
      */
-    getRules(checkPlanPk, cloudPk, projectPk, rulesetPk, callback) {
+    getRulesWithHttpInfo(checkPlanPk, cloudPk, projectPk, rulesetPk) {
       let postBody = null;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -1821,17 +2051,26 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getRuleset operation.
-     * @callback module:api/CheckplanApi~getRulesetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ruleset} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Retrieve all Rules
+     * Retrieve all Rules Required scopes: check:read
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} rulesetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Rule>}
      */
+    getRules(checkPlanPk, cloudPk, projectPk, rulesetPk) {
+      return this.getRulesWithHttpInfo(checkPlanPk, cloudPk, projectPk, rulesetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve one Ruleset
@@ -1840,10 +2079,9 @@ export default class CheckplanApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ruleset.
      * @param {String} projectPk 
-     * @param {module:api/CheckplanApi~getRulesetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ruleset}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ruleset} and HTTP response
      */
-    getRuleset(checkPlanPk, cloudPk, id, projectPk, callback) {
+    getRulesetWithHttpInfo(checkPlanPk, cloudPk, id, projectPk) {
       let postBody = null;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -1882,17 +2120,26 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getRulesets operation.
-     * @callback module:api/CheckplanApi~getRulesetsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Ruleset>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Retrieve one Ruleset
+     * Retrieve one Ruleset Required scopes: check:read
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ruleset.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ruleset}
      */
+    getRuleset(checkPlanPk, cloudPk, id, projectPk) {
+      return this.getRulesetWithHttpInfo(checkPlanPk, cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve all Rulesets
@@ -1900,10 +2147,9 @@ export default class CheckplanApi {
      * @param {String} checkPlanPk 
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:api/CheckplanApi~getRulesetsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Ruleset>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Ruleset>} and HTTP response
      */
-    getRulesets(checkPlanPk, cloudPk, projectPk, callback) {
+    getRulesetsWithHttpInfo(checkPlanPk, cloudPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -1937,17 +2183,25 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the launchNewCheck operation.
-     * @callback module:api/CheckplanApi~launchNewCheckCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Retrieve all Rulesets
+     * Retrieve all Rulesets Required scopes: check:read
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Ruleset>}
      */
+    getRulesets(checkPlanPk, cloudPk, projectPk) {
+      return this.getRulesetsWithHttpInfo(checkPlanPk, cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Launch a new check on the model
@@ -1957,9 +2211,9 @@ export default class CheckplanApi {
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
-     * @param {module:api/CheckplanApi~launchNewCheckCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    launchNewCheck(cloudPk, id, ifcPk, projectPk, data, callback) {
+    launchNewCheckWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -2002,17 +2256,27 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}/launch-check', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateChecker operation.
-     * @callback module:api/CheckplanApi~updateCheckerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/IfcChecker} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Launch a new check on the model
+     * Starts a new check in the checker Required scopes: check:write, ifc:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ifc checker.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/IfcChecker} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    launchNewCheck(cloudPk, id, ifcPk, projectPk, data) {
+      return this.launchNewCheckWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update some fields of a checker of a model
@@ -2022,10 +2286,9 @@ export default class CheckplanApi {
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
-     * @param {module:api/CheckplanApi~updateCheckerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/IfcChecker}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcChecker} and HTTP response
      */
-    updateChecker(cloudPk, id, ifcPk, projectPk, data, callback) {
+    updateCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -2068,17 +2331,27 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateCheckerResult operation.
-     * @callback module:api/CheckplanApi~updateCheckerResultCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CheckerResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update some fields of a checker of a model
+     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ifc checker.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/IfcChecker} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcChecker}
      */
+    updateChecker(cloudPk, id, ifcPk, projectPk, data) {
+      return this.updateCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update some fields of a CheckerResult
@@ -2089,10 +2362,9 @@ export default class CheckplanApi {
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {module:model/CheckerResult} data 
-     * @param {module:api/CheckplanApi~updateCheckerResultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CheckerResult}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckerResult} and HTTP response
      */
-    updateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data, callback) {
+    updateCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
@@ -2140,17 +2412,28 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateCheckplan operation.
-     * @callback module:api/CheckplanApi~updateCheckplanCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CheckPlan} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update some fields of a CheckerResult
+     * Update some fields of a CheckerResult Required scopes: check:write
+     * @param {String} checkerPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this checker result.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/CheckerResult} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckerResult}
      */
+    updateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data) {
+      return this.updateCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update some fields of a Checkplan
@@ -2159,10 +2442,9 @@ export default class CheckplanApi {
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {String} projectPk 
      * @param {module:model/CheckPlan} data 
-     * @param {module:api/CheckplanApi~updateCheckplanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CheckPlan}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckPlan} and HTTP response
      */
-    updateCheckplan(cloudPk, id, projectPk, data, callback) {
+    updateCheckplanWithHttpInfo(cloudPk, id, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -2200,17 +2482,26 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateRule operation.
-     * @callback module:api/CheckplanApi~updateRuleCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Rule} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update some fields of a Checkplan
+     * Update some fields of a Checkplan Required scopes: check:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this check plan.
+     * @param {String} projectPk 
+     * @param {module:model/CheckPlan} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckPlan}
      */
+    updateCheckplan(cloudPk, id, projectPk, data) {
+      return this.updateCheckplanWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update some fields of a Rule
@@ -2221,10 +2512,9 @@ export default class CheckplanApi {
      * @param {String} projectPk 
      * @param {String} rulesetPk 
      * @param {module:model/Rule} data 
-     * @param {module:api/CheckplanApi~updateRuleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Rule}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Rule} and HTTP response
      */
-    updateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data, callback) {
+    updateRuleWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data) {
       let postBody = data;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -2272,17 +2562,28 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateRuleComponent operation.
-     * @callback module:api/CheckplanApi~updateRuleComponentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/RuleComponent} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update some fields of a Rule
+     * Update some fields of a Rule Required scopes: check:write
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this rule.
+     * @param {String} projectPk 
+     * @param {String} rulesetPk 
+     * @param {module:model/Rule} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Rule}
      */
+    updateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data) {
+      return this.updateRuleWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update some fields of a RuleComponent
@@ -2294,10 +2595,9 @@ export default class CheckplanApi {
      * @param {String} rulePk 
      * @param {String} rulesetPk 
      * @param {module:model/RuleComponent} data 
-     * @param {module:api/CheckplanApi~updateRuleComponentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RuleComponent}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RuleComponent} and HTTP response
      */
-    updateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data, callback) {
+    updateRuleComponentWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data) {
       let postBody = data;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -2350,17 +2650,29 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateRuleset operation.
-     * @callback module:api/CheckplanApi~updateRulesetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ruleset} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update some fields of a RuleComponent
+     * Update some fields of a RuleComponent Required scopes: check:write
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this rule component.
+     * @param {String} projectPk 
+     * @param {String} rulePk 
+     * @param {String} rulesetPk 
+     * @param {module:model/RuleComponent} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RuleComponent}
      */
+    updateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data) {
+      return this.updateRuleComponentWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update some fields of a Ruleset
@@ -2370,10 +2682,9 @@ export default class CheckplanApi {
      * @param {Number} id A unique integer value identifying this ruleset.
      * @param {String} projectPk 
      * @param {module:model/Ruleset} data 
-     * @param {module:api/CheckplanApi~updateRulesetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ruleset}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ruleset} and HTTP response
      */
-    updateRuleset(checkPlanPk, cloudPk, id, projectPk, data, callback) {
+    updateRulesetWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
@@ -2416,8 +2727,25 @@ export default class CheckplanApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
+    }
+
+    /**
+     * Update some fields of a Ruleset
+     * Update some fields of a Ruleset Required scopes: check:write
+     * @param {String} checkPlanPk 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ruleset.
+     * @param {String} projectPk 
+     * @param {module:model/Ruleset} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ruleset}
+     */
+    updateRuleset(checkPlanPk, cloudPk, id, projectPk, data) {
+      return this.updateRulesetWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
 
 

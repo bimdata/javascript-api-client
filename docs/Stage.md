@@ -1,4 +1,4 @@
-# BimDataApi.Stage
+# bimdata.Stage
 
 ## Properties
 

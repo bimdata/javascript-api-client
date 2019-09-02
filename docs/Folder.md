@@ -1,4 +1,4 @@
-# BimDataApi.Folder
+# bimdata.Folder
 
 ## Properties
 

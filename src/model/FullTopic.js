@@ -18,7 +18,7 @@ import Viewpoint from './Viewpoint';
 /**
  * The FullTopic model module.
  * @module model/FullTopic
- * @version v1
+ * @version 0.0.0
  */
 class FullTopic {
     /**

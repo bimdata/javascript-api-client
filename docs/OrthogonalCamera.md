@@ -1,4 +1,4 @@
-# BimDataApi.OrthogonalCamera
+# bimdata.OrthogonalCamera
 
 ## Properties
 

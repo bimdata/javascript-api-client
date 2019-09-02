@@ -1,4 +1,4 @@
-# BimDataApi.Ifc
+# bimdata.Ifc
 
 ## Properties
 

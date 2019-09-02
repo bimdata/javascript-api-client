@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.RawUnit();
+    instance = new bimdata.RawUnit();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('RawUnit', function() {
     it('should create an instance of RawUnit', function() {
       // uncomment below and update the code to test RawUnit
-      //var instane = new BimDataApi.RawUnit();
-      //expect(instance).to.be.a(BimDataApi.RawUnit);
+      //var instane = new bimdata.RawUnit();
+      //expect(instance).to.be.a(bimdata.RawUnit);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new BimDataApi.RawUnit();
+      //var instane = new bimdata.RawUnit();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new BimDataApi.RawUnit();
+      //var instane = new bimdata.RawUnit();
       //expect(instance).to.be();
     });
 
     it('should have the property unitType (base name: "unit_type")', function() {
       // uncomment below and update the code to test the property unitType
-      //var instane = new BimDataApi.RawUnit();
+      //var instane = new bimdata.RawUnit();
       //expect(instance).to.be();
     });
 
     it('should have the property prefix (base name: "prefix")', function() {
       // uncomment below and update the code to test the property prefix
-      //var instane = new BimDataApi.RawUnit();
+      //var instane = new bimdata.RawUnit();
       //expect(instance).to.be();
     });
 
     it('should have the property elements (base name: "elements")', function() {
       // uncomment below and update the code to test the property elements
-      //var instane = new BimDataApi.RawUnit();
+      //var instane = new bimdata.RawUnit();
       //expect(instance).to.be();
     });
 
     it('should have the property conversionFactor (base name: "conversion_factor")', function() {
       // uncomment below and update the code to test the property conversionFactor
-      //var instane = new BimDataApi.RawUnit();
+      //var instane = new bimdata.RawUnit();
       //expect(instance).to.be();
     });
 
     it('should have the property dimensions (base name: "dimensions")', function() {
       // uncomment below and update the code to test the property dimensions
-      //var instane = new BimDataApi.RawUnit();
+      //var instane = new bimdata.RawUnit();
       //expect(instance).to.be();
     });
 
     it('should have the property conversionBaseunitIndex (base name: "conversion_baseunit_index")', function() {
       // uncomment below and update the code to test the property conversionBaseunitIndex
-      //var instane = new BimDataApi.RawUnit();
+      //var instane = new bimdata.RawUnit();
       //expect(instance).to.be();
     });
 

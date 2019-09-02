@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.Coloring();
+    instance = new bimdata.Coloring();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('Coloring', function() {
     it('should create an instance of Coloring', function() {
       // uncomment below and update the code to test Coloring
-      //var instane = new BimDataApi.Coloring();
-      //expect(instance).to.be.a(BimDataApi.Coloring);
+      //var instane = new bimdata.Coloring();
+      //expect(instance).to.be.a(bimdata.Coloring);
     });
 
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
-      //var instane = new BimDataApi.Coloring();
+      //var instane = new bimdata.Coloring();
       //expect(instance).to.be();
     });
 
     it('should have the property components (base name: "components")', function() {
       // uncomment below and update the code to test the property components
-      //var instane = new BimDataApi.Coloring();
+      //var instane = new bimdata.Coloring();
       //expect(instance).to.be();
     });
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Comment model module.
  * @module model/Comment
- * @version v1
+ * @version 0.0.0
  */
 class Comment {
     /**

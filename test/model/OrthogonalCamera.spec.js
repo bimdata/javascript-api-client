@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.OrthogonalCamera();
+    instance = new bimdata.OrthogonalCamera();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('OrthogonalCamera', function() {
     it('should create an instance of OrthogonalCamera', function() {
       // uncomment below and update the code to test OrthogonalCamera
-      //var instane = new BimDataApi.OrthogonalCamera();
-      //expect(instance).to.be.a(BimDataApi.OrthogonalCamera);
+      //var instane = new bimdata.OrthogonalCamera();
+      //expect(instance).to.be.a(bimdata.OrthogonalCamera);
     });
 
     it('should have the property viewToWorldScale (base name: "view_to_world_scale")', function() {
       // uncomment below and update the code to test the property viewToWorldScale
-      //var instane = new BimDataApi.OrthogonalCamera();
+      //var instane = new bimdata.OrthogonalCamera();
       //expect(instance).to.be();
     });
 
     it('should have the property cameraDirection (base name: "camera_direction")', function() {
       // uncomment below and update the code to test the property cameraDirection
-      //var instane = new BimDataApi.OrthogonalCamera();
+      //var instane = new bimdata.OrthogonalCamera();
       //expect(instance).to.be();
     });
 
     it('should have the property cameraUpVector (base name: "camera_up_vector")', function() {
       // uncomment below and update the code to test the property cameraUpVector
-      //var instane = new BimDataApi.OrthogonalCamera();
+      //var instane = new bimdata.OrthogonalCamera();
       //expect(instance).to.be();
     });
 
     it('should have the property cameraViewPoint (base name: "camera_view_point")', function() {
       // uncomment below and update the code to test the property cameraViewPoint
-      //var instane = new BimDataApi.OrthogonalCamera();
+      //var instane = new bimdata.OrthogonalCamera();
       //expect(instance).to.be();
     });
 

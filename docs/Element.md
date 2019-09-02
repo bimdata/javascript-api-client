@@ -1,4 +1,4 @@
-# BimDataApi.Element
+# bimdata.Element
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# BimDataApi.IfcExport
+# bimdata.IfcExport
 
 ## Properties
 

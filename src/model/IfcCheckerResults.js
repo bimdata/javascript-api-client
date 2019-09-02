@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IfcCheckerResults model module.
  * @module model/IfcCheckerResults
- * @version v1
+ * @version 0.0.0
  */
 class IfcCheckerResults {
     /**

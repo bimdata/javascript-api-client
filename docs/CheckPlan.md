@@ -1,4 +1,4 @@
-# BimDataApi.CheckPlan
+# bimdata.CheckPlan
 
 ## Properties
 

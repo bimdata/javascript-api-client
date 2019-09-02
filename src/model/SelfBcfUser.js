@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SelfBcfUser model module.
  * @module model/SelfBcfUser
- * @version v1
+ * @version 0.0.0
  */
 class SelfBcfUser {
     /**

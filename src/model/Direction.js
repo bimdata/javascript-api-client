@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Direction model module.
  * @module model/Direction
- * @version v1
+ * @version 0.0.0
  */
 class Direction {
     /**

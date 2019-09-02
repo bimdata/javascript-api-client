@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.Folder();
+    instance = new bimdata.Folder();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('Folder', function() {
     it('should create an instance of Folder', function() {
       // uncomment below and update the code to test Folder
-      //var instane = new BimDataApi.Folder();
-      //expect(instance).to.be.a(BimDataApi.Folder);
+      //var instane = new bimdata.Folder();
+      //expect(instance).to.be.a(bimdata.Folder);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new BimDataApi.Folder();
+      //var instane = new bimdata.Folder();
       //expect(instance).to.be();
     });
 
     it('should have the property parentId (base name: "parent_id")', function() {
       // uncomment below and update the code to test the property parentId
-      //var instane = new BimDataApi.Folder();
+      //var instane = new bimdata.Folder();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new BimDataApi.Folder();
+      //var instane = new bimdata.Folder();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new BimDataApi.Folder();
+      //var instane = new bimdata.Folder();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new BimDataApi.Folder();
+      //var instane = new bimdata.Folder();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new BimDataApi.Folder();
+      //var instane = new bimdata.Folder();
       //expect(instance).to.be();
     });
 
     it('should have the property createdBy (base name: "created_by")', function() {
       // uncomment below and update the code to test the property createdBy
-      //var instane = new BimDataApi.Folder();
+      //var instane = new bimdata.Folder();
       //expect(instance).to.be();
     });
 
     it('should have the property children (base name: "children")', function() {
       // uncomment below and update the code to test the property children
-      //var instane = new BimDataApi.Folder();
+      //var instane = new bimdata.Folder();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# BimDataApi.RawClassification
+# bimdata.RawClassification
 
 ## Properties
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IfcCheckerCheckplan model module.
  * @module model/IfcCheckerCheckplan
- * @version v1
+ * @version 0.0.0
  */
 class IfcCheckerCheckplan {
     /**

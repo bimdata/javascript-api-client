@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.BcfProject();
+    instance = new bimdata.BcfProject();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('BcfProject', function() {
     it('should create an instance of BcfProject', function() {
       // uncomment below and update the code to test BcfProject
-      //var instane = new BimDataApi.BcfProject();
-      //expect(instance).to.be.a(BimDataApi.BcfProject);
+      //var instane = new bimdata.BcfProject();
+      //expect(instance).to.be.a(bimdata.BcfProject);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new BimDataApi.BcfProject();
+      //var instane = new bimdata.BcfProject();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new BimDataApi.BcfProject();
+      //var instane = new bimdata.BcfProject();
       //expect(instance).to.be();
     });
 

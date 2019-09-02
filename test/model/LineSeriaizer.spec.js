@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.LineSeriaizer();
+    instance = new bimdata.LineSeriaizer();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('LineSeriaizer', function() {
     it('should create an instance of LineSeriaizer', function() {
       // uncomment below and update the code to test LineSeriaizer
-      //var instane = new BimDataApi.LineSeriaizer();
-      //expect(instance).to.be.a(BimDataApi.LineSeriaizer);
+      //var instane = new bimdata.LineSeriaizer();
+      //expect(instance).to.be.a(bimdata.LineSeriaizer);
     });
 
     it('should have the property endPoint (base name: "end_point")', function() {
       // uncomment below and update the code to test the property endPoint
-      //var instane = new BimDataApi.LineSeriaizer();
+      //var instane = new bimdata.LineSeriaizer();
       //expect(instance).to.be();
     });
 
     it('should have the property startPoint (base name: "start_point")', function() {
       // uncomment below and update the code to test the property startPoint
-      //var instane = new BimDataApi.LineSeriaizer();
+      //var instane = new bimdata.LineSeriaizer();
       //expect(instance).to.be();
     });
 

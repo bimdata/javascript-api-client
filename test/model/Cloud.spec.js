@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.Cloud();
+    instance = new bimdata.Cloud();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('Cloud', function() {
     it('should create an instance of Cloud', function() {
       // uncomment below and update the code to test Cloud
-      //var instane = new BimDataApi.Cloud();
-      //expect(instance).to.be.a(BimDataApi.Cloud);
+      //var instane = new bimdata.Cloud();
+      //expect(instance).to.be.a(bimdata.Cloud);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new BimDataApi.Cloud();
+      //var instane = new bimdata.Cloud();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new BimDataApi.Cloud();
+      //var instane = new bimdata.Cloud();
       //expect(instance).to.be();
     });
 
     it('should have the property features (base name: "features")', function() {
       // uncomment below and update the code to test the property features
-      //var instane = new BimDataApi.Cloud();
+      //var instane = new bimdata.Cloud();
       //expect(instance).to.be();
     });
 
     it('should have the property creator (base name: "creator")', function() {
       // uncomment below and update the code to test the property creator
-      //var instane = new BimDataApi.Cloud();
+      //var instane = new bimdata.Cloud();
       //expect(instance).to.be();
     });
 
     it('should have the property isDefault (base name: "is_default")', function() {
       // uncomment below and update the code to test the property isDefault
-      //var instane = new BimDataApi.Cloud();
+      //var instane = new bimdata.Cloud();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new BimDataApi.Cloud();
+      //var instane = new bimdata.Cloud();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new BimDataApi.Cloud();
+      //var instane = new bimdata.Cloud();
       //expect(instance).to.be();
     });
 

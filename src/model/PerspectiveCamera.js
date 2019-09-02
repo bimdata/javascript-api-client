@@ -18,7 +18,7 @@ import Point from './Point';
 /**
  * The PerspectiveCamera model module.
  * @module model/PerspectiveCamera
- * @version v1
+ * @version 0.0.0
  */
 class PerspectiveCamera {
     /**

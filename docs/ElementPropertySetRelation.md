@@ -1,4 +1,4 @@
-# BimDataApi.ElementPropertySetRelation
+# bimdata.ElementPropertySetRelation
 
 ## Properties
 

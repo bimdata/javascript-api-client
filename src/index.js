@@ -99,9 +99,9 @@ import UserApi from './api/UserApi';
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var BimDataApi = require('index'); // See note below*.
-* var xxxSvc = new BimDataApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new BimDataApi.Yyy(); // Construct a model instance.
+* var bimdata = require('index'); // See note below*.
+* var xxxSvc = new bimdata.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new bimdata.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -113,8 +113,8 @@ import UserApi from './api/UserApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new BimDataApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new BimDataApi.Yyy(); // Construct a model instance.
+* var xxxSvc = new bimdata.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new bimdata.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -122,7 +122,7 @@ import UserApi from './api/UserApi';
 * </pre>
 * </p>
 * @module index
-* @version v1
+* @version 0.0.0
 */
 export {
     /**

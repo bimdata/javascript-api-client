@@ -1,4 +1,4 @@
-# BimDataApi.WebHook
+# bimdata.WebHook
 
 ## Properties
 

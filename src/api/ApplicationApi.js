@@ -18,7 +18,7 @@ import WebHook from '../model/WebHook';
 /**
 * Application service.
 * @module api/ApplicationApi
-* @version v1
+* @version 0.0.0
 */
 export default class ApplicationApi {
 
@@ -34,23 +34,15 @@ export default class ApplicationApi {
     }
 
 
-    /**
-     * Callback function to receive the result of the createWebHook operation.
-     * @callback module:api/ApplicationApi~createWebHookCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/WebHook} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * Create a new Webhook
      * Create a new Webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @param {module:model/WebHook} data 
-     * @param {module:api/ApplicationApi~createWebHookCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WebHook}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
      */
-    createWebHook(cloudPk, data, callback) {
+    createWebHookWithHttpInfo(cloudPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -78,26 +70,33 @@ export default class ApplicationApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/webhook', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteWebHook operation.
-     * @callback module:api/ApplicationApi~deleteWebHookCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create a new Webhook
+     * Create a new Webhook Required scopes: webhook:manage
+     * @param {String} cloudPk 
+     * @param {module:model/WebHook} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
      */
+    createWebHook(cloudPk, data) {
+      return this.createWebHookWithHttpInfo(cloudPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete a webhook
      * Delete a webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @param {String} id 
-     * @param {module:api/ApplicationApi~deleteWebHookCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteWebHook(cloudPk, id, callback) {
+    deleteWebHookWithHttpInfo(cloudPk, id) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -126,17 +125,24 @@ export default class ApplicationApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/webhook/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the fullUpdateWebHook operation.
-     * @callback module:api/ApplicationApi~fullUpdateWebHookCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/WebHook} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete a webhook
+     * Delete a webhook Required scopes: webhook:manage
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    deleteWebHook(cloudPk, id) {
+      return this.deleteWebHookWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update all field of a webhook
@@ -144,10 +150,9 @@ export default class ApplicationApi {
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/WebHook} data 
-     * @param {module:api/ApplicationApi~fullUpdateWebHookCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WebHook}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
      */
-    fullUpdateWebHook(cloudPk, id, data, callback) {
+    fullUpdateWebHookWithHttpInfo(cloudPk, id, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -180,27 +185,34 @@ export default class ApplicationApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/webhook/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getWebHook operation.
-     * @callback module:api/ApplicationApi~getWebHookCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/WebHook} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Update all field of a webhook
+     * Update all field of a webhook Required scopes: webhook:manage
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/WebHook} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
      */
+    fullUpdateWebHook(cloudPk, id, data) {
+      return this.fullUpdateWebHookWithHttpInfo(cloudPk, id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve one configured webhook
      * Retrieve one configured webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
      * @param {String} id 
-     * @param {module:api/ApplicationApi~getWebHookCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WebHook}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
      */
-    getWebHook(cloudPk, id, callback) {
+    getWebHookWithHttpInfo(cloudPk, id) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -229,26 +241,32 @@ export default class ApplicationApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/webhook/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getWebHooks operation.
-     * @callback module:api/ApplicationApi~getWebHooksCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/WebHook>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Retrieve one configured webhook
+     * Retrieve one configured webhook Required scopes: webhook:manage
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
      */
+    getWebHook(cloudPk, id) {
+      return this.getWebHookWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Retrieve all configured webhooks
      * Retrieve all configured webhooks Required scopes: webhook:manage
      * @param {String} cloudPk 
-     * @param {module:api/ApplicationApi~getWebHooksCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/WebHook>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/WebHook>} and HTTP response
      */
-    getWebHooks(cloudPk, callback) {
+    getWebHooksWithHttpInfo(cloudPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -272,17 +290,23 @@ export default class ApplicationApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/webhook', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the pingWebHook operation.
-     * @callback module:api/ApplicationApi~pingWebHookCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/WebHook} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Retrieve all configured webhooks
+     * Retrieve all configured webhooks Required scopes: webhook:manage
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/WebHook>}
      */
+    getWebHooks(cloudPk) {
+      return this.getWebHooksWithHttpInfo(cloudPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Test a webhook
@@ -290,10 +314,9 @@ export default class ApplicationApi {
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/WebHook} data 
-     * @param {module:api/ApplicationApi~pingWebHookCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WebHook}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
      */
-    pingWebHook(cloudPk, id, data, callback) {
+    pingWebHookWithHttpInfo(cloudPk, id, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -326,17 +349,25 @@ export default class ApplicationApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/webhook/{id}/ping', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateWebHook operation.
-     * @callback module:api/ApplicationApi~updateWebHookCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/WebHook} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Test a webhook
+     * Trigger a Ping Event sending {\"ok\": true} to the webhook URL. Useful to test your app Required scopes: webhook:manage
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/WebHook} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
      */
+    pingWebHook(cloudPk, id, data) {
+      return this.pingWebHookWithHttpInfo(cloudPk, id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update some field of a webhook
@@ -344,10 +375,9 @@ export default class ApplicationApi {
      * @param {String} cloudPk 
      * @param {String} id 
      * @param {module:model/WebHook} data 
-     * @param {module:api/ApplicationApi~updateWebHookCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/WebHook}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
      */
-    updateWebHook(cloudPk, id, data, callback) {
+    updateWebHookWithHttpInfo(cloudPk, id, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -380,8 +410,23 @@ export default class ApplicationApi {
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/webhook/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
+    }
+
+    /**
+     * Update some field of a webhook
+     * Update some field of a webhook Required scopes: webhook:manage
+     * @param {String} cloudPk 
+     * @param {String} id 
+     * @param {module:model/WebHook} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
+     */
+    updateWebHook(cloudPk, id, data) {
+      return this.updateWebHookWithHttpInfo(cloudPk, id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
 
 

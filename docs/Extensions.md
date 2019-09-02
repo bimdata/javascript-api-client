@@ -1,4 +1,4 @@
-# BimDataApi.Extensions
+# bimdata.Extensions
 
 ## Properties
 

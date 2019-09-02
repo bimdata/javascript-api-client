@@ -1,4 +1,4 @@
-# BimDataApi.SelfBcfUser
+# bimdata.SelfBcfUser
 
 ## Properties
 

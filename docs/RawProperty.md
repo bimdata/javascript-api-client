@@ -1,4 +1,4 @@
-# BimDataApi.RawProperty
+# bimdata.RawProperty
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# BimDataApi.LineSeriaizer
+# bimdata.LineSeriaizer
 
 ## Properties
 

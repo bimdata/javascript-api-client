@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.ProcessorHandler();
+    instance = new bimdata.ProcessorHandler();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('ProcessorHandler', function() {
     it('should create an instance of ProcessorHandler', function() {
       // uncomment below and update the code to test ProcessorHandler
-      //var instane = new BimDataApi.ProcessorHandler();
-      //expect(instance).to.be.a(BimDataApi.ProcessorHandler);
+      //var instane = new bimdata.ProcessorHandler();
+      //expect(instance).to.be.a(bimdata.ProcessorHandler);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new BimDataApi.ProcessorHandler();
+      //var instane = new bimdata.ProcessorHandler();
       //expect(instance).to.be();
     });
 
     it('should have the property processor (base name: "processor")', function() {
       // uncomment below and update the code to test the property processor
-      //var instane = new BimDataApi.ProcessorHandler();
+      //var instane = new bimdata.ProcessorHandler();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new BimDataApi.ProcessorHandler();
+      //var instane = new bimdata.ProcessorHandler();
       //expect(instance).to.be();
     });
 
     it('should have the property detailMessage (base name: "detail_message")', function() {
       // uncomment below and update the code to test the property detailMessage
-      //var instane = new BimDataApi.ProcessorHandler();
+      //var instane = new bimdata.ProcessorHandler();
       //expect(instance).to.be();
     });
 

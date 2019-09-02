@@ -1,4 +1,4 @@
-# BimDataApi.BcfProject
+# bimdata.BcfProject
 
 ## Properties
 

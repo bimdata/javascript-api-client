@@ -1,4 +1,4 @@
-# BimDataApi.ElementClassificationRelation
+# bimdata.ElementClassificationRelation
 
 ## Properties
 

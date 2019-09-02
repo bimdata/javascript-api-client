@@ -17,7 +17,7 @@ import Space from './Space';
 /**
  * The Zone model module.
  * @module model/Zone
- * @version v1
+ * @version 0.0.0
  */
 class Zone {
     /**

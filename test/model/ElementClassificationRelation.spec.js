@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.ElementClassificationRelation();
+    instance = new bimdata.ElementClassificationRelation();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ElementClassificationRelation', function() {
     it('should create an instance of ElementClassificationRelation', function() {
       // uncomment below and update the code to test ElementClassificationRelation
-      //var instane = new BimDataApi.ElementClassificationRelation();
-      //expect(instance).to.be.a(BimDataApi.ElementClassificationRelation);
+      //var instane = new bimdata.ElementClassificationRelation();
+      //expect(instance).to.be.a(bimdata.ElementClassificationRelation);
     });
 
     it('should have the property elementUuid (base name: "element_uuid")', function() {
       // uncomment below and update the code to test the property elementUuid
-      //var instane = new BimDataApi.ElementClassificationRelation();
+      //var instane = new bimdata.ElementClassificationRelation();
       //expect(instance).to.be();
     });
 
     it('should have the property classificationId (base name: "classification_id")', function() {
       // uncomment below and update the code to test the property classificationId
-      //var instane = new BimDataApi.ElementClassificationRelation();
+      //var instane = new bimdata.ElementClassificationRelation();
       //expect(instance).to.be();
     });
 

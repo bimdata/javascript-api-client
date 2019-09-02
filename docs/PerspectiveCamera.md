@@ -1,4 +1,4 @@
-# BimDataApi.PerspectiveCamera
+# bimdata.PerspectiveCamera
 
 ## Properties
 

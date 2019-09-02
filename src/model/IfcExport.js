@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IfcExport model module.
  * @module model/IfcExport
- * @version v1
+ * @version 0.0.0
  */
 class IfcExport {
     /**

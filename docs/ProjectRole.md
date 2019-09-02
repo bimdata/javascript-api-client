@@ -1,4 +1,4 @@
-# BimDataApi.ProjectRole
+# bimdata.ProjectRole
 
 ## Properties
 

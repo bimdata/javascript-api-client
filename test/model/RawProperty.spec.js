@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.RawProperty();
+    instance = new bimdata.RawProperty();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('RawProperty', function() {
     it('should create an instance of RawProperty', function() {
       // uncomment below and update the code to test RawProperty
-      //var instane = new BimDataApi.RawProperty();
-      //expect(instance).to.be.a(BimDataApi.RawProperty);
+      //var instane = new bimdata.RawProperty();
+      //expect(instance).to.be.a(bimdata.RawProperty);
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new BimDataApi.RawProperty();
+      //var instane = new bimdata.RawProperty();
       //expect(instance).to.be();
     });
 
     it('should have the property defId (base name: "def_id")', function() {
       // uncomment below and update the code to test the property defId
-      //var instane = new BimDataApi.RawProperty();
+      //var instane = new bimdata.RawProperty();
       //expect(instance).to.be();
     });
 

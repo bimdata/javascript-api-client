@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.TopicType();
+    instance = new bimdata.TopicType();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('TopicType', function() {
     it('should create an instance of TopicType', function() {
       // uncomment below and update the code to test TopicType
-      //var instane = new BimDataApi.TopicType();
-      //expect(instance).to.be.a(BimDataApi.TopicType);
+      //var instane = new bimdata.TopicType();
+      //expect(instance).to.be.a(bimdata.TopicType);
     });
 
     it('should have the property topicType (base name: "topic_type")', function() {
       // uncomment below and update the code to test the property topicType
-      //var instane = new BimDataApi.TopicType();
+      //var instane = new bimdata.TopicType();
       //expect(instance).to.be();
     });
 

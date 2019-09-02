@@ -1,4 +1,4 @@
-# BimDataApi.CheckplanApi
+# bimdata.CheckplanApi
 
 All URIs are relative to *https://api-beta.bimdata.io*
 
@@ -55,8 +55,8 @@ A checker is a link between a checkplan and a model. A checker can launch a chec
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -69,18 +69,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new BimDataApi.IfcChecker(); // IfcChecker | 
-apiInstance.createChecker(cloudPk, ifcPk, projectPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.IfcChecker(); // IfcChecker | 
+apiInstance.createChecker(cloudPk, ifcPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -118,8 +117,8 @@ TCreate a CheckerResult Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -132,19 +131,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkerPk = "checkerPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new BimDataApi.CheckerResult(); // CheckerResult | 
-apiInstance.createCheckerResult(checkerPk, cloudPk, ifcPk, projectPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.CheckerResult(); // CheckerResult | 
+apiInstance.createCheckerResult(checkerPk, cloudPk, ifcPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -183,8 +181,8 @@ TCreate a Checkplan Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -197,17 +195,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new BimDataApi.CheckPlan(); // CheckPlan | 
-apiInstance.createCheckplan(cloudPk, projectPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.CheckPlan(); // CheckPlan | 
+apiInstance.createCheckplan(cloudPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -244,8 +241,8 @@ TCreate a Rule Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -258,19 +255,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let rulesetPk = "rulesetPk_example"; // String | 
-let data = new BimDataApi.Rule(); // Rule | 
-apiInstance.createRule(checkPlanPk, cloudPk, projectPk, rulesetPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.Rule(); // Rule | 
+apiInstance.createRule(checkPlanPk, cloudPk, projectPk, rulesetPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -309,8 +305,8 @@ TCreate a RuleComponent Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -323,20 +319,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let rulePk = "rulePk_example"; // String | 
 let rulesetPk = "rulesetPk_example"; // String | 
-let data = new BimDataApi.RuleComponent(); // RuleComponent | 
-apiInstance.createRuleComponent(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.RuleComponent(); // RuleComponent | 
+apiInstance.createRuleComponent(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -376,8 +371,8 @@ TCreate a Ruleset Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -390,18 +385,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new BimDataApi.Ruleset(); // Ruleset | 
-apiInstance.createRuleset(checkPlanPk, cloudPk, projectPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.Ruleset(); // Ruleset | 
+apiInstance.createRuleset(checkPlanPk, cloudPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -439,8 +433,8 @@ A checker is a link between a checkplan and a model. A checker can launch a chec
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -453,18 +447,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc checker.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteChecker(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.deleteChecker(cloudPk, id, ifcPk, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -502,8 +495,8 @@ Delete a CheckerResult Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -516,19 +509,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkerPk = "checkerPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this checker result.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.deleteCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -567,8 +559,8 @@ Delete a Checkplan Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -581,17 +573,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this check plan.
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteCheckplan(cloudPk, id, projectPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.deleteCheckplan(cloudPk, id, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -628,8 +619,8 @@ Delete a Rule Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -642,19 +633,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this rule.
 let projectPk = "projectPk_example"; // String | 
 let rulesetPk = "rulesetPk_example"; // String | 
-apiInstance.deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -693,8 +683,8 @@ Delete a RuleComponent Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -707,20 +697,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this rule component.
 let projectPk = "projectPk_example"; // String | 
 let rulePk = "rulePk_example"; // String | 
 let rulesetPk = "rulesetPk_example"; // String | 
-apiInstance.deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -760,8 +749,8 @@ Delete a Ruleset Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -774,18 +763,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ruleset.
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteRuleset(checkPlanPk, cloudPk, id, projectPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.deleteRuleset(checkPlanPk, cloudPk, id, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -823,8 +811,8 @@ A checker is a link between a checkplan and a model. A checker can launch a chec
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -837,19 +825,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc checker.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new BimDataApi.IfcChecker(); // IfcChecker | 
-apiInstance.fullUpdateChecker(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.IfcChecker(); // IfcChecker | 
+apiInstance.fullUpdateChecker(cloudPk, id, ifcPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -888,8 +875,8 @@ Update all fields of a CheckerResult Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -902,20 +889,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkerPk = "checkerPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this checker result.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new BimDataApi.CheckerResult(); // CheckerResult | 
-apiInstance.fullUpdateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.CheckerResult(); // CheckerResult | 
+apiInstance.fullUpdateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -955,8 +941,8 @@ Update all fields of a Checkplan Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -969,18 +955,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this check plan.
 let projectPk = "projectPk_example"; // String | 
-let data = new BimDataApi.CheckPlan(); // CheckPlan | 
-apiInstance.fullUpdateCheckplan(cloudPk, id, projectPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.CheckPlan(); // CheckPlan | 
+apiInstance.fullUpdateCheckplan(cloudPk, id, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1018,8 +1003,8 @@ Update all fields of a Rule Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1032,20 +1017,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this rule.
 let projectPk = "projectPk_example"; // String | 
 let rulesetPk = "rulesetPk_example"; // String | 
-let data = new BimDataApi.Rule(); // Rule | 
-apiInstance.fullUpdateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.Rule(); // Rule | 
+apiInstance.fullUpdateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1085,8 +1069,8 @@ Update all fields of a RuleComponent Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1099,21 +1083,20 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this rule component.
 let projectPk = "projectPk_example"; // String | 
 let rulePk = "rulePk_example"; // String | 
 let rulesetPk = "rulesetPk_example"; // String | 
-let data = new BimDataApi.RuleComponent(); // RuleComponent | 
-apiInstance.fullUpdateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.RuleComponent(); // RuleComponent | 
+apiInstance.fullUpdateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1154,8 +1137,8 @@ Update all fields of a Ruleset Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1168,19 +1151,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ruleset.
 let projectPk = "projectPk_example"; // String | 
-let data = new BimDataApi.Ruleset(); // Ruleset | 
-apiInstance.fullUpdateRuleset(checkPlanPk, cloudPk, id, projectPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.Ruleset(); // Ruleset | 
+apiInstance.fullUpdateRuleset(checkPlanPk, cloudPk, id, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1219,8 +1201,8 @@ A checker is a link between a checkplan and a model. A checker can launch a chec
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1233,18 +1215,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc checker.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getChecker(cloudPk, id, ifcPk, projectPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getChecker(cloudPk, id, ifcPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1282,8 +1263,8 @@ Retrieve one CheckerResult Required scopes: check:read
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1296,19 +1277,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkerPk = "checkerPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this checker result.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1347,8 +1327,8 @@ Retrieve all CheckerResults Required scopes: check:read
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1361,18 +1341,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkerPk = "checkerPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getCheckerResults(checkerPk, cloudPk, ifcPk, projectPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getCheckerResults(checkerPk, cloudPk, ifcPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1410,8 +1389,8 @@ A checker is a link between a checkplan and a model. A checker can launch a chec
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1424,17 +1403,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getCheckers(cloudPk, ifcPk, projectPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getCheckers(cloudPk, ifcPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1471,8 +1449,8 @@ Retrieve one Checkplan Required scopes: check:read
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1485,17 +1463,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this check plan.
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getCheckplan(cloudPk, id, projectPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getCheckplan(cloudPk, id, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1532,8 +1509,8 @@ Retrieve all Checkplans Required scopes: check:read
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1546,16 +1523,15 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getCheckplans(cloudPk, projectPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getCheckplans(cloudPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1591,8 +1567,8 @@ Retrieve one Rule Required scopes: check:read
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1605,19 +1581,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this rule.
 let projectPk = "projectPk_example"; // String | 
 let rulesetPk = "rulesetPk_example"; // String | 
-apiInstance.getRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1656,8 +1631,8 @@ Retrieve one RuleComponent Required scopes: check:read
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1670,20 +1645,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this rule component.
 let projectPk = "projectPk_example"; // String | 
 let rulePk = "rulePk_example"; // String | 
 let rulesetPk = "rulesetPk_example"; // String | 
-apiInstance.getRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1723,8 +1697,8 @@ Retrieve all RuleComponents Required scopes: check:read
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1737,19 +1711,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let rulePk = "rulePk_example"; // String | 
 let rulesetPk = "rulesetPk_example"; // String | 
-apiInstance.getRuleComponents(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getRuleComponents(checkPlanPk, cloudPk, projectPk, rulePk, rulesetPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1788,8 +1761,8 @@ Retrieve all Rules Required scopes: check:read
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1802,18 +1775,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let rulesetPk = "rulesetPk_example"; // String | 
-apiInstance.getRules(checkPlanPk, cloudPk, projectPk, rulesetPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getRules(checkPlanPk, cloudPk, projectPk, rulesetPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1851,8 +1823,8 @@ Retrieve one Ruleset Required scopes: check:read
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1865,18 +1837,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ruleset.
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getRuleset(checkPlanPk, cloudPk, id, projectPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getRuleset(checkPlanPk, cloudPk, id, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1914,8 +1885,8 @@ Retrieve all Rulesets Required scopes: check:read
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1928,17 +1899,16 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getRulesets(checkPlanPk, cloudPk, projectPk, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getRulesets(checkPlanPk, cloudPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1975,8 +1945,8 @@ Starts a new check in the checker Required scopes: check:write, ifc:read
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -1989,19 +1959,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc checker.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new BimDataApi.IfcChecker(); // IfcChecker | 
-apiInstance.launchNewCheck(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+let data = new bimdata.IfcChecker(); // IfcChecker | 
+apiInstance.launchNewCheck(cloudPk, id, ifcPk, projectPk, data).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2040,8 +2009,8 @@ A checker is a link between a checkplan and a model. A checker can launch a chec
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2054,19 +2023,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc checker.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new BimDataApi.IfcChecker(); // IfcChecker | 
-apiInstance.updateChecker(cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.IfcChecker(); // IfcChecker | 
+apiInstance.updateChecker(cloudPk, id, ifcPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2105,8 +2073,8 @@ Update some fields of a CheckerResult Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2119,20 +2087,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkerPk = "checkerPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this checker result.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new BimDataApi.CheckerResult(); // CheckerResult | 
-apiInstance.updateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.CheckerResult(); // CheckerResult | 
+apiInstance.updateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2172,8 +2139,8 @@ Update some fields of a Checkplan Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2186,18 +2153,17 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this check plan.
 let projectPk = "projectPk_example"; // String | 
-let data = new BimDataApi.CheckPlan(); // CheckPlan | 
-apiInstance.updateCheckplan(cloudPk, id, projectPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.CheckPlan(); // CheckPlan | 
+apiInstance.updateCheckplan(cloudPk, id, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2235,8 +2201,8 @@ Update some fields of a Rule Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2249,20 +2215,19 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this rule.
 let projectPk = "projectPk_example"; // String | 
 let rulesetPk = "rulesetPk_example"; // String | 
-let data = new BimDataApi.Rule(); // Rule | 
-apiInstance.updateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.Rule(); // Rule | 
+apiInstance.updateRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2302,8 +2267,8 @@ Update some fields of a RuleComponent Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2316,21 +2281,20 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this rule component.
 let projectPk = "projectPk_example"; // String | 
 let rulePk = "rulePk_example"; // String | 
 let rulesetPk = "rulesetPk_example"; // String | 
-let data = new BimDataApi.RuleComponent(); // RuleComponent | 
-apiInstance.updateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.RuleComponent(); // RuleComponent | 
+apiInstance.updateRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2371,8 +2335,8 @@ Update some fields of a Ruleset Required scopes: check:write
 ### Example
 
 ```javascript
-import BimDataApi from 'bim_data_api';
-let defaultClient = BimDataApi.ApiClient.instance;
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
 // Configure OAuth2 access token for authorization: BIMDataConnect
 let BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
 BIMDataConnect.accessToken = 'YOUR ACCESS TOKEN';
@@ -2385,19 +2349,18 @@ Bearer.apiKey = 'YOUR API KEY';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new BimDataApi.CheckplanApi();
+let apiInstance = new bimdata.CheckplanApi();
 let checkPlanPk = "checkPlanPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ruleset.
 let projectPk = "projectPk_example"; // String | 
-let data = new BimDataApi.Ruleset(); // Ruleset | 
-apiInstance.updateRuleset(checkPlanPk, cloudPk, id, projectPk, data, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+let data = new bimdata.Ruleset(); // Ruleset | 
+apiInstance.updateRuleset(checkPlanPk, cloudPk, id, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters

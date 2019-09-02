@@ -1,4 +1,4 @@
-# BimDataApi.RecursiveFolderChildren
+# bimdata.RecursiveFolderChildren
 
 ## Properties
 

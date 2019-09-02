@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Space model module.
  * @module model/Space
- * @version v1
+ * @version 0.0.0
  */
 class Space {
     /**

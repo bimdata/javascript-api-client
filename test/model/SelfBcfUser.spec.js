@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.BimDataApi);
+    factory(root.expect, root.bimdata);
   }
-}(this, function(expect, BimDataApi) {
+}(this, function(expect, bimdata) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new BimDataApi.SelfBcfUser();
+    instance = new bimdata.SelfBcfUser();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('SelfBcfUser', function() {
     it('should create an instance of SelfBcfUser', function() {
       // uncomment below and update the code to test SelfBcfUser
-      //var instane = new BimDataApi.SelfBcfUser();
-      //expect(instance).to.be.a(BimDataApi.SelfBcfUser);
+      //var instane = new bimdata.SelfBcfUser();
+      //expect(instance).to.be.a(bimdata.SelfBcfUser);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new BimDataApi.SelfBcfUser();
+      //var instane = new bimdata.SelfBcfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new BimDataApi.SelfBcfUser();
+      //var instane = new bimdata.SelfBcfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new BimDataApi.SelfBcfUser();
+      //var instane = new bimdata.SelfBcfUser();
       //expect(instance).to.be();
     });
 
