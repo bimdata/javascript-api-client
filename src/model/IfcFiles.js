@@ -65,6 +65,9 @@ class IfcFiles {
             if (data.hasOwnProperty('viewer_360_file')) {
                 obj['viewer_360_file'] = ApiClient.convertToType(data['viewer_360_file'], 'String');
             }
+            if (data.hasOwnProperty('xkt_file')) {
+                obj['xkt_file'] = ApiClient.convertToType(data['xkt_file'], 'String');
+            }
         }
         return obj;
     }
@@ -101,6 +104,11 @@ IfcFiles.prototype['bvh_tree_file'] = undefined;
  * @member {String} viewer_360_file
  */
 IfcFiles.prototype['viewer_360_file'] = undefined;
+
+/**
+ * @member {String} xkt_file
+ */
+IfcFiles.prototype['xkt_file'] = undefined;
 
 
 

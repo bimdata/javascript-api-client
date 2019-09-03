@@ -913,13 +913,13 @@ export default class IfcApi {
 
     /**
      * Create one or many classifications to an element
-     *  Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors          If classification created already exists, it will just be added to item's classifications and will not be duplicated      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/Classification} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Classification} and HTTP response
+     * @param {Array.<module:model/Classification>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
      */
     createClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data) {
       let postBody = data;
@@ -960,7 +960,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Classification;
+      let returnType = [Classification];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -970,13 +970,13 @@ export default class IfcApi {
 
     /**
      * Create one or many classifications to an element
-     *  Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors          If classification created already exists, it will just be added to item's classifications and will not be duplicated      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/Classification} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Classification}
+     * @param {Array.<module:model/Classification>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
      */
     createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data) {
       return this.createClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data)
@@ -988,12 +988,12 @@ export default class IfcApi {
 
     /**
      * Create an element in the model
-     * The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/Element} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Element} and HTTP response
+     * @param {Array.<module:model/Element>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Element>} and HTTP response
      */
     createElementWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
@@ -1029,7 +1029,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Element;
+      let returnType = [Element];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1039,12 +1039,12 @@ export default class IfcApi {
 
     /**
      * Create an element in the model
-     * The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/Element} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Element}
+     * @param {Array.<module:model/Element>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Element>}
      */
     createElement(cloudPk, ifcPk, projectPk, data) {
       return this.createElementWithHttpInfo(cloudPk, ifcPk, projectPk, data)
@@ -1398,12 +1398,12 @@ export default class IfcApi {
 
     /**
      * Create a PropertyDefinition on the model
-     *  Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/PropertyDefinition} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
+     * @param {Array.<module:model/PropertyDefinition>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyDefinition>} and HTTP response
      */
     createIfcPropertyDefinitionWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
@@ -1439,7 +1439,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = PropertyDefinition;
+      let returnType = [PropertyDefinition];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1449,12 +1449,12 @@ export default class IfcApi {
 
     /**
      * Create a PropertyDefinition on the model
-     *  Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/PropertyDefinition} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
+     * @param {Array.<module:model/PropertyDefinition>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyDefinition>}
      */
     createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, data) {
       return this.createIfcPropertyDefinitionWithHttpInfo(cloudPk, ifcPk, projectPk, data)
@@ -1466,12 +1466,12 @@ export default class IfcApi {
 
     /**
      * Create a Unit on a model
-     *  Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/Unit} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
+     * @param {Array.<module:model/Unit>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Unit>} and HTTP response
      */
     createIfcUnitWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
@@ -1507,7 +1507,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Unit;
+      let returnType = [Unit];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1517,12 +1517,12 @@ export default class IfcApi {
 
     /**
      * Create a Unit on a model
-     *  Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/Unit} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
+     * @param {Array.<module:model/Unit>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Unit>}
      */
     createIfcUnit(cloudPk, ifcPk, projectPk, data) {
       return this.createIfcUnitWithHttpInfo(cloudPk, ifcPk, projectPk, data)
@@ -1534,12 +1534,12 @@ export default class IfcApi {
 
     /**
      * Create a PropertySet
-     * Create a PropertySet Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/PropertySet} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertySet} and HTTP response
+     * @param {Array.<module:model/PropertySet>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertySet>} and HTTP response
      */
     createPropertySetWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
@@ -1575,7 +1575,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = PropertySet;
+      let returnType = [PropertySet];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1585,12 +1585,12 @@ export default class IfcApi {
 
     /**
      * Create a PropertySet
-     * Create a PropertySet Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/PropertySet} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertySet}
+     * @param {Array.<module:model/PropertySet>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertySet>}
      */
     createPropertySet(cloudPk, ifcPk, projectPk, data) {
       return this.createPropertySetWithHttpInfo(cloudPk, ifcPk, projectPk, data)
@@ -1738,12 +1738,12 @@ export default class IfcApi {
 
     /**
      * Create a space in the model
-     * The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/Space} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Space} and HTTP response
+     * @param {Array.<module:model/Space>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Space>} and HTTP response
      */
     createSpaceWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
@@ -1779,7 +1779,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Space;
+      let returnType = [Space];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1789,12 +1789,12 @@ export default class IfcApi {
 
     /**
      * Create a space in the model
-     * The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/Space} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Space}
+     * @param {Array.<module:model/Space>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Space>}
      */
     createSpace(cloudPk, ifcPk, projectPk, data) {
       return this.createSpaceWithHttpInfo(cloudPk, ifcPk, projectPk, data)
@@ -1806,12 +1806,12 @@ export default class IfcApi {
 
     /**
      * Create a zone in the model
-     * The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/Zone} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Zone} and HTTP response
+     * @param {Array.<module:model/Zone>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Zone>} and HTTP response
      */
     createZoneWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
       let postBody = data;
@@ -1847,7 +1847,7 @@ export default class IfcApi {
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Zone;
+      let returnType = [Zone];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1857,12 +1857,12 @@ export default class IfcApi {
 
     /**
      * Create a zone in the model
-     * The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @param {module:model/Zone} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Zone}
+     * @param {Array.<module:model/Zone>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Zone>}
      */
     createZone(cloudPk, ifcPk, projectPk, data) {
       return this.createZoneWithHttpInfo(cloudPk, ifcPk, projectPk, data)
@@ -6609,6 +6609,7 @@ export default class IfcApi {
      * @param {File} opts.gltfFile 
      * @param {File} opts.bvhTreeFile 
      * @param {File} opts.viewer360File 
+     * @param {File} opts.xktFile 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcFiles} and HTTP response
      */
     updateIfcFilesWithHttpInfo(cloudPk, id, projectPk, opts) {
@@ -6642,7 +6643,8 @@ export default class IfcApi {
         'map_file': opts['mapFile'],
         'gltf_file': opts['gltfFile'],
         'bvh_tree_file': opts['bvhTreeFile'],
-        'viewer_360_file': opts['viewer360File']
+        'viewer_360_file': opts['viewer360File'],
+        'xkt_file': opts['xktFile']
       };
 
       let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
@@ -6669,6 +6671,7 @@ export default class IfcApi {
      * @param {File} opts.gltfFile 
      * @param {File} opts.bvhTreeFile 
      * @param {File} opts.viewer360File 
+     * @param {File} opts.xktFile 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcFiles}
      */
     updateIfcFiles(cloudPk, id, projectPk, opts) {

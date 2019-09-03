@@ -104,11 +104,11 @@ null (empty response body)
 
 ## createClassification
 
-> Classification createClassification(cloudPk, projectPk, data)
+> [Classification] createClassification(cloudPk, projectPk, data)
 
 Create a classification
 
- Required scopes: ifc:write
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive      Required scopes: ifc:write
 
 ### Example
 
@@ -130,7 +130,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.ProjectApi();
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Classification(); // Classification | 
+let data = [new bimdata.Classification()]; // [Classification] | 
 apiInstance.createClassification(cloudPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -146,11 +146,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Classification**](Classification.md)|  | 
+ **data** | [**[Classification]**](Classification.md)|  | 
 
 ### Return type
 
-[**Classification**](Classification.md)
+[**[Classification]**](Classification.md)
 
 ### Authorization
 

@@ -138,14 +138,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property errorDetail (base name: "error_detail")', function() {
-      // uncomment below and update the code to test the property errorDetail
+    it('should have the property projectId (base name: "project_id")', function() {
+      // uncomment below and update the code to test the property projectId
       //var instane = new bimdata.Ifc();
       //expect(instance).to.be();
     });
 
-    it('should have the property projectId (base name: "project_id")', function() {
-      // uncomment below and update the code to test the property projectId
+    it('should have the property worldPosition (base name: "world_position")', function() {
+      // uncomment below and update the code to test the property worldPosition
       //var instane = new bimdata.Ifc();
       //expect(instance).to.be();
     });

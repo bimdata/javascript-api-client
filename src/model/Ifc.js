@@ -91,11 +91,11 @@ class Ifc {
             if (data.hasOwnProperty('viewer_360_file')) {
                 obj['viewer_360_file'] = ApiClient.convertToType(data['viewer_360_file'], 'String');
             }
-            if (data.hasOwnProperty('error_detail')) {
-                obj['error_detail'] = ApiClient.convertToType(data['error_detail'], 'String');
-            }
             if (data.hasOwnProperty('project_id')) {
                 obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
+            }
+            if (data.hasOwnProperty('world_position')) {
+                obj['world_position'] = ApiClient.convertToType(data['world_position'], ['Number']);
             }
         }
         return obj;
@@ -175,14 +175,15 @@ Ifc.prototype['bvh_tree_file'] = undefined;
 Ifc.prototype['viewer_360_file'] = undefined;
 
 /**
- * @member {String} error_detail
- */
-Ifc.prototype['error_detail'] = undefined;
-
-/**
  * @member {String} project_id
  */
 Ifc.prototype['project_id'] = undefined;
+
+/**
+ * [x,y,z] array of the position of the local_placement in world coordinates
+ * @member {Array.<Number>} world_position
+ */
+Ifc.prototype['world_position'] = undefined;
 
 
 

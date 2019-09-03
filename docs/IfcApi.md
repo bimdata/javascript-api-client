@@ -908,11 +908,11 @@ null (empty response body)
 
 ## createClassificationsOfElement
 
-> Classification createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data)
+> [Classification] createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data)
 
 Create one or many classifications to an element
 
- Required scopes: ifc:write
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors          If classification created already exists, it will just be added to item&#39;s classifications and will not be duplicated      Required scopes: ifc:write
 
 ### Example
 
@@ -936,7 +936,7 @@ let cloudPk = "cloudPk_example"; // String |
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Classification(); // Classification | 
+let data = [new bimdata.Classification()]; // [Classification] | 
 apiInstance.createClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -954,11 +954,11 @@ Name | Type | Description  | Notes
  **elementUuid** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Classification**](Classification.md)|  | 
+ **data** | [**[Classification]**](Classification.md)|  | 
 
 ### Return type
 
-[**Classification**](Classification.md)
+[**[Classification]**](Classification.md)
 
 ### Authorization
 
@@ -972,11 +972,11 @@ Name | Type | Description  | Notes
 
 ## createElement
 
-> Element createElement(cloudPk, ifcPk, projectPk, data)
+> [Element] createElement(cloudPk, ifcPk, projectPk, data)
 
 Create an element in the model
 
-The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
 
 ### Example
 
@@ -999,7 +999,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Element(); // Element | 
+let data = [new bimdata.Element()]; // [Element] | 
 apiInstance.createElement(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1016,11 +1016,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Element**](Element.md)|  | 
+ **data** | [**[Element]**](Element.md)|  | 
 
 ### Return type
 
-[**Element**](Element.md)
+[**[Element]**](Element.md)
 
 ### Authorization
 
@@ -1302,11 +1302,11 @@ Name | Type | Description  | Notes
 
 ## createIfcPropertyDefinition
 
-> PropertyDefinition createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, data)
+> [PropertyDefinition] createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, data)
 
 Create a PropertyDefinition on the model
 
- Required scopes: ifc:write
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
 
 ### Example
 
@@ -1329,7 +1329,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.PropertyDefinition(); // PropertyDefinition | 
+let data = [new bimdata.PropertyDefinition()]; // [PropertyDefinition] | 
 apiInstance.createIfcPropertyDefinition(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1346,11 +1346,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
+ **data** | [**[PropertyDefinition]**](PropertyDefinition.md)|  | 
 
 ### Return type
 
-[**PropertyDefinition**](PropertyDefinition.md)
+[**[PropertyDefinition]**](PropertyDefinition.md)
 
 ### Authorization
 
@@ -1364,11 +1364,11 @@ Name | Type | Description  | Notes
 
 ## createIfcUnit
 
-> Unit createIfcUnit(cloudPk, ifcPk, projectPk, data)
+> [Unit] createIfcUnit(cloudPk, ifcPk, projectPk, data)
 
 Create a Unit on a model
 
- Required scopes: ifc:write
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
 
 ### Example
 
@@ -1391,7 +1391,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Unit(); // Unit | 
+let data = [new bimdata.Unit()]; // [Unit] | 
 apiInstance.createIfcUnit(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1408,11 +1408,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Unit**](Unit.md)|  | 
+ **data** | [**[Unit]**](Unit.md)|  | 
 
 ### Return type
 
-[**Unit**](Unit.md)
+[**[Unit]**](Unit.md)
 
 ### Authorization
 
@@ -1426,11 +1426,11 @@ Name | Type | Description  | Notes
 
 ## createPropertySet
 
-> PropertySet createPropertySet(cloudPk, ifcPk, projectPk, data)
+> [PropertySet] createPropertySet(cloudPk, ifcPk, projectPk, data)
 
 Create a PropertySet
 
-Create a PropertySet Required scopes: ifc:write
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
 
 ### Example
 
@@ -1453,7 +1453,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.PropertySet(); // PropertySet | 
+let data = [new bimdata.PropertySet()]; // [PropertySet] | 
 apiInstance.createPropertySet(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1470,11 +1470,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**PropertySet**](PropertySet.md)|  | 
+ **data** | [**[PropertySet]**](PropertySet.md)|  | 
 
 ### Return type
 
-[**PropertySet**](PropertySet.md)
+[**[PropertySet]**](PropertySet.md)
 
 ### Authorization
 
@@ -1612,11 +1612,11 @@ null (empty response body)
 
 ## createSpace
 
-> Space createSpace(cloudPk, ifcPk, projectPk, data)
+> [Space] createSpace(cloudPk, ifcPk, projectPk, data)
 
 Create a space in the model
 
-The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      Required scopes: ifc:write
 
 ### Example
 
@@ -1639,7 +1639,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Space(); // Space | 
+let data = [new bimdata.Space()]; // [Space] | 
 apiInstance.createSpace(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1656,11 +1656,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Space**](Space.md)|  | 
+ **data** | [**[Space]**](Space.md)|  | 
 
 ### Return type
 
-[**Space**](Space.md)
+[**[Space]**](Space.md)
 
 ### Authorization
 
@@ -1674,11 +1674,11 @@ Name | Type | Description  | Notes
 
 ## createZone
 
-> Zone createZone(cloudPk, ifcPk, projectPk, data)
+> [Zone] createZone(cloudPk, ifcPk, projectPk, data)
 
 Create a zone in the model
 
-The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
 
 ### Example
 
@@ -1701,7 +1701,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Zone(); // Zone | 
+let data = [new bimdata.Zone()]; // [Zone] | 
 apiInstance.createZone(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1718,11 +1718,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Zone**](Zone.md)|  | 
+ **data** | [**[Zone]**](Zone.md)|  | 
 
 ### Return type
 
-[**Zone**](Zone.md)
+[**[Zone]**](Zone.md)
 
 ### Authorization
 
@@ -5927,7 +5927,8 @@ let opts = {
   'mapFile': "/path/to/file", // File | 
   'gltfFile': "/path/to/file", // File | 
   'bvhTreeFile': "/path/to/file", // File | 
-  'viewer360File': "/path/to/file" // File | 
+  'viewer360File': "/path/to/file", // File | 
+  'xktFile': "/path/to/file" // File | 
 };
 apiInstance.updateIfcFiles(cloudPk, id, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -5951,6 +5952,7 @@ Name | Type | Description  | Notes
  **gltfFile** | **File**|  | [optional] 
  **bvhTreeFile** | **File**|  | [optional] 
  **viewer360File** | **File**|  | [optional] 
+ **xktFile** | **File**|  | [optional] 
 
 ### Return type
 
