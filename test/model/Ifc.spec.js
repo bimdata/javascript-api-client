@@ -138,6 +138,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property xktFile (base name: "xkt_file")', function() {
+      // uncomment below and update the code to test the property xktFile
+      //var instane = new bimdata.Ifc();
+      //expect(instance).to.be();
+    });
+
     it('should have the property projectId (base name: "project_id")', function() {
       // uncomment below and update the code to test the property projectId
       //var instane = new bimdata.Ifc();

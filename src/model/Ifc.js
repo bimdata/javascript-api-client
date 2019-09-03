@@ -91,6 +91,9 @@ class Ifc {
             if (data.hasOwnProperty('viewer_360_file')) {
                 obj['viewer_360_file'] = ApiClient.convertToType(data['viewer_360_file'], 'String');
             }
+            if (data.hasOwnProperty('xkt_file')) {
+                obj['xkt_file'] = ApiClient.convertToType(data['xkt_file'], 'String');
+            }
             if (data.hasOwnProperty('project_id')) {
                 obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
             }
@@ -173,6 +176,11 @@ Ifc.prototype['bvh_tree_file'] = undefined;
  * @member {String} viewer_360_file
  */
 Ifc.prototype['viewer_360_file'] = undefined;
+
+/**
+ * @member {String} xkt_file
+ */
+Ifc.prototype['xkt_file'] = undefined;
 
 /**
  * @member {String} project_id

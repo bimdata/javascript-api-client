@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **gltfFile** | **String** |  | [optional] 
 **bvhTreeFile** | **String** |  | [optional] 
 **viewer360File** | **String** |  | [optional] 
+**xktFile** | **String** |  | [optional] 
 **projectId** | **String** |  | [optional] 
 **worldPosition** | **[Number]** | [x,y,z] array of the position of the local_placement in world coordinates | [optional] 
 
