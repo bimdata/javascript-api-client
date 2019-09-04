@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **size** | **Number** |  | [optional] 
 **ifcId** | **Number** |  | [optional] 
 **file** | **String** |  | [optional] 
-**children** | [**[RecursiveFolderChildren]**](RecursiveFolderChildren.md) |  | 
+**children** | [**[RecursiveFolderChildren]**](RecursiveFolderChildren.md) |  | [optional] 
 
 
 
