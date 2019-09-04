@@ -25,16 +25,14 @@ class RecursiveFolderChildren {
      * @alias module:model/RecursiveFolderChildren
      * @param id {Number} 
      * @param parentId {Number} 
-     * @param createdBy {module:model/User} 
-     * @param creator {module:model/User} 
      * @param name {String} 
      * @param createdAt {Date} 
      * @param updatedAt {Date} 
      * @param children {Array.<module:model/RecursiveFolderChildren>} 
      */
-    constructor(id, parentId, createdBy, creator, name, createdAt, updatedAt, children) { 
+    constructor(id, parentId, name, createdAt, updatedAt, children) { 
         
-        RecursiveFolderChildren.initialize(this, id, parentId, createdBy, creator, name, createdAt, updatedAt, children);
+        RecursiveFolderChildren.initialize(this, id, parentId, name, createdAt, updatedAt, children);
     }
 
     /**
@@ -42,11 +40,9 @@ class RecursiveFolderChildren {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, parentId, createdBy, creator, name, createdAt, updatedAt, children) { 
+    static initialize(obj, id, parentId, name, createdAt, updatedAt, children) { 
         obj['id'] = id;
         obj['parent_id'] = parentId;
-        obj['created_by'] = createdBy;
-        obj['creator'] = creator;
         obj['name'] = name;
         obj['created_at'] = createdAt;
         obj['updated_at'] = updatedAt;
