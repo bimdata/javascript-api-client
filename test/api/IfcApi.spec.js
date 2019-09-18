@@ -168,6 +168,16 @@
         done();
       });
     });
+    describe('createAccessToken', function() {
+      it('should call createAccessToken successfully', function(done) {
+        //uncomment below and update the code to test createAccessToken
+        //instance.createAccessToken(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createClassificationElementRelations', function() {
       it('should call createClassificationElementRelations successfully', function(done) {
         //uncomment below and update the code to test createClassificationElementRelations
@@ -318,6 +328,16 @@
         done();
       });
     });
+    describe('deleteAccessToken', function() {
+      it('should call deleteAccessToken successfully', function(done) {
+        //uncomment below and update the code to test deleteAccessToken
+        //instance.deleteAccessToken(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteElement', function() {
       it('should call deleteElement successfully', function(done) {
         //uncomment below and update the code to test deleteElement
@@ -418,6 +438,16 @@
         done();
       });
     });
+    describe('fullUpdateAccessToken', function() {
+      it('should call fullUpdateAccessToken successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateAccessToken
+        //instance.fullUpdateAccessToken(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('fullUpdateElement', function() {
       it('should call fullUpdateElement successfully', function(done) {
         //uncomment below and update the code to test fullUpdateElement
@@ -502,6 +532,26 @@
       it('should call fullUpdateZoneSpace successfully', function(done) {
         //uncomment below and update the code to test fullUpdateZoneSpace
         //instance.fullUpdateZoneSpace(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAccessToken', function() {
+      it('should call getAccessToken successfully', function(done) {
+        //uncomment below and update the code to test getAccessToken
+        //instance.getAccessToken(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAccessTokens', function() {
+      it('should call getAccessTokens successfully', function(done) {
+        //uncomment below and update the code to test getAccessTokens
+        //instance.getAccessTokens(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -942,6 +992,16 @@
       it('should call removeElementsFromClassification successfully', function(done) {
         //uncomment below and update the code to test removeElementsFromClassification
         //instance.removeElementsFromClassification(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateAccessToken', function() {
+      it('should call updateAccessToken successfully', function(done) {
+        //uncomment below and update the code to test updateAccessToken
+        //instance.updateAccessToken(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

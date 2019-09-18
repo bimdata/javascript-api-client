@@ -101,14 +101,14 @@ Please follow the [installation](#installation) instruction and execute the foll
 var bimdata = require('@bimdata/bimdata-api-client');
 
 var defaultClient = bimdata.ApiClient.instance;
-// Configure OAuth2 access token for authorization: BIMDataConnect
-var BIMDataConnect = defaultClient.authentications['BIMDataConnect'];
-BIMDataConnect.accessToken = "YOUR ACCESS TOKEN"
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = "YOUR API KEY"
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix['Authorization'] = "Token"
+// Configure OAuth2 access token for authorization: bimdata_connect
+var bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = "YOUR ACCESS TOKEN"
 // Configure OAuth2 access token for authorization: client_credentials
 var client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = "YOUR ACCESS TOKEN"
@@ -227,6 +227,10 @@ Class | Method | HTTP request | Description
 *bimdata.CloudApi* | [**inviteCloudUser**](docs/CloudApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | Invite a cloud administrator
 *bimdata.CloudApi* | [**updateCloud**](docs/CloudApi.md#updateCloud) | **PATCH** /cloud/{id} | Update some fields of a cloud
 *bimdata.CloudApi* | [**updateCloudUser**](docs/CloudApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | Update some fields of a cloud user
+*bimdata.IdentityProviderApi* | [**acceptInvitation**](docs/IdentityProviderApi.md#acceptInvitation) | **POST** /identity-provider/invitation/{id}/accept | Accept an invitation
+*bimdata.IdentityProviderApi* | [**denyInvitation**](docs/IdentityProviderApi.md#denyInvitation) | **POST** /identity-provider/invitation/{id}/deny | Deny an invitation
+*bimdata.IdentityProviderApi* | [**getInvitation**](docs/IdentityProviderApi.md#getInvitation) | **GET** /identity-provider/invitation/{id} | Retrieve an invitation
+*bimdata.IdentityProviderApi* | [**getInvitations**](docs/IdentityProviderApi.md#getInvitations) | **GET** /identity-provider/invitation | Retrieve all invitations
 *bimdata.IfcApi* | [**bulkDeleteIfcClassifications**](docs/IfcApi.md#bulkDeleteIfcClassifications) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/list_destroy | Remove all classifications from model&#39;s elements
 *bimdata.IfcApi* | [**bulkDeleteIfcProperties**](docs/IfcApi.md#bulkDeleteIfcProperties) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_destroy | Delete many Property of a model
 *bimdata.IfcApi* | [**bulkDeleteIfcPropertyDefinitions**](docs/IfcApi.md#bulkDeleteIfcPropertyDefinitions) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/bulk_destroy | Delete many PropertyDefinitions of a model
@@ -239,6 +243,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**bulkUpdateElements**](docs/IfcApi.md#bulkUpdateElements) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update | Update many elements at once (all field must be defined)
 *bimdata.IfcApi* | [**bulkUpdateIfcProperty**](docs/IfcApi.md#bulkUpdateIfcProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update | Update all fields of many properties of a model
 *bimdata.IfcApi* | [**cloudProjectIfcProcessorhandlerPartialUpdate**](docs/IfcApi.md#cloudProjectIfcProcessorhandlerPartialUpdate) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | 
+*bimdata.IfcApi* | [**createAccessToken**](docs/IfcApi.md#createAccessToken) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token | Create a token for this model
 *bimdata.IfcApi* | [**createClassificationElementRelations**](docs/IfcApi.md#createClassificationElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | Create association between existing classification and existing element
 *bimdata.IfcApi* | [**createClassificationsOfElement**](docs/IfcApi.md#createClassificationsOfElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Create one or many classifications to an element
 *bimdata.IfcApi* | [**createElement**](docs/IfcApi.md#createElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element | Create an element in the model
@@ -254,6 +259,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**createSpace**](docs/IfcApi.md#createSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space | Create a space in the model
 *bimdata.IfcApi* | [**createZone**](docs/IfcApi.md#createZone) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Create a zone in the model
 *bimdata.IfcApi* | [**createZoneSpace**](docs/IfcApi.md#createZoneSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Create a space in a zone
+*bimdata.IfcApi* | [**deleteAccessToken**](docs/IfcApi.md#deleteAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Delete a token
 *bimdata.IfcApi* | [**deleteElement**](docs/IfcApi.md#deleteElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Delete a zone of a model
 *bimdata.IfcApi* | [**deleteIfc**](docs/IfcApi.md#deleteIfc) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Delete a model
 *bimdata.IfcApi* | [**deleteIfcProperty**](docs/IfcApi.md#deleteIfcProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | Delete a Property of a model
@@ -264,6 +270,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**deleteZone**](docs/IfcApi.md#deleteZone) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Delete a zone of a model
 *bimdata.IfcApi* | [**deleteZoneSpace**](docs/IfcApi.md#deleteZoneSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Delete a space of a zone
 *bimdata.IfcApi* | [**exportIfc**](docs/IfcApi.md#exportIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/export | Export IFC
+*bimdata.IfcApi* | [**fullUpdateAccessToken**](docs/IfcApi.md#fullUpdateAccessToken) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Update all fields of a token
 *bimdata.IfcApi* | [**fullUpdateElement**](docs/IfcApi.md#fullUpdateElement) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update all fields of an element
 *bimdata.IfcApi* | [**fullUpdateIfc**](docs/IfcApi.md#fullUpdateIfc) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Update all fields of a model
 *bimdata.IfcApi* | [**fullUpdateIfcProperty**](docs/IfcApi.md#fullUpdateIfcProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | Update some fields of a Property
@@ -273,6 +280,8 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**fullUpdateSpace**](docs/IfcApi.md#fullUpdateSpace) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Update all fields of a space
 *bimdata.IfcApi* | [**fullUpdateZone**](docs/IfcApi.md#fullUpdateZone) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Update all fields of a zone
 *bimdata.IfcApi* | [**fullUpdateZoneSpace**](docs/IfcApi.md#fullUpdateZoneSpace) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Update all fields of a space
+*bimdata.IfcApi* | [**getAccessToken**](docs/IfcApi.md#getAccessToken) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Retrieve one token created for this model
+*bimdata.IfcApi* | [**getAccessTokens**](docs/IfcApi.md#getAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token | Retrieve all tokens created for this model
 *bimdata.IfcApi* | [**getClassificationsOfElement**](docs/IfcApi.md#getClassificationsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Retrieve all classifications of an element
 *bimdata.IfcApi* | [**getElement**](docs/IfcApi.md#getElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Retrieve an element of a model
 *bimdata.IfcApi* | [**getElementPropertySet**](docs/IfcApi.md#getElementPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | Retrieve a PropertySet of an element
@@ -317,6 +326,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**removeElementPropertySetPropertyDefinition**](docs/IfcApi.md#removeElementPropertySetPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id} | Remove a Definition from a Property
 *bimdata.IfcApi* | [**removeElementPropertySetPropertyDefinitionUnit**](docs/IfcApi.md#removeElementPropertySetPropertyDefinitionUnit) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit/{id} | Remove a Unit from a Definition
 *bimdata.IfcApi* | [**removeElementsFromClassification**](docs/IfcApi.md#removeElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/{uuid} | Remove the classification from all elements
+*bimdata.IfcApi* | [**updateAccessToken**](docs/IfcApi.md#updateAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Update some fields of a token
 *bimdata.IfcApi* | [**updateElement**](docs/IfcApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update some fields of a zone
 *bimdata.IfcApi* | [**updateIfc**](docs/IfcApi.md#updateIfc) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Update some fields of a model
 *bimdata.IfcApi* | [**updateIfcFiles**](docs/IfcApi.md#updateIfcFiles) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/files | Update models file (gltf, svg, structure, etc)
@@ -393,11 +403,13 @@ Class | Method | HTTP request | Description
  - [bimdata.Folder](docs/Folder.md)
  - [bimdata.FullTopic](docs/FullTopic.md)
  - [bimdata.Ifc](docs/Ifc.md)
+ - [bimdata.IfcAccessToken](docs/IfcAccessToken.md)
  - [bimdata.IfcChecker](docs/IfcChecker.md)
  - [bimdata.IfcCheckerCheckplan](docs/IfcCheckerCheckplan.md)
  - [bimdata.IfcCheckerResults](docs/IfcCheckerResults.md)
  - [bimdata.IfcExport](docs/IfcExport.md)
  - [bimdata.IfcFiles](docs/IfcFiles.md)
+ - [bimdata.Invitation](docs/Invitation.md)
  - [bimdata.Label](docs/Label.md)
  - [bimdata.LineSeriaizer](docs/LineSeriaizer.md)
  - [bimdata.OrthogonalCamera](docs/OrthogonalCamera.md)
@@ -447,22 +459,22 @@ Class | Method | HTTP request | Description
 
 
 
-### BIMDataConnect
-
-
-- **Type**: OAuth
-- **Flow**: implicit
-- **Authorization URL**: http://localhost:8081/authorize
-- **Scopes**: N/A
-
-
-
 ### Bearer
 
 
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+
+
+### bimdata_connect
+
+
+- **Type**: OAuth
+- **Flow**: implicit
+- **Authorization URL**: http://localhost:8080/auth/realms/bimdata/authorize
+- **Scopes**: N/A
 
 
 

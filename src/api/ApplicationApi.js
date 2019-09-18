@@ -63,7 +63,7 @@ export default class ApplicationApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = WebHook;
@@ -118,7 +118,7 @@ export default class ApplicationApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -178,7 +178,7 @@ export default class ApplicationApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = WebHook;
@@ -234,7 +234,7 @@ export default class ApplicationApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = WebHook;
@@ -283,7 +283,7 @@ export default class ApplicationApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [WebHook];
@@ -342,7 +342,7 @@ export default class ApplicationApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = WebHook;
@@ -403,7 +403,7 @@ export default class ApplicationApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = WebHook;

@@ -18,6 +18,7 @@ import Element from '../model/Element';
 import ElementClassificationRelation from '../model/ElementClassificationRelation';
 import ElementPropertySetRelation from '../model/ElementPropertySetRelation';
 import Ifc from '../model/Ifc';
+import IfcAccessToken from '../model/IfcAccessToken';
 import IfcExport from '../model/IfcExport';
 import IfcFiles from '../model/IfcFiles';
 import ProcessorHandler from '../model/ProcessorHandler';
@@ -85,7 +86,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -147,7 +148,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -209,7 +210,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -271,7 +272,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -333,7 +334,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -400,7 +401,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [Element];
@@ -468,7 +469,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [Property];
@@ -537,7 +538,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -606,7 +607,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -674,7 +675,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [Element];
@@ -742,7 +743,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [Property];
@@ -815,7 +816,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ProcessorHandler;
@@ -837,6 +838,74 @@ export default class IfcApi {
      */
     cloudProjectIfcProcessorhandlerPartialUpdate(cloudPk, id, ifcPk, projectPk, data) {
       return this.cloudProjectIfcProcessorhandlerPartialUpdateWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a token for this model
+     * Tokens are read_only by default and are valid 1 day Required scopes: ifc:token_manage
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/IfcAccessToken} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcAccessToken} and HTTP response
+     */
+    createAccessTokenWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createAccessToken");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createAccessToken");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createAccessToken");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createAccessToken");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = IfcAccessToken;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a token for this model
+     * Tokens are read_only by default and are valid 1 day Required scopes: ifc:token_manage
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/IfcAccessToken} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcAccessToken}
+     */
+    createAccessToken(cloudPk, ifcPk, projectPk, data) {
+      return this.createAccessTokenWithHttpInfo(cloudPk, ifcPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -883,7 +952,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -957,7 +1026,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [Classification];
@@ -1026,7 +1095,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [Element];
@@ -1100,7 +1169,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PropertySet;
@@ -1181,7 +1250,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Property;
@@ -1269,7 +1338,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PropertyDefinition;
@@ -1364,7 +1433,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Unit;
@@ -1436,7 +1505,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [PropertyDefinition];
@@ -1504,7 +1573,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [Unit];
@@ -1572,7 +1641,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [PropertySet];
@@ -1640,7 +1709,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -1708,7 +1777,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -1776,7 +1845,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [Space];
@@ -1844,7 +1913,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [Zone];
@@ -1918,7 +1987,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ZoneSpace;
@@ -1941,6 +2010,75 @@ export default class IfcApi {
      */
     createZoneSpace(cloudPk, ifcPk, projectPk, zonePk, data) {
       return this.createZoneSpaceWithHttpInfo(cloudPk, ifcPk, projectPk, zonePk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a token
+     * Deleting a token will revoke it. Required scopes: ifc:token_manage
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteAccessTokenWithHttpInfo(cloudPk, ifcPk, projectPk, token) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteAccessToken");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling deleteAccessToken");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteAccessToken");
+      }
+      // verify the required parameter 'token' is set
+      if (token === undefined || token === null) {
+        throw new Error("Missing the required parameter 'token' when calling deleteAccessToken");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'token': token
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a token
+     * Deleting a token will revoke it. Required scopes: ifc:token_manage
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteAccessToken(cloudPk, ifcPk, projectPk, token) {
+      return this.deleteAccessTokenWithHttpInfo(cloudPk, ifcPk, projectPk, token)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1988,7 +2126,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2051,7 +2189,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2119,7 +2257,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2188,7 +2326,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2257,7 +2395,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2326,7 +2464,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2395,7 +2533,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2464,7 +2602,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2539,7 +2677,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2608,7 +2746,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = IfcExport;
@@ -2630,6 +2768,81 @@ export default class IfcApi {
      */
     exportIfc(cloudPk, id, projectPk, data) {
       return this.exportIfcWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update all fields of a token
+     * You can update the expiration date or the read_only field Required scopes: ifc:token_manage
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @param {module:model/IfcAccessToken} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcAccessToken} and HTTP response
+     */
+    fullUpdateAccessTokenWithHttpInfo(cloudPk, ifcPk, projectPk, token, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateAccessToken");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateAccessToken");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateAccessToken");
+      }
+      // verify the required parameter 'token' is set
+      if (token === undefined || token === null) {
+        throw new Error("Missing the required parameter 'token' when calling fullUpdateAccessToken");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateAccessToken");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'token': token
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = IfcAccessToken;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update all fields of a token
+     * You can update the expiration date or the read_only field Required scopes: ifc:token_manage
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @param {module:model/IfcAccessToken} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcAccessToken}
+     */
+    fullUpdateAccessToken(cloudPk, ifcPk, projectPk, token, data) {
+      return this.fullUpdateAccessTokenWithHttpInfo(cloudPk, ifcPk, projectPk, token, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2682,7 +2895,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Element;
@@ -2751,7 +2964,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Ifc;
@@ -2825,7 +3038,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Property;
@@ -2900,7 +3113,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PropertyDefinition;
@@ -2975,7 +3188,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Unit;
@@ -3050,7 +3263,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PropertySet;
@@ -3125,7 +3338,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Space;
@@ -3200,7 +3413,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Zone;
@@ -3281,7 +3494,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ZoneSpace;
@@ -3305,6 +3518,137 @@ export default class IfcApi {
      */
     fullUpdateZoneSpace(cloudPk, id, ifcPk, projectPk, zonePk, data) {
       return this.fullUpdateZoneSpaceWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve one token created for this model
+     * Retrieve one token created for this model Required scopes: ifc:token_manage
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcAccessToken} and HTTP response
+     */
+    getAccessTokenWithHttpInfo(cloudPk, ifcPk, projectPk, token) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getAccessToken");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getAccessToken");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getAccessToken");
+      }
+      // verify the required parameter 'token' is set
+      if (token === undefined || token === null) {
+        throw new Error("Missing the required parameter 'token' when calling getAccessToken");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'token': token
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = IfcAccessToken;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve one token created for this model
+     * Retrieve one token created for this model Required scopes: ifc:token_manage
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcAccessToken}
+     */
+    getAccessToken(cloudPk, ifcPk, projectPk, token) {
+      return this.getAccessTokenWithHttpInfo(cloudPk, ifcPk, projectPk, token)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all tokens created for this model
+     * Retrieve all tokens created for this model Required scopes: ifc:token_manage
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/IfcAccessToken>} and HTTP response
+     */
+    getAccessTokensWithHttpInfo(cloudPk, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getAccessTokens");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getAccessTokens");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getAccessTokens");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [IfcAccessToken];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all tokens created for this model
+     * Retrieve all tokens created for this model Required scopes: ifc:token_manage
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/IfcAccessToken>}
+     */
+    getAccessTokens(cloudPk, ifcPk, projectPk) {
+      return this.getAccessTokensWithHttpInfo(cloudPk, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3352,7 +3696,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Classification];
@@ -3421,7 +3765,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Element;
@@ -3496,7 +3840,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PropertySet;
@@ -3572,7 +3916,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Property];
@@ -3654,7 +3998,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Property;
@@ -3743,7 +4087,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PropertyDefinition;
@@ -3839,7 +4183,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Unit;
@@ -3930,7 +4274,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Unit];
@@ -4014,7 +4358,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [PropertyDefinition];
@@ -4085,7 +4429,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [PropertySet];
@@ -4156,7 +4500,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Element];
@@ -4228,7 +4572,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Element];
@@ -4291,7 +4635,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Ifc;
@@ -4353,7 +4697,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4415,7 +4759,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Classification];
@@ -4477,7 +4821,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4539,7 +4883,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4601,7 +4945,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Property];
@@ -4669,7 +5013,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Property;
@@ -4738,7 +5082,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PropertyDefinition;
@@ -4801,7 +5145,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [PropertyDefinition];
@@ -4863,7 +5207,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4925,7 +5269,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4993,7 +5337,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Unit;
@@ -5056,7 +5400,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Unit];
@@ -5116,7 +5460,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Ifc];
@@ -5185,7 +5529,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ProcessorHandler;
@@ -5248,7 +5592,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [ProcessorHandler];
@@ -5316,7 +5660,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PropertySet;
@@ -5379,7 +5723,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [PropertySet];
@@ -5449,7 +5793,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = RawElements;
@@ -5521,7 +5865,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Space;
@@ -5584,7 +5928,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Space];
@@ -5652,7 +5996,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Zone;
@@ -5727,7 +6071,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ZoneSpace;
@@ -5797,7 +6141,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [ZoneSpace];
@@ -5864,7 +6208,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Zone];
@@ -5928,7 +6272,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [ElementClassificationRelation];
@@ -6002,7 +6346,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -6078,7 +6422,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -6160,7 +6504,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -6249,7 +6593,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -6345,7 +6689,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -6424,7 +6768,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -6447,6 +6791,81 @@ export default class IfcApi {
      */
     removeElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk, uuid) {
       return this.removeElementsFromClassificationWithHttpInfo(cloudPk, ifcClassificationPk, ifcPk, projectPk, uuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a token
+     * You can update the expiration date or the read_only field Required scopes: ifc:token_manage
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @param {module:model/IfcAccessToken} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcAccessToken} and HTTP response
+     */
+    updateAccessTokenWithHttpInfo(cloudPk, ifcPk, projectPk, token, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateAccessToken");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateAccessToken");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateAccessToken");
+      }
+      // verify the required parameter 'token' is set
+      if (token === undefined || token === null) {
+        throw new Error("Missing the required parameter 'token' when calling updateAccessToken");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateAccessToken");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'token': token
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = IfcAccessToken;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a token
+     * You can update the expiration date or the read_only field Required scopes: ifc:token_manage
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @param {module:model/IfcAccessToken} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcAccessToken}
+     */
+    updateAccessToken(cloudPk, ifcPk, projectPk, token, data) {
+      return this.updateAccessTokenWithHttpInfo(cloudPk, ifcPk, projectPk, token, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6499,7 +6918,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Element;
@@ -6568,7 +6987,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Ifc;
@@ -6647,7 +7066,7 @@ export default class IfcApi {
         'xkt_file': opts['xktFile']
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
       let returnType = IfcFiles;
@@ -6728,7 +7147,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Property;
@@ -6803,7 +7222,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PropertyDefinition;
@@ -6878,7 +7297,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Unit;
@@ -6953,7 +7372,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ProcessorHandler;
@@ -7028,7 +7447,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PropertySet;
@@ -7103,7 +7522,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Space;
@@ -7178,7 +7597,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Zone;
@@ -7259,7 +7678,7 @@ export default class IfcApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ZoneSpace;

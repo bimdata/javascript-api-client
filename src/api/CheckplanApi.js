@@ -80,7 +80,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = IfcChecker;
@@ -154,7 +154,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CheckerResult;
@@ -217,7 +217,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CheckPlan;
@@ -290,7 +290,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Rule;
@@ -371,7 +371,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = RuleComponent;
@@ -441,7 +441,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Ruleset;
@@ -510,7 +510,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -585,7 +585,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -649,7 +649,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -723,7 +723,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -805,7 +805,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -876,7 +876,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -950,7 +950,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = IfcChecker;
@@ -1031,7 +1031,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CheckerResult;
@@ -1101,7 +1101,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CheckPlan;
@@ -1181,7 +1181,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Rule;
@@ -1269,7 +1269,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = RuleComponent;
@@ -1346,7 +1346,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Ruleset;
@@ -1416,7 +1416,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = IfcChecker;
@@ -1491,7 +1491,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CheckerResult;
@@ -1561,7 +1561,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [CheckerResult];
@@ -1624,7 +1624,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [IfcChecker];
@@ -1686,7 +1686,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CheckPlan;
@@ -1742,7 +1742,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [CheckPlan];
@@ -1815,7 +1815,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Rule;
@@ -1897,7 +1897,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = RuleComponent;
@@ -1974,7 +1974,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [RuleComponent];
@@ -2044,7 +2044,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Rule];
@@ -2113,7 +2113,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Ruleset;
@@ -2176,7 +2176,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Ruleset];
@@ -2249,7 +2249,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -2324,7 +2324,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = IfcChecker;
@@ -2405,7 +2405,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CheckerResult;
@@ -2475,7 +2475,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CheckPlan;
@@ -2555,7 +2555,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Rule;
@@ -2643,7 +2643,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = RuleComponent;
@@ -2720,7 +2720,7 @@ export default class CheckplanApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Ruleset;

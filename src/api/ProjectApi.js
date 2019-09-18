@@ -77,7 +77,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -138,7 +138,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [Classification];
@@ -218,7 +218,7 @@ export default class ProjectApi {
         'size': opts['size']
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
       let returnType = Document;
@@ -288,7 +288,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Folder;
@@ -343,7 +343,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Project;
@@ -404,7 +404,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -466,7 +466,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -528,7 +528,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -584,7 +584,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -645,7 +645,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -712,7 +712,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Classification;
@@ -799,7 +799,7 @@ export default class ProjectApi {
         'size': opts['size']
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
       let returnType = Document;
@@ -876,7 +876,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Folder;
@@ -938,7 +938,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Project;
@@ -1005,7 +1005,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = User;
@@ -1068,7 +1068,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Classification;
@@ -1124,7 +1124,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Classification];
@@ -1185,7 +1185,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Document;
@@ -1241,7 +1241,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Document];
@@ -1302,7 +1302,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Folder;
@@ -1358,7 +1358,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Folder];
@@ -1413,7 +1413,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ProjectWithChildren;
@@ -1468,7 +1468,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Folder;
@@ -1523,7 +1523,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [ProjectInvitation];
@@ -1572,7 +1572,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [ProjectWithChildren];
@@ -1626,7 +1626,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Folder;
@@ -1687,7 +1687,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = User;
@@ -1743,7 +1743,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [User];
@@ -1792,7 +1792,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Project];
@@ -1851,7 +1851,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ProjectInvitation;
@@ -1918,7 +1918,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Classification;
@@ -1986,7 +1986,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Document;
@@ -2054,7 +2054,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Folder;
@@ -2116,7 +2116,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Project;
@@ -2183,7 +2183,7 @@ export default class ProjectApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = User;

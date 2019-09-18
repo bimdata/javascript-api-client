@@ -82,8 +82,11 @@ class SelfUser {
             if (data.hasOwnProperty('projects')) {
                 obj['projects'] = ApiClient.convertToType(data['projects'], [ProjectRole]);
             }
-            if (data.hasOwnProperty('oidc_sub')) {
-                obj['oidc_sub'] = ApiClient.convertToType(data['oidc_sub'], 'String');
+            if (data.hasOwnProperty('provider_sub')) {
+                obj['provider_sub'] = ApiClient.convertToType(data['provider_sub'], 'String');
+            }
+            if (data.hasOwnProperty('sub')) {
+                obj['sub'] = ApiClient.convertToType(data['sub'], 'String');
             }
         }
         return obj;
@@ -138,9 +141,16 @@ SelfUser.prototype['clouds'] = undefined;
 SelfUser.prototype['projects'] = undefined;
 
 /**
- * @member {String} oidc_sub
+ * sub from original identity provider
+ * @member {String} provider_sub
  */
-SelfUser.prototype['oidc_sub'] = undefined;
+SelfUser.prototype['provider_sub'] = undefined;
+
+/**
+ * sub from Keycloak
+ * @member {String} sub
+ */
+SelfUser.prototype['sub'] = undefined;
 
 
 

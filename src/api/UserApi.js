@@ -51,7 +51,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = SelfUser;
@@ -93,7 +93,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = SelfUser;
@@ -131,7 +131,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = ['BIMDataConnect', 'Bearer', 'client_credentials'];
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Project];

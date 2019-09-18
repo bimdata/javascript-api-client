@@ -108,8 +108,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property oidcSub (base name: "oidc_sub")', function() {
-      // uncomment below and update the code to test the property oidcSub
+    it('should have the property providerSub (base name: "provider_sub")', function() {
+      // uncomment below and update the code to test the property providerSub
+      //var instane = new bimdata.SelfUser();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sub (base name: "sub")', function() {
+      // uncomment below and update the code to test the property sub
       //var instane = new bimdata.SelfUser();
       //expect(instance).to.be();
     });

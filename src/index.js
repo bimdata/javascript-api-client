@@ -36,11 +36,13 @@ import Feature from './model/Feature';
 import Folder from './model/Folder';
 import FullTopic from './model/FullTopic';
 import Ifc from './model/Ifc';
+import IfcAccessToken from './model/IfcAccessToken';
 import IfcChecker from './model/IfcChecker';
 import IfcCheckerCheckplan from './model/IfcCheckerCheckplan';
 import IfcCheckerResults from './model/IfcCheckerResults';
 import IfcExport from './model/IfcExport';
 import IfcFiles from './model/IfcFiles';
+import Invitation from './model/Invitation';
 import Label from './model/Label';
 import LineSeriaizer from './model/LineSeriaizer';
 import OrthogonalCamera from './model/OrthogonalCamera';
@@ -88,6 +90,7 @@ import ApplicationApi from './api/ApplicationApi';
 import BcfApi from './api/BcfApi';
 import CheckplanApi from './api/CheckplanApi';
 import CloudApi from './api/CloudApi';
+import IdentityProviderApi from './api/IdentityProviderApi';
 import IfcApi from './api/IfcApi';
 import ProjectApi from './api/ProjectApi';
 import UserApi from './api/UserApi';
@@ -270,6 +273,12 @@ export {
     Ifc,
 
     /**
+     * The IfcAccessToken model constructor.
+     * @property {module:model/IfcAccessToken}
+     */
+    IfcAccessToken,
+
+    /**
      * The IfcChecker model constructor.
      * @property {module:model/IfcChecker}
      */
@@ -298,6 +307,12 @@ export {
      * @property {module:model/IfcFiles}
      */
     IfcFiles,
+
+    /**
+     * The Invitation model constructor.
+     * @property {module:model/Invitation}
+     */
+    Invitation,
 
     /**
      * The Label model constructor.
@@ -580,6 +595,12 @@ export {
     * @property {module:api/CloudApi}
     */
     CloudApi,
+
+    /**
+    * The IdentityProviderApi service constructor.
+    * @property {module:api/IdentityProviderApi}
+    */
+    IdentityProviderApi,
 
     /**
     * The IfcApi service constructor.

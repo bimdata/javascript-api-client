@@ -1,0 +1,33 @@
+# bimdata.Invitation
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **Number** |  | [optional] 
+**clientId** | **String** |  | [optional] 
+**redirectUri** | **String** | User will be redirected to this uri when they accept the invitation | 
+**cloudName** | **String** |  | 
+**cloudRole** | **Number** | Role the user will have when they accept the invitation | 
+**projectName** | **String** |  | 
+**projectRole** | **Number** | Role the user will have when they accept the invitation | [optional] 
+**email** | **String** | email of the user to invite | 
+**status** | **String** |          A: Accepted         D: Denied         P: Pending         W: Accepted but waiting for user first login to finish the process          | [optional] 
+**senderProviderSub** | **String** | OIDC sub of the sender. The original sub from the provider is used instead of the broker sub | 
+
+
+
+## Enum: StatusEnum
+
+
+* `A` (value: `"A"`)
+
+* `D` (value: `"D"`)
+
+* `P` (value: `"P"`)
+
+* `W` (value: `"W"`)
+
+
+
+
