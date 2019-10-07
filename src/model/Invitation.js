@@ -25,13 +25,11 @@ class Invitation {
      * @param redirectUri {String} User will be redirected to this uri when they accept the invitation
      * @param cloudName {String} 
      * @param cloudRole {Number} Role the user will have when they accept the invitation
-     * @param projectName {String} 
      * @param email {String} email of the user to invite
-     * @param senderProviderSub {String} OIDC sub of the sender. The original sub from the provider is used instead of the broker sub
      */
-    constructor(redirectUri, cloudName, cloudRole, projectName, email, senderProviderSub) { 
+    constructor(redirectUri, cloudName, cloudRole, email) { 
         
-        Invitation.initialize(this, redirectUri, cloudName, cloudRole, projectName, email, senderProviderSub);
+        Invitation.initialize(this, redirectUri, cloudName, cloudRole, email);
     }
 
     /**
@@ -39,13 +37,11 @@ class Invitation {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, redirectUri, cloudName, cloudRole, projectName, email, senderProviderSub) { 
+    static initialize(obj, redirectUri, cloudName, cloudRole, email) { 
         obj['redirect_uri'] = redirectUri;
         obj['cloud_name'] = cloudName;
         obj['cloud_role'] = cloudRole;
-        obj['project_name'] = projectName;
         obj['email'] = email;
-        obj['sender_provider_sub'] = senderProviderSub;
     }
 
     /**

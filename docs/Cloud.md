@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **creator** | [**User**](User.md) |  | [optional] 
 **isDefault** | **Boolean** |  | [optional] 
 **createdAt** | **Date** | Creation date | [optional] 
+**image** | **String** |  | [optional] 
 **updatedAt** | **Date** | Date of the last update | [optional] 
 
 

@@ -69,6 +69,9 @@ class Cloud {
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
+            if (data.hasOwnProperty('image')) {
+                obj['image'] = ApiClient.convertToType(data['image'], 'String');
+            }
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
@@ -110,6 +113,11 @@ Cloud.prototype['is_default'] = undefined;
  * @member {Date} created_at
  */
 Cloud.prototype['created_at'] = undefined;
+
+/**
+ * @member {String} image
+ */
+Cloud.prototype['image'] = undefined;
 
 /**
  * Date of the last update
