@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
-**name** | **String** |  | 
+**name** | **String** |  | [optional] 
 **uuid** | **String** |  | 
 **zones** | [**[Zone]**](Zone.md) |  | [optional] 
 **parentId** | **Number** |  | [optional] 

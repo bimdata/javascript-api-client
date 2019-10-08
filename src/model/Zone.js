@@ -23,12 +23,11 @@ class Zone {
     /**
      * Constructs a new <code>Zone</code>.
      * @alias module:model/Zone
-     * @param name {String} 
      * @param uuid {String} 
      */
-    constructor(name, uuid) { 
+    constructor(uuid) { 
         
-        Zone.initialize(this, name, uuid);
+        Zone.initialize(this, uuid);
     }
 
     /**
@@ -36,8 +35,7 @@ class Zone {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, uuid) { 
-        obj['name'] = name;
+    static initialize(obj, uuid) { 
         obj['uuid'] = uuid;
     }
 
