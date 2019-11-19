@@ -1622,7 +1622,7 @@ null (empty response body)
 
 Create elements in an optimized format
 
-         You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         If the structure is malformed, an error 500 without more explaination may be returned          Required scopes: ifc:write
+         You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         For performance reasons, we do not check the validity of the json. If the json is malformed, an error 500 without more explaination may be returned instead of a 400.          Required scopes: ifc:write
 
 ### Example
 

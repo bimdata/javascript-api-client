@@ -144,7 +144,7 @@ Document.prototype['description'] = undefined;
 Document.prototype['file'] = undefined;
 
 /**
- * Size of the file. The file may be compressed and show a smaller size
+ * Size of the file.
  * @member {Number} size
  */
 Document.prototype['size'] = undefined;

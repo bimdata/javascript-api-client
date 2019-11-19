@@ -199,7 +199,7 @@ let opts = {
   'fileName': "fileName_example", // String | Full name of the file
   'description': "description_example", // String | Description of the file
   'file': "/path/to/file", // File | 
-  'size': 56 // Number | Size of the file. The file may be compressed and show a smaller size
+  'size': 56 // Number | Size of the file.
 };
 apiInstance.createDocument(cloudPk, projectPk, name, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
  **fileName** | **String**| Full name of the file | [optional] 
  **description** | **String**| Description of the file | [optional] 
  **file** | **File**|  | [optional] 
- **size** | **Number**| Size of the file. The file may be compressed and show a smaller size | [optional] 
+ **size** | **Number**| Size of the file. | [optional] 
 
 ### Return type
 
@@ -484,7 +484,7 @@ null (empty response body)
 
 Delete a folder
 
-All files and subfolders will be deleted too Required scopes: document:write
+All files and subfolders will be deleted too. If folder is a project&#39;s root folder, only children are deleted Required scopes: document:write
 
 ### Example
 
@@ -756,7 +756,7 @@ let opts = {
   'fileName': "fileName_example", // String | Full name of the file
   'description': "description_example", // String | Description of the file
   'file': "/path/to/file", // File | 
-  'size': 56 // Number | Size of the file. The file may be compressed and show a smaller size
+  'size': 56 // Number | Size of the file.
 };
 apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -782,7 +782,7 @@ Name | Type | Description  | Notes
  **fileName** | **String**| Full name of the file | [optional] 
  **description** | **String**| Description of the file | [optional] 
  **file** | **File**|  | [optional] 
- **size** | **Number**| Size of the file. The file may be compressed and show a smaller size | [optional] 
+ **size** | **Number**| Size of the file. | [optional] 
 
 ### Return type
 

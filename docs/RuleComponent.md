@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
 **type** | **String** |  | [optional] 
-**value** | **String** |  | [optional] 
+**value** | [**Object**](.md) |  | [optional] 
 **operator** | **String** |  | [optional] 
-**params** | **String** |  | [optional] 
+**params** | [**Object**](.md) |  | [optional] 
 **condition** | **String** |  | [optional] 
-**ruleComponents** | **String** |  | [optional] 
+**ruleComponents** | [**Object**](.md) |  | [optional] 
 
 

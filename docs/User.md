@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **updatedAt** | **Date** |  | [optional] 
 **cloudRole** | **Number** |  | [optional] 
 **projectRole** | **Number** |  | [optional] 
+**provider** | **String** |  | [optional] 
 
 

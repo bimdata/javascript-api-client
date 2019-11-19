@@ -108,6 +108,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property provider (base name: "provider")', function() {
+      // uncomment below and update the code to test the property provider
+      //var instane = new bimdata.SelfUser();
+      //expect(instance).to.be();
+    });
+
     it('should have the property providerSub (base name: "provider_sub")', function() {
       // uncomment below and update the code to test the property providerSub
       //var instane = new bimdata.SelfUser();

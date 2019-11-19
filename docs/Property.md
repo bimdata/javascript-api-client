@@ -6,6 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
 **definition** | [**PropertyDefinition**](PropertyDefinition.md) |  | 
-**value** | **String** |  | [optional] 
+**value** | [**Object**](.md) |  | [optional] 
 
 

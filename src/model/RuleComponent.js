@@ -54,19 +54,19 @@ class RuleComponent {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], 'String');
+                obj['value'] = ApiClient.convertToType(data['value'], Object);
             }
             if (data.hasOwnProperty('operator')) {
                 obj['operator'] = ApiClient.convertToType(data['operator'], 'String');
             }
             if (data.hasOwnProperty('params')) {
-                obj['params'] = ApiClient.convertToType(data['params'], 'String');
+                obj['params'] = ApiClient.convertToType(data['params'], Object);
             }
             if (data.hasOwnProperty('condition')) {
                 obj['condition'] = ApiClient.convertToType(data['condition'], 'String');
             }
             if (data.hasOwnProperty('rule_components')) {
-                obj['rule_components'] = ApiClient.convertToType(data['rule_components'], 'String');
+                obj['rule_components'] = ApiClient.convertToType(data['rule_components'], Object);
             }
         }
         return obj;
@@ -86,7 +86,7 @@ RuleComponent.prototype['id'] = undefined;
 RuleComponent.prototype['type'] = undefined;
 
 /**
- * @member {String} value
+ * @member {Object} value
  */
 RuleComponent.prototype['value'] = undefined;
 
@@ -96,7 +96,7 @@ RuleComponent.prototype['value'] = undefined;
 RuleComponent.prototype['operator'] = undefined;
 
 /**
- * @member {String} params
+ * @member {Object} params
  */
 RuleComponent.prototype['params'] = undefined;
 
@@ -106,7 +106,7 @@ RuleComponent.prototype['params'] = undefined;
 RuleComponent.prototype['condition'] = undefined;
 
 /**
- * @member {String} rule_components
+ * @member {Object} rule_components
  */
 RuleComponent.prototype['rule_components'] = undefined;
 

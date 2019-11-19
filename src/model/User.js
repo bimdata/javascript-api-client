@@ -74,6 +74,9 @@ class User {
             if (data.hasOwnProperty('project_role')) {
                 obj['project_role'] = ApiClient.convertToType(data['project_role'], 'Number');
             }
+            if (data.hasOwnProperty('provider')) {
+                obj['provider'] = ApiClient.convertToType(data['provider'], 'String');
+            }
         }
         return obj;
     }
@@ -125,6 +128,11 @@ User.prototype['cloud_role'] = undefined;
  * @member {Number} project_role
  */
 User.prototype['project_role'] = undefined;
+
+/**
+ * @member {String} provider
+ */
+User.prototype['provider'] = undefined;
 
 
 

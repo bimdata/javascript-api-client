@@ -57,7 +57,7 @@ class Property {
                 obj['definition'] = PropertyDefinition.constructFromObject(data['definition']);
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], 'String');
+                obj['value'] = ApiClient.convertToType(data['value'], Object);
             }
         }
         return obj;
@@ -77,7 +77,7 @@ Property.prototype['id'] = undefined;
 Property.prototype['definition'] = undefined;
 
 /**
- * @member {String} value
+ * @member {Object} value
  */
 Property.prototype['value'] = undefined;
 

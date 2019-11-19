@@ -74,7 +74,7 @@ class Unit {
                 obj['conversion_baseunit'] = Unit.constructFromObject(data['conversion_baseunit']);
             }
             if (data.hasOwnProperty('elements')) {
-                obj['elements'] = ApiClient.convertToType(data['elements'], 'String');
+                obj['elements'] = ApiClient.convertToType(data['elements'], Object);
             }
         }
         return obj;
@@ -131,7 +131,7 @@ Unit.prototype['conversion_baseunit'] = undefined;
 
 /**
  * List of constitutive unit elements by id with corresponding exponent (ex: [meterID/1, secondID/-1] for velocity)
- * @member {String} elements
+ * @member {Object} elements
  */
 Unit.prototype['elements'] = undefined;
 

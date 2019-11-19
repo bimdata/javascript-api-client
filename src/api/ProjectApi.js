@@ -179,7 +179,7 @@ export default class ProjectApi {
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
      * @param {File} opts.file 
-     * @param {Number} opts.size Size of the file. The file may be compressed and show a smaller size
+     * @param {Number} opts.size Size of the file.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
     createDocumentWithHttpInfo(cloudPk, projectPk, name, opts) {
@@ -243,7 +243,7 @@ export default class ProjectApi {
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
      * @param {File} opts.file 
-     * @param {Number} opts.size Size of the file. The file may be compressed and show a smaller size
+     * @param {Number} opts.size Size of the file.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
     createDocument(cloudPk, projectPk, name, opts) {
@@ -495,7 +495,7 @@ export default class ProjectApi {
 
     /**
      * Delete a folder
-     * All files and subfolders will be deleted too Required scopes: document:write
+     * All files and subfolders will be deleted too. If folder is a project's root folder, only children are deleted Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
@@ -541,7 +541,7 @@ export default class ProjectApi {
 
     /**
      * Delete a folder
-     * All files and subfolders will be deleted too Required scopes: document:write
+     * All files and subfolders will be deleted too. If folder is a project's root folder, only children are deleted Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
@@ -755,7 +755,7 @@ export default class ProjectApi {
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
      * @param {File} opts.file 
-     * @param {Number} opts.size Size of the file. The file may be compressed and show a smaller size
+     * @param {Number} opts.size Size of the file.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
     fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, name, opts) {
@@ -825,7 +825,7 @@ export default class ProjectApi {
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
      * @param {File} opts.file 
-     * @param {Number} opts.size Size of the file. The file may be compressed and show a smaller size
+     * @param {Number} opts.size Size of the file.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
     fullUpdateDocument(cloudPk, id, projectPk, name, opts) {

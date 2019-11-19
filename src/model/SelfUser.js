@@ -82,6 +82,9 @@ class SelfUser {
             if (data.hasOwnProperty('projects')) {
                 obj['projects'] = ApiClient.convertToType(data['projects'], [ProjectRole]);
             }
+            if (data.hasOwnProperty('provider')) {
+                obj['provider'] = ApiClient.convertToType(data['provider'], 'String');
+            }
             if (data.hasOwnProperty('provider_sub')) {
                 obj['provider_sub'] = ApiClient.convertToType(data['provider_sub'], 'String');
             }
@@ -139,6 +142,11 @@ SelfUser.prototype['clouds'] = undefined;
  * @member {Array.<module:model/ProjectRole>} projects
  */
 SelfUser.prototype['projects'] = undefined;
+
+/**
+ * @member {String} provider
+ */
+SelfUser.prototype['provider'] = undefined;
 
 /**
  * sub from original identity provider

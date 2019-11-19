@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **fileName** | **String** | Full name of the file | [optional] 
 **description** | **String** | Description of the file | [optional] 
 **file** | **String** |  | [optional] 
-**size** | **Number** | Size of the file. The file may be compressed and show a smaller size | [optional] 
+**size** | **Number** | Size of the file. | [optional] 
 **createdAt** | **Date** | Creation date | [optional] 
 **updatedAt** | **Date** | Date of the last update | [optional] 
 **ifcId** | **String** |  | [optional] 

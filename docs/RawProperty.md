@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **String** |  | [optional] 
+**value** | [**Object**](.md) |  | [optional] 
 **defId** | **Number** |  | 
 
 
