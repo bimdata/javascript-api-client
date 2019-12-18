@@ -156,6 +156,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property errors (base name: "errors")', function() {
+      // uncomment below and update the code to test the property errors
+      //var instane = new bimdata.Ifc();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -19,14 +19,18 @@ import ElementClassificationRelation from '../model/ElementClassificationRelatio
 import ElementPropertySetRelation from '../model/ElementPropertySetRelation';
 import Ifc from '../model/Ifc';
 import IfcAccessToken from '../model/IfcAccessToken';
+import IfcErrors from '../model/IfcErrors';
 import IfcExport from '../model/IfcExport';
 import IfcFiles from '../model/IfcFiles';
+import Layer from '../model/Layer';
 import ProcessorHandler from '../model/ProcessorHandler';
 import Property from '../model/Property';
 import PropertyDefinition from '../model/PropertyDefinition';
 import PropertySet from '../model/PropertySet';
 import RawElements from '../model/RawElements';
+import SimpleElement from '../model/SimpleElement';
 import Space from '../model/Space';
+import System from '../model/System';
 import Unit from '../model/Unit';
 import Zone from '../model/Zone';
 import ZoneSpace from '../model/ZoneSpace';
@@ -49,6 +53,74 @@ export default class IfcApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+
+    /**
+     * Add errors to IFC
+     * IFC errors are warnings and errors during IFC process. They alert about missing elements or malformed files Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ifc.
+     * @param {String} projectPk 
+     * @param {module:model/IfcErrors} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcErrors} and HTTP response
+     */
+    addIfcErrorsWithHttpInfo(cloudPk, id, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling addIfcErrors");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling addIfcErrors");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling addIfcErrors");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling addIfcErrors");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = IfcErrors;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/errors', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Add errors to IFC
+     * IFC errors are warnings and errors during IFC process. They alert about missing elements or malformed files Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ifc.
+     * @param {String} projectPk 
+     * @param {module:model/IfcErrors} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcErrors}
+     */
+    addIfcErrors(cloudPk, id, projectPk, data) {
+      return this.addIfcErrorsWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
 
     /**
@@ -765,79 +837,6 @@ export default class IfcApi {
      */
     bulkUpdateIfcProperty(cloudPk, ifcPk, projectPk, data) {
       return this.bulkUpdateIfcPropertyWithHttpInfo(cloudPk, ifcPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     *  Required scopes: ifc:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this processor handler.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/ProcessorHandler} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProcessorHandler} and HTTP response
-     */
-    cloudProjectIfcProcessorhandlerPartialUpdateWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling cloudProjectIfcProcessorhandlerPartialUpdate");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling cloudProjectIfcProcessorhandlerPartialUpdate");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling cloudProjectIfcProcessorhandlerPartialUpdate");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling cloudProjectIfcProcessorhandlerPartialUpdate");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling cloudProjectIfcProcessorhandlerPartialUpdate");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = ProcessorHandler;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     *  Required scopes: ifc:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this processor handler.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/ProcessorHandler} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProcessorHandler}
-     */
-    cloudProjectIfcProcessorhandlerPartialUpdate(cloudPk, id, ifcPk, projectPk, data) {
-      return this.cloudProjectIfcProcessorhandlerPartialUpdateWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1602,6 +1601,74 @@ export default class IfcApi {
 
 
     /**
+     * Create a layer in the model
+     * The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Layer} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Layer} and HTTP response
+     */
+    createLayerWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createLayer");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createLayer");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createLayer");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createLayer");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Layer;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a layer in the model
+     * The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Layer} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Layer}
+     */
+    createLayer(cloudPk, ifcPk, projectPk, data) {
+      return this.createLayerWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create a PropertySet
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
@@ -1867,6 +1934,74 @@ export default class IfcApi {
      */
     createSpace(cloudPk, ifcPk, projectPk, data) {
       return this.createSpaceWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a system in the model
+     * The IFC file will not be updated. The created system will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/System} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/System} and HTTP response
+     */
+    createSystemWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createSystem");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createSystem");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createSystem");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createSystem");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = System;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a system in the model
+     * The IFC file will not be updated. The created system will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/System} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/System}
+     */
+    createSystem(cloudPk, ifcPk, projectPk, data) {
+      return this.createSystemWithHttpInfo(cloudPk, ifcPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2424,6 +2559,75 @@ export default class IfcApi {
 
 
     /**
+     * Delete a layer of a model
+     * The IFC file will not be updated. The remaining layers are available in API and will be available when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteLayerWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteLayer");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteLayer");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling deleteLayer");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteLayer");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a layer of a model
+     * The IFC file will not be updated. The remaining layers are available in API and will be available when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteLayer(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteLayerWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Delete a PropertySet of a model
      * Delete a PropertySet of a model Required scopes: ifc:write
      * @param {String} cloudPk 
@@ -2555,6 +2759,75 @@ export default class IfcApi {
      */
     deleteSpace(cloudPk, id, ifcPk, projectPk) {
       return this.deleteSpaceWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a system of a model
+     * The IFC file will not be updated. The remaining systems are available in API and will be available when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC sytem or system type UUID
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteSystemWithHttpInfo(cloudPk, ifcPk, projectPk, uuid) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteSystem");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling deleteSystem");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteSystem");
+      }
+      // verify the required parameter 'uuid' is set
+      if (uuid === undefined || uuid === null) {
+        throw new Error("Missing the required parameter 'uuid' when calling deleteSystem");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'uuid': uuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a system of a model
+     * The IFC file will not be updated. The remaining systems are available in API and will be available when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC sytem or system type UUID
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteSystem(cloudPk, ifcPk, projectPk, uuid) {
+      return this.deleteSystemWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3218,6 +3491,156 @@ export default class IfcApi {
 
 
     /**
+     * Update all fields of a layer
+     * Update all fields of a layer. The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Layer} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Layer} and HTTP response
+     */
+    fullUpdateLayerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateLayer");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateLayer");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateLayer");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateLayer");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateLayer");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Layer;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update all fields of a layer
+     * Update all fields of a layer. The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Layer} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Layer}
+     */
+    fullUpdateLayer(cloudPk, id, ifcPk, projectPk, data) {
+      return this.fullUpdateLayerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update the status of a processor handler
+     *  Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this processor handler.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/ProcessorHandler} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProcessorHandler} and HTTP response
+     */
+    fullUpdateProcessorHandlerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateProcessorHandler");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateProcessorHandler");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateProcessorHandler");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateProcessorHandler");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateProcessorHandler");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ProcessorHandler;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update the status of a processor handler
+     *  Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this processor handler.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/ProcessorHandler} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProcessorHandler}
+     */
+    fullUpdateProcessorHandler(cloudPk, id, ifcPk, projectPk, data) {
+      return this.fullUpdateProcessorHandlerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update all fields of a PropertySet
      * Update all fields of a PropertySet Required scopes: ifc:write
      * @param {String} cloudPk 
@@ -3361,6 +3784,81 @@ export default class IfcApi {
      */
     fullUpdateSpace(cloudPk, id, ifcPk, projectPk, data) {
       return this.fullUpdateSpaceWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update all fields of a system
+     * Update all fields of a system. The IFC file will not be updated. The created system will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC sytem or system type UUID
+     * @param {module:model/System} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/System} and HTTP response
+     */
+    fullUpdateSystemWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateSystem");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateSystem");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateSystem");
+      }
+      // verify the required parameter 'uuid' is set
+      if (uuid === undefined || uuid === null) {
+        throw new Error("Missing the required parameter 'uuid' when calling fullUpdateSystem");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateSystem");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'uuid': uuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = System;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update all fields of a system
+     * Update all fields of a system. The IFC file will not be updated. The created system will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC sytem or system type UUID
+     * @param {module:model/System} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/System}
+     */
+    fullUpdateSystem(cloudPk, ifcPk, projectPk, uuid, data) {
+      return this.fullUpdateSystemWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5489,6 +5987,137 @@ export default class IfcApi {
 
 
     /**
+     * Retrieve a layer of a model
+     * Retrieve a layer of a model Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Layer} and HTTP response
+     */
+    getLayerWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getLayer");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getLayer");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getLayer");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getLayer");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Layer;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a layer of a model
+     * Retrieve a layer of a model Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Layer}
+     */
+    getLayer(cloudPk, id, ifcPk, projectPk) {
+      return this.getLayerWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all layers of a model
+     * Retrieve all layers of a model. Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Layer>} and HTTP response
+     */
+    getLayersWithHttpInfo(cloudPk, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getLayers");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getLayers");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getLayers");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Layer];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all layers of a model
+     * Retrieve all layers of a model. Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Layer>}
+     */
+    getLayers(cloudPk, ifcPk, projectPk) {
+      return this.getLayersWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve a processor handler
      *  Required scopes: ifc:read
      * @param {String} cloudPk 
@@ -5825,6 +6454,149 @@ export default class IfcApi {
 
 
     /**
+     * Retrieve an element of a model with a simple value representation
+     *          Retrieve an element of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }          Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC element or element type UUID
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SimpleElement} and HTTP response
+     */
+    getSimpleElementWithHttpInfo(cloudPk, ifcPk, projectPk, uuid) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getSimpleElement");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getSimpleElement");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getSimpleElement");
+      }
+      // verify the required parameter 'uuid' is set
+      if (uuid === undefined || uuid === null) {
+        throw new Error("Missing the required parameter 'uuid' when calling getSimpleElement");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'uuid': uuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = SimpleElement;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid}/simple', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve an element of a model with a simple value representation
+     *          Retrieve an element of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }          Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC element or element type UUID
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SimpleElement}
+     */
+    getSimpleElement(cloudPk, ifcPk, projectPk, uuid) {
+      return this.getSimpleElementWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all elements of a model with a simple value representation
+     *          Retrieve all elements of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }          Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.type Filter the returned list by type
+     * @param {String} opts.classification Filter the returned list by classification
+     * @param {String} opts.classificationNotation Filter the returned list by classification__notation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SimpleElement} and HTTP response
+     */
+    getSimpleElementsWithHttpInfo(cloudPk, ifcPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getSimpleElements");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getSimpleElements");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getSimpleElements");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+        'type': opts['type'],
+        'classification': opts['classification'],
+        'classification__notation': opts['classificationNotation']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = SimpleElement;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/simple', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all elements of a model with a simple value representation
+     *          Retrieve all elements of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }          Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.type Filter the returned list by type
+     * @param {String} opts.classification Filter the returned list by classification
+     * @param {String} opts.classificationNotation Filter the returned list by classification__notation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SimpleElement}
+     */
+    getSimpleElements(cloudPk, ifcPk, projectPk, opts) {
+      return this.getSimpleElementsWithHttpInfo(cloudPk, ifcPk, projectPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve one space of the model
      * Retrieve one space of the model Required scopes: ifc:read
      * @param {String} cloudPk 
@@ -5949,6 +6721,137 @@ export default class IfcApi {
      */
     getSpaces(cloudPk, ifcPk, projectPk) {
       return this.getSpacesWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a system of a model
+     * Retrieve a system of a model Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC sytem or system type UUID
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/System} and HTTP response
+     */
+    getSystemWithHttpInfo(cloudPk, ifcPk, projectPk, uuid) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getSystem");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getSystem");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getSystem");
+      }
+      // verify the required parameter 'uuid' is set
+      if (uuid === undefined || uuid === null) {
+        throw new Error("Missing the required parameter 'uuid' when calling getSystem");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'uuid': uuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = System;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a system of a model
+     * Retrieve a system of a model Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC sytem or system type UUID
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/System}
+     */
+    getSystem(cloudPk, ifcPk, projectPk, uuid) {
+      return this.getSystemWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all systems of a model
+     * Retrieve all systems of a model. Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/System>} and HTTP response
+     */
+    getSystemsWithHttpInfo(cloudPk, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getSystems");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getSystems");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getSystems");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [System];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all systems of a model
+     * Retrieve all systems of a model. Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/System>}
+     */
+    getSystems(cloudPk, ifcPk, projectPk) {
+      return this.getSystemsWithHttpInfo(cloudPk, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7327,6 +8230,81 @@ export default class IfcApi {
 
 
     /**
+     * Update some fields of a layer
+     * Update some fields of a layer. The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Layer} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Layer} and HTTP response
+     */
+    updateLayerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateLayer");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateLayer");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateLayer");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateLayer");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateLayer");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Layer;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a layer
+     * Update some fields of a layer. The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {module:model/Layer} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Layer}
+     */
+    updateLayer(cloudPk, id, ifcPk, projectPk, data) {
+      return this.updateLayerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update the status of a processor handler
      *  Required scopes: ifc:write
      * @param {String} cloudPk 
@@ -7545,6 +8523,81 @@ export default class IfcApi {
      */
     updateSpace(cloudPk, id, ifcPk, projectPk, data) {
       return this.updateSpaceWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a system
+     * Update some fields of a system. The IFC file will not be updated. The created system will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC sytem or system type UUID
+     * @param {module:model/System} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/System} and HTTP response
+     */
+    updateSystemWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateSystem");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateSystem");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateSystem");
+      }
+      // verify the required parameter 'uuid' is set
+      if (uuid === undefined || uuid === null) {
+        throw new Error("Missing the required parameter 'uuid' when calling updateSystem");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateSystem");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'uuid': uuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = System;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a system
+     * Update some fields of a system. The IFC file will not be updated. The created system will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC sytem or system type UUID
+     * @param {module:model/System} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/System}
+     */
+    updateSystem(cloudPk, ifcPk, projectPk, uuid, data) {
+      return this.updateSystemWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

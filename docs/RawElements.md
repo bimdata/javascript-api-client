@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **definitions** | [**[RawDefinition]**](RawDefinition.md) |  | [optional] 
 **propertySets** | [**[RawPropertySet]**](RawPropertySet.md) |  | [optional] 
 **classifications** | [**[RawClassification]**](RawClassification.md) |  | [optional] 
+**layers** | [**[RawLayer]**](RawLayer.md) |  | [optional] 
+**systems** | [**[RawSystem]**](RawSystem.md) |  | [optional] 
 **elements** | [**[RawElement]**](RawElement.md) |  | 
 
 

@@ -66,6 +66,12 @@ class RawElement {
             if (data.hasOwnProperty('classifications')) {
                 obj['classifications'] = ApiClient.convertToType(data['classifications'], ['Number']);
             }
+            if (data.hasOwnProperty('layers')) {
+                obj['layers'] = ApiClient.convertToType(data['layers'], ['Number']);
+            }
+            if (data.hasOwnProperty('systems')) {
+                obj['systems'] = ApiClient.convertToType(data['systems'], ['Number']);
+            }
         }
         return obj;
     }
@@ -97,6 +103,16 @@ RawElement.prototype['psets'] = undefined;
  * @member {Array.<Number>} classifications
  */
 RawElement.prototype['classifications'] = undefined;
+
+/**
+ * @member {Array.<Number>} layers
+ */
+RawElement.prototype['layers'] = undefined;
+
+/**
+ * @member {Array.<Number>} systems
+ */
+RawElement.prototype['systems'] = undefined;
 
 
 

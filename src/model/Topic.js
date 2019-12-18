@@ -23,10 +23,11 @@ class Topic {
      * Constructs a new <code>Topic</code>.
      * @alias module:model/Topic
      * @param title {String} 
+     * @param project {Number} 
      */
-    constructor(title) { 
+    constructor(title, project) { 
         
-        Topic.initialize(this, title);
+        Topic.initialize(this, title, project);
     }
 
     /**
@@ -34,8 +35,9 @@ class Topic {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, title) { 
+    static initialize(obj, title, project) { 
         obj['title'] = title;
+        obj['project'] = project;
     }
 
     /**
@@ -102,6 +104,9 @@ class Topic {
             }
             if (data.hasOwnProperty('index')) {
                 obj['index'] = ApiClient.convertToType(data['index'], 'Number');
+            }
+            if (data.hasOwnProperty('project')) {
+                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
         }
         return obj;
@@ -199,6 +204,11 @@ Topic.prototype['format'] = undefined;
  * @member {Number} index
  */
 Topic.prototype['index'] = undefined;
+
+/**
+ * @member {Number} project
+ */
+Topic.prototype['project'] = undefined;
 
 
 

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.UserApi();
+    instance = new bimdata.ClientUser();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,37 +47,25 @@
       object[property] = value;
   }
 
-  describe('UserApi', function() {
-    describe('getSelfProjects', function() {
-      it('should call getSelfProjects successfully', function(done) {
-        //uncomment below and update the code to test getSelfProjects
-        //instance.getSelfProjects(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('ClientUser', function() {
+    it('should create an instance of ClientUser', function() {
+      // uncomment below and update the code to test ClientUser
+      //var instane = new bimdata.ClientUser();
+      //expect(instance).to.be.a(bimdata.ClientUser);
     });
-    describe('getSelfUser', function() {
-      it('should call getSelfUser successfully', function(done) {
-        //uncomment below and update the code to test getSelfUser
-        //instance.getSelfUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property clientId (base name: "client_id")', function() {
+      // uncomment below and update the code to test the property clientId
+      //var instane = new bimdata.ClientUser();
+      //expect(instance).to.be();
     });
-    describe('updateSelfUser', function() {
-      it('should call updateSelfUser successfully', function(done) {
-        //uncomment below and update the code to test updateSelfUser
-        //instance.updateSelfUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property provider (base name: "provider")', function() {
+      // uncomment below and update the code to test the property provider
+      //var instane = new bimdata.ClientUser();
+      //expect(instance).to.be();
     });
+
   });
 
 }));

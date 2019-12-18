@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import Invitation from '../model/Invitation';
+import SelectUser from '../model/SelectUser';
 
 /**
 * IdentityProvider service.
@@ -77,6 +78,53 @@ export default class IdentityProviderApi {
      */
     acceptInvitation(id) {
       return this.acceptInvitationWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete user form BIMData
+     * Delete the user and all clouds where the user is alone
+     * @param {module:model/SelectUser} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteUserWithHttpInfo(data) {
+      let postBody = data;
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling deleteUser");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/identity-provider/user', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete user form BIMData
+     * Delete the user and all clouds where the user is alone
+     * @param {module:model/SelectUser} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteUser(data) {
+      return this.deleteUserWithHttpInfo(data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

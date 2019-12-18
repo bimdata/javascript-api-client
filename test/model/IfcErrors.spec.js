@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.UserApi();
+    instance = new bimdata.IfcErrors();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,37 +47,19 @@
       object[property] = value;
   }
 
-  describe('UserApi', function() {
-    describe('getSelfProjects', function() {
-      it('should call getSelfProjects successfully', function(done) {
-        //uncomment below and update the code to test getSelfProjects
-        //instance.getSelfProjects(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('IfcErrors', function() {
+    it('should create an instance of IfcErrors', function() {
+      // uncomment below and update the code to test IfcErrors
+      //var instane = new bimdata.IfcErrors();
+      //expect(instance).to.be.a(bimdata.IfcErrors);
     });
-    describe('getSelfUser', function() {
-      it('should call getSelfUser successfully', function(done) {
-        //uncomment below and update the code to test getSelfUser
-        //instance.getSelfUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property errors (base name: "errors")', function() {
+      // uncomment below and update the code to test the property errors
+      //var instane = new bimdata.IfcErrors();
+      //expect(instance).to.be();
     });
-    describe('updateSelfUser', function() {
-      it('should call updateSelfUser successfully', function(done) {
-        //uncomment below and update the code to test updateSelfUser
-        //instance.updateSelfUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
+
   });
 
 }));

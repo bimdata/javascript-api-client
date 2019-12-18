@@ -18,6 +18,7 @@ import BcfUser from './model/BcfUser';
 import CheckPlan from './model/CheckPlan';
 import CheckerResult from './model/CheckerResult';
 import Classification from './model/Classification';
+import ClientUser from './model/ClientUser';
 import ClippingPlane from './model/ClippingPlane';
 import Cloud from './model/Cloud';
 import CloudInvitation from './model/CloudInvitation';
@@ -40,10 +41,13 @@ import IfcAccessToken from './model/IfcAccessToken';
 import IfcChecker from './model/IfcChecker';
 import IfcCheckerCheckplan from './model/IfcCheckerCheckplan';
 import IfcCheckerResults from './model/IfcCheckerResults';
+import IfcErrors from './model/IfcErrors';
 import IfcExport from './model/IfcExport';
 import IfcFiles from './model/IfcFiles';
 import Invitation from './model/Invitation';
 import Label from './model/Label';
+import Layer from './model/Layer';
+import LayerElement from './model/LayerElement';
 import LineSeriaizer from './model/LineSeriaizer';
 import OrthogonalCamera from './model/OrthogonalCamera';
 import PerspectiveCamera from './model/PerspectiveCamera';
@@ -61,18 +65,23 @@ import RawClassification from './model/RawClassification';
 import RawDefinition from './model/RawDefinition';
 import RawElement from './model/RawElement';
 import RawElements from './model/RawElements';
+import RawLayer from './model/RawLayer';
 import RawProperty from './model/RawProperty';
 import RawPropertySet from './model/RawPropertySet';
+import RawSystem from './model/RawSystem';
 import RawUnit from './model/RawUnit';
 import RecursiveFolderChildren from './model/RecursiveFolderChildren';
 import Rule from './model/Rule';
 import RuleComponent from './model/RuleComponent';
 import Ruleset from './model/Ruleset';
+import SelectUser from './model/SelectUser';
 import SelfBcfUser from './model/SelfBcfUser';
 import SelfUser from './model/SelfUser';
+import SimpleElement from './model/SimpleElement';
 import Snapshot from './model/Snapshot';
 import Space from './model/Space';
 import Stage from './model/Stage';
+import System from './model/System';
 import Topic from './model/Topic';
 import TopicStatus from './model/TopicStatus';
 import TopicType from './model/TopicType';
@@ -163,6 +172,12 @@ export {
      * @property {module:model/Classification}
      */
     Classification,
+
+    /**
+     * The ClientUser model constructor.
+     * @property {module:model/ClientUser}
+     */
+    ClientUser,
 
     /**
      * The ClippingPlane model constructor.
@@ -297,6 +312,12 @@ export {
     IfcCheckerResults,
 
     /**
+     * The IfcErrors model constructor.
+     * @property {module:model/IfcErrors}
+     */
+    IfcErrors,
+
+    /**
      * The IfcExport model constructor.
      * @property {module:model/IfcExport}
      */
@@ -319,6 +340,18 @@ export {
      * @property {module:model/Label}
      */
     Label,
+
+    /**
+     * The Layer model constructor.
+     * @property {module:model/Layer}
+     */
+    Layer,
+
+    /**
+     * The LayerElement model constructor.
+     * @property {module:model/LayerElement}
+     */
+    LayerElement,
 
     /**
      * The LineSeriaizer model constructor.
@@ -423,6 +456,12 @@ export {
     RawElements,
 
     /**
+     * The RawLayer model constructor.
+     * @property {module:model/RawLayer}
+     */
+    RawLayer,
+
+    /**
      * The RawProperty model constructor.
      * @property {module:model/RawProperty}
      */
@@ -433,6 +472,12 @@ export {
      * @property {module:model/RawPropertySet}
      */
     RawPropertySet,
+
+    /**
+     * The RawSystem model constructor.
+     * @property {module:model/RawSystem}
+     */
+    RawSystem,
 
     /**
      * The RawUnit model constructor.
@@ -465,6 +510,12 @@ export {
     Ruleset,
 
     /**
+     * The SelectUser model constructor.
+     * @property {module:model/SelectUser}
+     */
+    SelectUser,
+
+    /**
      * The SelfBcfUser model constructor.
      * @property {module:model/SelfBcfUser}
      */
@@ -475,6 +526,12 @@ export {
      * @property {module:model/SelfUser}
      */
     SelfUser,
+
+    /**
+     * The SimpleElement model constructor.
+     * @property {module:model/SimpleElement}
+     */
+    SimpleElement,
 
     /**
      * The Snapshot model constructor.
@@ -493,6 +550,12 @@ export {
      * @property {module:model/Stage}
      */
     Stage,
+
+    /**
+     * The System model constructor.
+     * @property {module:model/System}
+     */
+    System,
 
     /**
      * The Topic model constructor.

@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import Classification from './Classification';
+import LayerElement from './LayerElement';
 import PropertySet from './PropertySet';
 
 /**
@@ -69,6 +70,9 @@ class Element {
             if (data.hasOwnProperty('classifications')) {
                 obj['classifications'] = ApiClient.convertToType(data['classifications'], [Classification]);
             }
+            if (data.hasOwnProperty('layers')) {
+                obj['layers'] = ApiClient.convertToType(data['layers'], [LayerElement]);
+            }
         }
         return obj;
     }
@@ -106,6 +110,11 @@ Element.prototype['property_sets'] = undefined;
  * @member {Array.<module:model/Classification>} classifications
  */
 Element.prototype['classifications'] = undefined;
+
+/**
+ * @member {Array.<module:model/LayerElement>} layers
+ */
+Element.prototype['layers'] = undefined;
 
 
 

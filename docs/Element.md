@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **attributes** | [**PropertySet**](PropertySet.md) |  | [optional] 
 **propertySets** | [**[PropertySet]**](PropertySet.md) |  | [optional] 
 **classifications** | [**[Classification]**](Classification.md) |  | [optional] 
+**layers** | [**[LayerElement]**](LayerElement.md) |  | [optional] 
 
 

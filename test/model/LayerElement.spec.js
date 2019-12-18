@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Cloud();
+    instance = new bimdata.LayerElement();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,64 +47,34 @@
       object[property] = value;
   }
 
-  describe('Cloud', function() {
-    it('should create an instance of Cloud', function() {
-      // uncomment below and update the code to test Cloud
-      //var instane = new bimdata.Cloud();
-      //expect(instance).to.be.a(bimdata.Cloud);
+  describe('LayerElement', function() {
+    it('should create an instance of LayerElement', function() {
+      // uncomment below and update the code to test LayerElement
+      //var instane = new bimdata.LayerElement();
+      //expect(instance).to.be.a(bimdata.LayerElement);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Cloud();
+      //var instane = new bimdata.LayerElement();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Cloud();
+      //var instane = new bimdata.LayerElement();
       //expect(instance).to.be();
     });
 
-    it('should have the property features (base name: "features")', function() {
-      // uncomment below and update the code to test the property features
-      //var instane = new bimdata.Cloud();
+    it('should have the property identifier (base name: "identifier")', function() {
+      // uncomment below and update the code to test the property identifier
+      //var instane = new bimdata.LayerElement();
       //expect(instance).to.be();
     });
 
-    it('should have the property creator (base name: "creator")', function() {
-      // uncomment below and update the code to test the property creator
-      //var instane = new bimdata.Cloud();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property creatorApp (base name: "creator_app")', function() {
-      // uncomment below and update the code to test the property creatorApp
-      //var instane = new bimdata.Cloud();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isDefault (base name: "is_default")', function() {
-      // uncomment below and update the code to test the property isDefault
-      //var instane = new bimdata.Cloud();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createdAt (base name: "created_at")', function() {
-      // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.Cloud();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property image (base name: "image")', function() {
-      // uncomment below and update the code to test the property image
-      //var instane = new bimdata.Cloud();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property updatedAt (base name: "updated_at")', function() {
-      // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.Cloud();
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new bimdata.LayerElement();
       //expect(instance).to.be();
     });
 

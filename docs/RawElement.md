@@ -9,5 +9,7 @@ Name | Type | Description | Notes
 **attributes** | **Number** |  | [optional] 
 **psets** | **[Number]** |  | [optional] 
 **classifications** | **[Number]** |  | [optional] 
+**layers** | **[Number]** |  | [optional] 
+**systems** | **[Number]** |  | [optional] 
 
 

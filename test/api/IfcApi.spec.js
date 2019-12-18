@@ -48,6 +48,16 @@
   }
 
   describe('IfcApi', function() {
+    describe('addIfcErrors', function() {
+      it('should call addIfcErrors successfully', function(done) {
+        //uncomment below and update the code to test addIfcErrors
+        //instance.addIfcErrors(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('bulkDeleteIfcClassifications', function() {
       it('should call bulkDeleteIfcClassifications successfully', function(done) {
         //uncomment below and update the code to test bulkDeleteIfcClassifications
@@ -158,16 +168,6 @@
         done();
       });
     });
-    describe('cloudProjectIfcProcessorhandlerPartialUpdate', function() {
-      it('should call cloudProjectIfcProcessorhandlerPartialUpdate successfully', function(done) {
-        //uncomment below and update the code to test cloudProjectIfcProcessorhandlerPartialUpdate
-        //instance.cloudProjectIfcProcessorhandlerPartialUpdate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('createAccessToken', function() {
       it('should call createAccessToken successfully', function(done) {
         //uncomment below and update the code to test createAccessToken
@@ -268,6 +268,16 @@
         done();
       });
     });
+    describe('createLayer', function() {
+      it('should call createLayer successfully', function(done) {
+        //uncomment below and update the code to test createLayer
+        //instance.createLayer(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createPropertySet', function() {
       it('should call createPropertySet successfully', function(done) {
         //uncomment below and update the code to test createPropertySet
@@ -302,6 +312,16 @@
       it('should call createSpace successfully', function(done) {
         //uncomment below and update the code to test createSpace
         //instance.createSpace(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createSystem', function() {
+      it('should call createSystem successfully', function(done) {
+        //uncomment below and update the code to test createSystem
+        //instance.createSystem(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -388,6 +408,16 @@
         done();
       });
     });
+    describe('deleteLayer', function() {
+      it('should call deleteLayer successfully', function(done) {
+        //uncomment below and update the code to test deleteLayer
+        //instance.deleteLayer(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deletePropertySet', function() {
       it('should call deletePropertySet successfully', function(done) {
         //uncomment below and update the code to test deletePropertySet
@@ -402,6 +432,16 @@
       it('should call deleteSpace successfully', function(done) {
         //uncomment below and update the code to test deleteSpace
         //instance.deleteSpace(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteSystem', function() {
+      it('should call deleteSystem successfully', function(done) {
+        //uncomment below and update the code to test deleteSystem
+        //instance.deleteSystem(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -498,6 +538,26 @@
         done();
       });
     });
+    describe('fullUpdateLayer', function() {
+      it('should call fullUpdateLayer successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateLayer
+        //instance.fullUpdateLayer(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('fullUpdateProcessorHandler', function() {
+      it('should call fullUpdateProcessorHandler successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateProcessorHandler
+        //instance.fullUpdateProcessorHandler(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('fullUpdatePropertySet', function() {
       it('should call fullUpdatePropertySet successfully', function(done) {
         //uncomment below and update the code to test fullUpdatePropertySet
@@ -512,6 +572,16 @@
       it('should call fullUpdateSpace successfully', function(done) {
         //uncomment below and update the code to test fullUpdateSpace
         //instance.fullUpdateSpace(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('fullUpdateSystem', function() {
+      it('should call fullUpdateSystem successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateSystem
+        //instance.fullUpdateSystem(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -818,6 +888,26 @@
         done();
       });
     });
+    describe('getLayer', function() {
+      it('should call getLayer successfully', function(done) {
+        //uncomment below and update the code to test getLayer
+        //instance.getLayer(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getLayers', function() {
+      it('should call getLayers successfully', function(done) {
+        //uncomment below and update the code to test getLayers
+        //instance.getLayers(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getProcessorHandler', function() {
       it('should call getProcessorHandler successfully', function(done) {
         //uncomment below and update the code to test getProcessorHandler
@@ -868,6 +958,26 @@
         done();
       });
     });
+    describe('getSimpleElement', function() {
+      it('should call getSimpleElement successfully', function(done) {
+        //uncomment below and update the code to test getSimpleElement
+        //instance.getSimpleElement(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getSimpleElements', function() {
+      it('should call getSimpleElements successfully', function(done) {
+        //uncomment below and update the code to test getSimpleElements
+        //instance.getSimpleElements(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getSpace', function() {
       it('should call getSpace successfully', function(done) {
         //uncomment below and update the code to test getSpace
@@ -882,6 +992,26 @@
       it('should call getSpaces successfully', function(done) {
         //uncomment below and update the code to test getSpaces
         //instance.getSpaces(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getSystem', function() {
+      it('should call getSystem successfully', function(done) {
+        //uncomment below and update the code to test getSystem
+        //instance.getSystem(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getSystems', function() {
+      it('should call getSystems successfully', function(done) {
+        //uncomment below and update the code to test getSystems
+        //instance.getSystems(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1068,6 +1198,16 @@
         done();
       });
     });
+    describe('updateLayer', function() {
+      it('should call updateLayer successfully', function(done) {
+        //uncomment below and update the code to test updateLayer
+        //instance.updateLayer(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateProcessorHandler', function() {
       it('should call updateProcessorHandler successfully', function(done) {
         //uncomment below and update the code to test updateProcessorHandler
@@ -1092,6 +1232,16 @@
       it('should call updateSpace successfully', function(done) {
         //uncomment below and update the code to test updateSpace
         //instance.updateSpace(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateSystem', function() {
+      it('should call updateSystem successfully', function(done) {
+        //uncomment below and update the code to test updateSystem
+        //instance.updateSystem(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

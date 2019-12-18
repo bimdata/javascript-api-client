@@ -24,5 +24,6 @@ Name | Type | Description | Notes
 **dueDate** | **Date** |  | [optional] 
 **comments** | [**[Comment]**](Comment.md) |  | [optional] 
 **viewpoints** | [**[Viewpoint]**](Viewpoint.md) |  | [optional] 
+**project** | **Number** |  | 
 
 

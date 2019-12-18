@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.UserApi();
+    instance = new bimdata.SimpleElement();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,37 +47,19 @@
       object[property] = value;
   }
 
-  describe('UserApi', function() {
-    describe('getSelfProjects', function() {
-      it('should call getSelfProjects successfully', function(done) {
-        //uncomment below and update the code to test getSelfProjects
-        //instance.getSelfProjects(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('SimpleElement', function() {
+    it('should create an instance of SimpleElement', function() {
+      // uncomment below and update the code to test SimpleElement
+      //var instane = new bimdata.SimpleElement();
+      //expect(instance).to.be.a(bimdata.SimpleElement);
     });
-    describe('getSelfUser', function() {
-      it('should call getSelfUser successfully', function(done) {
-        //uncomment below and update the code to test getSelfUser
-        //instance.getSelfUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property uuid (base name: "uuid")', function() {
+      // uncomment below and update the code to test the property uuid
+      //var instane = new bimdata.SimpleElement();
+      //expect(instance).to.be();
     });
-    describe('updateSelfUser', function() {
-      it('should call updateSelfUser successfully', function(done) {
-        //uncomment below and update the code to test updateSelfUser
-        //instance.updateSelfUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
+
   });
 
 }));

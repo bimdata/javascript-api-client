@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.UserApi();
+    instance = new bimdata.SelectUser();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,37 +47,19 @@
       object[property] = value;
   }
 
-  describe('UserApi', function() {
-    describe('getSelfProjects', function() {
-      it('should call getSelfProjects successfully', function(done) {
-        //uncomment below and update the code to test getSelfProjects
-        //instance.getSelfProjects(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('SelectUser', function() {
+    it('should create an instance of SelectUser', function() {
+      // uncomment below and update the code to test SelectUser
+      //var instane = new bimdata.SelectUser();
+      //expect(instance).to.be.a(bimdata.SelectUser);
     });
-    describe('getSelfUser', function() {
-      it('should call getSelfUser successfully', function(done) {
-        //uncomment below and update the code to test getSelfUser
-        //instance.getSelfUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instane = new bimdata.SelectUser();
+      //expect(instance).to.be();
     });
-    describe('updateSelfUser', function() {
-      it('should call updateSelfUser successfully', function(done) {
-        //uncomment below and update the code to test updateSelfUser
-        //instance.updateSelfUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
+
   });
 
 }));

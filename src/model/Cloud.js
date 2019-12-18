@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import ClientUser from './ClientUser';
 import Feature from './Feature';
 import User from './User';
 
@@ -63,6 +64,9 @@ class Cloud {
             if (data.hasOwnProperty('creator')) {
                 obj['creator'] = User.constructFromObject(data['creator']);
             }
+            if (data.hasOwnProperty('creator_app')) {
+                obj['creator_app'] = ClientUser.constructFromObject(data['creator_app']);
+            }
             if (data.hasOwnProperty('is_default')) {
                 obj['is_default'] = ApiClient.convertToType(data['is_default'], 'Boolean');
             }
@@ -102,6 +106,11 @@ Cloud.prototype['features'] = undefined;
  * @member {module:model/User} creator
  */
 Cloud.prototype['creator'] = undefined;
+
+/**
+ * @member {module:model/ClientUser} creator_app
+ */
+Cloud.prototype['creator_app'] = undefined;
 
 /**
  * @member {Boolean} is_default

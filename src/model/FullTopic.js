@@ -25,10 +25,11 @@ class FullTopic {
      * Constructs a new <code>FullTopic</code>.
      * @alias module:model/FullTopic
      * @param title {String} 
+     * @param project {Number} 
      */
-    constructor(title) { 
+    constructor(title, project) { 
         
-        FullTopic.initialize(this, title);
+        FullTopic.initialize(this, title, project);
     }
 
     /**
@@ -36,8 +37,9 @@ class FullTopic {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, title) { 
+    static initialize(obj, title, project) { 
         obj['title'] = title;
+        obj['project'] = project;
     }
 
     /**
@@ -110,6 +112,9 @@ class FullTopic {
             }
             if (data.hasOwnProperty('viewpoints')) {
                 obj['viewpoints'] = ApiClient.convertToType(data['viewpoints'], [Viewpoint]);
+            }
+            if (data.hasOwnProperty('project')) {
+                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
         }
         return obj;
@@ -217,6 +222,11 @@ FullTopic.prototype['comments'] = undefined;
  * @member {Array.<module:model/Viewpoint>} viewpoints
  */
 FullTopic.prototype['viewpoints'] = undefined;
+
+/**
+ * @member {Number} project
+ */
+FullTopic.prototype['project'] = undefined;
 
 
 

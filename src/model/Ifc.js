@@ -100,6 +100,9 @@ class Ifc {
             if (data.hasOwnProperty('world_position')) {
                 obj['world_position'] = ApiClient.convertToType(data['world_position'], ['Number']);
             }
+            if (data.hasOwnProperty('errors')) {
+                obj['errors'] = ApiClient.convertToType(data['errors'], ['String']);
+            }
         }
         return obj;
     }
@@ -192,6 +195,12 @@ Ifc.prototype['project_id'] = undefined;
  * @member {Array.<Number>} world_position
  */
 Ifc.prototype['world_position'] = undefined;
+
+/**
+ * List for warnings and errors that happened during IFC processing
+ * @member {Array.<String>} errors
+ */
+Ifc.prototype['errors'] = undefined;
 
 
 

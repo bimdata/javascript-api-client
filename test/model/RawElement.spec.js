@@ -84,6 +84,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property layers (base name: "layers")', function() {
+      // uncomment below and update the code to test the property layers
+      //var instane = new bimdata.RawElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property systems (base name: "systems")', function() {
+      // uncomment below and update the code to test the property systems
+      //var instane = new bimdata.RawElement();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

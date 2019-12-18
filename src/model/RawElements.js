@@ -15,7 +15,9 @@ import ApiClient from '../ApiClient';
 import RawClassification from './RawClassification';
 import RawDefinition from './RawDefinition';
 import RawElement from './RawElement';
+import RawLayer from './RawLayer';
 import RawPropertySet from './RawPropertySet';
+import RawSystem from './RawSystem';
 import RawUnit from './RawUnit';
 
 /**
@@ -66,6 +68,12 @@ class RawElements {
             if (data.hasOwnProperty('classifications')) {
                 obj['classifications'] = ApiClient.convertToType(data['classifications'], [RawClassification]);
             }
+            if (data.hasOwnProperty('layers')) {
+                obj['layers'] = ApiClient.convertToType(data['layers'], [RawLayer]);
+            }
+            if (data.hasOwnProperty('systems')) {
+                obj['systems'] = ApiClient.convertToType(data['systems'], [RawSystem]);
+            }
             if (data.hasOwnProperty('elements')) {
                 obj['elements'] = ApiClient.convertToType(data['elements'], [RawElement]);
             }
@@ -95,6 +103,16 @@ RawElements.prototype['property_sets'] = undefined;
  * @member {Array.<module:model/RawClassification>} classifications
  */
 RawElements.prototype['classifications'] = undefined;
+
+/**
+ * @member {Array.<module:model/RawLayer>} layers
+ */
+RawElements.prototype['layers'] = undefined;
+
+/**
+ * @member {Array.<module:model/RawSystem>} systems
+ */
+RawElements.prototype['systems'] = undefined;
 
 /**
  * @member {Array.<module:model/RawElement>} elements

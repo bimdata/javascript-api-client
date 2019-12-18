@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('deleteUser', function() {
+      it('should call deleteUser successfully', function(done) {
+        //uncomment below and update the code to test deleteUser
+        //instance.deleteUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('denyInvitation', function() {
       it('should call denyInvitation successfully', function(done) {
         //uncomment below and update the code to test denyInvitation

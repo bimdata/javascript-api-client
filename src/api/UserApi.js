@@ -37,6 +37,47 @@ export default class UserApi {
 
 
     /**
+     * List user's projects
+     * List user's projects of all clouds Required scopes: user:read
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
+     */
+    getSelfProjectsWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Project];
+      return this.apiClient.callApi(
+        '/user/projects', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List user's projects
+     * List user's projects of all clouds Required scopes: user:read
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
+     */
+    getSelfProjects() {
+      return this.getSelfProjectsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SelfUser} and HTTP response
      */
     getSelfUserWithHttpInfo() {
@@ -110,43 +151,6 @@ export default class UserApi {
      */
     updateSelfUser(data) {
       return this.updateSelfUserWithHttpInfo(data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
-     */
-    userProjectsListWithHttpInfo() {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [Project];
-      return this.apiClient.callApi(
-        '/user/projects', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
-     */
-    userProjectsList() {
-      return this.userProjectsListWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

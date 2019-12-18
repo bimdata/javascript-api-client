@@ -162,6 +162,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property project (base name: "project")', function() {
+      // uncomment below and update the code to test the property project
+      //var instane = new bimdata.Topic();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

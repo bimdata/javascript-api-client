@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.RawElements();
+    instance = new bimdata.Layer();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,52 +47,40 @@
       object[property] = value;
   }
 
-  describe('RawElements', function() {
-    it('should create an instance of RawElements', function() {
-      // uncomment below and update the code to test RawElements
-      //var instane = new bimdata.RawElements();
-      //expect(instance).to.be.a(bimdata.RawElements);
+  describe('Layer', function() {
+    it('should create an instance of Layer', function() {
+      // uncomment below and update the code to test Layer
+      //var instane = new bimdata.Layer();
+      //expect(instance).to.be.a(bimdata.Layer);
     });
 
-    it('should have the property units (base name: "units")', function() {
-      // uncomment below and update the code to test the property units
-      //var instane = new bimdata.RawElements();
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new bimdata.Layer();
       //expect(instance).to.be();
     });
 
-    it('should have the property definitions (base name: "definitions")', function() {
-      // uncomment below and update the code to test the property definitions
-      //var instane = new bimdata.RawElements();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new bimdata.Layer();
       //expect(instance).to.be();
     });
 
-    it('should have the property propertySets (base name: "property_sets")', function() {
-      // uncomment below and update the code to test the property propertySets
-      //var instane = new bimdata.RawElements();
+    it('should have the property identifier (base name: "identifier")', function() {
+      // uncomment below and update the code to test the property identifier
+      //var instane = new bimdata.Layer();
       //expect(instance).to.be();
     });
 
-    it('should have the property classifications (base name: "classifications")', function() {
-      // uncomment below and update the code to test the property classifications
-      //var instane = new bimdata.RawElements();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property layers (base name: "layers")', function() {
-      // uncomment below and update the code to test the property layers
-      //var instane = new bimdata.RawElements();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property systems (base name: "systems")', function() {
-      // uncomment below and update the code to test the property systems
-      //var instane = new bimdata.RawElements();
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new bimdata.Layer();
       //expect(instance).to.be();
     });
 
     it('should have the property elements (base name: "elements")', function() {
       // uncomment below and update the code to test the property elements
-      //var instane = new bimdata.RawElements();
+      //var instane = new bimdata.Layer();
       //expect(instance).to.be();
     });
 

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.UserApi();
+    instance = new bimdata.RawLayer();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,37 +47,31 @@
       object[property] = value;
   }
 
-  describe('UserApi', function() {
-    describe('getSelfProjects', function() {
-      it('should call getSelfProjects successfully', function(done) {
-        //uncomment below and update the code to test getSelfProjects
-        //instance.getSelfProjects(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('RawLayer', function() {
+    it('should create an instance of RawLayer', function() {
+      // uncomment below and update the code to test RawLayer
+      //var instane = new bimdata.RawLayer();
+      //expect(instance).to.be.a(bimdata.RawLayer);
     });
-    describe('getSelfUser', function() {
-      it('should call getSelfUser successfully', function(done) {
-        //uncomment below and update the code to test getSelfUser
-        //instance.getSelfUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new bimdata.RawLayer();
+      //expect(instance).to.be();
     });
-    describe('updateSelfUser', function() {
-      it('should call updateSelfUser successfully', function(done) {
-        //uncomment below and update the code to test updateSelfUser
-        //instance.updateSelfUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new bimdata.RawLayer();
+      //expect(instance).to.be();
     });
+
+    it('should have the property identifier (base name: "identifier")', function() {
+      // uncomment below and update the code to test the property identifier
+      //var instane = new bimdata.RawLayer();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
