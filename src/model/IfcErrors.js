@@ -50,6 +50,9 @@ class IfcErrors {
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], ['String']);
             }
+            if (data.hasOwnProperty('warnings')) {
+                obj['warnings'] = ApiClient.convertToType(data['warnings'], ['String']);
+            }
         }
         return obj;
     }
@@ -58,10 +61,16 @@ class IfcErrors {
 }
 
 /**
- * List for warnings and errors that happened during IFC processing
+ * List of errors that happened during IFC processing
  * @member {Array.<String>} errors
  */
 IfcErrors.prototype['errors'] = undefined;
+
+/**
+ * List of warnings that happened during IFC processing
+ * @member {Array.<String>} warnings
+ */
+IfcErrors.prototype['warnings'] = undefined;
 
 
 

@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **xktFile** | **String** |  | [optional] 
 **projectId** | **String** |  | [optional] 
 **worldPosition** | **[Number]** | [x,y,z] array of the position of the local_placement in world coordinates | [optional] 
-**errors** | **[String]** | List for warnings and errors that happened during IFC processing | [optional] 
+**errors** | **[String]** | List of errors that happened during IFC processing | [optional] 
+**warnings** | **[String]** | List of warnings that happened during IFC processing | [optional] 
 
 

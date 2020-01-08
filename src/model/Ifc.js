@@ -103,6 +103,9 @@ class Ifc {
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], ['String']);
             }
+            if (data.hasOwnProperty('warnings')) {
+                obj['warnings'] = ApiClient.convertToType(data['warnings'], ['String']);
+            }
         }
         return obj;
     }
@@ -197,10 +200,16 @@ Ifc.prototype['project_id'] = undefined;
 Ifc.prototype['world_position'] = undefined;
 
 /**
- * List for warnings and errors that happened during IFC processing
+ * List of errors that happened during IFC processing
  * @member {Array.<String>} errors
  */
 Ifc.prototype['errors'] = undefined;
+
+/**
+ * List of warnings that happened during IFC processing
+ * @member {Array.<String>} warnings
+ */
+Ifc.prototype['warnings'] = undefined;
 
 
 

@@ -162,6 +162,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property warnings (base name: "warnings")', function() {
+      // uncomment below and update the code to test the property warnings
+      //var instane = new bimdata.Ifc();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
