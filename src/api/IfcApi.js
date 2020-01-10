@@ -2981,7 +2981,7 @@ export default class IfcApi {
 
     /**
      * Export IFC
-     * Export IFC as requested in parameters. This call doesn't return the IFC. When the export is finished, a new IFC file with '_export_DD_MM_YYYY' suffix will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
+     * Export IFC as requested in parameters. When the export is finished, a new IFC file with will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -3032,7 +3032,7 @@ export default class IfcApi {
 
     /**
      * Export IFC
-     * Export IFC as requested in parameters. This call doesn't return the IFC. When the export is finished, a new IFC file with '_export_DD_MM_YYYY' suffix will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
+     * Export IFC as requested in parameters. When the export is finished, a new IFC file with will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5932,6 +5932,7 @@ export default class IfcApi {
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.status Filter the returned list by status
+     * @param {String} opts.source Filter the returned list by source
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Ifc>} and HTTP response
      */
     getIfcsWithHttpInfo(cloudPk, projectPk, opts) {
@@ -5951,7 +5952,8 @@ export default class IfcApi {
         'project_pk': projectPk
       };
       let queryParams = {
-        'status': opts['status']
+        'status': opts['status'],
+        'source': opts['source']
       };
       let headerParams = {
       };
@@ -5976,6 +5978,7 @@ export default class IfcApi {
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.status Filter the returned list by status
+     * @param {String} opts.source Filter the returned list by source
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Ifc>}
      */
     getIfcs(cloudPk, projectPk, opts) {

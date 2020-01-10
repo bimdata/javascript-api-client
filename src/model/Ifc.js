@@ -61,6 +61,9 @@ class Ifc {
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
+            if (data.hasOwnProperty('source')) {
+                obj['source'] = ApiClient.convertToType(data['source'], 'String');
+            }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
@@ -132,6 +135,11 @@ Ifc.prototype['creator'] = undefined;
  * @member {String} status
  */
 Ifc.prototype['status'] = undefined;
+
+/**
+ * @member {module:model/Ifc.SourceEnum} source
+ */
+Ifc.prototype['source'] = undefined;
 
 /**
  * @member {Date} created_at
@@ -213,6 +221,39 @@ Ifc.prototype['warnings'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>source</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Ifc['SourceEnum'] = {
+
+    /**
+     * value: "UPLOAD"
+     * @const
+     */
+    "UPLOAD": "UPLOAD",
+
+    /**
+     * value: "SPLIT"
+     * @const
+     */
+    "SPLIT": "SPLIT",
+
+    /**
+     * value: "MERGE"
+     * @const
+     */
+    "MERGE": "MERGE",
+
+    /**
+     * value: "EXPORT"
+     * @const
+     */
+    "EXPORT": "EXPORT"
+};
 
 
 

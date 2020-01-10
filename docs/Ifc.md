@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **creator** | [**User**](User.md) |  | [optional] 
 **status** | **String** |  | [optional] 
+**source** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 **documentId** | **String** |  | [optional] 
@@ -23,5 +24,20 @@ Name | Type | Description | Notes
 **worldPosition** | **[Number]** | [x,y,z] array of the position of the local_placement in world coordinates | [optional] 
 **errors** | **[String]** | List of errors that happened during IFC processing | [optional] 
 **warnings** | **[String]** | List of warnings that happened during IFC processing | [optional] 
+
+
+
+## Enum: SourceEnum
+
+
+* `UPLOAD` (value: `"UPLOAD"`)
+
+* `SPLIT` (value: `"SPLIT"`)
+
+* `MERGE` (value: `"MERGE"`)
+
+* `EXPORT` (value: `"EXPORT"`)
+
+
 
 

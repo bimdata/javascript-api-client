@@ -2753,7 +2753,7 @@ null (empty response body)
 
 Export IFC
 
-Export IFC as requested in parameters. This call doesn&#39;t return the IFC. When the export is finished, a new IFC file with &#39;_export_DD_MM_YYYY&#39; suffix will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
+Export IFC as requested in parameters. When the export is finished, a new IFC file with will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
 
 ### Example
 
@@ -5360,7 +5360,8 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let opts = {
-  'status': "status_example" // String | Filter the returned list by status
+  'status': "status_example", // String | Filter the returned list by status
+  'source': "source_example" // String | Filter the returned list by source
 };
 apiInstance.getIfcs(cloudPk, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -5378,6 +5379,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **status** | **String**| Filter the returned list by status | [optional] 
+ **source** | **String**| Filter the returned list by source | [optional] 
 
 ### Return type
 
