@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **String** |  | [optional] 
 **creationDate** | **Date** |  | [optional] 
-**creationAuthor** | **String** |  | [optional] 
-**modifiedDate** | **Date** |  | [optional] 
-**modifiedAuthor** | **String** |  | [optional] 
+**creationAuthor** | **String** |  | [optional] [readonly] 
+**modifiedDate** | **Date** |  | [optional] [readonly] 
+**modifiedAuthor** | **String** |  | [optional] [readonly] 
 **title** | **String** |  | 
 **description** | **String** |  | [optional] 
 **referenceLinks** | **[String]** |  | [optional] 

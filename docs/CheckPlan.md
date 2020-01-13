@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
+**id** | **Number** |  | [optional] [readonly] 
 **name** | **String** |  | 
 **description** | **String** |  | [optional] 
-**createdAt** | **Date** |  | [optional] 
-**updatedAt** | **Date** |  | [optional] 
+**createdAt** | **Date** |  | [optional] [readonly] 
+**updatedAt** | **Date** |  | [optional] [readonly] 
 **rulesets** | [**[Ruleset]**](Ruleset.md) |  | [optional] 
-**isDefault** | **Boolean** |  | [optional] 
+**isDefault** | **Boolean** |  | [optional] [readonly] 
 
 

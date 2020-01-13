@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.ProjectApi();
+    instance = new bimdata.CollaborationApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,7 +47,17 @@
       object[property] = value;
   }
 
-  describe('ProjectApi', function() {
+  describe('CollaborationApi', function() {
+    describe('cancelCloudUserInvitation', function() {
+      it('should call cancelCloudUserInvitation successfully', function(done) {
+        //uncomment below and update the code to test cancelCloudUserInvitation
+        //instance.cancelCloudUserInvitation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('cancelProjectUserInvitation', function() {
       it('should call cancelProjectUserInvitation successfully', function(done) {
         //uncomment below and update the code to test cancelProjectUserInvitation
@@ -62,6 +72,26 @@
       it('should call createClassification successfully', function(done) {
         //uncomment below and update the code to test createClassification
         //instance.createClassification(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createCloud', function() {
+      it('should call createCloud successfully', function(done) {
+        //uncomment below and update the code to test createCloud
+        //instance.createCloud(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createDemo', function() {
+      it('should call createDemo successfully', function(done) {
+        //uncomment below and update the code to test createDemo
+        //instance.createDemo(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -102,6 +132,26 @@
       it('should call deleteClassification successfully', function(done) {
         //uncomment below and update the code to test deleteClassification
         //instance.deleteClassification(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteCloud', function() {
+      it('should call deleteCloud successfully', function(done) {
+        //uncomment below and update the code to test deleteCloud
+        //instance.deleteCloud(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteCloudUser', function() {
+      it('should call deleteCloudUser successfully', function(done) {
+        //uncomment below and update the code to test deleteCloudUser
+        //instance.deleteCloudUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -152,6 +202,26 @@
       it('should call fullUpdateClassification successfully', function(done) {
         //uncomment below and update the code to test fullUpdateClassification
         //instance.fullUpdateClassification(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('fullUpdateCloud', function() {
+      it('should call fullUpdateCloud successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateCloud
+        //instance.fullUpdateCloud(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('fullUpdateCloudUser', function() {
+      it('should call fullUpdateCloudUser successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateCloudUser
+        //instance.fullUpdateCloudUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -212,6 +282,66 @@
       it('should call getClassifications successfully', function(done) {
         //uncomment below and update the code to test getClassifications
         //instance.getClassifications(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCloud', function() {
+      it('should call getCloud successfully', function(done) {
+        //uncomment below and update the code to test getCloud
+        //instance.getCloud(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCloudInvitations', function() {
+      it('should call getCloudInvitations successfully', function(done) {
+        //uncomment below and update the code to test getCloudInvitations
+        //instance.getCloudInvitations(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCloudSize', function() {
+      it('should call getCloudSize successfully', function(done) {
+        //uncomment below and update the code to test getCloudSize
+        //instance.getCloudSize(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCloudUser', function() {
+      it('should call getCloudUser successfully', function(done) {
+        //uncomment below and update the code to test getCloudUser
+        //instance.getCloudUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCloudUsers', function() {
+      it('should call getCloudUsers successfully', function(done) {
+        //uncomment below and update the code to test getCloudUsers
+        //instance.getCloudUsers(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getClouds', function() {
+      it('should call getClouds successfully', function(done) {
+        //uncomment below and update the code to test getClouds
+        //instance.getClouds(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -338,6 +468,36 @@
         done();
       });
     });
+    describe('getSelfProjects', function() {
+      it('should call getSelfProjects successfully', function(done) {
+        //uncomment below and update the code to test getSelfProjects
+        //instance.getSelfProjects(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getSelfUser', function() {
+      it('should call getSelfUser successfully', function(done) {
+        //uncomment below and update the code to test getSelfUser
+        //instance.getSelfUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('inviteCloudUser', function() {
+      it('should call inviteCloudUser successfully', function(done) {
+        //uncomment below and update the code to test inviteCloudUser
+        //instance.inviteCloudUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('inviteProjectUser', function() {
       it('should call inviteProjectUser successfully', function(done) {
         //uncomment below and update the code to test inviteProjectUser
@@ -352,6 +512,26 @@
       it('should call updateClassification successfully', function(done) {
         //uncomment below and update the code to test updateClassification
         //instance.updateClassification(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateCloud', function() {
+      it('should call updateCloud successfully', function(done) {
+        //uncomment below and update the code to test updateCloud
+        //instance.updateCloud(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateCloudUser', function() {
+      it('should call updateCloudUser successfully', function(done) {
+        //uncomment below and update the code to test updateCloudUser
+        //instance.updateCloudUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -392,6 +572,16 @@
       it('should call updateProjectUser successfully', function(done) {
         //uncomment below and update the code to test updateProjectUser
         //instance.updateProjectUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateSelfUser', function() {
+      it('should call updateSelfUser successfully', function(done) {
+        //uncomment below and update the code to test updateSelfUser
+        //instance.updateSelfUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

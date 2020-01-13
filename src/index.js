@@ -95,14 +95,12 @@ import Visibility from './model/Visibility';
 import WebHook from './model/WebHook';
 import Zone from './model/Zone';
 import ZoneSpace from './model/ZoneSpace';
-import ApplicationApi from './api/ApplicationApi';
 import BcfApi from './api/BcfApi';
-import CheckplanApi from './api/CheckplanApi';
-import CloudApi from './api/CloudApi';
-import IdentityProviderApi from './api/IdentityProviderApi';
+import CheckerApi from './api/CheckerApi';
+import CollaborationApi from './api/CollaborationApi';
 import IfcApi from './api/IfcApi';
-import ProjectApi from './api/ProjectApi';
-import UserApi from './api/UserApi';
+import SsoApi from './api/SsoApi';
+import WebhookApi from './api/WebhookApi';
 
 
 /**
@@ -636,34 +634,22 @@ export {
     ZoneSpace,
 
     /**
-    * The ApplicationApi service constructor.
-    * @property {module:api/ApplicationApi}
-    */
-    ApplicationApi,
-
-    /**
     * The BcfApi service constructor.
     * @property {module:api/BcfApi}
     */
     BcfApi,
 
     /**
-    * The CheckplanApi service constructor.
-    * @property {module:api/CheckplanApi}
+    * The CheckerApi service constructor.
+    * @property {module:api/CheckerApi}
     */
-    CheckplanApi,
+    CheckerApi,
 
     /**
-    * The CloudApi service constructor.
-    * @property {module:api/CloudApi}
+    * The CollaborationApi service constructor.
+    * @property {module:api/CollaborationApi}
     */
-    CloudApi,
-
-    /**
-    * The IdentityProviderApi service constructor.
-    * @property {module:api/IdentityProviderApi}
-    */
-    IdentityProviderApi,
+    CollaborationApi,
 
     /**
     * The IfcApi service constructor.
@@ -672,14 +658,14 @@ export {
     IfcApi,
 
     /**
-    * The ProjectApi service constructor.
-    * @property {module:api/ProjectApi}
+    * The SsoApi service constructor.
+    * @property {module:api/SsoApi}
     */
-    ProjectApi,
+    SsoApi,
 
     /**
-    * The UserApi service constructor.
-    * @property {module:api/UserApi}
+    * The WebhookApi service constructor.
+    * @property {module:api/WebhookApi}
     */
-    UserApi
+    WebhookApi
 };

@@ -17,15 +17,15 @@ import Invitation from '../model/Invitation';
 import SelectUser from '../model/SelectUser';
 
 /**
-* IdentityProvider service.
-* @module api/IdentityProviderApi
+* Sso service.
+* @module api/SsoApi
 * @version 0.0.0
 */
-export default class IdentityProviderApi {
+export default class SsoApi {
 
     /**
-    * Constructs a new IdentityProviderApi. 
-    * @alias module:api/IdentityProviderApi
+    * Constructs a new SsoApi. 
+    * @alias module:api/SsoApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.

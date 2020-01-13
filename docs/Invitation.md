@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
-**clientId** | **String** |  | [optional] 
+**id** | **Number** |  | [optional] [readonly] 
+**clientId** | **String** |  | [optional] [readonly] 
 **redirectUri** | **String** | User will be redirected to this uri when they accept the invitation | 
 **cloudName** | **String** |  | 
 **cloudRole** | **Number** | Role the user will have when they accept the invitation | 

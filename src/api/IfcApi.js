@@ -14,9 +14,11 @@
 
 import ApiClient from "../ApiClient";
 import Classification from '../model/Classification';
+import Cloud from '../model/Cloud';
 import Element from '../model/Element';
 import ElementClassificationRelation from '../model/ElementClassificationRelation';
 import ElementPropertySetRelation from '../model/ElementPropertySetRelation';
+import Folder from '../model/Folder';
 import Ifc from '../model/Ifc';
 import IfcAccessToken from '../model/IfcAccessToken';
 import IfcErrors from '../model/IfcErrors';
@@ -24,6 +26,8 @@ import IfcExport from '../model/IfcExport';
 import IfcFiles from '../model/IfcFiles';
 import Layer from '../model/Layer';
 import ProcessorHandler from '../model/ProcessorHandler';
+import Project from '../model/Project';
+import ProjectWithChildren from '../model/ProjectWithChildren';
 import Property from '../model/Property';
 import PropertyDefinition from '../model/PropertyDefinition';
 import PropertySet from '../model/PropertySet';
@@ -1055,6 +1059,101 @@ export default class IfcApi {
 
 
     /**
+     * Create a cloud
+     *  Required scopes: cloud:manage
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
+     */
+    createCloudWithHttpInfo(data) {
+      let postBody = data;
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createCloud");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Cloud;
+      return this.apiClient.callApi(
+        '/cloud', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a cloud
+     *  Required scopes: cloud:manage
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
+     */
+    createCloud(data) {
+      return this.createCloudWithHttpInfo(data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a Demo project in a cloud
+     * Create a demo project with a pre-populated IFC and its data Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     */
+    createDemoWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling createDemo");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Project;
+      return this.apiClient.callApi(
+        '/cloud/{id}/create-demo', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a Demo project in a cloud
+     * Create a demo project with a pre-populated IFC and its data Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     */
+    createDemo(id) {
+      return this.createDemoWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create an element in the model
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
@@ -1669,6 +1768,60 @@ export default class IfcApi {
 
 
     /**
+     * Create a project
+     * Create a project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {module:model/Project} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     */
+    createProjectWithHttpInfo(cloudPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createProject");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createProject");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Project;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a project
+     * Create a project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {module:model/Project} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     */
+    createProject(cloudPk, data) {
+      return this.createProjectWithHttpInfo(cloudPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create a PropertySet
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
      * @param {String} cloudPk 
@@ -2221,6 +2374,54 @@ export default class IfcApi {
 
 
     /**
+     * Delete a cloud
+     *  Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteCloudWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteCloud");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a cloud
+     *  Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteCloud(id) {
+      return this.deleteCloudWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Delete a zone of a model
      * The IFC file will not be updated. The remaining elements are available in API and will be available when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
@@ -2621,6 +2822,61 @@ export default class IfcApi {
      */
     deleteLayer(cloudPk, id, ifcPk, projectPk) {
       return this.deleteLayerWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a project
+     * It can take a long time to respond because we may need to delete all properties of all elements of all models in the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteProjectWithHttpInfo(cloudPk, id) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteProject");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteProject");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a project
+     * It can take a long time to respond because we may need to delete all properties of all elements of all models in the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteProject(cloudPk, id) {
+      return this.deleteProjectWithHttpInfo(cloudPk, id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3116,6 +3372,60 @@ export default class IfcApi {
      */
     fullUpdateAccessToken(cloudPk, ifcPk, projectPk, token, data) {
       return this.fullUpdateAccessTokenWithHttpInfo(cloudPk, ifcPk, projectPk, token, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update all fields of a cloud
+     *  Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
+     */
+    fullUpdateCloudWithHttpInfo(id, data) {
+      let postBody = data;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateCloud");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateCloud");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Cloud;
+      return this.apiClient.callApi(
+        '/cloud/{id}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update all fields of a cloud
+     *  Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
+     */
+    fullUpdateCloud(id, data) {
+      return this.fullUpdateCloudWithHttpInfo(id, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3634,6 +3944,67 @@ export default class IfcApi {
      */
     fullUpdateProcessorHandler(cloudPk, id, ifcPk, projectPk, data) {
       return this.fullUpdateProcessorHandlerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update all fields of a project
+     * Update all fields of a project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @param {module:model/Project} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     */
+    fullUpdateProjectWithHttpInfo(cloudPk, id, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateProject");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateProject");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateProject");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Project;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{id}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update all fields of a project
+     * Update all fields of a project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @param {module:model/Project} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     */
+    fullUpdateProject(cloudPk, id, data) {
+      return this.fullUpdateProjectWithHttpInfo(cloudPk, id, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4216,6 +4587,141 @@ export default class IfcApi {
      */
     getClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk) {
       return this.getClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve one cloud
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
+     */
+    getCloudWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getCloud");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Cloud;
+      return this.apiClient.callApi(
+        '/cloud/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve one cloud
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
+     */
+    getCloud(id) {
+      return this.getCloudWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get size of all files in the cloud
+     * Returns the size of the cloud in Bytes
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Number} and HTTP response
+     */
+    getCloudSizeWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getCloudSize");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = 'Number';
+      return this.apiClient.callApi(
+        '/cloud/{id}/size', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get size of all files in the cloud
+     * Returns the size of the cloud in Bytes
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Number}
+     */
+    getCloudSize(id) {
+      return this.getCloudSizeWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all clouds
+     * Returns user's (or app's) clouds only
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Cloud>} and HTTP response
+     */
+    getCloudsWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Cloud];
+      return this.apiClient.callApi(
+        '/cloud', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all clouds
+     * Returns user's (or app's) clouds only
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Cloud>}
+     */
+    getClouds() {
+      return this.getCloudsWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6252,6 +6758,267 @@ export default class IfcApi {
 
 
     /**
+     * Retrieve a project
+     * Retrieve a project
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectWithChildren} and HTTP response
+     */
+    getProjectWithHttpInfo(cloudPk, id) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProject");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getProject");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ProjectWithChildren;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a project
+     * Retrieve a project
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectWithChildren}
+     */
+    getProject(cloudPk, id) {
+      return this.getProjectWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve the complete DMS tree
+     * Retrieve the complete DMS tree (all folders and all documents in the project)
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
+     */
+    getProjectDMSTreeWithHttpInfo(cloudPk, id) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectDMSTree");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getProjectDMSTree");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Folder;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{id}/dms-tree', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve the complete DMS tree
+     * Retrieve the complete DMS tree (all folders and all documents in the project)
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
+     */
+    getProjectDMSTree(cloudPk, id) {
+      return this.getProjectDMSTreeWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve the complete projects tree of the cloud
+     * Retrieve the complete projects tree of the cloud
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectWithChildren>} and HTTP response
+     */
+    getProjectSubTreeWithHttpInfo(cloudPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectSubTree");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [ProjectWithChildren];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/subtree', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve the complete projects tree of the cloud
+     * Retrieve the complete projects tree of the cloud
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectWithChildren>}
+     */
+    getProjectSubTree(cloudPk) {
+      return this.getProjectSubTreeWithHttpInfo(cloudPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve the complete DMS tree
+     * Retrieve the complete DMS tree (all folders and all documents in the project). DEPRECATED: renamed to getProjectDMSTree
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
+     */
+    getProjectTreeWithHttpInfo(cloudPk, id) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectTree");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getProjectTree");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Folder;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{id}/tree', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve the complete DMS tree
+     * Retrieve the complete DMS tree (all folders and all documents in the project). DEPRECATED: renamed to getProjectDMSTree
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
+     */
+    getProjectTree(cloudPk, id) {
+      return this.getProjectTreeWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all projects
+     * Retrieve all projects of the cloud. All project are shown at the same level. see #getProjectSubTree
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
+     */
+    getProjectsWithHttpInfo(cloudPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjects");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Project];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all projects
+     * Retrieve all projects of the cloud. All project are shown at the same level. see #getProjectSubTree
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
+     */
+    getProjects(cloudPk) {
+      return this.getProjectsWithHttpInfo(cloudPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve a PropertySet of a model
      * Retrieve a PropertySet of a model Required scopes: ifc:read
      * @param {String} cloudPk 
@@ -7779,6 +8546,60 @@ export default class IfcApi {
 
 
     /**
+     * Update some fields of a cloud
+     * Update some fields of a cloud Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
+     */
+    updateCloudWithHttpInfo(id, data) {
+      let postBody = data;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateCloud");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateCloud");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Cloud;
+      return this.apiClient.callApi(
+        '/cloud/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a cloud
+     * Update some fields of a cloud Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
+     */
+    updateCloud(id, data) {
+      return this.updateCloudWithHttpInfo(id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update some fields of a zone
      * Update some fields of a zone. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
@@ -8376,6 +9197,67 @@ export default class IfcApi {
      */
     updateProcessorHandler(cloudPk, id, ifcPk, projectPk, data) {
       return this.updateProcessorHandlerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a project
+     * Update some fields of a project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @param {module:model/Project} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     */
+    updateProjectWithHttpInfo(cloudPk, id, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateProject");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateProject");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateProject");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Project;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a project
+     * Update some fields of a project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @param {module:model/Project} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     */
+    updateProject(cloudPk, id, data) {
+      return this.updateProjectWithHttpInfo(cloudPk, id, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

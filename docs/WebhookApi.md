@@ -1,16 +1,16 @@
-# bimdata.ApplicationApi
+# bimdata.WebhookApi
 
 All URIs are relative to *https://api-beta.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createWebHook**](ApplicationApi.md#createWebHook) | **POST** /cloud/{cloud_pk}/webhook | Create a new Webhook
-[**deleteWebHook**](ApplicationApi.md#deleteWebHook) | **DELETE** /cloud/{cloud_pk}/webhook/{id} | Delete a webhook
-[**fullUpdateWebHook**](ApplicationApi.md#fullUpdateWebHook) | **PUT** /cloud/{cloud_pk}/webhook/{id} | Update all field of a webhook
-[**getWebHook**](ApplicationApi.md#getWebHook) | **GET** /cloud/{cloud_pk}/webhook/{id} | Retrieve one configured webhook
-[**getWebHooks**](ApplicationApi.md#getWebHooks) | **GET** /cloud/{cloud_pk}/webhook | Retrieve all configured webhooks
-[**pingWebHook**](ApplicationApi.md#pingWebHook) | **POST** /cloud/{cloud_pk}/webhook/{id}/ping | Test a webhook
-[**updateWebHook**](ApplicationApi.md#updateWebHook) | **PATCH** /cloud/{cloud_pk}/webhook/{id} | Update some field of a webhook
+[**createWebHook**](WebhookApi.md#createWebHook) | **POST** /cloud/{cloud_pk}/webhook | Create a new Webhook
+[**deleteWebHook**](WebhookApi.md#deleteWebHook) | **DELETE** /cloud/{cloud_pk}/webhook/{id} | Delete a webhook
+[**fullUpdateWebHook**](WebhookApi.md#fullUpdateWebHook) | **PUT** /cloud/{cloud_pk}/webhook/{id} | Update all field of a webhook
+[**getWebHook**](WebhookApi.md#getWebHook) | **GET** /cloud/{cloud_pk}/webhook/{id} | Retrieve one configured webhook
+[**getWebHooks**](WebhookApi.md#getWebHooks) | **GET** /cloud/{cloud_pk}/webhook | Retrieve all configured webhooks
+[**pingWebHook**](WebhookApi.md#pingWebHook) | **POST** /cloud/{cloud_pk}/webhook/{id}/ping | Test a webhook
+[**updateWebHook**](WebhookApi.md#updateWebHook) | **PATCH** /cloud/{cloud_pk}/webhook/{id} | Update some field of a webhook
 
 
 
@@ -39,7 +39,7 @@ bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.ApplicationApi();
+let apiInstance = new bimdata.WebhookApi();
 let cloudPk = "cloudPk_example"; // String | 
 let data = new bimdata.WebHook(); // WebHook | 
 apiInstance.createWebHook(cloudPk, data).then((data) => {
@@ -97,7 +97,7 @@ bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.ApplicationApi();
+let apiInstance = new bimdata.WebhookApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = "id_example"; // String | 
 apiInstance.deleteWebHook(cloudPk, id).then(() => {
@@ -155,7 +155,7 @@ bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.ApplicationApi();
+let apiInstance = new bimdata.WebhookApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = "id_example"; // String | 
 let data = new bimdata.WebHook(); // WebHook | 
@@ -215,7 +215,7 @@ bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.ApplicationApi();
+let apiInstance = new bimdata.WebhookApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = "id_example"; // String | 
 apiInstance.getWebHook(cloudPk, id).then((data) => {
@@ -273,7 +273,7 @@ bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.ApplicationApi();
+let apiInstance = new bimdata.WebhookApi();
 let cloudPk = "cloudPk_example"; // String | 
 apiInstance.getWebHooks(cloudPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -329,7 +329,7 @@ bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.ApplicationApi();
+let apiInstance = new bimdata.WebhookApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = "id_example"; // String | 
 let data = new bimdata.WebHook(); // WebHook | 
@@ -389,7 +389,7 @@ bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.ApplicationApi();
+let apiInstance = new bimdata.WebhookApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = "id_example"; // String | 
 let data = new bimdata.WebHook(); // WebHook | 

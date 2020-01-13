@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
+**id** | **Number** |  | [optional] [readonly] 
 **uuid** | **String** |  | [optional] 
 **type** | **String** | IFC type for the element | 
 **attributes** | [**PropertySet**](PropertySet.md) |  | [optional] 

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.CheckplanApi();
+    instance = new bimdata.CheckerApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,7 +47,7 @@
       object[property] = value;
   }
 
-  describe('CheckplanApi', function() {
+  describe('CheckerApi', function() {
     describe('createChecker', function() {
       it('should call createChecker successfully', function(done) {
         //uncomment below and update the code to test createChecker

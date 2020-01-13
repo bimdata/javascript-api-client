@@ -21,15 +21,15 @@ import RuleComponent from '../model/RuleComponent';
 import Ruleset from '../model/Ruleset';
 
 /**
-* Checkplan service.
-* @module api/CheckplanApi
+* Checker service.
+* @module api/CheckerApi
 * @version 0.0.0
 */
-export default class CheckplanApi {
+export default class CheckerApi {
 
     /**
-    * Constructs a new CheckplanApi. 
-    * @alias module:api/CheckplanApi
+    * Constructs a new CheckerApi. 
+    * @alias module:api/CheckerApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.

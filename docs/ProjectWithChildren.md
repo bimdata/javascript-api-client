@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
-**logo** | **String** |  | [optional] 
+**id** | **Number** |  | [optional] [readonly] 
+**logo** | **String** |  | [optional] [readonly] 
 **name** | **String** | Name of the project | 
 **status** | **String** |  | [optional] 
-**createdAt** | **Date** | Creation date | [optional] 
-**updatedAt** | **Date** | Date of the last update | [optional] 
+**createdAt** | **Date** | Creation date | [optional] [readonly] 
+**updatedAt** | **Date** | Date of the last update | [optional] [readonly] 
 **parentId** | **Number** |  | [optional] 
-**children** | [**[ProjectWithChildren]**](ProjectWithChildren.md) |  | [optional] 
-**rootFolderId** | **String** |  | [optional] 
+**children** | [**[ProjectWithChildren]**](ProjectWithChildren.md) |  | [optional] [readonly] 
+**rootFolderId** | **String** |  | [optional] [readonly] 
 
 
 

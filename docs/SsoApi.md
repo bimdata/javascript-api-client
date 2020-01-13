@@ -1,14 +1,14 @@
-# bimdata.IdentityProviderApi
+# bimdata.SsoApi
 
 All URIs are relative to *https://api-beta.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**acceptInvitation**](IdentityProviderApi.md#acceptInvitation) | **POST** /identity-provider/invitation/{id}/accept | Accept an invitation
-[**deleteUser**](IdentityProviderApi.md#deleteUser) | **DELETE** /identity-provider/user | Delete user form BIMData
-[**denyInvitation**](IdentityProviderApi.md#denyInvitation) | **POST** /identity-provider/invitation/{id}/deny | Deny an invitation
-[**getInvitation**](IdentityProviderApi.md#getInvitation) | **GET** /identity-provider/invitation/{id} | Retrieve an invitation
-[**getInvitations**](IdentityProviderApi.md#getInvitations) | **GET** /identity-provider/invitation | Retrieve all invitations
+[**acceptInvitation**](SsoApi.md#acceptInvitation) | **POST** /identity-provider/invitation/{id}/accept | Accept an invitation
+[**deleteUser**](SsoApi.md#deleteUser) | **DELETE** /identity-provider/user | Delete user form BIMData
+[**denyInvitation**](SsoApi.md#denyInvitation) | **POST** /identity-provider/invitation/{id}/deny | Deny an invitation
+[**getInvitation**](SsoApi.md#getInvitation) | **GET** /identity-provider/invitation/{id} | Retrieve an invitation
+[**getInvitations**](SsoApi.md#getInvitations) | **GET** /identity-provider/invitation | Retrieve all invitations
 
 
 
@@ -37,7 +37,7 @@ bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IdentityProviderApi();
+let apiInstance = new bimdata.SsoApi();
 let id = 56; // Number | A unique integer value identifying this invitation.
 apiInstance.acceptInvitation(id).then(() => {
   console.log('API called successfully.');
@@ -93,7 +93,7 @@ bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IdentityProviderApi();
+let apiInstance = new bimdata.SsoApi();
 let data = new bimdata.SelectUser(); // SelectUser | 
 apiInstance.deleteUser(data).then(() => {
   console.log('API called successfully.');
@@ -149,7 +149,7 @@ bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IdentityProviderApi();
+let apiInstance = new bimdata.SsoApi();
 let id = 56; // Number | A unique integer value identifying this invitation.
 apiInstance.denyInvitation(id).then(() => {
   console.log('API called successfully.');
@@ -205,7 +205,7 @@ bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IdentityProviderApi();
+let apiInstance = new bimdata.SsoApi();
 let id = 56; // Number | A unique integer value identifying this invitation.
 apiInstance.getInvitation(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -261,7 +261,7 @@ bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
 let client_credentials = defaultClient.authentications['client_credentials'];
 client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new bimdata.IdentityProviderApi();
+let apiInstance = new bimdata.SsoApi();
 let opts = {
   'status': "status_example" // String | Filter the returned list by status
 };

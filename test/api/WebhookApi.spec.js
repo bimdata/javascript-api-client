@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.IdentityProviderApi();
+    instance = new bimdata.WebhookApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,51 +47,71 @@
       object[property] = value;
   }
 
-  describe('IdentityProviderApi', function() {
-    describe('acceptInvitation', function() {
-      it('should call acceptInvitation successfully', function(done) {
-        //uncomment below and update the code to test acceptInvitation
-        //instance.acceptInvitation(function(error) {
+  describe('WebhookApi', function() {
+    describe('createWebHook', function() {
+      it('should call createWebHook successfully', function(done) {
+        //uncomment below and update the code to test createWebHook
+        //instance.createWebHook(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteUser', function() {
-      it('should call deleteUser successfully', function(done) {
-        //uncomment below and update the code to test deleteUser
-        //instance.deleteUser(function(error) {
+    describe('deleteWebHook', function() {
+      it('should call deleteWebHook successfully', function(done) {
+        //uncomment below and update the code to test deleteWebHook
+        //instance.deleteWebHook(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('denyInvitation', function() {
-      it('should call denyInvitation successfully', function(done) {
-        //uncomment below and update the code to test denyInvitation
-        //instance.denyInvitation(function(error) {
+    describe('fullUpdateWebHook', function() {
+      it('should call fullUpdateWebHook successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateWebHook
+        //instance.fullUpdateWebHook(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getInvitation', function() {
-      it('should call getInvitation successfully', function(done) {
-        //uncomment below and update the code to test getInvitation
-        //instance.getInvitation(function(error) {
+    describe('getWebHook', function() {
+      it('should call getWebHook successfully', function(done) {
+        //uncomment below and update the code to test getWebHook
+        //instance.getWebHook(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getInvitations', function() {
-      it('should call getInvitations successfully', function(done) {
-        //uncomment below and update the code to test getInvitations
-        //instance.getInvitations(function(error) {
+    describe('getWebHooks', function() {
+      it('should call getWebHooks successfully', function(done) {
+        //uncomment below and update the code to test getWebHooks
+        //instance.getWebHooks(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('pingWebHook', function() {
+      it('should call pingWebHook successfully', function(done) {
+        //uncomment below and update the code to test pingWebHook
+        //instance.pingWebHook(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateWebHook', function() {
+      it('should call updateWebHook successfully', function(done) {
+        //uncomment below and update the code to test updateWebHook
+        //instance.updateWebHook(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

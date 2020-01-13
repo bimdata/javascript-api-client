@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
-**email** | **String** |  | [optional] 
-**company** | **String** |  | [optional] 
-**firstname** | **String** |  | [optional] 
-**lastname** | **String** |  | [optional] 
-**createdAt** | **Date** |  | [optional] 
-**updatedAt** | **Date** |  | [optional] 
-**cloudRole** | **Number** |  | [optional] 
-**projectRole** | **Number** |  | [optional] 
-**provider** | **String** |  | [optional] 
+**id** | **Number** |  | [optional] [readonly] 
+**email** | **String** |  | [optional] [readonly] 
+**company** | **String** |  | [optional] [readonly] 
+**firstname** | **String** |  | [optional] [readonly] 
+**lastname** | **String** |  | [optional] [readonly] 
+**createdAt** | **Date** |  | [optional] [readonly] 
+**updatedAt** | **Date** |  | [optional] [readonly] 
+**cloudRole** | **Number** |  | [optional] [readonly] 
+**projectRole** | **Number** |  | [optional] [readonly] 
+**provider** | **String** |  | [optional] [readonly] 
 
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
+**id** | **Number** |  | [optional] [readonly] 
 **name** | **String** | Name of the layer | 
 **identifier** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 

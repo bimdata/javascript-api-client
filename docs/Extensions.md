@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **topicStatus** | **[String]** |  | 
 **topicLabel** | **[String]** |  | 
 **priority** | **[String]** |  | 
-**userIdType** | **[String]** |  | [optional] 
+**userIdType** | **[String]** |  | [optional] [readonly] 
 **stage** | **[String]** |  | 
 
 

@@ -22,11 +22,12 @@ class Document {
     /**
      * Constructs a new <code>Document</code>.
      * @alias module:model/Document
+     * @param project {Number} 
      * @param name {String} Shown name of the file
      */
-    constructor(name) { 
+    constructor(project, name) { 
         
-        Document.initialize(this, name);
+        Document.initialize(this, project, name);
     }
 
     /**
@@ -34,7 +35,8 @@ class Document {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name) { 
+    static initialize(obj, project, name) { 
+        obj['project'] = project;
         obj['name'] = name;
     }
 

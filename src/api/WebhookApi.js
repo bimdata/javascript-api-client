@@ -16,15 +16,15 @@ import ApiClient from "../ApiClient";
 import WebHook from '../model/WebHook';
 
 /**
-* Application service.
-* @module api/ApplicationApi
+* Webhook service.
+* @module api/WebhookApi
 * @version 0.0.0
 */
-export default class ApplicationApi {
+export default class WebhookApi {
 
     /**
-    * Constructs a new ApplicationApi. 
-    * @alias module:api/ApplicationApi
+    * Constructs a new WebhookApi. 
+    * @alias module:api/WebhookApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.

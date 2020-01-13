@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **String** |  | [optional] 
 **_date** | **Date** |  | [optional] 
-**author** | **String** |  | [optional] 
+**author** | **String** |  | [optional] [readonly] 
 **comment** | **String** |  | 
 **viewpointGuid** | **String** |  | [optional] 
 **replyToCommentGuid** | **String** |  | [optional] 
-**topicGuid** | **String** |  | [optional] 
-**modifiedAuthor** | **String** |  | [optional] 
-**modifiedDate** | **Date** |  | [optional] 
+**topicGuid** | **String** |  | [optional] [readonly] 
+**modifiedAuthor** | **String** |  | [optional] [readonly] 
+**modifiedDate** | **Date** |  | [optional] [readonly] 
 **viewpointTempId** | **Number** | Only used when using POST on the full-topic route to bind viewpoint with comment | [optional] 
 
 

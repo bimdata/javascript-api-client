@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**structureFile** | **String** |  | [optional] 
-**systemsFile** | **String** |  | [optional] 
-**mapFile** | **String** |  | [optional] 
-**gltfFile** | **String** |  | [optional] 
-**bvhTreeFile** | **String** |  | [optional] 
-**viewer360File** | **String** |  | [optional] 
-**xktFile** | **String** |  | [optional] 
+**structureFile** | **String** |  | [optional] [readonly] 
+**systemsFile** | **String** |  | [optional] [readonly] 
+**mapFile** | **String** |  | [optional] [readonly] 
+**gltfFile** | **String** |  | [optional] [readonly] 
+**bvhTreeFile** | **String** |  | [optional] [readonly] 
+**viewer360File** | **String** |  | [optional] [readonly] 
+**xktFile** | **String** |  | [optional] [readonly] 
 
 

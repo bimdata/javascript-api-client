@@ -14,24 +14,28 @@
 
 import ApiClient from "../ApiClient";
 import Classification from '../model/Classification';
+import Cloud from '../model/Cloud';
+import CloudInvitation from '../model/CloudInvitation';
 import Document from '../model/Document';
 import Folder from '../model/Folder';
 import Project from '../model/Project';
 import ProjectInvitation from '../model/ProjectInvitation';
 import ProjectWithChildren from '../model/ProjectWithChildren';
+import SelfUser from '../model/SelfUser';
 import User from '../model/User';
+import UserCloudUpdate from '../model/UserCloudUpdate';
 import UserProjectUpdate from '../model/UserProjectUpdate';
 
 /**
-* Project service.
-* @module api/ProjectApi
+* Collaboration service.
+* @module api/CollaborationApi
 * @version 0.0.0
 */
-export default class ProjectApi {
+export default class CollaborationApi {
 
     /**
-    * Constructs a new ProjectApi. 
-    * @alias module:api/ProjectApi
+    * Constructs a new CollaborationApi. 
+    * @alias module:api/CollaborationApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -40,6 +44,61 @@ export default class ProjectApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+
+    /**
+     * Cancel a pending invitation
+     * Cancel a pending invitation Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this invitation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    cancelCloudUserInvitationWithHttpInfo(cloudPk, id) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling cancelCloudUserInvitation");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling cancelCloudUserInvitation");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/invitation/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Cancel a pending invitation
+     * Cancel a pending invitation Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this invitation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    cancelCloudUserInvitation(cloudPk, id) {
+      return this.cancelCloudUserInvitationWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
 
     /**
@@ -166,23 +225,118 @@ export default class ProjectApi {
 
 
     /**
+     * Create a cloud
+     *  Required scopes: cloud:manage
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
+     */
+    createCloudWithHttpInfo(data) {
+      let postBody = data;
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createCloud");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Cloud;
+      return this.apiClient.callApi(
+        '/cloud', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a cloud
+     *  Required scopes: cloud:manage
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
+     */
+    createCloud(data) {
+      return this.createCloudWithHttpInfo(data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a Demo project in a cloud
+     * Create a demo project with a pre-populated IFC and its data Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     */
+    createDemoWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling createDemo");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Project;
+      return this.apiClient.callApi(
+        '/cloud/{id}/create-demo', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a Demo project in a cloud
+     * Create a demo project with a pre-populated IFC and its data Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     */
+    createDemo(id) {
+      return this.createDemoWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create a document
      * RCreate a document. If the document is an IFC, an IFC model will be created and attached to this document Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {Number} project 
      * @param {String} name Shown name of the file
+     * @param {File} file 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
-     * @param {Number} opts.project 
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
-     * @param {File} opts.file 
      * @param {Number} opts.size Size of the file.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
-    createDocumentWithHttpInfo(cloudPk, projectPk, name, opts) {
+    createDocumentWithHttpInfo(cloudPk, projectPk, project, name, file, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
@@ -193,9 +347,17 @@ export default class ProjectApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createDocument");
       }
+      // verify the required parameter 'project' is set
+      if (project === undefined || project === null) {
+        throw new Error("Missing the required parameter 'project' when calling createDocument");
+      }
       // verify the required parameter 'name' is set
       if (name === undefined || name === null) {
         throw new Error("Missing the required parameter 'name' when calling createDocument");
+      }
+      // verify the required parameter 'file' is set
+      if (file === undefined || file === null) {
+        throw new Error("Missing the required parameter 'file' when calling createDocument");
       }
 
       let pathParams = {
@@ -210,11 +372,11 @@ export default class ProjectApi {
         'parent': opts['parent'],
         'parent_id': opts['parentId'],
         'creator': opts['creator'],
-        'project': opts['project'],
+        'project': project,
         'name': name,
         'file_name': opts['fileName'],
         'description': opts['description'],
-        'file': opts['file'],
+        'file': file,
         'size': opts['size']
       };
 
@@ -234,20 +396,20 @@ export default class ProjectApi {
      * RCreate a document. If the document is an IFC, an IFC model will be created and attached to this document Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {Number} project 
      * @param {String} name Shown name of the file
+     * @param {File} file 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
-     * @param {Number} opts.project 
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
-     * @param {File} opts.file 
      * @param {Number} opts.size Size of the file.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
-    createDocument(cloudPk, projectPk, name, opts) {
-      return this.createDocumentWithHttpInfo(cloudPk, projectPk, name, opts)
+    createDocument(cloudPk, projectPk, project, name, file, opts) {
+      return this.createDocumentWithHttpInfo(cloudPk, projectPk, project, name, file, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -425,6 +587,109 @@ export default class ProjectApi {
      */
     deleteClassification(cloudPk, id, projectPk) {
       return this.deleteClassificationWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a cloud
+     *  Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteCloudWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteCloud");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a cloud
+     *  Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteCloud(id) {
+      return this.deleteCloudWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Remove a user from a cloud
+     * The user will also be removed from all the projects of the cloud Required scopes: cloud:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this fos user.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteCloudUserWithHttpInfo(cloudPk, id) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteCloudUser");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteCloudUser");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/user/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Remove a user from a cloud
+     * The user will also be removed from all the projects of the cloud Required scopes: cloud:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this fos user.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteCloudUser(cloudPk, id) {
+      return this.deleteCloudUserWithHttpInfo(cloudPk, id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -741,24 +1006,139 @@ export default class ProjectApi {
 
 
     /**
+     * Update all fields of a cloud
+     *  Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
+     */
+    fullUpdateCloudWithHttpInfo(id, data) {
+      let postBody = data;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateCloud");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateCloud");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Cloud;
+      return this.apiClient.callApi(
+        '/cloud/{id}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update all fields of a cloud
+     *  Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
+     */
+    fullUpdateCloud(id, data) {
+      return this.fullUpdateCloudWithHttpInfo(id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update all fields of a cloud user
+     * Change the user role in the cloud Required scopes: cloud:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this fos user.
+     * @param {module:model/UserCloudUpdate} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     */
+    fullUpdateCloudUserWithHttpInfo(cloudPk, id, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateCloudUser");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateCloudUser");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateCloudUser");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = User;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/user/{id}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update all fields of a cloud user
+     * Change the user role in the cloud Required scopes: cloud:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this fos user.
+     * @param {module:model/UserCloudUpdate} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     */
+    fullUpdateCloudUser(cloudPk, id, data) {
+      return this.fullUpdateCloudUserWithHttpInfo(cloudPk, id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update all fields of the document
      * Update all fields of the document Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
+     * @param {Number} project 
      * @param {String} name Shown name of the file
+     * @param {File} file 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
-     * @param {Number} opts.project 
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
-     * @param {File} opts.file 
      * @param {Number} opts.size Size of the file.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
-    fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, name, opts) {
+    fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, project, name, file, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
@@ -773,9 +1153,17 @@ export default class ProjectApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateDocument");
       }
+      // verify the required parameter 'project' is set
+      if (project === undefined || project === null) {
+        throw new Error("Missing the required parameter 'project' when calling fullUpdateDocument");
+      }
       // verify the required parameter 'name' is set
       if (name === undefined || name === null) {
         throw new Error("Missing the required parameter 'name' when calling fullUpdateDocument");
+      }
+      // verify the required parameter 'file' is set
+      if (file === undefined || file === null) {
+        throw new Error("Missing the required parameter 'file' when calling fullUpdateDocument");
       }
 
       let pathParams = {
@@ -791,11 +1179,11 @@ export default class ProjectApi {
         'parent': opts['parent'],
         'parent_id': opts['parentId'],
         'creator': opts['creator'],
-        'project': opts['project'],
+        'project': project,
         'name': name,
         'file_name': opts['fileName'],
         'description': opts['description'],
-        'file': opts['file'],
+        'file': file,
         'size': opts['size']
       };
 
@@ -816,20 +1204,20 @@ export default class ProjectApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
+     * @param {Number} project 
      * @param {String} name Shown name of the file
+     * @param {File} file 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
-     * @param {Number} opts.project 
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
-     * @param {File} opts.file 
      * @param {Number} opts.size Size of the file.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
-    fullUpdateDocument(cloudPk, id, projectPk, name, opts) {
-      return this.fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, name, opts)
+    fullUpdateDocument(cloudPk, id, projectPk, project, name, file, opts) {
+      return this.fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, project, name, file, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1144,6 +1532,292 @@ export default class ProjectApi {
      */
     getClassifications(cloudPk, projectPk) {
       return this.getClassificationsWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve one cloud
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
+     */
+    getCloudWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getCloud");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Cloud;
+      return this.apiClient.callApi(
+        '/cloud/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve one cloud
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
+     */
+    getCloud(id) {
+      return this.getCloudWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all pending invitations in the cloud
+     * Returns app's invitations only Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CloudInvitation>} and HTTP response
+     */
+    getCloudInvitationsWithHttpInfo(cloudPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getCloudInvitations");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [CloudInvitation];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/invitation', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all pending invitations in the cloud
+     * Returns app's invitations only Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CloudInvitation>}
+     */
+    getCloudInvitations(cloudPk) {
+      return this.getCloudInvitationsWithHttpInfo(cloudPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get size of all files in the cloud
+     * Returns the size of the cloud in Bytes
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Number} and HTTP response
+     */
+    getCloudSizeWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getCloudSize");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = 'Number';
+      return this.apiClient.callApi(
+        '/cloud/{id}/size', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get size of all files in the cloud
+     * Returns the size of the cloud in Bytes
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Number}
+     */
+    getCloudSize(id) {
+      return this.getCloudSizeWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a user in a cloud
+     * Only administrators can see a cloud member Required scopes: cloud:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this fos user.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     */
+    getCloudUserWithHttpInfo(cloudPk, id) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getCloudUser");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getCloudUser");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = User;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/user/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a user in a cloud
+     * Only administrators can see a cloud member Required scopes: cloud:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this fos user.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     */
+    getCloudUser(cloudPk, id) {
+      return this.getCloudUserWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all users in a cloud
+     * Only administrators can see all cloud members Required scopes: cloud:read
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/User>} and HTTP response
+     */
+    getCloudUsersWithHttpInfo(cloudPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getCloudUsers");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [User];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/user', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all users in a cloud
+     * Only administrators can see all cloud members Required scopes: cloud:read
+     * @param {String} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/User>}
+     */
+    getCloudUsers(cloudPk) {
+      return this.getCloudUsersWithHttpInfo(cloudPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all clouds
+     * Returns user's (or app's) clouds only
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Cloud>} and HTTP response
+     */
+    getCloudsWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Cloud];
+      return this.apiClient.callApi(
+        '/cloud', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all clouds
+     * Returns user's (or app's) clouds only
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Cloud>}
+     */
+    getClouds() {
+      return this.getCloudsWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1818,6 +2492,142 @@ export default class ProjectApi {
 
 
     /**
+     * List current user's projects
+     * List user's projects of all clouds Required scopes: user:read
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
+     */
+    getSelfProjectsWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Project];
+      return this.apiClient.callApi(
+        '/user/projects', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List current user's projects
+     * List user's projects of all clouds Required scopes: user:read
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
+     */
+    getSelfProjects() {
+      return this.getSelfProjectsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get info about the current user
+     * Get info about the current user
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SelfUser} and HTTP response
+     */
+    getSelfUserWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = SelfUser;
+      return this.apiClient.callApi(
+        '/user', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get info about the current user
+     * Get info about the current user
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SelfUser}
+     */
+    getSelfUser() {
+      return this.getSelfUserWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Invite a cloud administrator
+     * Invite cloud administrators only. To invite in a project, see inviteProjectUser. You can't invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {module:model/CloudInvitation} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CloudInvitation} and HTTP response
+     */
+    inviteCloudUserWithHttpInfo(cloudPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling inviteCloudUser");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling inviteCloudUser");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CloudInvitation;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/invitation', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Invite a cloud administrator
+     * Invite cloud administrators only. To invite in a project, see inviteProjectUser. You can't invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {module:model/CloudInvitation} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CloudInvitation}
+     */
+    inviteCloudUser(cloudPk, data) {
+      return this.inviteCloudUserWithHttpInfo(cloudPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Invite a project member
      * Invite a project member. If the user is not already a cloud member, they will also be invited in the cloud with USER role. Required scopes: org:manage
      * @param {String} cloudPk 
@@ -1940,6 +2750,121 @@ export default class ProjectApi {
      */
     updateClassification(cloudPk, id, projectPk, data) {
       return this.updateClassificationWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a cloud
+     * Update some fields of a cloud Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cloud} and HTTP response
+     */
+    updateCloudWithHttpInfo(id, data) {
+      let postBody = data;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateCloud");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateCloud");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Cloud;
+      return this.apiClient.callApi(
+        '/cloud/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a cloud
+     * Update some fields of a cloud Required scopes: cloud:manage
+     * @param {Number} id A unique integer value identifying this cloud.
+     * @param {module:model/Cloud} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cloud}
+     */
+    updateCloud(id, data) {
+      return this.updateCloudWithHttpInfo(id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a cloud user
+     * Change the user role in the cloud Required scopes: cloud:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this fos user.
+     * @param {module:model/UserCloudUpdate} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     */
+    updateCloudUserWithHttpInfo(cloudPk, id, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateCloudUser");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateCloudUser");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateCloudUser");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = User;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/user/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a cloud user
+     * Change the user role in the cloud Required scopes: cloud:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this fos user.
+     * @param {module:model/UserCloudUpdate} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     */
+    updateCloudUser(cloudPk, id, data) {
+      return this.updateCloudUserWithHttpInfo(cloudPk, id, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2205,6 +3130,53 @@ export default class ProjectApi {
      */
     updateProjectUser(cloudPk, id, projectPk, data) {
       return this.updateProjectUserWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update info of the current user
+     * DEPRECATED. The user must be updated on its identity provider
+     * @param {module:model/SelfUser} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SelfUser} and HTTP response
+     */
+    updateSelfUserWithHttpInfo(data) {
+      let postBody = data;
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateSelfUser");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = SelfUser;
+      return this.apiClient.callApi(
+        '/user', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update info of the current user
+     * DEPRECATED. The user must be updated on its identity provider
+     * @param {module:model/SelfUser} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SelfUser}
+     */
+    updateSelfUser(data) {
+      return this.updateSelfUserWithHttpInfo(data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

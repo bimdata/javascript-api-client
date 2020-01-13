@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
-**processor** | **Number** |  | [optional] 
+**id** | **Number** |  | [optional] [readonly] 
+**processor** | **Number** |  | [optional] [readonly] 
 **status** | **String** |  | [optional] 
 **detailMessage** | **String** |  | [optional] 
 

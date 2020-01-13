@@ -198,6 +198,26 @@
         done();
       });
     });
+    describe('createCloud', function() {
+      it('should call createCloud successfully', function(done) {
+        //uncomment below and update the code to test createCloud
+        //instance.createCloud(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createDemo', function() {
+      it('should call createDemo successfully', function(done) {
+        //uncomment below and update the code to test createDemo
+        //instance.createDemo(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createElement', function() {
       it('should call createElement successfully', function(done) {
         //uncomment below and update the code to test createElement
@@ -272,6 +292,16 @@
       it('should call createLayer successfully', function(done) {
         //uncomment below and update the code to test createLayer
         //instance.createLayer(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createProject', function() {
+      it('should call createProject successfully', function(done) {
+        //uncomment below and update the code to test createProject
+        //instance.createProject(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -358,6 +388,16 @@
         done();
       });
     });
+    describe('deleteCloud', function() {
+      it('should call deleteCloud successfully', function(done) {
+        //uncomment below and update the code to test deleteCloud
+        //instance.deleteCloud(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteElement', function() {
       it('should call deleteElement successfully', function(done) {
         //uncomment below and update the code to test deleteElement
@@ -412,6 +452,16 @@
       it('should call deleteLayer successfully', function(done) {
         //uncomment below and update the code to test deleteLayer
         //instance.deleteLayer(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteProject', function() {
+      it('should call deleteProject successfully', function(done) {
+        //uncomment below and update the code to test deleteProject
+        //instance.deleteProject(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -488,6 +538,16 @@
         done();
       });
     });
+    describe('fullUpdateCloud', function() {
+      it('should call fullUpdateCloud successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateCloud
+        //instance.fullUpdateCloud(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('fullUpdateElement', function() {
       it('should call fullUpdateElement successfully', function(done) {
         //uncomment below and update the code to test fullUpdateElement
@@ -552,6 +612,16 @@
       it('should call fullUpdateProcessorHandler successfully', function(done) {
         //uncomment below and update the code to test fullUpdateProcessorHandler
         //instance.fullUpdateProcessorHandler(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('fullUpdateProject', function() {
+      it('should call fullUpdateProject successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateProject
+        //instance.fullUpdateProject(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -632,6 +702,36 @@
       it('should call getClassificationsOfElement successfully', function(done) {
         //uncomment below and update the code to test getClassificationsOfElement
         //instance.getClassificationsOfElement(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCloud', function() {
+      it('should call getCloud successfully', function(done) {
+        //uncomment below and update the code to test getCloud
+        //instance.getCloud(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCloudSize', function() {
+      it('should call getCloudSize successfully', function(done) {
+        //uncomment below and update the code to test getCloudSize
+        //instance.getCloudSize(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getClouds', function() {
+      it('should call getClouds successfully', function(done) {
+        //uncomment below and update the code to test getClouds
+        //instance.getClouds(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -928,6 +1028,56 @@
         done();
       });
     });
+    describe('getProject', function() {
+      it('should call getProject successfully', function(done) {
+        //uncomment below and update the code to test getProject
+        //instance.getProject(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getProjectDMSTree', function() {
+      it('should call getProjectDMSTree successfully', function(done) {
+        //uncomment below and update the code to test getProjectDMSTree
+        //instance.getProjectDMSTree(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getProjectSubTree', function() {
+      it('should call getProjectSubTree successfully', function(done) {
+        //uncomment below and update the code to test getProjectSubTree
+        //instance.getProjectSubTree(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getProjectTree', function() {
+      it('should call getProjectTree successfully', function(done) {
+        //uncomment below and update the code to test getProjectTree
+        //instance.getProjectTree(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getProjects', function() {
+      it('should call getProjects successfully', function(done) {
+        //uncomment below and update the code to test getProjects
+        //instance.getProjects(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getPropertySet', function() {
       it('should call getPropertySet successfully', function(done) {
         //uncomment below and update the code to test getPropertySet
@@ -1138,6 +1288,16 @@
         done();
       });
     });
+    describe('updateCloud', function() {
+      it('should call updateCloud successfully', function(done) {
+        //uncomment below and update the code to test updateCloud
+        //instance.updateCloud(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateElement', function() {
       it('should call updateElement successfully', function(done) {
         //uncomment below and update the code to test updateElement
@@ -1212,6 +1372,16 @@
       it('should call updateProcessorHandler successfully', function(done) {
         //uncomment below and update the code to test updateProcessorHandler
         //instance.updateProcessorHandler(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateProject', function() {
+      it('should call updateProject successfully', function(done) {
+        //uncomment below and update the code to test updateProject
+        //instance.updateProject(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
