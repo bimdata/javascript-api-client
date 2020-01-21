@@ -324,7 +324,6 @@ export default class CollaborationApi {
      * RCreate a document. If the document is an IFC, an IFC model will be created and attached to this document Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {Number} project 
      * @param {String} name Shown name of the file
      * @param {File} file 
      * @param {Object} opts Optional parameters
@@ -336,7 +335,7 @@ export default class CollaborationApi {
      * @param {Number} opts.size Size of the file.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
-    createDocumentWithHttpInfo(cloudPk, projectPk, project, name, file, opts) {
+    createDocumentWithHttpInfo(cloudPk, projectPk, name, file, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
@@ -346,10 +345,6 @@ export default class CollaborationApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createDocument");
-      }
-      // verify the required parameter 'project' is set
-      if (project === undefined || project === null) {
-        throw new Error("Missing the required parameter 'project' when calling createDocument");
       }
       // verify the required parameter 'name' is set
       if (name === undefined || name === null) {
@@ -372,7 +367,6 @@ export default class CollaborationApi {
         'parent': opts['parent'],
         'parent_id': opts['parentId'],
         'creator': opts['creator'],
-        'project': project,
         'name': name,
         'file_name': opts['fileName'],
         'description': opts['description'],
@@ -396,7 +390,6 @@ export default class CollaborationApi {
      * RCreate a document. If the document is an IFC, an IFC model will be created and attached to this document Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {Number} project 
      * @param {String} name Shown name of the file
      * @param {File} file 
      * @param {Object} opts Optional parameters
@@ -408,8 +401,8 @@ export default class CollaborationApi {
      * @param {Number} opts.size Size of the file.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
-    createDocument(cloudPk, projectPk, project, name, file, opts) {
-      return this.createDocumentWithHttpInfo(cloudPk, projectPk, project, name, file, opts)
+    createDocument(cloudPk, projectPk, name, file, opts) {
+      return this.createDocumentWithHttpInfo(cloudPk, projectPk, name, file, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1126,7 +1119,6 @@ export default class CollaborationApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
-     * @param {Number} project 
      * @param {String} name Shown name of the file
      * @param {File} file 
      * @param {Object} opts Optional parameters
@@ -1138,7 +1130,7 @@ export default class CollaborationApi {
      * @param {Number} opts.size Size of the file.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
-    fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, project, name, file, opts) {
+    fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, name, file, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
@@ -1152,10 +1144,6 @@ export default class CollaborationApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateDocument");
-      }
-      // verify the required parameter 'project' is set
-      if (project === undefined || project === null) {
-        throw new Error("Missing the required parameter 'project' when calling fullUpdateDocument");
       }
       // verify the required parameter 'name' is set
       if (name === undefined || name === null) {
@@ -1179,7 +1167,6 @@ export default class CollaborationApi {
         'parent': opts['parent'],
         'parent_id': opts['parentId'],
         'creator': opts['creator'],
-        'project': project,
         'name': name,
         'file_name': opts['fileName'],
         'description': opts['description'],
@@ -1204,7 +1191,6 @@ export default class CollaborationApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this document.
      * @param {String} projectPk 
-     * @param {Number} project 
      * @param {String} name Shown name of the file
      * @param {File} file 
      * @param {Object} opts Optional parameters
@@ -1216,8 +1202,8 @@ export default class CollaborationApi {
      * @param {Number} opts.size Size of the file.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
-    fullUpdateDocument(cloudPk, id, projectPk, project, name, file, opts) {
-      return this.fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, project, name, file, opts)
+    fullUpdateDocument(cloudPk, id, projectPk, name, file, opts) {
+      return this.fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, name, file, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

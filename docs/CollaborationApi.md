@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 
 ## createDocument
 
-> Document createDocument(cloudPk, projectPk, project, name, file, opts)
+> Document createDocument(cloudPk, projectPk, name, file, opts)
 
 Create a document
 
@@ -379,7 +379,6 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let project = 56; // Number | 
 let name = "name_example"; // String | Shown name of the file
 let file = "/path/to/file"; // File | 
 let opts = {
@@ -390,7 +389,7 @@ let opts = {
   'description': "description_example", // String | Description of the file
   'size': 56 // Number | Size of the file.
 };
-apiInstance.createDocument(cloudPk, projectPk, project, name, file, opts).then((data) => {
+apiInstance.createDocument(cloudPk, projectPk, name, file, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -405,7 +404,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **project** | **Number**|  | 
  **name** | **String**| Shown name of the file | 
  **file** | **File**|  | 
  **parent** | **Number**|  | [optional] 
@@ -1141,7 +1139,7 @@ Name | Type | Description  | Notes
 
 ## fullUpdateDocument
 
-> Document fullUpdateDocument(cloudPk, id, projectPk, project, name, file, opts)
+> Document fullUpdateDocument(cloudPk, id, projectPk, name, file, opts)
 
 Update all fields of the document
 
@@ -1168,7 +1166,6 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this document.
 let projectPk = "projectPk_example"; // String | 
-let project = 56; // Number | 
 let name = "name_example"; // String | Shown name of the file
 let file = "/path/to/file"; // File | 
 let opts = {
@@ -1179,7 +1176,7 @@ let opts = {
   'description': "description_example", // String | Description of the file
   'size': 56 // Number | Size of the file.
 };
-apiInstance.fullUpdateDocument(cloudPk, id, projectPk, project, name, file, opts).then((data) => {
+apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, file, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1195,7 +1192,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **String**|  | 
- **project** | **Number**|  | 
  **name** | **String**| Shown name of the file | 
  **file** | **File**|  | 
  **parent** | **Number**|  | [optional] 
