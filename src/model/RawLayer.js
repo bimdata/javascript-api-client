@@ -23,12 +23,10 @@ class RawLayer {
      * Constructs a new <code>RawLayer</code>.
      * @alias module:model/RawLayer
      * @param name {String} 
-     * @param description {String} 
-     * @param identifier {String} 
      */
-    constructor(name, description, identifier) { 
+    constructor(name) { 
         
-        RawLayer.initialize(this, name, description, identifier);
+        RawLayer.initialize(this, name);
     }
 
     /**
@@ -36,10 +34,8 @@ class RawLayer {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, description, identifier) { 
+    static initialize(obj, name) { 
         obj['name'] = name;
-        obj['description'] = description;
-        obj['identifier'] = identifier;
     }
 
     /**

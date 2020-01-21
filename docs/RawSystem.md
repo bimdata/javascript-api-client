@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **String** |  | 
-**name** | **String** |  | 
-**description** | **String** |  | 
-**objectType** | **String** |  | 
+**name** | **String** |  | [optional] 
+**description** | **String** |  | [optional] 
+**objectType** | **String** |  | [optional] 
 
 

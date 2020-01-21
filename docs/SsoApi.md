@@ -1,6 +1,6 @@
 # bimdata.SsoApi
 
-All URIs are relative to *https://api-beta.bimdata.io*
+All URIs are relative to *https://api.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

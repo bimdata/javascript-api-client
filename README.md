@@ -128,7 +128,7 @@ api.createComment(projectsPk, topicsGuid, data).then(function(data) {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api-beta.bimdata.io*
+All URIs are relative to *https://api.bimdata.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

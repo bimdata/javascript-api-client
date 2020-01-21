@@ -32,9 +32,9 @@ class ApiClient {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default https://api-beta.bimdata.io
+         * @default https://api.bimdata.io
          */
-        this.basePath = 'https://api-beta.bimdata.io'.replace(/\/+$/, '');
+        this.basePath = 'https://api.bimdata.io'.replace(/\/+$/, '');
 
         /**
          * The authentication methods to be included for all API calls.
@@ -556,7 +556,7 @@ class ApiClient {
     hostSettings() {
         return [
             {
-              'url': "https://api-beta.bimdata.io/",
+              'url': "https://api.bimdata.io/",
               'description': "No description provided",
             }
       ];

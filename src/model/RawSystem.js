@@ -23,13 +23,10 @@ class RawSystem {
      * Constructs a new <code>RawSystem</code>.
      * @alias module:model/RawSystem
      * @param uuid {String} 
-     * @param name {String} 
-     * @param description {String} 
-     * @param objectType {String} 
      */
-    constructor(uuid, name, description, objectType) { 
+    constructor(uuid) { 
         
-        RawSystem.initialize(this, uuid, name, description, objectType);
+        RawSystem.initialize(this, uuid);
     }
 
     /**
@@ -37,11 +34,8 @@ class RawSystem {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, uuid, name, description, objectType) { 
+    static initialize(obj, uuid) { 
         obj['uuid'] = uuid;
-        obj['name'] = name;
-        obj['description'] = description;
-        obj['object_type'] = objectType;
     }
 
     /**
