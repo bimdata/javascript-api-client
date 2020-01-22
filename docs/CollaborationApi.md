@@ -387,7 +387,8 @@ let opts = {
   'creator': 56, // Number | 
   'fileName': "fileName_example", // String | Full name of the file
   'description': "description_example", // String | Description of the file
-  'size': 56 // Number | Size of the file.
+  'size': 56, // Number | Size of the file.
+  'ifcSource': "ifcSource_example" // String | Define the ifc.source field if the upload is an IFC
 };
 apiInstance.createDocument(cloudPk, projectPk, name, file, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -412,6 +413,7 @@ Name | Type | Description  | Notes
  **fileName** | **String**| Full name of the file | [optional] 
  **description** | **String**| Description of the file | [optional] 
  **size** | **Number**| Size of the file. | [optional] 
+ **ifcSource** | **String**| Define the ifc.source field if the upload is an IFC | [optional] 
 
 ### Return type
 
@@ -1174,7 +1176,8 @@ let opts = {
   'creator': 56, // Number | 
   'fileName': "fileName_example", // String | Full name of the file
   'description': "description_example", // String | Description of the file
-  'size': 56 // Number | Size of the file.
+  'size': 56, // Number | Size of the file.
+  'ifcSource': "ifcSource_example" // String | Define the ifc.source field if the upload is an IFC
 };
 apiInstance.fullUpdateDocument(cloudPk, id, projectPk, name, file, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1200,6 +1203,7 @@ Name | Type | Description  | Notes
  **fileName** | **String**| Full name of the file | [optional] 
  **description** | **String**| Description of the file | [optional] 
  **size** | **Number**| Size of the file. | [optional] 
+ **ifcSource** | **String**| Define the ifc.source field if the upload is an IFC | [optional] 
 
 ### Return type
 

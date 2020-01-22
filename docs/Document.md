@@ -16,6 +16,22 @@ Name | Type | Description | Notes
 **size** | **Number** | Size of the file. | [optional] 
 **createdAt** | **Date** | Creation date | [optional] [readonly] 
 **updatedAt** | **Date** | Date of the last update | [optional] [readonly] 
+**ifcSource** | **String** | Define the ifc.source field if the upload is an IFC | [optional] 
 **ifcId** | **String** |  | [optional] [readonly] 
+
+
+
+## Enum: IfcSourceEnum
+
+
+* `UPLOAD` (value: `"UPLOAD"`)
+
+* `SPLIT` (value: `"SPLIT"`)
+
+* `MERGE` (value: `"MERGE"`)
+
+* `EXPORT` (value: `"EXPORT"`)
+
+
 
 

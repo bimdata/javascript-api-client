@@ -85,6 +85,9 @@ class Document {
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
+            if (data.hasOwnProperty('ifc_source')) {
+                obj['ifc_source'] = ApiClient.convertToType(data['ifc_source'], 'String');
+            }
             if (data.hasOwnProperty('ifc_id')) {
                 obj['ifc_id'] = ApiClient.convertToType(data['ifc_id'], 'String');
             }
@@ -162,12 +165,51 @@ Document.prototype['created_at'] = undefined;
 Document.prototype['updated_at'] = undefined;
 
 /**
+ * Define the ifc.source field if the upload is an IFC
+ * @member {module:model/Document.IfcSourceEnum} ifc_source
+ */
+Document.prototype['ifc_source'] = undefined;
+
+/**
  * @member {String} ifc_id
  */
 Document.prototype['ifc_id'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>ifc_source</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Document['IfcSourceEnum'] = {
+
+    /**
+     * value: "UPLOAD"
+     * @const
+     */
+    "UPLOAD": "UPLOAD",
+
+    /**
+     * value: "SPLIT"
+     * @const
+     */
+    "SPLIT": "SPLIT",
+
+    /**
+     * value: "MERGE"
+     * @const
+     */
+    "MERGE": "MERGE",
+
+    /**
+     * value: "EXPORT"
+     * @const
+     */
+    "EXPORT": "EXPORT"
+};
 
 
 

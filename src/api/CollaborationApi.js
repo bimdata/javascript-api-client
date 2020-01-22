@@ -333,6 +333,7 @@ export default class CollaborationApi {
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
      * @param {Number} opts.size Size of the file.
+     * @param {module:model/String} opts.ifcSource Define the ifc.source field if the upload is an IFC
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
     createDocumentWithHttpInfo(cloudPk, projectPk, name, file, opts) {
@@ -371,7 +372,8 @@ export default class CollaborationApi {
         'file_name': opts['fileName'],
         'description': opts['description'],
         'file': file,
-        'size': opts['size']
+        'size': opts['size'],
+        'ifc_source': opts['ifcSource']
       };
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
@@ -399,6 +401,7 @@ export default class CollaborationApi {
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
      * @param {Number} opts.size Size of the file.
+     * @param {module:model/String} opts.ifcSource Define the ifc.source field if the upload is an IFC
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
     createDocument(cloudPk, projectPk, name, file, opts) {
@@ -1128,6 +1131,7 @@ export default class CollaborationApi {
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
      * @param {Number} opts.size Size of the file.
+     * @param {module:model/String} opts.ifcSource Define the ifc.source field if the upload is an IFC
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
     fullUpdateDocumentWithHttpInfo(cloudPk, id, projectPk, name, file, opts) {
@@ -1171,7 +1175,8 @@ export default class CollaborationApi {
         'file_name': opts['fileName'],
         'description': opts['description'],
         'file': file,
-        'size': opts['size']
+        'size': opts['size'],
+        'ifc_source': opts['ifcSource']
       };
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
@@ -1200,6 +1205,7 @@ export default class CollaborationApi {
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
      * @param {Number} opts.size Size of the file.
+     * @param {module:model/String} opts.ifcSource Define the ifc.source field if the upload is an IFC
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
     fullUpdateDocument(cloudPk, id, projectPk, name, file, opts) {

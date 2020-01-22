@@ -126,6 +126,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property ifcSource (base name: "ifc_source")', function() {
+      // uncomment below and update the code to test the property ifcSource
+      //var instane = new bimdata.Document();
+      //expect(instance).to.be();
+    });
+
     it('should have the property ifcId (base name: "ifc_id")', function() {
       // uncomment below and update the code to test the property ifcId
       //var instane = new bimdata.Document();
