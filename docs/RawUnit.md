@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **conversionFactor** | **Number** |  | [optional] 
 **dimensions** | **[Number]** |  | [optional] 
 **conversionBaseunitIndex** | **Number** |  | [optional] 
+**isDefault** | **Boolean** |  | [optional] 
 
 

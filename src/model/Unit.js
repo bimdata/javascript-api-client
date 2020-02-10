@@ -76,6 +76,9 @@ class Unit {
             if (data.hasOwnProperty('elements')) {
                 obj['elements'] = ApiClient.convertToType(data['elements'], Object);
             }
+            if (data.hasOwnProperty('is_default')) {
+                obj['is_default'] = ApiClient.convertToType(data['is_default'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -134,6 +137,11 @@ Unit.prototype['conversion_baseunit'] = undefined;
  * @member {Object} elements
  */
 Unit.prototype['elements'] = undefined;
+
+/**
+ * @member {Boolean} is_default
+ */
+Unit.prototype['is_default'] = undefined;
 
 
 

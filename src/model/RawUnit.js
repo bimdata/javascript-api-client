@@ -73,6 +73,9 @@ class RawUnit {
             if (data.hasOwnProperty('conversion_baseunit_index')) {
                 obj['conversion_baseunit_index'] = ApiClient.convertToType(data['conversion_baseunit_index'], 'Number');
             }
+            if (data.hasOwnProperty('is_default')) {
+                obj['is_default'] = ApiClient.convertToType(data['is_default'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -119,6 +122,11 @@ RawUnit.prototype['dimensions'] = undefined;
  * @member {Number} conversion_baseunit_index
  */
 RawUnit.prototype['conversion_baseunit_index'] = undefined;
+
+/**
+ * @member {Boolean} is_default
+ */
+RawUnit.prototype['is_default'] = undefined;
 
 
 

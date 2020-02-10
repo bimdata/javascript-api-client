@@ -72,7 +72,7 @@ class Classification {
 Classification.prototype['id'] = undefined;
 
 /**
- * Name of the clasification (uniformat, Untec, custom, etc)
+ * Name of the classification (uniformat, Untec, custom, etc)
  * @member {String} name
  */
 Classification.prototype['name'] = undefined;

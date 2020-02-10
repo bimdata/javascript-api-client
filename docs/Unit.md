@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **conversionFactor** | **Number** | Factor of conversion and base unit id (ex: DEGREE from RADIAN with factor 0.0174532925199433) | [optional] 
 **conversionBaseunit** | [**Unit**](Unit.md) |  | [optional] 
 **elements** | [**Object**](.md) | List of constitutive unit elements by id with corresponding exponent (ex: [meterID/1, secondID/-1] for velocity) | [optional] 
+**isDefault** | **Boolean** |  | [optional] 
 
 
