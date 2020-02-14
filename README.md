@@ -432,7 +432,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Label](docs/Label.md)
  - [bimdata.Layer](docs/Layer.md)
  - [bimdata.LayerElement](docs/LayerElement.md)
- - [bimdata.LineSeriaizer](docs/LineSeriaizer.md)
+ - [bimdata.Line](docs/Line.md)
  - [bimdata.OrthogonalCamera](docs/OrthogonalCamera.md)
  - [bimdata.PerspectiveCamera](docs/PerspectiveCamera.md)
  - [bimdata.Point](docs/Point.md)

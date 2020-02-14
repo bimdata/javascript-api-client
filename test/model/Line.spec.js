@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.LineSeriaizer();
+    instance = new bimdata.Line();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,22 @@
       object[property] = value;
   }
 
-  describe('LineSeriaizer', function() {
-    it('should create an instance of LineSeriaizer', function() {
-      // uncomment below and update the code to test LineSeriaizer
-      //var instane = new bimdata.LineSeriaizer();
-      //expect(instance).to.be.a(bimdata.LineSeriaizer);
+  describe('Line', function() {
+    it('should create an instance of Line', function() {
+      // uncomment below and update the code to test Line
+      //var instane = new bimdata.Line();
+      //expect(instance).to.be.a(bimdata.Line);
     });
 
     it('should have the property endPoint (base name: "end_point")', function() {
       // uncomment below and update the code to test the property endPoint
-      //var instane = new bimdata.LineSeriaizer();
+      //var instane = new bimdata.Line();
       //expect(instance).to.be();
     });
 
     it('should have the property startPoint (base name: "start_point")', function() {
       // uncomment below and update the code to test the property startPoint
-      //var instane = new bimdata.LineSeriaizer();
+      //var instane = new bimdata.Line();
       //expect(instance).to.be();
     });
 

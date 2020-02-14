@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 import ClippingPlane from './ClippingPlane';
 import ComponentsParent from './ComponentsParent';
-import LineSeriaizer from './LineSeriaizer';
+import Line from './Line';
 import OrthogonalCamera from './OrthogonalCamera';
 import PerspectiveCamera from './PerspectiveCamera';
 import Snapshot from './Snapshot';
@@ -66,7 +66,7 @@ class Viewpoint {
                 obj['perspective_camera'] = PerspectiveCamera.constructFromObject(data['perspective_camera']);
             }
             if (data.hasOwnProperty('lines')) {
-                obj['lines'] = ApiClient.convertToType(data['lines'], [LineSeriaizer]);
+                obj['lines'] = ApiClient.convertToType(data['lines'], [Line]);
             }
             if (data.hasOwnProperty('clipping_planes')) {
                 obj['clipping_planes'] = ApiClient.convertToType(data['clipping_planes'], [ClippingPlane]);
@@ -108,7 +108,7 @@ Viewpoint.prototype['orthogonal_camera'] = undefined;
 Viewpoint.prototype['perspective_camera'] = undefined;
 
 /**
- * @member {Array.<module:model/LineSeriaizer>} lines
+ * @member {Array.<module:model/Line>} lines
  */
 Viewpoint.prototype['lines'] = undefined;
 

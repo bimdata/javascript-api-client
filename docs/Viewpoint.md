@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **guid** | **String** |  | [optional] 
 **orthogonalCamera** | [**OrthogonalCamera**](OrthogonalCamera.md) |  | [optional] 
 **perspectiveCamera** | [**PerspectiveCamera**](PerspectiveCamera.md) |  | [optional] 
-**lines** | [**[LineSeriaizer]**](LineSeriaizer.md) |  | [optional] 
+**lines** | [**[Line]**](Line.md) |  | [optional] 
 **clippingPlanes** | [**[ClippingPlane]**](ClippingPlane.md) |  | [optional] 
 **snapshot** | [**Snapshot**](Snapshot.md) |  | [optional] 
 **components** | [**ComponentsParent**](ComponentsParent.md) |  | [optional] 

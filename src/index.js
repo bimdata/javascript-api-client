@@ -48,7 +48,7 @@ import Invitation from './model/Invitation';
 import Label from './model/Label';
 import Layer from './model/Layer';
 import LayerElement from './model/LayerElement';
-import LineSeriaizer from './model/LineSeriaizer';
+import Line from './model/Line';
 import OrthogonalCamera from './model/OrthogonalCamera';
 import PerspectiveCamera from './model/PerspectiveCamera';
 import Point from './model/Point';
@@ -352,10 +352,10 @@ export {
     LayerElement,
 
     /**
-     * The LineSeriaizer model constructor.
-     * @property {module:model/LineSeriaizer}
+     * The Line model constructor.
+     * @property {module:model/Line}
      */
-    LineSeriaizer,
+    Line,
 
     /**
      * The OrthogonalCamera model constructor.
