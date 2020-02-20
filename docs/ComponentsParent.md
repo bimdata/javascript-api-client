@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **coloring** | [**[Coloring]**](Coloring.md) |  | [optional] 
-**visibility** | [**Visibility**](Visibility.md) |  | 
+**visibility** | [**Visibility**](Visibility.md) |  | [optional] 
 **selection** | [**[Component]**](Component.md) |  | [optional] 
 
 

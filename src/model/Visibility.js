@@ -24,12 +24,11 @@ class Visibility {
     /**
      * Constructs a new <code>Visibility</code>.
      * @alias module:model/Visibility
-     * @param exceptions {Array.<module:model/Component>} 
      * @param viewSetupHints {module:model/ViewSetupHints} 
      */
-    constructor(exceptions, viewSetupHints) { 
+    constructor(viewSetupHints) { 
         
-        Visibility.initialize(this, exceptions, viewSetupHints);
+        Visibility.initialize(this, viewSetupHints);
     }
 
     /**
@@ -37,8 +36,7 @@ class Visibility {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, exceptions, viewSetupHints) { 
-        obj['exceptions'] = exceptions;
+    static initialize(obj, viewSetupHints) { 
         obj['view_setup_hints'] = viewSetupHints;
     }
 

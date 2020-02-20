@@ -1762,6 +1762,61 @@ export default class BcfApi {
 
 
     /**
+     * Import bcf-xml format into this project. If there are guid conflict, an error will be raised. If there are index conflicts, indexes of the imported file will be overriden with a new index. Author and assigned_to fields will be linked to existing users in the project. If no matching user are found, fields will be emptied. Only BCF 2.1 is supported
+     * Import bcf-xml format into this project Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this project.
+     * @param {String} name Name of the project
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    importBcfWithHttpInfo(id, name) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling importBcf");
+      }
+      // verify the required parameter 'name' is set
+      if (name === undefined || name === null) {
+        throw new Error("Missing the required parameter 'name' when calling importBcf");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+        'name': name
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{id}/import', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Import bcf-xml format into this project. If there are guid conflict, an error will be raised. If there are index conflicts, indexes of the imported file will be overriden with a new index. Author and assigned_to fields will be linked to existing users in the project. If no matching user are found, fields will be emptied. Only BCF 2.1 is supported
+     * Import bcf-xml format into this project Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this project.
+     * @param {String} name Name of the project
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    importBcf(id, name) {
+      return this.importBcfWithHttpInfo(id, name)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update some fields of a BCF project
      * Update some fields of a BCF project Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this project.

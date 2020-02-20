@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **defaultVisibility** | **Boolean** |  | [optional] 
-**exceptions** | [**[Component]**](Component.md) |  | 
+**exceptions** | [**[Component]**](Component.md) |  | [optional] 
 **viewSetupHints** | [**ViewSetupHints**](ViewSetupHints.md) |  | 
 
 

@@ -348,6 +348,16 @@
         done();
       });
     });
+    describe('importBcf', function() {
+      it('should call importBcf successfully', function(done) {
+        //uncomment below and update the code to test importBcf
+        //instance.importBcf(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateBcfProject', function() {
       it('should call updateBcfProject successfully', function(done) {
         //uncomment below and update the code to test updateBcfProject

@@ -125,7 +125,7 @@ export default class IfcApi {
 
     /**
      * Remove all classifications from model's elements
-     *              Delete relation between filtered classifications (eg. /classifications?name=untec) and all ifc's elements.             No classification will be deleted on this endpoint, only the relation between ifc's elements and their classification.          Required scopes: ifc:write
+     *              Delete relation between filtered classifications (eg. /classifications?name=untec) and all ifc's elements.             No classification will be deleted on this endpoint, only the relation between ifc's elements and their classification.  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -171,7 +171,7 @@ export default class IfcApi {
 
     /**
      * Remove all classifications from model's elements
-     *              Delete relation between filtered classifications (eg. /classifications?name=untec) and all ifc's elements.             No classification will be deleted on this endpoint, only the relation between ifc's elements and their classification.          Required scopes: ifc:write
+     *              Delete relation between filtered classifications (eg. /classifications?name=untec) and all ifc's elements.             No classification will be deleted on this endpoint, only the relation between ifc's elements and their classification.  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -187,7 +187,7 @@ export default class IfcApi {
 
     /**
      * Delete many Property of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -233,7 +233,7 @@ export default class IfcApi {
 
     /**
      * Delete many Property of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -249,7 +249,7 @@ export default class IfcApi {
 
     /**
      * Delete many PropertyDefinitions of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -295,7 +295,7 @@ export default class IfcApi {
 
     /**
      * Delete many PropertyDefinitions of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -311,7 +311,7 @@ export default class IfcApi {
 
     /**
      * Delete many Units of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -357,7 +357,7 @@ export default class IfcApi {
 
     /**
      * Delete many Units of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -373,7 +373,7 @@ export default class IfcApi {
 
     /**
      * Delete many PropertySet of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -419,7 +419,7 @@ export default class IfcApi {
 
     /**
      * Delete many PropertySet of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -435,7 +435,7 @@ export default class IfcApi {
 
     /**
      * Update many elements at once (only changing fields may be defined)
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -486,7 +486,7 @@ export default class IfcApi {
 
     /**
      * Update many elements at once (only changing fields may be defined)
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -503,7 +503,7 @@ export default class IfcApi {
 
     /**
      * Update some fields of many properties of a model
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -554,7 +554,7 @@ export default class IfcApi {
 
     /**
      * Update some fields of many properties of a model
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -571,7 +571,7 @@ export default class IfcApi {
 
     /**
      * Remove many classifications from an element
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -623,7 +623,7 @@ export default class IfcApi {
 
     /**
      * Remove many classifications from an element
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -640,7 +640,7 @@ export default class IfcApi {
 
     /**
      * Remove the classifications from all elements
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
@@ -692,7 +692,7 @@ export default class IfcApi {
 
     /**
      * Remove the classifications from all elements
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted      Required scopes: ifc:write
+     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
@@ -709,7 +709,7 @@ export default class IfcApi {
 
     /**
      * Update many elements at once (all field must be defined)
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -760,7 +760,7 @@ export default class IfcApi {
 
     /**
      * Update many elements at once (all field must be defined)
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -777,7 +777,7 @@ export default class IfcApi {
 
     /**
      * Update all fields of many properties of a model
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -828,7 +828,7 @@ export default class IfcApi {
 
     /**
      * Update all fields of many properties of a model
-     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -981,7 +981,7 @@ export default class IfcApi {
 
     /**
      * Create one or many classifications to an element
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors          If classification created already exists, it will just be added to item's classifications and will not be duplicated      Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      If classification created already exists, it will just be added to item's classifications and will not be duplicated  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1038,7 +1038,7 @@ export default class IfcApi {
 
     /**
      * Create one or many classifications to an element
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors          If classification created already exists, it will just be added to item's classifications and will not be duplicated      Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      If classification created already exists, it will just be added to item's classifications and will not be duplicated  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
@@ -1056,7 +1056,7 @@ export default class IfcApi {
 
     /**
      * Create an element in the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1107,7 +1107,7 @@ export default class IfcApi {
 
     /**
      * Create an element in the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1466,7 +1466,7 @@ export default class IfcApi {
 
     /**
      * Create a PropertyDefinition on the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1517,7 +1517,7 @@ export default class IfcApi {
 
     /**
      * Create a PropertyDefinition on the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1534,7 +1534,7 @@ export default class IfcApi {
 
     /**
      * Create a Unit on a model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1585,7 +1585,7 @@ export default class IfcApi {
 
     /**
      * Create a Unit on a model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1670,7 +1670,7 @@ export default class IfcApi {
 
     /**
      * Create a PropertySet
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1721,7 +1721,7 @@ export default class IfcApi {
 
     /**
      * Create a PropertySet
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1806,7 +1806,7 @@ export default class IfcApi {
 
     /**
      * Create elements in an optimized format
-     *          You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         For performance reasons, we do not check the validity of the json. If the json is malformed, an error 500 without more explaination may be returned instead of a 400.          Required scopes: ifc:write
+     *          You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         For performance reasons, we do not check the validity of the json. If the json is malformed, an error 500 without more explaination may be returned instead of a 400.  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1857,7 +1857,7 @@ export default class IfcApi {
 
     /**
      * Create elements in an optimized format
-     *          You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         For performance reasons, we do not check the validity of the json. If the json is malformed, an error 500 without more explaination may be returned instead of a 400.          Required scopes: ifc:write
+     *          You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         For performance reasons, we do not check the validity of the json. If the json is malformed, an error 500 without more explaination may be returned instead of a 400.  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1874,7 +1874,7 @@ export default class IfcApi {
 
     /**
      * Create a space in the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -1925,7 +1925,7 @@ export default class IfcApi {
 
     /**
      * Create a space in the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -2010,7 +2010,7 @@ export default class IfcApi {
 
     /**
      * Create a zone in the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -2061,7 +2061,7 @@ export default class IfcApi {
 
     /**
      * Create a zone in the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5162,7 +5162,7 @@ export default class IfcApi {
 
     /**
      * Get svg file
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the map file          Required scopes: ifc:read
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the map file  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5208,7 +5208,7 @@ export default class IfcApi {
 
     /**
      * Get svg file
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the map file          Required scopes: ifc:read
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the map file  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5286,7 +5286,7 @@ export default class IfcApi {
 
     /**
      * Get gltf file
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the gltf file          Required scopes: ifc:read
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the gltf file  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5332,7 +5332,7 @@ export default class IfcApi {
 
     /**
      * Get gltf file
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the gltf file          Required scopes: ifc:read
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the gltf file  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5348,7 +5348,7 @@ export default class IfcApi {
 
     /**
      * Get bvh file
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the bvh file          Required scopes: ifc:read
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the bvh file  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5394,7 +5394,7 @@ export default class IfcApi {
 
     /**
      * Get bvh file
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the bvh file          Required scopes: ifc:read
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the bvh file  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5672,7 +5672,7 @@ export default class IfcApi {
 
     /**
      * Get structure file
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the structure file          Required scopes: ifc:read
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the structure file  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5718,7 +5718,7 @@ export default class IfcApi {
 
     /**
      * Get structure file
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the structure file          Required scopes: ifc:read
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the structure file  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5734,7 +5734,7 @@ export default class IfcApi {
 
     /**
      * Get systems file
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the system file          Required scopes: ifc:read
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the system file  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5780,7 +5780,7 @@ export default class IfcApi {
 
     /**
      * Get systems file
-     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the system file          Required scopes: ifc:read
+     *          DEPRECATED: Now, retrieve the file url in the ifc object itself         Returns the system file  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -6384,7 +6384,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all elements in a optimized format
-     *          Returns elements, property_sets, properties, definitions and units in a JSON optimized structure          Required scopes: ifc:read
+     *          Returns elements, property_sets, properties, definitions and units in a JSON optimized structure  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6438,7 +6438,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all elements in a optimized format
-     *          Returns elements, property_sets, properties, definitions and units in a JSON optimized structure          Required scopes: ifc:read
+     *          Returns elements, property_sets, properties, definitions and units in a JSON optimized structure  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6458,7 +6458,7 @@ export default class IfcApi {
 
     /**
      * Retrieve an element of a model with a simple value representation
-     *          Retrieve an element of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }          Required scopes: ifc:read
+     *          Retrieve an element of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6510,7 +6510,7 @@ export default class IfcApi {
 
     /**
      * Retrieve an element of a model with a simple value representation
-     *          Retrieve an element of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }          Required scopes: ifc:read
+     *          Retrieve an element of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6527,7 +6527,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all elements of a model with a simple value representation
-     *          Retrieve all elements of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }          Required scopes: ifc:read
+     *          Retrieve all elements of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -6581,7 +6581,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all elements of a model with a simple value representation
-     *          Retrieve all elements of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }          Required scopes: ifc:read
+     *          Retrieve all elements of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }  Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -7923,7 +7923,7 @@ export default class IfcApi {
 
     /**
      * Update models file (gltf, svg, structure, etc)
-     *          Patch ifc files (gltf, structure, svg, etc)          Required scopes: ifc:write
+     *          Patch ifc files (gltf, structure, svg, etc)  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -7985,7 +7985,7 @@ export default class IfcApi {
 
     /**
      * Update models file (gltf, svg, structure, etc)
-     *          Patch ifc files (gltf, structure, svg, etc)          Required scopes: ifc:write
+     *          Patch ifc files (gltf, structure, svg, etc)  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 

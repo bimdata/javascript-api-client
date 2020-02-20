@@ -137,7 +137,7 @@ Invitation.prototype['project_role'] = undefined;
 Invitation.prototype['email'] = undefined;
 
 /**
- *          A: Accepted         D: Denied         P: Pending         W: Accepted but waiting for user first login to finish the process         
+ *  A: Accepted D: Denied P: Pending W: Accepted but waiting for user first login to finish the process 
  * @member {module:model/Invitation.StatusEnum} status
  */
 Invitation.prototype['status'] = undefined;

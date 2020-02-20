@@ -25,11 +25,10 @@ class ComponentsParent {
     /**
      * Constructs a new <code>ComponentsParent</code>.
      * @alias module:model/ComponentsParent
-     * @param visibility {module:model/Visibility} 
      */
-    constructor(visibility) { 
+    constructor() { 
         
-        ComponentsParent.initialize(this, visibility);
+        ComponentsParent.initialize(this);
     }
 
     /**
@@ -37,8 +36,7 @@ class ComponentsParent {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, visibility) { 
-        obj['visibility'] = visibility;
+    static initialize(obj) { 
     }
 
     /**
