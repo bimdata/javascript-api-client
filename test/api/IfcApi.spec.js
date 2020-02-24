@@ -498,6 +498,16 @@
         done();
       });
     });
+    describe('fullUpdateElementPropertySetProperty', function() {
+      it('should call fullUpdateElementPropertySetProperty successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateElementPropertySetProperty
+        //instance.fullUpdateElementPropertySetProperty(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('fullUpdateIfc', function() {
       it('should call fullUpdateIfc successfully', function(done) {
         //uncomment below and update the code to test fullUpdateIfc
@@ -1128,6 +1138,16 @@
         done();
       });
     });
+    describe('reprocessIfc', function() {
+      it('should call reprocessIfc successfully', function(done) {
+        //uncomment below and update the code to test reprocessIfc
+        //instance.reprocessIfc(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateAccessToken', function() {
       it('should call updateAccessToken successfully', function(done) {
         //uncomment below and update the code to test updateAccessToken
@@ -1142,6 +1162,16 @@
       it('should call updateElement successfully', function(done) {
         //uncomment below and update the code to test updateElement
         //instance.updateElement(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateElementPropertySetProperty', function() {
+      it('should call updateElementPropertySetProperty successfully', function(done) {
+        //uncomment below and update the code to test updateElementPropertySetProperty
+        //instance.updateElementPropertySetProperty(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

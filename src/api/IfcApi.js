@@ -3198,6 +3198,95 @@ export default class IfcApi {
 
 
     /**
+     * Update a property from an element
+     * Update a property value from an element. If the element is the only one to have this property, the property will be update in place. If many elements share this property, a new propertySet will be created to replace the propertyset for this element. Keeping the property for all other elements. If you want to update the property of all elements, see updateIfcProperty
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @param {module:model/Property} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
+     */
+    fullUpdateElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateElementPropertySetProperty");
+      }
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling fullUpdateElementPropertySetProperty");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateElementPropertySetProperty");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateElementPropertySetProperty");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateElementPropertySetProperty");
+      }
+      // verify the required parameter 'propertysetPk' is set
+      if (propertysetPk === undefined || propertysetPk === null) {
+        throw new Error("Missing the required parameter 'propertysetPk' when calling fullUpdateElementPropertySetProperty");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateElementPropertySetProperty");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'element_uuid': elementUuid,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'propertyset_pk': propertysetPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Property;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update a property from an element
+     * Update a property value from an element. If the element is the only one to have this property, the property will be update in place. If many elements share this property, a new propertySet will be created to replace the propertyset for this element. Keeping the property for all other elements. If you want to update the property of all elements, see updateIfcProperty
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @param {module:model/Property} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
+     */
+    fullUpdateElementPropertySetProperty(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, data) {
+      return this.fullUpdateElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update all fields of a model
      * Update all fields of a model Required scopes: ifc:write
      * @param {String} cloudPk 
@@ -7704,6 +7793,68 @@ export default class IfcApi {
 
 
     /**
+     * reprocess IFC file
+     * Reprocess the IFC. All data that are not in the original IFC files will be lost Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ifc.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    reprocessIfcWithHttpInfo(cloudPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling reprocessIfc");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling reprocessIfc");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling reprocessIfc");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/reprocess', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * reprocess IFC file
+     * Reprocess the IFC. All data that are not in the original IFC files will be lost Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ifc.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    reprocessIfc(cloudPk, id, projectPk) {
+      return this.reprocessIfcWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update some fields of a token
      * You can update the expiration date or the read_only field Required scopes: ifc:token_manage
      * @param {String} cloudPk 
@@ -7847,6 +7998,95 @@ export default class IfcApi {
      */
     updateElement(cloudPk, ifcPk, projectPk, uuid, data) {
       return this.updateElementWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update a property from an element
+     * Update a property value from an element. If the element is the only one to have this property, the property will be update in place. If many elements share this property, a new property will be created to replace the property for this element. Keeping the property for all other elements. If you want to update the property of all elements, see updateIfcProperty Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @param {module:model/Property} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
+     */
+    updateElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateElementPropertySetProperty");
+      }
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling updateElementPropertySetProperty");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateElementPropertySetProperty");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateElementPropertySetProperty");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateElementPropertySetProperty");
+      }
+      // verify the required parameter 'propertysetPk' is set
+      if (propertysetPk === undefined || propertysetPk === null) {
+        throw new Error("Missing the required parameter 'propertysetPk' when calling updateElementPropertySetProperty");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateElementPropertySetProperty");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'element_uuid': elementUuid,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'propertyset_pk': propertysetPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Property;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update a property from an element
+     * Update a property value from an element. If the element is the only one to have this property, the property will be update in place. If many elements share this property, a new property will be created to replace the property for this element. Keeping the property for all other elements. If you want to update the property of all elements, see updateIfcProperty Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @param {module:model/Property} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
+     */
+    updateElementPropertySetProperty(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, data) {
+      return this.updateElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
