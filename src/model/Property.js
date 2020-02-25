@@ -59,6 +59,9 @@ class Property {
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], Object);
             }
+            if (data.hasOwnProperty('property_set_id')) {
+                obj['property_set_id'] = ApiClient.convertToType(data['property_set_id'], 'String');
+            }
         }
         return obj;
     }
@@ -80,6 +83,12 @@ Property.prototype['definition'] = undefined;
  * @member {Object} value
  */
 Property.prototype['value'] = undefined;
+
+/**
+ * This field is useful when you update a property and the  API is rebuilding a new property set to avoid an update on many elements. It gives you the new pset id
+ * @member {String} property_set_id
+ */
+Property.prototype['property_set_id'] = undefined;
 
 
 

@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property propertySetId (base name: "property_set_id")', function() {
+      // uncomment below and update the code to test the property propertySetId
+      //var instane = new bimdata.Property();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
