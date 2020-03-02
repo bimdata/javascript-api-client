@@ -1762,8 +1762,8 @@ export default class BcfApi {
 
 
     /**
-     * Import bcf-xml format into this project. If there are guid conflict, an error will be raised. If there are index conflicts, indexes of the imported file will be overriden with a new index. Author and assigned_to fields will be linked to existing users in the project. If no matching user are found, fields will be emptied. Only BCF 2.1 is supported
-     * Import bcf-xml format into this project Required scopes: bcf:write
+     * Import bcf-xml format into this project
+     * Import bcf-xml format into this project. If there are guid conflict, an error will be raised. If there are index conflicts, indexes of the imported file will be overriden with a new index. Author and assigned_to fields will be linked to existing users in the project. If no matching user are found, fields will be emptied. Only BCF 2.1 is supported Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this project.
      * @param {String} name Name of the project
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -1802,8 +1802,8 @@ export default class BcfApi {
     }
 
     /**
-     * Import bcf-xml format into this project. If there are guid conflict, an error will be raised. If there are index conflicts, indexes of the imported file will be overriden with a new index. Author and assigned_to fields will be linked to existing users in the project. If no matching user are found, fields will be emptied. Only BCF 2.1 is supported
-     * Import bcf-xml format into this project Required scopes: bcf:write
+     * Import bcf-xml format into this project
+     * Import bcf-xml format into this project. If there are guid conflict, an error will be raised. If there are index conflicts, indexes of the imported file will be overriden with a new index. Author and assigned_to fields will be linked to existing users in the project. If no matching user are found, fields will be emptied. Only BCF 2.1 is supported Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this project.
      * @param {String} name Name of the project
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}

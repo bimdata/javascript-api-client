@@ -44,6 +44,7 @@ import IfcCheckerResults from './model/IfcCheckerResults';
 import IfcErrors from './model/IfcErrors';
 import IfcExport from './model/IfcExport';
 import IfcFiles from './model/IfcFiles';
+import IfcMerge from './model/IfcMerge';
 import Invitation from './model/Invitation';
 import Label from './model/Label';
 import Layer from './model/Layer';
@@ -326,6 +327,12 @@ export {
      * @property {module:model/IfcFiles}
      */
     IfcFiles,
+
+    /**
+     * The IfcMerge model constructor.
+     * @property {module:model/IfcMerge}
+     */
+    IfcMerge,
 
     /**
      * The Invitation model constructor.

@@ -22,6 +22,7 @@ import IfcAccessToken from '../model/IfcAccessToken';
 import IfcErrors from '../model/IfcErrors';
 import IfcExport from '../model/IfcExport';
 import IfcFiles from '../model/IfcFiles';
+import IfcMerge from '../model/IfcMerge';
 import Layer from '../model/Layer';
 import ProcessorHandler from '../model/ProcessorHandler';
 import Property from '../model/Property';
@@ -7288,6 +7289,67 @@ export default class IfcApi {
      */
     listClassificationElementRelations(cloudPk, ifcPk, projectPk) {
       return this.listClassificationElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * merge IFC files
+     * Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list. Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/IfcMerge} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    mergeIfcsWithHttpInfo(cloudPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling mergeIfcs");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling mergeIfcs");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling mergeIfcs");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/merge', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * merge IFC files
+     * Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list. Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/IfcMerge} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    mergeIfcs(cloudPk, projectPk, data) {
+      return this.mergeIfcsWithHttpInfo(cloudPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

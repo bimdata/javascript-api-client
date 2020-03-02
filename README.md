@@ -162,7 +162,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**getViewpoint**](docs/BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Retrieve a Viewpoint
 *bimdata.BcfApi* | [**getViewpoints**](docs/BcfApi.md#getViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints | Retrieve all Viewpoints of a topic
 *bimdata.BcfApi* | [**getVisibilities**](docs/BcfApi.md#getVisibilities) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/visibility | Retrieve all visibilities of a viewpoint
-*bimdata.BcfApi* | [**importBcf**](docs/BcfApi.md#importBcf) | **POST** /bcf/2.1/projects/{id}/import | Import bcf-xml format into this project. If there are guid conflict, an error will be raised. If there are index conflicts, indexes of the imported file will be overriden with a new index. Author and assigned_to fields will be linked to existing users in the project. If no matching user are found, fields will be emptied. Only BCF 2.1 is supported
+*bimdata.BcfApi* | [**importBcf**](docs/BcfApi.md#importBcf) | **POST** /bcf/2.1/projects/{id}/import | Import bcf-xml format into this project
 *bimdata.BcfApi* | [**updateBcfProject**](docs/BcfApi.md#updateBcfProject) | **PATCH** /bcf/2.1/projects/{id} | Update some fields of a BCF project
 *bimdata.BcfApi* | [**updateComment**](docs/BcfApi.md#updateComment) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Update some fields of a comment
 *bimdata.BcfApi* | [**updateExtensions**](docs/BcfApi.md#updateExtensions) | **PATCH** /bcf/2.1/projects/{projects_pk}/extensions | Update project extensions
@@ -363,6 +363,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**getZoneSpaces**](docs/IfcApi.md#getZoneSpaces) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Retrieve all spaces of a zone
 *bimdata.IfcApi* | [**getZones**](docs/IfcApi.md#getZones) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Retrieve zones of a model
 *bimdata.IfcApi* | [**listClassificationElementRelations**](docs/IfcApi.md#listClassificationElementRelations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | List all associations between classifications and elements
+*bimdata.IfcApi* | [**mergeIfcs**](docs/IfcApi.md#mergeIfcs) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/merge | merge IFC files
 *bimdata.IfcApi* | [**removeClassificationOfElement**](docs/IfcApi.md#removeClassificationOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/{id} | Remove a classification from an element
 *bimdata.IfcApi* | [**removeElementPropertySet**](docs/IfcApi.md#removeElementPropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | Remove a PropertySet from an element
 *bimdata.IfcApi* | [**removeElementPropertySetProperty**](docs/IfcApi.md#removeElementPropertySetProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Remove a property from a PropertySet
@@ -432,6 +433,7 @@ Class | Method | HTTP request | Description
  - [bimdata.IfcErrors](docs/IfcErrors.md)
  - [bimdata.IfcExport](docs/IfcExport.md)
  - [bimdata.IfcFiles](docs/IfcFiles.md)
+ - [bimdata.IfcMerge](docs/IfcMerge.md)
  - [bimdata.Invitation](docs/Invitation.md)
  - [bimdata.Label](docs/Label.md)
  - [bimdata.Layer](docs/Layer.md)
