@@ -13,27 +13,12 @@ references:
         - v1-npm-{{ checksum "package.json" }}
         - v1-npm
 
-  restore_repo: &restore_repo
-    restore_cache:
-      keys:
-        - v2-repo-{{ .Branch }}-{{ .Revision }}
-        - v2-repo-{{ .Branch }}
-        - v2-repo
 jobs:
-  checkout_code:
-    <<: *container_config
-    steps:
-      - *restore_repo
-      - checkout
-      - save_cache:
-          key: v2-repo-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - .
   test:
     <<: *container_config
 
     steps:
-      - *restore_repo
+      - checkout
       - *restore_npm_cache
 
       - run:
@@ -55,7 +40,7 @@ jobs:
   release:
     <<: *container_config
     steps:
-      - *restore_repo
+      - checkout
       - *restore_npm_cache
       - add_ssh_keys
       - run:
@@ -72,13 +57,9 @@ workflows:
   version: 2
   test_and_release:
     jobs:
-      - checkout_code
-      - test:
-          requires:
-            - checkout_code
+      - test
       - release:
           requires:
-            - checkout_code
             - test
           filters:
             branches:
