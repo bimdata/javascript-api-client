@@ -32,7 +32,7 @@ Method | HTTP request | Description
 [**getCloudInvitations**](CollaborationApi.md#getCloudInvitations) | **GET** /cloud/{cloud_pk}/invitation | Retrieve all pending invitations in the cloud
 [**getCloudSize**](CollaborationApi.md#getCloudSize) | **GET** /cloud/{id}/size | Get size of all files in the cloud
 [**getCloudUser**](CollaborationApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | Retrieve a user in a cloud
-[**getCloudUsers**](CollaborationApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | Retrieve all users in a cloud
+[**getCloudUsers**](CollaborationApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | Retrieve all users in a cloud, or a list with a filter by email
 [**getClouds**](CollaborationApi.md#getClouds) | **GET** /cloud | Retrieve all clouds
 [**getDocument**](CollaborationApi.md#getDocument) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Retrieve a document
 [**getDocuments**](CollaborationApi.md#getDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document | Retrieve all documents
@@ -44,7 +44,7 @@ Method | HTTP request | Description
 [**getProjectSubTree**](CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
 [**getProjectTree**](CollaborationApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | Retrieve the complete DMS tree
 [**getProjectUser**](CollaborationApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Retrieve a user in a project
-[**getProjectUsers**](CollaborationApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | Retrieve all users in a project
+[**getProjectUsers**](CollaborationApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | Retrieve all users in a project, or a list with a filter by email
 [**getProjects**](CollaborationApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | Retrieve all projects
 [**getSelfProjects**](CollaborationApi.md#getSelfProjects) | **GET** /user/projects | List current user&#39;s projects
 [**getSelfUser**](CollaborationApi.md#getSelfUser) | **GET** /user | Get info about the current user
@@ -1747,11 +1747,11 @@ Name | Type | Description  | Notes
 
 ## getCloudUsers
 
-> [User] getCloudUsers(cloudPk)
+> [User] getCloudUsers(cloudPk, opts)
 
-Retrieve all users in a cloud
+Retrieve all users in a cloud, or a list with a filter by email
 
-Only administrators can see all cloud members Required scopes: cloud:read
+Only administrators can see cloud members. Required scopes: cloud:read
 
 ### Example
 
@@ -1772,7 +1772,13 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = "cloudPk_example"; // String | 
-apiInstance.getCloudUsers(cloudPk).then((data) => {
+let opts = {
+  'email': "email_example", // String | Filter the returned list by email
+  'emailContains': "emailContains_example", // String | Filter the returned list by email__contains
+  'emailStartswith': "emailStartswith_example", // String | Filter the returned list by email__startswith
+  'emailEndswith': "emailEndswith_example" // String | Filter the returned list by email__endswith
+};
+apiInstance.getCloudUsers(cloudPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1786,6 +1792,10 @@ apiInstance.getCloudUsers(cloudPk).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
+ **email** | **String**| Filter the returned list by email | [optional] 
+ **emailContains** | **String**| Filter the returned list by email__contains | [optional] 
+ **emailStartswith** | **String**| Filter the returned list by email__startswith | [optional] 
+ **emailEndswith** | **String**| Filter the returned list by email__endswith | [optional] 
 
 ### Return type
 
@@ -2439,9 +2449,9 @@ Name | Type | Description  | Notes
 
 ## getProjectUsers
 
-> [User] getProjectUsers(cloudPk, projectPk)
+> [User] getProjectUsers(cloudPk, projectPk, opts)
 
-Retrieve all users in a project
+Retrieve all users in a project, or a list with a filter by email
 
 Each member of a project can see other members of the project Required scopes: cloud:read
 
@@ -2465,7 +2475,13 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getProjectUsers(cloudPk, projectPk).then((data) => {
+let opts = {
+  'email': "email_example", // String | Filter the returned list by email
+  'emailContains': "emailContains_example", // String | Filter the returned list by email__contains
+  'emailStartswith': "emailStartswith_example", // String | Filter the returned list by email__startswith
+  'emailEndswith': "emailEndswith_example" // String | Filter the returned list by email__endswith
+};
+apiInstance.getProjectUsers(cloudPk, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2480,6 +2496,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **email** | **String**| Filter the returned list by email | [optional] 
+ **emailContains** | **String**| Filter the returned list by email__contains | [optional] 
+ **emailStartswith** | **String**| Filter the returned list by email__startswith | [optional] 
+ **emailEndswith** | **String**| Filter the returned list by email__endswith | [optional] 
 
 ### Return type
 

@@ -1728,12 +1728,18 @@ export default class CollaborationApi {
 
 
     /**
-     * Retrieve all users in a cloud
-     * Only administrators can see all cloud members Required scopes: cloud:read
+     * Retrieve all users in a cloud, or a list with a filter by email
+     * Only administrators can see cloud members. Required scopes: cloud:read
      * @param {String} cloudPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.email Filter the returned list by email
+     * @param {String} opts.emailContains Filter the returned list by email__contains
+     * @param {String} opts.emailStartswith Filter the returned list by email__startswith
+     * @param {String} opts.emailEndswith Filter the returned list by email__endswith
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/User>} and HTTP response
      */
-    getCloudUsersWithHttpInfo(cloudPk) {
+    getCloudUsersWithHttpInfo(cloudPk, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1744,6 +1750,10 @@ export default class CollaborationApi {
         'cloud_pk': cloudPk
       };
       let queryParams = {
+        'email': opts['email'],
+        'email__contains': opts['emailContains'],
+        'email__startswith': opts['emailStartswith'],
+        'email__endswith': opts['emailEndswith']
       };
       let headerParams = {
       };
@@ -1762,13 +1772,18 @@ export default class CollaborationApi {
     }
 
     /**
-     * Retrieve all users in a cloud
-     * Only administrators can see all cloud members Required scopes: cloud:read
+     * Retrieve all users in a cloud, or a list with a filter by email
+     * Only administrators can see cloud members. Required scopes: cloud:read
      * @param {String} cloudPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.email Filter the returned list by email
+     * @param {String} opts.emailContains Filter the returned list by email__contains
+     * @param {String} opts.emailStartswith Filter the returned list by email__startswith
+     * @param {String} opts.emailEndswith Filter the returned list by email__endswith
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/User>}
      */
-    getCloudUsers(cloudPk) {
-      return this.getCloudUsersWithHttpInfo(cloudPk)
+    getCloudUsers(cloudPk, opts) {
+      return this.getCloudUsersWithHttpInfo(cloudPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2381,13 +2396,19 @@ export default class CollaborationApi {
 
 
     /**
-     * Retrieve all users in a project
+     * Retrieve all users in a project, or a list with a filter by email
      * Each member of a project can see other members of the project Required scopes: cloud:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.email Filter the returned list by email
+     * @param {String} opts.emailContains Filter the returned list by email__contains
+     * @param {String} opts.emailStartswith Filter the returned list by email__startswith
+     * @param {String} opts.emailEndswith Filter the returned list by email__endswith
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/User>} and HTTP response
      */
-    getProjectUsersWithHttpInfo(cloudPk, projectPk) {
+    getProjectUsersWithHttpInfo(cloudPk, projectPk, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -2403,6 +2424,10 @@ export default class CollaborationApi {
         'project_pk': projectPk
       };
       let queryParams = {
+        'email': opts['email'],
+        'email__contains': opts['emailContains'],
+        'email__startswith': opts['emailStartswith'],
+        'email__endswith': opts['emailEndswith']
       };
       let headerParams = {
       };
@@ -2421,14 +2446,19 @@ export default class CollaborationApi {
     }
 
     /**
-     * Retrieve all users in a project
+     * Retrieve all users in a project, or a list with a filter by email
      * Each member of a project can see other members of the project Required scopes: cloud:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.email Filter the returned list by email
+     * @param {String} opts.emailContains Filter the returned list by email__contains
+     * @param {String} opts.emailStartswith Filter the returned list by email__startswith
+     * @param {String} opts.emailEndswith Filter the returned list by email__endswith
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/User>}
      */
-    getProjectUsers(cloudPk, projectPk) {
-      return this.getProjectUsersWithHttpInfo(cloudPk, projectPk)
+    getProjectUsers(cloudPk, projectPk, opts) {
+      return this.getProjectUsersWithHttpInfo(cloudPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

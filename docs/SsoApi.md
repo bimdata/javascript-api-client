@@ -5,7 +5,7 @@ All URIs are relative to *https://api.bimdata.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**acceptInvitation**](SsoApi.md#acceptInvitation) | **POST** /identity-provider/invitation/{id}/accept | Accept an invitation
-[**deleteUser**](SsoApi.md#deleteUser) | **DELETE** /identity-provider/user | Delete user form BIMData
+[**deleteUser**](SsoApi.md#deleteUser) | **DELETE** /identity-provider/user | Delete user from BIMData
 [**denyInvitation**](SsoApi.md#denyInvitation) | **POST** /identity-provider/invitation/{id}/deny | Deny an invitation
 [**getInvitation**](SsoApi.md#getInvitation) | **GET** /identity-provider/invitation/{id} | Retrieve an invitation
 [**getInvitations**](SsoApi.md#getInvitations) | **GET** /identity-provider/invitation | Retrieve all invitations
@@ -72,7 +72,7 @@ null (empty response body)
 
 > deleteUser(data)
 
-Delete user form BIMData
+Delete user from BIMData
 
 NON HANDLED EDGE CASE: The user has been created on the identity provider (exists on the IDP) The user (or an app) has requested an access token (exists on keycloak) But the user has never used the API (doesn&#39;t exist on the API) So the API can&#39;t delete the user and can&#39;t forward the call to keycloak so a zombie user will stay on keycloak
 

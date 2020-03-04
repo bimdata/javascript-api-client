@@ -85,7 +85,7 @@ export default class SsoApi {
 
 
     /**
-     * Delete user form BIMData
+     * Delete user from BIMData
      * NON HANDLED EDGE CASE: The user has been created on the identity provider (exists on the IDP) The user (or an app) has requested an access token (exists on keycloak) But the user has never used the API (doesn't exist on the API) So the API can't delete the user and can't forward the call to keycloak so a zombie user will stay on keycloak
      * @param {module:model/SelectUser} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -118,7 +118,7 @@ export default class SsoApi {
     }
 
     /**
-     * Delete user form BIMData
+     * Delete user from BIMData
      * NON HANDLED EDGE CASE: The user has been created on the identity provider (exists on the IDP) The user (or an app) has requested an access token (exists on keycloak) But the user has never used the API (doesn't exist on the API) So the API can't delete the user and can't forward the call to keycloak so a zombie user will stay on keycloak
      * @param {module:model/SelectUser} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
