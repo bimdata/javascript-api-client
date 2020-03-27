@@ -54,7 +54,7 @@ class Ruleset {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('parent_ruleset_id')) {
-                obj['parent_ruleset_id'] = ApiClient.convertToType(data['parent_ruleset_id'], 'String');
+                obj['parent_ruleset_id'] = ApiClient.convertToType(data['parent_ruleset_id'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -81,7 +81,7 @@ class Ruleset {
 Ruleset.prototype['id'] = undefined;
 
 /**
- * @member {String} parent_ruleset_id
+ * @member {Number} parent_ruleset_id
  */
 Ruleset.prototype['parent_ruleset_id'] = undefined;
 

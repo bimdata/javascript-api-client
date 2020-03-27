@@ -22,11 +22,10 @@ class Comment {
     /**
      * Constructs a new <code>Comment</code>.
      * @alias module:model/Comment
-     * @param comment {String} 
      */
-    constructor(comment) { 
+    constructor() { 
         
-        Comment.initialize(this, comment);
+        Comment.initialize(this);
     }
 
     /**
@@ -34,8 +33,7 @@ class Comment {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, comment) { 
-        obj['comment'] = comment;
+    static initialize(obj) { 
     }
 
     /**

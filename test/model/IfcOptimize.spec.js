@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.IfcMerge();
+    instance = new bimdata.IfcOptimize();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,16 @@
       object[property] = value;
   }
 
-  describe('IfcMerge', function() {
-    it('should create an instance of IfcMerge', function() {
-      // uncomment below and update the code to test IfcMerge
-      //var instane = new bimdata.IfcMerge();
-      //expect(instance).to.be.a(bimdata.IfcMerge);
-    });
-
-    it('should have the property ifcIds (base name: "ifc_ids")', function() {
-      // uncomment below and update the code to test the property ifcIds
-      //var instane = new bimdata.IfcMerge();
-      //expect(instance).to.be();
+  describe('IfcOptimize', function() {
+    it('should create an instance of IfcOptimize', function() {
+      // uncomment below and update the code to test IfcOptimize
+      //var instane = new bimdata.IfcOptimize();
+      //expect(instance).to.be.a(bimdata.IfcOptimize);
     });
 
     it('should have the property floatingPointReduction (base name: "floating_point_reduction")', function() {
       // uncomment below and update the code to test the property floatingPointReduction
-      //var instane = new bimdata.IfcMerge();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property exportName (base name: "export_name")', function() {
-      // uncomment below and update the code to test the property exportName
-      //var instane = new bimdata.IfcMerge();
+      //var instane = new bimdata.IfcOptimize();
       //expect(instance).to.be();
     });
 

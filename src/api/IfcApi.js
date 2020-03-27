@@ -23,6 +23,7 @@ import IfcErrors from '../model/IfcErrors';
 import IfcExport from '../model/IfcExport';
 import IfcFiles from '../model/IfcFiles';
 import IfcMerge from '../model/IfcMerge';
+import IfcOptimize from '../model/IfcOptimize';
 import Layer from '../model/Layer';
 import ProcessorHandler from '../model/ProcessorHandler';
 import Property from '../model/Property';
@@ -7296,8 +7297,8 @@ export default class IfcApi {
 
 
     /**
-     * merge IFC files
-     * Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list. Required scopes: ifc:write
+     * Merge IFC files
+     * Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/IfcMerge} data 
@@ -7341,8 +7342,8 @@ export default class IfcApi {
     }
 
     /**
-     * merge IFC files
-     * Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list. Required scopes: ifc:write
+     * Merge IFC files
+     * Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/IfcMerge} data 
@@ -7350,6 +7351,74 @@ export default class IfcApi {
      */
     mergeIfcs(cloudPk, projectPk, data) {
       return this.mergeIfcsWithHttpInfo(cloudPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Optimize the IFC
+     * Optimize the IFC. A new optimized IFC file will be put in the same folder that the original IFC Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ifc.
+     * @param {String} projectPk 
+     * @param {module:model/IfcOptimize} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    optimizeIfcWithHttpInfo(cloudPk, id, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling optimizeIfc");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling optimizeIfc");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling optimizeIfc");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling optimizeIfc");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/optimize', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Optimize the IFC
+     * Optimize the IFC. A new optimized IFC file will be put in the same folder that the original IFC Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this ifc.
+     * @param {String} projectPk 
+     * @param {module:model/IfcOptimize} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    optimizeIfc(cloudPk, id, projectPk, data) {
+      return this.optimizeIfcWithHttpInfo(cloudPk, id, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7855,7 +7924,7 @@ export default class IfcApi {
 
 
     /**
-     * reprocess IFC file
+     * Reprocess IFC file
      * Reprocess the IFC. All data that are not in the original IFC files will be lost Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
@@ -7901,7 +7970,7 @@ export default class IfcApi {
     }
 
     /**
-     * reprocess IFC file
+     * Reprocess IFC file
      * Reprocess the IFC. All data that are not in the original IFC files will be lost Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.

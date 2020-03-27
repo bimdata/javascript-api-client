@@ -14,20 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The IfcMerge model module.
- * @module model/IfcMerge
+ * The IfcOptimize model module.
+ * @module model/IfcOptimize
  * @version 0.0.0
  */
-class IfcMerge {
+class IfcOptimize {
     /**
-     * Constructs a new <code>IfcMerge</code>.
-     * @alias module:model/IfcMerge
-     * @param ifcIds {Array.<Number>} 
-     * @param exportName {String} 
+     * Constructs a new <code>IfcOptimize</code>.
+     * @alias module:model/IfcOptimize
      */
-    constructor(ifcIds, exportName) { 
+    constructor() { 
         
-        IfcMerge.initialize(this, ifcIds, exportName);
+        IfcOptimize.initialize(this);
     }
 
     /**
@@ -35,30 +33,22 @@ class IfcMerge {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, ifcIds, exportName) { 
-        obj['ifc_ids'] = ifcIds;
-        obj['export_name'] = exportName;
+    static initialize(obj) { 
     }
 
     /**
-     * Constructs a <code>IfcMerge</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>IfcOptimize</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/IfcMerge} obj Optional instance to populate.
-     * @return {module:model/IfcMerge} The populated <code>IfcMerge</code> instance.
+     * @param {module:model/IfcOptimize} obj Optional instance to populate.
+     * @return {module:model/IfcOptimize} The populated <code>IfcOptimize</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new IfcMerge();
+            obj = obj || new IfcOptimize();
 
-            if (data.hasOwnProperty('ifc_ids')) {
-                obj['ifc_ids'] = ApiClient.convertToType(data['ifc_ids'], ['Number']);
-            }
             if (data.hasOwnProperty('floating_point_reduction')) {
                 obj['floating_point_reduction'] = ApiClient.convertToType(data['floating_point_reduction'], 'Number');
-            }
-            if (data.hasOwnProperty('export_name')) {
-                obj['export_name'] = ApiClient.convertToType(data['export_name'], 'String');
             }
         }
         return obj;
@@ -68,25 +58,15 @@ class IfcMerge {
 }
 
 /**
- * @member {Array.<Number>} ifc_ids
- */
-IfcMerge.prototype['ifc_ids'] = undefined;
-
-/**
  * Precision of geometries. 6 is micrometre, 9 is nanometre, ect...
  * @member {Number} floating_point_reduction
  */
-IfcMerge.prototype['floating_point_reduction'] = undefined;
-
-/**
- * @member {String} export_name
- */
-IfcMerge.prototype['export_name'] = undefined;
+IfcOptimize.prototype['floating_point_reduction'] = undefined;
 
 
 
 
 
 
-export default IfcMerge;
+export default IfcOptimize;
 

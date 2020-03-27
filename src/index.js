@@ -45,6 +45,7 @@ import IfcErrors from './model/IfcErrors';
 import IfcExport from './model/IfcExport';
 import IfcFiles from './model/IfcFiles';
 import IfcMerge from './model/IfcMerge';
+import IfcOptimize from './model/IfcOptimize';
 import Invitation from './model/Invitation';
 import Label from './model/Label';
 import Layer from './model/Layer';
@@ -333,6 +334,12 @@ export {
      * @property {module:model/IfcMerge}
      */
     IfcMerge,
+
+    /**
+     * The IfcOptimize model constructor.
+     * @property {module:model/IfcOptimize}
+     */
+    IfcOptimize,
 
     /**
      * The Invitation model constructor.

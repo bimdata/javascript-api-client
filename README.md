@@ -363,14 +363,15 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**getZoneSpaces**](docs/IfcApi.md#getZoneSpaces) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Retrieve all spaces of a zone
 *bimdata.IfcApi* | [**getZones**](docs/IfcApi.md#getZones) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Retrieve zones of a model
 *bimdata.IfcApi* | [**listClassificationElementRelations**](docs/IfcApi.md#listClassificationElementRelations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | List all associations between classifications and elements
-*bimdata.IfcApi* | [**mergeIfcs**](docs/IfcApi.md#mergeIfcs) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/merge | merge IFC files
+*bimdata.IfcApi* | [**mergeIfcs**](docs/IfcApi.md#mergeIfcs) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/merge | Merge IFC files
+*bimdata.IfcApi* | [**optimizeIfc**](docs/IfcApi.md#optimizeIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/optimize | Optimize the IFC
 *bimdata.IfcApi* | [**removeClassificationOfElement**](docs/IfcApi.md#removeClassificationOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/{id} | Remove a classification from an element
 *bimdata.IfcApi* | [**removeElementPropertySet**](docs/IfcApi.md#removeElementPropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | Remove a PropertySet from an element
 *bimdata.IfcApi* | [**removeElementPropertySetProperty**](docs/IfcApi.md#removeElementPropertySetProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Remove a property from a PropertySet
 *bimdata.IfcApi* | [**removeElementPropertySetPropertyDefinition**](docs/IfcApi.md#removeElementPropertySetPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id} | Remove a Definition from a Property
 *bimdata.IfcApi* | [**removeElementPropertySetPropertyDefinitionUnit**](docs/IfcApi.md#removeElementPropertySetPropertyDefinitionUnit) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit/{id} | Remove a Unit from a Definition
 *bimdata.IfcApi* | [**removeElementsFromClassification**](docs/IfcApi.md#removeElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/{uuid} | Remove the classification from all elements
-*bimdata.IfcApi* | [**reprocessIfc**](docs/IfcApi.md#reprocessIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/reprocess | reprocess IFC file
+*bimdata.IfcApi* | [**reprocessIfc**](docs/IfcApi.md#reprocessIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/reprocess | Reprocess IFC file
 *bimdata.IfcApi* | [**updateAccessToken**](docs/IfcApi.md#updateAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Update some fields of a token
 *bimdata.IfcApi* | [**updateElement**](docs/IfcApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update some fields of a zone
 *bimdata.IfcApi* | [**updateElementPropertySetProperty**](docs/IfcApi.md#updateElementPropertySetProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Update a property from an element
@@ -434,6 +435,7 @@ Class | Method | HTTP request | Description
  - [bimdata.IfcExport](docs/IfcExport.md)
  - [bimdata.IfcFiles](docs/IfcFiles.md)
  - [bimdata.IfcMerge](docs/IfcMerge.md)
+ - [bimdata.IfcOptimize](docs/IfcOptimize.md)
  - [bimdata.Invitation](docs/Invitation.md)
  - [bimdata.Label](docs/Label.md)
  - [bimdata.Layer](docs/Layer.md)

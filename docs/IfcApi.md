@@ -107,14 +107,15 @@ Method | HTTP request | Description
 [**getZoneSpaces**](IfcApi.md#getZoneSpaces) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Retrieve all spaces of a zone
 [**getZones**](IfcApi.md#getZones) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Retrieve zones of a model
 [**listClassificationElementRelations**](IfcApi.md#listClassificationElementRelations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | List all associations between classifications and elements
-[**mergeIfcs**](IfcApi.md#mergeIfcs) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/merge | merge IFC files
+[**mergeIfcs**](IfcApi.md#mergeIfcs) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/merge | Merge IFC files
+[**optimizeIfc**](IfcApi.md#optimizeIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/optimize | Optimize the IFC
 [**removeClassificationOfElement**](IfcApi.md#removeClassificationOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/{id} | Remove a classification from an element
 [**removeElementPropertySet**](IfcApi.md#removeElementPropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | Remove a PropertySet from an element
 [**removeElementPropertySetProperty**](IfcApi.md#removeElementPropertySetProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Remove a property from a PropertySet
 [**removeElementPropertySetPropertyDefinition**](IfcApi.md#removeElementPropertySetPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id} | Remove a Definition from a Property
 [**removeElementPropertySetPropertyDefinitionUnit**](IfcApi.md#removeElementPropertySetPropertyDefinitionUnit) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit/{id} | Remove a Unit from a Definition
 [**removeElementsFromClassification**](IfcApi.md#removeElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/{uuid} | Remove the classification from all elements
-[**reprocessIfc**](IfcApi.md#reprocessIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/reprocess | reprocess IFC file
+[**reprocessIfc**](IfcApi.md#reprocessIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/reprocess | Reprocess IFC file
 [**updateAccessToken**](IfcApi.md#updateAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Update some fields of a token
 [**updateElement**](IfcApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update some fields of a zone
 [**updateElementPropertySetProperty**](IfcApi.md#updateElementPropertySetProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Update a property from an element
@@ -6591,9 +6592,9 @@ Name | Type | Description  | Notes
 
 > mergeIfcs(cloudPk, projectPk, data)
 
-merge IFC files
+Merge IFC files
 
-Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list. Required scopes: ifc:write
+Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list Required scopes: ifc:write
 
 ### Example
 
@@ -6632,6 +6633,68 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**IfcMerge**](IfcMerge.md)|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## optimizeIfc
+
+> optimizeIfc(cloudPk, id, projectPk, data)
+
+Optimize the IFC
+
+Optimize the IFC. A new optimized IFC file will be put in the same folder that the original IFC Required scopes: ifc:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.IfcApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this ifc.
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.IfcOptimize(); // IfcOptimize | 
+apiInstance.optimizeIfc(cloudPk, id, projectPk, data).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this ifc. | 
+ **projectPk** | **String**|  | 
+ **data** | [**IfcOptimize**](IfcOptimize.md)|  | 
 
 ### Return type
 
@@ -7047,7 +7110,7 @@ null (empty response body)
 
 > reprocessIfc(cloudPk, id, projectPk)
 
-reprocess IFC file
+Reprocess IFC file
 
 Reprocess the IFC. All data that are not in the original IFC files will be lost Required scopes: ifc:write
 

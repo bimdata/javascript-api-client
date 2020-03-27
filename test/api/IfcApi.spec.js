@@ -1088,6 +1088,16 @@
         done();
       });
     });
+    describe('optimizeIfc', function() {
+      it('should call optimizeIfc successfully', function(done) {
+        //uncomment below and update the code to test optimizeIfc
+        //instance.optimizeIfc(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('removeClassificationOfElement', function() {
       it('should call removeClassificationOfElement successfully', function(done) {
         //uncomment below and update the code to test removeClassificationOfElement

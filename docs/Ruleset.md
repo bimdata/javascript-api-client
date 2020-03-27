@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] [readonly] 
-**parentRulesetId** | **String** |  | [optional] 
+**parentRulesetId** | **Number** |  | [optional] 
 **name** | **String** |  | 
 **description** | **String** |  | [optional] 
 **rules** | [**[Rule]**](Rule.md) |  | [optional] 
