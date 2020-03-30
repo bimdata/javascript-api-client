@@ -210,6 +210,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**cancelProjectUserInvitation**](docs/CollaborationApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
 *bimdata.CollaborationApi* | [**createClassification**](docs/CollaborationApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | Create a classification
 *bimdata.CollaborationApi* | [**createCloud**](docs/CollaborationApi.md#createCloud) | **POST** /cloud | Create a cloud
+*bimdata.CollaborationApi* | [**createDMSTree**](docs/CollaborationApi.md#createDMSTree) | **POST** /cloud/{cloud_pk}/project/{id}/dms-tree | Create a complete DMS tree
 *bimdata.CollaborationApi* | [**createDemo**](docs/CollaborationApi.md#createDemo) | **POST** /cloud/{id}/create-demo | Create a Demo project in a cloud
 *bimdata.CollaborationApi* | [**createDocument**](docs/CollaborationApi.md#createDocument) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | Create a document
 *bimdata.CollaborationApi* | [**createFolder**](docs/CollaborationApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | Create a folder

@@ -32,6 +32,8 @@ Name | Type | Description | Notes
 
 * `EXPORT` (value: `"EXPORT"`)
 
+* `OPTIMIZED` (value: `"OPTIMIZED"`)
+
 
 
 

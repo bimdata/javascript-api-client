@@ -272,6 +272,67 @@ export default class CollaborationApi {
 
 
     /**
+     * Create a complete DMS tree
+     *                  Create a DMS structure of folder                 Format request :                     [{                         \"name\": :name:                         \"parent_id\": :parent_id:    # optionnal                         \"children\": [{              # optionnal                             \"name\": :name:,                             \"children\": []                         }]                     }],  Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @param {module:model/Project} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    createDMSTreeWithHttpInfo(cloudPk, id, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createDMSTree");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling createDMSTree");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createDMSTree");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{id}/dms-tree', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a complete DMS tree
+     *                  Create a DMS structure of folder                 Format request :                     [{                         \"name\": :name:                         \"parent_id\": :parent_id:    # optionnal                         \"children\": [{              # optionnal                             \"name\": :name:,                             \"children\": []                         }]                     }],  Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @param {module:model/Project} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    createDMSTree(cloudPk, id, data) {
+      return this.createDMSTreeWithHttpInfo(cloudPk, id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create a Demo project in a cloud
      * Create a demo project with a pre-populated IFC and its data Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.

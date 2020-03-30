@@ -88,6 +88,16 @@
         done();
       });
     });
+    describe('createDMSTree', function() {
+      it('should call createDMSTree successfully', function(done) {
+        //uncomment below and update the code to test createDMSTree
+        //instance.createDMSTree(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createDemo', function() {
       it('should call createDemo successfully', function(done) {
         //uncomment below and update the code to test createDemo

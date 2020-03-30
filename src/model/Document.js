@@ -208,7 +208,13 @@ Document['IfcSourceEnum'] = {
      * value: "EXPORT"
      * @const
      */
-    "EXPORT": "EXPORT"
+    "EXPORT": "EXPORT",
+
+    /**
+     * value: "OPTIMIZED"
+     * @const
+     */
+    "OPTIMIZED": "OPTIMIZED"
 };
 
 
