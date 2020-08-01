@@ -57,6 +57,7 @@ import Point from './model/Point';
 import Priority from './model/Priority';
 import ProcessorHandler from './model/ProcessorHandler';
 import Project from './model/Project';
+import ProjectAccessToken from './model/ProjectAccessToken';
 import ProjectInvitation from './model/ProjectInvitation';
 import ProjectRole from './model/ProjectRole';
 import ProjectWithChildren from './model/ProjectWithChildren';
@@ -406,6 +407,12 @@ export {
      * @property {module:model/Project}
      */
     Project,
+
+    /**
+     * The ProjectAccessToken model constructor.
+     * @property {module:model/ProjectAccessToken}
+     */
+    ProjectAccessToken,
 
     /**
      * The ProjectInvitation model constructor.

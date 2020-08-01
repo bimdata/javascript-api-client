@@ -19,6 +19,7 @@ import CloudInvitation from '../model/CloudInvitation';
 import Document from '../model/Document';
 import Folder from '../model/Folder';
 import Project from '../model/Project';
+import ProjectAccessToken from '../model/ProjectAccessToken';
 import ProjectInvitation from '../model/ProjectInvitation';
 import ProjectWithChildren from '../model/ProjectWithChildren';
 import SelfUser from '../model/SelfUser';
@@ -276,7 +277,7 @@ export default class CollaborationApi {
      *                  Create a DMS structure of folder                 Format request :                     [{                         \"name\": :name:                         \"parent_id\": :parent_id:    # optionnal                         \"children\": [{              # optionnal                             \"name\": :name:,                             \"children\": []                         }]                     }],  Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @param {module:model/Project} data 
+     * @param {module:model/Folder} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     createDMSTreeWithHttpInfo(cloudPk, id, data) {
@@ -321,7 +322,7 @@ export default class CollaborationApi {
      *                  Create a DMS structure of folder                 Format request :                     [{                         \"name\": :name:                         \"parent_id\": :parent_id:    # optionnal                         \"children\": [{              # optionnal                             \"name\": :name:,                             \"children\": []                         }]                     }],  Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @param {module:model/Project} data 
+     * @param {module:model/Folder} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     createDMSTree(cloudPk, id, data) {
@@ -582,6 +583,67 @@ export default class CollaborationApi {
      */
     createProject(cloudPk, data) {
       return this.createProjectWithHttpInfo(cloudPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a token for this project
+     * Tokens are valid 1 day by default Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/ProjectAccessToken} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectAccessToken} and HTTP response
+     */
+    createProjectAccessTokenWithHttpInfo(cloudPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createProjectAccessToken");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createProjectAccessToken");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createProjectAccessToken");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ProjectAccessToken;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/access-token', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a token for this project
+     * Tokens are valid 1 day by default Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/ProjectAccessToken} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectAccessToken}
+     */
+    createProjectAccessToken(cloudPk, projectPk, data) {
+      return this.createProjectAccessTokenWithHttpInfo(cloudPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -926,6 +988,68 @@ export default class CollaborationApi {
      */
     deleteProject(cloudPk, id) {
       return this.deleteProjectWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a token
+     * Deleting a token will revoke it Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteProjectAccessToken");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteProjectAccessToken");
+      }
+      // verify the required parameter 'token' is set
+      if (token === undefined || token === null) {
+        throw new Error("Missing the required parameter 'token' when calling deleteProjectAccessToken");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk,
+        'token': token
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/access-token/{token}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a token
+     * Deleting a token will revoke it Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteProjectAccessToken(cloudPk, projectPk, token) {
+      return this.deleteProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1400,6 +1524,74 @@ export default class CollaborationApi {
      */
     fullUpdateProject(cloudPk, id, data) {
       return this.fullUpdateProjectWithHttpInfo(cloudPk, id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update all fields of a token
+     * You can update the expiration date field Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @param {module:model/ProjectAccessToken} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectAccessToken} and HTTP response
+     */
+    fullUpdateProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateProjectAccessToken");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateProjectAccessToken");
+      }
+      // verify the required parameter 'token' is set
+      if (token === undefined || token === null) {
+        throw new Error("Missing the required parameter 'token' when calling fullUpdateProjectAccessToken");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateProjectAccessToken");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk,
+        'token': token
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ProjectAccessToken;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/access-token/{token}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update all fields of a token
+     * You can update the expiration date field Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @param {module:model/ProjectAccessToken} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectAccessToken}
+     */
+    fullUpdateProjectAccessToken(cloudPk, projectPk, token, data) {
+      return this.fullUpdateProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2175,6 +2367,123 @@ export default class CollaborationApi {
      */
     getProject(cloudPk, id) {
       return this.getProjectWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve one token created for this project
+     * Retrieve one token created for this project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectAccessToken} and HTTP response
+     */
+    getProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectAccessToken");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getProjectAccessToken");
+      }
+      // verify the required parameter 'token' is set
+      if (token === undefined || token === null) {
+        throw new Error("Missing the required parameter 'token' when calling getProjectAccessToken");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk,
+        'token': token
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ProjectAccessToken;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/access-token/{token}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve one token created for this project
+     * Retrieve one token created for this project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectAccessToken}
+     */
+    getProjectAccessToken(cloudPk, projectPk, token) {
+      return this.getProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all tokens created for this project
+     * Retrieve all tokens created for this project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectAccessToken>} and HTTP response
+     */
+    getProjectAccessTokensWithHttpInfo(cloudPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectAccessTokens");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getProjectAccessTokens");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [ProjectAccessToken];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/access-token', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all tokens created for this project
+     * Retrieve all tokens created for this project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectAccessToken>}
+     */
+    getProjectAccessTokens(cloudPk, projectPk) {
+      return this.getProjectAccessTokensWithHttpInfo(cloudPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3145,6 +3454,74 @@ export default class CollaborationApi {
      */
     updateProject(cloudPk, id, data) {
       return this.updateProjectWithHttpInfo(cloudPk, id, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a token
+     * You can update the expiration date field Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @param {module:model/ProjectAccessToken} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectAccessToken} and HTTP response
+     */
+    updateProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateProjectAccessToken");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateProjectAccessToken");
+      }
+      // verify the required parameter 'token' is set
+      if (token === undefined || token === null) {
+        throw new Error("Missing the required parameter 'token' when calling updateProjectAccessToken");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateProjectAccessToken");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk,
+        'token': token
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ProjectAccessToken;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/access-token/{token}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a token
+     * You can update the expiration date field Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {String} token 
+     * @param {module:model/ProjectAccessToken} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectAccessToken}
+     */
+    updateProjectAccessToken(cloudPk, projectPk, token, data) {
+      return this.updateProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

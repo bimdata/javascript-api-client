@@ -13,12 +13,14 @@ Method | HTTP request | Description
 [**createDocument**](CollaborationApi.md#createDocument) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | Create a document
 [**createFolder**](CollaborationApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | Create a folder
 [**createProject**](CollaborationApi.md#createProject) | **POST** /cloud/{cloud_pk}/project | Create a project
+[**createProjectAccessToken**](CollaborationApi.md#createProjectAccessToken) | **POST** /cloud/{cloud_pk}/project/{project_pk}/access-token | Create a token for this project
 [**deleteClassification**](CollaborationApi.md#deleteClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Delete a classification
 [**deleteCloud**](CollaborationApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
 [**deleteCloudUser**](CollaborationApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | Remove a user from a cloud
 [**deleteDocument**](CollaborationApi.md#deleteDocument) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Delete the document
 [**deleteFolder**](CollaborationApi.md#deleteFolder) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Delete a folder
 [**deleteProject**](CollaborationApi.md#deleteProject) | **DELETE** /cloud/{cloud_pk}/project/{id} | Delete a project
+[**deleteProjectAccessToken**](CollaborationApi.md#deleteProjectAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Delete a token
 [**deleteProjectUser**](CollaborationApi.md#deleteProjectUser) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Remove a user from a project
 [**fullUpdateClassification**](CollaborationApi.md#fullUpdateClassification) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Update all fields of a classification
 [**fullUpdateCloud**](CollaborationApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | Update all fields of a cloud
@@ -26,6 +28,7 @@ Method | HTTP request | Description
 [**fullUpdateDocument**](CollaborationApi.md#fullUpdateDocument) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update all fields of the document
 [**fullUpdateFolder**](CollaborationApi.md#fullUpdateFolder) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update all fields of a folder
 [**fullUpdateProject**](CollaborationApi.md#fullUpdateProject) | **PUT** /cloud/{cloud_pk}/project/{id} | Update all fields of a project
+[**fullUpdateProjectAccessToken**](CollaborationApi.md#fullUpdateProjectAccessToken) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update all fields of a token
 [**fullUpdateProjectUser**](CollaborationApi.md#fullUpdateProjectUser) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update all fields of a project user
 [**getClassification**](CollaborationApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Retrieve a classification
 [**getClassifications**](CollaborationApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
@@ -40,6 +43,8 @@ Method | HTTP request | Description
 [**getFolder**](CollaborationApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Retrieve a folder
 [**getFolders**](CollaborationApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | Retrieve all folders
 [**getProject**](CollaborationApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | Retrieve a project
+[**getProjectAccessToken**](CollaborationApi.md#getProjectAccessToken) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Retrieve one token created for this project
+[**getProjectAccessTokens**](CollaborationApi.md#getProjectAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token | Retrieve all tokens created for this project
 [**getProjectDMSTree**](CollaborationApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
 [**getProjectInvitations**](CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
 [**getProjectSubTree**](CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
@@ -57,6 +62,7 @@ Method | HTTP request | Description
 [**updateDocument**](CollaborationApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update some fields of the document
 [**updateFolder**](CollaborationApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update some fields of a folder
 [**updateProject**](CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
+[**updateProjectAccessToken**](CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
 [**updateProjectUser**](CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update some fields of a project user
 [**updateSelfUser**](CollaborationApi.md#updateSelfUser) | **PATCH** /user | Update info of the current user
 
@@ -324,7 +330,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this project.
-let data = new bimdata.Project(); // Project | 
+let data = new bimdata.Folder(); // Folder | 
 apiInstance.createDMSTree(cloudPk, id, data).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -340,7 +346,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
- **data** | [**Project**](Project.md)|  | 
+ **data** | [**Folder**](Folder.md)|  | 
 
 ### Return type
 
@@ -597,6 +603,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Project**](Project.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createProjectAccessToken
+
+> ProjectAccessToken createProjectAccessToken(cloudPk, projectPk, data)
+
+Create a token for this project
+
+Tokens are valid 1 day by default Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.ProjectAccessToken(); // ProjectAccessToken | 
+apiInstance.createProjectAccessToken(cloudPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**ProjectAccessToken**](ProjectAccessToken.md)|  | 
+
+### Return type
+
+[**ProjectAccessToken**](ProjectAccessToken.md)
 
 ### Authorization
 
@@ -945,6 +1011,66 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## deleteProjectAccessToken
+
+> deleteProjectAccessToken(cloudPk, projectPk, token)
+
+Delete a token
+
+Deleting a token will revoke it Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let token = "token_example"; // String | 
+apiInstance.deleteProjectAccessToken(cloudPk, projectPk, token).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **token** | **String**|  | 
 
 ### Return type
 
@@ -1391,6 +1517,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Project**](Project.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## fullUpdateProjectAccessToken
+
+> ProjectAccessToken fullUpdateProjectAccessToken(cloudPk, projectPk, token, data)
+
+Update all fields of a token
+
+You can update the expiration date field Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let token = "token_example"; // String | 
+let data = new bimdata.ProjectAccessToken(); // ProjectAccessToken | 
+apiInstance.fullUpdateProjectAccessToken(cloudPk, projectPk, token, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **token** | **String**|  | 
+ **data** | [**ProjectAccessToken**](ProjectAccessToken.md)|  | 
+
+### Return type
+
+[**ProjectAccessToken**](ProjectAccessToken.md)
 
 ### Authorization
 
@@ -2207,6 +2395,124 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProjectWithChildren**](ProjectWithChildren.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getProjectAccessToken
+
+> ProjectAccessToken getProjectAccessToken(cloudPk, projectPk, token)
+
+Retrieve one token created for this project
+
+Retrieve one token created for this project Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let token = "token_example"; // String | 
+apiInstance.getProjectAccessToken(cloudPk, projectPk, token).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **token** | **String**|  | 
+
+### Return type
+
+[**ProjectAccessToken**](ProjectAccessToken.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getProjectAccessTokens
+
+> [ProjectAccessToken] getProjectAccessTokens(cloudPk, projectPk)
+
+Retrieve all tokens created for this project
+
+Retrieve all tokens created for this project Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getProjectAccessTokens(cloudPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**[ProjectAccessToken]**](ProjectAccessToken.md)
 
 ### Authorization
 
@@ -3207,6 +3513,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Project**](Project.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateProjectAccessToken
+
+> ProjectAccessToken updateProjectAccessToken(cloudPk, projectPk, token, data)
+
+Update some fields of a token
+
+You can update the expiration date field Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let token = "token_example"; // String | 
+let data = new bimdata.ProjectAccessToken(); // ProjectAccessToken | 
+apiInstance.updateProjectAccessToken(cloudPk, projectPk, token, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **token** | **String**|  | 
+ **data** | [**ProjectAccessToken**](ProjectAccessToken.md)|  | 
+
+### Return type
+
+[**ProjectAccessToken**](ProjectAccessToken.md)
 
 ### Authorization
 

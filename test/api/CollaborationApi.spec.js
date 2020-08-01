@@ -138,6 +138,16 @@
         done();
       });
     });
+    describe('createProjectAccessToken', function() {
+      it('should call createProjectAccessToken successfully', function(done) {
+        //uncomment below and update the code to test createProjectAccessToken
+        //instance.createProjectAccessToken(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteClassification', function() {
       it('should call deleteClassification successfully', function(done) {
         //uncomment below and update the code to test deleteClassification
@@ -192,6 +202,16 @@
       it('should call deleteProject successfully', function(done) {
         //uncomment below and update the code to test deleteProject
         //instance.deleteProject(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteProjectAccessToken', function() {
+      it('should call deleteProjectAccessToken successfully', function(done) {
+        //uncomment below and update the code to test deleteProjectAccessToken
+        //instance.deleteProjectAccessToken(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -262,6 +282,16 @@
       it('should call fullUpdateProject successfully', function(done) {
         //uncomment below and update the code to test fullUpdateProject
         //instance.fullUpdateProject(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('fullUpdateProjectAccessToken', function() {
+      it('should call fullUpdateProjectAccessToken successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateProjectAccessToken
+        //instance.fullUpdateProjectAccessToken(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -402,6 +432,26 @@
       it('should call getProject successfully', function(done) {
         //uncomment below and update the code to test getProject
         //instance.getProject(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getProjectAccessToken', function() {
+      it('should call getProjectAccessToken successfully', function(done) {
+        //uncomment below and update the code to test getProjectAccessToken
+        //instance.getProjectAccessToken(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getProjectAccessTokens', function() {
+      it('should call getProjectAccessTokens successfully', function(done) {
+        //uncomment below and update the code to test getProjectAccessTokens
+        //instance.getProjectAccessTokens(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -572,6 +622,16 @@
       it('should call updateProject successfully', function(done) {
         //uncomment below and update the code to test updateProject
         //instance.updateProject(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateProjectAccessToken', function() {
+      it('should call updateProjectAccessToken successfully', function(done) {
+        //uncomment below and update the code to test updateProjectAccessToken
+        //instance.updateProjectAccessToken(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

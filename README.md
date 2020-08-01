@@ -215,12 +215,14 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**createDocument**](docs/CollaborationApi.md#createDocument) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | Create a document
 *bimdata.CollaborationApi* | [**createFolder**](docs/CollaborationApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | Create a folder
 *bimdata.CollaborationApi* | [**createProject**](docs/CollaborationApi.md#createProject) | **POST** /cloud/{cloud_pk}/project | Create a project
+*bimdata.CollaborationApi* | [**createProjectAccessToken**](docs/CollaborationApi.md#createProjectAccessToken) | **POST** /cloud/{cloud_pk}/project/{project_pk}/access-token | Create a token for this project
 *bimdata.CollaborationApi* | [**deleteClassification**](docs/CollaborationApi.md#deleteClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Delete a classification
 *bimdata.CollaborationApi* | [**deleteCloud**](docs/CollaborationApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
 *bimdata.CollaborationApi* | [**deleteCloudUser**](docs/CollaborationApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | Remove a user from a cloud
 *bimdata.CollaborationApi* | [**deleteDocument**](docs/CollaborationApi.md#deleteDocument) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Delete the document
 *bimdata.CollaborationApi* | [**deleteFolder**](docs/CollaborationApi.md#deleteFolder) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Delete a folder
 *bimdata.CollaborationApi* | [**deleteProject**](docs/CollaborationApi.md#deleteProject) | **DELETE** /cloud/{cloud_pk}/project/{id} | Delete a project
+*bimdata.CollaborationApi* | [**deleteProjectAccessToken**](docs/CollaborationApi.md#deleteProjectAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Delete a token
 *bimdata.CollaborationApi* | [**deleteProjectUser**](docs/CollaborationApi.md#deleteProjectUser) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Remove a user from a project
 *bimdata.CollaborationApi* | [**fullUpdateClassification**](docs/CollaborationApi.md#fullUpdateClassification) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Update all fields of a classification
 *bimdata.CollaborationApi* | [**fullUpdateCloud**](docs/CollaborationApi.md#fullUpdateCloud) | **PUT** /cloud/{id} | Update all fields of a cloud
@@ -228,6 +230,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**fullUpdateDocument**](docs/CollaborationApi.md#fullUpdateDocument) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update all fields of the document
 *bimdata.CollaborationApi* | [**fullUpdateFolder**](docs/CollaborationApi.md#fullUpdateFolder) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update all fields of a folder
 *bimdata.CollaborationApi* | [**fullUpdateProject**](docs/CollaborationApi.md#fullUpdateProject) | **PUT** /cloud/{cloud_pk}/project/{id} | Update all fields of a project
+*bimdata.CollaborationApi* | [**fullUpdateProjectAccessToken**](docs/CollaborationApi.md#fullUpdateProjectAccessToken) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update all fields of a token
 *bimdata.CollaborationApi* | [**fullUpdateProjectUser**](docs/CollaborationApi.md#fullUpdateProjectUser) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update all fields of a project user
 *bimdata.CollaborationApi* | [**getClassification**](docs/CollaborationApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Retrieve a classification
 *bimdata.CollaborationApi* | [**getClassifications**](docs/CollaborationApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
@@ -242,6 +245,8 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getFolder**](docs/CollaborationApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Retrieve a folder
 *bimdata.CollaborationApi* | [**getFolders**](docs/CollaborationApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | Retrieve all folders
 *bimdata.CollaborationApi* | [**getProject**](docs/CollaborationApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | Retrieve a project
+*bimdata.CollaborationApi* | [**getProjectAccessToken**](docs/CollaborationApi.md#getProjectAccessToken) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Retrieve one token created for this project
+*bimdata.CollaborationApi* | [**getProjectAccessTokens**](docs/CollaborationApi.md#getProjectAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token | Retrieve all tokens created for this project
 *bimdata.CollaborationApi* | [**getProjectDMSTree**](docs/CollaborationApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
 *bimdata.CollaborationApi* | [**getProjectInvitations**](docs/CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
 *bimdata.CollaborationApi* | [**getProjectSubTree**](docs/CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
@@ -259,6 +264,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**updateDocument**](docs/CollaborationApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update some fields of the document
 *bimdata.CollaborationApi* | [**updateFolder**](docs/CollaborationApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update some fields of a folder
 *bimdata.CollaborationApi* | [**updateProject**](docs/CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
+*bimdata.CollaborationApi* | [**updateProjectAccessToken**](docs/CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
 *bimdata.CollaborationApi* | [**updateProjectUser**](docs/CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update some fields of a project user
 *bimdata.CollaborationApi* | [**updateSelfUser**](docs/CollaborationApi.md#updateSelfUser) | **PATCH** /user | Update info of the current user
 *bimdata.IfcApi* | [**addIfcErrors**](docs/IfcApi.md#addIfcErrors) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/errors | Add errors to IFC
@@ -448,6 +454,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Priority](docs/Priority.md)
  - [bimdata.ProcessorHandler](docs/ProcessorHandler.md)
  - [bimdata.Project](docs/Project.md)
+ - [bimdata.ProjectAccessToken](docs/ProjectAccessToken.md)
  - [bimdata.ProjectInvitation](docs/ProjectInvitation.md)
  - [bimdata.ProjectRole](docs/ProjectRole.md)
  - [bimdata.ProjectWithChildren](docs/ProjectWithChildren.md)

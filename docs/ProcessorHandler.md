@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 * `E` (value: `"E"`)
 
-* `U` (value: `"U"`)
+* `X` (value: `"X"`)
 
 
 

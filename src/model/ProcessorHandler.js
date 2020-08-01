@@ -134,10 +134,10 @@ ProcessorHandler['StatusEnum'] = {
     "E": "E",
 
     /**
-     * value: "U"
+     * value: "X"
      * @const
      */
-    "U": "U"
+    "X": "X"
 };
 
 
