@@ -208,6 +208,7 @@ Class | Method | HTTP request | Description
 *bimdata.CheckerApi* | [**updateRuleset**](docs/CheckerApi.md#updateRuleset) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Update some fields of a Ruleset
 *bimdata.CollaborationApi* | [**cancelCloudUserInvitation**](docs/CollaborationApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | Cancel a pending invitation
 *bimdata.CollaborationApi* | [**cancelProjectUserInvitation**](docs/CollaborationApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
+*bimdata.CollaborationApi* | [**checkAccess**](docs/CollaborationApi.md#checkAccess) | **GET** /cloud/{id}/check-access | Check app access from cloud
 *bimdata.CollaborationApi* | [**createClassification**](docs/CollaborationApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | Create a classification
 *bimdata.CollaborationApi* | [**createCloud**](docs/CollaborationApi.md#createCloud) | **POST** /cloud | Create a cloud
 *bimdata.CollaborationApi* | [**createDMSTree**](docs/CollaborationApi.md#createDMSTree) | **POST** /cloud/{cloud_pk}/project/{id}/dms-tree | Create a complete DMS tree
@@ -372,6 +373,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**listClassificationElementRelations**](docs/IfcApi.md#listClassificationElementRelations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | List all associations between classifications and elements
 *bimdata.IfcApi* | [**mergeIfcs**](docs/IfcApi.md#mergeIfcs) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/merge | Merge IFC files
 *bimdata.IfcApi* | [**optimizeIfc**](docs/IfcApi.md#optimizeIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/optimize | Optimize the IFC
+*bimdata.IfcApi* | [**removeAllElementPropertySet**](docs/IfcApi.md#removeAllElementPropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/all | Remove all property sets from element
 *bimdata.IfcApi* | [**removeClassificationOfElement**](docs/IfcApi.md#removeClassificationOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/{id} | Remove a classification from an element
 *bimdata.IfcApi* | [**removeElementPropertySet**](docs/IfcApi.md#removeElementPropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | Remove a PropertySet from an element
 *bimdata.IfcApi* | [**removeElementPropertySetProperty**](docs/IfcApi.md#removeElementPropertySetProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Remove a property from a PropertySet
@@ -415,7 +417,6 @@ Class | Method | HTTP request | Description
  - [bimdata.CheckPlan](docs/CheckPlan.md)
  - [bimdata.CheckerResult](docs/CheckerResult.md)
  - [bimdata.Classification](docs/Classification.md)
- - [bimdata.ClientUser](docs/ClientUser.md)
  - [bimdata.ClippingPlane](docs/ClippingPlane.md)
  - [bimdata.Cloud](docs/Cloud.md)
  - [bimdata.CloudInvitation](docs/CloudInvitation.md)
@@ -448,6 +449,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Layer](docs/Layer.md)
  - [bimdata.LayerElement](docs/LayerElement.md)
  - [bimdata.Line](docs/Line.md)
+ - [bimdata.Organization](docs/Organization.md)
  - [bimdata.OrthogonalCamera](docs/OrthogonalCamera.md)
  - [bimdata.PerspectiveCamera](docs/PerspectiveCamera.md)
  - [bimdata.Point](docs/Point.md)

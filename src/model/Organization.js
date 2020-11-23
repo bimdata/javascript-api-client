@@ -14,19 +14,19 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The Feature model module.
- * @module model/Feature
+ * The Organization model module.
+ * @module model/Organization
  * @version 0.0.0
  */
-class Feature {
+class Organization {
     /**
-     * Constructs a new <code>Feature</code>.
-     * @alias module:model/Feature
-     * @param name {String} Name of the feature
+     * Constructs a new <code>Organization</code>.
+     * @alias module:model/Organization
+     * @param name {String} Name of the organization
      */
     constructor(name) { 
         
-        Feature.initialize(this, name);
+        Organization.initialize(this, name);
     }
 
     /**
@@ -39,21 +39,24 @@ class Feature {
     }
 
     /**
-     * Constructs a <code>Feature</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>Organization</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Feature} obj Optional instance to populate.
-     * @return {module:model/Feature} The populated <code>Feature</code> instance.
+     * @param {module:model/Organization} obj Optional instance to populate.
+     * @return {module:model/Organization} The populated <code>Organization</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Feature();
+            obj = obj || new Organization();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('viewer_url')) {
-                obj['viewer_url'] = ApiClient.convertToType(data['viewer_url'], 'String');
+            if (data.hasOwnProperty('is_personnal')) {
+                obj['is_personnal'] = ApiClient.convertToType(data['is_personnal'], 'Boolean');
             }
         }
         return obj;
@@ -63,21 +66,25 @@ class Feature {
 }
 
 /**
- * Name of the feature
- * @member {String} name
+ * @member {Number} id
  */
-Feature.prototype['name'] = undefined;
+Organization.prototype['id'] = undefined;
 
 /**
- * Viewer's url to load instead of standard's one
- * @member {String} viewer_url
+ * Name of the organization
+ * @member {String} name
  */
-Feature.prototype['viewer_url'] = undefined;
+Organization.prototype['name'] = undefined;
+
+/**
+ * @member {Boolean} is_personnal
+ */
+Organization.prototype['is_personnal'] = undefined;
 
 
 
 
 
 
-export default Feature;
+export default Organization;
 

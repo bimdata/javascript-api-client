@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **Number** |  | [optional] [readonly] 
 **name** | **String** |  | [optional] 
 **type** | **String** |  | 
 **unitType** | **String** |  | [optional] 

@@ -1,12 +1,11 @@
-# bimdata.RawClassification
+# bimdata.Organization
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] [readonly] 
-**type** | **String** |  | [optional] 
-**notation** | **String** |  | [optional] 
-**description** | **String** |  | [optional] 
+**name** | **String** | Name of the organization | 
+**isPersonnal** | **Boolean** |  | [optional] 
 
 

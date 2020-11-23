@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **cloudRole** | **Number** |  | [optional] [readonly] 
 **projectRole** | **Number** |  | [optional] [readonly] 
 **provider** | **String** |  | [optional] [readonly] 
+**sub** | **String** | sub from Keycloak | [optional] [readonly] 
 
 

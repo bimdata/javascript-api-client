@@ -7,8 +7,10 @@ Name | Type | Description | Notes
 **id** | **Number** |  | [optional] [readonly] 
 **name** | **String** | Name of the cloud | 
 **features** | [**[Feature]**](Feature.md) |  | [optional] [readonly] 
+**marketplaceApps** | **String** |  | [optional] [readonly] 
+**organization** | [**Organization**](Organization.md) |  | [optional] 
 **creator** | [**User**](User.md) |  | [optional] 
-**creatorApp** | [**ClientUser**](ClientUser.md) |  | [optional] 
+**creatorApp** | **String** |  | [optional] [readonly] 
 **isDefault** | **Boolean** |  | [optional] [readonly] 
 **createdAt** | **Date** | Creation date | [optional] [readonly] 
 **image** | **String** |  | [optional] [readonly] 

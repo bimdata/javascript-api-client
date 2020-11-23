@@ -109,6 +109,7 @@ Method | HTTP request | Description
 [**listClassificationElementRelations**](IfcApi.md#listClassificationElementRelations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | List all associations between classifications and elements
 [**mergeIfcs**](IfcApi.md#mergeIfcs) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/merge | Merge IFC files
 [**optimizeIfc**](IfcApi.md#optimizeIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/optimize | Optimize the IFC
+[**removeAllElementPropertySet**](IfcApi.md#removeAllElementPropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/all | Remove all property sets from element
 [**removeClassificationOfElement**](IfcApi.md#removeClassificationOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/{id} | Remove a classification from an element
 [**removeElementPropertySet**](IfcApi.md#removeElementPropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | Remove a PropertySet from an element
 [**removeElementPropertySetProperty**](IfcApi.md#removeElementPropertySetProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Remove a property from a PropertySet
@@ -6710,6 +6711,68 @@ null (empty response body)
 - **Accept**: Not defined
 
 
+## removeAllElementPropertySet
+
+> removeAllElementPropertySet(cloudPk, elementUuid, ifcPk, projectPk)
+
+Remove all property sets from element
+
+Remove all property sets from element. Property Sets will not be deleted, just detached from element Required scopes: ifc:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.IfcApi();
+let cloudPk = "cloudPk_example"; // String | 
+let elementUuid = "elementUuid_example"; // String | 
+let ifcPk = "ifcPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.removeAllElementPropertySet(cloudPk, elementUuid, ifcPk, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **elementUuid** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
 ## removeClassificationOfElement
 
 > removeClassificationOfElement(cloudPk, elementUuid, id, ifcPk, projectPk)
@@ -7458,6 +7521,7 @@ let opts = {
   'systemsFile': "/path/to/file", // File | 
   'mapFile': "/path/to/file", // File | 
   'gltfFile': "/path/to/file", // File | 
+  'gltfWithOpeningsFile': "/path/to/file", // File | 
   'bvhTreeFile': "/path/to/file", // File | 
   'viewer360File': "/path/to/file", // File | 
   'xktFile': "/path/to/file" // File | 
@@ -7482,6 +7546,7 @@ Name | Type | Description  | Notes
  **systemsFile** | **File**|  | [optional] 
  **mapFile** | **File**|  | [optional] 
  **gltfFile** | **File**|  | [optional] 
+ **gltfWithOpeningsFile** | **File**|  | [optional] 
  **bvhTreeFile** | **File**|  | [optional] 
  **viewer360File** | **File**|  | [optional] 
  **xktFile** | **File**|  | [optional] 
