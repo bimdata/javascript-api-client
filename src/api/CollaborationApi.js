@@ -1926,7 +1926,7 @@ export default class CollaborationApi {
 
 
     /**
-     * Get size of all files in the cloud
+     * Get size of all ifc files in the cloud
      * Returns the size of the cloud in Bytes
      * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Number} and HTTP response
@@ -1960,7 +1960,7 @@ export default class CollaborationApi {
     }
 
     /**
-     * Get size of all files in the cloud
+     * Get size of all ifc files in the cloud
      * Returns the size of the cloud in Bytes
      * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Number}

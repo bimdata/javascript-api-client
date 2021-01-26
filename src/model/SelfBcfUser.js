@@ -60,6 +60,9 @@ class SelfBcfUser {
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
+            if (data.hasOwnProperty('is_client')) {
+                obj['is_client'] = ApiClient.convertToType(data['is_client'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -81,6 +84,11 @@ SelfBcfUser.prototype['name'] = undefined;
  * @member {String} email
  */
 SelfBcfUser.prototype['email'] = undefined;
+
+/**
+ * @member {Boolean} is_client
+ */
+SelfBcfUser.prototype['is_client'] = undefined;
 
 
 

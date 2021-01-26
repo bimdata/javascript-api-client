@@ -460,7 +460,7 @@ export default class BcfApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.topics topic guids to export, comma separated. Default = all
      * @param {String} opts.format topic format to export, comma separated. Default = all
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link File} and HTTP response
      */
     downloadBcfExportWithHttpInfo(id, opts) {
       opts = opts || {};
@@ -484,8 +484,8 @@ export default class BcfApi {
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
+      let accepts = ['application/json'];
+      let returnType = File;
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{id}/export', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -500,7 +500,7 @@ export default class BcfApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.topics topic guids to export, comma separated. Default = all
      * @param {String} opts.format topic format to export, comma separated. Default = all
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link File}
      */
     downloadBcfExport(id, opts) {
       return this.downloadBcfExportWithHttpInfo(id, opts)
@@ -1543,7 +1543,7 @@ export default class BcfApi {
 
     /**
      * Get current user info
-     * Get current user info Required scopes: bcf:read
+     * Get current user info. If request comes from an App, the response is always:         {             \"id\": None,             \"name\": None,             \"is_client\": True,         } Required scopes: bcf:read
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SelfBcfUser} and HTTP response
      */
     getUserWithHttpInfo() {
@@ -1571,7 +1571,7 @@ export default class BcfApi {
 
     /**
      * Get current user info
-     * Get current user info Required scopes: bcf:read
+     * Get current user info. If request comes from an App, the response is always:         {             \"id\": None,             \"name\": None,             \"is_client\": True,         } Required scopes: bcf:read
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SelfBcfUser}
      */
     getUser() {

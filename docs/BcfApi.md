@@ -460,7 +460,7 @@ null (empty response body)
 
 ## downloadBcfExport
 
-> downloadBcfExport(id, opts)
+> File downloadBcfExport(id, opts)
 
 Export project&#39;s topics in bcf-xml format
 
@@ -489,8 +489,8 @@ let opts = {
   'topics': "topics_example", // String | topic guids to export, comma separated. Default = all
   'format': "format_example" // String | topic format to export, comma separated. Default = all
 };
-apiInstance.downloadBcfExport(id, opts).then(() => {
-  console.log('API called successfully.');
+apiInstance.downloadBcfExport(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -508,7 +508,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**File**
 
 ### Authorization
 
@@ -517,7 +517,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## fullUpdateBcfProject
@@ -1588,7 +1588,7 @@ Name | Type | Description  | Notes
 
 Get current user info
 
-Get current user info Required scopes: bcf:read
+Get current user info. If request comes from an App, the response is always:         {             \&quot;id\&quot;: None,             \&quot;name\&quot;: None,             \&quot;is_client\&quot;: True,         } Required scopes: bcf:read
 
 ### Example
 

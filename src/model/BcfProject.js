@@ -52,6 +52,9 @@ class BcfProject {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
+            if (data.hasOwnProperty('project_id')) {
+                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -66,6 +69,11 @@ class BcfProject {
  * @member {Number} id
  */
 BcfProject.prototype['id'] = undefined;
+
+/**
+ * @member {String} project_id
+ */
+BcfProject.prototype['project_id'] = undefined;
 
 /**
  * Name of the project

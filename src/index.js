@@ -14,7 +14,6 @@
 
 import ApiClient from './ApiClient';
 import BcfProject from './model/BcfProject';
-import BcfUser from './model/BcfUser';
 import CheckPlan from './model/CheckPlan';
 import CheckerResult from './model/CheckerResult';
 import Classification from './model/Classification';
@@ -149,12 +148,6 @@ export {
      * @property {module:model/BcfProject}
      */
     BcfProject,
-
-    /**
-     * The BcfUser model constructor.
-     * @property {module:model/BcfUser}
-     */
-    BcfUser,
 
     /**
      * The CheckPlan model constructor.

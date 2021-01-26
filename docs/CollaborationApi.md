@@ -35,7 +35,7 @@ Method | HTTP request | Description
 [**getClassifications**](CollaborationApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
 [**getCloud**](CollaborationApi.md#getCloud) | **GET** /cloud/{id} | Retrieve one cloud
 [**getCloudInvitations**](CollaborationApi.md#getCloudInvitations) | **GET** /cloud/{cloud_pk}/invitation | Retrieve all pending invitations in the cloud
-[**getCloudSize**](CollaborationApi.md#getCloudSize) | **GET** /cloud/{id}/size | Get size of all files in the cloud
+[**getCloudSize**](CollaborationApi.md#getCloudSize) | **GET** /cloud/{id}/size | Get size of all ifc files in the cloud
 [**getCloudUser**](CollaborationApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | Retrieve a user in a cloud
 [**getCloudUsers**](CollaborationApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | Retrieve all users in a cloud, or a list with a filter by email
 [**getClouds**](CollaborationApi.md#getClouds) | **GET** /cloud | Retrieve all clouds
@@ -1941,7 +1941,7 @@ Name | Type | Description  | Notes
 
 > Number getCloudSize(id)
 
-Get size of all files in the cloud
+Get size of all ifc files in the cloud
 
 Returns the size of the cloud in Bytes
 

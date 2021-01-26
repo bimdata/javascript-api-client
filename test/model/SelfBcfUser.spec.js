@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isClient (base name: "is_client")', function() {
+      // uncomment below and update the code to test the property isClient
+      //var instane = new bimdata.SelfBcfUser();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

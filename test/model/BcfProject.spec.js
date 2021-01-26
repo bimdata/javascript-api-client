@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property projectId (base name: "project_id")', function() {
+      // uncomment below and update the code to test the property projectId
+      //var instane = new bimdata.BcfProject();
+      //expect(instance).to.be();
+    });
+
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instane = new bimdata.BcfProject();
