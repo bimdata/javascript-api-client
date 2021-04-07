@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class ProjectRole {
     /**
      * Constructs a new <code>ProjectRole</code>.
+     * UserProject(id, user, project, role)
      * @alias module:model/ProjectRole
      * @param project {Number} 
      */

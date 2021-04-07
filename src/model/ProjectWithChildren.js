@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class ProjectWithChildren {
     /**
      * Constructs a new <code>ProjectWithChildren</code>.
+     * Default behavior: - retrieve kwargs in the route (cloud_pk, project_pk, etc) - trim the _pk (cloud_pk &#x3D;&gt; cloud) - check if the object has a foreign key with the name - if so, set the foreign key to the value in the route Override: If the serializer has a method \&quot;get_parents\&quot;, we call it and set the parents The method \&quot;get_parents\&quot; should return an iterable of tuples : (parent_field_name, parent_object)
      * @alias module:model/ProjectWithChildren
      * @param name {String} Name of the project
      */
@@ -122,6 +123,7 @@ ProjectWithChildren.prototype['updated_at'] = undefined;
 ProjectWithChildren.prototype['parent_id'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/ProjectWithChildren>} children
  */
 ProjectWithChildren.prototype['children'] = undefined;

@@ -2817,7 +2817,7 @@ Name | Type | Description  | Notes
 
 Retrieve a user in a project
 
-Each member of a project can see other members of the project Required scopes: cloud:read
+Each member of a project can see other members of the project Required scopes: cloud:read, bcf:read
 
 ### Example
 
@@ -2877,7 +2877,7 @@ Name | Type | Description  | Notes
 
 Retrieve all users in a project, or a list with a filter by email
 
-Each member of a project can see other members of the project Required scopes: cloud:read
+Each member of a project can see other members of the project Required scopes: cloud:read, bcf:read
 
 ### Example
 

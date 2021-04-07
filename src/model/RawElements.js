@@ -16,6 +16,7 @@ import RawClassification from './RawClassification';
 import RawDefinition from './RawDefinition';
 import RawElement from './RawElement';
 import RawLayer from './RawLayer';
+import RawMaterialList from './RawMaterialList';
 import RawPropertySet from './RawPropertySet';
 import RawSystem from './RawSystem';
 import RawUnit from './RawUnit';
@@ -28,6 +29,7 @@ import RawUnit from './RawUnit';
 class RawElements {
     /**
      * Constructs a new <code>RawElements</code>.
+     * 
      * @alias module:model/RawElements
      * @param elements {Array.<module:model/RawElement>} 
      */
@@ -74,6 +76,9 @@ class RawElements {
             if (data.hasOwnProperty('systems')) {
                 obj['systems'] = ApiClient.convertToType(data['systems'], [RawSystem]);
             }
+            if (data.hasOwnProperty('material_list')) {
+                obj['material_list'] = RawMaterialList.constructFromObject(data['material_list']);
+            }
             if (data.hasOwnProperty('elements')) {
                 obj['elements'] = ApiClient.convertToType(data['elements'], [RawElement]);
             }
@@ -85,36 +90,48 @@ class RawElements {
 }
 
 /**
+ * 
  * @member {Array.<module:model/RawUnit>} units
  */
 RawElements.prototype['units'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/RawDefinition>} definitions
  */
 RawElements.prototype['definitions'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/RawPropertySet>} property_sets
  */
 RawElements.prototype['property_sets'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/RawClassification>} classifications
  */
 RawElements.prototype['classifications'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/RawLayer>} layers
  */
 RawElements.prototype['layers'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/RawSystem>} systems
  */
 RawElements.prototype['systems'] = undefined;
 
 /**
+ * @member {module:model/RawMaterialList} material_list
+ */
+RawElements.prototype['material_list'] = undefined;
+
+/**
+ * 
  * @member {Array.<module:model/RawElement>} elements
  */
 RawElements.prototype['elements'] = undefined;

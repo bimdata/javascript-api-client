@@ -24,6 +24,7 @@ import User from './User';
 class Cloud {
     /**
      * Constructs a new <code>Cloud</code>.
+     * Cloud(id, creator, creator_app, organization, name, created_at, updated_at, is_default, image)
      * @alias module:model/Cloud
      * @param name {String} Name of the cloud
      */
@@ -104,6 +105,7 @@ Cloud.prototype['id'] = undefined;
 Cloud.prototype['name'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/Feature>} features
  */
 Cloud.prototype['features'] = undefined;

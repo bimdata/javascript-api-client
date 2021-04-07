@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class IfcOptimize {
     /**
      * Constructs a new <code>IfcOptimize</code>.
+     * 
      * @alias module:model/IfcOptimize
      */
     constructor() { 

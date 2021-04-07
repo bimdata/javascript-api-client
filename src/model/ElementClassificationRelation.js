@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class ElementClassificationRelation {
     /**
      * Constructs a new <code>ElementClassificationRelation</code>.
+     * 
      * @alias module:model/ElementClassificationRelation
      * @param elementUuid {String} 
      * @param classificationId {Number} 

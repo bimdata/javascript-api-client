@@ -2753,7 +2753,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve a user in a project
-     * Each member of a project can see other members of the project Required scopes: cloud:read
+     * Each member of a project can see other members of the project Required scopes: cloud:read, bcf:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
@@ -2799,7 +2799,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve a user in a project
-     * Each member of a project can see other members of the project Required scopes: cloud:read
+     * Each member of a project can see other members of the project Required scopes: cloud:read, bcf:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this fos user.
      * @param {String} projectPk 
@@ -2815,7 +2815,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve all users in a project, or a list with a filter by email
-     * Each member of a project can see other members of the project Required scopes: cloud:read
+     * Each member of a project can see other members of the project Required scopes: cloud:read, bcf:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
@@ -2865,7 +2865,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve all users in a project, or a list with a filter by email
-     * Each member of a project can see other members of the project Required scopes: cloud:read
+     * Each member of a project can see other members of the project Required scopes: cloud:read, bcf:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters

@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class IfcMerge {
     /**
      * Constructs a new <code>IfcMerge</code>.
+     * 
      * @alias module:model/IfcMerge
      * @param ifcIds {Array.<Number>} 
      * @param exportName {String} 
@@ -68,6 +69,7 @@ class IfcMerge {
 }
 
 /**
+ * 
  * @member {Array.<Number>} ifc_ids
  */
 IfcMerge.prototype['ifc_ids'] = undefined;

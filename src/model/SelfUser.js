@@ -24,6 +24,7 @@ import ProjectRole from './ProjectRole';
 class SelfUser {
     /**
      * Constructs a new <code>SelfUser</code>.
+     * FosUser(id, user, email, firstname, lastname, company, created_at, updated_at, provider, provider_sub, sub, waiting_for_first_login)
      * @alias module:model/SelfUser
      * @param email {String} 
      * @param firstname {String} 
@@ -138,16 +139,19 @@ SelfUser.prototype['created_at'] = undefined;
 SelfUser.prototype['updated_at'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/Organization>} organizations
  */
 SelfUser.prototype['organizations'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/CloudRole>} clouds
  */
 SelfUser.prototype['clouds'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/ProjectRole>} projects
  */
 SelfUser.prototype['projects'] = undefined;

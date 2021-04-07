@@ -299,7 +299,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**createZone**](docs/IfcApi.md#createZone) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Create a zone in the model
 *bimdata.IfcApi* | [**createZoneSpace**](docs/IfcApi.md#createZoneSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Create a space in a zone
 *bimdata.IfcApi* | [**deleteAccessToken**](docs/IfcApi.md#deleteAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Delete a token
-*bimdata.IfcApi* | [**deleteElement**](docs/IfcApi.md#deleteElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Delete a zone of a model
+*bimdata.IfcApi* | [**deleteElement**](docs/IfcApi.md#deleteElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Delete an element of a model
 *bimdata.IfcApi* | [**deleteIfc**](docs/IfcApi.md#deleteIfc) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Delete a model
 *bimdata.IfcApi* | [**deleteIfcProperty**](docs/IfcApi.md#deleteIfcProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | Delete a Property of a model
 *bimdata.IfcApi* | [**deleteIfcPropertyDefinition**](docs/IfcApi.md#deleteIfcPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | Delete a PropertyDefinitions of a model
@@ -344,6 +344,8 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**getIfcClassifications**](docs/IfcApi.md#getIfcClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification | Retrieve all classifications in a model
 *bimdata.IfcApi* | [**getIfcGLTF**](docs/IfcApi.md#getIfcGLTF) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/gltf | Get gltf file
 *bimdata.IfcApi* | [**getIfcMap**](docs/IfcApi.md#getIfcMap) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/bvh | Get bvh file
+*bimdata.IfcApi* | [**getIfcMaterial**](docs/IfcApi.md#getIfcMaterial) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/material/{id} | Retrieve a material of a model
+*bimdata.IfcApi* | [**getIfcMaterials**](docs/IfcApi.md#getIfcMaterials) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/material | Retrieve all materials of a model
 *bimdata.IfcApi* | [**getIfcProperties**](docs/IfcApi.md#getIfcProperties) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property | Retrieve all Properties of a model
 *bimdata.IfcApi* | [**getIfcProperty**](docs/IfcApi.md#getIfcProperty) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | Retrieve a Property of a model
 *bimdata.IfcApi* | [**getIfcPropertyDefinition**](docs/IfcApi.md#getIfcPropertyDefinition) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | Retrieve a PropertyDefinition of a model
@@ -355,6 +357,8 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**getIfcs**](docs/IfcApi.md#getIfcs) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc | Retrieve all models
 *bimdata.IfcApi* | [**getLayer**](docs/IfcApi.md#getLayer) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id} | Retrieve a layer of a model
 *bimdata.IfcApi* | [**getLayers**](docs/IfcApi.md#getLayers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer | Retrieve all layers of a model
+*bimdata.IfcApi* | [**getMaterial**](docs/IfcApi.md#getMaterial) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/material/{id} | Retrieve a material of a model
+*bimdata.IfcApi* | [**getMaterials**](docs/IfcApi.md#getMaterials) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/material | Retrieve all materials of a model
 *bimdata.IfcApi* | [**getProcessorHandler**](docs/IfcApi.md#getProcessorHandler) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | Retrieve a processor handler
 *bimdata.IfcApi* | [**getProcessorHandlers**](docs/IfcApi.md#getProcessorHandlers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler | Get all processor handlers
 *bimdata.IfcApi* | [**getPropertySet**](docs/IfcApi.md#getPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Retrieve a PropertySet of a model
@@ -382,7 +386,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**removeElementsFromClassification**](docs/IfcApi.md#removeElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/{uuid} | Remove the classification from all elements
 *bimdata.IfcApi* | [**reprocessIfc**](docs/IfcApi.md#reprocessIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/reprocess | Reprocess IFC file
 *bimdata.IfcApi* | [**updateAccessToken**](docs/IfcApi.md#updateAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Update some fields of a token
-*bimdata.IfcApi* | [**updateElement**](docs/IfcApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update some fields of a zone
+*bimdata.IfcApi* | [**updateElement**](docs/IfcApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update some fields of an element
 *bimdata.IfcApi* | [**updateElementPropertySetProperty**](docs/IfcApi.md#updateElementPropertySetProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Update a property from an element
 *bimdata.IfcApi* | [**updateIfc**](docs/IfcApi.md#updateIfc) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Update some fields of a model
 *bimdata.IfcApi* | [**updateIfcFiles**](docs/IfcApi.md#updateIfcFiles) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/files | Update models file (gltf, svg, structure, etc)
@@ -448,6 +452,9 @@ Class | Method | HTTP request | Description
  - [bimdata.Layer](docs/Layer.md)
  - [bimdata.LayerElement](docs/LayerElement.md)
  - [bimdata.Line](docs/Line.md)
+ - [bimdata.Material](docs/Material.md)
+ - [bimdata.MaterialListComponent](docs/MaterialListComponent.md)
+ - [bimdata.MaterialOption](docs/MaterialOption.md)
  - [bimdata.Organization](docs/Organization.md)
  - [bimdata.OrthogonalCamera](docs/OrthogonalCamera.md)
  - [bimdata.PerspectiveCamera](docs/PerspectiveCamera.md)
@@ -467,6 +474,10 @@ Class | Method | HTTP request | Description
  - [bimdata.RawElement](docs/RawElement.md)
  - [bimdata.RawElements](docs/RawElements.md)
  - [bimdata.RawLayer](docs/RawLayer.md)
+ - [bimdata.RawMaterial](docs/RawMaterial.md)
+ - [bimdata.RawMaterialList](docs/RawMaterialList.md)
+ - [bimdata.RawMaterialListComponents](docs/RawMaterialListComponents.md)
+ - [bimdata.RawMaterialOptions](docs/RawMaterialOptions.md)
  - [bimdata.RawProperty](docs/RawProperty.md)
  - [bimdata.RawPropertySet](docs/RawPropertySet.md)
  - [bimdata.RawSystem](docs/RawSystem.md)

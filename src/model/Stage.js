@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class Stage {
     /**
      * Constructs a new <code>Stage</code>.
+     * Stage(id, stage)
      * @alias module:model/Stage
      * @param stage {String} 
      */

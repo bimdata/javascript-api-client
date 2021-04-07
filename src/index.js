@@ -49,6 +49,9 @@ import Label from './model/Label';
 import Layer from './model/Layer';
 import LayerElement from './model/LayerElement';
 import Line from './model/Line';
+import Material from './model/Material';
+import MaterialListComponent from './model/MaterialListComponent';
+import MaterialOption from './model/MaterialOption';
 import Organization from './model/Organization';
 import OrthogonalCamera from './model/OrthogonalCamera';
 import PerspectiveCamera from './model/PerspectiveCamera';
@@ -68,6 +71,10 @@ import RawDefinition from './model/RawDefinition';
 import RawElement from './model/RawElement';
 import RawElements from './model/RawElements';
 import RawLayer from './model/RawLayer';
+import RawMaterial from './model/RawMaterial';
+import RawMaterialList from './model/RawMaterialList';
+import RawMaterialListComponents from './model/RawMaterialListComponents';
+import RawMaterialOptions from './model/RawMaterialOptions';
 import RawProperty from './model/RawProperty';
 import RawPropertySet from './model/RawPropertySet';
 import RawSystem from './model/RawSystem';
@@ -360,6 +367,24 @@ export {
     Line,
 
     /**
+     * The Material model constructor.
+     * @property {module:model/Material}
+     */
+    Material,
+
+    /**
+     * The MaterialListComponent model constructor.
+     * @property {module:model/MaterialListComponent}
+     */
+    MaterialListComponent,
+
+    /**
+     * The MaterialOption model constructor.
+     * @property {module:model/MaterialOption}
+     */
+    MaterialOption,
+
+    /**
      * The Organization model constructor.
      * @property {module:model/Organization}
      */
@@ -472,6 +497,30 @@ export {
      * @property {module:model/RawLayer}
      */
     RawLayer,
+
+    /**
+     * The RawMaterial model constructor.
+     * @property {module:model/RawMaterial}
+     */
+    RawMaterial,
+
+    /**
+     * The RawMaterialList model constructor.
+     * @property {module:model/RawMaterialList}
+     */
+    RawMaterialList,
+
+    /**
+     * The RawMaterialListComponents model constructor.
+     * @property {module:model/RawMaterialListComponents}
+     */
+    RawMaterialListComponents,
+
+    /**
+     * The RawMaterialOptions model constructor.
+     * @property {module:model/RawMaterialOptions}
+     */
+    RawMaterialOptions,
 
     /**
      * The RawProperty model constructor.

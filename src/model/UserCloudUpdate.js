@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class UserCloudUpdate {
     /**
      * Constructs a new <code>UserCloudUpdate</code>.
+     * UserCloud(id, user, cloud, role)
      * @alias module:model/UserCloudUpdate
      */
     constructor() { 

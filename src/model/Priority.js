@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class Priority {
     /**
      * Constructs a new <code>Priority</code>.
+     * Priority(id, priority)
      * @alias module:model/Priority
      * @param priority {String} 
      */

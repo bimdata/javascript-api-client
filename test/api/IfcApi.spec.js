@@ -808,6 +808,26 @@
         done();
       });
     });
+    describe('getIfcMaterial', function() {
+      it('should call getIfcMaterial successfully', function(done) {
+        //uncomment below and update the code to test getIfcMaterial
+        //instance.getIfcMaterial(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getIfcMaterials', function() {
+      it('should call getIfcMaterials successfully', function(done) {
+        //uncomment below and update the code to test getIfcMaterials
+        //instance.getIfcMaterials(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getIfcProperties', function() {
       it('should call getIfcProperties successfully', function(done) {
         //uncomment below and update the code to test getIfcProperties
@@ -912,6 +932,26 @@
       it('should call getLayers successfully', function(done) {
         //uncomment below and update the code to test getLayers
         //instance.getLayers(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getMaterial', function() {
+      it('should call getMaterial successfully', function(done) {
+        //uncomment below and update the code to test getMaterial
+        //instance.getMaterial(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getMaterials', function() {
+      it('should call getMaterials successfully', function(done) {
+        //uncomment below and update the code to test getMaterials
+        //instance.getMaterials(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

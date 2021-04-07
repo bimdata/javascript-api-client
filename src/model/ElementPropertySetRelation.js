@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class ElementPropertySetRelation {
     /**
      * Constructs a new <code>ElementPropertySetRelation</code>.
+     * 
      * @alias module:model/ElementPropertySetRelation
      * @param elementUuid {String} 
      * @param propertySetId {Number} 

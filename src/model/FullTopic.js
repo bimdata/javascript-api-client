@@ -23,6 +23,7 @@ import Viewpoint from './Viewpoint';
 class FullTopic {
     /**
      * Constructs a new <code>FullTopic</code>.
+     * Default behavior: - retrieve kwargs in the route (cloud_pk, project_pk, etc) - trim the _pk (cloud_pk &#x3D;&gt; cloud) - check if the object has a foreign key with the name - if so, set the foreign key to the value in the route Override: If the serializer has a method \&quot;get_parents\&quot;, we call it and set the parents The method \&quot;get_parents\&quot; should return an iterable of tuples : (parent_field_name, parent_object)
      * @alias module:model/FullTopic
      * @param title {String} 
      * @param project {Number} 
@@ -159,6 +160,7 @@ FullTopic.prototype['title'] = undefined;
 FullTopic.prototype['description'] = undefined;
 
 /**
+ * 
  * @member {Array.<String>} reference_links
  */
 FullTopic.prototype['reference_links'] = undefined;
@@ -169,6 +171,7 @@ FullTopic.prototype['reference_links'] = undefined;
 FullTopic.prototype['ifcs'] = undefined;
 
 /**
+ * 
  * @member {Array.<String>} labels
  */
 FullTopic.prototype['labels'] = undefined;
@@ -214,11 +217,13 @@ FullTopic.prototype['format'] = undefined;
 FullTopic.prototype['due_date'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/Comment>} comments
  */
 FullTopic.prototype['comments'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/Viewpoint>} viewpoints
  */
 FullTopic.prototype['viewpoints'] = undefined;

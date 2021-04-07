@@ -25,6 +25,7 @@ import IfcFiles from '../model/IfcFiles';
 import IfcMerge from '../model/IfcMerge';
 import IfcOptimize from '../model/IfcOptimize';
 import Layer from '../model/Layer';
+import Material from '../model/Material';
 import ProcessorHandler from '../model/ProcessorHandler';
 import Property from '../model/Property';
 import PropertyDefinition from '../model/PropertyDefinition';
@@ -2223,7 +2224,7 @@ export default class IfcApi {
 
 
     /**
-     * Delete a zone of a model
+     * Delete an element of a model
      * The IFC file will not be updated. The remaining elements are available in API and will be available when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
@@ -2275,7 +2276,7 @@ export default class IfcApi {
     }
 
     /**
-     * Delete a zone of a model
+     * Delete an element of a model
      * The IFC file will not be updated. The remaining elements are available in API and will be available when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
@@ -3126,7 +3127,7 @@ export default class IfcApi {
 
     /**
      * Update all fields of an element
-     * Update all fields of a element. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * Update all fields of an element. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -3183,7 +3184,7 @@ export default class IfcApi {
 
     /**
      * Update all fields of an element
-     * Update all fields of a element. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * Update all fields of an element. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -5500,6 +5501,137 @@ export default class IfcApi {
 
 
     /**
+     * Retrieve a material of a model
+     * Retrieve a material of a model Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this material.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Material} and HTTP response
+     */
+    getIfcMaterialWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcMaterial");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfcMaterial");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcMaterial");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getIfcMaterial");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Material;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/material/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a material of a model
+     * Retrieve a material of a model Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this material.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Material}
+     */
+    getIfcMaterial(cloudPk, id, ifcPk, projectPk) {
+      return this.getIfcMaterialWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all materials of a model
+     * Retrieve all materials of a model. Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Material>} and HTTP response
+     */
+    getIfcMaterialsWithHttpInfo(cloudPk, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcMaterials");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcMaterials");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getIfcMaterials");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Material];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/material', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all materials of a model
+     * Retrieve all materials of a model. Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Material>}
+     */
+    getIfcMaterials(cloudPk, ifcPk, projectPk) {
+      return this.getIfcMaterialsWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve all Properties of a model
      * Retrieve all PropertySets of a model Required scopes: ifc:read
      * @param {String} cloudPk 
@@ -6205,6 +6337,151 @@ export default class IfcApi {
      */
     getLayers(cloudPk, ifcPk, projectPk) {
       return this.getLayersWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a material of a model
+     * Retrieve a material of a model Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this material.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Material} and HTTP response
+     */
+    getMaterialWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getMaterial");
+      }
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling getMaterial");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getMaterial");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getMaterial");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getMaterial");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'element_uuid': elementUuid,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Material;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/material/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a material of a model
+     * Retrieve a material of a model Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this material.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Material}
+     */
+    getMaterial(cloudPk, elementUuid, id, ifcPk, projectPk) {
+      return this.getMaterialWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all materials of a model
+     * Retrieve all materials of a model. Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Material>} and HTTP response
+     */
+    getMaterialsWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getMaterials");
+      }
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling getMaterials");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getMaterials");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getMaterials");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'element_uuid': elementUuid,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Material];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/material', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all materials of a model
+     * Retrieve all materials of a model. Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Material>}
+     */
+    getMaterials(cloudPk, elementUuid, ifcPk, projectPk) {
+      return this.getMaterialsWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8130,8 +8407,8 @@ export default class IfcApi {
 
 
     /**
-     * Update some fields of a zone
-     * Update some fields of a zone. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * Update some fields of an element
+     * Update some fields of an element. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -8187,8 +8464,8 @@ export default class IfcApi {
     }
 
     /**
-     * Update some fields of a zone
-     * Update some fields of a zone. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
+     * Update some fields of an element
+     * Update some fields of an element. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 

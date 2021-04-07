@@ -174,6 +174,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property archived (base name: "archived")', function() {
+      // uncomment below and update the code to test the property archived
+      //var instane = new bimdata.Ifc();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

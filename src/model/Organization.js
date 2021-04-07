@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class Organization {
     /**
      * Constructs a new <code>Organization</code>.
+     * Organization(id, name, is_personnal, created_at, updated_at, logo)
      * @alias module:model/Organization
      * @param name {String} Name of the organization
      */
@@ -58,6 +59,15 @@ class Organization {
             if (data.hasOwnProperty('is_personnal')) {
                 obj['is_personnal'] = ApiClient.convertToType(data['is_personnal'], 'Boolean');
             }
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            }
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+            }
+            if (data.hasOwnProperty('logo')) {
+                obj['logo'] = ApiClient.convertToType(data['logo'], 'String');
+            }
         }
         return obj;
     }
@@ -80,6 +90,23 @@ Organization.prototype['name'] = undefined;
  * @member {Boolean} is_personnal
  */
 Organization.prototype['is_personnal'] = undefined;
+
+/**
+ * Creation date
+ * @member {Date} created_at
+ */
+Organization.prototype['created_at'] = undefined;
+
+/**
+ * Date of the last update
+ * @member {Date} updated_at
+ */
+Organization.prototype['updated_at'] = undefined;
+
+/**
+ * @member {String} logo
+ */
+Organization.prototype['logo'] = undefined;
 
 
 

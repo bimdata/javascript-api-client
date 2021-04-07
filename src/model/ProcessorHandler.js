@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class ProcessorHandler {
     /**
      * Constructs a new <code>ProcessorHandler</code>.
+     * ProcessorHandler(id, ifc, processor, status, detail_message, created_at, updated_at)
      * @alias module:model/ProcessorHandler
      */
     constructor() { 

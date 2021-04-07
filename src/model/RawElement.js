@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class RawElement {
     /**
      * Constructs a new <code>RawElement</code>.
+     * 
      * @alias module:model/RawElement
      * @param uuid {String} 
      * @param type {String} 
@@ -60,6 +61,9 @@ class RawElement {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], 'Number');
             }
+            if (data.hasOwnProperty('material_list')) {
+                obj['material_list'] = ApiClient.convertToType(data['material_list'], ['String']);
+            }
             if (data.hasOwnProperty('psets')) {
                 obj['psets'] = ApiClient.convertToType(data['psets'], ['Number']);
             }
@@ -95,21 +99,31 @@ RawElement.prototype['type'] = undefined;
 RawElement.prototype['attributes'] = undefined;
 
 /**
+ * 
+ * @member {Array.<String>} material_list
+ */
+RawElement.prototype['material_list'] = undefined;
+
+/**
+ * 
  * @member {Array.<Number>} psets
  */
 RawElement.prototype['psets'] = undefined;
 
 /**
+ * 
  * @member {Array.<Number>} classifications
  */
 RawElement.prototype['classifications'] = undefined;
 
 /**
+ * 
  * @member {Array.<Number>} layers
  */
 RawElement.prototype['layers'] = undefined;
 
 /**
+ * 
  * @member {Array.<Number>} systems
  */
 RawElement.prototype['systems'] = undefined;

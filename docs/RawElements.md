@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **classifications** | [**[RawClassification]**](RawClassification.md) |  | [optional] 
 **layers** | [**[RawLayer]**](RawLayer.md) |  | [optional] 
 **systems** | [**[RawSystem]**](RawSystem.md) |  | [optional] 
+**materialList** | [**RawMaterialList**](RawMaterialList.md) |  | [optional] 
 **elements** | [**[RawElement]**](RawElement.md) |  | 
 
 

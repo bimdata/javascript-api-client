@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property materialList (base name: "material_list")', function() {
+      // uncomment below and update the code to test the property materialList
+      //var instane = new bimdata.RawElements();
+      //expect(instance).to.be();
+    });
+
     it('should have the property elements (base name: "elements")', function() {
       // uncomment below and update the code to test the property elements
       //var instane = new bimdata.RawElements();

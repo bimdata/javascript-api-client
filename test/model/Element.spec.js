@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property materialList (base name: "material_list")', function() {
+      // uncomment below and update the code to test the property materialList
+      //var instane = new bimdata.Element();
+      //expect(instance).to.be();
+    });
+
     it('should have the property layers (base name: "layers")', function() {
       // uncomment below and update the code to test the property layers
       //var instane = new bimdata.Element();

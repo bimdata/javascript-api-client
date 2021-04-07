@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class CloudRole {
     /**
      * Constructs a new <code>CloudRole</code>.
+     * UserCloud(id, user, cloud, role)
      * @alias module:model/CloudRole
      * @param cloud {Number} 
      */

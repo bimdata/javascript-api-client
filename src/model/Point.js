@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class Point {
     /**
      * Constructs a new <code>Point</code>.
+     * Point(id, x, y, z)
      * @alias module:model/Point
      * @param x {Number} 
      * @param y {Number} 

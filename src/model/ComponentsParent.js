@@ -24,6 +24,7 @@ import Visibility from './Visibility';
 class ComponentsParent {
     /**
      * Constructs a new <code>ComponentsParent</code>.
+     * ComponentsParent(id, visibility)
      * @alias module:model/ComponentsParent
      */
     constructor() { 
@@ -67,6 +68,7 @@ class ComponentsParent {
 }
 
 /**
+ * 
  * @member {Array.<module:model/Coloring>} coloring
  */
 ComponentsParent.prototype['coloring'] = undefined;
@@ -77,6 +79,7 @@ ComponentsParent.prototype['coloring'] = undefined;
 ComponentsParent.prototype['visibility'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/Component>} selection
  */
 ComponentsParent.prototype['selection'] = undefined;

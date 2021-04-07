@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class Label {
     /**
      * Constructs a new <code>Label</code>.
+     * Label(id, label)
      * @alias module:model/Label
      * @param label {String} 
      */

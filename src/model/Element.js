@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import Classification from './Classification';
 import LayerElement from './LayerElement';
+import MaterialListComponent from './MaterialListComponent';
 import PropertySet from './PropertySet';
 
 /**
@@ -24,6 +25,7 @@ import PropertySet from './PropertySet';
 class Element {
     /**
      * Constructs a new <code>Element</code>.
+     * Default behavior: - retrieve kwargs in the route (cloud_pk, project_pk, etc) - trim the _pk (cloud_pk &#x3D;&gt; cloud) - check if the object has a foreign key with the name - if so, set the foreign key to the value in the route Override: If the serializer has a method \&quot;get_parents\&quot;, we call it and set the parents The method \&quot;get_parents\&quot; should return an iterable of tuples : (parent_field_name, parent_object)
      * @alias module:model/Element
      * @param type {String} IFC type for the element
      */
@@ -70,6 +72,9 @@ class Element {
             if (data.hasOwnProperty('classifications')) {
                 obj['classifications'] = ApiClient.convertToType(data['classifications'], [Classification]);
             }
+            if (data.hasOwnProperty('material_list')) {
+                obj['material_list'] = ApiClient.convertToType(data['material_list'], [MaterialListComponent]);
+            }
             if (data.hasOwnProperty('layers')) {
                 obj['layers'] = ApiClient.convertToType(data['layers'], [LayerElement]);
             }
@@ -102,16 +107,25 @@ Element.prototype['type'] = undefined;
 Element.prototype['attributes'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/PropertySet>} property_sets
  */
 Element.prototype['property_sets'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/Classification>} classifications
  */
 Element.prototype['classifications'] = undefined;
 
 /**
+ * 
+ * @member {Array.<module:model/MaterialListComponent>} material_list
+ */
+Element.prototype['material_list'] = undefined;
+
+/**
+ * 
  * @member {Array.<module:model/LayerElement>} layers
  */
 Element.prototype['layers'] = undefined;

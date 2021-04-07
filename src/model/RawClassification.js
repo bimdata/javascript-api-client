@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class RawClassification {
     /**
      * Constructs a new <code>RawClassification</code>.
+     * 
      * @alias module:model/RawClassification
      */
     constructor() { 

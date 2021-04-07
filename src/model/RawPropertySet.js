@@ -22,6 +22,7 @@ import RawProperty from './RawProperty';
 class RawPropertySet {
     /**
      * Constructs a new <code>RawPropertySet</code>.
+     * 
      * @alias module:model/RawPropertySet
      * @param properties {Array.<module:model/RawProperty>} 
      */
@@ -93,6 +94,7 @@ RawPropertySet.prototype['name'] = undefined;
 RawPropertySet.prototype['type'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/RawProperty>} properties
  */
 RawPropertySet.prototype['properties'] = undefined;

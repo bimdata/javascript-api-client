@@ -23,6 +23,7 @@ import User from './User';
 class Folder {
     /**
      * Constructs a new <code>Folder</code>.
+     * Folder with recursive children field, useful for openapi generator
      * @alias module:model/Folder
      * @param name {String} Name of the folder
      */
@@ -122,6 +123,7 @@ Folder.prototype['updated_at'] = undefined;
 Folder.prototype['created_by'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:model/RecursiveFolderChildren>} children
  */
 Folder.prototype['children'] = undefined;

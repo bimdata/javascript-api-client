@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class ProjectInvitation {
     /**
      * Constructs a new <code>ProjectInvitation</code>.
+     * Invitation(id, sender, client, email, redirect_uri, cloud, cloud_role, project, project_role, provider, status)
      * @alias module:model/ProjectInvitation
      * @param email {String} email of the user to invite
      * @param redirectUri {String} User will be redirected to this uri when they accept the invitation

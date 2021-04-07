@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class TopicStatus {
     /**
      * Constructs a new <code>TopicStatus</code>.
+     * TopicStatus(id, topic_status)
      * @alias module:model/TopicStatus
      * @param topicStatus {String} 
      */

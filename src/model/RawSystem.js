@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class RawSystem {
     /**
      * Constructs a new <code>RawSystem</code>.
+     * 
      * @alias module:model/RawSystem
      * @param uuid {String} 
      */

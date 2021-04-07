@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class RawProperty {
     /**
      * Constructs a new <code>RawProperty</code>.
+     * 
      * @alias module:model/RawProperty
      * @param defId {Number} 
      */

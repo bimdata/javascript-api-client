@@ -21,6 +21,7 @@ import ApiClient from '../ApiClient';
 class RawUnit {
     /**
      * Constructs a new <code>RawUnit</code>.
+     * 
      * @alias module:model/RawUnit
      * @param type {String} 
      */
@@ -122,6 +123,7 @@ RawUnit.prototype['elements'] = undefined;
 RawUnit.prototype['conversion_factor'] = undefined;
 
 /**
+ * 
  * @member {Array.<Number>} dimensions
  */
 RawUnit.prototype['dimensions'] = undefined;

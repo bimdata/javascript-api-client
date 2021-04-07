@@ -23,6 +23,7 @@ import Point from './Point';
 class PerspectiveCamera {
     /**
      * Constructs a new <code>PerspectiveCamera</code>.
+     * PerspectiveCamera(id, field_of_view, camera_direction, bimdata_camera_direction, camera_up_vector, camera_view_point)
      * @alias module:model/PerspectiveCamera
      * @param fieldOfView {Number} 
      * @param cameraDirection {module:model/Direction} 
