@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **errors** | **[String]** |  | [optional] [readonly] 
 **warnings** | **[String]** |  | [optional] [readonly] 
 **archived** | **Boolean** |  | [optional] 
+**version** | **String** | This field is only for information. Updating it won&#39;t impact the export. | [optional] 
 
 
 

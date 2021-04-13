@@ -113,6 +113,9 @@ class Ifc {
             if (data.hasOwnProperty('archived')) {
                 obj['archived'] = ApiClient.convertToType(data['archived'], 'Boolean');
             }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
+            }
         }
         return obj;
     }
@@ -227,6 +230,12 @@ Ifc.prototype['warnings'] = undefined;
  * @member {Boolean} archived
  */
 Ifc.prototype['archived'] = undefined;
+
+/**
+ * This field is only for information. Updating it won't impact the export.
+ * @member {String} version
+ */
+Ifc.prototype['version'] = undefined;
 
 
 
