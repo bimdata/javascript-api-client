@@ -116,6 +116,9 @@ class Ifc {
             if (data.hasOwnProperty('version')) {
                 obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
+            if (data.hasOwnProperty('north_vector')) {
+                obj['north_vector'] = ApiClient.convertToType(data['north_vector'], [['Number']]);
+            }
         }
         return obj;
     }
@@ -236,6 +239,12 @@ Ifc.prototype['archived'] = undefined;
  * @member {String} version
  */
 Ifc.prototype['version'] = undefined;
+
+/**
+ * 
+ * @member {Array.<Array.<Number>>} north_vector
+ */
+Ifc.prototype['north_vector'] = undefined;
 
 
 

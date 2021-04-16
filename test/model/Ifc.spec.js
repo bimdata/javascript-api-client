@@ -186,6 +186,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property northVector (base name: "north_vector")', function() {
+      // uncomment below and update the code to test the property northVector
+      //var instane = new bimdata.Ifc();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
