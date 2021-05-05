@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] [readonly] 
 **email** | **String** |  | 
 **isClient** | **Boolean** |  | [optional] [readonly] 
+**isProjectToken** | **Boolean** |  | [optional] [readonly] 
 
 

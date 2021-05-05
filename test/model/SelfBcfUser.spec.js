@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isProjectToken (base name: "is_project_token")', function() {
+      // uncomment below and update the code to test the property isProjectToken
+      //var instane = new bimdata.SelfBcfUser();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -64,6 +64,9 @@ class SelfBcfUser {
             if (data.hasOwnProperty('is_client')) {
                 obj['is_client'] = ApiClient.convertToType(data['is_client'], 'Boolean');
             }
+            if (data.hasOwnProperty('is_project_token')) {
+                obj['is_project_token'] = ApiClient.convertToType(data['is_project_token'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -90,6 +93,11 @@ SelfBcfUser.prototype['email'] = undefined;
  * @member {Boolean} is_client
  */
 SelfBcfUser.prototype['is_client'] = undefined;
+
+/**
+ * @member {Boolean} is_project_token
+ */
+SelfBcfUser.prototype['is_project_token'] = undefined;
 
 
 

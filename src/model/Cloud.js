@@ -68,6 +68,9 @@ class Cloud {
             if (data.hasOwnProperty('organization')) {
                 obj['organization'] = Organization.constructFromObject(data['organization']);
             }
+            if (data.hasOwnProperty('organization_id')) {
+                obj['organization_id'] = ApiClient.convertToType(data['organization_id'], 'Number');
+            }
             if (data.hasOwnProperty('creator')) {
                 obj['creator'] = User.constructFromObject(data['creator']);
             }
@@ -119,6 +122,11 @@ Cloud.prototype['marketplace_apps'] = undefined;
  * @member {module:model/Organization} organization
  */
 Cloud.prototype['organization'] = undefined;
+
+/**
+ * @member {Number} organization_id
+ */
+Cloud.prototype['organization_id'] = undefined;
 
 /**
  * @member {module:model/User} creator

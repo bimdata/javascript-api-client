@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property organizationId (base name: "organization_id")', function() {
+      // uncomment below and update the code to test the property organizationId
+      //var instane = new bimdata.Cloud();
+      //expect(instance).to.be();
+    });
+
     it('should have the property creator (base name: "creator")', function() {
       // uncomment below and update the code to test the property creator
       //var instane = new bimdata.Cloud();
