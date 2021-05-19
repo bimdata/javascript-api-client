@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class RawMaterial {
     /**
      * Constructs a new <code>RawMaterial</code>.
-     * 
      * @alias module:model/RawMaterial
      * @param stepId {Number} 
      * @param name {String} 
@@ -103,7 +102,6 @@ RawMaterial.prototype['description'] = undefined;
 RawMaterial.prototype['category'] = undefined;
 
 /**
- * 
  * @member {Array.<Number>} psets
  */
 RawMaterial.prototype['psets'] = undefined;

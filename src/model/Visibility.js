@@ -23,7 +23,6 @@ import ViewSetupHints from './ViewSetupHints';
 class Visibility {
     /**
      * Constructs a new <code>Visibility</code>.
-     * Visibility(id, default_visibility, view_setup_hints)
      * @alias module:model/Visibility
      * @param viewSetupHints {module:model/ViewSetupHints} 
      */
@@ -74,7 +73,6 @@ class Visibility {
 Visibility.prototype['default_visibility'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/Component>} exceptions
  */
 Visibility.prototype['exceptions'] = undefined;

@@ -22,14 +22,12 @@ import PropertySet from './PropertySet';
 class Material {
     /**
      * Constructs a new <code>Material</code>.
-     * Default behavior: - retrieve kwargs in the route (cloud_pk, project_pk, etc) - trim the _pk (cloud_pk &#x3D;&gt; cloud) - check if the object has a foreign key with the name - if so, set the foreign key to the value in the route Override: If the serializer has a method \&quot;get_parents\&quot;, we call it and set the parents The method \&quot;get_parents\&quot; should return an iterable of tuples : (parent_field_name, parent_object)
      * @alias module:model/Material
-     * @param name {String} 
      * @param propertySets {Array.<module:model/PropertySet>} 
      */
-    constructor(name, propertySets) { 
+    constructor(propertySets) { 
         
-        Material.initialize(this, name, propertySets);
+        Material.initialize(this, propertySets);
     }
 
     /**
@@ -37,8 +35,7 @@ class Material {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, propertySets) { 
-        obj['name'] = name;
+    static initialize(obj, propertySets) { 
         obj['property_sets'] = propertySets;
     }
 
@@ -96,7 +93,6 @@ Material.prototype['category'] = undefined;
 Material.prototype['description'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/PropertySet>} property_sets
  */
 Material.prototype['property_sets'] = undefined;

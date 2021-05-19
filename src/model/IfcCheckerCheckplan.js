@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class IfcCheckerCheckplan {
     /**
      * Constructs a new <code>IfcCheckerCheckplan</code>.
-     * CheckPlan(id, name, project, description, created_at, updated_at, protected)
      * @alias module:model/IfcCheckerCheckplan
      * @param name {String} 
      * @param project {Number} 

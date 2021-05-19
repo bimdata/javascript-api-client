@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class RawLayer {
     /**
      * Constructs a new <code>RawLayer</code>.
-     * 
      * @alias module:model/RawLayer
      * @param name {String} 
      */

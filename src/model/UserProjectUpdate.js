@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class UserProjectUpdate {
     /**
      * Constructs a new <code>UserProjectUpdate</code>.
-     * UserProject(id, user, project, role)
      * @alias module:model/UserProjectUpdate
      */
     constructor() { 

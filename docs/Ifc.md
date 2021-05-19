@@ -21,12 +21,12 @@ Name | Type | Description | Notes
 **viewer360File** | **String** |  | [optional] [readonly] 
 **xktFile** | **String** |  | [optional] [readonly] 
 **projectId** | **String** |  | [optional] [readonly] 
-**worldPosition** | **[Number]** |  | [optional] 
-**errors** | **[String]** |  | [optional] [readonly] 
-**warnings** | **[String]** |  | [optional] [readonly] 
+**worldPosition** | **[Number]** | [x,y,z] array of the position of the local_placement in world coordinates | [optional] 
+**errors** | **[String]** | List of errors that happened during IFC processing | [optional] [readonly] 
+**warnings** | **[String]** | List of warnings that happened during IFC processing | [optional] [readonly] 
 **archived** | **Boolean** |  | [optional] 
 **version** | **String** | This field is only for information. Updating it won&#39;t impact the export. | [optional] 
-**northVector** | **[[Number]]** |  | [optional] 
+**northVector** | **[[Number]]** | This field is only for information. Updating it won&#39;t impact the export. | [optional] 
 
 
 

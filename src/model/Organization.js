@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class Organization {
     /**
      * Constructs a new <code>Organization</code>.
-     * Organization(id, name, is_personnal, created_at, updated_at, logo)
      * @alias module:model/Organization
      * @param name {String} Name of the organization
      */

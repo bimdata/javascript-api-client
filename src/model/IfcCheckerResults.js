@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class IfcCheckerResults {
     /**
      * Constructs a new <code>IfcCheckerResults</code>.
-     * CheckerResult(id, error_detail, checker, status, result, collisions, created_at, updated_at)
      * @alias module:model/IfcCheckerResults
      * @param checker {Number} 
      */

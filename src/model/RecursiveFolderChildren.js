@@ -22,7 +22,6 @@ import User from './User';
 class RecursiveFolderChildren {
     /**
      * Constructs a new <code>RecursiveFolderChildren</code>.
-     * Folder child with recursive children field, useful for openapi generator
      * @alias module:model/RecursiveFolderChildren
      * @param id {Number} 
      * @param parentId {Number} 
@@ -175,7 +174,6 @@ RecursiveFolderChildren.prototype['ifc_id'] = undefined;
 RecursiveFolderChildren.prototype['file'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/RecursiveFolderChildren>} children
  */
 RecursiveFolderChildren.prototype['children'] = undefined;

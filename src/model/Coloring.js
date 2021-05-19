@@ -22,7 +22,6 @@ import Component from './Component';
 class Coloring {
     /**
      * Constructs a new <code>Coloring</code>.
-     * Coloring(id, color, components_parent)
      * @alias module:model/Coloring
      * @param color {String} 
      * @param components {Array.<module:model/Component>} 
@@ -72,7 +71,6 @@ class Coloring {
 Coloring.prototype['color'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/Component>} components
  */
 Coloring.prototype['components'] = undefined;

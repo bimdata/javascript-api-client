@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class SelfBcfUser {
     /**
      * Constructs a new <code>SelfBcfUser</code>.
-     * FosUser(id, user, email, firstname, lastname, company, created_at, updated_at, provider, provider_sub, sub, waiting_for_first_login)
      * @alias module:model/SelfBcfUser
      * @param id {String} 
      * @param email {String} 

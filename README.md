@@ -452,6 +452,8 @@ Class | Method | HTTP request | Description
  - [bimdata.Layer](docs/Layer.md)
  - [bimdata.LayerElement](docs/LayerElement.md)
  - [bimdata.Line](docs/Line.md)
+ - [bimdata.MarketplaceApp](docs/MarketplaceApp.md)
+ - [bimdata.MarketplaceAppImage](docs/MarketplaceAppImage.md)
  - [bimdata.Material](docs/Material.md)
  - [bimdata.MaterialListComponent](docs/MaterialListComponent.md)
  - [bimdata.MaterialOption](docs/MaterialOption.md)

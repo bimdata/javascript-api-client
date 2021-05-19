@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class IfcExport {
     /**
      * Constructs a new <code>IfcExport</code>.
-     * Ifc(id, creator, document, project, created_at, updated_at, structure_file, systems_file, zones_file, map_file, gltf_file, gltf_with_openings_file, bvh_tree_file, viewer_360_file, xkt_file, world_position, is_demo, errors, warnings, source, update_check_needed, archived, version, north_vector)
      * @alias module:model/IfcExport
      * @param fileName {String} The name of the exported IFC file. It MUST end with .ifc or the exported file won't be processed by BIMData
      */
@@ -144,7 +143,7 @@ IfcExport.prototype['attributes'] = 'UPDATED';
 IfcExport.prototype['structure'] = 'UPDATED';
 
 /**
- * 
+ * Exported IFC will only have those elements. If omitted, all elements will be exported
  * @member {Array.<String>} uuids
  */
 IfcExport.prototype['uuids'] = undefined;

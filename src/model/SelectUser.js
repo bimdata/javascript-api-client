@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class SelectUser {
     /**
      * Constructs a new <code>SelectUser</code>.
-     * 
      * @alias module:model/SelectUser
      * @param email {String} 
      */

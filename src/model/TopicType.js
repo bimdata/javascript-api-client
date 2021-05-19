@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class TopicType {
     /**
      * Constructs a new <code>TopicType</code>.
-     * TopicType(id, topic_type)
      * @alias module:model/TopicType
      * @param topicType {String} 
      */

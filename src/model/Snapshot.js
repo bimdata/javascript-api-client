@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class Snapshot {
     /**
      * Constructs a new <code>Snapshot</code>.
-     * Snapshot(id, snapshot_type, snapshot_data)
      * @alias module:model/Snapshot
      * @param snapshotType {String} 
      */

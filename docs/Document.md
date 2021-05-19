@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **createdAt** | **Date** | Creation date | [optional] [readonly] 
 **updatedAt** | **Date** | Date of the last update | [optional] [readonly] 
 **ifcSource** | **String** | Define the ifc.source field if the upload is an IFC | [optional] 
-**ifcId** | **String** |  | [optional] [readonly] 
+**ifcId** | **Number** |  | [optional] [readonly] 
 
 
 

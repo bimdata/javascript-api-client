@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class RawDefinition {
     /**
      * Constructs a new <code>RawDefinition</code>.
-     * 
      * @alias module:model/RawDefinition
      */
     constructor() { 

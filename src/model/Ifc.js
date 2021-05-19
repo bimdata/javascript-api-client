@@ -23,7 +23,6 @@ import User from './User';
 class Ifc {
     /**
      * Constructs a new <code>Ifc</code>.
-     * Default behavior: - retrieve kwargs in the route (cloud_pk, project_pk, etc) - trim the _pk (cloud_pk &#x3D;&gt; cloud) - check if the object has a foreign key with the name - if so, set the foreign key to the value in the route Override: If the serializer has a method \&quot;get_parents\&quot;, we call it and set the parents The method \&quot;get_parents\&quot; should return an iterable of tuples : (parent_field_name, parent_object)
      * @alias module:model/Ifc
      */
     constructor() { 
@@ -212,19 +211,19 @@ Ifc.prototype['xkt_file'] = undefined;
 Ifc.prototype['project_id'] = undefined;
 
 /**
- * 
+ * [x,y,z] array of the position of the local_placement in world coordinates
  * @member {Array.<Number>} world_position
  */
 Ifc.prototype['world_position'] = undefined;
 
 /**
- * 
+ * List of errors that happened during IFC processing
  * @member {Array.<String>} errors
  */
 Ifc.prototype['errors'] = undefined;
 
 /**
- * 
+ * List of warnings that happened during IFC processing
  * @member {Array.<String>} warnings
  */
 Ifc.prototype['warnings'] = undefined;
@@ -241,7 +240,7 @@ Ifc.prototype['archived'] = undefined;
 Ifc.prototype['version'] = undefined;
 
 /**
- * 
+ * This field is only for information. Updating it won't impact the export.
  * @member {Array.<Array.<Number>>} north_vector
  */
 Ifc.prototype['north_vector'] = undefined;

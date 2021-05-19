@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The MaterialOption model module.
- * @module model/MaterialOption
+ * The MarketplaceAppImage model module.
+ * @module model/MarketplaceAppImage
  * @version 0.0.0
  */
-class MaterialOption {
+class MarketplaceAppImage {
     /**
-     * Constructs a new <code>MaterialOption</code>.
-     * @alias module:model/MaterialOption
+     * Constructs a new <code>MarketplaceAppImage</code>.
+     * @alias module:model/MarketplaceAppImage
      */
     constructor() { 
         
-        MaterialOption.initialize(this);
+        MarketplaceAppImage.initialize(this);
     }
 
     /**
@@ -37,24 +37,24 @@ class MaterialOption {
     }
 
     /**
-     * Constructs a <code>MaterialOption</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>MarketplaceAppImage</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MaterialOption} obj Optional instance to populate.
-     * @return {module:model/MaterialOption} The populated <code>MaterialOption</code> instance.
+     * @param {module:model/MarketplaceAppImage} obj Optional instance to populate.
+     * @return {module:model/MarketplaceAppImage} The populated <code>MarketplaceAppImage</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new MaterialOption();
+            obj = obj || new MarketplaceAppImage();
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('thickness')) {
-                obj['thickness'] = ApiClient.convertToType(data['thickness'], 'Number');
+            if (data.hasOwnProperty('image')) {
+                obj['image'] = ApiClient.convertToType(data['image'], 'String');
             }
-            if (data.hasOwnProperty('list_components')) {
-                obj['list_components'] = ApiClient.convertToType(data['list_components'], [{'String': 'String'}]);
+            if (data.hasOwnProperty('order')) {
+                obj['order'] = ApiClient.convertToType(data['order'], 'Number');
             }
         }
         return obj;
@@ -66,22 +66,22 @@ class MaterialOption {
 /**
  * @member {Number} id
  */
-MaterialOption.prototype['id'] = undefined;
+MarketplaceAppImage.prototype['id'] = undefined;
 
 /**
- * @member {Number} thickness
+ * @member {String} image
  */
-MaterialOption.prototype['thickness'] = undefined;
+MarketplaceAppImage.prototype['image'] = undefined;
 
 /**
- * @member {Array.<Object.<String, String>>} list_components
+ * @member {Number} order
  */
-MaterialOption.prototype['list_components'] = undefined;
+MarketplaceAppImage.prototype['order'] = undefined;
 
 
 
 
 
 
-export default MaterialOption;
+export default MarketplaceAppImage;
 

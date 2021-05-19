@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class Direction {
     /**
      * Constructs a new <code>Direction</code>.
-     * Direction(id, x, y, z)
      * @alias module:model/Direction
      * @param x {Number} 
      * @param y {Number} 

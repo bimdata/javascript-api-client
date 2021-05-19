@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class RawMaterialListComponents {
     /**
      * Constructs a new <code>RawMaterialListComponents</code>.
-     * 
      * @alias module:model/RawMaterialListComponents
      * @param materialOption {Number} 
      */

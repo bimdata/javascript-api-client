@@ -27,7 +27,6 @@ import Snapshot from './Snapshot';
 class Viewpoint {
     /**
      * Constructs a new <code>Viewpoint</code>.
-     * Default behavior: - retrieve kwargs in the route (cloud_pk, project_pk, etc) - trim the _pk (cloud_pk &#x3D;&gt; cloud) - check if the object has a foreign key with the name - if so, set the foreign key to the value in the route Override: If the serializer has a method \&quot;get_parents\&quot;, we call it and set the parents The method \&quot;get_parents\&quot; should return an iterable of tuples : (parent_field_name, parent_object)
      * @alias module:model/Viewpoint
      */
     constructor() { 
@@ -109,13 +108,11 @@ Viewpoint.prototype['orthogonal_camera'] = undefined;
 Viewpoint.prototype['perspective_camera'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/Line>} lines
  */
 Viewpoint.prototype['lines'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/ClippingPlane>} clipping_planes
  */
 Viewpoint.prototype['clipping_planes'] = undefined;

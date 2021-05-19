@@ -22,7 +22,6 @@ import Point from './Point';
 class Line {
     /**
      * Constructs a new <code>Line</code>.
-     * Line(id, start_point, end_point, viewpoint)
      * @alias module:model/Line
      * @param endPoint {module:model/Point} 
      * @param startPoint {module:model/Point} 

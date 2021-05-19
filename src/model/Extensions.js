@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class Extensions {
     /**
      * Constructs a new <code>Extensions</code>.
-     * Extensions(id, project)
      * @alias module:model/Extensions
      * @param topicType {Array.<String>} 
      * @param topicStatus {Array.<String>} 
@@ -84,37 +83,31 @@ class Extensions {
 }
 
 /**
- * 
  * @member {Array.<String>} topic_type
  */
 Extensions.prototype['topic_type'] = undefined;
 
 /**
- * 
  * @member {Array.<String>} topic_status
  */
 Extensions.prototype['topic_status'] = undefined;
 
 /**
- * 
  * @member {Array.<String>} topic_label
  */
 Extensions.prototype['topic_label'] = undefined;
 
 /**
- * 
  * @member {Array.<String>} priority
  */
 Extensions.prototype['priority'] = undefined;
 
 /**
- * 
  * @member {Array.<String>} user_id_type
  */
 Extensions.prototype['user_id_type'] = undefined;
 
 /**
- * 
  * @member {Array.<String>} stage
  */
 Extensions.prototype['stage'] = undefined;

@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class RawMaterialOptions {
     /**
      * Constructs a new <code>RawMaterialOptions</code>.
-     * 
      * @alias module:model/RawMaterialOptions
      */
     constructor() { 
@@ -75,7 +74,6 @@ RawMaterialOptions.prototype['id'] = undefined;
 RawMaterialOptions.prototype['thickness'] = undefined;
 
 /**
- * 
  * @member {Array.<Number>} material_list
  */
 RawMaterialOptions.prototype['material_list'] = undefined;

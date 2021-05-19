@@ -1,11 +1,11 @@
-# bimdata.MaterialOption
+# bimdata.MarketplaceAppImage
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] [readonly] 
-**thickness** | **Number** |  | [optional] [readonly] 
-**listComponents** | **[{String: String}]** |  | [optional] [readonly] 
+**image** | **String** |  | [optional] [readonly] 
+**order** | **Number** |  | [optional] [readonly] 
 
 

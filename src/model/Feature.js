@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class Feature {
     /**
      * Constructs a new <code>Feature</code>.
-     * Feature(id, name, cloud_setup_url, secret, viewer_url)
      * @alias module:model/Feature
      * @param name {String} Name of the feature
      */

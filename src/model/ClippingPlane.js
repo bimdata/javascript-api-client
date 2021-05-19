@@ -23,7 +23,6 @@ import Point from './Point';
 class ClippingPlane {
     /**
      * Constructs a new <code>ClippingPlane</code>.
-     * ClippingPlane(id, location, direction, viewpoint)
      * @alias module:model/ClippingPlane
      * @param location {module:model/Point} 
      * @param direction {module:model/Direction} 

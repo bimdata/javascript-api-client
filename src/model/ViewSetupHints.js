@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class ViewSetupHints {
     /**
      * Constructs a new <code>ViewSetupHints</code>.
-     * ViewSetupHints(id, spaces_visible, space_boundaries_visible, openings_visible)
      * @alias module:model/ViewSetupHints
      */
     constructor() { 

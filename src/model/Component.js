@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class Component {
     /**
      * Constructs a new <code>Component</code>.
-     * Component(id, ifc_guid, originating_system, authoring_tool_id, components_set, coloring, visibility)
      * @alias module:model/Component
      */
     constructor() { 

@@ -24,7 +24,6 @@ import RawMaterialOptions from './RawMaterialOptions';
 class RawMaterialList {
     /**
      * Constructs a new <code>RawMaterialList</code>.
-     * 
      * @alias module:model/RawMaterialList
      */
     constructor() { 
@@ -68,19 +67,16 @@ class RawMaterialList {
 }
 
 /**
- * 
  * @member {Array.<module:model/RawMaterial>} materials_data
  */
 RawMaterialList.prototype['materials_data'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/RawMaterialListComponents>} list_components
  */
 RawMaterialList.prototype['list_components'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/RawMaterialOptions>} options
  */
 RawMaterialList.prototype['options'] = undefined;

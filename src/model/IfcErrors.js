@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class IfcErrors {
     /**
      * Constructs a new <code>IfcErrors</code>.
-     * Ifc(id, creator, document, project, created_at, updated_at, structure_file, systems_file, zones_file, map_file, gltf_file, gltf_with_openings_file, bvh_tree_file, viewer_360_file, xkt_file, world_position, is_demo, errors, warnings, source, update_check_needed, archived, version, north_vector)
      * @alias module:model/IfcErrors
      */
     constructor() { 
@@ -62,13 +61,13 @@ class IfcErrors {
 }
 
 /**
- * 
+ * List of errors that happened during IFC processing
  * @member {Array.<String>} errors
  */
 IfcErrors.prototype['errors'] = undefined;
 
 /**
- * 
+ * List of warnings that happened during IFC processing
  * @member {Array.<String>} warnings
  */
 IfcErrors.prototype['warnings'] = undefined;

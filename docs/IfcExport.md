@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **materials** | **String** | Exported IFC will include materials from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won&#39;t include materials(NONE) | [optional] [default to &#39;UPDATED&#39;]
 **attributes** | **String** | Exported IFC will include attributes from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won&#39;t include attributes(NONE) | [optional] [default to &#39;UPDATED&#39;]
 **structure** | **String** | Exported IFC will include the structure from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won&#39;t include structure(NONE) | [optional] [default to &#39;UPDATED&#39;]
-**uuids** | **[String]** |  | [optional] 
+**uuids** | **[String]** | Exported IFC will only have those elements. If omitted, all elements will be exported | [optional] 
 **fileName** | **String** | The name of the exported IFC file. It MUST end with .ifc or the exported file won&#39;t be processed by BIMData | 
 
 

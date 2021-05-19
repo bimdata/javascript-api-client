@@ -21,7 +21,6 @@ import ApiClient from '../ApiClient';
 class SimpleElement {
     /**
      * Constructs a new <code>SimpleElement</code>.
-     * 
      * @alias module:model/SimpleElement
      * @param uuid {Object.<String, Object.<String, String>>} 
      */

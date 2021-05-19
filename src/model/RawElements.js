@@ -29,7 +29,6 @@ import RawUnit from './RawUnit';
 class RawElements {
     /**
      * Constructs a new <code>RawElements</code>.
-     * 
      * @alias module:model/RawElements
      * @param elements {Array.<module:model/RawElement>} 
      */
@@ -90,37 +89,31 @@ class RawElements {
 }
 
 /**
- * 
  * @member {Array.<module:model/RawUnit>} units
  */
 RawElements.prototype['units'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/RawDefinition>} definitions
  */
 RawElements.prototype['definitions'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/RawPropertySet>} property_sets
  */
 RawElements.prototype['property_sets'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/RawClassification>} classifications
  */
 RawElements.prototype['classifications'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/RawLayer>} layers
  */
 RawElements.prototype['layers'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/RawSystem>} systems
  */
 RawElements.prototype['systems'] = undefined;
@@ -131,7 +124,6 @@ RawElements.prototype['systems'] = undefined;
 RawElements.prototype['material_list'] = undefined;
 
 /**
- * 
  * @member {Array.<module:model/RawElement>} elements
  */
 RawElements.prototype['elements'] = undefined;

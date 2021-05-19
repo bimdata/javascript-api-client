@@ -49,6 +49,8 @@ import Label from './model/Label';
 import Layer from './model/Layer';
 import LayerElement from './model/LayerElement';
 import Line from './model/Line';
+import MarketplaceApp from './model/MarketplaceApp';
+import MarketplaceAppImage from './model/MarketplaceAppImage';
 import Material from './model/Material';
 import MaterialListComponent from './model/MaterialListComponent';
 import MaterialOption from './model/MaterialOption';
@@ -365,6 +367,18 @@ export {
      * @property {module:model/Line}
      */
     Line,
+
+    /**
+     * The MarketplaceApp model constructor.
+     * @property {module:model/MarketplaceApp}
+     */
+    MarketplaceApp,
+
+    /**
+     * The MarketplaceAppImage model constructor.
+     * @property {module:model/MarketplaceAppImage}
+     */
+    MarketplaceAppImage,
 
     /**
      * The Material model constructor.
