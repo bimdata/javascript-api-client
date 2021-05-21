@@ -192,6 +192,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property recommanded2dAngle (base name: "recommanded_2d_angle")', function() {
+      // uncomment below and update the code to test the property recommanded2dAngle
+      //var instane = new bimdata.Ifc();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

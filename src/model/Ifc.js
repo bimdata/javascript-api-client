@@ -118,6 +118,9 @@ class Ifc {
             if (data.hasOwnProperty('north_vector')) {
                 obj['north_vector'] = ApiClient.convertToType(data['north_vector'], [['Number']]);
             }
+            if (data.hasOwnProperty('recommanded_2d_angle')) {
+                obj['recommanded_2d_angle'] = ApiClient.convertToType(data['recommanded_2d_angle'], 'Number');
+            }
         }
         return obj;
     }
@@ -244,6 +247,12 @@ Ifc.prototype['version'] = undefined;
  * @member {Array.<Array.<Number>>} north_vector
  */
 Ifc.prototype['north_vector'] = undefined;
+
+/**
+ * This is the angle in clockwise degree to apply on the 2D to optimise the horizontality of objects. This field is only for information. Updating it won't impact the export.
+ * @member {Number} recommanded_2d_angle
+ */
+Ifc.prototype['recommanded_2d_angle'] = undefined;
 
 
 

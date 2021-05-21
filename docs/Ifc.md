@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **archived** | **Boolean** |  | [optional] 
 **version** | **String** | This field is only for information. Updating it won&#39;t impact the export. | [optional] 
 **northVector** | **[[Number]]** | This field is only for information. Updating it won&#39;t impact the export. | [optional] 
+**recommanded2dAngle** | **Number** | This is the angle in clockwise degree to apply on the 2D to optimise the horizontality of objects. This field is only for information. Updating it won&#39;t impact the export. | [optional] 
 
 
 

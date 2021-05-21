@@ -89,7 +89,7 @@ class Document {
                 obj['ifc_source'] = ApiClient.convertToType(data['ifc_source'], 'String');
             }
             if (data.hasOwnProperty('ifc_id')) {
-                obj['ifc_id'] = ApiClient.convertToType(data['ifc_id'], 'Number');
+                obj['ifc_id'] = ApiClient.convertToType(data['ifc_id'], 'String');
             }
         }
         return obj;
@@ -171,7 +171,7 @@ Document.prototype['updated_at'] = undefined;
 Document.prototype['ifc_source'] = undefined;
 
 /**
- * @member {Number} ifc_id
+ * @member {String} ifc_id
  */
 Document.prototype['ifc_id'] = undefined;
 
