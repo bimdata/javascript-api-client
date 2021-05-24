@@ -75,8 +75,8 @@ class RawElements {
             if (data.hasOwnProperty('systems')) {
                 obj['systems'] = ApiClient.convertToType(data['systems'], [RawSystem]);
             }
-            if (data.hasOwnProperty('material_list')) {
-                obj['material_list'] = RawMaterialList.constructFromObject(data['material_list']);
+            if (data.hasOwnProperty('materials')) {
+                obj['materials'] = RawMaterialList.constructFromObject(data['materials']);
             }
             if (data.hasOwnProperty('elements')) {
                 obj['elements'] = ApiClient.convertToType(data['elements'], [RawElement]);
@@ -119,9 +119,9 @@ RawElements.prototype['layers'] = undefined;
 RawElements.prototype['systems'] = undefined;
 
 /**
- * @member {module:model/RawMaterialList} material_list
+ * @member {module:model/RawMaterialList} materials
  */
-RawElements.prototype['material_list'] = undefined;
+RawElements.prototype['materials'] = undefined;
 
 /**
  * @member {Array.<module:model/RawElement>} elements

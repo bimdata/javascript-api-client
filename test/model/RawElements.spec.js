@@ -90,8 +90,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property materialList (base name: "material_list")', function() {
-      // uncomment below and update the code to test the property materialList
+    it('should have the property materials (base name: "materials")', function() {
+      // uncomment below and update the code to test the property materials
       //var instane = new bimdata.RawElements();
       //expect(instance).to.be();
     });
