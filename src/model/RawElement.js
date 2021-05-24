@@ -61,7 +61,7 @@ class RawElement {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], 'Number');
             }
             if (data.hasOwnProperty('material_list')) {
-                obj['material_list'] = ApiClient.convertToType(data['material_list'], ['String']);
+                obj['material_list'] = ApiClient.convertToType(data['material_list'], ['Number']);
             }
             if (data.hasOwnProperty('psets')) {
                 obj['psets'] = ApiClient.convertToType(data['psets'], ['Number']);
@@ -98,7 +98,7 @@ RawElement.prototype['type'] = undefined;
 RawElement.prototype['attributes'] = undefined;
 
 /**
- * @member {Array.<String>} material_list
+ * @member {Array.<Number>} material_list
  */
 RawElement.prototype['material_list'] = undefined;
 
