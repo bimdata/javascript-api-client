@@ -6,6 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] [readonly] 
 **material** | **Number** |  | [optional] 
-**materialOption** | **Number** |  | 
+**materialOption** | **Number** |  | [optional] 
 
 

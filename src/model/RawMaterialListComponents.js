@@ -22,11 +22,10 @@ class RawMaterialListComponents {
     /**
      * Constructs a new <code>RawMaterialListComponents</code>.
      * @alias module:model/RawMaterialListComponents
-     * @param materialOption {Number} 
      */
-    constructor(materialOption) { 
+    constructor() { 
         
-        RawMaterialListComponents.initialize(this, materialOption);
+        RawMaterialListComponents.initialize(this);
     }
 
     /**
@@ -34,8 +33,7 @@ class RawMaterialListComponents {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, materialOption) { 
-        obj['material_option'] = materialOption;
+    static initialize(obj) { 
     }
 
     /**
