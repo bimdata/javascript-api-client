@@ -1,0 +1,44 @@
+
+name: Javascript Api Client
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - name: Install dependencies
+        run: npm install
+      - name: Run test
+        run: npm test
+
+  publish:
+    runs-on: self-hosted
+    needs: test
+    if: contains('
+      refs/heads/master
+      refs/heads/main'
+      , github.ref)
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - uses: actions/setup-python@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Release
+        run: npx semantic-release -e ./config/release.config.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPOS_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} 

@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -e
+
 GENERATOR=$1
 if [ -z "$GENERATOR" ]; then
   GENERATOR=openapi-generator.jar
