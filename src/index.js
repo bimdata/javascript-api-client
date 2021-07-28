@@ -28,8 +28,6 @@ import ComponentsParent from './model/ComponentsParent';
 import Direction from './model/Direction';
 import Document from './model/Document';
 import Element from './model/Element';
-import ElementClassificationRelation from './model/ElementClassificationRelation';
-import ElementPropertySetRelation from './model/ElementPropertySetRelation';
 import Extensions from './model/Extensions';
 import Feature from './model/Feature';
 import Folder from './model/Folder';
@@ -241,18 +239,6 @@ export {
      * @property {module:model/Element}
      */
     Element,
-
-    /**
-     * The ElementClassificationRelation model constructor.
-     * @property {module:model/ElementClassificationRelation}
-     */
-    ElementClassificationRelation,
-
-    /**
-     * The ElementPropertySetRelation model constructor.
-     * @property {module:model/ElementPropertySetRelation}
-     */
-    ElementPropertySetRelation,
 
     /**
      * The Extensions model constructor.

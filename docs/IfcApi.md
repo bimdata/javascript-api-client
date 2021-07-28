@@ -937,11 +937,11 @@ Name | Type | Description  | Notes
 
 ## createClassificationElementRelations
 
-> createClassificationElementRelations(cloudPk, ifcPk, projectPk, data)
+> createClassificationElementRelations(cloudPk, ifcPk, projectPk)
 
 Create association between existing classification and existing element
 
-Create association between existing classification and existing element Required scopes: ifc:write
+ Required scopes: ifc:write
 
 ### Example
 
@@ -964,8 +964,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.ElementClassificationRelation()]; // [ElementClassificationRelation] | 
-apiInstance.createClassificationElementRelations(cloudPk, ifcPk, projectPk, data).then(() => {
+apiInstance.createClassificationElementRelations(cloudPk, ifcPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -981,7 +980,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[ElementClassificationRelation]**](ElementClassificationRelation.md)|  | 
 
 ### Return type
 
@@ -993,7 +991,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
@@ -1641,11 +1639,11 @@ Name | Type | Description  | Notes
 
 ## createPropertySetElementRelations
 
-> createPropertySetElementRelations(cloudPk, ifcPk, projectPk, data)
+> createPropertySetElementRelations(cloudPk, ifcPk, projectPk)
 
 Create association between PropertySet and element
 
-Create association between existing PropertySet and existing element Required scopes: ifc:write
+ Required scopes: ifc:write
 
 ### Example
 
@@ -1668,8 +1666,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.ElementPropertySetRelation()]; // [ElementPropertySetRelation] | 
-apiInstance.createPropertySetElementRelations(cloudPk, ifcPk, projectPk, data).then(() => {
+apiInstance.createPropertySetElementRelations(cloudPk, ifcPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -1685,7 +1682,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**[ElementPropertySetRelation]**](ElementPropertySetRelation.md)|  | 
 
 ### Return type
 
@@ -1697,7 +1693,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
@@ -6783,11 +6779,11 @@ Name | Type | Description  | Notes
 
 ## listClassificationElementRelations
 
-> [ElementClassificationRelation] listClassificationElementRelations(cloudPk, ifcPk, projectPk)
+> listClassificationElementRelations(cloudPk, ifcPk, projectPk)
 
 List all associations between classifications and elements
 
-List all associations between classifications and elements Required scopes: ifc:read
+ Required scopes: ifc:read
 
 ### Example
 
@@ -6810,8 +6806,8 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.listClassificationElementRelations(cloudPk, ifcPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
+apiInstance.listClassificationElementRelations(cloudPk, ifcPk, projectPk).then(() => {
+  console.log('API called successfully.');
 }, (error) => {
   console.error(error);
 });
@@ -6829,7 +6825,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ElementClassificationRelation]**](ElementClassificationRelation.md)
+null (empty response body)
 
 ### Authorization
 
@@ -6838,7 +6834,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 
 ## mergeIfcs
