@@ -48,6 +48,16 @@
   }
 
   describe('CollaborationApi', function() {
+    describe('addGroupMember', function() {
+      it('should call addGroupMember successfully', function(done) {
+        //uncomment below and update the code to test addGroupMember
+        //instance.addGroupMember(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('cancelCloudUserInvitation', function() {
       it('should call cancelCloudUserInvitation successfully', function(done) {
         //uncomment below and update the code to test cancelCloudUserInvitation
@@ -138,6 +148,16 @@
         done();
       });
     });
+    describe('createManageGroup', function() {
+      it('should call createManageGroup successfully', function(done) {
+        //uncomment below and update the code to test createManageGroup
+        //instance.createManageGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createProject', function() {
       it('should call createProject successfully', function(done) {
         //uncomment below and update the code to test createProject
@@ -202,6 +222,26 @@
       it('should call deleteFolder successfully', function(done) {
         //uncomment below and update the code to test deleteFolder
         //instance.deleteFolder(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteGroupMember', function() {
+      it('should call deleteGroupMember successfully', function(done) {
+        //uncomment below and update the code to test deleteGroupMember
+        //instance.deleteGroupMember(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteManageGroup', function() {
+      it('should call deleteManageGroup successfully', function(done) {
+        //uncomment below and update the code to test deleteManageGroup
+        //instance.deleteManageGroup(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -282,6 +322,26 @@
       it('should call fullUpdateFolder successfully', function(done) {
         //uncomment below and update the code to test fullUpdateFolder
         //instance.fullUpdateFolder(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('fullUpdateGroupFolder', function() {
+      it('should call fullUpdateGroupFolder successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateGroupFolder
+        //instance.fullUpdateGroupFolder(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('fullUpdateManageGroup', function() {
+      it('should call fullUpdateManageGroup successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateManageGroup
+        //instance.fullUpdateManageGroup(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -432,6 +492,46 @@
       it('should call getFolders successfully', function(done) {
         //uncomment below and update the code to test getFolders
         //instance.getFolders(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getGroup', function() {
+      it('should call getGroup successfully', function(done) {
+        //uncomment below and update the code to test getGroup
+        //instance.getGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getGroups', function() {
+      it('should call getGroups successfully', function(done) {
+        //uncomment below and update the code to test getGroups
+        //instance.getGroups(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getManageGroup', function() {
+      it('should call getManageGroup successfully', function(done) {
+        //uncomment below and update the code to test getManageGroup
+        //instance.getManageGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getManageGroups', function() {
+      it('should call getManageGroups successfully', function(done) {
+        //uncomment below and update the code to test getManageGroups
+        //instance.getManageGroups(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -622,6 +722,26 @@
       it('should call updateFolder successfully', function(done) {
         //uncomment below and update the code to test updateFolder
         //instance.updateFolder(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateGroupFolder', function() {
+      it('should call updateGroupFolder successfully', function(done) {
+        //uncomment below and update the code to test updateGroupFolder
+        //instance.updateGroupFolder(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateManageGroup', function() {
+      it('should call updateManageGroup successfully', function(done) {
+        //uncomment below and update the code to test updateManageGroup
+        //instance.updateManageGroup(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

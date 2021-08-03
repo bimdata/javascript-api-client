@@ -96,6 +96,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property groups (base name: "groups")', function() {
+      // uncomment below and update the code to test the property groups
+      //var instane = new bimdata.Folder();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property defaultPermission (base name: "default_permission")', function() {
+      // uncomment below and update the code to test the property defaultPermission
+      //var instane = new bimdata.Folder();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property userPermission (base name: "user_permission")', function() {
+      // uncomment below and update the code to test the property userPermission
+      //var instane = new bimdata.Folder();
+      //expect(instance).to.be();
+    });
+
     it('should have the property children (base name: "children")', function() {
       // uncomment below and update the code to test the property children
       //var instane = new bimdata.Folder();

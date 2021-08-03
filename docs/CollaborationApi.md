@@ -4,6 +4,7 @@ All URIs are relative to *https://api.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addGroupMember**](CollaborationApi.md#addGroupMember) | **POST** /cloud/{cloud_pk}/project/{project_pk}/group/{group_pk}/member | Add a user to a group
 [**cancelCloudUserInvitation**](CollaborationApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | Cancel a pending invitation
 [**cancelProjectUserInvitation**](CollaborationApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
 [**checkAccess**](CollaborationApi.md#checkAccess) | **GET** /cloud/{id}/check-access | Check app access from cloud
@@ -13,6 +14,7 @@ Method | HTTP request | Description
 [**createDemo**](CollaborationApi.md#createDemo) | **POST** /cloud/{id}/create-demo | Create a Demo project in a cloud
 [**createDocument**](CollaborationApi.md#createDocument) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document | Create a document
 [**createFolder**](CollaborationApi.md#createFolder) | **POST** /cloud/{cloud_pk}/project/{project_pk}/folder | Create a folder
+[**createManageGroup**](CollaborationApi.md#createManageGroup) | **POST** /cloud/{cloud_pk}/project/{project_pk}/group | Create a group
 [**createProject**](CollaborationApi.md#createProject) | **POST** /cloud/{cloud_pk}/project | Create a project
 [**createProjectAccessToken**](CollaborationApi.md#createProjectAccessToken) | **POST** /cloud/{cloud_pk}/project/{project_pk}/access-token | Create a token for this project
 [**deleteClassification**](CollaborationApi.md#deleteClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Delete a classification
@@ -20,6 +22,8 @@ Method | HTTP request | Description
 [**deleteCloudUser**](CollaborationApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | Remove a user from a cloud
 [**deleteDocument**](CollaborationApi.md#deleteDocument) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Delete the document
 [**deleteFolder**](CollaborationApi.md#deleteFolder) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Delete a folder
+[**deleteGroupMember**](CollaborationApi.md#deleteGroupMember) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/group/{group_pk}/member/{id} | Delete a user from a group
+[**deleteManageGroup**](CollaborationApi.md#deleteManageGroup) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Delete a group
 [**deleteProject**](CollaborationApi.md#deleteProject) | **DELETE** /cloud/{cloud_pk}/project/{id} | Delete a project
 [**deleteProjectAccessToken**](CollaborationApi.md#deleteProjectAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Delete a token
 [**deleteProjectUser**](CollaborationApi.md#deleteProjectUser) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Remove a user from a project
@@ -28,6 +32,8 @@ Method | HTTP request | Description
 [**fullUpdateCloudUser**](CollaborationApi.md#fullUpdateCloudUser) | **PUT** /cloud/{cloud_pk}/user/{id} | Update all fields of a cloud user
 [**fullUpdateDocument**](CollaborationApi.md#fullUpdateDocument) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update all fields of the document
 [**fullUpdateFolder**](CollaborationApi.md#fullUpdateFolder) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update all fields of a folder
+[**fullUpdateGroupFolder**](CollaborationApi.md#fullUpdateGroupFolder) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/group/{id} | Update the permission of a group on a folder
+[**fullUpdateManageGroup**](CollaborationApi.md#fullUpdateManageGroup) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update all fields of a group
 [**fullUpdateProject**](CollaborationApi.md#fullUpdateProject) | **PUT** /cloud/{cloud_pk}/project/{id} | Update all fields of a project
 [**fullUpdateProjectAccessToken**](CollaborationApi.md#fullUpdateProjectAccessToken) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update all fields of a token
 [**fullUpdateProjectUser**](CollaborationApi.md#fullUpdateProjectUser) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update all fields of a project user
@@ -43,6 +49,10 @@ Method | HTTP request | Description
 [**getDocuments**](CollaborationApi.md#getDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document | Retrieve all documents
 [**getFolder**](CollaborationApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Retrieve a folder
 [**getFolders**](CollaborationApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | Retrieve all folders
+[**getGroup**](CollaborationApi.md#getGroup) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/group/{id} | Retrieve a group
+[**getGroups**](CollaborationApi.md#getGroups) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/group | Retrieve all groups
+[**getManageGroup**](CollaborationApi.md#getManageGroup) | **GET** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Retrieve a group
+[**getManageGroups**](CollaborationApi.md#getManageGroups) | **GET** /cloud/{cloud_pk}/project/{project_pk}/group | Retrieve all groups
 [**getProject**](CollaborationApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | Retrieve a project
 [**getProjectAccessToken**](CollaborationApi.md#getProjectAccessToken) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Retrieve one token created for this project
 [**getProjectAccessTokens**](CollaborationApi.md#getProjectAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token | Retrieve all tokens created for this project
@@ -62,11 +72,75 @@ Method | HTTP request | Description
 [**updateCloudUser**](CollaborationApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | Update some fields of a cloud user
 [**updateDocument**](CollaborationApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update some fields of the document
 [**updateFolder**](CollaborationApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update some fields of a folder
+[**updateGroupFolder**](CollaborationApi.md#updateGroupFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/group/{id} | Update the permission of a group on a folder
+[**updateManageGroup**](CollaborationApi.md#updateManageGroup) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update some fields of a group
 [**updateProject**](CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
 [**updateProjectAccessToken**](CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
 [**updateProjectUser**](CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update some fields of a project user
 [**updateSelfUser**](CollaborationApi.md#updateSelfUser) | **PATCH** /user | Update info of the current user
 
+
+
+## addGroupMember
+
+> User addGroupMember(cloudPk, groupPk, projectPk, data)
+
+Add a user to a group
+
+Add a user to a group. Must be an admin of the project Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let groupPk = "groupPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.FosUserId(); // FosUserId | 
+apiInstance.addGroupMember(cloudPk, groupPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **groupPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**FosUserId**](FosUserId.md)|  | 
+
+### Return type
+
+[**User**](User.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## cancelCloudUserInvitation
@@ -365,7 +439,7 @@ Name | Type | Description  | Notes
 
 Create a complete DMS tree
 
-                 Create a DMS structure of folder                 Format request :                     [{                         \&quot;name\&quot;: :name:                         \&quot;parent_id\&quot;: :parent_id:    # optionnal                         \&quot;children\&quot;: [{              # optionnal                             \&quot;name\&quot;: :name:,                             \&quot;children\&quot;: []                         }]                     }],  Required scopes: org:manage
+                 Create a DMS structure of folder                 Format request :                     [{                         \&quot;name\&quot;: :name:                         \&quot;parent_id\&quot;: :parent_id:                      # optionnal                         \&quot;default_permission\&quot;: :default_permission:    # optionnal                         \&quot;children\&quot;: [{                                # optionnal                             \&quot;name\&quot;: :name:,                             \&quot;children\&quot;: []                         }]                     }],  Required scopes: org:manage
 
 ### Example
 
@@ -555,7 +629,7 @@ Name | Type | Description  | Notes
 
 ## createFolder
 
-> Folder createFolder(cloudPk, projectPk, data)
+> InlineResponse200 createFolder(cloudPk, projectPk, data)
 
 Create a folder
 
@@ -581,7 +655,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = "cloudPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Folder(); // Folder | 
+let data = new bimdata.InlineObject(); // InlineObject | 
 apiInstance.createFolder(cloudPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -597,11 +671,71 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Folder**](Folder.md)|  | 
+ **data** | [**InlineObject**](InlineObject.md)|  | 
 
 ### Return type
 
-[**Folder**](Folder.md)
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createManageGroup
+
+> InlineResponse2001 createManageGroup(cloudPk, projectPk, data)
+
+Create a group
+
+Create a group. Must be an admin of the project Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.InlineObject3(); // InlineObject3 | 
+apiInstance.createManageGroup(cloudPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**InlineObject3**](InlineObject3.md)|  | 
+
+### Return type
+
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -1009,6 +1143,128 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this folder. | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## deleteGroupMember
+
+> deleteGroupMember(cloudPk, groupPk, id, projectPk)
+
+Delete a user from a group
+
+Delete a user from a group. Must be an admin of the project Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let groupPk = "groupPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this fos user.
+let projectPk = "projectPk_example"; // String | 
+apiInstance.deleteGroupMember(cloudPk, groupPk, id, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **groupPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this fos user. | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## deleteManageGroup
+
+> deleteManageGroup(cloudPk, id, projectPk)
+
+Delete a group
+
+Delete a group. Must be an admin of the project Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this group.
+let projectPk = "projectPk_example"; // String | 
+apiInstance.deleteManageGroup(cloudPk, id, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this group. | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -1465,11 +1721,11 @@ Name | Type | Description  | Notes
 
 ## fullUpdateFolder
 
-> Folder fullUpdateFolder(cloudPk, id, projectPk, data)
+> InlineResponse200 fullUpdateFolder(cloudPk, id, projectPk, data)
 
 Update all fields of a folder
 
-Update all fields of a folder Required scopes: document:write
+Update all fields of a folder. Only project admins can update the &#x60;default_permission&#x60; field Required scopes: document:write
 
 ### Example
 
@@ -1492,7 +1748,7 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this folder.
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Folder(); // Folder | 
+let data = new bimdata.InlineObject1(); // InlineObject1 | 
 apiInstance.fullUpdateFolder(cloudPk, id, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1509,11 +1765,137 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this folder. | 
  **projectPk** | **String**|  | 
- **data** | [**Folder**](Folder.md)|  | 
+ **data** | [**InlineObject1**](InlineObject1.md)|  | 
 
 ### Return type
 
-[**Folder**](Folder.md)
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## fullUpdateGroupFolder
+
+> GroupFolder fullUpdateGroupFolder(cloudPk, folderPk, id, projectPk, data)
+
+Update the permission of a group on a folder
+
+Update the permission of a group on a folder.             0: ACCESS_DENIED,             50: READ_ONLY,             100: READ_WRTIE  Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let folderPk = "folderPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this group folder.
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.GroupFolder(); // GroupFolder | 
+apiInstance.fullUpdateGroupFolder(cloudPk, folderPk, id, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **folderPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this group folder. | 
+ **projectPk** | **String**|  | 
+ **data** | [**GroupFolder**](GroupFolder.md)|  | 
+
+### Return type
+
+[**GroupFolder**](GroupFolder.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## fullUpdateManageGroup
+
+> InlineResponse2001 fullUpdateManageGroup(cloudPk, id, projectPk, data)
+
+Update all fields of a group
+
+Update all fields of a group. Must be an admin of the project Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this group.
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.InlineObject4(); // InlineObject4 | 
+apiInstance.fullUpdateManageGroup(cloudPk, id, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this group. | 
+ **projectPk** | **String**|  | 
+ **data** | [**InlineObject4**](InlineObject4.md)|  | 
+
+### Return type
+
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -2289,7 +2671,7 @@ Name | Type | Description  | Notes
 
 ## getFolder
 
-> Folder getFolder(cloudPk, id, projectPk)
+> InlineResponse200 getFolder(cloudPk, id, projectPk)
 
 Retrieve a folder
 
@@ -2335,7 +2717,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Folder**](Folder.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -2349,7 +2731,7 @@ Name | Type | Description  | Notes
 
 ## getFolders
 
-> [Folder] getFolders(cloudPk, projectPk)
+> [InlineResponse200] getFolders(cloudPk, projectPk)
 
 Retrieve all folders
 
@@ -2393,7 +2775,243 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Folder]**](Folder.md)
+[**[InlineResponse200]**](InlineResponse200.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getGroup
+
+> InlineResponse2001 getGroup(cloudPk, id, projectPk)
+
+Retrieve a group
+
+Retrieve a group to which the user belongs Required scopes: document:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this group.
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getGroup(cloudPk, id, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this group. | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**InlineResponse2001**](InlineResponse2001.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getGroups
+
+> [InlineResponse2001] getGroups(cloudPk, projectPk)
+
+Retrieve all groups
+
+Retrieves all groups to which the user belongs Required scopes: document:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getGroups(cloudPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**[InlineResponse2001]**](InlineResponse2001.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getManageGroup
+
+> InlineResponse2001 getManageGroup(cloudPk, id, projectPk)
+
+Retrieve a group
+
+Retrieve a group. Must be an admin of the project Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this group.
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getManageGroup(cloudPk, id, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this group. | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**InlineResponse2001**](InlineResponse2001.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getManageGroups
+
+> [InlineResponse2001] getManageGroups(cloudPk, projectPk)
+
+Retrieve all groups
+
+Retrieve all groups in the project. Must be an admin of the project Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getManageGroups(cloudPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**[InlineResponse2001]**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -3461,11 +4079,11 @@ Name | Type | Description  | Notes
 
 ## updateFolder
 
-> Folder updateFolder(cloudPk, id, projectPk, data)
+> InlineResponse200 updateFolder(cloudPk, id, projectPk, data)
 
 Update some fields of a folder
 
-Update some fields of a folder Required scopes: document:write
+Update some fields of a folder. Only project admins can update the &#x60;default_permission&#x60; field Required scopes: document:write
 
 ### Example
 
@@ -3488,7 +4106,7 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this folder.
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Folder(); // Folder | 
+let data = new bimdata.InlineObject2(); // InlineObject2 | 
 apiInstance.updateFolder(cloudPk, id, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3505,11 +4123,137 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this folder. | 
  **projectPk** | **String**|  | 
- **data** | [**Folder**](Folder.md)|  | 
+ **data** | [**InlineObject2**](InlineObject2.md)|  | 
 
 ### Return type
 
-[**Folder**](Folder.md)
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateGroupFolder
+
+> GroupFolder updateGroupFolder(cloudPk, folderPk, id, projectPk, data)
+
+Update the permission of a group on a folder
+
+Update the permission of a group on a folder.             0: ACCESS_DENIED,             50: READ_ONLY,             100: READ_WRTIE  Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let folderPk = "folderPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this group folder.
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.GroupFolder(); // GroupFolder | 
+apiInstance.updateGroupFolder(cloudPk, folderPk, id, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **folderPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this group folder. | 
+ **projectPk** | **String**|  | 
+ **data** | [**GroupFolder**](GroupFolder.md)|  | 
+
+### Return type
+
+[**GroupFolder**](GroupFolder.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateManageGroup
+
+> InlineResponse2001 updateManageGroup(cloudPk, id, projectPk, data)
+
+Update some fields of a group
+
+Update some fields of a group. Must be an admin of the project Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this group.
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.InlineObject5(); // InlineObject5 | 
+apiInstance.updateManageGroup(cloudPk, id, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this group. | 
+ **projectPk** | **String**|  | 
+ **data** | [**InlineObject5**](InlineObject5.md)|  | 
+
+### Return type
+
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 

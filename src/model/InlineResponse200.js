@@ -12,23 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import RecursiveFolderChildren from './RecursiveFolderChildren';
 import User from './User';
 
 /**
- * The Folder model module.
- * @module model/Folder
+ * The InlineResponse200 model module.
+ * @module model/InlineResponse200
  * @version 0.0.0
  */
-class Folder {
+class InlineResponse200 {
     /**
-     * Constructs a new <code>Folder</code>.
-     * @alias module:model/Folder
+     * Constructs a new <code>InlineResponse200</code>.
+     * @alias module:model/InlineResponse200
      * @param name {String} Name of the folder
      */
     constructor(name) { 
         
-        Folder.initialize(this, name);
+        InlineResponse200.initialize(this, name);
     }
 
     /**
@@ -41,15 +40,15 @@ class Folder {
     }
 
     /**
-     * Constructs a <code>Folder</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InlineResponse200</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Folder} obj Optional instance to populate.
-     * @return {module:model/Folder} The populated <code>Folder</code> instance.
+     * @param {module:model/InlineResponse200} obj Optional instance to populate.
+     * @return {module:model/InlineResponse200} The populated <code>InlineResponse200</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Folder();
+            obj = obj || new InlineResponse200();
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
@@ -81,9 +80,6 @@ class Folder {
             if (data.hasOwnProperty('user_permission')) {
                 obj['user_permission'] = ApiClient.convertToType(data['user_permission'], 'Number');
             }
-            if (data.hasOwnProperty('children')) {
-                obj['children'] = ApiClient.convertToType(data['children'], [RecursiveFolderChildren]);
-            }
         }
         return obj;
     }
@@ -94,68 +90,63 @@ class Folder {
 /**
  * @member {Number} id
  */
-Folder.prototype['id'] = undefined;
+InlineResponse200.prototype['id'] = undefined;
 
 /**
  * @member {Number} parent_id
  */
-Folder.prototype['parent_id'] = undefined;
+InlineResponse200.prototype['parent_id'] = undefined;
 
 /**
  * Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
  * @member {String} type
  */
-Folder.prototype['type'] = undefined;
+InlineResponse200.prototype['type'] = undefined;
 
 /**
  * Name of the folder
  * @member {String} name
  */
-Folder.prototype['name'] = undefined;
+InlineResponse200.prototype['name'] = undefined;
 
 /**
  * Creation date
  * @member {Date} created_at
  */
-Folder.prototype['created_at'] = undefined;
+InlineResponse200.prototype['created_at'] = undefined;
 
 /**
  * Date of the last update
  * @member {Date} updated_at
  */
-Folder.prototype['updated_at'] = undefined;
+InlineResponse200.prototype['updated_at'] = undefined;
 
 /**
  * @member {module:model/User} created_by
  */
-Folder.prototype['created_by'] = undefined;
+InlineResponse200.prototype['created_by'] = undefined;
 
 /**
  * @member {Array.<Number>} groups
  */
-Folder.prototype['groups'] = undefined;
+InlineResponse200.prototype['groups'] = undefined;
 
 /**
  * Permission for a Folder
  * @member {Number} default_permission
  */
-Folder.prototype['default_permission'] = undefined;
+InlineResponse200.prototype['default_permission'] = undefined;
 
 /**
  * Aggregate of group user permissions and folder default permission
  * @member {Number} user_permission
  */
-Folder.prototype['user_permission'] = undefined;
-
-/**
- * @member {Array.<module:model/RecursiveFolderChildren>} children
- */
-Folder.prototype['children'] = undefined;
+InlineResponse200.prototype['user_permission'] = undefined;
 
 
 
 
 
 
-export default Folder;
+export default InlineResponse200;
 

@@ -31,7 +31,9 @@ import Element from './model/Element';
 import Extensions from './model/Extensions';
 import Feature from './model/Feature';
 import Folder from './model/Folder';
+import FosUserId from './model/FosUserId';
 import FullTopic from './model/FullTopic';
+import GroupFolder from './model/GroupFolder';
 import Ifc from './model/Ifc';
 import IfcAccessToken from './model/IfcAccessToken';
 import IfcChecker from './model/IfcChecker';
@@ -42,6 +44,14 @@ import IfcExport from './model/IfcExport';
 import IfcFiles from './model/IfcFiles';
 import IfcMerge from './model/IfcMerge';
 import IfcOptimize from './model/IfcOptimize';
+import InlineObject from './model/InlineObject';
+import InlineObject1 from './model/InlineObject1';
+import InlineObject2 from './model/InlineObject2';
+import InlineObject3 from './model/InlineObject3';
+import InlineObject4 from './model/InlineObject4';
+import InlineObject5 from './model/InlineObject5';
+import InlineResponse200 from './model/InlineResponse200';
+import InlineResponse2001 from './model/InlineResponse2001';
 import Invitation from './model/Invitation';
 import Label from './model/Label';
 import Layer from './model/Layer';
@@ -259,10 +269,22 @@ export {
     Folder,
 
     /**
+     * The FosUserId model constructor.
+     * @property {module:model/FosUserId}
+     */
+    FosUserId,
+
+    /**
      * The FullTopic model constructor.
      * @property {module:model/FullTopic}
      */
     FullTopic,
+
+    /**
+     * The GroupFolder model constructor.
+     * @property {module:model/GroupFolder}
+     */
+    GroupFolder,
 
     /**
      * The Ifc model constructor.
@@ -323,6 +345,54 @@ export {
      * @property {module:model/IfcOptimize}
      */
     IfcOptimize,
+
+    /**
+     * The InlineObject model constructor.
+     * @property {module:model/InlineObject}
+     */
+    InlineObject,
+
+    /**
+     * The InlineObject1 model constructor.
+     * @property {module:model/InlineObject1}
+     */
+    InlineObject1,
+
+    /**
+     * The InlineObject2 model constructor.
+     * @property {module:model/InlineObject2}
+     */
+    InlineObject2,
+
+    /**
+     * The InlineObject3 model constructor.
+     * @property {module:model/InlineObject3}
+     */
+    InlineObject3,
+
+    /**
+     * The InlineObject4 model constructor.
+     * @property {module:model/InlineObject4}
+     */
+    InlineObject4,
+
+    /**
+     * The InlineObject5 model constructor.
+     * @property {module:model/InlineObject5}
+     */
+    InlineObject5,
+
+    /**
+     * The InlineResponse200 model constructor.
+     * @property {module:model/InlineResponse200}
+     */
+    InlineResponse200,
+
+    /**
+     * The InlineResponse2001 model constructor.
+     * @property {module:model/InlineResponse2001}
+     */
+    InlineResponse2001,
 
     /**
      * The Invitation model constructor.

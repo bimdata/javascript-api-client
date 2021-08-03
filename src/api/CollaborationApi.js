@@ -18,6 +18,16 @@ import Cloud from '../model/Cloud';
 import CloudInvitation from '../model/CloudInvitation';
 import Document from '../model/Document';
 import Folder from '../model/Folder';
+import FosUserId from '../model/FosUserId';
+import GroupFolder from '../model/GroupFolder';
+import InlineObject from '../model/InlineObject';
+import InlineObject1 from '../model/InlineObject1';
+import InlineObject2 from '../model/InlineObject2';
+import InlineObject3 from '../model/InlineObject3';
+import InlineObject4 from '../model/InlineObject4';
+import InlineObject5 from '../model/InlineObject5';
+import InlineResponse200 from '../model/InlineResponse200';
+import InlineResponse2001 from '../model/InlineResponse2001';
 import Project from '../model/Project';
 import ProjectAccessToken from '../model/ProjectAccessToken';
 import ProjectInvitation from '../model/ProjectInvitation';
@@ -45,6 +55,74 @@ export default class CollaborationApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+
+    /**
+     * Add a user to a group
+     * Add a user to a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} groupPk 
+     * @param {String} projectPk 
+     * @param {module:model/FosUserId} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     */
+    addGroupMemberWithHttpInfo(cloudPk, groupPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling addGroupMember");
+      }
+      // verify the required parameter 'groupPk' is set
+      if (groupPk === undefined || groupPk === null) {
+        throw new Error("Missing the required parameter 'groupPk' when calling addGroupMember");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling addGroupMember");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling addGroupMember");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'group_pk': groupPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = User;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/group/{group_pk}/member', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Add a user to a group
+     * Add a user to a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} groupPk 
+     * @param {String} projectPk 
+     * @param {module:model/FosUserId} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     */
+    addGroupMember(cloudPk, groupPk, projectPk, data) {
+      return this.addGroupMemberWithHttpInfo(cloudPk, groupPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
 
     /**
@@ -322,7 +400,7 @@ export default class CollaborationApi {
 
     /**
      * Create a complete DMS tree
-     *                  Create a DMS structure of folder                 Format request :                     [{                         \"name\": :name:                         \"parent_id\": :parent_id:    # optionnal                         \"children\": [{              # optionnal                             \"name\": :name:,                             \"children\": []                         }]                     }],  Required scopes: org:manage
+     *                  Create a DMS structure of folder                 Format request :                     [{                         \"name\": :name:                         \"parent_id\": :parent_id:                      # optionnal                         \"default_permission\": :default_permission:    # optionnal                         \"children\": [{                                # optionnal                             \"name\": :name:,                             \"children\": []                         }]                     }],  Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/Folder} data 
@@ -367,7 +445,7 @@ export default class CollaborationApi {
 
     /**
      * Create a complete DMS tree
-     *                  Create a DMS structure of folder                 Format request :                     [{                         \"name\": :name:                         \"parent_id\": :parent_id:    # optionnal                         \"children\": [{              # optionnal                             \"name\": :name:,                             \"children\": []                         }]                     }],  Required scopes: org:manage
+     *                  Create a DMS structure of folder                 Format request :                     [{                         \"name\": :name:                         \"parent_id\": :parent_id:                      # optionnal                         \"default_permission\": :default_permission:    # optionnal                         \"children\": [{                                # optionnal                             \"name\": :name:,                             \"children\": []                         }]                     }],  Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {module:model/Folder} data 
@@ -527,8 +605,8 @@ export default class CollaborationApi {
      * If the created folder have no parent, it will be put as a child of the default root folder of the project Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:model/Folder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
+     * @param {module:model/InlineObject} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     createFolderWithHttpInfo(cloudPk, projectPk, data) {
       let postBody = data;
@@ -559,7 +637,7 @@ export default class CollaborationApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Folder;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -572,11 +650,72 @@ export default class CollaborationApi {
      * If the created folder have no parent, it will be put as a child of the default root folder of the project Required scopes: document:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @param {module:model/Folder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
+     * @param {module:model/InlineObject} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     createFolder(cloudPk, projectPk, data) {
       return this.createFolderWithHttpInfo(cloudPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a group
+     * Create a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/InlineObject3} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     */
+    createManageGroupWithHttpInfo(cloudPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createManageGroup");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createManageGroup");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createManageGroup");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2001;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/group', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a group
+     * Create a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/InlineObject3} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     */
+    createManageGroup(cloudPk, projectPk, data) {
+      return this.createManageGroupWithHttpInfo(cloudPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -981,6 +1120,137 @@ export default class CollaborationApi {
      */
     deleteFolder(cloudPk, id, projectPk) {
       return this.deleteFolderWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a user from a group
+     * Delete a user from a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} groupPk 
+     * @param {Number} id A unique integer value identifying this fos user.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteGroupMemberWithHttpInfo(cloudPk, groupPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteGroupMember");
+      }
+      // verify the required parameter 'groupPk' is set
+      if (groupPk === undefined || groupPk === null) {
+        throw new Error("Missing the required parameter 'groupPk' when calling deleteGroupMember");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteGroupMember");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteGroupMember");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'group_pk': groupPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/group/{group_pk}/member/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a user from a group
+     * Delete a user from a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} groupPk 
+     * @param {Number} id A unique integer value identifying this fos user.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteGroupMember(cloudPk, groupPk, id, projectPk) {
+      return this.deleteGroupMemberWithHttpInfo(cloudPk, groupPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a group
+     * Delete a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this group.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteManageGroupWithHttpInfo(cloudPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteManageGroup");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteManageGroup");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteManageGroup");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/group/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a group
+     * Delete a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this group.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteManageGroup(cloudPk, id, projectPk) {
+      return this.deleteManageGroupWithHttpInfo(cloudPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1451,12 +1721,12 @@ export default class CollaborationApi {
 
     /**
      * Update all fields of a folder
-     * Update all fields of a folder Required scopes: document:write
+     * Update all fields of a folder. Only project admins can update the `default_permission` field Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @param {module:model/Folder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
+     * @param {module:model/InlineObject1} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     fullUpdateFolderWithHttpInfo(cloudPk, id, projectPk, data) {
       let postBody = data;
@@ -1492,7 +1762,7 @@ export default class CollaborationApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Folder;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1502,15 +1772,158 @@ export default class CollaborationApi {
 
     /**
      * Update all fields of a folder
-     * Update all fields of a folder Required scopes: document:write
+     * Update all fields of a folder. Only project admins can update the `default_permission` field Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @param {module:model/Folder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
+     * @param {module:model/InlineObject1} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     fullUpdateFolder(cloudPk, id, projectPk, data) {
       return this.fullUpdateFolderWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update the permission of a group on a folder
+     * Update the permission of a group on a folder.             0: ACCESS_DENIED,             50: READ_ONLY,             100: READ_WRTIE  Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} folderPk 
+     * @param {Number} id A unique integer value identifying this group folder.
+     * @param {String} projectPk 
+     * @param {module:model/GroupFolder} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GroupFolder} and HTTP response
+     */
+    fullUpdateGroupFolderWithHttpInfo(cloudPk, folderPk, id, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateGroupFolder");
+      }
+      // verify the required parameter 'folderPk' is set
+      if (folderPk === undefined || folderPk === null) {
+        throw new Error("Missing the required parameter 'folderPk' when calling fullUpdateGroupFolder");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateGroupFolder");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateGroupFolder");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateGroupFolder");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'folder_pk': folderPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GroupFolder;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/group/{id}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update the permission of a group on a folder
+     * Update the permission of a group on a folder.             0: ACCESS_DENIED,             50: READ_ONLY,             100: READ_WRTIE  Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} folderPk 
+     * @param {Number} id A unique integer value identifying this group folder.
+     * @param {String} projectPk 
+     * @param {module:model/GroupFolder} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GroupFolder}
+     */
+    fullUpdateGroupFolder(cloudPk, folderPk, id, projectPk, data) {
+      return this.fullUpdateGroupFolderWithHttpInfo(cloudPk, folderPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update all fields of a group
+     * Update all fields of a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this group.
+     * @param {String} projectPk 
+     * @param {module:model/InlineObject4} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     */
+    fullUpdateManageGroupWithHttpInfo(cloudPk, id, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateManageGroup");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fullUpdateManageGroup");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateManageGroup");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateManageGroup");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2001;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/group/{id}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update all fields of a group
+     * Update all fields of a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this group.
+     * @param {String} projectPk 
+     * @param {module:model/InlineObject4} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     */
+    fullUpdateManageGroup(cloudPk, id, projectPk, data) {
+      return this.fullUpdateManageGroupWithHttpInfo(cloudPk, id, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2255,7 +2668,7 @@ export default class CollaborationApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     getFolderWithHttpInfo(cloudPk, id, projectPk) {
       let postBody = null;
@@ -2287,7 +2700,7 @@ export default class CollaborationApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Folder;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2301,7 +2714,7 @@ export default class CollaborationApi {
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     getFolder(cloudPk, id, projectPk) {
       return this.getFolderWithHttpInfo(cloudPk, id, projectPk)
@@ -2316,7 +2729,7 @@ export default class CollaborationApi {
      * Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree Required scopes: document:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Folder>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse200>} and HTTP response
      */
     getFoldersWithHttpInfo(cloudPk, projectPk) {
       let postBody = null;
@@ -2343,7 +2756,7 @@ export default class CollaborationApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Folder];
+      let returnType = [InlineResponse200];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2356,10 +2769,244 @@ export default class CollaborationApi {
      * Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree Required scopes: document:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Folder>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse200>}
      */
     getFolders(cloudPk, projectPk) {
       return this.getFoldersWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a group
+     * Retrieve a group to which the user belongs Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this group.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     */
+    getGroupWithHttpInfo(cloudPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getGroup");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getGroup");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getGroup");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2001;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/me/group/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a group
+     * Retrieve a group to which the user belongs Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this group.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     */
+    getGroup(cloudPk, id, projectPk) {
+      return this.getGroupWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all groups
+     * Retrieves all groups to which the user belongs Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse2001>} and HTTP response
+     */
+    getGroupsWithHttpInfo(cloudPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getGroups");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getGroups");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [InlineResponse2001];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/me/group', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all groups
+     * Retrieves all groups to which the user belongs Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse2001>}
+     */
+    getGroups(cloudPk, projectPk) {
+      return this.getGroupsWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a group
+     * Retrieve a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this group.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     */
+    getManageGroupWithHttpInfo(cloudPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getManageGroup");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getManageGroup");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getManageGroup");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2001;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/group/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a group
+     * Retrieve a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this group.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     */
+    getManageGroup(cloudPk, id, projectPk) {
+      return this.getManageGroupWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all groups
+     * Retrieve all groups in the project. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse2001>} and HTTP response
+     */
+    getManageGroupsWithHttpInfo(cloudPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getManageGroups");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getManageGroups");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [InlineResponse2001];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/group', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all groups
+     * Retrieve all groups in the project. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse2001>}
+     */
+    getManageGroups(cloudPk, projectPk) {
+      return this.getManageGroupsWithHttpInfo(cloudPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3381,12 +4028,12 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of a folder
-     * Update some fields of a folder Required scopes: document:write
+     * Update some fields of a folder. Only project admins can update the `default_permission` field Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @param {module:model/Folder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
+     * @param {module:model/InlineObject2} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     updateFolderWithHttpInfo(cloudPk, id, projectPk, data) {
       let postBody = data;
@@ -3422,7 +4069,7 @@ export default class CollaborationApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Folder;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/folder/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3432,15 +4079,158 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of a folder
-     * Update some fields of a folder Required scopes: document:write
+     * Update some fields of a folder. Only project admins can update the `default_permission` field Required scopes: document:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this folder.
      * @param {String} projectPk 
-     * @param {module:model/Folder} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
+     * @param {module:model/InlineObject2} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     updateFolder(cloudPk, id, projectPk, data) {
       return this.updateFolderWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update the permission of a group on a folder
+     * Update the permission of a group on a folder.             0: ACCESS_DENIED,             50: READ_ONLY,             100: READ_WRTIE  Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} folderPk 
+     * @param {Number} id A unique integer value identifying this group folder.
+     * @param {String} projectPk 
+     * @param {module:model/GroupFolder} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GroupFolder} and HTTP response
+     */
+    updateGroupFolderWithHttpInfo(cloudPk, folderPk, id, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateGroupFolder");
+      }
+      // verify the required parameter 'folderPk' is set
+      if (folderPk === undefined || folderPk === null) {
+        throw new Error("Missing the required parameter 'folderPk' when calling updateGroupFolder");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateGroupFolder");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateGroupFolder");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateGroupFolder");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'folder_pk': folderPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GroupFolder;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/group/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update the permission of a group on a folder
+     * Update the permission of a group on a folder.             0: ACCESS_DENIED,             50: READ_ONLY,             100: READ_WRTIE  Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {String} folderPk 
+     * @param {Number} id A unique integer value identifying this group folder.
+     * @param {String} projectPk 
+     * @param {module:model/GroupFolder} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GroupFolder}
+     */
+    updateGroupFolder(cloudPk, folderPk, id, projectPk, data) {
+      return this.updateGroupFolderWithHttpInfo(cloudPk, folderPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a group
+     * Update some fields of a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this group.
+     * @param {String} projectPk 
+     * @param {module:model/InlineObject5} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     */
+    updateManageGroupWithHttpInfo(cloudPk, id, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateManageGroup");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateManageGroup");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateManageGroup");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateManageGroup");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2001;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/group/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a group
+     * Update some fields of a group. Must be an admin of the project Required scopes: org:manage
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this group.
+     * @param {String} projectPk 
+     * @param {module:model/InlineObject5} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     */
+    updateManageGroup(cloudPk, id, projectPk, data) {
+      return this.updateManageGroupWithHttpInfo(cloudPk, id, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

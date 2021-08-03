@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.RecursiveFolderChildren();
+    instance = new bimdata.InlineResponse200();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,106 +47,70 @@
       object[property] = value;
   }
 
-  describe('RecursiveFolderChildren', function() {
-    it('should create an instance of RecursiveFolderChildren', function() {
-      // uncomment below and update the code to test RecursiveFolderChildren
-      //var instane = new bimdata.RecursiveFolderChildren();
-      //expect(instance).to.be.a(bimdata.RecursiveFolderChildren);
+  describe('InlineResponse200', function() {
+    it('should create an instance of InlineResponse200', function() {
+      // uncomment below and update the code to test InlineResponse200
+      //var instane = new bimdata.InlineResponse200();
+      //expect(instance).to.be.a(bimdata.InlineResponse200);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.RecursiveFolderChildren();
+      //var instane = new bimdata.InlineResponse200();
       //expect(instance).to.be();
     });
 
     it('should have the property parentId (base name: "parent_id")', function() {
       // uncomment below and update the code to test the property parentId
-      //var instane = new bimdata.RecursiveFolderChildren();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createdBy (base name: "created_by")', function() {
-      // uncomment below and update the code to test the property createdBy
-      //var instane = new bimdata.RecursiveFolderChildren();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property creator (base name: "creator")', function() {
-      // uncomment below and update the code to test the property creator
-      //var instane = new bimdata.RecursiveFolderChildren();
+      //var instane = new bimdata.InlineResponse200();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.RecursiveFolderChildren();
+      //var instane = new bimdata.InlineResponse200();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.RecursiveFolderChildren();
+      //var instane = new bimdata.InlineResponse200();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.RecursiveFolderChildren();
+      //var instane = new bimdata.InlineResponse200();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.RecursiveFolderChildren();
+      //var instane = new bimdata.InlineResponse200();
       //expect(instance).to.be();
     });
 
-    it('should have the property fileName (base name: "file_name")', function() {
-      // uncomment below and update the code to test the property fileName
-      //var instane = new bimdata.RecursiveFolderChildren();
+    it('should have the property createdBy (base name: "created_by")', function() {
+      // uncomment below and update the code to test the property createdBy
+      //var instane = new bimdata.InlineResponse200();
       //expect(instance).to.be();
     });
 
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
-      //var instane = new bimdata.RecursiveFolderChildren();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property size (base name: "size")', function() {
-      // uncomment below and update the code to test the property size
-      //var instane = new bimdata.RecursiveFolderChildren();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property ifcId (base name: "ifc_id")', function() {
-      // uncomment below and update the code to test the property ifcId
-      //var instane = new bimdata.RecursiveFolderChildren();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property file (base name: "file")', function() {
-      // uncomment below and update the code to test the property file
-      //var instane = new bimdata.RecursiveFolderChildren();
+    it('should have the property groups (base name: "groups")', function() {
+      // uncomment below and update the code to test the property groups
+      //var instane = new bimdata.InlineResponse200();
       //expect(instance).to.be();
     });
 
     it('should have the property defaultPermission (base name: "default_permission")', function() {
       // uncomment below and update the code to test the property defaultPermission
-      //var instane = new bimdata.RecursiveFolderChildren();
+      //var instane = new bimdata.InlineResponse200();
       //expect(instance).to.be();
     });
 
     it('should have the property userPermission (base name: "user_permission")', function() {
       // uncomment below and update the code to test the property userPermission
-      //var instane = new bimdata.RecursiveFolderChildren();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property children (base name: "children")', function() {
-      // uncomment below and update the code to test the property children
-      //var instane = new bimdata.RecursiveFolderChildren();
+      //var instane = new bimdata.InlineResponse200();
       //expect(instance).to.be();
     });
 
