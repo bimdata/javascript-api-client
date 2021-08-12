@@ -99,7 +99,7 @@ class RecursiveFolderChildren {
                 obj['file'] = ApiClient.convertToType(data['file'], 'String');
             }
             if (data.hasOwnProperty('groups_permissions')) {
-                obj['groups_permissions'] = FolderGroupPermission.constructFromObject(data['groups_permissions']);
+                obj['groups_permissions'] = ApiClient.convertToType(data['groups_permissions'], [FolderGroupPermission]);
             }
             if (data.hasOwnProperty('default_permission')) {
                 obj['default_permission'] = ApiClient.convertToType(data['default_permission'], 'Number');
@@ -184,7 +184,8 @@ RecursiveFolderChildren.prototype['ifc_id'] = undefined;
 RecursiveFolderChildren.prototype['file'] = undefined;
 
 /**
- * @member {module:model/FolderGroupPermission} groups_permissions
+ * Groups permissions of folder
+ * @member {Array.<module:model/FolderGroupPermission>} groups_permissions
  */
 RecursiveFolderChildren.prototype['groups_permissions'] = undefined;
 
