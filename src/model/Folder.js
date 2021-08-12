@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import FolderGroupPermission from './FolderGroupPermission';
 import RecursiveFolderChildren from './RecursiveFolderChildren';
 import User from './User';
 
@@ -72,8 +73,8 @@ class Folder {
             if (data.hasOwnProperty('created_by')) {
                 obj['created_by'] = User.constructFromObject(data['created_by']);
             }
-            if (data.hasOwnProperty('groups')) {
-                obj['groups'] = ApiClient.convertToType(data['groups'], ['Number']);
+            if (data.hasOwnProperty('groups_permissions')) {
+                obj['groups_permissions'] = ApiClient.convertToType(data['groups_permissions'], [FolderGroupPermission]);
             }
             if (data.hasOwnProperty('default_permission')) {
                 obj['default_permission'] = ApiClient.convertToType(data['default_permission'], 'Number');
@@ -131,9 +132,9 @@ Folder.prototype['updated_at'] = undefined;
 Folder.prototype['created_by'] = undefined;
 
 /**
- * @member {Array.<Number>} groups
+ * @member {Array.<module:model/FolderGroupPermission>} groups_permissions
  */
-Folder.prototype['groups'] = undefined;
+Folder.prototype['groups_permissions'] = undefined;
 
 /**
  * Permission for a Folder

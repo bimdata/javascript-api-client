@@ -447,6 +447,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Extensions](docs/Extensions.md)
  - [bimdata.Feature](docs/Feature.md)
  - [bimdata.Folder](docs/Folder.md)
+ - [bimdata.FolderGroupPermission](docs/FolderGroupPermission.md)
  - [bimdata.FosUserId](docs/FosUserId.md)
  - [bimdata.FullTopic](docs/FullTopic.md)
  - [bimdata.GroupFolder](docs/GroupFolder.md)

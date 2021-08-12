@@ -31,6 +31,7 @@ import Element from './model/Element';
 import Extensions from './model/Extensions';
 import Feature from './model/Feature';
 import Folder from './model/Folder';
+import FolderGroupPermission from './model/FolderGroupPermission';
 import FosUserId from './model/FosUserId';
 import FullTopic from './model/FullTopic';
 import GroupFolder from './model/GroupFolder';
@@ -267,6 +268,12 @@ export {
      * @property {module:model/Folder}
      */
     Folder,
+
+    /**
+     * The FolderGroupPermission model constructor.
+     * @property {module:model/FolderGroupPermission}
+     */
+    FolderGroupPermission,
 
     /**
      * The FosUserId model constructor.

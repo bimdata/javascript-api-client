@@ -96,8 +96,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property groups (base name: "groups")', function() {
-      // uncomment below and update the code to test the property groups
+    it('should have the property groupsPermissions (base name: "groups_permissions")', function() {
+      // uncomment below and update the code to test the property groupsPermissions
       //var instane = new bimdata.Folder();
       //expect(instance).to.be();
     });

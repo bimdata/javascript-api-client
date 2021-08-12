@@ -132,6 +132,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property groupsPermissions (base name: "groups_permissions")', function() {
+      // uncomment below and update the code to test the property groupsPermissions
+      //var instane = new bimdata.RecursiveFolderChildren();
+      //expect(instance).to.be();
+    });
+
     it('should have the property defaultPermission (base name: "default_permission")', function() {
       // uncomment below and update the code to test the property defaultPermission
       //var instane = new bimdata.RecursiveFolderChildren();
