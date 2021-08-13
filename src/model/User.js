@@ -53,9 +53,6 @@ class User {
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
-            if (data.hasOwnProperty('company')) {
-                obj['company'] = ApiClient.convertToType(data['company'], 'String');
-            }
             if (data.hasOwnProperty('firstname')) {
                 obj['firstname'] = ApiClient.convertToType(data['firstname'], 'String');
             }
@@ -80,6 +77,9 @@ class User {
             if (data.hasOwnProperty('sub')) {
                 obj['sub'] = ApiClient.convertToType(data['sub'], 'String');
             }
+            if (data.hasOwnProperty('profile_picture')) {
+                obj['profile_picture'] = ApiClient.convertToType(data['profile_picture'], 'String');
+            }
         }
         return obj;
     }
@@ -96,11 +96,6 @@ User.prototype['id'] = undefined;
  * @member {String} email
  */
 User.prototype['email'] = undefined;
-
-/**
- * @member {String} company
- */
-User.prototype['company'] = undefined;
 
 /**
  * @member {String} firstname
@@ -142,6 +137,11 @@ User.prototype['provider'] = undefined;
  * @member {String} sub
  */
 User.prototype['sub'] = undefined;
+
+/**
+ * @member {String} profile_picture
+ */
+User.prototype['profile_picture'] = undefined;
 
 
 

@@ -66,12 +66,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property company (base name: "company")', function() {
-      // uncomment below and update the code to test the property company
-      //var instane = new bimdata.User();
-      //expect(instance).to.be();
-    });
-
     it('should have the property firstname (base name: "firstname")', function() {
       // uncomment below and update the code to test the property firstname
       //var instane = new bimdata.User();
@@ -116,6 +110,12 @@
 
     it('should have the property sub (base name: "sub")', function() {
       // uncomment below and update the code to test the property sub
+      //var instane = new bimdata.User();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property profilePicture (base name: "profile_picture")', function() {
+      // uncomment below and update the code to test the property profilePicture
       //var instane = new bimdata.User();
       //expect(instance).to.be();
     });

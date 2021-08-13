@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] [readonly] 
 **email** | **String** |  | [optional] [readonly] 
-**company** | **String** |  | [optional] [readonly] 
 **firstname** | **String** |  | [optional] [readonly] 
 **lastname** | **String** |  | [optional] [readonly] 
 **createdAt** | **Date** |  | [optional] [readonly] 
@@ -15,5 +14,6 @@ Name | Type | Description | Notes
 **projectRole** | **Number** |  | [optional] [readonly] 
 **provider** | **String** |  | [optional] [readonly] 
 **sub** | **String** | sub from Keycloak | [optional] [readonly] 
+**profilePicture** | **String** |  | [optional] [readonly] 
 
 

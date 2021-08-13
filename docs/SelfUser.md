@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] [readonly] 
 **email** | **String** |  | 
-**company** | **String** |  | [optional] 
 **firstname** | **String** |  | 
 **lastname** | **String** |  | 
 **createdAt** | **Date** |  | [optional] [readonly] 
@@ -17,5 +16,6 @@ Name | Type | Description | Notes
 **provider** | **String** |  | [optional] [readonly] 
 **providerSub** | **String** | sub from original identity provider | [optional] 
 **sub** | **String** | sub from Keycloak | [optional] [readonly] 
+**profilePicture** | **String** |  | [optional] [readonly] 
 
 
