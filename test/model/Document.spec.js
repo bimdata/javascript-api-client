@@ -138,6 +138,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property userPermission (base name: "user_permission")', function() {
+      // uncomment below and update the code to test the property userPermission
+      //var instane = new bimdata.Document();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

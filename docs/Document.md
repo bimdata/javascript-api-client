@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **updatedAt** | **Date** | Date of the last update | [optional] [readonly] 
 **ifcSource** | **String** | Define the ifc.source field if the upload is an IFC | [optional] 
 **ifcId** | **String** |  | [optional] [readonly] 
+**userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [optional] [readonly] 
 
 
 

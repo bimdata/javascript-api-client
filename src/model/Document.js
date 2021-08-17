@@ -91,6 +91,9 @@ class Document {
             if (data.hasOwnProperty('ifc_id')) {
                 obj['ifc_id'] = ApiClient.convertToType(data['ifc_id'], 'String');
             }
+            if (data.hasOwnProperty('user_permission')) {
+                obj['user_permission'] = ApiClient.convertToType(data['user_permission'], 'Number');
+            }
         }
         return obj;
     }
@@ -174,6 +177,12 @@ Document.prototype['ifc_source'] = undefined;
  * @member {String} ifc_id
  */
 Document.prototype['ifc_id'] = undefined;
+
+/**
+ * Aggregate of group user permissions and folder default permission
+ * @member {Number} user_permission
+ */
+Document.prototype['user_permission'] = undefined;
 
 
 
