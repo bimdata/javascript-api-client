@@ -15,6 +15,8 @@
 import ApiClient from "../ApiClient";
 import Classification from '../model/Classification';
 import Element from '../model/Element';
+import ElementClassificationRelation from '../model/ElementClassificationRelation';
+import ElementPropertySetRelation from '../model/ElementPropertySetRelation';
 import Ifc from '../model/Ifc';
 import IfcAccessToken from '../model/IfcAccessToken';
 import IfcErrors from '../model/IfcErrors';
@@ -914,14 +916,15 @@ export default class IfcApi {
 
     /**
      * Create association between existing classification and existing element
-     *  Required scopes: ifc:write
+     * Create association between existing classification and existing element Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<module:model/ElementClassificationRelation>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    createClassificationElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
+    createClassificationElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+      let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createClassificationElementRelations");
@@ -933,6 +936,10 @@ export default class IfcApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createClassificationElementRelations");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createClassificationElementRelations");
       }
 
       let pathParams = {
@@ -948,7 +955,7 @@ export default class IfcApi {
       };
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -960,14 +967,15 @@ export default class IfcApi {
 
     /**
      * Create association between existing classification and existing element
-     *  Required scopes: ifc:write
+     * Create association between existing classification and existing element Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<module:model/ElementClassificationRelation>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    createClassificationElementRelations(cloudPk, ifcPk, projectPk) {
-      return this.createClassificationElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk)
+    createClassificationElementRelations(cloudPk, ifcPk, projectPk, data) {
+      return this.createClassificationElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1733,14 +1741,15 @@ export default class IfcApi {
 
     /**
      * Create association between PropertySet and element
-     *  Required scopes: ifc:write
+     * Create association between existing PropertySet and existing element Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<module:model/ElementPropertySetRelation>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    createPropertySetElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
+    createPropertySetElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+      let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createPropertySetElementRelations");
@@ -1752,6 +1761,10 @@ export default class IfcApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createPropertySetElementRelations");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createPropertySetElementRelations");
       }
 
       let pathParams = {
@@ -1767,7 +1780,7 @@ export default class IfcApi {
       };
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -1779,14 +1792,15 @@ export default class IfcApi {
 
     /**
      * Create association between PropertySet and element
-     *  Required scopes: ifc:write
+     * Create association between existing PropertySet and existing element Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<module:model/ElementPropertySetRelation>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    createPropertySetElementRelations(cloudPk, ifcPk, projectPk) {
-      return this.createPropertySetElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk)
+    createPropertySetElementRelations(cloudPk, ifcPk, projectPk, data) {
+      return this.createPropertySetElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7499,11 +7513,11 @@ export default class IfcApi {
 
     /**
      * List all associations between classifications and elements
-     *  Required scopes: ifc:read
+     * List all associations between classifications and elements Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ElementClassificationRelation>} and HTTP response
      */
     listClassificationElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk) {
       let postBody = null;
@@ -7534,8 +7548,8 @@ export default class IfcApi {
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
+      let accepts = ['application/json'];
+      let returnType = [ElementClassificationRelation];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -7545,11 +7559,11 @@ export default class IfcApi {
 
     /**
      * List all associations between classifications and elements
-     *  Required scopes: ifc:read
+     * List all associations between classifications and elements Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ElementClassificationRelation>}
      */
     listClassificationElementRelations(cloudPk, ifcPk, projectPk) {
       return this.listClassificationElementRelationsWithHttpInfo(cloudPk, ifcPk, projectPk)

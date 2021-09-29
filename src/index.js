@@ -28,6 +28,8 @@ import ComponentsParent from './model/ComponentsParent';
 import Direction from './model/Direction';
 import Document from './model/Document';
 import Element from './model/Element';
+import ElementClassificationRelation from './model/ElementClassificationRelation';
+import ElementPropertySetRelation from './model/ElementPropertySetRelation';
 import Extensions from './model/Extensions';
 import Feature from './model/Feature';
 import Folder from './model/Folder';
@@ -73,6 +75,7 @@ import Project from './model/Project';
 import ProjectAccessToken from './model/ProjectAccessToken';
 import ProjectInvitation from './model/ProjectInvitation';
 import ProjectRole from './model/ProjectRole';
+import ProjectSize from './model/ProjectSize';
 import ProjectWithChildren from './model/ProjectWithChildren';
 import Property from './model/Property';
 import PropertyDefinition from './model/PropertyDefinition';
@@ -98,6 +101,7 @@ import SelectUser from './model/SelectUser';
 import SelfBcfUser from './model/SelfBcfUser';
 import SelfUser from './model/SelfUser';
 import SimpleElement from './model/SimpleElement';
+import Size from './model/Size';
 import Snapshot from './model/Snapshot';
 import Space from './model/Space';
 import Stage from './model/Stage';
@@ -250,6 +254,18 @@ export {
      * @property {module:model/Element}
      */
     Element,
+
+    /**
+     * The ElementClassificationRelation model constructor.
+     * @property {module:model/ElementClassificationRelation}
+     */
+    ElementClassificationRelation,
+
+    /**
+     * The ElementPropertySetRelation model constructor.
+     * @property {module:model/ElementPropertySetRelation}
+     */
+    ElementPropertySetRelation,
 
     /**
      * The Extensions model constructor.
@@ -522,6 +538,12 @@ export {
     ProjectRole,
 
     /**
+     * The ProjectSize model constructor.
+     * @property {module:model/ProjectSize}
+     */
+    ProjectSize,
+
+    /**
      * The ProjectWithChildren model constructor.
      * @property {module:model/ProjectWithChildren}
      */
@@ -670,6 +692,12 @@ export {
      * @property {module:model/SimpleElement}
      */
     SimpleElement,
+
+    /**
+     * The Size model constructor.
+     * @property {module:model/Size}
+     */
+    Size,
 
     /**
      * The Snapshot model constructor.

@@ -244,7 +244,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getClassifications**](docs/CollaborationApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
 *bimdata.CollaborationApi* | [**getCloud**](docs/CollaborationApi.md#getCloud) | **GET** /cloud/{id} | Retrieve one cloud
 *bimdata.CollaborationApi* | [**getCloudInvitations**](docs/CollaborationApi.md#getCloudInvitations) | **GET** /cloud/{cloud_pk}/invitation | Retrieve all pending invitations in the cloud
-*bimdata.CollaborationApi* | [**getCloudSize**](docs/CollaborationApi.md#getCloudSize) | **GET** /cloud/{id}/size | Get size of all ifc files in the cloud
+*bimdata.CollaborationApi* | [**getCloudSize**](docs/CollaborationApi.md#getCloudSize) | **GET** /cloud/{id}/size | Returns the sizes of the cloud in Bytes.
 *bimdata.CollaborationApi* | [**getCloudUser**](docs/CollaborationApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | Retrieve a user in a cloud
 *bimdata.CollaborationApi* | [**getCloudUsers**](docs/CollaborationApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | Retrieve all users in a cloud, or a list with a filter by email
 *bimdata.CollaborationApi* | [**getClouds**](docs/CollaborationApi.md#getClouds) | **GET** /cloud | Retrieve all clouds
@@ -261,6 +261,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getProjectAccessTokens**](docs/CollaborationApi.md#getProjectAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token | Retrieve all tokens created for this project
 *bimdata.CollaborationApi* | [**getProjectDMSTree**](docs/CollaborationApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
 *bimdata.CollaborationApi* | [**getProjectInvitations**](docs/CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
+*bimdata.CollaborationApi* | [**getProjectSize**](docs/CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all ifc files in the project
 *bimdata.CollaborationApi* | [**getProjectSubTree**](docs/CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
 *bimdata.CollaborationApi* | [**getProjectTree**](docs/CollaborationApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | Retrieve the complete DMS tree
 *bimdata.CollaborationApi* | [**getProjectUser**](docs/CollaborationApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Retrieve a user in a project
@@ -444,6 +445,8 @@ Class | Method | HTTP request | Description
  - [bimdata.Direction](docs/Direction.md)
  - [bimdata.Document](docs/Document.md)
  - [bimdata.Element](docs/Element.md)
+ - [bimdata.ElementClassificationRelation](docs/ElementClassificationRelation.md)
+ - [bimdata.ElementPropertySetRelation](docs/ElementPropertySetRelation.md)
  - [bimdata.Extensions](docs/Extensions.md)
  - [bimdata.Feature](docs/Feature.md)
  - [bimdata.Folder](docs/Folder.md)
@@ -489,6 +492,7 @@ Class | Method | HTTP request | Description
  - [bimdata.ProjectAccessToken](docs/ProjectAccessToken.md)
  - [bimdata.ProjectInvitation](docs/ProjectInvitation.md)
  - [bimdata.ProjectRole](docs/ProjectRole.md)
+ - [bimdata.ProjectSize](docs/ProjectSize.md)
  - [bimdata.ProjectWithChildren](docs/ProjectWithChildren.md)
  - [bimdata.Property](docs/Property.md)
  - [bimdata.PropertyDefinition](docs/PropertyDefinition.md)
@@ -514,6 +518,7 @@ Class | Method | HTTP request | Description
  - [bimdata.SelfBcfUser](docs/SelfBcfUser.md)
  - [bimdata.SelfUser](docs/SelfUser.md)
  - [bimdata.SimpleElement](docs/SimpleElement.md)
+ - [bimdata.Size](docs/Size.md)
  - [bimdata.Snapshot](docs/Snapshot.md)
  - [bimdata.Space](docs/Space.md)
  - [bimdata.Stage](docs/Stage.md)

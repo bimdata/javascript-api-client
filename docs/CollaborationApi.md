@@ -41,7 +41,7 @@ Method | HTTP request | Description
 [**getClassifications**](CollaborationApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
 [**getCloud**](CollaborationApi.md#getCloud) | **GET** /cloud/{id} | Retrieve one cloud
 [**getCloudInvitations**](CollaborationApi.md#getCloudInvitations) | **GET** /cloud/{cloud_pk}/invitation | Retrieve all pending invitations in the cloud
-[**getCloudSize**](CollaborationApi.md#getCloudSize) | **GET** /cloud/{id}/size | Get size of all ifc files in the cloud
+[**getCloudSize**](CollaborationApi.md#getCloudSize) | **GET** /cloud/{id}/size | Returns the sizes of the cloud in Bytes.
 [**getCloudUser**](CollaborationApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | Retrieve a user in a cloud
 [**getCloudUsers**](CollaborationApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | Retrieve all users in a cloud, or a list with a filter by email
 [**getClouds**](CollaborationApi.md#getClouds) | **GET** /cloud | Retrieve all clouds
@@ -58,6 +58,7 @@ Method | HTTP request | Description
 [**getProjectAccessTokens**](CollaborationApi.md#getProjectAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token | Retrieve all tokens created for this project
 [**getProjectDMSTree**](CollaborationApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
 [**getProjectInvitations**](CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
+[**getProjectSize**](CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all ifc files in the project
 [**getProjectSubTree**](CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
 [**getProjectTree**](CollaborationApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | Retrieve the complete DMS tree
 [**getProjectUser**](CollaborationApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Retrieve a user in a project
@@ -2321,11 +2322,11 @@ Name | Type | Description  | Notes
 
 ## getCloudSize
 
-> Number getCloudSize(id)
+> Size getCloudSize(id)
 
-Get size of all ifc files in the cloud
+Returns the sizes of the cloud in Bytes.
 
-Returns the size of the cloud in Bytes
+ Returns the sizes of the cloud in Bytes. The response fields depends on the role of the user. If the user is an admin, all field will be returned. If the user is a standard user, only &#x60;remaining_total_size&#x60; and &#x60;remaining_smart_data_size&#x60; will be set. If the call is made from an API access, role admin (100) will be returned and all fields will be set. The fields &#x60;managed by&#x60; indicate if the subscription for this cloud is an API subscription or a BIMData Platform subscription. If the cloud is managed by an API plan, the remaining sizes will take others organizations&#39;s clouds size into account 
 
 ### Example
 
@@ -2363,7 +2364,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Number**
+[**Size**](Size.md)
 
 ### Authorization
 
@@ -3304,6 +3305,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[ProjectInvitation]**](ProjectInvitation.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getProjectSize
+
+> ProjectSize getProjectSize(cloudPk, id)
+
+Get size of all ifc files in the project
+
+Returns the size of the project in Bytes
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this project.
+apiInstance.getProjectSize(cloudPk, id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this project. | 
+
+### Return type
+
+[**ProjectSize**](ProjectSize.md)
 
 ### Authorization
 

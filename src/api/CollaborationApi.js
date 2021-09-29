@@ -31,8 +31,10 @@ import InlineResponse2001 from '../model/InlineResponse2001';
 import Project from '../model/Project';
 import ProjectAccessToken from '../model/ProjectAccessToken';
 import ProjectInvitation from '../model/ProjectInvitation';
+import ProjectSize from '../model/ProjectSize';
 import ProjectWithChildren from '../model/ProjectWithChildren';
 import SelfUser from '../model/SelfUser';
+import Size from '../model/Size';
 import User from '../model/User';
 import UserCloudUpdate from '../model/UserCloudUpdate';
 import UserProjectUpdate from '../model/UserProjectUpdate';
@@ -2339,10 +2341,10 @@ export default class CollaborationApi {
 
 
     /**
-     * Get size of all ifc files in the cloud
-     * Returns the size of the cloud in Bytes
+     * Returns the sizes of the cloud in Bytes.
+     *  Returns the sizes of the cloud in Bytes. The response fields depends on the role of the user. If the user is an admin, all field will be returned. If the user is a standard user, only `remaining_total_size` and `remaining_smart_data_size` will be set. If the call is made from an API access, role admin (100) will be returned and all fields will be set. The fields `managed by` indicate if the subscription for this cloud is an API subscription or a BIMData Platform subscription. If the cloud is managed by an API plan, the remaining sizes will take others organizations's clouds size into account 
      * @param {Number} id A unique integer value identifying this cloud.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Number} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Size} and HTTP response
      */
     getCloudSizeWithHttpInfo(id) {
       let postBody = null;
@@ -2364,7 +2366,7 @@ export default class CollaborationApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = 'Number';
+      let returnType = Size;
       return this.apiClient.callApi(
         '/cloud/{id}/size', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2373,10 +2375,10 @@ export default class CollaborationApi {
     }
 
     /**
-     * Get size of all ifc files in the cloud
-     * Returns the size of the cloud in Bytes
+     * Returns the sizes of the cloud in Bytes.
+     *  Returns the sizes of the cloud in Bytes. The response fields depends on the role of the user. If the user is an admin, all field will be returned. If the user is a standard user, only `remaining_total_size` and `remaining_smart_data_size` will be set. If the call is made from an API access, role admin (100) will be returned and all fields will be set. The fields `managed by` indicate if the subscription for this cloud is an API subscription or a BIMData Platform subscription. If the cloud is managed by an API plan, the remaining sizes will take others organizations's clouds size into account 
      * @param {Number} id A unique integer value identifying this cloud.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Number}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Size}
      */
     getCloudSize(id) {
       return this.getCloudSizeWithHttpInfo(id)
@@ -3289,6 +3291,61 @@ export default class CollaborationApi {
      */
     getProjectInvitations(cloudPk, projectPk) {
       return this.getProjectInvitationsWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get size of all ifc files in the project
+     * Returns the size of the project in Bytes
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectSize} and HTTP response
+     */
+    getProjectSizeWithHttpInfo(cloudPk, id) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectSize");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getProjectSize");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ProjectSize;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{id}/size', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get size of all ifc files in the project
+     * Returns the size of the project in Bytes
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectSize}
+     */
+    getProjectSize(cloudPk, id) {
+      return this.getProjectSizeWithHttpInfo(cloudPk, id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

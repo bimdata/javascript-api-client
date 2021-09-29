@@ -588,6 +588,16 @@
         done();
       });
     });
+    describe('getProjectSize', function() {
+      it('should call getProjectSize successfully', function(done) {
+        //uncomment below and update the code to test getProjectSize
+        //instance.getProjectSize(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getProjectSubTree', function() {
       it('should call getProjectSubTree successfully', function(done) {
         //uncomment below and update the code to test getProjectSubTree
