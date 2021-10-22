@@ -41,7 +41,7 @@ Method | HTTP request | Description
 [**getClassifications**](CollaborationApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
 [**getCloud**](CollaborationApi.md#getCloud) | **GET** /cloud/{id} | Retrieve one cloud
 [**getCloudInvitations**](CollaborationApi.md#getCloudInvitations) | **GET** /cloud/{cloud_pk}/invitation | Retrieve all pending invitations in the cloud
-[**getCloudSize**](CollaborationApi.md#getCloudSize) | **GET** /cloud/{id}/size | Returns the sizes of the cloud in Bytes.
+[**getCloudSize**](CollaborationApi.md#getCloudSize) | **GET** /cloud/{id}/size | summary
 [**getCloudUser**](CollaborationApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | Retrieve a user in a cloud
 [**getCloudUsers**](CollaborationApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | Retrieve all users in a cloud, or a list with a filter by email
 [**getClouds**](CollaborationApi.md#getClouds) | **GET** /cloud | Retrieve all clouds
@@ -2324,7 +2324,7 @@ Name | Type | Description  | Notes
 
 > Size getCloudSize(id)
 
-Returns the sizes of the cloud in Bytes.
+summary
 
  Returns the sizes of the cloud in Bytes. The response fields depends on the role of the user. If the user is an admin, all field will be returned. If the user is a standard user, only &#x60;remaining_total_size&#x60; and &#x60;remaining_smart_data_size&#x60; will be set. If the call is made from an API access, role admin (100) will be returned and all fields will be set. The fields &#x60;managed by&#x60; indicate if the subscription for this cloud is an API subscription or a BIMData Platform subscription. If the cloud is managed by an API plan, the remaining sizes will take others organizations&#39;s clouds size into account 
 

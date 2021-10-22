@@ -2341,7 +2341,7 @@ export default class CollaborationApi {
 
 
     /**
-     * Returns the sizes of the cloud in Bytes.
+     * summary
      *  Returns the sizes of the cloud in Bytes. The response fields depends on the role of the user. If the user is an admin, all field will be returned. If the user is a standard user, only `remaining_total_size` and `remaining_smart_data_size` will be set. If the call is made from an API access, role admin (100) will be returned and all fields will be set. The fields `managed by` indicate if the subscription for this cloud is an API subscription or a BIMData Platform subscription. If the cloud is managed by an API plan, the remaining sizes will take others organizations's clouds size into account 
      * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Size} and HTTP response
@@ -2375,7 +2375,7 @@ export default class CollaborationApi {
     }
 
     /**
-     * Returns the sizes of the cloud in Bytes.
+     * summary
      *  Returns the sizes of the cloud in Bytes. The response fields depends on the role of the user. If the user is an admin, all field will be returned. If the user is a standard user, only `remaining_total_size` and `remaining_smart_data_size` will be set. If the call is made from an API access, role admin (100) will be returned and all fields will be set. The fields `managed by` indicate if the subscription for this cloud is an API subscription or a BIMData Platform subscription. If the cloud is managed by an API plan, the remaining sizes will take others organizations's clouds size into account 
      * @param {Number} id A unique integer value identifying this cloud.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Size}
