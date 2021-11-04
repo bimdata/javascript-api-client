@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import User from './User';
+import UserProject from './UserProject';
 
 /**
  * The InlineObject4 model module.
@@ -60,7 +60,7 @@ class InlineObject4 {
                 obj['color'] = ApiClient.convertToType(data['color'], 'String');
             }
             if (data.hasOwnProperty('members')) {
-                obj['members'] = ApiClient.convertToType(data['members'], [User]);
+                obj['members'] = ApiClient.convertToType(data['members'], [UserProject]);
             }
         }
         return obj;
@@ -86,7 +86,7 @@ InlineObject4.prototype['name'] = undefined;
 InlineObject4.prototype['color'] = undefined;
 
 /**
- * @member {Array.<module:model/User>} members
+ * @member {Array.<module:model/UserProject>} members
  */
 InlineObject4.prototype['members'] = undefined;
 

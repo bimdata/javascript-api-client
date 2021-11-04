@@ -37,6 +37,7 @@ import SelfUser from '../model/SelfUser';
 import Size from '../model/Size';
 import User from '../model/User';
 import UserCloudUpdate from '../model/UserCloudUpdate';
+import UserProject from '../model/UserProject';
 import UserProjectUpdate from '../model/UserProjectUpdate';
 
 /**
@@ -66,7 +67,7 @@ export default class CollaborationApi {
      * @param {String} groupPk 
      * @param {String} projectPk 
      * @param {module:model/FosUserId} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserProject} and HTTP response
      */
     addGroupMemberWithHttpInfo(cloudPk, groupPk, projectPk, data) {
       let postBody = data;
@@ -102,7 +103,7 @@ export default class CollaborationApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = User;
+      let returnType = UserProject;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/group/{group_pk}/member', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -117,7 +118,7 @@ export default class CollaborationApi {
      * @param {String} groupPk 
      * @param {String} projectPk 
      * @param {module:model/FosUserId} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserProject}
      */
     addGroupMember(cloudPk, groupPk, projectPk, data) {
       return this.addGroupMemberWithHttpInfo(cloudPk, groupPk, projectPk, data)

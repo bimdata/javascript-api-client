@@ -112,6 +112,7 @@ import TopicType from './model/TopicType';
 import Unit from './model/Unit';
 import User from './model/User';
 import UserCloudUpdate from './model/UserCloudUpdate';
+import UserProject from './model/UserProject';
 import UserProjectUpdate from './model/UserProjectUpdate';
 import ViewSetupHints from './model/ViewSetupHints';
 import Viewpoint from './model/Viewpoint';
@@ -758,6 +759,12 @@ export {
      * @property {module:model/UserCloudUpdate}
      */
     UserCloudUpdate,
+
+    /**
+     * The UserProject model constructor.
+     * @property {module:model/UserProject}
+     */
+    UserProject,
 
     /**
      * The UserProjectUpdate model constructor.

@@ -84,7 +84,7 @@ Method | HTTP request | Description
 
 ## addGroupMember
 
-> User addGroupMember(cloudPk, groupPk, projectPk, data)
+> UserProject addGroupMember(cloudPk, groupPk, projectPk, data)
 
 Add a user to a group
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](User.md)
+[**UserProject**](UserProject.md)
 
 ### Authorization
 

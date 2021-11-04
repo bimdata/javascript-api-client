@@ -529,6 +529,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Unit](docs/Unit.md)
  - [bimdata.User](docs/User.md)
  - [bimdata.UserCloudUpdate](docs/UserCloudUpdate.md)
+ - [bimdata.UserProject](docs/UserProject.md)
  - [bimdata.UserProjectUpdate](docs/UserProjectUpdate.md)
  - [bimdata.ViewSetupHints](docs/ViewSetupHints.md)
  - [bimdata.Viewpoint](docs/Viewpoint.md)
