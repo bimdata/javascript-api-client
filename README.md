@@ -269,6 +269,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getSelfUser**](docs/CollaborationApi.md#getSelfUser) | **GET** /user | Get info about the current user
 *bimdata.CollaborationApi* | [**inviteCloudUser**](docs/CollaborationApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | Invite a cloud administrator
 *bimdata.CollaborationApi* | [**inviteProjectUser**](docs/CollaborationApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | Invite a project member
+*bimdata.CollaborationApi* | [**leaveProject**](docs/CollaborationApi.md#leaveProject) | **POST** /cloud/{cloud_pk}/project/{id}/leave | Leave the project
 *bimdata.CollaborationApi* | [**updateClassification**](docs/CollaborationApi.md#updateClassification) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Update some fields of a classification
 *bimdata.CollaborationApi* | [**updateCloud**](docs/CollaborationApi.md#updateCloud) | **PATCH** /cloud/{id} | Update some fields of a cloud
 *bimdata.CollaborationApi* | [**updateCloudUser**](docs/CollaborationApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | Update some fields of a cloud user

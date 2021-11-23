@@ -668,6 +668,16 @@
         done();
       });
     });
+    describe('leaveProject', function() {
+      it('should call leaveProject successfully', function(done) {
+        //uncomment below and update the code to test leaveProject
+        //instance.leaveProject(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateClassification', function() {
       it('should call updateClassification successfully', function(done) {
         //uncomment below and update the code to test updateClassification
