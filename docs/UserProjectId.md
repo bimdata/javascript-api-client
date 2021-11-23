@@ -1,9 +1,9 @@
-# bimdata.FosUserId
+# bimdata.UserProjectId
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**userId** | **Number** |  | 
+**userprojectId** | **Number** |  | 
 
 

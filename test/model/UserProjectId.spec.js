@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.FosUserId();
+    instance = new bimdata.UserProjectId();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,16 @@
       object[property] = value;
   }
 
-  describe('FosUserId', function() {
-    it('should create an instance of FosUserId', function() {
-      // uncomment below and update the code to test FosUserId
-      //var instane = new bimdata.FosUserId();
-      //expect(instance).to.be.a(bimdata.FosUserId);
+  describe('UserProjectId', function() {
+    it('should create an instance of UserProjectId', function() {
+      // uncomment below and update the code to test UserProjectId
+      //var instane = new bimdata.UserProjectId();
+      //expect(instance).to.be.a(bimdata.UserProjectId);
     });
 
-    it('should have the property userId (base name: "user_id")', function() {
-      // uncomment below and update the code to test the property userId
-      //var instane = new bimdata.FosUserId();
+    it('should have the property userprojectId (base name: "userproject_id")', function() {
+      // uncomment below and update the code to test the property userprojectId
+      //var instane = new bimdata.UserProjectId();
       //expect(instance).to.be();
     });
 

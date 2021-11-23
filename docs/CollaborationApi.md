@@ -36,7 +36,6 @@ Method | HTTP request | Description
 [**fullUpdateManageGroup**](CollaborationApi.md#fullUpdateManageGroup) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update all fields of a group
 [**fullUpdateProject**](CollaborationApi.md#fullUpdateProject) | **PUT** /cloud/{cloud_pk}/project/{id} | Update all fields of a project
 [**fullUpdateProjectAccessToken**](CollaborationApi.md#fullUpdateProjectAccessToken) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update all fields of a token
-[**fullUpdateProjectUser**](CollaborationApi.md#fullUpdateProjectUser) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update all fields of a project user
 [**getClassification**](CollaborationApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Retrieve a classification
 [**getClassifications**](CollaborationApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
 [**getCloud**](CollaborationApi.md#getCloud) | **GET** /cloud/{id} | Retrieve one cloud
@@ -61,7 +60,6 @@ Method | HTTP request | Description
 [**getProjectSize**](CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all ifc files in the project
 [**getProjectSubTree**](CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
 [**getProjectTree**](CollaborationApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | Retrieve the complete DMS tree
-[**getProjectUser**](CollaborationApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Retrieve a user in a project
 [**getProjectUsers**](CollaborationApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | Retrieve all users in a project, or a list with a filter by email
 [**getProjects**](CollaborationApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | Retrieve all projects
 [**getSelfProjects**](CollaborationApi.md#getSelfProjects) | **GET** /user/projects | List current user&#39;s projects
@@ -77,7 +75,7 @@ Method | HTTP request | Description
 [**updateManageGroup**](CollaborationApi.md#updateManageGroup) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update some fields of a group
 [**updateProject**](CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
 [**updateProjectAccessToken**](CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
-[**updateProjectUser**](CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update some fields of a project user
+[**updateProjectUser**](CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Change the user role in the cloud
 [**updateSelfUser**](CollaborationApi.md#updateSelfUser) | **PATCH** /user | Update info of the current user
 
 
@@ -88,7 +86,7 @@ Method | HTTP request | Description
 
 Add a user to a group
 
-Add a user to a group. Must be an admin of the project Required scopes: org:manage
+Add a userproject to a group. Must be an admin of the project Required scopes: org:manage
 
 ### Example
 
@@ -111,7 +109,7 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = "cloudPk_example"; // String | 
 let groupPk = "groupPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.FosUserId(); // FosUserId | 
+let data = new bimdata.UserProjectId(); // UserProjectId | 
 apiInstance.addGroupMember(cloudPk, groupPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -128,7 +126,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **groupPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**FosUserId**](FosUserId.md)|  | 
+ **data** | [**UserProjectId**](UserProjectId.md)|  | 
 
 ### Return type
 
@@ -1166,7 +1164,7 @@ null (empty response body)
 
 Delete a user from a group
 
-Delete a user from a group. Must be an admin of the project Required scopes: org:manage
+Delete a userproject from a group. Id is the userproject_id. Must be an admin of the project. Required scopes: org:manage
 
 ### Example
 
@@ -1188,7 +1186,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = "cloudPk_example"; // String | 
 let groupPk = "groupPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this fos user.
+let id = "id_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 apiInstance.deleteGroupMember(cloudPk, groupPk, id, projectPk).then(() => {
   console.log('API called successfully.');
@@ -1205,7 +1203,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **groupPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this fos user. | 
+ **id** | **String**|  | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -1427,7 +1425,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this fos user.
+let id = "id_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 apiInstance.deleteProjectUser(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
@@ -1443,7 +1441,7 @@ apiInstance.deleteProjectUser(cloudPk, id, projectPk).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this fos user. | 
+ **id** | **String**|  | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -2019,68 +2017,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProjectAccessToken**](ProjectAccessToken.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## fullUpdateProjectUser
-
-> User fullUpdateProjectUser(cloudPk, id, projectPk, data)
-
-Update all fields of a project user
-
-Change the user role in the cloud Required scopes: cloud:manage
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this fos user.
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.UserProjectUpdate(); // UserProjectUpdate | 
-apiInstance.fullUpdateProjectUser(cloudPk, id, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this fos user. | 
- **projectPk** | **String**|  | 
- **data** | [**UserProjectUpdate**](UserProjectUpdate.md)|  | 
-
-### Return type
-
-[**User**](User.md)
 
 ### Authorization
 
@@ -3488,69 +3424,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getProjectUser
-
-> User getProjectUser(cloudPk, id, projectPk)
-
-Retrieve a user in a project
-
-Each member of a project can see other members of the project Required scopes: cloud:read, bcf:read
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this fos user.
-let projectPk = "projectPk_example"; // String | 
-apiInstance.getProjectUser(cloudPk, id, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this fos user. | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-[**User**](User.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## getProjectUsers
 
-> [User] getProjectUsers(cloudPk, projectPk, opts)
+> [UserProject] getProjectUsers(cloudPk, projectPk, opts)
 
 Retrieve all users in a project, or a list with a filter by email
 
@@ -3604,7 +3480,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[User]**](User.md)
+[**[UserProject]**](UserProject.md)
 
 ### Authorization
 
@@ -4448,9 +4324,9 @@ Name | Type | Description  | Notes
 
 ## updateProjectUser
 
-> User updateProjectUser(cloudPk, id, projectPk, data)
+> UserProject updateProjectUser(cloudPk, id, projectPk, data)
 
-Update some fields of a project user
+Change the user role in the cloud
 
 Change the user role in the cloud Required scopes: cloud:manage
 
@@ -4473,7 +4349,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this fos user.
+let id = "id_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let data = new bimdata.UserProjectUpdate(); // UserProjectUpdate | 
 apiInstance.updateProjectUser(cloudPk, id, projectPk, data).then((data) => {
@@ -4490,13 +4366,13 @@ apiInstance.updateProjectUser(cloudPk, id, projectPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this fos user. | 
+ **id** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**UserProjectUpdate**](UserProjectUpdate.md)|  | 
 
 ### Return type
 
-[**User**](User.md)
+[**UserProject**](UserProject.md)
 
 ### Authorization
 

@@ -239,7 +239,6 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**fullUpdateManageGroup**](docs/CollaborationApi.md#fullUpdateManageGroup) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update all fields of a group
 *bimdata.CollaborationApi* | [**fullUpdateProject**](docs/CollaborationApi.md#fullUpdateProject) | **PUT** /cloud/{cloud_pk}/project/{id} | Update all fields of a project
 *bimdata.CollaborationApi* | [**fullUpdateProjectAccessToken**](docs/CollaborationApi.md#fullUpdateProjectAccessToken) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update all fields of a token
-*bimdata.CollaborationApi* | [**fullUpdateProjectUser**](docs/CollaborationApi.md#fullUpdateProjectUser) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update all fields of a project user
 *bimdata.CollaborationApi* | [**getClassification**](docs/CollaborationApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Retrieve a classification
 *bimdata.CollaborationApi* | [**getClassifications**](docs/CollaborationApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
 *bimdata.CollaborationApi* | [**getCloud**](docs/CollaborationApi.md#getCloud) | **GET** /cloud/{id} | Retrieve one cloud
@@ -264,7 +263,6 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getProjectSize**](docs/CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all ifc files in the project
 *bimdata.CollaborationApi* | [**getProjectSubTree**](docs/CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
 *bimdata.CollaborationApi* | [**getProjectTree**](docs/CollaborationApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | Retrieve the complete DMS tree
-*bimdata.CollaborationApi* | [**getProjectUser**](docs/CollaborationApi.md#getProjectUser) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Retrieve a user in a project
 *bimdata.CollaborationApi* | [**getProjectUsers**](docs/CollaborationApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | Retrieve all users in a project, or a list with a filter by email
 *bimdata.CollaborationApi* | [**getProjects**](docs/CollaborationApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | Retrieve all projects
 *bimdata.CollaborationApi* | [**getSelfProjects**](docs/CollaborationApi.md#getSelfProjects) | **GET** /user/projects | List current user&#39;s projects
@@ -280,7 +278,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**updateManageGroup**](docs/CollaborationApi.md#updateManageGroup) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update some fields of a group
 *bimdata.CollaborationApi* | [**updateProject**](docs/CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
 *bimdata.CollaborationApi* | [**updateProjectAccessToken**](docs/CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
-*bimdata.CollaborationApi* | [**updateProjectUser**](docs/CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Update some fields of a project user
+*bimdata.CollaborationApi* | [**updateProjectUser**](docs/CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Change the user role in the cloud
 *bimdata.CollaborationApi* | [**updateSelfUser**](docs/CollaborationApi.md#updateSelfUser) | **PATCH** /user | Update info of the current user
 *bimdata.IfcApi* | [**addIfcErrors**](docs/IfcApi.md#addIfcErrors) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/errors | Add errors to IFC
 *bimdata.IfcApi* | [**bulkDeleteIfcClassifications**](docs/IfcApi.md#bulkDeleteIfcClassifications) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/list_destroy | Remove all classifications from model&#39;s elements
@@ -451,7 +449,6 @@ Class | Method | HTTP request | Description
  - [bimdata.Feature](docs/Feature.md)
  - [bimdata.Folder](docs/Folder.md)
  - [bimdata.FolderGroupPermission](docs/FolderGroupPermission.md)
- - [bimdata.FosUserId](docs/FosUserId.md)
  - [bimdata.FullTopic](docs/FullTopic.md)
  - [bimdata.GroupFolder](docs/GroupFolder.md)
  - [bimdata.Ifc](docs/Ifc.md)
@@ -530,6 +527,7 @@ Class | Method | HTTP request | Description
  - [bimdata.User](docs/User.md)
  - [bimdata.UserCloudUpdate](docs/UserCloudUpdate.md)
  - [bimdata.UserProject](docs/UserProject.md)
+ - [bimdata.UserProjectId](docs/UserProjectId.md)
  - [bimdata.UserProjectUpdate](docs/UserProjectUpdate.md)
  - [bimdata.ViewSetupHints](docs/ViewSetupHints.md)
  - [bimdata.Viewpoint](docs/Viewpoint.md)

@@ -34,7 +34,6 @@ import Extensions from './model/Extensions';
 import Feature from './model/Feature';
 import Folder from './model/Folder';
 import FolderGroupPermission from './model/FolderGroupPermission';
-import FosUserId from './model/FosUserId';
 import FullTopic from './model/FullTopic';
 import GroupFolder from './model/GroupFolder';
 import Ifc from './model/Ifc';
@@ -113,6 +112,7 @@ import Unit from './model/Unit';
 import User from './model/User';
 import UserCloudUpdate from './model/UserCloudUpdate';
 import UserProject from './model/UserProject';
+import UserProjectId from './model/UserProjectId';
 import UserProjectUpdate from './model/UserProjectUpdate';
 import ViewSetupHints from './model/ViewSetupHints';
 import Viewpoint from './model/Viewpoint';
@@ -291,12 +291,6 @@ export {
      * @property {module:model/FolderGroupPermission}
      */
     FolderGroupPermission,
-
-    /**
-     * The FosUserId model constructor.
-     * @property {module:model/FosUserId}
-     */
-    FosUserId,
 
     /**
      * The FullTopic model constructor.
@@ -765,6 +759,12 @@ export {
      * @property {module:model/UserProject}
      */
     UserProject,
+
+    /**
+     * The UserProjectId model constructor.
+     * @property {module:model/UserProjectId}
+     */
+    UserProjectId,
 
     /**
      * The UserProjectUpdate model constructor.

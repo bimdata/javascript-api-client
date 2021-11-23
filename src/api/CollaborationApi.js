@@ -18,7 +18,6 @@ import Cloud from '../model/Cloud';
 import CloudInvitation from '../model/CloudInvitation';
 import Document from '../model/Document';
 import Folder from '../model/Folder';
-import FosUserId from '../model/FosUserId';
 import GroupFolder from '../model/GroupFolder';
 import InlineObject from '../model/InlineObject';
 import InlineObject1 from '../model/InlineObject1';
@@ -38,6 +37,7 @@ import Size from '../model/Size';
 import User from '../model/User';
 import UserCloudUpdate from '../model/UserCloudUpdate';
 import UserProject from '../model/UserProject';
+import UserProjectId from '../model/UserProjectId';
 import UserProjectUpdate from '../model/UserProjectUpdate';
 
 /**
@@ -62,11 +62,11 @@ export default class CollaborationApi {
 
     /**
      * Add a user to a group
-     * Add a user to a group. Must be an admin of the project Required scopes: org:manage
+     * Add a userproject to a group. Must be an admin of the project Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {String} groupPk 
      * @param {String} projectPk 
-     * @param {module:model/FosUserId} data 
+     * @param {module:model/UserProjectId} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserProject} and HTTP response
      */
     addGroupMemberWithHttpInfo(cloudPk, groupPk, projectPk, data) {
@@ -113,11 +113,11 @@ export default class CollaborationApi {
 
     /**
      * Add a user to a group
-     * Add a user to a group. Must be an admin of the project Required scopes: org:manage
+     * Add a userproject to a group. Must be an admin of the project Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {String} groupPk 
      * @param {String} projectPk 
-     * @param {module:model/FosUserId} data 
+     * @param {module:model/UserProjectId} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserProject}
      */
     addGroupMember(cloudPk, groupPk, projectPk, data) {
@@ -1131,10 +1131,10 @@ export default class CollaborationApi {
 
     /**
      * Delete a user from a group
-     * Delete a user from a group. Must be an admin of the project Required scopes: org:manage
+     * Delete a userproject from a group. Id is the userproject_id. Must be an admin of the project. Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {String} groupPk 
-     * @param {Number} id A unique integer value identifying this fos user.
+     * @param {String} id 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -1183,10 +1183,10 @@ export default class CollaborationApi {
 
     /**
      * Delete a user from a group
-     * Delete a user from a group. Must be an admin of the project Required scopes: org:manage
+     * Delete a userproject from a group. Id is the userproject_id. Must be an admin of the project. Required scopes: org:manage
      * @param {String} cloudPk 
      * @param {String} groupPk 
-     * @param {Number} id A unique integer value identifying this fos user.
+     * @param {String} id 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -1381,7 +1381,7 @@ export default class CollaborationApi {
      * Remove a user from a project
      * Remove a user from a project Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
+     * @param {String} id 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -1427,7 +1427,7 @@ export default class CollaborationApi {
      * Remove a user from a project
      * Remove a user from a project Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
+     * @param {String} id 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -2056,74 +2056,6 @@ export default class CollaborationApi {
      */
     fullUpdateProjectAccessToken(cloudPk, projectPk, token, data) {
       return this.fullUpdateProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update all fields of a project user
-     * Change the user role in the cloud Required scopes: cloud:manage
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
-     * @param {String} projectPk 
-     * @param {module:model/UserProjectUpdate} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
-     */
-    fullUpdateProjectUserWithHttpInfo(cloudPk, id, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateProjectUser");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateProjectUser");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateProjectUser");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling fullUpdateProjectUser");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = User;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update all fields of a project user
-     * Change the user role in the cloud Required scopes: cloud:manage
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
-     * @param {String} projectPk 
-     * @param {module:model/UserProjectUpdate} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
-     */
-    fullUpdateProjectUser(cloudPk, id, projectPk, data) {
-      return this.fullUpdateProjectUserWithHttpInfo(cloudPk, id, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3457,68 +3389,6 @@ export default class CollaborationApi {
 
 
     /**
-     * Retrieve a user in a project
-     * Each member of a project can see other members of the project Required scopes: cloud:read, bcf:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
-     */
-    getProjectUserWithHttpInfo(cloudPk, id, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectUser");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getProjectUser");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getProjectUser");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = User;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve a user in a project
-     * Each member of a project can see other members of the project Required scopes: cloud:read, bcf:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
-     */
-    getProjectUser(cloudPk, id, projectPk) {
-      return this.getProjectUserWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Retrieve all users in a project, or a list with a filter by email
      * Each member of a project can see other members of the project Required scopes: cloud:read, bcf:read
      * @param {String} cloudPk 
@@ -3528,7 +3398,7 @@ export default class CollaborationApi {
      * @param {String} opts.emailContains Filter the returned list by email__contains
      * @param {String} opts.emailStartswith Filter the returned list by email__startswith
      * @param {String} opts.emailEndswith Filter the returned list by email__endswith
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/User>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/UserProject>} and HTTP response
      */
     getProjectUsersWithHttpInfo(cloudPk, projectPk, opts) {
       opts = opts || {};
@@ -3560,7 +3430,7 @@ export default class CollaborationApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [User];
+      let returnType = [UserProject];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/user', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3578,7 +3448,7 @@ export default class CollaborationApi {
      * @param {String} opts.emailContains Filter the returned list by email__contains
      * @param {String} opts.emailStartswith Filter the returned list by email__startswith
      * @param {String} opts.emailEndswith Filter the returned list by email__endswith
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/User>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/UserProject>}
      */
     getProjectUsers(cloudPk, projectPk, opts) {
       return this.getProjectUsersWithHttpInfo(cloudPk, projectPk, opts)
@@ -4425,13 +4295,13 @@ export default class CollaborationApi {
 
 
     /**
-     * Update some fields of a project user
+     * Change the user role in the cloud
      * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
+     * @param {String} id 
      * @param {String} projectPk 
      * @param {module:model/UserProjectUpdate} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/User} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserProject} and HTTP response
      */
     updateProjectUserWithHttpInfo(cloudPk, id, projectPk, data) {
       let postBody = data;
@@ -4467,7 +4337,7 @@ export default class CollaborationApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = User;
+      let returnType = UserProject;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/user/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4476,13 +4346,13 @@ export default class CollaborationApi {
     }
 
     /**
-     * Update some fields of a project user
+     * Change the user role in the cloud
      * Change the user role in the cloud Required scopes: cloud:manage
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this fos user.
+     * @param {String} id 
      * @param {String} projectPk 
      * @param {module:model/UserProjectUpdate} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/User}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserProject}
      */
     updateProjectUser(cloudPk, id, projectPk, data) {
       return this.updateProjectUserWithHttpInfo(cloudPk, id, projectPk, data)

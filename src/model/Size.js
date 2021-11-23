@@ -23,7 +23,7 @@ class Size {
      * Constructs a new <code>Size</code>.
      * @alias module:model/Size
      * @param managedBy {module:model/Size.ManagedByEnum} 
-     * @param role {module:model/Size.RoleEnum} 
+     * @param role {Number} 
      */
     constructor(managedBy, role) { 
         
@@ -51,11 +51,14 @@ class Size {
         if (data) {
             obj = obj || new Size();
 
+            if (data.hasOwnProperty('is_unsupervised')) {
+                obj['is_unsupervised'] = ApiClient.convertToType(data['is_unsupervised'], 'Boolean');
+            }
             if (data.hasOwnProperty('managed_by')) {
                 obj['managed_by'] = ApiClient.convertToType(data['managed_by'], 'String');
             }
             if (data.hasOwnProperty('role')) {
-                obj['role'] = ApiClient.convertToType(data['role'], 'String');
+                obj['role'] = ApiClient.convertToType(data['role'], 'Number');
             }
             if (data.hasOwnProperty('total_size')) {
                 obj['total_size'] = ApiClient.convertToType(data['total_size'], 'Number');
@@ -89,12 +92,17 @@ class Size {
 }
 
 /**
+ * @member {Boolean} is_unsupervised
+ */
+Size.prototype['is_unsupervised'] = undefined;
+
+/**
  * @member {module:model/Size.ManagedByEnum} managed_by
  */
 Size.prototype['managed_by'] = undefined;
 
 /**
- * @member {module:model/Size.RoleEnum} role
+ * @member {Number} role
  */
 Size.prototype['role'] = undefined;
 
@@ -160,27 +168,6 @@ Size['ManagedByEnum'] = {
      * @const
      */
     "ORGANIZATION": "ORGANIZATION"
-};
-
-
-/**
- * Allowed values for the <code>role</code> property.
- * @enum {String}
- * @readonly
- */
-Size['RoleEnum'] = {
-
-    /**
-     * value: "A"
-     * @const
-     */
-    "A": "A",
-
-    /**
-     * value: "D"
-     * @const
-     */
-    "D": "D"
 };
 
 

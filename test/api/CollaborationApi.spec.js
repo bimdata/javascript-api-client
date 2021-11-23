@@ -368,16 +368,6 @@
         done();
       });
     });
-    describe('fullUpdateProjectUser', function() {
-      it('should call fullUpdateProjectUser successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateProjectUser
-        //instance.fullUpdateProjectUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getClassification', function() {
       it('should call getClassification successfully', function(done) {
         //uncomment below and update the code to test getClassification
@@ -612,16 +602,6 @@
       it('should call getProjectTree successfully', function(done) {
         //uncomment below and update the code to test getProjectTree
         //instance.getProjectTree(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getProjectUser', function() {
-      it('should call getProjectUser successfully', function(done) {
-        //uncomment below and update the code to test getProjectUser
-        //instance.getProjectUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

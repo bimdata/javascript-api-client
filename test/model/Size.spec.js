@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(bimdata.Size);
     });
 
+    it('should have the property isUnsupervised (base name: "is_unsupervised")', function() {
+      // uncomment below and update the code to test the property isUnsupervised
+      //var instane = new bimdata.Size();
+      //expect(instance).to.be();
+    });
+
     it('should have the property managedBy (base name: "managed_by")', function() {
       // uncomment below and update the code to test the property managedBy
       //var instane = new bimdata.Size();

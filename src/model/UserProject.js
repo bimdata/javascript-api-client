@@ -12,8 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProjectInvitation from './ProjectInvitation';
-import User from './User';
 
 /**
  * The UserProject model module.
@@ -23,12 +21,12 @@ import User from './User';
 class UserProject {
     /**
      * Constructs a new <code>UserProject</code>.
+     *  This is a flattened nested represetation of FosUser and Invitation models in this serializer. 
      * @alias module:model/UserProject
-     * @param project {Number} 
      */
-    constructor(project) { 
+    constructor() { 
         
-        UserProject.initialize(this, project);
+        UserProject.initialize(this);
     }
 
     /**
@@ -36,8 +34,7 @@ class UserProject {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, project) { 
-        obj['project'] = project;
+    static initialize(obj) { 
     }
 
     /**
@@ -51,17 +48,29 @@ class UserProject {
         if (data) {
             obj = obj || new UserProject();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
+            if (data.hasOwnProperty('user_id')) {
+                obj['user_id'] = ApiClient.convertToType(data['user_id'], 'Number');
+            }
+            if (data.hasOwnProperty('invitation_id')) {
+                obj['invitation_id'] = ApiClient.convertToType(data['invitation_id'], 'Number');
+            }
+            if (data.hasOwnProperty('email')) {
+                obj['email'] = ApiClient.convertToType(data['email'], 'String');
+            }
+            if (data.hasOwnProperty('firstname')) {
+                obj['firstname'] = ApiClient.convertToType(data['firstname'], 'String');
+            }
+            if (data.hasOwnProperty('lastname')) {
+                obj['lastname'] = ApiClient.convertToType(data['lastname'], 'String');
+            }
+            if (data.hasOwnProperty('profile_picture')) {
+                obj['profile_picture'] = ApiClient.convertToType(data['profile_picture'], 'String');
+            }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'Number');
-            }
-            if (data.hasOwnProperty('user')) {
-                obj['user'] = User.constructFromObject(data['user']);
-            }
-            if (data.hasOwnProperty('invitation')) {
-                obj['invitation'] = ProjectInvitation.constructFromObject(data['invitation']);
-            }
-            if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
         }
         return obj;
@@ -71,25 +80,44 @@ class UserProject {
 }
 
 /**
- * User's role in the project
+ * @member {Number} id
+ */
+UserProject.prototype['id'] = undefined;
+
+/**
+ * @member {Number} user_id
+ */
+UserProject.prototype['user_id'] = undefined;
+
+/**
+ * @member {Number} invitation_id
+ */
+UserProject.prototype['invitation_id'] = undefined;
+
+/**
+ * @member {String} email
+ */
+UserProject.prototype['email'] = undefined;
+
+/**
+ * @member {String} firstname
+ */
+UserProject.prototype['firstname'] = undefined;
+
+/**
+ * @member {String} lastname
+ */
+UserProject.prototype['lastname'] = undefined;
+
+/**
+ * @member {String} profile_picture
+ */
+UserProject.prototype['profile_picture'] = undefined;
+
+/**
  * @member {Number} role
  */
 UserProject.prototype['role'] = undefined;
-
-/**
- * @member {module:model/User} user
- */
-UserProject.prototype['user'] = undefined;
-
-/**
- * @member {module:model/ProjectInvitation} invitation
- */
-UserProject.prototype['invitation'] = undefined;
-
-/**
- * @member {Number} project
- */
-UserProject.prototype['project'] = undefined;
 
 
 

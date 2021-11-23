@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**isUnsupervised** | **Boolean** |  | [optional] [readonly] 
 **managedBy** | **String** |  | 
-**role** | **String** |  | 
+**role** | **Number** |  | 
 **totalSize** | **Number** |  | [optional] [readonly] 
 **smartDataSize** | **Number** |  | [optional] [readonly] 
 **totalSizeAvailable** | **Number** |  | [optional] [readonly] 
@@ -23,17 +24,6 @@ Name | Type | Description | Notes
 * `BIMDATA_PLATFORM` (value: `"BIMDATA_PLATFORM"`)
 
 * `ORGANIZATION` (value: `"ORGANIZATION"`)
-
-
-
-
-
-## Enum: RoleEnum
-
-
-* `A` (value: `"A"`)
-
-* `D` (value: `"D"`)
 
 
 
