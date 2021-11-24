@@ -168,66 +168,6 @@
         done();
       });
     });
-    describe('fullUpdateChecker', function() {
-      it('should call fullUpdateChecker successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateChecker
-        //instance.fullUpdateChecker(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateCheckerResult', function() {
-      it('should call fullUpdateCheckerResult successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateCheckerResult
-        //instance.fullUpdateCheckerResult(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateCheckplan', function() {
-      it('should call fullUpdateCheckplan successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateCheckplan
-        //instance.fullUpdateCheckplan(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateRule', function() {
-      it('should call fullUpdateRule successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateRule
-        //instance.fullUpdateRule(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateRuleComponent', function() {
-      it('should call fullUpdateRuleComponent successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateRuleComponent
-        //instance.fullUpdateRuleComponent(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateRuleset', function() {
-      it('should call fullUpdateRuleset successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateRuleset
-        //instance.fullUpdateRuleset(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getChecker', function() {
       it('should call getChecker successfully', function(done) {
         //uncomment below and update the code to test getChecker

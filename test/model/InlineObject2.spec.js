@@ -60,56 +60,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
-      //var instane = new bimdata.InlineObject2();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new bimdata.InlineObject2();
-      //expect(instance).to.be();
-    });
-
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instane = new bimdata.InlineObject2();
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "created_at")', function() {
-      // uncomment below and update the code to test the property createdAt
+    it('should have the property color (base name: "color")', function() {
+      // uncomment below and update the code to test the property color
       //var instane = new bimdata.InlineObject2();
       //expect(instance).to.be();
     });
 
-    it('should have the property updatedAt (base name: "updated_at")', function() {
-      // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.InlineObject2();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createdBy (base name: "created_by")', function() {
-      // uncomment below and update the code to test the property createdBy
-      //var instane = new bimdata.InlineObject2();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property groupsPermissions (base name: "groups_permissions")', function() {
-      // uncomment below and update the code to test the property groupsPermissions
-      //var instane = new bimdata.InlineObject2();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property defaultPermission (base name: "default_permission")', function() {
-      // uncomment below and update the code to test the property defaultPermission
-      //var instane = new bimdata.InlineObject2();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property userPermission (base name: "user_permission")', function() {
-      // uncomment below and update the code to test the property userPermission
+    it('should have the property members (base name: "members")', function() {
+      // uncomment below and update the code to test the property members
       //var instane = new bimdata.InlineObject2();
       //expect(instance).to.be();
     });

@@ -68,16 +68,6 @@
         done();
       });
     });
-    describe('fullUpdateWebHook', function() {
-      it('should call fullUpdateWebHook successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateWebHook
-        //instance.fullUpdateWebHook(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getWebHook', function() {
       it('should call getWebHook successfully', function(done) {
         //uncomment below and update the code to test getWebHook

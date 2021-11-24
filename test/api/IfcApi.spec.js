@@ -478,140 +478,10 @@
         done();
       });
     });
-    describe('fullUpdateAccessToken', function() {
-      it('should call fullUpdateAccessToken successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateAccessToken
-        //instance.fullUpdateAccessToken(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('fullUpdateElement', function() {
       it('should call fullUpdateElement successfully', function(done) {
         //uncomment below and update the code to test fullUpdateElement
         //instance.fullUpdateElement(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateElementPropertySetProperty', function() {
-      it('should call fullUpdateElementPropertySetProperty successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateElementPropertySetProperty
-        //instance.fullUpdateElementPropertySetProperty(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateIfc', function() {
-      it('should call fullUpdateIfc successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateIfc
-        //instance.fullUpdateIfc(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateIfcProperty', function() {
-      it('should call fullUpdateIfcProperty successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateIfcProperty
-        //instance.fullUpdateIfcProperty(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateIfcPropertyDefinition', function() {
-      it('should call fullUpdateIfcPropertyDefinition successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateIfcPropertyDefinition
-        //instance.fullUpdateIfcPropertyDefinition(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateIfcUnit', function() {
-      it('should call fullUpdateIfcUnit successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateIfcUnit
-        //instance.fullUpdateIfcUnit(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateLayer', function() {
-      it('should call fullUpdateLayer successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateLayer
-        //instance.fullUpdateLayer(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateProcessorHandler', function() {
-      it('should call fullUpdateProcessorHandler successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateProcessorHandler
-        //instance.fullUpdateProcessorHandler(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdatePropertySet', function() {
-      it('should call fullUpdatePropertySet successfully', function(done) {
-        //uncomment below and update the code to test fullUpdatePropertySet
-        //instance.fullUpdatePropertySet(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateSpace', function() {
-      it('should call fullUpdateSpace successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateSpace
-        //instance.fullUpdateSpace(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateSystem', function() {
-      it('should call fullUpdateSystem successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateSystem
-        //instance.fullUpdateSystem(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateZone', function() {
-      it('should call fullUpdateZone successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateZone
-        //instance.fullUpdateZone(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateZoneSpace', function() {
-      it('should call fullUpdateZoneSpace successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateZoneSpace
-        //instance.fullUpdateZoneSpace(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -768,40 +638,10 @@
         done();
       });
     });
-    describe('getIfcBVH', function() {
-      it('should call getIfcBVH successfully', function(done) {
-        //uncomment below and update the code to test getIfcBVH
-        //instance.getIfcBVH(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getIfcClassifications', function() {
       it('should call getIfcClassifications successfully', function(done) {
         //uncomment below and update the code to test getIfcClassifications
         //instance.getIfcClassifications(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getIfcGLTF', function() {
-      it('should call getIfcGLTF successfully', function(done) {
-        //uncomment below and update the code to test getIfcGLTF
-        //instance.getIfcGLTF(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getIfcMap', function() {
-      it('should call getIfcMap successfully', function(done) {
-        //uncomment below and update the code to test getIfcMap
-        //instance.getIfcMap(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -862,26 +702,6 @@
       it('should call getIfcPropertyDefinitions successfully', function(done) {
         //uncomment below and update the code to test getIfcPropertyDefinitions
         //instance.getIfcPropertyDefinitions(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getIfcStructure', function() {
-      it('should call getIfcStructure successfully', function(done) {
-        //uncomment below and update the code to test getIfcStructure
-        //instance.getIfcStructure(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getIfcSystems', function() {
-      it('should call getIfcSystems successfully', function(done) {
-        //uncomment below and update the code to test getIfcSystems
-        //instance.getIfcSystems(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

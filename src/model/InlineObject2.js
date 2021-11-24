@@ -12,8 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import FolderGroupPermission from './FolderGroupPermission';
-import User from './User';
+import UserProject from './UserProject';
 
 /**
  * The InlineObject2 model module.
@@ -24,7 +23,7 @@ class InlineObject2 {
     /**
      * Constructs a new <code>InlineObject2</code>.
      * @alias module:model/InlineObject2
-     * @param name {String} Name of the folder
+     * @param name {String} Full name of the group
      */
     constructor(name) { 
         
@@ -54,32 +53,14 @@ class InlineObject2 {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('parent_id')) {
-                obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            if (data.hasOwnProperty('color')) {
+                obj['color'] = ApiClient.convertToType(data['color'], 'String');
             }
-            if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
-            }
-            if (data.hasOwnProperty('created_by')) {
-                obj['created_by'] = User.constructFromObject(data['created_by']);
-            }
-            if (data.hasOwnProperty('groups_permissions')) {
-                obj['groups_permissions'] = ApiClient.convertToType(data['groups_permissions'], [FolderGroupPermission]);
-            }
-            if (data.hasOwnProperty('default_permission')) {
-                obj['default_permission'] = ApiClient.convertToType(data['default_permission'], 'Number');
-            }
-            if (data.hasOwnProperty('user_permission')) {
-                obj['user_permission'] = ApiClient.convertToType(data['user_permission'], 'Number');
+            if (data.hasOwnProperty('members')) {
+                obj['members'] = ApiClient.convertToType(data['members'], [UserProject]);
             }
         }
         return obj;
@@ -94,55 +75,20 @@ class InlineObject2 {
 InlineObject2.prototype['id'] = undefined;
 
 /**
- * @member {Number} parent_id
- */
-InlineObject2.prototype['parent_id'] = undefined;
-
-/**
- * Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
- * @member {String} type
- */
-InlineObject2.prototype['type'] = undefined;
-
-/**
- * Name of the folder
+ * Full name of the group
  * @member {String} name
  */
 InlineObject2.prototype['name'] = undefined;
 
 /**
- * Creation date
- * @member {Date} created_at
+ * @member {String} color
  */
-InlineObject2.prototype['created_at'] = undefined;
+InlineObject2.prototype['color'] = undefined;
 
 /**
- * Date of the last update
- * @member {Date} updated_at
+ * @member {Array.<module:model/UserProject>} members
  */
-InlineObject2.prototype['updated_at'] = undefined;
-
-/**
- * @member {module:model/User} created_by
- */
-InlineObject2.prototype['created_by'] = undefined;
-
-/**
- * @member {Array.<module:model/FolderGroupPermission>} groups_permissions
- */
-InlineObject2.prototype['groups_permissions'] = undefined;
-
-/**
- * Permission for a Folder
- * @member {Number} default_permission
- */
-InlineObject2.prototype['default_permission'] = undefined;
-
-/**
- * Aggregate of group user permissions and folder default permission
- * @member {Number} user_permission
- */
-InlineObject2.prototype['user_permission'] = undefined;
+InlineObject2.prototype['members'] = undefined;
 
 
 

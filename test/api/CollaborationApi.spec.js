@@ -278,96 +278,6 @@
         done();
       });
     });
-    describe('fullUpdateClassification', function() {
-      it('should call fullUpdateClassification successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateClassification
-        //instance.fullUpdateClassification(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateCloud', function() {
-      it('should call fullUpdateCloud successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateCloud
-        //instance.fullUpdateCloud(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateCloudUser', function() {
-      it('should call fullUpdateCloudUser successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateCloudUser
-        //instance.fullUpdateCloudUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateDocument', function() {
-      it('should call fullUpdateDocument successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateDocument
-        //instance.fullUpdateDocument(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateFolder', function() {
-      it('should call fullUpdateFolder successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateFolder
-        //instance.fullUpdateFolder(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateGroupFolder', function() {
-      it('should call fullUpdateGroupFolder successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateGroupFolder
-        //instance.fullUpdateGroupFolder(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateManageGroup', function() {
-      it('should call fullUpdateManageGroup successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateManageGroup
-        //instance.fullUpdateManageGroup(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateProject', function() {
-      it('should call fullUpdateProject successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateProject
-        //instance.fullUpdateProject(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('fullUpdateProjectAccessToken', function() {
-      it('should call fullUpdateProjectAccessToken successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateProjectAccessToken
-        //instance.fullUpdateProjectAccessToken(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getClassification', function() {
       it('should call getClassification successfully', function(done) {
         //uncomment below and update the code to test getClassification
@@ -772,16 +682,6 @@
       it('should call updateProjectUser successfully', function(done) {
         //uncomment below and update the code to test updateProjectUser
         //instance.updateProjectUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateSelfUser', function() {
-      it('should call updateSelfUser successfully', function(done) {
-        //uncomment below and update the code to test updateSelfUser
-        //instance.updateSelfUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

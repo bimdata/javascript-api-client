@@ -145,67 +145,6 @@ export default class WebhookApi {
 
 
     /**
-     * Update all field of a webhook
-     * Update all field of a webhook Required scopes: webhook:manage
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {module:model/WebHook} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
-     */
-    fullUpdateWebHookWithHttpInfo(cloudPk, id, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateWebHook");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling fullUpdateWebHook");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling fullUpdateWebHook");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = WebHook;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/webhook/{id}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update all field of a webhook
-     * Update all field of a webhook Required scopes: webhook:manage
-     * @param {String} cloudPk 
-     * @param {String} id 
-     * @param {module:model/WebHook} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
-     */
-    fullUpdateWebHook(cloudPk, id, data) {
-      return this.fullUpdateWebHookWithHttpInfo(cloudPk, id, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Retrieve one configured webhook
      * Retrieve one configured webhook Required scopes: webhook:manage
      * @param {String} cloudPk 
