@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import MarketplaceAppImage from './MarketplaceAppImage';
+import PublicOrganization from './PublicOrganization';
 import User from './User';
 
 /**
@@ -100,8 +101,8 @@ class MarketplaceApp {
             if (data.hasOwnProperty('images')) {
                 obj['images'] = ApiClient.convertToType(data['images'], [MarketplaceAppImage]);
             }
-            if (data.hasOwnProperty('organization_id')) {
-                obj['organization_id'] = ApiClient.convertToType(data['organization_id'], 'String');
+            if (data.hasOwnProperty('organization')) {
+                obj['organization'] = PublicOrganization.constructFromObject(data['organization']);
             }
         }
         return obj;
@@ -187,9 +188,9 @@ MarketplaceApp.prototype['logo'] = undefined;
 MarketplaceApp.prototype['images'] = undefined;
 
 /**
- * @member {String} organization_id
+ * @member {module:model/PublicOrganization} organization
  */
-MarketplaceApp.prototype['organization_id'] = undefined;
+MarketplaceApp.prototype['organization'] = undefined;
 
 
 

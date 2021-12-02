@@ -144,8 +144,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property organizationId (base name: "organization_id")', function() {
-      // uncomment below and update the code to test the property organizationId
+    it('should have the property organization (base name: "organization")', function() {
+      // uncomment below and update the code to test the property organization
       //var instane = new bimdata.MarketplaceApp();
       //expect(instance).to.be();
     });

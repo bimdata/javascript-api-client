@@ -19,6 +19,6 @@ Name | Type | Description | Notes
 **tags** | **[String]** |  | [optional] 
 **logo** | **String** |  | [optional] [readonly] 
 **images** | [**[MarketplaceAppImage]**](MarketplaceAppImage.md) |  | [optional] [readonly] 
-**organizationId** | **String** |  | [optional] [readonly] 
+**organization** | [**PublicOrganization**](PublicOrganization.md) |  | [optional] 
 
 

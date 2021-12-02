@@ -77,6 +77,7 @@ import ProjectWithChildren from './model/ProjectWithChildren';
 import Property from './model/Property';
 import PropertyDefinition from './model/PropertyDefinition';
 import PropertySet from './model/PropertySet';
+import PublicOrganization from './model/PublicOrganization';
 import RawClassification from './model/RawClassification';
 import RawDefinition from './model/RawDefinition';
 import RawElement from './model/RawElement';
@@ -547,6 +548,12 @@ export {
      * @property {module:model/PropertySet}
      */
     PropertySet,
+
+    /**
+     * The PublicOrganization model constructor.
+     * @property {module:model/PublicOrganization}
+     */
+    PublicOrganization,
 
     /**
      * The RawClassification model constructor.
