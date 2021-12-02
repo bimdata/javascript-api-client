@@ -49,6 +49,9 @@ class PublicOrganization {
         if (data) {
             obj = obj || new PublicOrganization();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -61,6 +64,11 @@ class PublicOrganization {
 
 
 }
+
+/**
+ * @member {Number} id
+ */
+PublicOrganization.prototype['id'] = undefined;
 
 /**
  * Name of the organization
