@@ -34,6 +34,7 @@ import Extensions from './model/Extensions';
 import Feature from './model/Feature';
 import Folder from './model/Folder';
 import FolderGroupPermission from './model/FolderGroupPermission';
+import FolderUserProject from './model/FolderUserProject';
 import FullTopic from './model/FullTopic';
 import GroupFolder from './model/GroupFolder';
 import Ifc from './model/Ifc';
@@ -115,6 +116,9 @@ import UserProjectId from './model/UserProjectId';
 import UserProjectUpdate from './model/UserProjectUpdate';
 import ViewSetupHints from './model/ViewSetupHints';
 import Viewpoint from './model/Viewpoint';
+import Visa from './model/Visa';
+import VisaComment from './model/VisaComment';
+import VisaValidation from './model/VisaValidation';
 import Visibility from './model/Visibility';
 import WebHook from './model/WebHook';
 import Zone from './model/Zone';
@@ -290,6 +294,12 @@ export {
      * @property {module:model/FolderGroupPermission}
      */
     FolderGroupPermission,
+
+    /**
+     * The FolderUserProject model constructor.
+     * @property {module:model/FolderUserProject}
+     */
+    FolderUserProject,
 
     /**
      * The FullTopic model constructor.
@@ -776,6 +786,24 @@ export {
      * @property {module:model/Viewpoint}
      */
     Viewpoint,
+
+    /**
+     * The Visa model constructor.
+     * @property {module:model/Visa}
+     */
+    Visa,
+
+    /**
+     * The VisaComment model constructor.
+     * @property {module:model/VisaComment}
+     */
+    VisaComment,
+
+    /**
+     * The VisaValidation model constructor.
+     * @property {module:model/VisaValidation}
+     */
+    VisaValidation,
 
     /**
      * The Visibility model constructor.

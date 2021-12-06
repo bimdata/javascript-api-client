@@ -201,10 +201,12 @@ Class | Method | HTTP request | Description
 *bimdata.CheckerApi* | [**updateRule**](docs/CheckerApi.md#updateRule) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | Update some fields of a Rule
 *bimdata.CheckerApi* | [**updateRuleComponent**](docs/CheckerApi.md#updateRuleComponent) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Update some fields of a RuleComponent
 *bimdata.CheckerApi* | [**updateRuleset**](docs/CheckerApi.md#updateRuleset) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Update some fields of a Ruleset
+*bimdata.CollaborationApi* | [**acceptValidation**](docs/CollaborationApi.md#acceptValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/accept | Accept a validation
 *bimdata.CollaborationApi* | [**addGroupMember**](docs/CollaborationApi.md#addGroupMember) | **POST** /cloud/{cloud_pk}/project/{project_pk}/group/{group_pk}/member | Add a user to a group
 *bimdata.CollaborationApi* | [**cancelCloudUserInvitation**](docs/CollaborationApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | Cancel a pending invitation
 *bimdata.CollaborationApi* | [**cancelProjectUserInvitation**](docs/CollaborationApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
 *bimdata.CollaborationApi* | [**checkAccess**](docs/CollaborationApi.md#checkAccess) | **GET** /cloud/{id}/check-access | Check app access from cloud
+*bimdata.CollaborationApi* | [**closeVisa**](docs/CollaborationApi.md#closeVisa) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}/close | Close a visa of a document
 *bimdata.CollaborationApi* | [**createClassification**](docs/CollaborationApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | Create a classification
 *bimdata.CollaborationApi* | [**createCloud**](docs/CollaborationApi.md#createCloud) | **POST** /cloud | Create a cloud
 *bimdata.CollaborationApi* | [**createDMSTree**](docs/CollaborationApi.md#createDMSTree) | **POST** /cloud/{cloud_pk}/project/{id}/dms-tree | Create a complete DMS tree
@@ -214,6 +216,9 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**createManageGroup**](docs/CollaborationApi.md#createManageGroup) | **POST** /cloud/{cloud_pk}/project/{project_pk}/group | Create a group
 *bimdata.CollaborationApi* | [**createProject**](docs/CollaborationApi.md#createProject) | **POST** /cloud/{cloud_pk}/project | Create a project
 *bimdata.CollaborationApi* | [**createProjectAccessToken**](docs/CollaborationApi.md#createProjectAccessToken) | **POST** /cloud/{cloud_pk}/project/{project_pk}/access-token | Create a token for this project
+*bimdata.CollaborationApi* | [**createValidation**](docs/CollaborationApi.md#createValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation | Add a validation to a visa
+*bimdata.CollaborationApi* | [**createVisa**](docs/CollaborationApi.md#createVisa) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa | Create a visa
+*bimdata.CollaborationApi* | [**createVisaComment**](docs/CollaborationApi.md#createVisaComment) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment | Add a comment
 *bimdata.CollaborationApi* | [**deleteClassification**](docs/CollaborationApi.md#deleteClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Delete a classification
 *bimdata.CollaborationApi* | [**deleteCloud**](docs/CollaborationApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
 *bimdata.CollaborationApi* | [**deleteCloudUser**](docs/CollaborationApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | Remove a user from a cloud
@@ -224,6 +229,10 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**deleteProject**](docs/CollaborationApi.md#deleteProject) | **DELETE** /cloud/{cloud_pk}/project/{id} | Delete a project
 *bimdata.CollaborationApi* | [**deleteProjectAccessToken**](docs/CollaborationApi.md#deleteProjectAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Delete a token
 *bimdata.CollaborationApi* | [**deleteProjectUser**](docs/CollaborationApi.md#deleteProjectUser) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Remove a user from a project
+*bimdata.CollaborationApi* | [**deleteValidation**](docs/CollaborationApi.md#deleteValidation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id} | Remove a validation
+*bimdata.CollaborationApi* | [**deleteVisa**](docs/CollaborationApi.md#deleteVisa) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Remove a visa
+*bimdata.CollaborationApi* | [**deleteVisaComment**](docs/CollaborationApi.md#deleteVisaComment) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Remove a comment
+*bimdata.CollaborationApi* | [**denyValidation**](docs/CollaborationApi.md#denyValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/deny | Deny a validation
 *bimdata.CollaborationApi* | [**getClassification**](docs/CollaborationApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Retrieve a classification
 *bimdata.CollaborationApi* | [**getClassifications**](docs/CollaborationApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
 *bimdata.CollaborationApi* | [**getCloud**](docs/CollaborationApi.md#getCloud) | **GET** /cloud/{id} | Retrieve one cloud
@@ -235,6 +244,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getDocument**](docs/CollaborationApi.md#getDocument) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Retrieve a document
 *bimdata.CollaborationApi* | [**getDocuments**](docs/CollaborationApi.md#getDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document | Retrieve all documents
 *bimdata.CollaborationApi* | [**getFolder**](docs/CollaborationApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Retrieve a folder
+*bimdata.CollaborationApi* | [**getFolderProjectUsers**](docs/CollaborationApi.md#getFolderProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/user | Retrieve all users in a project with the permission on the folder
 *bimdata.CollaborationApi* | [**getFolders**](docs/CollaborationApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | Retrieve all folders
 *bimdata.CollaborationApi* | [**getGroup**](docs/CollaborationApi.md#getGroup) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/group/{id} | Retrieve a group
 *bimdata.CollaborationApi* | [**getGroups**](docs/CollaborationApi.md#getGroups) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/group | Retrieve all groups
@@ -243,18 +253,29 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getProject**](docs/CollaborationApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | Retrieve a project
 *bimdata.CollaborationApi* | [**getProjectAccessToken**](docs/CollaborationApi.md#getProjectAccessToken) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Retrieve one token created for this project
 *bimdata.CollaborationApi* | [**getProjectAccessTokens**](docs/CollaborationApi.md#getProjectAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token | Retrieve all tokens created for this project
+*bimdata.CollaborationApi* | [**getProjectCreatorVisas**](docs/CollaborationApi.md#getProjectCreatorVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/visa/creator | List visas created by user
 *bimdata.CollaborationApi* | [**getProjectDMSTree**](docs/CollaborationApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
 *bimdata.CollaborationApi* | [**getProjectInvitations**](docs/CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
 *bimdata.CollaborationApi* | [**getProjectSize**](docs/CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all ifc files in the project
 *bimdata.CollaborationApi* | [**getProjectSubTree**](docs/CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
 *bimdata.CollaborationApi* | [**getProjectTree**](docs/CollaborationApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | Retrieve the complete DMS tree
 *bimdata.CollaborationApi* | [**getProjectUsers**](docs/CollaborationApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | Retrieve all users in a project, or a list with a filter by email
+*bimdata.CollaborationApi* | [**getProjectValidatorVisas**](docs/CollaborationApi.md#getProjectValidatorVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/visa/validator | List visas where user is a validator
 *bimdata.CollaborationApi* | [**getProjects**](docs/CollaborationApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | Retrieve all projects
 *bimdata.CollaborationApi* | [**getSelfProjects**](docs/CollaborationApi.md#getSelfProjects) | **GET** /user/projects | List current user&#39;s projects
 *bimdata.CollaborationApi* | [**getSelfUser**](docs/CollaborationApi.md#getSelfUser) | **GET** /user | Get info about the current user
+*bimdata.CollaborationApi* | [**getValidation**](docs/CollaborationApi.md#getValidation) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id} | Retrieve a validation to a visa
+*bimdata.CollaborationApi* | [**getValidations**](docs/CollaborationApi.md#getValidations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation | List all validations to a visa
+*bimdata.CollaborationApi* | [**getVisa**](docs/CollaborationApi.md#getVisa) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Retrieve a visa of a document
+*bimdata.CollaborationApi* | [**getVisaComment**](docs/CollaborationApi.md#getVisaComment) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Retrieve a comment
+*bimdata.CollaborationApi* | [**getVisaComments**](docs/CollaborationApi.md#getVisaComments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment | List all comment of a visa
+*bimdata.CollaborationApi* | [**getVisas**](docs/CollaborationApi.md#getVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa | List all visas of a document
 *bimdata.CollaborationApi* | [**inviteCloudUser**](docs/CollaborationApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | Invite a cloud administrator
 *bimdata.CollaborationApi* | [**inviteProjectUser**](docs/CollaborationApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | Invite a project member
 *bimdata.CollaborationApi* | [**leaveProject**](docs/CollaborationApi.md#leaveProject) | **POST** /cloud/{cloud_pk}/project/{id}/leave | Leave the project
+*bimdata.CollaborationApi* | [**pauseVisa**](docs/CollaborationApi.md#pauseVisa) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}/pause | Pause a visa of a document
+*bimdata.CollaborationApi* | [**resetValidation**](docs/CollaborationApi.md#resetValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/reset | Reset a validation
+*bimdata.CollaborationApi* | [**resumeVisa**](docs/CollaborationApi.md#resumeVisa) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}/resume | Resume a visa of a document
 *bimdata.CollaborationApi* | [**updateClassification**](docs/CollaborationApi.md#updateClassification) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Update some fields of a classification
 *bimdata.CollaborationApi* | [**updateCloud**](docs/CollaborationApi.md#updateCloud) | **PATCH** /cloud/{id} | Update some fields of a cloud
 *bimdata.CollaborationApi* | [**updateCloudUser**](docs/CollaborationApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | Update some fields of a cloud user
@@ -265,6 +286,9 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**updateProject**](docs/CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
 *bimdata.CollaborationApi* | [**updateProjectAccessToken**](docs/CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
 *bimdata.CollaborationApi* | [**updateProjectUser**](docs/CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Change the user role in the cloud
+*bimdata.CollaborationApi* | [**updateValidation**](docs/CollaborationApi.md#updateValidation) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id} | Update the validator of validation
+*bimdata.CollaborationApi* | [**updateVisa**](docs/CollaborationApi.md#updateVisa) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Update some fields of a visa
+*bimdata.CollaborationApi* | [**updateVisaComment**](docs/CollaborationApi.md#updateVisaComment) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Update some fields of a comment
 *bimdata.IfcApi* | [**addIfcErrors**](docs/IfcApi.md#addIfcErrors) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/errors | Add errors to IFC
 *bimdata.IfcApi* | [**bulkDeleteIfcClassifications**](docs/IfcApi.md#bulkDeleteIfcClassifications) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/list_destroy | Remove all classifications from model&#39;s elements
 *bimdata.IfcApi* | [**bulkDeleteIfcProperties**](docs/IfcApi.md#bulkDeleteIfcProperties) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_destroy | Delete many Property of a model
@@ -415,6 +439,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Feature](docs/Feature.md)
  - [bimdata.Folder](docs/Folder.md)
  - [bimdata.FolderGroupPermission](docs/FolderGroupPermission.md)
+ - [bimdata.FolderUserProject](docs/FolderUserProject.md)
  - [bimdata.FullTopic](docs/FullTopic.md)
  - [bimdata.GroupFolder](docs/GroupFolder.md)
  - [bimdata.Ifc](docs/Ifc.md)
@@ -496,6 +521,9 @@ Class | Method | HTTP request | Description
  - [bimdata.UserProjectUpdate](docs/UserProjectUpdate.md)
  - [bimdata.ViewSetupHints](docs/ViewSetupHints.md)
  - [bimdata.Viewpoint](docs/Viewpoint.md)
+ - [bimdata.Visa](docs/Visa.md)
+ - [bimdata.VisaComment](docs/VisaComment.md)
+ - [bimdata.VisaValidation](docs/VisaValidation.md)
  - [bimdata.Visibility](docs/Visibility.md)
  - [bimdata.WebHook](docs/WebHook.md)
  - [bimdata.Zone](docs/Zone.md)

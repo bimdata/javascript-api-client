@@ -48,6 +48,16 @@
   }
 
   describe('CollaborationApi', function() {
+    describe('acceptValidation', function() {
+      it('should call acceptValidation successfully', function(done) {
+        //uncomment below and update the code to test acceptValidation
+        //instance.acceptValidation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('addGroupMember', function() {
       it('should call addGroupMember successfully', function(done) {
         //uncomment below and update the code to test addGroupMember
@@ -82,6 +92,16 @@
       it('should call checkAccess successfully', function(done) {
         //uncomment below and update the code to test checkAccess
         //instance.checkAccess(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('closeVisa', function() {
+      it('should call closeVisa successfully', function(done) {
+        //uncomment below and update the code to test closeVisa
+        //instance.closeVisa(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -172,6 +192,36 @@
       it('should call createProjectAccessToken successfully', function(done) {
         //uncomment below and update the code to test createProjectAccessToken
         //instance.createProjectAccessToken(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createValidation', function() {
+      it('should call createValidation successfully', function(done) {
+        //uncomment below and update the code to test createValidation
+        //instance.createValidation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createVisa', function() {
+      it('should call createVisa successfully', function(done) {
+        //uncomment below and update the code to test createVisa
+        //instance.createVisa(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createVisaComment', function() {
+      it('should call createVisaComment successfully', function(done) {
+        //uncomment below and update the code to test createVisaComment
+        //instance.createVisaComment(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -272,6 +322,46 @@
       it('should call deleteProjectUser successfully', function(done) {
         //uncomment below and update the code to test deleteProjectUser
         //instance.deleteProjectUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteValidation', function() {
+      it('should call deleteValidation successfully', function(done) {
+        //uncomment below and update the code to test deleteValidation
+        //instance.deleteValidation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteVisa', function() {
+      it('should call deleteVisa successfully', function(done) {
+        //uncomment below and update the code to test deleteVisa
+        //instance.deleteVisa(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteVisaComment', function() {
+      it('should call deleteVisaComment successfully', function(done) {
+        //uncomment below and update the code to test deleteVisaComment
+        //instance.deleteVisaComment(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('denyValidation', function() {
+      it('should call denyValidation successfully', function(done) {
+        //uncomment below and update the code to test denyValidation
+        //instance.denyValidation(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -388,6 +478,16 @@
         done();
       });
     });
+    describe('getFolderProjectUsers', function() {
+      it('should call getFolderProjectUsers successfully', function(done) {
+        //uncomment below and update the code to test getFolderProjectUsers
+        //instance.getFolderProjectUsers(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getFolders', function() {
       it('should call getFolders successfully', function(done) {
         //uncomment below and update the code to test getFolders
@@ -468,6 +568,16 @@
         done();
       });
     });
+    describe('getProjectCreatorVisas', function() {
+      it('should call getProjectCreatorVisas successfully', function(done) {
+        //uncomment below and update the code to test getProjectCreatorVisas
+        //instance.getProjectCreatorVisas(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getProjectDMSTree', function() {
       it('should call getProjectDMSTree successfully', function(done) {
         //uncomment below and update the code to test getProjectDMSTree
@@ -528,6 +638,16 @@
         done();
       });
     });
+    describe('getProjectValidatorVisas', function() {
+      it('should call getProjectValidatorVisas successfully', function(done) {
+        //uncomment below and update the code to test getProjectValidatorVisas
+        //instance.getProjectValidatorVisas(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getProjects', function() {
       it('should call getProjects successfully', function(done) {
         //uncomment below and update the code to test getProjects
@@ -558,6 +678,66 @@
         done();
       });
     });
+    describe('getValidation', function() {
+      it('should call getValidation successfully', function(done) {
+        //uncomment below and update the code to test getValidation
+        //instance.getValidation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getValidations', function() {
+      it('should call getValidations successfully', function(done) {
+        //uncomment below and update the code to test getValidations
+        //instance.getValidations(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getVisa', function() {
+      it('should call getVisa successfully', function(done) {
+        //uncomment below and update the code to test getVisa
+        //instance.getVisa(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getVisaComment', function() {
+      it('should call getVisaComment successfully', function(done) {
+        //uncomment below and update the code to test getVisaComment
+        //instance.getVisaComment(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getVisaComments', function() {
+      it('should call getVisaComments successfully', function(done) {
+        //uncomment below and update the code to test getVisaComments
+        //instance.getVisaComments(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getVisas', function() {
+      it('should call getVisas successfully', function(done) {
+        //uncomment below and update the code to test getVisas
+        //instance.getVisas(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('inviteCloudUser', function() {
       it('should call inviteCloudUser successfully', function(done) {
         //uncomment below and update the code to test inviteCloudUser
@@ -582,6 +762,36 @@
       it('should call leaveProject successfully', function(done) {
         //uncomment below and update the code to test leaveProject
         //instance.leaveProject(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('pauseVisa', function() {
+      it('should call pauseVisa successfully', function(done) {
+        //uncomment below and update the code to test pauseVisa
+        //instance.pauseVisa(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('resetValidation', function() {
+      it('should call resetValidation successfully', function(done) {
+        //uncomment below and update the code to test resetValidation
+        //instance.resetValidation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('resumeVisa', function() {
+      it('should call resumeVisa successfully', function(done) {
+        //uncomment below and update the code to test resumeVisa
+        //instance.resumeVisa(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -682,6 +892,36 @@
       it('should call updateProjectUser successfully', function(done) {
         //uncomment below and update the code to test updateProjectUser
         //instance.updateProjectUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateValidation', function() {
+      it('should call updateValidation successfully', function(done) {
+        //uncomment below and update the code to test updateValidation
+        //instance.updateValidation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateVisa', function() {
+      it('should call updateVisa successfully', function(done) {
+        //uncomment below and update the code to test updateVisa
+        //instance.updateVisa(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateVisaComment', function() {
+      it('should call updateVisaComment successfully', function(done) {
+        //uncomment below and update the code to test updateVisaComment
+        //instance.updateVisaComment(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

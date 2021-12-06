@@ -18,6 +18,7 @@ import Cloud from '../model/Cloud';
 import CloudInvitation from '../model/CloudInvitation';
 import Document from '../model/Document';
 import Folder from '../model/Folder';
+import FolderUserProject from '../model/FolderUserProject';
 import GroupFolder from '../model/GroupFolder';
 import InlineObject from '../model/InlineObject';
 import InlineObject1 from '../model/InlineObject1';
@@ -37,6 +38,9 @@ import UserCloudUpdate from '../model/UserCloudUpdate';
 import UserProject from '../model/UserProject';
 import UserProjectId from '../model/UserProjectId';
 import UserProjectUpdate from '../model/UserProjectUpdate';
+import Visa from '../model/Visa';
+import VisaComment from '../model/VisaComment';
+import VisaValidation from '../model/VisaValidation';
 
 /**
 * Collaboration service.
@@ -56,6 +60,82 @@ export default class CollaborationApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+
+    /**
+     * Accept a validation
+     * Accept a validation Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa validation.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    acceptValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling acceptValidation");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling acceptValidation");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling acceptValidation");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling acceptValidation");
+      }
+      // verify the required parameter 'visaPk' is set
+      if (visaPk === undefined || visaPk === null) {
+        throw new Error("Missing the required parameter 'visaPk' when calling acceptValidation");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk,
+        'visa_pk': visaPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/accept', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Accept a validation
+     * Accept a validation Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa validation.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    acceptValidation(cloudPk, documentPk, id, projectPk, visaPk) {
+      return this.acceptValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
 
     /**
@@ -285,6 +365,75 @@ export default class CollaborationApi {
      */
     checkAccess(id) {
       return this.checkAccessWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Close a visa of a document
+     * Close a visa of a document Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    closeVisaWithHttpInfo(cloudPk, documentPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling closeVisa");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling closeVisa");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling closeVisa");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling closeVisa");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}/close', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Close a visa of a document
+     * Close a visa of a document Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    closeVisa(cloudPk, documentPk, id, projectPk) {
+      return this.closeVisaWithHttpInfo(cloudPk, documentPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -832,6 +981,224 @@ export default class CollaborationApi {
      */
     createProjectAccessToken(cloudPk, projectPk, data) {
       return this.createProjectAccessTokenWithHttpInfo(cloudPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Add a validation to a visa
+     * Add a validation to a visa Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @param {module:model/VisaValidation} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VisaValidation} and HTTP response
+     */
+    createValidationWithHttpInfo(cloudPk, documentPk, projectPk, visaPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createValidation");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling createValidation");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createValidation");
+      }
+      // verify the required parameter 'visaPk' is set
+      if (visaPk === undefined || visaPk === null) {
+        throw new Error("Missing the required parameter 'visaPk' when calling createValidation");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createValidation");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'project_pk': projectPk,
+        'visa_pk': visaPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = VisaValidation;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Add a validation to a visa
+     * Add a validation to a visa Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @param {module:model/VisaValidation} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VisaValidation}
+     */
+    createValidation(cloudPk, documentPk, projectPk, visaPk, data) {
+      return this.createValidationWithHttpInfo(cloudPk, documentPk, projectPk, visaPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a visa
+     * Create a visa Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {String} projectPk 
+     * @param {module:model/Visa} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Visa} and HTTP response
+     */
+    createVisaWithHttpInfo(cloudPk, documentPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createVisa");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling createVisa");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createVisa");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createVisa");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Visa;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a visa
+     * Create a visa Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {String} projectPk 
+     * @param {module:model/Visa} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Visa}
+     */
+    createVisa(cloudPk, documentPk, projectPk, data) {
+      return this.createVisaWithHttpInfo(cloudPk, documentPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Add a comment
+     * Add a comment Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @param {module:model/VisaComment} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VisaComment} and HTTP response
+     */
+    createVisaCommentWithHttpInfo(cloudPk, documentPk, projectPk, visaPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createVisaComment");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling createVisaComment");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createVisaComment");
+      }
+      // verify the required parameter 'visaPk' is set
+      if (visaPk === undefined || visaPk === null) {
+        throw new Error("Missing the required parameter 'visaPk' when calling createVisaComment");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createVisaComment");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'project_pk': projectPk,
+        'visa_pk': visaPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = VisaComment;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Add a comment
+     * Add a comment Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @param {module:model/VisaComment} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VisaComment}
+     */
+    createVisaComment(cloudPk, documentPk, projectPk, visaPk, data) {
+      return this.createVisaCommentWithHttpInfo(cloudPk, documentPk, projectPk, visaPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1438,6 +1805,303 @@ export default class CollaborationApi {
 
 
     /**
+     * Remove a validation
+     * Remove a validation Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa validation.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteValidation");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling deleteValidation");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteValidation");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteValidation");
+      }
+      // verify the required parameter 'visaPk' is set
+      if (visaPk === undefined || visaPk === null) {
+        throw new Error("Missing the required parameter 'visaPk' when calling deleteValidation");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk,
+        'visa_pk': visaPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Remove a validation
+     * Remove a validation Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa validation.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteValidation(cloudPk, documentPk, id, projectPk, visaPk) {
+      return this.deleteValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Remove a visa
+     * Remove a visa Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteVisaWithHttpInfo(cloudPk, documentPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteVisa");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling deleteVisa");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteVisa");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteVisa");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Remove a visa
+     * Remove a visa Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteVisa(cloudPk, documentPk, id, projectPk) {
+      return this.deleteVisaWithHttpInfo(cloudPk, documentPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Remove a comment
+     * Remove a comment Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa comment.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteVisaCommentWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteVisaComment");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling deleteVisaComment");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteVisaComment");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteVisaComment");
+      }
+      // verify the required parameter 'visaPk' is set
+      if (visaPk === undefined || visaPk === null) {
+        throw new Error("Missing the required parameter 'visaPk' when calling deleteVisaComment");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk,
+        'visa_pk': visaPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Remove a comment
+     * Remove a comment Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa comment.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteVisaComment(cloudPk, documentPk, id, projectPk, visaPk) {
+      return this.deleteVisaCommentWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Deny a validation
+     * Deny a validation Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa validation.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    denyValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling denyValidation");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling denyValidation");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling denyValidation");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling denyValidation");
+      }
+      // verify the required parameter 'visaPk' is set
+      if (visaPk === undefined || visaPk === null) {
+        throw new Error("Missing the required parameter 'visaPk' when calling denyValidation");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk,
+        'visa_pk': visaPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/deny', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Deny a validation
+     * Deny a validation Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa validation.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    denyValidation(cloudPk, documentPk, id, projectPk, visaPk) {
+      return this.denyValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve a classification
      * Retrieve a classification Required scopes: ifc:read
      * @param {String} cloudPk 
@@ -2035,6 +2699,68 @@ export default class CollaborationApi {
 
 
     /**
+     * Retrieve all users in a project with the permission on the folder
+     * Retrieve all users in a project with the permission on the folder Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} folderPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FolderUserProject>} and HTTP response
+     */
+    getFolderProjectUsersWithHttpInfo(cloudPk, folderPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getFolderProjectUsers");
+      }
+      // verify the required parameter 'folderPk' is set
+      if (folderPk === undefined || folderPk === null) {
+        throw new Error("Missing the required parameter 'folderPk' when calling getFolderProjectUsers");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getFolderProjectUsers");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'folder_pk': folderPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [FolderUserProject];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/user', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all users in a project with the permission on the folder
+     * Retrieve all users in a project with the permission on the folder Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} folderPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FolderUserProject>}
+     */
+    getFolderProjectUsers(cloudPk, folderPk, projectPk) {
+      return this.getFolderProjectUsersWithHttpInfo(cloudPk, folderPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve all folders
      * Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree Required scopes: document:read
      * @param {String} cloudPk 
@@ -2496,6 +3222,61 @@ export default class CollaborationApi {
 
 
     /**
+     * List visas created by user
+     * List visas created by user in a project Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Visa>} and HTTP response
+     */
+    getProjectCreatorVisasWithHttpInfo(cloudPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectCreatorVisas");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getProjectCreatorVisas");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Visa];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/me/visa/creator', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List visas created by user
+     * List visas created by user in a project Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Visa>}
+     */
+    getProjectCreatorVisas(cloudPk, projectPk) {
+      return this.getProjectCreatorVisasWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve the complete DMS tree
      * Retrieve the complete DMS tree (all folders and all documents in the project)
      * @param {String} cloudPk 
@@ -2834,6 +3615,61 @@ export default class CollaborationApi {
 
 
     /**
+     * List visas where user is a validator
+     * List visas where user is a validator in a project Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Visa>} and HTTP response
+     */
+    getProjectValidatorVisasWithHttpInfo(cloudPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectValidatorVisas");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getProjectValidatorVisas");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Visa];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/me/visa/validator', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List visas where user is a validator
+     * List visas where user is a validator in a project Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Visa>}
+     */
+    getProjectValidatorVisas(cloudPk, projectPk) {
+      return this.getProjectValidatorVisasWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve all projects
      * Retrieve all projects of the cloud. All project are shown at the same level. see #getProjectSubTree
      * @param {String} cloudPk 
@@ -2957,6 +3793,427 @@ export default class CollaborationApi {
      */
     getSelfUser() {
       return this.getSelfUserWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a validation to a visa
+     * Retrieve a validation to a visa Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa validation.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VisaValidation} and HTTP response
+     */
+    getValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getValidation");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling getValidation");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getValidation");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getValidation");
+      }
+      // verify the required parameter 'visaPk' is set
+      if (visaPk === undefined || visaPk === null) {
+        throw new Error("Missing the required parameter 'visaPk' when calling getValidation");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk,
+        'visa_pk': visaPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = VisaValidation;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a validation to a visa
+     * Retrieve a validation to a visa Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa validation.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VisaValidation}
+     */
+    getValidation(cloudPk, documentPk, id, projectPk, visaPk) {
+      return this.getValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List all validations to a visa
+     * List all validations to a visa Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VisaValidation>} and HTTP response
+     */
+    getValidationsWithHttpInfo(cloudPk, documentPk, projectPk, visaPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getValidations");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling getValidations");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getValidations");
+      }
+      // verify the required parameter 'visaPk' is set
+      if (visaPk === undefined || visaPk === null) {
+        throw new Error("Missing the required parameter 'visaPk' when calling getValidations");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'project_pk': projectPk,
+        'visa_pk': visaPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [VisaValidation];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List all validations to a visa
+     * List all validations to a visa Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VisaValidation>}
+     */
+    getValidations(cloudPk, documentPk, projectPk, visaPk) {
+      return this.getValidationsWithHttpInfo(cloudPk, documentPk, projectPk, visaPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a visa of a document
+     * Retrieve a unique visa of a document Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Visa} and HTTP response
+     */
+    getVisaWithHttpInfo(cloudPk, documentPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getVisa");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling getVisa");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getVisa");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getVisa");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Visa;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a visa of a document
+     * Retrieve a unique visa of a document Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Visa}
+     */
+    getVisa(cloudPk, documentPk, id, projectPk) {
+      return this.getVisaWithHttpInfo(cloudPk, documentPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a comment
+     * Retrieve a comment Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa comment.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VisaComment} and HTTP response
+     */
+    getVisaCommentWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getVisaComment");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling getVisaComment");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getVisaComment");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getVisaComment");
+      }
+      // verify the required parameter 'visaPk' is set
+      if (visaPk === undefined || visaPk === null) {
+        throw new Error("Missing the required parameter 'visaPk' when calling getVisaComment");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk,
+        'visa_pk': visaPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = VisaComment;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a comment
+     * Retrieve a comment Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa comment.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VisaComment}
+     */
+    getVisaComment(cloudPk, documentPk, id, projectPk, visaPk) {
+      return this.getVisaCommentWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List all comment of a visa
+     * List all comment of a visa Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VisaComment>} and HTTP response
+     */
+    getVisaCommentsWithHttpInfo(cloudPk, documentPk, projectPk, visaPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getVisaComments");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling getVisaComments");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getVisaComments");
+      }
+      // verify the required parameter 'visaPk' is set
+      if (visaPk === undefined || visaPk === null) {
+        throw new Error("Missing the required parameter 'visaPk' when calling getVisaComments");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'project_pk': projectPk,
+        'visa_pk': visaPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [VisaComment];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List all comment of a visa
+     * List all comment of a visa Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VisaComment>}
+     */
+    getVisaComments(cloudPk, documentPk, projectPk, visaPk) {
+      return this.getVisaCommentsWithHttpInfo(cloudPk, documentPk, projectPk, visaPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List all visas of a document
+     * List all visas of a document Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Visa>} and HTTP response
+     */
+    getVisasWithHttpInfo(cloudPk, documentPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getVisas");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling getVisas");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getVisas");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Visa];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List all visas of a document
+     * List all visas of a document Required scopes: document:read
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Visa>}
+     */
+    getVisas(cloudPk, documentPk, projectPk) {
+      return this.getVisasWithHttpInfo(cloudPk, documentPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3127,6 +4384,220 @@ export default class CollaborationApi {
      */
     leaveProject(cloudPk, id) {
       return this.leaveProjectWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Pause a visa of a document
+     * Pause a visa of a document Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    pauseVisaWithHttpInfo(cloudPk, documentPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling pauseVisa");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling pauseVisa");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling pauseVisa");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling pauseVisa");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}/pause', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Pause a visa of a document
+     * Pause a visa of a document Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    pauseVisa(cloudPk, documentPk, id, projectPk) {
+      return this.pauseVisaWithHttpInfo(cloudPk, documentPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Reset a validation
+     * Reset a validation if the validation has been accepted or rejected Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa validation.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    resetValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling resetValidation");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling resetValidation");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling resetValidation");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling resetValidation");
+      }
+      // verify the required parameter 'visaPk' is set
+      if (visaPk === undefined || visaPk === null) {
+        throw new Error("Missing the required parameter 'visaPk' when calling resetValidation");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk,
+        'visa_pk': visaPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/reset', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Reset a validation
+     * Reset a validation if the validation has been accepted or rejected Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa validation.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    resetValidation(cloudPk, documentPk, id, projectPk, visaPk) {
+      return this.resetValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Resume a visa of a document
+     * Resume a visa of a document after a pause Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    resumeVisaWithHttpInfo(cloudPk, documentPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling resumeVisa");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling resumeVisa");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling resumeVisa");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling resumeVisa");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}/resume', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Resume a visa of a document
+     * Resume a visa of a document after a pause Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa.
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    resumeVisa(cloudPk, documentPk, id, projectPk) {
+      return this.resumeVisaWithHttpInfo(cloudPk, documentPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3786,6 +5257,245 @@ export default class CollaborationApi {
      */
     updateProjectUser(cloudPk, id, projectPk, data) {
       return this.updateProjectUserWithHttpInfo(cloudPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update the validator of validation
+     * Update the validator of validation. This route is only useful for an App Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa validation.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @param {module:model/VisaValidation} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VisaValidation} and HTTP response
+     */
+    updateValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateValidation");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling updateValidation");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateValidation");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateValidation");
+      }
+      // verify the required parameter 'visaPk' is set
+      if (visaPk === undefined || visaPk === null) {
+        throw new Error("Missing the required parameter 'visaPk' when calling updateValidation");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateValidation");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk,
+        'visa_pk': visaPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = VisaValidation;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update the validator of validation
+     * Update the validator of validation. This route is only useful for an App Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa validation.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @param {module:model/VisaValidation} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VisaValidation}
+     */
+    updateValidation(cloudPk, documentPk, id, projectPk, visaPk, data) {
+      return this.updateValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a visa
+     * Update some fields of a visa Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa.
+     * @param {String} projectPk 
+     * @param {module:model/Visa} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Visa} and HTTP response
+     */
+    updateVisaWithHttpInfo(cloudPk, documentPk, id, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateVisa");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling updateVisa");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateVisa");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateVisa");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateVisa");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Visa;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a visa
+     * Update some fields of a visa Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa.
+     * @param {String} projectPk 
+     * @param {module:model/Visa} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Visa}
+     */
+    updateVisa(cloudPk, documentPk, id, projectPk, data) {
+      return this.updateVisaWithHttpInfo(cloudPk, documentPk, id, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a comment
+     * Update some fields of a comment Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa comment.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @param {module:model/VisaComment} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VisaComment} and HTTP response
+     */
+    updateVisaCommentWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateVisaComment");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling updateVisaComment");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateVisaComment");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateVisaComment");
+      }
+      // verify the required parameter 'visaPk' is set
+      if (visaPk === undefined || visaPk === null) {
+        throw new Error("Missing the required parameter 'visaPk' when calling updateVisaComment");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateVisaComment");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk,
+        'visa_pk': visaPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = VisaComment;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a comment
+     * Update some fields of a comment Required scopes: document:write
+     * @param {String} cloudPk 
+     * @param {String} documentPk 
+     * @param {Number} id A unique integer value identifying this visa comment.
+     * @param {String} projectPk 
+     * @param {String} visaPk 
+     * @param {module:model/VisaComment} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VisaComment}
+     */
+    updateVisaComment(cloudPk, documentPk, id, projectPk, visaPk, data) {
+      return this.updateVisaCommentWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
