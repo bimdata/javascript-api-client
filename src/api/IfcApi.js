@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import Classification from '../model/Classification';
+import Document from '../model/Document';
 import Element from '../model/Element';
 import ElementClassificationRelation from '../model/ElementClassificationRelation';
 import ElementPropertySetRelation from '../model/ElementPropertySetRelation';
@@ -190,14 +191,15 @@ export default class IfcApi {
 
     /**
      * Delete many Property of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteIfcPropertiesWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
+    bulkDeleteIfcPropertiesWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+      let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcProperties");
@@ -210,6 +212,10 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcProperties");
       }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling bulkDeleteIfcProperties");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -224,7 +230,7 @@ export default class IfcApi {
       };
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -236,14 +242,15 @@ export default class IfcApi {
 
     /**
      * Delete many Property of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteIfcProperties(cloudPk, ifcPk, projectPk) {
-      return this.bulkDeleteIfcPropertiesWithHttpInfo(cloudPk, ifcPk, projectPk)
+    bulkDeleteIfcProperties(cloudPk, ifcPk, projectPk, data) {
+      return this.bulkDeleteIfcPropertiesWithHttpInfo(cloudPk, ifcPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -252,14 +259,15 @@ export default class IfcApi {
 
     /**
      * Delete many PropertyDefinitions of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteIfcPropertyDefinitionsWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
+    bulkDeleteIfcPropertyDefinitionsWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+      let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcPropertyDefinitions");
@@ -272,6 +280,10 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcPropertyDefinitions");
       }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling bulkDeleteIfcPropertyDefinitions");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -286,7 +298,7 @@ export default class IfcApi {
       };
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -298,14 +310,15 @@ export default class IfcApi {
 
     /**
      * Delete many PropertyDefinitions of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteIfcPropertyDefinitions(cloudPk, ifcPk, projectPk) {
-      return this.bulkDeleteIfcPropertyDefinitionsWithHttpInfo(cloudPk, ifcPk, projectPk)
+    bulkDeleteIfcPropertyDefinitions(cloudPk, ifcPk, projectPk, data) {
+      return this.bulkDeleteIfcPropertyDefinitionsWithHttpInfo(cloudPk, ifcPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -314,14 +327,15 @@ export default class IfcApi {
 
     /**
      * Delete many Units of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteIfcUnitsWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
+    bulkDeleteIfcUnitsWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+      let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcUnits");
@@ -334,6 +348,10 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcUnits");
       }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling bulkDeleteIfcUnits");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -348,7 +366,7 @@ export default class IfcApi {
       };
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -360,14 +378,15 @@ export default class IfcApi {
 
     /**
      * Delete many Units of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteIfcUnits(cloudPk, ifcPk, projectPk) {
-      return this.bulkDeleteIfcUnitsWithHttpInfo(cloudPk, ifcPk, projectPk)
+    bulkDeleteIfcUnits(cloudPk, ifcPk, projectPk, data) {
+      return this.bulkDeleteIfcUnitsWithHttpInfo(cloudPk, ifcPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -376,14 +395,15 @@ export default class IfcApi {
 
     /**
      * Delete many PropertySet of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeletePropertySetWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
+    bulkDeletePropertySetWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+      let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeletePropertySet");
@@ -396,6 +416,10 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkDeletePropertySet");
       }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling bulkDeletePropertySet");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -410,7 +434,7 @@ export default class IfcApi {
       };
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -422,14 +446,15 @@ export default class IfcApi {
 
     /**
      * Delete many PropertySet of a model
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeletePropertySet(cloudPk, ifcPk, projectPk) {
-      return this.bulkDeletePropertySetWithHttpInfo(cloudPk, ifcPk, projectPk)
+    bulkDeletePropertySet(cloudPk, ifcPk, projectPk, data) {
+      return this.bulkDeletePropertySetWithHttpInfo(cloudPk, ifcPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -574,15 +599,16 @@ export default class IfcApi {
 
     /**
      * Remove many classifications from an element
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkRemoveClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk) {
-      let postBody = null;
+    bulkRemoveClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data) {
+      let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkRemoveClassificationsOfElement");
@@ -599,6 +625,10 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveClassificationsOfElement");
       }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling bulkRemoveClassificationsOfElement");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -614,7 +644,7 @@ export default class IfcApi {
       };
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -626,15 +656,91 @@ export default class IfcApi {
 
     /**
      * Remove many classifications from an element
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkRemoveClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk) {
-      return this.bulkRemoveClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
+    bulkRemoveClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data) {
+      return this.bulkRemoveClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Remove many documents from an element
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<Number>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    bulkRemoveDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkRemoveDocumentsOfElement");
+      }
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling bulkRemoveDocumentsOfElement");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling bulkRemoveDocumentsOfElement");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveDocumentsOfElement");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling bulkRemoveDocumentsOfElement");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'element_uuid': elementUuid,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents/bulk_destroy', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Remove many documents from an element
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<Number>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    bulkRemoveDocumentsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data) {
+      return this.bulkRemoveDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -643,15 +749,16 @@ export default class IfcApi {
 
     /**
      * Remove the classifications from all elements
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkRemoveElementsFromClassificationWithHttpInfo(cloudPk, ifcClassificationPk, ifcPk, projectPk) {
-      let postBody = null;
+    bulkRemoveElementsFromClassificationWithHttpInfo(cloudPk, ifcClassificationPk, ifcPk, projectPk, data) {
+      let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkRemoveElementsFromClassification");
@@ -668,6 +775,10 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveElementsFromClassification");
       }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling bulkRemoveElementsFromClassification");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -683,7 +794,7 @@ export default class IfcApi {
       };
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -695,15 +806,16 @@ export default class IfcApi {
 
     /**
      * Remove the classifications from all elements
-     *          Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+     *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcClassificationPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
+     * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkRemoveElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk) {
-      return this.bulkRemoveElementsFromClassificationWithHttpInfo(cloudPk, ifcClassificationPk, ifcPk, projectPk)
+    bulkRemoveElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk, data) {
+      return this.bulkRemoveElementsFromClassificationWithHttpInfo(cloudPk, ifcClassificationPk, ifcPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3319,6 +3431,75 @@ export default class IfcApi {
      */
     getClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk) {
       return this.getClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all documents of an element
+     * Retrieve all documents of an element Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
+     */
+    getDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getDocumentsOfElement");
+      }
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling getDocumentsOfElement");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getDocumentsOfElement");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getDocumentsOfElement");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'element_uuid': elementUuid,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Document];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all documents of an element
+     * Retrieve all documents of an element Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
+     */
+    getDocumentsOfElement(cloudPk, elementUuid, ifcPk, projectPk) {
+      return this.getDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6213,6 +6394,81 @@ export default class IfcApi {
 
 
     /**
+     * Link one or many documents to an element
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<Number>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
+     */
+    linkDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling linkDocumentsOfElement");
+      }
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling linkDocumentsOfElement");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling linkDocumentsOfElement");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling linkDocumentsOfElement");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling linkDocumentsOfElement");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'element_uuid': elementUuid,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = [Document];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Link one or many documents to an element
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Array.<Number>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
+     */
+    linkDocumentsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data) {
+      return this.linkDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * List all associations between classifications and elements
      * List all associations between classifications and elements Required scopes: ifc:read
      * @param {String} cloudPk 
@@ -6542,6 +6798,82 @@ export default class IfcApi {
      */
     removeClassificationOfElement(cloudPk, elementUuid, id, ifcPk, projectPk) {
       return this.removeClassificationOfElementWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Remove a documents from an element
+     * The document will not be deleted Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    removeDocumentOfElementWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling removeDocumentOfElement");
+      }
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling removeDocumentOfElement");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling removeDocumentOfElement");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling removeDocumentOfElement");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling removeDocumentOfElement");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'element_uuid': elementUuid,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Remove a documents from an element
+     * The document will not be deleted Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    removeDocumentOfElement(cloudPk, elementUuid, id, ifcPk, projectPk) {
+      return this.removeDocumentOfElementWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **Number** |  | [optional] [readonly] 
 **visaId** | **String** |  | [optional] [readonly] 
 **validator** | [**UserProject**](UserProject.md) |  | [optional] 
-**validatorId** | **Number** | This is the userproject_id. This field is only used if the call is made from an App | [optional] 
+**validatorId** | **Number** | This is the userproject_id | [optional] 
 **status** | **String** |  | [optional] [readonly] 
 **hasCommented** | **Boolean** | Return True if validator has commented the visa | [optional] [readonly] 
 **createdAt** | **Date** |  | [optional] [readonly] 

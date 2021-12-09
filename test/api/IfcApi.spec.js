@@ -138,6 +138,16 @@
         done();
       });
     });
+    describe('bulkRemoveDocumentsOfElement', function() {
+      it('should call bulkRemoveDocumentsOfElement successfully', function(done) {
+        //uncomment below and update the code to test bulkRemoveDocumentsOfElement
+        //instance.bulkRemoveDocumentsOfElement(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('bulkRemoveElementsFromClassification', function() {
       it('should call bulkRemoveElementsFromClassification successfully', function(done) {
         //uncomment below and update the code to test bulkRemoveElementsFromClassification
@@ -512,6 +522,16 @@
       it('should call getClassificationsOfElement successfully', function(done) {
         //uncomment below and update the code to test getClassificationsOfElement
         //instance.getClassificationsOfElement(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getDocumentsOfElement', function() {
+      it('should call getDocumentsOfElement successfully', function(done) {
+        //uncomment below and update the code to test getDocumentsOfElement
+        //instance.getDocumentsOfElement(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -928,6 +948,16 @@
         done();
       });
     });
+    describe('linkDocumentsOfElement', function() {
+      it('should call linkDocumentsOfElement successfully', function(done) {
+        //uncomment below and update the code to test linkDocumentsOfElement
+        //instance.linkDocumentsOfElement(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listClassificationElementRelations', function() {
       it('should call listClassificationElementRelations successfully', function(done) {
         //uncomment below and update the code to test listClassificationElementRelations
@@ -972,6 +1002,16 @@
       it('should call removeClassificationOfElement successfully', function(done) {
         //uncomment below and update the code to test removeClassificationOfElement
         //instance.removeClassificationOfElement(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeDocumentOfElement', function() {
+      it('should call removeDocumentOfElement successfully', function(done) {
+        //uncomment below and update the code to test removeDocumentOfElement
+        //instance.removeDocumentOfElement(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

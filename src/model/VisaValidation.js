@@ -95,7 +95,7 @@ VisaValidation.prototype['visa_id'] = undefined;
 VisaValidation.prototype['validator'] = undefined;
 
 /**
- * This is the userproject_id. This field is only used if the call is made from an App
+ * This is the userproject_id
  * @member {Number} validator_id
  */
 VisaValidation.prototype['validator_id'] = undefined;

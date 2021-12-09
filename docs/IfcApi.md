@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**bulkFullUpdateElements**](IfcApi.md#bulkFullUpdateElements) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update | Update many elements at once (only changing fields may be defined)
 [**bulkFullUpdateIfcProperty**](IfcApi.md#bulkFullUpdateIfcProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update | Update some fields of many properties of a model
 [**bulkRemoveClassificationsOfElement**](IfcApi.md#bulkRemoveClassificationsOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/bulk_destroy | Remove many classifications from an element
+[**bulkRemoveDocumentsOfElement**](IfcApi.md#bulkRemoveDocumentsOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents/bulk_destroy | Remove many documents from an element
 [**bulkRemoveElementsFromClassification**](IfcApi.md#bulkRemoveElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{ifc_classification_pk}/element/bulk_destroy | Remove the classifications from all elements
 [**bulkUpdateElements**](IfcApi.md#bulkUpdateElements) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update | Update many elements at once (all field must be defined)
 [**bulkUpdateIfcProperty**](IfcApi.md#bulkUpdateIfcProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update | Update all fields of many properties of a model
@@ -51,6 +52,7 @@ Method | HTTP request | Description
 [**getAccessToken**](IfcApi.md#getAccessToken) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Retrieve one token created for this model
 [**getAccessTokens**](IfcApi.md#getAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token | Retrieve all tokens created for this model
 [**getClassificationsOfElement**](IfcApi.md#getClassificationsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Retrieve all classifications of an element
+[**getDocumentsOfElement**](IfcApi.md#getDocumentsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents | Retrieve all documents of an element
 [**getElement**](IfcApi.md#getElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Retrieve an element of a model
 [**getElementPropertySet**](IfcApi.md#getElementPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | Retrieve a PropertySet of an element
 [**getElementPropertySetProperties**](IfcApi.md#getElementPropertySetProperties) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property | Retrieve all Properties of a PropertySet
@@ -92,11 +94,13 @@ Method | HTTP request | Description
 [**getZoneSpace**](IfcApi.md#getZoneSpace) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Retrieve one space of a zone
 [**getZoneSpaces**](IfcApi.md#getZoneSpaces) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Retrieve all spaces of a zone
 [**getZones**](IfcApi.md#getZones) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Retrieve zones of a model
+[**linkDocumentsOfElement**](IfcApi.md#linkDocumentsOfElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents | Link one or many documents to an element
 [**listClassificationElementRelations**](IfcApi.md#listClassificationElementRelations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | List all associations between classifications and elements
 [**mergeIfcs**](IfcApi.md#mergeIfcs) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/merge | Merge IFC files
 [**optimizeIfc**](IfcApi.md#optimizeIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/optimize | Optimize the IFC
 [**removeAllElementPropertySet**](IfcApi.md#removeAllElementPropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/all | Remove all property sets from element
 [**removeClassificationOfElement**](IfcApi.md#removeClassificationOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/{id} | Remove a classification from an element
+[**removeDocumentOfElement**](IfcApi.md#removeDocumentOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents/{id} | Remove a documents from an element
 [**removeElementPropertySet**](IfcApi.md#removeElementPropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | Remove a PropertySet from an element
 [**removeElementPropertySetProperty**](IfcApi.md#removeElementPropertySetProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Remove a property from a PropertySet
 [**removeElementPropertySetPropertyDefinition**](IfcApi.md#removeElementPropertySetPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id} | Remove a Definition from a Property
@@ -245,11 +249,11 @@ null (empty response body)
 
 ## bulkDeleteIfcProperties
 
-> bulkDeleteIfcProperties(cloudPk, ifcPk, projectPk)
+> bulkDeleteIfcProperties(cloudPk, ifcPk, projectPk, data)
 
 Delete many Property of a model
 
-         Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+         Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
 
 ### Example
 
@@ -272,7 +276,8 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkDeleteIfcProperties(cloudPk, ifcPk, projectPk).then(() => {
+let data = [null]; // [Number] | 
+apiInstance.bulkDeleteIfcProperties(cloudPk, ifcPk, projectPk, data).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -288,6 +293,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **data** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 
@@ -299,17 +305,17 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 
 ## bulkDeleteIfcPropertyDefinitions
 
-> bulkDeleteIfcPropertyDefinitions(cloudPk, ifcPk, projectPk)
+> bulkDeleteIfcPropertyDefinitions(cloudPk, ifcPk, projectPk, data)
 
 Delete many PropertyDefinitions of a model
 
-         Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+         Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
 
 ### Example
 
@@ -332,7 +338,8 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkDeleteIfcPropertyDefinitions(cloudPk, ifcPk, projectPk).then(() => {
+let data = [null]; // [Number] | 
+apiInstance.bulkDeleteIfcPropertyDefinitions(cloudPk, ifcPk, projectPk, data).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -348,6 +355,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **data** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 
@@ -359,17 +367,17 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 
 ## bulkDeleteIfcUnits
 
-> bulkDeleteIfcUnits(cloudPk, ifcPk, projectPk)
+> bulkDeleteIfcUnits(cloudPk, ifcPk, projectPk, data)
 
 Delete many Units of a model
 
-         Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+         Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
 
 ### Example
 
@@ -392,7 +400,8 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkDeleteIfcUnits(cloudPk, ifcPk, projectPk).then(() => {
+let data = [null]; // [Number] | 
+apiInstance.bulkDeleteIfcUnits(cloudPk, ifcPk, projectPk, data).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -408,6 +417,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **data** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 
@@ -419,17 +429,17 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 
 ## bulkDeletePropertySet
 
-> bulkDeletePropertySet(cloudPk, ifcPk, projectPk)
+> bulkDeletePropertySet(cloudPk, ifcPk, projectPk, data)
 
 Delete many PropertySet of a model
 
-         Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+         Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
 
 ### Example
 
@@ -452,7 +462,8 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkDeletePropertySet(cloudPk, ifcPk, projectPk).then(() => {
+let data = [null]; // [Number] | 
+apiInstance.bulkDeletePropertySet(cloudPk, ifcPk, projectPk, data).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -468,6 +479,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **data** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 
@@ -479,7 +491,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 
@@ -609,11 +621,11 @@ Name | Type | Description  | Notes
 
 ## bulkRemoveClassificationsOfElement
 
-> bulkRemoveClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk)
+> bulkRemoveClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data)
 
 Remove many classifications from an element
 
-         Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+         Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
 
 ### Example
 
@@ -637,7 +649,8 @@ let cloudPk = "cloudPk_example"; // String |
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkRemoveClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk).then(() => {
+let data = [null]; // [Number] | 
+apiInstance.bulkRemoveClassificationsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -654,6 +667,7 @@ Name | Type | Description  | Notes
  **elementUuid** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **data** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 
@@ -665,17 +679,81 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## bulkRemoveDocumentsOfElement
+
+> bulkRemoveDocumentsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data)
+
+Remove many documents from an element
+
+         Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.IfcApi();
+let cloudPk = "cloudPk_example"; // String | 
+let elementUuid = "elementUuid_example"; // String | 
+let ifcPk = "ifcPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = [null]; // [Number] | 
+apiInstance.bulkRemoveDocumentsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **elementUuid** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**[Number]**](Number.md)|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 
 ## bulkRemoveElementsFromClassification
 
-> bulkRemoveElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk)
+> bulkRemoveElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk, data)
 
 Remove the classifications from all elements
 
-         Bulk delete.         You should send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
+         Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write
 
 ### Example
 
@@ -699,7 +777,8 @@ let cloudPk = "cloudPk_example"; // String |
 let ifcClassificationPk = "ifcClassificationPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkRemoveElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk).then(() => {
+let data = [null]; // [Number] | 
+apiInstance.bulkRemoveElementsFromClassification(cloudPk, ifcClassificationPk, ifcPk, projectPk, data).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -716,6 +795,7 @@ Name | Type | Description  | Notes
  **ifcClassificationPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **data** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 
@@ -727,7 +807,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 
@@ -3038,6 +3118,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[Classification]**](Classification.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getDocumentsOfElement
+
+> [Document] getDocumentsOfElement(cloudPk, elementUuid, ifcPk, projectPk)
+
+Retrieve all documents of an element
+
+Retrieve all documents of an element Required scopes: ifc:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.IfcApi();
+let cloudPk = "cloudPk_example"; // String | 
+let elementUuid = "elementUuid_example"; // String | 
+let ifcPk = "ifcPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getDocumentsOfElement(cloudPk, elementUuid, ifcPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **elementUuid** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**[Document]**](Document.md)
 
 ### Authorization
 
@@ -5627,6 +5769,70 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## linkDocumentsOfElement
+
+> [Document] linkDocumentsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data)
+
+Link one or many documents to an element
+
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors  Required scopes: ifc:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.IfcApi();
+let cloudPk = "cloudPk_example"; // String | 
+let elementUuid = "elementUuid_example"; // String | 
+let ifcPk = "ifcPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = [null]; // [Number] | 
+apiInstance.linkDocumentsOfElement(cloudPk, elementUuid, ifcPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **elementUuid** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**[Number]**](Number.md)|  | 
+
+### Return type
+
+[**[Document]**](Document.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## listClassificationElementRelations
 
 > [ElementClassificationRelation] listClassificationElementRelations(cloudPk, ifcPk, projectPk)
@@ -5918,6 +6124,70 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **elementUuid** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this classification. | 
+ **ifcPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## removeDocumentOfElement
+
+> removeDocumentOfElement(cloudPk, elementUuid, id, ifcPk, projectPk)
+
+Remove a documents from an element
+
+The document will not be deleted Required scopes: ifc:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.IfcApi();
+let cloudPk = "cloudPk_example"; // String | 
+let elementUuid = "elementUuid_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this document.
+let ifcPk = "ifcPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.removeDocumentOfElement(cloudPk, elementUuid, id, ifcPk, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **elementUuid** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this document. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
