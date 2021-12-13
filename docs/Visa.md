@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **creatorId** | **Number** | This is the userproject_id. This field is only used if the call is made from an App | [optional] 
 **status** | **String** |  | [optional] [readonly] 
 **description** | **String** | Description of the visa | [optional] 
+**document** | [**Document**](Document.md) |  | [optional] 
 **comments** | [**[VisaComment]**](VisaComment.md) |  | [optional] [readonly] 
 **deadline** | **Date** |  | [optional] 
 **createdAt** | **Date** |  | [optional] [readonly] 

@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Document from './Document';
 import UserProject from './UserProject';
 import VisaComment from './VisaComment';
 import VisaValidation from './VisaValidation';
@@ -68,6 +69,9 @@ class Visa {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('document')) {
+                obj['document'] = Document.constructFromObject(data['document']);
+            }
             if (data.hasOwnProperty('comments')) {
                 obj['comments'] = ApiClient.convertToType(data['comments'], [VisaComment]);
             }
@@ -118,6 +122,11 @@ Visa.prototype['status'] = undefined;
  * @member {String} description
  */
 Visa.prototype['description'] = undefined;
+
+/**
+ * @member {module:model/Document} document
+ */
+Visa.prototype['document'] = undefined;
 
 /**
  * @member {Array.<module:model/VisaComment>} comments
