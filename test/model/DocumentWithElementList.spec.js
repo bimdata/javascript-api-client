@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property elementIds (base name: "element_ids")', function() {
-      // uncomment below and update the code to test the property elementIds
+    it('should have the property elementUuids (base name: "element_uuids")', function() {
+      // uncomment below and update the code to test the property elementUuids
       //var instane = new bimdata.DocumentWithElementList();
       //expect(instance).to.be();
     });
