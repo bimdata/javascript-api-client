@@ -339,6 +339,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**getClassificationsOfElement**](docs/IfcApi.md#getClassificationsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Retrieve all classifications of an element
 *bimdata.IfcApi* | [**getDocumentsOfElement**](docs/IfcApi.md#getDocumentsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents | Retrieve all documents of an element
 *bimdata.IfcApi* | [**getElement**](docs/IfcApi.md#getElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Retrieve an element of a model
+*bimdata.IfcApi* | [**getElementLinkedDocuments**](docs/IfcApi.md#getElementLinkedDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/documents | Retrieve all documents linked to any element
 *bimdata.IfcApi* | [**getElementPropertySet**](docs/IfcApi.md#getElementPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | Retrieve a PropertySet of an element
 *bimdata.IfcApi* | [**getElementPropertySetProperties**](docs/IfcApi.md#getElementPropertySetProperties) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property | Retrieve all Properties of a PropertySet
 *bimdata.IfcApi* | [**getElementPropertySetProperty**](docs/IfcApi.md#getElementPropertySetProperty) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Retrieve a Property of a PropertySet
@@ -436,6 +437,7 @@ Class | Method | HTTP request | Description
  - [bimdata.ComponentsParent](docs/ComponentsParent.md)
  - [bimdata.Direction](docs/Direction.md)
  - [bimdata.Document](docs/Document.md)
+ - [bimdata.DocumentWithElementList](docs/DocumentWithElementList.md)
  - [bimdata.Element](docs/Element.md)
  - [bimdata.ElementClassificationRelation](docs/ElementClassificationRelation.md)
  - [bimdata.ElementPropertySetRelation](docs/ElementPropertySetRelation.md)

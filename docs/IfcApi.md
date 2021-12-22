@@ -54,6 +54,7 @@ Method | HTTP request | Description
 [**getClassificationsOfElement**](IfcApi.md#getClassificationsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Retrieve all classifications of an element
 [**getDocumentsOfElement**](IfcApi.md#getDocumentsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents | Retrieve all documents of an element
 [**getElement**](IfcApi.md#getElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Retrieve an element of a model
+[**getElementLinkedDocuments**](IfcApi.md#getElementLinkedDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/documents | Retrieve all documents linked to any element
 [**getElementPropertySet**](IfcApi.md#getElementPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | Retrieve a PropertySet of an element
 [**getElementPropertySetProperties**](IfcApi.md#getElementPropertySetProperties) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property | Retrieve all Properties of a PropertySet
 [**getElementPropertySetProperty**](IfcApi.md#getElementPropertySetProperty) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Retrieve a Property of a PropertySet
@@ -3242,6 +3243,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Element**](Element.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getElementLinkedDocuments
+
+> [DocumentWithElementList] getElementLinkedDocuments(cloudPk, ifcPk, projectPk, opts)
+
+Retrieve all documents linked to any element
+
+Retrieve all documents linked to any element with the list of uuids Required scopes: ifc:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.IfcApi();
+let cloudPk = "cloudPk_example"; // String | 
+let ifcPk = "ifcPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let opts = {
+  'type': "type_example", // String | Filter the returned list by type
+  'classification': "classification_example", // String | Filter the returned list by classification
+  'classificationNotation': "classificationNotation_example" // String | Filter the returned list by classification__notation
+};
+apiInstance.getElementLinkedDocuments(cloudPk, ifcPk, projectPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **type** | **String**| Filter the returned list by type | [optional] 
+ **classification** | **String**| Filter the returned list by classification | [optional] 
+ **classificationNotation** | **String**| Filter the returned list by classification__notation | [optional] 
+
+### Return type
+
+[**[DocumentWithElementList]**](DocumentWithElementList.md)
 
 ### Authorization
 

@@ -27,6 +27,7 @@ import Component from './model/Component';
 import ComponentsParent from './model/ComponentsParent';
 import Direction from './model/Direction';
 import Document from './model/Document';
+import DocumentWithElementList from './model/DocumentWithElementList';
 import Element from './model/Element';
 import ElementClassificationRelation from './model/ElementClassificationRelation';
 import ElementPropertySetRelation from './model/ElementPropertySetRelation';
@@ -252,6 +253,12 @@ export {
      * @property {module:model/Document}
      */
     Document,
+
+    /**
+     * The DocumentWithElementList model constructor.
+     * @property {module:model/DocumentWithElementList}
+     */
+    DocumentWithElementList,
 
     /**
      * The Element model constructor.

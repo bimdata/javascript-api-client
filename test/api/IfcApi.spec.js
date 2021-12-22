@@ -548,6 +548,16 @@
         done();
       });
     });
+    describe('getElementLinkedDocuments', function() {
+      it('should call getElementLinkedDocuments successfully', function(done) {
+        //uncomment below and update the code to test getElementLinkedDocuments
+        //instance.getElementLinkedDocuments(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getElementPropertySet', function() {
       it('should call getElementPropertySet successfully', function(done) {
         //uncomment below and update the code to test getElementPropertySet

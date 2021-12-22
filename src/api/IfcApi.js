@@ -15,6 +15,7 @@
 import ApiClient from "../ApiClient";
 import Classification from '../model/Classification';
 import Document from '../model/Document';
+import DocumentWithElementList from '../model/DocumentWithElementList';
 import Element from '../model/Element';
 import ElementClassificationRelation from '../model/ElementClassificationRelation';
 import ElementPropertySetRelation from '../model/ElementPropertySetRelation';
@@ -3569,6 +3570,80 @@ export default class IfcApi {
      */
     getElement(cloudPk, ifcPk, projectPk, uuid) {
       return this.getElementWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all documents linked to any element
+     * Retrieve all documents linked to any element with the list of uuids Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.type Filter the returned list by type
+     * @param {String} opts.classification Filter the returned list by classification
+     * @param {String} opts.classificationNotation Filter the returned list by classification__notation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DocumentWithElementList>} and HTTP response
+     */
+    getElementLinkedDocumentsWithHttpInfo(cloudPk, ifcPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementLinkedDocuments");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getElementLinkedDocuments");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementLinkedDocuments");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+        'type': opts['type'],
+        'classification': opts['classification'],
+        'classification__notation': opts['classificationNotation']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [DocumentWithElementList];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/documents', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all documents linked to any element
+     * Retrieve all documents linked to any element with the list of uuids Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.type Filter the returned list by type
+     * @param {String} opts.classification Filter the returned list by classification
+     * @param {String} opts.classificationNotation Filter the returned list by classification__notation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DocumentWithElementList>}
+     */
+    getElementLinkedDocuments(cloudPk, ifcPk, projectPk, opts) {
+      return this.getElementLinkedDocumentsWithHttpInfo(cloudPk, ifcPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
