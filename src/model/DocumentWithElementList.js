@@ -52,7 +52,7 @@ class DocumentWithElementList {
                 obj['document'] = Document.constructFromObject(data['document']);
             }
             if (data.hasOwnProperty('element_uuids')) {
-                obj['element_uuids'] = ApiClient.convertToType(data['element_uuids'], ['Number']);
+                obj['element_uuids'] = ApiClient.convertToType(data['element_uuids'], ['String']);
             }
         }
         return obj;
@@ -67,7 +67,7 @@ class DocumentWithElementList {
 DocumentWithElementList.prototype['document'] = undefined;
 
 /**
- * @member {Array.<Number>} element_uuids
+ * @member {Array.<String>} element_uuids
  */
 DocumentWithElementList.prototype['element_uuids'] = undefined;
 
