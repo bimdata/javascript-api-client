@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property validationsInError (base name: "validations_in_error")', function() {
+      // uncomment below and update the code to test the property validationsInError
+      //var instane = new bimdata.Visa();
+      //expect(instance).to.be();
+    });
+
     it('should have the property creator (base name: "creator")', function() {
       // uncomment below and update the code to test the property creator
       //var instane = new bimdata.Visa();

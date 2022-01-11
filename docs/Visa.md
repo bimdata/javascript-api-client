@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] [readonly] 
 **validations** | [**[VisaValidation]**](VisaValidation.md) |  | [optional] [readonly] 
+**validationsInError** | **[Number]** | Validation IDs where one or more validators have no longer access to the visa document. | [optional] [readonly] 
 **creator** | [**UserProject**](UserProject.md) |  | [optional] 
 **creatorId** | **Number** | This is the userproject_id. This field is only used if the call is made from an App | [optional] 
 **status** | **String** |  | [optional] [readonly] 

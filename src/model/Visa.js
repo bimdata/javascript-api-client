@@ -57,6 +57,9 @@ class Visa {
             if (data.hasOwnProperty('validations')) {
                 obj['validations'] = ApiClient.convertToType(data['validations'], [VisaValidation]);
             }
+            if (data.hasOwnProperty('validations_in_error')) {
+                obj['validations_in_error'] = ApiClient.convertToType(data['validations_in_error'], ['Number']);
+            }
             if (data.hasOwnProperty('creator')) {
                 obj['creator'] = UserProject.constructFromObject(data['creator']);
             }
@@ -100,6 +103,12 @@ Visa.prototype['id'] = undefined;
  * @member {Array.<module:model/VisaValidation>} validations
  */
 Visa.prototype['validations'] = undefined;
+
+/**
+ * Validation IDs where one or more validators have no longer access to the visa document.
+ * @member {Array.<Number>} validations_in_error
+ */
+Visa.prototype['validations_in_error'] = undefined;
 
 /**
  * @member {module:model/UserProject} creator
