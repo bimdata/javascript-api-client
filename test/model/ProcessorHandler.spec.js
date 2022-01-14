@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property processor (base name: "processor")', function() {
-      // uncomment below and update the code to test the property processor
+    it('should have the property worker (base name: "worker")', function() {
+      // uncomment below and update the code to test the property worker
       //var instane = new bimdata.ProcessorHandler();
       //expect(instance).to.be();
     });

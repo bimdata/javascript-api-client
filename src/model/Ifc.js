@@ -55,6 +55,9 @@ class Ifc {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
             if (data.hasOwnProperty('creator')) {
                 obj['creator'] = User.constructFromObject(data['creator']);
             }
@@ -137,6 +140,11 @@ Ifc.prototype['id'] = undefined;
  * @member {String} name
  */
 Ifc.prototype['name'] = undefined;
+
+/**
+ * @member {String} type
+ */
+Ifc.prototype['type'] = undefined;
 
 /**
  * @member {module:model/User} creator

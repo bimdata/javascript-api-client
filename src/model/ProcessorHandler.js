@@ -50,8 +50,8 @@ class ProcessorHandler {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('processor')) {
-                obj['processor'] = ApiClient.convertToType(data['processor'], 'Number');
+            if (data.hasOwnProperty('worker')) {
+                obj['worker'] = ApiClient.convertToType(data['worker'], 'String');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -72,9 +72,9 @@ class ProcessorHandler {
 ProcessorHandler.prototype['id'] = undefined;
 
 /**
- * @member {Number} processor
+ * @member {String} worker
  */
-ProcessorHandler.prototype['processor'] = undefined;
+ProcessorHandler.prototype['worker'] = undefined;
 
 /**
  * @member {module:model/ProcessorHandler.StatusEnum} status

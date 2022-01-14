@@ -2826,7 +2826,7 @@ null (empty response body)
 
 Export IFC
 
-Export IFC as requested in parameters. When the export is finished, a new IFC file with will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
+Only works for IFC files. Export IFC as requested in parameters. When the export is finished, a new IFC file with will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
 
 ### Example
 
@@ -4594,7 +4594,7 @@ Name | Type | Description  | Notes
 
 Retrieve all models
 
-Retrieve all models Required scopes: ifc:read
+Retrieve all models. For legacy reasons, this route is named IFC but now handle all models types (DWG, PDF, IFC, etc). The field &#x60;type&#x60; allows you to discriminate which kind of model it is. Required scopes: ifc:read
 
 ### Example
 
@@ -4618,7 +4618,8 @@ let cloudPk = "cloudPk_example"; // String |
 let projectPk = "projectPk_example"; // String | 
 let opts = {
   'status': "status_example", // String | Filter the returned list by status
-  'source': "source_example" // String | Filter the returned list by source
+  'source': "source_example", // String | Filter the returned list by source
+  'type': "type_example" // String | Filter the returned list by type
 };
 apiInstance.getIfcs(cloudPk, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -4637,6 +4638,7 @@ Name | Type | Description  | Notes
  **projectPk** | **String**|  | 
  **status** | **String**| Filter the returned list by status | [optional] 
  **source** | **String**| Filter the returned list by source | [optional] 
+ **type** | **String**| Filter the returned list by type | [optional] 
 
 ### Return type
 
@@ -5968,7 +5970,7 @@ Name | Type | Description  | Notes
 
 Merge IFC files
 
-Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list Required scopes: ifc:write
+Only works for IFC files. Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list Required scopes: ifc:write
 
 ### Example
 
@@ -6028,7 +6030,7 @@ null (empty response body)
 
 Optimize the IFC
 
-Optimize the IFC. A new optimized IFC file will be put in the same folder that the original IFC Required scopes: ifc:write
+Only works for IFC files. Optimize the IFC. A new optimized IFC file will be put in the same folder that the original IFC Required scopes: ifc:write
 
 ### Example
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] [readonly] 
-**processor** | **Number** |  | [optional] [readonly] 
+**worker** | **String** |  | [optional] [readonly] 
 **status** | **String** |  | [optional] 
 **detailMessage** | **String** |  | [optional] 
 

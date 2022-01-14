@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] [readonly] 
 **name** | **String** |  | [optional] [readonly] 
+**type** | **String** |  | [optional] [readonly] 
 **creator** | [**User**](User.md) |  | [optional] 
 **status** | **String** |  | [optional] [readonly] 
 **source** | **String** |  | [optional] 

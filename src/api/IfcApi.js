@@ -3097,7 +3097,7 @@ export default class IfcApi {
 
     /**
      * Export IFC
-     * Export IFC as requested in parameters. When the export is finished, a new IFC file with will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
+     * Only works for IFC files. Export IFC as requested in parameters. When the export is finished, a new IFC file with will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -3148,7 +3148,7 @@ export default class IfcApi {
 
     /**
      * Export IFC
-     * Export IFC as requested in parameters. When the export is finished, a new IFC file with will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
+     * Only works for IFC files. Export IFC as requested in parameters. When the export is finished, a new IFC file with will be created in the same folder than the original IFC. You can query the folder or subscribe to the new document webhook to retrieve the result Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -5107,12 +5107,13 @@ export default class IfcApi {
 
     /**
      * Retrieve all models
-     * Retrieve all models Required scopes: ifc:read
+     * Retrieve all models. For legacy reasons, this route is named IFC but now handle all models types (DWG, PDF, IFC, etc). The field `type` allows you to discriminate which kind of model it is. Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.status Filter the returned list by status
      * @param {String} opts.source Filter the returned list by source
+     * @param {String} opts.type Filter the returned list by type
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Ifc>} and HTTP response
      */
     getIfcsWithHttpInfo(cloudPk, projectPk, opts) {
@@ -5133,7 +5134,8 @@ export default class IfcApi {
       };
       let queryParams = {
         'status': opts['status'],
-        'source': opts['source']
+        'source': opts['source'],
+        'type': opts['type']
       };
       let headerParams = {
       };
@@ -5153,12 +5155,13 @@ export default class IfcApi {
 
     /**
      * Retrieve all models
-     * Retrieve all models Required scopes: ifc:read
+     * Retrieve all models. For legacy reasons, this route is named IFC but now handle all models types (DWG, PDF, IFC, etc). The field `type` allows you to discriminate which kind of model it is. Required scopes: ifc:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.status Filter the returned list by status
      * @param {String} opts.source Filter the returned list by source
+     * @param {String} opts.type Filter the returned list by type
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Ifc>}
      */
     getIfcs(cloudPk, projectPk, opts) {
@@ -6607,7 +6610,7 @@ export default class IfcApi {
 
     /**
      * Merge IFC files
-     * Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list Required scopes: ifc:write
+     * Only works for IFC files. Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/IfcMerge} data 
@@ -6652,7 +6655,7 @@ export default class IfcApi {
 
     /**
      * Merge IFC files
-     * Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list Required scopes: ifc:write
+     * Only works for IFC files. Merge IFC files. The merged IFC file will be put in the same folder that the first IFC of the list Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/IfcMerge} data 
@@ -6668,7 +6671,7 @@ export default class IfcApi {
 
     /**
      * Optimize the IFC
-     * Optimize the IFC. A new optimized IFC file will be put in the same folder that the original IFC Required scopes: ifc:write
+     * Only works for IFC files. Optimize the IFC. A new optimized IFC file will be put in the same folder that the original IFC Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
@@ -6719,7 +6722,7 @@ export default class IfcApi {
 
     /**
      * Optimize the IFC
-     * Optimize the IFC. A new optimized IFC file will be put in the same folder that the original IFC Required scopes: ifc:write
+     * Only works for IFC files. Optimize the IFC. A new optimized IFC file will be put in the same folder that the original IFC Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc.
      * @param {String} projectPk 
