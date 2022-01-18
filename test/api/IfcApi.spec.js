@@ -288,6 +288,16 @@
         done();
       });
     });
+    describe('createModel', function() {
+      it('should call createModel successfully', function(done) {
+        //uncomment below and update the code to test createModel
+        //instance.createModel(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createPropertySet', function() {
       it('should call createPropertySet successfully', function(done) {
         //uncomment below and update the code to test createPropertySet
@@ -422,6 +432,16 @@
       it('should call deleteLayer successfully', function(done) {
         //uncomment below and update the code to test deleteLayer
         //instance.deleteLayer(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteModelWithoutDoc', function() {
+      it('should call deleteModelWithoutDoc successfully', function(done) {
+        //uncomment below and update the code to test deleteModelWithoutDoc
+        //instance.deleteModelWithoutDoc(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

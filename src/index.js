@@ -25,6 +25,7 @@ import Coloring from './model/Coloring';
 import Comment from './model/Comment';
 import Component from './model/Component';
 import ComponentsParent from './model/ComponentsParent';
+import CreateModel from './model/CreateModel';
 import Direction from './model/Direction';
 import Document from './model/Document';
 import DocumentWithElementList from './model/DocumentWithElementList';
@@ -241,6 +242,12 @@ export {
      * @property {module:model/ComponentsParent}
      */
     ComponentsParent,
+
+    /**
+     * The CreateModel model constructor.
+     * @property {module:model/CreateModel}
+     */
+    CreateModel,
 
     /**
      * The Direction model constructor.

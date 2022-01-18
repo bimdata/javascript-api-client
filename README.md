@@ -313,6 +313,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**createIfcPropertyDefinition**](docs/IfcApi.md#createIfcPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition | Create a PropertyDefinition on the model
 *bimdata.IfcApi* | [**createIfcUnit**](docs/IfcApi.md#createIfcUnit) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit | Create a Unit on a model
 *bimdata.IfcApi* | [**createLayer**](docs/IfcApi.md#createLayer) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer | Create a layer in the model
+*bimdata.IfcApi* | [**createModel**](docs/IfcApi.md#createModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/create-model | Make a PDF or Image file a Model
 *bimdata.IfcApi* | [**createPropertySet**](docs/IfcApi.md#createPropertySet) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset | Create a PropertySet
 *bimdata.IfcApi* | [**createPropertySetElementRelations**](docs/IfcApi.md#createPropertySetElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset-element | Create association between PropertySet and element
 *bimdata.IfcApi* | [**createRawElements**](docs/IfcApi.md#createRawElements) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw | Create elements in an optimized format
@@ -327,6 +328,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**deleteIfcPropertyDefinition**](docs/IfcApi.md#deleteIfcPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | Delete a PropertyDefinitions of a model
 *bimdata.IfcApi* | [**deleteIfcUnit**](docs/IfcApi.md#deleteIfcUnit) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | Delete a Unit of a model
 *bimdata.IfcApi* | [**deleteLayer**](docs/IfcApi.md#deleteLayer) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id} | Delete a layer of a model
+*bimdata.IfcApi* | [**deleteModelWithoutDoc**](docs/IfcApi.md#deleteModelWithoutDoc) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/delete-model | Delete the Model without deleting the related document
 *bimdata.IfcApi* | [**deletePropertySet**](docs/IfcApi.md#deletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Delete a PropertySet of a model
 *bimdata.IfcApi* | [**deleteSpace**](docs/IfcApi.md#deleteSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Delete a space
 *bimdata.IfcApi* | [**deleteSystem**](docs/IfcApi.md#deleteSystem) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid} | Delete a system of a model
@@ -435,6 +437,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Comment](docs/Comment.md)
  - [bimdata.Component](docs/Component.md)
  - [bimdata.ComponentsParent](docs/ComponentsParent.md)
+ - [bimdata.CreateModel](docs/CreateModel.md)
  - [bimdata.Direction](docs/Direction.md)
  - [bimdata.Document](docs/Document.md)
  - [bimdata.DocumentWithElementList](docs/DocumentWithElementList.md)

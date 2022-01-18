@@ -142,7 +142,7 @@ Ifc.prototype['id'] = undefined;
 Ifc.prototype['name'] = undefined;
 
 /**
- * @member {String} type
+ * @member {module:model/Ifc.TypeEnum} type
  */
 Ifc.prototype['type'] = undefined;
 
@@ -264,6 +264,75 @@ Ifc.prototype['recommanded_2d_angle'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Ifc['TypeEnum'] = {
+
+    /**
+     * value: "IFC"
+     * @const
+     */
+    "IFC": "IFC",
+
+    /**
+     * value: "DWG"
+     * @const
+     */
+    "DWG": "DWG",
+
+    /**
+     * value: "DXF"
+     * @const
+     */
+    "DXF": "DXF",
+
+    /**
+     * value: "GLTF"
+     * @const
+     */
+    "GLTF": "GLTF",
+
+    /**
+     * value: "PDF"
+     * @const
+     */
+    "PDF": "PDF",
+
+    /**
+     * value: "JPEG"
+     * @const
+     */
+    "JPEG": "JPEG",
+
+    /**
+     * value: "PNG"
+     * @const
+     */
+    "PNG": "PNG",
+
+    /**
+     * value: "OBJ"
+     * @const
+     */
+    "OBJ": "OBJ",
+
+    /**
+     * value: "DAE"
+     * @const
+     */
+    "DAE": "DAE",
+
+    /**
+     * value: "BFX"
+     * @const
+     */
+    "BFX": "BFX"
+};
 
 
 /**
