@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] [readonly] 
-**name** | **String** |  | [optional] [readonly] 
+**name** | **String** |  | [optional] 
 **type** | **String** |  | [optional] [readonly] 
 **creator** | [**User**](User.md) |  | [optional] 
 **status** | **String** |  | [optional] [readonly] 
@@ -54,6 +54,8 @@ Name | Type | Description | Notes
 * `DAE` (value: `"DAE"`)
 
 * `BFX` (value: `"BFX"`)
+
+* `METABUILDING` (value: `"METABUILDING"`)
 
 
 

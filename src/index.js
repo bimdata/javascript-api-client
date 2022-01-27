@@ -25,6 +25,7 @@ import Coloring from './model/Coloring';
 import Comment from './model/Comment';
 import Component from './model/Component';
 import ComponentsParent from './model/ComponentsParent';
+import CreateBuilding from './model/CreateBuilding';
 import CreateModel from './model/CreateModel';
 import Direction from './model/Direction';
 import Document from './model/Document';
@@ -106,6 +107,8 @@ import Size from './model/Size';
 import Snapshot from './model/Snapshot';
 import Space from './model/Space';
 import Stage from './model/Stage';
+import Storey from './model/Storey';
+import StoreyRequest from './model/StoreyRequest';
 import System from './model/System';
 import Topic from './model/Topic';
 import TopicStatus from './model/TopicStatus';
@@ -242,6 +245,12 @@ export {
      * @property {module:model/ComponentsParent}
      */
     ComponentsParent,
+
+    /**
+     * The CreateBuilding model constructor.
+     * @property {module:model/CreateBuilding}
+     */
+    CreateBuilding,
 
     /**
      * The CreateModel model constructor.
@@ -728,6 +737,18 @@ export {
      * @property {module:model/Stage}
      */
     Stage,
+
+    /**
+     * The Storey model constructor.
+     * @property {module:model/Storey}
+     */
+    Storey,
+
+    /**
+     * The StoreyRequest model constructor.
+     * @property {module:model/StoreyRequest}
+     */
+    StoreyRequest,
 
     /**
      * The System model constructor.

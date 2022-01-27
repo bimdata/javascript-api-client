@@ -331,7 +331,13 @@ Ifc['TypeEnum'] = {
      * value: "BFX"
      * @const
      */
-    "BFX": "BFX"
+    "BFX": "BFX",
+
+    /**
+     * value: "METABUILDING"
+     * @const
+     */
+    "METABUILDING": "METABUILDING"
 };
 
 

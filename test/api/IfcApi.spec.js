@@ -288,6 +288,16 @@
         done();
       });
     });
+    describe('createMetaBuilding', function() {
+      it('should call createMetaBuilding successfully', function(done) {
+        //uncomment below and update the code to test createMetaBuilding
+        //instance.createMetaBuilding(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createModel', function() {
       it('should call createModel successfully', function(done) {
         //uncomment below and update the code to test createModel
@@ -332,6 +342,16 @@
       it('should call createSpace successfully', function(done) {
         //uncomment below and update the code to test createSpace
         //instance.createSpace(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createStoreyPlan', function() {
+      it('should call createStoreyPlan successfully', function(done) {
+        //uncomment below and update the code to test createStoreyPlan
+        //instance.createStoreyPlan(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -468,6 +488,26 @@
         done();
       });
     });
+    describe('deleteStorey', function() {
+      it('should call deleteStorey successfully', function(done) {
+        //uncomment below and update the code to test deleteStorey
+        //instance.deleteStorey(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteStoreyPlan', function() {
+      it('should call deleteStoreyPlan successfully', function(done) {
+        //uncomment below and update the code to test deleteStoreyPlan
+        //instance.deleteStoreyPlan(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteSystem', function() {
       it('should call deleteSystem successfully', function(done) {
         //uncomment below and update the code to test deleteSystem
@@ -512,6 +552,16 @@
       it('should call fullUpdateElement successfully', function(done) {
         //uncomment below and update the code to test fullUpdateElement
         //instance.fullUpdateElement(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('fullUpdateStoreys', function() {
+      it('should call fullUpdateStoreys successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateStoreys
+        //instance.fullUpdateStoreys(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -822,6 +872,26 @@
       it('should call getMaterials successfully', function(done) {
         //uncomment below and update the code to test getMaterials
         //instance.getMaterials(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getModelStorey', function() {
+      it('should call getModelStorey successfully', function(done) {
+        //uncomment below and update the code to test getModelStorey
+        //instance.getModelStorey(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getModelStoreys', function() {
+      it('should call getModelStoreys successfully', function(done) {
+        //uncomment below and update the code to test getModelStoreys
+        //instance.getModelStoreys(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1222,6 +1292,16 @@
       it('should call updateSpace successfully', function(done) {
         //uncomment below and update the code to test updateSpace
         //instance.updateSpace(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateStorey', function() {
+      it('should call updateStorey successfully', function(done) {
+        //uncomment below and update the code to test updateStorey
+        //instance.updateStorey(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
