@@ -2184,17 +2184,16 @@ export default class IfcApi {
 
     /**
      * Create a 2d model in storey
-     * Create a 2d model in storey Required scopes: ifc:write
+     * Create a 2d model in storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG') Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} storeyPk 
-     * @param {module:model/Storey} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
-    createStoreyPlanWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk, data) {
-      let postBody = data;
+    createStoreyPlanWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createStoreyPlan");
@@ -2215,10 +2214,6 @@ export default class IfcApi {
       if (storeyPk === undefined || storeyPk === null) {
         throw new Error("Missing the required parameter 'storeyPk' when calling createStoreyPlan");
       }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createStoreyPlan");
-      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -2235,7 +2230,7 @@ export default class IfcApi {
       };
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
+      let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Storey;
       return this.apiClient.callApi(
@@ -2247,17 +2242,16 @@ export default class IfcApi {
 
     /**
      * Create a 2d model in storey
-     * Create a 2d model in storey Required scopes: ifc:write
+     * Create a 2d model in storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG') Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} storeyPk 
-     * @param {module:model/Storey} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
-    createStoreyPlan(cloudPk, id, ifcPk, projectPk, storeyPk, data) {
-      return this.createStoreyPlanWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk, data)
+    createStoreyPlan(cloudPk, id, ifcPk, projectPk, storeyPk) {
+      return this.createStoreyPlanWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3655,7 +3649,7 @@ export default class IfcApi {
 
     /**
      * Update all fields of all storeys
-     *          This route allows you to create storeys, modify them, delete them and organize them by order.         If the optional field \"id\" is present, the storey will be modified. Otherwise, a new storey will be created.         If an \"id\" present in the api is not present in the list passed in parameter, the corresponding storey will be deleted.         An storey with \"is_site=True\" will be stored without order.  Required scopes: ifc:write
+     *          This route allows you to create storeys, modify them, delete them and organize them by order.         If the optional field \"id\" is present, the storey will be modified. Otherwise, a new storey will be created.         If an \"id\" present in the api is not present in the list passed in parameter, the corresponding storey will be deleted.         A storey with \"is_site=True\" will be stored without order. There can be only one storey with \"is_site=True\"\"  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 
@@ -3706,7 +3700,7 @@ export default class IfcApi {
 
     /**
      * Update all fields of all storeys
-     *          This route allows you to create storeys, modify them, delete them and organize them by order.         If the optional field \"id\" is present, the storey will be modified. Otherwise, a new storey will be created.         If an \"id\" present in the api is not present in the list passed in parameter, the corresponding storey will be deleted.         An storey with \"is_site=True\" will be stored without order.  Required scopes: ifc:write
+     *          This route allows you to create storeys, modify them, delete them and organize them by order.         If the optional field \"id\" is present, the storey will be modified. Otherwise, a new storey will be created.         If an \"id\" present in the api is not present in the list passed in parameter, the corresponding storey will be deleted.         A storey with \"is_site=True\" will be stored without order. There can be only one storey with \"is_site=True\"\"  Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {String} ifcPk 
      * @param {String} projectPk 

@@ -2020,11 +2020,11 @@ Name | Type | Description  | Notes
 
 ## createStoreyPlan
 
-> Storey createStoreyPlan(cloudPk, id, ifcPk, projectPk, storeyPk, data)
+> Storey createStoreyPlan(cloudPk, id, ifcPk, projectPk, storeyPk)
 
 Create a 2d model in storey
 
-Create a 2d model in storey Required scopes: ifc:write
+Create a 2d model in storey. The model type must be one of : (&#39;DWG&#39;, &#39;DXF&#39;, &#39;PDF&#39;, &#39;JPEG&#39;, &#39;PNG&#39;) Required scopes: ifc:write
 
 ### Example
 
@@ -2049,8 +2049,7 @@ let id = 56; // Number | A unique integer value identifying this storey.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let storeyPk = "storeyPk_example"; // String | 
-let data = new bimdata.Storey(); // Storey | 
-apiInstance.createStoreyPlan(cloudPk, id, ifcPk, projectPk, storeyPk, data).then((data) => {
+apiInstance.createStoreyPlan(cloudPk, id, ifcPk, projectPk, storeyPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2068,7 +2067,6 @@ Name | Type | Description  | Notes
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **storeyPk** | **String**|  | 
- **data** | [**Storey**](Storey.md)|  | 
 
 ### Return type
 
@@ -2080,7 +2078,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -3334,7 +3332,7 @@ Name | Type | Description  | Notes
 
 Update all fields of all storeys
 
-         This route allows you to create storeys, modify them, delete them and organize them by order.         If the optional field \&quot;id\&quot; is present, the storey will be modified. Otherwise, a new storey will be created.         If an \&quot;id\&quot; present in the api is not present in the list passed in parameter, the corresponding storey will be deleted.         An storey with \&quot;is_site&#x3D;True\&quot; will be stored without order.  Required scopes: ifc:write
+         This route allows you to create storeys, modify them, delete them and organize them by order.         If the optional field \&quot;id\&quot; is present, the storey will be modified. Otherwise, a new storey will be created.         If an \&quot;id\&quot; present in the api is not present in the list passed in parameter, the corresponding storey will be deleted.         A storey with \&quot;is_site&#x3D;True\&quot; will be stored without order. There can be only one storey with \&quot;is_site&#x3D;True\&quot;\&quot;  Required scopes: ifc:write
 
 ### Example
 
