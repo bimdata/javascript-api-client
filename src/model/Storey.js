@@ -68,6 +68,9 @@ class Storey {
             if (data.hasOwnProperty('models')) {
                 obj['models'] = ApiClient.convertToType(data['models'], [Ifc]);
             }
+            if (data.hasOwnProperty('models_unreachable_count')) {
+                obj['models_unreachable_count'] = ApiClient.convertToType(data['models_unreachable_count'], 'Number');
+            }
             if (data.hasOwnProperty('is_site')) {
                 obj['is_site'] = ApiClient.convertToType(data['is_site'], 'Boolean');
             }
@@ -107,6 +110,11 @@ Storey.prototype['order'] = undefined;
  * @member {Array.<module:model/Ifc>} models
  */
 Storey.prototype['models'] = undefined;
+
+/**
+ * @member {Number} models_unreachable_count
+ */
+Storey.prototype['models_unreachable_count'] = undefined;
 
 /**
  * @member {Boolean} is_site

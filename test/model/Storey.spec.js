@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property modelsUnreachableCount (base name: "models_unreachable_count")', function() {
+      // uncomment below and update the code to test the property modelsUnreachableCount
+      //var instane = new bimdata.Storey();
+      //expect(instance).to.be();
+    });
+
     it('should have the property isSite (base name: "is_site")', function() {
       // uncomment below and update the code to test the property isSite
       //var instane = new bimdata.Storey();

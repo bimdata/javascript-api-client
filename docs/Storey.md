@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **elevation** | **Number** |  | [optional] 
 **order** | **Number** |  | [optional] [readonly] 
 **models** | [**[Ifc]**](Ifc.md) |  | [optional] [readonly] 
+**modelsUnreachableCount** | **Number** |  | [optional] [readonly] 
 **isSite** | **Boolean** |  | [optional] [readonly] 
 
 
