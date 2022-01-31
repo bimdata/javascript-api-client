@@ -1,0 +1,14 @@
+# bimdata.ModelWithPositioningPlan
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**translationX** | **Number** |  | [optional] 
+**translationY** | **Number** |  | [optional] 
+**rotateZ** | **Number** |  | [optional] 
+**scale** | **Number** |  | [optional] 
+**opacity** | **Number** |  | [optional] 
+**plan** | [**Ifc**](Ifc.md) |  | [optional] 
+
+

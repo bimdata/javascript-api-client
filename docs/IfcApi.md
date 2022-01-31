@@ -34,7 +34,7 @@ Method | HTTP request | Description
 [**createPropertySetElementRelations**](IfcApi.md#createPropertySetElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset-element | Create association between PropertySet and element
 [**createRawElements**](IfcApi.md#createRawElements) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw | Create elements in an optimized format
 [**createSpace**](IfcApi.md#createSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space | Create a space in the model
-[**createStoreyPlan**](IfcApi.md#createStoreyPlan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/add | Create a 2d model in storey
+[**createStoreyPlan**](IfcApi.md#createStoreyPlan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/add | Create a relation between a 2d model and a storey
 [**createSystem**](IfcApi.md#createSystem) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system | Create a system in the model
 [**createZone**](IfcApi.md#createZone) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Create a zone in the model
 [**createZoneSpace**](IfcApi.md#createZoneSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Create a space in a zone
@@ -49,7 +49,7 @@ Method | HTTP request | Description
 [**deletePropertySet**](IfcApi.md#deletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Delete a PropertySet of a model
 [**deleteSpace**](IfcApi.md#deleteSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Delete a space
 [**deleteStorey**](IfcApi.md#deleteStorey) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{id} | Delete a storey of a model
-[**deleteStoreyPlan**](IfcApi.md#deleteStoreyPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/delete | Delete a 2d model
+[**deleteStoreyPlan**](IfcApi.md#deleteStoreyPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id} | Delete the relation between a 2d model and a storey
 [**deleteSystem**](IfcApi.md#deleteSystem) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid} | Delete a system of a model
 [**deleteZone**](IfcApi.md#deleteZone) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Delete a zone of a model
 [**deleteZoneSpace**](IfcApi.md#deleteZoneSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Delete a space of a zone
@@ -89,6 +89,7 @@ Method | HTTP request | Description
 [**getMaterials**](IfcApi.md#getMaterials) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/material | Retrieve all materials of a model
 [**getModelStorey**](IfcApi.md#getModelStorey) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{id} | Retrieve a storey of a model
 [**getModelStoreys**](IfcApi.md#getModelStoreys) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey | Retrieve all storeys of a model
+[**getPlanPositioning**](IfcApi.md#getPlanPositioning) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/positioning | Retrieve the postioning of the plan in the storey
 [**getProcessorHandler**](IfcApi.md#getProcessorHandler) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | Retrieve a processor handler
 [**getProcessorHandlers**](IfcApi.md#getProcessorHandlers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler | Get all processor handlers
 [**getPropertySet**](IfcApi.md#getPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Retrieve a PropertySet of a model
@@ -126,6 +127,7 @@ Method | HTTP request | Description
 [**updateIfcPropertyDefinition**](IfcApi.md#updateIfcPropertyDefinition) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | Update some fields of many PropertyDefinitions of a model
 [**updateIfcUnit**](IfcApi.md#updateIfcUnit) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | Update some fields of a Unit of a model
 [**updateLayer**](IfcApi.md#updateLayer) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id} | Update some fields of a layer
+[**updatePlanPositioning**](IfcApi.md#updatePlanPositioning) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/positioning | Update the postioning of the plan in the storey
 [**updateProcessorHandler**](IfcApi.md#updateProcessorHandler) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | Update the status of a processor handler
 [**updatePropertySet**](IfcApi.md#updatePropertySet) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Update some fields of a PropertySet
 [**updateSpace**](IfcApi.md#updateSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Update some fields of a space
@@ -2020,11 +2022,11 @@ Name | Type | Description  | Notes
 
 ## createStoreyPlan
 
-> Storey createStoreyPlan(cloudPk, id, ifcPk, projectPk, storeyPk)
+> Storey createStoreyPlan(cloudPk, ifcPk, projectPk, storeyPk, data)
 
-Create a 2d model in storey
+Create a relation between a 2d model and a storey
 
-Create a 2d model in storey. The model type must be one of : (&#39;DWG&#39;, &#39;DXF&#39;, &#39;PDF&#39;, &#39;JPEG&#39;, &#39;PNG&#39;) Required scopes: ifc:write
+Create a relation between a 2d model and a storey. The model type must be one of : (&#39;DWG&#39;, &#39;DXF&#39;, &#39;PDF&#39;, &#39;JPEG&#39;, &#39;PNG&#39;) Required scopes: ifc:write
 
 ### Example
 
@@ -2045,11 +2047,11 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this storey.
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let storeyPk = "storeyPk_example"; // String | 
-apiInstance.createStoreyPlan(cloudPk, id, ifcPk, projectPk, storeyPk).then((data) => {
+let data = new bimdata.InlineObject4(); // InlineObject4 | 
+apiInstance.createStoreyPlan(cloudPk, ifcPk, projectPk, storeyPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2063,10 +2065,10 @@ apiInstance.createStoreyPlan(cloudPk, id, ifcPk, projectPk, storeyPk).then((data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this storey. | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **storeyPk** | **String**|  | 
+ **data** | [**InlineObject4**](InlineObject4.md)|  | 
 
 ### Return type
 
@@ -2078,7 +2080,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -2952,9 +2954,9 @@ null (empty response body)
 
 > deleteStoreyPlan(cloudPk, id, ifcPk, projectPk, storeyPk)
 
-Delete a 2d model
+Delete the relation between a 2d model and a storey
 
-Delete a 2D model Required scopes: ifc:write
+Delete the relation between a 2d model and a storey Required scopes: ifc:write
 
 ### Example
 
@@ -5466,6 +5468,70 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getPlanPositioning
+
+> PositioningPlan getPlanPositioning(cloudPk, id, ifcPk, projectPk, storeyPk)
+
+Retrieve the postioning of the plan in the storey
+
+Retrieve the postioning of the plan in the storey Required scopes: ifc:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.IfcApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this storey.
+let ifcPk = "ifcPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let storeyPk = "storeyPk_example"; // String | 
+apiInstance.getPlanPositioning(cloudPk, id, ifcPk, projectPk, storeyPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this storey. | 
+ **ifcPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **storeyPk** | **String**|  | 
+
+### Return type
+
+[**PositioningPlan**](PositioningPlan.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getProcessorHandler
 
 > ProcessorHandler getProcessorHandler(cloudPk, id, ifcPk, projectPk)
@@ -7813,6 +7879,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Layer**](Layer.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updatePlanPositioning
+
+> PositioningPlan updatePlanPositioning(cloudPk, id, ifcPk, projectPk, storeyPk, data)
+
+Update the postioning of the plan in the storey
+
+Update the postioning of the plan in the storey Required scopes: ifc:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.IfcApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this storey.
+let ifcPk = "ifcPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let storeyPk = "storeyPk_example"; // String | 
+let data = new bimdata.PositioningPlan(); // PositioningPlan | 
+apiInstance.updatePlanPositioning(cloudPk, id, ifcPk, projectPk, storeyPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this storey. | 
+ **ifcPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **storeyPk** | **String**|  | 
+ **data** | [**PositioningPlan**](PositioningPlan.md)|  | 
+
+### Return type
+
+[**PositioningPlan**](PositioningPlan.md)
 
 ### Authorization
 

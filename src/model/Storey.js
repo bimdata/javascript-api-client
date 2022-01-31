@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import Ifc from './Ifc';
+import ModelWithPositioningPlan from './ModelWithPositioningPlan';
 
 /**
  * The Storey model module.
@@ -66,7 +66,7 @@ class Storey {
                 obj['order'] = ApiClient.convertToType(data['order'], 'Number');
             }
             if (data.hasOwnProperty('models')) {
-                obj['models'] = ApiClient.convertToType(data['models'], [Ifc]);
+                obj['models'] = ApiClient.convertToType(data['models'], [ModelWithPositioningPlan]);
             }
             if (data.hasOwnProperty('models_unreachable_count')) {
                 obj['models_unreachable_count'] = ApiClient.convertToType(data['models_unreachable_count'], 'Number');
@@ -107,7 +107,7 @@ Storey.prototype['elevation'] = undefined;
 Storey.prototype['order'] = undefined;
 
 /**
- * @member {Array.<module:model/Ifc>} models
+ * @member {Array.<module:model/ModelWithPositioningPlan>} models
  */
 Storey.prototype['models'] = undefined;
 

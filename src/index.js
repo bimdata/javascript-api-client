@@ -54,6 +54,7 @@ import InlineObject from './model/InlineObject';
 import InlineObject1 from './model/InlineObject1';
 import InlineObject2 from './model/InlineObject2';
 import InlineObject3 from './model/InlineObject3';
+import InlineObject4 from './model/InlineObject4';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
 import Invitation from './model/Invitation';
@@ -66,10 +67,12 @@ import MarketplaceAppImage from './model/MarketplaceAppImage';
 import Material from './model/Material';
 import MaterialListComponent from './model/MaterialListComponent';
 import MaterialOption from './model/MaterialOption';
+import ModelWithPositioningPlan from './model/ModelWithPositioningPlan';
 import Organization from './model/Organization';
 import OrthogonalCamera from './model/OrthogonalCamera';
 import PerspectiveCamera from './model/PerspectiveCamera';
 import Point from './model/Point';
+import PositioningPlan from './model/PositioningPlan';
 import Priority from './model/Priority';
 import ProcessorHandler from './model/ProcessorHandler';
 import Project from './model/Project';
@@ -421,6 +424,12 @@ export {
     InlineObject3,
 
     /**
+     * The InlineObject4 model constructor.
+     * @property {module:model/InlineObject4}
+     */
+    InlineObject4,
+
+    /**
      * The InlineResponse200 model constructor.
      * @property {module:model/InlineResponse200}
      */
@@ -493,6 +502,12 @@ export {
     MaterialOption,
 
     /**
+     * The ModelWithPositioningPlan model constructor.
+     * @property {module:model/ModelWithPositioningPlan}
+     */
+    ModelWithPositioningPlan,
+
+    /**
      * The Organization model constructor.
      * @property {module:model/Organization}
      */
@@ -515,6 +530,12 @@ export {
      * @property {module:model/Point}
      */
     Point,
+
+    /**
+     * The PositioningPlan model constructor.
+     * @property {module:model/PositioningPlan}
+     */
+    PositioningPlan,
 
     /**
      * The Priority model constructor.

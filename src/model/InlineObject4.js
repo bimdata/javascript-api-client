@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import UserProject from './UserProject';
 
 /**
  * The InlineObject4 model module.
@@ -23,11 +22,10 @@ class InlineObject4 {
     /**
      * Constructs a new <code>InlineObject4</code>.
      * @alias module:model/InlineObject4
-     * @param name {String} Full name of the group
      */
-    constructor(name) { 
+    constructor() { 
         
-        InlineObject4.initialize(this, name);
+        InlineObject4.initialize(this);
     }
 
     /**
@@ -35,8 +33,7 @@ class InlineObject4 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name) { 
-        obj['name'] = name;
+    static initialize(obj) { 
     }
 
     /**
@@ -53,15 +50,6 @@ class InlineObject4 {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('color')) {
-                obj['color'] = ApiClient.convertToType(data['color'], 'String');
-            }
-            if (data.hasOwnProperty('members')) {
-                obj['members'] = ApiClient.convertToType(data['members'], [UserProject]);
-            }
         }
         return obj;
     }
@@ -70,25 +58,10 @@ class InlineObject4 {
 }
 
 /**
+ * model id
  * @member {Number} id
  */
 InlineObject4.prototype['id'] = undefined;
-
-/**
- * Full name of the group
- * @member {String} name
- */
-InlineObject4.prototype['name'] = undefined;
-
-/**
- * @member {String} color
- */
-InlineObject4.prototype['color'] = undefined;
-
-/**
- * @member {Array.<module:model/UserProject>} members
- */
-InlineObject4.prototype['members'] = undefined;
 
 
 

@@ -28,8 +28,10 @@ import IfcExport from '../model/IfcExport';
 import IfcFiles from '../model/IfcFiles';
 import IfcMerge from '../model/IfcMerge';
 import IfcOptimize from '../model/IfcOptimize';
+import InlineObject4 from '../model/InlineObject4';
 import Layer from '../model/Layer';
 import Material from '../model/Material';
+import PositioningPlan from '../model/PositioningPlan';
 import ProcessorHandler from '../model/ProcessorHandler';
 import Property from '../model/Property';
 import PropertyDefinition from '../model/PropertyDefinition';
@@ -2183,24 +2185,20 @@ export default class IfcApi {
 
 
     /**
-     * Create a 2d model in storey
-     * Create a 2d model in storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG') Required scopes: ifc:write
+     * Create a relation between a 2d model and a storey
+     * Create a relation between a 2d model and a storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG') Required scopes: ifc:write
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} storeyPk 
+     * @param {module:model/InlineObject4} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
-    createStoreyPlanWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk) {
-      let postBody = null;
+    createStoreyPlanWithHttpInfo(cloudPk, ifcPk, projectPk, storeyPk, data) {
+      let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createStoreyPlan");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling createStoreyPlan");
       }
       // verify the required parameter 'ifcPk' is set
       if (ifcPk === undefined || ifcPk === null) {
@@ -2214,10 +2212,13 @@ export default class IfcApi {
       if (storeyPk === undefined || storeyPk === null) {
         throw new Error("Missing the required parameter 'storeyPk' when calling createStoreyPlan");
       }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createStoreyPlan");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'id': id,
         'ifc_pk': ifcPk,
         'project_pk': projectPk,
         'storey_pk': storeyPk
@@ -2230,28 +2231,28 @@ export default class IfcApi {
       };
 
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Storey;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/add', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/add', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Create a 2d model in storey
-     * Create a 2d model in storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG') Required scopes: ifc:write
+     * Create a relation between a 2d model and a storey
+     * Create a relation between a 2d model and a storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG') Required scopes: ifc:write
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
      * @param {String} ifcPk 
      * @param {String} projectPk 
      * @param {String} storeyPk 
+     * @param {module:model/InlineObject4} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
-    createStoreyPlan(cloudPk, id, ifcPk, projectPk, storeyPk) {
-      return this.createStoreyPlanWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk)
+    createStoreyPlan(cloudPk, ifcPk, projectPk, storeyPk, data) {
+      return this.createStoreyPlanWithHttpInfo(cloudPk, ifcPk, projectPk, storeyPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3215,8 +3216,8 @@ export default class IfcApi {
 
 
     /**
-     * Delete a 2d model
-     * Delete a 2D model Required scopes: ifc:write
+     * Delete the relation between a 2d model and a storey
+     * Delete the relation between a 2d model and a storey Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
      * @param {String} ifcPk 
@@ -3266,15 +3267,15 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/delete', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Delete a 2d model
-     * Delete a 2D model Required scopes: ifc:write
+     * Delete the relation between a 2d model and a storey
+     * Delete the relation between a 2d model and a storey Required scopes: ifc:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
      * @param {String} ifcPk 
@@ -6057,6 +6058,82 @@ export default class IfcApi {
 
 
     /**
+     * Retrieve the postioning of the plan in the storey
+     * Retrieve the postioning of the plan in the storey Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this storey.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} storeyPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PositioningPlan} and HTTP response
+     */
+    getPlanPositioningWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getPlanPositioning");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getPlanPositioning");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getPlanPositioning");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getPlanPositioning");
+      }
+      // verify the required parameter 'storeyPk' is set
+      if (storeyPk === undefined || storeyPk === null) {
+        throw new Error("Missing the required parameter 'storeyPk' when calling getPlanPositioning");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'storey_pk': storeyPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PositioningPlan;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/positioning', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve the postioning of the plan in the storey
+     * Retrieve the postioning of the plan in the storey Required scopes: ifc:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this storey.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} storeyPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PositioningPlan}
+     */
+    getPlanPositioning(cloudPk, id, ifcPk, projectPk, storeyPk) {
+      return this.getPlanPositioningWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve a processor handler
      *  Required scopes: ifc:read
      * @param {String} cloudPk 
@@ -8740,6 +8817,88 @@ export default class IfcApi {
      */
     updateLayer(cloudPk, id, ifcPk, projectPk, data) {
       return this.updateLayerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update the postioning of the plan in the storey
+     * Update the postioning of the plan in the storey Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this storey.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} storeyPk 
+     * @param {module:model/PositioningPlan} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PositioningPlan} and HTTP response
+     */
+    updatePlanPositioningWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updatePlanPositioning");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updatePlanPositioning");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updatePlanPositioning");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updatePlanPositioning");
+      }
+      // verify the required parameter 'storeyPk' is set
+      if (storeyPk === undefined || storeyPk === null) {
+        throw new Error("Missing the required parameter 'storeyPk' when calling updatePlanPositioning");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updatePlanPositioning");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'storey_pk': storeyPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PositioningPlan;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/positioning', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update the postioning of the plan in the storey
+     * Update the postioning of the plan in the storey Required scopes: ifc:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this storey.
+     * @param {String} ifcPk 
+     * @param {String} projectPk 
+     * @param {String} storeyPk 
+     * @param {module:model/PositioningPlan} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PositioningPlan}
+     */
+    updatePlanPositioning(cloudPk, id, ifcPk, projectPk, storeyPk, data) {
+      return this.updatePlanPositioningWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

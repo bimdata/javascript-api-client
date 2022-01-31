@@ -319,7 +319,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**createPropertySetElementRelations**](docs/IfcApi.md#createPropertySetElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset-element | Create association between PropertySet and element
 *bimdata.IfcApi* | [**createRawElements**](docs/IfcApi.md#createRawElements) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw | Create elements in an optimized format
 *bimdata.IfcApi* | [**createSpace**](docs/IfcApi.md#createSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space | Create a space in the model
-*bimdata.IfcApi* | [**createStoreyPlan**](docs/IfcApi.md#createStoreyPlan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/add | Create a 2d model in storey
+*bimdata.IfcApi* | [**createStoreyPlan**](docs/IfcApi.md#createStoreyPlan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/add | Create a relation between a 2d model and a storey
 *bimdata.IfcApi* | [**createSystem**](docs/IfcApi.md#createSystem) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system | Create a system in the model
 *bimdata.IfcApi* | [**createZone**](docs/IfcApi.md#createZone) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Create a zone in the model
 *bimdata.IfcApi* | [**createZoneSpace**](docs/IfcApi.md#createZoneSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Create a space in a zone
@@ -334,7 +334,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**deletePropertySet**](docs/IfcApi.md#deletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Delete a PropertySet of a model
 *bimdata.IfcApi* | [**deleteSpace**](docs/IfcApi.md#deleteSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Delete a space
 *bimdata.IfcApi* | [**deleteStorey**](docs/IfcApi.md#deleteStorey) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{id} | Delete a storey of a model
-*bimdata.IfcApi* | [**deleteStoreyPlan**](docs/IfcApi.md#deleteStoreyPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/delete | Delete a 2d model
+*bimdata.IfcApi* | [**deleteStoreyPlan**](docs/IfcApi.md#deleteStoreyPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id} | Delete the relation between a 2d model and a storey
 *bimdata.IfcApi* | [**deleteSystem**](docs/IfcApi.md#deleteSystem) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid} | Delete a system of a model
 *bimdata.IfcApi* | [**deleteZone**](docs/IfcApi.md#deleteZone) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Delete a zone of a model
 *bimdata.IfcApi* | [**deleteZoneSpace**](docs/IfcApi.md#deleteZoneSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Delete a space of a zone
@@ -374,6 +374,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**getMaterials**](docs/IfcApi.md#getMaterials) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/material | Retrieve all materials of a model
 *bimdata.IfcApi* | [**getModelStorey**](docs/IfcApi.md#getModelStorey) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{id} | Retrieve a storey of a model
 *bimdata.IfcApi* | [**getModelStoreys**](docs/IfcApi.md#getModelStoreys) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey | Retrieve all storeys of a model
+*bimdata.IfcApi* | [**getPlanPositioning**](docs/IfcApi.md#getPlanPositioning) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/positioning | Retrieve the postioning of the plan in the storey
 *bimdata.IfcApi* | [**getProcessorHandler**](docs/IfcApi.md#getProcessorHandler) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | Retrieve a processor handler
 *bimdata.IfcApi* | [**getProcessorHandlers**](docs/IfcApi.md#getProcessorHandlers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler | Get all processor handlers
 *bimdata.IfcApi* | [**getPropertySet**](docs/IfcApi.md#getPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Retrieve a PropertySet of a model
@@ -411,6 +412,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**updateIfcPropertyDefinition**](docs/IfcApi.md#updateIfcPropertyDefinition) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | Update some fields of many PropertyDefinitions of a model
 *bimdata.IfcApi* | [**updateIfcUnit**](docs/IfcApi.md#updateIfcUnit) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | Update some fields of a Unit of a model
 *bimdata.IfcApi* | [**updateLayer**](docs/IfcApi.md#updateLayer) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id} | Update some fields of a layer
+*bimdata.IfcApi* | [**updatePlanPositioning**](docs/IfcApi.md#updatePlanPositioning) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/positioning | Update the postioning of the plan in the storey
 *bimdata.IfcApi* | [**updateProcessorHandler**](docs/IfcApi.md#updateProcessorHandler) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | Update the status of a processor handler
 *bimdata.IfcApi* | [**updatePropertySet**](docs/IfcApi.md#updatePropertySet) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Update some fields of a PropertySet
 *bimdata.IfcApi* | [**updateSpace**](docs/IfcApi.md#updateSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Update some fields of a space
@@ -474,6 +476,7 @@ Class | Method | HTTP request | Description
  - [bimdata.InlineObject1](docs/InlineObject1.md)
  - [bimdata.InlineObject2](docs/InlineObject2.md)
  - [bimdata.InlineObject3](docs/InlineObject3.md)
+ - [bimdata.InlineObject4](docs/InlineObject4.md)
  - [bimdata.InlineResponse200](docs/InlineResponse200.md)
  - [bimdata.InlineResponse2001](docs/InlineResponse2001.md)
  - [bimdata.Invitation](docs/Invitation.md)
@@ -486,10 +489,12 @@ Class | Method | HTTP request | Description
  - [bimdata.Material](docs/Material.md)
  - [bimdata.MaterialListComponent](docs/MaterialListComponent.md)
  - [bimdata.MaterialOption](docs/MaterialOption.md)
+ - [bimdata.ModelWithPositioningPlan](docs/ModelWithPositioningPlan.md)
  - [bimdata.Organization](docs/Organization.md)
  - [bimdata.OrthogonalCamera](docs/OrthogonalCamera.md)
  - [bimdata.PerspectiveCamera](docs/PerspectiveCamera.md)
  - [bimdata.Point](docs/Point.md)
+ - [bimdata.PositioningPlan](docs/PositioningPlan.md)
  - [bimdata.Priority](docs/Priority.md)
  - [bimdata.ProcessorHandler](docs/ProcessorHandler.md)
  - [bimdata.Project](docs/Project.md)

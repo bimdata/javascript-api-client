@@ -898,6 +898,16 @@
         done();
       });
     });
+    describe('getPlanPositioning', function() {
+      it('should call getPlanPositioning successfully', function(done) {
+        //uncomment below and update the code to test getPlanPositioning
+        //instance.getPlanPositioning(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getProcessorHandler', function() {
       it('should call getProcessorHandler successfully', function(done) {
         //uncomment below and update the code to test getProcessorHandler
@@ -1262,6 +1272,16 @@
       it('should call updateLayer successfully', function(done) {
         //uncomment below and update the code to test updateLayer
         //instance.updateLayer(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updatePlanPositioning', function() {
+      it('should call updatePlanPositioning successfully', function(done) {
+        //uncomment below and update the code to test updatePlanPositioning
+        //instance.updatePlanPositioning(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
