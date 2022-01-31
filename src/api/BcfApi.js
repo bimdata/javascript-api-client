@@ -110,9 +110,12 @@ export default class BcfApi {
      * This is not a standard route. You can send a topic, viewpoints and comments in a single call Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {module:model/FullTopic} data 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FullTopic} and HTTP response
      */
-    createFullTopicWithHttpInfo(projectsPk, data) {
+    createFullTopicWithHttpInfo(projectsPk, data, opts) {
+      opts = opts || {};
       let postBody = data;
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -127,6 +130,7 @@ export default class BcfApi {
         'projects_pk': projectsPk
       };
       let queryParams = {
+        'img_format': opts['imgFormat']
       };
       let headerParams = {
       };
@@ -149,10 +153,12 @@ export default class BcfApi {
      * This is not a standard route. You can send a topic, viewpoints and comments in a single call Required scopes: bcf:write
      * @param {String} projectsPk 
      * @param {module:model/FullTopic} data 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FullTopic}
      */
-    createFullTopic(projectsPk, data) {
-      return this.createFullTopicWithHttpInfo(projectsPk, data)
+    createFullTopic(projectsPk, data, opts) {
+      return this.createFullTopicWithHttpInfo(projectsPk, data, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -219,9 +225,12 @@ export default class BcfApi {
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
      * @param {module:model/Viewpoint} data 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Viewpoint} and HTTP response
      */
-    createViewpointWithHttpInfo(projectsPk, topicsGuid, data) {
+    createViewpointWithHttpInfo(projectsPk, topicsGuid, data, opts) {
+      opts = opts || {};
       let postBody = data;
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -241,6 +250,7 @@ export default class BcfApi {
         'topics_guid': topicsGuid
       };
       let queryParams = {
+        'img_format': opts['imgFormat']
       };
       let headerParams = {
       };
@@ -264,10 +274,12 @@ export default class BcfApi {
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
      * @param {module:model/Viewpoint} data 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Viewpoint}
      */
-    createViewpoint(projectsPk, topicsGuid, data) {
-      return this.createViewpointWithHttpInfo(projectsPk, topicsGuid, data)
+    createViewpoint(projectsPk, topicsGuid, data, opts) {
+      return this.createViewpointWithHttpInfo(projectsPk, topicsGuid, data, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -397,9 +409,12 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteViewpointWithHttpInfo(guid, projectsPk, topicsGuid) {
+    deleteViewpointWithHttpInfo(guid, projectsPk, topicsGuid, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
@@ -420,6 +435,7 @@ export default class BcfApi {
         'topics_guid': topicsGuid
       };
       let queryParams = {
+        'img_format': opts['imgFormat']
       };
       let headerParams = {
       };
@@ -443,10 +459,12 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteViewpoint(guid, projectsPk, topicsGuid) {
-      return this.deleteViewpointWithHttpInfo(guid, projectsPk, topicsGuid)
+    deleteViewpoint(guid, projectsPk, topicsGuid, opts) {
+      return this.deleteViewpointWithHttpInfo(guid, projectsPk, topicsGuid, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -638,9 +656,12 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {String} projectsPk 
      * @param {module:model/FullTopic} data 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FullTopic} and HTTP response
      */
-    fullUpdateFullTopicWithHttpInfo(guid, projectsPk, data) {
+    fullUpdateFullTopicWithHttpInfo(guid, projectsPk, data, opts) {
+      opts = opts || {};
       let postBody = data;
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
@@ -660,6 +681,7 @@ export default class BcfApi {
         'projects_pk': projectsPk
       };
       let queryParams = {
+        'img_format': opts['imgFormat']
       };
       let headerParams = {
       };
@@ -683,10 +705,12 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {String} projectsPk 
      * @param {module:model/FullTopic} data 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FullTopic}
      */
-    fullUpdateFullTopic(guid, projectsPk, data) {
-      return this.fullUpdateFullTopicWithHttpInfo(guid, projectsPk, data)
+    fullUpdateFullTopic(guid, projectsPk, data, opts) {
+      return this.fullUpdateFullTopicWithHttpInfo(guid, projectsPk, data, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -761,9 +785,12 @@ export default class BcfApi {
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
      * @param {module:model/Viewpoint} data 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Viewpoint} and HTTP response
      */
-    fullUpdateViewpointWithHttpInfo(guid, projectsPk, topicsGuid, data) {
+    fullUpdateViewpointWithHttpInfo(guid, projectsPk, topicsGuid, data, opts) {
+      opts = opts || {};
       let postBody = data;
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
@@ -788,6 +815,7 @@ export default class BcfApi {
         'topics_guid': topicsGuid
       };
       let queryParams = {
+        'img_format': opts['imgFormat']
       };
       let headerParams = {
       };
@@ -812,10 +840,12 @@ export default class BcfApi {
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
      * @param {module:model/Viewpoint} data 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Viewpoint}
      */
-    fullUpdateViewpoint(guid, projectsPk, topicsGuid, data) {
-      return this.fullUpdateViewpointWithHttpInfo(guid, projectsPk, topicsGuid, data)
+    fullUpdateViewpoint(guid, projectsPk, topicsGuid, data, opts) {
+      return this.fullUpdateViewpointWithHttpInfo(guid, projectsPk, topicsGuid, data, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1143,9 +1173,12 @@ export default class BcfApi {
      * This is not a standard route. It responds with a topic, its viewpoints and its comments Required scopes: bcf:read
      * @param {String} guid 
      * @param {String} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FullTopic} and HTTP response
      */
-    getFullTopicWithHttpInfo(guid, projectsPk) {
+    getFullTopicWithHttpInfo(guid, projectsPk, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
@@ -1161,6 +1194,7 @@ export default class BcfApi {
         'projects_pk': projectsPk
       };
       let queryParams = {
+        'img_format': opts['imgFormat']
       };
       let headerParams = {
       };
@@ -1183,10 +1217,12 @@ export default class BcfApi {
      * This is not a standard route. It responds with a topic, its viewpoints and its comments Required scopes: bcf:read
      * @param {String} guid 
      * @param {String} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FullTopic}
      */
-    getFullTopic(guid, projectsPk) {
-      return this.getFullTopicWithHttpInfo(guid, projectsPk)
+    getFullTopic(guid, projectsPk, opts) {
+      return this.getFullTopicWithHttpInfo(guid, projectsPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1200,6 +1236,7 @@ export default class BcfApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.ifcs Filter the returned list by ifcs
      * @param {String} opts.format Filter the returned list by format
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FullTopic>} and HTTP response
      */
     getFullTopicsWithHttpInfo(projectsPk, opts) {
@@ -1215,7 +1252,8 @@ export default class BcfApi {
       };
       let queryParams = {
         'ifcs': opts['ifcs'],
-        'format': opts['format']
+        'format': opts['format'],
+        'img_format': opts['imgFormat']
       };
       let headerParams = {
       };
@@ -1240,6 +1278,7 @@ export default class BcfApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.ifcs Filter the returned list by ifcs
      * @param {String} opts.format Filter the returned list by format
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FullTopic>}
      */
     getFullTopics(projectsPk, opts) {
@@ -1434,9 +1473,12 @@ export default class BcfApi {
      * This is not a standard route. It returns all viewpoints of the topic that are not attached to a comment. Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Viewpoint>} and HTTP response
      */
-    getTopicViewpointsWithHttpInfo(projectsPk, topicsGuid) {
+    getTopicViewpointsWithHttpInfo(projectsPk, topicsGuid, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1452,6 +1494,7 @@ export default class BcfApi {
         'topics_guid': topicsGuid
       };
       let queryParams = {
+        'img_format': opts['imgFormat']
       };
       let headerParams = {
       };
@@ -1474,10 +1517,12 @@ export default class BcfApi {
      * This is not a standard route. It returns all viewpoints of the topic that are not attached to a comment. Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Viewpoint>}
      */
-    getTopicViewpoints(projectsPk, topicsGuid) {
-      return this.getTopicViewpointsWithHttpInfo(projectsPk, topicsGuid)
+    getTopicViewpoints(projectsPk, topicsGuid, opts) {
+      return this.getTopicViewpointsWithHttpInfo(projectsPk, topicsGuid, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1588,9 +1633,12 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Viewpoint} and HTTP response
      */
-    getViewpointWithHttpInfo(guid, projectsPk, topicsGuid) {
+    getViewpointWithHttpInfo(guid, projectsPk, topicsGuid, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
@@ -1611,6 +1659,7 @@ export default class BcfApi {
         'topics_guid': topicsGuid
       };
       let queryParams = {
+        'img_format': opts['imgFormat']
       };
       let headerParams = {
       };
@@ -1634,10 +1683,12 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Viewpoint}
      */
-    getViewpoint(guid, projectsPk, topicsGuid) {
-      return this.getViewpointWithHttpInfo(guid, projectsPk, topicsGuid)
+    getViewpoint(guid, projectsPk, topicsGuid, opts) {
+      return this.getViewpointWithHttpInfo(guid, projectsPk, topicsGuid, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1649,9 +1700,12 @@ export default class BcfApi {
      * Retrieve all Viewpoints of a topic Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Viewpoint>} and HTTP response
      */
-    getViewpointsWithHttpInfo(projectsPk, topicsGuid) {
+    getViewpointsWithHttpInfo(projectsPk, topicsGuid, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1667,6 +1721,7 @@ export default class BcfApi {
         'topics_guid': topicsGuid
       };
       let queryParams = {
+        'img_format': opts['imgFormat']
       };
       let headerParams = {
       };
@@ -1689,10 +1744,12 @@ export default class BcfApi {
      * Retrieve all Viewpoints of a topic Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Viewpoint>}
      */
-    getViewpoints(projectsPk, topicsGuid) {
-      return this.getViewpointsWithHttpInfo(projectsPk, topicsGuid)
+    getViewpoints(projectsPk, topicsGuid, opts) {
+      return this.getViewpointsWithHttpInfo(projectsPk, topicsGuid, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1998,9 +2055,12 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {String} projectsPk 
      * @param {module:model/FullTopic} data 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FullTopic} and HTTP response
      */
-    updateFullTopicWithHttpInfo(guid, projectsPk, data) {
+    updateFullTopicWithHttpInfo(guid, projectsPk, data, opts) {
+      opts = opts || {};
       let postBody = data;
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
@@ -2020,6 +2080,7 @@ export default class BcfApi {
         'projects_pk': projectsPk
       };
       let queryParams = {
+        'img_format': opts['imgFormat']
       };
       let headerParams = {
       };
@@ -2043,10 +2104,12 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {String} projectsPk 
      * @param {module:model/FullTopic} data 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FullTopic}
      */
-    updateFullTopic(guid, projectsPk, data) {
-      return this.updateFullTopicWithHttpInfo(guid, projectsPk, data)
+    updateFullTopic(guid, projectsPk, data, opts) {
+      return this.updateFullTopicWithHttpInfo(guid, projectsPk, data, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2121,9 +2184,12 @@ export default class BcfApi {
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
      * @param {module:model/Viewpoint} data 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Viewpoint} and HTTP response
      */
-    updateViewpointWithHttpInfo(guid, projectsPk, topicsGuid, data) {
+    updateViewpointWithHttpInfo(guid, projectsPk, topicsGuid, data, opts) {
+      opts = opts || {};
       let postBody = data;
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
@@ -2148,6 +2214,7 @@ export default class BcfApi {
         'topics_guid': topicsGuid
       };
       let queryParams = {
+        'img_format': opts['imgFormat']
       };
       let headerParams = {
       };
@@ -2172,10 +2239,12 @@ export default class BcfApi {
      * @param {String} projectsPk 
      * @param {String} topicsGuid 
      * @param {module:model/Viewpoint} data 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Viewpoint}
      */
-    updateViewpoint(guid, projectsPk, topicsGuid, data) {
-      return this.updateViewpointWithHttpInfo(guid, projectsPk, topicsGuid, data)
+    updateViewpoint(guid, projectsPk, topicsGuid, data, opts) {
+      return this.updateViewpointWithHttpInfo(guid, projectsPk, topicsGuid, data, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

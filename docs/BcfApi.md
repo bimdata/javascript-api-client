@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ## createFullTopic
 
-> FullTopic createFullTopic(projectsPk, data)
+> FullTopic createFullTopic(projectsPk, data, opts)
 
 Create a Topic with viewpoints and comments
 
@@ -132,7 +132,10 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let data = new bimdata.FullTopic(); // FullTopic | 
-apiInstance.createFullTopic(projectsPk, data).then((data) => {
+let opts = {
+  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+};
+apiInstance.createFullTopic(projectsPk, data, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -147,6 +150,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
  **data** | [**FullTopic**](FullTopic.md)|  | 
+ **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
 
@@ -222,7 +226,7 @@ Name | Type | Description  | Notes
 
 ## createViewpoint
 
-> Viewpoint createViewpoint(projectsPk, topicsGuid, data)
+> Viewpoint createViewpoint(projectsPk, topicsGuid, data, opts)
 
 Create a Viewpoint
 
@@ -249,7 +253,10 @@ let apiInstance = new bimdata.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
 let data = new bimdata.Viewpoint(); // Viewpoint | 
-apiInstance.createViewpoint(projectsPk, topicsGuid, data).then((data) => {
+let opts = {
+  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+};
+apiInstance.createViewpoint(projectsPk, topicsGuid, data, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -265,6 +272,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsGuid** | **String**|  | 
  **data** | [**Viewpoint**](Viewpoint.md)|  | 
+ **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
 
@@ -400,7 +408,7 @@ null (empty response body)
 
 ## deleteViewpoint
 
-> deleteViewpoint(guid, projectsPk, topicsGuid)
+> deleteViewpoint(guid, projectsPk, topicsGuid, opts)
 
 Delete a Viewpoint
 
@@ -427,7 +435,10 @@ let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.deleteViewpoint(guid, projectsPk, topicsGuid).then(() => {
+let opts = {
+  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+};
+apiInstance.deleteViewpoint(guid, projectsPk, topicsGuid, opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -443,6 +454,7 @@ Name | Type | Description  | Notes
  **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
  **topicsGuid** | **String**|  | 
+ **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
 
@@ -642,7 +654,7 @@ Name | Type | Description  | Notes
 
 ## fullUpdateFullTopic
 
-> FullTopic fullUpdateFullTopic(guid, projectsPk, data)
+> FullTopic fullUpdateFullTopic(guid, projectsPk, data, opts)
 
 Update all fields of a topic
 
@@ -669,7 +681,10 @@ let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let data = new bimdata.FullTopic(); // FullTopic | 
-apiInstance.fullUpdateFullTopic(guid, projectsPk, data).then((data) => {
+let opts = {
+  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+};
+apiInstance.fullUpdateFullTopic(guid, projectsPk, data, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -685,6 +700,7 @@ Name | Type | Description  | Notes
  **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
  **data** | [**FullTopic**](FullTopic.md)|  | 
+ **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
 
@@ -762,7 +778,7 @@ Name | Type | Description  | Notes
 
 ## fullUpdateViewpoint
 
-> Viewpoint fullUpdateViewpoint(guid, projectsPk, topicsGuid, data)
+> Viewpoint fullUpdateViewpoint(guid, projectsPk, topicsGuid, data, opts)
 
 Update all fields of a Viewpoint
 
@@ -790,7 +806,10 @@ let guid = null; // String |
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
 let data = new bimdata.Viewpoint(); // Viewpoint | 
-apiInstance.fullUpdateViewpoint(guid, projectsPk, topicsGuid, data).then((data) => {
+let opts = {
+  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+};
+apiInstance.fullUpdateViewpoint(guid, projectsPk, topicsGuid, data, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -807,6 +826,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsGuid** | **String**|  | 
  **data** | [**Viewpoint**](Viewpoint.md)|  | 
+ **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
 
@@ -1166,7 +1186,7 @@ Name | Type | Description  | Notes
 
 ## getFullTopic
 
-> FullTopic getFullTopic(guid, projectsPk)
+> FullTopic getFullTopic(guid, projectsPk, opts)
 
 Retrieve a full topic
 
@@ -1192,7 +1212,10 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
-apiInstance.getFullTopic(guid, projectsPk).then((data) => {
+let opts = {
+  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+};
+apiInstance.getFullTopic(guid, projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1207,6 +1230,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
+ **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
 
@@ -1251,7 +1275,8 @@ let apiInstance = new bimdata.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let opts = {
   'ifcs': "ifcs_example", // String | Filter the returned list by ifcs
-  'format': "format_example" // String | Filter the returned list by format
+  'format': "format_example", // String | Filter the returned list by format
+  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
 };
 apiInstance.getFullTopics(projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1269,6 +1294,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **ifcs** | **String**| Filter the returned list by ifcs | [optional] 
  **format** | **String**| Filter the returned list by format | [optional] 
+ **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
 
@@ -1464,7 +1490,7 @@ Name | Type | Description  | Notes
 
 ## getTopicViewpoints
 
-> [Viewpoint] getTopicViewpoints(projectsPk, topicsGuid)
+> [Viewpoint] getTopicViewpoints(projectsPk, topicsGuid, opts)
 
 Retrieve all viewpoints attached to the topic
 
@@ -1490,7 +1516,10 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.getTopicViewpoints(projectsPk, topicsGuid).then((data) => {
+let opts = {
+  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+};
+apiInstance.getTopicViewpoints(projectsPk, topicsGuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1505,6 +1534,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
  **topicsGuid** | **String**|  | 
+ **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
 
@@ -1636,7 +1666,7 @@ This endpoint does not need any parameter.
 
 ## getViewpoint
 
-> Viewpoint getViewpoint(guid, projectsPk, topicsGuid)
+> Viewpoint getViewpoint(guid, projectsPk, topicsGuid, opts)
 
 Retrieve a Viewpoint
 
@@ -1663,7 +1693,10 @@ let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.getViewpoint(guid, projectsPk, topicsGuid).then((data) => {
+let opts = {
+  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+};
+apiInstance.getViewpoint(guid, projectsPk, topicsGuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1679,6 +1712,7 @@ Name | Type | Description  | Notes
  **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
  **topicsGuid** | **String**|  | 
+ **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
 
@@ -1696,7 +1730,7 @@ Name | Type | Description  | Notes
 
 ## getViewpoints
 
-> [Viewpoint] getViewpoints(projectsPk, topicsGuid)
+> [Viewpoint] getViewpoints(projectsPk, topicsGuid, opts)
 
 Retrieve all Viewpoints of a topic
 
@@ -1722,7 +1756,10 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.getViewpoints(projectsPk, topicsGuid).then((data) => {
+let opts = {
+  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+};
+apiInstance.getViewpoints(projectsPk, topicsGuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1737,6 +1774,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
  **topicsGuid** | **String**|  | 
+ **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
 
@@ -2050,7 +2088,7 @@ Name | Type | Description  | Notes
 
 ## updateFullTopic
 
-> FullTopic updateFullTopic(guid, projectsPk, data)
+> FullTopic updateFullTopic(guid, projectsPk, data, opts)
 
 Update some fields of a topic
 
@@ -2077,7 +2115,10 @@ let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
 let projectsPk = "projectsPk_example"; // String | 
 let data = new bimdata.FullTopic(); // FullTopic | 
-apiInstance.updateFullTopic(guid, projectsPk, data).then((data) => {
+let opts = {
+  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+};
+apiInstance.updateFullTopic(guid, projectsPk, data, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2093,6 +2134,7 @@ Name | Type | Description  | Notes
  **guid** | [**String**](.md)|  | 
  **projectsPk** | **String**|  | 
  **data** | [**FullTopic**](FullTopic.md)|  | 
+ **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
 
@@ -2170,7 +2212,7 @@ Name | Type | Description  | Notes
 
 ## updateViewpoint
 
-> Viewpoint updateViewpoint(guid, projectsPk, topicsGuid, data)
+> Viewpoint updateViewpoint(guid, projectsPk, topicsGuid, data, opts)
 
 Update some fields of a Viewpoint
 
@@ -2198,7 +2240,10 @@ let guid = null; // String |
 let projectsPk = "projectsPk_example"; // String | 
 let topicsGuid = "topicsGuid_example"; // String | 
 let data = new bimdata.Viewpoint(); // Viewpoint | 
-apiInstance.updateViewpoint(guid, projectsPk, topicsGuid, data).then((data) => {
+let opts = {
+  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+};
+apiInstance.updateViewpoint(guid, projectsPk, topicsGuid, data, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2215,6 +2260,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **String**|  | 
  **topicsGuid** | **String**|  | 
  **data** | [**Viewpoint**](Viewpoint.md)|  | 
+ **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
 
