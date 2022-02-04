@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] [readonly] 
-**ifc** | [**Ifc**](Ifc.md) |  | [optional] 
+**ifc** | [**Model**](Model.md) |  | [optional] 
 **creator** | [**User**](User.md) |  | [optional] 
 **name** | **String** |  | [optional] 
 **checkplanId** | **Number** |  | [optional] 

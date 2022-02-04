@@ -1274,6 +1274,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let opts = {
+  'models': "models_example", // String | Filter the returned list by models
   'ifcs': "ifcs_example", // String | Filter the returned list by ifcs
   'format': "format_example", // String | Filter the returned list by format
   'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
@@ -1292,6 +1293,7 @@ apiInstance.getFullTopics(projectsPk, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
+ **models** | **String**| Filter the returned list by models | [optional] 
  **ifcs** | **String**| Filter the returned list by ifcs | [optional] 
  **format** | **String**| Filter the returned list by format | [optional] 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
@@ -1578,6 +1580,7 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = "projectsPk_example"; // String | 
 let opts = {
+  'models': "models_example", // String | Filter the returned list by models
   'ifcs': "ifcs_example", // String | Filter the returned list by ifcs
   'format': "format_example" // String | Filter the returned list by format
 };
@@ -1595,6 +1598,7 @@ apiInstance.getTopics(projectsPk, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **String**|  | 
+ **models** | **String**| Filter the returned list by models | [optional] 
  **ifcs** | **String**| Filter the returned list by ifcs | [optional] 
  **format** | **String**| Filter the returned list by format | [optional] 
 

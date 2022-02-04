@@ -13,7 +13,6 @@
 
 
 import ApiClient from "../ApiClient";
-import CheckerResult from '../model/CheckerResult';
 import Classification from '../model/Classification';
 import CreateBuilding from '../model/CreateBuilding';
 import CreateModel from '../model/CreateModel';
@@ -23,11 +22,10 @@ import Element from '../model/Element';
 import ElementClassificationRelation from '../model/ElementClassificationRelation';
 import ElementPropertySetRelation from '../model/ElementPropertySetRelation';
 import IfcAccessToken from '../model/IfcAccessToken';
-import IfcChecker from '../model/IfcChecker';
 import IfcExport from '../model/IfcExport';
 import IfcMerge from '../model/IfcMerge';
 import IfcOptimize from '../model/IfcOptimize';
-import InlineObject4 from '../model/InlineObject4';
+import InlineObject5 from '../model/InlineObject5';
 import Layer from '../model/Layer';
 import Material from '../model/Material';
 import Model from '../model/Model';
@@ -49,15 +47,15 @@ import Zone from '../model/Zone';
 import ZoneSpace from '../model/ZoneSpace';
 
 /**
-* Ifc service.
-* @module api/IfcApi
+* Model service.
+* @module api/ModelApi
 * @version 0.0.0
 */
-export default class IfcApi {
+export default class ModelApi {
 
     /**
-    * Constructs a new IfcApi. 
-    * @alias module:api/IfcApi
+    * Constructs a new ModelApi. 
+    * @alias module:api/ModelApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -77,23 +75,23 @@ export default class IfcApi {
      * @param {module:model/ModelErrors} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelErrors} and HTTP response
      */
-    addIfcErrorsDeprecatedWithHttpInfo(cloudPk, id, projectPk, data) {
+    addModelErrorsWithHttpInfo(cloudPk, id, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling addIfcErrorsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling addModelErrors");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling addIfcErrorsDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling addModelErrors");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling addIfcErrorsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling addModelErrors");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling addIfcErrorsDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling addModelErrors");
       }
 
       let pathParams = {
@@ -113,7 +111,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = ModelErrors;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/errors', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}/errors', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -128,8 +126,8 @@ export default class IfcApi {
      * @param {module:model/ModelErrors} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelErrors}
      */
-    addIfcErrorsDeprecated(cloudPk, id, projectPk, data) {
-      return this.addIfcErrorsDeprecatedWithHttpInfo(cloudPk, id, projectPk, data)
+    addModelErrors(cloudPk, id, projectPk, data) {
+      return this.addModelErrorsWithHttpInfo(cloudPk, id, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -140,28 +138,28 @@ export default class IfcApi {
      * Remove all classifications from model's elements
      *              Delete relation between filtered classifications (eg. /classifications?name=untec) and all mode's elements.             No classification will be deleted on this endpoint, only the relation between model's elements and their classification.  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteIfcClassificationsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
+    bulkDeleteIfcClassificationsWithHttpInfo(cloudPk, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcClassificationsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcClassifications");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeleteIfcClassificationsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkDeleteIfcClassifications");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcClassificationsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcClassifications");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -176,7 +174,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/list_destroy', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification/list_destroy', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -186,12 +184,12 @@ export default class IfcApi {
      * Remove all classifications from model's elements
      *              Delete relation between filtered classifications (eg. /classifications?name=untec) and all mode's elements.             No classification will be deleted on this endpoint, only the relation between model's elements and their classification.  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteIfcClassificationsDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.bulkDeleteIfcClassificationsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
+    bulkDeleteIfcClassifications(cloudPk, modelPk, projectPk) {
+      return this.bulkDeleteIfcClassificationsWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -202,33 +200,33 @@ export default class IfcApi {
      * Delete many Property of a model
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteIfcPropertiesDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    bulkDeleteIfcPropertiesWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcPropertiesDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcProperties");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeleteIfcPropertiesDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkDeleteIfcProperties");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcPropertiesDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcProperties");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkDeleteIfcPropertiesDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling bulkDeleteIfcProperties");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -243,7 +241,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_destroy', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/bulk_destroy', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -253,13 +251,13 @@ export default class IfcApi {
      * Delete many Property of a model
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteIfcPropertiesDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.bulkDeleteIfcPropertiesDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    bulkDeleteIfcProperties(cloudPk, modelPk, projectPk, data) {
+      return this.bulkDeleteIfcPropertiesWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -270,33 +268,33 @@ export default class IfcApi {
      * Delete many PropertyDefinitions of a model
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteIfcPropertyDefinitionsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    bulkDeleteIfcPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcPropertyDefinitionsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcPropertyDefinitions");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeleteIfcPropertyDefinitionsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkDeleteIfcPropertyDefinitions");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcPropertyDefinitionsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcPropertyDefinitions");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkDeleteIfcPropertyDefinitionsDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling bulkDeleteIfcPropertyDefinitions");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -311,7 +309,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/bulk_destroy', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/bulk_destroy', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -321,13 +319,13 @@ export default class IfcApi {
      * Delete many PropertyDefinitions of a model
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteIfcPropertyDefinitionsDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.bulkDeleteIfcPropertyDefinitionsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    bulkDeleteIfcPropertyDefinitions(cloudPk, modelPk, projectPk, data) {
+      return this.bulkDeleteIfcPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -338,33 +336,33 @@ export default class IfcApi {
      * Delete many Units of a model
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteIfcUnitsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    bulkDeleteIfcUnitsWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcUnitsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcUnits");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeleteIfcUnitsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkDeleteIfcUnits");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcUnitsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcUnits");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkDeleteIfcUnitsDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling bulkDeleteIfcUnits");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -379,7 +377,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/bulk_destroy', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/bulk_destroy', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -389,13 +387,13 @@ export default class IfcApi {
      * Delete many Units of a model
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteIfcUnitsDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.bulkDeleteIfcUnitsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    bulkDeleteIfcUnits(cloudPk, modelPk, projectPk, data) {
+      return this.bulkDeleteIfcUnitsWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -406,33 +404,33 @@ export default class IfcApi {
      * Delete many PropertySet of a model
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeletePropertySetDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    bulkDeletePropertySetWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeletePropertySetDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeletePropertySet");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkDeletePropertySetDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkDeletePropertySet");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeletePropertySetDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeletePropertySet");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkDeletePropertySetDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling bulkDeletePropertySet");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -447,7 +445,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/bulk_destroy', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/bulk_destroy', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -457,13 +455,13 @@ export default class IfcApi {
      * Delete many PropertySet of a model
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeletePropertySetDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.bulkDeletePropertySetDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    bulkDeletePropertySet(cloudPk, modelPk, projectPk, data) {
+      return this.bulkDeletePropertySetWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -474,33 +472,33 @@ export default class IfcApi {
      * Update many elements at once (only changing fields may be defined)
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Element>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Element>} and HTTP response
      */
-    bulkFullUpdateElementsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    bulkFullUpdateElementsWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkFullUpdateElementsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkFullUpdateElements");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkFullUpdateElementsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkFullUpdateElements");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkFullUpdateElementsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkFullUpdateElements");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkFullUpdateElementsDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling bulkFullUpdateElements");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -515,7 +513,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Element];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/bulk_update', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -525,13 +523,13 @@ export default class IfcApi {
      * Update many elements at once (only changing fields may be defined)
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Element>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Element>}
      */
-    bulkFullUpdateElementsDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.bulkFullUpdateElementsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    bulkFullUpdateElements(cloudPk, modelPk, projectPk, data) {
+      return this.bulkFullUpdateElementsWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -542,33 +540,33 @@ export default class IfcApi {
      * Update some fields of many properties of a model
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Property>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Property>} and HTTP response
      */
-    bulkFullUpdateIfcPropertyDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    bulkFullUpdateIfcPropertyWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkFullUpdateIfcPropertyDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkFullUpdateIfcProperty");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkFullUpdateIfcPropertyDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkFullUpdateIfcProperty");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkFullUpdateIfcPropertyDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkFullUpdateIfcProperty");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkFullUpdateIfcPropertyDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling bulkFullUpdateIfcProperty");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -583,7 +581,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Property];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/bulk_update', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -593,13 +591,13 @@ export default class IfcApi {
      * Update some fields of many properties of a model
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Property>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Property>}
      */
-    bulkFullUpdateIfcPropertyDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.bulkFullUpdateIfcPropertyDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    bulkFullUpdateIfcProperty(cloudPk, modelPk, projectPk, data) {
+      return this.bulkFullUpdateIfcPropertyWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -611,38 +609,38 @@ export default class IfcApi {
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkRemoveClassificationsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data) {
+    bulkRemoveClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkRemoveClassificationsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkRemoveClassificationsOfElement");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling bulkRemoveClassificationsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling bulkRemoveClassificationsOfElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkRemoveClassificationsOfElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkRemoveClassificationsOfElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveClassificationsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveClassificationsOfElement");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkRemoveClassificationsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling bulkRemoveClassificationsOfElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -657,7 +655,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/bulk_destroy', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/classification/bulk_destroy', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -668,13 +666,13 @@ export default class IfcApi {
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkRemoveClassificationsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, data) {
-      return this.bulkRemoveClassificationsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data)
+    bulkRemoveClassificationsOfElement(cloudPk, elementUuid, modelPk, projectPk, data) {
+      return this.bulkRemoveClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -686,38 +684,38 @@ export default class IfcApi {
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkRemoveDocumentsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data) {
+    bulkRemoveDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkRemoveDocumentsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkRemoveDocumentsOfElement");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling bulkRemoveDocumentsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling bulkRemoveDocumentsOfElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkRemoveDocumentsOfElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkRemoveDocumentsOfElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveDocumentsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveDocumentsOfElement");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkRemoveDocumentsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling bulkRemoveDocumentsOfElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -732,7 +730,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents/bulk_destroy', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/documents/bulk_destroy', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -743,13 +741,13 @@ export default class IfcApi {
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkRemoveDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, data) {
-      return this.bulkRemoveDocumentsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data)
+    bulkRemoveDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk, data) {
+      return this.bulkRemoveDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -760,39 +758,39 @@ export default class IfcApi {
      * Remove the classifications from all elements
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
      * @param {String} modelClassificationPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkRemoveElementsFromClassificationDeprecatedWithHttpInfo(cloudPk, ifcPk, modelClassificationPk, projectPk, data) {
+    bulkRemoveElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkRemoveElementsFromClassificationDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkRemoveElementsFromClassificationDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkRemoveElementsFromClassification");
       }
       // verify the required parameter 'modelClassificationPk' is set
       if (modelClassificationPk === undefined || modelClassificationPk === null) {
-        throw new Error("Missing the required parameter 'modelClassificationPk' when calling bulkRemoveElementsFromClassificationDeprecated");
+        throw new Error("Missing the required parameter 'modelClassificationPk' when calling bulkRemoveElementsFromClassification");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkRemoveElementsFromClassification");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveElementsFromClassificationDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveElementsFromClassification");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkRemoveElementsFromClassificationDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling bulkRemoveElementsFromClassification");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
         'model_classification_pk': modelClassificationPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -807,7 +805,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{model_classification_pk}/element/bulk_destroy', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification/{model_classification_pk}/element/bulk_destroy', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -817,14 +815,14 @@ export default class IfcApi {
      * Remove the classifications from all elements
      *          Bulk delete.         You must send a list of ids in the body.         These ids (or relations with these ids in case of many-to-many relation deletion) will be deleted  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
      * @param {String} modelClassificationPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkRemoveElementsFromClassificationDeprecated(cloudPk, ifcPk, modelClassificationPk, projectPk, data) {
-      return this.bulkRemoveElementsFromClassificationDeprecatedWithHttpInfo(cloudPk, ifcPk, modelClassificationPk, projectPk, data)
+    bulkRemoveElementsFromClassification(cloudPk, modelClassificationPk, modelPk, projectPk, data) {
+      return this.bulkRemoveElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -835,33 +833,33 @@ export default class IfcApi {
      * Update many elements at once (all field must be defined)
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Element>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Element>} and HTTP response
      */
-    bulkUpdateElementsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    bulkUpdateElementsWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkUpdateElementsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkUpdateElements");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkUpdateElementsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkUpdateElements");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkUpdateElementsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkUpdateElements");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkUpdateElementsDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling bulkUpdateElements");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -876,7 +874,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Element];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update', 'PUT',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/bulk_update', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -886,13 +884,13 @@ export default class IfcApi {
      * Update many elements at once (all field must be defined)
      *          Bulk update.         Similar to update, but the body should be a list of objects to patch or put         The response will be a list (in the same order) of updated objects or of errors if any         If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Element>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Element>}
      */
-    bulkUpdateElementsDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.bulkUpdateElementsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    bulkUpdateElements(cloudPk, modelPk, projectPk, data) {
+      return this.bulkUpdateElementsWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -903,33 +901,33 @@ export default class IfcApi {
      * Update all fields of many properties of a model
      *  Bulk update. Similar to update, but the body should be a list of objects to patch or put The response will be a list (in the same order) of updated objects or of errors if any If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors 
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Property>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Property>} and HTTP response
      */
-    bulkUpdateIfcPropertyDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    bulkUpdateIfcPropertyWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkUpdateIfcPropertyDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkUpdateIfcProperty");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling bulkUpdateIfcPropertyDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkUpdateIfcProperty");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkUpdateIfcPropertyDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkUpdateIfcProperty");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkUpdateIfcPropertyDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling bulkUpdateIfcProperty");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -944,7 +942,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Property];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update', 'PUT',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/bulk_update', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -954,13 +952,13 @@ export default class IfcApi {
      * Update all fields of many properties of a model
      *  Bulk update. Similar to update, but the body should be a list of objects to patch or put The response will be a list (in the same order) of updated objects or of errors if any If at least one update succeeded, the status code will be 200. If every update failed, the status code we'll be 400 with the list of errors 
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Property>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Property>}
      */
-    bulkUpdateIfcPropertyDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.bulkUpdateIfcPropertyDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    bulkUpdateIfcProperty(cloudPk, modelPk, projectPk, data) {
+      return this.bulkUpdateIfcPropertyWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -971,33 +969,33 @@ export default class IfcApi {
      * Create a token for this model
      * Tokens are read_only by default and are valid 1 day Required scopes: ifc:token_manage, model:token_manage
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/IfcAccessToken} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcAccessToken} and HTTP response
      */
-    createAccessTokenDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    createAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createAccessTokenDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createAccessToken");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createAccessTokenDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createAccessToken");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createAccessTokenDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createAccessToken");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createAccessTokenDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createAccessToken");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1012,7 +1010,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = IfcAccessToken;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1022,156 +1020,13 @@ export default class IfcApi {
      * Create a token for this model
      * Tokens are read_only by default and are valid 1 day Required scopes: ifc:token_manage, model:token_manage
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/IfcAccessToken} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcAccessToken}
      */
-    createAccessTokenDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.createAccessTokenDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Create a checker to a model
-     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/IfcChecker} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcChecker} and HTTP response
-     */
-    createCheckerDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createCheckerDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createCheckerDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createCheckerDeprecated");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createCheckerDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = IfcChecker;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Create a checker to a model
-     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/IfcChecker} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcChecker}
-     */
-    createCheckerDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.createCheckerDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Create a CheckerResult
-     * TCreate a CheckerResult Required scopes: check:write
-     * @param {String} checkerPk 
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/CheckerResult} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckerResult} and HTTP response
-     */
-    createCheckerResultDeprecatedWithHttpInfo(checkerPk, cloudPk, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'checkerPk' is set
-      if (checkerPk === undefined || checkerPk === null) {
-        throw new Error("Missing the required parameter 'checkerPk' when calling createCheckerResultDeprecated");
-      }
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createCheckerResultDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createCheckerResultDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createCheckerResultDeprecated");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createCheckerResultDeprecated");
-      }
-
-      let pathParams = {
-        'checker_pk': checkerPk,
-        'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = CheckerResult;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Create a CheckerResult
-     * TCreate a CheckerResult Required scopes: check:write
-     * @param {String} checkerPk 
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/CheckerResult} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckerResult}
-     */
-    createCheckerResultDeprecated(checkerPk, cloudPk, ifcPk, projectPk, data) {
-      return this.createCheckerResultDeprecatedWithHttpInfo(checkerPk, cloudPk, ifcPk, projectPk, data)
+    createAccessToken(cloudPk, modelPk, projectPk, data) {
+      return this.createAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1182,33 +1037,33 @@ export default class IfcApi {
      * Create association between existing classification and existing element
      * Create association between existing classification and existing element Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/ElementClassificationRelation>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    createClassificationElementRelationsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    createClassificationElementRelationsWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createClassificationElementRelationsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createClassificationElementRelations");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createClassificationElementRelationsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createClassificationElementRelations");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createClassificationElementRelationsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createClassificationElementRelations");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createClassificationElementRelationsDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createClassificationElementRelations");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1223,7 +1078,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification-element', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1233,13 +1088,13 @@ export default class IfcApi {
      * Create association between existing classification and existing element
      * Create association between existing classification and existing element Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/ElementClassificationRelation>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    createClassificationElementRelationsDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.createClassificationElementRelationsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    createClassificationElementRelations(cloudPk, modelPk, projectPk, data) {
+      return this.createClassificationElementRelationsWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1251,38 +1106,38 @@ export default class IfcApi {
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      If classification created already exists, it will just be added to item's classifications and will not be duplicated  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Classification>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
      */
-    createClassificationsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data) {
+    createClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createClassificationsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createClassificationsOfElement");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling createClassificationsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling createClassificationsOfElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createClassificationsOfElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createClassificationsOfElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createClassificationsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createClassificationsOfElement");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createClassificationsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createClassificationsOfElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1297,7 +1152,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Classification];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/classification', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1308,13 +1163,13 @@ export default class IfcApi {
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      If classification created already exists, it will just be added to item's classifications and will not be duplicated  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Classification>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
      */
-    createClassificationsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, data) {
-      return this.createClassificationsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data)
+    createClassificationsOfElement(cloudPk, elementUuid, modelPk, projectPk, data) {
+      return this.createClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1325,33 +1180,33 @@ export default class IfcApi {
      * Create an element in the model
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Element>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Element>} and HTTP response
      */
-    createElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    createElementWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createElement");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createElementDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1366,7 +1221,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Element];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1376,13 +1231,13 @@ export default class IfcApi {
      * Create an element in the model
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Element>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Element>}
      */
-    createElementDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.createElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    createElement(cloudPk, modelPk, projectPk, data) {
+      return this.createElementWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1394,38 +1249,38 @@ export default class IfcApi {
      * Create a PropertySets that will be automatically linked to the element Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/PropertySet} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertySet} and HTTP response
      */
-    createElementPropertySetDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data) {
+    createElementPropertySetWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySet");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySet");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createElementPropertySetDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createElementPropertySet");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySet");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createElementPropertySet");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1440,7 +1295,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = PropertySet;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1451,13 +1306,95 @@ export default class IfcApi {
      * Create a PropertySets that will be automatically linked to the element Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/PropertySet} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertySet}
      */
-    createElementPropertySetDeprecated(cloudPk, elementUuid, ifcPk, projectPk, data) {
-      return this.createElementPropertySetDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data)
+    createElementPropertySet(cloudPk, elementUuid, modelPk, projectPk, data) {
+      return this.createElementPropertySetWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a property to a PropertySet
+     *  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @param {module:model/Property} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
+     */
+    createElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, propertysetPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySetProperty");
+      }
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySetProperty");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createElementPropertySetProperty");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySetProperty");
+      }
+      // verify the required parameter 'propertysetPk' is set
+      if (propertysetPk === undefined || propertysetPk === null) {
+        throw new Error("Missing the required parameter 'propertysetPk' when calling createElementPropertySetProperty");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createElementPropertySetProperty");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'element_uuid': elementUuid,
+        'model_pk': modelPk,
+        'project_pk': projectPk,
+        'propertyset_pk': propertysetPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Property;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a property to a PropertySet
+     *  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @param {module:model/Property} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
+     */
+    createElementPropertySetProperty(cloudPk, elementUuid, modelPk, projectPk, propertysetPk, data) {
+      return this.createElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, propertysetPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1469,48 +1406,48 @@ export default class IfcApi {
      *  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertysetPk 
      * @param {module:model/PropertyDefinition} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
      */
-    createElementPropertySetPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, data) {
+    createElementPropertySetPropertyDefinitionWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, propertyPk, propertysetPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySetPropertyDefinition");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createElementPropertySetPropertyDefinitionDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'propertyPk' is set
       if (propertyPk === undefined || propertyPk === null) {
-        throw new Error("Missing the required parameter 'propertyPk' when calling createElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'propertyPk' when calling createElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'propertysetPk' is set
       if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling createElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'propertysetPk' when calling createElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createElementPropertySetPropertyDefinition");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'property_pk': propertyPk,
         'propertyset_pk': propertysetPk
@@ -1527,7 +1464,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = PropertyDefinition;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1538,15 +1475,15 @@ export default class IfcApi {
      *  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertysetPk 
      * @param {module:model/PropertyDefinition} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
      */
-    createElementPropertySetPropertyDefinitionDeprecated(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, data) {
-      return this.createElementPropertySetPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk, data)
+    createElementPropertySetPropertyDefinition(cloudPk, elementUuid, modelPk, projectPk, propertyPk, propertysetPk, data) {
+      return this.createElementPropertySetPropertyDefinitionWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, propertyPk, propertysetPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1558,7 +1495,7 @@ export default class IfcApi {
      * Create a Unit to a Definition Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertydefinitionPk 
@@ -1566,45 +1503,45 @@ export default class IfcApi {
      * @param {module:model/Unit} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
      */
-    createElementPropertySetPropertyDefinitionUnitDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data) {
+    createElementPropertySetPropertyDefinitionUnitWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySetPropertyDefinitionUnit");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createElementPropertySetPropertyDefinitionUnitDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'propertyPk' is set
       if (propertyPk === undefined || propertyPk === null) {
-        throw new Error("Missing the required parameter 'propertyPk' when calling createElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'propertyPk' when calling createElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'propertydefinitionPk' is set
       if (propertydefinitionPk === undefined || propertydefinitionPk === null) {
-        throw new Error("Missing the required parameter 'propertydefinitionPk' when calling createElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'propertydefinitionPk' when calling createElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'propertysetPk' is set
       if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling createElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'propertysetPk' when calling createElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createElementPropertySetPropertyDefinitionUnit");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'property_pk': propertyPk,
         'propertydefinition_pk': propertydefinitionPk,
@@ -1622,7 +1559,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Unit;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1633,7 +1570,7 @@ export default class IfcApi {
      * Create a Unit to a Definition Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertydefinitionPk 
@@ -1641,151 +1578,8 @@ export default class IfcApi {
      * @param {module:model/Unit} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
      */
-    createElementPropertySetPropertyDefinitionUnitDeprecated(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data) {
-      return this.createElementPropertySetPropertyDefinitionUnitDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Create a property to a PropertySet
-     *  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {String} elementUuid 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} propertysetPk 
-     * @param {module:model/Property} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
-     */
-    createElementPropertySetPropertyDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling createElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'propertysetPk' is set
-      if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling createElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createElementPropertySetPropertyDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk,
-        'propertyset_pk': propertysetPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Property;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Create a property to a PropertySet
-     *  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {String} elementUuid 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} propertysetPk 
-     * @param {module:model/Property} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
-     */
-    createElementPropertySetPropertyDeprecated(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, data) {
-      return this.createElementPropertySetPropertyDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Make a PDF or Image file a Model
-     * Make a PDF or Image file a Model to be used in BIMData services Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @param {module:model/CreateModel} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Model} and HTTP response
-     */
-    createIfcDeprecatedWithHttpInfo(cloudPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createIfcDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createIfcDeprecated");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createIfcDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Model;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/create-model', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Make a PDF or Image file a Model
-     * Make a PDF or Image file a Model to be used in BIMData services Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {String} projectPk 
-     * @param {module:model/CreateModel} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Model}
-     */
-    createIfcDeprecated(cloudPk, projectPk, data) {
-      return this.createIfcDeprecatedWithHttpInfo(cloudPk, projectPk, data)
+    createElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data) {
+      return this.createElementPropertySetPropertyDefinitionUnitWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1796,33 +1590,33 @@ export default class IfcApi {
      * Create a PropertyDefinition on the model
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/PropertyDefinition>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyDefinition>} and HTTP response
      */
-    createIfcPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    createIfcPropertyDefinitionWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createIfcPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createIfcPropertyDefinition");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createIfcPropertyDefinitionDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createIfcPropertyDefinition");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createIfcPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createIfcPropertyDefinition");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createIfcPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createIfcPropertyDefinition");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1837,7 +1631,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [PropertyDefinition];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1847,13 +1641,13 @@ export default class IfcApi {
      * Create a PropertyDefinition on the model
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/PropertyDefinition>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyDefinition>}
      */
-    createIfcPropertyDefinitionDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.createIfcPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    createIfcPropertyDefinition(cloudPk, modelPk, projectPk, data) {
+      return this.createIfcPropertyDefinitionWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1864,33 +1658,33 @@ export default class IfcApi {
      * Create a Unit on a model
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Unit>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Unit>} and HTTP response
      */
-    createIfcUnitDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    createIfcUnitWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createIfcUnitDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createIfcUnit");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createIfcUnitDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createIfcUnit");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createIfcUnitDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createIfcUnit");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createIfcUnitDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createIfcUnit");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1905,7 +1699,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Unit];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1915,13 +1709,13 @@ export default class IfcApi {
      * Create a Unit on a model
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Unit>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Unit>}
      */
-    createIfcUnitDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.createIfcUnitDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    createIfcUnit(cloudPk, modelPk, projectPk, data) {
+      return this.createIfcUnitWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1932,33 +1726,33 @@ export default class IfcApi {
      * Create a layer in the model
      * The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/Layer} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Layer} and HTTP response
      */
-    createLayerDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    createLayerWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createLayerDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createLayer");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createLayerDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createLayer");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createLayerDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createLayer");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createLayerDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createLayer");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1973,7 +1767,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Layer;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1983,13 +1777,13 @@ export default class IfcApi {
      * Create a layer in the model
      * The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/Layer} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Layer}
      */
-    createLayerDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.createLayerDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    createLayer(cloudPk, modelPk, projectPk, data) {
+      return this.createLayerWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2004,19 +1798,19 @@ export default class IfcApi {
      * @param {module:model/CreateBuilding} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Model} and HTTP response
      */
-    createMetaBuildingDeprecatedWithHttpInfo(cloudPk, projectPk, data) {
+    createMetaBuildingWithHttpInfo(cloudPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createMetaBuildingDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createMetaBuilding");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createMetaBuildingDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createMetaBuilding");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createMetaBuildingDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createMetaBuilding");
       }
 
       let pathParams = {
@@ -2035,7 +1829,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Model;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/create-metabuilding', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/create-metabuilding', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -2049,8 +1843,69 @@ export default class IfcApi {
      * @param {module:model/CreateBuilding} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Model}
      */
-    createMetaBuildingDeprecated(cloudPk, projectPk, data) {
-      return this.createMetaBuildingDeprecatedWithHttpInfo(cloudPk, projectPk, data)
+    createMetaBuilding(cloudPk, projectPk, data) {
+      return this.createMetaBuildingWithHttpInfo(cloudPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Make a PDF or Image file a Model
+     * Make a PDF or Image file a Model to be used in BIMData services Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/CreateModel} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Model} and HTTP response
+     */
+    createModelWithHttpInfo(cloudPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createModel");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createModel");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createModel");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Model;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/create-model', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Make a PDF or Image file a Model
+     * Make a PDF or Image file a Model to be used in BIMData services Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} projectPk 
+     * @param {module:model/CreateModel} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Model}
+     */
+    createModel(cloudPk, projectPk, data) {
+      return this.createModelWithHttpInfo(cloudPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2061,33 +1916,33 @@ export default class IfcApi {
      * Create a PropertySet
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/PropertySet>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertySet>} and HTTP response
      */
-    createPropertySetDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    createPropertySetWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createPropertySet");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createPropertySetDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createPropertySet");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createPropertySet");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createPropertySet");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -2102,7 +1957,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [PropertySet];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -2112,13 +1967,13 @@ export default class IfcApi {
      * Create a PropertySet
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/PropertySet>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertySet>}
      */
-    createPropertySetDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.createPropertySetDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    createPropertySet(cloudPk, modelPk, projectPk, data) {
+      return this.createPropertySetWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2129,33 +1984,33 @@ export default class IfcApi {
      * Create association between PropertySet and element
      * Create association between existing PropertySet and existing element Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/ElementPropertySetRelation>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    createPropertySetElementRelationsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    createPropertySetElementRelationsWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createPropertySetElementRelationsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createPropertySetElementRelations");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createPropertySetElementRelationsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createPropertySetElementRelations");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createPropertySetElementRelationsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createPropertySetElementRelations");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createPropertySetElementRelationsDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createPropertySetElementRelations");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -2170,7 +2025,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset-element', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset-element', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -2180,13 +2035,13 @@ export default class IfcApi {
      * Create association between PropertySet and element
      * Create association between existing PropertySet and existing element Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/ElementPropertySetRelation>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    createPropertySetElementRelationsDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.createPropertySetElementRelationsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    createPropertySetElementRelations(cloudPk, modelPk, projectPk, data) {
+      return this.createPropertySetElementRelationsWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2197,33 +2052,33 @@ export default class IfcApi {
      * Create elements in an optimized format
      *          You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         For performance reasons, we do not check the validity of the json. If the json is malformed, an error 500 without more explaination may be returned instead of a 400.  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/RawElements} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    createRawElementsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    createRawElementsWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createRawElementsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createRawElements");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createRawElementsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createRawElements");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createRawElementsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createRawElements");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createRawElementsDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createRawElements");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -2238,7 +2093,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/raw', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -2248,13 +2103,13 @@ export default class IfcApi {
      * Create elements in an optimized format
      *          You can use the same optimized structure to post multiple elements, property_sets, properties, definitions and units at once.         For performance reasons, we do not check the validity of the json. If the json is malformed, an error 500 without more explaination may be returned instead of a 400.  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/RawElements} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    createRawElementsDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.createRawElementsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    createRawElements(cloudPk, modelPk, projectPk, data) {
+      return this.createRawElementsWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2265,33 +2120,33 @@ export default class IfcApi {
      * Create a space in the model
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Space>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Space>} and HTTP response
      */
-    createSpaceDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    createSpaceWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createSpaceDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createSpace");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createSpaceDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createSpace");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createSpaceDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createSpace");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createSpaceDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createSpace");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -2306,7 +2161,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Space];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -2316,13 +2171,13 @@ export default class IfcApi {
      * Create a space in the model
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Space>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Space>}
      */
-    createSpaceDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.createSpaceDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    createSpace(cloudPk, modelPk, projectPk, data) {
+      return this.createSpaceWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2333,38 +2188,38 @@ export default class IfcApi {
      * Create a relation between a 2d model and a storey
      * Create a relation between a 2d model and a storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG') Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} storeyPk 
-     * @param {module:model/InlineObject4} data 
+     * @param {module:model/InlineObject5} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
-    createStoreyPlanDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, storeyPk, data) {
+    createStoreyPlanWithHttpInfo(cloudPk, modelPk, projectPk, storeyPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createStoreyPlanDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createStoreyPlan");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createStoreyPlanDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createStoreyPlan");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createStoreyPlanDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createStoreyPlan");
       }
       // verify the required parameter 'storeyPk' is set
       if (storeyPk === undefined || storeyPk === null) {
-        throw new Error("Missing the required parameter 'storeyPk' when calling createStoreyPlanDeprecated");
+        throw new Error("Missing the required parameter 'storeyPk' when calling createStoreyPlan");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createStoreyPlanDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createStoreyPlan");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'storey_pk': storeyPk
       };
@@ -2380,7 +2235,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Storey;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/add', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/add', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -2390,14 +2245,14 @@ export default class IfcApi {
      * Create a relation between a 2d model and a storey
      * Create a relation between a 2d model and a storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG') Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} storeyPk 
-     * @param {module:model/InlineObject4} data 
+     * @param {module:model/InlineObject5} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
-    createStoreyPlanDeprecated(cloudPk, ifcPk, projectPk, storeyPk, data) {
-      return this.createStoreyPlanDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, storeyPk, data)
+    createStoreyPlan(cloudPk, modelPk, projectPk, storeyPk, data) {
+      return this.createStoreyPlanWithHttpInfo(cloudPk, modelPk, projectPk, storeyPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2408,33 +2263,33 @@ export default class IfcApi {
      * Create a system in the model
      * The IFC file will not be updated. The created system will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/System} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/System} and HTTP response
      */
-    createSystemDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    createSystemWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createSystemDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createSystem");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createSystemDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createSystem");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createSystemDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createSystem");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createSystemDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createSystem");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -2449,7 +2304,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = System;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -2459,13 +2314,13 @@ export default class IfcApi {
      * Create a system in the model
      * The IFC file will not be updated. The created system will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/System} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/System}
      */
-    createSystemDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.createSystemDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    createSystem(cloudPk, modelPk, projectPk, data) {
+      return this.createSystemWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2476,33 +2331,33 @@ export default class IfcApi {
      * Create a zone in the model
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Zone>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Zone>} and HTTP response
      */
-    createZoneDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    createZoneWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createZoneDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createZone");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createZoneDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createZone");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createZoneDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createZone");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createZoneDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createZone");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -2517,7 +2372,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Zone];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -2527,13 +2382,13 @@ export default class IfcApi {
      * Create a zone in the model
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Zone>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Zone>}
      */
-    createZoneDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.createZoneDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    createZone(cloudPk, modelPk, projectPk, data) {
+      return this.createZoneWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2544,38 +2399,38 @@ export default class IfcApi {
      * Create a space in a zone
      * The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
      * @param {module:model/ZoneSpace} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ZoneSpace} and HTTP response
      */
-    createZoneSpaceDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, zonePk, data) {
+    createZoneSpaceWithHttpInfo(cloudPk, modelPk, projectPk, zonePk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createZoneSpace");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createZoneSpaceDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createZoneSpace");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling createZoneSpace");
       }
       // verify the required parameter 'zonePk' is set
       if (zonePk === undefined || zonePk === null) {
-        throw new Error("Missing the required parameter 'zonePk' when calling createZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'zonePk' when calling createZoneSpace");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling createZoneSpace");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'zone_pk': zonePk
       };
@@ -2591,7 +2446,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = ZoneSpace;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -2601,14 +2456,14 @@ export default class IfcApi {
      * Create a space in a zone
      * The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
      * @param {module:model/ZoneSpace} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ZoneSpace}
      */
-    createZoneSpaceDeprecated(cloudPk, ifcPk, projectPk, zonePk, data) {
-      return this.createZoneSpaceDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, zonePk, data)
+    createZoneSpace(cloudPk, modelPk, projectPk, zonePk, data) {
+      return this.createZoneSpaceWithHttpInfo(cloudPk, modelPk, projectPk, zonePk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2619,33 +2474,33 @@ export default class IfcApi {
      * Delete a token
      * Deleting a token will revoke it. Required scopes: ifc:token_manage, model:token_manage
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} token 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteAccessTokenDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, token) {
+    deleteAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, token) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteAccessTokenDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteAccessToken");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteAccessTokenDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteAccessToken");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteAccessTokenDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteAccessToken");
       }
       // verify the required parameter 'token' is set
       if (token === undefined || token === null) {
-        throw new Error("Missing the required parameter 'token' when calling deleteAccessTokenDeprecated");
+        throw new Error("Missing the required parameter 'token' when calling deleteAccessToken");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'token': token
       };
@@ -2661,7 +2516,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -2671,158 +2526,13 @@ export default class IfcApi {
      * Delete a token
      * Deleting a token will revoke it. Required scopes: ifc:token_manage, model:token_manage
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} token 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteAccessTokenDeprecated(cloudPk, ifcPk, projectPk, token) {
-      return this.deleteAccessTokenDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, token)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete a checker of a model
-     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    deleteCheckerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteCheckerDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteCheckerDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteCheckerDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteCheckerDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Delete a checker of a model
-     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    deleteCheckerDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.deleteCheckerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete a CheckerResult
-     * Delete a CheckerResult Required scopes: check:write
-     * @param {String} checkerPk 
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this checker result.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    deleteCheckerResultDeprecatedWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'checkerPk' is set
-      if (checkerPk === undefined || checkerPk === null) {
-        throw new Error("Missing the required parameter 'checkerPk' when calling deleteCheckerResultDeprecated");
-      }
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteCheckerResultDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteCheckerResultDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteCheckerResultDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteCheckerResultDeprecated");
-      }
-
-      let pathParams = {
-        'checker_pk': checkerPk,
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Delete a CheckerResult
-     * Delete a CheckerResult Required scopes: check:write
-     * @param {String} checkerPk 
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this checker result.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    deleteCheckerResultDeprecated(checkerPk, cloudPk, id, ifcPk, projectPk) {
-      return this.deleteCheckerResultDeprecatedWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk)
+    deleteAccessToken(cloudPk, modelPk, projectPk, token) {
+      return this.deleteAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, token)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2833,33 +2543,33 @@ export default class IfcApi {
      * Delete an element of a model
      * The IFC file will not be updated. The remaining elements are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid) {
+    deleteElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteElement");
       }
       // verify the required parameter 'uuid' is set
       if (uuid === undefined || uuid === null) {
-        throw new Error("Missing the required parameter 'uuid' when calling deleteElementDeprecated");
+        throw new Error("Missing the required parameter 'uuid' when calling deleteElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'uuid': uuid
       };
@@ -2875,7 +2585,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -2885,13 +2595,289 @@ export default class IfcApi {
      * Delete an element of a model
      * The IFC file will not be updated. The remaining elements are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteElementDeprecated(cloudPk, ifcPk, projectPk, uuid) {
-      return this.deleteElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
+    deleteElement(cloudPk, modelPk, projectPk, uuid) {
+      return this.deleteElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a Property of a model
+     * Delete a Property of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteIfcPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcProperty");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteIfcProperty");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteIfcProperty");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcProperty");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a Property of a model
+     * Delete a Property of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteIfcProperty(cloudPk, id, modelPk, projectPk) {
+      return this.deleteIfcPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a PropertyDefinitions of a model
+     * Delete a PropertyDefinitions of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property definition.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteIfcPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcPropertyDefinition");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteIfcPropertyDefinition");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteIfcPropertyDefinition");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcPropertyDefinition");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a PropertyDefinitions of a model
+     * Delete a PropertyDefinitions of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property definition.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteIfcPropertyDefinition(cloudPk, id, modelPk, projectPk) {
+      return this.deleteIfcPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a Unit of a model
+     * Delete a Unit of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this unit.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteIfcUnitWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcUnit");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteIfcUnit");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteIfcUnit");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcUnit");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a Unit of a model
+     * Delete a Unit of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this unit.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteIfcUnit(cloudPk, id, modelPk, projectPk) {
+      return this.deleteIfcUnitWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a layer of a model
+     * The IFC file will not be updated. The remaining layers are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteLayerWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteLayer");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteLayer");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteLayer");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteLayer");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a layer of a model
+     * The IFC file will not be updated. The remaining layers are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteLayer(cloudPk, id, modelPk, projectPk) {
+      return this.deleteLayerWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2906,19 +2892,19 @@ export default class IfcApi {
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk) {
+    deleteModelWithHttpInfo(cloudPk, id, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteModel");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteIfcDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling deleteModel");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteModel");
       }
 
       let pathParams = {
@@ -2938,7 +2924,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -2952,215 +2938,8 @@ export default class IfcApi {
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteIfcDeprecated(cloudPk, id, projectPk) {
-      return this.deleteIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete a PropertyDefinitions of a model
-     * Delete a PropertyDefinitions of a model Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    deleteIfcPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcPropertyDefinitionDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteIfcPropertyDefinitionDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteIfcPropertyDefinitionDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcPropertyDefinitionDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Delete a PropertyDefinitions of a model
-     * Delete a PropertyDefinitions of a model Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    deleteIfcPropertyDefinitionDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.deleteIfcPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete a Property of a model
-     * Delete a Property of a model Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    deleteIfcPropertyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcPropertyDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteIfcPropertyDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteIfcPropertyDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcPropertyDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Delete a Property of a model
-     * Delete a Property of a model Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    deleteIfcPropertyDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.deleteIfcPropertyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete a Unit of a model
-     * Delete a Unit of a model Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    deleteIfcUnitDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcUnitDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteIfcUnitDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteIfcUnitDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcUnitDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Delete a Unit of a model
-     * Delete a Unit of a model Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    deleteIfcUnitDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.deleteIfcUnitDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+    deleteModel(cloudPk, id, projectPk) {
+      return this.deleteModelWithHttpInfo(cloudPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3175,19 +2954,19 @@ export default class IfcApi {
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteIfcWithoutDocDeprecatedWithHttpInfo(cloudPk, id, projectPk) {
+    deleteModelWithoutDocWithHttpInfo(cloudPk, id, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcWithoutDocDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteModelWithoutDoc");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteIfcWithoutDocDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling deleteModelWithoutDoc");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcWithoutDocDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteModelWithoutDoc");
       }
 
       let pathParams = {
@@ -3207,7 +2986,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/delete-model', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}/delete-model', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -3221,77 +3000,8 @@ export default class IfcApi {
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteIfcWithoutDocDeprecated(cloudPk, id, projectPk) {
-      return this.deleteIfcWithoutDocDeprecatedWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete a layer of a model
-     * The IFC file will not be updated. The remaining layers are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this layer.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    deleteLayerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteLayerDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteLayerDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteLayerDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteLayerDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Delete a layer of a model
-     * The IFC file will not be updated. The remaining layers are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this layer.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    deleteLayerDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.deleteLayerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+    deleteModelWithoutDoc(cloudPk, id, projectPk) {
+      return this.deleteModelWithoutDocWithHttpInfo(cloudPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3303,33 +3013,33 @@ export default class IfcApi {
      * Delete a PropertySet of a model Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deletePropertySetDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+    deletePropertySetWithHttpInfo(cloudPk, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deletePropertySetDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling deletePropertySet");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deletePropertySetDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling deletePropertySet");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deletePropertySetDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deletePropertySet");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deletePropertySetDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling deletePropertySet");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -3344,7 +3054,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -3355,12 +3065,12 @@ export default class IfcApi {
      * Delete a PropertySet of a model Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deletePropertySetDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.deletePropertySetDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+    deletePropertySet(cloudPk, id, modelPk, projectPk) {
+      return this.deletePropertySetWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3372,33 +3082,33 @@ export default class IfcApi {
      * It will not delete related zones. The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+    deleteSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteSpaceDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteSpace");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteSpaceDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling deleteSpace");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteSpaceDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteSpace");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteSpaceDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteSpace");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -3413,7 +3123,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -3424,12 +3134,12 @@ export default class IfcApi {
      * It will not delete related zones. The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteSpaceDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.deleteSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+    deleteSpace(cloudPk, id, modelPk, projectPk) {
+      return this.deleteSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3441,33 +3151,33 @@ export default class IfcApi {
      * Delete a storey of a model Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteStoreyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+    deleteStoreyWithHttpInfo(cloudPk, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteStoreyDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteStorey");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteStoreyDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling deleteStorey");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteStoreyDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteStorey");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteStoreyDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteStorey");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -3482,7 +3192,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -3493,12 +3203,12 @@ export default class IfcApi {
      * Delete a storey of a model Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteStoreyDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.deleteStoreyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+    deleteStorey(cloudPk, id, modelPk, projectPk) {
+      return this.deleteStoreyWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3510,38 +3220,38 @@ export default class IfcApi {
      * Delete the relation between a 2d model and a storey Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} storeyPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteStoreyPlanDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk) {
+    deleteStoreyPlanWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteStoreyPlanDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteStoreyPlan");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteStoreyPlanDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling deleteStoreyPlan");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteStoreyPlanDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteStoreyPlan");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteStoreyPlanDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteStoreyPlan");
       }
       // verify the required parameter 'storeyPk' is set
       if (storeyPk === undefined || storeyPk === null) {
-        throw new Error("Missing the required parameter 'storeyPk' when calling deleteStoreyPlanDeprecated");
+        throw new Error("Missing the required parameter 'storeyPk' when calling deleteStoreyPlan");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'storey_pk': storeyPk
       };
@@ -3557,7 +3267,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -3568,13 +3278,13 @@ export default class IfcApi {
      * Delete the relation between a 2d model and a storey Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} storeyPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteStoreyPlanDeprecated(cloudPk, id, ifcPk, projectPk, storeyPk) {
-      return this.deleteStoreyPlanDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk)
+    deleteStoreyPlan(cloudPk, id, modelPk, projectPk, storeyPk) {
+      return this.deleteStoreyPlanWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3585,33 +3295,33 @@ export default class IfcApi {
      * Delete a system of a model
      * The IFC file will not be updated. The remaining systems are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC sytem or system type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteSystemDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid) {
+    deleteSystemWithHttpInfo(cloudPk, modelPk, projectPk, uuid) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteSystemDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteSystem");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteSystemDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteSystem");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteSystemDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteSystem");
       }
       // verify the required parameter 'uuid' is set
       if (uuid === undefined || uuid === null) {
-        throw new Error("Missing the required parameter 'uuid' when calling deleteSystemDeprecated");
+        throw new Error("Missing the required parameter 'uuid' when calling deleteSystem");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'uuid': uuid
       };
@@ -3627,7 +3337,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system/{uuid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -3637,13 +3347,13 @@ export default class IfcApi {
      * Delete a system of a model
      * The IFC file will not be updated. The remaining systems are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC sytem or system type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteSystemDeprecated(cloudPk, ifcPk, projectPk, uuid) {
-      return this.deleteSystemDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
+    deleteSystem(cloudPk, modelPk, projectPk, uuid) {
+      return this.deleteSystemWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3655,33 +3365,33 @@ export default class IfcApi {
      * The IFC file will not be updated. The remaining zones are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteZoneDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+    deleteZoneWithHttpInfo(cloudPk, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteZoneDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteZone");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteZoneDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling deleteZone");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteZoneDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteZone");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteZoneDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteZone");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -3696,7 +3406,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -3707,12 +3417,12 @@ export default class IfcApi {
      * The IFC file will not be updated. The remaining zones are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteZoneDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.deleteZoneDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+    deleteZone(cloudPk, id, modelPk, projectPk) {
+      return this.deleteZoneWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3724,38 +3434,38 @@ export default class IfcApi {
      * The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteZoneSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk) {
+    deleteZoneSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, zonePk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteZoneSpace");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling deleteZoneSpace");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteZoneSpaceDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteZoneSpace");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteZoneSpace");
       }
       // verify the required parameter 'zonePk' is set
       if (zonePk === undefined || zonePk === null) {
-        throw new Error("Missing the required parameter 'zonePk' when calling deleteZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'zonePk' when calling deleteZoneSpace");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'zone_pk': zonePk
       };
@@ -3771,7 +3481,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -3782,13 +3492,13 @@ export default class IfcApi {
      * The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteZoneSpaceDeprecated(cloudPk, id, ifcPk, projectPk, zonePk) {
-      return this.deleteZoneSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk)
+    deleteZoneSpace(cloudPk, id, modelPk, projectPk, zonePk) {
+      return this.deleteZoneSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, zonePk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3804,23 +3514,23 @@ export default class IfcApi {
      * @param {module:model/IfcExport} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcExport} and HTTP response
      */
-    exportIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk, data) {
+    exportIfcWithHttpInfo(cloudPk, id, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling exportIfcDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling exportIfc");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling exportIfcDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling exportIfc");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling exportIfcDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling exportIfc");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling exportIfcDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling exportIfc");
       }
 
       let pathParams = {
@@ -3840,7 +3550,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = IfcExport;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/export', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}/export', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -3855,8 +3565,8 @@ export default class IfcApi {
      * @param {module:model/IfcExport} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcExport}
      */
-    exportIfcDeprecated(cloudPk, id, projectPk, data) {
-      return this.exportIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk, data)
+    exportIfc(cloudPk, id, projectPk, data) {
+      return this.exportIfcWithHttpInfo(cloudPk, id, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3867,38 +3577,38 @@ export default class IfcApi {
      * Update all fields of an element
      * Update all fields of an element. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
      * @param {module:model/Element} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Element} and HTTP response
      */
-    fullUpdateElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, data) {
+    fullUpdateElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling fullUpdateElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateElement");
       }
       // verify the required parameter 'uuid' is set
       if (uuid === undefined || uuid === null) {
-        throw new Error("Missing the required parameter 'uuid' when calling fullUpdateElementDeprecated");
+        throw new Error("Missing the required parameter 'uuid' when calling fullUpdateElement");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling fullUpdateElementDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'uuid': uuid
       };
@@ -3914,7 +3624,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Element;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid}', 'PUT',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -3924,14 +3634,14 @@ export default class IfcApi {
      * Update all fields of an element
      * Update all fields of an element. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
      * @param {module:model/Element} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Element}
      */
-    fullUpdateElementDeprecated(cloudPk, ifcPk, projectPk, uuid, data) {
-      return this.fullUpdateElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, data)
+    fullUpdateElement(cloudPk, modelPk, projectPk, uuid, data) {
+      return this.fullUpdateElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3942,33 +3652,33 @@ export default class IfcApi {
      * Update all fields of all storeys
      *          This route allows you to create storeys, modify them, delete them and organize them by order.         If the optional field \"id\" is present, the storey will be modified. Otherwise, a new storey will be created.         If an \"id\" present in the api is not present in the list passed in parameter, the corresponding storey will be deleted.         A storey with \"is_site=True\" will be stored without order. There can be only one storey with \"is_site=True\"\"  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/StoreyRequest>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Storey>} and HTTP response
      */
-    fullUpdateStoreysDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    fullUpdateStoreysWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateStoreysDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateStoreys");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling fullUpdateStoreysDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling fullUpdateStoreys");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateStoreysDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateStoreys");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling fullUpdateStoreysDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling fullUpdateStoreys");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -3983,7 +3693,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Storey];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/full_update', 'PUT',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/full_update', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -3993,13 +3703,13 @@ export default class IfcApi {
      * Update all fields of all storeys
      *          This route allows you to create storeys, modify them, delete them and organize them by order.         If the optional field \"id\" is present, the storey will be modified. Otherwise, a new storey will be created.         If an \"id\" present in the api is not present in the list passed in parameter, the corresponding storey will be deleted.         A storey with \"is_site=True\" will be stored without order. There can be only one storey with \"is_site=True\"\"  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/StoreyRequest>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Storey>}
      */
-    fullUpdateStoreysDeprecated(cloudPk, ifcPk, projectPk, data) {
-      return this.fullUpdateStoreysDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    fullUpdateStoreys(cloudPk, modelPk, projectPk, data) {
+      return this.fullUpdateStoreysWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4010,33 +3720,33 @@ export default class IfcApi {
      * Retrieve one token created for this model
      * Retrieve one token created for this model Required scopes: ifc:token_manage, model:token_manage
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} token 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcAccessToken} and HTTP response
      */
-    getAccessTokenDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, token) {
+    getAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, token) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getAccessTokenDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getAccessToken");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getAccessTokenDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getAccessToken");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getAccessTokenDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getAccessToken");
       }
       // verify the required parameter 'token' is set
       if (token === undefined || token === null) {
-        throw new Error("Missing the required parameter 'token' when calling getAccessTokenDeprecated");
+        throw new Error("Missing the required parameter 'token' when calling getAccessToken");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'token': token
       };
@@ -4052,7 +3762,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = IfcAccessToken;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -4062,13 +3772,13 @@ export default class IfcApi {
      * Retrieve one token created for this model
      * Retrieve one token created for this model Required scopes: ifc:token_manage, model:token_manage
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} token 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcAccessToken}
      */
-    getAccessTokenDeprecated(cloudPk, ifcPk, projectPk, token) {
-      return this.getAccessTokenDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, token)
+    getAccessToken(cloudPk, modelPk, projectPk, token) {
+      return this.getAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, token)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4079,28 +3789,28 @@ export default class IfcApi {
      * Retrieve all tokens created for this model
      * Retrieve all tokens created for this model Required scopes: ifc:token_manage, model:token_manage
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/IfcAccessToken>} and HTTP response
      */
-    getAccessTokensDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
+    getAccessTokensWithHttpInfo(cloudPk, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getAccessTokensDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getAccessTokens");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getAccessTokensDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getAccessTokens");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getAccessTokensDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getAccessTokens");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -4115,7 +3825,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [IfcAccessToken];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -4125,288 +3835,12 @@ export default class IfcApi {
      * Retrieve all tokens created for this model
      * Retrieve all tokens created for this model Required scopes: ifc:token_manage, model:token_manage
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/IfcAccessToken>}
      */
-    getAccessTokensDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.getAccessTokensDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve a checker of a model
-     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcChecker} and HTTP response
-     */
-    getCheckerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckerDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getCheckerDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getCheckerDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getCheckerDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = IfcChecker;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve a checker of a model
-     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcChecker}
-     */
-    getCheckerDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.getCheckerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve one CheckerResult
-     * Retrieve one CheckerResult Required scopes: check:read
-     * @param {String} checkerPk 
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this checker result.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckerResult} and HTTP response
-     */
-    getCheckerResultDeprecatedWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'checkerPk' is set
-      if (checkerPk === undefined || checkerPk === null) {
-        throw new Error("Missing the required parameter 'checkerPk' when calling getCheckerResultDeprecated");
-      }
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckerResultDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getCheckerResultDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getCheckerResultDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getCheckerResultDeprecated");
-      }
-
-      let pathParams = {
-        'checker_pk': checkerPk,
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CheckerResult;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve one CheckerResult
-     * Retrieve one CheckerResult Required scopes: check:read
-     * @param {String} checkerPk 
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this checker result.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckerResult}
-     */
-    getCheckerResultDeprecated(checkerPk, cloudPk, id, ifcPk, projectPk) {
-      return this.getCheckerResultDeprecatedWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve all CheckerResults
-     * Retrieve all CheckerResults Required scopes: check:read
-     * @param {String} checkerPk 
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CheckerResult>} and HTTP response
-     */
-    getCheckerResultsDeprecatedWithHttpInfo(checkerPk, cloudPk, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'checkerPk' is set
-      if (checkerPk === undefined || checkerPk === null) {
-        throw new Error("Missing the required parameter 'checkerPk' when calling getCheckerResultsDeprecated");
-      }
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckerResultsDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getCheckerResultsDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getCheckerResultsDeprecated");
-      }
-
-      let pathParams = {
-        'checker_pk': checkerPk,
-        'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [CheckerResult];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve all CheckerResults
-     * Retrieve all CheckerResults Required scopes: check:read
-     * @param {String} checkerPk 
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CheckerResult>}
-     */
-    getCheckerResultsDeprecated(checkerPk, cloudPk, ifcPk, projectPk) {
-      return this.getCheckerResultsDeprecatedWithHttpInfo(checkerPk, cloudPk, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve all checkers of a model
-     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/IfcChecker>} and HTTP response
-     */
-    getCheckersDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getCheckersDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getCheckersDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getCheckersDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [IfcChecker];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve all checkers of a model
-     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/IfcChecker>}
-     */
-    getCheckersDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.getCheckersDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
+    getAccessTokens(cloudPk, modelPk, projectPk) {
+      return this.getAccessTokensWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4418,33 +3852,33 @@ export default class IfcApi {
      * Retrieve all classifications of an element Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
      */
-    getClassificationsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk) {
+    getClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getClassificationsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getClassificationsOfElement");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getClassificationsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling getClassificationsOfElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getClassificationsOfElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getClassificationsOfElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getClassificationsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getClassificationsOfElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -4459,7 +3893,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Classification];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/classification', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -4470,12 +3904,12 @@ export default class IfcApi {
      * Retrieve all classifications of an element Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
      */
-    getClassificationsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk) {
-      return this.getClassificationsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
+    getClassificationsOfElement(cloudPk, elementUuid, modelPk, projectPk) {
+      return this.getClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4487,33 +3921,33 @@ export default class IfcApi {
      * Retrieve all documents of an element Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
      */
-    getDocumentsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk) {
+    getDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getDocumentsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getDocumentsOfElement");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getDocumentsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling getDocumentsOfElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getDocumentsOfElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getDocumentsOfElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getDocumentsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getDocumentsOfElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -4528,7 +3962,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Document];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/documents', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -4539,12 +3973,12 @@ export default class IfcApi {
      * Retrieve all documents of an element Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
      */
-    getDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk) {
-      return this.getDocumentsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
+    getDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk) {
+      return this.getDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4555,33 +3989,33 @@ export default class IfcApi {
      * Retrieve an element of a model
      * Retrieve an element of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Element} and HTTP response
      */
-    getElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid) {
+    getElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getElement");
       }
       // verify the required parameter 'uuid' is set
       if (uuid === undefined || uuid === null) {
-        throw new Error("Missing the required parameter 'uuid' when calling getElementDeprecated");
+        throw new Error("Missing the required parameter 'uuid' when calling getElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'uuid': uuid
       };
@@ -4597,7 +4031,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Element;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -4607,13 +4041,13 @@ export default class IfcApi {
      * Retrieve an element of a model
      * Retrieve an element of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Element}
      */
-    getElementDeprecated(cloudPk, ifcPk, projectPk, uuid) {
-      return this.getElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
+    getElement(cloudPk, modelPk, projectPk, uuid) {
+      return this.getElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4624,7 +4058,7 @@ export default class IfcApi {
      * Retrieve all documents linked to any element
      * Retrieve all documents linked to any element with the list of uuids Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.type Filter the returned list by type
@@ -4632,25 +4066,25 @@ export default class IfcApi {
      * @param {String} opts.classificationNotation Filter the returned list by classification__notation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DocumentWithElementList>} and HTTP response
      */
-    getElementLinkedDocumentsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, opts) {
+    getElementLinkedDocumentsWithHttpInfo(cloudPk, modelPk, projectPk, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementLinkedDocumentsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementLinkedDocuments");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementLinkedDocumentsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getElementLinkedDocuments");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementLinkedDocumentsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementLinkedDocuments");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -4668,7 +4102,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [DocumentWithElementList];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/documents', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/documents', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -4678,7 +4112,7 @@ export default class IfcApi {
      * Retrieve all documents linked to any element
      * Retrieve all documents linked to any element with the list of uuids Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.type Filter the returned list by type
@@ -4686,8 +4120,8 @@ export default class IfcApi {
      * @param {String} opts.classificationNotation Filter the returned list by classification__notation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DocumentWithElementList>}
      */
-    getElementLinkedDocumentsDeprecated(cloudPk, ifcPk, projectPk, opts) {
-      return this.getElementLinkedDocumentsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, opts)
+    getElementLinkedDocuments(cloudPk, modelPk, projectPk, opts) {
+      return this.getElementLinkedDocumentsWithHttpInfo(cloudPk, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4700,38 +4134,38 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property set.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertySet} and HTTP response
      */
-    getElementPropertySetDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk) {
+    getElementPropertySetWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySet");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySet");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling getElementPropertySet");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getElementPropertySet");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySet");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -4746,7 +4180,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = PropertySet;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -4758,12 +4192,12 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property set.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertySet}
      */
-    getElementPropertySetDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk) {
-      return this.getElementPropertySetDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
+    getElementPropertySet(cloudPk, elementUuid, id, modelPk, projectPk) {
+      return this.getElementPropertySetWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4775,38 +4209,38 @@ export default class IfcApi {
      * Retrieve all Properties of a PropertySet Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Property>} and HTTP response
      */
-    getElementPropertySetPropertiesDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk) {
+    getElementPropertySetPropertiesWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, propertysetPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertiesDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetProperties");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertiesDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetProperties");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetPropertiesDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getElementPropertySetProperties");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertiesDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetProperties");
       }
       // verify the required parameter 'propertysetPk' is set
       if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertiesDeprecated");
+        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetProperties");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'propertyset_pk': propertysetPk
       };
@@ -4822,7 +4256,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Property];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -4833,13 +4267,96 @@ export default class IfcApi {
      * Retrieve all Properties of a PropertySet Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Property>}
      */
-    getElementPropertySetPropertiesDeprecated(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk) {
-      return this.getElementPropertySetPropertiesDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertysetPk)
+    getElementPropertySetProperties(cloudPk, elementUuid, modelPk, projectPk, propertysetPk) {
+      return this.getElementPropertySetPropertiesWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, propertysetPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a Property of a PropertySet
+     * Retrieve a Property of a PropertySet Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
+     */
+    getElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetProperty");
+      }
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetProperty");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getElementPropertySetProperty");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getElementPropertySetProperty");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetProperty");
+      }
+      // verify the required parameter 'propertysetPk' is set
+      if (propertysetPk === undefined || propertysetPk === null) {
+        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetProperty");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'element_uuid': elementUuid,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk,
+        'propertyset_pk': propertysetPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Property;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a Property of a PropertySet
+     * Retrieve a Property of a PropertySet Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
+     */
+    getElementPropertySetProperty(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk) {
+      return this.getElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4852,48 +4369,48 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
      */
-    getElementPropertySetPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk) {
+    getElementPropertySetPropertyDefinitionWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling getElementPropertySetPropertyDefinition");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetPropertyDefinitionDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'propertyPk' is set
       if (propertyPk === undefined || propertyPk === null) {
-        throw new Error("Missing the required parameter 'propertyPk' when calling getElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'propertyPk' when calling getElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'propertysetPk' is set
       if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDefinition");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'property_pk': propertyPk,
         'propertyset_pk': propertysetPk
@@ -4910,7 +4427,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = PropertyDefinition;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -4922,14 +4439,14 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
      */
-    getElementPropertySetPropertyDefinitionDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk) {
-      return this.getElementPropertySetPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk)
+    getElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk) {
+      return this.getElementPropertySetPropertyDefinitionWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4942,53 +4459,53 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertydefinitionPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
      */
-    getElementPropertySetPropertyDefinitionUnitDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
+    getElementPropertySetPropertyDefinitionUnitWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling getElementPropertySetPropertyDefinitionUnit");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetPropertyDefinitionUnitDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'propertyPk' is set
       if (propertyPk === undefined || propertyPk === null) {
-        throw new Error("Missing the required parameter 'propertyPk' when calling getElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'propertyPk' when calling getElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'propertydefinitionPk' is set
       if (propertydefinitionPk === undefined || propertydefinitionPk === null) {
-        throw new Error("Missing the required parameter 'propertydefinitionPk' when calling getElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'propertydefinitionPk' when calling getElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'propertysetPk' is set
       if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDefinitionUnit");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'property_pk': propertyPk,
         'propertydefinition_pk': propertydefinitionPk,
@@ -5006,7 +4523,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Unit;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit/{id}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -5018,15 +4535,15 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertydefinitionPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
      */
-    getElementPropertySetPropertyDefinitionUnitDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
-      return this.getElementPropertySetPropertyDefinitionUnitDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
+    getElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
+      return this.getElementPropertySetPropertyDefinitionUnitWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5038,48 +4555,48 @@ export default class IfcApi {
      * Retrieve all Units of a Definition Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertydefinitionPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Unit>} and HTTP response
      */
-    getElementPropertySetPropertyDefinitionUnitsDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
+    getElementPropertySetPropertyDefinitionUnitsWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinitionUnitsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinitionUnits");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDefinitionUnitsDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDefinitionUnits");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetPropertyDefinitionUnitsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getElementPropertySetPropertyDefinitionUnits");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinitionUnitsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinitionUnits");
       }
       // verify the required parameter 'propertyPk' is set
       if (propertyPk === undefined || propertyPk === null) {
-        throw new Error("Missing the required parameter 'propertyPk' when calling getElementPropertySetPropertyDefinitionUnitsDeprecated");
+        throw new Error("Missing the required parameter 'propertyPk' when calling getElementPropertySetPropertyDefinitionUnits");
       }
       // verify the required parameter 'propertydefinitionPk' is set
       if (propertydefinitionPk === undefined || propertydefinitionPk === null) {
-        throw new Error("Missing the required parameter 'propertydefinitionPk' when calling getElementPropertySetPropertyDefinitionUnitsDeprecated");
+        throw new Error("Missing the required parameter 'propertydefinitionPk' when calling getElementPropertySetPropertyDefinitionUnits");
       }
       // verify the required parameter 'propertysetPk' is set
       if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDefinitionUnitsDeprecated");
+        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDefinitionUnits");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'property_pk': propertyPk,
         'propertydefinition_pk': propertydefinitionPk,
@@ -5097,7 +4614,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Unit];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -5108,15 +4625,15 @@ export default class IfcApi {
      * Retrieve all Units of a Definition Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertydefinitionPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Unit>}
      */
-    getElementPropertySetPropertyDefinitionUnitsDeprecated(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
-      return this.getElementPropertySetPropertyDefinitionUnitsDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
+    getElementPropertySetPropertyDefinitionUnits(cloudPk, elementUuid, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
+      return this.getElementPropertySetPropertyDefinitionUnitsWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5128,43 +4645,43 @@ export default class IfcApi {
      * Retrieve all Definitions of a PropertySet Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyDefinition>} and HTTP response
      */
-    getElementPropertySetPropertyDefinitionsDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk) {
+    getElementPropertySetPropertyDefinitionsWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, propertyPk, propertysetPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinitionsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDefinitions");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDefinitionsDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDefinitions");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetPropertyDefinitionsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getElementPropertySetPropertyDefinitions");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinitionsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDefinitions");
       }
       // verify the required parameter 'propertyPk' is set
       if (propertyPk === undefined || propertyPk === null) {
-        throw new Error("Missing the required parameter 'propertyPk' when calling getElementPropertySetPropertyDefinitionsDeprecated");
+        throw new Error("Missing the required parameter 'propertyPk' when calling getElementPropertySetPropertyDefinitions");
       }
       // verify the required parameter 'propertysetPk' is set
       if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDefinitionsDeprecated");
+        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDefinitions");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'property_pk': propertyPk,
         'propertyset_pk': propertysetPk
@@ -5181,7 +4698,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [PropertyDefinition];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -5192,97 +4709,14 @@ export default class IfcApi {
      * Retrieve all Definitions of a PropertySet Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyDefinition>}
      */
-    getElementPropertySetPropertyDefinitionsDeprecated(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk) {
-      return this.getElementPropertySetPropertyDefinitionsDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, propertyPk, propertysetPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve a Property of a PropertySet
-     * Retrieve a Property of a PropertySet Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} elementUuid 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} propertysetPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
-     */
-    getElementPropertySetPropertyDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'propertysetPk' is set
-      if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling getElementPropertySetPropertyDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'element_uuid': elementUuid,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk,
-        'propertyset_pk': propertysetPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = Property;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve a Property of a PropertySet
-     * Retrieve a Property of a PropertySet Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} elementUuid 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} propertysetPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
-     */
-    getElementPropertySetPropertyDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk) {
-      return this.getElementPropertySetPropertyDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk)
+    getElementPropertySetPropertyDefinitions(cloudPk, elementUuid, modelPk, projectPk, propertyPk, propertysetPk) {
+      return this.getElementPropertySetPropertyDefinitionsWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, propertyPk, propertysetPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5294,33 +4728,33 @@ export default class IfcApi {
      * Retrieve all PropertySets of an element Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertySet>} and HTTP response
      */
-    getElementPropertySetsDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk) {
+    getElementPropertySetsWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySetsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementPropertySets");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySetsDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling getElementPropertySets");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementPropertySetsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getElementPropertySets");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySetsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementPropertySets");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -5335,7 +4769,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [PropertySet];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -5346,12 +4780,12 @@ export default class IfcApi {
      * Retrieve all PropertySets of an element Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertySet>}
      */
-    getElementPropertySetsDeprecated(cloudPk, elementUuid, ifcPk, projectPk) {
-      return this.getElementPropertySetsDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
+    getElementPropertySets(cloudPk, elementUuid, modelPk, projectPk) {
+      return this.getElementPropertySetsWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5362,7 +4796,7 @@ export default class IfcApi {
      * Retrieve all elements of a model
      * Retrieve all elements of a model. If not filtered, the json may be very large. To efficently retrieve all elements and their data, see getRawElements Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.type Filter the returned list by type
@@ -5370,25 +4804,25 @@ export default class IfcApi {
      * @param {String} opts.classificationNotation Filter the returned list by classification__notation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Element>} and HTTP response
      */
-    getElementsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, opts) {
+    getElementsWithHttpInfo(cloudPk, modelPk, projectPk, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElements");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getElements");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getElements");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -5406,7 +4840,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Element];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -5416,7 +4850,7 @@ export default class IfcApi {
      * Retrieve all elements of a model
      * Retrieve all elements of a model. If not filtered, the json may be very large. To efficently retrieve all elements and their data, see getRawElements Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.type Filter the returned list by type
@@ -5424,8 +4858,8 @@ export default class IfcApi {
      * @param {String} opts.classificationNotation Filter the returned list by classification__notation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Element>}
      */
-    getElementsDeprecated(cloudPk, ifcPk, projectPk, opts) {
-      return this.getElementsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, opts)
+    getElements(cloudPk, modelPk, projectPk, opts) {
+      return this.getElementsWithHttpInfo(cloudPk, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5436,34 +4870,34 @@ export default class IfcApi {
      * Retrieve all elements with the classification
      * Retrieve all elements with the classification Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
      * @param {String} modelClassificationPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Element>} and HTTP response
      */
-    getElementsFromClassificationDeprecatedWithHttpInfo(cloudPk, ifcPk, modelClassificationPk, projectPk) {
+    getElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getElementsFromClassificationDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getElementsFromClassificationDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getElementsFromClassification");
       }
       // verify the required parameter 'modelClassificationPk' is set
       if (modelClassificationPk === undefined || modelClassificationPk === null) {
-        throw new Error("Missing the required parameter 'modelClassificationPk' when calling getElementsFromClassificationDeprecated");
+        throw new Error("Missing the required parameter 'modelClassificationPk' when calling getElementsFromClassification");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getElementsFromClassification");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getElementsFromClassificationDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getElementsFromClassification");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
         'model_classification_pk': modelClassificationPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -5478,7 +4912,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Element];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{model_classification_pk}/element', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification/{model_classification_pk}/element', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -5488,13 +4922,13 @@ export default class IfcApi {
      * Retrieve all elements with the classification
      * Retrieve all elements with the classification Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
      * @param {String} modelClassificationPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Element>}
      */
-    getElementsFromClassificationDeprecated(cloudPk, ifcPk, modelClassificationPk, projectPk) {
-      return this.getElementsFromClassificationDeprecatedWithHttpInfo(cloudPk, ifcPk, modelClassificationPk, projectPk)
+    getElementsFromClassification(cloudPk, modelClassificationPk, modelPk, projectPk) {
+      return this.getElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5505,28 +4939,28 @@ export default class IfcApi {
      * Retrieve all classifications in a model
      * Retrieve all classifications in a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
      */
-    getIfcClassificationsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
+    getIfcClassificationsWithHttpInfo(cloudPk, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcClassificationsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcClassifications");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcClassificationsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getIfcClassifications");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcClassificationsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getIfcClassifications");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -5541,7 +4975,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Classification];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -5551,12 +4985,812 @@ export default class IfcApi {
      * Retrieve all classifications in a model
      * Retrieve all classifications in a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
      */
-    getIfcClassificationsDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.getIfcClassificationsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
+    getIfcClassifications(cloudPk, modelPk, projectPk) {
+      return this.getIfcClassificationsWithHttpInfo(cloudPk, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a material of a model
+     * Retrieve a material of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this material.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Material} and HTTP response
+     */
+    getIfcMaterialWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcMaterial");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfcMaterial");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getIfcMaterial");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getIfcMaterial");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Material;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/material/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a material of a model
+     * Retrieve a material of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this material.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Material}
+     */
+    getIfcMaterial(cloudPk, id, modelPk, projectPk) {
+      return this.getIfcMaterialWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all materials of a model
+     * Retrieve all materials of a model. Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Material>} and HTTP response
+     */
+    getIfcMaterialsWithHttpInfo(cloudPk, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcMaterials");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getIfcMaterials");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getIfcMaterials");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Material];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/material', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all materials of a model
+     * Retrieve all materials of a model. Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Material>}
+     */
+    getIfcMaterials(cloudPk, modelPk, projectPk) {
+      return this.getIfcMaterialsWithHttpInfo(cloudPk, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all Properties of a model
+     * Retrieve all PropertySets of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Property>} and HTTP response
+     */
+    getIfcPropertiesWithHttpInfo(cloudPk, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcProperties");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getIfcProperties");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getIfcProperties");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Property];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all Properties of a model
+     * Retrieve all PropertySets of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Property>}
+     */
+    getIfcProperties(cloudPk, modelPk, projectPk) {
+      return this.getIfcPropertiesWithHttpInfo(cloudPk, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a Property of a model
+     * Retrieve a Property of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
+     */
+    getIfcPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcProperty");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfcProperty");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getIfcProperty");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getIfcProperty");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Property;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a Property of a model
+     * Retrieve a Property of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
+     */
+    getIfcProperty(cloudPk, id, modelPk, projectPk) {
+      return this.getIfcPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a PropertyDefinition of a model
+     * Retrieve a PropertyDefinition of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property definition.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
+     */
+    getIfcPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcPropertyDefinition");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfcPropertyDefinition");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getIfcPropertyDefinition");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getIfcPropertyDefinition");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PropertyDefinition;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a PropertyDefinition of a model
+     * Retrieve a PropertyDefinition of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property definition.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
+     */
+    getIfcPropertyDefinition(cloudPk, id, modelPk, projectPk) {
+      return this.getIfcPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all PropertyDefinitions of a model
+     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyDefinition>} and HTTP response
+     */
+    getIfcPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcPropertyDefinitions");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getIfcPropertyDefinitions");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getIfcPropertyDefinitions");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [PropertyDefinition];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all PropertyDefinitions of a model
+     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyDefinition>}
+     */
+    getIfcPropertyDefinitions(cloudPk, modelPk, projectPk) {
+      return this.getIfcPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a Unit of a model
+     * Retrieve a Unit of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this unit.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
+     */
+    getIfcUnitWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcUnit");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getIfcUnit");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getIfcUnit");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getIfcUnit");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Unit;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a Unit of a model
+     * Retrieve a Unit of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this unit.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
+     */
+    getIfcUnit(cloudPk, id, modelPk, projectPk) {
+      return this.getIfcUnitWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all Units of a model
+     * Retrieve all Units of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Unit>} and HTTP response
+     */
+    getIfcUnitsWithHttpInfo(cloudPk, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcUnits");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getIfcUnits");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getIfcUnits");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Unit];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all Units of a model
+     * Retrieve all Units of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Unit>}
+     */
+    getIfcUnits(cloudPk, modelPk, projectPk) {
+      return this.getIfcUnitsWithHttpInfo(cloudPk, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a layer of a model
+     * Retrieve a layer of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Layer} and HTTP response
+     */
+    getLayerWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getLayer");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getLayer");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getLayer");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getLayer");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Layer;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a layer of a model
+     * Retrieve a layer of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Layer}
+     */
+    getLayer(cloudPk, id, modelPk, projectPk) {
+      return this.getLayerWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all layers of a model
+     * Retrieve all layers of a model. Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Layer>} and HTTP response
+     */
+    getLayersWithHttpInfo(cloudPk, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getLayers");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getLayers");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getLayers");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Layer];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all layers of a model
+     * Retrieve all layers of a model. Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Layer>}
+     */
+    getLayers(cloudPk, modelPk, projectPk) {
+      return this.getLayersWithHttpInfo(cloudPk, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a material of a model
+     * Retrieve a material of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this material.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Material} and HTTP response
+     */
+    getMaterialWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getMaterial");
+      }
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling getMaterial");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getMaterial");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getMaterial");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getMaterial");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'element_uuid': elementUuid,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Material;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/material/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a material of a model
+     * Retrieve a material of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this material.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Material}
+     */
+    getMaterial(cloudPk, elementUuid, id, modelPk, projectPk) {
+      return this.getMaterialWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all materials of a model
+     * Retrieve all materials of a model. Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Material>} and HTTP response
+     */
+    getMaterialsWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getMaterials");
+      }
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling getMaterials");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getMaterials");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getMaterials");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'element_uuid': elementUuid,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Material];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/material', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all materials of a model
+     * Retrieve all materials of a model. Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Material>}
+     */
+    getMaterials(cloudPk, elementUuid, modelPk, projectPk) {
+      return this.getMaterialsWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5571,19 +5805,19 @@ export default class IfcApi {
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Model} and HTTP response
      */
-    getIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk) {
+    getModelWithHttpInfo(cloudPk, id, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getModel");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling getModel");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getModel");
       }
 
       let pathParams = {
@@ -5603,7 +5837,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Model;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -5617,532 +5851,8 @@ export default class IfcApi {
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Model}
      */
-    getIfcDeprecated(cloudPk, id, projectPk) {
-      return this.getIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve a material of a model
-     * Retrieve a material of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this material.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Material} and HTTP response
-     */
-    getIfcMaterialDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcMaterialDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcMaterialDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcMaterialDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcMaterialDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = Material;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/material/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve a material of a model
-     * Retrieve a material of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this material.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Material}
-     */
-    getIfcMaterialDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.getIfcMaterialDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve all materials of a model
-     * Retrieve all materials of a model. Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Material>} and HTTP response
-     */
-    getIfcMaterialsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcMaterialsDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcMaterialsDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcMaterialsDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [Material];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/material', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve all materials of a model
-     * Retrieve all materials of a model. Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Material>}
-     */
-    getIfcMaterialsDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.getIfcMaterialsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve all Properties of a model
-     * Retrieve all PropertySets of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Property>} and HTTP response
-     */
-    getIfcPropertiesDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcPropertiesDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcPropertiesDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcPropertiesDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [Property];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve all Properties of a model
-     * Retrieve all PropertySets of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Property>}
-     */
-    getIfcPropertiesDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.getIfcPropertiesDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve a PropertyDefinition of a model
-     * Retrieve a PropertyDefinition of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
-     */
-    getIfcPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcPropertyDefinitionDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcPropertyDefinitionDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcPropertyDefinitionDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcPropertyDefinitionDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = PropertyDefinition;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve a PropertyDefinition of a model
-     * Retrieve a PropertyDefinition of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
-     */
-    getIfcPropertyDefinitionDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.getIfcPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve all PropertyDefinitions of a model
-     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyDefinition>} and HTTP response
-     */
-    getIfcPropertyDefinitionsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcPropertyDefinitionsDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcPropertyDefinitionsDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcPropertyDefinitionsDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [PropertyDefinition];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve all PropertyDefinitions of a model
-     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyDefinition>}
-     */
-    getIfcPropertyDefinitionsDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.getIfcPropertyDefinitionsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve a Property of a model
-     * Retrieve a Property of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
-     */
-    getIfcPropertyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcPropertyDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcPropertyDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcPropertyDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcPropertyDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = Property;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve a Property of a model
-     * Retrieve a Property of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
-     */
-    getIfcPropertyDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.getIfcPropertyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve a Unit of a model
-     * Retrieve a Unit of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
-     */
-    getIfcUnitDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcUnitDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcUnitDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcUnitDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcUnitDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = Unit;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve a Unit of a model
-     * Retrieve a Unit of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
-     */
-    getIfcUnitDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.getIfcUnitDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve all Units of a model
-     * Retrieve all Units of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Unit>} and HTTP response
-     */
-    getIfcUnitsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcUnitsDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getIfcUnitsDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcUnitsDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [Unit];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve all Units of a model
-     * Retrieve all Units of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Unit>}
-     */
-    getIfcUnitsDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.getIfcUnitsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
+    getModel(cloudPk, id, projectPk) {
+      return this.getModelWithHttpInfo(cloudPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6160,16 +5870,16 @@ export default class IfcApi {
      * @param {String} opts.type Filter the returned list by type
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Model>} and HTTP response
      */
-    getIfcsDeprecatedWithHttpInfo(cloudPk, projectPk, opts) {
+    getModelsWithHttpInfo(cloudPk, projectPk, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getModels");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getModels");
       }
 
       let pathParams = {
@@ -6191,7 +5901,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Model];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6208,284 +5918,8 @@ export default class IfcApi {
      * @param {String} opts.type Filter the returned list by type
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Model>}
      */
-    getIfcsDeprecated(cloudPk, projectPk, opts) {
-      return this.getIfcsDeprecatedWithHttpInfo(cloudPk, projectPk, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve a layer of a model
-     * Retrieve a layer of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this layer.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Layer} and HTTP response
-     */
-    getLayerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getLayerDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getLayerDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getLayerDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getLayerDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = Layer;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve a layer of a model
-     * Retrieve a layer of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this layer.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Layer}
-     */
-    getLayerDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.getLayerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve all layers of a model
-     * Retrieve all layers of a model. Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Layer>} and HTTP response
-     */
-    getLayersDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getLayersDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getLayersDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getLayersDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [Layer];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve all layers of a model
-     * Retrieve all layers of a model. Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Layer>}
-     */
-    getLayersDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.getLayersDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve a material of a model
-     * Retrieve a material of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} elementUuid 
-     * @param {Number} id A unique integer value identifying this material.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Material} and HTTP response
-     */
-    getMaterialDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getMaterialDeprecated");
-      }
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getMaterialDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getMaterialDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getMaterialDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getMaterialDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'element_uuid': elementUuid,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = Material;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/material/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve a material of a model
-     * Retrieve a material of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} elementUuid 
-     * @param {Number} id A unique integer value identifying this material.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Material}
-     */
-    getMaterialDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk) {
-      return this.getMaterialDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve all materials of a model
-     * Retrieve all materials of a model. Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} elementUuid 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Material>} and HTTP response
-     */
-    getMaterialsDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getMaterialsDeprecated");
-      }
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling getMaterialsDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getMaterialsDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getMaterialsDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [Material];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/material', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve all materials of a model
-     * Retrieve all materials of a model. Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} elementUuid 
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Material>}
-     */
-    getMaterialsDeprecated(cloudPk, elementUuid, ifcPk, projectPk) {
-      return this.getMaterialsDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
+    getModels(cloudPk, projectPk, opts) {
+      return this.getModelsWithHttpInfo(cloudPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6497,38 +5931,38 @@ export default class IfcApi {
      * Retrieve the postioning of the plan in the storey Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} storeyPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PositioningPlan} and HTTP response
      */
-    getPlanPositioningDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk) {
+    getPlanPositioningWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getPlanPositioningDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getPlanPositioning");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getPlanPositioningDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling getPlanPositioning");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getPlanPositioningDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getPlanPositioning");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getPlanPositioningDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getPlanPositioning");
       }
       // verify the required parameter 'storeyPk' is set
       if (storeyPk === undefined || storeyPk === null) {
-        throw new Error("Missing the required parameter 'storeyPk' when calling getPlanPositioningDeprecated");
+        throw new Error("Missing the required parameter 'storeyPk' when calling getPlanPositioning");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'storey_pk': storeyPk
       };
@@ -6544,7 +5978,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = PositioningPlan;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/positioning', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id}/positioning', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6555,13 +5989,13 @@ export default class IfcApi {
      * Retrieve the postioning of the plan in the storey Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} storeyPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PositioningPlan}
      */
-    getPlanPositioningDeprecated(cloudPk, id, ifcPk, projectPk, storeyPk) {
-      return this.getPlanPositioningDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk)
+    getPlanPositioning(cloudPk, id, modelPk, projectPk, storeyPk) {
+      return this.getPlanPositioningWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6573,33 +6007,33 @@ export default class IfcApi {
      *  Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this processor handler.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProcessorHandler} and HTTP response
      */
-    getProcessorHandlerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+    getProcessorHandlerWithHttpInfo(cloudPk, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getProcessorHandlerDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProcessorHandler");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getProcessorHandlerDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling getProcessorHandler");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getProcessorHandlerDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getProcessorHandler");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getProcessorHandlerDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getProcessorHandler");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -6614,7 +6048,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = ProcessorHandler;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6625,12 +6059,12 @@ export default class IfcApi {
      *  Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this processor handler.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProcessorHandler}
      */
-    getProcessorHandlerDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.getProcessorHandlerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+    getProcessorHandler(cloudPk, id, modelPk, projectPk) {
+      return this.getProcessorHandlerWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6641,28 +6075,28 @@ export default class IfcApi {
      * Get all processor handlers
      *  Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProcessorHandler>} and HTTP response
      */
-    getProcessorHandlersDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
+    getProcessorHandlersWithHttpInfo(cloudPk, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getProcessorHandlersDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProcessorHandlers");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getProcessorHandlersDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getProcessorHandlers");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getProcessorHandlersDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getProcessorHandlers");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -6677,7 +6111,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [ProcessorHandler];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6687,12 +6121,12 @@ export default class IfcApi {
      * Get all processor handlers
      *  Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProcessorHandler>}
      */
-    getProcessorHandlersDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.getProcessorHandlersDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
+    getProcessorHandlers(cloudPk, modelPk, projectPk) {
+      return this.getProcessorHandlersWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6704,33 +6138,33 @@ export default class IfcApi {
      * Retrieve a PropertySet of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertySet} and HTTP response
      */
-    getPropertySetDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+    getPropertySetWithHttpInfo(cloudPk, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getPropertySet");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling getPropertySet");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getPropertySetDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getPropertySet");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getPropertySet");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -6745,7 +6179,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = PropertySet;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6756,12 +6190,12 @@ export default class IfcApi {
      * Retrieve a PropertySet of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertySet}
      */
-    getPropertySetDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.getPropertySetDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+    getPropertySet(cloudPk, id, modelPk, projectPk) {
+      return this.getPropertySetWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6772,28 +6206,28 @@ export default class IfcApi {
      * Retrieve all PropertySets of a model
      * Retrieve all PropertySets of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertySet>} and HTTP response
      */
-    getPropertySetsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
+    getPropertySetsWithHttpInfo(cloudPk, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getPropertySetsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getPropertySets");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getPropertySetsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getPropertySets");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getPropertySetsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getPropertySets");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -6808,7 +6242,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [PropertySet];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6818,12 +6252,12 @@ export default class IfcApi {
      * Retrieve all PropertySets of a model
      * Retrieve all PropertySets of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertySet>}
      */
-    getPropertySetsDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.getPropertySetsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
+    getPropertySets(cloudPk, modelPk, projectPk) {
+      return this.getPropertySetsWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6834,7 +6268,7 @@ export default class IfcApi {
      * Retrieve all elements in a optimized format
      *          Returns elements, property_sets, properties, definitions and units in a JSON optimized structure  Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.type Filter the returned list by type
@@ -6842,25 +6276,25 @@ export default class IfcApi {
      * @param {String} opts.classificationNotation Filter the returned list by classification__notation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RawElements} and HTTP response
      */
-    getRawElementsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, opts) {
+    getRawElementsWithHttpInfo(cloudPk, modelPk, projectPk, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getRawElementsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getRawElements");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getRawElementsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getRawElements");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getRawElementsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getRawElements");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -6878,7 +6312,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = RawElements;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/raw', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6888,7 +6322,7 @@ export default class IfcApi {
      * Retrieve all elements in a optimized format
      *          Returns elements, property_sets, properties, definitions and units in a JSON optimized structure  Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.type Filter the returned list by type
@@ -6896,8 +6330,8 @@ export default class IfcApi {
      * @param {String} opts.classificationNotation Filter the returned list by classification__notation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RawElements}
      */
-    getRawElementsDeprecated(cloudPk, ifcPk, projectPk, opts) {
-      return this.getRawElementsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, opts)
+    getRawElements(cloudPk, modelPk, projectPk, opts) {
+      return this.getRawElementsWithHttpInfo(cloudPk, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6908,33 +6342,33 @@ export default class IfcApi {
      * Retrieve an element of a model with a simple value representation
      *          Retrieve an element of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }  Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SimpleElement} and HTTP response
      */
-    getSimpleElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid) {
+    getSimpleElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getSimpleElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getSimpleElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getSimpleElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getSimpleElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getSimpleElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getSimpleElement");
       }
       // verify the required parameter 'uuid' is set
       if (uuid === undefined || uuid === null) {
-        throw new Error("Missing the required parameter 'uuid' when calling getSimpleElementDeprecated");
+        throw new Error("Missing the required parameter 'uuid' when calling getSimpleElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'uuid': uuid
       };
@@ -6950,7 +6384,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = SimpleElement;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid}/simple', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid}/simple', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6960,13 +6394,13 @@ export default class IfcApi {
      * Retrieve an element of a model with a simple value representation
      *          Retrieve an element of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }  Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SimpleElement}
      */
-    getSimpleElementDeprecated(cloudPk, ifcPk, projectPk, uuid) {
-      return this.getSimpleElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
+    getSimpleElement(cloudPk, modelPk, projectPk, uuid) {
+      return this.getSimpleElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6977,7 +6411,7 @@ export default class IfcApi {
      * Retrieve all elements of a model with a simple value representation
      *          Retrieve all elements of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }  Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.type Filter the returned list by type
@@ -6985,25 +6419,25 @@ export default class IfcApi {
      * @param {String} opts.classificationNotation Filter the returned list by classification__notation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SimpleElement} and HTTP response
      */
-    getSimpleElementsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, opts) {
+    getSimpleElementsWithHttpInfo(cloudPk, modelPk, projectPk, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getSimpleElementsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getSimpleElements");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getSimpleElementsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getSimpleElements");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getSimpleElementsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getSimpleElements");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -7021,7 +6455,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = SimpleElement;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/simple', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/simple', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7031,7 +6465,7 @@ export default class IfcApi {
      * Retrieve all elements of a model with a simple value representation
      *          Retrieve all elements of a model with a simple value representation         Format response :             {                 :element_uuid: {                     \"attributes\": {                         :property_name: value,                         :property_name: value                     },                     :property_set_name: {                         :property_name: value,                         :property_name: value                     }                 }             }  Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.type Filter the returned list by type
@@ -7039,8 +6473,8 @@ export default class IfcApi {
      * @param {String} opts.classificationNotation Filter the returned list by classification__notation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SimpleElement}
      */
-    getSimpleElementsDeprecated(cloudPk, ifcPk, projectPk, opts) {
-      return this.getSimpleElementsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, opts)
+    getSimpleElements(cloudPk, modelPk, projectPk, opts) {
+      return this.getSimpleElementsWithHttpInfo(cloudPk, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7052,33 +6486,33 @@ export default class IfcApi {
      * Retrieve one space of the model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Space} and HTTP response
      */
-    getSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+    getSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getSpaceDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getSpace");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getSpaceDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling getSpace");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getSpaceDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getSpace");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getSpaceDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getSpace");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -7093,7 +6527,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Space;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7104,12 +6538,12 @@ export default class IfcApi {
      * Retrieve one space of the model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Space}
      */
-    getSpaceDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.getSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+    getSpace(cloudPk, id, modelPk, projectPk) {
+      return this.getSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7120,28 +6554,28 @@ export default class IfcApi {
      * Retrieve all spaces of the model
      * Retrieve all spaces of the model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Space>} and HTTP response
      */
-    getSpacesDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
+    getSpacesWithHttpInfo(cloudPk, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getSpacesDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getSpaces");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getSpacesDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getSpaces");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getSpacesDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getSpaces");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -7156,7 +6590,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Space];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7166,12 +6600,12 @@ export default class IfcApi {
      * Retrieve all spaces of the model
      * Retrieve all spaces of the model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Space>}
      */
-    getSpacesDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.getSpacesDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
+    getSpaces(cloudPk, modelPk, projectPk) {
+      return this.getSpacesWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7183,33 +6617,33 @@ export default class IfcApi {
      * Retrieve a storey of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
-    getStoreyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+    getStoreyWithHttpInfo(cloudPk, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getStoreyDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getStorey");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getStoreyDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling getStorey");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getStoreyDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getStorey");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getStoreyDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getStorey");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -7224,7 +6658,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Storey;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{id}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7235,12 +6669,12 @@ export default class IfcApi {
      * Retrieve a storey of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
-    getStoreyDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.getStoreyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+    getStorey(cloudPk, id, modelPk, projectPk) {
+      return this.getStoreyWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7251,28 +6685,28 @@ export default class IfcApi {
      * Retrieve all storeys of a model
      * Retrieve all storeys of a model. Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Storey>} and HTTP response
      */
-    getStoreysDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
+    getStoreysWithHttpInfo(cloudPk, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getStoreysDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getStoreys");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getStoreysDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getStoreys");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getStoreysDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getStoreys");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -7287,7 +6721,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Storey];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7297,12 +6731,12 @@ export default class IfcApi {
      * Retrieve all storeys of a model
      * Retrieve all storeys of a model. Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Storey>}
      */
-    getStoreysDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.getStoreysDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
+    getStoreys(cloudPk, modelPk, projectPk) {
+      return this.getStoreysWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7313,33 +6747,33 @@ export default class IfcApi {
      * Retrieve a system of a model
      * Retrieve a system of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC sytem or system type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/System} and HTTP response
      */
-    getSystemDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid) {
+    getSystemWithHttpInfo(cloudPk, modelPk, projectPk, uuid) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getSystemDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getSystem");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getSystemDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getSystem");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getSystemDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getSystem");
       }
       // verify the required parameter 'uuid' is set
       if (uuid === undefined || uuid === null) {
-        throw new Error("Missing the required parameter 'uuid' when calling getSystemDeprecated");
+        throw new Error("Missing the required parameter 'uuid' when calling getSystem");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'uuid': uuid
       };
@@ -7355,7 +6789,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = System;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system/{uuid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7365,13 +6799,13 @@ export default class IfcApi {
      * Retrieve a system of a model
      * Retrieve a system of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC sytem or system type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/System}
      */
-    getSystemDeprecated(cloudPk, ifcPk, projectPk, uuid) {
-      return this.getSystemDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
+    getSystem(cloudPk, modelPk, projectPk, uuid) {
+      return this.getSystemWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7382,28 +6816,28 @@ export default class IfcApi {
      * Retrieve all systems of a model
      * Retrieve all systems of a model. Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/System>} and HTTP response
      */
-    getSystemsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
+    getSystemsWithHttpInfo(cloudPk, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getSystemsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getSystems");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getSystemsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getSystems");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getSystemsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getSystems");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -7418,7 +6852,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [System];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7428,12 +6862,12 @@ export default class IfcApi {
      * Retrieve all systems of a model
      * Retrieve all systems of a model. Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/System>}
      */
-    getSystemsDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.getSystemsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
+    getSystems(cloudPk, modelPk, projectPk) {
+      return this.getSystemsWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7445,33 +6879,33 @@ export default class IfcApi {
      * Retrieve one zone of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Zone} and HTTP response
      */
-    getZoneDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+    getZoneWithHttpInfo(cloudPk, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getZoneDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getZone");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getZoneDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling getZone");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getZoneDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getZone");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getZoneDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getZone");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -7486,7 +6920,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Zone;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7497,12 +6931,12 @@ export default class IfcApi {
      * Retrieve one zone of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Zone}
      */
-    getZoneDeprecated(cloudPk, id, ifcPk, projectPk) {
-      return this.getZoneDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+    getZone(cloudPk, id, modelPk, projectPk) {
+      return this.getZoneWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7514,38 +6948,38 @@ export default class IfcApi {
      * Retrieve one space of a zone Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ZoneSpace} and HTTP response
      */
-    getZoneSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk) {
+    getZoneSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, zonePk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getZoneSpace");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling getZoneSpace");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getZoneSpaceDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getZoneSpace");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getZoneSpace");
       }
       // verify the required parameter 'zonePk' is set
       if (zonePk === undefined || zonePk === null) {
-        throw new Error("Missing the required parameter 'zonePk' when calling getZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'zonePk' when calling getZoneSpace");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'zone_pk': zonePk
       };
@@ -7561,7 +6995,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = ZoneSpace;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7572,13 +7006,13 @@ export default class IfcApi {
      * Retrieve one space of a zone Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ZoneSpace}
      */
-    getZoneSpaceDeprecated(cloudPk, id, ifcPk, projectPk, zonePk) {
-      return this.getZoneSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk)
+    getZoneSpace(cloudPk, id, modelPk, projectPk, zonePk) {
+      return this.getZoneSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, zonePk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7589,33 +7023,33 @@ export default class IfcApi {
      * Retrieve all spaces of a zone
      * Retrieve all spaces of a zone Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ZoneSpace>} and HTTP response
      */
-    getZoneSpacesDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, zonePk) {
+    getZoneSpacesWithHttpInfo(cloudPk, modelPk, projectPk, zonePk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getZoneSpacesDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getZoneSpaces");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getZoneSpacesDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getZoneSpaces");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getZoneSpacesDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getZoneSpaces");
       }
       // verify the required parameter 'zonePk' is set
       if (zonePk === undefined || zonePk === null) {
-        throw new Error("Missing the required parameter 'zonePk' when calling getZoneSpacesDeprecated");
+        throw new Error("Missing the required parameter 'zonePk' when calling getZoneSpaces");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'zone_pk': zonePk
       };
@@ -7631,7 +7065,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [ZoneSpace];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7641,13 +7075,13 @@ export default class IfcApi {
      * Retrieve all spaces of a zone
      * Retrieve all spaces of a zone Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ZoneSpace>}
      */
-    getZoneSpacesDeprecated(cloudPk, ifcPk, projectPk, zonePk) {
-      return this.getZoneSpacesDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, zonePk)
+    getZoneSpaces(cloudPk, modelPk, projectPk, zonePk) {
+      return this.getZoneSpacesWithHttpInfo(cloudPk, modelPk, projectPk, zonePk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7658,31 +7092,31 @@ export default class IfcApi {
      * Retrieve zones of a model
      * Retrieve parent zones of a model. Children zones we'll be in the 'zones' field Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.color Filter the returned list by color
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Zone>} and HTTP response
      */
-    getZonesDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, opts) {
+    getZonesWithHttpInfo(cloudPk, modelPk, projectPk, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getZonesDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling getZones");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getZonesDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getZones");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getZonesDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling getZones");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -7698,7 +7132,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Zone];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7708,89 +7142,14 @@ export default class IfcApi {
      * Retrieve zones of a model
      * Retrieve parent zones of a model. Children zones we'll be in the 'zones' field Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Object} opts Optional parameters
      * @param {String} opts.color Filter the returned list by color
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Zone>}
      */
-    getZonesDeprecated(cloudPk, ifcPk, projectPk, opts) {
-      return this.getZonesDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Launch a new check on the model
-     * Starts a new check in the checker Required scopes: check:write, ifc:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/IfcChecker} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    launchNewCheckDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling launchNewCheckDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling launchNewCheckDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling launchNewCheckDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling launchNewCheckDeprecated");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling launchNewCheckDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = [];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}/launch-check', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Launch a new check on the model
-     * Starts a new check in the checker Required scopes: check:write, ifc:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/IfcChecker} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    launchNewCheckDeprecated(cloudPk, id, ifcPk, projectPk, data) {
-      return this.launchNewCheckDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+    getZones(cloudPk, modelPk, projectPk, opts) {
+      return this.getZonesWithHttpInfo(cloudPk, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7802,38 +7161,38 @@ export default class IfcApi {
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
      */
-    linkDocumentsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data) {
+    linkDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling linkDocumentsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling linkDocumentsOfElement");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling linkDocumentsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling linkDocumentsOfElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling linkDocumentsOfElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling linkDocumentsOfElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling linkDocumentsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling linkDocumentsOfElement");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling linkDocumentsOfElementDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling linkDocumentsOfElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -7848,7 +7207,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [Document];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/documents', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7859,13 +7218,13 @@ export default class IfcApi {
      *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
      */
-    linkDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, data) {
-      return this.linkDocumentsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, data)
+    linkDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk, data) {
+      return this.linkDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7876,28 +7235,28 @@ export default class IfcApi {
      * List all associations between classifications and elements
      * List all associations between classifications and elements Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ElementClassificationRelation>} and HTTP response
      */
-    listClassificationElementRelationsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
+    listClassificationElementRelationsWithHttpInfo(cloudPk, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling listClassificationElementRelationsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling listClassificationElementRelations");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling listClassificationElementRelationsDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling listClassificationElementRelations");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling listClassificationElementRelationsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling listClassificationElementRelations");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -7912,7 +7271,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = [ElementClassificationRelation];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification-element', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7922,12 +7281,12 @@ export default class IfcApi {
      * List all associations between classifications and elements
      * List all associations between classifications and elements Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ElementClassificationRelation>}
      */
-    listClassificationElementRelationsDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.listClassificationElementRelationsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
+    listClassificationElementRelations(cloudPk, modelPk, projectPk) {
+      return this.listClassificationElementRelationsWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7942,19 +7301,19 @@ export default class IfcApi {
      * @param {module:model/IfcMerge} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    mergeIfcsDeprecatedWithHttpInfo(cloudPk, projectPk, data) {
+    mergeIfcsWithHttpInfo(cloudPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling mergeIfcsDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling mergeIfcs");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling mergeIfcsDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling mergeIfcs");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling mergeIfcsDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling mergeIfcs");
       }
 
       let pathParams = {
@@ -7973,7 +7332,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/merge', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/merge', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7987,8 +7346,8 @@ export default class IfcApi {
      * @param {module:model/IfcMerge} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    mergeIfcsDeprecated(cloudPk, projectPk, data) {
-      return this.mergeIfcsDeprecatedWithHttpInfo(cloudPk, projectPk, data)
+    mergeIfcs(cloudPk, projectPk, data) {
+      return this.mergeIfcsWithHttpInfo(cloudPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8004,23 +7363,23 @@ export default class IfcApi {
      * @param {module:model/IfcOptimize} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    optimizeIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk, data) {
+    optimizeIfcWithHttpInfo(cloudPk, id, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling optimizeIfcDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling optimizeIfc");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling optimizeIfcDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling optimizeIfc");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling optimizeIfcDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling optimizeIfc");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling optimizeIfcDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling optimizeIfc");
       }
 
       let pathParams = {
@@ -8040,7 +7399,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/optimize', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}/optimize', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -8055,8 +7414,8 @@ export default class IfcApi {
      * @param {module:model/IfcOptimize} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    optimizeIfcDeprecated(cloudPk, id, projectPk, data) {
-      return this.optimizeIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk, data)
+    optimizeIfc(cloudPk, id, projectPk, data) {
+      return this.optimizeIfcWithHttpInfo(cloudPk, id, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8068,33 +7427,33 @@ export default class IfcApi {
      * Remove all property sets from element. Property Sets will not be deleted, just detached from element Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeAllElementPropertySetDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk) {
+    removeAllElementPropertySetWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling removeAllElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling removeAllElementPropertySet");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling removeAllElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling removeAllElementPropertySet");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling removeAllElementPropertySetDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling removeAllElementPropertySet");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling removeAllElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling removeAllElementPropertySet");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -8109,7 +7468,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/all', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/all', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -8120,12 +7479,12 @@ export default class IfcApi {
      * Remove all property sets from element. Property Sets will not be deleted, just detached from element Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} elementUuid 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeAllElementPropertySetDeprecated(cloudPk, elementUuid, ifcPk, projectPk) {
-      return this.removeAllElementPropertySetDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
+    removeAllElementPropertySet(cloudPk, elementUuid, modelPk, projectPk) {
+      return this.removeAllElementPropertySetWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8138,38 +7497,38 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this classification.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeClassificationOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk) {
+    removeClassificationOfElementWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling removeClassificationOfElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling removeClassificationOfElement");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling removeClassificationOfElementDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling removeClassificationOfElement");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling removeClassificationOfElementDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling removeClassificationOfElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling removeClassificationOfElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling removeClassificationOfElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling removeClassificationOfElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling removeClassificationOfElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -8184,7 +7543,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/classification/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -8196,12 +7555,12 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this classification.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeClassificationOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk) {
-      return this.removeClassificationOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
+    removeClassificationOfElement(cloudPk, elementUuid, id, modelPk, projectPk) {
+      return this.removeClassificationOfElementWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8214,38 +7573,38 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this document.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeDocumentOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk) {
+    removeDocumentOfElementWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling removeDocumentOfElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling removeDocumentOfElement");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling removeDocumentOfElementDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling removeDocumentOfElement");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling removeDocumentOfElementDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling removeDocumentOfElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling removeDocumentOfElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling removeDocumentOfElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling removeDocumentOfElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling removeDocumentOfElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -8260,7 +7619,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/documents/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -8272,12 +7631,12 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this document.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeDocumentOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk) {
-      return this.removeDocumentOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
+    removeDocumentOfElement(cloudPk, elementUuid, id, modelPk, projectPk) {
+      return this.removeDocumentOfElementWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8290,38 +7649,38 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property set.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementPropertySetDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk) {
+    removeElementPropertySetWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySet");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling removeElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling removeElementPropertySet");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling removeElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling removeElementPropertySet");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling removeElementPropertySetDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling removeElementPropertySet");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySetDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySet");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -8336,7 +7695,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -8348,12 +7707,95 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property set.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementPropertySetDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk) {
-      return this.removeElementPropertySetDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
+    removeElementPropertySet(cloudPk, elementUuid, id, modelPk, projectPk) {
+      return this.removeElementPropertySetWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Remove a property from a PropertySet
+     *  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    removeElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetProperty");
+      }
+      // verify the required parameter 'elementUuid' is set
+      if (elementUuid === undefined || elementUuid === null) {
+        throw new Error("Missing the required parameter 'elementUuid' when calling removeElementPropertySetProperty");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling removeElementPropertySetProperty");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling removeElementPropertySetProperty");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySetProperty");
+      }
+      // verify the required parameter 'propertysetPk' is set
+      if (propertysetPk === undefined || propertysetPk === null) {
+        throw new Error("Missing the required parameter 'propertysetPk' when calling removeElementPropertySetProperty");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'element_uuid': elementUuid,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk,
+        'propertyset_pk': propertysetPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Remove a property from a PropertySet
+     *  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} elementUuid 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} propertysetPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    removeElementPropertySetProperty(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk) {
+      return this.removeElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8366,48 +7808,48 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementPropertySetPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk) {
+    removeElementPropertySetPropertyDefinitionWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling removeElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling removeElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling removeElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling removeElementPropertySetPropertyDefinition");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling removeElementPropertySetPropertyDefinitionDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling removeElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'propertyPk' is set
       if (propertyPk === undefined || propertyPk === null) {
-        throw new Error("Missing the required parameter 'propertyPk' when calling removeElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'propertyPk' when calling removeElementPropertySetPropertyDefinition");
       }
       // verify the required parameter 'propertysetPk' is set
       if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling removeElementPropertySetPropertyDefinitionDeprecated");
+        throw new Error("Missing the required parameter 'propertysetPk' when calling removeElementPropertySetPropertyDefinition");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'property_pk': propertyPk,
         'propertyset_pk': propertysetPk
@@ -8424,7 +7866,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -8436,14 +7878,14 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementPropertySetPropertyDefinitionDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk) {
-      return this.removeElementPropertySetPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk)
+    removeElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk) {
+      return this.removeElementPropertySetPropertyDefinitionWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8456,53 +7898,53 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertydefinitionPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementPropertySetPropertyDefinitionUnitDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
+    removeElementPropertySetPropertyDefinitionUnitWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling removeElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling removeElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling removeElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling removeElementPropertySetPropertyDefinitionUnit");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling removeElementPropertySetPropertyDefinitionUnitDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling removeElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'propertyPk' is set
       if (propertyPk === undefined || propertyPk === null) {
-        throw new Error("Missing the required parameter 'propertyPk' when calling removeElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'propertyPk' when calling removeElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'propertydefinitionPk' is set
       if (propertydefinitionPk === undefined || propertydefinitionPk === null) {
-        throw new Error("Missing the required parameter 'propertydefinitionPk' when calling removeElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'propertydefinitionPk' when calling removeElementPropertySetPropertyDefinitionUnit");
       }
       // verify the required parameter 'propertysetPk' is set
       if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling removeElementPropertySetPropertyDefinitionUnitDeprecated");
+        throw new Error("Missing the required parameter 'propertysetPk' when calling removeElementPropertySetPropertyDefinitionUnit");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'property_pk': propertyPk,
         'propertydefinition_pk': propertydefinitionPk,
@@ -8520,7 +7962,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -8532,98 +7974,15 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertyPk 
      * @param {String} propertydefinitionPk 
      * @param {String} propertysetPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementPropertySetPropertyDefinitionUnitDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
-      return this.removeElementPropertySetPropertyDefinitionUnitDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Remove a property from a PropertySet
-     *  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {String} elementUuid 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} propertysetPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    removeElementPropertySetPropertyDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'elementUuid' is set
-      if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling removeElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling removeElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling removeElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling removeElementPropertySetPropertyDeprecated");
-      }
-      // verify the required parameter 'propertysetPk' is set
-      if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling removeElementPropertySetPropertyDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'element_uuid': elementUuid,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk,
-        'propertyset_pk': propertysetPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Remove a property from a PropertySet
-     *  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {String} elementUuid 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {String} propertysetPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    removeElementPropertySetPropertyDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk) {
-      return this.removeElementPropertySetPropertyDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk)
+    removeElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
+      return this.removeElementPropertySetPropertyDefinitionUnitWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8634,39 +7993,39 @@ export default class IfcApi {
      * Remove the classification from all elements
      * Remove the classification from all elements. No element nor classification will be deleted Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
      * @param {String} modelClassificationPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementsFromClassificationDeprecatedWithHttpInfo(cloudPk, ifcPk, modelClassificationPk, projectPk, uuid) {
+    removeElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk, uuid) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementsFromClassificationDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling removeElementsFromClassificationDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling removeElementsFromClassification");
       }
       // verify the required parameter 'modelClassificationPk' is set
       if (modelClassificationPk === undefined || modelClassificationPk === null) {
-        throw new Error("Missing the required parameter 'modelClassificationPk' when calling removeElementsFromClassificationDeprecated");
+        throw new Error("Missing the required parameter 'modelClassificationPk' when calling removeElementsFromClassification");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling removeElementsFromClassification");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling removeElementsFromClassificationDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling removeElementsFromClassification");
       }
       // verify the required parameter 'uuid' is set
       if (uuid === undefined || uuid === null) {
-        throw new Error("Missing the required parameter 'uuid' when calling removeElementsFromClassificationDeprecated");
+        throw new Error("Missing the required parameter 'uuid' when calling removeElementsFromClassification");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
         'model_classification_pk': modelClassificationPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'uuid': uuid
       };
@@ -8682,7 +8041,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{model_classification_pk}/element/{uuid}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification/{model_classification_pk}/element/{uuid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -8692,14 +8051,14 @@ export default class IfcApi {
      * Remove the classification from all elements
      * Remove the classification from all elements. No element nor classification will be deleted Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
      * @param {String} modelClassificationPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementsFromClassificationDeprecated(cloudPk, ifcPk, modelClassificationPk, projectPk, uuid) {
-      return this.removeElementsFromClassificationDeprecatedWithHttpInfo(cloudPk, ifcPk, modelClassificationPk, projectPk, uuid)
+    removeElementsFromClassification(cloudPk, modelClassificationPk, modelPk, projectPk, uuid) {
+      return this.removeElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk, uuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8714,19 +8073,19 @@ export default class IfcApi {
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    reprocessIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk) {
+    reprocessModelWithHttpInfo(cloudPk, id, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling reprocessIfcDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling reprocessModel");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling reprocessIfcDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling reprocessModel");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling reprocessIfcDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling reprocessModel");
       }
 
       let pathParams = {
@@ -8746,7 +8105,7 @@ export default class IfcApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/reprocess', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}/reprocess', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -8760,8 +8119,8 @@ export default class IfcApi {
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    reprocessIfcDeprecated(cloudPk, id, projectPk) {
-      return this.reprocessIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk)
+    reprocessModel(cloudPk, id, projectPk) {
+      return this.reprocessModelWithHttpInfo(cloudPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8772,38 +8131,38 @@ export default class IfcApi {
      * Update some fields of a token
      * You can update the expiration date or the read_only field Required scopes: ifc:token_manage, model:token_manage
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} token 
      * @param {module:model/IfcAccessToken} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcAccessToken} and HTTP response
      */
-    updateAccessTokenDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, token, data) {
+    updateAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, token, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateAccessTokenDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateAccessToken");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateAccessTokenDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateAccessToken");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateAccessTokenDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling updateAccessToken");
       }
       // verify the required parameter 'token' is set
       if (token === undefined || token === null) {
-        throw new Error("Missing the required parameter 'token' when calling updateAccessTokenDeprecated");
+        throw new Error("Missing the required parameter 'token' when calling updateAccessToken");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateAccessTokenDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling updateAccessToken");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'token': token
       };
@@ -8819,7 +8178,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = IfcAccessToken;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -8829,171 +8188,14 @@ export default class IfcApi {
      * Update some fields of a token
      * You can update the expiration date or the read_only field Required scopes: ifc:token_manage, model:token_manage
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} token 
      * @param {module:model/IfcAccessToken} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcAccessToken}
      */
-    updateAccessTokenDeprecated(cloudPk, ifcPk, projectPk, token, data) {
-      return this.updateAccessTokenDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, token, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update some fields of a checker of a model
-     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/IfcChecker} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcChecker} and HTTP response
-     */
-    updateCheckerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateCheckerDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateCheckerDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateCheckerDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateCheckerDeprecated");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateCheckerDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = IfcChecker;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update some fields of a checker of a model
-     * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/IfcChecker} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcChecker}
-     */
-    updateCheckerDeprecated(cloudPk, id, ifcPk, projectPk, data) {
-      return this.updateCheckerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update some fields of a CheckerResult
-     * Update some fields of a CheckerResult Required scopes: check:write
-     * @param {String} checkerPk 
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this checker result.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/CheckerResult} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckerResult} and HTTP response
-     */
-    updateCheckerResultDeprecatedWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'checkerPk' is set
-      if (checkerPk === undefined || checkerPk === null) {
-        throw new Error("Missing the required parameter 'checkerPk' when calling updateCheckerResultDeprecated");
-      }
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateCheckerResultDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateCheckerResultDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateCheckerResultDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateCheckerResultDeprecated");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateCheckerResultDeprecated");
-      }
-
-      let pathParams = {
-        'checker_pk': checkerPk,
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = CheckerResult;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update some fields of a CheckerResult
-     * Update some fields of a CheckerResult Required scopes: check:write
-     * @param {String} checkerPk 
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this checker result.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/CheckerResult} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckerResult}
-     */
-    updateCheckerResultDeprecated(checkerPk, cloudPk, id, ifcPk, projectPk, data) {
-      return this.updateCheckerResultDeprecatedWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk, data)
+    updateAccessToken(cloudPk, modelPk, projectPk, token, data) {
+      return this.updateAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, token, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9004,38 +8206,38 @@ export default class IfcApi {
      * Update some fields of an element
      * Update some fields of an element. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
      * @param {module:model/Element} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Element} and HTTP response
      */
-    updateElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, data) {
+    updateElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateElementDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateElement");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateElementDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateElement");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateElementDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling updateElement");
       }
       // verify the required parameter 'uuid' is set
       if (uuid === undefined || uuid === null) {
-        throw new Error("Missing the required parameter 'uuid' when calling updateElementDeprecated");
+        throw new Error("Missing the required parameter 'uuid' when calling updateElement");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateElementDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling updateElement");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'uuid': uuid
       };
@@ -9051,7 +8253,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Element;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -9061,14 +8263,14 @@ export default class IfcApi {
      * Update some fields of an element
      * Update some fields of an element. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
      * @param {module:model/Element} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Element}
      */
-    updateElementDeprecated(cloudPk, ifcPk, projectPk, uuid, data) {
-      return this.updateElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, data)
+    updateElement(cloudPk, modelPk, projectPk, uuid, data) {
+      return this.updateElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9081,48 +8283,48 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertysetPk 
      * @param {module:model/Property} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
      */
-    updateElementPropertySetPropertyDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, data) {
+    updateElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateElementPropertySetPropertyDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateElementPropertySetProperty");
       }
       // verify the required parameter 'elementUuid' is set
       if (elementUuid === undefined || elementUuid === null) {
-        throw new Error("Missing the required parameter 'elementUuid' when calling updateElementPropertySetPropertyDeprecated");
+        throw new Error("Missing the required parameter 'elementUuid' when calling updateElementPropertySetProperty");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateElementPropertySetPropertyDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling updateElementPropertySetProperty");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateElementPropertySetPropertyDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateElementPropertySetProperty");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateElementPropertySetPropertyDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling updateElementPropertySetProperty");
       }
       // verify the required parameter 'propertysetPk' is set
       if (propertysetPk === undefined || propertysetPk === null) {
-        throw new Error("Missing the required parameter 'propertysetPk' when calling updateElementPropertySetPropertyDeprecated");
+        throw new Error("Missing the required parameter 'propertysetPk' when calling updateElementPropertySetProperty");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateElementPropertySetPropertyDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling updateElementPropertySetProperty");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'element_uuid': elementUuid,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'propertyset_pk': propertysetPk
       };
@@ -9138,7 +8340,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Property;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -9150,14 +8352,314 @@ export default class IfcApi {
      * @param {String} cloudPk 
      * @param {String} elementUuid 
      * @param {Number} id A unique integer value identifying this property.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} propertysetPk 
      * @param {module:model/Property} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
      */
-    updateElementPropertySetPropertyDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, data) {
-      return this.updateElementPropertySetPropertyDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, data)
+    updateElementPropertySetProperty(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk, data) {
+      return this.updateElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a Property
+     * Update some fields of a Property Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/Property} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
+     */
+    updateIfcPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcProperty");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateIfcProperty");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateIfcProperty");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateIfcProperty");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateIfcProperty");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Property;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a Property
+     * Update some fields of a Property Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/Property} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
+     */
+    updateIfcProperty(cloudPk, id, modelPk, projectPk, data) {
+      return this.updateIfcPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of many PropertyDefinitions of a model
+     *  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property definition.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/PropertyDefinition} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
+     */
+    updateIfcPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcPropertyDefinition");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateIfcPropertyDefinition");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateIfcPropertyDefinition");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateIfcPropertyDefinition");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateIfcPropertyDefinition");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PropertyDefinition;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of many PropertyDefinitions of a model
+     *  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property definition.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/PropertyDefinition} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
+     */
+    updateIfcPropertyDefinition(cloudPk, id, modelPk, projectPk, data) {
+      return this.updateIfcPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a Unit of a model
+     *  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this unit.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/Unit} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
+     */
+    updateIfcUnitWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcUnit");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateIfcUnit");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateIfcUnit");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateIfcUnit");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateIfcUnit");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Unit;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a Unit of a model
+     *  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this unit.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/Unit} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
+     */
+    updateIfcUnit(cloudPk, id, modelPk, projectPk, data) {
+      return this.updateIfcUnitWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a layer
+     * Update some fields of a layer. The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/Layer} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Layer} and HTTP response
+     */
+    updateLayerWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateLayer");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateLayer");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateLayer");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateLayer");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateLayer");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Layer;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a layer
+     * Update some fields of a layer. The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this layer.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/Layer} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Layer}
+     */
+    updateLayer(cloudPk, id, modelPk, projectPk, data) {
+      return this.updateLayerWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9173,23 +8675,23 @@ export default class IfcApi {
      * @param {module:model/Model} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Model} and HTTP response
      */
-    updateIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk, data) {
+    updateModelWithHttpInfo(cloudPk, id, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateModel");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateIfcDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling updateModel");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateIfcDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling updateModel");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateIfcDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling updateModel");
       }
 
       let pathParams = {
@@ -9209,7 +8711,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Model;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -9224,8 +8726,8 @@ export default class IfcApi {
      * @param {module:model/Model} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Model}
      */
-    updateIfcDeprecated(cloudPk, id, projectPk, data) {
-      return this.updateIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk, data)
+    updateModel(cloudPk, id, projectPk, data) {
+      return this.updateModelWithHttpInfo(cloudPk, id, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9249,20 +8751,20 @@ export default class IfcApi {
      * @param {File} opts.xktFile 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelFiles} and HTTP response
      */
-    updateIfcFilesDeprecatedWithHttpInfo(cloudPk, id, projectPk, opts) {
+    updateModelFilesWithHttpInfo(cloudPk, id, projectPk, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcFilesDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateModelFiles");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateIfcFilesDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling updateModelFiles");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateIfcFilesDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling updateModelFiles");
       }
 
       let pathParams = {
@@ -9290,7 +8792,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = ModelFiles;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/files', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}/files', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -9313,308 +8815,8 @@ export default class IfcApi {
      * @param {File} opts.xktFile 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelFiles}
      */
-    updateIfcFilesDeprecated(cloudPk, id, projectPk, opts) {
-      return this.updateIfcFilesDeprecatedWithHttpInfo(cloudPk, id, projectPk, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update some fields of many PropertyDefinitions of a model
-     *  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/PropertyDefinition} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
-     */
-    updateIfcPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcPropertyDefinitionDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateIfcPropertyDefinitionDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateIfcPropertyDefinitionDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateIfcPropertyDefinitionDeprecated");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateIfcPropertyDefinitionDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = PropertyDefinition;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update some fields of many PropertyDefinitions of a model
-     *  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/PropertyDefinition} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
-     */
-    updateIfcPropertyDefinitionDeprecated(cloudPk, id, ifcPk, projectPk, data) {
-      return this.updateIfcPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update some fields of a Property
-     * Update some fields of a Property Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/Property} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
-     */
-    updateIfcPropertyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcPropertyDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateIfcPropertyDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateIfcPropertyDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateIfcPropertyDeprecated");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateIfcPropertyDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Property;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update some fields of a Property
-     * Update some fields of a Property Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/Property} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
-     */
-    updateIfcPropertyDeprecated(cloudPk, id, ifcPk, projectPk, data) {
-      return this.updateIfcPropertyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update some fields of a Unit of a model
-     *  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/Unit} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
-     */
-    updateIfcUnitDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcUnitDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateIfcUnitDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateIfcUnitDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateIfcUnitDeprecated");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateIfcUnitDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Unit;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update some fields of a Unit of a model
-     *  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/Unit} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
-     */
-    updateIfcUnitDeprecated(cloudPk, id, ifcPk, projectPk, data) {
-      return this.updateIfcUnitDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update some fields of a layer
-     * Update some fields of a layer. The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this layer.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/Layer} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Layer} and HTTP response
-     */
-    updateLayerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateLayerDeprecated");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateLayerDeprecated");
-      }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateLayerDeprecated");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateLayerDeprecated");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateLayerDeprecated");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'ifc_pk': ifcPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Layer;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update some fields of a layer
-     * Update some fields of a layer. The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this layer.
-     * @param {String} ifcPk 
-     * @param {String} projectPk 
-     * @param {module:model/Layer} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Layer}
-     */
-    updateLayerDeprecated(cloudPk, id, ifcPk, projectPk, data) {
-      return this.updateLayerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+    updateModelFiles(cloudPk, id, projectPk, opts) {
+      return this.updateModelFilesWithHttpInfo(cloudPk, id, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9626,43 +8828,43 @@ export default class IfcApi {
      * Update the postioning of the plan in the storey Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} storeyPk 
      * @param {module:model/PositioningPlan} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PositioningPlan} and HTTP response
      */
-    updatePlanPositioningDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk, data) {
+    updatePlanPositioningWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updatePlanPositioningDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updatePlanPositioning");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updatePlanPositioningDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling updatePlanPositioning");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updatePlanPositioningDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updatePlanPositioning");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updatePlanPositioningDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling updatePlanPositioning");
       }
       // verify the required parameter 'storeyPk' is set
       if (storeyPk === undefined || storeyPk === null) {
-        throw new Error("Missing the required parameter 'storeyPk' when calling updatePlanPositioningDeprecated");
+        throw new Error("Missing the required parameter 'storeyPk' when calling updatePlanPositioning");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updatePlanPositioningDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling updatePlanPositioning");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'storey_pk': storeyPk
       };
@@ -9678,7 +8880,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = PositioningPlan;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/positioning', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id}/positioning', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -9689,14 +8891,14 @@ export default class IfcApi {
      * Update the postioning of the plan in the storey Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} storeyPk 
      * @param {module:model/PositioningPlan} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PositioningPlan}
      */
-    updatePlanPositioningDeprecated(cloudPk, id, ifcPk, projectPk, storeyPk, data) {
-      return this.updatePlanPositioningDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, storeyPk, data)
+    updatePlanPositioning(cloudPk, id, modelPk, projectPk, storeyPk, data) {
+      return this.updatePlanPositioningWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9708,38 +8910,38 @@ export default class IfcApi {
      *  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this processor handler.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/ProcessorHandler} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProcessorHandler} and HTTP response
      */
-    updateProcessorHandlerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
+    updateProcessorHandlerWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateProcessorHandlerDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateProcessorHandler");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateProcessorHandlerDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling updateProcessorHandler");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateProcessorHandlerDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateProcessorHandler");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateProcessorHandlerDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling updateProcessorHandler");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateProcessorHandlerDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling updateProcessorHandler");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -9754,7 +8956,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = ProcessorHandler;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -9765,13 +8967,13 @@ export default class IfcApi {
      *  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this processor handler.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/ProcessorHandler} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProcessorHandler}
      */
-    updateProcessorHandlerDeprecated(cloudPk, id, ifcPk, projectPk, data) {
-      return this.updateProcessorHandlerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+    updateProcessorHandler(cloudPk, id, modelPk, projectPk, data) {
+      return this.updateProcessorHandlerWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9783,38 +8985,38 @@ export default class IfcApi {
      * Update some fields of a PropertySet Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/PropertySet} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertySet} and HTTP response
      */
-    updatePropertySetDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
+    updatePropertySetWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updatePropertySetDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updatePropertySet");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updatePropertySetDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling updatePropertySet");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updatePropertySetDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updatePropertySet");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updatePropertySetDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling updatePropertySet");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updatePropertySetDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling updatePropertySet");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -9829,7 +9031,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = PropertySet;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -9840,13 +9042,13 @@ export default class IfcApi {
      * Update some fields of a PropertySet Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this property set.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/PropertySet} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertySet}
      */
-    updatePropertySetDeprecated(cloudPk, id, ifcPk, projectPk, data) {
-      return this.updatePropertySetDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+    updatePropertySet(cloudPk, id, modelPk, projectPk, data) {
+      return this.updatePropertySetWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9858,38 +9060,38 @@ export default class IfcApi {
      * Update some fields of a space. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/Space} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Space} and HTTP response
      */
-    updateSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
+    updateSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateSpaceDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateSpace");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateSpaceDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling updateSpace");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateSpaceDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateSpace");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateSpaceDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling updateSpace");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateSpaceDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling updateSpace");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -9904,7 +9106,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Space;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -9915,13 +9117,13 @@ export default class IfcApi {
      * Update some fields of a space. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/Space} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Space}
      */
-    updateSpaceDeprecated(cloudPk, id, ifcPk, projectPk, data) {
-      return this.updateSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+    updateSpace(cloudPk, id, modelPk, projectPk, data) {
+      return this.updateSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9933,38 +9135,38 @@ export default class IfcApi {
      * Update some fields of a storey Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/Storey} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
-    updateStoreyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
+    updateStoreyWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateStoreyDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateStorey");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateStoreyDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling updateStorey");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateStoreyDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateStorey");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateStoreyDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling updateStorey");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateStoreyDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling updateStorey");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -9979,7 +9181,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Storey;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{id}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -9990,13 +9192,13 @@ export default class IfcApi {
      * Update some fields of a storey Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/Storey} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
-    updateStoreyDeprecated(cloudPk, id, ifcPk, projectPk, data) {
-      return this.updateStoreyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+    updateStorey(cloudPk, id, modelPk, projectPk, data) {
+      return this.updateStoreyWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -10007,38 +9209,38 @@ export default class IfcApi {
      * Update some fields of a system
      * Update some fields of a system. The IFC file will not be updated. The created system will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC sytem or system type UUID
      * @param {module:model/System} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/System} and HTTP response
      */
-    updateSystemDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, data) {
+    updateSystemWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateSystemDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateSystem");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateSystemDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateSystem");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateSystemDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling updateSystem");
       }
       // verify the required parameter 'uuid' is set
       if (uuid === undefined || uuid === null) {
-        throw new Error("Missing the required parameter 'uuid' when calling updateSystemDeprecated");
+        throw new Error("Missing the required parameter 'uuid' when calling updateSystem");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateSystemDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling updateSystem");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'uuid': uuid
       };
@@ -10054,7 +9256,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = System;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system/{uuid}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -10064,14 +9266,14 @@ export default class IfcApi {
      * Update some fields of a system
      * Update some fields of a system. The IFC file will not be updated. The created system will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC sytem or system type UUID
      * @param {module:model/System} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/System}
      */
-    updateSystemDeprecated(cloudPk, ifcPk, projectPk, uuid, data) {
-      return this.updateSystemDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, data)
+    updateSystem(cloudPk, modelPk, projectPk, uuid, data) {
+      return this.updateSystemWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -10083,38 +9285,38 @@ export default class IfcApi {
      * Update some fields of a zone. The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/Zone} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Zone} and HTTP response
      */
-    updateZoneDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
+    updateZoneWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateZoneDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateZone");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateZoneDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling updateZone");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateZoneDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateZone");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateZoneDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling updateZone");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateZoneDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling updateZone");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -10129,7 +9331,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = Zone;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -10140,13 +9342,13 @@ export default class IfcApi {
      * Update some fields of a zone. The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this zone.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/Zone} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Zone}
      */
-    updateZoneDeprecated(cloudPk, id, ifcPk, projectPk, data) {
-      return this.updateZoneDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+    updateZone(cloudPk, id, modelPk, projectPk, data) {
+      return this.updateZoneWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -10158,43 +9360,43 @@ export default class IfcApi {
      * Update some fields of a space. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
      * @param {module:model/ZoneSpace} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ZoneSpace} and HTTP response
      */
-    updateZoneSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk, data) {
+    updateZoneSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, zonePk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateZoneSpace");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'id' when calling updateZoneSpace");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateZoneSpaceDeprecated");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateZoneSpace");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'projectPk' when calling updateZoneSpace");
       }
       // verify the required parameter 'zonePk' is set
       if (zonePk === undefined || zonePk === null) {
-        throw new Error("Missing the required parameter 'zonePk' when calling updateZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'zonePk' when calling updateZoneSpace");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateZoneSpaceDeprecated");
+        throw new Error("Missing the required parameter 'data' when calling updateZoneSpace");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk,
         'zone_pk': zonePk
       };
@@ -10210,7 +9412,7 @@ export default class IfcApi {
       let accepts = ['application/json'];
       let returnType = ZoneSpace;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -10221,14 +9423,14 @@ export default class IfcApi {
      * Update some fields of a space. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this space.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} zonePk 
      * @param {module:model/ZoneSpace} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ZoneSpace}
      */
-    updateZoneSpaceDeprecated(cloudPk, id, ifcPk, projectPk, zonePk, data) {
-      return this.updateZoneSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk, data)
+    updateZoneSpace(cloudPk, id, modelPk, projectPk, zonePk, data) {
+      return this.updateZoneSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, zonePk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

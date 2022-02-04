@@ -44,20 +44,20 @@ export default class CheckerApi {
      * Create a checker to a model
      * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcChecker} and HTTP response
      */
-    createCheckerWithHttpInfo(cloudPk, ifcPk, projectPk, data) {
+    createCheckerWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createChecker");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createChecker");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createChecker");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -70,7 +70,7 @@ export default class CheckerApi {
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -85,7 +85,7 @@ export default class CheckerApi {
       let accepts = ['application/json'];
       let returnType = IfcChecker;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -95,13 +95,13 @@ export default class CheckerApi {
      * Create a checker to a model
      * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcChecker}
      */
-    createChecker(cloudPk, ifcPk, projectPk, data) {
-      return this.createCheckerWithHttpInfo(cloudPk, ifcPk, projectPk, data)
+    createChecker(cloudPk, modelPk, projectPk, data) {
+      return this.createCheckerWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -113,12 +113,12 @@ export default class CheckerApi {
      * TCreate a CheckerResult Required scopes: check:write
      * @param {String} checkerPk 
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/CheckerResult} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckerResult} and HTTP response
      */
-    createCheckerResultWithHttpInfo(checkerPk, cloudPk, ifcPk, projectPk, data) {
+    createCheckerResultWithHttpInfo(checkerPk, cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
@@ -128,9 +128,9 @@ export default class CheckerApi {
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createCheckerResult");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling createCheckerResult");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createCheckerResult");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -144,7 +144,7 @@ export default class CheckerApi {
       let pathParams = {
         'checker_pk': checkerPk,
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -159,7 +159,7 @@ export default class CheckerApi {
       let accepts = ['application/json'];
       let returnType = CheckerResult;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -170,13 +170,13 @@ export default class CheckerApi {
      * TCreate a CheckerResult Required scopes: check:write
      * @param {String} checkerPk 
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/CheckerResult} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckerResult}
      */
-    createCheckerResult(checkerPk, cloudPk, ifcPk, projectPk, data) {
-      return this.createCheckerResultWithHttpInfo(checkerPk, cloudPk, ifcPk, projectPk, data)
+    createCheckerResult(checkerPk, cloudPk, modelPk, projectPk, data) {
+      return this.createCheckerResultWithHttpInfo(checkerPk, cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -474,11 +474,11 @@ export default class CheckerApi {
      * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+    deleteCheckerWithHttpInfo(cloudPk, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -488,9 +488,9 @@ export default class CheckerApi {
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteChecker");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteChecker");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteChecker");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -500,7 +500,7 @@ export default class CheckerApi {
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -515,7 +515,7 @@ export default class CheckerApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -526,12 +526,12 @@ export default class CheckerApi {
      * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteChecker(cloudPk, id, ifcPk, projectPk) {
-      return this.deleteCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+    deleteChecker(cloudPk, id, modelPk, projectPk) {
+      return this.deleteCheckerWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -544,11 +544,11 @@ export default class CheckerApi {
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk) {
+    deleteCheckerResultWithHttpInfo(checkerPk, cloudPk, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
@@ -562,9 +562,9 @@ export default class CheckerApi {
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteCheckerResult");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling deleteCheckerResult");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteCheckerResult");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -575,7 +575,7 @@ export default class CheckerApi {
         'checker_pk': checkerPk,
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -590,7 +590,7 @@ export default class CheckerApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -602,12 +602,12 @@ export default class CheckerApi {
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk) {
-      return this.deleteCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk)
+    deleteCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk) {
+      return this.deleteCheckerResultWithHttpInfo(checkerPk, cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -909,11 +909,11 @@ export default class CheckerApi {
      * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcChecker} and HTTP response
      */
-    getCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+    getCheckerWithHttpInfo(cloudPk, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -923,9 +923,9 @@ export default class CheckerApi {
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getChecker");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getChecker");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getChecker");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -935,7 +935,7 @@ export default class CheckerApi {
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -950,7 +950,7 @@ export default class CheckerApi {
       let accepts = ['application/json'];
       let returnType = IfcChecker;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -961,12 +961,12 @@ export default class CheckerApi {
      * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcChecker}
      */
-    getChecker(cloudPk, id, ifcPk, projectPk) {
-      return this.getCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+    getChecker(cloudPk, id, modelPk, projectPk) {
+      return this.getCheckerWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -979,11 +979,11 @@ export default class CheckerApi {
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckerResult} and HTTP response
      */
-    getCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk) {
+    getCheckerResultWithHttpInfo(checkerPk, cloudPk, id, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
@@ -997,9 +997,9 @@ export default class CheckerApi {
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getCheckerResult");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getCheckerResult");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getCheckerResult");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1010,7 +1010,7 @@ export default class CheckerApi {
         'checker_pk': checkerPk,
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1025,7 +1025,7 @@ export default class CheckerApi {
       let accepts = ['application/json'];
       let returnType = CheckerResult;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1037,12 +1037,12 @@ export default class CheckerApi {
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckerResult}
      */
-    getCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk) {
-      return this.getCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk)
+    getCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk) {
+      return this.getCheckerResultWithHttpInfo(checkerPk, cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1054,11 +1054,11 @@ export default class CheckerApi {
      * Retrieve all CheckerResults Required scopes: check:read
      * @param {String} checkerPk 
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CheckerResult>} and HTTP response
      */
-    getCheckerResultsWithHttpInfo(checkerPk, cloudPk, ifcPk, projectPk) {
+    getCheckerResultsWithHttpInfo(checkerPk, cloudPk, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
@@ -1068,9 +1068,9 @@ export default class CheckerApi {
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getCheckerResults");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getCheckerResults");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getCheckerResults");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1080,7 +1080,7 @@ export default class CheckerApi {
       let pathParams = {
         'checker_pk': checkerPk,
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1095,7 +1095,7 @@ export default class CheckerApi {
       let accepts = ['application/json'];
       let returnType = [CheckerResult];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1106,12 +1106,12 @@ export default class CheckerApi {
      * Retrieve all CheckerResults Required scopes: check:read
      * @param {String} checkerPk 
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CheckerResult>}
      */
-    getCheckerResults(checkerPk, cloudPk, ifcPk, projectPk) {
-      return this.getCheckerResultsWithHttpInfo(checkerPk, cloudPk, ifcPk, projectPk)
+    getCheckerResults(checkerPk, cloudPk, modelPk, projectPk) {
+      return this.getCheckerResultsWithHttpInfo(checkerPk, cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1122,19 +1122,19 @@ export default class CheckerApi {
      * Retrieve all checkers of a model
      * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/IfcChecker>} and HTTP response
      */
-    getCheckersWithHttpInfo(cloudPk, ifcPk, projectPk) {
+    getCheckersWithHttpInfo(cloudPk, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getCheckers");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling getCheckers");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getCheckers");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1143,7 +1143,7 @@ export default class CheckerApi {
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1158,7 +1158,7 @@ export default class CheckerApi {
       let accepts = ['application/json'];
       let returnType = [IfcChecker];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1168,12 +1168,12 @@ export default class CheckerApi {
      * Retrieve all checkers of a model
      * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:read, ifc:read
      * @param {String} cloudPk 
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/IfcChecker>}
      */
-    getCheckers(cloudPk, ifcPk, projectPk) {
-      return this.getCheckersWithHttpInfo(cloudPk, ifcPk, projectPk)
+    getCheckers(cloudPk, modelPk, projectPk) {
+      return this.getCheckersWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1737,12 +1737,12 @@ export default class CheckerApi {
      * Starts a new check in the checker Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    launchNewCheckWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
+    launchNewCheckWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1752,9 +1752,9 @@ export default class CheckerApi {
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling launchNewCheck");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling launchNewCheck");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling launchNewCheck");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1768,7 +1768,7 @@ export default class CheckerApi {
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1783,7 +1783,7 @@ export default class CheckerApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}/launch-check', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{id}/launch-check', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1794,13 +1794,13 @@ export default class CheckerApi {
      * Starts a new check in the checker Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    launchNewCheck(cloudPk, id, ifcPk, projectPk, data) {
-      return this.launchNewCheckWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+    launchNewCheck(cloudPk, id, modelPk, projectPk, data) {
+      return this.launchNewCheckWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1812,12 +1812,12 @@ export default class CheckerApi {
      * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcChecker} and HTTP response
      */
-    updateCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data) {
+    updateCheckerWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -1827,9 +1827,9 @@ export default class CheckerApi {
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling updateChecker");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateChecker");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateChecker");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1843,7 +1843,7 @@ export default class CheckerApi {
       let pathParams = {
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1858,7 +1858,7 @@ export default class CheckerApi {
       let accepts = ['application/json'];
       let returnType = IfcChecker;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1869,13 +1869,13 @@ export default class CheckerApi {
      * A checker is a link between a checkplan and a model. A checker can launch a check multiple time and store all the results Required scopes: check:write, ifc:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this ifc checker.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/IfcChecker} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcChecker}
      */
-    updateChecker(cloudPk, id, ifcPk, projectPk, data) {
-      return this.updateCheckerWithHttpInfo(cloudPk, id, ifcPk, projectPk, data)
+    updateChecker(cloudPk, id, modelPk, projectPk, data) {
+      return this.updateCheckerWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1888,12 +1888,12 @@ export default class CheckerApi {
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/CheckerResult} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CheckerResult} and HTTP response
      */
-    updateCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk, data) {
+    updateCheckerResultWithHttpInfo(checkerPk, cloudPk, id, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
@@ -1907,9 +1907,9 @@ export default class CheckerApi {
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling updateCheckerResult");
       }
-      // verify the required parameter 'ifcPk' is set
-      if (ifcPk === undefined || ifcPk === null) {
-        throw new Error("Missing the required parameter 'ifcPk' when calling updateCheckerResult");
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateCheckerResult");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
@@ -1924,7 +1924,7 @@ export default class CheckerApi {
         'checker_pk': checkerPk,
         'cloud_pk': cloudPk,
         'id': id,
-        'ifc_pk': ifcPk,
+        'model_pk': modelPk,
         'project_pk': projectPk
       };
       let queryParams = {
@@ -1939,7 +1939,7 @@ export default class CheckerApi {
       let accepts = ['application/json'];
       let returnType = CheckerResult;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1951,13 +1951,13 @@ export default class CheckerApi {
      * @param {String} checkerPk 
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this checker result.
-     * @param {String} ifcPk 
+     * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {module:model/CheckerResult} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CheckerResult}
      */
-    updateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data) {
-      return this.updateCheckerResultWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk, data)
+    updateCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk, data) {
+      return this.updateCheckerResultWithHttpInfo(checkerPk, cloudPk, id, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -53,8 +53,8 @@ class Storey {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('ifc_id')) {
-                obj['ifc_id'] = ApiClient.convertToType(data['ifc_id'], 'String');
+            if (data.hasOwnProperty('building_id')) {
+                obj['building_id'] = ApiClient.convertToType(data['building_id'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -87,9 +87,9 @@ class Storey {
 Storey.prototype['id'] = undefined;
 
 /**
- * @member {String} ifc_id
+ * @member {String} building_id
  */
-Storey.prototype['ifc_id'] = undefined;
+Storey.prototype['building_id'] = undefined;
 
 /**
  * @member {String} name

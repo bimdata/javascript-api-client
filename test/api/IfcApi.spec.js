@@ -48,1310 +48,1420 @@
   }
 
   describe('IfcApi', function() {
-    describe('addIfcErrors', function() {
-      it('should call addIfcErrors successfully', function(done) {
-        //uncomment below and update the code to test addIfcErrors
-        //instance.addIfcErrors(function(error) {
+    describe('addIfcErrorsDeprecated', function() {
+      it('should call addIfcErrorsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test addIfcErrorsDeprecated
+        //instance.addIfcErrorsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkDeleteIfcClassifications', function() {
-      it('should call bulkDeleteIfcClassifications successfully', function(done) {
-        //uncomment below and update the code to test bulkDeleteIfcClassifications
-        //instance.bulkDeleteIfcClassifications(function(error) {
+    describe('bulkDeleteIfcClassificationsDeprecated', function() {
+      it('should call bulkDeleteIfcClassificationsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test bulkDeleteIfcClassificationsDeprecated
+        //instance.bulkDeleteIfcClassificationsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkDeleteIfcProperties', function() {
-      it('should call bulkDeleteIfcProperties successfully', function(done) {
-        //uncomment below and update the code to test bulkDeleteIfcProperties
-        //instance.bulkDeleteIfcProperties(function(error) {
+    describe('bulkDeleteIfcPropertiesDeprecated', function() {
+      it('should call bulkDeleteIfcPropertiesDeprecated successfully', function(done) {
+        //uncomment below and update the code to test bulkDeleteIfcPropertiesDeprecated
+        //instance.bulkDeleteIfcPropertiesDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkDeleteIfcPropertyDefinitions', function() {
-      it('should call bulkDeleteIfcPropertyDefinitions successfully', function(done) {
-        //uncomment below and update the code to test bulkDeleteIfcPropertyDefinitions
-        //instance.bulkDeleteIfcPropertyDefinitions(function(error) {
+    describe('bulkDeleteIfcPropertyDefinitionsDeprecated', function() {
+      it('should call bulkDeleteIfcPropertyDefinitionsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test bulkDeleteIfcPropertyDefinitionsDeprecated
+        //instance.bulkDeleteIfcPropertyDefinitionsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkDeleteIfcUnits', function() {
-      it('should call bulkDeleteIfcUnits successfully', function(done) {
-        //uncomment below and update the code to test bulkDeleteIfcUnits
-        //instance.bulkDeleteIfcUnits(function(error) {
+    describe('bulkDeleteIfcUnitsDeprecated', function() {
+      it('should call bulkDeleteIfcUnitsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test bulkDeleteIfcUnitsDeprecated
+        //instance.bulkDeleteIfcUnitsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkDeletePropertySet', function() {
-      it('should call bulkDeletePropertySet successfully', function(done) {
-        //uncomment below and update the code to test bulkDeletePropertySet
-        //instance.bulkDeletePropertySet(function(error) {
+    describe('bulkDeletePropertySetDeprecated', function() {
+      it('should call bulkDeletePropertySetDeprecated successfully', function(done) {
+        //uncomment below and update the code to test bulkDeletePropertySetDeprecated
+        //instance.bulkDeletePropertySetDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkFullUpdateElements', function() {
-      it('should call bulkFullUpdateElements successfully', function(done) {
-        //uncomment below and update the code to test bulkFullUpdateElements
-        //instance.bulkFullUpdateElements(function(error) {
+    describe('bulkFullUpdateElementsDeprecated', function() {
+      it('should call bulkFullUpdateElementsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test bulkFullUpdateElementsDeprecated
+        //instance.bulkFullUpdateElementsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkFullUpdateIfcProperty', function() {
-      it('should call bulkFullUpdateIfcProperty successfully', function(done) {
-        //uncomment below and update the code to test bulkFullUpdateIfcProperty
-        //instance.bulkFullUpdateIfcProperty(function(error) {
+    describe('bulkFullUpdateIfcPropertyDeprecated', function() {
+      it('should call bulkFullUpdateIfcPropertyDeprecated successfully', function(done) {
+        //uncomment below and update the code to test bulkFullUpdateIfcPropertyDeprecated
+        //instance.bulkFullUpdateIfcPropertyDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkRemoveClassificationsOfElement', function() {
-      it('should call bulkRemoveClassificationsOfElement successfully', function(done) {
-        //uncomment below and update the code to test bulkRemoveClassificationsOfElement
-        //instance.bulkRemoveClassificationsOfElement(function(error) {
+    describe('bulkRemoveClassificationsOfElementDeprecated', function() {
+      it('should call bulkRemoveClassificationsOfElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test bulkRemoveClassificationsOfElementDeprecated
+        //instance.bulkRemoveClassificationsOfElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkRemoveDocumentsOfElement', function() {
-      it('should call bulkRemoveDocumentsOfElement successfully', function(done) {
-        //uncomment below and update the code to test bulkRemoveDocumentsOfElement
-        //instance.bulkRemoveDocumentsOfElement(function(error) {
+    describe('bulkRemoveDocumentsOfElementDeprecated', function() {
+      it('should call bulkRemoveDocumentsOfElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test bulkRemoveDocumentsOfElementDeprecated
+        //instance.bulkRemoveDocumentsOfElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkRemoveElementsFromClassification', function() {
-      it('should call bulkRemoveElementsFromClassification successfully', function(done) {
-        //uncomment below and update the code to test bulkRemoveElementsFromClassification
-        //instance.bulkRemoveElementsFromClassification(function(error) {
+    describe('bulkRemoveElementsFromClassificationDeprecated', function() {
+      it('should call bulkRemoveElementsFromClassificationDeprecated successfully', function(done) {
+        //uncomment below and update the code to test bulkRemoveElementsFromClassificationDeprecated
+        //instance.bulkRemoveElementsFromClassificationDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkUpdateElements', function() {
-      it('should call bulkUpdateElements successfully', function(done) {
-        //uncomment below and update the code to test bulkUpdateElements
-        //instance.bulkUpdateElements(function(error) {
+    describe('bulkUpdateElementsDeprecated', function() {
+      it('should call bulkUpdateElementsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test bulkUpdateElementsDeprecated
+        //instance.bulkUpdateElementsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkUpdateIfcProperty', function() {
-      it('should call bulkUpdateIfcProperty successfully', function(done) {
-        //uncomment below and update the code to test bulkUpdateIfcProperty
-        //instance.bulkUpdateIfcProperty(function(error) {
+    describe('bulkUpdateIfcPropertyDeprecated', function() {
+      it('should call bulkUpdateIfcPropertyDeprecated successfully', function(done) {
+        //uncomment below and update the code to test bulkUpdateIfcPropertyDeprecated
+        //instance.bulkUpdateIfcPropertyDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createAccessToken', function() {
-      it('should call createAccessToken successfully', function(done) {
-        //uncomment below and update the code to test createAccessToken
-        //instance.createAccessToken(function(error) {
+    describe('createAccessTokenDeprecated', function() {
+      it('should call createAccessTokenDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createAccessTokenDeprecated
+        //instance.createAccessTokenDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createClassificationElementRelations', function() {
-      it('should call createClassificationElementRelations successfully', function(done) {
-        //uncomment below and update the code to test createClassificationElementRelations
-        //instance.createClassificationElementRelations(function(error) {
+    describe('createCheckerDeprecated', function() {
+      it('should call createCheckerDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createCheckerDeprecated
+        //instance.createCheckerDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createClassificationsOfElement', function() {
-      it('should call createClassificationsOfElement successfully', function(done) {
-        //uncomment below and update the code to test createClassificationsOfElement
-        //instance.createClassificationsOfElement(function(error) {
+    describe('createCheckerResultDeprecated', function() {
+      it('should call createCheckerResultDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createCheckerResultDeprecated
+        //instance.createCheckerResultDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createElement', function() {
-      it('should call createElement successfully', function(done) {
-        //uncomment below and update the code to test createElement
-        //instance.createElement(function(error) {
+    describe('createClassificationElementRelationsDeprecated', function() {
+      it('should call createClassificationElementRelationsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createClassificationElementRelationsDeprecated
+        //instance.createClassificationElementRelationsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createElementPropertySet', function() {
-      it('should call createElementPropertySet successfully', function(done) {
-        //uncomment below and update the code to test createElementPropertySet
-        //instance.createElementPropertySet(function(error) {
+    describe('createClassificationsOfElementDeprecated', function() {
+      it('should call createClassificationsOfElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createClassificationsOfElementDeprecated
+        //instance.createClassificationsOfElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createElementPropertySetProperty', function() {
-      it('should call createElementPropertySetProperty successfully', function(done) {
-        //uncomment below and update the code to test createElementPropertySetProperty
-        //instance.createElementPropertySetProperty(function(error) {
+    describe('createElementDeprecated', function() {
+      it('should call createElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createElementDeprecated
+        //instance.createElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createElementPropertySetPropertyDefinition', function() {
-      it('should call createElementPropertySetPropertyDefinition successfully', function(done) {
-        //uncomment below and update the code to test createElementPropertySetPropertyDefinition
-        //instance.createElementPropertySetPropertyDefinition(function(error) {
+    describe('createElementPropertySetDeprecated', function() {
+      it('should call createElementPropertySetDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createElementPropertySetDeprecated
+        //instance.createElementPropertySetDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createElementPropertySetPropertyDefinitionUnit', function() {
-      it('should call createElementPropertySetPropertyDefinitionUnit successfully', function(done) {
-        //uncomment below and update the code to test createElementPropertySetPropertyDefinitionUnit
-        //instance.createElementPropertySetPropertyDefinitionUnit(function(error) {
+    describe('createElementPropertySetPropertyDefinitionDeprecated', function() {
+      it('should call createElementPropertySetPropertyDefinitionDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createElementPropertySetPropertyDefinitionDeprecated
+        //instance.createElementPropertySetPropertyDefinitionDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createIfcPropertyDefinition', function() {
-      it('should call createIfcPropertyDefinition successfully', function(done) {
-        //uncomment below and update the code to test createIfcPropertyDefinition
-        //instance.createIfcPropertyDefinition(function(error) {
+    describe('createElementPropertySetPropertyDefinitionUnitDeprecated', function() {
+      it('should call createElementPropertySetPropertyDefinitionUnitDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createElementPropertySetPropertyDefinitionUnitDeprecated
+        //instance.createElementPropertySetPropertyDefinitionUnitDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createIfcUnit', function() {
-      it('should call createIfcUnit successfully', function(done) {
-        //uncomment below and update the code to test createIfcUnit
-        //instance.createIfcUnit(function(error) {
+    describe('createElementPropertySetPropertyDeprecated', function() {
+      it('should call createElementPropertySetPropertyDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createElementPropertySetPropertyDeprecated
+        //instance.createElementPropertySetPropertyDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createLayer', function() {
-      it('should call createLayer successfully', function(done) {
-        //uncomment below and update the code to test createLayer
-        //instance.createLayer(function(error) {
+    describe('createIfcDeprecated', function() {
+      it('should call createIfcDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createIfcDeprecated
+        //instance.createIfcDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createMetaBuilding', function() {
-      it('should call createMetaBuilding successfully', function(done) {
-        //uncomment below and update the code to test createMetaBuilding
-        //instance.createMetaBuilding(function(error) {
+    describe('createIfcPropertyDefinitionDeprecated', function() {
+      it('should call createIfcPropertyDefinitionDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createIfcPropertyDefinitionDeprecated
+        //instance.createIfcPropertyDefinitionDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createModel', function() {
-      it('should call createModel successfully', function(done) {
-        //uncomment below and update the code to test createModel
-        //instance.createModel(function(error) {
+    describe('createIfcUnitDeprecated', function() {
+      it('should call createIfcUnitDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createIfcUnitDeprecated
+        //instance.createIfcUnitDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createPropertySet', function() {
-      it('should call createPropertySet successfully', function(done) {
-        //uncomment below and update the code to test createPropertySet
-        //instance.createPropertySet(function(error) {
+    describe('createLayerDeprecated', function() {
+      it('should call createLayerDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createLayerDeprecated
+        //instance.createLayerDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createPropertySetElementRelations', function() {
-      it('should call createPropertySetElementRelations successfully', function(done) {
-        //uncomment below and update the code to test createPropertySetElementRelations
-        //instance.createPropertySetElementRelations(function(error) {
+    describe('createMetaBuildingDeprecated', function() {
+      it('should call createMetaBuildingDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createMetaBuildingDeprecated
+        //instance.createMetaBuildingDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createRawElements', function() {
-      it('should call createRawElements successfully', function(done) {
-        //uncomment below and update the code to test createRawElements
-        //instance.createRawElements(function(error) {
+    describe('createPropertySetDeprecated', function() {
+      it('should call createPropertySetDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createPropertySetDeprecated
+        //instance.createPropertySetDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createSpace', function() {
-      it('should call createSpace successfully', function(done) {
-        //uncomment below and update the code to test createSpace
-        //instance.createSpace(function(error) {
+    describe('createPropertySetElementRelationsDeprecated', function() {
+      it('should call createPropertySetElementRelationsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createPropertySetElementRelationsDeprecated
+        //instance.createPropertySetElementRelationsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createStoreyPlan', function() {
-      it('should call createStoreyPlan successfully', function(done) {
-        //uncomment below and update the code to test createStoreyPlan
-        //instance.createStoreyPlan(function(error) {
+    describe('createRawElementsDeprecated', function() {
+      it('should call createRawElementsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createRawElementsDeprecated
+        //instance.createRawElementsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createSystem', function() {
-      it('should call createSystem successfully', function(done) {
-        //uncomment below and update the code to test createSystem
-        //instance.createSystem(function(error) {
+    describe('createSpaceDeprecated', function() {
+      it('should call createSpaceDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createSpaceDeprecated
+        //instance.createSpaceDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createZone', function() {
-      it('should call createZone successfully', function(done) {
-        //uncomment below and update the code to test createZone
-        //instance.createZone(function(error) {
+    describe('createStoreyPlanDeprecated', function() {
+      it('should call createStoreyPlanDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createStoreyPlanDeprecated
+        //instance.createStoreyPlanDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('createZoneSpace', function() {
-      it('should call createZoneSpace successfully', function(done) {
-        //uncomment below and update the code to test createZoneSpace
-        //instance.createZoneSpace(function(error) {
+    describe('createSystemDeprecated', function() {
+      it('should call createSystemDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createSystemDeprecated
+        //instance.createSystemDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteAccessToken', function() {
-      it('should call deleteAccessToken successfully', function(done) {
-        //uncomment below and update the code to test deleteAccessToken
-        //instance.deleteAccessToken(function(error) {
+    describe('createZoneDeprecated', function() {
+      it('should call createZoneDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createZoneDeprecated
+        //instance.createZoneDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteElement', function() {
-      it('should call deleteElement successfully', function(done) {
-        //uncomment below and update the code to test deleteElement
-        //instance.deleteElement(function(error) {
+    describe('createZoneSpaceDeprecated', function() {
+      it('should call createZoneSpaceDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createZoneSpaceDeprecated
+        //instance.createZoneSpaceDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteIfc', function() {
-      it('should call deleteIfc successfully', function(done) {
-        //uncomment below and update the code to test deleteIfc
-        //instance.deleteIfc(function(error) {
+    describe('deleteAccessTokenDeprecated', function() {
+      it('should call deleteAccessTokenDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteAccessTokenDeprecated
+        //instance.deleteAccessTokenDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteIfcProperty', function() {
-      it('should call deleteIfcProperty successfully', function(done) {
-        //uncomment below and update the code to test deleteIfcProperty
-        //instance.deleteIfcProperty(function(error) {
+    describe('deleteCheckerDeprecated', function() {
+      it('should call deleteCheckerDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteCheckerDeprecated
+        //instance.deleteCheckerDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteIfcPropertyDefinition', function() {
-      it('should call deleteIfcPropertyDefinition successfully', function(done) {
-        //uncomment below and update the code to test deleteIfcPropertyDefinition
-        //instance.deleteIfcPropertyDefinition(function(error) {
+    describe('deleteCheckerResultDeprecated', function() {
+      it('should call deleteCheckerResultDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteCheckerResultDeprecated
+        //instance.deleteCheckerResultDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteIfcUnit', function() {
-      it('should call deleteIfcUnit successfully', function(done) {
-        //uncomment below and update the code to test deleteIfcUnit
-        //instance.deleteIfcUnit(function(error) {
+    describe('deleteElementDeprecated', function() {
+      it('should call deleteElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteElementDeprecated
+        //instance.deleteElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteLayer', function() {
-      it('should call deleteLayer successfully', function(done) {
-        //uncomment below and update the code to test deleteLayer
-        //instance.deleteLayer(function(error) {
+    describe('deleteIfcDeprecated', function() {
+      it('should call deleteIfcDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteIfcDeprecated
+        //instance.deleteIfcDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteModelWithoutDoc', function() {
-      it('should call deleteModelWithoutDoc successfully', function(done) {
-        //uncomment below and update the code to test deleteModelWithoutDoc
-        //instance.deleteModelWithoutDoc(function(error) {
+    describe('deleteIfcPropertyDefinitionDeprecated', function() {
+      it('should call deleteIfcPropertyDefinitionDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteIfcPropertyDefinitionDeprecated
+        //instance.deleteIfcPropertyDefinitionDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deletePropertySet', function() {
-      it('should call deletePropertySet successfully', function(done) {
-        //uncomment below and update the code to test deletePropertySet
-        //instance.deletePropertySet(function(error) {
+    describe('deleteIfcPropertyDeprecated', function() {
+      it('should call deleteIfcPropertyDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteIfcPropertyDeprecated
+        //instance.deleteIfcPropertyDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteSpace', function() {
-      it('should call deleteSpace successfully', function(done) {
-        //uncomment below and update the code to test deleteSpace
-        //instance.deleteSpace(function(error) {
+    describe('deleteIfcUnitDeprecated', function() {
+      it('should call deleteIfcUnitDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteIfcUnitDeprecated
+        //instance.deleteIfcUnitDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteStorey', function() {
-      it('should call deleteStorey successfully', function(done) {
-        //uncomment below and update the code to test deleteStorey
-        //instance.deleteStorey(function(error) {
+    describe('deleteIfcWithoutDocDeprecated', function() {
+      it('should call deleteIfcWithoutDocDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteIfcWithoutDocDeprecated
+        //instance.deleteIfcWithoutDocDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteStoreyPlan', function() {
-      it('should call deleteStoreyPlan successfully', function(done) {
-        //uncomment below and update the code to test deleteStoreyPlan
-        //instance.deleteStoreyPlan(function(error) {
+    describe('deleteLayerDeprecated', function() {
+      it('should call deleteLayerDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteLayerDeprecated
+        //instance.deleteLayerDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteSystem', function() {
-      it('should call deleteSystem successfully', function(done) {
-        //uncomment below and update the code to test deleteSystem
-        //instance.deleteSystem(function(error) {
+    describe('deletePropertySetDeprecated', function() {
+      it('should call deletePropertySetDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deletePropertySetDeprecated
+        //instance.deletePropertySetDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteZone', function() {
-      it('should call deleteZone successfully', function(done) {
-        //uncomment below and update the code to test deleteZone
-        //instance.deleteZone(function(error) {
+    describe('deleteSpaceDeprecated', function() {
+      it('should call deleteSpaceDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteSpaceDeprecated
+        //instance.deleteSpaceDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteZoneSpace', function() {
-      it('should call deleteZoneSpace successfully', function(done) {
-        //uncomment below and update the code to test deleteZoneSpace
-        //instance.deleteZoneSpace(function(error) {
+    describe('deleteStoreyDeprecated', function() {
+      it('should call deleteStoreyDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteStoreyDeprecated
+        //instance.deleteStoreyDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('exportIfc', function() {
-      it('should call exportIfc successfully', function(done) {
-        //uncomment below and update the code to test exportIfc
-        //instance.exportIfc(function(error) {
+    describe('deleteStoreyPlanDeprecated', function() {
+      it('should call deleteStoreyPlanDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteStoreyPlanDeprecated
+        //instance.deleteStoreyPlanDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fullUpdateElement', function() {
-      it('should call fullUpdateElement successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateElement
-        //instance.fullUpdateElement(function(error) {
+    describe('deleteSystemDeprecated', function() {
+      it('should call deleteSystemDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteSystemDeprecated
+        //instance.deleteSystemDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fullUpdateStoreys', function() {
-      it('should call fullUpdateStoreys successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateStoreys
-        //instance.fullUpdateStoreys(function(error) {
+    describe('deleteZoneDeprecated', function() {
+      it('should call deleteZoneDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteZoneDeprecated
+        //instance.deleteZoneDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getAccessToken', function() {
-      it('should call getAccessToken successfully', function(done) {
-        //uncomment below and update the code to test getAccessToken
-        //instance.getAccessToken(function(error) {
+    describe('deleteZoneSpaceDeprecated', function() {
+      it('should call deleteZoneSpaceDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteZoneSpaceDeprecated
+        //instance.deleteZoneSpaceDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getAccessTokens', function() {
-      it('should call getAccessTokens successfully', function(done) {
-        //uncomment below and update the code to test getAccessTokens
-        //instance.getAccessTokens(function(error) {
+    describe('exportIfcDeprecated', function() {
+      it('should call exportIfcDeprecated successfully', function(done) {
+        //uncomment below and update the code to test exportIfcDeprecated
+        //instance.exportIfcDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getClassificationsOfElement', function() {
-      it('should call getClassificationsOfElement successfully', function(done) {
-        //uncomment below and update the code to test getClassificationsOfElement
-        //instance.getClassificationsOfElement(function(error) {
+    describe('fullUpdateElementDeprecated', function() {
+      it('should call fullUpdateElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateElementDeprecated
+        //instance.fullUpdateElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getDocumentsOfElement', function() {
-      it('should call getDocumentsOfElement successfully', function(done) {
-        //uncomment below and update the code to test getDocumentsOfElement
-        //instance.getDocumentsOfElement(function(error) {
+    describe('fullUpdateStoreysDeprecated', function() {
+      it('should call fullUpdateStoreysDeprecated successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateStoreysDeprecated
+        //instance.fullUpdateStoreysDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getElement', function() {
-      it('should call getElement successfully', function(done) {
-        //uncomment below and update the code to test getElement
-        //instance.getElement(function(error) {
+    describe('getAccessTokenDeprecated', function() {
+      it('should call getAccessTokenDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getAccessTokenDeprecated
+        //instance.getAccessTokenDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getElementLinkedDocuments', function() {
-      it('should call getElementLinkedDocuments successfully', function(done) {
-        //uncomment below and update the code to test getElementLinkedDocuments
-        //instance.getElementLinkedDocuments(function(error) {
+    describe('getAccessTokensDeprecated', function() {
+      it('should call getAccessTokensDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getAccessTokensDeprecated
+        //instance.getAccessTokensDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getElementPropertySet', function() {
-      it('should call getElementPropertySet successfully', function(done) {
-        //uncomment below and update the code to test getElementPropertySet
-        //instance.getElementPropertySet(function(error) {
+    describe('getCheckerDeprecated', function() {
+      it('should call getCheckerDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getCheckerDeprecated
+        //instance.getCheckerDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getElementPropertySetProperties', function() {
-      it('should call getElementPropertySetProperties successfully', function(done) {
-        //uncomment below and update the code to test getElementPropertySetProperties
-        //instance.getElementPropertySetProperties(function(error) {
+    describe('getCheckerResultDeprecated', function() {
+      it('should call getCheckerResultDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getCheckerResultDeprecated
+        //instance.getCheckerResultDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getElementPropertySetProperty', function() {
-      it('should call getElementPropertySetProperty successfully', function(done) {
-        //uncomment below and update the code to test getElementPropertySetProperty
-        //instance.getElementPropertySetProperty(function(error) {
+    describe('getCheckerResultsDeprecated', function() {
+      it('should call getCheckerResultsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getCheckerResultsDeprecated
+        //instance.getCheckerResultsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getElementPropertySetPropertyDefinition', function() {
-      it('should call getElementPropertySetPropertyDefinition successfully', function(done) {
-        //uncomment below and update the code to test getElementPropertySetPropertyDefinition
-        //instance.getElementPropertySetPropertyDefinition(function(error) {
+    describe('getCheckersDeprecated', function() {
+      it('should call getCheckersDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getCheckersDeprecated
+        //instance.getCheckersDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getElementPropertySetPropertyDefinitionUnit', function() {
-      it('should call getElementPropertySetPropertyDefinitionUnit successfully', function(done) {
-        //uncomment below and update the code to test getElementPropertySetPropertyDefinitionUnit
-        //instance.getElementPropertySetPropertyDefinitionUnit(function(error) {
+    describe('getClassificationsOfElementDeprecated', function() {
+      it('should call getClassificationsOfElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getClassificationsOfElementDeprecated
+        //instance.getClassificationsOfElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getElementPropertySetPropertyDefinitionUnits', function() {
-      it('should call getElementPropertySetPropertyDefinitionUnits successfully', function(done) {
-        //uncomment below and update the code to test getElementPropertySetPropertyDefinitionUnits
-        //instance.getElementPropertySetPropertyDefinitionUnits(function(error) {
+    describe('getDocumentsOfElementDeprecated', function() {
+      it('should call getDocumentsOfElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getDocumentsOfElementDeprecated
+        //instance.getDocumentsOfElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getElementPropertySetPropertyDefinitions', function() {
-      it('should call getElementPropertySetPropertyDefinitions successfully', function(done) {
-        //uncomment below and update the code to test getElementPropertySetPropertyDefinitions
-        //instance.getElementPropertySetPropertyDefinitions(function(error) {
+    describe('getElementDeprecated', function() {
+      it('should call getElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getElementDeprecated
+        //instance.getElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getElementPropertySets', function() {
-      it('should call getElementPropertySets successfully', function(done) {
-        //uncomment below and update the code to test getElementPropertySets
-        //instance.getElementPropertySets(function(error) {
+    describe('getElementLinkedDocumentsDeprecated', function() {
+      it('should call getElementLinkedDocumentsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getElementLinkedDocumentsDeprecated
+        //instance.getElementLinkedDocumentsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getElements', function() {
-      it('should call getElements successfully', function(done) {
-        //uncomment below and update the code to test getElements
-        //instance.getElements(function(error) {
+    describe('getElementPropertySetDeprecated', function() {
+      it('should call getElementPropertySetDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getElementPropertySetDeprecated
+        //instance.getElementPropertySetDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getElementsFromClassification', function() {
-      it('should call getElementsFromClassification successfully', function(done) {
-        //uncomment below and update the code to test getElementsFromClassification
-        //instance.getElementsFromClassification(function(error) {
+    describe('getElementPropertySetPropertiesDeprecated', function() {
+      it('should call getElementPropertySetPropertiesDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getElementPropertySetPropertiesDeprecated
+        //instance.getElementPropertySetPropertiesDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getIfc', function() {
-      it('should call getIfc successfully', function(done) {
-        //uncomment below and update the code to test getIfc
-        //instance.getIfc(function(error) {
+    describe('getElementPropertySetPropertyDefinitionDeprecated', function() {
+      it('should call getElementPropertySetPropertyDefinitionDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getElementPropertySetPropertyDefinitionDeprecated
+        //instance.getElementPropertySetPropertyDefinitionDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getIfcClassifications', function() {
-      it('should call getIfcClassifications successfully', function(done) {
-        //uncomment below and update the code to test getIfcClassifications
-        //instance.getIfcClassifications(function(error) {
+    describe('getElementPropertySetPropertyDefinitionUnitDeprecated', function() {
+      it('should call getElementPropertySetPropertyDefinitionUnitDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getElementPropertySetPropertyDefinitionUnitDeprecated
+        //instance.getElementPropertySetPropertyDefinitionUnitDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getIfcMaterial', function() {
-      it('should call getIfcMaterial successfully', function(done) {
-        //uncomment below and update the code to test getIfcMaterial
-        //instance.getIfcMaterial(function(error) {
+    describe('getElementPropertySetPropertyDefinitionUnitsDeprecated', function() {
+      it('should call getElementPropertySetPropertyDefinitionUnitsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getElementPropertySetPropertyDefinitionUnitsDeprecated
+        //instance.getElementPropertySetPropertyDefinitionUnitsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getIfcMaterials', function() {
-      it('should call getIfcMaterials successfully', function(done) {
-        //uncomment below and update the code to test getIfcMaterials
-        //instance.getIfcMaterials(function(error) {
+    describe('getElementPropertySetPropertyDefinitionsDeprecated', function() {
+      it('should call getElementPropertySetPropertyDefinitionsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getElementPropertySetPropertyDefinitionsDeprecated
+        //instance.getElementPropertySetPropertyDefinitionsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getIfcProperties', function() {
-      it('should call getIfcProperties successfully', function(done) {
-        //uncomment below and update the code to test getIfcProperties
-        //instance.getIfcProperties(function(error) {
+    describe('getElementPropertySetPropertyDeprecated', function() {
+      it('should call getElementPropertySetPropertyDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getElementPropertySetPropertyDeprecated
+        //instance.getElementPropertySetPropertyDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getIfcProperty', function() {
-      it('should call getIfcProperty successfully', function(done) {
-        //uncomment below and update the code to test getIfcProperty
-        //instance.getIfcProperty(function(error) {
+    describe('getElementPropertySetsDeprecated', function() {
+      it('should call getElementPropertySetsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getElementPropertySetsDeprecated
+        //instance.getElementPropertySetsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getIfcPropertyDefinition', function() {
-      it('should call getIfcPropertyDefinition successfully', function(done) {
-        //uncomment below and update the code to test getIfcPropertyDefinition
-        //instance.getIfcPropertyDefinition(function(error) {
+    describe('getElementsDeprecated', function() {
+      it('should call getElementsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getElementsDeprecated
+        //instance.getElementsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getIfcPropertyDefinitions', function() {
-      it('should call getIfcPropertyDefinitions successfully', function(done) {
-        //uncomment below and update the code to test getIfcPropertyDefinitions
-        //instance.getIfcPropertyDefinitions(function(error) {
+    describe('getElementsFromClassificationDeprecated', function() {
+      it('should call getElementsFromClassificationDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getElementsFromClassificationDeprecated
+        //instance.getElementsFromClassificationDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getIfcUnit', function() {
-      it('should call getIfcUnit successfully', function(done) {
-        //uncomment below and update the code to test getIfcUnit
-        //instance.getIfcUnit(function(error) {
+    describe('getIfcClassificationsDeprecated', function() {
+      it('should call getIfcClassificationsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getIfcClassificationsDeprecated
+        //instance.getIfcClassificationsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getIfcUnits', function() {
-      it('should call getIfcUnits successfully', function(done) {
-        //uncomment below and update the code to test getIfcUnits
-        //instance.getIfcUnits(function(error) {
+    describe('getIfcDeprecated', function() {
+      it('should call getIfcDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getIfcDeprecated
+        //instance.getIfcDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getIfcs', function() {
-      it('should call getIfcs successfully', function(done) {
-        //uncomment below and update the code to test getIfcs
-        //instance.getIfcs(function(error) {
+    describe('getIfcMaterialDeprecated', function() {
+      it('should call getIfcMaterialDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getIfcMaterialDeprecated
+        //instance.getIfcMaterialDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getLayer', function() {
-      it('should call getLayer successfully', function(done) {
-        //uncomment below and update the code to test getLayer
-        //instance.getLayer(function(error) {
+    describe('getIfcMaterialsDeprecated', function() {
+      it('should call getIfcMaterialsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getIfcMaterialsDeprecated
+        //instance.getIfcMaterialsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getLayers', function() {
-      it('should call getLayers successfully', function(done) {
-        //uncomment below and update the code to test getLayers
-        //instance.getLayers(function(error) {
+    describe('getIfcPropertiesDeprecated', function() {
+      it('should call getIfcPropertiesDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getIfcPropertiesDeprecated
+        //instance.getIfcPropertiesDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getMaterial', function() {
-      it('should call getMaterial successfully', function(done) {
-        //uncomment below and update the code to test getMaterial
-        //instance.getMaterial(function(error) {
+    describe('getIfcPropertyDefinitionDeprecated', function() {
+      it('should call getIfcPropertyDefinitionDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getIfcPropertyDefinitionDeprecated
+        //instance.getIfcPropertyDefinitionDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getMaterials', function() {
-      it('should call getMaterials successfully', function(done) {
-        //uncomment below and update the code to test getMaterials
-        //instance.getMaterials(function(error) {
+    describe('getIfcPropertyDefinitionsDeprecated', function() {
+      it('should call getIfcPropertyDefinitionsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getIfcPropertyDefinitionsDeprecated
+        //instance.getIfcPropertyDefinitionsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getModelStorey', function() {
-      it('should call getModelStorey successfully', function(done) {
-        //uncomment below and update the code to test getModelStorey
-        //instance.getModelStorey(function(error) {
+    describe('getIfcPropertyDeprecated', function() {
+      it('should call getIfcPropertyDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getIfcPropertyDeprecated
+        //instance.getIfcPropertyDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getModelStoreys', function() {
-      it('should call getModelStoreys successfully', function(done) {
-        //uncomment below and update the code to test getModelStoreys
-        //instance.getModelStoreys(function(error) {
+    describe('getIfcUnitDeprecated', function() {
+      it('should call getIfcUnitDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getIfcUnitDeprecated
+        //instance.getIfcUnitDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getPlanPositioning', function() {
-      it('should call getPlanPositioning successfully', function(done) {
-        //uncomment below and update the code to test getPlanPositioning
-        //instance.getPlanPositioning(function(error) {
+    describe('getIfcUnitsDeprecated', function() {
+      it('should call getIfcUnitsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getIfcUnitsDeprecated
+        //instance.getIfcUnitsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getProcessorHandler', function() {
-      it('should call getProcessorHandler successfully', function(done) {
-        //uncomment below and update the code to test getProcessorHandler
-        //instance.getProcessorHandler(function(error) {
+    describe('getIfcsDeprecated', function() {
+      it('should call getIfcsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getIfcsDeprecated
+        //instance.getIfcsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getProcessorHandlers', function() {
-      it('should call getProcessorHandlers successfully', function(done) {
-        //uncomment below and update the code to test getProcessorHandlers
-        //instance.getProcessorHandlers(function(error) {
+    describe('getLayerDeprecated', function() {
+      it('should call getLayerDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getLayerDeprecated
+        //instance.getLayerDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getPropertySet', function() {
-      it('should call getPropertySet successfully', function(done) {
-        //uncomment below and update the code to test getPropertySet
-        //instance.getPropertySet(function(error) {
+    describe('getLayersDeprecated', function() {
+      it('should call getLayersDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getLayersDeprecated
+        //instance.getLayersDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getPropertySets', function() {
-      it('should call getPropertySets successfully', function(done) {
-        //uncomment below and update the code to test getPropertySets
-        //instance.getPropertySets(function(error) {
+    describe('getMaterialDeprecated', function() {
+      it('should call getMaterialDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getMaterialDeprecated
+        //instance.getMaterialDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getRawElements', function() {
-      it('should call getRawElements successfully', function(done) {
-        //uncomment below and update the code to test getRawElements
-        //instance.getRawElements(function(error) {
+    describe('getMaterialsDeprecated', function() {
+      it('should call getMaterialsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getMaterialsDeprecated
+        //instance.getMaterialsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getSimpleElement', function() {
-      it('should call getSimpleElement successfully', function(done) {
-        //uncomment below and update the code to test getSimpleElement
-        //instance.getSimpleElement(function(error) {
+    describe('getPlanPositioningDeprecated', function() {
+      it('should call getPlanPositioningDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getPlanPositioningDeprecated
+        //instance.getPlanPositioningDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getSimpleElements', function() {
-      it('should call getSimpleElements successfully', function(done) {
-        //uncomment below and update the code to test getSimpleElements
-        //instance.getSimpleElements(function(error) {
+    describe('getProcessorHandlerDeprecated', function() {
+      it('should call getProcessorHandlerDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getProcessorHandlerDeprecated
+        //instance.getProcessorHandlerDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getSpace', function() {
-      it('should call getSpace successfully', function(done) {
-        //uncomment below and update the code to test getSpace
-        //instance.getSpace(function(error) {
+    describe('getProcessorHandlersDeprecated', function() {
+      it('should call getProcessorHandlersDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getProcessorHandlersDeprecated
+        //instance.getProcessorHandlersDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getSpaces', function() {
-      it('should call getSpaces successfully', function(done) {
-        //uncomment below and update the code to test getSpaces
-        //instance.getSpaces(function(error) {
+    describe('getPropertySetDeprecated', function() {
+      it('should call getPropertySetDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getPropertySetDeprecated
+        //instance.getPropertySetDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getSystem', function() {
-      it('should call getSystem successfully', function(done) {
-        //uncomment below and update the code to test getSystem
-        //instance.getSystem(function(error) {
+    describe('getPropertySetsDeprecated', function() {
+      it('should call getPropertySetsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getPropertySetsDeprecated
+        //instance.getPropertySetsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getSystems', function() {
-      it('should call getSystems successfully', function(done) {
-        //uncomment below and update the code to test getSystems
-        //instance.getSystems(function(error) {
+    describe('getRawElementsDeprecated', function() {
+      it('should call getRawElementsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getRawElementsDeprecated
+        //instance.getRawElementsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getZone', function() {
-      it('should call getZone successfully', function(done) {
-        //uncomment below and update the code to test getZone
-        //instance.getZone(function(error) {
+    describe('getSimpleElementDeprecated', function() {
+      it('should call getSimpleElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getSimpleElementDeprecated
+        //instance.getSimpleElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getZoneSpace', function() {
-      it('should call getZoneSpace successfully', function(done) {
-        //uncomment below and update the code to test getZoneSpace
-        //instance.getZoneSpace(function(error) {
+    describe('getSimpleElementsDeprecated', function() {
+      it('should call getSimpleElementsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getSimpleElementsDeprecated
+        //instance.getSimpleElementsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getZoneSpaces', function() {
-      it('should call getZoneSpaces successfully', function(done) {
-        //uncomment below and update the code to test getZoneSpaces
-        //instance.getZoneSpaces(function(error) {
+    describe('getSpaceDeprecated', function() {
+      it('should call getSpaceDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getSpaceDeprecated
+        //instance.getSpaceDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getZones', function() {
-      it('should call getZones successfully', function(done) {
-        //uncomment below and update the code to test getZones
-        //instance.getZones(function(error) {
+    describe('getSpacesDeprecated', function() {
+      it('should call getSpacesDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getSpacesDeprecated
+        //instance.getSpacesDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('linkDocumentsOfElement', function() {
-      it('should call linkDocumentsOfElement successfully', function(done) {
-        //uncomment below and update the code to test linkDocumentsOfElement
-        //instance.linkDocumentsOfElement(function(error) {
+    describe('getStoreyDeprecated', function() {
+      it('should call getStoreyDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getStoreyDeprecated
+        //instance.getStoreyDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('listClassificationElementRelations', function() {
-      it('should call listClassificationElementRelations successfully', function(done) {
-        //uncomment below and update the code to test listClassificationElementRelations
-        //instance.listClassificationElementRelations(function(error) {
+    describe('getStoreysDeprecated', function() {
+      it('should call getStoreysDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getStoreysDeprecated
+        //instance.getStoreysDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('mergeIfcs', function() {
-      it('should call mergeIfcs successfully', function(done) {
-        //uncomment below and update the code to test mergeIfcs
-        //instance.mergeIfcs(function(error) {
+    describe('getSystemDeprecated', function() {
+      it('should call getSystemDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getSystemDeprecated
+        //instance.getSystemDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('optimizeIfc', function() {
-      it('should call optimizeIfc successfully', function(done) {
-        //uncomment below and update the code to test optimizeIfc
-        //instance.optimizeIfc(function(error) {
+    describe('getSystemsDeprecated', function() {
+      it('should call getSystemsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getSystemsDeprecated
+        //instance.getSystemsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeAllElementPropertySet', function() {
-      it('should call removeAllElementPropertySet successfully', function(done) {
-        //uncomment below and update the code to test removeAllElementPropertySet
-        //instance.removeAllElementPropertySet(function(error) {
+    describe('getZoneDeprecated', function() {
+      it('should call getZoneDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getZoneDeprecated
+        //instance.getZoneDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeClassificationOfElement', function() {
-      it('should call removeClassificationOfElement successfully', function(done) {
-        //uncomment below and update the code to test removeClassificationOfElement
-        //instance.removeClassificationOfElement(function(error) {
+    describe('getZoneSpaceDeprecated', function() {
+      it('should call getZoneSpaceDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getZoneSpaceDeprecated
+        //instance.getZoneSpaceDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeDocumentOfElement', function() {
-      it('should call removeDocumentOfElement successfully', function(done) {
-        //uncomment below and update the code to test removeDocumentOfElement
-        //instance.removeDocumentOfElement(function(error) {
+    describe('getZoneSpacesDeprecated', function() {
+      it('should call getZoneSpacesDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getZoneSpacesDeprecated
+        //instance.getZoneSpacesDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeElementPropertySet', function() {
-      it('should call removeElementPropertySet successfully', function(done) {
-        //uncomment below and update the code to test removeElementPropertySet
-        //instance.removeElementPropertySet(function(error) {
+    describe('getZonesDeprecated', function() {
+      it('should call getZonesDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getZonesDeprecated
+        //instance.getZonesDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeElementPropertySetProperty', function() {
-      it('should call removeElementPropertySetProperty successfully', function(done) {
-        //uncomment below and update the code to test removeElementPropertySetProperty
-        //instance.removeElementPropertySetProperty(function(error) {
+    describe('launchNewCheckDeprecated', function() {
+      it('should call launchNewCheckDeprecated successfully', function(done) {
+        //uncomment below and update the code to test launchNewCheckDeprecated
+        //instance.launchNewCheckDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeElementPropertySetPropertyDefinition', function() {
-      it('should call removeElementPropertySetPropertyDefinition successfully', function(done) {
-        //uncomment below and update the code to test removeElementPropertySetPropertyDefinition
-        //instance.removeElementPropertySetPropertyDefinition(function(error) {
+    describe('linkDocumentsOfElementDeprecated', function() {
+      it('should call linkDocumentsOfElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test linkDocumentsOfElementDeprecated
+        //instance.linkDocumentsOfElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeElementPropertySetPropertyDefinitionUnit', function() {
-      it('should call removeElementPropertySetPropertyDefinitionUnit successfully', function(done) {
-        //uncomment below and update the code to test removeElementPropertySetPropertyDefinitionUnit
-        //instance.removeElementPropertySetPropertyDefinitionUnit(function(error) {
+    describe('listClassificationElementRelationsDeprecated', function() {
+      it('should call listClassificationElementRelationsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test listClassificationElementRelationsDeprecated
+        //instance.listClassificationElementRelationsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('removeElementsFromClassification', function() {
-      it('should call removeElementsFromClassification successfully', function(done) {
-        //uncomment below and update the code to test removeElementsFromClassification
-        //instance.removeElementsFromClassification(function(error) {
+    describe('mergeIfcsDeprecated', function() {
+      it('should call mergeIfcsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test mergeIfcsDeprecated
+        //instance.mergeIfcsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('reprocessIfc', function() {
-      it('should call reprocessIfc successfully', function(done) {
-        //uncomment below and update the code to test reprocessIfc
-        //instance.reprocessIfc(function(error) {
+    describe('optimizeIfcDeprecated', function() {
+      it('should call optimizeIfcDeprecated successfully', function(done) {
+        //uncomment below and update the code to test optimizeIfcDeprecated
+        //instance.optimizeIfcDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateAccessToken', function() {
-      it('should call updateAccessToken successfully', function(done) {
-        //uncomment below and update the code to test updateAccessToken
-        //instance.updateAccessToken(function(error) {
+    describe('removeAllElementPropertySetDeprecated', function() {
+      it('should call removeAllElementPropertySetDeprecated successfully', function(done) {
+        //uncomment below and update the code to test removeAllElementPropertySetDeprecated
+        //instance.removeAllElementPropertySetDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateElement', function() {
-      it('should call updateElement successfully', function(done) {
-        //uncomment below and update the code to test updateElement
-        //instance.updateElement(function(error) {
+    describe('removeClassificationOfElementDeprecated', function() {
+      it('should call removeClassificationOfElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test removeClassificationOfElementDeprecated
+        //instance.removeClassificationOfElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateElementPropertySetProperty', function() {
-      it('should call updateElementPropertySetProperty successfully', function(done) {
-        //uncomment below and update the code to test updateElementPropertySetProperty
-        //instance.updateElementPropertySetProperty(function(error) {
+    describe('removeDocumentOfElementDeprecated', function() {
+      it('should call removeDocumentOfElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test removeDocumentOfElementDeprecated
+        //instance.removeDocumentOfElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateIfc', function() {
-      it('should call updateIfc successfully', function(done) {
-        //uncomment below and update the code to test updateIfc
-        //instance.updateIfc(function(error) {
+    describe('removeElementPropertySetDeprecated', function() {
+      it('should call removeElementPropertySetDeprecated successfully', function(done) {
+        //uncomment below and update the code to test removeElementPropertySetDeprecated
+        //instance.removeElementPropertySetDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateIfcFiles', function() {
-      it('should call updateIfcFiles successfully', function(done) {
-        //uncomment below and update the code to test updateIfcFiles
-        //instance.updateIfcFiles(function(error) {
+    describe('removeElementPropertySetPropertyDefinitionDeprecated', function() {
+      it('should call removeElementPropertySetPropertyDefinitionDeprecated successfully', function(done) {
+        //uncomment below and update the code to test removeElementPropertySetPropertyDefinitionDeprecated
+        //instance.removeElementPropertySetPropertyDefinitionDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateIfcProperty', function() {
-      it('should call updateIfcProperty successfully', function(done) {
-        //uncomment below and update the code to test updateIfcProperty
-        //instance.updateIfcProperty(function(error) {
+    describe('removeElementPropertySetPropertyDefinitionUnitDeprecated', function() {
+      it('should call removeElementPropertySetPropertyDefinitionUnitDeprecated successfully', function(done) {
+        //uncomment below and update the code to test removeElementPropertySetPropertyDefinitionUnitDeprecated
+        //instance.removeElementPropertySetPropertyDefinitionUnitDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateIfcPropertyDefinition', function() {
-      it('should call updateIfcPropertyDefinition successfully', function(done) {
-        //uncomment below and update the code to test updateIfcPropertyDefinition
-        //instance.updateIfcPropertyDefinition(function(error) {
+    describe('removeElementPropertySetPropertyDeprecated', function() {
+      it('should call removeElementPropertySetPropertyDeprecated successfully', function(done) {
+        //uncomment below and update the code to test removeElementPropertySetPropertyDeprecated
+        //instance.removeElementPropertySetPropertyDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateIfcUnit', function() {
-      it('should call updateIfcUnit successfully', function(done) {
-        //uncomment below and update the code to test updateIfcUnit
-        //instance.updateIfcUnit(function(error) {
+    describe('removeElementsFromClassificationDeprecated', function() {
+      it('should call removeElementsFromClassificationDeprecated successfully', function(done) {
+        //uncomment below and update the code to test removeElementsFromClassificationDeprecated
+        //instance.removeElementsFromClassificationDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateLayer', function() {
-      it('should call updateLayer successfully', function(done) {
-        //uncomment below and update the code to test updateLayer
-        //instance.updateLayer(function(error) {
+    describe('reprocessIfcDeprecated', function() {
+      it('should call reprocessIfcDeprecated successfully', function(done) {
+        //uncomment below and update the code to test reprocessIfcDeprecated
+        //instance.reprocessIfcDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updatePlanPositioning', function() {
-      it('should call updatePlanPositioning successfully', function(done) {
-        //uncomment below and update the code to test updatePlanPositioning
-        //instance.updatePlanPositioning(function(error) {
+    describe('updateAccessTokenDeprecated', function() {
+      it('should call updateAccessTokenDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateAccessTokenDeprecated
+        //instance.updateAccessTokenDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateProcessorHandler', function() {
-      it('should call updateProcessorHandler successfully', function(done) {
-        //uncomment below and update the code to test updateProcessorHandler
-        //instance.updateProcessorHandler(function(error) {
+    describe('updateCheckerDeprecated', function() {
+      it('should call updateCheckerDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateCheckerDeprecated
+        //instance.updateCheckerDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updatePropertySet', function() {
-      it('should call updatePropertySet successfully', function(done) {
-        //uncomment below and update the code to test updatePropertySet
-        //instance.updatePropertySet(function(error) {
+    describe('updateCheckerResultDeprecated', function() {
+      it('should call updateCheckerResultDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateCheckerResultDeprecated
+        //instance.updateCheckerResultDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateSpace', function() {
-      it('should call updateSpace successfully', function(done) {
-        //uncomment below and update the code to test updateSpace
-        //instance.updateSpace(function(error) {
+    describe('updateElementDeprecated', function() {
+      it('should call updateElementDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateElementDeprecated
+        //instance.updateElementDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateStorey', function() {
-      it('should call updateStorey successfully', function(done) {
-        //uncomment below and update the code to test updateStorey
-        //instance.updateStorey(function(error) {
+    describe('updateElementPropertySetPropertyDeprecated', function() {
+      it('should call updateElementPropertySetPropertyDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateElementPropertySetPropertyDeprecated
+        //instance.updateElementPropertySetPropertyDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateSystem', function() {
-      it('should call updateSystem successfully', function(done) {
-        //uncomment below and update the code to test updateSystem
-        //instance.updateSystem(function(error) {
+    describe('updateIfcDeprecated', function() {
+      it('should call updateIfcDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateIfcDeprecated
+        //instance.updateIfcDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateZone', function() {
-      it('should call updateZone successfully', function(done) {
-        //uncomment below and update the code to test updateZone
-        //instance.updateZone(function(error) {
+    describe('updateIfcFilesDeprecated', function() {
+      it('should call updateIfcFilesDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateIfcFilesDeprecated
+        //instance.updateIfcFilesDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateZoneSpace', function() {
-      it('should call updateZoneSpace successfully', function(done) {
-        //uncomment below and update the code to test updateZoneSpace
-        //instance.updateZoneSpace(function(error) {
+    describe('updateIfcPropertyDefinitionDeprecated', function() {
+      it('should call updateIfcPropertyDefinitionDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateIfcPropertyDefinitionDeprecated
+        //instance.updateIfcPropertyDefinitionDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateIfcPropertyDeprecated', function() {
+      it('should call updateIfcPropertyDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateIfcPropertyDeprecated
+        //instance.updateIfcPropertyDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateIfcUnitDeprecated', function() {
+      it('should call updateIfcUnitDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateIfcUnitDeprecated
+        //instance.updateIfcUnitDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateLayerDeprecated', function() {
+      it('should call updateLayerDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateLayerDeprecated
+        //instance.updateLayerDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updatePlanPositioningDeprecated', function() {
+      it('should call updatePlanPositioningDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updatePlanPositioningDeprecated
+        //instance.updatePlanPositioningDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateProcessorHandlerDeprecated', function() {
+      it('should call updateProcessorHandlerDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateProcessorHandlerDeprecated
+        //instance.updateProcessorHandlerDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updatePropertySetDeprecated', function() {
+      it('should call updatePropertySetDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updatePropertySetDeprecated
+        //instance.updatePropertySetDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateSpaceDeprecated', function() {
+      it('should call updateSpaceDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateSpaceDeprecated
+        //instance.updateSpaceDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateStoreyDeprecated', function() {
+      it('should call updateStoreyDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateStoreyDeprecated
+        //instance.updateStoreyDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateSystemDeprecated', function() {
+      it('should call updateSystemDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateSystemDeprecated
+        //instance.updateSystemDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateZoneDeprecated', function() {
+      it('should call updateZoneDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateZoneDeprecated
+        //instance.updateZoneDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateZoneSpaceDeprecated', function() {
+      it('should call updateZoneSpaceDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateZoneSpaceDeprecated
+        //instance.updateZoneSpaceDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

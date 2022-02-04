@@ -442,7 +442,7 @@ export default class CollaborationApi {
 
     /**
      * Create a classification
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a 'classification' filter on this endpoint. By ex: /classification?name='untec'. The name is case sensitive  Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a 'classification' filter on this endpoint. By ex: /classification?name='untec'. The name is case sensitive  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Classification>} data 
@@ -487,7 +487,7 @@ export default class CollaborationApi {
 
     /**
      * Create a classification
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a 'classification' filter on this endpoint. By ex: /classification?name='untec'. The name is case sensitive  Required scopes: ifc:write
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors      If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a 'classification' filter on this endpoint. By ex: /classification?name='untec'. The name is case sensitive  Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {Array.<module:model/Classification>} data 
@@ -671,7 +671,8 @@ export default class CollaborationApi {
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
      * @param {Number} opts.size Size of the file.
-     * @param {module:model/String} opts.ifcSource Define the ifc.source field if the upload is an IFC
+     * @param {module:model/String} opts.modelSource Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+     * @param {module:model/String} opts.ifcSource DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
     createDocumentWithHttpInfo(cloudPk, projectPk, name, file, opts) {
@@ -711,6 +712,7 @@ export default class CollaborationApi {
         'description': opts['description'],
         'file': file,
         'size': opts['size'],
+        'model_source': opts['modelSource'],
         'ifc_source': opts['ifcSource']
       };
 
@@ -739,7 +741,8 @@ export default class CollaborationApi {
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
      * @param {Number} opts.size Size of the file.
-     * @param {module:model/String} opts.ifcSource Define the ifc.source field if the upload is an IFC
+     * @param {module:model/String} opts.modelSource Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+     * @param {module:model/String} opts.ifcSource DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
     createDocument(cloudPk, projectPk, name, file, opts) {
@@ -1207,7 +1210,7 @@ export default class CollaborationApi {
 
     /**
      * Delete a classification
-     * All elements having this classification will lose it Required scopes: ifc:write
+     * All elements having this classification will lose it Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -1253,7 +1256,7 @@ export default class CollaborationApi {
 
     /**
      * Delete a classification
-     * All elements having this classification will lose it Required scopes: ifc:write
+     * All elements having this classification will lose it Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -2103,7 +2106,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve a classification
-     * Retrieve a classification Required scopes: ifc:read
+     * Retrieve a classification Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -2149,7 +2152,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve a classification
-     * Retrieve a classification Required scopes: ifc:read
+     * Retrieve a classification Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -2165,7 +2168,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve all classifications
-     * Retrieve all classifications of all models in the project Required scopes: ifc:read
+     * Retrieve all classifications of all models in the project Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
@@ -2205,7 +2208,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve all classifications
-     * Retrieve all classifications of all models in the project Required scopes: ifc:read
+     * Retrieve all classifications of all models in the project Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
@@ -3387,7 +3390,7 @@ export default class CollaborationApi {
 
 
     /**
-     * Get size of all ifc files in the project
+     * Get size of all model files in the project
      * Returns the size of the project in Bytes
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
@@ -3427,7 +3430,7 @@ export default class CollaborationApi {
     }
 
     /**
-     * Get size of all ifc files in the project
+     * Get size of all model files in the project
      * Returns the size of the project in Bytes
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
@@ -4606,7 +4609,7 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of a classification
-     * Update some fields of a classification Required scopes: ifc:write
+     * Update some fields of a classification Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 
@@ -4657,7 +4660,7 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of a classification
-     * Update some fields of a classification Required scopes: ifc:write
+     * Update some fields of a classification Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {Number} id A unique integer value identifying this classification.
      * @param {String} projectPk 

@@ -60,6 +60,9 @@ class InlineResponse200 {
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
+            if (data.hasOwnProperty('nature')) {
+                obj['nature'] = ApiClient.convertToType(data['nature'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -99,10 +102,16 @@ InlineResponse200.prototype['id'] = undefined;
 InlineResponse200.prototype['parent_id'] = undefined;
 
 /**
- * Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
+ * DEPRECATED: Use 'nature' instead. Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
  * @member {String} type
  */
 InlineResponse200.prototype['type'] = undefined;
+
+/**
+ * Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
+ * @member {String} nature
+ */
+InlineResponse200.prototype['nature'] = undefined;
 
 /**
  * Name of the folder

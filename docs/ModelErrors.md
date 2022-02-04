@@ -1,4 +1,4 @@
-# bimdata.IfcErrors
+# bimdata.ModelErrors
 
 ## Properties
 

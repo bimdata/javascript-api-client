@@ -59,7 +59,7 @@ Method | HTTP request | Description
 [**getProjectCreatorVisas**](CollaborationApi.md#getProjectCreatorVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/visa/creator | List visas created by user
 [**getProjectDMSTree**](CollaborationApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
 [**getProjectInvitations**](CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
-[**getProjectSize**](CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all ifc files in the project
+[**getProjectSize**](CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all model files in the project
 [**getProjectSubTree**](CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
 [**getProjectTree**](CollaborationApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | Retrieve the complete DMS tree
 [**getProjectUsers**](CollaborationApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | Retrieve all users in a project, or a list with a filter by email
@@ -463,7 +463,7 @@ null (empty response body)
 
 Create a classification
 
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive  Required scopes: ifc:write
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive  Required scopes: ifc:write, model:write
 
 ### Example
 
@@ -726,7 +726,8 @@ let opts = {
   'fileName': "fileName_example", // String | Full name of the file
   'description': "description_example", // String | Description of the file
   'size': 56, // Number | Size of the file.
-  'ifcSource': "ifcSource_example" // String | Define the ifc.source field if the upload is an IFC
+  'modelSource': "modelSource_example", // String | Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+  'ifcSource': "ifcSource_example" // String | DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
 };
 apiInstance.createDocument(cloudPk, projectPk, name, file, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -751,7 +752,8 @@ Name | Type | Description  | Notes
  **fileName** | **String**| Full name of the file | [optional] 
  **description** | **String**| Description of the file | [optional] 
  **size** | **Number**| Size of the file. | [optional] 
- **ifcSource** | **String**| Define the ifc.source field if the upload is an IFC | [optional] 
+ **modelSource** | **String**| Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
+ **ifcSource** | **String**| DEPRECATED: Use &#39;model_source&#39; instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
 
 ### Return type
 
@@ -1201,7 +1203,7 @@ Name | Type | Description  | Notes
 
 Delete a classification
 
-All elements having this classification will lose it Required scopes: ifc:write
+All elements having this classification will lose it Required scopes: ifc:write, model:write
 
 ### Example
 
@@ -2049,7 +2051,7 @@ null (empty response body)
 
 Retrieve a classification
 
-Retrieve a classification Required scopes: ifc:read
+Retrieve a classification Required scopes: ifc:read, model:read
 
 ### Example
 
@@ -2109,7 +2111,7 @@ Name | Type | Description  | Notes
 
 Retrieve all classifications
 
-Retrieve all classifications of all models in the project Required scopes: ifc:read
+Retrieve all classifications of all models in the project Required scopes: ifc:read, model:read
 
 ### Example
 
@@ -3389,7 +3391,7 @@ Name | Type | Description  | Notes
 
 > ProjectSize getProjectSize(cloudPk, id)
 
-Get size of all ifc files in the project
+Get size of all model files in the project
 
 Returns the size of the project in Bytes
 
@@ -4587,7 +4589,7 @@ null (empty response body)
 
 Update some fields of a classification
 
-Update some fields of a classification Required scopes: ifc:write
+Update some fields of a classification Required scopes: ifc:write, model:write
 
 ### Example
 

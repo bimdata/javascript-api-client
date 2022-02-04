@@ -1234,6 +1234,7 @@ export default class BcfApi {
      * This is not a standard route. It responds with all topics, their viewpoints and their comments Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
+     * @param {String} opts.models Filter the returned list by models
      * @param {String} opts.ifcs Filter the returned list by ifcs
      * @param {String} opts.format Filter the returned list by format
      * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
@@ -1251,6 +1252,7 @@ export default class BcfApi {
         'projects_pk': projectsPk
       };
       let queryParams = {
+        'models': opts['models'],
         'ifcs': opts['ifcs'],
         'format': opts['format'],
         'img_format': opts['imgFormat']
@@ -1276,6 +1278,7 @@ export default class BcfApi {
      * This is not a standard route. It responds with all topics, their viewpoints and their comments Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
+     * @param {String} opts.models Filter the returned list by models
      * @param {String} opts.ifcs Filter the returned list by ifcs
      * @param {String} opts.format Filter the returned list by format
      * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
@@ -1534,6 +1537,7 @@ export default class BcfApi {
      * Retrieve all topics Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
+     * @param {String} opts.models Filter the returned list by models
      * @param {String} opts.ifcs Filter the returned list by ifcs
      * @param {String} opts.format Filter the returned list by format
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Topic>} and HTTP response
@@ -1550,6 +1554,7 @@ export default class BcfApi {
         'projects_pk': projectsPk
       };
       let queryParams = {
+        'models': opts['models'],
         'ifcs': opts['ifcs'],
         'format': opts['format']
       };
@@ -1574,6 +1579,7 @@ export default class BcfApi {
      * Retrieve all topics Required scopes: bcf:read
      * @param {String} projectsPk 
      * @param {Object} opts Optional parameters
+     * @param {String} opts.models Filter the returned list by models
      * @param {String} opts.ifcs Filter the returned list by ifcs
      * @param {String} opts.format Filter the returned list by format
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Topic>}

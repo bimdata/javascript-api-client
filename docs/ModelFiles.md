@@ -1,4 +1,4 @@
-# bimdata.IfcFiles
+# bimdata.ModelFiles
 
 ## Properties
 

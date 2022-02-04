@@ -108,6 +108,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property models (base name: "models")', function() {
+      // uncomment below and update the code to test the property models
+      //var instane = new bimdata.FullTopic();
+      //expect(instance).to.be();
+    });
+
     it('should have the property labels (base name: "labels")', function() {
       // uncomment below and update the code to test the property labels
       //var instane = new bimdata.FullTopic();

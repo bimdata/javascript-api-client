@@ -40,14 +40,11 @@ import FolderGroupPermission from './model/FolderGroupPermission';
 import FolderUserProject from './model/FolderUserProject';
 import FullTopic from './model/FullTopic';
 import GroupFolder from './model/GroupFolder';
-import Ifc from './model/Ifc';
 import IfcAccessToken from './model/IfcAccessToken';
 import IfcChecker from './model/IfcChecker';
 import IfcCheckerCheckplan from './model/IfcCheckerCheckplan';
 import IfcCheckerResults from './model/IfcCheckerResults';
-import IfcErrors from './model/IfcErrors';
 import IfcExport from './model/IfcExport';
-import IfcFiles from './model/IfcFiles';
 import IfcMerge from './model/IfcMerge';
 import IfcOptimize from './model/IfcOptimize';
 import InlineObject from './model/InlineObject';
@@ -55,6 +52,7 @@ import InlineObject1 from './model/InlineObject1';
 import InlineObject2 from './model/InlineObject2';
 import InlineObject3 from './model/InlineObject3';
 import InlineObject4 from './model/InlineObject4';
+import InlineObject5 from './model/InlineObject5';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
 import Invitation from './model/Invitation';
@@ -67,6 +65,9 @@ import MarketplaceAppImage from './model/MarketplaceAppImage';
 import Material from './model/Material';
 import MaterialListComponent from './model/MaterialListComponent';
 import MaterialOption from './model/MaterialOption';
+import Model from './model/Model';
+import ModelErrors from './model/ModelErrors';
+import ModelFiles from './model/ModelFiles';
 import ModelWithPositioningPlan from './model/ModelWithPositioningPlan';
 import Organization from './model/Organization';
 import OrthogonalCamera from './model/OrthogonalCamera';
@@ -135,6 +136,7 @@ import BcfApi from './api/BcfApi';
 import CheckerApi from './api/CheckerApi';
 import CollaborationApi from './api/CollaborationApi';
 import IfcApi from './api/IfcApi';
+import ModelApi from './api/ModelApi';
 import SsoApi from './api/SsoApi';
 import WebhookApi from './api/WebhookApi';
 
@@ -340,12 +342,6 @@ export {
     GroupFolder,
 
     /**
-     * The Ifc model constructor.
-     * @property {module:model/Ifc}
-     */
-    Ifc,
-
-    /**
      * The IfcAccessToken model constructor.
      * @property {module:model/IfcAccessToken}
      */
@@ -370,22 +366,10 @@ export {
     IfcCheckerResults,
 
     /**
-     * The IfcErrors model constructor.
-     * @property {module:model/IfcErrors}
-     */
-    IfcErrors,
-
-    /**
      * The IfcExport model constructor.
      * @property {module:model/IfcExport}
      */
     IfcExport,
-
-    /**
-     * The IfcFiles model constructor.
-     * @property {module:model/IfcFiles}
-     */
-    IfcFiles,
 
     /**
      * The IfcMerge model constructor.
@@ -428,6 +412,12 @@ export {
      * @property {module:model/InlineObject4}
      */
     InlineObject4,
+
+    /**
+     * The InlineObject5 model constructor.
+     * @property {module:model/InlineObject5}
+     */
+    InlineObject5,
 
     /**
      * The InlineResponse200 model constructor.
@@ -500,6 +490,24 @@ export {
      * @property {module:model/MaterialOption}
      */
     MaterialOption,
+
+    /**
+     * The Model model constructor.
+     * @property {module:model/Model}
+     */
+    Model,
+
+    /**
+     * The ModelErrors model constructor.
+     * @property {module:model/ModelErrors}
+     */
+    ModelErrors,
+
+    /**
+     * The ModelFiles model constructor.
+     * @property {module:model/ModelFiles}
+     */
+    ModelFiles,
 
     /**
      * The ModelWithPositioningPlan model constructor.
@@ -908,6 +916,12 @@ export {
     * @property {module:api/IfcApi}
     */
     IfcApi,
+
+    /**
+    * The ModelApi service constructor.
+    * @property {module:api/ModelApi}
+    */
+    ModelApi,
 
     /**
     * The SsoApi service constructor.

@@ -12,7 +12,8 @@ Name | Type | Description | Notes
 **title** | **String** |  | 
 **description** | **String** |  | [optional] 
 **referenceLinks** | **[String]** |  | [optional] 
-**ifcs** | **[Number]** |  | [optional] 
+**ifcs** | **[Number]** | DEPRECATED: Use &#39;models&#39; instead | [optional] 
+**models** | **[Number]** |  | [optional] 
 **labels** | **[String]** |  | [optional] 
 **topicType** | **String** |  | [optional] 
 **topicStatus** | **String** |  | [optional] 

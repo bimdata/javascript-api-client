@@ -150,6 +150,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property models (base name: "models")', function() {
+      // uncomment below and update the code to test the property models
+      //var instane = new bimdata.Topic();
+      //expect(instance).to.be();
+    });
+
     it('should have the property format (base name: "format")', function() {
       // uncomment below and update the code to test the property format
       //var instane = new bimdata.Topic();

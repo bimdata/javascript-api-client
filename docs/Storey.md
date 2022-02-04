@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] [readonly] 
-**ifcId** | **String** |  | [optional] [readonly] 
+**buildingId** | **String** |  | [optional] [readonly] 
 **name** | **String** |  | 
 **elevation** | **Number** |  | [optional] 
 **order** | **Number** |  | [optional] [readonly] 

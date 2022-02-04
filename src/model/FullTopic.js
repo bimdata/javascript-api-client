@@ -80,6 +80,9 @@ class FullTopic {
             if (data.hasOwnProperty('ifcs')) {
                 obj['ifcs'] = ApiClient.convertToType(data['ifcs'], ['Number']);
             }
+            if (data.hasOwnProperty('models')) {
+                obj['models'] = ApiClient.convertToType(data['models'], ['Number']);
+            }
             if (data.hasOwnProperty('labels')) {
                 obj['labels'] = ApiClient.convertToType(data['labels'], ['String']);
             }
@@ -164,9 +167,15 @@ FullTopic.prototype['description'] = undefined;
 FullTopic.prototype['reference_links'] = undefined;
 
 /**
+ * DEPRECATED: Use 'models' instead
  * @member {Array.<Number>} ifcs
  */
 FullTopic.prototype['ifcs'] = undefined;
+
+/**
+ * @member {Array.<Number>} models
+ */
+FullTopic.prototype['models'] = undefined;
 
 /**
  * @member {Array.<String>} labels

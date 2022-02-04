@@ -84,6 +84,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property nature (base name: "nature")', function() {
+      // uncomment below and update the code to test the property nature
+      //var instane = new bimdata.RecursiveFolderChildren();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property modelType (base name: "model_type")', function() {
+      // uncomment below and update the code to test the property modelType
+      //var instane = new bimdata.RecursiveFolderChildren();
+      //expect(instance).to.be();
+    });
+
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instane = new bimdata.RecursiveFolderChildren();
@@ -116,6 +128,12 @@
 
     it('should have the property size (base name: "size")', function() {
       // uncomment below and update the code to test the property size
+      //var instane = new bimdata.RecursiveFolderChildren();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property modelId (base name: "model_id")', function() {
+      // uncomment below and update the code to test the property modelId
       //var instane = new bimdata.RecursiveFolderChildren();
       //expect(instance).to.be();
     });

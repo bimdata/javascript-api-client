@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The InlineObject5 model module.
- * @module model/InlineObject5
+ * The ModelErrors model module.
+ * @module model/ModelErrors
  * @version 0.0.0
  */
-class InlineObject5 {
+class ModelErrors {
     /**
-     * Constructs a new <code>InlineObject5</code>.
-     * @alias module:model/InlineObject5
+     * Constructs a new <code>ModelErrors</code>.
+     * @alias module:model/ModelErrors
      */
     constructor() { 
         
-        InlineObject5.initialize(this);
+        ModelErrors.initialize(this);
     }
 
     /**
@@ -37,18 +37,21 @@ class InlineObject5 {
     }
 
     /**
-     * Constructs a <code>InlineObject5</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ModelErrors</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InlineObject5} obj Optional instance to populate.
-     * @return {module:model/InlineObject5} The populated <code>InlineObject5</code> instance.
+     * @param {module:model/ModelErrors} obj Optional instance to populate.
+     * @return {module:model/ModelErrors} The populated <code>ModelErrors</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InlineObject5();
+            obj = obj || new ModelErrors();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            if (data.hasOwnProperty('errors')) {
+                obj['errors'] = ApiClient.convertToType(data['errors'], ['String']);
+            }
+            if (data.hasOwnProperty('warnings')) {
+                obj['warnings'] = ApiClient.convertToType(data['warnings'], ['String']);
             }
         }
         return obj;
@@ -58,15 +61,21 @@ class InlineObject5 {
 }
 
 /**
- * model id
- * @member {Number} id
+ * List of errors that happened during IFC processing
+ * @member {Array.<String>} errors
  */
-InlineObject5.prototype['id'] = undefined;
+ModelErrors.prototype['errors'] = undefined;
+
+/**
+ * List of warnings that happened during IFC processing
+ * @member {Array.<String>} warnings
+ */
+ModelErrors.prototype['warnings'] = undefined;
 
 
 
 
 
 
-export default InlineObject5;
+export default ModelErrors;
 

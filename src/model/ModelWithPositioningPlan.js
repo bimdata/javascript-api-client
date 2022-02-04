@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import Ifc from './Ifc';
+import Model from './Model';
 
 /**
  * The ModelWithPositioningPlan model module.
@@ -64,7 +64,7 @@ class ModelWithPositioningPlan {
                 obj['opacity'] = ApiClient.convertToType(data['opacity'], 'Number');
             }
             if (data.hasOwnProperty('plan')) {
-                obj['plan'] = Ifc.constructFromObject(data['plan']);
+                obj['plan'] = Model.constructFromObject(data['plan']);
             }
         }
         return obj;
@@ -99,7 +99,7 @@ ModelWithPositioningPlan.prototype['scale'] = undefined;
 ModelWithPositioningPlan.prototype['opacity'] = undefined;
 
 /**
- * @member {module:model/Ifc} plan
+ * @member {module:model/Model} plan
  */
 ModelWithPositioningPlan.prototype['plan'] = undefined;
 

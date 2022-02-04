@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property ifcId (base name: "ifc_id")', function() {
-      // uncomment below and update the code to test the property ifcId
+    it('should have the property buildingId (base name: "building_id")', function() {
+      // uncomment below and update the code to test the property buildingId
       //var instane = new bimdata.Storey();
       //expect(instance).to.be();
     });

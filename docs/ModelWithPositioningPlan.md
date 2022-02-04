@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **rotateZ** | **Number** |  | [optional] 
 **scale** | **Number** |  | [optional] 
 **opacity** | **Number** |  | [optional] 
-**plan** | [**Ifc**](Ifc.md) |  | [optional] 
+**plan** | [**Model**](Model.md) |  | [optional] 
 
 

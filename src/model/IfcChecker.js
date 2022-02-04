@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import Ifc from './Ifc';
 import IfcCheckerCheckplan from './IfcCheckerCheckplan';
 import IfcCheckerResults from './IfcCheckerResults';
+import Model from './Model';
 import User from './User';
 
 /**
@@ -55,7 +55,7 @@ class IfcChecker {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('ifc')) {
-                obj['ifc'] = Ifc.constructFromObject(data['ifc']);
+                obj['ifc'] = Model.constructFromObject(data['ifc']);
             }
             if (data.hasOwnProperty('creator')) {
                 obj['creator'] = User.constructFromObject(data['creator']);
@@ -91,7 +91,7 @@ class IfcChecker {
 IfcChecker.prototype['id'] = undefined;
 
 /**
- * @member {module:model/Ifc} ifc
+ * @member {module:model/Model} ifc
  */
 IfcChecker.prototype['ifc'] = undefined;
 

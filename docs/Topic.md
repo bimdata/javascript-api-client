@@ -19,7 +19,8 @@ Name | Type | Description | Notes
 **stage** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **dueDate** | **Date** |  | [optional] 
-**ifcs** | **[Number]** |  | [optional] 
+**ifcs** | **[Number]** | DEPRECATED: Use &#39;models&#39; instead | [optional] 
+**models** | **[Number]** |  | [optional] 
 **format** | **String** |  | [optional] 
 **index** | **Number** |  | [optional] 
 **project** | **Number** |  | 

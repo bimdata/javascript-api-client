@@ -4,22 +4,22 @@ All URIs are relative to *https://api.bimdata.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createChecker**](CheckerApi.md#createChecker) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker | Create a checker to a model
-[**createCheckerResult**](CheckerApi.md#createCheckerResult) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result | Create a CheckerResult
+[**createChecker**](CheckerApi.md#createChecker) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker | Create a checker to a model
+[**createCheckerResult**](CheckerApi.md#createCheckerResult) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result | Create a CheckerResult
 [**createCheckplan**](CheckerApi.md#createCheckplan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan | Create a Checkplan
 [**createRule**](CheckerApi.md#createRule) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule | Create a Rule
 [**createRuleComponent**](CheckerApi.md#createRuleComponent) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent | Create a RuleComponent
 [**createRuleset**](CheckerApi.md#createRuleset) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset | Create a Ruleset
-[**deleteChecker**](CheckerApi.md#deleteChecker) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | Delete a checker of a model
-[**deleteCheckerResult**](CheckerApi.md#deleteCheckerResult) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | Delete a CheckerResult
+[**deleteChecker**](CheckerApi.md#deleteChecker) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{id} | Delete a checker of a model
+[**deleteCheckerResult**](CheckerApi.md#deleteCheckerResult) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result/{id} | Delete a CheckerResult
 [**deleteCheckplan**](CheckerApi.md#deleteCheckplan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | Delete a Checkplan
 [**deleteRule**](CheckerApi.md#deleteRule) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | Delete a Rule
 [**deleteRuleComponent**](CheckerApi.md#deleteRuleComponent) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Delete a RuleComponent
 [**deleteRuleset**](CheckerApi.md#deleteRuleset) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Delete a Ruleset
-[**getChecker**](CheckerApi.md#getChecker) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | Retrieve a checker of a model
-[**getCheckerResult**](CheckerApi.md#getCheckerResult) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | Retrieve one CheckerResult
-[**getCheckerResults**](CheckerApi.md#getCheckerResults) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result | Retrieve all CheckerResults
-[**getCheckers**](CheckerApi.md#getCheckers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker | Retrieve all checkers of a model
+[**getChecker**](CheckerApi.md#getChecker) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{id} | Retrieve a checker of a model
+[**getCheckerResult**](CheckerApi.md#getCheckerResult) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result/{id} | Retrieve one CheckerResult
+[**getCheckerResults**](CheckerApi.md#getCheckerResults) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result | Retrieve all CheckerResults
+[**getCheckers**](CheckerApi.md#getCheckers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker | Retrieve all checkers of a model
 [**getCheckplan**](CheckerApi.md#getCheckplan) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | Retrieve one Checkplan
 [**getCheckplans**](CheckerApi.md#getCheckplans) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan | Retrieve all Checkplans
 [**getRule**](CheckerApi.md#getRule) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | Retrieve one Rule
@@ -28,9 +28,9 @@ Method | HTTP request | Description
 [**getRules**](CheckerApi.md#getRules) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule | Retrieve all Rules
 [**getRuleset**](CheckerApi.md#getRuleset) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Retrieve one Ruleset
 [**getRulesets**](CheckerApi.md#getRulesets) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset | Retrieve all Rulesets
-[**launchNewCheck**](CheckerApi.md#launchNewCheck) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}/launch-check | Launch a new check on the model
-[**updateChecker**](CheckerApi.md#updateChecker) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | Update some fields of a checker of a model
-[**updateCheckerResult**](CheckerApi.md#updateCheckerResult) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | Update some fields of a CheckerResult
+[**launchNewCheck**](CheckerApi.md#launchNewCheck) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{id}/launch-check | Launch a new check on the model
+[**updateChecker**](CheckerApi.md#updateChecker) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{id} | Update some fields of a checker of a model
+[**updateCheckerResult**](CheckerApi.md#updateCheckerResult) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result/{id} | Update some fields of a CheckerResult
 [**updateCheckplan**](CheckerApi.md#updateCheckplan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | Update some fields of a Checkplan
 [**updateRule**](CheckerApi.md#updateRule) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | Update some fields of a Rule
 [**updateRuleComponent**](CheckerApi.md#updateRuleComponent) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Update some fields of a RuleComponent
@@ -40,7 +40,7 @@ Method | HTTP request | Description
 
 ## createChecker
 
-> IfcChecker createChecker(cloudPk, ifcPk, projectPk, data)
+> IfcChecker createChecker(cloudPk, modelPk, projectPk, data)
 
 Create a checker to a model
 
@@ -65,10 +65,10 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CheckerApi();
 let cloudPk = "cloudPk_example"; // String | 
-let ifcPk = "ifcPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let data = new bimdata.IfcChecker(); // IfcChecker | 
-apiInstance.createChecker(cloudPk, ifcPk, projectPk, data).then((data) => {
+apiInstance.createChecker(cloudPk, modelPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -82,7 +82,7 @@ apiInstance.createChecker(cloudPk, ifcPk, projectPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
+ **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**IfcChecker**](IfcChecker.md)|  | 
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ## createCheckerResult
 
-> CheckerResult createCheckerResult(checkerPk, cloudPk, ifcPk, projectPk, data)
+> CheckerResult createCheckerResult(checkerPk, cloudPk, modelPk, projectPk, data)
 
 Create a CheckerResult
 
@@ -128,10 +128,10 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.CheckerApi();
 let checkerPk = "checkerPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
-let ifcPk = "ifcPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let data = new bimdata.CheckerResult(); // CheckerResult | 
-apiInstance.createCheckerResult(checkerPk, cloudPk, ifcPk, projectPk, data).then((data) => {
+apiInstance.createCheckerResult(checkerPk, cloudPk, modelPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkerPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
+ **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**CheckerResult**](CheckerResult.md)|  | 
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 
 ## deleteChecker
 
-> deleteChecker(cloudPk, id, ifcPk, projectPk)
+> deleteChecker(cloudPk, id, modelPk, projectPk)
 
 Delete a checker of a model
 
@@ -444,9 +444,9 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.CheckerApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc checker.
-let ifcPk = "ifcPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteChecker(cloudPk, id, ifcPk, projectPk).then(() => {
+apiInstance.deleteChecker(cloudPk, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this ifc checker. | 
- **ifcPk** | **String**|  | 
+ **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -480,7 +480,7 @@ null (empty response body)
 
 ## deleteCheckerResult
 
-> deleteCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk)
+> deleteCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk)
 
 Delete a CheckerResult
 
@@ -507,9 +507,9 @@ let apiInstance = new bimdata.CheckerApi();
 let checkerPk = "checkerPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this checker result.
-let ifcPk = "ifcPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk).then(() => {
+apiInstance.deleteCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
  **checkerPk** | **String**|  | 
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this checker result. | 
- **ifcPk** | **String**|  | 
+ **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -796,7 +796,7 @@ null (empty response body)
 
 ## getChecker
 
-> IfcChecker getChecker(cloudPk, id, ifcPk, projectPk)
+> IfcChecker getChecker(cloudPk, id, modelPk, projectPk)
 
 Retrieve a checker of a model
 
@@ -822,9 +822,9 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.CheckerApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc checker.
-let ifcPk = "ifcPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getChecker(cloudPk, id, ifcPk, projectPk).then((data) => {
+apiInstance.getChecker(cloudPk, id, modelPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -839,7 +839,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this ifc checker. | 
- **ifcPk** | **String**|  | 
+ **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -858,7 +858,7 @@ Name | Type | Description  | Notes
 
 ## getCheckerResult
 
-> CheckerResult getCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk)
+> CheckerResult getCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk)
 
 Retrieve one CheckerResult
 
@@ -885,9 +885,9 @@ let apiInstance = new bimdata.CheckerApi();
 let checkerPk = "checkerPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this checker result.
-let ifcPk = "ifcPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk).then((data) => {
+apiInstance.getCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -903,7 +903,7 @@ Name | Type | Description  | Notes
  **checkerPk** | **String**|  | 
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this checker result. | 
- **ifcPk** | **String**|  | 
+ **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -922,7 +922,7 @@ Name | Type | Description  | Notes
 
 ## getCheckerResults
 
-> [CheckerResult] getCheckerResults(checkerPk, cloudPk, ifcPk, projectPk)
+> [CheckerResult] getCheckerResults(checkerPk, cloudPk, modelPk, projectPk)
 
 Retrieve all CheckerResults
 
@@ -948,9 +948,9 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.CheckerApi();
 let checkerPk = "checkerPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
-let ifcPk = "ifcPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getCheckerResults(checkerPk, cloudPk, ifcPk, projectPk).then((data) => {
+apiInstance.getCheckerResults(checkerPk, cloudPk, modelPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -965,7 +965,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkerPk** | **String**|  | 
  **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
+ **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -984,7 +984,7 @@ Name | Type | Description  | Notes
 
 ## getCheckers
 
-> [IfcChecker] getCheckers(cloudPk, ifcPk, projectPk)
+> [IfcChecker] getCheckers(cloudPk, modelPk, projectPk)
 
 Retrieve all checkers of a model
 
@@ -1009,9 +1009,9 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CheckerApi();
 let cloudPk = "cloudPk_example"; // String | 
-let ifcPk = "ifcPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getCheckers(cloudPk, ifcPk, projectPk).then((data) => {
+apiInstance.getCheckers(cloudPk, modelPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1025,7 +1025,7 @@ apiInstance.getCheckers(cloudPk, ifcPk, projectPk).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **ifcPk** | **String**|  | 
+ **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -1540,7 +1540,7 @@ Name | Type | Description  | Notes
 
 ## launchNewCheck
 
-> launchNewCheck(cloudPk, id, ifcPk, projectPk, data)
+> launchNewCheck(cloudPk, id, modelPk, projectPk, data)
 
 Launch a new check on the model
 
@@ -1566,10 +1566,10 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.CheckerApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc checker.
-let ifcPk = "ifcPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let data = new bimdata.IfcChecker(); // IfcChecker | 
-apiInstance.launchNewCheck(cloudPk, id, ifcPk, projectPk, data).then(() => {
+apiInstance.launchNewCheck(cloudPk, id, modelPk, projectPk, data).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -1584,7 +1584,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this ifc checker. | 
- **ifcPk** | **String**|  | 
+ **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**IfcChecker**](IfcChecker.md)|  | 
 
@@ -1604,7 +1604,7 @@ null (empty response body)
 
 ## updateChecker
 
-> IfcChecker updateChecker(cloudPk, id, ifcPk, projectPk, data)
+> IfcChecker updateChecker(cloudPk, id, modelPk, projectPk, data)
 
 Update some fields of a checker of a model
 
@@ -1630,10 +1630,10 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new bimdata.CheckerApi();
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this ifc checker.
-let ifcPk = "ifcPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let data = new bimdata.IfcChecker(); // IfcChecker | 
-apiInstance.updateChecker(cloudPk, id, ifcPk, projectPk, data).then((data) => {
+apiInstance.updateChecker(cloudPk, id, modelPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1648,7 +1648,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this ifc checker. | 
- **ifcPk** | **String**|  | 
+ **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**IfcChecker**](IfcChecker.md)|  | 
 
@@ -1668,7 +1668,7 @@ Name | Type | Description  | Notes
 
 ## updateCheckerResult
 
-> CheckerResult updateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data)
+> CheckerResult updateCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk, data)
 
 Update some fields of a CheckerResult
 
@@ -1695,10 +1695,10 @@ let apiInstance = new bimdata.CheckerApi();
 let checkerPk = "checkerPk_example"; // String | 
 let cloudPk = "cloudPk_example"; // String | 
 let id = 56; // Number | A unique integer value identifying this checker result.
-let ifcPk = "ifcPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let data = new bimdata.CheckerResult(); // CheckerResult | 
-apiInstance.updateCheckerResult(checkerPk, cloudPk, id, ifcPk, projectPk, data).then((data) => {
+apiInstance.updateCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1714,7 +1714,7 @@ Name | Type | Description  | Notes
  **checkerPk** | **String**|  | 
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this checker result. | 
- **ifcPk** | **String**|  | 
+ **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **data** | [**CheckerResult**](CheckerResult.md)|  | 
 

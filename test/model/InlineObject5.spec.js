@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.IfcErrors();
+    instance = new bimdata.InlineObject5();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,16 @@
       object[property] = value;
   }
 
-  describe('IfcErrors', function() {
-    it('should create an instance of IfcErrors', function() {
-      // uncomment below and update the code to test IfcErrors
-      //var instane = new bimdata.IfcErrors();
-      //expect(instance).to.be.a(bimdata.IfcErrors);
+  describe('InlineObject5', function() {
+    it('should create an instance of InlineObject5', function() {
+      // uncomment below and update the code to test InlineObject5
+      //var instane = new bimdata.InlineObject5();
+      //expect(instance).to.be.a(bimdata.InlineObject5);
     });
 
-    it('should have the property errors (base name: "errors")', function() {
-      // uncomment below and update the code to test the property errors
-      //var instane = new bimdata.IfcErrors();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property warnings (base name: "warnings")', function() {
-      // uncomment below and update the code to test the property warnings
-      //var instane = new bimdata.IfcErrors();
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new bimdata.InlineObject5();
       //expect(instance).to.be();
     });
 

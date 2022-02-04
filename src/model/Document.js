@@ -85,6 +85,12 @@ class Document {
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
+            if (data.hasOwnProperty('model_source')) {
+                obj['model_source'] = ApiClient.convertToType(data['model_source'], 'String');
+            }
+            if (data.hasOwnProperty('model_id')) {
+                obj['model_id'] = ApiClient.convertToType(data['model_id'], 'String');
+            }
             if (data.hasOwnProperty('ifc_source')) {
                 obj['ifc_source'] = ApiClient.convertToType(data['ifc_source'], 'String');
             }
@@ -168,12 +174,24 @@ Document.prototype['created_at'] = undefined;
 Document.prototype['updated_at'] = undefined;
 
 /**
- * Define the ifc.source field if the upload is an IFC
+ * Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+ * @member {module:model/Document.ModelSourceEnum} model_source
+ */
+Document.prototype['model_source'] = undefined;
+
+/**
+ * @member {String} model_id
+ */
+Document.prototype['model_id'] = undefined;
+
+/**
+ * DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
  * @member {module:model/Document.IfcSourceEnum} ifc_source
  */
 Document.prototype['ifc_source'] = undefined;
 
 /**
+ * DEPRECATED: Use 'model_id' instead.
  * @member {String} ifc_id
  */
 Document.prototype['ifc_id'] = undefined;
@@ -186,6 +204,45 @@ Document.prototype['user_permission'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>model_source</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Document['ModelSourceEnum'] = {
+
+    /**
+     * value: "UPLOAD"
+     * @const
+     */
+    "UPLOAD": "UPLOAD",
+
+    /**
+     * value: "SPLIT"
+     * @const
+     */
+    "SPLIT": "SPLIT",
+
+    /**
+     * value: "MERGE"
+     * @const
+     */
+    "MERGE": "MERGE",
+
+    /**
+     * value: "EXPORT"
+     * @const
+     */
+    "EXPORT": "EXPORT",
+
+    /**
+     * value: "OPTIMIZED"
+     * @const
+     */
+    "OPTIMIZED": "OPTIMIZED"
+};
 
 
 /**

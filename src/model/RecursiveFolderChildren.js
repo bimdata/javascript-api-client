@@ -74,6 +74,12 @@ class RecursiveFolderChildren {
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
+            if (data.hasOwnProperty('nature')) {
+                obj['nature'] = ApiClient.convertToType(data['nature'], 'String');
+            }
+            if (data.hasOwnProperty('model_type')) {
+                obj['model_type'] = ApiClient.convertToType(data['model_type'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -91,6 +97,9 @@ class RecursiveFolderChildren {
             }
             if (data.hasOwnProperty('size')) {
                 obj['size'] = ApiClient.convertToType(data['size'], 'Number');
+            }
+            if (data.hasOwnProperty('model_id')) {
+                obj['model_id'] = ApiClient.convertToType(data['model_id'], 'Number');
             }
             if (data.hasOwnProperty('ifc_id')) {
                 obj['ifc_id'] = ApiClient.convertToType(data['ifc_id'], 'Number');
@@ -138,10 +147,22 @@ RecursiveFolderChildren.prototype['created_by'] = undefined;
 RecursiveFolderChildren.prototype['creator'] = undefined;
 
 /**
- * Values can be 'Folder', 'Document' or 'Ifc'. It is usefull to parse the tree and discriminate folders and files
+ * DEPRECATED: Use 'nature' instead. Values can be 'Folder', 'Document' or 'Ifc'. It is usefull to parse the tree and discriminate folders and files
  * @member {module:model/RecursiveFolderChildren.TypeEnum} type
  */
 RecursiveFolderChildren.prototype['type'] = undefined;
+
+/**
+ * Values can be 'Folder', 'Document' or 'Model'. It is usefull to parse the tree and discriminate folders and files
+ * @member {module:model/RecursiveFolderChildren.NatureEnum} nature
+ */
+RecursiveFolderChildren.prototype['nature'] = undefined;
+
+/**
+ * Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, GLTF, DAE, BFX
+ * @member {module:model/RecursiveFolderChildren.ModelTypeEnum} model_type
+ */
+RecursiveFolderChildren.prototype['model_type'] = undefined;
 
 /**
  * @member {String} name
@@ -174,6 +195,12 @@ RecursiveFolderChildren.prototype['description'] = undefined;
 RecursiveFolderChildren.prototype['size'] = undefined;
 
 /**
+ * @member {Number} model_id
+ */
+RecursiveFolderChildren.prototype['model_id'] = undefined;
+
+/**
+ * DEPRECATED: Use 'model_id' instead
  * @member {Number} ifc_id
  */
 RecursiveFolderChildren.prototype['ifc_id'] = undefined;
@@ -234,6 +261,102 @@ RecursiveFolderChildren['TypeEnum'] = {
      * @const
      */
     "Ifc": "Ifc"
+};
+
+
+/**
+ * Allowed values for the <code>nature</code> property.
+ * @enum {String}
+ * @readonly
+ */
+RecursiveFolderChildren['NatureEnum'] = {
+
+    /**
+     * value: "Folder"
+     * @const
+     */
+    "Folder": "Folder",
+
+    /**
+     * value: "Document"
+     * @const
+     */
+    "Document": "Document",
+
+    /**
+     * value: "Model"
+     * @const
+     */
+    "Model": "Model"
+};
+
+
+/**
+ * Allowed values for the <code>model_type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+RecursiveFolderChildren['ModelTypeEnum'] = {
+
+    /**
+     * value: "IFC"
+     * @const
+     */
+    "IFC": "IFC",
+
+    /**
+     * value: "DWG"
+     * @const
+     */
+    "DWG": "DWG",
+
+    /**
+     * value: "DXF"
+     * @const
+     */
+    "DXF": "DXF",
+
+    /**
+     * value: "GLTF"
+     * @const
+     */
+    "GLTF": "GLTF",
+
+    /**
+     * value: "PDF"
+     * @const
+     */
+    "PDF": "PDF",
+
+    /**
+     * value: "JPEG"
+     * @const
+     */
+    "JPEG": "JPEG",
+
+    /**
+     * value: "PNG"
+     * @const
+     */
+    "PNG": "PNG",
+
+    /**
+     * value: "OBJ"
+     * @const
+     */
+    "OBJ": "OBJ",
+
+    /**
+     * value: "DAE"
+     * @const
+     */
+    "DAE": "DAE",
+
+    /**
+     * value: "BFX"
+     * @const
+     */
+    "BFX": "BFX"
 };
 
 

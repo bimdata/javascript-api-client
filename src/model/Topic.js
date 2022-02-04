@@ -99,6 +99,9 @@ class Topic {
             if (data.hasOwnProperty('ifcs')) {
                 obj['ifcs'] = ApiClient.convertToType(data['ifcs'], ['Number']);
             }
+            if (data.hasOwnProperty('models')) {
+                obj['models'] = ApiClient.convertToType(data['models'], ['Number']);
+            }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
@@ -191,9 +194,15 @@ Topic.prototype['description'] = undefined;
 Topic.prototype['due_date'] = undefined;
 
 /**
+ * DEPRECATED: Use 'models' instead
  * @member {Array.<Number>} ifcs
  */
 Topic.prototype['ifcs'] = undefined;
+
+/**
+ * @member {Array.<Number>} models
+ */
+Topic.prototype['models'] = undefined;
 
 /**
  * @member {String} format
