@@ -142,19 +142,19 @@ export default class ModelApi {
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteIfcClassificationsWithHttpInfo(cloudPk, modelPk, projectPk) {
+    bulkDeleteModelClassificationsWithHttpInfo(cloudPk, modelPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcClassifications");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteModelClassifications");
       }
       // verify the required parameter 'modelPk' is set
       if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling bulkDeleteIfcClassifications");
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkDeleteModelClassifications");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcClassifications");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteModelClassifications");
       }
 
       let pathParams = {
@@ -188,8 +188,8 @@ export default class ModelApi {
      * @param {String} projectPk 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteIfcClassifications(cloudPk, modelPk, projectPk) {
-      return this.bulkDeleteIfcClassificationsWithHttpInfo(cloudPk, modelPk, projectPk)
+    bulkDeleteModelClassifications(cloudPk, modelPk, projectPk) {
+      return this.bulkDeleteModelClassificationsWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -205,23 +205,23 @@ export default class ModelApi {
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteIfcPropertiesWithHttpInfo(cloudPk, modelPk, projectPk, data) {
+    bulkDeleteModelPropertiesWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcProperties");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteModelProperties");
       }
       // verify the required parameter 'modelPk' is set
       if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling bulkDeleteIfcProperties");
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkDeleteModelProperties");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcProperties");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteModelProperties");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkDeleteIfcProperties");
+        throw new Error("Missing the required parameter 'data' when calling bulkDeleteModelProperties");
       }
 
       let pathParams = {
@@ -256,8 +256,8 @@ export default class ModelApi {
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteIfcProperties(cloudPk, modelPk, projectPk, data) {
-      return this.bulkDeleteIfcPropertiesWithHttpInfo(cloudPk, modelPk, projectPk, data)
+    bulkDeleteModelProperties(cloudPk, modelPk, projectPk, data) {
+      return this.bulkDeleteModelPropertiesWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -273,23 +273,23 @@ export default class ModelApi {
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteIfcPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk, data) {
+    bulkDeleteModelPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcPropertyDefinitions");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteModelPropertyDefinitions");
       }
       // verify the required parameter 'modelPk' is set
       if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling bulkDeleteIfcPropertyDefinitions");
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkDeleteModelPropertyDefinitions");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcPropertyDefinitions");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteModelPropertyDefinitions");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkDeleteIfcPropertyDefinitions");
+        throw new Error("Missing the required parameter 'data' when calling bulkDeleteModelPropertyDefinitions");
       }
 
       let pathParams = {
@@ -324,8 +324,8 @@ export default class ModelApi {
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteIfcPropertyDefinitions(cloudPk, modelPk, projectPk, data) {
-      return this.bulkDeleteIfcPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk, data)
+    bulkDeleteModelPropertyDefinitions(cloudPk, modelPk, projectPk, data) {
+      return this.bulkDeleteModelPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -341,23 +341,23 @@ export default class ModelApi {
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteIfcUnitsWithHttpInfo(cloudPk, modelPk, projectPk, data) {
+    bulkDeleteModelUnitsWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteIfcUnits");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteModelUnits");
       }
       // verify the required parameter 'modelPk' is set
       if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling bulkDeleteIfcUnits");
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkDeleteModelUnits");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteIfcUnits");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteModelUnits");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkDeleteIfcUnits");
+        throw new Error("Missing the required parameter 'data' when calling bulkDeleteModelUnits");
       }
 
       let pathParams = {
@@ -392,8 +392,8 @@ export default class ModelApi {
      * @param {Array.<Number>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteIfcUnits(cloudPk, modelPk, projectPk, data) {
-      return this.bulkDeleteIfcUnitsWithHttpInfo(cloudPk, modelPk, projectPk, data)
+    bulkDeleteModelUnits(cloudPk, modelPk, projectPk, data) {
+      return this.bulkDeleteModelUnitsWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -545,23 +545,23 @@ export default class ModelApi {
      * @param {Array.<module:model/Property>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Property>} and HTTP response
      */
-    bulkFullUpdateIfcPropertyWithHttpInfo(cloudPk, modelPk, projectPk, data) {
+    bulkFullUpdateModelPropertyWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkFullUpdateIfcProperty");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkFullUpdateModelProperty");
       }
       // verify the required parameter 'modelPk' is set
       if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling bulkFullUpdateIfcProperty");
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkFullUpdateModelProperty");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkFullUpdateIfcProperty");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkFullUpdateModelProperty");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkFullUpdateIfcProperty");
+        throw new Error("Missing the required parameter 'data' when calling bulkFullUpdateModelProperty");
       }
 
       let pathParams = {
@@ -596,8 +596,8 @@ export default class ModelApi {
      * @param {Array.<module:model/Property>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Property>}
      */
-    bulkFullUpdateIfcProperty(cloudPk, modelPk, projectPk, data) {
-      return this.bulkFullUpdateIfcPropertyWithHttpInfo(cloudPk, modelPk, projectPk, data)
+    bulkFullUpdateModelProperty(cloudPk, modelPk, projectPk, data) {
+      return this.bulkFullUpdateModelPropertyWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -906,23 +906,23 @@ export default class ModelApi {
      * @param {Array.<module:model/Property>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Property>} and HTTP response
      */
-    bulkUpdateIfcPropertyWithHttpInfo(cloudPk, modelPk, projectPk, data) {
+    bulkUpdateModelPropertyWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling bulkUpdateIfcProperty");
+        throw new Error("Missing the required parameter 'cloudPk' when calling bulkUpdateModelProperty");
       }
       // verify the required parameter 'modelPk' is set
       if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling bulkUpdateIfcProperty");
+        throw new Error("Missing the required parameter 'modelPk' when calling bulkUpdateModelProperty");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling bulkUpdateIfcProperty");
+        throw new Error("Missing the required parameter 'projectPk' when calling bulkUpdateModelProperty");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling bulkUpdateIfcProperty");
+        throw new Error("Missing the required parameter 'data' when calling bulkUpdateModelProperty");
       }
 
       let pathParams = {
@@ -957,8 +957,8 @@ export default class ModelApi {
      * @param {Array.<module:model/Property>} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Property>}
      */
-    bulkUpdateIfcProperty(cloudPk, modelPk, projectPk, data) {
-      return this.bulkUpdateIfcPropertyWithHttpInfo(cloudPk, modelPk, projectPk, data)
+    bulkUpdateModelProperty(cloudPk, modelPk, projectPk, data) {
+      return this.bulkUpdateModelPropertyWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1587,142 +1587,6 @@ export default class ModelApi {
 
 
     /**
-     * Create a PropertyDefinition on the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {Array.<module:model/PropertyDefinition>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyDefinition>} and HTTP response
-     */
-    createIfcPropertyDefinitionWithHttpInfo(cloudPk, modelPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createIfcPropertyDefinition");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling createIfcPropertyDefinition");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createIfcPropertyDefinition");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createIfcPropertyDefinition");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = [PropertyDefinition];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Create a PropertyDefinition on the model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {Array.<module:model/PropertyDefinition>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyDefinition>}
-     */
-    createIfcPropertyDefinition(cloudPk, modelPk, projectPk, data) {
-      return this.createIfcPropertyDefinitionWithHttpInfo(cloudPk, modelPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Create a Unit on a model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {Array.<module:model/Unit>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Unit>} and HTTP response
-     */
-    createIfcUnitWithHttpInfo(cloudPk, modelPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createIfcUnit");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling createIfcUnit");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createIfcUnit");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createIfcUnit");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = [Unit];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Create a Unit on a model
-     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {Array.<module:model/Unit>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Unit>}
-     */
-    createIfcUnit(cloudPk, modelPk, projectPk, data) {
-      return this.createIfcUnitWithHttpInfo(cloudPk, modelPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Create a layer in the model
      * The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
@@ -1853,7 +1717,7 @@ export default class ModelApi {
 
     /**
      * Make a PDF or Image file a Model
-     * Make a PDF or Image file a Model to be used in BIMData services Required scopes: ifc:write, model:write
+     * Make a PDF or Image file a Model to be used in BIMData services. If a model already exists, this route does nothing and returns a 201 with the model Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/CreateModel} data 
@@ -1898,7 +1762,7 @@ export default class ModelApi {
 
     /**
      * Make a PDF or Image file a Model
-     * Make a PDF or Image file a Model to be used in BIMData services Required scopes: ifc:write, model:write
+     * Make a PDF or Image file a Model to be used in BIMData services. If a model already exists, this route does nothing and returns a 201 with the model Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} projectPk 
      * @param {module:model/CreateModel} data 
@@ -1906,6 +1770,142 @@ export default class ModelApi {
      */
     createModel(cloudPk, projectPk, data) {
       return this.createModelWithHttpInfo(cloudPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a PropertyDefinition on the model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/PropertyDefinition>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyDefinition>} and HTTP response
+     */
+    createModelPropertyDefinitionWithHttpInfo(cloudPk, modelPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createModelPropertyDefinition");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createModelPropertyDefinition");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createModelPropertyDefinition");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createModelPropertyDefinition");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = [PropertyDefinition];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a PropertyDefinition on the model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/PropertyDefinition>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyDefinition>}
+     */
+    createModelPropertyDefinition(cloudPk, modelPk, projectPk, data) {
+      return this.createModelPropertyDefinitionWithHttpInfo(cloudPk, modelPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a Unit on a model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/Unit>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Unit>} and HTTP response
+     */
+    createModelUnitWithHttpInfo(cloudPk, modelPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createModelUnit");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createModelUnit");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createModelUnit");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createModelUnit");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = [Unit];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a Unit on a model
+     *          Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {Array.<module:model/Unit>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Unit>}
+     */
+    createModelUnit(cloudPk, modelPk, projectPk, data) {
+      return this.createModelUnitWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2609,213 +2609,6 @@ export default class ModelApi {
 
 
     /**
-     * Delete a Property of a model
-     * Delete a Property of a model Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    deleteIfcPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcProperty");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteIfcProperty");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling deleteIfcProperty");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcProperty");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Delete a Property of a model
-     * Delete a Property of a model Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    deleteIfcProperty(cloudPk, id, modelPk, projectPk) {
-      return this.deleteIfcPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete a PropertyDefinitions of a model
-     * Delete a PropertyDefinitions of a model Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    deleteIfcPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcPropertyDefinition");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteIfcPropertyDefinition");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling deleteIfcPropertyDefinition");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcPropertyDefinition");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Delete a PropertyDefinitions of a model
-     * Delete a PropertyDefinitions of a model Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    deleteIfcPropertyDefinition(cloudPk, id, modelPk, projectPk) {
-      return this.deleteIfcPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete a Unit of a model
-     * Delete a Unit of a model Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    deleteIfcUnitWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcUnit");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteIfcUnit");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling deleteIfcUnit");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcUnit");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Delete a Unit of a model
-     * Delete a Unit of a model Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    deleteIfcUnit(cloudPk, id, modelPk, projectPk) {
-      return this.deleteIfcUnitWithHttpInfo(cloudPk, id, modelPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Delete a layer of a model
      * The IFC file will not be updated. The remaining layers are available in API and will be available when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
@@ -2940,6 +2733,213 @@ export default class ModelApi {
      */
     deleteModel(cloudPk, id, projectPk) {
       return this.deleteModelWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a Property of a model
+     * Delete a Property of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteModelPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteModelProperty");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteModelProperty");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteModelProperty");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteModelProperty");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a Property of a model
+     * Delete a Property of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteModelProperty(cloudPk, id, modelPk, projectPk) {
+      return this.deleteModelPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a PropertyDefinitions of a model
+     * Delete a PropertyDefinitions of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property definition.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteModelPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteModelPropertyDefinition");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteModelPropertyDefinition");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteModelPropertyDefinition");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteModelPropertyDefinition");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a PropertyDefinitions of a model
+     * Delete a PropertyDefinitions of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property definition.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteModelPropertyDefinition(cloudPk, id, modelPk, projectPk) {
+      return this.deleteModelPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a Unit of a model
+     * Delete a Unit of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this unit.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteModelUnitWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteModelUnit");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteModelUnit");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteModelUnit");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteModelUnit");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a Unit of a model
+     * Delete a Unit of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this unit.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteModelUnit(cloudPk, id, modelPk, projectPk) {
+      return this.deleteModelUnitWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4936,592 +4936,6 @@ export default class ModelApi {
 
 
     /**
-     * Retrieve all classifications in a model
-     * Retrieve all classifications in a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
-     */
-    getIfcClassificationsWithHttpInfo(cloudPk, modelPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcClassifications");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling getIfcClassifications");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcClassifications");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [Classification];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve all classifications in a model
-     * Retrieve all classifications in a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
-     */
-    getIfcClassifications(cloudPk, modelPk, projectPk) {
-      return this.getIfcClassificationsWithHttpInfo(cloudPk, modelPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve a material of a model
-     * Retrieve a material of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this material.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Material} and HTTP response
-     */
-    getIfcMaterialWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcMaterial");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcMaterial");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling getIfcMaterial");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcMaterial");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = Material;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/material/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve a material of a model
-     * Retrieve a material of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this material.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Material}
-     */
-    getIfcMaterial(cloudPk, id, modelPk, projectPk) {
-      return this.getIfcMaterialWithHttpInfo(cloudPk, id, modelPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve all materials of a model
-     * Retrieve all materials of a model. Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Material>} and HTTP response
-     */
-    getIfcMaterialsWithHttpInfo(cloudPk, modelPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcMaterials");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling getIfcMaterials");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcMaterials");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [Material];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/material', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve all materials of a model
-     * Retrieve all materials of a model. Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Material>}
-     */
-    getIfcMaterials(cloudPk, modelPk, projectPk) {
-      return this.getIfcMaterialsWithHttpInfo(cloudPk, modelPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve all Properties of a model
-     * Retrieve all PropertySets of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Property>} and HTTP response
-     */
-    getIfcPropertiesWithHttpInfo(cloudPk, modelPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcProperties");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling getIfcProperties");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcProperties");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [Property];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve all Properties of a model
-     * Retrieve all PropertySets of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Property>}
-     */
-    getIfcProperties(cloudPk, modelPk, projectPk) {
-      return this.getIfcPropertiesWithHttpInfo(cloudPk, modelPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve a Property of a model
-     * Retrieve a Property of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
-     */
-    getIfcPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcProperty");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcProperty");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling getIfcProperty");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcProperty");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = Property;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve a Property of a model
-     * Retrieve a Property of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
-     */
-    getIfcProperty(cloudPk, id, modelPk, projectPk) {
-      return this.getIfcPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve a PropertyDefinition of a model
-     * Retrieve a PropertyDefinition of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
-     */
-    getIfcPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcPropertyDefinition");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcPropertyDefinition");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling getIfcPropertyDefinition");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcPropertyDefinition");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = PropertyDefinition;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve a PropertyDefinition of a model
-     * Retrieve a PropertyDefinition of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
-     */
-    getIfcPropertyDefinition(cloudPk, id, modelPk, projectPk) {
-      return this.getIfcPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve all PropertyDefinitions of a model
-     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyDefinition>} and HTTP response
-     */
-    getIfcPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcPropertyDefinitions");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling getIfcPropertyDefinitions");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcPropertyDefinitions");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [PropertyDefinition];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve all PropertyDefinitions of a model
-     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyDefinition>}
-     */
-    getIfcPropertyDefinitions(cloudPk, modelPk, projectPk) {
-      return this.getIfcPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve a Unit of a model
-     * Retrieve a Unit of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
-     */
-    getIfcUnitWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcUnit");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getIfcUnit");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling getIfcUnit");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcUnit");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = Unit;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve a Unit of a model
-     * Retrieve a Unit of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
-     */
-    getIfcUnit(cloudPk, id, modelPk, projectPk) {
-      return this.getIfcUnitWithHttpInfo(cloudPk, id, modelPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve all Units of a model
-     * Retrieve all Units of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Unit>} and HTTP response
-     */
-    getIfcUnitsWithHttpInfo(cloudPk, modelPk, projectPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getIfcUnits");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling getIfcUnits");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getIfcUnits");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [Unit];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve all Units of a model
-     * Retrieve all Units of a model Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Unit>}
-     */
-    getIfcUnits(cloudPk, modelPk, projectPk) {
-      return this.getIfcUnitsWithHttpInfo(cloudPk, modelPk, projectPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Retrieve a layer of a model
      * Retrieve a layer of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
@@ -5853,6 +5267,592 @@ export default class ModelApi {
      */
     getModel(cloudPk, id, projectPk) {
       return this.getModelWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all classifications in a model
+     * Retrieve all classifications in a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Classification>} and HTTP response
+     */
+    getModelClassificationsWithHttpInfo(cloudPk, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getModelClassifications");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getModelClassifications");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getModelClassifications");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Classification];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all classifications in a model
+     * Retrieve all classifications in a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Classification>}
+     */
+    getModelClassifications(cloudPk, modelPk, projectPk) {
+      return this.getModelClassificationsWithHttpInfo(cloudPk, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a material of a model
+     * Retrieve a material of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this material.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Material} and HTTP response
+     */
+    getModelMaterialWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getModelMaterial");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getModelMaterial");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getModelMaterial");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getModelMaterial");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Material;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/material/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a material of a model
+     * Retrieve a material of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this material.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Material}
+     */
+    getModelMaterial(cloudPk, id, modelPk, projectPk) {
+      return this.getModelMaterialWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all materials of a model
+     * Retrieve all materials of a model. Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Material>} and HTTP response
+     */
+    getModelMaterialsWithHttpInfo(cloudPk, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getModelMaterials");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getModelMaterials");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getModelMaterials");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Material];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/material', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all materials of a model
+     * Retrieve all materials of a model. Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Material>}
+     */
+    getModelMaterials(cloudPk, modelPk, projectPk) {
+      return this.getModelMaterialsWithHttpInfo(cloudPk, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all Properties of a model
+     * Retrieve all PropertySets of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Property>} and HTTP response
+     */
+    getModelPropertiesWithHttpInfo(cloudPk, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getModelProperties");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getModelProperties");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getModelProperties");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Property];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all Properties of a model
+     * Retrieve all PropertySets of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Property>}
+     */
+    getModelProperties(cloudPk, modelPk, projectPk) {
+      return this.getModelPropertiesWithHttpInfo(cloudPk, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a Property of a model
+     * Retrieve a Property of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
+     */
+    getModelPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getModelProperty");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getModelProperty");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getModelProperty");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getModelProperty");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Property;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a Property of a model
+     * Retrieve a Property of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
+     */
+    getModelProperty(cloudPk, id, modelPk, projectPk) {
+      return this.getModelPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a PropertyDefinition of a model
+     * Retrieve a PropertyDefinition of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property definition.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
+     */
+    getModelPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getModelPropertyDefinition");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getModelPropertyDefinition");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getModelPropertyDefinition");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getModelPropertyDefinition");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PropertyDefinition;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a PropertyDefinition of a model
+     * Retrieve a PropertyDefinition of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property definition.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
+     */
+    getModelPropertyDefinition(cloudPk, id, modelPk, projectPk) {
+      return this.getModelPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all PropertyDefinitions of a model
+     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyDefinition>} and HTTP response
+     */
+    getModelPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getModelPropertyDefinitions");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getModelPropertyDefinitions");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getModelPropertyDefinitions");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [PropertyDefinition];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all PropertyDefinitions of a model
+     * Retrieve all PropertyDefinitions of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyDefinition>}
+     */
+    getModelPropertyDefinitions(cloudPk, modelPk, projectPk) {
+      return this.getModelPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a Unit of a model
+     * Retrieve a Unit of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this unit.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
+     */
+    getModelUnitWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getModelUnit");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getModelUnit");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getModelUnit");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getModelUnit");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Unit;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a Unit of a model
+     * Retrieve a Unit of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this unit.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
+     */
+    getModelUnit(cloudPk, id, modelPk, projectPk) {
+      return this.getModelUnitWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all Units of a model
+     * Retrieve all Units of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Unit>} and HTTP response
+     */
+    getModelUnitsWithHttpInfo(cloudPk, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getModelUnits");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getModelUnits");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getModelUnits");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Unit];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all Units of a model
+     * Retrieve all Units of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Unit>}
+     */
+    getModelUnits(cloudPk, modelPk, projectPk) {
+      return this.getModelUnitsWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8367,231 +8367,6 @@ export default class ModelApi {
 
 
     /**
-     * Update some fields of a Property
-     * Update some fields of a Property Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {module:model/Property} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
-     */
-    updateIfcPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcProperty");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateIfcProperty");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling updateIfcProperty");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateIfcProperty");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateIfcProperty");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Property;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update some fields of a Property
-     * Update some fields of a Property Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {module:model/Property} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
-     */
-    updateIfcProperty(cloudPk, id, modelPk, projectPk, data) {
-      return this.updateIfcPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update some fields of many PropertyDefinitions of a model
-     *  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {module:model/PropertyDefinition} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
-     */
-    updateIfcPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcPropertyDefinition");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateIfcPropertyDefinition");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling updateIfcPropertyDefinition");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateIfcPropertyDefinition");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateIfcPropertyDefinition");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = PropertyDefinition;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update some fields of many PropertyDefinitions of a model
-     *  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this property definition.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {module:model/PropertyDefinition} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
-     */
-    updateIfcPropertyDefinition(cloudPk, id, modelPk, projectPk, data) {
-      return this.updateIfcPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update some fields of a Unit of a model
-     *  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {module:model/Unit} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
-     */
-    updateIfcUnitWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateIfcUnit");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateIfcUnit");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling updateIfcUnit");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateIfcUnit");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateIfcUnit");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Unit;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update some fields of a Unit of a model
-     *  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this unit.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {module:model/Unit} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
-     */
-    updateIfcUnit(cloudPk, id, modelPk, projectPk, data) {
-      return this.updateIfcUnitWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Update some fields of a layer
      * Update some fields of a layer. The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
@@ -8817,6 +8592,231 @@ export default class ModelApi {
      */
     updateModelFiles(cloudPk, id, projectPk, opts) {
       return this.updateModelFilesWithHttpInfo(cloudPk, id, projectPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a Property
+     * Update some fields of a Property Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/Property} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Property} and HTTP response
+     */
+    updateModelPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateModelProperty");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateModelProperty");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateModelProperty");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateModelProperty");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateModelProperty");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Property;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a Property
+     * Update some fields of a Property Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/Property} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Property}
+     */
+    updateModelProperty(cloudPk, id, modelPk, projectPk, data) {
+      return this.updateModelPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of many PropertyDefinitions of a model
+     *  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property definition.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/PropertyDefinition} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyDefinition} and HTTP response
+     */
+    updateModelPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateModelPropertyDefinition");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateModelPropertyDefinition");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateModelPropertyDefinition");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateModelPropertyDefinition");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateModelPropertyDefinition");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PropertyDefinition;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of many PropertyDefinitions of a model
+     *  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this property definition.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/PropertyDefinition} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyDefinition}
+     */
+    updateModelPropertyDefinition(cloudPk, id, modelPk, projectPk, data) {
+      return this.updateModelPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a Unit of a model
+     *  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this unit.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/Unit} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Unit} and HTTP response
+     */
+    updateModelUnitWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateModelUnit");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateModelUnit");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateModelUnit");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateModelUnit");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateModelUnit");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Unit;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a Unit of a model
+     *  Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this unit.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/Unit} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Unit}
+     */
+    updateModelUnit(cloudPk, id, modelPk, projectPk, data) {
+      return this.updateModelUnitWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

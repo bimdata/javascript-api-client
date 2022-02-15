@@ -5,18 +5,18 @@ All URIs are relative to *https://api.bimdata.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addModelErrors**](ModelApi.md#addModelErrors) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/errors | Add errors to model
-[**bulkDeleteIfcClassifications**](ModelApi.md#bulkDeleteIfcClassifications) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification/list_destroy | Remove all classifications from model&#39;s elements
-[**bulkDeleteIfcProperties**](ModelApi.md#bulkDeleteIfcProperties) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/bulk_destroy | Delete many Property of a model
-[**bulkDeleteIfcPropertyDefinitions**](ModelApi.md#bulkDeleteIfcPropertyDefinitions) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/bulk_destroy | Delete many PropertyDefinitions of a model
-[**bulkDeleteIfcUnits**](ModelApi.md#bulkDeleteIfcUnits) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/bulk_destroy | Delete many Units of a model
+[**bulkDeleteModelClassifications**](ModelApi.md#bulkDeleteModelClassifications) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification/list_destroy | Remove all classifications from model&#39;s elements
+[**bulkDeleteModelProperties**](ModelApi.md#bulkDeleteModelProperties) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/bulk_destroy | Delete many Property of a model
+[**bulkDeleteModelPropertyDefinitions**](ModelApi.md#bulkDeleteModelPropertyDefinitions) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/bulk_destroy | Delete many PropertyDefinitions of a model
+[**bulkDeleteModelUnits**](ModelApi.md#bulkDeleteModelUnits) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/bulk_destroy | Delete many Units of a model
 [**bulkDeletePropertySet**](ModelApi.md#bulkDeletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/bulk_destroy | Delete many PropertySet of a model
 [**bulkFullUpdateElements**](ModelApi.md#bulkFullUpdateElements) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/bulk_update | Update many elements at once (only changing fields may be defined)
-[**bulkFullUpdateIfcProperty**](ModelApi.md#bulkFullUpdateIfcProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/bulk_update | Update some fields of many properties of a model
+[**bulkFullUpdateModelProperty**](ModelApi.md#bulkFullUpdateModelProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/bulk_update | Update some fields of many properties of a model
 [**bulkRemoveClassificationsOfElement**](ModelApi.md#bulkRemoveClassificationsOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/classification/bulk_destroy | Remove many classifications from an element
 [**bulkRemoveDocumentsOfElement**](ModelApi.md#bulkRemoveDocumentsOfElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/documents/bulk_destroy | Remove many documents from an element
 [**bulkRemoveElementsFromClassification**](ModelApi.md#bulkRemoveElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification/{model_classification_pk}/element/bulk_destroy | Remove the classifications from all elements
 [**bulkUpdateElements**](ModelApi.md#bulkUpdateElements) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/bulk_update | Update many elements at once (all field must be defined)
-[**bulkUpdateIfcProperty**](ModelApi.md#bulkUpdateIfcProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/bulk_update | Update all fields of many properties of a model
+[**bulkUpdateModelProperty**](ModelApi.md#bulkUpdateModelProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/bulk_update | Update all fields of many properties of a model
 [**createAccessToken**](ModelApi.md#createAccessToken) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token | Create a token for this model
 [**createClassificationElementRelations**](ModelApi.md#createClassificationElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification-element | Create association between existing classification and existing element
 [**createClassificationsOfElement**](ModelApi.md#createClassificationsOfElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/classification | Create one or many classifications to an element
@@ -25,11 +25,11 @@ Method | HTTP request | Description
 [**createElementPropertySetProperty**](ModelApi.md#createElementPropertySetProperty) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property | Create a property to a PropertySet
 [**createElementPropertySetPropertyDefinition**](ModelApi.md#createElementPropertySetPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition | Create a Definition to a Property
 [**createElementPropertySetPropertyDefinitionUnit**](ModelApi.md#createElementPropertySetPropertyDefinitionUnit) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit | Create a Unit to a Definition
-[**createIfcPropertyDefinition**](ModelApi.md#createIfcPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition | Create a PropertyDefinition on the model
-[**createIfcUnit**](ModelApi.md#createIfcUnit) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit | Create a Unit on a model
 [**createLayer**](ModelApi.md#createLayer) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer | Create a layer in the model
 [**createMetaBuilding**](ModelApi.md#createMetaBuilding) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-metabuilding | Create an empty 3D Model
 [**createModel**](ModelApi.md#createModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-model | Make a PDF or Image file a Model
+[**createModelPropertyDefinition**](ModelApi.md#createModelPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition | Create a PropertyDefinition on the model
+[**createModelUnit**](ModelApi.md#createModelUnit) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit | Create a Unit on a model
 [**createPropertySet**](ModelApi.md#createPropertySet) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset | Create a PropertySet
 [**createPropertySetElementRelations**](ModelApi.md#createPropertySetElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset-element | Create association between PropertySet and element
 [**createRawElements**](ModelApi.md#createRawElements) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/raw | Create elements in an optimized format
@@ -40,11 +40,11 @@ Method | HTTP request | Description
 [**createZoneSpace**](ModelApi.md#createZoneSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space | Create a space in a zone
 [**deleteAccessToken**](ModelApi.md#deleteAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token} | Delete a token
 [**deleteElement**](ModelApi.md#deleteElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Delete an element of a model
-[**deleteIfcProperty**](ModelApi.md#deleteIfcProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id} | Delete a Property of a model
-[**deleteIfcPropertyDefinition**](ModelApi.md#deleteIfcPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Delete a PropertyDefinitions of a model
-[**deleteIfcUnit**](ModelApi.md#deleteIfcUnit) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Delete a Unit of a model
 [**deleteLayer**](ModelApi.md#deleteLayer) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Delete a layer of a model
 [**deleteModel**](ModelApi.md#deleteModel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id} | Delete a model
+[**deleteModelProperty**](ModelApi.md#deleteModelProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id} | Delete a Property of a model
+[**deleteModelPropertyDefinition**](ModelApi.md#deleteModelPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Delete a PropertyDefinitions of a model
+[**deleteModelUnit**](ModelApi.md#deleteModelUnit) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Delete a Unit of a model
 [**deleteModelWithoutDoc**](ModelApi.md#deleteModelWithoutDoc) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/delete-model | Delete the Model without deleting the related document
 [**deletePropertySet**](ModelApi.md#deletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Delete a PropertySet of a model
 [**deleteSpace**](ModelApi.md#deleteSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id} | Delete a space
@@ -72,20 +72,20 @@ Method | HTTP request | Description
 [**getElementPropertySets**](ModelApi.md#getElementPropertySets) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset | Retrieve all PropertySets of an element
 [**getElements**](ModelApi.md#getElements) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element | Retrieve all elements of a model
 [**getElementsFromClassification**](ModelApi.md#getElementsFromClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification/{model_classification_pk}/element | Retrieve all elements with the classification
-[**getIfcClassifications**](ModelApi.md#getIfcClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification | Retrieve all classifications in a model
-[**getIfcMaterial**](ModelApi.md#getIfcMaterial) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/material/{id} | Retrieve a material of a model
-[**getIfcMaterials**](ModelApi.md#getIfcMaterials) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/material | Retrieve all materials of a model
-[**getIfcProperties**](ModelApi.md#getIfcProperties) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property | Retrieve all Properties of a model
-[**getIfcProperty**](ModelApi.md#getIfcProperty) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id} | Retrieve a Property of a model
-[**getIfcPropertyDefinition**](ModelApi.md#getIfcPropertyDefinition) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Retrieve a PropertyDefinition of a model
-[**getIfcPropertyDefinitions**](ModelApi.md#getIfcPropertyDefinitions) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition | Retrieve all PropertyDefinitions of a model
-[**getIfcUnit**](ModelApi.md#getIfcUnit) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Retrieve a Unit of a model
-[**getIfcUnits**](ModelApi.md#getIfcUnits) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit | Retrieve all Units of a model
 [**getLayer**](ModelApi.md#getLayer) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Retrieve a layer of a model
 [**getLayers**](ModelApi.md#getLayers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer | Retrieve all layers of a model
 [**getMaterial**](ModelApi.md#getMaterial) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/material/{id} | Retrieve a material of a model
 [**getMaterials**](ModelApi.md#getMaterials) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/material | Retrieve all materials of a model
 [**getModel**](ModelApi.md#getModel) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{id} | Retrieve one model
+[**getModelClassifications**](ModelApi.md#getModelClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification | Retrieve all classifications in a model
+[**getModelMaterial**](ModelApi.md#getModelMaterial) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/material/{id} | Retrieve a material of a model
+[**getModelMaterials**](ModelApi.md#getModelMaterials) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/material | Retrieve all materials of a model
+[**getModelProperties**](ModelApi.md#getModelProperties) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property | Retrieve all Properties of a model
+[**getModelProperty**](ModelApi.md#getModelProperty) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id} | Retrieve a Property of a model
+[**getModelPropertyDefinition**](ModelApi.md#getModelPropertyDefinition) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Retrieve a PropertyDefinition of a model
+[**getModelPropertyDefinitions**](ModelApi.md#getModelPropertyDefinitions) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition | Retrieve all PropertyDefinitions of a model
+[**getModelUnit**](ModelApi.md#getModelUnit) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Retrieve a Unit of a model
+[**getModelUnits**](ModelApi.md#getModelUnits) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit | Retrieve all Units of a model
 [**getModels**](ModelApi.md#getModels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model | Retrieve all models
 [**getPlanPositioning**](ModelApi.md#getPlanPositioning) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id}/positioning | Retrieve the postioning of the plan in the storey
 [**getProcessorHandler**](ModelApi.md#getProcessorHandler) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id} | Retrieve a processor handler
@@ -121,12 +121,12 @@ Method | HTTP request | Description
 [**updateAccessToken**](ModelApi.md#updateAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token} | Update some fields of a token
 [**updateElement**](ModelApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Update some fields of an element
 [**updateElementPropertySetProperty**](ModelApi.md#updateElementPropertySetProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Update a property from an element
-[**updateIfcProperty**](ModelApi.md#updateIfcProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id} | Update some fields of a Property
-[**updateIfcPropertyDefinition**](ModelApi.md#updateIfcPropertyDefinition) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Update some fields of many PropertyDefinitions of a model
-[**updateIfcUnit**](ModelApi.md#updateIfcUnit) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Update some fields of a Unit of a model
 [**updateLayer**](ModelApi.md#updateLayer) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Update some fields of a layer
 [**updateModel**](ModelApi.md#updateModel) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{id} | Update some fields of a model
 [**updateModelFiles**](ModelApi.md#updateModelFiles) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/files | Update models file (gltf, svg, structure, etc)
+[**updateModelProperty**](ModelApi.md#updateModelProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id} | Update some fields of a Property
+[**updateModelPropertyDefinition**](ModelApi.md#updateModelPropertyDefinition) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Update some fields of many PropertyDefinitions of a model
+[**updateModelUnit**](ModelApi.md#updateModelUnit) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Update some fields of a Unit of a model
 [**updatePlanPositioning**](ModelApi.md#updatePlanPositioning) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id}/positioning | Update the postioning of the plan in the storey
 [**updateProcessorHandler**](ModelApi.md#updateProcessorHandler) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id} | Update the status of a processor handler
 [**updatePropertySet**](ModelApi.md#updatePropertySet) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Update some fields of a PropertySet
@@ -200,9 +200,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## bulkDeleteIfcClassifications
+## bulkDeleteModelClassifications
 
-> bulkDeleteIfcClassifications(cloudPk, modelPk, projectPk)
+> bulkDeleteModelClassifications(cloudPk, modelPk, projectPk)
 
 Remove all classifications from model&#39;s elements
 
@@ -229,7 +229,7 @@ let apiInstance = new bimdata.ModelApi();
 let cloudPk = "cloudPk_example"; // String | 
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.bulkDeleteIfcClassifications(cloudPk, modelPk, projectPk).then(() => {
+apiInstance.bulkDeleteModelClassifications(cloudPk, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -260,9 +260,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## bulkDeleteIfcProperties
+## bulkDeleteModelProperties
 
-> bulkDeleteIfcProperties(cloudPk, modelPk, projectPk, data)
+> bulkDeleteModelProperties(cloudPk, modelPk, projectPk, data)
 
 Delete many Property of a model
 
@@ -290,7 +290,7 @@ let cloudPk = "cloudPk_example"; // String |
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let data = [null]; // [Number] | 
-apiInstance.bulkDeleteIfcProperties(cloudPk, modelPk, projectPk, data).then(() => {
+apiInstance.bulkDeleteModelProperties(cloudPk, modelPk, projectPk, data).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -322,9 +322,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## bulkDeleteIfcPropertyDefinitions
+## bulkDeleteModelPropertyDefinitions
 
-> bulkDeleteIfcPropertyDefinitions(cloudPk, modelPk, projectPk, data)
+> bulkDeleteModelPropertyDefinitions(cloudPk, modelPk, projectPk, data)
 
 Delete many PropertyDefinitions of a model
 
@@ -352,7 +352,7 @@ let cloudPk = "cloudPk_example"; // String |
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let data = [null]; // [Number] | 
-apiInstance.bulkDeleteIfcPropertyDefinitions(cloudPk, modelPk, projectPk, data).then(() => {
+apiInstance.bulkDeleteModelPropertyDefinitions(cloudPk, modelPk, projectPk, data).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -384,9 +384,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## bulkDeleteIfcUnits
+## bulkDeleteModelUnits
 
-> bulkDeleteIfcUnits(cloudPk, modelPk, projectPk, data)
+> bulkDeleteModelUnits(cloudPk, modelPk, projectPk, data)
 
 Delete many Units of a model
 
@@ -414,7 +414,7 @@ let cloudPk = "cloudPk_example"; // String |
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let data = [null]; // [Number] | 
-apiInstance.bulkDeleteIfcUnits(cloudPk, modelPk, projectPk, data).then(() => {
+apiInstance.bulkDeleteModelUnits(cloudPk, modelPk, projectPk, data).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -570,9 +570,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## bulkFullUpdateIfcProperty
+## bulkFullUpdateModelProperty
 
-> [Property] bulkFullUpdateIfcProperty(cloudPk, modelPk, projectPk, data)
+> [Property] bulkFullUpdateModelProperty(cloudPk, modelPk, projectPk, data)
 
 Update some fields of many properties of a model
 
@@ -600,7 +600,7 @@ let cloudPk = "cloudPk_example"; // String |
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let data = [new bimdata.Property()]; // [Property] | 
-apiInstance.bulkFullUpdateIfcProperty(cloudPk, modelPk, projectPk, data).then((data) => {
+apiInstance.bulkFullUpdateModelProperty(cloudPk, modelPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -886,9 +886,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## bulkUpdateIfcProperty
+## bulkUpdateModelProperty
 
-> [Property] bulkUpdateIfcProperty(cloudPk, modelPk, projectPk, data)
+> [Property] bulkUpdateModelProperty(cloudPk, modelPk, projectPk, data)
 
 Update all fields of many properties of a model
 
@@ -916,7 +916,7 @@ let cloudPk = "cloudPk_example"; // String |
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let data = [new bimdata.Property()]; // [Property] | 
-apiInstance.bulkUpdateIfcProperty(cloudPk, modelPk, projectPk, data).then((data) => {
+apiInstance.bulkUpdateModelProperty(cloudPk, modelPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1466,130 +1466,6 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## createIfcPropertyDefinition
-
-> [PropertyDefinition] createIfcPropertyDefinition(cloudPk, modelPk, projectPk, data)
-
-Create a PropertyDefinition on the model
-
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors  Required scopes: ifc:write, model:write
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.PropertyDefinition()]; // [PropertyDefinition] | 
-apiInstance.createIfcPropertyDefinition(cloudPk, modelPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**[PropertyDefinition]**](PropertyDefinition.md)|  | 
-
-### Return type
-
-[**[PropertyDefinition]**](PropertyDefinition.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## createIfcUnit
-
-> [Unit] createIfcUnit(cloudPk, modelPk, projectPk, data)
-
-Create a Unit on a model
-
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors  Required scopes: ifc:write, model:write
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.Unit()]; // [Unit] | 
-apiInstance.createIfcUnit(cloudPk, modelPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**[Unit]**](Unit.md)|  | 
-
-### Return type
-
-[**[Unit]**](Unit.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
 ## createLayer
 
 > Layer createLayer(cloudPk, modelPk, projectPk, data)
@@ -1718,7 +1594,7 @@ Name | Type | Description  | Notes
 
 Make a PDF or Image file a Model
 
-Make a PDF or Image file a Model to be used in BIMData services Required scopes: ifc:write, model:write
+Make a PDF or Image file a Model to be used in BIMData services. If a model already exists, this route does nothing and returns a 201 with the model Required scopes: ifc:write, model:write
 
 ### Example
 
@@ -1761,6 +1637,130 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Model**](Model.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createModelPropertyDefinition
+
+> [PropertyDefinition] createModelPropertyDefinition(cloudPk, modelPk, projectPk, data)
+
+Create a PropertyDefinition on the model
+
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors  Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = [new bimdata.PropertyDefinition()]; // [PropertyDefinition] | 
+apiInstance.createModelPropertyDefinition(cloudPk, modelPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**[PropertyDefinition]**](PropertyDefinition.md)|  | 
+
+### Return type
+
+[**[PropertyDefinition]**](PropertyDefinition.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createModelUnit
+
+> [Unit] createModelUnit(cloudPk, modelPk, projectPk, data)
+
+Create a Unit on a model
+
+         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors  Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = [new bimdata.Unit()]; // [Unit] | 
+apiInstance.createModelUnit(cloudPk, modelPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**[Unit]**](Unit.md)|  | 
+
+### Return type
+
+[**[Unit]**](Unit.md)
 
 ### Authorization
 
@@ -2396,192 +2396,6 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## deleteIfcProperty
-
-> deleteIfcProperty(cloudPk, id, modelPk, projectPk)
-
-Delete a Property of a model
-
-Delete a Property of a model Required scopes: ifc:write, model:write
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this property.
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteIfcProperty(cloudPk, id, modelPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this property. | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## deleteIfcPropertyDefinition
-
-> deleteIfcPropertyDefinition(cloudPk, id, modelPk, projectPk)
-
-Delete a PropertyDefinitions of a model
-
-Delete a PropertyDefinitions of a model Required scopes: ifc:write, model:write
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this property definition.
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteIfcPropertyDefinition(cloudPk, id, modelPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this property definition. | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## deleteIfcUnit
-
-> deleteIfcUnit(cloudPk, id, modelPk, projectPk)
-
-Delete a Unit of a model
-
-Delete a Unit of a model Required scopes: ifc:write, model:write
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this unit.
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteIfcUnit(cloudPk, id, modelPk, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this unit. | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
 ## deleteLayer
 
 > deleteLayer(cloudPk, id, modelPk, projectPk)
@@ -2688,6 +2502,192 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
  **id** | **Number**| A unique integer value identifying this model. | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## deleteModelProperty
+
+> deleteModelProperty(cloudPk, id, modelPk, projectPk)
+
+Delete a Property of a model
+
+Delete a Property of a model Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this property.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.deleteModelProperty(cloudPk, id, modelPk, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## deleteModelPropertyDefinition
+
+> deleteModelPropertyDefinition(cloudPk, id, modelPk, projectPk)
+
+Delete a PropertyDefinitions of a model
+
+Delete a PropertyDefinitions of a model Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this property definition.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.deleteModelPropertyDefinition(cloudPk, id, modelPk, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property definition. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## deleteModelUnit
+
+> deleteModelUnit(cloudPk, id, modelPk, projectPk)
+
+Delete a Unit of a model
+
+Delete a Unit of a model Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this unit.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.deleteModelUnit(cloudPk, id, modelPk, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this unit. | 
+ **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
 
 ### Return type
@@ -4424,554 +4424,6 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getIfcClassifications
-
-> [Classification] getIfcClassifications(cloudPk, modelPk, projectPk)
-
-Retrieve all classifications in a model
-
-Retrieve all classifications in a model Required scopes: ifc:read, model:read
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcClassifications(cloudPk, modelPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-[**[Classification]**](Classification.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getIfcMaterial
-
-> Material getIfcMaterial(cloudPk, id, modelPk, projectPk)
-
-Retrieve a material of a model
-
-Retrieve a material of a model Required scopes: ifc:read, model:read
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this material.
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcMaterial(cloudPk, id, modelPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this material. | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-[**Material**](Material.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getIfcMaterials
-
-> [Material] getIfcMaterials(cloudPk, modelPk, projectPk)
-
-Retrieve all materials of a model
-
-Retrieve all materials of a model. Required scopes: ifc:read, model:read
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcMaterials(cloudPk, modelPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-[**[Material]**](Material.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getIfcProperties
-
-> [Property] getIfcProperties(cloudPk, modelPk, projectPk)
-
-Retrieve all Properties of a model
-
-Retrieve all PropertySets of a model Required scopes: ifc:read, model:read
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcProperties(cloudPk, modelPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-[**[Property]**](Property.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getIfcProperty
-
-> Property getIfcProperty(cloudPk, id, modelPk, projectPk)
-
-Retrieve a Property of a model
-
-Retrieve a Property of a model Required scopes: ifc:read, model:read
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this property.
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcProperty(cloudPk, id, modelPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this property. | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-[**Property**](Property.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getIfcPropertyDefinition
-
-> PropertyDefinition getIfcPropertyDefinition(cloudPk, id, modelPk, projectPk)
-
-Retrieve a PropertyDefinition of a model
-
-Retrieve a PropertyDefinition of a model Required scopes: ifc:read, model:read
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this property definition.
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcPropertyDefinition(cloudPk, id, modelPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this property definition. | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-[**PropertyDefinition**](PropertyDefinition.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getIfcPropertyDefinitions
-
-> [PropertyDefinition] getIfcPropertyDefinitions(cloudPk, modelPk, projectPk)
-
-Retrieve all PropertyDefinitions of a model
-
-Retrieve all PropertyDefinitions of a model Required scopes: ifc:read, model:read
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcPropertyDefinitions(cloudPk, modelPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-[**[PropertyDefinition]**](PropertyDefinition.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getIfcUnit
-
-> Unit getIfcUnit(cloudPk, id, modelPk, projectPk)
-
-Retrieve a Unit of a model
-
-Retrieve a Unit of a model Required scopes: ifc:read, model:read
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this unit.
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcUnit(cloudPk, id, modelPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this unit. | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-[**Unit**](Unit.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getIfcUnits
-
-> [Unit] getIfcUnits(cloudPk, modelPk, projectPk)
-
-Retrieve all Units of a model
-
-Retrieve all Units of a model Required scopes: ifc:read, model:read
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-apiInstance.getIfcUnits(cloudPk, modelPk, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
-
-### Return type
-
-[**[Unit]**](Unit.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## getLayer
 
 > Layer getLayer(cloudPk, id, modelPk, projectPk)
@@ -5269,6 +4721,554 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Model**](Model.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getModelClassifications
+
+> [Classification] getModelClassifications(cloudPk, modelPk, projectPk)
+
+Retrieve all classifications in a model
+
+Retrieve all classifications in a model Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getModelClassifications(cloudPk, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**[Classification]**](Classification.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getModelMaterial
+
+> Material getModelMaterial(cloudPk, id, modelPk, projectPk)
+
+Retrieve a material of a model
+
+Retrieve a material of a model Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this material.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getModelMaterial(cloudPk, id, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this material. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**Material**](Material.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getModelMaterials
+
+> [Material] getModelMaterials(cloudPk, modelPk, projectPk)
+
+Retrieve all materials of a model
+
+Retrieve all materials of a model. Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getModelMaterials(cloudPk, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**[Material]**](Material.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getModelProperties
+
+> [Property] getModelProperties(cloudPk, modelPk, projectPk)
+
+Retrieve all Properties of a model
+
+Retrieve all PropertySets of a model Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getModelProperties(cloudPk, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**[Property]**](Property.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getModelProperty
+
+> Property getModelProperty(cloudPk, id, modelPk, projectPk)
+
+Retrieve a Property of a model
+
+Retrieve a Property of a model Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this property.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getModelProperty(cloudPk, id, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**Property**](Property.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getModelPropertyDefinition
+
+> PropertyDefinition getModelPropertyDefinition(cloudPk, id, modelPk, projectPk)
+
+Retrieve a PropertyDefinition of a model
+
+Retrieve a PropertyDefinition of a model Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this property definition.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getModelPropertyDefinition(cloudPk, id, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property definition. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**PropertyDefinition**](PropertyDefinition.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getModelPropertyDefinitions
+
+> [PropertyDefinition] getModelPropertyDefinitions(cloudPk, modelPk, projectPk)
+
+Retrieve all PropertyDefinitions of a model
+
+Retrieve all PropertyDefinitions of a model Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getModelPropertyDefinitions(cloudPk, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**[PropertyDefinition]**](PropertyDefinition.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getModelUnit
+
+> Unit getModelUnit(cloudPk, id, modelPk, projectPk)
+
+Retrieve a Unit of a model
+
+Retrieve a Unit of a model Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this unit.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getModelUnit(cloudPk, id, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this unit. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**Unit**](Unit.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getModelUnits
+
+> [Unit] getModelUnits(cloudPk, modelPk, projectPk)
+
+Retrieve all Units of a model
+
+Retrieve all Units of a model Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getModelUnits(cloudPk, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**[Unit]**](Unit.md)
 
 ### Authorization
 
@@ -7494,198 +7494,6 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## updateIfcProperty
-
-> Property updateIfcProperty(cloudPk, id, modelPk, projectPk, data)
-
-Update some fields of a Property
-
-Update some fields of a Property Required scopes: ifc:write, model:write
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this property.
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Property(); // Property | 
-apiInstance.updateIfcProperty(cloudPk, id, modelPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this property. | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**Property**](Property.md)|  | 
-
-### Return type
-
-[**Property**](Property.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## updateIfcPropertyDefinition
-
-> PropertyDefinition updateIfcPropertyDefinition(cloudPk, id, modelPk, projectPk, data)
-
-Update some fields of many PropertyDefinitions of a model
-
- Required scopes: ifc:write, model:write
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this property definition.
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.PropertyDefinition(); // PropertyDefinition | 
-apiInstance.updateIfcPropertyDefinition(cloudPk, id, modelPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this property definition. | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
-
-### Return type
-
-[**PropertyDefinition**](PropertyDefinition.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## updateIfcUnit
-
-> Unit updateIfcUnit(cloudPk, id, modelPk, projectPk, data)
-
-Update some fields of a Unit of a model
-
- Required scopes: ifc:write, model:write
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this unit.
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Unit(); // Unit | 
-apiInstance.updateIfcUnit(cloudPk, id, modelPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this unit. | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**Unit**](Unit.md)|  | 
-
-### Return type
-
-[**Unit**](Unit.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
 ## updateLayer
 
 > Layer updateLayer(cloudPk, id, modelPk, projectPk, data)
@@ -7887,6 +7695,198 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
+- **Accept**: application/json
+
+
+## updateModelProperty
+
+> Property updateModelProperty(cloudPk, id, modelPk, projectPk, data)
+
+Update some fields of a Property
+
+Update some fields of a Property Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this property.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.Property(); // Property | 
+apiInstance.updateModelProperty(cloudPk, id, modelPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**Property**](Property.md)|  | 
+
+### Return type
+
+[**Property**](Property.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateModelPropertyDefinition
+
+> PropertyDefinition updateModelPropertyDefinition(cloudPk, id, modelPk, projectPk, data)
+
+Update some fields of many PropertyDefinitions of a model
+
+ Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this property definition.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.PropertyDefinition(); // PropertyDefinition | 
+apiInstance.updateModelPropertyDefinition(cloudPk, id, modelPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this property definition. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**PropertyDefinition**](PropertyDefinition.md)|  | 
+
+### Return type
+
+[**PropertyDefinition**](PropertyDefinition.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateModelUnit
+
+> Unit updateModelUnit(cloudPk, id, modelPk, projectPk, data)
+
+Update some fields of a Unit of a model
+
+ Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this unit.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.Unit(); // Unit | 
+apiInstance.updateModelUnit(cloudPk, id, modelPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this unit. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**Unit**](Unit.md)|  | 
+
+### Return type
+
+[**Unit**](Unit.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

@@ -1609,7 +1609,7 @@ Name | Type | Description  | Notes
 
 Make a PDF or Image file a Model
 
-Make a PDF or Image file a Model to be used in BIMData services Required scopes: ifc:write, model:write
+Make a PDF or Image file a Model to be used in BIMData services. If a model already exists, this route does nothing and returns a 201 with the model Required scopes: ifc:write, model:write
 
 ### Example
 

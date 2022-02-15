@@ -58,40 +58,40 @@
         done();
       });
     });
-    describe('bulkDeleteIfcClassifications', function() {
-      it('should call bulkDeleteIfcClassifications successfully', function(done) {
-        //uncomment below and update the code to test bulkDeleteIfcClassifications
-        //instance.bulkDeleteIfcClassifications(function(error) {
+    describe('bulkDeleteModelClassifications', function() {
+      it('should call bulkDeleteModelClassifications successfully', function(done) {
+        //uncomment below and update the code to test bulkDeleteModelClassifications
+        //instance.bulkDeleteModelClassifications(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkDeleteIfcProperties', function() {
-      it('should call bulkDeleteIfcProperties successfully', function(done) {
-        //uncomment below and update the code to test bulkDeleteIfcProperties
-        //instance.bulkDeleteIfcProperties(function(error) {
+    describe('bulkDeleteModelProperties', function() {
+      it('should call bulkDeleteModelProperties successfully', function(done) {
+        //uncomment below and update the code to test bulkDeleteModelProperties
+        //instance.bulkDeleteModelProperties(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkDeleteIfcPropertyDefinitions', function() {
-      it('should call bulkDeleteIfcPropertyDefinitions successfully', function(done) {
-        //uncomment below and update the code to test bulkDeleteIfcPropertyDefinitions
-        //instance.bulkDeleteIfcPropertyDefinitions(function(error) {
+    describe('bulkDeleteModelPropertyDefinitions', function() {
+      it('should call bulkDeleteModelPropertyDefinitions successfully', function(done) {
+        //uncomment below and update the code to test bulkDeleteModelPropertyDefinitions
+        //instance.bulkDeleteModelPropertyDefinitions(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('bulkDeleteIfcUnits', function() {
-      it('should call bulkDeleteIfcUnits successfully', function(done) {
-        //uncomment below and update the code to test bulkDeleteIfcUnits
-        //instance.bulkDeleteIfcUnits(function(error) {
+    describe('bulkDeleteModelUnits', function() {
+      it('should call bulkDeleteModelUnits successfully', function(done) {
+        //uncomment below and update the code to test bulkDeleteModelUnits
+        //instance.bulkDeleteModelUnits(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -118,10 +118,10 @@
         done();
       });
     });
-    describe('bulkFullUpdateIfcProperty', function() {
-      it('should call bulkFullUpdateIfcProperty successfully', function(done) {
-        //uncomment below and update the code to test bulkFullUpdateIfcProperty
-        //instance.bulkFullUpdateIfcProperty(function(error) {
+    describe('bulkFullUpdateModelProperty', function() {
+      it('should call bulkFullUpdateModelProperty successfully', function(done) {
+        //uncomment below and update the code to test bulkFullUpdateModelProperty
+        //instance.bulkFullUpdateModelProperty(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -168,10 +168,10 @@
         done();
       });
     });
-    describe('bulkUpdateIfcProperty', function() {
-      it('should call bulkUpdateIfcProperty successfully', function(done) {
-        //uncomment below and update the code to test bulkUpdateIfcProperty
-        //instance.bulkUpdateIfcProperty(function(error) {
+    describe('bulkUpdateModelProperty', function() {
+      it('should call bulkUpdateModelProperty successfully', function(done) {
+        //uncomment below and update the code to test bulkUpdateModelProperty
+        //instance.bulkUpdateModelProperty(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -258,26 +258,6 @@
         done();
       });
     });
-    describe('createIfcPropertyDefinition', function() {
-      it('should call createIfcPropertyDefinition successfully', function(done) {
-        //uncomment below and update the code to test createIfcPropertyDefinition
-        //instance.createIfcPropertyDefinition(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('createIfcUnit', function() {
-      it('should call createIfcUnit successfully', function(done) {
-        //uncomment below and update the code to test createIfcUnit
-        //instance.createIfcUnit(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('createLayer', function() {
       it('should call createLayer successfully', function(done) {
         //uncomment below and update the code to test createLayer
@@ -302,6 +282,26 @@
       it('should call createModel successfully', function(done) {
         //uncomment below and update the code to test createModel
         //instance.createModel(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createModelPropertyDefinition', function() {
+      it('should call createModelPropertyDefinition successfully', function(done) {
+        //uncomment below and update the code to test createModelPropertyDefinition
+        //instance.createModelPropertyDefinition(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createModelUnit', function() {
+      it('should call createModelUnit successfully', function(done) {
+        //uncomment below and update the code to test createModelUnit
+        //instance.createModelUnit(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -408,36 +408,6 @@
         done();
       });
     });
-    describe('deleteIfcProperty', function() {
-      it('should call deleteIfcProperty successfully', function(done) {
-        //uncomment below and update the code to test deleteIfcProperty
-        //instance.deleteIfcProperty(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteIfcPropertyDefinition', function() {
-      it('should call deleteIfcPropertyDefinition successfully', function(done) {
-        //uncomment below and update the code to test deleteIfcPropertyDefinition
-        //instance.deleteIfcPropertyDefinition(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteIfcUnit', function() {
-      it('should call deleteIfcUnit successfully', function(done) {
-        //uncomment below and update the code to test deleteIfcUnit
-        //instance.deleteIfcUnit(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('deleteLayer', function() {
       it('should call deleteLayer successfully', function(done) {
         //uncomment below and update the code to test deleteLayer
@@ -452,6 +422,36 @@
       it('should call deleteModel successfully', function(done) {
         //uncomment below and update the code to test deleteModel
         //instance.deleteModel(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteModelProperty', function() {
+      it('should call deleteModelProperty successfully', function(done) {
+        //uncomment below and update the code to test deleteModelProperty
+        //instance.deleteModelProperty(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteModelPropertyDefinition', function() {
+      it('should call deleteModelPropertyDefinition successfully', function(done) {
+        //uncomment below and update the code to test deleteModelPropertyDefinition
+        //instance.deleteModelPropertyDefinition(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteModelUnit', function() {
+      it('should call deleteModelUnit successfully', function(done) {
+        //uncomment below and update the code to test deleteModelUnit
+        //instance.deleteModelUnit(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -728,96 +728,6 @@
         done();
       });
     });
-    describe('getIfcClassifications', function() {
-      it('should call getIfcClassifications successfully', function(done) {
-        //uncomment below and update the code to test getIfcClassifications
-        //instance.getIfcClassifications(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getIfcMaterial', function() {
-      it('should call getIfcMaterial successfully', function(done) {
-        //uncomment below and update the code to test getIfcMaterial
-        //instance.getIfcMaterial(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getIfcMaterials', function() {
-      it('should call getIfcMaterials successfully', function(done) {
-        //uncomment below and update the code to test getIfcMaterials
-        //instance.getIfcMaterials(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getIfcProperties', function() {
-      it('should call getIfcProperties successfully', function(done) {
-        //uncomment below and update the code to test getIfcProperties
-        //instance.getIfcProperties(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getIfcProperty', function() {
-      it('should call getIfcProperty successfully', function(done) {
-        //uncomment below and update the code to test getIfcProperty
-        //instance.getIfcProperty(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getIfcPropertyDefinition', function() {
-      it('should call getIfcPropertyDefinition successfully', function(done) {
-        //uncomment below and update the code to test getIfcPropertyDefinition
-        //instance.getIfcPropertyDefinition(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getIfcPropertyDefinitions', function() {
-      it('should call getIfcPropertyDefinitions successfully', function(done) {
-        //uncomment below and update the code to test getIfcPropertyDefinitions
-        //instance.getIfcPropertyDefinitions(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getIfcUnit', function() {
-      it('should call getIfcUnit successfully', function(done) {
-        //uncomment below and update the code to test getIfcUnit
-        //instance.getIfcUnit(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getIfcUnits', function() {
-      it('should call getIfcUnits successfully', function(done) {
-        //uncomment below and update the code to test getIfcUnits
-        //instance.getIfcUnits(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getLayer', function() {
       it('should call getLayer successfully', function(done) {
         //uncomment below and update the code to test getLayer
@@ -862,6 +772,96 @@
       it('should call getModel successfully', function(done) {
         //uncomment below and update the code to test getModel
         //instance.getModel(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getModelClassifications', function() {
+      it('should call getModelClassifications successfully', function(done) {
+        //uncomment below and update the code to test getModelClassifications
+        //instance.getModelClassifications(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getModelMaterial', function() {
+      it('should call getModelMaterial successfully', function(done) {
+        //uncomment below and update the code to test getModelMaterial
+        //instance.getModelMaterial(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getModelMaterials', function() {
+      it('should call getModelMaterials successfully', function(done) {
+        //uncomment below and update the code to test getModelMaterials
+        //instance.getModelMaterials(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getModelProperties', function() {
+      it('should call getModelProperties successfully', function(done) {
+        //uncomment below and update the code to test getModelProperties
+        //instance.getModelProperties(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getModelProperty', function() {
+      it('should call getModelProperty successfully', function(done) {
+        //uncomment below and update the code to test getModelProperty
+        //instance.getModelProperty(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getModelPropertyDefinition', function() {
+      it('should call getModelPropertyDefinition successfully', function(done) {
+        //uncomment below and update the code to test getModelPropertyDefinition
+        //instance.getModelPropertyDefinition(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getModelPropertyDefinitions', function() {
+      it('should call getModelPropertyDefinitions successfully', function(done) {
+        //uncomment below and update the code to test getModelPropertyDefinitions
+        //instance.getModelPropertyDefinitions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getModelUnit', function() {
+      it('should call getModelUnit successfully', function(done) {
+        //uncomment below and update the code to test getModelUnit
+        //instance.getModelUnit(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getModelUnits', function() {
+      it('should call getModelUnits successfully', function(done) {
+        //uncomment below and update the code to test getModelUnits
+        //instance.getModelUnits(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1218,36 +1218,6 @@
         done();
       });
     });
-    describe('updateIfcProperty', function() {
-      it('should call updateIfcProperty successfully', function(done) {
-        //uncomment below and update the code to test updateIfcProperty
-        //instance.updateIfcProperty(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateIfcPropertyDefinition', function() {
-      it('should call updateIfcPropertyDefinition successfully', function(done) {
-        //uncomment below and update the code to test updateIfcPropertyDefinition
-        //instance.updateIfcPropertyDefinition(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateIfcUnit', function() {
-      it('should call updateIfcUnit successfully', function(done) {
-        //uncomment below and update the code to test updateIfcUnit
-        //instance.updateIfcUnit(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('updateLayer', function() {
       it('should call updateLayer successfully', function(done) {
         //uncomment below and update the code to test updateLayer
@@ -1272,6 +1242,36 @@
       it('should call updateModelFiles successfully', function(done) {
         //uncomment below and update the code to test updateModelFiles
         //instance.updateModelFiles(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateModelProperty', function() {
+      it('should call updateModelProperty successfully', function(done) {
+        //uncomment below and update the code to test updateModelProperty
+        //instance.updateModelProperty(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateModelPropertyDefinition', function() {
+      it('should call updateModelPropertyDefinition successfully', function(done) {
+        //uncomment below and update the code to test updateModelPropertyDefinition
+        //instance.updateModelPropertyDefinition(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateModelUnit', function() {
+      it('should call updateModelUnit successfully', function(done) {
+        //uncomment below and update the code to test updateModelUnit
+        //instance.updateModelUnit(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
