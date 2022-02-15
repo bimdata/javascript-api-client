@@ -14,19 +14,19 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The Label model module.
- * @module model/Label
+ * The LabelRead model module.
+ * @module model/LabelRead
  * @version 0.0.0
  */
-class Label {
+class LabelRead {
     /**
-     * Constructs a new <code>Label</code>.
-     * @alias module:model/Label
+     * Constructs a new <code>LabelRead</code>.
+     * @alias module:model/LabelRead
      * @param label {String} 
      */
     constructor(label) { 
         
-        Label.initialize(this, label);
+        LabelRead.initialize(this, label);
     }
 
     /**
@@ -39,24 +39,18 @@ class Label {
     }
 
     /**
-     * Constructs a <code>Label</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>LabelRead</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Label} obj Optional instance to populate.
-     * @return {module:model/Label} The populated <code>Label</code> instance.
+     * @param {module:model/LabelRead} obj Optional instance to populate.
+     * @return {module:model/LabelRead} The populated <code>LabelRead</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Label();
+            obj = obj || new LabelRead();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-            }
             if (data.hasOwnProperty('label')) {
                 obj['label'] = ApiClient.convertToType(data['label'], 'String');
-            }
-            if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
         }
         return obj;
@@ -66,25 +60,14 @@ class Label {
 }
 
 /**
- * @member {Number} id
- */
-Label.prototype['id'] = undefined;
-
-/**
  * @member {String} label
  */
-Label.prototype['label'] = undefined;
-
-/**
- * This field is automatically provided by the route, you don't need to provide it in the body
- * @member {Number} project
- */
-Label.prototype['project'] = undefined;
+LabelRead.prototype['label'] = undefined;
 
 
 
 
 
 
-export default Label;
+export default LabelRead;
 

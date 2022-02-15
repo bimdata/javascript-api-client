@@ -49,8 +49,17 @@ class TopicStatus {
         if (data) {
             obj = obj || new TopicStatus();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
             if (data.hasOwnProperty('topic_status')) {
                 obj['topic_status'] = ApiClient.convertToType(data['topic_status'], 'String');
+            }
+            if (data.hasOwnProperty('color')) {
+                obj['color'] = ApiClient.convertToType(data['color'], 'String');
+            }
+            if (data.hasOwnProperty('project')) {
+                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
         }
         return obj;
@@ -60,9 +69,25 @@ class TopicStatus {
 }
 
 /**
+ * @member {Number} id
+ */
+TopicStatus.prototype['id'] = undefined;
+
+/**
  * @member {String} topic_status
  */
 TopicStatus.prototype['topic_status'] = undefined;
+
+/**
+ * @member {String} color
+ */
+TopicStatus.prototype['color'] = undefined;
+
+/**
+ * This field is automatically provided by the route, you don't need to provide it in the body
+ * @member {Number} project
+ */
+TopicStatus.prototype['project'] = undefined;
 
 
 

@@ -78,14 +78,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property stage (base name: "stage")', function() {
+      // uncomment below and update the code to test the property stage
+      //var instane = new bimdata.Extensions();
+      //expect(instance).to.be();
+    });
+
     it('should have the property userIdType (base name: "user_id_type")', function() {
       // uncomment below and update the code to test the property userIdType
       //var instane = new bimdata.Extensions();
       //expect(instance).to.be();
     });
 
-    it('should have the property stage (base name: "stage")', function() {
-      // uncomment below and update the code to test the property stage
+    it('should have the property priorityColors (base name: "priority_colors")', function() {
+      // uncomment below and update the code to test the property priorityColors
+      //var instane = new bimdata.Extensions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property topicStatusColors (base name: "topic_status_colors")', function() {
+      // uncomment below and update the code to test the property topicStatusColors
       //var instane = new bimdata.Extensions();
       //expect(instance).to.be();
     });

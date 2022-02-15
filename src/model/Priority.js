@@ -49,8 +49,17 @@ class Priority {
         if (data) {
             obj = obj || new Priority();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
             if (data.hasOwnProperty('priority')) {
                 obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
+            }
+            if (data.hasOwnProperty('color')) {
+                obj['color'] = ApiClient.convertToType(data['color'], 'String');
+            }
+            if (data.hasOwnProperty('project')) {
+                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
         }
         return obj;
@@ -60,9 +69,25 @@ class Priority {
 }
 
 /**
+ * @member {Number} id
+ */
+Priority.prototype['id'] = undefined;
+
+/**
  * @member {String} priority
  */
 Priority.prototype['priority'] = undefined;
+
+/**
+ * @member {String} color
+ */
+Priority.prototype['color'] = undefined;
+
+/**
+ * This field is automatically provided by the route, you don't need to provide it in the body
+ * @member {Number} project
+ */
+Priority.prototype['project'] = undefined;
 
 
 

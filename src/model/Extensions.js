@@ -22,15 +22,12 @@ class Extensions {
     /**
      * Constructs a new <code>Extensions</code>.
      * @alias module:model/Extensions
-     * @param topicType {Array.<String>} 
-     * @param topicStatus {Array.<String>} 
-     * @param topicLabel {Array.<String>} 
-     * @param priority {Array.<String>} 
-     * @param stage {Array.<String>} 
+     * @param priorityColors {Array.<String>} Non standard field. Arrays of priorities and this array are in the same order.
+     * @param topicStatusColors {Array.<String>} Non standard field. Arrays of statuses and this array are in the same order.
      */
-    constructor(topicType, topicStatus, topicLabel, priority, stage) { 
+    constructor(priorityColors, topicStatusColors) { 
         
-        Extensions.initialize(this, topicType, topicStatus, topicLabel, priority, stage);
+        Extensions.initialize(this, priorityColors, topicStatusColors);
     }
 
     /**
@@ -38,12 +35,9 @@ class Extensions {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, topicType, topicStatus, topicLabel, priority, stage) { 
-        obj['topic_type'] = topicType;
-        obj['topic_status'] = topicStatus;
-        obj['topic_label'] = topicLabel;
-        obj['priority'] = priority;
-        obj['stage'] = stage;
+    static initialize(obj, priorityColors, topicStatusColors) { 
+        obj['priority_colors'] = priorityColors;
+        obj['topic_status_colors'] = topicStatusColors;
     }
 
     /**
@@ -69,11 +63,17 @@ class Extensions {
             if (data.hasOwnProperty('priority')) {
                 obj['priority'] = ApiClient.convertToType(data['priority'], ['String']);
             }
+            if (data.hasOwnProperty('stage')) {
+                obj['stage'] = ApiClient.convertToType(data['stage'], ['String']);
+            }
             if (data.hasOwnProperty('user_id_type')) {
                 obj['user_id_type'] = ApiClient.convertToType(data['user_id_type'], ['String']);
             }
-            if (data.hasOwnProperty('stage')) {
-                obj['stage'] = ApiClient.convertToType(data['stage'], ['String']);
+            if (data.hasOwnProperty('priority_colors')) {
+                obj['priority_colors'] = ApiClient.convertToType(data['priority_colors'], ['String']);
+            }
+            if (data.hasOwnProperty('topic_status_colors')) {
+                obj['topic_status_colors'] = ApiClient.convertToType(data['topic_status_colors'], ['String']);
             }
         }
         return obj;
@@ -103,14 +103,26 @@ Extensions.prototype['topic_label'] = undefined;
 Extensions.prototype['priority'] = undefined;
 
 /**
+ * @member {Array.<String>} stage
+ */
+Extensions.prototype['stage'] = undefined;
+
+/**
  * @member {Array.<String>} user_id_type
  */
 Extensions.prototype['user_id_type'] = undefined;
 
 /**
- * @member {Array.<String>} stage
+ * Non standard field. Arrays of priorities and this array are in the same order.
+ * @member {Array.<String>} priority_colors
  */
-Extensions.prototype['stage'] = undefined;
+Extensions.prototype['priority_colors'] = undefined;
+
+/**
+ * Non standard field. Arrays of statuses and this array are in the same order.
+ * @member {Array.<String>} topic_status_colors
+ */
+Extensions.prototype['topic_status_colors'] = undefined;
 
 
 

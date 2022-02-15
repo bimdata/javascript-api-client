@@ -27,6 +27,7 @@ import Component from './model/Component';
 import ComponentsParent from './model/ComponentsParent';
 import CreateBuilding from './model/CreateBuilding';
 import CreateModel from './model/CreateModel';
+import DetailedExtensions from './model/DetailedExtensions';
 import Direction from './model/Direction';
 import Document from './model/Document';
 import DocumentWithElementList from './model/DocumentWithElementList';
@@ -57,6 +58,7 @@ import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
 import Invitation from './model/Invitation';
 import Label from './model/Label';
+import LabelRead from './model/LabelRead';
 import Layer from './model/Layer';
 import LayerElement from './model/LayerElement';
 import Line from './model/Line';
@@ -264,6 +266,12 @@ export {
     CreateModel,
 
     /**
+     * The DetailedExtensions model constructor.
+     * @property {module:model/DetailedExtensions}
+     */
+    DetailedExtensions,
+
+    /**
      * The Direction model constructor.
      * @property {module:model/Direction}
      */
@@ -442,6 +450,12 @@ export {
      * @property {module:model/Label}
      */
     Label,
+
+    /**
+     * The LabelRead model constructor.
+     * @property {module:model/LabelRead}
+     */
+    LabelRead,
 
     /**
      * The Layer model constructor.

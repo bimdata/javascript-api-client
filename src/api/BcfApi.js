@@ -17,10 +17,16 @@ import BcfProject from '../model/BcfProject';
 import Coloring from '../model/Coloring';
 import Comment from '../model/Comment';
 import Component from '../model/Component';
+import DetailedExtensions from '../model/DetailedExtensions';
 import Extensions from '../model/Extensions';
 import FullTopic from '../model/FullTopic';
+import Label from '../model/Label';
+import Priority from '../model/Priority';
 import SelfBcfUser from '../model/SelfBcfUser';
+import Stage from '../model/Stage';
 import Topic from '../model/Topic';
+import TopicStatus from '../model/TopicStatus';
+import TopicType from '../model/TopicType';
 import Viewpoint from '../model/Viewpoint';
 import Visibility from '../model/Visibility';
 
@@ -99,6 +105,276 @@ export default class BcfApi {
      */
     createComment(projectsPk, topicsGuid, data) {
       return this.createCommentWithHttpInfo(projectsPk, topicsGuid, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a Label
+     * This is not a standard route. Create a Label available for the project Required scopes: bcf:write
+     * @param {String} projectsPk 
+     * @param {module:model/Label} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Label} and HTTP response
+     */
+    createExtensionLabelWithHttpInfo(projectsPk, data) {
+      let postBody = data;
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createExtensionLabel");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createExtensionLabel");
+      }
+
+      let pathParams = {
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Label;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/label', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a Label
+     * This is not a standard route. Create a Label available for the project Required scopes: bcf:write
+     * @param {String} projectsPk 
+     * @param {module:model/Label} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Label}
+     */
+    createExtensionLabel(projectsPk, data) {
+      return this.createExtensionLabelWithHttpInfo(projectsPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a Priority
+     * This is not a standard route. Create a Priority available for the project Required scopes: bcf:write
+     * @param {String} projectsPk 
+     * @param {module:model/Priority} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Priority} and HTTP response
+     */
+    createExtensionPriorityWithHttpInfo(projectsPk, data) {
+      let postBody = data;
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createExtensionPriority");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createExtensionPriority");
+      }
+
+      let pathParams = {
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Priority;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/priority', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a Priority
+     * This is not a standard route. Create a Priority available for the project Required scopes: bcf:write
+     * @param {String} projectsPk 
+     * @param {module:model/Priority} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Priority}
+     */
+    createExtensionPriority(projectsPk, data) {
+      return this.createExtensionPriorityWithHttpInfo(projectsPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a Stage
+     * This is not a standard route. Create a Stage available for the project Required scopes: bcf:write
+     * @param {String} projectsPk 
+     * @param {module:model/Stage} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Stage} and HTTP response
+     */
+    createExtensionStageWithHttpInfo(projectsPk, data) {
+      let postBody = data;
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createExtensionStage");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createExtensionStage");
+      }
+
+      let pathParams = {
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Stage;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/stage', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a Stage
+     * This is not a standard route. Create a Stage available for the project Required scopes: bcf:write
+     * @param {String} projectsPk 
+     * @param {module:model/Stage} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Stage}
+     */
+    createExtensionStage(projectsPk, data) {
+      return this.createExtensionStageWithHttpInfo(projectsPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a TopicStatus
+     * This is not a standard route. Create a TopicStatus available for the project Required scopes: bcf:write
+     * @param {String} projectsPk 
+     * @param {module:model/TopicStatus} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TopicStatus} and HTTP response
+     */
+    createExtensionStatusWithHttpInfo(projectsPk, data) {
+      let postBody = data;
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createExtensionStatus");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createExtensionStatus");
+      }
+
+      let pathParams = {
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TopicStatus;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/status', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a TopicStatus
+     * This is not a standard route. Create a TopicStatus available for the project Required scopes: bcf:write
+     * @param {String} projectsPk 
+     * @param {module:model/TopicStatus} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TopicStatus}
+     */
+    createExtensionStatus(projectsPk, data) {
+      return this.createExtensionStatusWithHttpInfo(projectsPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a TopicType
+     * This is not a standard route. Create a TopicType available for the project Required scopes: bcf:write
+     * @param {String} projectsPk 
+     * @param {module:model/TopicType} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TopicType} and HTTP response
+     */
+    createExtensionTypeWithHttpInfo(projectsPk, data) {
+      let postBody = data;
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createExtensionType");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createExtensionType");
+      }
+
+      let pathParams = {
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TopicType;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/type', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a TopicType
+     * This is not a standard route. Create a TopicType available for the project Required scopes: bcf:write
+     * @param {String} projectsPk 
+     * @param {module:model/TopicType} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TopicType}
+     */
+    createExtensionType(projectsPk, data) {
+      return this.createExtensionTypeWithHttpInfo(projectsPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -349,6 +625,281 @@ export default class BcfApi {
 
 
     /**
+     * Delete a Label
+     * This is not a standard route. Delete a Label. Topics using this label won't be deleted  Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this label.
+     * @param {String} projectsPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteExtensionLabelWithHttpInfo(id, projectsPk) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteExtensionLabel");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling deleteExtensionLabel");
+      }
+
+      let pathParams = {
+        'id': id,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/label/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a Label
+     * This is not a standard route. Delete a Label. Topics using this label won't be deleted  Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this label.
+     * @param {String} projectsPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteExtensionLabel(id, projectsPk) {
+      return this.deleteExtensionLabelWithHttpInfo(id, projectsPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a Priority
+     * This is not a standard route. Delete a Priority. Topics using this priority won't be deleted  Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this priority.
+     * @param {String} projectsPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteExtensionPriorityWithHttpInfo(id, projectsPk) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteExtensionPriority");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling deleteExtensionPriority");
+      }
+
+      let pathParams = {
+        'id': id,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/priority/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a Priority
+     * This is not a standard route. Delete a Priority. Topics using this priority won't be deleted  Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this priority.
+     * @param {String} projectsPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteExtensionPriority(id, projectsPk) {
+      return this.deleteExtensionPriorityWithHttpInfo(id, projectsPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a Stage
+     * This is not a standard route. Delete a Stage. Topics using this stage won't be deleted  Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this stage.
+     * @param {String} projectsPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteExtensionStageWithHttpInfo(id, projectsPk) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteExtensionStage");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling deleteExtensionStage");
+      }
+
+      let pathParams = {
+        'id': id,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/stage/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a Stage
+     * This is not a standard route. Delete a Stage. Topics using this stage won't be deleted  Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this stage.
+     * @param {String} projectsPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteExtensionStage(id, projectsPk) {
+      return this.deleteExtensionStageWithHttpInfo(id, projectsPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a TopicStatus
+     * This is not a standard route. Delete a TopicStatus. Topics using this status won't be deleted  Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this topic status.
+     * @param {String} projectsPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteExtensionStatusWithHttpInfo(id, projectsPk) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteExtensionStatus");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling deleteExtensionStatus");
+      }
+
+      let pathParams = {
+        'id': id,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/status/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a TopicStatus
+     * This is not a standard route. Delete a TopicStatus. Topics using this status won't be deleted  Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this topic status.
+     * @param {String} projectsPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteExtensionStatus(id, projectsPk) {
+      return this.deleteExtensionStatusWithHttpInfo(id, projectsPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a TopicType
+     * This is not a standard route. Delete a TopicType. Topics using this type won't be deleted Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this topic type.
+     * @param {String} projectsPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteExtensionTypeWithHttpInfo(id, projectsPk) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteExtensionType");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling deleteExtensionType");
+      }
+
+      let pathParams = {
+        'id': id,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/type/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a TopicType
+     * This is not a standard route. Delete a TopicType. Topics using this type won't be deleted Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this topic type.
+     * @param {String} projectsPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteExtensionType(id, projectsPk) {
+      return this.deleteExtensionTypeWithHttpInfo(id, projectsPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Delete a topic
      * Delete a topic Required scopes: bcf:write
      * @param {String} guid 
@@ -473,7 +1024,7 @@ export default class BcfApi {
 
     /**
      * Export project's topics in bcf-xml format
-     * Export project's topics in bcf-xml format Required scopes: bcf:read
+     * This is not a standard route. Export project's topics in bcf-xml format Required scopes: bcf:read
      * @param {Number} id A unique integer value identifying this project.
      * @param {Object} opts Optional parameters
      * @param {String} opts.topics topic guids to export, comma separated. Default = all
@@ -513,7 +1064,7 @@ export default class BcfApi {
 
     /**
      * Export project's topics in bcf-xml format
-     * Export project's topics in bcf-xml format Required scopes: bcf:read
+     * This is not a standard route. Export project's topics in bcf-xml format Required scopes: bcf:read
      * @param {Number} id A unique integer value identifying this project.
      * @param {Object} opts Optional parameters
      * @param {String} opts.topics topic guids to export, comma separated. Default = all
@@ -1121,20 +1672,68 @@ export default class BcfApi {
 
 
     /**
-     * Retrieve project extensions
-     * Retrieve project extensions
-     * @param {String} projectsPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Extensions} and HTTP response
+     * Retrieve project detailed extensions
+     * This is not a standard route. Retrieve project detailed extensions Required scopes: bcf:read
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DetailedExtensions} and HTTP response
      */
-    getExtensionsWithHttpInfo(projectsPk) {
+    getDetailedExtensionsWithHttpInfo(id) {
       let postBody = null;
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling getExtensions");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getDetailedExtensions");
       }
 
       let pathParams = {
-        'projects_pk': projectsPk
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = DetailedExtensions;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{id}/detailed-extensions', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve project detailed extensions
+     * This is not a standard route. Retrieve project detailed extensions Required scopes: bcf:read
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DetailedExtensions}
+     */
+    getDetailedExtensions(id) {
+      return this.getDetailedExtensionsWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve project extensions
+     * Retrieve project extensions Required scopes: bcf:read
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Extensions} and HTTP response
+     */
+    getExtensionsWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getExtensions");
+      }
+
+      let pathParams = {
+        'id': id
       };
       let queryParams = {
       };
@@ -1148,7 +1747,7 @@ export default class BcfApi {
       let accepts = ['application/json'];
       let returnType = Extensions;
       return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/extensions', 'GET',
+        '/bcf/2.1/projects/{id}/extensions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1156,12 +1755,12 @@ export default class BcfApi {
 
     /**
      * Retrieve project extensions
-     * Retrieve project extensions
-     * @param {String} projectsPk 
+     * Retrieve project extensions Required scopes: bcf:read
+     * @param {Number} id A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Extensions}
      */
-    getExtensions(projectsPk) {
-      return this.getExtensionsWithHttpInfo(projectsPk)
+    getExtensions(id) {
+      return this.getExtensionsWithHttpInfo(id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1826,7 +2425,7 @@ export default class BcfApi {
 
     /**
      * Import bcf-xml format into this project
-     * Import bcf-xml format into this project. If there are guid conflict, an error will be raised. If there are index conflicts, indexes of the imported file will be overriden with a new index. Author and assigned_to fields will be linked to existing users in the project. If no matching user are found, fields will be emptied. Only BCF 2.1 is supported Required scopes: bcf:write
+     * This is not a standard route. Import bcf-xml format into this project. If there are guid conflict, an error will be raised. If there are index conflicts, indexes of the imported file will be overriden with a new index. Author and assigned_to fields will be linked to existing users in the project. If no matching user are found, fields will be emptied. Only BCF 2.1 is supported Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this project.
      * @param {String} name Name of the project
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -1866,7 +2465,7 @@ export default class BcfApi {
 
     /**
      * Import bcf-xml format into this project
-     * Import bcf-xml format into this project. If there are guid conflict, an error will be raised. If there are index conflicts, indexes of the imported file will be overriden with a new index. Author and assigned_to fields will be linked to existing users in the project. If no matching user are found, fields will be emptied. Only BCF 2.1 is supported Required scopes: bcf:write
+     * This is not a standard route. Import bcf-xml format into this project. If there are guid conflict, an error will be raised. If there are index conflicts, indexes of the imported file will be overriden with a new index. Author and assigned_to fields will be linked to existing users in the project. If no matching user are found, fields will be emptied. Only BCF 2.1 is supported Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this project.
      * @param {String} name Name of the project
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -2002,24 +2601,30 @@ export default class BcfApi {
 
 
     /**
-     * Update project extensions
-     * Update project extensions
+     * Update a Label
+     * This is not a standard route. Update a Label. All topics using this label will be updated Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this label.
      * @param {String} projectsPk 
-     * @param {module:model/Extensions} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Extensions} and HTTP response
+     * @param {module:model/Label} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Label} and HTTP response
      */
-    updateExtensionsWithHttpInfo(projectsPk, data) {
+    updateExtensionLabelWithHttpInfo(id, projectsPk, data) {
       let postBody = data;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateExtensionLabel");
+      }
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling updateExtensions");
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateExtensionLabel");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updateExtensions");
+        throw new Error("Missing the required parameter 'data' when calling updateExtensionLabel");
       }
 
       let pathParams = {
+        'id': id,
         'projects_pk': projectsPk
       };
       let queryParams = {
@@ -2032,23 +2637,268 @@ export default class BcfApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Extensions;
+      let returnType = Label;
       return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/extensions', 'PATCH',
+        '/bcf/2.1/projects/{projects_pk}/extension/label/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Update project extensions
-     * Update project extensions
+     * Update a Label
+     * This is not a standard route. Update a Label. All topics using this label will be updated Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this label.
      * @param {String} projectsPk 
-     * @param {module:model/Extensions} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Extensions}
+     * @param {module:model/Label} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Label}
      */
-    updateExtensions(projectsPk, data) {
-      return this.updateExtensionsWithHttpInfo(projectsPk, data)
+    updateExtensionLabel(id, projectsPk, data) {
+      return this.updateExtensionLabelWithHttpInfo(id, projectsPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update a Priority
+     * This is not a standard route. Update a Priority. All topics using this priority will be updated Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this priority.
+     * @param {String} projectsPk 
+     * @param {module:model/Priority} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Priority} and HTTP response
+     */
+    updateExtensionPriorityWithHttpInfo(id, projectsPk, data) {
+      let postBody = data;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateExtensionPriority");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateExtensionPriority");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateExtensionPriority");
+      }
+
+      let pathParams = {
+        'id': id,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Priority;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/priority/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update a Priority
+     * This is not a standard route. Update a Priority. All topics using this priority will be updated Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this priority.
+     * @param {String} projectsPk 
+     * @param {module:model/Priority} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Priority}
+     */
+    updateExtensionPriority(id, projectsPk, data) {
+      return this.updateExtensionPriorityWithHttpInfo(id, projectsPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update a Stage
+     * This is not a standard route. Update a Stage. All topics using this stage will be updated Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this stage.
+     * @param {String} projectsPk 
+     * @param {module:model/Stage} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Stage} and HTTP response
+     */
+    updateExtensionStageWithHttpInfo(id, projectsPk, data) {
+      let postBody = data;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateExtensionStage");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateExtensionStage");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateExtensionStage");
+      }
+
+      let pathParams = {
+        'id': id,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Stage;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/stage/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update a Stage
+     * This is not a standard route. Update a Stage. All topics using this stage will be updated Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this stage.
+     * @param {String} projectsPk 
+     * @param {module:model/Stage} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Stage}
+     */
+    updateExtensionStage(id, projectsPk, data) {
+      return this.updateExtensionStageWithHttpInfo(id, projectsPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update a TopicStatus
+     * This is not a standard route. Update a TopicStatus. All topics using this status will be updated Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this topic status.
+     * @param {String} projectsPk 
+     * @param {module:model/TopicStatus} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TopicStatus} and HTTP response
+     */
+    updateExtensionStatusWithHttpInfo(id, projectsPk, data) {
+      let postBody = data;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateExtensionStatus");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateExtensionStatus");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateExtensionStatus");
+      }
+
+      let pathParams = {
+        'id': id,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TopicStatus;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/status/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update a TopicStatus
+     * This is not a standard route. Update a TopicStatus. All topics using this status will be updated Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this topic status.
+     * @param {String} projectsPk 
+     * @param {module:model/TopicStatus} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TopicStatus}
+     */
+    updateExtensionStatus(id, projectsPk, data) {
+      return this.updateExtensionStatusWithHttpInfo(id, projectsPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update a TopicType
+     * This is not a standard route. Update a TopicType. All topics using this type will be updated Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this topic type.
+     * @param {String} projectsPk 
+     * @param {module:model/TopicType} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TopicType} and HTTP response
+     */
+    updateExtensionTypeWithHttpInfo(id, projectsPk, data) {
+      let postBody = data;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateExtensionType");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateExtensionType");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateExtensionType");
+      }
+
+      let pathParams = {
+        'id': id,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TopicType;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/extension/type/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update a TopicType
+     * This is not a standard route. Update a TopicType. All topics using this type will be updated Required scopes: bcf:write
+     * @param {Number} id A unique integer value identifying this topic type.
+     * @param {String} projectsPk 
+     * @param {module:model/TopicType} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TopicType}
+     */
+    updateExtensionType(id, projectsPk, data) {
+      return this.updateExtensionTypeWithHttpInfo(id, projectsPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Label();
+    instance = new bimdata.DetailedExtensions();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,40 @@
       object[property] = value;
   }
 
-  describe('Label', function() {
-    it('should create an instance of Label', function() {
-      // uncomment below and update the code to test Label
-      //var instane = new bimdata.Label();
-      //expect(instance).to.be.a(bimdata.Label);
+  describe('DetailedExtensions', function() {
+    it('should create an instance of DetailedExtensions', function() {
+      // uncomment below and update the code to test DetailedExtensions
+      //var instane = new bimdata.DetailedExtensions();
+      //expect(instance).to.be.a(bimdata.DetailedExtensions);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Label();
+    it('should have the property labels (base name: "labels")', function() {
+      // uncomment below and update the code to test the property labels
+      //var instane = new bimdata.DetailedExtensions();
       //expect(instance).to.be();
     });
 
-    it('should have the property label (base name: "label")', function() {
-      // uncomment below and update the code to test the property label
-      //var instane = new bimdata.Label();
+    it('should have the property topicTypes (base name: "topic_types")', function() {
+      // uncomment below and update the code to test the property topicTypes
+      //var instane = new bimdata.DetailedExtensions();
       //expect(instance).to.be();
     });
 
-    it('should have the property project (base name: "project")', function() {
-      // uncomment below and update the code to test the property project
-      //var instane = new bimdata.Label();
+    it('should have the property topicStatuses (base name: "topic_statuses")', function() {
+      // uncomment below and update the code to test the property topicStatuses
+      //var instane = new bimdata.DetailedExtensions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property priorities (base name: "priorities")', function() {
+      // uncomment below and update the code to test the property priorities
+      //var instane = new bimdata.DetailedExtensions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property stages (base name: "stages")', function() {
+      // uncomment below and update the code to test the property stages
+      //var instane = new bimdata.DetailedExtensions();
       //expect(instance).to.be();
     });
 

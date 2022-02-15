@@ -54,8 +54,20 @@
       //expect(instance).to.be.a(bimdata.TopicType);
     });
 
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new bimdata.TopicType();
+      //expect(instance).to.be();
+    });
+
     it('should have the property topicType (base name: "topic_type")', function() {
       // uncomment below and update the code to test the property topicType
+      //var instane = new bimdata.TopicType();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property project (base name: "project")', function() {
+      // uncomment below and update the code to test the property project
       //var instane = new bimdata.TopicType();
       //expect(instance).to.be();
     });

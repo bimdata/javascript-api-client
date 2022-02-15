@@ -49,8 +49,14 @@ class Stage {
         if (data) {
             obj = obj || new Stage();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
             if (data.hasOwnProperty('stage')) {
                 obj['stage'] = ApiClient.convertToType(data['stage'], 'String');
+            }
+            if (data.hasOwnProperty('project')) {
+                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
         }
         return obj;
@@ -60,9 +66,20 @@ class Stage {
 }
 
 /**
+ * @member {Number} id
+ */
+Stage.prototype['id'] = undefined;
+
+/**
  * @member {String} stage
  */
 Stage.prototype['stage'] = undefined;
+
+/**
+ * This field is automatically provided by the route, you don't need to provide it in the body
+ * @member {Number} project
+ */
+Stage.prototype['project'] = undefined;
 
 
 

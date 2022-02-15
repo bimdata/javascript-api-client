@@ -58,6 +58,56 @@
         done();
       });
     });
+    describe('createExtensionLabel', function() {
+      it('should call createExtensionLabel successfully', function(done) {
+        //uncomment below and update the code to test createExtensionLabel
+        //instance.createExtensionLabel(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createExtensionPriority', function() {
+      it('should call createExtensionPriority successfully', function(done) {
+        //uncomment below and update the code to test createExtensionPriority
+        //instance.createExtensionPriority(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createExtensionStage', function() {
+      it('should call createExtensionStage successfully', function(done) {
+        //uncomment below and update the code to test createExtensionStage
+        //instance.createExtensionStage(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createExtensionStatus', function() {
+      it('should call createExtensionStatus successfully', function(done) {
+        //uncomment below and update the code to test createExtensionStatus
+        //instance.createExtensionStatus(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createExtensionType', function() {
+      it('should call createExtensionType successfully', function(done) {
+        //uncomment below and update the code to test createExtensionType
+        //instance.createExtensionType(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createFullTopic', function() {
       it('should call createFullTopic successfully', function(done) {
         //uncomment below and update the code to test createFullTopic
@@ -92,6 +142,56 @@
       it('should call deleteComment successfully', function(done) {
         //uncomment below and update the code to test deleteComment
         //instance.deleteComment(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteExtensionLabel', function() {
+      it('should call deleteExtensionLabel successfully', function(done) {
+        //uncomment below and update the code to test deleteExtensionLabel
+        //instance.deleteExtensionLabel(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteExtensionPriority', function() {
+      it('should call deleteExtensionPriority successfully', function(done) {
+        //uncomment below and update the code to test deleteExtensionPriority
+        //instance.deleteExtensionPriority(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteExtensionStage', function() {
+      it('should call deleteExtensionStage successfully', function(done) {
+        //uncomment below and update the code to test deleteExtensionStage
+        //instance.deleteExtensionStage(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteExtensionStatus', function() {
+      it('should call deleteExtensionStatus successfully', function(done) {
+        //uncomment below and update the code to test deleteExtensionStatus
+        //instance.deleteExtensionStatus(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteExtensionType', function() {
+      it('should call deleteExtensionType successfully', function(done) {
+        //uncomment below and update the code to test deleteExtensionType
+        //instance.deleteExtensionType(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -222,6 +322,16 @@
       it('should call getComments successfully', function(done) {
         //uncomment below and update the code to test getComments
         //instance.getComments(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getDetailedExtensions', function() {
+      it('should call getDetailedExtensions successfully', function(done) {
+        //uncomment below and update the code to test getDetailedExtensions
+        //instance.getDetailedExtensions(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -378,10 +488,50 @@
         done();
       });
     });
-    describe('updateExtensions', function() {
-      it('should call updateExtensions successfully', function(done) {
-        //uncomment below and update the code to test updateExtensions
-        //instance.updateExtensions(function(error) {
+    describe('updateExtensionLabel', function() {
+      it('should call updateExtensionLabel successfully', function(done) {
+        //uncomment below and update the code to test updateExtensionLabel
+        //instance.updateExtensionLabel(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateExtensionPriority', function() {
+      it('should call updateExtensionPriority successfully', function(done) {
+        //uncomment below and update the code to test updateExtensionPriority
+        //instance.updateExtensionPriority(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateExtensionStage', function() {
+      it('should call updateExtensionStage successfully', function(done) {
+        //uncomment below and update the code to test updateExtensionStage
+        //instance.updateExtensionStage(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateExtensionStatus', function() {
+      it('should call updateExtensionStatus successfully', function(done) {
+        //uncomment below and update the code to test updateExtensionStatus
+        //instance.updateExtensionStatus(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateExtensionType', function() {
+      it('should call updateExtensionType successfully', function(done) {
+        //uncomment below and update the code to test updateExtensionType
+        //instance.updateExtensionType(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
