@@ -62,6 +62,12 @@ class Property {
             if (data.hasOwnProperty('property_set_id')) {
                 obj['property_set_id'] = ApiClient.convertToType(data['property_set_id'], 'String');
             }
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            }
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+            }
         }
         return obj;
     }
@@ -89,6 +95,16 @@ Property.prototype['value'] = undefined;
  * @member {String} property_set_id
  */
 Property.prototype['property_set_id'] = undefined;
+
+/**
+ * @member {Date} created_at
+ */
+Property.prototype['created_at'] = undefined;
+
+/**
+ * @member {Date} updated_at
+ */
+Property.prototype['updated_at'] = undefined;
 
 
 

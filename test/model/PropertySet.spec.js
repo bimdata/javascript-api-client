@@ -84,6 +84,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property createdAt (base name: "created_at")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instane = new bimdata.PropertySet();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property updatedAt (base name: "updated_at")', function() {
+      // uncomment below and update the code to test the property updatedAt
+      //var instane = new bimdata.PropertySet();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

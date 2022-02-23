@@ -63,6 +63,12 @@ class PropertySet {
             if (data.hasOwnProperty('properties')) {
                 obj['properties'] = ApiClient.convertToType(data['properties'], [Property]);
             }
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            }
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+            }
         }
         return obj;
     }
@@ -94,6 +100,16 @@ PropertySet.prototype['type'] = undefined;
  * @member {Array.<module:model/Property>} properties
  */
 PropertySet.prototype['properties'] = undefined;
+
+/**
+ * @member {Date} created_at
+ */
+PropertySet.prototype['created_at'] = undefined;
+
+/**
+ * @member {Date} updated_at
+ */
+PropertySet.prototype['updated_at'] = undefined;
 
 
 

@@ -9,5 +9,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 **properties** | [**[Property]**](Property.md) |  | [optional] 
+**createdAt** | **Date** |  | [optional] [readonly] 
+**updatedAt** | **Date** |  | [optional] [readonly] 
 
 
