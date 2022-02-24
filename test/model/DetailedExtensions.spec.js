@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(bimdata.DetailedExtensions);
     });
 
-    it('should have the property labels (base name: "labels")', function() {
-      // uncomment below and update the code to test the property labels
+    it('should have the property topicLabels (base name: "topic_labels")', function() {
+      // uncomment below and update the code to test the property topicLabels
       //var instane = new bimdata.DetailedExtensions();
       //expect(instance).to.be();
     });

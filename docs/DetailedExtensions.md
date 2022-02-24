@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**labels** | [**[Label]**](Label.md) |  | [optional] 
+**topicLabels** | [**[Label]**](Label.md) |  | [optional] 
 **topicTypes** | [**[TopicType]**](TopicType.md) |  | [optional] 
 **topicStatuses** | [**[TopicStatus]**](TopicStatus.md) |  | [optional] 
 **priorities** | [**[Priority]**](Priority.md) |  | [optional] 

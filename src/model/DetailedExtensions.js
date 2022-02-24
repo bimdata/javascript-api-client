@@ -52,8 +52,8 @@ class DetailedExtensions {
         if (data) {
             obj = obj || new DetailedExtensions();
 
-            if (data.hasOwnProperty('labels')) {
-                obj['labels'] = ApiClient.convertToType(data['labels'], [Label]);
+            if (data.hasOwnProperty('topic_labels')) {
+                obj['topic_labels'] = ApiClient.convertToType(data['topic_labels'], [Label]);
             }
             if (data.hasOwnProperty('topic_types')) {
                 obj['topic_types'] = ApiClient.convertToType(data['topic_types'], [TopicType]);
@@ -75,9 +75,9 @@ class DetailedExtensions {
 }
 
 /**
- * @member {Array.<module:model/Label>} labels
+ * @member {Array.<module:model/Label>} topic_labels
  */
-DetailedExtensions.prototype['labels'] = undefined;
+DetailedExtensions.prototype['topic_labels'] = undefined;
 
 /**
  * @member {Array.<module:model/TopicType>} topic_types
