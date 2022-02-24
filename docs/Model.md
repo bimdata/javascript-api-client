@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **xktFile** | **String** |  | [optional] [readonly] 
 **projectId** | **String** |  | [optional] [readonly] 
 **worldPosition** | **[Number]** | [x,y,z] array of the position of the local_placement in world coordinates | [optional] 
+**sizeRatio** | **Number** | How many meters a unit represents | [optional] 
 **errors** | **[String]** | List of errors that happened during IFC processing | [optional] [readonly] 
 **warnings** | **[String]** | List of warnings that happened during IFC processing | [optional] [readonly] 
 **archived** | **Boolean** |  | [optional] 

@@ -106,6 +106,9 @@ class Model {
             if (data.hasOwnProperty('world_position')) {
                 obj['world_position'] = ApiClient.convertToType(data['world_position'], ['Number']);
             }
+            if (data.hasOwnProperty('size_ratio')) {
+                obj['size_ratio'] = ApiClient.convertToType(data['size_ratio'], 'Number');
+            }
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], ['String']);
             }
@@ -226,6 +229,12 @@ Model.prototype['project_id'] = undefined;
  * @member {Array.<Number>} world_position
  */
 Model.prototype['world_position'] = undefined;
+
+/**
+ * How many meters a unit represents
+ * @member {Number} size_ratio
+ */
+Model.prototype['size_ratio'] = undefined;
 
 /**
  * List of errors that happened during IFC processing

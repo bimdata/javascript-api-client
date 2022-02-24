@@ -168,6 +168,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sizeRatio (base name: "size_ratio")', function() {
+      // uncomment below and update the code to test the property sizeRatio
+      //var instane = new bimdata.Model();
+      //expect(instance).to.be();
+    });
+
     it('should have the property errors (base name: "errors")', function() {
       // uncomment below and update the code to test the property errors
       //var instane = new bimdata.Model();
