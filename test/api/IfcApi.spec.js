@@ -1478,6 +1478,26 @@
         done();
       });
     });
+    describe('updateOrderBuildingPlanDeprecated', function() {
+      it('should call updateOrderBuildingPlanDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateOrderBuildingPlanDeprecated
+        //instance.updateOrderBuildingPlanDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateOrderStoreyPlanDeprecated', function() {
+      it('should call updateOrderStoreyPlanDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateOrderStoreyPlanDeprecated
+        //instance.updateOrderStoreyPlanDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateOrderStoreysDeprecated', function() {
       it('should call updateOrderStoreysDeprecated successfully', function(done) {
         //uncomment below and update the code to test updateOrderStoreysDeprecated

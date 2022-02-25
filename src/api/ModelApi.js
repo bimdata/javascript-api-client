@@ -9480,6 +9480,156 @@ export default class ModelApi {
 
 
     /**
+     * Update order of all plan of a building
+     * Update order of all plan of a building Required scopes: ifc:write, model:write
+     * @param {String} buildingUuid 
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {Array.<String>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
+     */
+    updateOrderBuildingPlanWithHttpInfo(buildingUuid, cloudPk, modelPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'buildingUuid' is set
+      if (buildingUuid === undefined || buildingUuid === null) {
+        throw new Error("Missing the required parameter 'buildingUuid' when calling updateOrderBuildingPlan");
+      }
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateOrderBuildingPlan");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateOrderBuildingPlan");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateOrderBuildingPlan");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateOrderBuildingPlan");
+      }
+
+      let pathParams = {
+        'building_uuid': buildingUuid,
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Storey;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/order', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update order of all plan of a building
+     * Update order of all plan of a building Required scopes: ifc:write, model:write
+     * @param {String} buildingUuid 
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {Array.<String>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
+     */
+    updateOrderBuildingPlan(buildingUuid, cloudPk, modelPk, projectPk, data) {
+      return this.updateOrderBuildingPlanWithHttpInfo(buildingUuid, cloudPk, modelPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update order of all plan of a storey
+     * Update order of all plan of a storey Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} storeyUuid 
+     * @param {Array.<String>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
+     */
+    updateOrderStoreyPlanWithHttpInfo(cloudPk, modelPk, projectPk, storeyUuid, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateOrderStoreyPlan");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateOrderStoreyPlan");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateOrderStoreyPlan");
+      }
+      // verify the required parameter 'storeyUuid' is set
+      if (storeyUuid === undefined || storeyUuid === null) {
+        throw new Error("Missing the required parameter 'storeyUuid' when calling updateOrderStoreyPlan");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateOrderStoreyPlan");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk,
+        'storey_uuid': storeyUuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Storey;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/order', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update order of all plan of a storey
+     * Update order of all plan of a storey Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} storeyUuid 
+     * @param {Array.<String>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
+     */
+    updateOrderStoreyPlan(cloudPk, modelPk, projectPk, storeyUuid, data) {
+      return this.updateOrderStoreyPlanWithHttpInfo(cloudPk, modelPk, projectPk, storeyUuid, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update order of all storey of a model
      * Update order of all storey of a model Required scopes: ifc:write, model:write
      * @param {String} cloudPk 

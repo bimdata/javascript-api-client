@@ -1368,6 +1368,26 @@
         done();
       });
     });
+    describe('updateOrderBuildingPlan', function() {
+      it('should call updateOrderBuildingPlan successfully', function(done) {
+        //uncomment below and update the code to test updateOrderBuildingPlan
+        //instance.updateOrderBuildingPlan(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateOrderStoreyPlan', function() {
+      it('should call updateOrderStoreyPlan successfully', function(done) {
+        //uncomment below and update the code to test updateOrderStoreyPlan
+        //instance.updateOrderStoreyPlan(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateOrderStoreys', function() {
       it('should call updateOrderStoreys successfully', function(done) {
         //uncomment below and update the code to test updateOrderStoreys

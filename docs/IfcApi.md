@@ -147,6 +147,8 @@ Method | HTTP request | Description
 [**updateIfcPropertyDeprecated**](IfcApi.md#updateIfcPropertyDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | Update some fields of a Property
 [**updateIfcUnitDeprecated**](IfcApi.md#updateIfcUnitDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | Update some fields of a Unit of a model
 [**updateLayerDeprecated**](IfcApi.md#updateLayerDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id} | Update some fields of a layer
+[**updateOrderBuildingPlanDeprecated**](IfcApi.md#updateOrderBuildingPlanDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{building_uuid}/plan/order | Update order of all plan of a building
+[**updateOrderStoreyPlanDeprecated**](IfcApi.md#updateOrderStoreyPlanDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_uuid}/plan/order | Update order of all plan of a storey
 [**updateOrderStoreysDeprecated**](IfcApi.md#updateOrderStoreysDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/order | Update order of all storey of a model
 [**updateProcessorHandlerDeprecated**](IfcApi.md#updateProcessorHandlerDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | Update the status of a processor handler
 [**updatePropertySetDeprecated**](IfcApi.md#updatePropertySetDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Update some fields of a PropertySet
@@ -9162,6 +9164,134 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Layer**](Layer.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateOrderBuildingPlanDeprecated
+
+> Storey updateOrderBuildingPlanDeprecated(buildingUuid, cloudPk, ifcPk, projectPk, data)
+
+Update order of all plan of a building
+
+Update order of all plan of a building Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.IfcApi();
+let buildingUuid = "buildingUuid_example"; // String | 
+let cloudPk = "cloudPk_example"; // String | 
+let ifcPk = "ifcPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = ["null"]; // [String] | 
+apiInstance.updateOrderBuildingPlanDeprecated(buildingUuid, cloudPk, ifcPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **buildingUuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**[String]**](String.md)|  | 
+
+### Return type
+
+[**Storey**](Storey.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateOrderStoreyPlanDeprecated
+
+> Storey updateOrderStoreyPlanDeprecated(cloudPk, ifcPk, projectPk, storeyUuid, data)
+
+Update order of all plan of a storey
+
+Update order of all plan of a storey Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.IfcApi();
+let cloudPk = "cloudPk_example"; // String | 
+let ifcPk = "ifcPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let storeyUuid = "storeyUuid_example"; // String | 
+let data = ["null"]; // [String] | 
+apiInstance.updateOrderStoreyPlanDeprecated(cloudPk, ifcPk, projectPk, storeyUuid, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **ifcPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **storeyUuid** | **String**|  | 
+ **data** | [**[String]**](String.md)|  | 
+
+### Return type
+
+[**Storey**](Storey.md)
 
 ### Authorization
 
