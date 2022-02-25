@@ -53,6 +53,10 @@ import InlineObject from './model/InlineObject';
 import InlineObject1 from './model/InlineObject1';
 import InlineObject10 from './model/InlineObject10';
 import InlineObject11 from './model/InlineObject11';
+import InlineObject12 from './model/InlineObject12';
+import InlineObject13 from './model/InlineObject13';
+import InlineObject14 from './model/InlineObject14';
+import InlineObject15 from './model/InlineObject15';
 import InlineObject2 from './model/InlineObject2';
 import InlineObject3 from './model/InlineObject3';
 import InlineObject4 from './model/InlineObject4';
@@ -63,7 +67,7 @@ import InlineObject8 from './model/InlineObject8';
 import InlineObject9 from './model/InlineObject9';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
-import InlineResponse2002 from './model/InlineResponse2002';
+import InlineResponse201 from './model/InlineResponse201';
 import Invitation from './model/Invitation';
 import Label from './model/Label';
 import LabelRead from './model/LabelRead';
@@ -429,6 +433,30 @@ export {
     InlineObject11,
 
     /**
+     * The InlineObject12 model constructor.
+     * @property {module:model/InlineObject12}
+     */
+    InlineObject12,
+
+    /**
+     * The InlineObject13 model constructor.
+     * @property {module:model/InlineObject13}
+     */
+    InlineObject13,
+
+    /**
+     * The InlineObject14 model constructor.
+     * @property {module:model/InlineObject14}
+     */
+    InlineObject14,
+
+    /**
+     * The InlineObject15 model constructor.
+     * @property {module:model/InlineObject15}
+     */
+    InlineObject15,
+
+    /**
      * The InlineObject2 model constructor.
      * @property {module:model/InlineObject2}
      */
@@ -489,10 +517,10 @@ export {
     InlineResponse2001,
 
     /**
-     * The InlineResponse2002 model constructor.
-     * @property {module:model/InlineResponse2002}
+     * The InlineResponse201 model constructor.
+     * @property {module:model/InlineResponse201}
      */
-    InlineResponse2002,
+    InlineResponse201,
 
     /**
      * The Invitation model constructor.

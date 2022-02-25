@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | model id | [optional] 
+**name** | **String** | name of storey/building | [optional] 
 
 

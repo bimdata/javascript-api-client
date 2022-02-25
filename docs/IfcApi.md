@@ -1035,7 +1035,7 @@ Name | Type | Description  | Notes
 
 ## createBuildingDeprecated
 
-> Building createBuildingDeprecated(cloudPk, ifcPk, projectPk, data)
+> InlineResponse201 createBuildingDeprecated(cloudPk, ifcPk, projectPk, data)
 
 Create a building of a model
 
@@ -1062,7 +1062,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Building(); // Building | 
+let data = new bimdata.InlineObject4(); // InlineObject4 | 
 apiInstance.createBuildingDeprecated(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1079,11 +1079,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Building**](Building.md)|  | 
+ **data** | [**InlineObject4**](InlineObject4.md)|  | 
 
 ### Return type
 
-[**Building**](Building.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 
@@ -1125,7 +1125,7 @@ let buildingUuid = "buildingUuid_example"; // String |
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.InlineObject4(); // InlineObject4 | 
+let data = new bimdata.InlineObject5(); // InlineObject5 | 
 apiInstance.createBuildingPlanDeprecated(buildingUuid, cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1143,7 +1143,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**InlineObject4**](InlineObject4.md)|  | 
+ **data** | [**InlineObject5**](InlineObject5.md)|  | 
 
 ### Return type
 
@@ -2297,7 +2297,7 @@ Name | Type | Description  | Notes
 
 ## createStoreyDeprecated
 
-> Storey createStoreyDeprecated(cloudPk, ifcPk, projectPk, data)
+> InlineResponse201 createStoreyDeprecated(cloudPk, ifcPk, projectPk, data)
 
 Create a storey of a model
 
@@ -2324,7 +2324,7 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = "cloudPk_example"; // String | 
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Storey(); // Storey | 
+let data = new bimdata.InlineObject7(); // InlineObject7 | 
 apiInstance.createStoreyDeprecated(cloudPk, ifcPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2341,11 +2341,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Storey**](Storey.md)|  | 
+ **data** | [**InlineObject7**](InlineObject7.md)|  | 
 
 ### Return type
 
-[**Storey**](Storey.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 
@@ -2387,7 +2387,7 @@ let cloudPk = "cloudPk_example"; // String |
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let storeyUuid = "storeyUuid_example"; // String | 
-let data = new bimdata.InlineObject6(); // InlineObject6 | 
+let data = new bimdata.InlineObject8(); // InlineObject8 | 
 apiInstance.createStoreyPlanDeprecated(cloudPk, ifcPk, projectPk, storeyUuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2405,7 +2405,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **storeyUuid** | **String**|  | 
- **data** | [**InlineObject6**](InlineObject6.md)|  | 
+ **data** | [**InlineObject8**](InlineObject8.md)|  | 
 
 ### Return type
 
@@ -8389,7 +8389,7 @@ Name | Type | Description  | Notes
 
 ## updateBuildingDeprecated
 
-> InlineResponse2002 updateBuildingDeprecated(cloudPk, ifcPk, projectPk, uuid, data)
+> InlineResponse201 updateBuildingDeprecated(cloudPk, ifcPk, projectPk, uuid, data)
 
 Update some fields of a building
 
@@ -8417,7 +8417,7 @@ let cloudPk = "cloudPk_example"; // String |
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let uuid = "uuid_example"; // String | IFC element or element type UUID
-let data = new bimdata.InlineObject5(); // InlineObject5 | 
+let data = new bimdata.InlineObject6(); // InlineObject6 | 
 apiInstance.updateBuildingDeprecated(cloudPk, ifcPk, projectPk, uuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -8435,11 +8435,11 @@ Name | Type | Description  | Notes
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **uuid** | **String**| IFC element or element type UUID | 
- **data** | [**InlineObject5**](InlineObject5.md)|  | 
+ **data** | [**InlineObject6**](InlineObject6.md)|  | 
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 
@@ -9559,7 +9559,7 @@ Name | Type | Description  | Notes
 
 ## updateStoreyDeprecated
 
-> InlineResponse2002 updateStoreyDeprecated(cloudPk, ifcPk, projectPk, uuid, data)
+> InlineResponse201 updateStoreyDeprecated(cloudPk, ifcPk, projectPk, uuid, data)
 
 Update some fields of a storey
 
@@ -9587,7 +9587,7 @@ let cloudPk = "cloudPk_example"; // String |
 let ifcPk = "ifcPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let uuid = "uuid_example"; // String | IFC element or element type UUID
-let data = new bimdata.InlineObject7(); // InlineObject7 | 
+let data = new bimdata.InlineObject9(); // InlineObject9 | 
 apiInstance.updateStoreyDeprecated(cloudPk, ifcPk, projectPk, uuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -9605,11 +9605,11 @@ Name | Type | Description  | Notes
  **ifcPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **uuid** | **String**| IFC element or element type UUID | 
- **data** | [**InlineObject7**](InlineObject7.md)|  | 
+ **data** | [**InlineObject9**](InlineObject9.md)|  | 
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 

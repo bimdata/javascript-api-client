@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(bimdata.InlineObject11);
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new bimdata.InlineObject11();
       //expect(instance).to.be();
     });

@@ -47,8 +47,8 @@ class InlineObject10 {
         if (data) {
             obj = obj || new InlineObject10();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
         }
         return obj;
@@ -58,10 +58,10 @@ class InlineObject10 {
 }
 
 /**
- * model id
- * @member {Number} id
+ * name of storey/building
+ * @member {String} name
  */
-InlineObject10.prototype['id'] = undefined;
+InlineObject10.prototype['name'] = undefined;
 
 
 

@@ -1024,7 +1024,7 @@ Name | Type | Description  | Notes
 
 ## createBuilding
 
-> Building createBuilding(cloudPk, modelPk, projectPk, data)
+> InlineResponse201 createBuilding(cloudPk, modelPk, projectPk, data)
 
 Create a building of a model
 
@@ -1051,7 +1051,7 @@ let apiInstance = new bimdata.ModelApi();
 let cloudPk = "cloudPk_example"; // String | 
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Building(); // Building | 
+let data = new bimdata.InlineObject10(); // InlineObject10 | 
 apiInstance.createBuilding(cloudPk, modelPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1068,11 +1068,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Building**](Building.md)|  | 
+ **data** | [**InlineObject10**](InlineObject10.md)|  | 
 
 ### Return type
 
-[**Building**](Building.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 
@@ -1114,7 +1114,7 @@ let buildingUuid = "buildingUuid_example"; // String |
 let cloudPk = "cloudPk_example"; // String | 
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.InlineObject8(); // InlineObject8 | 
+let data = new bimdata.InlineObject11(); // InlineObject11 | 
 apiInstance.createBuildingPlan(buildingUuid, cloudPk, modelPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1132,7 +1132,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**InlineObject8**](InlineObject8.md)|  | 
+ **data** | [**InlineObject11**](InlineObject11.md)|  | 
 
 ### Return type
 
@@ -2160,7 +2160,7 @@ Name | Type | Description  | Notes
 
 ## createStorey
 
-> Storey createStorey(cloudPk, modelPk, projectPk, data)
+> InlineResponse201 createStorey(cloudPk, modelPk, projectPk, data)
 
 Create a storey of a model
 
@@ -2187,7 +2187,7 @@ let apiInstance = new bimdata.ModelApi();
 let cloudPk = "cloudPk_example"; // String | 
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Storey(); // Storey | 
+let data = new bimdata.InlineObject13(); // InlineObject13 | 
 apiInstance.createStorey(cloudPk, modelPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2204,11 +2204,11 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Storey**](Storey.md)|  | 
+ **data** | [**InlineObject13**](InlineObject13.md)|  | 
 
 ### Return type
 
-[**Storey**](Storey.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 
@@ -2250,7 +2250,7 @@ let cloudPk = "cloudPk_example"; // String |
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let storeyUuid = "storeyUuid_example"; // String | 
-let data = new bimdata.InlineObject10(); // InlineObject10 | 
+let data = new bimdata.InlineObject14(); // InlineObject14 | 
 apiInstance.createStoreyPlan(cloudPk, modelPk, projectPk, storeyUuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2268,7 +2268,7 @@ Name | Type | Description  | Notes
  **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **storeyUuid** | **String**|  | 
- **data** | [**InlineObject10**](InlineObject10.md)|  | 
+ **data** | [**InlineObject14**](InlineObject14.md)|  | 
 
 ### Return type
 
@@ -7814,7 +7814,7 @@ Name | Type | Description  | Notes
 
 ## updateBuilding
 
-> InlineResponse2002 updateBuilding(cloudPk, modelPk, projectPk, uuid, data)
+> InlineResponse201 updateBuilding(cloudPk, modelPk, projectPk, uuid, data)
 
 Update some fields of a building
 
@@ -7842,7 +7842,7 @@ let cloudPk = "cloudPk_example"; // String |
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let uuid = "uuid_example"; // String | IFC element or element type UUID
-let data = new bimdata.InlineObject9(); // InlineObject9 | 
+let data = new bimdata.InlineObject12(); // InlineObject12 | 
 apiInstance.updateBuilding(cloudPk, modelPk, projectPk, uuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -7860,11 +7860,11 @@ Name | Type | Description  | Notes
  **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **uuid** | **String**| IFC element or element type UUID | 
- **data** | [**InlineObject9**](InlineObject9.md)|  | 
+ **data** | [**InlineObject12**](InlineObject12.md)|  | 
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 
@@ -8854,7 +8854,7 @@ Name | Type | Description  | Notes
 
 ## updateStorey
 
-> InlineResponse2002 updateStorey(cloudPk, modelPk, projectPk, uuid, data)
+> InlineResponse201 updateStorey(cloudPk, modelPk, projectPk, uuid, data)
 
 Update some fields of a storey
 
@@ -8882,7 +8882,7 @@ let cloudPk = "cloudPk_example"; // String |
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
 let uuid = "uuid_example"; // String | IFC element or element type UUID
-let data = new bimdata.InlineObject11(); // InlineObject11 | 
+let data = new bimdata.InlineObject15(); // InlineObject15 | 
 apiInstance.updateStorey(cloudPk, modelPk, projectPk, uuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -8900,11 +8900,11 @@ Name | Type | Description  | Notes
  **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **uuid** | **String**| IFC element or element type UUID | 
- **data** | [**InlineObject11**](InlineObject11.md)|  | 
+ **data** | [**InlineObject15**](InlineObject15.md)|  | 
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 

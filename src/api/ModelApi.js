@@ -28,9 +28,11 @@ import IfcMerge from '../model/IfcMerge';
 import IfcOptimize from '../model/IfcOptimize';
 import InlineObject10 from '../model/InlineObject10';
 import InlineObject11 from '../model/InlineObject11';
-import InlineObject8 from '../model/InlineObject8';
-import InlineObject9 from '../model/InlineObject9';
-import InlineResponse2002 from '../model/InlineResponse2002';
+import InlineObject12 from '../model/InlineObject12';
+import InlineObject13 from '../model/InlineObject13';
+import InlineObject14 from '../model/InlineObject14';
+import InlineObject15 from '../model/InlineObject15';
+import InlineResponse201 from '../model/InlineResponse201';
 import Layer from '../model/Layer';
 import Material from '../model/Material';
 import Model from '../model/Model';
@@ -1043,8 +1045,8 @@ export default class ModelApi {
      * @param {String} cloudPk 
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {module:model/Building} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Building} and HTTP response
+     * @param {module:model/InlineObject10} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse201} and HTTP response
      */
     createBuildingWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
@@ -1080,7 +1082,7 @@ export default class ModelApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Building;
+      let returnType = InlineResponse201;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1094,8 +1096,8 @@ export default class ModelApi {
      * @param {String} cloudPk 
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {module:model/Building} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Building}
+     * @param {module:model/InlineObject10} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse201}
      */
     createBuilding(cloudPk, modelPk, projectPk, data) {
       return this.createBuildingWithHttpInfo(cloudPk, modelPk, projectPk, data)
@@ -1112,7 +1114,7 @@ export default class ModelApi {
      * @param {String} cloudPk 
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {module:model/InlineObject8} data 
+     * @param {module:model/InlineObject11} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Building} and HTTP response
      */
     createBuildingPlanWithHttpInfo(buildingUuid, cloudPk, modelPk, projectPk, data) {
@@ -1169,7 +1171,7 @@ export default class ModelApi {
      * @param {String} cloudPk 
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {module:model/InlineObject8} data 
+     * @param {module:model/InlineObject11} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Building}
      */
     createBuildingPlan(buildingUuid, cloudPk, modelPk, projectPk, data) {
@@ -2337,8 +2339,8 @@ export default class ModelApi {
      * @param {String} cloudPk 
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {module:model/Storey} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
+     * @param {module:model/InlineObject13} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse201} and HTTP response
      */
     createStoreyWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
@@ -2374,7 +2376,7 @@ export default class ModelApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Storey;
+      let returnType = InlineResponse201;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2388,8 +2390,8 @@ export default class ModelApi {
      * @param {String} cloudPk 
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {module:model/Storey} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
+     * @param {module:model/InlineObject13} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse201}
      */
     createStorey(cloudPk, modelPk, projectPk, data) {
       return this.createStoreyWithHttpInfo(cloudPk, modelPk, projectPk, data)
@@ -2406,7 +2408,7 @@ export default class ModelApi {
      * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} storeyUuid 
-     * @param {module:model/InlineObject10} data 
+     * @param {module:model/InlineObject14} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
     createStoreyPlanWithHttpInfo(cloudPk, modelPk, projectPk, storeyUuid, data) {
@@ -2463,7 +2465,7 @@ export default class ModelApi {
      * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} storeyUuid 
-     * @param {module:model/InlineObject10} data 
+     * @param {module:model/InlineObject14} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
     createStoreyPlan(cloudPk, modelPk, projectPk, storeyUuid, data) {
@@ -8708,8 +8710,8 @@ export default class ModelApi {
      * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
-     * @param {module:model/InlineObject9} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
+     * @param {module:model/InlineObject12} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse201} and HTTP response
      */
     updateBuildingWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data) {
       let postBody = data;
@@ -8750,7 +8752,7 @@ export default class ModelApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2002;
+      let returnType = InlineResponse201;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{uuid}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -8765,8 +8767,8 @@ export default class ModelApi {
      * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
-     * @param {module:model/InlineObject9} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
+     * @param {module:model/InlineObject12} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse201}
      */
     updateBuilding(cloudPk, modelPk, projectPk, uuid, data) {
       return this.updateBuildingWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data)
@@ -9929,8 +9931,8 @@ export default class ModelApi {
      * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
-     * @param {module:model/InlineObject11} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
+     * @param {module:model/InlineObject15} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse201} and HTTP response
      */
     updateStoreyWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data) {
       let postBody = data;
@@ -9971,7 +9973,7 @@ export default class ModelApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2002;
+      let returnType = InlineResponse201;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{uuid}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -9986,8 +9988,8 @@ export default class ModelApi {
      * @param {String} modelPk 
      * @param {String} projectPk 
      * @param {String} uuid IFC element or element type UUID
-     * @param {module:model/InlineObject11} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
+     * @param {module:model/InlineObject15} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse201}
      */
     updateStorey(cloudPk, modelPk, projectPk, uuid, data) {
       return this.updateStoreyWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data)

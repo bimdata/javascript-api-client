@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The InlineObject4 model module.
- * @module model/InlineObject4
+ * The InlineResponse201 model module.
+ * @module model/InlineResponse201
  * @version 0.0.0
  */
-class InlineObject4 {
+class InlineResponse201 {
     /**
-     * Constructs a new <code>InlineObject4</code>.
-     * @alias module:model/InlineObject4
+     * Constructs a new <code>InlineResponse201</code>.
+     * @alias module:model/InlineResponse201
      */
     constructor() { 
         
-        InlineObject4.initialize(this);
+        InlineResponse201.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class InlineObject4 {
     }
 
     /**
-     * Constructs a <code>InlineObject4</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InlineResponse201</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InlineObject4} obj Optional instance to populate.
-     * @return {module:model/InlineObject4} The populated <code>InlineObject4</code> instance.
+     * @param {module:model/InlineResponse201} obj Optional instance to populate.
+     * @return {module:model/InlineResponse201} The populated <code>InlineResponse201</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InlineObject4();
+            obj = obj || new InlineResponse201();
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -61,12 +61,12 @@ class InlineObject4 {
  * name of storey/building
  * @member {String} name
  */
-InlineObject4.prototype['name'] = undefined;
+InlineResponse201.prototype['name'] = undefined;
 
 
 
 
 
 
-export default InlineObject4;
+export default InlineResponse201;
 

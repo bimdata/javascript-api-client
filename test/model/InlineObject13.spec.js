@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.InlineObject5();
+    instance = new bimdata.InlineObject13();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,16 @@
       object[property] = value;
   }
 
-  describe('InlineObject5', function() {
-    it('should create an instance of InlineObject5', function() {
-      // uncomment below and update the code to test InlineObject5
-      //var instane = new bimdata.InlineObject5();
-      //expect(instance).to.be.a(bimdata.InlineObject5);
+  describe('InlineObject13', function() {
+    it('should create an instance of InlineObject13', function() {
+      // uncomment below and update the code to test InlineObject13
+      //var instane = new bimdata.InlineObject13();
+      //expect(instance).to.be.a(bimdata.InlineObject13);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new bimdata.InlineObject5();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new bimdata.InlineObject13();
       //expect(instance).to.be();
     });
 

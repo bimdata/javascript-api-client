@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The InlineObject4 model module.
- * @module model/InlineObject4
+ * The InlineObject13 model module.
+ * @module model/InlineObject13
  * @version 0.0.0
  */
-class InlineObject4 {
+class InlineObject13 {
     /**
-     * Constructs a new <code>InlineObject4</code>.
-     * @alias module:model/InlineObject4
+     * Constructs a new <code>InlineObject13</code>.
+     * @alias module:model/InlineObject13
      */
     constructor() { 
         
-        InlineObject4.initialize(this);
+        InlineObject13.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class InlineObject4 {
     }
 
     /**
-     * Constructs a <code>InlineObject4</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InlineObject13</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InlineObject4} obj Optional instance to populate.
-     * @return {module:model/InlineObject4} The populated <code>InlineObject4</code> instance.
+     * @param {module:model/InlineObject13} obj Optional instance to populate.
+     * @return {module:model/InlineObject13} The populated <code>InlineObject13</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InlineObject4();
+            obj = obj || new InlineObject13();
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -61,12 +61,12 @@ class InlineObject4 {
  * name of storey/building
  * @member {String} name
  */
-InlineObject4.prototype['name'] = undefined;
+InlineObject13.prototype['name'] = undefined;
 
 
 
 
 
 
-export default InlineObject4;
+export default InlineObject13;
 
