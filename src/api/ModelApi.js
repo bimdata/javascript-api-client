@@ -13,6 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
+import Building from '../model/Building';
 import Classification from '../model/Classification';
 import CreateBuilding from '../model/CreateBuilding';
 import CreateModel from '../model/CreateModel';
@@ -25,7 +26,11 @@ import IfcAccessToken from '../model/IfcAccessToken';
 import IfcExport from '../model/IfcExport';
 import IfcMerge from '../model/IfcMerge';
 import IfcOptimize from '../model/IfcOptimize';
-import InlineObject5 from '../model/InlineObject5';
+import InlineObject10 from '../model/InlineObject10';
+import InlineObject11 from '../model/InlineObject11';
+import InlineObject8 from '../model/InlineObject8';
+import InlineObject9 from '../model/InlineObject9';
+import InlineResponse2002 from '../model/InlineResponse2002';
 import Layer from '../model/Layer';
 import Material from '../model/Material';
 import Model from '../model/Model';
@@ -40,7 +45,6 @@ import RawElements from '../model/RawElements';
 import SimpleElement from '../model/SimpleElement';
 import Space from '../model/Space';
 import Storey from '../model/Storey';
-import StoreyRequest from '../model/StoreyRequest';
 import System from '../model/System';
 import Unit from '../model/Unit';
 import Zone from '../model/Zone';
@@ -1027,6 +1031,149 @@ export default class ModelApi {
      */
     createAccessToken(cloudPk, modelPk, projectPk, data) {
       return this.createAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a building of a model
+     * Create a building of a model. Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/Building} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Building} and HTTP response
+     */
+    createBuildingWithHttpInfo(cloudPk, modelPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createBuilding");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createBuilding");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createBuilding");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createBuilding");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Building;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a building of a model
+     * Create a building of a model. Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/Building} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Building}
+     */
+    createBuilding(cloudPk, modelPk, projectPk, data) {
+      return this.createBuildingWithHttpInfo(cloudPk, modelPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a relation between a 2d model and a building
+     * Create a relation between a 2d model and a building. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG') Required scopes: ifc:write, model:write
+     * @param {String} buildingUuid 
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/InlineObject8} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Building} and HTTP response
+     */
+    createBuildingPlanWithHttpInfo(buildingUuid, cloudPk, modelPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'buildingUuid' is set
+      if (buildingUuid === undefined || buildingUuid === null) {
+        throw new Error("Missing the required parameter 'buildingUuid' when calling createBuildingPlan");
+      }
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createBuildingPlan");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createBuildingPlan");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createBuildingPlan");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createBuildingPlan");
+      }
+
+      let pathParams = {
+        'building_uuid': buildingUuid,
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Building;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/add', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a relation between a 2d model and a building
+     * Create a relation between a 2d model and a building. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG') Required scopes: ifc:write, model:write
+     * @param {String} buildingUuid 
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/InlineObject8} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Building}
+     */
+    createBuildingPlan(buildingUuid, cloudPk, modelPk, projectPk, data) {
+      return this.createBuildingPlanWithHttpInfo(buildingUuid, cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2185,43 +2332,37 @@ export default class ModelApi {
 
 
     /**
-     * Create a relation between a 2d model and a storey
-     * Create a relation between a 2d model and a storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG') Required scopes: ifc:write, model:write
+     * Create a storey of a model
+     * Create a storey of a model. Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {String} storeyPk 
-     * @param {module:model/InlineObject5} data 
+     * @param {module:model/Storey} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
-    createStoreyPlanWithHttpInfo(cloudPk, modelPk, projectPk, storeyPk, data) {
+    createStoreyWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling createStoreyPlan");
+        throw new Error("Missing the required parameter 'cloudPk' when calling createStorey");
       }
       // verify the required parameter 'modelPk' is set
       if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling createStoreyPlan");
+        throw new Error("Missing the required parameter 'modelPk' when calling createStorey");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling createStoreyPlan");
-      }
-      // verify the required parameter 'storeyPk' is set
-      if (storeyPk === undefined || storeyPk === null) {
-        throw new Error("Missing the required parameter 'storeyPk' when calling createStoreyPlan");
+        throw new Error("Missing the required parameter 'projectPk' when calling createStorey");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling createStoreyPlan");
+        throw new Error("Missing the required parameter 'data' when calling createStorey");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
         'model_pk': modelPk,
-        'project_pk': projectPk,
-        'storey_pk': storeyPk
+        'project_pk': projectPk
       };
       let queryParams = {
       };
@@ -2235,7 +2376,81 @@ export default class ModelApi {
       let accepts = ['application/json'];
       let returnType = Storey;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/add', 'POST',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a storey of a model
+     * Create a storey of a model. Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/Storey} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
+     */
+    createStorey(cloudPk, modelPk, projectPk, data) {
+      return this.createStoreyWithHttpInfo(cloudPk, modelPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a relation between a 2d model and a storey
+     * Create a relation between a 2d model and a storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG') Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} storeyUuid 
+     * @param {module:model/InlineObject10} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
+     */
+    createStoreyPlanWithHttpInfo(cloudPk, modelPk, projectPk, storeyUuid, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createStoreyPlan");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createStoreyPlan");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createStoreyPlan");
+      }
+      // verify the required parameter 'storeyUuid' is set
+      if (storeyUuid === undefined || storeyUuid === null) {
+        throw new Error("Missing the required parameter 'storeyUuid' when calling createStoreyPlan");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling createStoreyPlan");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk,
+        'storey_uuid': storeyUuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Storey;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/add', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -2247,12 +2462,12 @@ export default class ModelApi {
      * @param {String} cloudPk 
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {String} storeyPk 
-     * @param {module:model/InlineObject5} data 
+     * @param {String} storeyUuid 
+     * @param {module:model/InlineObject10} data 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
-    createStoreyPlan(cloudPk, modelPk, projectPk, storeyPk, data) {
-      return this.createStoreyPlanWithHttpInfo(cloudPk, modelPk, projectPk, storeyPk, data)
+    createStoreyPlan(cloudPk, modelPk, projectPk, storeyUuid, data) {
+      return this.createStoreyPlanWithHttpInfo(cloudPk, modelPk, projectPk, storeyUuid, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2533,6 +2748,151 @@ export default class ModelApi {
      */
     deleteAccessToken(cloudPk, modelPk, projectPk, token) {
       return this.deleteAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, token)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a building of a model
+     * Delete a building of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC element or element type UUID
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteBuildingWithHttpInfo(cloudPk, modelPk, projectPk, uuid) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteBuilding");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteBuilding");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteBuilding");
+      }
+      // verify the required parameter 'uuid' is set
+      if (uuid === undefined || uuid === null) {
+        throw new Error("Missing the required parameter 'uuid' when calling deleteBuilding");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk,
+        'uuid': uuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{uuid}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a building of a model
+     * Delete a building of a model Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC element or element type UUID
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteBuilding(cloudPk, modelPk, projectPk, uuid) {
+      return this.deleteBuildingWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete the relation between a 2d model and a building
+     * Delete the relation between a 2d model and a building Required scopes: ifc:write, model:write
+     * @param {String} buildingUuid 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this element.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteBuildingPlanWithHttpInfo(buildingUuid, cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'buildingUuid' is set
+      if (buildingUuid === undefined || buildingUuid === null) {
+        throw new Error("Missing the required parameter 'buildingUuid' when calling deleteBuildingPlan");
+      }
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteBuildingPlan");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteBuildingPlan");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteBuildingPlan");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteBuildingPlan");
+      }
+
+      let pathParams = {
+        'building_uuid': buildingUuid,
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete the relation between a 2d model and a building
+     * Delete the relation between a 2d model and a building Required scopes: ifc:write, model:write
+     * @param {String} buildingUuid 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this element.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteBuildingPlan(buildingUuid, cloudPk, id, modelPk, projectPk) {
+      return this.deleteBuildingPlanWithHttpInfo(buildingUuid, cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3150,20 +3510,16 @@ export default class ModelApi {
      * Delete a storey of a model
      * Delete a storey of a model Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
      * @param {String} modelPk 
      * @param {String} projectPk 
+     * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteStoreyWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+    deleteStoreyWithHttpInfo(cloudPk, modelPk, projectPk, uuid) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteStorey");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteStorey");
       }
       // verify the required parameter 'modelPk' is set
       if (modelPk === undefined || modelPk === null) {
@@ -3173,12 +3529,16 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteStorey");
       }
+      // verify the required parameter 'uuid' is set
+      if (uuid === undefined || uuid === null) {
+        throw new Error("Missing the required parameter 'uuid' when calling deleteStorey");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'id': id,
         'model_pk': modelPk,
-        'project_pk': projectPk
+        'project_pk': projectPk,
+        'uuid': uuid
       };
       let queryParams = {
       };
@@ -3192,7 +3552,7 @@ export default class ModelApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{uuid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -3202,13 +3562,13 @@ export default class ModelApi {
      * Delete a storey of a model
      * Delete a storey of a model Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
      * @param {String} modelPk 
      * @param {String} projectPk 
+     * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteStorey(cloudPk, id, modelPk, projectPk) {
-      return this.deleteStoreyWithHttpInfo(cloudPk, id, modelPk, projectPk)
+    deleteStorey(cloudPk, modelPk, projectPk, uuid) {
+      return this.deleteStoreyWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3219,13 +3579,13 @@ export default class ModelApi {
      * Delete the relation between a 2d model and a storey
      * Delete the relation between a 2d model and a storey Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
+     * @param {Number} id A unique integer value identifying this element.
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {String} storeyPk 
+     * @param {String} storeyUuid 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteStoreyPlanWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyPk) {
+    deleteStoreyPlanWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyUuid) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -3243,9 +3603,9 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteStoreyPlan");
       }
-      // verify the required parameter 'storeyPk' is set
-      if (storeyPk === undefined || storeyPk === null) {
-        throw new Error("Missing the required parameter 'storeyPk' when calling deleteStoreyPlan");
+      // verify the required parameter 'storeyUuid' is set
+      if (storeyUuid === undefined || storeyUuid === null) {
+        throw new Error("Missing the required parameter 'storeyUuid' when calling deleteStoreyPlan");
       }
 
       let pathParams = {
@@ -3253,7 +3613,7 @@ export default class ModelApi {
         'id': id,
         'model_pk': modelPk,
         'project_pk': projectPk,
-        'storey_pk': storeyPk
+        'storey_uuid': storeyUuid
       };
       let queryParams = {
       };
@@ -3267,7 +3627,7 @@ export default class ModelApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id}', 'DELETE',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -3277,14 +3637,14 @@ export default class ModelApi {
      * Delete the relation between a 2d model and a storey
      * Delete the relation between a 2d model and a storey Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
+     * @param {Number} id A unique integer value identifying this element.
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {String} storeyPk 
+     * @param {String} storeyUuid 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteStoreyPlan(cloudPk, id, modelPk, projectPk, storeyPk) {
-      return this.deleteStoreyPlanWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyPk)
+    deleteStoreyPlan(cloudPk, id, modelPk, projectPk, storeyUuid) {
+      return this.deleteStoreyPlanWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyUuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3649,74 +4009,6 @@ export default class ModelApi {
 
 
     /**
-     * Update all fields of all storeys
-     *          This route allows you to create storeys, modify them, delete them and organize them by order.         If the optional field \"id\" is present, the storey will be modified. Otherwise, a new storey will be created.         If an \"id\" present in the api is not present in the list passed in parameter, the corresponding storey will be deleted.         A storey with \"is_site=True\" will be stored without order. There can be only one storey with \"is_site=True\"\"  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {Array.<module:model/StoreyRequest>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Storey>} and HTTP response
-     */
-    fullUpdateStoreysWithHttpInfo(cloudPk, modelPk, projectPk, data) {
-      let postBody = data;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling fullUpdateStoreys");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling fullUpdateStoreys");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling fullUpdateStoreys");
-      }
-      // verify the required parameter 'data' is set
-      if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling fullUpdateStoreys");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'model_pk': modelPk,
-        'project_pk': projectPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = [Storey];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/full_update', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update all fields of all storeys
-     *          This route allows you to create storeys, modify them, delete them and organize them by order.         If the optional field \"id\" is present, the storey will be modified. Otherwise, a new storey will be created.         If an \"id\" present in the api is not present in the list passed in parameter, the corresponding storey will be deleted.         A storey with \"is_site=True\" will be stored without order. There can be only one storey with \"is_site=True\"\"  Required scopes: ifc:write, model:write
-     * @param {String} cloudPk 
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {Array.<module:model/StoreyRequest>} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Storey>}
-     */
-    fullUpdateStoreys(cloudPk, modelPk, projectPk, data) {
-      return this.fullUpdateStoreysWithHttpInfo(cloudPk, modelPk, projectPk, data)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Retrieve one token created for this model
      * Retrieve one token created for this model Required scopes: ifc:token_manage, model:token_manage
      * @param {String} cloudPk 
@@ -3841,6 +4133,213 @@ export default class ModelApi {
      */
     getAccessTokens(cloudPk, modelPk, projectPk) {
       return this.getAccessTokensWithHttpInfo(cloudPk, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a building of a model
+     * Retrieve a building of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC element or element type UUID
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Building} and HTTP response
+     */
+    getBuildingWithHttpInfo(cloudPk, modelPk, projectPk, uuid) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getBuilding");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getBuilding");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getBuilding");
+      }
+      // verify the required parameter 'uuid' is set
+      if (uuid === undefined || uuid === null) {
+        throw new Error("Missing the required parameter 'uuid' when calling getBuilding");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk,
+        'uuid': uuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Building;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{uuid}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a building of a model
+     * Retrieve a building of a model Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC element or element type UUID
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Building}
+     */
+    getBuilding(cloudPk, modelPk, projectPk, uuid) {
+      return this.getBuildingWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve the postioning of the plan in the building
+     * Retrieve the postioning of the plan in the building Required scopes: ifc:read, model:read
+     * @param {String} buildingUuid 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this element.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PositioningPlan} and HTTP response
+     */
+    getBuildingPlanPositioningWithHttpInfo(buildingUuid, cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'buildingUuid' is set
+      if (buildingUuid === undefined || buildingUuid === null) {
+        throw new Error("Missing the required parameter 'buildingUuid' when calling getBuildingPlanPositioning");
+      }
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getBuildingPlanPositioning");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getBuildingPlanPositioning");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getBuildingPlanPositioning");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getBuildingPlanPositioning");
+      }
+
+      let pathParams = {
+        'building_uuid': buildingUuid,
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PositioningPlan;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/{id}/positioning', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve the postioning of the plan in the building
+     * Retrieve the postioning of the plan in the building Required scopes: ifc:read, model:read
+     * @param {String} buildingUuid 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this element.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PositioningPlan}
+     */
+    getBuildingPlanPositioning(buildingUuid, cloudPk, id, modelPk, projectPk) {
+      return this.getBuildingPlanPositioningWithHttpInfo(buildingUuid, cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all buildings of a model
+     * Retrieve all buildings of a model. Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Building>} and HTTP response
+     */
+    getBuildingsWithHttpInfo(cloudPk, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getBuildings");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getBuildings");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getBuildings");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Building];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all buildings of a model
+     * Retrieve all buildings of a model. Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Building>}
+     */
+    getBuildings(cloudPk, modelPk, projectPk) {
+      return this.getBuildingsWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5927,82 +6426,6 @@ export default class ModelApi {
 
 
     /**
-     * Retrieve the postioning of the plan in the storey
-     * Retrieve the postioning of the plan in the storey Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {String} storeyPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PositioningPlan} and HTTP response
-     */
-    getPlanPositioningWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getPlanPositioning");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getPlanPositioning");
-      }
-      // verify the required parameter 'modelPk' is set
-      if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling getPlanPositioning");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling getPlanPositioning");
-      }
-      // verify the required parameter 'storeyPk' is set
-      if (storeyPk === undefined || storeyPk === null) {
-        throw new Error("Missing the required parameter 'storeyPk' when calling getPlanPositioning");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'id': id,
-        'model_pk': modelPk,
-        'project_pk': projectPk,
-        'storey_pk': storeyPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = PositioningPlan;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id}/positioning', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve the postioning of the plan in the storey
-     * Retrieve the postioning of the plan in the storey Required scopes: ifc:read, model:read
-     * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
-     * @param {String} modelPk 
-     * @param {String} projectPk 
-     * @param {String} storeyPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PositioningPlan}
-     */
-    getPlanPositioning(cloudPk, id, modelPk, projectPk, storeyPk) {
-      return this.getPlanPositioningWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Retrieve a processor handler
      *  Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
@@ -6616,20 +7039,16 @@ export default class ModelApi {
      * Retrieve a storey of a model
      * Retrieve a storey of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
      * @param {String} modelPk 
      * @param {String} projectPk 
+     * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
-    getStoreyWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+    getStoreyWithHttpInfo(cloudPk, modelPk, projectPk, uuid) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling getStorey");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getStorey");
       }
       // verify the required parameter 'modelPk' is set
       if (modelPk === undefined || modelPk === null) {
@@ -6639,12 +7058,16 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling getStorey");
       }
+      // verify the required parameter 'uuid' is set
+      if (uuid === undefined || uuid === null) {
+        throw new Error("Missing the required parameter 'uuid' when calling getStorey");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'id': id,
         'model_pk': modelPk,
-        'project_pk': projectPk
+        'project_pk': projectPk,
+        'uuid': uuid
       };
       let queryParams = {
       };
@@ -6658,7 +7081,7 @@ export default class ModelApi {
       let accepts = ['application/json'];
       let returnType = Storey;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{id}', 'GET',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{uuid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6668,13 +7091,89 @@ export default class ModelApi {
      * Retrieve a storey of a model
      * Retrieve a storey of a model Required scopes: ifc:read, model:read
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
      * @param {String} modelPk 
      * @param {String} projectPk 
+     * @param {String} uuid IFC element or element type UUID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
-    getStorey(cloudPk, id, modelPk, projectPk) {
-      return this.getStoreyWithHttpInfo(cloudPk, id, modelPk, projectPk)
+    getStorey(cloudPk, modelPk, projectPk, uuid) {
+      return this.getStoreyWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve the postioning of the plan in the storey
+     * Retrieve the postioning of the plan in the storey Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this element.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} storeyUuid 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PositioningPlan} and HTTP response
+     */
+    getStoreyPlanPositioningWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyUuid) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getStoreyPlanPositioning");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getStoreyPlanPositioning");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getStoreyPlanPositioning");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getStoreyPlanPositioning");
+      }
+      // verify the required parameter 'storeyUuid' is set
+      if (storeyUuid === undefined || storeyUuid === null) {
+        throw new Error("Missing the required parameter 'storeyUuid' when calling getStoreyPlanPositioning");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk,
+        'storey_uuid': storeyUuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PositioningPlan;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/{id}/positioning', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve the postioning of the plan in the storey
+     * Retrieve the postioning of the plan in the storey Required scopes: ifc:read, model:read
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this element.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} storeyUuid 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PositioningPlan}
+     */
+    getStoreyPlanPositioning(cloudPk, id, modelPk, projectPk, storeyUuid) {
+      return this.getStoreyPlanPositioningWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyUuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8203,6 +8702,163 @@ export default class ModelApi {
 
 
     /**
+     * Update some fields of a building
+     * Update some fields of a building Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC element or element type UUID
+     * @param {module:model/InlineObject9} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
+     */
+    updateBuildingWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateBuilding");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateBuilding");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateBuilding");
+      }
+      // verify the required parameter 'uuid' is set
+      if (uuid === undefined || uuid === null) {
+        throw new Error("Missing the required parameter 'uuid' when calling updateBuilding");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateBuilding");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk,
+        'uuid': uuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2002;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{uuid}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a building
+     * Update some fields of a building Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} uuid IFC element or element type UUID
+     * @param {module:model/InlineObject9} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
+     */
+    updateBuilding(cloudPk, modelPk, projectPk, uuid, data) {
+      return this.updateBuildingWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update the postioning of the plan in the building
+     * Update the postioning of the plan in the building Required scopes: ifc:write, model:write
+     * @param {String} buildingUuid 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this element.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/PositioningPlan} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PositioningPlan} and HTTP response
+     */
+    updateBuildingPlanPositioningWithHttpInfo(buildingUuid, cloudPk, id, modelPk, projectPk, data) {
+      let postBody = data;
+      // verify the required parameter 'buildingUuid' is set
+      if (buildingUuid === undefined || buildingUuid === null) {
+        throw new Error("Missing the required parameter 'buildingUuid' when calling updateBuildingPlanPositioning");
+      }
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateBuildingPlanPositioning");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateBuildingPlanPositioning");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateBuildingPlanPositioning");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateBuildingPlanPositioning");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateBuildingPlanPositioning");
+      }
+
+      let pathParams = {
+        'building_uuid': buildingUuid,
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PositioningPlan;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/{id}/positioning', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update the postioning of the plan in the building
+     * Update the postioning of the plan in the building Required scopes: ifc:write, model:write
+     * @param {String} buildingUuid 
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this element.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {module:model/PositioningPlan} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PositioningPlan}
+     */
+    updateBuildingPlanPositioning(buildingUuid, cloudPk, id, modelPk, projectPk, data) {
+      return this.updateBuildingPlanPositioningWithHttpInfo(buildingUuid, cloudPk, id, modelPk, projectPk, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update some fields of an element
      * Update some fields of an element. The IFC file will not be updated. The created element will be accessible over the API and when exporting an IFC file Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
@@ -8824,49 +9480,37 @@ export default class ModelApi {
 
 
     /**
-     * Update the postioning of the plan in the storey
-     * Update the postioning of the plan in the storey Required scopes: ifc:write, model:write
+     * Update order of all storey of a model
+     * Update order of all storey of a model Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {String} storeyPk 
-     * @param {module:model/PositioningPlan} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PositioningPlan} and HTTP response
+     * @param {Array.<String>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Storey>} and HTTP response
      */
-    updatePlanPositioningWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyPk, data) {
+    updateOrderStoreysWithHttpInfo(cloudPk, modelPk, projectPk, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updatePlanPositioning");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updatePlanPositioning");
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateOrderStoreys");
       }
       // verify the required parameter 'modelPk' is set
       if (modelPk === undefined || modelPk === null) {
-        throw new Error("Missing the required parameter 'modelPk' when calling updatePlanPositioning");
+        throw new Error("Missing the required parameter 'modelPk' when calling updateOrderStoreys");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updatePlanPositioning");
-      }
-      // verify the required parameter 'storeyPk' is set
-      if (storeyPk === undefined || storeyPk === null) {
-        throw new Error("Missing the required parameter 'storeyPk' when calling updatePlanPositioning");
+        throw new Error("Missing the required parameter 'projectPk' when calling updateOrderStoreys");
       }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
-        throw new Error("Missing the required parameter 'data' when calling updatePlanPositioning");
+        throw new Error("Missing the required parameter 'data' when calling updateOrderStoreys");
       }
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'id': id,
         'model_pk': modelPk,
-        'project_pk': projectPk,
-        'storey_pk': storeyPk
+        'project_pk': projectPk
       };
       let queryParams = {
       };
@@ -8878,27 +9522,25 @@ export default class ModelApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = PositioningPlan;
+      let returnType = [Storey];
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id}/positioning', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/order', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Update the postioning of the plan in the storey
-     * Update the postioning of the plan in the storey Required scopes: ifc:write, model:write
+     * Update order of all storey of a model
+     * Update order of all storey of a model Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {String} storeyPk 
-     * @param {module:model/PositioningPlan} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PositioningPlan}
+     * @param {Array.<String>} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Storey>}
      */
-    updatePlanPositioning(cloudPk, id, modelPk, projectPk, storeyPk, data) {
-      return this.updatePlanPositioningWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyPk, data)
+    updateOrderStoreys(cloudPk, modelPk, projectPk, data) {
+      return this.updateOrderStoreysWithHttpInfo(cloudPk, modelPk, projectPk, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9134,21 +9776,17 @@ export default class ModelApi {
      * Update some fields of a storey
      * Update some fields of a storey Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {module:model/Storey} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
+     * @param {String} uuid IFC element or element type UUID
+     * @param {module:model/InlineObject11} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
-    updateStoreyWithHttpInfo(cloudPk, id, modelPk, projectPk, data) {
+    updateStoreyWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data) {
       let postBody = data;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling updateStorey");
-      }
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateStorey");
       }
       // verify the required parameter 'modelPk' is set
       if (modelPk === undefined || modelPk === null) {
@@ -9158,6 +9796,10 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling updateStorey");
       }
+      // verify the required parameter 'uuid' is set
+      if (uuid === undefined || uuid === null) {
+        throw new Error("Missing the required parameter 'uuid' when calling updateStorey");
+      }
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
         throw new Error("Missing the required parameter 'data' when calling updateStorey");
@@ -9165,9 +9807,9 @@ export default class ModelApi {
 
       let pathParams = {
         'cloud_pk': cloudPk,
-        'id': id,
         'model_pk': modelPk,
-        'project_pk': projectPk
+        'project_pk': projectPk,
+        'uuid': uuid
       };
       let queryParams = {
       };
@@ -9179,9 +9821,9 @@ export default class ModelApi {
       let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Storey;
+      let returnType = InlineResponse2002;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{id}', 'PATCH',
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{uuid}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -9191,14 +9833,96 @@ export default class ModelApi {
      * Update some fields of a storey
      * Update some fields of a storey Required scopes: ifc:write, model:write
      * @param {String} cloudPk 
-     * @param {Number} id A unique integer value identifying this storey.
      * @param {String} modelPk 
      * @param {String} projectPk 
-     * @param {module:model/Storey} data 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
+     * @param {String} uuid IFC element or element type UUID
+     * @param {module:model/InlineObject11} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
-    updateStorey(cloudPk, id, modelPk, projectPk, data) {
-      return this.updateStoreyWithHttpInfo(cloudPk, id, modelPk, projectPk, data)
+    updateStorey(cloudPk, modelPk, projectPk, uuid, data) {
+      return this.updateStoreyWithHttpInfo(cloudPk, modelPk, projectPk, uuid, data)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update the postioning of the plan in the storey
+     * Update the postioning of the plan in the storey Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this element.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} storeyUuid 
+     * @param {module:model/PositioningPlan} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PositioningPlan} and HTTP response
+     */
+    updateStoreyPlanPositioningWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyUuid, data) {
+      let postBody = data;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateStoreyPlanPositioning");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateStoreyPlanPositioning");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateStoreyPlanPositioning");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateStoreyPlanPositioning");
+      }
+      // verify the required parameter 'storeyUuid' is set
+      if (storeyUuid === undefined || storeyUuid === null) {
+        throw new Error("Missing the required parameter 'storeyUuid' when calling updateStoreyPlanPositioning");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling updateStoreyPlanPositioning");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk,
+        'storey_uuid': storeyUuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Bearer', 'bimdata_connect', 'client_credentials'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PositioningPlan;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/{id}/positioning', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update the postioning of the plan in the storey
+     * Update the postioning of the plan in the storey Required scopes: ifc:write, model:write
+     * @param {String} cloudPk 
+     * @param {Number} id A unique integer value identifying this element.
+     * @param {String} modelPk 
+     * @param {String} projectPk 
+     * @param {String} storeyUuid 
+     * @param {module:model/PositioningPlan} data 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PositioningPlan}
+     */
+    updateStoreyPlanPositioning(cloudPk, id, modelPk, projectPk, storeyUuid, data) {
+      return this.updateStoreyPlanPositioningWithHttpInfo(cloudPk, id, modelPk, projectPk, storeyUuid, data)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -14,6 +14,7 @@
 
 import ApiClient from './ApiClient';
 import BcfProject from './model/BcfProject';
+import Building from './model/Building';
 import CheckPlan from './model/CheckPlan';
 import CheckerResult from './model/CheckerResult';
 import Classification from './model/Classification';
@@ -50,12 +51,19 @@ import IfcMerge from './model/IfcMerge';
 import IfcOptimize from './model/IfcOptimize';
 import InlineObject from './model/InlineObject';
 import InlineObject1 from './model/InlineObject1';
+import InlineObject10 from './model/InlineObject10';
+import InlineObject11 from './model/InlineObject11';
 import InlineObject2 from './model/InlineObject2';
 import InlineObject3 from './model/InlineObject3';
 import InlineObject4 from './model/InlineObject4';
 import InlineObject5 from './model/InlineObject5';
+import InlineObject6 from './model/InlineObject6';
+import InlineObject7 from './model/InlineObject7';
+import InlineObject8 from './model/InlineObject8';
+import InlineObject9 from './model/InlineObject9';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
+import InlineResponse2002 from './model/InlineResponse2002';
 import Invitation from './model/Invitation';
 import Label from './model/Label';
 import LabelRead from './model/LabelRead';
@@ -114,7 +122,6 @@ import Snapshot from './model/Snapshot';
 import Space from './model/Space';
 import Stage from './model/Stage';
 import Storey from './model/Storey';
-import StoreyRequest from './model/StoreyRequest';
 import System from './model/System';
 import Topic from './model/Topic';
 import TopicStatus from './model/TopicStatus';
@@ -186,6 +193,12 @@ export {
      * @property {module:model/BcfProject}
      */
     BcfProject,
+
+    /**
+     * The Building model constructor.
+     * @property {module:model/Building}
+     */
+    Building,
 
     /**
      * The CheckPlan model constructor.
@@ -404,6 +417,18 @@ export {
     InlineObject1,
 
     /**
+     * The InlineObject10 model constructor.
+     * @property {module:model/InlineObject10}
+     */
+    InlineObject10,
+
+    /**
+     * The InlineObject11 model constructor.
+     * @property {module:model/InlineObject11}
+     */
+    InlineObject11,
+
+    /**
      * The InlineObject2 model constructor.
      * @property {module:model/InlineObject2}
      */
@@ -428,6 +453,30 @@ export {
     InlineObject5,
 
     /**
+     * The InlineObject6 model constructor.
+     * @property {module:model/InlineObject6}
+     */
+    InlineObject6,
+
+    /**
+     * The InlineObject7 model constructor.
+     * @property {module:model/InlineObject7}
+     */
+    InlineObject7,
+
+    /**
+     * The InlineObject8 model constructor.
+     * @property {module:model/InlineObject8}
+     */
+    InlineObject8,
+
+    /**
+     * The InlineObject9 model constructor.
+     * @property {module:model/InlineObject9}
+     */
+    InlineObject9,
+
+    /**
      * The InlineResponse200 model constructor.
      * @property {module:model/InlineResponse200}
      */
@@ -438,6 +487,12 @@ export {
      * @property {module:model/InlineResponse2001}
      */
     InlineResponse2001,
+
+    /**
+     * The InlineResponse2002 model constructor.
+     * @property {module:model/InlineResponse2002}
+     */
+    InlineResponse2002,
 
     /**
      * The Invitation model constructor.
@@ -786,12 +841,6 @@ export {
      * @property {module:model/Storey}
      */
     Storey,
-
-    /**
-     * The StoreyRequest model constructor.
-     * @property {module:model/StoreyRequest}
-     */
-    StoreyRequest,
 
     /**
      * The System model constructor.

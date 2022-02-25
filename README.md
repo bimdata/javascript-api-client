@@ -318,6 +318,8 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**bulkUpdateElementsDeprecated**](docs/IfcApi.md#bulkUpdateElementsDeprecated) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/bulk_update | Update many elements at once (all field must be defined)
 *bimdata.IfcApi* | [**bulkUpdateIfcPropertyDeprecated**](docs/IfcApi.md#bulkUpdateIfcPropertyDeprecated) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_update | Update all fields of many properties of a model
 *bimdata.IfcApi* | [**createAccessTokenDeprecated**](docs/IfcApi.md#createAccessTokenDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token | Create a token for this model
+*bimdata.IfcApi* | [**createBuildingDeprecated**](docs/IfcApi.md#createBuildingDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building | Create a building of a model
+*bimdata.IfcApi* | [**createBuildingPlanDeprecated**](docs/IfcApi.md#createBuildingPlanDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{building_uuid}/plan/add | Create a relation between a 2d model and a building
 *bimdata.IfcApi* | [**createCheckerDeprecated**](docs/IfcApi.md#createCheckerDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker | Create a checker to a model
 *bimdata.IfcApi* | [**createCheckerResultDeprecated**](docs/IfcApi.md#createCheckerResultDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result | Create a CheckerResult
 *bimdata.IfcApi* | [**createClassificationElementRelationsDeprecated**](docs/IfcApi.md#createClassificationElementRelationsDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | Create association between existing classification and existing element
@@ -336,11 +338,14 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**createPropertySetElementRelationsDeprecated**](docs/IfcApi.md#createPropertySetElementRelationsDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset-element | Create association between PropertySet and element
 *bimdata.IfcApi* | [**createRawElementsDeprecated**](docs/IfcApi.md#createRawElementsDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw | Create elements in an optimized format
 *bimdata.IfcApi* | [**createSpaceDeprecated**](docs/IfcApi.md#createSpaceDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space | Create a space in the model
-*bimdata.IfcApi* | [**createStoreyPlanDeprecated**](docs/IfcApi.md#createStoreyPlanDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/add | Create a relation between a 2d model and a storey
+*bimdata.IfcApi* | [**createStoreyDeprecated**](docs/IfcApi.md#createStoreyDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey | Create a storey of a model
+*bimdata.IfcApi* | [**createStoreyPlanDeprecated**](docs/IfcApi.md#createStoreyPlanDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_uuid}/plan/add | Create a relation between a 2d model and a storey
 *bimdata.IfcApi* | [**createSystemDeprecated**](docs/IfcApi.md#createSystemDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system | Create a system in the model
 *bimdata.IfcApi* | [**createZoneDeprecated**](docs/IfcApi.md#createZoneDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Create a zone in the model
 *bimdata.IfcApi* | [**createZoneSpaceDeprecated**](docs/IfcApi.md#createZoneSpaceDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Create a space in a zone
 *bimdata.IfcApi* | [**deleteAccessTokenDeprecated**](docs/IfcApi.md#deleteAccessTokenDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Delete a token
+*bimdata.IfcApi* | [**deleteBuildingDeprecated**](docs/IfcApi.md#deleteBuildingDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{uuid} | Delete a building of a model
+*bimdata.IfcApi* | [**deleteBuildingPlanDeprecated**](docs/IfcApi.md#deleteBuildingPlanDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{building_uuid}/plan/{id} | Delete the relation between a 2d model and a building
 *bimdata.IfcApi* | [**deleteCheckerDeprecated**](docs/IfcApi.md#deleteCheckerDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | Delete a checker of a model
 *bimdata.IfcApi* | [**deleteCheckerResultDeprecated**](docs/IfcApi.md#deleteCheckerResultDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | Delete a CheckerResult
 *bimdata.IfcApi* | [**deleteElementDeprecated**](docs/IfcApi.md#deleteElementDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Delete an element of a model
@@ -352,16 +357,18 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**deleteLayerDeprecated**](docs/IfcApi.md#deleteLayerDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id} | Delete a layer of a model
 *bimdata.IfcApi* | [**deletePropertySetDeprecated**](docs/IfcApi.md#deletePropertySetDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Delete a PropertySet of a model
 *bimdata.IfcApi* | [**deleteSpaceDeprecated**](docs/IfcApi.md#deleteSpaceDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Delete a space
-*bimdata.IfcApi* | [**deleteStoreyDeprecated**](docs/IfcApi.md#deleteStoreyDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{id} | Delete a storey of a model
-*bimdata.IfcApi* | [**deleteStoreyPlanDeprecated**](docs/IfcApi.md#deleteStoreyPlanDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id} | Delete the relation between a 2d model and a storey
+*bimdata.IfcApi* | [**deleteStoreyDeprecated**](docs/IfcApi.md#deleteStoreyDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{uuid} | Delete a storey of a model
+*bimdata.IfcApi* | [**deleteStoreyPlanDeprecated**](docs/IfcApi.md#deleteStoreyPlanDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_uuid}/plan/{id} | Delete the relation between a 2d model and a storey
 *bimdata.IfcApi* | [**deleteSystemDeprecated**](docs/IfcApi.md#deleteSystemDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid} | Delete a system of a model
 *bimdata.IfcApi* | [**deleteZoneDeprecated**](docs/IfcApi.md#deleteZoneDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Delete a zone of a model
 *bimdata.IfcApi* | [**deleteZoneSpaceDeprecated**](docs/IfcApi.md#deleteZoneSpaceDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Delete a space of a zone
 *bimdata.IfcApi* | [**exportIfcDeprecated**](docs/IfcApi.md#exportIfcDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/export | Export IFC
 *bimdata.IfcApi* | [**fullUpdateElementDeprecated**](docs/IfcApi.md#fullUpdateElementDeprecated) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update all fields of an element
-*bimdata.IfcApi* | [**fullUpdateStoreysDeprecated**](docs/IfcApi.md#fullUpdateStoreysDeprecated) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/full_update | Update all fields of all storeys
 *bimdata.IfcApi* | [**getAccessTokenDeprecated**](docs/IfcApi.md#getAccessTokenDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Retrieve one token created for this model
 *bimdata.IfcApi* | [**getAccessTokensDeprecated**](docs/IfcApi.md#getAccessTokensDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token | Retrieve all tokens created for this model
+*bimdata.IfcApi* | [**getBuildingDeprecated**](docs/IfcApi.md#getBuildingDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{uuid} | Retrieve a building of a model
+*bimdata.IfcApi* | [**getBuildingPlanPositioningDeprecated**](docs/IfcApi.md#getBuildingPlanPositioningDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{building_uuid}/plan/{id}/positioning | Retrieve the postioning of the plan in the building
+*bimdata.IfcApi* | [**getBuildingsDeprecated**](docs/IfcApi.md#getBuildingsDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building | Retrieve all buildings of a model
 *bimdata.IfcApi* | [**getCheckerDeprecated**](docs/IfcApi.md#getCheckerDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | Retrieve a checker of a model
 *bimdata.IfcApi* | [**getCheckerResultDeprecated**](docs/IfcApi.md#getCheckerResultDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | Retrieve one CheckerResult
 *bimdata.IfcApi* | [**getCheckerResultsDeprecated**](docs/IfcApi.md#getCheckerResultsDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result | Retrieve all CheckerResults
@@ -395,7 +402,6 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**getLayersDeprecated**](docs/IfcApi.md#getLayersDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer | Retrieve all layers of a model
 *bimdata.IfcApi* | [**getMaterialDeprecated**](docs/IfcApi.md#getMaterialDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/material/{id} | Retrieve a material of a model
 *bimdata.IfcApi* | [**getMaterialsDeprecated**](docs/IfcApi.md#getMaterialsDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/material | Retrieve all materials of a model
-*bimdata.IfcApi* | [**getPlanPositioningDeprecated**](docs/IfcApi.md#getPlanPositioningDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/positioning | Retrieve the postioning of the plan in the storey
 *bimdata.IfcApi* | [**getProcessorHandlerDeprecated**](docs/IfcApi.md#getProcessorHandlerDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | Retrieve a processor handler
 *bimdata.IfcApi* | [**getProcessorHandlersDeprecated**](docs/IfcApi.md#getProcessorHandlersDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler | Get all processor handlers
 *bimdata.IfcApi* | [**getPropertySetDeprecated**](docs/IfcApi.md#getPropertySetDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Retrieve a PropertySet of a model
@@ -405,7 +411,8 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**getSimpleElementsDeprecated**](docs/IfcApi.md#getSimpleElementsDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/simple | Retrieve all elements of a model with a simple value representation
 *bimdata.IfcApi* | [**getSpaceDeprecated**](docs/IfcApi.md#getSpaceDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Retrieve one space of the model
 *bimdata.IfcApi* | [**getSpacesDeprecated**](docs/IfcApi.md#getSpacesDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space | Retrieve all spaces of the model
-*bimdata.IfcApi* | [**getStoreyDeprecated**](docs/IfcApi.md#getStoreyDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{id} | Retrieve a storey of a model
+*bimdata.IfcApi* | [**getStoreyDeprecated**](docs/IfcApi.md#getStoreyDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{uuid} | Retrieve a storey of a model
+*bimdata.IfcApi* | [**getStoreyPlanPositioningDeprecated**](docs/IfcApi.md#getStoreyPlanPositioningDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_uuid}/plan/{id}/positioning | Retrieve the postioning of the plan in the storey
 *bimdata.IfcApi* | [**getStoreysDeprecated**](docs/IfcApi.md#getStoreysDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey | Retrieve all storeys of a model
 *bimdata.IfcApi* | [**getSystemDeprecated**](docs/IfcApi.md#getSystemDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid} | Retrieve a system of a model
 *bimdata.IfcApi* | [**getSystemsDeprecated**](docs/IfcApi.md#getSystemsDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system | Retrieve all systems of a model
@@ -428,6 +435,8 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**removeElementsFromClassificationDeprecated**](docs/IfcApi.md#removeElementsFromClassificationDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/{model_classification_pk}/element/{uuid} | Remove the classification from all elements
 *bimdata.IfcApi* | [**reprocessIfcDeprecated**](docs/IfcApi.md#reprocessIfcDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/reprocess | Reprocess Model file
 *bimdata.IfcApi* | [**updateAccessTokenDeprecated**](docs/IfcApi.md#updateAccessTokenDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Update some fields of a token
+*bimdata.IfcApi* | [**updateBuildingDeprecated**](docs/IfcApi.md#updateBuildingDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{uuid} | Update some fields of a building
+*bimdata.IfcApi* | [**updateBuildingPlanPositioningDeprecated**](docs/IfcApi.md#updateBuildingPlanPositioningDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{building_uuid}/plan/{id}/positioning | Update the postioning of the plan in the building
 *bimdata.IfcApi* | [**updateCheckerDeprecated**](docs/IfcApi.md#updateCheckerDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | Update some fields of a checker of a model
 *bimdata.IfcApi* | [**updateCheckerResultDeprecated**](docs/IfcApi.md#updateCheckerResultDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | Update some fields of a CheckerResult
 *bimdata.IfcApi* | [**updateElementDeprecated**](docs/IfcApi.md#updateElementDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update some fields of an element
@@ -438,11 +447,12 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**updateIfcPropertyDeprecated**](docs/IfcApi.md#updateIfcPropertyDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/{id} | Update some fields of a Property
 *bimdata.IfcApi* | [**updateIfcUnitDeprecated**](docs/IfcApi.md#updateIfcUnitDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit/{id} | Update some fields of a Unit of a model
 *bimdata.IfcApi* | [**updateLayerDeprecated**](docs/IfcApi.md#updateLayerDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer/{id} | Update some fields of a layer
-*bimdata.IfcApi* | [**updatePlanPositioningDeprecated**](docs/IfcApi.md#updatePlanPositioningDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_pk}/plan/{id}/positioning | Update the postioning of the plan in the storey
+*bimdata.IfcApi* | [**updateOrderStoreysDeprecated**](docs/IfcApi.md#updateOrderStoreysDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/order | Update order of all storey of a model
 *bimdata.IfcApi* | [**updateProcessorHandlerDeprecated**](docs/IfcApi.md#updateProcessorHandlerDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/processorhandler/{id} | Update the status of a processor handler
 *bimdata.IfcApi* | [**updatePropertySetDeprecated**](docs/IfcApi.md#updatePropertySetDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset/{id} | Update some fields of a PropertySet
 *bimdata.IfcApi* | [**updateSpaceDeprecated**](docs/IfcApi.md#updateSpaceDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/space/{id} | Update some fields of a space
-*bimdata.IfcApi* | [**updateStoreyDeprecated**](docs/IfcApi.md#updateStoreyDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{id} | Update some fields of a storey
+*bimdata.IfcApi* | [**updateStoreyDeprecated**](docs/IfcApi.md#updateStoreyDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{uuid} | Update some fields of a storey
+*bimdata.IfcApi* | [**updateStoreyPlanPositioningDeprecated**](docs/IfcApi.md#updateStoreyPlanPositioningDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_uuid}/plan/{id}/positioning | Update the postioning of the plan in the storey
 *bimdata.IfcApi* | [**updateSystemDeprecated**](docs/IfcApi.md#updateSystemDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid} | Update some fields of a system
 *bimdata.IfcApi* | [**updateZoneDeprecated**](docs/IfcApi.md#updateZoneDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Update some fields of a zone
 *bimdata.IfcApi* | [**updateZoneSpaceDeprecated**](docs/IfcApi.md#updateZoneSpaceDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Update some fields of a space
@@ -460,6 +470,8 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**bulkUpdateElements**](docs/ModelApi.md#bulkUpdateElements) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/bulk_update | Update many elements at once (all field must be defined)
 *bimdata.ModelApi* | [**bulkUpdateModelProperty**](docs/ModelApi.md#bulkUpdateModelProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/bulk_update | Update all fields of many properties of a model
 *bimdata.ModelApi* | [**createAccessToken**](docs/ModelApi.md#createAccessToken) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token | Create a token for this model
+*bimdata.ModelApi* | [**createBuilding**](docs/ModelApi.md#createBuilding) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building | Create a building of a model
+*bimdata.ModelApi* | [**createBuildingPlan**](docs/ModelApi.md#createBuildingPlan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/add | Create a relation between a 2d model and a building
 *bimdata.ModelApi* | [**createClassificationElementRelations**](docs/ModelApi.md#createClassificationElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification-element | Create association between existing classification and existing element
 *bimdata.ModelApi* | [**createClassificationsOfElement**](docs/ModelApi.md#createClassificationsOfElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/classification | Create one or many classifications to an element
 *bimdata.ModelApi* | [**createElement**](docs/ModelApi.md#createElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element | Create an element in the model
@@ -476,11 +488,14 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**createPropertySetElementRelations**](docs/ModelApi.md#createPropertySetElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset-element | Create association between PropertySet and element
 *bimdata.ModelApi* | [**createRawElements**](docs/ModelApi.md#createRawElements) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/raw | Create elements in an optimized format
 *bimdata.ModelApi* | [**createSpace**](docs/ModelApi.md#createSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space | Create a space in the model
-*bimdata.ModelApi* | [**createStoreyPlan**](docs/ModelApi.md#createStoreyPlan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/add | Create a relation between a 2d model and a storey
+*bimdata.ModelApi* | [**createStorey**](docs/ModelApi.md#createStorey) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey | Create a storey of a model
+*bimdata.ModelApi* | [**createStoreyPlan**](docs/ModelApi.md#createStoreyPlan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/add | Create a relation between a 2d model and a storey
 *bimdata.ModelApi* | [**createSystem**](docs/ModelApi.md#createSystem) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system | Create a system in the model
 *bimdata.ModelApi* | [**createZone**](docs/ModelApi.md#createZone) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone | Create a zone in the model
 *bimdata.ModelApi* | [**createZoneSpace**](docs/ModelApi.md#createZoneSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space | Create a space in a zone
 *bimdata.ModelApi* | [**deleteAccessToken**](docs/ModelApi.md#deleteAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token} | Delete a token
+*bimdata.ModelApi* | [**deleteBuilding**](docs/ModelApi.md#deleteBuilding) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{uuid} | Delete a building of a model
+*bimdata.ModelApi* | [**deleteBuildingPlan**](docs/ModelApi.md#deleteBuildingPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/{id} | Delete the relation between a 2d model and a building
 *bimdata.ModelApi* | [**deleteElement**](docs/ModelApi.md#deleteElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Delete an element of a model
 *bimdata.ModelApi* | [**deleteLayer**](docs/ModelApi.md#deleteLayer) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Delete a layer of a model
 *bimdata.ModelApi* | [**deleteModel**](docs/ModelApi.md#deleteModel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id} | Delete a model
@@ -490,16 +505,18 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**deleteModelWithoutDoc**](docs/ModelApi.md#deleteModelWithoutDoc) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/delete-model | Delete the Model without deleting the related document
 *bimdata.ModelApi* | [**deletePropertySet**](docs/ModelApi.md#deletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Delete a PropertySet of a model
 *bimdata.ModelApi* | [**deleteSpace**](docs/ModelApi.md#deleteSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id} | Delete a space
-*bimdata.ModelApi* | [**deleteStorey**](docs/ModelApi.md#deleteStorey) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{id} | Delete a storey of a model
-*bimdata.ModelApi* | [**deleteStoreyPlan**](docs/ModelApi.md#deleteStoreyPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id} | Delete the relation between a 2d model and a storey
+*bimdata.ModelApi* | [**deleteStorey**](docs/ModelApi.md#deleteStorey) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{uuid} | Delete a storey of a model
+*bimdata.ModelApi* | [**deleteStoreyPlan**](docs/ModelApi.md#deleteStoreyPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/{id} | Delete the relation between a 2d model and a storey
 *bimdata.ModelApi* | [**deleteSystem**](docs/ModelApi.md#deleteSystem) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system/{uuid} | Delete a system of a model
 *bimdata.ModelApi* | [**deleteZone**](docs/ModelApi.md#deleteZone) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{id} | Delete a zone of a model
 *bimdata.ModelApi* | [**deleteZoneSpace**](docs/ModelApi.md#deleteZoneSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space/{id} | Delete a space of a zone
 *bimdata.ModelApi* | [**exportIfc**](docs/ModelApi.md#exportIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/export | Export IFC
 *bimdata.ModelApi* | [**fullUpdateElement**](docs/ModelApi.md#fullUpdateElement) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Update all fields of an element
-*bimdata.ModelApi* | [**fullUpdateStoreys**](docs/ModelApi.md#fullUpdateStoreys) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/full_update | Update all fields of all storeys
 *bimdata.ModelApi* | [**getAccessToken**](docs/ModelApi.md#getAccessToken) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token} | Retrieve one token created for this model
 *bimdata.ModelApi* | [**getAccessTokens**](docs/ModelApi.md#getAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token | Retrieve all tokens created for this model
+*bimdata.ModelApi* | [**getBuilding**](docs/ModelApi.md#getBuilding) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{uuid} | Retrieve a building of a model
+*bimdata.ModelApi* | [**getBuildingPlanPositioning**](docs/ModelApi.md#getBuildingPlanPositioning) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/{id}/positioning | Retrieve the postioning of the plan in the building
+*bimdata.ModelApi* | [**getBuildings**](docs/ModelApi.md#getBuildings) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building | Retrieve all buildings of a model
 *bimdata.ModelApi* | [**getClassificationsOfElement**](docs/ModelApi.md#getClassificationsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/classification | Retrieve all classifications of an element
 *bimdata.ModelApi* | [**getDocumentsOfElement**](docs/ModelApi.md#getDocumentsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/documents | Retrieve all documents of an element
 *bimdata.ModelApi* | [**getElement**](docs/ModelApi.md#getElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Retrieve an element of a model
@@ -529,7 +546,6 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**getModelUnit**](docs/ModelApi.md#getModelUnit) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Retrieve a Unit of a model
 *bimdata.ModelApi* | [**getModelUnits**](docs/ModelApi.md#getModelUnits) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit | Retrieve all Units of a model
 *bimdata.ModelApi* | [**getModels**](docs/ModelApi.md#getModels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model | Retrieve all models
-*bimdata.ModelApi* | [**getPlanPositioning**](docs/ModelApi.md#getPlanPositioning) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id}/positioning | Retrieve the postioning of the plan in the storey
 *bimdata.ModelApi* | [**getProcessorHandler**](docs/ModelApi.md#getProcessorHandler) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id} | Retrieve a processor handler
 *bimdata.ModelApi* | [**getProcessorHandlers**](docs/ModelApi.md#getProcessorHandlers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler | Get all processor handlers
 *bimdata.ModelApi* | [**getPropertySet**](docs/ModelApi.md#getPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Retrieve a PropertySet of a model
@@ -539,7 +555,8 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**getSimpleElements**](docs/ModelApi.md#getSimpleElements) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/simple | Retrieve all elements of a model with a simple value representation
 *bimdata.ModelApi* | [**getSpace**](docs/ModelApi.md#getSpace) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id} | Retrieve one space of the model
 *bimdata.ModelApi* | [**getSpaces**](docs/ModelApi.md#getSpaces) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space | Retrieve all spaces of the model
-*bimdata.ModelApi* | [**getStorey**](docs/ModelApi.md#getStorey) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{id} | Retrieve a storey of a model
+*bimdata.ModelApi* | [**getStorey**](docs/ModelApi.md#getStorey) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{uuid} | Retrieve a storey of a model
+*bimdata.ModelApi* | [**getStoreyPlanPositioning**](docs/ModelApi.md#getStoreyPlanPositioning) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/{id}/positioning | Retrieve the postioning of the plan in the storey
 *bimdata.ModelApi* | [**getStoreys**](docs/ModelApi.md#getStoreys) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey | Retrieve all storeys of a model
 *bimdata.ModelApi* | [**getSystem**](docs/ModelApi.md#getSystem) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system/{uuid} | Retrieve a system of a model
 *bimdata.ModelApi* | [**getSystems**](docs/ModelApi.md#getSystems) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system | Retrieve all systems of a model
@@ -561,6 +578,8 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**removeElementsFromClassification**](docs/ModelApi.md#removeElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification/{model_classification_pk}/element/{uuid} | Remove the classification from all elements
 *bimdata.ModelApi* | [**reprocessModel**](docs/ModelApi.md#reprocessModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/reprocess | Reprocess Model file
 *bimdata.ModelApi* | [**updateAccessToken**](docs/ModelApi.md#updateAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token} | Update some fields of a token
+*bimdata.ModelApi* | [**updateBuilding**](docs/ModelApi.md#updateBuilding) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{uuid} | Update some fields of a building
+*bimdata.ModelApi* | [**updateBuildingPlanPositioning**](docs/ModelApi.md#updateBuildingPlanPositioning) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/{id}/positioning | Update the postioning of the plan in the building
 *bimdata.ModelApi* | [**updateElement**](docs/ModelApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Update some fields of an element
 *bimdata.ModelApi* | [**updateElementPropertySetProperty**](docs/ModelApi.md#updateElementPropertySetProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Update a property from an element
 *bimdata.ModelApi* | [**updateLayer**](docs/ModelApi.md#updateLayer) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Update some fields of a layer
@@ -569,11 +588,12 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**updateModelProperty**](docs/ModelApi.md#updateModelProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id} | Update some fields of a Property
 *bimdata.ModelApi* | [**updateModelPropertyDefinition**](docs/ModelApi.md#updateModelPropertyDefinition) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Update some fields of many PropertyDefinitions of a model
 *bimdata.ModelApi* | [**updateModelUnit**](docs/ModelApi.md#updateModelUnit) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Update some fields of a Unit of a model
-*bimdata.ModelApi* | [**updatePlanPositioning**](docs/ModelApi.md#updatePlanPositioning) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id}/positioning | Update the postioning of the plan in the storey
+*bimdata.ModelApi* | [**updateOrderStoreys**](docs/ModelApi.md#updateOrderStoreys) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/order | Update order of all storey of a model
 *bimdata.ModelApi* | [**updateProcessorHandler**](docs/ModelApi.md#updateProcessorHandler) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id} | Update the status of a processor handler
 *bimdata.ModelApi* | [**updatePropertySet**](docs/ModelApi.md#updatePropertySet) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Update some fields of a PropertySet
 *bimdata.ModelApi* | [**updateSpace**](docs/ModelApi.md#updateSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id} | Update some fields of a space
-*bimdata.ModelApi* | [**updateStorey**](docs/ModelApi.md#updateStorey) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{id} | Update some fields of a storey
+*bimdata.ModelApi* | [**updateStorey**](docs/ModelApi.md#updateStorey) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{uuid} | Update some fields of a storey
+*bimdata.ModelApi* | [**updateStoreyPlanPositioning**](docs/ModelApi.md#updateStoreyPlanPositioning) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/{id}/positioning | Update the postioning of the plan in the storey
 *bimdata.ModelApi* | [**updateSystem**](docs/ModelApi.md#updateSystem) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system/{uuid} | Update some fields of a system
 *bimdata.ModelApi* | [**updateZone**](docs/ModelApi.md#updateZone) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{id} | Update some fields of a zone
 *bimdata.ModelApi* | [**updateZoneSpace**](docs/ModelApi.md#updateZoneSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space/{id} | Update some fields of a space
@@ -593,6 +613,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [bimdata.BcfProject](docs/BcfProject.md)
+ - [bimdata.Building](docs/Building.md)
  - [bimdata.CheckPlan](docs/CheckPlan.md)
  - [bimdata.CheckerResult](docs/CheckerResult.md)
  - [bimdata.Classification](docs/Classification.md)
@@ -629,12 +650,19 @@ Class | Method | HTTP request | Description
  - [bimdata.IfcOptimize](docs/IfcOptimize.md)
  - [bimdata.InlineObject](docs/InlineObject.md)
  - [bimdata.InlineObject1](docs/InlineObject1.md)
+ - [bimdata.InlineObject10](docs/InlineObject10.md)
+ - [bimdata.InlineObject11](docs/InlineObject11.md)
  - [bimdata.InlineObject2](docs/InlineObject2.md)
  - [bimdata.InlineObject3](docs/InlineObject3.md)
  - [bimdata.InlineObject4](docs/InlineObject4.md)
  - [bimdata.InlineObject5](docs/InlineObject5.md)
+ - [bimdata.InlineObject6](docs/InlineObject6.md)
+ - [bimdata.InlineObject7](docs/InlineObject7.md)
+ - [bimdata.InlineObject8](docs/InlineObject8.md)
+ - [bimdata.InlineObject9](docs/InlineObject9.md)
  - [bimdata.InlineResponse200](docs/InlineResponse200.md)
  - [bimdata.InlineResponse2001](docs/InlineResponse2001.md)
+ - [bimdata.InlineResponse2002](docs/InlineResponse2002.md)
  - [bimdata.Invitation](docs/Invitation.md)
  - [bimdata.Label](docs/Label.md)
  - [bimdata.LabelRead](docs/LabelRead.md)
@@ -693,7 +721,6 @@ Class | Method | HTTP request | Description
  - [bimdata.Space](docs/Space.md)
  - [bimdata.Stage](docs/Stage.md)
  - [bimdata.Storey](docs/Storey.md)
- - [bimdata.StoreyRequest](docs/StoreyRequest.md)
  - [bimdata.System](docs/System.md)
  - [bimdata.Topic](docs/Topic.md)
  - [bimdata.TopicStatus](docs/TopicStatus.md)

@@ -1,4 +1,4 @@
-# bimdata.InlineObject5
+# bimdata.InlineResponse2002
 
 ## Properties
 

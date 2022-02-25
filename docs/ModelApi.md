@@ -18,6 +18,8 @@ Method | HTTP request | Description
 [**bulkUpdateElements**](ModelApi.md#bulkUpdateElements) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/bulk_update | Update many elements at once (all field must be defined)
 [**bulkUpdateModelProperty**](ModelApi.md#bulkUpdateModelProperty) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/bulk_update | Update all fields of many properties of a model
 [**createAccessToken**](ModelApi.md#createAccessToken) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token | Create a token for this model
+[**createBuilding**](ModelApi.md#createBuilding) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building | Create a building of a model
+[**createBuildingPlan**](ModelApi.md#createBuildingPlan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/add | Create a relation between a 2d model and a building
 [**createClassificationElementRelations**](ModelApi.md#createClassificationElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification-element | Create association between existing classification and existing element
 [**createClassificationsOfElement**](ModelApi.md#createClassificationsOfElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/classification | Create one or many classifications to an element
 [**createElement**](ModelApi.md#createElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element | Create an element in the model
@@ -34,11 +36,14 @@ Method | HTTP request | Description
 [**createPropertySetElementRelations**](ModelApi.md#createPropertySetElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset-element | Create association between PropertySet and element
 [**createRawElements**](ModelApi.md#createRawElements) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/raw | Create elements in an optimized format
 [**createSpace**](ModelApi.md#createSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space | Create a space in the model
-[**createStoreyPlan**](ModelApi.md#createStoreyPlan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/add | Create a relation between a 2d model and a storey
+[**createStorey**](ModelApi.md#createStorey) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey | Create a storey of a model
+[**createStoreyPlan**](ModelApi.md#createStoreyPlan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/add | Create a relation between a 2d model and a storey
 [**createSystem**](ModelApi.md#createSystem) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system | Create a system in the model
 [**createZone**](ModelApi.md#createZone) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone | Create a zone in the model
 [**createZoneSpace**](ModelApi.md#createZoneSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space | Create a space in a zone
 [**deleteAccessToken**](ModelApi.md#deleteAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token} | Delete a token
+[**deleteBuilding**](ModelApi.md#deleteBuilding) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{uuid} | Delete a building of a model
+[**deleteBuildingPlan**](ModelApi.md#deleteBuildingPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/{id} | Delete the relation between a 2d model and a building
 [**deleteElement**](ModelApi.md#deleteElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Delete an element of a model
 [**deleteLayer**](ModelApi.md#deleteLayer) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Delete a layer of a model
 [**deleteModel**](ModelApi.md#deleteModel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id} | Delete a model
@@ -48,16 +53,18 @@ Method | HTTP request | Description
 [**deleteModelWithoutDoc**](ModelApi.md#deleteModelWithoutDoc) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/delete-model | Delete the Model without deleting the related document
 [**deletePropertySet**](ModelApi.md#deletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Delete a PropertySet of a model
 [**deleteSpace**](ModelApi.md#deleteSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id} | Delete a space
-[**deleteStorey**](ModelApi.md#deleteStorey) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{id} | Delete a storey of a model
-[**deleteStoreyPlan**](ModelApi.md#deleteStoreyPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id} | Delete the relation between a 2d model and a storey
+[**deleteStorey**](ModelApi.md#deleteStorey) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{uuid} | Delete a storey of a model
+[**deleteStoreyPlan**](ModelApi.md#deleteStoreyPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/{id} | Delete the relation between a 2d model and a storey
 [**deleteSystem**](ModelApi.md#deleteSystem) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system/{uuid} | Delete a system of a model
 [**deleteZone**](ModelApi.md#deleteZone) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{id} | Delete a zone of a model
 [**deleteZoneSpace**](ModelApi.md#deleteZoneSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space/{id} | Delete a space of a zone
 [**exportIfc**](ModelApi.md#exportIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/export | Export IFC
 [**fullUpdateElement**](ModelApi.md#fullUpdateElement) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Update all fields of an element
-[**fullUpdateStoreys**](ModelApi.md#fullUpdateStoreys) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/full_update | Update all fields of all storeys
 [**getAccessToken**](ModelApi.md#getAccessToken) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token} | Retrieve one token created for this model
 [**getAccessTokens**](ModelApi.md#getAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token | Retrieve all tokens created for this model
+[**getBuilding**](ModelApi.md#getBuilding) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{uuid} | Retrieve a building of a model
+[**getBuildingPlanPositioning**](ModelApi.md#getBuildingPlanPositioning) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/{id}/positioning | Retrieve the postioning of the plan in the building
+[**getBuildings**](ModelApi.md#getBuildings) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building | Retrieve all buildings of a model
 [**getClassificationsOfElement**](ModelApi.md#getClassificationsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/classification | Retrieve all classifications of an element
 [**getDocumentsOfElement**](ModelApi.md#getDocumentsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/documents | Retrieve all documents of an element
 [**getElement**](ModelApi.md#getElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Retrieve an element of a model
@@ -87,7 +94,6 @@ Method | HTTP request | Description
 [**getModelUnit**](ModelApi.md#getModelUnit) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Retrieve a Unit of a model
 [**getModelUnits**](ModelApi.md#getModelUnits) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit | Retrieve all Units of a model
 [**getModels**](ModelApi.md#getModels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model | Retrieve all models
-[**getPlanPositioning**](ModelApi.md#getPlanPositioning) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id}/positioning | Retrieve the postioning of the plan in the storey
 [**getProcessorHandler**](ModelApi.md#getProcessorHandler) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id} | Retrieve a processor handler
 [**getProcessorHandlers**](ModelApi.md#getProcessorHandlers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler | Get all processor handlers
 [**getPropertySet**](ModelApi.md#getPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Retrieve a PropertySet of a model
@@ -97,7 +103,8 @@ Method | HTTP request | Description
 [**getSimpleElements**](ModelApi.md#getSimpleElements) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/simple | Retrieve all elements of a model with a simple value representation
 [**getSpace**](ModelApi.md#getSpace) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id} | Retrieve one space of the model
 [**getSpaces**](ModelApi.md#getSpaces) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space | Retrieve all spaces of the model
-[**getStorey**](ModelApi.md#getStorey) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{id} | Retrieve a storey of a model
+[**getStorey**](ModelApi.md#getStorey) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{uuid} | Retrieve a storey of a model
+[**getStoreyPlanPositioning**](ModelApi.md#getStoreyPlanPositioning) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/{id}/positioning | Retrieve the postioning of the plan in the storey
 [**getStoreys**](ModelApi.md#getStoreys) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey | Retrieve all storeys of a model
 [**getSystem**](ModelApi.md#getSystem) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system/{uuid} | Retrieve a system of a model
 [**getSystems**](ModelApi.md#getSystems) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system | Retrieve all systems of a model
@@ -119,6 +126,8 @@ Method | HTTP request | Description
 [**removeElementsFromClassification**](ModelApi.md#removeElementsFromClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification/{model_classification_pk}/element/{uuid} | Remove the classification from all elements
 [**reprocessModel**](ModelApi.md#reprocessModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/reprocess | Reprocess Model file
 [**updateAccessToken**](ModelApi.md#updateAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token} | Update some fields of a token
+[**updateBuilding**](ModelApi.md#updateBuilding) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{uuid} | Update some fields of a building
+[**updateBuildingPlanPositioning**](ModelApi.md#updateBuildingPlanPositioning) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/{id}/positioning | Update the postioning of the plan in the building
 [**updateElement**](ModelApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Update some fields of an element
 [**updateElementPropertySetProperty**](ModelApi.md#updateElementPropertySetProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Update a property from an element
 [**updateLayer**](ModelApi.md#updateLayer) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Update some fields of a layer
@@ -127,11 +136,12 @@ Method | HTTP request | Description
 [**updateModelProperty**](ModelApi.md#updateModelProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id} | Update some fields of a Property
 [**updateModelPropertyDefinition**](ModelApi.md#updateModelPropertyDefinition) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Update some fields of many PropertyDefinitions of a model
 [**updateModelUnit**](ModelApi.md#updateModelUnit) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Update some fields of a Unit of a model
-[**updatePlanPositioning**](ModelApi.md#updatePlanPositioning) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_pk}/plan/{id}/positioning | Update the postioning of the plan in the storey
+[**updateOrderStoreys**](ModelApi.md#updateOrderStoreys) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/order | Update order of all storey of a model
 [**updateProcessorHandler**](ModelApi.md#updateProcessorHandler) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id} | Update the status of a processor handler
 [**updatePropertySet**](ModelApi.md#updatePropertySet) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Update some fields of a PropertySet
 [**updateSpace**](ModelApi.md#updateSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id} | Update some fields of a space
-[**updateStorey**](ModelApi.md#updateStorey) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{id} | Update some fields of a storey
+[**updateStorey**](ModelApi.md#updateStorey) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{uuid} | Update some fields of a storey
+[**updateStoreyPlanPositioning**](ModelApi.md#updateStoreyPlanPositioning) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/{id}/positioning | Update the postioning of the plan in the storey
 [**updateSystem**](ModelApi.md#updateSystem) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system/{uuid} | Update some fields of a system
 [**updateZone**](ModelApi.md#updateZone) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{id} | Update some fields of a zone
 [**updateZoneSpace**](ModelApi.md#updateZoneSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space/{id} | Update some fields of a space
@@ -999,6 +1009,132 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**IfcAccessToken**](IfcAccessToken.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createBuilding
+
+> Building createBuilding(cloudPk, modelPk, projectPk, data)
+
+Create a building of a model
+
+Create a building of a model. Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.Building(); // Building | 
+apiInstance.createBuilding(cloudPk, modelPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**Building**](Building.md)|  | 
+
+### Return type
+
+[**Building**](Building.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createBuildingPlan
+
+> Building createBuildingPlan(buildingUuid, cloudPk, modelPk, projectPk, data)
+
+Create a relation between a 2d model and a building
+
+Create a relation between a 2d model and a building. The model type must be one of : (&#39;DWG&#39;, &#39;DXF&#39;, &#39;PDF&#39;, &#39;JPEG&#39;, &#39;PNG&#39;) Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let buildingUuid = "buildingUuid_example"; // String | 
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.InlineObject8(); // InlineObject8 | 
+apiInstance.createBuildingPlan(buildingUuid, cloudPk, modelPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **buildingUuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**InlineObject8**](InlineObject8.md)|  | 
+
+### Return type
+
+[**Building**](Building.md)
 
 ### Authorization
 
@@ -2020,9 +2156,71 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## createStorey
+
+> Storey createStorey(cloudPk, modelPk, projectPk, data)
+
+Create a storey of a model
+
+Create a storey of a model. Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.Storey(); // Storey | 
+apiInstance.createStorey(cloudPk, modelPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**Storey**](Storey.md)|  | 
+
+### Return type
+
+[**Storey**](Storey.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## createStoreyPlan
 
-> Storey createStoreyPlan(cloudPk, modelPk, projectPk, storeyPk, data)
+> Storey createStoreyPlan(cloudPk, modelPk, projectPk, storeyUuid, data)
 
 Create a relation between a 2d model and a storey
 
@@ -2049,9 +2247,9 @@ let apiInstance = new bimdata.ModelApi();
 let cloudPk = "cloudPk_example"; // String | 
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let storeyPk = "storeyPk_example"; // String | 
-let data = new bimdata.InlineObject5(); // InlineObject5 | 
-apiInstance.createStoreyPlan(cloudPk, modelPk, projectPk, storeyPk, data).then((data) => {
+let storeyUuid = "storeyUuid_example"; // String | 
+let data = new bimdata.InlineObject10(); // InlineObject10 | 
+apiInstance.createStoreyPlan(cloudPk, modelPk, projectPk, storeyUuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2067,8 +2265,8 @@ Name | Type | Description  | Notes
  **cloudPk** | **String**|  | 
  **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **storeyPk** | **String**|  | 
- **data** | [**InlineObject5**](InlineObject5.md)|  | 
+ **storeyUuid** | **String**|  | 
+ **data** | [**InlineObject10**](InlineObject10.md)|  | 
 
 ### Return type
 
@@ -2319,6 +2517,132 @@ Name | Type | Description  | Notes
  **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
  **token** | **String**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## deleteBuilding
+
+> deleteBuilding(cloudPk, modelPk, projectPk, uuid)
+
+Delete a building of a model
+
+Delete a building of a model Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let uuid = "uuid_example"; // String | IFC element or element type UUID
+apiInstance.deleteBuilding(cloudPk, modelPk, projectPk, uuid).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **uuid** | **String**| IFC element or element type UUID | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## deleteBuildingPlan
+
+> deleteBuildingPlan(buildingUuid, cloudPk, id, modelPk, projectPk)
+
+Delete the relation between a 2d model and a building
+
+Delete the relation between a 2d model and a building Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let buildingUuid = "buildingUuid_example"; // String | 
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this element.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.deleteBuildingPlan(buildingUuid, cloudPk, id, modelPk, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **buildingUuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this element. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
 
 ### Return type
 
@@ -2890,7 +3214,7 @@ null (empty response body)
 
 ## deleteStorey
 
-> deleteStorey(cloudPk, id, modelPk, projectPk)
+> deleteStorey(cloudPk, modelPk, projectPk, uuid)
 
 Delete a storey of a model
 
@@ -2915,10 +3239,10 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.ModelApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this storey.
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.deleteStorey(cloudPk, id, modelPk, projectPk).then(() => {
+let uuid = "uuid_example"; // String | IFC element or element type UUID
+apiInstance.deleteStorey(cloudPk, modelPk, projectPk, uuid).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -2932,9 +3256,9 @@ apiInstance.deleteStorey(cloudPk, id, modelPk, projectPk).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this storey. | 
  **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **uuid** | **String**| IFC element or element type UUID | 
 
 ### Return type
 
@@ -2952,7 +3276,7 @@ null (empty response body)
 
 ## deleteStoreyPlan
 
-> deleteStoreyPlan(cloudPk, id, modelPk, projectPk, storeyPk)
+> deleteStoreyPlan(cloudPk, id, modelPk, projectPk, storeyUuid)
 
 Delete the relation between a 2d model and a storey
 
@@ -2977,11 +3301,11 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.ModelApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this storey.
+let id = 56; // Number | A unique integer value identifying this element.
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let storeyPk = "storeyPk_example"; // String | 
-apiInstance.deleteStoreyPlan(cloudPk, id, modelPk, projectPk, storeyPk).then(() => {
+let storeyUuid = "storeyUuid_example"; // String | 
+apiInstance.deleteStoreyPlan(cloudPk, id, modelPk, projectPk, storeyUuid).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -2995,10 +3319,10 @@ apiInstance.deleteStoreyPlan(cloudPk, id, modelPk, projectPk, storeyPk).then(() 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this storey. | 
+ **id** | **Number**| A unique integer value identifying this element. | 
  **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **storeyPk** | **String**|  | 
+ **storeyUuid** | **String**|  | 
 
 ### Return type
 
@@ -3328,68 +3652,6 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## fullUpdateStoreys
-
-> [Storey] fullUpdateStoreys(cloudPk, modelPk, projectPk, data)
-
-Update all fields of all storeys
-
-         This route allows you to create storeys, modify them, delete them and organize them by order.         If the optional field \&quot;id\&quot; is present, the storey will be modified. Otherwise, a new storey will be created.         If an \&quot;id\&quot; present in the api is not present in the list passed in parameter, the corresponding storey will be deleted.         A storey with \&quot;is_site&#x3D;True\&quot; will be stored without order. There can be only one storey with \&quot;is_site&#x3D;True\&quot;\&quot;  Required scopes: ifc:write, model:write
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.StoreyRequest()]; // [StoreyRequest] | 
-apiInstance.fullUpdateStoreys(cloudPk, modelPk, projectPk, data).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**[StoreyRequest]**](StoreyRequest.md)|  | 
-
-### Return type
-
-[**[Storey]**](Storey.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
 ## getAccessToken
 
 > IfcAccessToken getAccessToken(cloudPk, modelPk, projectPk, token)
@@ -3501,6 +3763,192 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[IfcAccessToken]**](IfcAccessToken.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getBuilding
+
+> Building getBuilding(cloudPk, modelPk, projectPk, uuid)
+
+Retrieve a building of a model
+
+Retrieve a building of a model Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let uuid = "uuid_example"; // String | IFC element or element type UUID
+apiInstance.getBuilding(cloudPk, modelPk, projectPk, uuid).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **uuid** | **String**| IFC element or element type UUID | 
+
+### Return type
+
+[**Building**](Building.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getBuildingPlanPositioning
+
+> PositioningPlan getBuildingPlanPositioning(buildingUuid, cloudPk, id, modelPk, projectPk)
+
+Retrieve the postioning of the plan in the building
+
+Retrieve the postioning of the plan in the building Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let buildingUuid = "buildingUuid_example"; // String | 
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this element.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getBuildingPlanPositioning(buildingUuid, cloudPk, id, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **buildingUuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this element. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**PositioningPlan**](PositioningPlan.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getBuildings
+
+> [Building] getBuildings(cloudPk, modelPk, projectPk)
+
+Retrieve all buildings of a model
+
+Retrieve all buildings of a model. Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+apiInstance.getBuildings(cloudPk, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+
+### Return type
+
+[**[Building]**](Building.md)
 
 ### Authorization
 
@@ -5346,70 +5794,6 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getPlanPositioning
-
-> PositioningPlan getPlanPositioning(cloudPk, id, modelPk, projectPk, storeyPk)
-
-Retrieve the postioning of the plan in the storey
-
-Retrieve the postioning of the plan in the storey Required scopes: ifc:read, model:read
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new bimdata.ModelApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this storey.
-let modelPk = "modelPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let storeyPk = "storeyPk_example"; // String | 
-apiInstance.getPlanPositioning(cloudPk, id, modelPk, projectPk, storeyPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this storey. | 
- **modelPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **storeyPk** | **String**|  | 
-
-### Return type
-
-[**PositioningPlan**](PositioningPlan.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## getProcessorHandler
 
 > ProcessorHandler getProcessorHandler(cloudPk, id, modelPk, projectPk)
@@ -5976,7 +6360,7 @@ Name | Type | Description  | Notes
 
 ## getStorey
 
-> Storey getStorey(cloudPk, id, modelPk, projectPk)
+> Storey getStorey(cloudPk, modelPk, projectPk, uuid)
 
 Retrieve a storey of a model
 
@@ -6001,10 +6385,10 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.ModelApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this storey.
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-apiInstance.getStorey(cloudPk, id, modelPk, projectPk).then((data) => {
+let uuid = "uuid_example"; // String | IFC element or element type UUID
+apiInstance.getStorey(cloudPk, modelPk, projectPk, uuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6018,13 +6402,77 @@ apiInstance.getStorey(cloudPk, id, modelPk, projectPk).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this storey. | 
  **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
+ **uuid** | **String**| IFC element or element type UUID | 
 
 ### Return type
 
 [**Storey**](Storey.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getStoreyPlanPositioning
+
+> PositioningPlan getStoreyPlanPositioning(cloudPk, id, modelPk, projectPk, storeyUuid)
+
+Retrieve the postioning of the plan in the storey
+
+Retrieve the postioning of the plan in the storey Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this element.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let storeyUuid = "storeyUuid_example"; // String | 
+apiInstance.getStoreyPlanPositioning(cloudPk, id, modelPk, projectPk, storeyUuid).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this element. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **storeyUuid** | **String**|  | 
+
+### Return type
+
+[**PositioningPlan**](PositioningPlan.md)
 
 ### Authorization
 
@@ -7362,6 +7810,136 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## updateBuilding
+
+> InlineResponse2002 updateBuilding(cloudPk, modelPk, projectPk, uuid, data)
+
+Update some fields of a building
+
+Update some fields of a building Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let uuid = "uuid_example"; // String | IFC element or element type UUID
+let data = new bimdata.InlineObject9(); // InlineObject9 | 
+apiInstance.updateBuilding(cloudPk, modelPk, projectPk, uuid, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **uuid** | **String**| IFC element or element type UUID | 
+ **data** | [**InlineObject9**](InlineObject9.md)|  | 
+
+### Return type
+
+[**InlineResponse2002**](InlineResponse2002.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateBuildingPlanPositioning
+
+> PositioningPlan updateBuildingPlanPositioning(buildingUuid, cloudPk, id, modelPk, projectPk, data)
+
+Update the postioning of the plan in the building
+
+Update the postioning of the plan in the building Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let buildingUuid = "buildingUuid_example"; // String | 
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this element.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let data = new bimdata.PositioningPlan(); // PositioningPlan | 
+apiInstance.updateBuildingPlanPositioning(buildingUuid, cloudPk, id, modelPk, projectPk, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **buildingUuid** | **String**|  | 
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this element. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **data** | [**PositioningPlan**](PositioningPlan.md)|  | 
+
+### Return type
+
+[**PositioningPlan**](PositioningPlan.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## updateElement
 
 > Element updateElement(cloudPk, modelPk, projectPk, uuid, data)
@@ -7890,13 +8468,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## updatePlanPositioning
+## updateOrderStoreys
 
-> PositioningPlan updatePlanPositioning(cloudPk, id, modelPk, projectPk, storeyPk, data)
+> [Storey] updateOrderStoreys(cloudPk, modelPk, projectPk, data)
 
-Update the postioning of the plan in the storey
+Update order of all storey of a model
 
-Update the postioning of the plan in the storey Required scopes: ifc:write, model:write
+Update order of all storey of a model Required scopes: ifc:write, model:write
 
 ### Example
 
@@ -7917,12 +8495,10 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.ModelApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this storey.
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let storeyPk = "storeyPk_example"; // String | 
-let data = new bimdata.PositioningPlan(); // PositioningPlan | 
-apiInstance.updatePlanPositioning(cloudPk, id, modelPk, projectPk, storeyPk, data).then((data) => {
+let data = ["null"]; // [String] | 
+apiInstance.updateOrderStoreys(cloudPk, modelPk, projectPk, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7936,15 +8512,13 @@ apiInstance.updatePlanPositioning(cloudPk, id, modelPk, projectPk, storeyPk, dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this storey. | 
  **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **storeyPk** | **String**|  | 
- **data** | [**PositioningPlan**](PositioningPlan.md)|  | 
+ **data** | [**[String]**](String.md)|  | 
 
 ### Return type
 
-[**PositioningPlan**](PositioningPlan.md)
+[**[Storey]**](Storey.md)
 
 ### Authorization
 
@@ -8150,7 +8724,7 @@ Name | Type | Description  | Notes
 
 ## updateStorey
 
-> Storey updateStorey(cloudPk, id, modelPk, projectPk, data)
+> InlineResponse2002 updateStorey(cloudPk, modelPk, projectPk, uuid, data)
 
 Update some fields of a storey
 
@@ -8175,11 +8749,11 @@ client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.ModelApi();
 let cloudPk = "cloudPk_example"; // String | 
-let id = 56; // Number | A unique integer value identifying this storey.
 let modelPk = "modelPk_example"; // String | 
 let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Storey(); // Storey | 
-apiInstance.updateStorey(cloudPk, id, modelPk, projectPk, data).then((data) => {
+let uuid = "uuid_example"; // String | IFC element or element type UUID
+let data = new bimdata.InlineObject11(); // InlineObject11 | 
+apiInstance.updateStorey(cloudPk, modelPk, projectPk, uuid, data).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8193,14 +8767,80 @@ apiInstance.updateStorey(cloudPk, id, modelPk, projectPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **String**|  | 
- **id** | **Number**| A unique integer value identifying this storey. | 
  **modelPk** | **String**|  | 
  **projectPk** | **String**|  | 
- **data** | [**Storey**](Storey.md)|  | 
+ **uuid** | **String**| IFC element or element type UUID | 
+ **data** | [**InlineObject11**](InlineObject11.md)|  | 
 
 ### Return type
 
-[**Storey**](Storey.md)
+[**InlineResponse2002**](InlineResponse2002.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateStoreyPlanPositioning
+
+> PositioningPlan updateStoreyPlanPositioning(cloudPk, id, modelPk, projectPk, storeyUuid, data)
+
+Update the postioning of the plan in the storey
+
+Update the postioning of the plan in the storey Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: bimdata_connect
+let bimdata_connect = defaultClient.authentications['bimdata_connect'];
+bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: client_credentials
+let client_credentials = defaultClient.authentications['client_credentials'];
+client_credentials.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = "cloudPk_example"; // String | 
+let id = 56; // Number | A unique integer value identifying this element.
+let modelPk = "modelPk_example"; // String | 
+let projectPk = "projectPk_example"; // String | 
+let storeyUuid = "storeyUuid_example"; // String | 
+let data = new bimdata.PositioningPlan(); // PositioningPlan | 
+apiInstance.updateStoreyPlanPositioning(cloudPk, id, modelPk, projectPk, storeyUuid, data).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **String**|  | 
+ **id** | **Number**| A unique integer value identifying this element. | 
+ **modelPk** | **String**|  | 
+ **projectPk** | **String**|  | 
+ **storeyUuid** | **String**|  | 
+ **data** | [**PositioningPlan**](PositioningPlan.md)|  | 
+
+### Return type
+
+[**PositioningPlan**](PositioningPlan.md)
 
 ### Authorization
 

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.StoreyRequest();
+    instance = new bimdata.InlineObject6();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,16 @@
       object[property] = value;
   }
 
-  describe('StoreyRequest', function() {
-    it('should create an instance of StoreyRequest', function() {
-      // uncomment below and update the code to test StoreyRequest
-      //var instane = new bimdata.StoreyRequest();
-      //expect(instance).to.be.a(bimdata.StoreyRequest);
+  describe('InlineObject6', function() {
+    it('should create an instance of InlineObject6', function() {
+      // uncomment below and update the code to test InlineObject6
+      //var instane = new bimdata.InlineObject6();
+      //expect(instance).to.be.a(bimdata.InlineObject6);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.StoreyRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new bimdata.StoreyRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property elevation (base name: "elevation")', function() {
-      // uncomment below and update the code to test the property elevation
-      //var instane = new bimdata.StoreyRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isSite (base name: "is_site")', function() {
-      // uncomment below and update the code to test the property isSite
-      //var instane = new bimdata.StoreyRequest();
+      //var instane = new bimdata.InlineObject6();
       //expect(instance).to.be();
     });
 

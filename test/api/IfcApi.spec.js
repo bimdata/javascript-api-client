@@ -188,6 +188,26 @@
         done();
       });
     });
+    describe('createBuildingDeprecated', function() {
+      it('should call createBuildingDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createBuildingDeprecated
+        //instance.createBuildingDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createBuildingPlanDeprecated', function() {
+      it('should call createBuildingPlanDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createBuildingPlanDeprecated
+        //instance.createBuildingPlanDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createCheckerDeprecated', function() {
       it('should call createCheckerDeprecated successfully', function(done) {
         //uncomment below and update the code to test createCheckerDeprecated
@@ -368,6 +388,16 @@
         done();
       });
     });
+    describe('createStoreyDeprecated', function() {
+      it('should call createStoreyDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createStoreyDeprecated
+        //instance.createStoreyDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createStoreyPlanDeprecated', function() {
       it('should call createStoreyPlanDeprecated successfully', function(done) {
         //uncomment below and update the code to test createStoreyPlanDeprecated
@@ -412,6 +442,26 @@
       it('should call deleteAccessTokenDeprecated successfully', function(done) {
         //uncomment below and update the code to test deleteAccessTokenDeprecated
         //instance.deleteAccessTokenDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteBuildingDeprecated', function() {
+      it('should call deleteBuildingDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteBuildingDeprecated
+        //instance.deleteBuildingDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteBuildingPlanDeprecated', function() {
+      it('should call deleteBuildingPlanDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteBuildingPlanDeprecated
+        //instance.deleteBuildingPlanDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -598,16 +648,6 @@
         done();
       });
     });
-    describe('fullUpdateStoreysDeprecated', function() {
-      it('should call fullUpdateStoreysDeprecated successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateStoreysDeprecated
-        //instance.fullUpdateStoreysDeprecated(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getAccessTokenDeprecated', function() {
       it('should call getAccessTokenDeprecated successfully', function(done) {
         //uncomment below and update the code to test getAccessTokenDeprecated
@@ -622,6 +662,36 @@
       it('should call getAccessTokensDeprecated successfully', function(done) {
         //uncomment below and update the code to test getAccessTokensDeprecated
         //instance.getAccessTokensDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getBuildingDeprecated', function() {
+      it('should call getBuildingDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getBuildingDeprecated
+        //instance.getBuildingDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getBuildingPlanPositioningDeprecated', function() {
+      it('should call getBuildingPlanPositioningDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getBuildingPlanPositioningDeprecated
+        //instance.getBuildingPlanPositioningDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getBuildingsDeprecated', function() {
+      it('should call getBuildingsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getBuildingsDeprecated
+        //instance.getBuildingsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -958,16 +1028,6 @@
         done();
       });
     });
-    describe('getPlanPositioningDeprecated', function() {
-      it('should call getPlanPositioningDeprecated successfully', function(done) {
-        //uncomment below and update the code to test getPlanPositioningDeprecated
-        //instance.getPlanPositioningDeprecated(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getProcessorHandlerDeprecated', function() {
       it('should call getProcessorHandlerDeprecated successfully', function(done) {
         //uncomment below and update the code to test getProcessorHandlerDeprecated
@@ -1062,6 +1122,16 @@
       it('should call getStoreyDeprecated successfully', function(done) {
         //uncomment below and update the code to test getStoreyDeprecated
         //instance.getStoreyDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getStoreyPlanPositioningDeprecated', function() {
+      it('should call getStoreyPlanPositioningDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getStoreyPlanPositioningDeprecated
+        //instance.getStoreyPlanPositioningDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1288,6 +1358,26 @@
         done();
       });
     });
+    describe('updateBuildingDeprecated', function() {
+      it('should call updateBuildingDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateBuildingDeprecated
+        //instance.updateBuildingDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateBuildingPlanPositioningDeprecated', function() {
+      it('should call updateBuildingPlanPositioningDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateBuildingPlanPositioningDeprecated
+        //instance.updateBuildingPlanPositioningDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateCheckerDeprecated', function() {
       it('should call updateCheckerDeprecated successfully', function(done) {
         //uncomment below and update the code to test updateCheckerDeprecated
@@ -1388,10 +1478,10 @@
         done();
       });
     });
-    describe('updatePlanPositioningDeprecated', function() {
-      it('should call updatePlanPositioningDeprecated successfully', function(done) {
-        //uncomment below and update the code to test updatePlanPositioningDeprecated
-        //instance.updatePlanPositioningDeprecated(function(error) {
+    describe('updateOrderStoreysDeprecated', function() {
+      it('should call updateOrderStoreysDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateOrderStoreysDeprecated
+        //instance.updateOrderStoreysDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1432,6 +1522,16 @@
       it('should call updateStoreyDeprecated successfully', function(done) {
         //uncomment below and update the code to test updateStoreyDeprecated
         //instance.updateStoreyDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateStoreyPlanPositioningDeprecated', function() {
+      it('should call updateStoreyPlanPositioningDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateStoreyPlanPositioningDeprecated
+        //instance.updateStoreyPlanPositioningDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

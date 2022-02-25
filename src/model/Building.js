@@ -15,18 +15,18 @@ import ApiClient from '../ApiClient';
 import ModelWithPositioningPlan from './ModelWithPositioningPlan';
 
 /**
- * The Storey model module.
- * @module model/Storey
+ * The Building model module.
+ * @module model/Building
  * @version 0.0.0
  */
-class Storey {
+class Building {
     /**
-     * Constructs a new <code>Storey</code>.
-     * @alias module:model/Storey
+     * Constructs a new <code>Building</code>.
+     * @alias module:model/Building
      */
     constructor() { 
         
-        Storey.initialize(this);
+        Building.initialize(this);
     }
 
     /**
@@ -38,15 +38,15 @@ class Storey {
     }
 
     /**
-     * Constructs a <code>Storey</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>Building</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Storey} obj Optional instance to populate.
-     * @return {module:model/Storey} The populated <code>Storey</code> instance.
+     * @param {module:model/Building} obj Optional instance to populate.
+     * @return {module:model/Building} The populated <code>Building</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Storey();
+            obj = obj || new Building();
 
             if (data.hasOwnProperty('uuid')) {
                 obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
@@ -71,28 +71,28 @@ class Storey {
  * IFC element or element type UUID
  * @member {String} uuid
  */
-Storey.prototype['uuid'] = undefined;
+Building.prototype['uuid'] = undefined;
 
 /**
- * Name of the storey
+ * Name of the building
  * @member {String} name
  */
-Storey.prototype['name'] = undefined;
+Building.prototype['name'] = undefined;
 
 /**
  * @member {Array.<module:model/ModelWithPositioningPlan>} plans
  */
-Storey.prototype['plans'] = undefined;
+Building.prototype['plans'] = undefined;
 
 /**
  * @member {Number} plans_unreachable_count
  */
-Storey.prototype['plans_unreachable_count'] = undefined;
+Building.prototype['plans_unreachable_count'] = undefined;
 
 
 
 
 
 
-export default Storey;
+export default Building;
 

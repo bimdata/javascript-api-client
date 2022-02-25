@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Storey();
+    instance = new bimdata.InlineObject8();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,16 @@
       object[property] = value;
   }
 
-  describe('Storey', function() {
-    it('should create an instance of Storey', function() {
-      // uncomment below and update the code to test Storey
-      //var instane = new bimdata.Storey();
-      //expect(instance).to.be.a(bimdata.Storey);
+  describe('InlineObject8', function() {
+    it('should create an instance of InlineObject8', function() {
+      // uncomment below and update the code to test InlineObject8
+      //var instane = new bimdata.InlineObject8();
+      //expect(instance).to.be.a(bimdata.InlineObject8);
     });
 
-    it('should have the property uuid (base name: "uuid")', function() {
-      // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.Storey();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Storey();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property plans (base name: "plans")', function() {
-      // uncomment below and update the code to test the property plans
-      //var instane = new bimdata.Storey();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property plansUnreachableCount (base name: "plans_unreachable_count")', function() {
-      // uncomment below and update the code to test the property plansUnreachableCount
-      //var instane = new bimdata.Storey();
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new bimdata.InlineObject8();
       //expect(instance).to.be();
     });
 

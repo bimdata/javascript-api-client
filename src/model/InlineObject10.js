@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The InlineObject5 model module.
- * @module model/InlineObject5
+ * The InlineObject10 model module.
+ * @module model/InlineObject10
  * @version 0.0.0
  */
-class InlineObject5 {
+class InlineObject10 {
     /**
-     * Constructs a new <code>InlineObject5</code>.
-     * @alias module:model/InlineObject5
+     * Constructs a new <code>InlineObject10</code>.
+     * @alias module:model/InlineObject10
      */
     constructor() { 
         
-        InlineObject5.initialize(this);
+        InlineObject10.initialize(this);
     }
 
     /**
@@ -37,18 +37,18 @@ class InlineObject5 {
     }
 
     /**
-     * Constructs a <code>InlineObject5</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InlineObject10</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InlineObject5} obj Optional instance to populate.
-     * @return {module:model/InlineObject5} The populated <code>InlineObject5</code> instance.
+     * @param {module:model/InlineObject10} obj Optional instance to populate.
+     * @return {module:model/InlineObject10} The populated <code>InlineObject10</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InlineObject5();
+            obj = obj || new InlineObject10();
 
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
         }
         return obj;
@@ -58,15 +58,15 @@ class InlineObject5 {
 }
 
 /**
- * name of storey/building
- * @member {String} name
+ * model id
+ * @member {Number} id
  */
-InlineObject5.prototype['name'] = undefined;
+InlineObject10.prototype['id'] = undefined;
 
 
 
 
 
 
-export default InlineObject5;
+export default InlineObject10;
 

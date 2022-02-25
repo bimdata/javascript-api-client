@@ -188,6 +188,26 @@
         done();
       });
     });
+    describe('createBuilding', function() {
+      it('should call createBuilding successfully', function(done) {
+        //uncomment below and update the code to test createBuilding
+        //instance.createBuilding(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createBuildingPlan', function() {
+      it('should call createBuildingPlan successfully', function(done) {
+        //uncomment below and update the code to test createBuildingPlan
+        //instance.createBuildingPlan(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createClassificationElementRelations', function() {
       it('should call createClassificationElementRelations successfully', function(done) {
         //uncomment below and update the code to test createClassificationElementRelations
@@ -348,6 +368,16 @@
         done();
       });
     });
+    describe('createStorey', function() {
+      it('should call createStorey successfully', function(done) {
+        //uncomment below and update the code to test createStorey
+        //instance.createStorey(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createStoreyPlan', function() {
       it('should call createStoreyPlan successfully', function(done) {
         //uncomment below and update the code to test createStoreyPlan
@@ -392,6 +422,26 @@
       it('should call deleteAccessToken successfully', function(done) {
         //uncomment below and update the code to test deleteAccessToken
         //instance.deleteAccessToken(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteBuilding', function() {
+      it('should call deleteBuilding successfully', function(done) {
+        //uncomment below and update the code to test deleteBuilding
+        //instance.deleteBuilding(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteBuildingPlan', function() {
+      it('should call deleteBuildingPlan successfully', function(done) {
+        //uncomment below and update the code to test deleteBuildingPlan
+        //instance.deleteBuildingPlan(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -558,16 +608,6 @@
         done();
       });
     });
-    describe('fullUpdateStoreys', function() {
-      it('should call fullUpdateStoreys successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateStoreys
-        //instance.fullUpdateStoreys(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getAccessToken', function() {
       it('should call getAccessToken successfully', function(done) {
         //uncomment below and update the code to test getAccessToken
@@ -582,6 +622,36 @@
       it('should call getAccessTokens successfully', function(done) {
         //uncomment below and update the code to test getAccessTokens
         //instance.getAccessTokens(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getBuilding', function() {
+      it('should call getBuilding successfully', function(done) {
+        //uncomment below and update the code to test getBuilding
+        //instance.getBuilding(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getBuildingPlanPositioning', function() {
+      it('should call getBuildingPlanPositioning successfully', function(done) {
+        //uncomment below and update the code to test getBuildingPlanPositioning
+        //instance.getBuildingPlanPositioning(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getBuildings', function() {
+      it('should call getBuildings successfully', function(done) {
+        //uncomment below and update the code to test getBuildings
+        //instance.getBuildings(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -878,16 +948,6 @@
         done();
       });
     });
-    describe('getPlanPositioning', function() {
-      it('should call getPlanPositioning successfully', function(done) {
-        //uncomment below and update the code to test getPlanPositioning
-        //instance.getPlanPositioning(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getProcessorHandler', function() {
       it('should call getProcessorHandler successfully', function(done) {
         //uncomment below and update the code to test getProcessorHandler
@@ -982,6 +1042,16 @@
       it('should call getStorey successfully', function(done) {
         //uncomment below and update the code to test getStorey
         //instance.getStorey(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getStoreyPlanPositioning', function() {
+      it('should call getStoreyPlanPositioning successfully', function(done) {
+        //uncomment below and update the code to test getStoreyPlanPositioning
+        //instance.getStoreyPlanPositioning(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1198,6 +1268,26 @@
         done();
       });
     });
+    describe('updateBuilding', function() {
+      it('should call updateBuilding successfully', function(done) {
+        //uncomment below and update the code to test updateBuilding
+        //instance.updateBuilding(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateBuildingPlanPositioning', function() {
+      it('should call updateBuildingPlanPositioning successfully', function(done) {
+        //uncomment below and update the code to test updateBuildingPlanPositioning
+        //instance.updateBuildingPlanPositioning(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateElement', function() {
       it('should call updateElement successfully', function(done) {
         //uncomment below and update the code to test updateElement
@@ -1278,10 +1368,10 @@
         done();
       });
     });
-    describe('updatePlanPositioning', function() {
-      it('should call updatePlanPositioning successfully', function(done) {
-        //uncomment below and update the code to test updatePlanPositioning
-        //instance.updatePlanPositioning(function(error) {
+    describe('updateOrderStoreys', function() {
+      it('should call updateOrderStoreys successfully', function(done) {
+        //uncomment below and update the code to test updateOrderStoreys
+        //instance.updateOrderStoreys(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1322,6 +1412,16 @@
       it('should call updateStorey successfully', function(done) {
         //uncomment below and update the code to test updateStorey
         //instance.updateStorey(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateStoreyPlanPositioning', function() {
+      it('should call updateStoreyPlanPositioning successfully', function(done) {
+        //uncomment below and update the code to test updateStoreyPlanPositioning
+        //instance.updateStoreyPlanPositioning(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
