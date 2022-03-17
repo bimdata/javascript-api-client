@@ -84,12 +84,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property replyToCommentId (base name: "reply_to_comment_id")', function() {
-      // uncomment below and update the code to test the property replyToCommentId
-      //var instane = new bimdata.VisaComment();
-      //expect(instance).to.be();
-    });
-
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instane = new bimdata.VisaComment();

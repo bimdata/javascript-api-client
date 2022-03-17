@@ -63,9 +63,6 @@ class VisaComment {
             if (data.hasOwnProperty('content')) {
                 obj['content'] = ApiClient.convertToType(data['content'], 'String');
             }
-            if (data.hasOwnProperty('reply_to_comment_id')) {
-                obj['reply_to_comment_id'] = ApiClient.convertToType(data['reply_to_comment_id'], 'Number');
-            }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
@@ -104,11 +101,6 @@ VisaComment.prototype['visa_id'] = undefined;
  * @member {String} content
  */
 VisaComment.prototype['content'] = undefined;
-
-/**
- * @member {Number} reply_to_comment_id
- */
-VisaComment.prototype['reply_to_comment_id'] = undefined;
 
 /**
  * @member {Date} created_at
