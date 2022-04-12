@@ -50,25 +50,25 @@
   describe('Visibility', function() {
     it('should create an instance of Visibility', function() {
       // uncomment below and update the code to test Visibility
-      //var instane = new bimdata.Visibility();
+      //var instance = new bimdata.Visibility();
       //expect(instance).to.be.a(bimdata.Visibility);
     });
 
     it('should have the property defaultVisibility (base name: "default_visibility")', function() {
       // uncomment below and update the code to test the property defaultVisibility
-      //var instane = new bimdata.Visibility();
+      //var instance = new bimdata.Visibility();
       //expect(instance).to.be();
     });
 
     it('should have the property exceptions (base name: "exceptions")', function() {
       // uncomment below and update the code to test the property exceptions
-      //var instane = new bimdata.Visibility();
+      //var instance = new bimdata.Visibility();
       //expect(instance).to.be();
     });
 
     it('should have the property viewSetupHints (base name: "view_setup_hints")', function() {
       // uncomment below and update the code to test the property viewSetupHints
-      //var instane = new bimdata.Visibility();
+      //var instance = new bimdata.Visibility();
       //expect(instance).to.be();
     });
 

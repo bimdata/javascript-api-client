@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**{String: AnyType}**](AnyType.md) |  | [optional] 
+**value** | **{String: Object}** |  | [optional] 
 **defId** | **Number** |  | 
 
 

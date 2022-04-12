@@ -50,43 +50,43 @@
   describe('PatchedZoneRequest', function() {
     it('should create an instance of PatchedZoneRequest', function() {
       // uncomment below and update the code to test PatchedZoneRequest
-      //var instane = new bimdata.PatchedZoneRequest();
+      //var instance = new bimdata.PatchedZoneRequest();
       //expect(instance).to.be.a(bimdata.PatchedZoneRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PatchedZoneRequest();
+      //var instance = new bimdata.PatchedZoneRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.PatchedZoneRequest();
+      //var instance = new bimdata.PatchedZoneRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property zones (base name: "zones")', function() {
       // uncomment below and update the code to test the property zones
-      //var instane = new bimdata.PatchedZoneRequest();
+      //var instance = new bimdata.PatchedZoneRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property parentId (base name: "parent_id")', function() {
       // uncomment below and update the code to test the property parentId
-      //var instane = new bimdata.PatchedZoneRequest();
+      //var instance = new bimdata.PatchedZoneRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property spaces (base name: "spaces")', function() {
       // uncomment below and update the code to test the property spaces
-      //var instane = new bimdata.PatchedZoneRequest();
+      //var instance = new bimdata.PatchedZoneRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
-      //var instane = new bimdata.PatchedZoneRequest();
+      //var instance = new bimdata.PatchedZoneRequest();
       //expect(instance).to.be();
     });
 

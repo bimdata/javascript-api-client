@@ -50,43 +50,43 @@
   describe('Property', function() {
     it('should create an instance of Property', function() {
       // uncomment below and update the code to test Property
-      //var instane = new bimdata.Property();
+      //var instance = new bimdata.Property();
       //expect(instance).to.be.a(bimdata.Property);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Property();
+      //var instance = new bimdata.Property();
       //expect(instance).to.be();
     });
 
     it('should have the property definition (base name: "definition")', function() {
       // uncomment below and update the code to test the property definition
-      //var instane = new bimdata.Property();
+      //var instance = new bimdata.Property();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new bimdata.Property();
+      //var instance = new bimdata.Property();
       //expect(instance).to.be();
     });
 
     it('should have the property propertySetId (base name: "property_set_id")', function() {
       // uncomment below and update the code to test the property propertySetId
-      //var instane = new bimdata.Property();
+      //var instance = new bimdata.Property();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.Property();
+      //var instance = new bimdata.Property();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.Property();
+      //var instance = new bimdata.Property();
       //expect(instance).to.be();
     });
 

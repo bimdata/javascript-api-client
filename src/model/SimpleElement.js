@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyType from './AnyType';
 
 /**
  * The SimpleElement model module.
@@ -23,7 +22,7 @@ class SimpleElement {
     /**
      * Constructs a new <code>SimpleElement</code>.
      * @alias module:model/SimpleElement
-     * @param uuid {Object.<String, Object.<String, module:model/AnyType>>} uuid of element
+     * @param uuid {Object.<String, Object.<String, Object>>} uuid of element
      */
     constructor(uuid) { 
         
@@ -51,7 +50,7 @@ class SimpleElement {
             obj = obj || new SimpleElement();
 
             if (data.hasOwnProperty('uuid')) {
-                obj['uuid'] = ApiClient.convertToType(data['uuid'], {'String': {'String': AnyType}});
+                obj['uuid'] = ApiClient.convertToType(data['uuid'], {'String': {'String': Object}});
             }
         }
         return obj;
@@ -62,7 +61,7 @@ class SimpleElement {
 
 /**
  * uuid of element
- * @member {Object.<String, Object.<String, module:model/AnyType>>} uuid
+ * @member {Object.<String, Object.<String, Object>>} uuid
  */
 SimpleElement.prototype['uuid'] = undefined;
 

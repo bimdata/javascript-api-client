@@ -50,13 +50,13 @@
   describe('MaterialRequest', function() {
     it('should create an instance of MaterialRequest', function() {
       // uncomment below and update the code to test MaterialRequest
-      //var instane = new bimdata.MaterialRequest();
+      //var instance = new bimdata.MaterialRequest();
       //expect(instance).to.be.a(bimdata.MaterialRequest);
     });
 
     it('should have the property propertySets (base name: "property_sets")', function() {
       // uncomment below and update the code to test the property propertySets
-      //var instane = new bimdata.MaterialRequest();
+      //var instance = new bimdata.MaterialRequest();
       //expect(instance).to.be();
     });
 

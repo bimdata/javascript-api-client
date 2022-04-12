@@ -50,19 +50,19 @@
   describe('VisaCommentRequest', function() {
     it('should create an instance of VisaCommentRequest', function() {
       // uncomment below and update the code to test VisaCommentRequest
-      //var instane = new bimdata.VisaCommentRequest();
+      //var instance = new bimdata.VisaCommentRequest();
       //expect(instance).to.be.a(bimdata.VisaCommentRequest);
     });
 
     it('should have the property authorId (base name: "author_id")', function() {
       // uncomment below and update the code to test the property authorId
-      //var instane = new bimdata.VisaCommentRequest();
+      //var instance = new bimdata.VisaCommentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property content (base name: "content")', function() {
       // uncomment below and update the code to test the property content
-      //var instane = new bimdata.VisaCommentRequest();
+      //var instance = new bimdata.VisaCommentRequest();
       //expect(instance).to.be();
     });
 

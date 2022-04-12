@@ -50,19 +50,19 @@
   describe('PublicOrganizationRequest', function() {
     it('should create an instance of PublicOrganizationRequest', function() {
       // uncomment below and update the code to test PublicOrganizationRequest
-      //var instane = new bimdata.PublicOrganizationRequest();
+      //var instance = new bimdata.PublicOrganizationRequest();
       //expect(instance).to.be.a(bimdata.PublicOrganizationRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PublicOrganizationRequest();
+      //var instance = new bimdata.PublicOrganizationRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property logo (base name: "logo")', function() {
       // uncomment below and update the code to test the property logo
-      //var instane = new bimdata.PublicOrganizationRequest();
+      //var instance = new bimdata.PublicOrganizationRequest();
       //expect(instance).to.be();
     });
 

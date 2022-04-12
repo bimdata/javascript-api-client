@@ -50,25 +50,25 @@
   describe('RawLayerRequest', function() {
     it('should create an instance of RawLayerRequest', function() {
       // uncomment below and update the code to test RawLayerRequest
-      //var instane = new bimdata.RawLayerRequest();
+      //var instance = new bimdata.RawLayerRequest();
       //expect(instance).to.be.a(bimdata.RawLayerRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.RawLayerRequest();
+      //var instance = new bimdata.RawLayerRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.RawLayerRequest();
+      //var instance = new bimdata.RawLayerRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property identifier (base name: "identifier")', function() {
       // uncomment below and update the code to test the property identifier
-      //var instane = new bimdata.RawLayerRequest();
+      //var instance = new bimdata.RawLayerRequest();
       //expect(instance).to.be();
     });
 

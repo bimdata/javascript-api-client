@@ -50,61 +50,61 @@
   describe('Zone', function() {
     it('should create an instance of Zone', function() {
       // uncomment below and update the code to test Zone
-      //var instane = new bimdata.Zone();
+      //var instance = new bimdata.Zone();
       //expect(instance).to.be.a(bimdata.Zone);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Zone();
+      //var instance = new bimdata.Zone();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Zone();
+      //var instance = new bimdata.Zone();
       //expect(instance).to.be();
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.Zone();
+      //var instance = new bimdata.Zone();
       //expect(instance).to.be();
     });
 
     it('should have the property zones (base name: "zones")', function() {
       // uncomment below and update the code to test the property zones
-      //var instane = new bimdata.Zone();
+      //var instance = new bimdata.Zone();
       //expect(instance).to.be();
     });
 
     it('should have the property parentId (base name: "parent_id")', function() {
       // uncomment below and update the code to test the property parentId
-      //var instane = new bimdata.Zone();
+      //var instance = new bimdata.Zone();
       //expect(instance).to.be();
     });
 
     it('should have the property spaces (base name: "spaces")', function() {
       // uncomment below and update the code to test the property spaces
-      //var instane = new bimdata.Zone();
+      //var instance = new bimdata.Zone();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.Zone();
+      //var instance = new bimdata.Zone();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.Zone();
+      //var instance = new bimdata.Zone();
       //expect(instance).to.be();
     });
 
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
-      //var instane = new bimdata.Zone();
+      //var instance = new bimdata.Zone();
       //expect(instance).to.be();
     });
 

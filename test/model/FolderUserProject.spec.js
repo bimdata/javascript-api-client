@@ -50,61 +50,61 @@
   describe('FolderUserProject', function() {
     it('should create an instance of FolderUserProject', function() {
       // uncomment below and update the code to test FolderUserProject
-      //var instane = new bimdata.FolderUserProject();
+      //var instance = new bimdata.FolderUserProject();
       //expect(instance).to.be.a(bimdata.FolderUserProject);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.FolderUserProject();
+      //var instance = new bimdata.FolderUserProject();
       //expect(instance).to.be();
     });
 
     it('should have the property userId (base name: "user_id")', function() {
       // uncomment below and update the code to test the property userId
-      //var instane = new bimdata.FolderUserProject();
+      //var instance = new bimdata.FolderUserProject();
       //expect(instance).to.be();
     });
 
     it('should have the property invitationId (base name: "invitation_id")', function() {
       // uncomment below and update the code to test the property invitationId
-      //var instane = new bimdata.FolderUserProject();
+      //var instance = new bimdata.FolderUserProject();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new bimdata.FolderUserProject();
+      //var instance = new bimdata.FolderUserProject();
       //expect(instance).to.be();
     });
 
     it('should have the property firstname (base name: "firstname")', function() {
       // uncomment below and update the code to test the property firstname
-      //var instane = new bimdata.FolderUserProject();
+      //var instance = new bimdata.FolderUserProject();
       //expect(instance).to.be();
     });
 
     it('should have the property lastname (base name: "lastname")', function() {
       // uncomment below and update the code to test the property lastname
-      //var instane = new bimdata.FolderUserProject();
+      //var instance = new bimdata.FolderUserProject();
       //expect(instance).to.be();
     });
 
     it('should have the property profilePicture (base name: "profile_picture")', function() {
       // uncomment below and update the code to test the property profilePicture
-      //var instane = new bimdata.FolderUserProject();
+      //var instance = new bimdata.FolderUserProject();
       //expect(instance).to.be();
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new bimdata.FolderUserProject();
+      //var instance = new bimdata.FolderUserProject();
       //expect(instance).to.be();
     });
 
     it('should have the property permission (base name: "permission")', function() {
       // uncomment below and update the code to test the property permission
-      //var instane = new bimdata.FolderUserProject();
+      //var instance = new bimdata.FolderUserProject();
       //expect(instance).to.be();
     });
 

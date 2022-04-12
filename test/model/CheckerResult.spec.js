@@ -50,43 +50,43 @@
   describe('CheckerResult', function() {
     it('should create an instance of CheckerResult', function() {
       // uncomment below and update the code to test CheckerResult
-      //var instane = new bimdata.CheckerResult();
+      //var instance = new bimdata.CheckerResult();
       //expect(instance).to.be.a(bimdata.CheckerResult);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.CheckerResult();
+      //var instance = new bimdata.CheckerResult();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new bimdata.CheckerResult();
+      //var instance = new bimdata.CheckerResult();
       //expect(instance).to.be();
     });
 
     it('should have the property result (base name: "result")', function() {
       // uncomment below and update the code to test the property result
-      //var instane = new bimdata.CheckerResult();
+      //var instance = new bimdata.CheckerResult();
       //expect(instance).to.be();
     });
 
     it('should have the property collisions (base name: "collisions")', function() {
       // uncomment below and update the code to test the property collisions
-      //var instane = new bimdata.CheckerResult();
+      //var instance = new bimdata.CheckerResult();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.CheckerResult();
+      //var instance = new bimdata.CheckerResult();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.CheckerResult();
+      //var instance = new bimdata.CheckerResult();
       //expect(instance).to.be();
     });
 

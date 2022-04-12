@@ -50,19 +50,19 @@
   describe('ProjectSize', function() {
     it('should create an instance of ProjectSize', function() {
       // uncomment below and update the code to test ProjectSize
-      //var instane = new bimdata.ProjectSize();
+      //var instance = new bimdata.ProjectSize();
       //expect(instance).to.be.a(bimdata.ProjectSize);
     });
 
     it('should have the property totalSize (base name: "total_size")', function() {
       // uncomment below and update the code to test the property totalSize
-      //var instane = new bimdata.ProjectSize();
+      //var instance = new bimdata.ProjectSize();
       //expect(instance).to.be();
     });
 
     it('should have the property smartDataSize (base name: "smart_data_size")', function() {
       // uncomment below and update the code to test the property smartDataSize
-      //var instane = new bimdata.ProjectSize();
+      //var instance = new bimdata.ProjectSize();
       //expect(instance).to.be();
     });
 

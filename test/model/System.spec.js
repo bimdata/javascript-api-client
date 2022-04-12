@@ -50,43 +50,43 @@
   describe('System', function() {
     it('should create an instance of System', function() {
       // uncomment below and update the code to test System
-      //var instane = new bimdata.System();
+      //var instance = new bimdata.System();
       //expect(instance).to.be.a(bimdata.System);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.System();
+      //var instance = new bimdata.System();
       //expect(instance).to.be();
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.System();
+      //var instance = new bimdata.System();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.System();
+      //var instance = new bimdata.System();
       //expect(instance).to.be();
     });
 
     it('should have the property objectType (base name: "object_type")', function() {
       // uncomment below and update the code to test the property objectType
-      //var instane = new bimdata.System();
+      //var instance = new bimdata.System();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.System();
+      //var instance = new bimdata.System();
       //expect(instance).to.be();
     });
 
     it('should have the property elements (base name: "elements")', function() {
       // uncomment below and update the code to test the property elements
-      //var instane = new bimdata.System();
+      //var instance = new bimdata.System();
       //expect(instance).to.be();
     });
 

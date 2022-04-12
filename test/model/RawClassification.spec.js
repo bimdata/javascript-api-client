@@ -50,31 +50,31 @@
   describe('RawClassification', function() {
     it('should create an instance of RawClassification', function() {
       // uncomment below and update the code to test RawClassification
-      //var instane = new bimdata.RawClassification();
+      //var instance = new bimdata.RawClassification();
       //expect(instance).to.be.a(bimdata.RawClassification);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.RawClassification();
+      //var instance = new bimdata.RawClassification();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.RawClassification();
+      //var instance = new bimdata.RawClassification();
       //expect(instance).to.be();
     });
 
     it('should have the property notation (base name: "notation")', function() {
       // uncomment below and update the code to test the property notation
-      //var instane = new bimdata.RawClassification();
+      //var instance = new bimdata.RawClassification();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.RawClassification();
+      //var instance = new bimdata.RawClassification();
       //expect(instance).to.be();
     });
 

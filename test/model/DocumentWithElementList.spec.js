@@ -50,19 +50,19 @@
   describe('DocumentWithElementList', function() {
     it('should create an instance of DocumentWithElementList', function() {
       // uncomment below and update the code to test DocumentWithElementList
-      //var instane = new bimdata.DocumentWithElementList();
+      //var instance = new bimdata.DocumentWithElementList();
       //expect(instance).to.be.a(bimdata.DocumentWithElementList);
     });
 
     it('should have the property document (base name: "document")', function() {
       // uncomment below and update the code to test the property document
-      //var instane = new bimdata.DocumentWithElementList();
+      //var instance = new bimdata.DocumentWithElementList();
       //expect(instance).to.be();
     });
 
     it('should have the property elementUuids (base name: "element_uuids")', function() {
       // uncomment below and update the code to test the property elementUuids
-      //var instane = new bimdata.DocumentWithElementList();
+      //var instance = new bimdata.DocumentWithElementList();
       //expect(instance).to.be();
     });
 

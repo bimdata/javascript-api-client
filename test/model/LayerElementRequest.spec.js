@@ -50,25 +50,25 @@
   describe('LayerElementRequest', function() {
     it('should create an instance of LayerElementRequest', function() {
       // uncomment below and update the code to test LayerElementRequest
-      //var instane = new bimdata.LayerElementRequest();
+      //var instance = new bimdata.LayerElementRequest();
       //expect(instance).to.be.a(bimdata.LayerElementRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.LayerElementRequest();
+      //var instance = new bimdata.LayerElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property identifier (base name: "identifier")', function() {
       // uncomment below and update the code to test the property identifier
-      //var instane = new bimdata.LayerElementRequest();
+      //var instance = new bimdata.LayerElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.LayerElementRequest();
+      //var instance = new bimdata.LayerElementRequest();
       //expect(instance).to.be();
     });
 

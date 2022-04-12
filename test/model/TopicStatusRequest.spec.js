@@ -50,25 +50,25 @@
   describe('TopicStatusRequest', function() {
     it('should create an instance of TopicStatusRequest', function() {
       // uncomment below and update the code to test TopicStatusRequest
-      //var instane = new bimdata.TopicStatusRequest();
+      //var instance = new bimdata.TopicStatusRequest();
       //expect(instance).to.be.a(bimdata.TopicStatusRequest);
     });
 
     it('should have the property topicStatus (base name: "topic_status")', function() {
       // uncomment below and update the code to test the property topicStatus
-      //var instane = new bimdata.TopicStatusRequest();
+      //var instance = new bimdata.TopicStatusRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
-      //var instane = new bimdata.TopicStatusRequest();
+      //var instance = new bimdata.TopicStatusRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property project (base name: "project")', function() {
       // uncomment below and update the code to test the property project
-      //var instane = new bimdata.TopicStatusRequest();
+      //var instance = new bimdata.TopicStatusRequest();
       //expect(instance).to.be();
     });
 

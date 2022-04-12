@@ -50,25 +50,25 @@
   describe('PatchedWebHookRequest', function() {
     it('should create an instance of PatchedWebHookRequest', function() {
       // uncomment below and update the code to test PatchedWebHookRequest
-      //var instane = new bimdata.PatchedWebHookRequest();
+      //var instance = new bimdata.PatchedWebHookRequest();
       //expect(instance).to.be.a(bimdata.PatchedWebHookRequest);
     });
 
     it('should have the property events (base name: "events")', function() {
       // uncomment below and update the code to test the property events
-      //var instane = new bimdata.PatchedWebHookRequest();
+      //var instance = new bimdata.PatchedWebHookRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new bimdata.PatchedWebHookRequest();
+      //var instance = new bimdata.PatchedWebHookRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property secret (base name: "secret")', function() {
       // uncomment below and update the code to test the property secret
-      //var instane = new bimdata.PatchedWebHookRequest();
+      //var instance = new bimdata.PatchedWebHookRequest();
       //expect(instance).to.be();
     });
 

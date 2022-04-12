@@ -50,19 +50,19 @@
   describe('LabelRequest', function() {
     it('should create an instance of LabelRequest', function() {
       // uncomment below and update the code to test LabelRequest
-      //var instane = new bimdata.LabelRequest();
+      //var instance = new bimdata.LabelRequest();
       //expect(instance).to.be.a(bimdata.LabelRequest);
     });
 
     it('should have the property label (base name: "label")', function() {
       // uncomment below and update the code to test the property label
-      //var instane = new bimdata.LabelRequest();
+      //var instance = new bimdata.LabelRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property project (base name: "project")', function() {
       // uncomment below and update the code to test the property project
-      //var instane = new bimdata.LabelRequest();
+      //var instance = new bimdata.LabelRequest();
       //expect(instance).to.be();
     });
 

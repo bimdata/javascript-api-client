@@ -50,25 +50,25 @@
   describe('Stage', function() {
     it('should create an instance of Stage', function() {
       // uncomment below and update the code to test Stage
-      //var instane = new bimdata.Stage();
+      //var instance = new bimdata.Stage();
       //expect(instance).to.be.a(bimdata.Stage);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Stage();
+      //var instance = new bimdata.Stage();
       //expect(instance).to.be();
     });
 
     it('should have the property stage (base name: "stage")', function() {
       // uncomment below and update the code to test the property stage
-      //var instane = new bimdata.Stage();
+      //var instance = new bimdata.Stage();
       //expect(instance).to.be();
     });
 
     it('should have the property project (base name: "project")', function() {
       // uncomment below and update the code to test the property project
-      //var instane = new bimdata.Stage();
+      //var instance = new bimdata.Stage();
       //expect(instance).to.be();
     });
 

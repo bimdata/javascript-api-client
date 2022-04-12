@@ -50,25 +50,25 @@
   describe('PointRequest', function() {
     it('should create an instance of PointRequest', function() {
       // uncomment below and update the code to test PointRequest
-      //var instane = new bimdata.PointRequest();
+      //var instance = new bimdata.PointRequest();
       //expect(instance).to.be.a(bimdata.PointRequest);
     });
 
     it('should have the property x (base name: "x")', function() {
       // uncomment below and update the code to test the property x
-      //var instane = new bimdata.PointRequest();
+      //var instance = new bimdata.PointRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property y (base name: "y")', function() {
       // uncomment below and update the code to test the property y
-      //var instane = new bimdata.PointRequest();
+      //var instance = new bimdata.PointRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property z (base name: "z")', function() {
       // uncomment below and update the code to test the property z
-      //var instane = new bimdata.PointRequest();
+      //var instance = new bimdata.PointRequest();
       //expect(instance).to.be();
     });
 

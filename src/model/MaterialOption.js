@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyType from './AnyType';
 
 /**
  * The MaterialOption model module.
@@ -25,7 +24,7 @@ class MaterialOption {
      * @alias module:model/MaterialOption
      * @param id {Number} 
      * @param thickness {Number} 
-     * @param listComponents {Array.<Object.<String, module:model/AnyType>>} 
+     * @param listComponents {Array.<Object.<String, Object>>} 
      */
     constructor(id, thickness, listComponents) { 
         
@@ -61,7 +60,7 @@ class MaterialOption {
                 obj['thickness'] = ApiClient.convertToType(data['thickness'], 'Number');
             }
             if (data.hasOwnProperty('list_components')) {
-                obj['list_components'] = ApiClient.convertToType(data['list_components'], [{'String': AnyType}]);
+                obj['list_components'] = ApiClient.convertToType(data['list_components'], [{'String': Object}]);
             }
         }
         return obj;
@@ -81,7 +80,7 @@ MaterialOption.prototype['id'] = undefined;
 MaterialOption.prototype['thickness'] = undefined;
 
 /**
- * @member {Array.<Object.<String, module:model/AnyType>>} list_components
+ * @member {Array.<Object.<String, Object>>} list_components
  */
 MaterialOption.prototype['list_components'] = undefined;
 

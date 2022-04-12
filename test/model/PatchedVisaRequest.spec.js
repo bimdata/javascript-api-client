@@ -50,25 +50,25 @@
   describe('PatchedVisaRequest', function() {
     it('should create an instance of PatchedVisaRequest', function() {
       // uncomment below and update the code to test PatchedVisaRequest
-      //var instane = new bimdata.PatchedVisaRequest();
+      //var instance = new bimdata.PatchedVisaRequest();
       //expect(instance).to.be.a(bimdata.PatchedVisaRequest);
     });
 
     it('should have the property creatorId (base name: "creator_id")', function() {
       // uncomment below and update the code to test the property creatorId
-      //var instane = new bimdata.PatchedVisaRequest();
+      //var instance = new bimdata.PatchedVisaRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.PatchedVisaRequest();
+      //var instance = new bimdata.PatchedVisaRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property deadline (base name: "deadline")', function() {
       // uncomment below and update the code to test the property deadline
-      //var instane = new bimdata.PatchedVisaRequest();
+      //var instance = new bimdata.PatchedVisaRequest();
       //expect(instance).to.be();
     });
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **String** |  | [optional] 
-**_date** | **Date** |  | [optional] 
+**date** | **Date** |  | [optional] 
 **author** | **String** |  | [optional] 
 **comment** | **String** |  | [optional] 
 **viewpointGuid** | **String** |  | [optional] 

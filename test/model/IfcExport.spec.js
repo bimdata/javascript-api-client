@@ -50,67 +50,67 @@
   describe('IfcExport', function() {
     it('should create an instance of IfcExport', function() {
       // uncomment below and update the code to test IfcExport
-      //var instane = new bimdata.IfcExport();
+      //var instance = new bimdata.IfcExport();
       //expect(instance).to.be.a(bimdata.IfcExport);
     });
 
     it('should have the property classifications (base name: "classifications")', function() {
       // uncomment below and update the code to test the property classifications
-      //var instane = new bimdata.IfcExport();
+      //var instance = new bimdata.IfcExport();
       //expect(instance).to.be();
     });
 
     it('should have the property zones (base name: "zones")', function() {
       // uncomment below and update the code to test the property zones
-      //var instane = new bimdata.IfcExport();
+      //var instance = new bimdata.IfcExport();
       //expect(instance).to.be();
     });
 
     it('should have the property properties (base name: "properties")', function() {
       // uncomment below and update the code to test the property properties
-      //var instane = new bimdata.IfcExport();
+      //var instance = new bimdata.IfcExport();
       //expect(instance).to.be();
     });
 
     it('should have the property systems (base name: "systems")', function() {
       // uncomment below and update the code to test the property systems
-      //var instane = new bimdata.IfcExport();
+      //var instance = new bimdata.IfcExport();
       //expect(instance).to.be();
     });
 
     it('should have the property layers (base name: "layers")', function() {
       // uncomment below and update the code to test the property layers
-      //var instane = new bimdata.IfcExport();
+      //var instance = new bimdata.IfcExport();
       //expect(instance).to.be();
     });
 
     it('should have the property materials (base name: "materials")', function() {
       // uncomment below and update the code to test the property materials
-      //var instane = new bimdata.IfcExport();
+      //var instance = new bimdata.IfcExport();
       //expect(instance).to.be();
     });
 
     it('should have the property attributes (base name: "attributes")', function() {
       // uncomment below and update the code to test the property attributes
-      //var instane = new bimdata.IfcExport();
+      //var instance = new bimdata.IfcExport();
       //expect(instance).to.be();
     });
 
     it('should have the property structure (base name: "structure")', function() {
       // uncomment below and update the code to test the property structure
-      //var instane = new bimdata.IfcExport();
+      //var instance = new bimdata.IfcExport();
       //expect(instance).to.be();
     });
 
     it('should have the property uuids (base name: "uuids")', function() {
       // uncomment below and update the code to test the property uuids
-      //var instane = new bimdata.IfcExport();
+      //var instance = new bimdata.IfcExport();
       //expect(instance).to.be();
     });
 
     it('should have the property fileName (base name: "file_name")', function() {
       // uncomment below and update the code to test the property fileName
-      //var instane = new bimdata.IfcExport();
+      //var instance = new bimdata.IfcExport();
       //expect(instance).to.be();
     });
 

@@ -50,37 +50,37 @@
   describe('PatchedPositioningPlanRequest', function() {
     it('should create an instance of PatchedPositioningPlanRequest', function() {
       // uncomment below and update the code to test PatchedPositioningPlanRequest
-      //var instane = new bimdata.PatchedPositioningPlanRequest();
+      //var instance = new bimdata.PatchedPositioningPlanRequest();
       //expect(instance).to.be.a(bimdata.PatchedPositioningPlanRequest);
     });
 
     it('should have the property translationX (base name: "translation_x")', function() {
       // uncomment below and update the code to test the property translationX
-      //var instane = new bimdata.PatchedPositioningPlanRequest();
+      //var instance = new bimdata.PatchedPositioningPlanRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property translationY (base name: "translation_y")', function() {
       // uncomment below and update the code to test the property translationY
-      //var instane = new bimdata.PatchedPositioningPlanRequest();
+      //var instance = new bimdata.PatchedPositioningPlanRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property rotateZ (base name: "rotate_z")', function() {
       // uncomment below and update the code to test the property rotateZ
-      //var instane = new bimdata.PatchedPositioningPlanRequest();
+      //var instance = new bimdata.PatchedPositioningPlanRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property scale (base name: "scale")', function() {
       // uncomment below and update the code to test the property scale
-      //var instane = new bimdata.PatchedPositioningPlanRequest();
+      //var instance = new bimdata.PatchedPositioningPlanRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property opacity (base name: "opacity")', function() {
       // uncomment below and update the code to test the property opacity
-      //var instane = new bimdata.PatchedPositioningPlanRequest();
+      //var instance = new bimdata.PatchedPositioningPlanRequest();
       //expect(instance).to.be();
     });
 

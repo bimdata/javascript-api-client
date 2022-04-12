@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyType from './AnyType';
 import PropertyDefinition from './PropertyDefinition';
 
 /**
@@ -67,7 +66,7 @@ class Property {
                 obj['definition'] = PropertyDefinition.constructFromObject(data['definition']);
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], {'String': AnyType});
+                obj['value'] = ApiClient.convertToType(data['value'], {'String': Object});
             }
             if (data.hasOwnProperty('property_set_id')) {
                 obj['property_set_id'] = ApiClient.convertToType(data['property_set_id'], 'Number');
@@ -96,7 +95,7 @@ Property.prototype['id'] = undefined;
 Property.prototype['definition'] = undefined;
 
 /**
- * @member {Object.<String, module:model/AnyType>} value
+ * @member {Object.<String, Object>} value
  */
 Property.prototype['value'] = undefined;
 

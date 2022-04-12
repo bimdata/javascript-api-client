@@ -49,7 +49,7 @@
   describe('CloudRoleEnum', function() {
     it('should create an instance of CloudRoleEnum', function() {
       // uncomment below and update the code to test CloudRoleEnum
-      //var instane = new bimdata.CloudRoleEnum();
+      //var instance = new bimdata.CloudRoleEnum();
       //expect(instance).to.be.a(bimdata.CloudRoleEnum);
     });
 

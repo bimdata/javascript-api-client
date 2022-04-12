@@ -50,13 +50,13 @@
   describe('UserProjectIdRequest', function() {
     it('should create an instance of UserProjectIdRequest', function() {
       // uncomment below and update the code to test UserProjectIdRequest
-      //var instane = new bimdata.UserProjectIdRequest();
+      //var instance = new bimdata.UserProjectIdRequest();
       //expect(instance).to.be.a(bimdata.UserProjectIdRequest);
     });
 
     it('should have the property userprojectId (base name: "userproject_id")', function() {
       // uncomment below and update the code to test the property userprojectId
-      //var instane = new bimdata.UserProjectIdRequest();
+      //var instance = new bimdata.UserProjectIdRequest();
       //expect(instance).to.be();
     });
 

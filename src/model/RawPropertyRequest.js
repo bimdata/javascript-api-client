@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyType from './AnyType';
 
 /**
  * The RawPropertyRequest model module.
@@ -51,7 +50,7 @@ class RawPropertyRequest {
             obj = obj || new RawPropertyRequest();
 
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], {'String': AnyType});
+                obj['value'] = ApiClient.convertToType(data['value'], {'String': Object});
             }
             if (data.hasOwnProperty('def_id')) {
                 obj['def_id'] = ApiClient.convertToType(data['def_id'], 'Number');
@@ -64,7 +63,7 @@ class RawPropertyRequest {
 }
 
 /**
- * @member {Object.<String, module:model/AnyType>} value
+ * @member {Object.<String, Object>} value
  */
 RawPropertyRequest.prototype['value'] = undefined;
 

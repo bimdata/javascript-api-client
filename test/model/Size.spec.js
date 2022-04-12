@@ -50,73 +50,73 @@
   describe('Size', function() {
     it('should create an instance of Size', function() {
       // uncomment below and update the code to test Size
-      //var instane = new bimdata.Size();
+      //var instance = new bimdata.Size();
       //expect(instance).to.be.a(bimdata.Size);
     });
 
     it('should have the property isUnsupervised (base name: "is_unsupervised")', function() {
       // uncomment below and update the code to test the property isUnsupervised
-      //var instane = new bimdata.Size();
+      //var instance = new bimdata.Size();
       //expect(instance).to.be();
     });
 
     it('should have the property managedBy (base name: "managed_by")', function() {
       // uncomment below and update the code to test the property managedBy
-      //var instane = new bimdata.Size();
+      //var instance = new bimdata.Size();
       //expect(instance).to.be();
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new bimdata.Size();
+      //var instance = new bimdata.Size();
       //expect(instance).to.be();
     });
 
     it('should have the property totalSize (base name: "total_size")', function() {
       // uncomment below and update the code to test the property totalSize
-      //var instane = new bimdata.Size();
+      //var instance = new bimdata.Size();
       //expect(instance).to.be();
     });
 
     it('should have the property smartDataSize (base name: "smart_data_size")', function() {
       // uncomment below and update the code to test the property smartDataSize
-      //var instane = new bimdata.Size();
+      //var instance = new bimdata.Size();
       //expect(instance).to.be();
     });
 
     it('should have the property totalSizeAvailable (base name: "total_size_available")', function() {
       // uncomment below and update the code to test the property totalSizeAvailable
-      //var instane = new bimdata.Size();
+      //var instance = new bimdata.Size();
       //expect(instance).to.be();
     });
 
     it('should have the property smartDataSizeAvailable (base name: "smart_data_size_available")', function() {
       // uncomment below and update the code to test the property smartDataSizeAvailable
-      //var instane = new bimdata.Size();
+      //var instance = new bimdata.Size();
       //expect(instance).to.be();
     });
 
     it('should have the property remainingTotalSize (base name: "remaining_total_size")', function() {
       // uncomment below and update the code to test the property remainingTotalSize
-      //var instane = new bimdata.Size();
+      //var instance = new bimdata.Size();
       //expect(instance).to.be();
     });
 
     it('should have the property remainingSmartDataSize (base name: "remaining_smart_data_size")', function() {
       // uncomment below and update the code to test the property remainingSmartDataSize
-      //var instane = new bimdata.Size();
+      //var instance = new bimdata.Size();
       //expect(instance).to.be();
     });
 
     it('should have the property remainingTotalSizePercent (base name: "remaining_total_size_percent")', function() {
       // uncomment below and update the code to test the property remainingTotalSizePercent
-      //var instane = new bimdata.Size();
+      //var instance = new bimdata.Size();
       //expect(instance).to.be();
     });
 
     it('should have the property remainingSmartDataSizePercent (base name: "remaining_smart_data_size_percent")', function() {
       // uncomment below and update the code to test the property remainingSmartDataSizePercent
-      //var instane = new bimdata.Size();
+      //var instance = new bimdata.Size();
       //expect(instance).to.be();
     });
 

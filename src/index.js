@@ -45,7 +45,6 @@ import DetailedExtensions from './model/DetailedExtensions';
 import Direction from './model/Direction';
 import DirectionRequest from './model/DirectionRequest';
 import Document from './model/Document';
-import DocumentRequest from './model/DocumentRequest';
 import DocumentWithElementList from './model/DocumentWithElementList';
 import Element from './model/Element';
 import ElementClassificationRelation from './model/ElementClassificationRelation';
@@ -128,7 +127,6 @@ import PatchedIfcAccessTokenRequest from './model/PatchedIfcAccessTokenRequest';
 import PatchedIfcCheckerRequest from './model/PatchedIfcCheckerRequest';
 import PatchedLabelRequest from './model/PatchedLabelRequest';
 import PatchedLayerRequest from './model/PatchedLayerRequest';
-import PatchedModelFilesRequest from './model/PatchedModelFilesRequest';
 import PatchedModelRequest from './model/PatchedModelRequest';
 import PatchedPositioningPlanRequest from './model/PatchedPositioningPlanRequest';
 import PatchedPriorityRequest from './model/PatchedPriorityRequest';
@@ -501,12 +499,6 @@ export {
      * @property {module:model/Document}
      */
     Document,
-
-    /**
-     * The DocumentRequest model constructor.
-     * @property {module:model/DocumentRequest}
-     */
-    DocumentRequest,
 
     /**
      * The DocumentWithElementList model constructor.
@@ -999,12 +991,6 @@ export {
      * @property {module:model/PatchedLayerRequest}
      */
     PatchedLayerRequest,
-
-    /**
-     * The PatchedModelFilesRequest model constructor.
-     * @property {module:model/PatchedModelFilesRequest}
-     */
-    PatchedModelFilesRequest,
 
     /**
      * The PatchedModelRequest model constructor.

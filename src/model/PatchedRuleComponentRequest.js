@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyType from './AnyType';
 
 /**
  * The PatchedRuleComponentRequest model module.
@@ -52,19 +51,19 @@ class PatchedRuleComponentRequest {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], {'String': AnyType});
+                obj['value'] = ApiClient.convertToType(data['value'], {'String': Object});
             }
             if (data.hasOwnProperty('operator')) {
                 obj['operator'] = ApiClient.convertToType(data['operator'], 'String');
             }
             if (data.hasOwnProperty('params')) {
-                obj['params'] = ApiClient.convertToType(data['params'], {'String': AnyType});
+                obj['params'] = ApiClient.convertToType(data['params'], {'String': Object});
             }
             if (data.hasOwnProperty('condition')) {
                 obj['condition'] = ApiClient.convertToType(data['condition'], 'String');
             }
             if (data.hasOwnProperty('rule_components')) {
-                obj['rule_components'] = ApiClient.convertToType(data['rule_components'], {'String': AnyType});
+                obj['rule_components'] = ApiClient.convertToType(data['rule_components'], {'String': Object});
             }
         }
         return obj;
@@ -79,7 +78,7 @@ class PatchedRuleComponentRequest {
 PatchedRuleComponentRequest.prototype['type'] = undefined;
 
 /**
- * @member {Object.<String, module:model/AnyType>} value
+ * @member {Object.<String, Object>} value
  */
 PatchedRuleComponentRequest.prototype['value'] = undefined;
 
@@ -89,7 +88,7 @@ PatchedRuleComponentRequest.prototype['value'] = undefined;
 PatchedRuleComponentRequest.prototype['operator'] = undefined;
 
 /**
- * @member {Object.<String, module:model/AnyType>} params
+ * @member {Object.<String, Object>} params
  */
 PatchedRuleComponentRequest.prototype['params'] = undefined;
 
@@ -99,7 +98,7 @@ PatchedRuleComponentRequest.prototype['params'] = undefined;
 PatchedRuleComponentRequest.prototype['condition'] = undefined;
 
 /**
- * @member {Object.<String, module:model/AnyType>} rule_components
+ * @member {Object.<String, Object>} rule_components
  */
 PatchedRuleComponentRequest.prototype['rule_components'] = undefined;
 

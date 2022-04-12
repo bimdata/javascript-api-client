@@ -50,85 +50,85 @@
   describe('SelfUser', function() {
     it('should create an instance of SelfUser', function() {
       // uncomment below and update the code to test SelfUser
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be.a(bimdata.SelfUser);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property firstname (base name: "firstname")', function() {
       // uncomment below and update the code to test the property firstname
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property lastname (base name: "lastname")', function() {
       // uncomment below and update the code to test the property lastname
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property organizations (base name: "organizations")', function() {
       // uncomment below and update the code to test the property organizations
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property clouds (base name: "clouds")', function() {
       // uncomment below and update the code to test the property clouds
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property projects (base name: "projects")', function() {
       // uncomment below and update the code to test the property projects
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property provider (base name: "provider")', function() {
       // uncomment below and update the code to test the property provider
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property providerSub (base name: "provider_sub")', function() {
       // uncomment below and update the code to test the property providerSub
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property sub (base name: "sub")', function() {
       // uncomment below and update the code to test the property sub
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });
 
     it('should have the property profilePicture (base name: "profile_picture")', function() {
       // uncomment below and update the code to test the property profilePicture
-      //var instane = new bimdata.SelfUser();
+      //var instance = new bimdata.SelfUser();
       //expect(instance).to.be();
     });
 

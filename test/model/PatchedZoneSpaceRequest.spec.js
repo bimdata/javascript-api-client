@@ -50,25 +50,25 @@
   describe('PatchedZoneSpaceRequest', function() {
     it('should create an instance of PatchedZoneSpaceRequest', function() {
       // uncomment below and update the code to test PatchedZoneSpaceRequest
-      //var instane = new bimdata.PatchedZoneSpaceRequest();
+      //var instance = new bimdata.PatchedZoneSpaceRequest();
       //expect(instance).to.be.a(bimdata.PatchedZoneSpaceRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PatchedZoneSpaceRequest();
+      //var instance = new bimdata.PatchedZoneSpaceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property longname (base name: "longname")', function() {
       // uncomment below and update the code to test the property longname
-      //var instane = new bimdata.PatchedZoneSpaceRequest();
+      //var instance = new bimdata.PatchedZoneSpaceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.PatchedZoneSpaceRequest();
+      //var instance = new bimdata.PatchedZoneSpaceRequest();
       //expect(instance).to.be();
     });
 

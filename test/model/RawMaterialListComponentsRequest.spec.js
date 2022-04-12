@@ -50,19 +50,19 @@
   describe('RawMaterialListComponentsRequest', function() {
     it('should create an instance of RawMaterialListComponentsRequest', function() {
       // uncomment below and update the code to test RawMaterialListComponentsRequest
-      //var instane = new bimdata.RawMaterialListComponentsRequest();
+      //var instance = new bimdata.RawMaterialListComponentsRequest();
       //expect(instance).to.be.a(bimdata.RawMaterialListComponentsRequest);
     });
 
     it('should have the property material (base name: "material")', function() {
       // uncomment below and update the code to test the property material
-      //var instane = new bimdata.RawMaterialListComponentsRequest();
+      //var instance = new bimdata.RawMaterialListComponentsRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property materialOption (base name: "material_option")', function() {
       // uncomment below and update the code to test the property materialOption
-      //var instane = new bimdata.RawMaterialListComponentsRequest();
+      //var instance = new bimdata.RawMaterialListComponentsRequest();
       //expect(instance).to.be();
     });
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **type** | **String** |  | 
 **unitType** | **String** |  | [optional] 
 **prefix** | **String** |  | [optional] 
-**elements** | [**{String: AnyType}**](AnyType.md) |  | [optional] 
+**elements** | **{String: Object}** |  | [optional] 
 **conversionFactor** | **Number** |  | [optional] 
 **dimensions** | **[Number]** |  | [optional] 
 **conversionBaseunitIndex** | **Number** |  | [optional] 

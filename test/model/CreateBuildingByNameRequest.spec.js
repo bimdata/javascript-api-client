@@ -50,13 +50,13 @@
   describe('CreateBuildingByNameRequest', function() {
     it('should create an instance of CreateBuildingByNameRequest', function() {
       // uncomment below and update the code to test CreateBuildingByNameRequest
-      //var instane = new bimdata.CreateBuildingByNameRequest();
+      //var instance = new bimdata.CreateBuildingByNameRequest();
       //expect(instance).to.be.a(bimdata.CreateBuildingByNameRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.CreateBuildingByNameRequest();
+      //var instance = new bimdata.CreateBuildingByNameRequest();
       //expect(instance).to.be();
     });
 

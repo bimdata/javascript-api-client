@@ -50,19 +50,19 @@
   describe('PatchedVisaCommentRequest', function() {
     it('should create an instance of PatchedVisaCommentRequest', function() {
       // uncomment below and update the code to test PatchedVisaCommentRequest
-      //var instane = new bimdata.PatchedVisaCommentRequest();
+      //var instance = new bimdata.PatchedVisaCommentRequest();
       //expect(instance).to.be.a(bimdata.PatchedVisaCommentRequest);
     });
 
     it('should have the property authorId (base name: "author_id")', function() {
       // uncomment below and update the code to test the property authorId
-      //var instane = new bimdata.PatchedVisaCommentRequest();
+      //var instance = new bimdata.PatchedVisaCommentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property content (base name: "content")', function() {
       // uncomment below and update the code to test the property content
-      //var instane = new bimdata.PatchedVisaCommentRequest();
+      //var instance = new bimdata.PatchedVisaCommentRequest();
       //expect(instance).to.be();
     });
 

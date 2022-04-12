@@ -50,19 +50,19 @@
   describe('PatchedProjectAccessTokenRequest', function() {
     it('should create an instance of PatchedProjectAccessTokenRequest', function() {
       // uncomment below and update the code to test PatchedProjectAccessTokenRequest
-      //var instane = new bimdata.PatchedProjectAccessTokenRequest();
+      //var instance = new bimdata.PatchedProjectAccessTokenRequest();
       //expect(instance).to.be.a(bimdata.PatchedProjectAccessTokenRequest);
     });
 
     it('should have the property scopes (base name: "scopes")', function() {
       // uncomment below and update the code to test the property scopes
-      //var instane = new bimdata.PatchedProjectAccessTokenRequest();
+      //var instance = new bimdata.PatchedProjectAccessTokenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property expiresAt (base name: "expires_at")', function() {
       // uncomment below and update the code to test the property expiresAt
-      //var instane = new bimdata.PatchedProjectAccessTokenRequest();
+      //var instance = new bimdata.PatchedProjectAccessTokenRequest();
       //expect(instance).to.be();
     });
 

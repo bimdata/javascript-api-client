@@ -50,31 +50,31 @@
   describe('ProcessorHandler', function() {
     it('should create an instance of ProcessorHandler', function() {
       // uncomment below and update the code to test ProcessorHandler
-      //var instane = new bimdata.ProcessorHandler();
+      //var instance = new bimdata.ProcessorHandler();
       //expect(instance).to.be.a(bimdata.ProcessorHandler);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.ProcessorHandler();
+      //var instance = new bimdata.ProcessorHandler();
       //expect(instance).to.be();
     });
 
     it('should have the property worker (base name: "worker")', function() {
       // uncomment below and update the code to test the property worker
-      //var instane = new bimdata.ProcessorHandler();
+      //var instance = new bimdata.ProcessorHandler();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new bimdata.ProcessorHandler();
+      //var instance = new bimdata.ProcessorHandler();
       //expect(instance).to.be();
     });
 
     it('should have the property detailMessage (base name: "detail_message")', function() {
       // uncomment below and update the code to test the property detailMessage
-      //var instane = new bimdata.ProcessorHandler();
+      //var instance = new bimdata.ProcessorHandler();
       //expect(instance).to.be();
     });
 

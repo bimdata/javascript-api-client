@@ -50,19 +50,19 @@
   describe('PatchedIfcCheckerRequest', function() {
     it('should create an instance of PatchedIfcCheckerRequest', function() {
       // uncomment below and update the code to test PatchedIfcCheckerRequest
-      //var instane = new bimdata.PatchedIfcCheckerRequest();
+      //var instance = new bimdata.PatchedIfcCheckerRequest();
       //expect(instance).to.be.a(bimdata.PatchedIfcCheckerRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PatchedIfcCheckerRequest();
+      //var instance = new bimdata.PatchedIfcCheckerRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property checkplanId (base name: "checkplan_id")', function() {
       // uncomment below and update the code to test the property checkplanId
-      //var instane = new bimdata.PatchedIfcCheckerRequest();
+      //var instance = new bimdata.PatchedIfcCheckerRequest();
       //expect(instance).to.be();
     });
 

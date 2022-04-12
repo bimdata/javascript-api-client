@@ -50,25 +50,25 @@
   describe('SpaceRequest', function() {
     it('should create an instance of SpaceRequest', function() {
       // uncomment below and update the code to test SpaceRequest
-      //var instane = new bimdata.SpaceRequest();
+      //var instance = new bimdata.SpaceRequest();
       //expect(instance).to.be.a(bimdata.SpaceRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.SpaceRequest();
+      //var instance = new bimdata.SpaceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property longname (base name: "longname")', function() {
       // uncomment below and update the code to test the property longname
-      //var instane = new bimdata.SpaceRequest();
+      //var instance = new bimdata.SpaceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.SpaceRequest();
+      //var instance = new bimdata.SpaceRequest();
       //expect(instance).to.be();
     });
 

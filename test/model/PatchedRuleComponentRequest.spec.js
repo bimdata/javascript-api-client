@@ -50,43 +50,43 @@
   describe('PatchedRuleComponentRequest', function() {
     it('should create an instance of PatchedRuleComponentRequest', function() {
       // uncomment below and update the code to test PatchedRuleComponentRequest
-      //var instane = new bimdata.PatchedRuleComponentRequest();
+      //var instance = new bimdata.PatchedRuleComponentRequest();
       //expect(instance).to.be.a(bimdata.PatchedRuleComponentRequest);
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.PatchedRuleComponentRequest();
+      //var instance = new bimdata.PatchedRuleComponentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new bimdata.PatchedRuleComponentRequest();
+      //var instance = new bimdata.PatchedRuleComponentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property operator (base name: "operator")', function() {
       // uncomment below and update the code to test the property operator
-      //var instane = new bimdata.PatchedRuleComponentRequest();
+      //var instance = new bimdata.PatchedRuleComponentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property params (base name: "params")', function() {
       // uncomment below and update the code to test the property params
-      //var instane = new bimdata.PatchedRuleComponentRequest();
+      //var instance = new bimdata.PatchedRuleComponentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property condition (base name: "condition")', function() {
       // uncomment below and update the code to test the property condition
-      //var instane = new bimdata.PatchedRuleComponentRequest();
+      //var instance = new bimdata.PatchedRuleComponentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property ruleComponents (base name: "rule_components")', function() {
       // uncomment below and update the code to test the property ruleComponents
-      //var instane = new bimdata.PatchedRuleComponentRequest();
+      //var instance = new bimdata.PatchedRuleComponentRequest();
       //expect(instance).to.be();
     });
 

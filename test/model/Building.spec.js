@@ -50,31 +50,31 @@
   describe('Building', function() {
     it('should create an instance of Building', function() {
       // uncomment below and update the code to test Building
-      //var instane = new bimdata.Building();
+      //var instance = new bimdata.Building();
       //expect(instance).to.be.a(bimdata.Building);
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.Building();
+      //var instance = new bimdata.Building();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Building();
+      //var instance = new bimdata.Building();
       //expect(instance).to.be();
     });
 
     it('should have the property plans (base name: "plans")', function() {
       // uncomment below and update the code to test the property plans
-      //var instane = new bimdata.Building();
+      //var instance = new bimdata.Building();
       //expect(instance).to.be();
     });
 
     it('should have the property plansUnreachableCount (base name: "plans_unreachable_count")', function() {
       // uncomment below and update the code to test the property plansUnreachableCount
-      //var instane = new bimdata.Building();
+      //var instance = new bimdata.Building();
       //expect(instance).to.be();
     });
 

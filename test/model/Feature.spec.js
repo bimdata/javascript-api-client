@@ -50,19 +50,19 @@
   describe('Feature', function() {
     it('should create an instance of Feature', function() {
       // uncomment below and update the code to test Feature
-      //var instane = new bimdata.Feature();
+      //var instance = new bimdata.Feature();
       //expect(instance).to.be.a(bimdata.Feature);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Feature();
+      //var instance = new bimdata.Feature();
       //expect(instance).to.be();
     });
 
     it('should have the property viewerUrl (base name: "viewer_url")', function() {
       // uncomment below and update the code to test the property viewerUrl
-      //var instane = new bimdata.Feature();
+      //var instance = new bimdata.Feature();
       //expect(instance).to.be();
     });
 

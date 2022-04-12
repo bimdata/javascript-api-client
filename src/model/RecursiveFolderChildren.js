@@ -14,8 +14,9 @@
 import ApiClient from '../ApiClient';
 import FolderGroupPermission from './FolderGroupPermission';
 import FolderPermissionEnum from './FolderPermissionEnum';
+import ModelTypeEnum from './ModelTypeEnum';
 import NatureEnum from './NatureEnum';
-import OneOfModelTypeEnumNullEnum from './OneOfModelTypeEnumNullEnum';
+import NullEnum from './NullEnum';
 import RecursiveFolderChildrenTypeEnum from './RecursiveFolderChildrenTypeEnum';
 import User from './User';
 

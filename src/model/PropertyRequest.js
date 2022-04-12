@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyType from './AnyType';
 import PropertyDefinitionRequest from './PropertyDefinitionRequest';
 
 /**
@@ -56,7 +55,7 @@ class PropertyRequest {
                 obj['definition'] = PropertyDefinitionRequest.constructFromObject(data['definition']);
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], {'String': AnyType});
+                obj['value'] = ApiClient.convertToType(data['value'], {'String': Object});
             }
         }
         return obj;
@@ -71,7 +70,7 @@ class PropertyRequest {
 PropertyRequest.prototype['definition'] = undefined;
 
 /**
- * @member {Object.<String, module:model/AnyType>} value
+ * @member {Object.<String, Object>} value
  */
 PropertyRequest.prototype['value'] = undefined;
 

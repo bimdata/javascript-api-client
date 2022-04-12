@@ -50,25 +50,25 @@
   describe('IfcMergeRequest', function() {
     it('should create an instance of IfcMergeRequest', function() {
       // uncomment below and update the code to test IfcMergeRequest
-      //var instane = new bimdata.IfcMergeRequest();
+      //var instance = new bimdata.IfcMergeRequest();
       //expect(instance).to.be.a(bimdata.IfcMergeRequest);
     });
 
     it('should have the property ifcIds (base name: "ifc_ids")', function() {
       // uncomment below and update the code to test the property ifcIds
-      //var instane = new bimdata.IfcMergeRequest();
+      //var instance = new bimdata.IfcMergeRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property floatingPointReduction (base name: "floating_point_reduction")', function() {
       // uncomment below and update the code to test the property floatingPointReduction
-      //var instane = new bimdata.IfcMergeRequest();
+      //var instance = new bimdata.IfcMergeRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property exportName (base name: "export_name")', function() {
       // uncomment below and update the code to test the property exportName
-      //var instane = new bimdata.IfcMergeRequest();
+      //var instance = new bimdata.IfcMergeRequest();
       //expect(instance).to.be();
     });
 

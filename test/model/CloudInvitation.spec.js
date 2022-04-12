@@ -50,31 +50,31 @@
   describe('CloudInvitation', function() {
     it('should create an instance of CloudInvitation', function() {
       // uncomment below and update the code to test CloudInvitation
-      //var instane = new bimdata.CloudInvitation();
+      //var instance = new bimdata.CloudInvitation();
       //expect(instance).to.be.a(bimdata.CloudInvitation);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.CloudInvitation();
+      //var instance = new bimdata.CloudInvitation();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new bimdata.CloudInvitation();
+      //var instance = new bimdata.CloudInvitation();
       //expect(instance).to.be();
     });
 
     it('should have the property redirectUri (base name: "redirect_uri")', function() {
       // uncomment below and update the code to test the property redirectUri
-      //var instane = new bimdata.CloudInvitation();
+      //var instance = new bimdata.CloudInvitation();
       //expect(instance).to.be();
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new bimdata.CloudInvitation();
+      //var instance = new bimdata.CloudInvitation();
       //expect(instance).to.be();
     });
 

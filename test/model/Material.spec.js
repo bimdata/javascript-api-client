@@ -50,37 +50,37 @@
   describe('Material', function() {
     it('should create an instance of Material', function() {
       // uncomment below and update the code to test Material
-      //var instane = new bimdata.Material();
+      //var instance = new bimdata.Material();
       //expect(instance).to.be.a(bimdata.Material);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Material();
+      //var instance = new bimdata.Material();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Material();
+      //var instance = new bimdata.Material();
       //expect(instance).to.be();
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new bimdata.Material();
+      //var instance = new bimdata.Material();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.Material();
+      //var instance = new bimdata.Material();
       //expect(instance).to.be();
     });
 
     it('should have the property propertySets (base name: "property_sets")', function() {
       // uncomment below and update the code to test the property propertySets
-      //var instane = new bimdata.Material();
+      //var instance = new bimdata.Material();
       //expect(instance).to.be();
     });
 

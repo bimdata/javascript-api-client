@@ -50,37 +50,37 @@
   describe('SystemRequest', function() {
     it('should create an instance of SystemRequest', function() {
       // uncomment below and update the code to test SystemRequest
-      //var instane = new bimdata.SystemRequest();
+      //var instance = new bimdata.SystemRequest();
       //expect(instance).to.be.a(bimdata.SystemRequest);
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.SystemRequest();
+      //var instance = new bimdata.SystemRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.SystemRequest();
+      //var instance = new bimdata.SystemRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property objectType (base name: "object_type")', function() {
       // uncomment below and update the code to test the property objectType
-      //var instane = new bimdata.SystemRequest();
+      //var instance = new bimdata.SystemRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.SystemRequest();
+      //var instance = new bimdata.SystemRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property elements (base name: "elements")', function() {
       // uncomment below and update the code to test the property elements
-      //var instane = new bimdata.SystemRequest();
+      //var instance = new bimdata.SystemRequest();
       //expect(instance).to.be();
     });
 

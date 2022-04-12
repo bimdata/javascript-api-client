@@ -50,19 +50,19 @@
   describe('MaterialListComponent', function() {
     it('should create an instance of MaterialListComponent', function() {
       // uncomment below and update the code to test MaterialListComponent
-      //var instane = new bimdata.MaterialListComponent();
+      //var instance = new bimdata.MaterialListComponent();
       //expect(instance).to.be.a(bimdata.MaterialListComponent);
     });
 
     it('should have the property material (base name: "material")', function() {
       // uncomment below and update the code to test the property material
-      //var instane = new bimdata.MaterialListComponent();
+      //var instance = new bimdata.MaterialListComponent();
       //expect(instance).to.be();
     });
 
     it('should have the property option (base name: "option")', function() {
       // uncomment below and update the code to test the property option
-      //var instane = new bimdata.MaterialListComponent();
+      //var instance = new bimdata.MaterialListComponent();
       //expect(instance).to.be();
     });
 

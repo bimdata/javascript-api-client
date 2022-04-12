@@ -50,25 +50,25 @@
   describe('MaterialOption', function() {
     it('should create an instance of MaterialOption', function() {
       // uncomment below and update the code to test MaterialOption
-      //var instane = new bimdata.MaterialOption();
+      //var instance = new bimdata.MaterialOption();
       //expect(instance).to.be.a(bimdata.MaterialOption);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.MaterialOption();
+      //var instance = new bimdata.MaterialOption();
       //expect(instance).to.be();
     });
 
     it('should have the property thickness (base name: "thickness")', function() {
       // uncomment below and update the code to test the property thickness
-      //var instane = new bimdata.MaterialOption();
+      //var instance = new bimdata.MaterialOption();
       //expect(instance).to.be();
     });
 
     it('should have the property listComponents (base name: "list_components")', function() {
       // uncomment below and update the code to test the property listComponents
-      //var instane = new bimdata.MaterialOption();
+      //var instance = new bimdata.MaterialOption();
       //expect(instance).to.be();
     });
 

@@ -50,55 +50,55 @@
   describe('Element', function() {
     it('should create an instance of Element', function() {
       // uncomment below and update the code to test Element
-      //var instane = new bimdata.Element();
+      //var instance = new bimdata.Element();
       //expect(instance).to.be.a(bimdata.Element);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Element();
+      //var instance = new bimdata.Element();
       //expect(instance).to.be();
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.Element();
+      //var instance = new bimdata.Element();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.Element();
+      //var instance = new bimdata.Element();
       //expect(instance).to.be();
     });
 
     it('should have the property attributes (base name: "attributes")', function() {
       // uncomment below and update the code to test the property attributes
-      //var instane = new bimdata.Element();
+      //var instance = new bimdata.Element();
       //expect(instance).to.be();
     });
 
     it('should have the property propertySets (base name: "property_sets")', function() {
       // uncomment below and update the code to test the property propertySets
-      //var instane = new bimdata.Element();
+      //var instance = new bimdata.Element();
       //expect(instance).to.be();
     });
 
     it('should have the property classifications (base name: "classifications")', function() {
       // uncomment below and update the code to test the property classifications
-      //var instane = new bimdata.Element();
+      //var instance = new bimdata.Element();
       //expect(instance).to.be();
     });
 
     it('should have the property materialList (base name: "material_list")', function() {
       // uncomment below and update the code to test the property materialList
-      //var instane = new bimdata.Element();
+      //var instance = new bimdata.Element();
       //expect(instance).to.be();
     });
 
     it('should have the property layers (base name: "layers")', function() {
       // uncomment below and update the code to test the property layers
-      //var instane = new bimdata.Element();
+      //var instance = new bimdata.Element();
       //expect(instance).to.be();
     });
 

@@ -50,61 +50,61 @@
   describe('PatchedViewpointRequest', function() {
     it('should create an instance of PatchedViewpointRequest', function() {
       // uncomment below and update the code to test PatchedViewpointRequest
-      //var instane = new bimdata.PatchedViewpointRequest();
+      //var instance = new bimdata.PatchedViewpointRequest();
       //expect(instance).to.be.a(bimdata.PatchedViewpointRequest);
     });
 
     it('should have the property index (base name: "index")', function() {
       // uncomment below and update the code to test the property index
-      //var instane = new bimdata.PatchedViewpointRequest();
+      //var instance = new bimdata.PatchedViewpointRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property guid (base name: "guid")', function() {
       // uncomment below and update the code to test the property guid
-      //var instane = new bimdata.PatchedViewpointRequest();
+      //var instance = new bimdata.PatchedViewpointRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property orthogonalCamera (base name: "orthogonal_camera")', function() {
       // uncomment below and update the code to test the property orthogonalCamera
-      //var instane = new bimdata.PatchedViewpointRequest();
+      //var instance = new bimdata.PatchedViewpointRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property perspectiveCamera (base name: "perspective_camera")', function() {
       // uncomment below and update the code to test the property perspectiveCamera
-      //var instane = new bimdata.PatchedViewpointRequest();
+      //var instance = new bimdata.PatchedViewpointRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property lines (base name: "lines")', function() {
       // uncomment below and update the code to test the property lines
-      //var instane = new bimdata.PatchedViewpointRequest();
+      //var instance = new bimdata.PatchedViewpointRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property clippingPlanes (base name: "clipping_planes")', function() {
       // uncomment below and update the code to test the property clippingPlanes
-      //var instane = new bimdata.PatchedViewpointRequest();
+      //var instance = new bimdata.PatchedViewpointRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property snapshot (base name: "snapshot")', function() {
       // uncomment below and update the code to test the property snapshot
-      //var instane = new bimdata.PatchedViewpointRequest();
+      //var instance = new bimdata.PatchedViewpointRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property components (base name: "components")', function() {
       // uncomment below and update the code to test the property components
-      //var instane = new bimdata.PatchedViewpointRequest();
+      //var instance = new bimdata.PatchedViewpointRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property tempId (base name: "temp_id")', function() {
       // uncomment below and update the code to test the property tempId
-      //var instane = new bimdata.PatchedViewpointRequest();
+      //var instance = new bimdata.PatchedViewpointRequest();
       //expect(instance).to.be();
     });
 

@@ -50,25 +50,25 @@
   describe('IfcAccessToken', function() {
     it('should create an instance of IfcAccessToken', function() {
       // uncomment below and update the code to test IfcAccessToken
-      //var instane = new bimdata.IfcAccessToken();
+      //var instance = new bimdata.IfcAccessToken();
       //expect(instance).to.be.a(bimdata.IfcAccessToken);
     });
 
     it('should have the property token (base name: "token")', function() {
       // uncomment below and update the code to test the property token
-      //var instane = new bimdata.IfcAccessToken();
+      //var instance = new bimdata.IfcAccessToken();
       //expect(instance).to.be();
     });
 
     it('should have the property readOnly (base name: "read_only")', function() {
       // uncomment below and update the code to test the property readOnly
-      //var instane = new bimdata.IfcAccessToken();
+      //var instance = new bimdata.IfcAccessToken();
       //expect(instance).to.be();
     });
 
     it('should have the property expiresAt (base name: "expires_at")', function() {
       // uncomment below and update the code to test the property expiresAt
-      //var instane = new bimdata.IfcAccessToken();
+      //var instance = new bimdata.IfcAccessToken();
       //expect(instance).to.be();
     });
 

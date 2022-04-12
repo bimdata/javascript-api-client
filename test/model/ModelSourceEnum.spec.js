@@ -49,7 +49,7 @@
   describe('ModelSourceEnum', function() {
     it('should create an instance of ModelSourceEnum', function() {
       // uncomment below and update the code to test ModelSourceEnum
-      //var instane = new bimdata.ModelSourceEnum();
+      //var instance = new bimdata.ModelSourceEnum();
       //expect(instance).to.be.a(bimdata.ModelSourceEnum);
     });
 

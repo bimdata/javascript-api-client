@@ -50,19 +50,19 @@
   describe('ProjectAccessTokenRequest', function() {
     it('should create an instance of ProjectAccessTokenRequest', function() {
       // uncomment below and update the code to test ProjectAccessTokenRequest
-      //var instane = new bimdata.ProjectAccessTokenRequest();
+      //var instance = new bimdata.ProjectAccessTokenRequest();
       //expect(instance).to.be.a(bimdata.ProjectAccessTokenRequest);
     });
 
     it('should have the property scopes (base name: "scopes")', function() {
       // uncomment below and update the code to test the property scopes
-      //var instane = new bimdata.ProjectAccessTokenRequest();
+      //var instance = new bimdata.ProjectAccessTokenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property expiresAt (base name: "expires_at")', function() {
       // uncomment below and update the code to test the property expiresAt
-      //var instane = new bimdata.ProjectAccessTokenRequest();
+      //var instance = new bimdata.ProjectAccessTokenRequest();
       //expect(instance).to.be();
     });
 

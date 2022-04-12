@@ -50,19 +50,19 @@
   describe('PropertyRequest', function() {
     it('should create an instance of PropertyRequest', function() {
       // uncomment below and update the code to test PropertyRequest
-      //var instane = new bimdata.PropertyRequest();
+      //var instance = new bimdata.PropertyRequest();
       //expect(instance).to.be.a(bimdata.PropertyRequest);
     });
 
     it('should have the property definition (base name: "definition")', function() {
       // uncomment below and update the code to test the property definition
-      //var instane = new bimdata.PropertyRequest();
+      //var instance = new bimdata.PropertyRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new bimdata.PropertyRequest();
+      //var instance = new bimdata.PropertyRequest();
       //expect(instance).to.be();
     });
 

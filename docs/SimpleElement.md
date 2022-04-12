@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uuid** | **{String: {String: AnyType}}** | uuid of element | 
+**uuid** | **{String: {String: Object}}** | uuid of element | 
 
 

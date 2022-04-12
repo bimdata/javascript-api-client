@@ -50,19 +50,19 @@
   describe('ElementPropertySetRelationRequest', function() {
     it('should create an instance of ElementPropertySetRelationRequest', function() {
       // uncomment below and update the code to test ElementPropertySetRelationRequest
-      //var instane = new bimdata.ElementPropertySetRelationRequest();
+      //var instance = new bimdata.ElementPropertySetRelationRequest();
       //expect(instance).to.be.a(bimdata.ElementPropertySetRelationRequest);
     });
 
     it('should have the property elementUuid (base name: "element_uuid")', function() {
       // uncomment below and update the code to test the property elementUuid
-      //var instane = new bimdata.ElementPropertySetRelationRequest();
+      //var instance = new bimdata.ElementPropertySetRelationRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property propertySetId (base name: "property_set_id")', function() {
       // uncomment below and update the code to test the property propertySetId
-      //var instane = new bimdata.ElementPropertySetRelationRequest();
+      //var instance = new bimdata.ElementPropertySetRelationRequest();
       //expect(instance).to.be();
     });
 

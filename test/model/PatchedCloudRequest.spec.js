@@ -50,25 +50,25 @@
   describe('PatchedCloudRequest', function() {
     it('should create an instance of PatchedCloudRequest', function() {
       // uncomment below and update the code to test PatchedCloudRequest
-      //var instane = new bimdata.PatchedCloudRequest();
+      //var instance = new bimdata.PatchedCloudRequest();
       //expect(instance).to.be.a(bimdata.PatchedCloudRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PatchedCloudRequest();
+      //var instance = new bimdata.PatchedCloudRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property organizationId (base name: "organization_id")', function() {
       // uncomment below and update the code to test the property organizationId
-      //var instane = new bimdata.PatchedCloudRequest();
+      //var instance = new bimdata.PatchedCloudRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
-      //var instane = new bimdata.PatchedCloudRequest();
+      //var instance = new bimdata.PatchedCloudRequest();
       //expect(instance).to.be();
     });
 

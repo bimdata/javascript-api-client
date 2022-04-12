@@ -50,43 +50,43 @@
   describe('Ruleset', function() {
     it('should create an instance of Ruleset', function() {
       // uncomment below and update the code to test Ruleset
-      //var instane = new bimdata.Ruleset();
+      //var instance = new bimdata.Ruleset();
       //expect(instance).to.be.a(bimdata.Ruleset);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Ruleset();
+      //var instance = new bimdata.Ruleset();
       //expect(instance).to.be();
     });
 
     it('should have the property parentRulesetId (base name: "parent_ruleset_id")', function() {
       // uncomment below and update the code to test the property parentRulesetId
-      //var instane = new bimdata.Ruleset();
+      //var instance = new bimdata.Ruleset();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Ruleset();
+      //var instance = new bimdata.Ruleset();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.Ruleset();
+      //var instance = new bimdata.Ruleset();
       //expect(instance).to.be();
     });
 
     it('should have the property rules (base name: "rules")', function() {
       // uncomment below and update the code to test the property rules
-      //var instane = new bimdata.Ruleset();
+      //var instance = new bimdata.Ruleset();
       //expect(instance).to.be();
     });
 
     it('should have the property rulesets (base name: "rulesets")', function() {
       // uncomment below and update the code to test the property rulesets
-      //var instane = new bimdata.Ruleset();
+      //var instance = new bimdata.Ruleset();
       //expect(instance).to.be();
     });
 

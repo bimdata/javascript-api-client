@@ -50,13 +50,13 @@
   describe('MarketplaceAppImageRequest', function() {
     it('should create an instance of MarketplaceAppImageRequest', function() {
       // uncomment below and update the code to test MarketplaceAppImageRequest
-      //var instane = new bimdata.MarketplaceAppImageRequest();
+      //var instance = new bimdata.MarketplaceAppImageRequest();
       //expect(instance).to.be.a(bimdata.MarketplaceAppImageRequest);
     });
 
     it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
-      //var instane = new bimdata.MarketplaceAppImageRequest();
+      //var instance = new bimdata.MarketplaceAppImageRequest();
       //expect(instance).to.be();
     });
 

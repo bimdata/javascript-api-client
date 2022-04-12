@@ -50,25 +50,25 @@
   describe('ViewSetupHintsRequest', function() {
     it('should create an instance of ViewSetupHintsRequest', function() {
       // uncomment below and update the code to test ViewSetupHintsRequest
-      //var instane = new bimdata.ViewSetupHintsRequest();
+      //var instance = new bimdata.ViewSetupHintsRequest();
       //expect(instance).to.be.a(bimdata.ViewSetupHintsRequest);
     });
 
     it('should have the property spacesVisible (base name: "spaces_visible")', function() {
       // uncomment below and update the code to test the property spacesVisible
-      //var instane = new bimdata.ViewSetupHintsRequest();
+      //var instance = new bimdata.ViewSetupHintsRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property spaceBoundariesVisible (base name: "space_boundaries_visible")', function() {
       // uncomment below and update the code to test the property spaceBoundariesVisible
-      //var instane = new bimdata.ViewSetupHintsRequest();
+      //var instance = new bimdata.ViewSetupHintsRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property openingsVisible (base name: "openings_visible")', function() {
       // uncomment below and update the code to test the property openingsVisible
-      //var instane = new bimdata.ViewSetupHintsRequest();
+      //var instance = new bimdata.ViewSetupHintsRequest();
       //expect(instance).to.be();
     });
 

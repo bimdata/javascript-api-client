@@ -50,25 +50,25 @@
   describe('PatchedClassificationRequest', function() {
     it('should create an instance of PatchedClassificationRequest', function() {
       // uncomment below and update the code to test PatchedClassificationRequest
-      //var instane = new bimdata.PatchedClassificationRequest();
+      //var instance = new bimdata.PatchedClassificationRequest();
       //expect(instance).to.be.a(bimdata.PatchedClassificationRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PatchedClassificationRequest();
+      //var instance = new bimdata.PatchedClassificationRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property notation (base name: "notation")', function() {
       // uncomment below and update the code to test the property notation
-      //var instane = new bimdata.PatchedClassificationRequest();
+      //var instance = new bimdata.PatchedClassificationRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new bimdata.PatchedClassificationRequest();
+      //var instance = new bimdata.PatchedClassificationRequest();
       //expect(instance).to.be();
     });
 

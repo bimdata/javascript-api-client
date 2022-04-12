@@ -50,37 +50,37 @@
   describe('Rule', function() {
     it('should create an instance of Rule', function() {
       // uncomment below and update the code to test Rule
-      //var instane = new bimdata.Rule();
+      //var instance = new bimdata.Rule();
       //expect(instance).to.be.a(bimdata.Rule);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Rule();
+      //var instance = new bimdata.Rule();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Rule();
+      //var instance = new bimdata.Rule();
       //expect(instance).to.be();
     });
 
     it('should have the property condition (base name: "condition")', function() {
       // uncomment below and update the code to test the property condition
-      //var instane = new bimdata.Rule();
+      //var instance = new bimdata.Rule();
       //expect(instance).to.be();
     });
 
     it('should have the property ruleComponents (base name: "rule_components")', function() {
       // uncomment below and update the code to test the property ruleComponents
-      //var instane = new bimdata.Rule();
+      //var instance = new bimdata.Rule();
       //expect(instance).to.be();
     });
 
     it('should have the property on (base name: "on")', function() {
       // uncomment below and update the code to test the property on
-      //var instane = new bimdata.Rule();
+      //var instance = new bimdata.Rule();
       //expect(instance).to.be();
     });
 

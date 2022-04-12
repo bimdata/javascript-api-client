@@ -50,19 +50,19 @@
   describe('GroupRequest', function() {
     it('should create an instance of GroupRequest', function() {
       // uncomment below and update the code to test GroupRequest
-      //var instane = new bimdata.GroupRequest();
+      //var instance = new bimdata.GroupRequest();
       //expect(instance).to.be.a(bimdata.GroupRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.GroupRequest();
+      //var instance = new bimdata.GroupRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
-      //var instane = new bimdata.GroupRequest();
+      //var instance = new bimdata.GroupRequest();
       //expect(instance).to.be();
     });
 

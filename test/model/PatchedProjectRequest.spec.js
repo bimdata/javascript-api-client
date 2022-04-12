@@ -50,31 +50,31 @@
   describe('PatchedProjectRequest', function() {
     it('should create an instance of PatchedProjectRequest', function() {
       // uncomment below and update the code to test PatchedProjectRequest
-      //var instane = new bimdata.PatchedProjectRequest();
+      //var instance = new bimdata.PatchedProjectRequest();
       //expect(instance).to.be.a(bimdata.PatchedProjectRequest);
     });
 
     it('should have the property logo (base name: "logo")', function() {
       // uncomment below and update the code to test the property logo
-      //var instane = new bimdata.PatchedProjectRequest();
+      //var instance = new bimdata.PatchedProjectRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PatchedProjectRequest();
+      //var instance = new bimdata.PatchedProjectRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new bimdata.PatchedProjectRequest();
+      //var instance = new bimdata.PatchedProjectRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property parentId (base name: "parent_id")', function() {
       // uncomment below and update the code to test the property parentId
-      //var instane = new bimdata.PatchedProjectRequest();
+      //var instance = new bimdata.PatchedProjectRequest();
       //expect(instance).to.be();
     });
 

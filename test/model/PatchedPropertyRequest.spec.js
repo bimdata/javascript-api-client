@@ -50,19 +50,19 @@
   describe('PatchedPropertyRequest', function() {
     it('should create an instance of PatchedPropertyRequest', function() {
       // uncomment below and update the code to test PatchedPropertyRequest
-      //var instane = new bimdata.PatchedPropertyRequest();
+      //var instance = new bimdata.PatchedPropertyRequest();
       //expect(instance).to.be.a(bimdata.PatchedPropertyRequest);
     });
 
     it('should have the property definition (base name: "definition")', function() {
       // uncomment below and update the code to test the property definition
-      //var instane = new bimdata.PatchedPropertyRequest();
+      //var instance = new bimdata.PatchedPropertyRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new bimdata.PatchedPropertyRequest();
+      //var instance = new bimdata.PatchedPropertyRequest();
       //expect(instance).to.be();
     });
 

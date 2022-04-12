@@ -49,7 +49,7 @@
   describe('FolderPermissionEnum', function() {
     it('should create an instance of FolderPermissionEnum', function() {
       // uncomment below and update the code to test FolderPermissionEnum
-      //var instane = new bimdata.FolderPermissionEnum();
+      //var instance = new bimdata.FolderPermissionEnum();
       //expect(instance).to.be.a(bimdata.FolderPermissionEnum);
     });
 

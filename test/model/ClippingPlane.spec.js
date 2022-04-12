@@ -50,19 +50,19 @@
   describe('ClippingPlane', function() {
     it('should create an instance of ClippingPlane', function() {
       // uncomment below and update the code to test ClippingPlane
-      //var instane = new bimdata.ClippingPlane();
+      //var instance = new bimdata.ClippingPlane();
       //expect(instance).to.be.a(bimdata.ClippingPlane);
     });
 
     it('should have the property location (base name: "location")', function() {
       // uncomment below and update the code to test the property location
-      //var instane = new bimdata.ClippingPlane();
+      //var instance = new bimdata.ClippingPlane();
       //expect(instance).to.be();
     });
 
     it('should have the property direction (base name: "direction")', function() {
       // uncomment below and update the code to test the property direction
-      //var instane = new bimdata.ClippingPlane();
+      //var instance = new bimdata.ClippingPlane();
       //expect(instance).to.be();
     });
 

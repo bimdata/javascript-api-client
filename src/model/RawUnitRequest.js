@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyType from './AnyType';
 
 /**
  * The RawUnitRequest model module.
@@ -63,7 +62,7 @@ class RawUnitRequest {
                 obj['prefix'] = ApiClient.convertToType(data['prefix'], 'String');
             }
             if (data.hasOwnProperty('elements')) {
-                obj['elements'] = ApiClient.convertToType(data['elements'], {'String': AnyType});
+                obj['elements'] = ApiClient.convertToType(data['elements'], {'String': Object});
             }
             if (data.hasOwnProperty('conversion_factor')) {
                 obj['conversion_factor'] = ApiClient.convertToType(data['conversion_factor'], 'Number');
@@ -105,7 +104,7 @@ RawUnitRequest.prototype['unit_type'] = undefined;
 RawUnitRequest.prototype['prefix'] = undefined;
 
 /**
- * @member {Object.<String, module:model/AnyType>} elements
+ * @member {Object.<String, Object>} elements
  */
 RawUnitRequest.prototype['elements'] = undefined;
 

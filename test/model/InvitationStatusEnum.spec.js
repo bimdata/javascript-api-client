@@ -49,7 +49,7 @@
   describe('InvitationStatusEnum', function() {
     it('should create an instance of InvitationStatusEnum', function() {
       // uncomment below and update the code to test InvitationStatusEnum
-      //var instane = new bimdata.InvitationStatusEnum();
+      //var instance = new bimdata.InvitationStatusEnum();
       //expect(instance).to.be.a(bimdata.InvitationStatusEnum);
     });
 

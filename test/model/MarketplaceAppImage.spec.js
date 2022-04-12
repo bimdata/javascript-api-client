@@ -50,25 +50,25 @@
   describe('MarketplaceAppImage', function() {
     it('should create an instance of MarketplaceAppImage', function() {
       // uncomment below and update the code to test MarketplaceAppImage
-      //var instane = new bimdata.MarketplaceAppImage();
+      //var instance = new bimdata.MarketplaceAppImage();
       //expect(instance).to.be.a(bimdata.MarketplaceAppImage);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.MarketplaceAppImage();
+      //var instance = new bimdata.MarketplaceAppImage();
       //expect(instance).to.be();
     });
 
     it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
-      //var instane = new bimdata.MarketplaceAppImage();
+      //var instance = new bimdata.MarketplaceAppImage();
       //expect(instance).to.be();
     });
 
     it('should have the property order (base name: "order")', function() {
       // uncomment below and update the code to test the property order
-      //var instane = new bimdata.MarketplaceAppImage();
+      //var instance = new bimdata.MarketplaceAppImage();
       //expect(instance).to.be();
     });
 

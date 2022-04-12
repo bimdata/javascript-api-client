@@ -50,25 +50,25 @@
   describe('CheckPlanRequest', function() {
     it('should create an instance of CheckPlanRequest', function() {
       // uncomment below and update the code to test CheckPlanRequest
-      //var instane = new bimdata.CheckPlanRequest();
+      //var instance = new bimdata.CheckPlanRequest();
       //expect(instance).to.be.a(bimdata.CheckPlanRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.CheckPlanRequest();
+      //var instance = new bimdata.CheckPlanRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.CheckPlanRequest();
+      //var instance = new bimdata.CheckPlanRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property rulesets (base name: "rulesets")', function() {
       // uncomment below and update the code to test the property rulesets
-      //var instane = new bimdata.CheckPlanRequest();
+      //var instance = new bimdata.CheckPlanRequest();
       //expect(instance).to.be();
     });
 

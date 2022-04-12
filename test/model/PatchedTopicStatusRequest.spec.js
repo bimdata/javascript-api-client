@@ -50,25 +50,25 @@
   describe('PatchedTopicStatusRequest', function() {
     it('should create an instance of PatchedTopicStatusRequest', function() {
       // uncomment below and update the code to test PatchedTopicStatusRequest
-      //var instane = new bimdata.PatchedTopicStatusRequest();
+      //var instance = new bimdata.PatchedTopicStatusRequest();
       //expect(instance).to.be.a(bimdata.PatchedTopicStatusRequest);
     });
 
     it('should have the property topicStatus (base name: "topic_status")', function() {
       // uncomment below and update the code to test the property topicStatus
-      //var instane = new bimdata.PatchedTopicStatusRequest();
+      //var instance = new bimdata.PatchedTopicStatusRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
-      //var instane = new bimdata.PatchedTopicStatusRequest();
+      //var instance = new bimdata.PatchedTopicStatusRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property project (base name: "project")', function() {
       // uncomment below and update the code to test the property project
-      //var instane = new bimdata.PatchedTopicStatusRequest();
+      //var instance = new bimdata.PatchedTopicStatusRequest();
       //expect(instance).to.be();
     });
 

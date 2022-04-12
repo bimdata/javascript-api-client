@@ -50,19 +50,19 @@
   describe('PatchedIfcAccessTokenRequest', function() {
     it('should create an instance of PatchedIfcAccessTokenRequest', function() {
       // uncomment below and update the code to test PatchedIfcAccessTokenRequest
-      //var instane = new bimdata.PatchedIfcAccessTokenRequest();
+      //var instance = new bimdata.PatchedIfcAccessTokenRequest();
       //expect(instance).to.be.a(bimdata.PatchedIfcAccessTokenRequest);
     });
 
     it('should have the property readOnly (base name: "read_only")', function() {
       // uncomment below and update the code to test the property readOnly
-      //var instane = new bimdata.PatchedIfcAccessTokenRequest();
+      //var instance = new bimdata.PatchedIfcAccessTokenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property expiresAt (base name: "expires_at")', function() {
       // uncomment below and update the code to test the property expiresAt
-      //var instane = new bimdata.PatchedIfcAccessTokenRequest();
+      //var instance = new bimdata.PatchedIfcAccessTokenRequest();
       //expect(instance).to.be();
     });
 

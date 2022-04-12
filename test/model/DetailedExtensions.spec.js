@@ -50,37 +50,37 @@
   describe('DetailedExtensions', function() {
     it('should create an instance of DetailedExtensions', function() {
       // uncomment below and update the code to test DetailedExtensions
-      //var instane = new bimdata.DetailedExtensions();
+      //var instance = new bimdata.DetailedExtensions();
       //expect(instance).to.be.a(bimdata.DetailedExtensions);
     });
 
     it('should have the property topicLabels (base name: "topic_labels")', function() {
       // uncomment below and update the code to test the property topicLabels
-      //var instane = new bimdata.DetailedExtensions();
+      //var instance = new bimdata.DetailedExtensions();
       //expect(instance).to.be();
     });
 
     it('should have the property topicTypes (base name: "topic_types")', function() {
       // uncomment below and update the code to test the property topicTypes
-      //var instane = new bimdata.DetailedExtensions();
+      //var instance = new bimdata.DetailedExtensions();
       //expect(instance).to.be();
     });
 
     it('should have the property topicStatuses (base name: "topic_statuses")', function() {
       // uncomment below and update the code to test the property topicStatuses
-      //var instane = new bimdata.DetailedExtensions();
+      //var instance = new bimdata.DetailedExtensions();
       //expect(instance).to.be();
     });
 
     it('should have the property priorities (base name: "priorities")', function() {
       // uncomment below and update the code to test the property priorities
-      //var instane = new bimdata.DetailedExtensions();
+      //var instance = new bimdata.DetailedExtensions();
       //expect(instance).to.be();
     });
 
     it('should have the property stages (base name: "stages")', function() {
       // uncomment below and update the code to test the property stages
-      //var instane = new bimdata.DetailedExtensions();
+      //var instance = new bimdata.DetailedExtensions();
       //expect(instance).to.be();
     });
 

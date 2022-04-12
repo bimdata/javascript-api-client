@@ -49,7 +49,7 @@
   describe('RecursiveFolderChildrenTypeEnum', function() {
     it('should create an instance of RecursiveFolderChildrenTypeEnum', function() {
       // uncomment below and update the code to test RecursiveFolderChildrenTypeEnum
-      //var instane = new bimdata.RecursiveFolderChildrenTypeEnum();
+      //var instance = new bimdata.RecursiveFolderChildrenTypeEnum();
       //expect(instance).to.be.a(bimdata.RecursiveFolderChildrenTypeEnum);
     });
 

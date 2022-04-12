@@ -50,25 +50,25 @@
   describe('ComponentsParentRequest', function() {
     it('should create an instance of ComponentsParentRequest', function() {
       // uncomment below and update the code to test ComponentsParentRequest
-      //var instane = new bimdata.ComponentsParentRequest();
+      //var instance = new bimdata.ComponentsParentRequest();
       //expect(instance).to.be.a(bimdata.ComponentsParentRequest);
     });
 
     it('should have the property coloring (base name: "coloring")', function() {
       // uncomment below and update the code to test the property coloring
-      //var instane = new bimdata.ComponentsParentRequest();
+      //var instance = new bimdata.ComponentsParentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property visibility (base name: "visibility")', function() {
       // uncomment below and update the code to test the property visibility
-      //var instane = new bimdata.ComponentsParentRequest();
+      //var instance = new bimdata.ComponentsParentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property selection (base name: "selection")', function() {
       // uncomment below and update the code to test the property selection
-      //var instane = new bimdata.ComponentsParentRequest();
+      //var instance = new bimdata.ComponentsParentRequest();
       //expect(instance).to.be();
     });
 

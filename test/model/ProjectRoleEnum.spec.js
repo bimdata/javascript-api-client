@@ -49,7 +49,7 @@
   describe('ProjectRoleEnum', function() {
     it('should create an instance of ProjectRoleEnum', function() {
       // uncomment below and update the code to test ProjectRoleEnum
-      //var instane = new bimdata.ProjectRoleEnum();
+      //var instance = new bimdata.ProjectRoleEnum();
       //expect(instance).to.be.a(bimdata.ProjectRoleEnum);
     });
 

@@ -50,55 +50,55 @@
   describe('Extensions', function() {
     it('should create an instance of Extensions', function() {
       // uncomment below and update the code to test Extensions
-      //var instane = new bimdata.Extensions();
+      //var instance = new bimdata.Extensions();
       //expect(instance).to.be.a(bimdata.Extensions);
     });
 
     it('should have the property topicType (base name: "topic_type")', function() {
       // uncomment below and update the code to test the property topicType
-      //var instane = new bimdata.Extensions();
+      //var instance = new bimdata.Extensions();
       //expect(instance).to.be();
     });
 
     it('should have the property topicStatus (base name: "topic_status")', function() {
       // uncomment below and update the code to test the property topicStatus
-      //var instane = new bimdata.Extensions();
+      //var instance = new bimdata.Extensions();
       //expect(instance).to.be();
     });
 
     it('should have the property topicLabel (base name: "topic_label")', function() {
       // uncomment below and update the code to test the property topicLabel
-      //var instane = new bimdata.Extensions();
+      //var instance = new bimdata.Extensions();
       //expect(instance).to.be();
     });
 
     it('should have the property priority (base name: "priority")', function() {
       // uncomment below and update the code to test the property priority
-      //var instane = new bimdata.Extensions();
+      //var instance = new bimdata.Extensions();
       //expect(instance).to.be();
     });
 
     it('should have the property stage (base name: "stage")', function() {
       // uncomment below and update the code to test the property stage
-      //var instane = new bimdata.Extensions();
+      //var instance = new bimdata.Extensions();
       //expect(instance).to.be();
     });
 
     it('should have the property userIdType (base name: "user_id_type")', function() {
       // uncomment below and update the code to test the property userIdType
-      //var instane = new bimdata.Extensions();
+      //var instance = new bimdata.Extensions();
       //expect(instance).to.be();
     });
 
     it('should have the property priorityColors (base name: "priority_colors")', function() {
       // uncomment below and update the code to test the property priorityColors
-      //var instane = new bimdata.Extensions();
+      //var instance = new bimdata.Extensions();
       //expect(instance).to.be();
     });
 
     it('should have the property topicStatusColors (base name: "topic_status_colors")', function() {
       // uncomment below and update the code to test the property topicStatusColors
-      //var instane = new bimdata.Extensions();
+      //var instance = new bimdata.Extensions();
       //expect(instance).to.be();
     });
 

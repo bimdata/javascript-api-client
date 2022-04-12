@@ -49,7 +49,7 @@
   describe('NatureEnum', function() {
     it('should create an instance of NatureEnum', function() {
       // uncomment below and update the code to test NatureEnum
-      //var instane = new bimdata.NatureEnum();
+      //var instance = new bimdata.NatureEnum();
       //expect(instance).to.be.a(bimdata.NatureEnum);
     });
 

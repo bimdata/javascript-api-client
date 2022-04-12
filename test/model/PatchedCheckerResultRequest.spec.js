@@ -50,31 +50,31 @@
   describe('PatchedCheckerResultRequest', function() {
     it('should create an instance of PatchedCheckerResultRequest', function() {
       // uncomment below and update the code to test PatchedCheckerResultRequest
-      //var instane = new bimdata.PatchedCheckerResultRequest();
+      //var instance = new bimdata.PatchedCheckerResultRequest();
       //expect(instance).to.be.a(bimdata.PatchedCheckerResultRequest);
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new bimdata.PatchedCheckerResultRequest();
+      //var instance = new bimdata.PatchedCheckerResultRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property result (base name: "result")', function() {
       // uncomment below and update the code to test the property result
-      //var instane = new bimdata.PatchedCheckerResultRequest();
+      //var instance = new bimdata.PatchedCheckerResultRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property collisions (base name: "collisions")', function() {
       // uncomment below and update the code to test the property collisions
-      //var instane = new bimdata.PatchedCheckerResultRequest();
+      //var instance = new bimdata.PatchedCheckerResultRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property errorDetail (base name: "error_detail")', function() {
       // uncomment below and update the code to test the property errorDetail
-      //var instane = new bimdata.PatchedCheckerResultRequest();
+      //var instance = new bimdata.PatchedCheckerResultRequest();
       //expect(instance).to.be();
     });
 

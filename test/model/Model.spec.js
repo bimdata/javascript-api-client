@@ -50,163 +50,163 @@
   describe('Model', function() {
     it('should create an instance of Model', function() {
       // uncomment below and update the code to test Model
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be.a(bimdata.Model);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property creator (base name: "creator")', function() {
       // uncomment below and update the code to test the property creator
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property source (base name: "source")', function() {
       // uncomment below and update the code to test the property source
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property documentId (base name: "document_id")', function() {
       // uncomment below and update the code to test the property documentId
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property document (base name: "document")', function() {
       // uncomment below and update the code to test the property document
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property structureFile (base name: "structure_file")', function() {
       // uncomment below and update the code to test the property structureFile
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property systemsFile (base name: "systems_file")', function() {
       // uncomment below and update the code to test the property systemsFile
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property mapFile (base name: "map_file")', function() {
       // uncomment below and update the code to test the property mapFile
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property gltfFile (base name: "gltf_file")', function() {
       // uncomment below and update the code to test the property gltfFile
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property bvhTreeFile (base name: "bvh_tree_file")', function() {
       // uncomment below and update the code to test the property bvhTreeFile
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property viewer360File (base name: "viewer_360_file")', function() {
       // uncomment below and update the code to test the property viewer360File
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property xktFile (base name: "xkt_file")', function() {
       // uncomment below and update the code to test the property xktFile
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property projectId (base name: "project_id")', function() {
       // uncomment below and update the code to test the property projectId
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property worldPosition (base name: "world_position")', function() {
       // uncomment below and update the code to test the property worldPosition
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property sizeRatio (base name: "size_ratio")', function() {
       // uncomment below and update the code to test the property sizeRatio
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property errors (base name: "errors")', function() {
       // uncomment below and update the code to test the property errors
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property warnings (base name: "warnings")', function() {
       // uncomment below and update the code to test the property warnings
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property archived (base name: "archived")', function() {
       // uncomment below and update the code to test the property archived
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property version (base name: "version")', function() {
       // uncomment below and update the code to test the property version
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property northVector (base name: "north_vector")', function() {
       // uncomment below and update the code to test the property northVector
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 
     it('should have the property recommanded2dAngle (base name: "recommanded_2d_angle")', function() {
       // uncomment below and update the code to test the property recommanded2dAngle
-      //var instane = new bimdata.Model();
+      //var instance = new bimdata.Model();
       //expect(instance).to.be();
     });
 

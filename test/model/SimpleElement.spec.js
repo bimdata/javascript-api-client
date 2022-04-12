@@ -50,13 +50,13 @@
   describe('SimpleElement', function() {
     it('should create an instance of SimpleElement', function() {
       // uncomment below and update the code to test SimpleElement
-      //var instane = new bimdata.SimpleElement();
+      //var instance = new bimdata.SimpleElement();
       //expect(instance).to.be.a(bimdata.SimpleElement);
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.SimpleElement();
+      //var instance = new bimdata.SimpleElement();
       //expect(instance).to.be();
     });
 

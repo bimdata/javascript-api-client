@@ -50,25 +50,25 @@
   describe('BcfProject', function() {
     it('should create an instance of BcfProject', function() {
       // uncomment below and update the code to test BcfProject
-      //var instane = new bimdata.BcfProject();
+      //var instance = new bimdata.BcfProject();
       //expect(instance).to.be.a(bimdata.BcfProject);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.BcfProject();
+      //var instance = new bimdata.BcfProject();
       //expect(instance).to.be();
     });
 
     it('should have the property projectId (base name: "project_id")', function() {
       // uncomment below and update the code to test the property projectId
-      //var instane = new bimdata.BcfProject();
+      //var instance = new bimdata.BcfProject();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.BcfProject();
+      //var instance = new bimdata.BcfProject();
       //expect(instance).to.be();
     });
 

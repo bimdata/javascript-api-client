@@ -50,31 +50,31 @@
   describe('Classification', function() {
     it('should create an instance of Classification', function() {
       // uncomment below and update the code to test Classification
-      //var instane = new bimdata.Classification();
+      //var instance = new bimdata.Classification();
       //expect(instance).to.be.a(bimdata.Classification);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Classification();
+      //var instance = new bimdata.Classification();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Classification();
+      //var instance = new bimdata.Classification();
       //expect(instance).to.be();
     });
 
     it('should have the property notation (base name: "notation")', function() {
       // uncomment below and update the code to test the property notation
-      //var instane = new bimdata.Classification();
+      //var instance = new bimdata.Classification();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new bimdata.Classification();
+      //var instance = new bimdata.Classification();
       //expect(instance).to.be();
     });
 

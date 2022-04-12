@@ -50,19 +50,19 @@
   describe('FolderGroupPermissionRequest', function() {
     it('should create an instance of FolderGroupPermissionRequest', function() {
       // uncomment below and update the code to test FolderGroupPermissionRequest
-      //var instane = new bimdata.FolderGroupPermissionRequest();
+      //var instance = new bimdata.FolderGroupPermissionRequest();
       //expect(instance).to.be.a(bimdata.FolderGroupPermissionRequest);
     });
 
     it('should have the property group (base name: "group")', function() {
       // uncomment below and update the code to test the property group
-      //var instane = new bimdata.FolderGroupPermissionRequest();
+      //var instance = new bimdata.FolderGroupPermissionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property permission (base name: "permission")', function() {
       // uncomment below and update the code to test the property permission
-      //var instane = new bimdata.FolderGroupPermissionRequest();
+      //var instance = new bimdata.FolderGroupPermissionRequest();
       //expect(instance).to.be();
     });
 

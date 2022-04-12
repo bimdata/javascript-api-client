@@ -50,13 +50,13 @@
   describe('PatchedUserProjectUpdateRequest', function() {
     it('should create an instance of PatchedUserProjectUpdateRequest', function() {
       // uncomment below and update the code to test PatchedUserProjectUpdateRequest
-      //var instane = new bimdata.PatchedUserProjectUpdateRequest();
+      //var instance = new bimdata.PatchedUserProjectUpdateRequest();
       //expect(instance).to.be.a(bimdata.PatchedUserProjectUpdateRequest);
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new bimdata.PatchedUserProjectUpdateRequest();
+      //var instance = new bimdata.PatchedUserProjectUpdateRequest();
       //expect(instance).to.be();
     });
 

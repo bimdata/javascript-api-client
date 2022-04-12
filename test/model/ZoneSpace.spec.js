@@ -50,49 +50,49 @@
   describe('ZoneSpace', function() {
     it('should create an instance of ZoneSpace', function() {
       // uncomment below and update the code to test ZoneSpace
-      //var instane = new bimdata.ZoneSpace();
+      //var instance = new bimdata.ZoneSpace();
       //expect(instance).to.be.a(bimdata.ZoneSpace);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.ZoneSpace();
+      //var instance = new bimdata.ZoneSpace();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.ZoneSpace();
+      //var instance = new bimdata.ZoneSpace();
       //expect(instance).to.be();
     });
 
     it('should have the property longname (base name: "longname")', function() {
       // uncomment below and update the code to test the property longname
-      //var instane = new bimdata.ZoneSpace();
+      //var instance = new bimdata.ZoneSpace();
       //expect(instance).to.be();
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.ZoneSpace();
+      //var instance = new bimdata.ZoneSpace();
       //expect(instance).to.be();
     });
 
     it('should have the property zoneSet (base name: "zone_set")', function() {
       // uncomment below and update the code to test the property zoneSet
-      //var instane = new bimdata.ZoneSpace();
+      //var instance = new bimdata.ZoneSpace();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.ZoneSpace();
+      //var instance = new bimdata.ZoneSpace();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.ZoneSpace();
+      //var instance = new bimdata.ZoneSpace();
       //expect(instance).to.be();
     });
 

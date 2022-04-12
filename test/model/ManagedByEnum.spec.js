@@ -49,7 +49,7 @@
   describe('ManagedByEnum', function() {
     it('should create an instance of ManagedByEnum', function() {
       // uncomment below and update the code to test ManagedByEnum
-      //var instane = new bimdata.ManagedByEnum();
+      //var instance = new bimdata.ManagedByEnum();
       //expect(instance).to.be.a(bimdata.ManagedByEnum);
     });
 

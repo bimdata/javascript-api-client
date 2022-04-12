@@ -50,19 +50,19 @@
   describe('FeatureRequest', function() {
     it('should create an instance of FeatureRequest', function() {
       // uncomment below and update the code to test FeatureRequest
-      //var instane = new bimdata.FeatureRequest();
+      //var instance = new bimdata.FeatureRequest();
       //expect(instance).to.be.a(bimdata.FeatureRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.FeatureRequest();
+      //var instance = new bimdata.FeatureRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property viewerUrl (base name: "viewer_url")', function() {
       // uncomment below and update the code to test the property viewerUrl
-      //var instane = new bimdata.FeatureRequest();
+      //var instance = new bimdata.FeatureRequest();
       //expect(instance).to.be();
     });
 

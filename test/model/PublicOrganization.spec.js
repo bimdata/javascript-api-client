@@ -50,25 +50,25 @@
   describe('PublicOrganization', function() {
     it('should create an instance of PublicOrganization', function() {
       // uncomment below and update the code to test PublicOrganization
-      //var instane = new bimdata.PublicOrganization();
+      //var instance = new bimdata.PublicOrganization();
       //expect(instance).to.be.a(bimdata.PublicOrganization);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.PublicOrganization();
+      //var instance = new bimdata.PublicOrganization();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PublicOrganization();
+      //var instance = new bimdata.PublicOrganization();
       //expect(instance).to.be();
     });
 
     it('should have the property logo (base name: "logo")', function() {
       // uncomment below and update the code to test the property logo
-      //var instane = new bimdata.PublicOrganization();
+      //var instance = new bimdata.PublicOrganization();
       //expect(instance).to.be();
     });
 

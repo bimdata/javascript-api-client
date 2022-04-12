@@ -50,13 +50,13 @@
   describe('IfcOptimizeRequest', function() {
     it('should create an instance of IfcOptimizeRequest', function() {
       // uncomment below and update the code to test IfcOptimizeRequest
-      //var instane = new bimdata.IfcOptimizeRequest();
+      //var instance = new bimdata.IfcOptimizeRequest();
       //expect(instance).to.be.a(bimdata.IfcOptimizeRequest);
     });
 
     it('should have the property floatingPointReduction (base name: "floating_point_reduction")', function() {
       // uncomment below and update the code to test the property floatingPointReduction
-      //var instane = new bimdata.IfcOptimizeRequest();
+      //var instance = new bimdata.IfcOptimizeRequest();
       //expect(instance).to.be();
     });
 

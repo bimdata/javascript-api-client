@@ -50,19 +50,19 @@
   describe('PatchedTopicTypeRequest', function() {
     it('should create an instance of PatchedTopicTypeRequest', function() {
       // uncomment below and update the code to test PatchedTopicTypeRequest
-      //var instane = new bimdata.PatchedTopicTypeRequest();
+      //var instance = new bimdata.PatchedTopicTypeRequest();
       //expect(instance).to.be.a(bimdata.PatchedTopicTypeRequest);
     });
 
     it('should have the property topicType (base name: "topic_type")', function() {
       // uncomment below and update the code to test the property topicType
-      //var instane = new bimdata.PatchedTopicTypeRequest();
+      //var instance = new bimdata.PatchedTopicTypeRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property project (base name: "project")', function() {
       // uncomment below and update the code to test the property project
-      //var instane = new bimdata.PatchedTopicTypeRequest();
+      //var instance = new bimdata.PatchedTopicTypeRequest();
       //expect(instance).to.be();
     });
 

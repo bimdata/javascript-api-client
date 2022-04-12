@@ -50,49 +50,49 @@
   describe('VisaValidation', function() {
     it('should create an instance of VisaValidation', function() {
       // uncomment below and update the code to test VisaValidation
-      //var instane = new bimdata.VisaValidation();
+      //var instance = new bimdata.VisaValidation();
       //expect(instance).to.be.a(bimdata.VisaValidation);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.VisaValidation();
+      //var instance = new bimdata.VisaValidation();
       //expect(instance).to.be();
     });
 
     it('should have the property visaId (base name: "visa_id")', function() {
       // uncomment below and update the code to test the property visaId
-      //var instane = new bimdata.VisaValidation();
+      //var instance = new bimdata.VisaValidation();
       //expect(instance).to.be();
     });
 
     it('should have the property validator (base name: "validator")', function() {
       // uncomment below and update the code to test the property validator
-      //var instane = new bimdata.VisaValidation();
+      //var instance = new bimdata.VisaValidation();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new bimdata.VisaValidation();
+      //var instance = new bimdata.VisaValidation();
       //expect(instance).to.be();
     });
 
     it('should have the property hasCommented (base name: "has_commented")', function() {
       // uncomment below and update the code to test the property hasCommented
-      //var instane = new bimdata.VisaValidation();
+      //var instance = new bimdata.VisaValidation();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.VisaValidation();
+      //var instance = new bimdata.VisaValidation();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.VisaValidation();
+      //var instance = new bimdata.VisaValidation();
       //expect(instance).to.be();
     });
 

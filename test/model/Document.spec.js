@@ -50,97 +50,97 @@
   describe('Document', function() {
     it('should create an instance of Document', function() {
       // uncomment below and update the code to test Document
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be.a(bimdata.Document);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property parent (base name: "parent")', function() {
       // uncomment below and update the code to test the property parent
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property parentId (base name: "parent_id")', function() {
       // uncomment below and update the code to test the property parentId
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property creator (base name: "creator")', function() {
       // uncomment below and update the code to test the property creator
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property project (base name: "project")', function() {
       // uncomment below and update the code to test the property project
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property fileName (base name: "file_name")', function() {
       // uncomment below and update the code to test the property fileName
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property file (base name: "file")', function() {
       // uncomment below and update the code to test the property file
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property size (base name: "size")', function() {
       // uncomment below and update the code to test the property size
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property modelId (base name: "model_id")', function() {
       // uncomment below and update the code to test the property modelId
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property ifcId (base name: "ifc_id")', function() {
       // uncomment below and update the code to test the property ifcId
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property userPermission (base name: "user_permission")', function() {
       // uncomment below and update the code to test the property userPermission
-      //var instane = new bimdata.Document();
+      //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 

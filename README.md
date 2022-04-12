@@ -109,6 +109,9 @@ ApiKey.apiKey = "YOUR API KEY"
 // Configure OAuth2 access token for authorization: BIMData_Connect
 var BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
 BIMData_Connect.accessToken = "YOUR ACCESS TOKEN"
+// Configure OAuth2 access token for authorization: BIMData_Connect
+var BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = "YOUR ACCESS TOKEN"
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = "YOUR API KEY"
@@ -117,7 +120,7 @@ Bearer.apiKey = "YOUR API KEY"
 
 var api = new bimdata.BcfApi()
 var projectsPk = 56; // {Number} A unique integer value identifying this project.
-var topicsGuid = null; // {String} 
+var topicsGuid = "topicsGuid_example"; // {String} 
 var opts = {
   'commentRequest': new bimdata.CommentRequest() // {CommentRequest} 
 };
@@ -651,7 +654,6 @@ Class | Method | HTTP request | Description
  - [bimdata.Direction](docs/Direction.md)
  - [bimdata.DirectionRequest](docs/DirectionRequest.md)
  - [bimdata.Document](docs/Document.md)
- - [bimdata.DocumentRequest](docs/DocumentRequest.md)
  - [bimdata.DocumentWithElementList](docs/DocumentWithElementList.md)
  - [bimdata.Element](docs/Element.md)
  - [bimdata.ElementClassificationRelation](docs/ElementClassificationRelation.md)
@@ -734,7 +736,6 @@ Class | Method | HTTP request | Description
  - [bimdata.PatchedIfcCheckerRequest](docs/PatchedIfcCheckerRequest.md)
  - [bimdata.PatchedLabelRequest](docs/PatchedLabelRequest.md)
  - [bimdata.PatchedLayerRequest](docs/PatchedLayerRequest.md)
- - [bimdata.PatchedModelFilesRequest](docs/PatchedModelFilesRequest.md)
  - [bimdata.PatchedModelRequest](docs/PatchedModelRequest.md)
  - [bimdata.PatchedPositioningPlanRequest](docs/PatchedPositioningPlanRequest.md)
  - [bimdata.PatchedPriorityRequest](docs/PatchedPriorityRequest.md)
@@ -890,6 +891,16 @@ Class | Method | HTTP request | Description
 - **Type**: OAuth
 - **Flow**: implicit
 - **Authorization URL**: http://fakeurl.bimdata.io/realms/bimdata/protocol/openid-connect/auth
+- **Scopes**: N/A
+
+
+
+### BIMData_Connect
+
+
+- **Type**: OAuth
+- **Flow**: application
+- **Authorization URL**: 
 - **Scopes**: N/A
 
 

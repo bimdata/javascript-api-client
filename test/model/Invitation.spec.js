@@ -50,67 +50,67 @@
   describe('Invitation', function() {
     it('should create an instance of Invitation', function() {
       // uncomment below and update the code to test Invitation
-      //var instane = new bimdata.Invitation();
+      //var instance = new bimdata.Invitation();
       //expect(instance).to.be.a(bimdata.Invitation);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Invitation();
+      //var instance = new bimdata.Invitation();
       //expect(instance).to.be();
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new bimdata.Invitation();
+      //var instance = new bimdata.Invitation();
       //expect(instance).to.be();
     });
 
     it('should have the property redirectUri (base name: "redirect_uri")', function() {
       // uncomment below and update the code to test the property redirectUri
-      //var instane = new bimdata.Invitation();
+      //var instance = new bimdata.Invitation();
       //expect(instance).to.be();
     });
 
     it('should have the property cloudName (base name: "cloud_name")', function() {
       // uncomment below and update the code to test the property cloudName
-      //var instane = new bimdata.Invitation();
+      //var instance = new bimdata.Invitation();
       //expect(instance).to.be();
     });
 
     it('should have the property cloudRole (base name: "cloud_role")', function() {
       // uncomment below and update the code to test the property cloudRole
-      //var instane = new bimdata.Invitation();
+      //var instance = new bimdata.Invitation();
       //expect(instance).to.be();
     });
 
     it('should have the property projectName (base name: "project_name")', function() {
       // uncomment below and update the code to test the property projectName
-      //var instane = new bimdata.Invitation();
+      //var instance = new bimdata.Invitation();
       //expect(instance).to.be();
     });
 
     it('should have the property projectRole (base name: "project_role")', function() {
       // uncomment below and update the code to test the property projectRole
-      //var instane = new bimdata.Invitation();
+      //var instance = new bimdata.Invitation();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new bimdata.Invitation();
+      //var instance = new bimdata.Invitation();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new bimdata.Invitation();
+      //var instance = new bimdata.Invitation();
       //expect(instance).to.be();
     });
 
     it('should have the property senderProviderSub (base name: "sender_provider_sub")', function() {
       // uncomment below and update the code to test the property senderProviderSub
-      //var instane = new bimdata.Invitation();
+      //var instance = new bimdata.Invitation();
       //expect(instance).to.be();
     });
 

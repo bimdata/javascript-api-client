@@ -50,61 +50,61 @@
   describe('PatchedUnitRequest', function() {
     it('should create an instance of PatchedUnitRequest', function() {
       // uncomment below and update the code to test PatchedUnitRequest
-      //var instane = new bimdata.PatchedUnitRequest();
+      //var instance = new bimdata.PatchedUnitRequest();
       //expect(instance).to.be.a(bimdata.PatchedUnitRequest);
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.PatchedUnitRequest();
+      //var instance = new bimdata.PatchedUnitRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PatchedUnitRequest();
+      //var instance = new bimdata.PatchedUnitRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property unitType (base name: "unit_type")', function() {
       // uncomment below and update the code to test the property unitType
-      //var instane = new bimdata.PatchedUnitRequest();
+      //var instance = new bimdata.PatchedUnitRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property prefix (base name: "prefix")', function() {
       // uncomment below and update the code to test the property prefix
-      //var instane = new bimdata.PatchedUnitRequest();
+      //var instance = new bimdata.PatchedUnitRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property dimensions (base name: "dimensions")', function() {
       // uncomment below and update the code to test the property dimensions
-      //var instane = new bimdata.PatchedUnitRequest();
+      //var instance = new bimdata.PatchedUnitRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property conversionFactor (base name: "conversion_factor")', function() {
       // uncomment below and update the code to test the property conversionFactor
-      //var instane = new bimdata.PatchedUnitRequest();
+      //var instance = new bimdata.PatchedUnitRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property conversionBaseunit (base name: "conversion_baseunit")', function() {
       // uncomment below and update the code to test the property conversionBaseunit
-      //var instane = new bimdata.PatchedUnitRequest();
+      //var instance = new bimdata.PatchedUnitRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property elements (base name: "elements")', function() {
       // uncomment below and update the code to test the property elements
-      //var instane = new bimdata.PatchedUnitRequest();
+      //var instance = new bimdata.PatchedUnitRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property isDefault (base name: "is_default")', function() {
       // uncomment below and update the code to test the property isDefault
-      //var instane = new bimdata.PatchedUnitRequest();
+      //var instance = new bimdata.PatchedUnitRequest();
       //expect(instance).to.be();
     });
 

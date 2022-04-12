@@ -49,7 +49,7 @@
   describe('ExportEnum', function() {
     it('should create an instance of ExportEnum', function() {
       // uncomment below and update the code to test ExportEnum
-      //var instane = new bimdata.ExportEnum();
+      //var instance = new bimdata.ExportEnum();
       //expect(instance).to.be.a(bimdata.ExportEnum);
     });
 

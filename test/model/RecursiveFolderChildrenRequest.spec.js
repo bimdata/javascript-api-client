@@ -50,67 +50,67 @@
   describe('RecursiveFolderChildrenRequest', function() {
     it('should create an instance of RecursiveFolderChildrenRequest', function() {
       // uncomment below and update the code to test RecursiveFolderChildrenRequest
-      //var instane = new bimdata.RecursiveFolderChildrenRequest();
+      //var instance = new bimdata.RecursiveFolderChildrenRequest();
       //expect(instance).to.be.a(bimdata.RecursiveFolderChildrenRequest);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.RecursiveFolderChildrenRequest();
+      //var instance = new bimdata.RecursiveFolderChildrenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property parentId (base name: "parent_id")', function() {
       // uncomment below and update the code to test the property parentId
-      //var instane = new bimdata.RecursiveFolderChildrenRequest();
+      //var instance = new bimdata.RecursiveFolderChildrenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.RecursiveFolderChildrenRequest();
+      //var instance = new bimdata.RecursiveFolderChildrenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.RecursiveFolderChildrenRequest();
+      //var instance = new bimdata.RecursiveFolderChildrenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.RecursiveFolderChildrenRequest();
+      //var instance = new bimdata.RecursiveFolderChildrenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property fileName (base name: "file_name")', function() {
       // uncomment below and update the code to test the property fileName
-      //var instane = new bimdata.RecursiveFolderChildrenRequest();
+      //var instance = new bimdata.RecursiveFolderChildrenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.RecursiveFolderChildrenRequest();
+      //var instance = new bimdata.RecursiveFolderChildrenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property size (base name: "size")', function() {
       // uncomment below and update the code to test the property size
-      //var instane = new bimdata.RecursiveFolderChildrenRequest();
+      //var instance = new bimdata.RecursiveFolderChildrenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property file (base name: "file")', function() {
       // uncomment below and update the code to test the property file
-      //var instane = new bimdata.RecursiveFolderChildrenRequest();
+      //var instance = new bimdata.RecursiveFolderChildrenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property children (base name: "children")', function() {
       // uncomment below and update the code to test the property children
-      //var instane = new bimdata.RecursiveFolderChildrenRequest();
+      //var instance = new bimdata.RecursiveFolderChildrenRequest();
       //expect(instance).to.be();
     });
 

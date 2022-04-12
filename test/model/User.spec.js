@@ -50,73 +50,73 @@
   describe('User', function() {
     it('should create an instance of User', function() {
       // uncomment below and update the code to test User
-      //var instane = new bimdata.User();
+      //var instance = new bimdata.User();
       //expect(instance).to.be.a(bimdata.User);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.User();
+      //var instance = new bimdata.User();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new bimdata.User();
+      //var instance = new bimdata.User();
       //expect(instance).to.be();
     });
 
     it('should have the property firstname (base name: "firstname")', function() {
       // uncomment below and update the code to test the property firstname
-      //var instane = new bimdata.User();
+      //var instance = new bimdata.User();
       //expect(instance).to.be();
     });
 
     it('should have the property lastname (base name: "lastname")', function() {
       // uncomment below and update the code to test the property lastname
-      //var instane = new bimdata.User();
+      //var instance = new bimdata.User();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.User();
+      //var instance = new bimdata.User();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.User();
+      //var instance = new bimdata.User();
       //expect(instance).to.be();
     });
 
     it('should have the property cloudRole (base name: "cloud_role")', function() {
       // uncomment below and update the code to test the property cloudRole
-      //var instane = new bimdata.User();
+      //var instance = new bimdata.User();
       //expect(instance).to.be();
     });
 
     it('should have the property projectRole (base name: "project_role")', function() {
       // uncomment below and update the code to test the property projectRole
-      //var instane = new bimdata.User();
+      //var instance = new bimdata.User();
       //expect(instance).to.be();
     });
 
     it('should have the property provider (base name: "provider")', function() {
       // uncomment below and update the code to test the property provider
-      //var instane = new bimdata.User();
+      //var instance = new bimdata.User();
       //expect(instance).to.be();
     });
 
     it('should have the property sub (base name: "sub")', function() {
       // uncomment below and update the code to test the property sub
-      //var instane = new bimdata.User();
+      //var instance = new bimdata.User();
       //expect(instance).to.be();
     });
 
     it('should have the property profilePicture (base name: "profile_picture")', function() {
       // uncomment below and update the code to test the property profilePicture
-      //var instane = new bimdata.User();
+      //var instance = new bimdata.User();
       //expect(instance).to.be();
     });
 

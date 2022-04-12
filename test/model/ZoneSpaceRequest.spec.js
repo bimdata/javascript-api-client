@@ -50,25 +50,25 @@
   describe('ZoneSpaceRequest', function() {
     it('should create an instance of ZoneSpaceRequest', function() {
       // uncomment below and update the code to test ZoneSpaceRequest
-      //var instane = new bimdata.ZoneSpaceRequest();
+      //var instance = new bimdata.ZoneSpaceRequest();
       //expect(instance).to.be.a(bimdata.ZoneSpaceRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.ZoneSpaceRequest();
+      //var instance = new bimdata.ZoneSpaceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property longname (base name: "longname")', function() {
       // uncomment below and update the code to test the property longname
-      //var instane = new bimdata.ZoneSpaceRequest();
+      //var instance = new bimdata.ZoneSpaceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.ZoneSpaceRequest();
+      //var instance = new bimdata.ZoneSpaceRequest();
       //expect(instance).to.be();
     });
 

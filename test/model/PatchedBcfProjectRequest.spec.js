@@ -50,13 +50,13 @@
   describe('PatchedBcfProjectRequest', function() {
     it('should create an instance of PatchedBcfProjectRequest', function() {
       // uncomment below and update the code to test PatchedBcfProjectRequest
-      //var instane = new bimdata.PatchedBcfProjectRequest();
+      //var instance = new bimdata.PatchedBcfProjectRequest();
       //expect(instance).to.be.a(bimdata.PatchedBcfProjectRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PatchedBcfProjectRequest();
+      //var instance = new bimdata.PatchedBcfProjectRequest();
       //expect(instance).to.be();
     });
 

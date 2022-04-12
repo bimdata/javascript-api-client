@@ -50,31 +50,31 @@
   describe('RawSystem', function() {
     it('should create an instance of RawSystem', function() {
       // uncomment below and update the code to test RawSystem
-      //var instane = new bimdata.RawSystem();
+      //var instance = new bimdata.RawSystem();
       //expect(instance).to.be.a(bimdata.RawSystem);
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.RawSystem();
+      //var instance = new bimdata.RawSystem();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.RawSystem();
+      //var instance = new bimdata.RawSystem();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.RawSystem();
+      //var instance = new bimdata.RawSystem();
       //expect(instance).to.be();
     });
 
     it('should have the property objectType (base name: "object_type")', function() {
       // uncomment below and update the code to test the property objectType
-      //var instane = new bimdata.RawSystem();
+      //var instance = new bimdata.RawSystem();
       //expect(instance).to.be();
     });
 

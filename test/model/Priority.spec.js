@@ -50,31 +50,31 @@
   describe('Priority', function() {
     it('should create an instance of Priority', function() {
       // uncomment below and update the code to test Priority
-      //var instane = new bimdata.Priority();
+      //var instance = new bimdata.Priority();
       //expect(instance).to.be.a(bimdata.Priority);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Priority();
+      //var instance = new bimdata.Priority();
       //expect(instance).to.be();
     });
 
     it('should have the property priority (base name: "priority")', function() {
       // uncomment below and update the code to test the property priority
-      //var instane = new bimdata.Priority();
+      //var instance = new bimdata.Priority();
       //expect(instance).to.be();
     });
 
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
-      //var instane = new bimdata.Priority();
+      //var instance = new bimdata.Priority();
       //expect(instance).to.be();
     });
 
     it('should have the property project (base name: "project")', function() {
       // uncomment below and update the code to test the property project
-      //var instane = new bimdata.Priority();
+      //var instance = new bimdata.Priority();
       //expect(instance).to.be();
     });
 

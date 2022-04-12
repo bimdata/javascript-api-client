@@ -50,73 +50,73 @@
   describe('Visa', function() {
     it('should create an instance of Visa', function() {
       // uncomment below and update the code to test Visa
-      //var instane = new bimdata.Visa();
+      //var instance = new bimdata.Visa();
       //expect(instance).to.be.a(bimdata.Visa);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Visa();
+      //var instance = new bimdata.Visa();
       //expect(instance).to.be();
     });
 
     it('should have the property validations (base name: "validations")', function() {
       // uncomment below and update the code to test the property validations
-      //var instane = new bimdata.Visa();
+      //var instance = new bimdata.Visa();
       //expect(instance).to.be();
     });
 
     it('should have the property validationsInError (base name: "validations_in_error")', function() {
       // uncomment below and update the code to test the property validationsInError
-      //var instane = new bimdata.Visa();
+      //var instance = new bimdata.Visa();
       //expect(instance).to.be();
     });
 
     it('should have the property creator (base name: "creator")', function() {
       // uncomment below and update the code to test the property creator
-      //var instane = new bimdata.Visa();
+      //var instance = new bimdata.Visa();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new bimdata.Visa();
+      //var instance = new bimdata.Visa();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.Visa();
+      //var instance = new bimdata.Visa();
       //expect(instance).to.be();
     });
 
     it('should have the property document (base name: "document")', function() {
       // uncomment below and update the code to test the property document
-      //var instane = new bimdata.Visa();
+      //var instance = new bimdata.Visa();
       //expect(instance).to.be();
     });
 
     it('should have the property comments (base name: "comments")', function() {
       // uncomment below and update the code to test the property comments
-      //var instane = new bimdata.Visa();
+      //var instance = new bimdata.Visa();
       //expect(instance).to.be();
     });
 
     it('should have the property deadline (base name: "deadline")', function() {
       // uncomment below and update the code to test the property deadline
-      //var instane = new bimdata.Visa();
+      //var instance = new bimdata.Visa();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.Visa();
+      //var instance = new bimdata.Visa();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.Visa();
+      //var instance = new bimdata.Visa();
       //expect(instance).to.be();
     });
 

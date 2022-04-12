@@ -50,19 +50,19 @@
   describe('ModelErrors', function() {
     it('should create an instance of ModelErrors', function() {
       // uncomment below and update the code to test ModelErrors
-      //var instane = new bimdata.ModelErrors();
+      //var instance = new bimdata.ModelErrors();
       //expect(instance).to.be.a(bimdata.ModelErrors);
     });
 
     it('should have the property errors (base name: "errors")', function() {
       // uncomment below and update the code to test the property errors
-      //var instane = new bimdata.ModelErrors();
+      //var instance = new bimdata.ModelErrors();
       //expect(instance).to.be();
     });
 
     it('should have the property warnings (base name: "warnings")', function() {
       // uncomment below and update the code to test the property warnings
-      //var instane = new bimdata.ModelErrors();
+      //var instance = new bimdata.ModelErrors();
       //expect(instance).to.be();
     });
 

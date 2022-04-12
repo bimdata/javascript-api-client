@@ -50,37 +50,37 @@
   describe('RawMaterialRequest', function() {
     it('should create an instance of RawMaterialRequest', function() {
       // uncomment below and update the code to test RawMaterialRequest
-      //var instane = new bimdata.RawMaterialRequest();
+      //var instance = new bimdata.RawMaterialRequest();
       //expect(instance).to.be.a(bimdata.RawMaterialRequest);
     });
 
     it('should have the property stepId (base name: "step_id")', function() {
       // uncomment below and update the code to test the property stepId
-      //var instane = new bimdata.RawMaterialRequest();
+      //var instance = new bimdata.RawMaterialRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.RawMaterialRequest();
+      //var instance = new bimdata.RawMaterialRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.RawMaterialRequest();
+      //var instance = new bimdata.RawMaterialRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new bimdata.RawMaterialRequest();
+      //var instance = new bimdata.RawMaterialRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property psets (base name: "psets")', function() {
       // uncomment below and update the code to test the property psets
-      //var instane = new bimdata.RawMaterialRequest();
+      //var instance = new bimdata.RawMaterialRequest();
       //expect(instance).to.be();
     });
 

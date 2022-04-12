@@ -50,61 +50,61 @@
   describe('Comment', function() {
     it('should create an instance of Comment', function() {
       // uncomment below and update the code to test Comment
-      //var instane = new bimdata.Comment();
+      //var instance = new bimdata.Comment();
       //expect(instance).to.be.a(bimdata.Comment);
     });
 
     it('should have the property guid (base name: "guid")', function() {
       // uncomment below and update the code to test the property guid
-      //var instane = new bimdata.Comment();
+      //var instance = new bimdata.Comment();
       //expect(instance).to.be();
     });
 
-    it('should have the property _date (base name: "date")', function() {
-      // uncomment below and update the code to test the property _date
-      //var instane = new bimdata.Comment();
+    it('should have the property date (base name: "date")', function() {
+      // uncomment below and update the code to test the property date
+      //var instance = new bimdata.Comment();
       //expect(instance).to.be();
     });
 
     it('should have the property author (base name: "author")', function() {
       // uncomment below and update the code to test the property author
-      //var instane = new bimdata.Comment();
+      //var instance = new bimdata.Comment();
       //expect(instance).to.be();
     });
 
     it('should have the property comment (base name: "comment")', function() {
       // uncomment below and update the code to test the property comment
-      //var instane = new bimdata.Comment();
+      //var instance = new bimdata.Comment();
       //expect(instance).to.be();
     });
 
     it('should have the property viewpointGuid (base name: "viewpoint_guid")', function() {
       // uncomment below and update the code to test the property viewpointGuid
-      //var instane = new bimdata.Comment();
+      //var instance = new bimdata.Comment();
       //expect(instance).to.be();
     });
 
     it('should have the property replyToCommentGuid (base name: "reply_to_comment_guid")', function() {
       // uncomment below and update the code to test the property replyToCommentGuid
-      //var instane = new bimdata.Comment();
+      //var instance = new bimdata.Comment();
       //expect(instance).to.be();
     });
 
     it('should have the property topicGuid (base name: "topic_guid")', function() {
       // uncomment below and update the code to test the property topicGuid
-      //var instane = new bimdata.Comment();
+      //var instance = new bimdata.Comment();
       //expect(instance).to.be();
     });
 
     it('should have the property modifiedAuthor (base name: "modified_author")', function() {
       // uncomment below and update the code to test the property modifiedAuthor
-      //var instane = new bimdata.Comment();
+      //var instance = new bimdata.Comment();
       //expect(instance).to.be();
     });
 
     it('should have the property modifiedDate (base name: "modified_date")', function() {
       // uncomment below and update the code to test the property modifiedDate
-      //var instane = new bimdata.Comment();
+      //var instance = new bimdata.Comment();
       //expect(instance).to.be();
     });
 

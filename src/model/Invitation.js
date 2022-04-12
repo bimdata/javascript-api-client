@@ -14,7 +14,8 @@
 import ApiClient from '../ApiClient';
 import CloudRoleEnum from './CloudRoleEnum';
 import InvitationStatusEnum from './InvitationStatusEnum';
-import OneOfProjectRoleEnumNullEnum from './OneOfProjectRoleEnumNullEnum';
+import NullEnum from './NullEnum';
+import ProjectRoleEnum from './ProjectRoleEnum';
 
 /**
  * The Invitation model module.

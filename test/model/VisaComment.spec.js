@@ -50,43 +50,43 @@
   describe('VisaComment', function() {
     it('should create an instance of VisaComment', function() {
       // uncomment below and update the code to test VisaComment
-      //var instane = new bimdata.VisaComment();
+      //var instance = new bimdata.VisaComment();
       //expect(instance).to.be.a(bimdata.VisaComment);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.VisaComment();
+      //var instance = new bimdata.VisaComment();
       //expect(instance).to.be();
     });
 
     it('should have the property author (base name: "author")', function() {
       // uncomment below and update the code to test the property author
-      //var instane = new bimdata.VisaComment();
+      //var instance = new bimdata.VisaComment();
       //expect(instance).to.be();
     });
 
     it('should have the property visaId (base name: "visa_id")', function() {
       // uncomment below and update the code to test the property visaId
-      //var instane = new bimdata.VisaComment();
+      //var instance = new bimdata.VisaComment();
       //expect(instance).to.be();
     });
 
     it('should have the property content (base name: "content")', function() {
       // uncomment below and update the code to test the property content
-      //var instane = new bimdata.VisaComment();
+      //var instance = new bimdata.VisaComment();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new bimdata.VisaComment();
+      //var instance = new bimdata.VisaComment();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new bimdata.VisaComment();
+      //var instance = new bimdata.VisaComment();
       //expect(instance).to.be();
     });
 

@@ -50,25 +50,25 @@
   describe('WebHookRequest', function() {
     it('should create an instance of WebHookRequest', function() {
       // uncomment below and update the code to test WebHookRequest
-      //var instane = new bimdata.WebHookRequest();
+      //var instance = new bimdata.WebHookRequest();
       //expect(instance).to.be.a(bimdata.WebHookRequest);
     });
 
     it('should have the property events (base name: "events")', function() {
       // uncomment below and update the code to test the property events
-      //var instane = new bimdata.WebHookRequest();
+      //var instance = new bimdata.WebHookRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new bimdata.WebHookRequest();
+      //var instance = new bimdata.WebHookRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property secret (base name: "secret")', function() {
       // uncomment below and update the code to test the property secret
-      //var instane = new bimdata.WebHookRequest();
+      //var instance = new bimdata.WebHookRequest();
       //expect(instance).to.be();
     });
 

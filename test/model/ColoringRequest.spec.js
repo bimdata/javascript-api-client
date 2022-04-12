@@ -50,19 +50,19 @@
   describe('ColoringRequest', function() {
     it('should create an instance of ColoringRequest', function() {
       // uncomment below and update the code to test ColoringRequest
-      //var instane = new bimdata.ColoringRequest();
+      //var instance = new bimdata.ColoringRequest();
       //expect(instance).to.be.a(bimdata.ColoringRequest);
     });
 
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
-      //var instane = new bimdata.ColoringRequest();
+      //var instance = new bimdata.ColoringRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property components (base name: "components")', function() {
       // uncomment below and update the code to test the property components
-      //var instane = new bimdata.ColoringRequest();
+      //var instance = new bimdata.ColoringRequest();
       //expect(instance).to.be();
     });
 

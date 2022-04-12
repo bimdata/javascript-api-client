@@ -50,61 +50,61 @@
   describe('ModelRequest', function() {
     it('should create an instance of ModelRequest', function() {
       // uncomment below and update the code to test ModelRequest
-      //var instane = new bimdata.ModelRequest();
+      //var instance = new bimdata.ModelRequest();
       //expect(instance).to.be.a(bimdata.ModelRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.ModelRequest();
+      //var instance = new bimdata.ModelRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new bimdata.ModelRequest();
+      //var instance = new bimdata.ModelRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property source (base name: "source")', function() {
       // uncomment below and update the code to test the property source
-      //var instane = new bimdata.ModelRequest();
+      //var instance = new bimdata.ModelRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property worldPosition (base name: "world_position")', function() {
       // uncomment below and update the code to test the property worldPosition
-      //var instane = new bimdata.ModelRequest();
+      //var instance = new bimdata.ModelRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property sizeRatio (base name: "size_ratio")', function() {
       // uncomment below and update the code to test the property sizeRatio
-      //var instane = new bimdata.ModelRequest();
+      //var instance = new bimdata.ModelRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property archived (base name: "archived")', function() {
       // uncomment below and update the code to test the property archived
-      //var instane = new bimdata.ModelRequest();
+      //var instance = new bimdata.ModelRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property version (base name: "version")', function() {
       // uncomment below and update the code to test the property version
-      //var instane = new bimdata.ModelRequest();
+      //var instance = new bimdata.ModelRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property northVector (base name: "north_vector")', function() {
       // uncomment below and update the code to test the property northVector
-      //var instane = new bimdata.ModelRequest();
+      //var instance = new bimdata.ModelRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property recommanded2dAngle (base name: "recommanded_2d_angle")', function() {
       // uncomment below and update the code to test the property recommanded2dAngle
-      //var instane = new bimdata.ModelRequest();
+      //var instance = new bimdata.ModelRequest();
       //expect(instance).to.be();
     });
 

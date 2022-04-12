@@ -50,31 +50,31 @@
   describe('RawPropertySetRequest', function() {
     it('should create an instance of RawPropertySetRequest', function() {
       // uncomment below and update the code to test RawPropertySetRequest
-      //var instane = new bimdata.RawPropertySetRequest();
+      //var instance = new bimdata.RawPropertySetRequest();
       //expect(instance).to.be.a(bimdata.RawPropertySetRequest);
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.RawPropertySetRequest();
+      //var instance = new bimdata.RawPropertySetRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.RawPropertySetRequest();
+      //var instance = new bimdata.RawPropertySetRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.RawPropertySetRequest();
+      //var instance = new bimdata.RawPropertySetRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property properties (base name: "properties")', function() {
       // uncomment below and update the code to test the property properties
-      //var instane = new bimdata.RawPropertySetRequest();
+      //var instance = new bimdata.RawPropertySetRequest();
       //expect(instance).to.be();
     });
 

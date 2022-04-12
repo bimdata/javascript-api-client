@@ -50,13 +50,13 @@
   describe('MaterialListComponentRequest', function() {
     it('should create an instance of MaterialListComponentRequest', function() {
       // uncomment below and update the code to test MaterialListComponentRequest
-      //var instane = new bimdata.MaterialListComponentRequest();
+      //var instance = new bimdata.MaterialListComponentRequest();
       //expect(instance).to.be.a(bimdata.MaterialListComponentRequest);
     });
 
     it('should have the property material (base name: "material")', function() {
       // uncomment below and update the code to test the property material
-      //var instane = new bimdata.MaterialListComponentRequest();
+      //var instance = new bimdata.MaterialListComponentRequest();
       //expect(instance).to.be();
     });
 

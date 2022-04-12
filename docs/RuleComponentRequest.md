@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** |  | [optional] 
-**value** | [**{String: AnyType}**](AnyType.md) |  | [optional] 
+**value** | **{String: Object}** |  | [optional] 
 **operator** | **String** |  | [optional] 
-**params** | [**{String: AnyType}**](AnyType.md) |  | [optional] 
+**params** | **{String: Object}** |  | [optional] 
 **condition** | **String** |  | [optional] 
-**ruleComponents** | [**{String: AnyType}**](AnyType.md) |  | [optional] 
+**ruleComponents** | **{String: Object}** |  | [optional] 
 
 

@@ -50,19 +50,19 @@
   describe('SnapshotRequest', function() {
     it('should create an instance of SnapshotRequest', function() {
       // uncomment below and update the code to test SnapshotRequest
-      //var instane = new bimdata.SnapshotRequest();
+      //var instance = new bimdata.SnapshotRequest();
       //expect(instance).to.be.a(bimdata.SnapshotRequest);
     });
 
     it('should have the property snapshotType (base name: "snapshot_type")', function() {
       // uncomment below and update the code to test the property snapshotType
-      //var instane = new bimdata.SnapshotRequest();
+      //var instance = new bimdata.SnapshotRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property snapshotData (base name: "snapshot_data")', function() {
       // uncomment below and update the code to test the property snapshotData
-      //var instane = new bimdata.SnapshotRequest();
+      //var instance = new bimdata.SnapshotRequest();
       //expect(instance).to.be();
     });
 

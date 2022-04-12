@@ -50,55 +50,55 @@
   describe('RawElementRequest', function() {
     it('should create an instance of RawElementRequest', function() {
       // uncomment below and update the code to test RawElementRequest
-      //var instane = new bimdata.RawElementRequest();
+      //var instance = new bimdata.RawElementRequest();
       //expect(instance).to.be.a(bimdata.RawElementRequest);
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.RawElementRequest();
+      //var instance = new bimdata.RawElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.RawElementRequest();
+      //var instance = new bimdata.RawElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property attributes (base name: "attributes")', function() {
       // uncomment below and update the code to test the property attributes
-      //var instane = new bimdata.RawElementRequest();
+      //var instance = new bimdata.RawElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property materialList (base name: "material_list")', function() {
       // uncomment below and update the code to test the property materialList
-      //var instane = new bimdata.RawElementRequest();
+      //var instance = new bimdata.RawElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property psets (base name: "psets")', function() {
       // uncomment below and update the code to test the property psets
-      //var instane = new bimdata.RawElementRequest();
+      //var instance = new bimdata.RawElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property classifications (base name: "classifications")', function() {
       // uncomment below and update the code to test the property classifications
-      //var instane = new bimdata.RawElementRequest();
+      //var instance = new bimdata.RawElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property layers (base name: "layers")', function() {
       // uncomment below and update the code to test the property layers
-      //var instane = new bimdata.RawElementRequest();
+      //var instance = new bimdata.RawElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property systems (base name: "systems")', function() {
       // uncomment below and update the code to test the property systems
-      //var instane = new bimdata.RawElementRequest();
+      //var instance = new bimdata.RawElementRequest();
       //expect(instance).to.be();
     });
 

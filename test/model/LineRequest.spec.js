@@ -50,19 +50,19 @@
   describe('LineRequest', function() {
     it('should create an instance of LineRequest', function() {
       // uncomment below and update the code to test LineRequest
-      //var instane = new bimdata.LineRequest();
+      //var instance = new bimdata.LineRequest();
       //expect(instance).to.be.a(bimdata.LineRequest);
     });
 
     it('should have the property endPoint (base name: "end_point")', function() {
       // uncomment below and update the code to test the property endPoint
-      //var instane = new bimdata.LineRequest();
+      //var instance = new bimdata.LineRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property startPoint (base name: "start_point")', function() {
       // uncomment below and update the code to test the property startPoint
-      //var instane = new bimdata.LineRequest();
+      //var instance = new bimdata.LineRequest();
       //expect(instance).to.be();
     });
 

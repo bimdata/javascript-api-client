@@ -49,7 +49,7 @@
   describe('NullEnum', function() {
     it('should create an instance of NullEnum', function() {
       // uncomment below and update the code to test NullEnum
-      //var instane = new bimdata.NullEnum();
+      //var instance = new bimdata.NullEnum();
       //expect(instance).to.be.a(bimdata.NullEnum);
     });
 

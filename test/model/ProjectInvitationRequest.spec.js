@@ -50,25 +50,25 @@
   describe('ProjectInvitationRequest', function() {
     it('should create an instance of ProjectInvitationRequest', function() {
       // uncomment below and update the code to test ProjectInvitationRequest
-      //var instane = new bimdata.ProjectInvitationRequest();
+      //var instance = new bimdata.ProjectInvitationRequest();
       //expect(instance).to.be.a(bimdata.ProjectInvitationRequest);
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new bimdata.ProjectInvitationRequest();
+      //var instance = new bimdata.ProjectInvitationRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property redirectUri (base name: "redirect_uri")', function() {
       // uncomment below and update the code to test the property redirectUri
-      //var instane = new bimdata.ProjectInvitationRequest();
+      //var instance = new bimdata.ProjectInvitationRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new bimdata.ProjectInvitationRequest();
+      //var instance = new bimdata.ProjectInvitationRequest();
       //expect(instance).to.be();
     });
 

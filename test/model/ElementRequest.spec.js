@@ -50,43 +50,43 @@
   describe('ElementRequest', function() {
     it('should create an instance of ElementRequest', function() {
       // uncomment below and update the code to test ElementRequest
-      //var instane = new bimdata.ElementRequest();
+      //var instance = new bimdata.ElementRequest();
       //expect(instance).to.be.a(bimdata.ElementRequest);
     });
 
     it('should have the property uuid (base name: "uuid")', function() {
       // uncomment below and update the code to test the property uuid
-      //var instane = new bimdata.ElementRequest();
+      //var instance = new bimdata.ElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.ElementRequest();
+      //var instance = new bimdata.ElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property attributes (base name: "attributes")', function() {
       // uncomment below and update the code to test the property attributes
-      //var instane = new bimdata.ElementRequest();
+      //var instance = new bimdata.ElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property propertySets (base name: "property_sets")', function() {
       // uncomment below and update the code to test the property propertySets
-      //var instane = new bimdata.ElementRequest();
+      //var instance = new bimdata.ElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property classifications (base name: "classifications")', function() {
       // uncomment below and update the code to test the property classifications
-      //var instane = new bimdata.ElementRequest();
+      //var instance = new bimdata.ElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property layers (base name: "layers")', function() {
       // uncomment below and update the code to test the property layers
-      //var instane = new bimdata.ElementRequest();
+      //var instance = new bimdata.ElementRequest();
       //expect(instance).to.be();
     });
 

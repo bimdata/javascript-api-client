@@ -50,19 +50,19 @@
   describe('ProjectRole', function() {
     it('should create an instance of ProjectRole', function() {
       // uncomment below and update the code to test ProjectRole
-      //var instane = new bimdata.ProjectRole();
+      //var instance = new bimdata.ProjectRole();
       //expect(instance).to.be.a(bimdata.ProjectRole);
     });
 
     it('should have the property project (base name: "project")', function() {
       // uncomment below and update the code to test the property project
-      //var instane = new bimdata.ProjectRole();
+      //var instance = new bimdata.ProjectRole();
       //expect(instance).to.be();
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new bimdata.ProjectRole();
+      //var instance = new bimdata.ProjectRole();
       //expect(instance).to.be();
     });
 

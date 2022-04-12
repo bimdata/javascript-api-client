@@ -50,37 +50,37 @@
   describe('PropertyDefinitionRequest', function() {
     it('should create an instance of PropertyDefinitionRequest', function() {
       // uncomment below and update the code to test PropertyDefinitionRequest
-      //var instane = new bimdata.PropertyDefinitionRequest();
+      //var instance = new bimdata.PropertyDefinitionRequest();
       //expect(instance).to.be.a(bimdata.PropertyDefinitionRequest);
     });
 
     it('should have the property unit (base name: "unit")', function() {
       // uncomment below and update the code to test the property unit
-      //var instane = new bimdata.PropertyDefinitionRequest();
+      //var instance = new bimdata.PropertyDefinitionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PropertyDefinitionRequest();
+      //var instance = new bimdata.PropertyDefinitionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.PropertyDefinitionRequest();
+      //var instance = new bimdata.PropertyDefinitionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new bimdata.PropertyDefinitionRequest();
+      //var instance = new bimdata.PropertyDefinitionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property valueType (base name: "value_type")', function() {
       // uncomment below and update the code to test the property valueType
-      //var instane = new bimdata.PropertyDefinitionRequest();
+      //var instance = new bimdata.PropertyDefinitionRequest();
       //expect(instance).to.be();
     });
 

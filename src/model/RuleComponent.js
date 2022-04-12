@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyType from './AnyType';
 
 /**
  * The RuleComponent model module.
@@ -57,19 +56,19 @@ class RuleComponent {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], {'String': AnyType});
+                obj['value'] = ApiClient.convertToType(data['value'], {'String': Object});
             }
             if (data.hasOwnProperty('operator')) {
                 obj['operator'] = ApiClient.convertToType(data['operator'], 'String');
             }
             if (data.hasOwnProperty('params')) {
-                obj['params'] = ApiClient.convertToType(data['params'], {'String': AnyType});
+                obj['params'] = ApiClient.convertToType(data['params'], {'String': Object});
             }
             if (data.hasOwnProperty('condition')) {
                 obj['condition'] = ApiClient.convertToType(data['condition'], 'String');
             }
             if (data.hasOwnProperty('rule_components')) {
-                obj['rule_components'] = ApiClient.convertToType(data['rule_components'], {'String': AnyType});
+                obj['rule_components'] = ApiClient.convertToType(data['rule_components'], {'String': Object});
             }
         }
         return obj;
@@ -89,7 +88,7 @@ RuleComponent.prototype['id'] = undefined;
 RuleComponent.prototype['type'] = undefined;
 
 /**
- * @member {Object.<String, module:model/AnyType>} value
+ * @member {Object.<String, Object>} value
  */
 RuleComponent.prototype['value'] = undefined;
 
@@ -99,7 +98,7 @@ RuleComponent.prototype['value'] = undefined;
 RuleComponent.prototype['operator'] = undefined;
 
 /**
- * @member {Object.<String, module:model/AnyType>} params
+ * @member {Object.<String, Object>} params
  */
 RuleComponent.prototype['params'] = undefined;
 
@@ -109,7 +108,7 @@ RuleComponent.prototype['params'] = undefined;
 RuleComponent.prototype['condition'] = undefined;
 
 /**
- * @member {Object.<String, module:model/AnyType>} rule_components
+ * @member {Object.<String, Object>} rule_components
  */
 RuleComponent.prototype['rule_components'] = undefined;
 

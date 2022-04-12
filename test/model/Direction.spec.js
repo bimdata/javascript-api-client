@@ -50,25 +50,25 @@
   describe('Direction', function() {
     it('should create an instance of Direction', function() {
       // uncomment below and update the code to test Direction
-      //var instane = new bimdata.Direction();
+      //var instance = new bimdata.Direction();
       //expect(instance).to.be.a(bimdata.Direction);
     });
 
     it('should have the property x (base name: "x")', function() {
       // uncomment below and update the code to test the property x
-      //var instane = new bimdata.Direction();
+      //var instance = new bimdata.Direction();
       //expect(instance).to.be();
     });
 
     it('should have the property y (base name: "y")', function() {
       // uncomment below and update the code to test the property y
-      //var instane = new bimdata.Direction();
+      //var instance = new bimdata.Direction();
       //expect(instance).to.be();
     });
 
     it('should have the property z (base name: "z")', function() {
       // uncomment below and update the code to test the property z
-      //var instane = new bimdata.Direction();
+      //var instance = new bimdata.Direction();
       //expect(instance).to.be();
     });
 

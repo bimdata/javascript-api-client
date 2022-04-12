@@ -50,25 +50,25 @@
   describe('ComponentsParent', function() {
     it('should create an instance of ComponentsParent', function() {
       // uncomment below and update the code to test ComponentsParent
-      //var instane = new bimdata.ComponentsParent();
+      //var instance = new bimdata.ComponentsParent();
       //expect(instance).to.be.a(bimdata.ComponentsParent);
     });
 
     it('should have the property coloring (base name: "coloring")', function() {
       // uncomment below and update the code to test the property coloring
-      //var instane = new bimdata.ComponentsParent();
+      //var instance = new bimdata.ComponentsParent();
       //expect(instance).to.be();
     });
 
     it('should have the property visibility (base name: "visibility")', function() {
       // uncomment below and update the code to test the property visibility
-      //var instane = new bimdata.ComponentsParent();
+      //var instance = new bimdata.ComponentsParent();
       //expect(instance).to.be();
     });
 
     it('should have the property selection (base name: "selection")', function() {
       // uncomment below and update the code to test the property selection
-      //var instane = new bimdata.ComponentsParent();
+      //var instance = new bimdata.ComponentsParent();
       //expect(instance).to.be();
     });
 

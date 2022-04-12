@@ -50,19 +50,19 @@
   describe('PatchedProcessorHandlerRequest', function() {
     it('should create an instance of PatchedProcessorHandlerRequest', function() {
       // uncomment below and update the code to test PatchedProcessorHandlerRequest
-      //var instane = new bimdata.PatchedProcessorHandlerRequest();
+      //var instance = new bimdata.PatchedProcessorHandlerRequest();
       //expect(instance).to.be.a(bimdata.PatchedProcessorHandlerRequest);
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new bimdata.PatchedProcessorHandlerRequest();
+      //var instance = new bimdata.PatchedProcessorHandlerRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property detailMessage (base name: "detail_message")', function() {
       // uncomment below and update the code to test the property detailMessage
-      //var instane = new bimdata.PatchedProcessorHandlerRequest();
+      //var instance = new bimdata.PatchedProcessorHandlerRequest();
       //expect(instance).to.be();
     });
 

@@ -50,25 +50,25 @@
   describe('PatchedFolderWithoutChildrenRequest', function() {
     it('should create an instance of PatchedFolderWithoutChildrenRequest', function() {
       // uncomment below and update the code to test PatchedFolderWithoutChildrenRequest
-      //var instane = new bimdata.PatchedFolderWithoutChildrenRequest();
+      //var instance = new bimdata.PatchedFolderWithoutChildrenRequest();
       //expect(instance).to.be.a(bimdata.PatchedFolderWithoutChildrenRequest);
     });
 
     it('should have the property parentId (base name: "parent_id")', function() {
       // uncomment below and update the code to test the property parentId
-      //var instane = new bimdata.PatchedFolderWithoutChildrenRequest();
+      //var instance = new bimdata.PatchedFolderWithoutChildrenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PatchedFolderWithoutChildrenRequest();
+      //var instance = new bimdata.PatchedFolderWithoutChildrenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property defaultPermission (base name: "default_permission")', function() {
       // uncomment below and update the code to test the property defaultPermission
-      //var instane = new bimdata.PatchedFolderWithoutChildrenRequest();
+      //var instance = new bimdata.PatchedFolderWithoutChildrenRequest();
       //expect(instance).to.be();
     });
 

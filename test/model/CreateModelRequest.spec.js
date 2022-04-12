@@ -50,13 +50,13 @@
   describe('CreateModelRequest', function() {
     it('should create an instance of CreateModelRequest', function() {
       // uncomment below and update the code to test CreateModelRequest
-      //var instane = new bimdata.CreateModelRequest();
+      //var instance = new bimdata.CreateModelRequest();
       //expect(instance).to.be.a(bimdata.CreateModelRequest);
     });
 
     it('should have the property documentId (base name: "document_id")', function() {
       // uncomment below and update the code to test the property documentId
-      //var instane = new bimdata.CreateModelRequest();
+      //var instance = new bimdata.CreateModelRequest();
       //expect(instance).to.be();
     });
 

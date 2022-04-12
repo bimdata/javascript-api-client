@@ -50,25 +50,25 @@
   describe('PatchedPriorityRequest', function() {
     it('should create an instance of PatchedPriorityRequest', function() {
       // uncomment below and update the code to test PatchedPriorityRequest
-      //var instane = new bimdata.PatchedPriorityRequest();
+      //var instance = new bimdata.PatchedPriorityRequest();
       //expect(instance).to.be.a(bimdata.PatchedPriorityRequest);
     });
 
     it('should have the property priority (base name: "priority")', function() {
       // uncomment below and update the code to test the property priority
-      //var instane = new bimdata.PatchedPriorityRequest();
+      //var instance = new bimdata.PatchedPriorityRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
-      //var instane = new bimdata.PatchedPriorityRequest();
+      //var instance = new bimdata.PatchedPriorityRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property project (base name: "project")', function() {
       // uncomment below and update the code to test the property project
-      //var instane = new bimdata.PatchedPriorityRequest();
+      //var instance = new bimdata.PatchedPriorityRequest();
       //expect(instance).to.be();
     });
 

@@ -50,19 +50,19 @@
   describe('RawPropertyRequest', function() {
     it('should create an instance of RawPropertyRequest', function() {
       // uncomment below and update the code to test RawPropertyRequest
-      //var instane = new bimdata.RawPropertyRequest();
+      //var instance = new bimdata.RawPropertyRequest();
       //expect(instance).to.be.a(bimdata.RawPropertyRequest);
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new bimdata.RawPropertyRequest();
+      //var instance = new bimdata.RawPropertyRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property defId (base name: "def_id")', function() {
       // uncomment below and update the code to test the property defId
-      //var instane = new bimdata.RawPropertyRequest();
+      //var instance = new bimdata.RawPropertyRequest();
       //expect(instance).to.be();
     });
 

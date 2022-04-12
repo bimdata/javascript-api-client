@@ -50,19 +50,19 @@
   describe('ElementClassificationRelationRequest', function() {
     it('should create an instance of ElementClassificationRelationRequest', function() {
       // uncomment below and update the code to test ElementClassificationRelationRequest
-      //var instane = new bimdata.ElementClassificationRelationRequest();
+      //var instance = new bimdata.ElementClassificationRelationRequest();
       //expect(instance).to.be.a(bimdata.ElementClassificationRelationRequest);
     });
 
     it('should have the property elementUuid (base name: "element_uuid")', function() {
       // uncomment below and update the code to test the property elementUuid
-      //var instane = new bimdata.ElementClassificationRelationRequest();
+      //var instance = new bimdata.ElementClassificationRelationRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property classificationId (base name: "classification_id")', function() {
       // uncomment below and update the code to test the property classificationId
-      //var instane = new bimdata.ElementClassificationRelationRequest();
+      //var instance = new bimdata.ElementClassificationRelationRequest();
       //expect(instance).to.be();
     });
 

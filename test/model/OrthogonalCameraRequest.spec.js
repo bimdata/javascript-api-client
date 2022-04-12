@@ -50,31 +50,31 @@
   describe('OrthogonalCameraRequest', function() {
     it('should create an instance of OrthogonalCameraRequest', function() {
       // uncomment below and update the code to test OrthogonalCameraRequest
-      //var instane = new bimdata.OrthogonalCameraRequest();
+      //var instance = new bimdata.OrthogonalCameraRequest();
       //expect(instance).to.be.a(bimdata.OrthogonalCameraRequest);
     });
 
     it('should have the property viewToWorldScale (base name: "view_to_world_scale")', function() {
       // uncomment below and update the code to test the property viewToWorldScale
-      //var instane = new bimdata.OrthogonalCameraRequest();
+      //var instance = new bimdata.OrthogonalCameraRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property cameraDirection (base name: "camera_direction")', function() {
       // uncomment below and update the code to test the property cameraDirection
-      //var instane = new bimdata.OrthogonalCameraRequest();
+      //var instance = new bimdata.OrthogonalCameraRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property cameraUpVector (base name: "camera_up_vector")', function() {
       // uncomment below and update the code to test the property cameraUpVector
-      //var instane = new bimdata.OrthogonalCameraRequest();
+      //var instance = new bimdata.OrthogonalCameraRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property cameraViewPoint (base name: "camera_view_point")', function() {
       // uncomment below and update the code to test the property cameraViewPoint
-      //var instane = new bimdata.OrthogonalCameraRequest();
+      //var instance = new bimdata.OrthogonalCameraRequest();
       //expect(instance).to.be();
     });
 

@@ -50,25 +50,25 @@
   describe('Component', function() {
     it('should create an instance of Component', function() {
       // uncomment below and update the code to test Component
-      //var instane = new bimdata.Component();
+      //var instance = new bimdata.Component();
       //expect(instance).to.be.a(bimdata.Component);
     });
 
     it('should have the property ifcGuid (base name: "ifc_guid")', function() {
       // uncomment below and update the code to test the property ifcGuid
-      //var instane = new bimdata.Component();
+      //var instance = new bimdata.Component();
       //expect(instance).to.be();
     });
 
     it('should have the property originatingSystem (base name: "originating_system")', function() {
       // uncomment below and update the code to test the property originatingSystem
-      //var instane = new bimdata.Component();
+      //var instance = new bimdata.Component();
       //expect(instance).to.be();
     });
 
     it('should have the property authoringToolId (base name: "authoring_tool_id")', function() {
       // uncomment below and update the code to test the property authoringToolId
-      //var instane = new bimdata.Component();
+      //var instance = new bimdata.Component();
       //expect(instance).to.be();
     });
 

@@ -50,121 +50,121 @@
   describe('PatchedTopicRequest', function() {
     it('should create an instance of PatchedTopicRequest', function() {
       // uncomment below and update the code to test PatchedTopicRequest
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be.a(bimdata.PatchedTopicRequest);
     });
 
     it('should have the property guid (base name: "guid")', function() {
       // uncomment below and update the code to test the property guid
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property topicType (base name: "topic_type")', function() {
       // uncomment below and update the code to test the property topicType
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property topicStatus (base name: "topic_status")', function() {
       // uncomment below and update the code to test the property topicStatus
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property priority (base name: "priority")', function() {
       // uncomment below and update the code to test the property priority
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property labels (base name: "labels")', function() {
       // uncomment below and update the code to test the property labels
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property creationDate (base name: "creation_date")', function() {
       // uncomment below and update the code to test the property creationDate
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property creationAuthor (base name: "creation_author")', function() {
       // uncomment below and update the code to test the property creationAuthor
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property modifiedAuthor (base name: "modified_author")', function() {
       // uncomment below and update the code to test the property modifiedAuthor
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property assignedTo (base name: "assigned_to")', function() {
       // uncomment below and update the code to test the property assignedTo
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property referenceLinks (base name: "reference_links")', function() {
       // uncomment below and update the code to test the property referenceLinks
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property stage (base name: "stage")', function() {
       // uncomment below and update the code to test the property stage
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property dueDate (base name: "due_date")', function() {
       // uncomment below and update the code to test the property dueDate
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property ifcs (base name: "ifcs")', function() {
       // uncomment below and update the code to test the property ifcs
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property models (base name: "models")', function() {
       // uncomment below and update the code to test the property models
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property format (base name: "format")', function() {
       // uncomment below and update the code to test the property format
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property index (base name: "index")', function() {
       // uncomment below and update the code to test the property index
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property project (base name: "project")', function() {
       // uncomment below and update the code to test the property project
-      //var instane = new bimdata.PatchedTopicRequest();
+      //var instance = new bimdata.PatchedTopicRequest();
       //expect(instance).to.be();
     });
 

@@ -49,7 +49,7 @@
   describe('ModelStatusEnum', function() {
     it('should create an instance of ModelStatusEnum', function() {
       // uncomment below and update the code to test ModelStatusEnum
-      //var instane = new bimdata.ModelStatusEnum();
+      //var instance = new bimdata.ModelStatusEnum();
       //expect(instance).to.be.a(bimdata.ModelStatusEnum);
     });
 

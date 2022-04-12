@@ -50,55 +50,55 @@
   describe('ModelFiles', function() {
     it('should create an instance of ModelFiles', function() {
       // uncomment below and update the code to test ModelFiles
-      //var instane = new bimdata.ModelFiles();
+      //var instance = new bimdata.ModelFiles();
       //expect(instance).to.be.a(bimdata.ModelFiles);
     });
 
     it('should have the property structureFile (base name: "structure_file")', function() {
       // uncomment below and update the code to test the property structureFile
-      //var instane = new bimdata.ModelFiles();
+      //var instance = new bimdata.ModelFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property systemsFile (base name: "systems_file")', function() {
       // uncomment below and update the code to test the property systemsFile
-      //var instane = new bimdata.ModelFiles();
+      //var instance = new bimdata.ModelFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property mapFile (base name: "map_file")', function() {
       // uncomment below and update the code to test the property mapFile
-      //var instane = new bimdata.ModelFiles();
+      //var instance = new bimdata.ModelFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property gltfFile (base name: "gltf_file")', function() {
       // uncomment below and update the code to test the property gltfFile
-      //var instane = new bimdata.ModelFiles();
+      //var instance = new bimdata.ModelFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property gltfWithOpeningsFile (base name: "gltf_with_openings_file")', function() {
       // uncomment below and update the code to test the property gltfWithOpeningsFile
-      //var instane = new bimdata.ModelFiles();
+      //var instance = new bimdata.ModelFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property bvhTreeFile (base name: "bvh_tree_file")', function() {
       // uncomment below and update the code to test the property bvhTreeFile
-      //var instane = new bimdata.ModelFiles();
+      //var instance = new bimdata.ModelFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property viewer360File (base name: "viewer_360_file")', function() {
       // uncomment below and update the code to test the property viewer360File
-      //var instane = new bimdata.ModelFiles();
+      //var instance = new bimdata.ModelFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property xktFile (base name: "xkt_file")', function() {
       // uncomment below and update the code to test the property xktFile
-      //var instane = new bimdata.ModelFiles();
+      //var instance = new bimdata.ModelFiles();
       //expect(instance).to.be();
     });
 

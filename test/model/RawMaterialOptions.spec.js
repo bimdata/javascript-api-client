@@ -50,25 +50,25 @@
   describe('RawMaterialOptions', function() {
     it('should create an instance of RawMaterialOptions', function() {
       // uncomment below and update the code to test RawMaterialOptions
-      //var instane = new bimdata.RawMaterialOptions();
+      //var instance = new bimdata.RawMaterialOptions();
       //expect(instance).to.be.a(bimdata.RawMaterialOptions);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.RawMaterialOptions();
+      //var instance = new bimdata.RawMaterialOptions();
       //expect(instance).to.be();
     });
 
     it('should have the property thickness (base name: "thickness")', function() {
       // uncomment below and update the code to test the property thickness
-      //var instane = new bimdata.RawMaterialOptions();
+      //var instance = new bimdata.RawMaterialOptions();
       //expect(instance).to.be();
     });
 
     it('should have the property materialList (base name: "material_list")', function() {
       // uncomment below and update the code to test the property materialList
-      //var instane = new bimdata.RawMaterialOptions();
+      //var instance = new bimdata.RawMaterialOptions();
       //expect(instance).to.be();
     });
 

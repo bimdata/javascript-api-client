@@ -50,19 +50,19 @@
   describe('TopicTypeRequest', function() {
     it('should create an instance of TopicTypeRequest', function() {
       // uncomment below and update the code to test TopicTypeRequest
-      //var instane = new bimdata.TopicTypeRequest();
+      //var instance = new bimdata.TopicTypeRequest();
       //expect(instance).to.be.a(bimdata.TopicTypeRequest);
     });
 
     it('should have the property topicType (base name: "topic_type")', function() {
       // uncomment below and update the code to test the property topicType
-      //var instane = new bimdata.TopicTypeRequest();
+      //var instance = new bimdata.TopicTypeRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property project (base name: "project")', function() {
       // uncomment below and update the code to test the property project
-      //var instane = new bimdata.TopicTypeRequest();
+      //var instance = new bimdata.TopicTypeRequest();
       //expect(instance).to.be();
     });
 

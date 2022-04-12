@@ -50,67 +50,67 @@
   describe('PatchedDocumentRequest', function() {
     it('should create an instance of PatchedDocumentRequest', function() {
       // uncomment below and update the code to test PatchedDocumentRequest
-      //var instane = new bimdata.PatchedDocumentRequest();
+      //var instance = new bimdata.PatchedDocumentRequest();
       //expect(instance).to.be.a(bimdata.PatchedDocumentRequest);
     });
 
     it('should have the property parent (base name: "parent")', function() {
       // uncomment below and update the code to test the property parent
-      //var instane = new bimdata.PatchedDocumentRequest();
+      //var instance = new bimdata.PatchedDocumentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property parentId (base name: "parent_id")', function() {
       // uncomment below and update the code to test the property parentId
-      //var instane = new bimdata.PatchedDocumentRequest();
+      //var instance = new bimdata.PatchedDocumentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property creator (base name: "creator")', function() {
       // uncomment below and update the code to test the property creator
-      //var instane = new bimdata.PatchedDocumentRequest();
+      //var instance = new bimdata.PatchedDocumentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.PatchedDocumentRequest();
+      //var instance = new bimdata.PatchedDocumentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property fileName (base name: "file_name")', function() {
       // uncomment below and update the code to test the property fileName
-      //var instane = new bimdata.PatchedDocumentRequest();
+      //var instance = new bimdata.PatchedDocumentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new bimdata.PatchedDocumentRequest();
+      //var instance = new bimdata.PatchedDocumentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property file (base name: "file")', function() {
       // uncomment below and update the code to test the property file
-      //var instane = new bimdata.PatchedDocumentRequest();
+      //var instance = new bimdata.PatchedDocumentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property size (base name: "size")', function() {
       // uncomment below and update the code to test the property size
-      //var instane = new bimdata.PatchedDocumentRequest();
+      //var instance = new bimdata.PatchedDocumentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property modelSource (base name: "model_source")', function() {
       // uncomment below and update the code to test the property modelSource
-      //var instane = new bimdata.PatchedDocumentRequest();
+      //var instance = new bimdata.PatchedDocumentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property ifcSource (base name: "ifc_source")', function() {
       // uncomment below and update the code to test the property ifcSource
-      //var instane = new bimdata.PatchedDocumentRequest();
+      //var instance = new bimdata.PatchedDocumentRequest();
       //expect(instance).to.be();
     });
 

@@ -50,13 +50,13 @@
   describe('VisaValidationRequest', function() {
     it('should create an instance of VisaValidationRequest', function() {
       // uncomment below and update the code to test VisaValidationRequest
-      //var instane = new bimdata.VisaValidationRequest();
+      //var instance = new bimdata.VisaValidationRequest();
       //expect(instance).to.be.a(bimdata.VisaValidationRequest);
     });
 
     it('should have the property validatorId (base name: "validator_id")', function() {
       // uncomment below and update the code to test the property validatorId
-      //var instane = new bimdata.VisaValidationRequest();
+      //var instance = new bimdata.VisaValidationRequest();
       //expect(instance).to.be();
     });
 

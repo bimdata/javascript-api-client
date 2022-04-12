@@ -50,25 +50,25 @@
   describe('GroupFolder', function() {
     it('should create an instance of GroupFolder', function() {
       // uncomment below and update the code to test GroupFolder
-      //var instane = new bimdata.GroupFolder();
+      //var instance = new bimdata.GroupFolder();
       //expect(instance).to.be.a(bimdata.GroupFolder);
     });
 
     it('should have the property folder (base name: "folder")', function() {
       // uncomment below and update the code to test the property folder
-      //var instane = new bimdata.GroupFolder();
+      //var instance = new bimdata.GroupFolder();
       //expect(instance).to.be();
     });
 
     it('should have the property group (base name: "group")', function() {
       // uncomment below and update the code to test the property group
-      //var instane = new bimdata.GroupFolder();
+      //var instance = new bimdata.GroupFolder();
       //expect(instance).to.be();
     });
 
     it('should have the property permission (base name: "permission")', function() {
       // uncomment below and update the code to test the property permission
-      //var instane = new bimdata.GroupFolder();
+      //var instance = new bimdata.GroupFolder();
       //expect(instance).to.be();
     });
 

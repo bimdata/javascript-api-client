@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyType from './AnyType';
 
 /**
  * The UnitRequest model module.
@@ -73,7 +72,7 @@ class UnitRequest {
                 obj['conversion_baseunit'] = UnitRequest.constructFromObject(data['conversion_baseunit']);
             }
             if (data.hasOwnProperty('elements')) {
-                obj['elements'] = ApiClient.convertToType(data['elements'], {'String': AnyType});
+                obj['elements'] = ApiClient.convertToType(data['elements'], {'String': Object});
             }
             if (data.hasOwnProperty('is_default')) {
                 obj['is_default'] = ApiClient.convertToType(data['is_default'], 'Boolean');
@@ -128,7 +127,7 @@ UnitRequest.prototype['conversion_baseunit'] = undefined;
 
 /**
  * List of constitutive unit elements by id with corresponding exponent (ex: [meterID/1, secondID/-1] for velocity)
- * @member {Object.<String, module:model/AnyType>} elements
+ * @member {Object.<String, Object>} elements
  */
 UnitRequest.prototype['elements'] = undefined;
 

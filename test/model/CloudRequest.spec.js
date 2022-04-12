@@ -50,25 +50,25 @@
   describe('CloudRequest', function() {
     it('should create an instance of CloudRequest', function() {
       // uncomment below and update the code to test CloudRequest
-      //var instane = new bimdata.CloudRequest();
+      //var instance = new bimdata.CloudRequest();
       //expect(instance).to.be.a(bimdata.CloudRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.CloudRequest();
+      //var instance = new bimdata.CloudRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property organizationId (base name: "organization_id")', function() {
       // uncomment below and update the code to test the property organizationId
-      //var instane = new bimdata.CloudRequest();
+      //var instance = new bimdata.CloudRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
-      //var instane = new bimdata.CloudRequest();
+      //var instance = new bimdata.CloudRequest();
       //expect(instance).to.be();
     });
 

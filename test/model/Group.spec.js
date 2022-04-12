@@ -50,31 +50,31 @@
   describe('Group', function() {
     it('should create an instance of Group', function() {
       // uncomment below and update the code to test Group
-      //var instane = new bimdata.Group();
+      //var instance = new bimdata.Group();
       //expect(instance).to.be.a(bimdata.Group);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new bimdata.Group();
+      //var instance = new bimdata.Group();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new bimdata.Group();
+      //var instance = new bimdata.Group();
       //expect(instance).to.be();
     });
 
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
-      //var instane = new bimdata.Group();
+      //var instance = new bimdata.Group();
       //expect(instance).to.be();
     });
 
     it('should have the property members (base name: "members")', function() {
       // uncomment below and update the code to test the property members
-      //var instane = new bimdata.Group();
+      //var instance = new bimdata.Group();
       //expect(instance).to.be();
     });
 

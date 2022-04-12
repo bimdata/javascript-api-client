@@ -50,37 +50,37 @@
   describe('PerspectiveCameraRequest', function() {
     it('should create an instance of PerspectiveCameraRequest', function() {
       // uncomment below and update the code to test PerspectiveCameraRequest
-      //var instane = new bimdata.PerspectiveCameraRequest();
+      //var instance = new bimdata.PerspectiveCameraRequest();
       //expect(instance).to.be.a(bimdata.PerspectiveCameraRequest);
     });
 
     it('should have the property fieldOfView (base name: "field_of_view")', function() {
       // uncomment below and update the code to test the property fieldOfView
-      //var instane = new bimdata.PerspectiveCameraRequest();
+      //var instance = new bimdata.PerspectiveCameraRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property cameraDirection (base name: "camera_direction")', function() {
       // uncomment below and update the code to test the property cameraDirection
-      //var instane = new bimdata.PerspectiveCameraRequest();
+      //var instance = new bimdata.PerspectiveCameraRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property cameraUpVector (base name: "camera_up_vector")', function() {
       // uncomment below and update the code to test the property cameraUpVector
-      //var instane = new bimdata.PerspectiveCameraRequest();
+      //var instance = new bimdata.PerspectiveCameraRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property cameraViewPoint (base name: "camera_view_point")', function() {
       // uncomment below and update the code to test the property cameraViewPoint
-      //var instane = new bimdata.PerspectiveCameraRequest();
+      //var instance = new bimdata.PerspectiveCameraRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property bimdataCameraDirection (base name: "bimdata_camera_direction")', function() {
       // uncomment below and update the code to test the property bimdataCameraDirection
-      //var instane = new bimdata.PerspectiveCameraRequest();
+      //var instance = new bimdata.PerspectiveCameraRequest();
       //expect(instance).to.be();
     });
 

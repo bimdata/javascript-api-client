@@ -102,7 +102,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Comment;
@@ -158,7 +158,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Label;
@@ -212,7 +212,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Priority;
@@ -266,7 +266,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Stage;
@@ -320,7 +320,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = TopicStatus;
@@ -374,7 +374,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = TopicType;
@@ -432,7 +432,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = FullTopic;
@@ -488,7 +488,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Topic;
@@ -548,7 +548,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Viewpoint;
@@ -612,7 +612,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -668,7 +668,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -723,7 +723,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -778,7 +778,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -833,7 +833,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -888,7 +888,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -943,7 +943,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1008,7 +1008,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1066,7 +1066,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = File;
@@ -1122,7 +1122,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = BcfProject;
@@ -1186,7 +1186,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Comment;
@@ -1253,7 +1253,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = FullTopic;
@@ -1316,7 +1316,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Topic;
@@ -1383,7 +1383,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Viewpoint;
@@ -1436,7 +1436,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = BcfProject;
@@ -1478,7 +1478,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [BcfProject];
@@ -1537,7 +1537,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Coloring];
@@ -1599,7 +1599,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Comment;
@@ -1655,7 +1655,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Comment];
@@ -1704,7 +1704,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = DetailedExtensions;
@@ -1752,7 +1752,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Extensions;
@@ -1810,7 +1810,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = FullTopic;
@@ -1871,7 +1871,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [FullTopic];
@@ -1936,7 +1936,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Component];
@@ -1998,7 +1998,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = File;
@@ -2054,7 +2054,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Topic;
@@ -2113,7 +2113,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Viewpoint];
@@ -2172,7 +2172,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Topic];
@@ -2218,7 +2218,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = SelfBcfUser;
@@ -2281,7 +2281,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Viewpoint;
@@ -2343,7 +2343,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Viewpoint];
@@ -2406,7 +2406,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Visibility;
@@ -2462,7 +2462,7 @@ export default class BcfApi {
         'name': name
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       let accepts = [];
       let returnType = null;
@@ -2514,7 +2514,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = BcfProject;
@@ -2579,7 +2579,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Comment;
@@ -2640,7 +2640,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Label;
@@ -2700,7 +2700,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Priority;
@@ -2760,7 +2760,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Stage;
@@ -2820,7 +2820,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = TopicStatus;
@@ -2880,7 +2880,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = TopicType;
@@ -2942,7 +2942,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = FullTopic;
@@ -3003,7 +3003,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Topic;
@@ -3071,7 +3071,7 @@ export default class BcfApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Viewpoint;

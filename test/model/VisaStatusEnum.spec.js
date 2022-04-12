@@ -49,7 +49,7 @@
   describe('VisaStatusEnum', function() {
     it('should create an instance of VisaStatusEnum', function() {
       // uncomment below and update the code to test VisaStatusEnum
-      //var instane = new bimdata.VisaStatusEnum();
+      //var instance = new bimdata.VisaStatusEnum();
       //expect(instance).to.be.a(bimdata.VisaStatusEnum);
     });
 

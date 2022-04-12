@@ -50,19 +50,19 @@
   describe('CloudInvitationRequest', function() {
     it('should create an instance of CloudInvitationRequest', function() {
       // uncomment below and update the code to test CloudInvitationRequest
-      //var instane = new bimdata.CloudInvitationRequest();
+      //var instance = new bimdata.CloudInvitationRequest();
       //expect(instance).to.be.a(bimdata.CloudInvitationRequest);
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new bimdata.CloudInvitationRequest();
+      //var instance = new bimdata.CloudInvitationRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property redirectUri (base name: "redirect_uri")', function() {
       // uncomment below and update the code to test the property redirectUri
-      //var instane = new bimdata.CloudInvitationRequest();
+      //var instance = new bimdata.CloudInvitationRequest();
       //expect(instance).to.be();
     });
 

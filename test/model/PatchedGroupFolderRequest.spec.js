@@ -50,13 +50,13 @@
   describe('PatchedGroupFolderRequest', function() {
     it('should create an instance of PatchedGroupFolderRequest', function() {
       // uncomment below and update the code to test PatchedGroupFolderRequest
-      //var instane = new bimdata.PatchedGroupFolderRequest();
+      //var instance = new bimdata.PatchedGroupFolderRequest();
       //expect(instance).to.be.a(bimdata.PatchedGroupFolderRequest);
     });
 
     it('should have the property permission (base name: "permission")', function() {
       // uncomment below and update the code to test the property permission
-      //var instane = new bimdata.PatchedGroupFolderRequest();
+      //var instance = new bimdata.PatchedGroupFolderRequest();
       //expect(instance).to.be();
     });
 
