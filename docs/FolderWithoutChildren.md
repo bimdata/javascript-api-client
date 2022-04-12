@@ -13,7 +13,33 @@ Name | Type | Description | Notes
 **updatedAt** | **Date** | Date of the last update | [readonly] 
 **createdBy** | [**User**](User.md) |  | [readonly] 
 **groupsPermissions** | [**[FolderGroupPermission]**](FolderGroupPermission.md) |  | [readonly] 
-**defaultPermission** | [**FolderPermissionEnum**](FolderPermissionEnum.md) | Permission for a Folder | [optional] 
-**userPermission** | [**FolderPermissionEnum**](FolderPermissionEnum.md) | Aggregate of group user permissions and folder default permission | [readonly] 
+**defaultPermission** | **Number** | Permission for a Folder | [optional] 
+**userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 
+
+
+
+## Enum: DefaultPermissionEnum
+
+
+* `1` (value: `1`)
+
+* `50` (value: `50`)
+
+* `100` (value: `100`)
+
+
+
+
+
+## Enum: UserPermissionEnum
+
+
+* `1` (value: `1`)
+
+* `50` (value: `50`)
+
+* `100` (value: `100`)
+
+
 
 

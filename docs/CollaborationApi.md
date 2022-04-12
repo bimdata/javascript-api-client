@@ -781,8 +781,8 @@ let opts = {
   'fileName': "fileName_example", // String | Full name of the file
   'description': "description_example", // String | Description of the file
   'size': 789, // Number | Size of the file.
-  'modelSource': new bimdata.ModelSourceEnum(), // ModelSourceEnum | Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
-  'ifcSource': new bimdata.ModelSourceEnum() // ModelSourceEnum | DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+  'modelSource': "modelSource_example", // String | Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+  'ifcSource': "ifcSource_example" // String | DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
 };
 apiInstance.createDocument(cloudPk, projectPk, name, file, opts).then(() => {
   console.log('API called successfully.');
@@ -807,8 +807,8 @@ Name | Type | Description  | Notes
  **fileName** | **String**| Full name of the file | [optional] 
  **description** | **String**| Description of the file | [optional] 
  **size** | **Number**| Size of the file. | [optional] 
- **modelSource** | [**ModelSourceEnum**](ModelSourceEnum.md)| Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
- **ifcSource** | [**ModelSourceEnum**](ModelSourceEnum.md)| DEPRECATED: Use &#39;model_source&#39; instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
+ **modelSource** | **String**| Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
+ **ifcSource** | **String**| DEPRECATED: Use &#39;model_source&#39; instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
 
 ### Return type
 

@@ -8,10 +8,21 @@ Name | Type | Description | Notes
 **logo** | **String** |  | [optional] 
 **name** | **String** | Name of the project | 
 **cloud** | [**Cloud**](Cloud.md) |  | [readonly] 
-**status** | [**ProjectStatusEnum**](ProjectStatusEnum.md) |  | [optional] 
+**status** | **String** |  | [optional] 
 **createdAt** | **Date** | Creation date | [readonly] 
 **updatedAt** | **Date** | Date of the last update | [readonly] 
 **parentId** | **Number** |  | [optional] 
 **rootFolderId** | **Number** |  | [readonly] 
+
+
+
+## Enum: StatusEnum
+
+
+* `A` (value: `"A"`)
+
+* `D` (value: `"D"`)
+
+
 
 

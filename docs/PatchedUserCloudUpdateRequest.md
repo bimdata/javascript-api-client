@@ -4,6 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**role** | [**CloudRoleEnum**](CloudRoleEnum.md) | Role of the user in the cloud | [optional] 
+**role** | **Number** | Role of the user in the cloud | [optional] 
+
+
+
+## Enum: RoleEnum
+
+
+* `100` (value: `100`)
+
+* `50` (value: `50`)
+
+
 
 

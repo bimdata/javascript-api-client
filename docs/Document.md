@@ -18,6 +18,19 @@ Name | Type | Description | Notes
 **updatedAt** | **Date** | Date of the last update | [readonly] 
 **modelId** | **Number** |  | [readonly] 
 **ifcId** | **Number** | DEPRECATED: Use &#39;model_id&#39; instead. | [readonly] 
-**userPermission** | [**FolderPermissionEnum**](FolderPermissionEnum.md) | Aggregate of group user permissions and folder default permission | [readonly] 
+**userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 
+
+
+
+## Enum: UserPermissionEnum
+
+
+* `1` (value: `1`)
+
+* `50` (value: `50`)
+
+* `100` (value: `100`)
+
+
 
 

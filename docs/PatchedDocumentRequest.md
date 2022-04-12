@@ -12,7 +12,41 @@ Name | Type | Description | Notes
 **description** | **String** | Description of the file | [optional] 
 **file** | **File** |  | [optional] 
 **size** | **Number** | Size of the file. | [optional] 
-**modelSource** | [**ModelSourceEnum**](ModelSourceEnum.md) | Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
-**ifcSource** | [**ModelSourceEnum**](ModelSourceEnum.md) | DEPRECATED: Use &#39;model_source&#39; instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
+**modelSource** | **String** | Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
+**ifcSource** | **String** | DEPRECATED: Use &#39;model_source&#39; instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
+
+
+
+## Enum: ModelSourceEnum
+
+
+* `UPLOAD` (value: `"UPLOAD"`)
+
+* `SPLIT` (value: `"SPLIT"`)
+
+* `MERGE` (value: `"MERGE"`)
+
+* `EXPORT` (value: `"EXPORT"`)
+
+* `OPTIMIZED` (value: `"OPTIMIZED"`)
+
+
+
+
+
+## Enum: IfcSourceEnum
+
+
+* `UPLOAD` (value: `"UPLOAD"`)
+
+* `SPLIT` (value: `"SPLIT"`)
+
+* `MERGE` (value: `"MERGE"`)
+
+* `EXPORT` (value: `"EXPORT"`)
+
+* `OPTIMIZED` (value: `"OPTIMIZED"`)
+
+
 
 
