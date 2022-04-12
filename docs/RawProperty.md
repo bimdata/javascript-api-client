@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
-**value** | [**Object**](.md) |  | [optional] 
+**id** | **Number** |  | [readonly] 
+**value** | [**{String: AnyType}**](AnyType.md) |  | [optional] 
 **defId** | **Number** |  | 
 
 

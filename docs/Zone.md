@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
 **name** | **String** |  | [optional] 
 **uuid** | **String** |  | 
 **zones** | [**[Zone]**](Zone.md) |  | [optional] 
 **parentId** | **Number** |  | [optional] 
 **spaces** | [**[Space]**](Space.md) |  | [optional] 
-**createdAt** | **Date** |  | [optional] [readonly] 
-**updatedAt** | **Date** |  | [optional] [readonly] 
+**createdAt** | **Date** |  | [readonly] 
+**updatedAt** | **Date** |  | [readonly] 
 **color** | **String** |  | [optional] 
 
 

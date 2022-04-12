@@ -4,17 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
 **name** | **String** | Name of the cloud | 
-**features** | [**[Feature]**](Feature.md) |  | [optional] [readonly] 
-**marketplaceApps** | [**[MarketplaceApp]**](MarketplaceApp.md) |  | [optional] [readonly] 
-**organization** | [**Organization**](Organization.md) |  | [optional] 
-**organizationId** | **Number** |  | [optional] 
-**creator** | [**User**](User.md) |  | [optional] 
-**creatorApp** | **String** |  | [optional] [readonly] 
-**isDefault** | **Boolean** |  | [optional] [readonly] 
-**createdAt** | **Date** | Creation date | [optional] [readonly] 
-**image** | **String** |  | [optional] [readonly] 
-**updatedAt** | **Date** | Date of the last update | [optional] [readonly] 
+**features** | [**[Feature]**](Feature.md) |  | [readonly] 
+**marketplaceApps** | [**[MarketplaceApp]**](MarketplaceApp.md) |  | [readonly] 
+**organization** | [**Organization**](Organization.md) |  | [readonly] 
+**creator** | [**User**](User.md) |  | [readonly] 
+**creatorApp** | **String** |  | [readonly] 
+**isDefault** | **Boolean** |  | [readonly] 
+**createdAt** | **Date** | Creation date | [readonly] 
+**image** | **String** |  | [optional] 
+**updatedAt** | **Date** | Date of the last update | [readonly] 
 
 

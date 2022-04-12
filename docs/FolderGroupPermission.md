@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**group** | [**InlineResponse2001**](InlineResponse2001.md) |  | 
-**permission** | **Number** | Group&#39;s permission for a folder | [optional] 
+**group** | [**Group**](Group.md) |  | 
+**permission** | [**FolderPermissionEnum**](FolderPermissionEnum.md) | Group&#39;s permission for a folder | [optional] 
 
 

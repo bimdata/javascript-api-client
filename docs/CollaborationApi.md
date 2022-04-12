@@ -1,6 +1,6 @@
 # bimdata.CollaborationApi
 
-All URIs are relative to *https://api.bimdata.io*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -40,7 +40,7 @@ Method | HTTP request | Description
 [**getClassifications**](CollaborationApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
 [**getCloud**](CollaborationApi.md#getCloud) | **GET** /cloud/{id} | Retrieve one cloud
 [**getCloudInvitations**](CollaborationApi.md#getCloudInvitations) | **GET** /cloud/{cloud_pk}/invitation | Retrieve all pending invitations in the cloud
-[**getCloudSize**](CollaborationApi.md#getCloudSize) | **GET** /cloud/{id}/size | summary
+[**getCloudSize**](CollaborationApi.md#getCloudSize) | **GET** /cloud/{id}/size | Get size of the cloud
 [**getCloudUser**](CollaborationApi.md#getCloudUser) | **GET** /cloud/{cloud_pk}/user/{id} | Retrieve a user in a cloud
 [**getCloudUsers**](CollaborationApi.md#getCloudUsers) | **GET** /cloud/{cloud_pk}/user | Retrieve all users in a cloud, or a list with a filter by email
 [**getClouds**](CollaborationApi.md#getClouds) | **GET** /cloud | Retrieve all clouds
@@ -81,7 +81,7 @@ Method | HTTP request | Description
 [**resumeVisa**](CollaborationApi.md#resumeVisa) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}/resume | Resume a visa of a document
 [**updateClassification**](CollaborationApi.md#updateClassification) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Update some fields of a classification
 [**updateCloud**](CollaborationApi.md#updateCloud) | **PATCH** /cloud/{id} | Update some fields of a cloud
-[**updateCloudUser**](CollaborationApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | Update some fields of a cloud user
+[**updateCloudUser**](CollaborationApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | Change the user role in the cloud
 [**updateDocument**](CollaborationApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update some fields of the document
 [**updateFolder**](CollaborationApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update some fields of a folder
 [**updateGroupFolder**](CollaborationApi.md#updateGroupFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/group/{id} | Update the permission of a group on a folder
@@ -101,31 +101,33 @@ Method | HTTP request | Description
 
 Accept a validation
 
-Accept a validation Required scopes: document:write
+Accept a validation  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa validation.
-let projectPk = "projectPk_example"; // String | 
-let visaPk = "visaPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let visaPk = 56; // Number | A unique integer value identifying this visa.
 apiInstance.acceptValidation(cloudPk, documentPk, id, projectPk, visaPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -139,11 +141,11 @@ apiInstance.acceptValidation(cloudPk, documentPk, id, projectPk, visaPk).then(()
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa validation. | 
- **projectPk** | **String**|  | 
- **visaPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaPk** | **Number**| A unique integer value identifying this visa. | 
 
 ### Return type
 
@@ -151,7 +153,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -161,35 +163,37 @@ null (empty response body)
 
 ## addGroupMember
 
-> UserProject addGroupMember(cloudPk, groupPk, projectPk, data)
+> UserProject addGroupMember(cloudPk, groupPk, projectPk, userProjectIdRequest)
 
 Add a user to a group
 
-Add a userproject to a group. Must be an admin of the project Required scopes: org:manage
+Add a userproject to a group. Must be an admin of the project  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let groupPk = "groupPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.UserProjectId(); // UserProjectId | 
-apiInstance.addGroupMember(cloudPk, groupPk, projectPk, data).then((data) => {
+let cloudPk = 56; // Number | 
+let groupPk = 56; // Number | A unique integer value identifying this group.
+let projectPk = 56; // Number | 
+let userProjectIdRequest = new bimdata.UserProjectIdRequest(); // UserProjectIdRequest | 
+apiInstance.addGroupMember(cloudPk, groupPk, projectPk, userProjectIdRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -202,10 +206,10 @@ apiInstance.addGroupMember(cloudPk, groupPk, projectPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **groupPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**UserProjectId**](UserProjectId.md)|  | 
+ **cloudPk** | **Number**|  | 
+ **groupPk** | **Number**| A unique integer value identifying this group. | 
+ **projectPk** | **Number**|  | 
+ **userProjectIdRequest** | [**UserProjectIdRequest**](UserProjectIdRequest.md)|  | 
 
 ### Return type
 
@@ -213,11 +217,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
@@ -227,27 +231,29 @@ Name | Type | Description  | Notes
 
 Cancel a pending invitation
 
-Cancel a pending invitation Required scopes: org:manage
+Cancel a pending invitation  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this invitation.
 apiInstance.cancelCloudUserInvitation(cloudPk, id).then(() => {
   console.log('API called successfully.');
@@ -262,7 +268,7 @@ apiInstance.cancelCloudUserInvitation(cloudPk, id).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this invitation. | 
 
 ### Return type
@@ -271,7 +277,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -285,29 +291,31 @@ null (empty response body)
 
 Cancel a pending invitation
 
- Required scopes: org:manage
+Cancel a pending invitation  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this invitation.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.cancelProjectUserInvitation(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -321,9 +329,9 @@ apiInstance.cancelProjectUserInvitation(cloudPk, id, projectPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this invitation. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -331,7 +339,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -352,17 +360,19 @@ Return code 200 if the cloud has access to the marketplace app
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
 let id = 56; // Number | A unique integer value identifying this cloud.
@@ -387,7 +397,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -401,30 +411,32 @@ null (empty response body)
 
 Close a visa of a document
 
-Close a visa of a document Required scopes: document:write
+Close a visa of a document  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.closeVisa(cloudPk, documentPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -438,10 +450,10 @@ apiInstance.closeVisa(cloudPk, documentPk, id, projectPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -449,7 +461,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -459,34 +471,36 @@ null (empty response body)
 
 ## createClassification
 
-> [Classification] createClassification(cloudPk, projectPk, data)
+> [Classification] createClassification(cloudPk, projectPk, classificationRequest)
 
 Create a classification
 
-         Bulk create available.         You can either post an object or a list of objects.         Is you post a list, the response will be a list (in the same order) of created objects or of errors if any         If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors      If created classification already exists, it will not be duplicated and the previous one will be returned.     You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive  Required scopes: ifc:write, model:write
+ Bulk create available. You can either post an object or a list of objects. Is you post a list, the response will be a list (in the same order) of created objects or of errors if any If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors  If created classification already exists, it will not be duplicated and the previous one will be returned. You also can add a &#39;classification&#39; filter on this endpoint. By ex: /classification?name&#x3D;&#39;untec&#39;. The name is case sensitive  Required scopes: ifc:write, model:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = [new bimdata.Classification()]; // [Classification] | 
-apiInstance.createClassification(cloudPk, projectPk, data).then((data) => {
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let classificationRequest = [new bimdata.ClassificationRequest()]; // [ClassificationRequest] | 
+apiInstance.createClassification(cloudPk, projectPk, classificationRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -499,9 +513,9 @@ apiInstance.createClassification(cloudPk, projectPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**[Classification]**](Classification.md)|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **classificationRequest** | [**[ClassificationRequest]**](ClassificationRequest.md)|  | 
 
 ### Return type
 
@@ -509,42 +523,44 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createCloud
 
-> Cloud createCloud(data)
+> Cloud createCloud(cloudRequest)
 
 Create a cloud
 
- Required scopes: cloud:manage
+Create a cloud  Required scopes: cloud:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let data = new bimdata.Cloud(); // Cloud | 
-apiInstance.createCloud(data).then((data) => {
+let cloudRequest = new bimdata.CloudRequest(); // CloudRequest | 
+apiInstance.createCloud(cloudRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -557,7 +573,7 @@ apiInstance.createCloud(data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**Cloud**](Cloud.md)|  | 
+ **cloudRequest** | [**CloudRequest**](CloudRequest.md)|  | 
 
 ### Return type
 
@@ -565,44 +581,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createDMSTree
 
-> createDMSTree(cloudPk, id, data)
+> createDMSTree(cloudPk, id, folderRequest)
 
 Create a complete DMS tree
 
-                 Create a DMS structure of folder                 Format request :                     [{                         \&quot;name\&quot;: :name:                         \&quot;parent_id\&quot;: :parent_id:                      # optionnal                         \&quot;default_permission\&quot;: :default_permission:    # optionnal                         \&quot;children\&quot;: [{                                # optionnal                             \&quot;name\&quot;: :name:,                             \&quot;children\&quot;: []                         }]                     }],  Required scopes: org:manage
+ Create a DMS structure of folder Format request :     [{         \&quot;name\&quot;: :name:         \&quot;parent_id\&quot;: :parent_id:                      # optionnal         \&quot;default_permission\&quot;: :default_permission:    # optionnal         \&quot;children\&quot;: [{                                # optionnal             \&quot;name\&quot;: :name:,             \&quot;children\&quot;: []         }]     }],                   Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this project.
-let data = new bimdata.Folder(); // Folder | 
-apiInstance.createDMSTree(cloudPk, id, data).then(() => {
+let folderRequest = new bimdata.FolderRequest(); // FolderRequest | 
+apiInstance.createDMSTree(cloudPk, id, folderRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -615,9 +633,9 @@ apiInstance.createDMSTree(cloudPk, id, data).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
- **data** | [**Folder**](Folder.md)|  | 
+ **folderRequest** | [**FolderRequest**](FolderRequest.md)|  | 
 
 ### Return type
 
@@ -625,11 +643,11 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
@@ -639,24 +657,26 @@ null (empty response body)
 
 Create a Demo project in a cloud
 
-Create a demo project with a pre-populated IFC and its data Required scopes: cloud:manage
+Create a project name &#39;Demo&#39; with an already processed model in it  Required scopes: cloud:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
 let id = 56; // Number | A unique integer value identifying this cloud.
@@ -681,7 +701,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -691,32 +711,34 @@ Name | Type | Description  | Notes
 
 ## createDocument
 
-> Document createDocument(cloudPk, projectPk, name, file, opts)
+> createDocument(cloudPk, projectPk, name, file, opts)
 
 Create a document
 
-RCreate a document. If the document is an IFC, an IFC model will be created and attached to this document Required scopes: document:write
+RCreate a document. If the document is an IFC, an IFC model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 let name = "name_example"; // String | Shown name of the file
 let file = "/path/to/file"; // File | 
 let opts = {
@@ -725,12 +747,12 @@ let opts = {
   'creator': 56, // Number | 
   'fileName': "fileName_example", // String | Full name of the file
   'description': "description_example", // String | Description of the file
-  'size': 56, // Number | Size of the file.
-  'modelSource': "modelSource_example", // String | Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
-  'ifcSource': "ifcSource_example" // String | DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+  'size': 789, // Number | Size of the file.
+  'modelSource': new bimdata.ModelSourceEnum(), // ModelSourceEnum | Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+  'ifcSource': new bimdata.ModelSourceEnum() // ModelSourceEnum | DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
 };
-apiInstance.createDocument(cloudPk, projectPk, name, file, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
+apiInstance.createDocument(cloudPk, projectPk, name, file, opts).then(() => {
+  console.log('API called successfully.');
 }, (error) => {
   console.error(error);
 });
@@ -742,8 +764,8 @@ apiInstance.createDocument(cloudPk, projectPk, name, file, opts).then((data) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
  **name** | **String**| Shown name of the file | 
  **file** | **File**|  | 
  **parent** | **Number**|  | [optional] 
@@ -752,53 +774,55 @@ Name | Type | Description  | Notes
  **fileName** | **String**| Full name of the file | [optional] 
  **description** | **String**| Description of the file | [optional] 
  **size** | **Number**| Size of the file. | [optional] 
- **modelSource** | **String**| Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
- **ifcSource** | **String**| DEPRECATED: Use &#39;model_source&#39; instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
+ **modelSource** | [**ModelSourceEnum**](ModelSourceEnum.md)| Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
+ **ifcSource** | [**ModelSourceEnum**](ModelSourceEnum.md)| DEPRECATED: Use &#39;model_source&#39; instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
 
 ### Return type
 
-[**Document**](Document.md)
+null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
 - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Accept**: Not defined
 
 
 ## createFolder
 
-> InlineResponse200 createFolder(cloudPk, projectPk, data)
+> FolderWithoutChildren createFolder(cloudPk, projectPk, folderWithoutChildrenRequest)
 
 Create a folder
 
-If the created folder have no parent, it will be put as a child of the default root folder of the project Required scopes: document:write
+If the created folder have no parent, it will be put as a child of the default root folder of the project  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.InlineObject(); // InlineObject | 
-apiInstance.createFolder(cloudPk, projectPk, data).then((data) => {
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let folderWithoutChildrenRequest = new bimdata.FolderWithoutChildrenRequest(); // FolderWithoutChildrenRequest | 
+apiInstance.createFolder(cloudPk, projectPk, folderWithoutChildrenRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -811,54 +835,56 @@ apiInstance.createFolder(cloudPk, projectPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**InlineObject**](InlineObject.md)|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **folderWithoutChildrenRequest** | [**FolderWithoutChildrenRequest**](FolderWithoutChildrenRequest.md)|  | 
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**FolderWithoutChildren**](FolderWithoutChildren.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createManageGroup
 
-> InlineResponse2001 createManageGroup(cloudPk, projectPk, data)
+> Group createManageGroup(cloudPk, projectPk, groupRequest)
 
 Create a group
 
-Create a group. Must be an admin of the project Required scopes: org:manage
+Create a group. Must be an admin of the project  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.InlineObject2(); // InlineObject2 | 
-apiInstance.createManageGroup(cloudPk, projectPk, data).then((data) => {
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let groupRequest = new bimdata.GroupRequest(); // GroupRequest | 
+apiInstance.createManageGroup(cloudPk, projectPk, groupRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -871,53 +897,55 @@ apiInstance.createManageGroup(cloudPk, projectPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**InlineObject2**](InlineObject2.md)|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **groupRequest** | [**GroupRequest**](GroupRequest.md)|  | 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**Group**](Group.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createProject
 
-> Project createProject(cloudPk, data)
+> Project createProject(cloudPk, projectRequest)
 
 Create a project
 
-Create a project Required scopes: org:manage
+Create a project  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let data = new bimdata.Project(); // Project | 
-apiInstance.createProject(cloudPk, data).then((data) => {
+let cloudPk = 56; // Number | 
+let projectRequest = new bimdata.ProjectRequest(); // ProjectRequest | 
+apiInstance.createProject(cloudPk, projectRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -930,8 +958,8 @@ apiInstance.createProject(cloudPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **data** | [**Project**](Project.md)|  | 
+ **cloudPk** | **Number**|  | 
+ **projectRequest** | [**ProjectRequest**](ProjectRequest.md)|  | 
 
 ### Return type
 
@@ -939,44 +967,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createProjectAccessToken
 
-> ProjectAccessToken createProjectAccessToken(cloudPk, projectPk, data)
+> ProjectAccessToken createProjectAccessToken(cloudPk, projectPk, projectAccessTokenRequest)
 
 Create a token for this project
 
-Tokens are valid 1 day by default Required scopes: org:manage
+Tokens are valid 1 day by default  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.ProjectAccessToken(); // ProjectAccessToken | 
-apiInstance.createProjectAccessToken(cloudPk, projectPk, data).then((data) => {
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let projectAccessTokenRequest = new bimdata.ProjectAccessTokenRequest(); // ProjectAccessTokenRequest | 
+apiInstance.createProjectAccessToken(cloudPk, projectPk, projectAccessTokenRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -989,9 +1019,9 @@ apiInstance.createProjectAccessToken(cloudPk, projectPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**ProjectAccessToken**](ProjectAccessToken.md)|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **projectAccessTokenRequest** | [**ProjectAccessTokenRequest**](ProjectAccessTokenRequest.md)|  | 
 
 ### Return type
 
@@ -999,46 +1029,48 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createValidation
 
-> VisaValidation createValidation(cloudPk, documentPk, projectPk, visaPk, data)
+> VisaValidation createValidation(cloudPk, documentPk, projectPk, visaPk, visaValidationRequest)
 
 Add a validation to a visa
 
-Add a validation to a visa Required scopes: document:write
+Add a validation to a visa  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let visaPk = "visaPk_example"; // String | 
-let data = new bimdata.VisaValidation(); // VisaValidation | 
-apiInstance.createValidation(cloudPk, documentPk, projectPk, visaPk, data).then((data) => {
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let visaPk = 56; // Number | A unique integer value identifying this visa.
+let visaValidationRequest = new bimdata.VisaValidationRequest(); // VisaValidationRequest | 
+apiInstance.createValidation(cloudPk, documentPk, projectPk, visaPk, visaValidationRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1051,11 +1083,11 @@ apiInstance.createValidation(cloudPk, documentPk, projectPk, visaPk, data).then(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **visaPk** | **String**|  | 
- **data** | [**VisaValidation**](VisaValidation.md)|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaPk** | **Number**| A unique integer value identifying this visa. | 
+ **visaValidationRequest** | [**VisaValidationRequest**](VisaValidationRequest.md)|  | 
 
 ### Return type
 
@@ -1063,45 +1095,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createVisa
 
-> Visa createVisa(cloudPk, documentPk, projectPk, data)
+> Visa createVisa(cloudPk, documentPk, projectPk, opts)
 
 Create a visa
 
-Create a visa Required scopes: document:write
+Create a visa  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Visa(); // Visa | 
-apiInstance.createVisa(cloudPk, documentPk, projectPk, data).then((data) => {
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let opts = {
+  'visaRequest': new bimdata.VisaRequest() // VisaRequest | 
+};
+apiInstance.createVisa(cloudPk, documentPk, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1114,10 +1150,10 @@ apiInstance.createVisa(cloudPk, documentPk, projectPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**Visa**](Visa.md)|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaRequest** | [**VisaRequest**](VisaRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -1125,46 +1161,50 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createVisaComment
 
-> VisaComment createVisaComment(cloudPk, documentPk, projectPk, visaPk, data)
+> VisaComment createVisaComment(cloudPk, documentPk, projectPk, visaPk, opts)
 
 Add a comment
 
-Add a comment Required scopes: document:write
+Add a comment  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let visaPk = "visaPk_example"; // String | 
-let data = new bimdata.VisaComment(); // VisaComment | 
-apiInstance.createVisaComment(cloudPk, documentPk, projectPk, visaPk, data).then((data) => {
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let visaPk = 56; // Number | A unique integer value identifying this visa.
+let opts = {
+  'visaCommentRequest': new bimdata.VisaCommentRequest() // VisaCommentRequest | 
+};
+apiInstance.createVisaComment(cloudPk, documentPk, projectPk, visaPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1177,11 +1217,11 @@ apiInstance.createVisaComment(cloudPk, documentPk, projectPk, visaPk, data).then
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **visaPk** | **String**|  | 
- **data** | [**VisaComment**](VisaComment.md)|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaPk** | **Number**| A unique integer value identifying this visa. | 
+ **visaCommentRequest** | [**VisaCommentRequest**](VisaCommentRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -1189,11 +1229,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
@@ -1203,29 +1243,31 @@ Name | Type | Description  | Notes
 
 Delete a classification
 
-All elements having this classification will lose it Required scopes: ifc:write, model:write
+All elements having this classification will lose it  Required scopes: ifc:write, model:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this classification.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.deleteClassification(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1239,9 +1281,9 @@ apiInstance.deleteClassification(cloudPk, id, projectPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this classification. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -1249,7 +1291,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1263,24 +1305,26 @@ null (empty response body)
 
 Delete a cloud
 
- Required scopes: cloud:manage
+Delete a cloud  Required scopes: cloud:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
 let id = 56; // Number | A unique integer value identifying this cloud.
@@ -1305,7 +1349,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1319,27 +1363,29 @@ null (empty response body)
 
 Remove a user from a cloud
 
-The user will also be removed from all the projects of the cloud Required scopes: cloud:manage
+The user will also be removed from all the projects of the cloud  Required scopes: cloud:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this fos user.
 apiInstance.deleteCloudUser(cloudPk, id).then(() => {
   console.log('API called successfully.');
@@ -1354,7 +1400,7 @@ apiInstance.deleteCloudUser(cloudPk, id).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this fos user. | 
 
 ### Return type
@@ -1363,7 +1409,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1377,29 +1423,31 @@ null (empty response body)
 
 Delete the document
 
-Delete the document Required scopes: document:write
+Delete the document  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this document.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.deleteDocument(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1413,9 +1461,9 @@ apiInstance.deleteDocument(cloudPk, id, projectPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this document. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -1423,7 +1471,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1437,29 +1485,31 @@ null (empty response body)
 
 Delete a folder
 
-All files and subfolders will be deleted too. If folder is a project&#39;s root folder, only children are deleted Required scopes: document:write
+All files and subfolders will be deleted too. If folder is a project&#39;s root folder, only children are deleted  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this folder.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.deleteFolder(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1473,9 +1523,9 @@ apiInstance.deleteFolder(cloudPk, id, projectPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this folder. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -1483,7 +1533,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1497,30 +1547,32 @@ null (empty response body)
 
 Delete a user from a group
 
-Delete a userproject from a group. Id is the userproject_id. Must be an admin of the project. Required scopes: org:manage
+Delete a userproject from a group. Id is the userproject_id. Must be an admin of the project.  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let groupPk = "groupPk_example"; // String | 
-let id = "id_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | 
+let groupPk = 56; // Number | A unique integer value identifying this group.
+let id = 56; // Number | A unique integer value identifying this group.
+let projectPk = 56; // Number | 
 apiInstance.deleteGroupMember(cloudPk, groupPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1534,10 +1586,10 @@ apiInstance.deleteGroupMember(cloudPk, groupPk, id, projectPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **groupPk** | **String**|  | 
- **id** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
+ **groupPk** | **Number**| A unique integer value identifying this group. | 
+ **id** | **Number**| A unique integer value identifying this group. | 
+ **projectPk** | **Number**|  | 
 
 ### Return type
 
@@ -1545,7 +1597,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1559,29 +1611,31 @@ null (empty response body)
 
 Delete a group
 
-Delete a group. Must be an admin of the project Required scopes: org:manage
+Delete a group. Must be an admin of the project  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this group.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.deleteManageGroup(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1595,9 +1649,9 @@ apiInstance.deleteManageGroup(cloudPk, id, projectPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this group. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -1605,7 +1659,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1619,27 +1673,29 @@ null (empty response body)
 
 Delete a project
 
-It can take a long time to respond because we may need to delete all properties of all elements of all models in the project Required scopes: org:manage
+It can take a long time to respond because we may need to delete all properties of all elements of all models in the project  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this project.
 apiInstance.deleteProject(cloudPk, id).then(() => {
   console.log('API called successfully.');
@@ -1654,7 +1710,7 @@ apiInstance.deleteProject(cloudPk, id).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
@@ -1663,7 +1719,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1677,28 +1733,30 @@ null (empty response body)
 
 Delete a token
 
-Deleting a token will revoke it Required scopes: org:manage
+Deleting a token will revoke it  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 let token = "token_example"; // String | 
 apiInstance.deleteProjectAccessToken(cloudPk, projectPk, token).then(() => {
   console.log('API called successfully.');
@@ -1713,8 +1771,8 @@ apiInstance.deleteProjectAccessToken(cloudPk, projectPk, token).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
  **token** | **String**|  | 
 
 ### Return type
@@ -1723,7 +1781,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1737,29 +1795,31 @@ null (empty response body)
 
 Remove a user from a project
 
-Remove a user from a project Required scopes: cloud:manage
+Remove a user from a project  Required scopes: cloud:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = "id_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | 
+let id = 56; // Number | A unique integer value identifying this user project.
+let projectPk = 56; // Number | 
 apiInstance.deleteProjectUser(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1773,9 +1833,9 @@ apiInstance.deleteProjectUser(cloudPk, id, projectPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
+ **id** | **Number**| A unique integer value identifying this user project. | 
+ **projectPk** | **Number**|  | 
 
 ### Return type
 
@@ -1783,7 +1843,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1797,31 +1857,33 @@ null (empty response body)
 
 Remove a validation
 
-Remove a validation Required scopes: document:write
+Remove a validation  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa validation.
-let projectPk = "projectPk_example"; // String | 
-let visaPk = "visaPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let visaPk = 56; // Number | A unique integer value identifying this visa.
 apiInstance.deleteValidation(cloudPk, documentPk, id, projectPk, visaPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1835,11 +1897,11 @@ apiInstance.deleteValidation(cloudPk, documentPk, id, projectPk, visaPk).then(()
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa validation. | 
- **projectPk** | **String**|  | 
- **visaPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaPk** | **Number**| A unique integer value identifying this visa. | 
 
 ### Return type
 
@@ -1847,7 +1909,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1861,30 +1923,32 @@ null (empty response body)
 
 Remove a visa
 
-Remove a visa Required scopes: document:write
+Remove a visa  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.deleteVisa(cloudPk, documentPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1898,10 +1962,10 @@ apiInstance.deleteVisa(cloudPk, documentPk, id, projectPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -1909,7 +1973,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1923,31 +1987,33 @@ null (empty response body)
 
 Remove a comment
 
-Remove a comment Required scopes: document:write
+Remove a comment  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa comment.
-let projectPk = "projectPk_example"; // String | 
-let visaPk = "visaPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let visaPk = 56; // Number | A unique integer value identifying this visa.
 apiInstance.deleteVisaComment(cloudPk, documentPk, id, projectPk, visaPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -1961,11 +2027,11 @@ apiInstance.deleteVisaComment(cloudPk, documentPk, id, projectPk, visaPk).then((
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa comment. | 
- **projectPk** | **String**|  | 
- **visaPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaPk** | **Number**| A unique integer value identifying this visa. | 
 
 ### Return type
 
@@ -1973,7 +2039,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1987,31 +2053,33 @@ null (empty response body)
 
 Deny a validation
 
-Deny a validation Required scopes: document:write
+Deny a validation  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa validation.
-let projectPk = "projectPk_example"; // String | 
-let visaPk = "visaPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let visaPk = 56; // Number | A unique integer value identifying this visa.
 apiInstance.denyValidation(cloudPk, documentPk, id, projectPk, visaPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -2025,11 +2093,11 @@ apiInstance.denyValidation(cloudPk, documentPk, id, projectPk, visaPk).then(() =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa validation. | 
- **projectPk** | **String**|  | 
- **visaPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaPk** | **Number**| A unique integer value identifying this visa. | 
 
 ### Return type
 
@@ -2037,7 +2105,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2051,29 +2119,31 @@ null (empty response body)
 
 Retrieve a classification
 
-Retrieve a classification Required scopes: ifc:read, model:read
+Retrieve a classification  Required scopes: ifc:read, model:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this classification.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getClassification(cloudPk, id, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2087,9 +2157,9 @@ apiInstance.getClassification(cloudPk, id, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this classification. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -2097,7 +2167,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2111,28 +2181,30 @@ Name | Type | Description  | Notes
 
 Retrieve all classifications
 
-Retrieve all classifications of all models in the project Required scopes: ifc:read, model:read
+Retrieve all classifications of all models in the project  Required scopes: ifc:read, model:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getClassifications(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2146,8 +2218,8 @@ apiInstance.getClassifications(cloudPk, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -2155,7 +2227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2169,22 +2241,26 @@ Name | Type | Description  | Notes
 
 Retrieve one cloud
 
+Retrieve one cloud
+
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
 let id = 56; // Number | A unique integer value identifying this cloud.
@@ -2209,7 +2285,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2223,27 +2299,29 @@ Name | Type | Description  | Notes
 
 Retrieve all pending invitations in the cloud
 
-Returns app&#39;s invitations only Required scopes: org:manage
+Returns app&#39;s invitations only  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 apiInstance.getCloudInvitations(cloudPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2257,7 +2335,7 @@ apiInstance.getCloudInvitations(cloudPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
 
 ### Return type
 
@@ -2265,7 +2343,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2277,26 +2355,28 @@ Name | Type | Description  | Notes
 
 > Size getCloudSize(id)
 
-summary
+Get size of the cloud
 
- Returns the sizes of the cloud in Bytes. The response fields depends on the role of the user. If the user is an admin, all field will be returned. If the user is a standard user, only &#x60;remaining_total_size&#x60; and &#x60;remaining_smart_data_size&#x60; will be set. If the call is made from an API access, role admin (100) will be returned and all fields will be set. The fields &#x60;managed by&#x60; indicate if the subscription for this cloud is an API subscription or a BIMData Platform subscription. If the cloud is managed by an API plan, the remaining sizes will take others organizations&#39;s clouds size into account 
+ Returns the sizes of the cloud in Bytes. The response fields depends on the role of the user. If the user is an admin, all field will be returned. If the user is a standard user, only &#x60;remaining_total_size&#x60; and &#x60;remaining_smart_data_size&#x60; will be set. If the call is made from an API access, role admin (100) will be returned and all fields will be set. The fields &#x60;managed by&#x60; indicate if the subscription for this cloud is an API subscription or a BIMData Platform subscription. If the cloud is managed by an API plan, the remaining sizes will take others organizations&#39;s clouds size into account
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
 let id = 56; // Number | A unique integer value identifying this cloud.
@@ -2321,7 +2401,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2335,27 +2415,29 @@ Name | Type | Description  | Notes
 
 Retrieve a user in a cloud
 
-Only administrators can see a cloud member Required scopes: cloud:read
+Only administrators can see a cloud member  Required scopes: cloud:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this fos user.
 apiInstance.getCloudUser(cloudPk, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -2370,7 +2452,7 @@ apiInstance.getCloudUser(cloudPk, id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this fos user. | 
 
 ### Return type
@@ -2379,7 +2461,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2393,32 +2475,34 @@ Name | Type | Description  | Notes
 
 Retrieve all users in a cloud, or a list with a filter by email
 
-Only administrators can see cloud members. Required scopes: cloud:read
+Only administrators can see cloud members.  Required scopes: cloud:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 let opts = {
-  'email': "email_example", // String | Filter the returned list by email
-  'emailContains': "emailContains_example", // String | Filter the returned list by email__contains
-  'emailStartswith': "emailStartswith_example", // String | Filter the returned list by email__startswith
-  'emailEndswith': "emailEndswith_example" // String | Filter the returned list by email__endswith
+  'email': "email_example", // String | 
+  'emailContains': "emailContains_example", // String | 
+  'emailEndswith': "emailEndswith_example", // String | 
+  'emailStartswith': "emailStartswith_example" // String | 
 };
 apiInstance.getCloudUsers(cloudPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -2433,11 +2517,11 @@ apiInstance.getCloudUsers(cloudPk, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **email** | **String**| Filter the returned list by email | [optional] 
- **emailContains** | **String**| Filter the returned list by email__contains | [optional] 
- **emailStartswith** | **String**| Filter the returned list by email__startswith | [optional] 
- **emailEndswith** | **String**| Filter the returned list by email__endswith | [optional] 
+ **cloudPk** | **Number**|  | 
+ **email** | **String**|  | [optional] 
+ **emailContains** | **String**|  | [optional] 
+ **emailEndswith** | **String**|  | [optional] 
+ **emailStartswith** | **String**|  | [optional] 
 
 ### Return type
 
@@ -2445,7 +2529,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2466,17 +2550,19 @@ Returns user&#39;s (or app&#39;s) clouds only
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
 apiInstance.getClouds().then((data) => {
@@ -2497,7 +2583,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2511,29 +2597,31 @@ This endpoint does not need any parameter.
 
 Retrieve a document
 
-Retrieve a document in the project Required scopes: document:read
+Retrieve a document in the project  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this document.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getDocument(cloudPk, id, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2547,9 +2635,9 @@ apiInstance.getDocument(cloudPk, id, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this document. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -2557,7 +2645,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2571,28 +2659,30 @@ Name | Type | Description  | Notes
 
 Retrieve all documents
 
-Retrieve all documents in the project Required scopes: document:read
+Retrieve all documents in the project  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getDocuments(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2606,8 +2696,8 @@ apiInstance.getDocuments(cloudPk, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -2615,7 +2705,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2625,33 +2715,35 @@ Name | Type | Description  | Notes
 
 ## getFolder
 
-> InlineResponse200 getFolder(cloudPk, id, projectPk)
+> FolderWithoutChildren getFolder(cloudPk, id, projectPk)
 
 Retrieve a folder
 
-Retrieve a folder Required scopes: document:read
+Retrieve a folder  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this folder.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getFolder(cloudPk, id, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2665,17 +2757,17 @@ apiInstance.getFolder(cloudPk, id, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this folder. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**FolderWithoutChildren**](FolderWithoutChildren.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2689,29 +2781,31 @@ Name | Type | Description  | Notes
 
 Retrieve all users in a project with the permission on the folder
 
-Retrieve all users in a project with the permission on the folder Required scopes: document:read
+Retrieve all users in a project with the permission on the folder  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let folderPk = "folderPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | 
+let folderPk = 56; // Number | A unique integer value identifying this folder.
+let projectPk = 56; // Number | 
 apiInstance.getFolderProjectUsers(cloudPk, folderPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2725,9 +2819,9 @@ apiInstance.getFolderProjectUsers(cloudPk, folderPk, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **folderPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
+ **folderPk** | **Number**| A unique integer value identifying this folder. | 
+ **projectPk** | **Number**|  | 
 
 ### Return type
 
@@ -2735,7 +2829,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2745,32 +2839,34 @@ Name | Type | Description  | Notes
 
 ## getFolders
 
-> [InlineResponse200] getFolders(cloudPk, projectPk)
+> [FolderWithoutChildren] getFolders(cloudPk, projectPk)
 
 Retrieve all folders
 
-Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree Required scopes: document:read
+Retrieve all folders in the project. This is an array of folder. If you want to get the tree of all folders, see getProjectTree  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getFolders(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2784,16 +2880,16 @@ apiInstance.getFolders(cloudPk, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
-[**[InlineResponse200]**](InlineResponse200.md)
+[**[FolderWithoutChildren]**](FolderWithoutChildren.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2803,33 +2899,35 @@ Name | Type | Description  | Notes
 
 ## getGroup
 
-> InlineResponse2001 getGroup(cloudPk, id, projectPk)
+> Group getGroup(cloudPk, id, projectPk)
 
 Retrieve a group
 
-Retrieve a group to which the user belongs Required scopes: document:read
+Retrieve a group to which the user belongs  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this group.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getGroup(cloudPk, id, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2843,17 +2941,17 @@ apiInstance.getGroup(cloudPk, id, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this group. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**Group**](Group.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2863,32 +2961,34 @@ Name | Type | Description  | Notes
 
 ## getGroups
 
-> [InlineResponse2001] getGroups(cloudPk, projectPk)
+> [Group] getGroups(cloudPk, projectPk)
 
 Retrieve all groups
 
-Retrieves all groups to which the user belongs Required scopes: document:read
+Retrieves all groups to which the user belongs  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getGroups(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2902,16 +3002,16 @@ apiInstance.getGroups(cloudPk, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
-[**[InlineResponse2001]**](InlineResponse2001.md)
+[**[Group]**](Group.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2921,33 +3021,35 @@ Name | Type | Description  | Notes
 
 ## getManageGroup
 
-> InlineResponse2001 getManageGroup(cloudPk, id, projectPk)
+> Group getManageGroup(cloudPk, id, projectPk)
 
 Retrieve a group
 
-Retrieve a group. Must be an admin of the project Required scopes: org:manage
+Retrieve a group. Must be an admin of the project  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this group.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getManageGroup(cloudPk, id, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2961,17 +3063,17 @@ apiInstance.getManageGroup(cloudPk, id, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this group. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**Group**](Group.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2981,32 +3083,34 @@ Name | Type | Description  | Notes
 
 ## getManageGroups
 
-> [InlineResponse2001] getManageGroups(cloudPk, projectPk)
+> [Group] getManageGroups(cloudPk, projectPk)
 
 Retrieve all groups
 
-Retrieve all groups in the project. Must be an admin of the project Required scopes: org:manage
+Retrieve all groups in the project. Must be an admin of the project  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getManageGroups(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3020,16 +3124,16 @@ apiInstance.getManageGroups(cloudPk, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
-[**[InlineResponse2001]**](InlineResponse2001.md)
+[**[Group]**](Group.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3050,20 +3154,22 @@ Retrieve a project
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this project.
 apiInstance.getProject(cloudPk, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -3078,7 +3184,7 @@ apiInstance.getProject(cloudPk, id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
@@ -3087,7 +3193,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3101,28 +3207,30 @@ Name | Type | Description  | Notes
 
 Retrieve one token created for this project
 
-Retrieve one token created for this project Required scopes: org:manage
+Retrieve one token created for this project  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 let token = "token_example"; // String | 
 apiInstance.getProjectAccessToken(cloudPk, projectPk, token).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -3137,8 +3245,8 @@ apiInstance.getProjectAccessToken(cloudPk, projectPk, token).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
  **token** | **String**|  | 
 
 ### Return type
@@ -3147,7 +3255,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3161,28 +3269,30 @@ Name | Type | Description  | Notes
 
 Retrieve all tokens created for this project
 
-Retrieve all tokens created for this project Required scopes: org:manage
+Retrieve all tokens created for this project  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getProjectAccessTokens(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3196,8 +3306,8 @@ apiInstance.getProjectAccessTokens(cloudPk, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -3205,7 +3315,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3219,28 +3329,30 @@ Name | Type | Description  | Notes
 
 List visas created by user
 
-List visas created by user in a project Required scopes: document:read
+List visas created by user in a project  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getProjectCreatorVisas(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3254,8 +3366,8 @@ apiInstance.getProjectCreatorVisas(cloudPk, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -3263,7 +3375,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3284,20 +3396,22 @@ Retrieve the complete DMS tree (all folders and all documents in the project)
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this project.
 apiInstance.getProjectDMSTree(cloudPk, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -3312,7 +3426,7 @@ apiInstance.getProjectDMSTree(cloudPk, id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
@@ -3321,7 +3435,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3335,28 +3449,30 @@ Name | Type | Description  | Notes
 
 Retrieve all pending invitations in the project
 
-Returns app&#39;s invitations only Required scopes: org:manage
+Returns app&#39;s invitations only  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getProjectInvitations(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3370,8 +3486,8 @@ apiInstance.getProjectInvitations(cloudPk, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -3379,7 +3495,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3400,20 +3516,22 @@ Returns the size of the project in Bytes
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this project.
 apiInstance.getProjectSize(cloudPk, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -3428,7 +3546,7 @@ apiInstance.getProjectSize(cloudPk, id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
@@ -3437,7 +3555,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3458,20 +3576,22 @@ Retrieve the complete projects tree of the cloud
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 apiInstance.getProjectSubTree(cloudPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3485,7 +3605,7 @@ apiInstance.getProjectSubTree(cloudPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
 
 ### Return type
 
@@ -3493,7 +3613,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3514,20 +3634,22 @@ Retrieve the complete DMS tree (all folders and all documents in the project). D
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this project.
 apiInstance.getProjectTree(cloudPk, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -3542,7 +3664,7 @@ apiInstance.getProjectTree(cloudPk, id).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
@@ -3551,7 +3673,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3565,33 +3687,35 @@ Name | Type | Description  | Notes
 
 Retrieve all users in a project, or a list with a filter by email
 
-Each member of a project can see other members of the project Required scopes: cloud:read, bcf:read
+Each member of a project can see other members of the project  Required scopes: cloud:read, bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | 
+let projectPk = 56; // Number | 
 let opts = {
   'email': "email_example", // String | Filter the returned list by email
   'emailContains': "emailContains_example", // String | Filter the returned list by email__contains
-  'emailStartswith': "emailStartswith_example", // String | Filter the returned list by email__startswith
-  'emailEndswith': "emailEndswith_example" // String | Filter the returned list by email__endswith
+  'emailEndswith': "emailEndswith_example", // String | Filter the returned list by email__endswith
+  'emailStartswith': "emailStartswith_example" // String | Filter the returned list by email__startswith
 };
 apiInstance.getProjectUsers(cloudPk, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -3606,12 +3730,12 @@ apiInstance.getProjectUsers(cloudPk, projectPk, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
+ **projectPk** | **Number**|  | 
  **email** | **String**| Filter the returned list by email | [optional] 
  **emailContains** | **String**| Filter the returned list by email__contains | [optional] 
- **emailStartswith** | **String**| Filter the returned list by email__startswith | [optional] 
  **emailEndswith** | **String**| Filter the returned list by email__endswith | [optional] 
+ **emailStartswith** | **String**| Filter the returned list by email__startswith | [optional] 
 
 ### Return type
 
@@ -3619,7 +3743,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3633,28 +3757,30 @@ Name | Type | Description  | Notes
 
 List visas where user is a validator
 
-List visas where user is a validator in a project Required scopes: document:read
+List visas where user is a validator in a project  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getProjectValidatorVisas(cloudPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3668,8 +3794,8 @@ apiInstance.getProjectValidatorVisas(cloudPk, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -3677,7 +3803,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3698,20 +3824,22 @@ Retrieve all projects of the cloud. All project are shown at the same level. see
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 apiInstance.getProjects(cloudPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3725,7 +3853,7 @@ apiInstance.getProjects(cloudPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
 
 ### Return type
 
@@ -3733,7 +3861,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3747,24 +3875,26 @@ Name | Type | Description  | Notes
 
 List current user&#39;s projects
 
-List user&#39;s projects of all clouds Required scopes: user:read
+List user&#39;s projects of all clouds  Required scopes: user:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
 apiInstance.getSelfProjects().then((data) => {
@@ -3785,7 +3915,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3799,24 +3929,26 @@ This endpoint does not need any parameter.
 
 Get info about the current user
 
-Get info about the current user
+Get info about the current user  Required scopes: user:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
 apiInstance.getSelfUser().then((data) => {
@@ -3837,7 +3969,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3851,31 +3983,33 @@ This endpoint does not need any parameter.
 
 Retrieve a validation to a visa
 
-Retrieve a validation to a visa Required scopes: document:read
+Retrieve a validation to a visa  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa validation.
-let projectPk = "projectPk_example"; // String | 
-let visaPk = "visaPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let visaPk = 56; // Number | A unique integer value identifying this visa.
 apiInstance.getValidation(cloudPk, documentPk, id, projectPk, visaPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3889,11 +4023,11 @@ apiInstance.getValidation(cloudPk, documentPk, id, projectPk, visaPk).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa validation. | 
- **projectPk** | **String**|  | 
- **visaPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaPk** | **Number**| A unique integer value identifying this visa. | 
 
 ### Return type
 
@@ -3901,7 +4035,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3915,30 +4049,32 @@ Name | Type | Description  | Notes
 
 List all validations to a visa
 
-List all validations to a visa Required scopes: document:read
+List all validations to a visa  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let visaPk = "visaPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let visaPk = 56; // Number | A unique integer value identifying this visa.
 apiInstance.getValidations(cloudPk, documentPk, projectPk, visaPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3952,10 +4088,10 @@ apiInstance.getValidations(cloudPk, documentPk, projectPk, visaPk).then((data) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **visaPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaPk** | **Number**| A unique integer value identifying this visa. | 
 
 ### Return type
 
@@ -3963,7 +4099,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3977,30 +4113,32 @@ Name | Type | Description  | Notes
 
 Retrieve a visa of a document
 
-Retrieve a unique visa of a document Required scopes: document:read
+Retrieve a unique visa of a document  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getVisa(cloudPk, documentPk, id, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -4014,10 +4152,10 @@ apiInstance.getVisa(cloudPk, documentPk, id, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -4025,7 +4163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4039,31 +4177,33 @@ Name | Type | Description  | Notes
 
 Retrieve a comment
 
-Retrieve a comment Required scopes: document:read
+Retrieve a comment  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa comment.
-let projectPk = "projectPk_example"; // String | 
-let visaPk = "visaPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let visaPk = 56; // Number | A unique integer value identifying this visa.
 apiInstance.getVisaComment(cloudPk, documentPk, id, projectPk, visaPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -4077,11 +4217,11 @@ apiInstance.getVisaComment(cloudPk, documentPk, id, projectPk, visaPk).then((dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa comment. | 
- **projectPk** | **String**|  | 
- **visaPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaPk** | **Number**| A unique integer value identifying this visa. | 
 
 ### Return type
 
@@ -4089,7 +4229,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4103,30 +4243,32 @@ Name | Type | Description  | Notes
 
 List all comment of a visa
 
-List all comment of a visa Required scopes: document:read
+List all comment of a visa  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let visaPk = "visaPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let visaPk = 56; // Number | A unique integer value identifying this visa.
 apiInstance.getVisaComments(cloudPk, documentPk, projectPk, visaPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -4140,10 +4282,10 @@ apiInstance.getVisaComments(cloudPk, documentPk, projectPk, visaPk).then((data) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **visaPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaPk** | **Number**| A unique integer value identifying this visa. | 
 
 ### Return type
 
@@ -4151,7 +4293,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4165,29 +4307,31 @@ Name | Type | Description  | Notes
 
 List all visas of a document
 
-List all visas of a document Required scopes: document:read
+List all visas of a document  Required scopes: document:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.getVisas(cloudPk, documentPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -4201,9 +4345,9 @@ apiInstance.getVisas(cloudPk, documentPk, projectPk).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -4211,7 +4355,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4221,33 +4365,35 @@ Name | Type | Description  | Notes
 
 ## inviteCloudUser
 
-> CloudInvitation inviteCloudUser(cloudPk, data)
+> CloudInvitation inviteCloudUser(cloudPk, cloudInvitationRequest)
 
 Invite a cloud administrator
 
-Invite cloud administrators only. To invite in a project, see inviteProjectUser. You can&#39;t invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object Required scopes: org:manage
+Invite cloud administrators only. To invite in a project, see inviteProjectUser. You can&#39;t invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let data = new bimdata.CloudInvitation(); // CloudInvitation | 
-apiInstance.inviteCloudUser(cloudPk, data).then((data) => {
+let cloudPk = 56; // Number | 
+let cloudInvitationRequest = new bimdata.CloudInvitationRequest(); // CloudInvitationRequest | 
+apiInstance.inviteCloudUser(cloudPk, cloudInvitationRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4260,8 +4406,8 @@ apiInstance.inviteCloudUser(cloudPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **data** | [**CloudInvitation**](CloudInvitation.md)|  | 
+ **cloudPk** | **Number**|  | 
+ **cloudInvitationRequest** | [**CloudInvitationRequest**](CloudInvitationRequest.md)|  | 
 
 ### Return type
 
@@ -4269,44 +4415,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## inviteProjectUser
 
-> ProjectInvitation inviteProjectUser(cloudPk, projectPk, data)
+> ProjectInvitation inviteProjectUser(cloudPk, projectPk, projectInvitationRequest)
 
 Invite a project member
 
-Invite a project member. If the user is not already a cloud member, they will also be invited in the cloud with USER role. Required scopes: org:manage
+Invite a project member. If the user is not already a cloud member, they will also be invited in the cloud with USER role.  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.ProjectInvitation(); // ProjectInvitation | 
-apiInstance.inviteProjectUser(cloudPk, projectPk, data).then((data) => {
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let projectInvitationRequest = new bimdata.ProjectInvitationRequest(); // ProjectInvitationRequest | 
+apiInstance.inviteProjectUser(cloudPk, projectPk, projectInvitationRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4319,9 +4467,9 @@ apiInstance.inviteProjectUser(cloudPk, projectPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**ProjectInvitation**](ProjectInvitation.md)|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **projectInvitationRequest** | [**ProjectInvitationRequest**](ProjectInvitationRequest.md)|  | 
 
 ### Return type
 
@@ -4329,11 +4477,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
@@ -4343,27 +4491,29 @@ Name | Type | Description  | Notes
 
 Leave the project
 
-Leave the project. Only authenticated users (no app) can call this route. Required scopes: org:manage
+Leave the project. Only authenticated users (no app) can call this route.  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this project.
 apiInstance.leaveProject(cloudPk, id).then(() => {
   console.log('API called successfully.');
@@ -4378,7 +4528,7 @@ apiInstance.leaveProject(cloudPk, id).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
@@ -4387,7 +4537,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4401,30 +4551,32 @@ null (empty response body)
 
 Pause a visa of a document
 
-Pause a visa of a document Required scopes: document:write
+Pause a visa of a document  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.pauseVisa(cloudPk, documentPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -4438,10 +4590,10 @@ apiInstance.pauseVisa(cloudPk, documentPk, id, projectPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -4449,7 +4601,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4463,31 +4615,33 @@ null (empty response body)
 
 Reset a validation
 
-Reset a validation if the validation has been accepted or rejected Required scopes: document:write
+Reset a validation if the validation has been accepted or rejected  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa validation.
-let projectPk = "projectPk_example"; // String | 
-let visaPk = "visaPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let visaPk = 56; // Number | A unique integer value identifying this visa.
 apiInstance.resetValidation(cloudPk, documentPk, id, projectPk, visaPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -4501,11 +4655,11 @@ apiInstance.resetValidation(cloudPk, documentPk, id, projectPk, visaPk).then(() 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa validation. | 
- **projectPk** | **String**|  | 
- **visaPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaPk** | **Number**| A unique integer value identifying this visa. | 
 
 ### Return type
 
@@ -4513,7 +4667,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4527,30 +4681,32 @@ null (empty response body)
 
 Resume a visa of a document
 
-Resume a visa of a document after a pause Required scopes: document:write
+Resume a visa of a document after a pause  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa.
-let projectPk = "projectPk_example"; // String | 
+let projectPk = 56; // Number | A unique integer value identifying this project.
 apiInstance.resumeVisa(cloudPk, documentPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -4564,10 +4720,10 @@ apiInstance.resumeVisa(cloudPk, documentPk, id, projectPk).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa. | 
- **projectPk** | **String**|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -4575,7 +4731,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4585,35 +4741,39 @@ null (empty response body)
 
 ## updateClassification
 
-> Classification updateClassification(cloudPk, id, projectPk, data)
+> Classification updateClassification(cloudPk, id, projectPk, opts)
 
 Update some fields of a classification
 
-Update some fields of a classification Required scopes: ifc:write, model:write
+Update some fields of a classification  Required scopes: ifc:write, model:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this classification.
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Classification(); // Classification | 
-apiInstance.updateClassification(cloudPk, id, projectPk, data).then((data) => {
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let opts = {
+  'patchedClassificationRequest': new bimdata.PatchedClassificationRequest() // PatchedClassificationRequest | 
+};
+apiInstance.updateClassification(cloudPk, id, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4626,10 +4786,10 @@ apiInstance.updateClassification(cloudPk, id, projectPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this classification. | 
- **projectPk** | **String**|  | 
- **data** | [**Classification**](Classification.md)|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **patchedClassificationRequest** | [**PatchedClassificationRequest**](PatchedClassificationRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -4637,43 +4797,47 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateCloud
 
-> Cloud updateCloud(id, data)
+> Cloud updateCloud(id, opts)
 
 Update some fields of a cloud
 
-Update some fields of a cloud Required scopes: cloud:manage
+Update some fields of a cloud  Required scopes: cloud:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
 let id = 56; // Number | A unique integer value identifying this cloud.
-let data = new bimdata.Cloud(); // Cloud | 
-apiInstance.updateCloud(id, data).then((data) => {
+let opts = {
+  'patchedCloudRequest': new bimdata.PatchedCloudRequest() // PatchedCloudRequest | 
+};
+apiInstance.updateCloud(id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4687,7 +4851,7 @@ apiInstance.updateCloud(id, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this cloud. | 
- **data** | [**Cloud**](Cloud.md)|  | 
+ **patchedCloudRequest** | [**PatchedCloudRequest**](PatchedCloudRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -4695,44 +4859,48 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateCloudUser
 
-> User updateCloudUser(cloudPk, id, data)
+> User updateCloudUser(cloudPk, id, opts)
 
-Update some fields of a cloud user
+Change the user role in the cloud
 
-Change the user role in the cloud Required scopes: cloud:manage
+Change the user role in the cloud  Required scopes: cloud:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this fos user.
-let data = new bimdata.UserCloudUpdate(); // UserCloudUpdate | 
-apiInstance.updateCloudUser(cloudPk, id, data).then((data) => {
+let opts = {
+  'patchedUserCloudUpdateRequest': new bimdata.PatchedUserCloudUpdateRequest() // PatchedUserCloudUpdateRequest | 
+};
+apiInstance.updateCloudUser(cloudPk, id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4745,9 +4913,9 @@ apiInstance.updateCloudUser(cloudPk, id, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this fos user. | 
- **data** | [**UserCloudUpdate**](UserCloudUpdate.md)|  | 
+ **patchedUserCloudUpdateRequest** | [**PatchedUserCloudUpdateRequest**](PatchedUserCloudUpdateRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -4755,45 +4923,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateDocument
 
-> Document updateDocument(cloudPk, id, projectPk, data)
+> Document updateDocument(cloudPk, id, projectPk, opts)
 
 Update some fields of the document
 
-Update some fields of the document Required scopes: document:write
+Update some fields of the document  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this document.
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Document(); // Document | 
-apiInstance.updateDocument(cloudPk, id, projectPk, data).then((data) => {
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let opts = {
+  'patchedDocumentRequest': new bimdata.PatchedDocumentRequest() // PatchedDocumentRequest | 
+};
+apiInstance.updateDocument(cloudPk, id, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4806,10 +4978,10 @@ apiInstance.updateDocument(cloudPk, id, projectPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this document. | 
- **projectPk** | **String**|  | 
- **data** | [**Document**](Document.md)|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **patchedDocumentRequest** | [**PatchedDocumentRequest**](PatchedDocumentRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -4817,45 +4989,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateFolder
 
-> InlineResponse200 updateFolder(cloudPk, id, projectPk, data)
+> FolderWithoutChildren updateFolder(cloudPk, id, projectPk, opts)
 
 Update some fields of a folder
 
-Update some fields of a folder. Only project admins can update the &#x60;default_permission&#x60; field Required scopes: document:write
+Update some fields of a folder. Only project admins can update the &#x60;default_permission&#x60; field  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this folder.
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.InlineObject1(); // InlineObject1 | 
-apiInstance.updateFolder(cloudPk, id, projectPk, data).then((data) => {
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let opts = {
+  'patchedFolderWithoutChildrenRequest': new bimdata.PatchedFolderWithoutChildrenRequest() // PatchedFolderWithoutChildrenRequest | 
+};
+apiInstance.updateFolder(cloudPk, id, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4868,57 +5044,61 @@ apiInstance.updateFolder(cloudPk, id, projectPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this folder. | 
- **projectPk** | **String**|  | 
- **data** | [**InlineObject1**](InlineObject1.md)|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **patchedFolderWithoutChildrenRequest** | [**PatchedFolderWithoutChildrenRequest**](PatchedFolderWithoutChildrenRequest.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**FolderWithoutChildren**](FolderWithoutChildren.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateGroupFolder
 
-> GroupFolder updateGroupFolder(cloudPk, folderPk, id, projectPk, data)
+> GroupFolder updateGroupFolder(cloudPk, folderPk, id, projectPk, opts)
 
 Update the permission of a group on a folder
 
-Update the permission of a group on a folder.             0: ACCESS_DENIED,             50: READ_ONLY,             100: READ_WRTIE  Required scopes: org:manage
+Update the permission of a group on a folder.             0: ACCESS_DENIED,             50: READ_ONLY,             100: READ_WRTIE               Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let folderPk = "folderPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let folderPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this group folder.
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.GroupFolder(); // GroupFolder | 
-apiInstance.updateGroupFolder(cloudPk, folderPk, id, projectPk, data).then((data) => {
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let opts = {
+  'patchedGroupFolderRequest': new bimdata.PatchedGroupFolderRequest() // PatchedGroupFolderRequest | 
+};
+apiInstance.updateGroupFolder(cloudPk, folderPk, id, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4931,11 +5111,11 @@ apiInstance.updateGroupFolder(cloudPk, folderPk, id, projectPk, data).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **folderPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **folderPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this group folder. | 
- **projectPk** | **String**|  | 
- **data** | [**GroupFolder**](GroupFolder.md)|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **patchedGroupFolderRequest** | [**PatchedGroupFolderRequest**](PatchedGroupFolderRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -4943,45 +5123,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateManageGroup
 
-> InlineResponse2001 updateManageGroup(cloudPk, id, projectPk, data)
+> Group updateManageGroup(cloudPk, id, projectPk, opts)
 
 Update some fields of a group
 
-Update some fields of a group. Must be an admin of the project Required scopes: org:manage
+Update some fields of a group. Must be an admin of the project  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this group.
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.InlineObject3(); // InlineObject3 | 
-apiInstance.updateManageGroup(cloudPk, id, projectPk, data).then((data) => {
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let opts = {
+  'patchedGroupRequest': new bimdata.PatchedGroupRequest() // PatchedGroupRequest | 
+};
+apiInstance.updateManageGroup(cloudPk, id, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4994,55 +5178,59 @@ apiInstance.updateManageGroup(cloudPk, id, projectPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this group. | 
- **projectPk** | **String**|  | 
- **data** | [**InlineObject3**](InlineObject3.md)|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **patchedGroupRequest** | [**PatchedGroupRequest**](PatchedGroupRequest.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**Group**](Group.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateProject
 
-> Project updateProject(cloudPk, id, data)
+> Project updateProject(cloudPk, id, opts)
 
 Update some fields of a project
 
-Update some fields of a project Required scopes: org:manage
+Update some fields of a project  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
+let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this project.
-let data = new bimdata.Project(); // Project | 
-apiInstance.updateProject(cloudPk, id, data).then((data) => {
+let opts = {
+  'patchedProjectRequest': new bimdata.PatchedProjectRequest() // PatchedProjectRequest | 
+};
+apiInstance.updateProject(cloudPk, id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5055,9 +5243,9 @@ apiInstance.updateProject(cloudPk, id, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
+ **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
- **data** | [**Project**](Project.md)|  | 
+ **patchedProjectRequest** | [**PatchedProjectRequest**](PatchedProjectRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -5065,45 +5253,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateProjectAccessToken
 
-> ProjectAccessToken updateProjectAccessToken(cloudPk, projectPk, token, data)
+> ProjectAccessToken updateProjectAccessToken(cloudPk, projectPk, token, opts)
 
 Update some fields of a token
 
-You can update the expiration date field Required scopes: org:manage
+You can update the expiration date field  Required scopes: org:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
 let token = "token_example"; // String | 
-let data = new bimdata.ProjectAccessToken(); // ProjectAccessToken | 
-apiInstance.updateProjectAccessToken(cloudPk, projectPk, token, data).then((data) => {
+let opts = {
+  'patchedProjectAccessTokenRequest': new bimdata.PatchedProjectAccessTokenRequest() // PatchedProjectAccessTokenRequest | 
+};
+apiInstance.updateProjectAccessToken(cloudPk, projectPk, token, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5116,10 +5308,10 @@ apiInstance.updateProjectAccessToken(cloudPk, projectPk, token, data).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **projectPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
  **token** | **String**|  | 
- **data** | [**ProjectAccessToken**](ProjectAccessToken.md)|  | 
+ **patchedProjectAccessTokenRequest** | [**PatchedProjectAccessTokenRequest**](PatchedProjectAccessTokenRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -5127,45 +5319,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateProjectUser
 
-> UserProject updateProjectUser(cloudPk, id, projectPk, data)
+> UserProject updateProjectUser(cloudPk, id, projectPk, opts)
 
 Change the user role in the cloud
 
-Change the user role in the cloud Required scopes: cloud:manage
+Change the user role in the cloud  Required scopes: cloud:manage
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let id = "id_example"; // String | 
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.UserProjectUpdate(); // UserProjectUpdate | 
-apiInstance.updateProjectUser(cloudPk, id, projectPk, data).then((data) => {
+let cloudPk = 56; // Number | 
+let id = 56; // Number | A unique integer value identifying this user project.
+let projectPk = 56; // Number | 
+let opts = {
+  'patchedUserProjectUpdateRequest': new bimdata.PatchedUserProjectUpdateRequest() // PatchedUserProjectUpdateRequest | 
+};
+apiInstance.updateProjectUser(cloudPk, id, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5178,10 +5374,10 @@ apiInstance.updateProjectUser(cloudPk, id, projectPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **id** | **String**|  | 
- **projectPk** | **String**|  | 
- **data** | [**UserProjectUpdate**](UserProjectUpdate.md)|  | 
+ **cloudPk** | **Number**|  | 
+ **id** | **Number**| A unique integer value identifying this user project. | 
+ **projectPk** | **Number**|  | 
+ **patchedUserProjectUpdateRequest** | [**PatchedUserProjectUpdateRequest**](PatchedUserProjectUpdateRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -5189,47 +5385,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateValidation
 
-> VisaValidation updateValidation(cloudPk, documentPk, id, projectPk, visaPk, data)
+> VisaValidation updateValidation(cloudPk, documentPk, id, projectPk, visaPk, opts)
 
 Update the validator of validation
 
-Update the validator of validation. This route is only useful for an App Required scopes: document:write
+Update the validator of validation. This route is only useful for an App  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa validation.
-let projectPk = "projectPk_example"; // String | 
-let visaPk = "visaPk_example"; // String | 
-let data = new bimdata.VisaValidation(); // VisaValidation | 
-apiInstance.updateValidation(cloudPk, documentPk, id, projectPk, visaPk, data).then((data) => {
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let visaPk = 56; // Number | A unique integer value identifying this visa.
+let opts = {
+  'patchedVisaValidationRequest': new bimdata.PatchedVisaValidationRequest() // PatchedVisaValidationRequest | 
+};
+apiInstance.updateValidation(cloudPk, documentPk, id, projectPk, visaPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5242,12 +5442,12 @@ apiInstance.updateValidation(cloudPk, documentPk, id, projectPk, visaPk, data).t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa validation. | 
- **projectPk** | **String**|  | 
- **visaPk** | **String**|  | 
- **data** | [**VisaValidation**](VisaValidation.md)|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaPk** | **Number**| A unique integer value identifying this visa. | 
+ **patchedVisaValidationRequest** | [**PatchedVisaValidationRequest**](PatchedVisaValidationRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -5255,46 +5455,50 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateVisa
 
-> Visa updateVisa(cloudPk, documentPk, id, projectPk, data)
+> Visa updateVisa(cloudPk, documentPk, id, projectPk, opts)
 
 Update some fields of a visa
 
-Update some fields of a visa Required scopes: document:write
+Update some fields of a visa  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa.
-let projectPk = "projectPk_example"; // String | 
-let data = new bimdata.Visa(); // Visa | 
-apiInstance.updateVisa(cloudPk, documentPk, id, projectPk, data).then((data) => {
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let opts = {
+  'patchedVisaRequest': new bimdata.PatchedVisaRequest() // PatchedVisaRequest | 
+};
+apiInstance.updateVisa(cloudPk, documentPk, id, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5307,11 +5511,11 @@ apiInstance.updateVisa(cloudPk, documentPk, id, projectPk, data).then((data) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa. | 
- **projectPk** | **String**|  | 
- **data** | [**Visa**](Visa.md)|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **patchedVisaRequest** | [**PatchedVisaRequest**](PatchedVisaRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -5319,47 +5523,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateVisaComment
 
-> VisaComment updateVisaComment(cloudPk, documentPk, id, projectPk, visaPk, data)
+> VisaComment updateVisaComment(cloudPk, documentPk, id, projectPk, visaPk, opts)
 
 Update some fields of a comment
 
-Update some fields of a comment Required scopes: document:write
+Update some fields of a comment  Required scopes: document:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = "cloudPk_example"; // String | 
-let documentPk = "documentPk_example"; // String | 
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa comment.
-let projectPk = "projectPk_example"; // String | 
-let visaPk = "visaPk_example"; // String | 
-let data = new bimdata.VisaComment(); // VisaComment | 
-apiInstance.updateVisaComment(cloudPk, documentPk, id, projectPk, visaPk, data).then((data) => {
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let visaPk = 56; // Number | A unique integer value identifying this visa.
+let opts = {
+  'patchedVisaCommentRequest': new bimdata.PatchedVisaCommentRequest() // PatchedVisaCommentRequest | 
+};
+apiInstance.updateVisaComment(cloudPk, documentPk, id, projectPk, visaPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5372,12 +5580,12 @@ apiInstance.updateVisaComment(cloudPk, documentPk, id, projectPk, visaPk, data).
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloudPk** | **String**|  | 
- **documentPk** | **String**|  | 
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa comment. | 
- **projectPk** | **String**|  | 
- **visaPk** | **String**|  | 
- **data** | [**VisaComment**](VisaComment.md)|  | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **visaPk** | **Number**| A unique integer value identifying this visa. | 
+ **patchedVisaCommentRequest** | [**PatchedVisaCommentRequest**](PatchedVisaCommentRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -5385,10 +5593,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 

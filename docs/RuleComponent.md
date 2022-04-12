@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
 **type** | **String** |  | [optional] 
-**value** | [**Object**](.md) |  | [optional] 
+**value** | [**{String: AnyType}**](AnyType.md) |  | [optional] 
 **operator** | **String** |  | [optional] 
-**params** | [**Object**](.md) |  | [optional] 
+**params** | [**{String: AnyType}**](AnyType.md) |  | [optional] 
 **condition** | **String** |  | [optional] 
-**ruleComponents** | [**Object**](.md) |  | [optional] 
+**ruleComponents** | [**{String: AnyType}**](AnyType.md) |  | [optional] 
 
 

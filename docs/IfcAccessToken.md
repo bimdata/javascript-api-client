@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**token** | **String** |  | [optional] [readonly] 
+**token** | **String** |  | [readonly] 
 **readOnly** | **Boolean** |  | [optional] 
 **expiresAt** | **Date** |  | [optional] 
 

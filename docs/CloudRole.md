@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cloud** | **Number** |  | 
-**role** | **Number** | Role of the user in the cloud | [optional] 
+**role** | [**CloudRoleEnum**](CloudRoleEnum.md) | Role of the user in the cloud | [optional] 
 
 

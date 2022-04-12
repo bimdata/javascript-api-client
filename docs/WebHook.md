@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
 **events** | **[String]** |  | 
 **url** | **String** |  | 
 **secret** | **String** |  | 

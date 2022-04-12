@@ -1,6 +1,6 @@
 # bimdata.BcfApi
 
-All URIs are relative to *https://api.bimdata.io*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -61,34 +61,38 @@ Method | HTTP request | Description
 
 ## createComment
 
-> Comment createComment(projectsPk, topicsGuid, data)
+> Comment createComment(projectsPk, topicsGuid, opts)
 
 Create a comment
 
-Create a comment Required scopes: bcf:write
+Create a comment  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
-let data = new bimdata.Comment(); // Comment | 
-apiInstance.createComment(projectsPk, topicsGuid, data).then((data) => {
+let projectsPk = 56; // Number | A unique integer value identifying this project.
+let topicsGuid = null; // String | 
+let opts = {
+  'commentRequest': new bimdata.CommentRequest() // CommentRequest | 
+};
+apiInstance.createComment(projectsPk, topicsGuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -101,9 +105,9 @@ apiInstance.createComment(projectsPk, topicsGuid, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
- **data** | [**Comment**](Comment.md)|  | 
+ **projectsPk** | **Number**| A unique integer value identifying this project. | 
+ **topicsGuid** | [**String**](.md)|  | 
+ **commentRequest** | [**CommentRequest**](CommentRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -111,43 +115,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createExtensionLabel
 
-> Label createExtensionLabel(projectsPk, data)
+> Label createExtensionLabel(projectsPk, labelRequest)
 
 Create a Label
 
-This is not a standard route. Create a Label available for the project Required scopes: bcf:write
+This is not a standard route. Create a Label available for the project  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.Label(); // Label | 
-apiInstance.createExtensionLabel(projectsPk, data).then((data) => {
+let projectsPk = 56; // Number | 
+let labelRequest = new bimdata.LabelRequest(); // LabelRequest | 
+apiInstance.createExtensionLabel(projectsPk, labelRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -160,8 +166,8 @@ apiInstance.createExtensionLabel(projectsPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **data** | [**Label**](Label.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **labelRequest** | [**LabelRequest**](LabelRequest.md)|  | 
 
 ### Return type
 
@@ -169,43 +175,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createExtensionPriority
 
-> Priority createExtensionPriority(projectsPk, data)
+> Priority createExtensionPriority(projectsPk, priorityRequest)
 
 Create a Priority
 
-This is not a standard route. Create a Priority available for the project Required scopes: bcf:write
+This is not a standard route. Create a Priority available for the project  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.Priority(); // Priority | 
-apiInstance.createExtensionPriority(projectsPk, data).then((data) => {
+let projectsPk = 56; // Number | 
+let priorityRequest = new bimdata.PriorityRequest(); // PriorityRequest | 
+apiInstance.createExtensionPriority(projectsPk, priorityRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -218,8 +226,8 @@ apiInstance.createExtensionPriority(projectsPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **data** | [**Priority**](Priority.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **priorityRequest** | [**PriorityRequest**](PriorityRequest.md)|  | 
 
 ### Return type
 
@@ -227,43 +235,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createExtensionStage
 
-> Stage createExtensionStage(projectsPk, data)
+> Stage createExtensionStage(projectsPk, stageRequest)
 
 Create a Stage
 
-This is not a standard route. Create a Stage available for the project Required scopes: bcf:write
+This is not a standard route. Create a Stage available for the project  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.Stage(); // Stage | 
-apiInstance.createExtensionStage(projectsPk, data).then((data) => {
+let projectsPk = 56; // Number | 
+let stageRequest = new bimdata.StageRequest(); // StageRequest | 
+apiInstance.createExtensionStage(projectsPk, stageRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -276,8 +286,8 @@ apiInstance.createExtensionStage(projectsPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **data** | [**Stage**](Stage.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **stageRequest** | [**StageRequest**](StageRequest.md)|  | 
 
 ### Return type
 
@@ -285,43 +295,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createExtensionStatus
 
-> TopicStatus createExtensionStatus(projectsPk, data)
+> TopicStatus createExtensionStatus(projectsPk, topicStatusRequest)
 
 Create a TopicStatus
 
-This is not a standard route. Create a TopicStatus available for the project Required scopes: bcf:write
+This is not a standard route. Create a TopicStatus available for the project  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.TopicStatus(); // TopicStatus | 
-apiInstance.createExtensionStatus(projectsPk, data).then((data) => {
+let projectsPk = 56; // Number | 
+let topicStatusRequest = new bimdata.TopicStatusRequest(); // TopicStatusRequest | 
+apiInstance.createExtensionStatus(projectsPk, topicStatusRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -334,8 +346,8 @@ apiInstance.createExtensionStatus(projectsPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **data** | [**TopicStatus**](TopicStatus.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **topicStatusRequest** | [**TopicStatusRequest**](TopicStatusRequest.md)|  | 
 
 ### Return type
 
@@ -343,43 +355,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createExtensionType
 
-> TopicType createExtensionType(projectsPk, data)
+> TopicType createExtensionType(projectsPk, topicTypeRequest)
 
 Create a TopicType
 
-This is not a standard route. Create a TopicType available for the project Required scopes: bcf:write
+This is not a standard route. Create a TopicType available for the project  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.TopicType(); // TopicType | 
-apiInstance.createExtensionType(projectsPk, data).then((data) => {
+let projectsPk = 56; // Number | 
+let topicTypeRequest = new bimdata.TopicTypeRequest(); // TopicTypeRequest | 
+apiInstance.createExtensionType(projectsPk, topicTypeRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -392,8 +406,8 @@ apiInstance.createExtensionType(projectsPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **data** | [**TopicType**](TopicType.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **topicTypeRequest** | [**TopicTypeRequest**](TopicTypeRequest.md)|  | 
 
 ### Return type
 
@@ -401,46 +415,48 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createFullTopic
 
-> FullTopic createFullTopic(projectsPk, data, opts)
+> FullTopic createFullTopic(projectsPk, fullTopicRequest, opts)
 
 Create a Topic with viewpoints and comments
 
-This is not a standard route. You can send a topic, viewpoints and comments in a single call Required scopes: bcf:write
+This is not a standard route. You can send a topic, viewpoints and comments in a single call  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.FullTopic(); // FullTopic | 
+let projectsPk = 56; // Number | 
+let fullTopicRequest = new bimdata.FullTopicRequest(); // FullTopicRequest | 
 let opts = {
   'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
 };
-apiInstance.createFullTopic(projectsPk, data, opts).then((data) => {
+apiInstance.createFullTopic(projectsPk, fullTopicRequest, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -453,8 +469,8 @@ apiInstance.createFullTopic(projectsPk, data, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **data** | [**FullTopic**](FullTopic.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **fullTopicRequest** | [**FullTopicRequest**](FullTopicRequest.md)|  | 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
@@ -463,43 +479,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createTopic
 
-> Topic createTopic(projectsPk, data)
+> Topic createTopic(projectsPk, topicRequest)
 
 Create a topic
 
-Create a topic Required scopes: bcf:write
+Create a topic  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.Topic(); // Topic | 
-apiInstance.createTopic(projectsPk, data).then((data) => {
+let projectsPk = 56; // Number | 
+let topicRequest = new bimdata.TopicRequest(); // TopicRequest | 
+apiInstance.createTopic(projectsPk, topicRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -512,8 +530,8 @@ apiInstance.createTopic(projectsPk, data).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **data** | [**Topic**](Topic.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **topicRequest** | [**TopicRequest**](TopicRequest.md)|  | 
 
 ### Return type
 
@@ -521,47 +539,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createViewpoint
 
-> Viewpoint createViewpoint(projectsPk, topicsGuid, data, opts)
+> Viewpoint createViewpoint(projectsPk, topicsGuid, opts)
 
 Create a Viewpoint
 
-Create a Viewpoint Required scopes: bcf:write
+Create a Viewpoint  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
-let data = new bimdata.Viewpoint(); // Viewpoint | 
+let projectsPk = 56; // Number | 
+let topicsGuid = null; // String | 
 let opts = {
-  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+  'imgFormat': "imgFormat_example", // String | All snapshot_data will be returned as url instead of base64
+  'viewpointRequest': new bimdata.ViewpointRequest() // ViewpointRequest | 
 };
-apiInstance.createViewpoint(projectsPk, topicsGuid, data, opts).then((data) => {
+apiInstance.createViewpoint(projectsPk, topicsGuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -574,10 +594,10 @@ apiInstance.createViewpoint(projectsPk, topicsGuid, data, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
- **data** | [**Viewpoint**](Viewpoint.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | [**String**](.md)|  | 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
+ **viewpointRequest** | [**ViewpointRequest**](ViewpointRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -585,11 +605,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
@@ -599,29 +619,31 @@ Name | Type | Description  | Notes
 
 Delete a comment
 
-Delete a comment Required scopes: bcf:write
+Delete a comment  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
+let projectsPk = 56; // Number | A unique integer value identifying this project.
+let topicsGuid = null; // String | 
 apiInstance.deleteComment(guid, projectsPk, topicsGuid).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -636,8 +658,8 @@ apiInstance.deleteComment(guid, projectsPk, topicsGuid).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
+ **projectsPk** | **Number**| A unique integer value identifying this project. | 
+ **topicsGuid** | [**String**](.md)|  | 
 
 ### Return type
 
@@ -645,7 +667,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -659,28 +681,30 @@ null (empty response body)
 
 Delete a Label
 
-This is not a standard route. Delete a Label. Topics using this label won&#39;t be deleted  Required scopes: bcf:write
+This is not a standard route. Delete a Label. Topics using this label won&#39;t be deleted   Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this label.
-let projectsPk = "projectsPk_example"; // String | 
+let projectsPk = 56; // Number | 
 apiInstance.deleteExtensionLabel(id, projectsPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -695,7 +719,7 @@ apiInstance.deleteExtensionLabel(id, projectsPk).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this label. | 
- **projectsPk** | **String**|  | 
+ **projectsPk** | **Number**|  | 
 
 ### Return type
 
@@ -703,7 +727,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -717,28 +741,30 @@ null (empty response body)
 
 Delete a Priority
 
-This is not a standard route. Delete a Priority. Topics using this priority won&#39;t be deleted  Required scopes: bcf:write
+This is not a standard route. Delete a Priority. Topics using this priority won&#39;t be deleted   Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this priority.
-let projectsPk = "projectsPk_example"; // String | 
+let projectsPk = 56; // Number | 
 apiInstance.deleteExtensionPriority(id, projectsPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -753,7 +779,7 @@ apiInstance.deleteExtensionPriority(id, projectsPk).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this priority. | 
- **projectsPk** | **String**|  | 
+ **projectsPk** | **Number**|  | 
 
 ### Return type
 
@@ -761,7 +787,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -775,28 +801,30 @@ null (empty response body)
 
 Delete a Stage
 
-This is not a standard route. Delete a Stage. Topics using this stage won&#39;t be deleted  Required scopes: bcf:write
+This is not a standard route. Delete a Stage. Topics using this stage won&#39;t be deleted   Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this stage.
-let projectsPk = "projectsPk_example"; // String | 
+let projectsPk = 56; // Number | 
 apiInstance.deleteExtensionStage(id, projectsPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -811,7 +839,7 @@ apiInstance.deleteExtensionStage(id, projectsPk).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this stage. | 
- **projectsPk** | **String**|  | 
+ **projectsPk** | **Number**|  | 
 
 ### Return type
 
@@ -819,7 +847,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -833,28 +861,30 @@ null (empty response body)
 
 Delete a TopicStatus
 
-This is not a standard route. Delete a TopicStatus. Topics using this status won&#39;t be deleted  Required scopes: bcf:write
+This is not a standard route. Delete a TopicStatus. Topics using this status won&#39;t be deleted   Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this topic status.
-let projectsPk = "projectsPk_example"; // String | 
+let projectsPk = 56; // Number | 
 apiInstance.deleteExtensionStatus(id, projectsPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -869,7 +899,7 @@ apiInstance.deleteExtensionStatus(id, projectsPk).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this topic status. | 
- **projectsPk** | **String**|  | 
+ **projectsPk** | **Number**|  | 
 
 ### Return type
 
@@ -877,7 +907,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -891,28 +921,30 @@ null (empty response body)
 
 Delete a TopicType
 
-This is not a standard route. Delete a TopicType. Topics using this type won&#39;t be deleted Required scopes: bcf:write
+This is not a standard route. Delete a TopicType. Topics using this type won&#39;t be deleted  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this topic type.
-let projectsPk = "projectsPk_example"; // String | 
+let projectsPk = 56; // Number | 
 apiInstance.deleteExtensionType(id, projectsPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -927,7 +959,7 @@ apiInstance.deleteExtensionType(id, projectsPk).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this topic type. | 
- **projectsPk** | **String**|  | 
+ **projectsPk** | **Number**|  | 
 
 ### Return type
 
@@ -935,7 +967,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -949,28 +981,30 @@ null (empty response body)
 
 Delete a topic
 
-Delete a topic Required scopes: bcf:write
+Delete a topic  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
+let projectsPk = 56; // Number | 
 apiInstance.deleteTopic(guid, projectsPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -985,7 +1019,7 @@ apiInstance.deleteTopic(guid, projectsPk).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
+ **projectsPk** | **Number**|  | 
 
 ### Return type
 
@@ -993,7 +1027,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1007,29 +1041,31 @@ null (empty response body)
 
 Delete a Viewpoint
 
-This is not a standard route. Delete a Viewpoint Required scopes: bcf:write
+This is not a standard route. Delete a Viewpoint  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
+let projectsPk = 56; // Number | 
+let topicsGuid = null; // String | 
 let opts = {
   'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
 };
@@ -1047,8 +1083,8 @@ apiInstance.deleteViewpoint(guid, projectsPk, topicsGuid, opts).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | [**String**](.md)|  | 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
@@ -1057,7 +1093,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1071,30 +1107,32 @@ null (empty response body)
 
 Export project&#39;s topics in bcf-xml format
 
-This is not a standard route. Export project&#39;s topics in bcf-xml format Required scopes: bcf:read
+This is not a standard route. Export project&#39;s topics in bcf-xml format  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
 let opts = {
-  'topics': "topics_example", // String | topic guids to export, comma separated. Default = all
-  'format': "format_example" // String | topic format to export, comma separated. Default = all
+  'format': "format_example", // String | topic format to export, comma separated. Default = all
+  'topics': "topics_example" // String | topic guids to export, comma separated. Default = all
 };
 apiInstance.downloadBcfExport(id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1110,8 +1148,8 @@ apiInstance.downloadBcfExport(id, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this project. | 
- **topics** | **String**| topic guids to export, comma separated. Default &#x3D; all | [optional] 
  **format** | **String**| topic format to export, comma separated. Default &#x3D; all | [optional] 
+ **topics** | **String**| topic guids to export, comma separated. Default &#x3D; all | [optional] 
 
 ### Return type
 
@@ -1119,7 +1157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1129,33 +1167,35 @@ Name | Type | Description  | Notes
 
 ## fullUpdateBcfProject
 
-> BcfProject fullUpdateBcfProject(id, data)
+> BcfProject fullUpdateBcfProject(id, bcfProjectRequest)
 
 Update all fields of a BCF project
 
-Update all fields of a BCF project Required scopes: bcf:write
+Update all fields of a BCF project  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
-let data = new bimdata.BcfProject(); // BcfProject | 
-apiInstance.fullUpdateBcfProject(id, data).then((data) => {
+let bcfProjectRequest = new bimdata.BcfProjectRequest(); // BcfProjectRequest | 
+apiInstance.fullUpdateBcfProject(id, bcfProjectRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1169,7 +1209,7 @@ apiInstance.fullUpdateBcfProject(id, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this project. | 
- **data** | [**BcfProject**](BcfProject.md)|  | 
+ **bcfProjectRequest** | [**BcfProjectRequest**](BcfProjectRequest.md)|  | 
 
 ### Return type
 
@@ -1177,45 +1217,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## fullUpdateComment
 
-> Comment fullUpdateComment(guid, projectsPk, topicsGuid, data)
+> Comment fullUpdateComment(guid, projectsPk, topicsGuid, opts)
 
 Update all fields of a comment
 
-Update all fields of a comment Required scopes: bcf:write
+Update all fields of a comment  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
-let data = new bimdata.Comment(); // Comment | 
-apiInstance.fullUpdateComment(guid, projectsPk, topicsGuid, data).then((data) => {
+let projectsPk = 56; // Number | A unique integer value identifying this project.
+let topicsGuid = null; // String | 
+let opts = {
+  'commentRequest': new bimdata.CommentRequest() // CommentRequest | 
+};
+apiInstance.fullUpdateComment(guid, projectsPk, topicsGuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1229,9 +1273,9 @@ apiInstance.fullUpdateComment(guid, projectsPk, topicsGuid, data).then((data) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
- **data** | [**Comment**](Comment.md)|  | 
+ **projectsPk** | **Number**| A unique integer value identifying this project. | 
+ **topicsGuid** | [**String**](.md)|  | 
+ **commentRequest** | [**CommentRequest**](CommentRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -1239,47 +1283,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## fullUpdateFullTopic
 
-> FullTopic fullUpdateFullTopic(guid, projectsPk, data, opts)
+> FullTopic fullUpdateFullTopic(guid, projectsPk, fullTopicRequest, opts)
 
 Update all fields of a topic
 
-This is not a standard route. You can update topic, viewpoints and comment is a signle call Required scopes: bcf:write
+This is not a standard route. You can update topic, viewpoints and comment is a signle call  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.FullTopic(); // FullTopic | 
+let projectsPk = 56; // Number | 
+let fullTopicRequest = new bimdata.FullTopicRequest(); // FullTopicRequest | 
 let opts = {
   'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
 };
-apiInstance.fullUpdateFullTopic(guid, projectsPk, data, opts).then((data) => {
+apiInstance.fullUpdateFullTopic(guid, projectsPk, fullTopicRequest, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1293,8 +1339,8 @@ apiInstance.fullUpdateFullTopic(guid, projectsPk, data, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **data** | [**FullTopic**](FullTopic.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **fullTopicRequest** | [**FullTopicRequest**](FullTopicRequest.md)|  | 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
@@ -1303,44 +1349,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## fullUpdateTopic
 
-> Topic fullUpdateTopic(guid, projectsPk, data)
+> Topic fullUpdateTopic(guid, projectsPk, topicRequest)
 
 Update all fields of a topic
 
-Update all fields of a topic Required scopes: bcf:write
+Update all fields of a topic  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.Topic(); // Topic | 
-apiInstance.fullUpdateTopic(guid, projectsPk, data).then((data) => {
+let projectsPk = 56; // Number | 
+let topicRequest = new bimdata.TopicRequest(); // TopicRequest | 
+apiInstance.fullUpdateTopic(guid, projectsPk, topicRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1354,8 +1402,8 @@ apiInstance.fullUpdateTopic(guid, projectsPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **data** | [**Topic**](Topic.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **topicRequest** | [**TopicRequest**](TopicRequest.md)|  | 
 
 ### Return type
 
@@ -1363,48 +1411,50 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## fullUpdateViewpoint
 
-> Viewpoint fullUpdateViewpoint(guid, projectsPk, topicsGuid, data, opts)
+> Viewpoint fullUpdateViewpoint(guid, projectsPk, topicsGuid, opts)
 
 Update all fields of a Viewpoint
 
-This is not a standard route. Update all fields of a Viewpoint Required scopes: bcf:write
+This is not a standard route. Update all fields of a Viewpoint  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
-let data = new bimdata.Viewpoint(); // Viewpoint | 
+let projectsPk = 56; // Number | 
+let topicsGuid = null; // String | 
 let opts = {
-  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+  'imgFormat': "imgFormat_example", // String | All snapshot_data will be returned as url instead of base64
+  'viewpointRequest': new bimdata.ViewpointRequest() // ViewpointRequest | 
 };
-apiInstance.fullUpdateViewpoint(guid, projectsPk, topicsGuid, data, opts).then((data) => {
+apiInstance.fullUpdateViewpoint(guid, projectsPk, topicsGuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1418,10 +1468,10 @@ apiInstance.fullUpdateViewpoint(guid, projectsPk, topicsGuid, data, opts).then((
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
- **data** | [**Viewpoint**](Viewpoint.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | [**String**](.md)|  | 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
+ **viewpointRequest** | [**ViewpointRequest**](ViewpointRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -1429,11 +1479,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
@@ -1443,24 +1493,26 @@ Name | Type | Description  | Notes
 
 Retrieve a BCF project
 
-Retrieve a BCF project Required scopes: bcf:read
+Retrieve a BCF project  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
@@ -1485,7 +1537,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1499,24 +1551,26 @@ Name | Type | Description  | Notes
 
 Retrieve all BCF projects
 
-Retrieve all BCF projects Required scopes: bcf:read
+Retrieve all BCF projects  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 apiInstance.getBcfProjects().then((data) => {
@@ -1537,7 +1591,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1551,29 +1605,31 @@ This endpoint does not need any parameter.
 
 Retrieve all colorings of a viewpoint
 
-Retrieve all colorings of a viewpoint Required scopes: bcf:read
+Retrieve all colorings of a viewpoint  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
+let projectsPk = 56; // Number | 
+let topicsGuid = null; // String | 
 apiInstance.getColorings(guid, projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1588,8 +1644,8 @@ apiInstance.getColorings(guid, projectsPk, topicsGuid).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | [**String**](.md)|  | 
 
 ### Return type
 
@@ -1597,7 +1653,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1611,29 +1667,31 @@ Name | Type | Description  | Notes
 
 Retrieve a comment
 
-Retrieve a comment Required scopes: bcf:read
+Retrieve a comment  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
+let projectsPk = 56; // Number | A unique integer value identifying this project.
+let topicsGuid = null; // String | 
 apiInstance.getComment(guid, projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1648,8 +1706,8 @@ apiInstance.getComment(guid, projectsPk, topicsGuid).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
+ **projectsPk** | **Number**| A unique integer value identifying this project. | 
+ **topicsGuid** | [**String**](.md)|  | 
 
 ### Return type
 
@@ -1657,7 +1715,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1671,28 +1729,30 @@ Name | Type | Description  | Notes
 
 Retrieve all comments
 
-Retrieve all comments Required scopes: bcf:read
+Retrieve all comments  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
+let projectsPk = 56; // Number | A unique integer value identifying this project.
+let topicsGuid = null; // String | 
 apiInstance.getComments(projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -1706,8 +1766,8 @@ apiInstance.getComments(projectsPk, topicsGuid).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
+ **projectsPk** | **Number**| A unique integer value identifying this project. | 
+ **topicsGuid** | [**String**](.md)|  | 
 
 ### Return type
 
@@ -1715,7 +1775,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1729,24 +1789,26 @@ Name | Type | Description  | Notes
 
 Retrieve project detailed extensions
 
-This is not a standard route. Retrieve project detailed extensions Required scopes: bcf:read
+This is not a standard route. Retrieve project detailed extensions  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
@@ -1771,7 +1833,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1785,24 +1847,26 @@ Name | Type | Description  | Notes
 
 Retrieve project extensions
 
-Retrieve project extensions Required scopes: bcf:read
+Retrieve project extensions  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
@@ -1827,7 +1891,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1841,28 +1905,30 @@ Name | Type | Description  | Notes
 
 Retrieve a full topic
 
-This is not a standard route. It responds with a topic, its viewpoints and its comments Required scopes: bcf:read
+This is not a standard route. It responds with a topic, its viewpoints and its comments  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
+let projectsPk = 56; // Number | 
 let opts = {
   'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
 };
@@ -1880,7 +1946,7 @@ apiInstance.getFullTopic(guid, projectsPk, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
+ **projectsPk** | **Number**|  | 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
@@ -1889,7 +1955,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1903,32 +1969,34 @@ Name | Type | Description  | Notes
 
 Retrieve all full topics
 
-This is not a standard route. It responds with all topics, their viewpoints and their comments Required scopes: bcf:read
+This is not a standard route. It responds with all topics, their viewpoints and their comments  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
+let projectsPk = 56; // Number | 
 let opts = {
-  'models': "models_example", // String | Filter the returned list by models
-  'ifcs': "ifcs_example", // String | Filter the returned list by ifcs
-  'format': "format_example", // String | Filter the returned list by format
-  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+  'format': "format_example", // String | 
+  'ifcs': [null], // [Number] | 
+  'imgFormat': "imgFormat_example", // String | All snapshot_data will be returned as url instead of base64
+  'models': [null] // [Number] | 
 };
 apiInstance.getFullTopics(projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1943,11 +2011,11 @@ apiInstance.getFullTopics(projectsPk, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **models** | **String**| Filter the returned list by models | [optional] 
- **ifcs** | **String**| Filter the returned list by ifcs | [optional] 
- **format** | **String**| Filter the returned list by format | [optional] 
+ **projectsPk** | **Number**|  | 
+ **format** | **String**|  | [optional] 
+ **ifcs** | [**[Number]**](Number.md)|  | [optional] 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
+ **models** | [**[Number]**](Number.md)|  | [optional] 
 
 ### Return type
 
@@ -1955,7 +2023,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1969,29 +2037,31 @@ Name | Type | Description  | Notes
 
 Retrieve all selections of a viewpoint
 
-Retrieve all selections of a viewpoint Required scopes: bcf:read
+Retrieve all selections of a viewpoint  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
+let projectsPk = 56; // Number | 
+let topicsGuid = null; // String | 
 apiInstance.getSelections(guid, projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2006,8 +2076,8 @@ apiInstance.getSelections(guid, projectsPk, topicsGuid).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | [**String**](.md)|  | 
 
 ### Return type
 
@@ -2015,7 +2085,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2029,29 +2099,31 @@ Name | Type | Description  | Notes
 
 Retrieve the viewpoint&#39; snapshot
 
-Retrieve the viewpoint&#39; snapshot Required scopes: bcf:read
+Retrieve the viewpoint&#39; snapshot  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
+let projectsPk = 56; // Number | 
+let topicsGuid = null; // String | 
 apiInstance.getSnapshot(guid, projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2066,8 +2138,8 @@ apiInstance.getSnapshot(guid, projectsPk, topicsGuid).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | [**String**](.md)|  | 
 
 ### Return type
 
@@ -2075,7 +2147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2089,28 +2161,30 @@ Name | Type | Description  | Notes
 
 Retrieve a topic
 
-Retrieve a topic Required scopes: bcf:read
+Retrieve a topic  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
+let projectsPk = 56; // Number | 
 apiInstance.getTopic(guid, projectsPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2125,7 +2199,7 @@ apiInstance.getTopic(guid, projectsPk).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
+ **projectsPk** | **Number**|  | 
 
 ### Return type
 
@@ -2133,7 +2207,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2147,28 +2221,30 @@ Name | Type | Description  | Notes
 
 Retrieve all viewpoints attached to the topic
 
-This is not a standard route. It returns all viewpoints of the topic that are not attached to a comment. Required scopes: bcf:read
+This is not a standard route. It returns all viewpoints of the topic that are not attached to a comment.  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
+let projectsPk = 56; // Number | 
+let topicsGuid = null; // String | 
 let opts = {
   'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
 };
@@ -2185,8 +2261,8 @@ apiInstance.getTopicViewpoints(projectsPk, topicsGuid, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | [**String**](.md)|  | 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
@@ -2195,7 +2271,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2209,31 +2285,33 @@ Name | Type | Description  | Notes
 
 Retrieve all topics
 
-Retrieve all topics Required scopes: bcf:read
+Retrieve all topics  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
+let projectsPk = 56; // Number | 
 let opts = {
-  'models': "models_example", // String | Filter the returned list by models
-  'ifcs': "ifcs_example", // String | Filter the returned list by ifcs
-  'format': "format_example" // String | Filter the returned list by format
+  'format': "format_example", // String | 
+  'ifcs': [null], // [Number] | 
+  'models': [null] // [Number] | 
 };
 apiInstance.getTopics(projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -2248,10 +2326,10 @@ apiInstance.getTopics(projectsPk, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **models** | **String**| Filter the returned list by models | [optional] 
- **ifcs** | **String**| Filter the returned list by ifcs | [optional] 
- **format** | **String**| Filter the returned list by format | [optional] 
+ **projectsPk** | **Number**|  | 
+ **format** | **String**|  | [optional] 
+ **ifcs** | [**[Number]**](Number.md)|  | [optional] 
+ **models** | [**[Number]**](Number.md)|  | [optional] 
 
 ### Return type
 
@@ -2259,7 +2337,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2273,24 +2351,26 @@ Name | Type | Description  | Notes
 
 Get current user info
 
-Get current user info. If request comes from an App, the response is always:         {             \&quot;id\&quot;: None,             \&quot;name\&quot;: None,             \&quot;is_client\&quot;: True,         } Required scopes: bcf:read
+Get current user info. If request comes from an App, the response is always:{    \&quot;id\&quot;: None,    \&quot;name\&quot;: None,    \&quot;is_client\&quot;: True,}  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 apiInstance.getUser().then((data) => {
@@ -2311,7 +2391,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2325,29 +2405,31 @@ This endpoint does not need any parameter.
 
 Retrieve a Viewpoint
 
-Retrieve a Viewpoint Required scopes: bcf:read
+Retrieve a Viewpoint  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
+let projectsPk = 56; // Number | 
+let topicsGuid = null; // String | 
 let opts = {
   'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
 };
@@ -2365,8 +2447,8 @@ apiInstance.getViewpoint(guid, projectsPk, topicsGuid, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | [**String**](.md)|  | 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
@@ -2375,7 +2457,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2389,28 +2471,30 @@ Name | Type | Description  | Notes
 
 Retrieve all Viewpoints of a topic
 
-Retrieve all Viewpoints of a topic Required scopes: bcf:read
+Retrieve all Viewpoints of a topic  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
+let projectsPk = 56; // Number | 
+let topicsGuid = null; // String | 
 let opts = {
   'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
 };
@@ -2427,8 +2511,8 @@ apiInstance.getViewpoints(projectsPk, topicsGuid, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | [**String**](.md)|  | 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
 
 ### Return type
@@ -2437,7 +2521,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2451,29 +2535,31 @@ Name | Type | Description  | Notes
 
 Retrieve all visibilities of a viewpoint
 
-Retrieve all visibilities of a viewpoint Required scopes: bcf:read
+Retrieve all visibilities of a viewpoint  Required scopes: bcf:read
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
+let projectsPk = 56; // Number | 
+let topicsGuid = null; // String | 
 apiInstance.getVisibilities(guid, projectsPk, topicsGuid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -2488,8 +2574,8 @@ apiInstance.getVisibilities(guid, projectsPk, topicsGuid).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | [**String**](.md)|  | 
 
 ### Return type
 
@@ -2497,7 +2583,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2511,24 +2597,26 @@ Name | Type | Description  | Notes
 
 Import bcf-xml format into this project
 
-This is not a standard route. Import bcf-xml format into this project. If there are guid conflict, an error will be raised. If there are index conflicts, indexes of the imported file will be overriden with a new index. Author and assigned_to fields will be linked to existing users in the project. If no matching user are found, fields will be emptied. Only BCF 2.1 is supported Required scopes: bcf:write
+This is not a standard route. Import bcf-xml format into this project. If there are guid conflict, an error will be raised. If there are index conflicts, indexes of the imported file will be overriden with a new index. Author and assigned_to fields will be linked to existing users in the project. If no matching user are found, fields will be emptied. Only BCF 2.1 is supported  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
@@ -2555,7 +2643,7 @@ null (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2565,33 +2653,37 @@ null (empty response body)
 
 ## updateBcfProject
 
-> BcfProject updateBcfProject(id, data)
+> BcfProject updateBcfProject(id, opts)
 
 Update some fields of a BCF project
 
-Update some fields of a BCF project Required scopes: bcf:write
+Update some fields of a BCF project  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
-let data = new bimdata.BcfProject(); // BcfProject | 
-apiInstance.updateBcfProject(id, data).then((data) => {
+let opts = {
+  'patchedBcfProjectRequest': new bimdata.PatchedBcfProjectRequest() // PatchedBcfProjectRequest | 
+};
+apiInstance.updateBcfProject(id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2605,7 +2697,7 @@ apiInstance.updateBcfProject(id, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this project. | 
- **data** | [**BcfProject**](BcfProject.md)|  | 
+ **patchedBcfProjectRequest** | [**PatchedBcfProjectRequest**](PatchedBcfProjectRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -2613,45 +2705,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateComment
 
-> Comment updateComment(guid, projectsPk, topicsGuid, data)
+> Comment updateComment(guid, projectsPk, topicsGuid, opts)
 
 Update some fields of a comment
 
-Update some fields of a comment Required scopes: bcf:write
+Update some fields of a comment  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
-let data = new bimdata.Comment(); // Comment | 
-apiInstance.updateComment(guid, projectsPk, topicsGuid, data).then((data) => {
+let projectsPk = 56; // Number | A unique integer value identifying this project.
+let topicsGuid = null; // String | 
+let opts = {
+  'patchedCommentRequest': new bimdata.PatchedCommentRequest() // PatchedCommentRequest | 
+};
+apiInstance.updateComment(guid, projectsPk, topicsGuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2665,9 +2761,9 @@ apiInstance.updateComment(guid, projectsPk, topicsGuid, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
- **data** | [**Comment**](Comment.md)|  | 
+ **projectsPk** | **Number**| A unique integer value identifying this project. | 
+ **topicsGuid** | [**String**](.md)|  | 
+ **patchedCommentRequest** | [**PatchedCommentRequest**](PatchedCommentRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -2675,44 +2771,48 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateExtensionLabel
 
-> Label updateExtensionLabel(id, projectsPk, data)
+> Label updateExtensionLabel(id, projectsPk, opts)
 
 Update a Label
 
-This is not a standard route. Update a Label. All topics using this label will be updated Required scopes: bcf:write
+This is not a standard route. Update a Label. All topics using this label will be updated  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this label.
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.Label(); // Label | 
-apiInstance.updateExtensionLabel(id, projectsPk, data).then((data) => {
+let projectsPk = 56; // Number | 
+let opts = {
+  'patchedLabelRequest': new bimdata.PatchedLabelRequest() // PatchedLabelRequest | 
+};
+apiInstance.updateExtensionLabel(id, projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2726,8 +2826,8 @@ apiInstance.updateExtensionLabel(id, projectsPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this label. | 
- **projectsPk** | **String**|  | 
- **data** | [**Label**](Label.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **patchedLabelRequest** | [**PatchedLabelRequest**](PatchedLabelRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -2735,44 +2835,48 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateExtensionPriority
 
-> Priority updateExtensionPriority(id, projectsPk, data)
+> Priority updateExtensionPriority(id, projectsPk, opts)
 
 Update a Priority
 
-This is not a standard route. Update a Priority. All topics using this priority will be updated Required scopes: bcf:write
+This is not a standard route. Update a Priority. All topics using this priority will be updated  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this priority.
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.Priority(); // Priority | 
-apiInstance.updateExtensionPriority(id, projectsPk, data).then((data) => {
+let projectsPk = 56; // Number | 
+let opts = {
+  'patchedPriorityRequest': new bimdata.PatchedPriorityRequest() // PatchedPriorityRequest | 
+};
+apiInstance.updateExtensionPriority(id, projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2786,8 +2890,8 @@ apiInstance.updateExtensionPriority(id, projectsPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this priority. | 
- **projectsPk** | **String**|  | 
- **data** | [**Priority**](Priority.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **patchedPriorityRequest** | [**PatchedPriorityRequest**](PatchedPriorityRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -2795,44 +2899,48 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateExtensionStage
 
-> Stage updateExtensionStage(id, projectsPk, data)
+> Stage updateExtensionStage(id, projectsPk, opts)
 
 Update a Stage
 
-This is not a standard route. Update a Stage. All topics using this stage will be updated Required scopes: bcf:write
+This is not a standard route. Update a Stage. All topics using this stage will be updated  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this stage.
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.Stage(); // Stage | 
-apiInstance.updateExtensionStage(id, projectsPk, data).then((data) => {
+let projectsPk = 56; // Number | 
+let opts = {
+  'patchedStageRequest': new bimdata.PatchedStageRequest() // PatchedStageRequest | 
+};
+apiInstance.updateExtensionStage(id, projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2846,8 +2954,8 @@ apiInstance.updateExtensionStage(id, projectsPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this stage. | 
- **projectsPk** | **String**|  | 
- **data** | [**Stage**](Stage.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **patchedStageRequest** | [**PatchedStageRequest**](PatchedStageRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -2855,44 +2963,48 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateExtensionStatus
 
-> TopicStatus updateExtensionStatus(id, projectsPk, data)
+> TopicStatus updateExtensionStatus(id, projectsPk, opts)
 
 Update a TopicStatus
 
-This is not a standard route. Update a TopicStatus. All topics using this status will be updated Required scopes: bcf:write
+This is not a standard route. Update a TopicStatus. All topics using this status will be updated  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this topic status.
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.TopicStatus(); // TopicStatus | 
-apiInstance.updateExtensionStatus(id, projectsPk, data).then((data) => {
+let projectsPk = 56; // Number | 
+let opts = {
+  'patchedTopicStatusRequest': new bimdata.PatchedTopicStatusRequest() // PatchedTopicStatusRequest | 
+};
+apiInstance.updateExtensionStatus(id, projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2906,8 +3018,8 @@ apiInstance.updateExtensionStatus(id, projectsPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this topic status. | 
- **projectsPk** | **String**|  | 
- **data** | [**TopicStatus**](TopicStatus.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **patchedTopicStatusRequest** | [**PatchedTopicStatusRequest**](PatchedTopicStatusRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -2915,44 +3027,48 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateExtensionType
 
-> TopicType updateExtensionType(id, projectsPk, data)
+> TopicType updateExtensionType(id, projectsPk, opts)
 
 Update a TopicType
 
-This is not a standard route. Update a TopicType. All topics using this type will be updated Required scopes: bcf:write
+This is not a standard route. Update a TopicType. All topics using this type will be updated  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this topic type.
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.TopicType(); // TopicType | 
-apiInstance.updateExtensionType(id, projectsPk, data).then((data) => {
+let projectsPk = 56; // Number | 
+let opts = {
+  'patchedTopicTypeRequest': new bimdata.PatchedTopicTypeRequest() // PatchedTopicTypeRequest | 
+};
+apiInstance.updateExtensionType(id, projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2966,8 +3082,8 @@ apiInstance.updateExtensionType(id, projectsPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this topic type. | 
- **projectsPk** | **String**|  | 
- **data** | [**TopicType**](TopicType.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **patchedTopicTypeRequest** | [**PatchedTopicTypeRequest**](PatchedTopicTypeRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -2975,47 +3091,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateFullTopic
 
-> FullTopic updateFullTopic(guid, projectsPk, data, opts)
+> FullTopic updateFullTopic(guid, projectsPk, opts)
 
 Update some fields of a topic
 
-This is not a standard route. You can update topic, viewpoints and comment is a signle call Required scopes: bcf:write
+This is not a standard route. You can update topic, viewpoints and comment is a signle call  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.FullTopic(); // FullTopic | 
+let projectsPk = 56; // Number | 
 let opts = {
-  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+  'imgFormat': "imgFormat_example", // String | All snapshot_data will be returned as url instead of base64
+  'patchedFullTopicRequest': new bimdata.PatchedFullTopicRequest() // PatchedFullTopicRequest | 
 };
-apiInstance.updateFullTopic(guid, projectsPk, data, opts).then((data) => {
+apiInstance.updateFullTopic(guid, projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3029,9 +3147,9 @@ apiInstance.updateFullTopic(guid, projectsPk, data, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **data** | [**FullTopic**](FullTopic.md)|  | 
+ **projectsPk** | **Number**|  | 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
+ **patchedFullTopicRequest** | [**PatchedFullTopicRequest**](PatchedFullTopicRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -3039,44 +3157,48 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateTopic
 
-> Topic updateTopic(guid, projectsPk, data)
+> Topic updateTopic(guid, projectsPk, opts)
 
 Update some fields of a topic
 
-Update some fields of a topic Required scopes: bcf:write
+Update some fields of a topic  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let data = new bimdata.Topic(); // Topic | 
-apiInstance.updateTopic(guid, projectsPk, data).then((data) => {
+let projectsPk = 56; // Number | 
+let opts = {
+  'patchedTopicRequest': new bimdata.PatchedTopicRequest() // PatchedTopicRequest | 
+};
+apiInstance.updateTopic(guid, projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3090,8 +3212,8 @@ apiInstance.updateTopic(guid, projectsPk, data).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **data** | [**Topic**](Topic.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **patchedTopicRequest** | [**PatchedTopicRequest**](PatchedTopicRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -3099,48 +3221,50 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## updateViewpoint
 
-> Viewpoint updateViewpoint(guid, projectsPk, topicsGuid, data, opts)
+> Viewpoint updateViewpoint(guid, projectsPk, topicsGuid, opts)
 
 Update some fields of a Viewpoint
 
-This is not a standard route. Update some fields of a Viewpoint Required scopes: bcf:write
+This is not a standard route. Update some fields of a Viewpoint  Required scopes: bcf:write
 
 ### Example
 
 ```javascript
 import bimdata from '@bimdata/bimdata-api-client';
 let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Bearer.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: bimdata_connect
-let bimdata_connect = defaultClient.authentications['bimdata_connect'];
-bimdata_connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: client_credentials
-let client_credentials = defaultClient.authentications['client_credentials'];
-client_credentials.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new bimdata.BcfApi();
 let guid = null; // String | 
-let projectsPk = "projectsPk_example"; // String | 
-let topicsGuid = "topicsGuid_example"; // String | 
-let data = new bimdata.Viewpoint(); // Viewpoint | 
+let projectsPk = 56; // Number | 
+let topicsGuid = null; // String | 
 let opts = {
-  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+  'imgFormat': "imgFormat_example", // String | All snapshot_data will be returned as url instead of base64
+  'patchedViewpointRequest': new bimdata.PatchedViewpointRequest() // PatchedViewpointRequest | 
 };
-apiInstance.updateViewpoint(guid, projectsPk, topicsGuid, data, opts).then((data) => {
+apiInstance.updateViewpoint(guid, projectsPk, topicsGuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3154,10 +3278,10 @@ apiInstance.updateViewpoint(guid, projectsPk, topicsGuid, data, opts).then((data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | [**String**](.md)|  | 
- **projectsPk** | **String**|  | 
- **topicsGuid** | **String**|  | 
- **data** | [**Viewpoint**](Viewpoint.md)|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | [**String**](.md)|  | 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
+ **patchedViewpointRequest** | [**PatchedViewpointRequest**](PatchedViewpointRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -3165,10 +3289,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer), [bimdata_connect](../README.md#bimdata_connect), [client_credentials](../README.md#client_credentials)
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 

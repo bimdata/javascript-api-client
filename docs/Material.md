@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
-**name** | **String** |  | [optional] [readonly] 
-**category** | **String** |  | [optional] [readonly] 
-**description** | **String** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
+**name** | **String** |  | [readonly] 
+**category** | **String** |  | [readonly] 
+**description** | **String** |  | [readonly] 
 **propertySets** | [**[PropertySet]**](PropertySet.md) |  | 
 
 

@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
 **name** | **String** |  | [optional] 
 **type** | **String** |  | 
 **unitType** | **String** |  | [optional] 
 **prefix** | **String** |  | [optional] 
-**elements** | [**Object**](.md) |  | [optional] 
+**elements** | [**{String: AnyType}**](AnyType.md) |  | [optional] 
 **conversionFactor** | **Number** |  | [optional] 
 **dimensions** | **[Number]** |  | [optional] 
 **conversionBaseunitIndex** | **Number** |  | [optional] 

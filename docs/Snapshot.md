@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **snapshotType** | **String** |  | 
-**snapshotData** | **String** |  | [optional] [readonly] 
+**snapshotData** | **String** |  | 
 
 

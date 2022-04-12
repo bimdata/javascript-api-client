@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
-**email** | **String** |  | [optional] [readonly] 
-**firstname** | **String** |  | [optional] [readonly] 
-**lastname** | **String** |  | [optional] [readonly] 
-**createdAt** | **Date** |  | [optional] [readonly] 
-**updatedAt** | **Date** |  | [optional] [readonly] 
-**cloudRole** | **Number** |  | [optional] [readonly] 
-**projectRole** | **Number** |  | [optional] [readonly] 
-**provider** | **String** |  | [optional] [readonly] 
-**sub** | **String** | sub from Keycloak | [optional] [readonly] 
-**profilePicture** | **String** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
+**email** | **String** |  | [readonly] 
+**firstname** | **String** |  | [readonly] 
+**lastname** | **String** |  | [readonly] 
+**createdAt** | **Date** |  | [readonly] 
+**updatedAt** | **Date** |  | [readonly] 
+**cloudRole** | **Number** |  | [readonly] 
+**projectRole** | **Number** |  | [readonly] 
+**provider** | **String** |  | [readonly] 
+**sub** | **String** | sub from Keycloak | [readonly] 
+**profilePicture** | **String** |  | [readonly] 
 
 

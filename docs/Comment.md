@@ -10,9 +10,8 @@ Name | Type | Description | Notes
 **comment** | **String** |  | [optional] 
 **viewpointGuid** | **String** |  | [optional] 
 **replyToCommentGuid** | **String** |  | [optional] 
-**topicGuid** | **String** |  | [optional] [readonly] 
+**topicGuid** | **String** |  | [readonly] 
 **modifiedAuthor** | **String** |  | [optional] 
-**modifiedDate** | **Date** |  | [optional] [readonly] 
-**viewpointTempId** | **Number** | Only used when using POST on the full-topic route to bind viewpoint with comment | [optional] 
+**modifiedDate** | **Date** |  | [readonly] 
 
 

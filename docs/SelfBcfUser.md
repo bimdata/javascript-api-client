@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**name** | **String** |  | [optional] [readonly] 
+**name** | **String** |  | [readonly] 
 **email** | **String** |  | 
-**isClient** | **Boolean** |  | [optional] [readonly] 
-**isProjectToken** | **Boolean** |  | [optional] [readonly] 
+**isClient** | **Boolean** |  | [readonly] 
+**isProjectToken** | **Boolean** |  | [readonly] 
 
 

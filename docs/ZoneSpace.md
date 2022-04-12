@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
 **name** | **String** |  | [optional] 
 **longname** | **String** |  | [optional] 
 **uuid** | **String** |  | 
-**zoneSet** | **[Number]** |  | [optional] [readonly] 
-**createdAt** | **Date** |  | [optional] [readonly] 
-**updatedAt** | **Date** |  | [optional] [readonly] 
+**zoneSet** | **[Number]** |  | [readonly] 
+**createdAt** | **Date** |  | [readonly] 
+**updatedAt** | **Date** |  | [readonly] 
 
 

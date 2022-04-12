@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
 **name** | **String** |  | [optional] 
 **condition** | **String** |  | 
 **ruleComponents** | [**[RuleComponent]**](RuleComponent.md) |  | [optional] 

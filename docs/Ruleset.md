@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
 **parentRulesetId** | **Number** |  | [optional] 
 **name** | **String** |  | 
 **description** | **String** |  | [optional] 

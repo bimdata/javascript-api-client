@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
-**thickness** | **Number** |  | [optional] [readonly] 
-**listComponents** | **[{String: String}]** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
+**thickness** | **Number** |  | [readonly] 
+**listComponents** | **[{String: AnyType}]** |  | [readonly] 
 
 

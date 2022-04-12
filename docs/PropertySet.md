@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
 **name** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 **properties** | [**[Property]**](Property.md) |  | [optional] 
-**createdAt** | **Date** |  | [optional] [readonly] 
-**updatedAt** | **Date** |  | [optional] [readonly] 
+**createdAt** | **Date** |  | [readonly] 
+**updatedAt** | **Date** |  | [readonly] 
 
 

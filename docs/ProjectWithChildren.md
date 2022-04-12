@@ -4,25 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
-**logo** | **String** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
+**logo** | **String** |  | [optional] 
 **name** | **String** | Name of the project | 
-**status** | **String** |  | [optional] 
-**createdAt** | **Date** | Creation date | [optional] [readonly] 
-**updatedAt** | **Date** | Date of the last update | [optional] [readonly] 
+**status** | [**ProjectStatusEnum**](ProjectStatusEnum.md) |  | [optional] 
+**createdAt** | **Date** | Creation date | [readonly] 
+**updatedAt** | **Date** | Date of the last update | [readonly] 
 **parentId** | **Number** |  | [optional] 
-**children** | [**[ProjectWithChildren]**](ProjectWithChildren.md) |  | [optional] [readonly] 
-**rootFolderId** | **String** |  | [optional] [readonly] 
-
-
-
-## Enum: StatusEnum
-
-
-* `A` (value: `"A"`)
-
-* `D` (value: `"D"`)
-
-
+**children** | [**[ProjectWithChildren]**](ProjectWithChildren.md) |  | [readonly] 
+**rootFolderId** | **Number** |  | [readonly] 
 
 

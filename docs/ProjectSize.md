@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalSize** | **Number** |  | [optional] [readonly] 
-**smartDataSize** | **Number** |  | [optional] [readonly] 
+**totalSize** | **Number** |  | [readonly] 
+**smartDataSize** | **Number** |  | [readonly] 
 
 

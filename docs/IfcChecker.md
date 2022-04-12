@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
-**ifc** | [**Model**](Model.md) |  | [optional] 
-**creator** | [**User**](User.md) |  | [optional] 
+**id** | **Number** |  | [readonly] 
+**ifc** | [**Model**](Model.md) |  | [readonly] 
+**creator** | [**User**](User.md) |  | [readonly] 
 **name** | **String** |  | [optional] 
-**checkplanId** | **Number** |  | [optional] 
-**results** | [**[IfcCheckerResults]**](IfcCheckerResults.md) |  | [optional] [readonly] 
-**createdAt** | **Date** |  | [optional] [readonly] 
-**updatedAt** | **Date** |  | [optional] [readonly] 
-**checkplan** | [**IfcCheckerCheckplan**](IfcCheckerCheckplan.md) |  | [optional] 
+**results** | [**[CheckerResult]**](CheckerResult.md) |  | [readonly] 
+**createdAt** | **Date** |  | [readonly] 
+**updatedAt** | **Date** |  | [readonly] 
+**checkplan** | [**CheckPlan**](CheckPlan.md) |  | [readonly] 
 
 

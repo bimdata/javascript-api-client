@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **guid** | **String** |  | [optional] 
 **creationDate** | **Date** |  | [optional] 
 **creationAuthor** | **String** |  | [optional] 
-**modifiedDate** | **Date** |  | [optional] [readonly] 
+**modifiedDate** | **Date** |  | [readonly] 
 **modifiedAuthor** | **String** |  | [optional] 
 **title** | **String** |  | 
 **description** | **String** |  | [optional] 

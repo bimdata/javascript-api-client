@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
-**userId** | **Number** |  | [optional] [readonly] 
-**invitationId** | **Number** |  | [optional] [readonly] 
-**email** | **String** |  | [optional] [readonly] 
-**firstname** | **String** |  | [optional] [readonly] 
-**lastname** | **String** |  | [optional] [readonly] 
-**profilePicture** | **String** |  | [optional] [readonly] 
-**role** | **Number** |  | [optional] [readonly] 
-**permission** | **Number** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
+**userId** | **Number** |  | [readonly] 
+**invitationId** | **Number** |  | [readonly] 
+**email** | **String** |  | [readonly] 
+**firstname** | **String** |  | [readonly] 
+**lastname** | **String** |  | [readonly] 
+**profilePicture** | **String** |  | [readonly] 
+**role** | [**ProjectRoleEnum**](ProjectRoleEnum.md) |  | [readonly] 
+**permission** | [**FolderPermissionEnum**](FolderPermissionEnum.md) |  | [readonly] 
 
 

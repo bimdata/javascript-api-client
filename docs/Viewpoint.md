@@ -12,6 +12,5 @@ Name | Type | Description | Notes
 **clippingPlanes** | [**[ClippingPlane]**](ClippingPlane.md) |  | [optional] 
 **snapshot** | [**Snapshot**](Snapshot.md) |  | [optional] 
 **components** | [**ComponentsParent**](ComponentsParent.md) |  | [optional] 
-**tempId** | **Number** | Only used when using POST on the full-topic route to bind viewpoint with comment | [optional] 
 
 

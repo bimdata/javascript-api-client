@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] [readonly] 
+**id** | **Number** |  | [readonly] 
 **email** | **String** |  | 
 **firstname** | **String** |  | 
 **lastname** | **String** |  | 
-**createdAt** | **Date** |  | [optional] [readonly] 
-**updatedAt** | **Date** |  | [optional] [readonly] 
-**organizations** | [**[Organization]**](Organization.md) |  | [optional] [readonly] 
-**clouds** | [**[CloudRole]**](CloudRole.md) |  | [optional] [readonly] 
-**projects** | [**[ProjectRole]**](ProjectRole.md) |  | [optional] [readonly] 
-**provider** | **String** |  | [optional] [readonly] 
+**createdAt** | **Date** |  | [readonly] 
+**updatedAt** | **Date** |  | [readonly] 
+**organizations** | [**[Organization]**](Organization.md) |  | [readonly] 
+**clouds** | [**[CloudRole]**](CloudRole.md) |  | [readonly] 
+**projects** | [**[ProjectRole]**](ProjectRole.md) |  | [readonly] 
+**provider** | **String** |  | [readonly] 
 **providerSub** | **String** | sub from original identity provider | [optional] 
-**sub** | **String** | sub from Keycloak | [optional] [readonly] 
-**profilePicture** | **String** |  | [optional] [readonly] 
+**sub** | **String** | sub from Keycloak | [readonly] 
+**profilePicture** | **String** |  | [readonly] 
 
 

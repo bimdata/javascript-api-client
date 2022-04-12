@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **labels** | **[String]** |  | [optional] 
 **creationDate** | **Date** |  | [optional] 
 **creationAuthor** | **String** |  | [optional] 
-**modifiedDate** | **Date** |  | [optional] [readonly] 
+**modifiedDate** | **Date** |  | [readonly] 
 **modifiedAuthor** | **String** |  | [optional] 
 **assignedTo** | **String** |  | [optional] 
 **referenceLinks** | **[String]** |  | [optional] 

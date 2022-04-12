@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**document** | [**Document**](Document.md) |  | [optional] 
-**elementUuids** | **[String]** |  | [optional] [readonly] 
+**document** | [**Document**](Document.md) |  | [readonly] 
+**elementUuids** | **[String]** |  | [readonly] 
 
 
