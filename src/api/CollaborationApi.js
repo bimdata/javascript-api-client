@@ -36,6 +36,7 @@ import PatchedGroupFolderRequest from '../model/PatchedGroupFolderRequest';
 import PatchedGroupRequest from '../model/PatchedGroupRequest';
 import PatchedProjectAccessTokenRequest from '../model/PatchedProjectAccessTokenRequest';
 import PatchedProjectRequest from '../model/PatchedProjectRequest';
+import PatchedTagRequest from '../model/PatchedTagRequest';
 import PatchedUserCloudUpdateRequest from '../model/PatchedUserCloudUpdateRequest';
 import PatchedUserProjectUpdateRequest from '../model/PatchedUserProjectUpdateRequest';
 import PatchedVisaCommentRequest from '../model/PatchedVisaCommentRequest';
@@ -51,6 +52,9 @@ import ProjectSize from '../model/ProjectSize';
 import ProjectWithChildren from '../model/ProjectWithChildren';
 import SelfUser from '../model/SelfUser';
 import Size from '../model/Size';
+import Tag from '../model/Tag';
+import TagIdRequest from '../model/TagIdRequest';
+import TagRequest from '../model/TagRequest';
 import User from '../model/User';
 import UserProject from '../model/UserProject';
 import UserProjectIdRequest from '../model/UserProjectIdRequest';
@@ -151,6 +155,74 @@ export default class CollaborationApi {
      */
     acceptValidation(cloudPk, documentPk, id, projectPk, visaPk) {
       return this.acceptValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Add a tag to a document
+     * Add a tag to a document  Required scopes: document:write
+     * @param {Number} cloudPk 
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} projectPk 
+     * @param {module:model/TagIdRequest} tagIdRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
+     */
+    addDocumentTagWithHttpInfo(cloudPk, documentPk, projectPk, tagIdRequest) {
+      let postBody = tagIdRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling addDocumentTag");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling addDocumentTag");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling addDocumentTag");
+      }
+      // verify the required parameter 'tagIdRequest' is set
+      if (tagIdRequest === undefined || tagIdRequest === null) {
+        throw new Error("Missing the required parameter 'tagIdRequest' when calling addDocumentTag");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Document;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/tag', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Add a tag to a document
+     * Add a tag to a document  Required scopes: document:write
+     * @param {Number} cloudPk 
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} projectPk 
+     * @param {module:model/TagIdRequest} tagIdRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
+     */
+    addDocumentTag(cloudPk, documentPk, projectPk, tagIdRequest) {
+      return this.addDocumentTagWithHttpInfo(cloudPk, documentPk, projectPk, tagIdRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1010,6 +1082,67 @@ export default class CollaborationApi {
 
 
     /**
+     * Create a tag
+     * Create a tag  Required scopes: org:manage
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/TagRequest} tagRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Tag} and HTTP response
+     */
+    createTagWithHttpInfo(cloudPk, projectPk, tagRequest) {
+      let postBody = tagRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createTag");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createTag");
+      }
+      // verify the required parameter 'tagRequest' is set
+      if (tagRequest === undefined || tagRequest === null) {
+        throw new Error("Missing the required parameter 'tagRequest' when calling createTag");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Tag;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/tag', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a tag
+     * Create a tag  Required scopes: org:manage
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/TagRequest} tagRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Tag}
+     */
+    createTag(cloudPk, projectPk, tagRequest) {
+      return this.createTagWithHttpInfo(cloudPk, projectPk, tagRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Add a validation to a visa
      * Add a validation to a visa  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -1453,6 +1586,75 @@ export default class CollaborationApi {
 
 
     /**
+     * Delete a tag from a document
+     * Delete a tag from a document  Required scopes: document:write
+     * @param {Number} cloudPk 
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteDocumentTagWithHttpInfo(cloudPk, documentPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteDocumentTag");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling deleteDocumentTag");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteDocumentTag");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteDocumentTag");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/tag/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a tag from a document
+     * Delete a tag from a document  Required scopes: document:write
+     * @param {Number} cloudPk 
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteDocumentTag(cloudPk, documentPk, id, projectPk) {
+      return this.deleteDocumentTagWithHttpInfo(cloudPk, documentPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Delete a folder
      * All files and subfolders will be deleted too. If folder is a project's root folder, only children are deleted  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -1818,6 +2020,68 @@ export default class CollaborationApi {
      */
     deleteProjectUser(cloudPk, id, projectPk) {
       return this.deleteProjectUserWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete the tag
+     * Delete the tag  Required scopes: org:manage
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this tag.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteTagWithHttpInfo(cloudPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteTag");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteTag");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteTag");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/tag/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete the tag
+     * Delete the tag  Required scopes: org:manage
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this tag.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteTag(cloudPk, id, projectPk) {
+      return this.deleteTagWithHttpInfo(cloudPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3822,6 +4086,123 @@ export default class CollaborationApi {
 
 
     /**
+     * Retrieve a tag
+     * Retrieve a tag in the project  Required scopes: org:manage
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this tag.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Tag} and HTTP response
+     */
+    getTagWithHttpInfo(cloudPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getTag");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getTag");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getTag");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Tag;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/tag/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a tag
+     * Retrieve a tag in the project  Required scopes: org:manage
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this tag.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Tag}
+     */
+    getTag(cloudPk, id, projectPk) {
+      return this.getTagWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all tags
+     * Retrieve all tags in the project  Required scopes: org:manage
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Tag>} and HTTP response
+     */
+    getTagsWithHttpInfo(cloudPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getTags");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getTags");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Tag];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/tag', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all tags
+     * Retrieve all tags in the project  Required scopes: org:manage
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Tag>}
+     */
+    getTags(cloudPk, projectPk) {
+      return this.getTagsWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve a validation to a visa
      * Retrieve a validation to a visa  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -5269,6 +5650,73 @@ export default class CollaborationApi {
      */
     updateProjectUser(cloudPk, id, projectPk, opts) {
       return this.updateProjectUserWithHttpInfo(cloudPk, id, projectPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of the tag
+     * Update some fields of the tag  Required scopes: org:manage
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this tag.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedTagRequest} opts.patchedTagRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Tag} and HTTP response
+     */
+    updateTagWithHttpInfo(cloudPk, id, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedTagRequest'];
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateTag");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateTag");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateTag");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Tag;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/tag/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of the tag
+     * Update some fields of the tag  Required scopes: org:manage
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this tag.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedTagRequest} opts.patchedTagRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Tag}
+     */
+    updateTag(cloudPk, id, projectPk, opts) {
+      return this.updateTagWithHttpInfo(cloudPk, id, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

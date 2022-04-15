@@ -225,6 +225,7 @@ Class | Method | HTTP request | Description
 *bimdata.CheckerApi* | [**updateRuleComponent**](docs/CheckerApi.md#updateRuleComponent) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Update some fields of a RuleComponent
 *bimdata.CheckerApi* | [**updateRuleset**](docs/CheckerApi.md#updateRuleset) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Update some fields of a Ruleset
 *bimdata.CollaborationApi* | [**acceptValidation**](docs/CollaborationApi.md#acceptValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/accept | Accept a validation
+*bimdata.CollaborationApi* | [**addDocumentTag**](docs/CollaborationApi.md#addDocumentTag) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/tag | Add a tag to a document
 *bimdata.CollaborationApi* | [**addGroupMember**](docs/CollaborationApi.md#addGroupMember) | **POST** /cloud/{cloud_pk}/project/{project_pk}/group/{group_pk}/member | Add a user to a group
 *bimdata.CollaborationApi* | [**cancelCloudUserInvitation**](docs/CollaborationApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | Cancel a pending invitation
 *bimdata.CollaborationApi* | [**cancelProjectUserInvitation**](docs/CollaborationApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
@@ -239,6 +240,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**createManageGroup**](docs/CollaborationApi.md#createManageGroup) | **POST** /cloud/{cloud_pk}/project/{project_pk}/group | Create a group
 *bimdata.CollaborationApi* | [**createProject**](docs/CollaborationApi.md#createProject) | **POST** /cloud/{cloud_pk}/project | Create a project
 *bimdata.CollaborationApi* | [**createProjectAccessToken**](docs/CollaborationApi.md#createProjectAccessToken) | **POST** /cloud/{cloud_pk}/project/{project_pk}/access-token | Create a token for this project
+*bimdata.CollaborationApi* | [**createTag**](docs/CollaborationApi.md#createTag) | **POST** /cloud/{cloud_pk}/project/{project_pk}/tag | Create a tag
 *bimdata.CollaborationApi* | [**createValidation**](docs/CollaborationApi.md#createValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation | Add a validation to a visa
 *bimdata.CollaborationApi* | [**createVisa**](docs/CollaborationApi.md#createVisa) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa | Create a visa
 *bimdata.CollaborationApi* | [**createVisaComment**](docs/CollaborationApi.md#createVisaComment) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment | Add a comment
@@ -246,12 +248,14 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**deleteCloud**](docs/CollaborationApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
 *bimdata.CollaborationApi* | [**deleteCloudUser**](docs/CollaborationApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | Remove a user from a cloud
 *bimdata.CollaborationApi* | [**deleteDocument**](docs/CollaborationApi.md#deleteDocument) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Delete the document
+*bimdata.CollaborationApi* | [**deleteDocumentTag**](docs/CollaborationApi.md#deleteDocumentTag) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/tag/{id} | Delete a tag from a document
 *bimdata.CollaborationApi* | [**deleteFolder**](docs/CollaborationApi.md#deleteFolder) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Delete a folder
 *bimdata.CollaborationApi* | [**deleteGroupMember**](docs/CollaborationApi.md#deleteGroupMember) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/group/{group_pk}/member/{id} | Delete a user from a group
 *bimdata.CollaborationApi* | [**deleteManageGroup**](docs/CollaborationApi.md#deleteManageGroup) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Delete a group
 *bimdata.CollaborationApi* | [**deleteProject**](docs/CollaborationApi.md#deleteProject) | **DELETE** /cloud/{cloud_pk}/project/{id} | Delete a project
 *bimdata.CollaborationApi* | [**deleteProjectAccessToken**](docs/CollaborationApi.md#deleteProjectAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Delete a token
 *bimdata.CollaborationApi* | [**deleteProjectUser**](docs/CollaborationApi.md#deleteProjectUser) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Remove a user from a project
+*bimdata.CollaborationApi* | [**deleteTag**](docs/CollaborationApi.md#deleteTag) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/tag/{id} | Delete the tag
 *bimdata.CollaborationApi* | [**deleteValidation**](docs/CollaborationApi.md#deleteValidation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id} | Remove a validation
 *bimdata.CollaborationApi* | [**deleteVisa**](docs/CollaborationApi.md#deleteVisa) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Remove a visa
 *bimdata.CollaborationApi* | [**deleteVisaComment**](docs/CollaborationApi.md#deleteVisaComment) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Remove a comment
@@ -287,6 +291,8 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getProjects**](docs/CollaborationApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | Retrieve all projects
 *bimdata.CollaborationApi* | [**getSelfProjects**](docs/CollaborationApi.md#getSelfProjects) | **GET** /user/projects | List current user&#39;s projects
 *bimdata.CollaborationApi* | [**getSelfUser**](docs/CollaborationApi.md#getSelfUser) | **GET** /user | Get info about the current user
+*bimdata.CollaborationApi* | [**getTag**](docs/CollaborationApi.md#getTag) | **GET** /cloud/{cloud_pk}/project/{project_pk}/tag/{id} | Retrieve a tag
+*bimdata.CollaborationApi* | [**getTags**](docs/CollaborationApi.md#getTags) | **GET** /cloud/{cloud_pk}/project/{project_pk}/tag | Retrieve all tags
 *bimdata.CollaborationApi* | [**getValidation**](docs/CollaborationApi.md#getValidation) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id} | Retrieve a validation to a visa
 *bimdata.CollaborationApi* | [**getValidations**](docs/CollaborationApi.md#getValidations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation | List all validations to a visa
 *bimdata.CollaborationApi* | [**getVisa**](docs/CollaborationApi.md#getVisa) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Retrieve a visa of a document
@@ -309,6 +315,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**updateProject**](docs/CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
 *bimdata.CollaborationApi* | [**updateProjectAccessToken**](docs/CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
 *bimdata.CollaborationApi* | [**updateProjectUser**](docs/CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Change the user role in the cloud
+*bimdata.CollaborationApi* | [**updateTag**](docs/CollaborationApi.md#updateTag) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/tag/{id} | Update some fields of the tag
 *bimdata.CollaborationApi* | [**updateValidation**](docs/CollaborationApi.md#updateValidation) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id} | Update the validator of validation
 *bimdata.CollaborationApi* | [**updateVisa**](docs/CollaborationApi.md#updateVisa) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Update some fields of a visa
 *bimdata.CollaborationApi* | [**updateVisaComment**](docs/CollaborationApi.md#updateVisaComment) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Update some fields of a comment
@@ -742,6 +749,7 @@ Class | Method | HTTP request | Description
  - [bimdata.PatchedSpaceRequest](docs/PatchedSpaceRequest.md)
  - [bimdata.PatchedStageRequest](docs/PatchedStageRequest.md)
  - [bimdata.PatchedSystemRequest](docs/PatchedSystemRequest.md)
+ - [bimdata.PatchedTagRequest](docs/PatchedTagRequest.md)
  - [bimdata.PatchedTopicRequest](docs/PatchedTopicRequest.md)
  - [bimdata.PatchedTopicStatusRequest](docs/PatchedTopicStatusRequest.md)
  - [bimdata.PatchedTopicTypeRequest](docs/PatchedTopicTypeRequest.md)
@@ -827,6 +835,9 @@ Class | Method | HTTP request | Description
  - [bimdata.Storey](docs/Storey.md)
  - [bimdata.System](docs/System.md)
  - [bimdata.SystemRequest](docs/SystemRequest.md)
+ - [bimdata.Tag](docs/Tag.md)
+ - [bimdata.TagIdRequest](docs/TagIdRequest.md)
+ - [bimdata.TagRequest](docs/TagRequest.md)
  - [bimdata.Topic](docs/Topic.md)
  - [bimdata.TopicRequest](docs/TopicRequest.md)
  - [bimdata.TopicStatus](docs/TopicStatus.md)

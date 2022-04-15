@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **description** | **String** | Description of the file | [optional] 
 **file** | **String** |  | 
 **size** | **Number** | Size of the file. | [optional] 
+**tags** | [**[Tag]**](Tag.md) |  | [readonly] 
 **createdAt** | **Date** | Creation date | [readonly] 
 **updatedAt** | **Date** | Date of the last update | [readonly] 
 **modelId** | **Number** |  | [readonly] 

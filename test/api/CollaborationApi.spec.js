@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('addDocumentTag', function() {
+      it('should call addDocumentTag successfully', function(done) {
+        //uncomment below and update the code to test addDocumentTag
+        //instance.addDocumentTag(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('addGroupMember', function() {
       it('should call addGroupMember successfully', function(done) {
         //uncomment below and update the code to test addGroupMember
@@ -198,6 +208,16 @@
         done();
       });
     });
+    describe('createTag', function() {
+      it('should call createTag successfully', function(done) {
+        //uncomment below and update the code to test createTag
+        //instance.createTag(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createValidation', function() {
       it('should call createValidation successfully', function(done) {
         //uncomment below and update the code to test createValidation
@@ -268,6 +288,16 @@
         done();
       });
     });
+    describe('deleteDocumentTag', function() {
+      it('should call deleteDocumentTag successfully', function(done) {
+        //uncomment below and update the code to test deleteDocumentTag
+        //instance.deleteDocumentTag(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteFolder', function() {
       it('should call deleteFolder successfully', function(done) {
         //uncomment below and update the code to test deleteFolder
@@ -322,6 +352,16 @@
       it('should call deleteProjectUser successfully', function(done) {
         //uncomment below and update the code to test deleteProjectUser
         //instance.deleteProjectUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteTag', function() {
+      it('should call deleteTag successfully', function(done) {
+        //uncomment below and update the code to test deleteTag
+        //instance.deleteTag(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -678,6 +718,26 @@
         done();
       });
     });
+    describe('getTag', function() {
+      it('should call getTag successfully', function(done) {
+        //uncomment below and update the code to test getTag
+        //instance.getTag(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getTags', function() {
+      it('should call getTags successfully', function(done) {
+        //uncomment below and update the code to test getTags
+        //instance.getTags(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getValidation', function() {
       it('should call getValidation successfully', function(done) {
         //uncomment below and update the code to test getValidation
@@ -892,6 +952,16 @@
       it('should call updateProjectUser successfully', function(done) {
         //uncomment below and update the code to test updateProjectUser
         //instance.updateProjectUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateTag', function() {
+      it('should call updateTag successfully', function(done) {
+        //uncomment below and update the code to test updateTag
+        //instance.updateTag(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

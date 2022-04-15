@@ -131,6 +131,7 @@ import PatchedRulesetRequest from './model/PatchedRulesetRequest';
 import PatchedSpaceRequest from './model/PatchedSpaceRequest';
 import PatchedStageRequest from './model/PatchedStageRequest';
 import PatchedSystemRequest from './model/PatchedSystemRequest';
+import PatchedTagRequest from './model/PatchedTagRequest';
 import PatchedTopicRequest from './model/PatchedTopicRequest';
 import PatchedTopicStatusRequest from './model/PatchedTopicStatusRequest';
 import PatchedTopicTypeRequest from './model/PatchedTopicTypeRequest';
@@ -216,6 +217,9 @@ import StageRequest from './model/StageRequest';
 import Storey from './model/Storey';
 import System from './model/System';
 import SystemRequest from './model/SystemRequest';
+import Tag from './model/Tag';
+import TagIdRequest from './model/TagIdRequest';
+import TagRequest from './model/TagRequest';
 import Topic from './model/Topic';
 import TopicRequest from './model/TopicRequest';
 import TopicStatus from './model/TopicStatus';
@@ -1001,6 +1005,12 @@ export {
     PatchedSystemRequest,
 
     /**
+     * The PatchedTagRequest model constructor.
+     * @property {module:model/PatchedTagRequest}
+     */
+    PatchedTagRequest,
+
+    /**
      * The PatchedTopicRequest model constructor.
      * @property {module:model/PatchedTopicRequest}
      */
@@ -1509,6 +1519,24 @@ export {
      * @property {module:model/SystemRequest}
      */
     SystemRequest,
+
+    /**
+     * The Tag model constructor.
+     * @property {module:model/Tag}
+     */
+    Tag,
+
+    /**
+     * The TagIdRequest model constructor.
+     * @property {module:model/TagIdRequest}
+     */
+    TagIdRequest,
+
+    /**
+     * The TagRequest model constructor.
+     * @property {module:model/TagRequest}
+     */
+    TagRequest,
 
     /**
      * The Topic model constructor.

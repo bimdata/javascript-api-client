@@ -125,6 +125,7 @@ docs/PatchedRulesetRequest.md
 docs/PatchedSpaceRequest.md
 docs/PatchedStageRequest.md
 docs/PatchedSystemRequest.md
+docs/PatchedTagRequest.md
 docs/PatchedTopicRequest.md
 docs/PatchedTopicStatusRequest.md
 docs/PatchedTopicTypeRequest.md
@@ -211,6 +212,9 @@ docs/StageRequest.md
 docs/Storey.md
 docs/System.md
 docs/SystemRequest.md
+docs/Tag.md
+docs/TagIdRequest.md
+docs/TagRequest.md
 docs/Topic.md
 docs/TopicRequest.md
 docs/TopicStatus.md
@@ -370,6 +374,7 @@ src/model/PatchedRulesetRequest.js
 src/model/PatchedSpaceRequest.js
 src/model/PatchedStageRequest.js
 src/model/PatchedSystemRequest.js
+src/model/PatchedTagRequest.js
 src/model/PatchedTopicRequest.js
 src/model/PatchedTopicStatusRequest.js
 src/model/PatchedTopicTypeRequest.js
@@ -455,6 +460,9 @@ src/model/StageRequest.js
 src/model/Storey.js
 src/model/System.js
 src/model/SystemRequest.js
+src/model/Tag.js
+src/model/TagIdRequest.js
+src/model/TagRequest.js
 src/model/Topic.js
 src/model/TopicRequest.js
 src/model/TopicStatus.js
@@ -609,6 +617,7 @@ test/model/PatchedRulesetRequest.spec.js
 test/model/PatchedSpaceRequest.spec.js
 test/model/PatchedStageRequest.spec.js
 test/model/PatchedSystemRequest.spec.js
+test/model/PatchedTagRequest.spec.js
 test/model/PatchedTopicRequest.spec.js
 test/model/PatchedTopicStatusRequest.spec.js
 test/model/PatchedTopicTypeRequest.spec.js
@@ -694,6 +703,9 @@ test/model/StageRequest.spec.js
 test/model/Storey.spec.js
 test/model/System.spec.js
 test/model/SystemRequest.spec.js
+test/model/Tag.spec.js
+test/model/TagIdRequest.spec.js
+test/model/TagRequest.spec.js
 test/model/Topic.spec.js
 test/model/TopicRequest.spec.js
 test/model/TopicStatus.spec.js

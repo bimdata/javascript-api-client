@@ -114,6 +114,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
+      //var instance = new bimdata.Document();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instance = new bimdata.Document();

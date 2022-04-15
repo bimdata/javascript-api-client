@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Tag from './Tag';
 
 /**
  * The Document model module.
@@ -26,15 +27,16 @@ class Document {
      * @param project {Number} 
      * @param name {String} Shown name of the file
      * @param file {String} 
+     * @param tags {Array.<module:model/Tag>} 
      * @param createdAt {Date} Creation date
      * @param updatedAt {Date} Date of the last update
      * @param modelId {Number} 
      * @param ifcId {Number} DEPRECATED: Use 'model_id' instead.
      * @param userPermission {module:model/Document.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      */
-    constructor(id, project, name, file, createdAt, updatedAt, modelId, ifcId, userPermission) { 
+    constructor(id, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission) { 
         
-        Document.initialize(this, id, project, name, file, createdAt, updatedAt, modelId, ifcId, userPermission);
+        Document.initialize(this, id, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission);
     }
 
     /**
@@ -42,11 +44,12 @@ class Document {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, project, name, file, createdAt, updatedAt, modelId, ifcId, userPermission) { 
+    static initialize(obj, id, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission) { 
         obj['id'] = id;
         obj['project'] = project;
         obj['name'] = name;
         obj['file'] = file;
+        obj['tags'] = tags;
         obj['created_at'] = createdAt;
         obj['updated_at'] = updatedAt;
         obj['model_id'] = modelId;
@@ -94,6 +97,9 @@ class Document {
             }
             if (data.hasOwnProperty('size')) {
                 obj['size'] = ApiClient.convertToType(data['size'], 'Number');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [Tag]);
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -170,6 +176,11 @@ Document.prototype['file'] = undefined;
  * @member {Number} size
  */
 Document.prototype['size'] = undefined;
+
+/**
+ * @member {Array.<module:model/Tag>} tags
+ */
+Document.prototype['tags'] = undefined;
 
 /**
  * Creation date

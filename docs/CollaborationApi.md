@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**acceptValidation**](CollaborationApi.md#acceptValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/accept | Accept a validation
+[**addDocumentTag**](CollaborationApi.md#addDocumentTag) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/tag | Add a tag to a document
 [**addGroupMember**](CollaborationApi.md#addGroupMember) | **POST** /cloud/{cloud_pk}/project/{project_pk}/group/{group_pk}/member | Add a user to a group
 [**cancelCloudUserInvitation**](CollaborationApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | Cancel a pending invitation
 [**cancelProjectUserInvitation**](CollaborationApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
@@ -19,6 +20,7 @@ Method | HTTP request | Description
 [**createManageGroup**](CollaborationApi.md#createManageGroup) | **POST** /cloud/{cloud_pk}/project/{project_pk}/group | Create a group
 [**createProject**](CollaborationApi.md#createProject) | **POST** /cloud/{cloud_pk}/project | Create a project
 [**createProjectAccessToken**](CollaborationApi.md#createProjectAccessToken) | **POST** /cloud/{cloud_pk}/project/{project_pk}/access-token | Create a token for this project
+[**createTag**](CollaborationApi.md#createTag) | **POST** /cloud/{cloud_pk}/project/{project_pk}/tag | Create a tag
 [**createValidation**](CollaborationApi.md#createValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation | Add a validation to a visa
 [**createVisa**](CollaborationApi.md#createVisa) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa | Create a visa
 [**createVisaComment**](CollaborationApi.md#createVisaComment) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment | Add a comment
@@ -26,12 +28,14 @@ Method | HTTP request | Description
 [**deleteCloud**](CollaborationApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
 [**deleteCloudUser**](CollaborationApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | Remove a user from a cloud
 [**deleteDocument**](CollaborationApi.md#deleteDocument) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Delete the document
+[**deleteDocumentTag**](CollaborationApi.md#deleteDocumentTag) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/tag/{id} | Delete a tag from a document
 [**deleteFolder**](CollaborationApi.md#deleteFolder) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Delete a folder
 [**deleteGroupMember**](CollaborationApi.md#deleteGroupMember) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/group/{group_pk}/member/{id} | Delete a user from a group
 [**deleteManageGroup**](CollaborationApi.md#deleteManageGroup) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Delete a group
 [**deleteProject**](CollaborationApi.md#deleteProject) | **DELETE** /cloud/{cloud_pk}/project/{id} | Delete a project
 [**deleteProjectAccessToken**](CollaborationApi.md#deleteProjectAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Delete a token
 [**deleteProjectUser**](CollaborationApi.md#deleteProjectUser) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Remove a user from a project
+[**deleteTag**](CollaborationApi.md#deleteTag) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/tag/{id} | Delete the tag
 [**deleteValidation**](CollaborationApi.md#deleteValidation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id} | Remove a validation
 [**deleteVisa**](CollaborationApi.md#deleteVisa) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Remove a visa
 [**deleteVisaComment**](CollaborationApi.md#deleteVisaComment) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Remove a comment
@@ -67,6 +71,8 @@ Method | HTTP request | Description
 [**getProjects**](CollaborationApi.md#getProjects) | **GET** /cloud/{cloud_pk}/project | Retrieve all projects
 [**getSelfProjects**](CollaborationApi.md#getSelfProjects) | **GET** /user/projects | List current user&#39;s projects
 [**getSelfUser**](CollaborationApi.md#getSelfUser) | **GET** /user | Get info about the current user
+[**getTag**](CollaborationApi.md#getTag) | **GET** /cloud/{cloud_pk}/project/{project_pk}/tag/{id} | Retrieve a tag
+[**getTags**](CollaborationApi.md#getTags) | **GET** /cloud/{cloud_pk}/project/{project_pk}/tag | Retrieve all tags
 [**getValidation**](CollaborationApi.md#getValidation) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id} | Retrieve a validation to a visa
 [**getValidations**](CollaborationApi.md#getValidations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation | List all validations to a visa
 [**getVisa**](CollaborationApi.md#getVisa) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Retrieve a visa of a document
@@ -89,6 +95,7 @@ Method | HTTP request | Description
 [**updateProject**](CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
 [**updateProjectAccessToken**](CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
 [**updateProjectUser**](CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Change the user role in the cloud
+[**updateTag**](CollaborationApi.md#updateTag) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/tag/{id} | Update some fields of the tag
 [**updateValidation**](CollaborationApi.md#updateValidation) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id} | Update the validator of validation
 [**updateVisa**](CollaborationApi.md#updateVisa) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Update some fields of a visa
 [**updateVisaComment**](CollaborationApi.md#updateVisaComment) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Update some fields of a comment
@@ -162,6 +169,73 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+
+## addDocumentTag
+
+> Document addDocumentTag(cloudPk, documentPk, projectPk, tagIdRequest)
+
+Add a tag to a document
+
+Add a tag to a document  Required scopes: document:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | 
+let documentPk = 56; // Number | A unique integer value identifying this document.
+let projectPk = 56; // Number | 
+let tagIdRequest = new bimdata.TagIdRequest(); // TagIdRequest | 
+apiInstance.addDocumentTag(cloudPk, documentPk, projectPk, tagIdRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**|  | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
+ **projectPk** | **Number**|  | 
+ **tagIdRequest** | [**TagIdRequest**](TagIdRequest.md)|  | 
+
+### Return type
+
+[**Document**](Document.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
 
 
 ## addGroupMember
@@ -1082,6 +1156,71 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## createTag
+
+> Tag createTag(cloudPk, projectPk, tagRequest)
+
+Create a tag
+
+Create a tag  Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let tagRequest = new bimdata.TagRequest(); // TagRequest | 
+apiInstance.createTag(cloudPk, projectPk, tagRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **tagRequest** | [**TagRequest**](TagRequest.md)|  | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
 ## createValidation
 
 > VisaValidation createValidation(cloudPk, documentPk, projectPk, visaPk, visaValidationRequest)
@@ -1545,6 +1684,73 @@ null (empty response body)
 - **Accept**: Not defined
 
 
+## deleteDocumentTag
+
+> deleteDocumentTag(cloudPk, documentPk, id, projectPk)
+
+Delete a tag from a document
+
+Delete a tag from a document  Required scopes: document:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | 
+let documentPk = 56; // Number | A unique integer value identifying this document.
+let id = 56; // Number | A unique integer value identifying this document.
+let projectPk = 56; // Number | 
+apiInstance.deleteDocumentTag(cloudPk, documentPk, id, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**|  | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
+ **id** | **Number**| A unique integer value identifying this document. | 
+ **projectPk** | **Number**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
 ## deleteFolder
 
 > deleteFolder(cloudPk, id, projectPk)
@@ -1920,6 +2126,71 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this user project. | 
  **projectPk** | **Number**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## deleteTag
+
+> deleteTag(cloudPk, id, projectPk)
+
+Delete the tag
+
+Delete the tag  Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let id = 56; // Number | A unique integer value identifying this tag.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+apiInstance.deleteTag(cloudPk, id, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **id** | **Number**| A unique integer value identifying this tag. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -4166,6 +4437,134 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
+## getTag
+
+> Tag getTag(cloudPk, id, projectPk)
+
+Retrieve a tag
+
+Retrieve a tag in the project  Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let id = 56; // Number | A unique integer value identifying this tag.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+apiInstance.getTag(cloudPk, id, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **id** | **Number**| A unique integer value identifying this tag. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getTags
+
+> [Tag] getTags(cloudPk, projectPk)
+
+Retrieve all tags
+
+Retrieve all tags in the project  Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+apiInstance.getTags(cloudPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+
+### Return type
+
+[**[Tag]**](Tag.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getValidation
 
 > VisaValidation getValidation(cloudPk, documentPk, id, projectPk, visaPk)
@@ -5637,6 +6036,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UserProject**](UserProject.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
+## updateTag
+
+> Tag updateTag(cloudPk, id, projectPk, opts)
+
+Update some fields of the tag
+
+Update some fields of the tag  Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let id = 56; // Number | A unique integer value identifying this tag.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let opts = {
+  'patchedTagRequest': new bimdata.PatchedTagRequest() // PatchedTagRequest | 
+};
+apiInstance.updateTag(cloudPk, id, projectPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **id** | **Number**| A unique integer value identifying this tag. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **patchedTagRequest** | [**PatchedTagRequest**](PatchedTagRequest.md)|  | [optional] 
+
+### Return type
+
+[**Tag**](Tag.md)
 
 ### Authorization
 
