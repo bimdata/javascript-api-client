@@ -764,7 +764,7 @@ export default class CollaborationApi {
      * @param {Number} opts.size Size of the file.
      * @param {module:model/String} opts.modelSource Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
      * @param {module:model/String} opts.ifcSource DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
     createDocumentWithHttpInfo(cloudPk, projectPk, name, file, opts) {
       opts = opts || {};
@@ -809,8 +809,8 @@ export default class CollaborationApi {
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
-      let accepts = [];
-      let returnType = null;
+      let accepts = ['application/json'];
+      let returnType = Document;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -834,7 +834,7 @@ export default class CollaborationApi {
      * @param {Number} opts.size Size of the file.
      * @param {module:model/String} opts.modelSource Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
      * @param {module:model/String} opts.ifcSource DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
     createDocument(cloudPk, projectPk, name, file, opts) {
       return this.createDocumentWithHttpInfo(cloudPk, projectPk, name, file, opts)

@@ -815,7 +815,7 @@ Name | Type | Description  | Notes
 
 ## createDocument
 
-> createDocument(cloudPk, projectPk, name, file, opts)
+> Document createDocument(cloudPk, projectPk, name, file, opts)
 
 Create a document
 
@@ -858,8 +858,8 @@ let opts = {
   'modelSource': "modelSource_example", // String | Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
   'ifcSource': "ifcSource_example" // String | DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
 };
-apiInstance.createDocument(cloudPk, projectPk, name, file, opts).then(() => {
-  console.log('API called successfully.');
+apiInstance.createDocument(cloudPk, projectPk, name, file, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -886,7 +886,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Document**](Document.md)
 
 ### Authorization
 
@@ -895,7 +895,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## createFolder
