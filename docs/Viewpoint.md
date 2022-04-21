@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **clippingPlanes** | [**[ClippingPlane]**](ClippingPlane.md) |  | [optional] 
 **snapshot** | [**Snapshot**](Snapshot.md) |  | [optional] 
 **components** | [**ComponentsParent**](ComponentsParent.md) |  | [optional] 
+**pins** | **[[Number]]** | Non standard field. Pins is a list of points representing annotation positions | [optional] 
 
 

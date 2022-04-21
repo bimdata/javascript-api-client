@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property pins (base name: "pins")', function() {
+      // uncomment below and update the code to test the property pins
+      //var instance = new bimdata.PatchedViewpointRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property tempId (base name: "temp_id")', function() {
       // uncomment below and update the code to test the property tempId
       //var instance = new bimdata.PatchedViewpointRequest();

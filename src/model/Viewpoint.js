@@ -78,6 +78,9 @@ class Viewpoint {
             if (data.hasOwnProperty('components')) {
                 obj['components'] = ApiClient.convertToType(data['components'], ComponentsParent);
             }
+            if (data.hasOwnProperty('pins')) {
+                obj['pins'] = ApiClient.convertToType(data['pins'], [['Number']]);
+            }
         }
         return obj;
     }
@@ -124,6 +127,12 @@ Viewpoint.prototype['snapshot'] = undefined;
  * @member {module:model/ComponentsParent} components
  */
 Viewpoint.prototype['components'] = undefined;
+
+/**
+ * Non standard field. Pins is a list of points representing annotation positions
+ * @member {Array.<Array.<Number>>} pins
+ */
+Viewpoint.prototype['pins'] = undefined;
 
 
 

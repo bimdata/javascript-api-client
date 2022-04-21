@@ -78,6 +78,9 @@ class PatchedViewpointRequest {
             if (data.hasOwnProperty('components')) {
                 obj['components'] = ApiClient.convertToType(data['components'], ComponentsParentRequest);
             }
+            if (data.hasOwnProperty('pins')) {
+                obj['pins'] = ApiClient.convertToType(data['pins'], [['Number']]);
+            }
             if (data.hasOwnProperty('temp_id')) {
                 obj['temp_id'] = ApiClient.convertToType(data['temp_id'], 'Number');
             }
@@ -127,6 +130,12 @@ PatchedViewpointRequest.prototype['snapshot'] = undefined;
  * @member {module:model/ComponentsParentRequest} components
  */
 PatchedViewpointRequest.prototype['components'] = undefined;
+
+/**
+ * Non standard field. Pins is a list of points representing annotation positions
+ * @member {Array.<Array.<Number>>} pins
+ */
+PatchedViewpointRequest.prototype['pins'] = undefined;
 
 /**
  * Only used when using POST on the full-topic route to bind viewpoint with comment
