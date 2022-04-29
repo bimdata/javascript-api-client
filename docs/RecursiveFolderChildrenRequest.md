@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | 
-**parentId** | **Number** |  | 
 **name** | **String** |  | 
 **createdAt** | **Date** |  | 
 **updatedAt** | **Date** |  | 

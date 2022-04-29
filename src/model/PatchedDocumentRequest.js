@@ -47,9 +47,6 @@ class PatchedDocumentRequest {
         if (data) {
             obj = obj || new PatchedDocumentRequest();
 
-            if (data.hasOwnProperty('parent')) {
-                obj['parent'] = ApiClient.convertToType(data['parent'], 'Number');
-            }
             if (data.hasOwnProperty('parent_id')) {
                 obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
             }
@@ -77,17 +74,15 @@ class PatchedDocumentRequest {
             if (data.hasOwnProperty('ifc_source')) {
                 obj['ifc_source'] = ApiClient.convertToType(data['ifc_source'], 'String');
             }
+            if (data.hasOwnProperty('successor_of')) {
+                obj['successor_of'] = ApiClient.convertToType(data['successor_of'], 'Number');
+            }
         }
         return obj;
     }
 
 
 }
-
-/**
- * @member {Number} parent
- */
-PatchedDocumentRequest.prototype['parent'] = undefined;
 
 /**
  * @member {Number} parent_id
@@ -139,6 +134,12 @@ PatchedDocumentRequest.prototype['model_source'] = undefined;
  * @member {module:model/PatchedDocumentRequest.IfcSourceEnum} ifc_source
  */
 PatchedDocumentRequest.prototype['ifc_source'] = undefined;
+
+/**
+ * Old document version to replace. Only for create
+ * @member {Number} successor_of
+ */
+PatchedDocumentRequest.prototype['successor_of'] = undefined;
 
 
 

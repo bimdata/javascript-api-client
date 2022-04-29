@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | 
-**parentId** | **Number** |  | 
+**parentId** | **Number** |  | [readonly] 
 **createdBy** | [**User**](User.md) |  | [optional] 
 **creator** | [**User**](User.md) |  | [optional] 
 **type** | **String** | DEPRECATED: Use &#39;nature&#39; instead. Values can be &#39;Folder&#39;, &#39;Document&#39; or &#39;Ifc&#39;. It is usefull to parse the tree and discriminate folders and files | [readonly] 

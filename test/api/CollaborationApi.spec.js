@@ -288,6 +288,16 @@
         done();
       });
     });
+    describe('deleteDocumentHistory', function() {
+      it('should call deleteDocumentHistory successfully', function(done) {
+        //uncomment below and update the code to test deleteDocumentHistory
+        //instance.deleteDocumentHistory(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteDocumentTag', function() {
       it('should call deleteDocumentTag successfully', function(done) {
         //uncomment below and update the code to test deleteDocumentTag
@@ -408,6 +418,16 @@
         done();
       });
     });
+    describe('exitVersionDocumentHistory', function() {
+      it('should call exitVersionDocumentHistory successfully', function(done) {
+        //uncomment below and update the code to test exitVersionDocumentHistory
+        //instance.exitVersionDocumentHistory(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getClassification', function() {
       it('should call getClassification successfully', function(done) {
         //uncomment below and update the code to test getClassification
@@ -492,6 +512,26 @@
       it('should call getDocument successfully', function(done) {
         //uncomment below and update the code to test getDocument
         //instance.getDocument(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getDocumentHistories', function() {
+      it('should call getDocumentHistories successfully', function(done) {
+        //uncomment below and update the code to test getDocumentHistories
+        //instance.getDocumentHistories(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getDocumentHistory', function() {
+      it('should call getDocumentHistory successfully', function(done) {
+        //uncomment below and update the code to test getDocumentHistory
+        //instance.getDocumentHistory(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -822,6 +862,16 @@
       it('should call leaveProject successfully', function(done) {
         //uncomment below and update the code to test leaveProject
         //instance.leaveProject(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('makeHeadVersionDocumentHistory', function() {
+      it('should call makeHeadVersionDocumentHistory successfully', function(done) {
+        //uncomment below and update the code to test makeHeadVersionDocumentHistory
+        //instance.makeHeadVersionDocumentHistory(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

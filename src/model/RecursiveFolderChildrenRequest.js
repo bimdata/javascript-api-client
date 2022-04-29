@@ -23,14 +23,13 @@ class RecursiveFolderChildrenRequest {
      * Constructs a new <code>RecursiveFolderChildrenRequest</code>.
      * @alias module:model/RecursiveFolderChildrenRequest
      * @param id {Number} 
-     * @param parentId {Number} 
      * @param name {String} 
      * @param createdAt {Date} 
      * @param updatedAt {Date} 
      */
-    constructor(id, parentId, name, createdAt, updatedAt) { 
+    constructor(id, name, createdAt, updatedAt) { 
         
-        RecursiveFolderChildrenRequest.initialize(this, id, parentId, name, createdAt, updatedAt);
+        RecursiveFolderChildrenRequest.initialize(this, id, name, createdAt, updatedAt);
     }
 
     /**
@@ -38,9 +37,8 @@ class RecursiveFolderChildrenRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, parentId, name, createdAt, updatedAt) { 
+    static initialize(obj, id, name, createdAt, updatedAt) { 
         obj['id'] = id;
-        obj['parent_id'] = parentId;
         obj['name'] = name;
         obj['created_at'] = createdAt;
         obj['updated_at'] = updatedAt;
@@ -59,9 +57,6 @@ class RecursiveFolderChildrenRequest {
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-            }
-            if (data.hasOwnProperty('parent_id')) {
-                obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -98,11 +93,6 @@ class RecursiveFolderChildrenRequest {
  * @member {Number} id
  */
 RecursiveFolderChildrenRequest.prototype['id'] = undefined;
-
-/**
- * @member {Number} parent_id
- */
-RecursiveFolderChildrenRequest.prototype['parent_id'] = undefined;
 
 /**
  * @member {String} name

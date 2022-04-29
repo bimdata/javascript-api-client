@@ -756,7 +756,6 @@ export default class CollaborationApi {
      * @param {String} name Shown name of the file
      * @param {File} file 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
      * @param {String} opts.fileName Full name of the file
@@ -764,6 +763,7 @@ export default class CollaborationApi {
      * @param {Number} opts.size Size of the file.
      * @param {module:model/String} opts.modelSource Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
      * @param {module:model/String} opts.ifcSource DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+     * @param {Number} opts.successorOf Old document version to replace. Only for create
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
     createDocumentWithHttpInfo(cloudPk, projectPk, name, file, opts) {
@@ -795,7 +795,6 @@ export default class CollaborationApi {
       let headerParams = {
       };
       let formParams = {
-        'parent': opts['parent'],
         'parent_id': opts['parentId'],
         'creator': opts['creator'],
         'name': name,
@@ -804,7 +803,8 @@ export default class CollaborationApi {
         'file': file,
         'size': opts['size'],
         'model_source': opts['modelSource'],
-        'ifc_source': opts['ifcSource']
+        'ifc_source': opts['ifcSource'],
+        'successor_of': opts['successorOf']
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
@@ -826,7 +826,6 @@ export default class CollaborationApi {
      * @param {String} name Shown name of the file
      * @param {File} file 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.parent 
      * @param {Number} opts.parentId 
      * @param {Number} opts.creator 
      * @param {String} opts.fileName Full name of the file
@@ -834,6 +833,7 @@ export default class CollaborationApi {
      * @param {Number} opts.size Size of the file.
      * @param {module:model/String} opts.modelSource Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
      * @param {module:model/String} opts.ifcSource DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+     * @param {Number} opts.successorOf Old document version to replace. Only for create
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */
     createDocument(cloudPk, projectPk, name, file, opts) {
@@ -1579,6 +1579,75 @@ export default class CollaborationApi {
      */
     deleteDocument(cloudPk, id, projectPk) {
       return this.deleteDocumentWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete the document
+     * Delete the document  Required scopes: document:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteDocumentHistoryWithHttpInfo(cloudPk, documentPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteDocumentHistory");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling deleteDocumentHistory");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteDocumentHistory");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteDocumentHistory");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete the document
+     * Delete the document  Required scopes: document:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteDocumentHistory(cloudPk, documentPk, id, projectPk) {
+      return this.deleteDocumentHistoryWithHttpInfo(cloudPk, documentPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2386,6 +2455,75 @@ export default class CollaborationApi {
 
 
     /**
+     * Exit of the history version
+     * This will create a new independent document in the same folder  Required scopes: document:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
+     */
+    exitVersionDocumentHistoryWithHttpInfo(cloudPk, documentPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling exitVersionDocumentHistory");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling exitVersionDocumentHistory");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling exitVersionDocumentHistory");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling exitVersionDocumentHistory");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Document;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id}/exit', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Exit of the history version
+     * This will create a new independent document in the same folder  Required scopes: document:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
+     */
+    exitVersionDocumentHistory(cloudPk, documentPk, id, projectPk) {
+      return this.exitVersionDocumentHistoryWithHttpInfo(cloudPk, documentPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve a classification
      * Retrieve a classification  Required scopes: ifc:read, model:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -2861,6 +2999,137 @@ export default class CollaborationApi {
      */
     getDocument(cloudPk, id, projectPk) {
       return this.getDocumentWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all document histories
+     * Retrieve all documents from the header document history  Required scopes: document:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
+     */
+    getDocumentHistoriesWithHttpInfo(cloudPk, documentPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getDocumentHistories");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling getDocumentHistories");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getDocumentHistories");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Document];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all document histories
+     * Retrieve all documents from the header document history  Required scopes: document:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
+     */
+    getDocumentHistories(cloudPk, documentPk, projectPk) {
+      return this.getDocumentHistoriesWithHttpInfo(cloudPk, documentPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a document
+     * Retrieve a document from the header document history  Required scopes: document:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
+     */
+    getDocumentHistoryWithHttpInfo(cloudPk, documentPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getDocumentHistory");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling getDocumentHistory");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getDocumentHistory");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getDocumentHistory");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Document;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a document
+     * Retrieve a document from the header document history  Required scopes: document:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
+     */
+    getDocumentHistory(cloudPk, documentPk, id, projectPk) {
+      return this.getDocumentHistoryWithHttpInfo(cloudPk, documentPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4787,6 +5056,75 @@ export default class CollaborationApi {
      */
     leaveProject(cloudPk, id) {
       return this.leaveProjectWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Make the head of the version
+     * The actual head version will be defined as the previous version  Required scopes: document:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
+     */
+    makeHeadVersionDocumentHistoryWithHttpInfo(cloudPk, documentPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling makeHeadVersionDocumentHistory");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling makeHeadVersionDocumentHistory");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling makeHeadVersionDocumentHistory");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling makeHeadVersionDocumentHistory");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Document;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id}/head-version', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Make the head of the version
+     * The actual head version will be defined as the previous version  Required scopes: document:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
+     */
+    makeHeadVersionDocumentHistory(cloudPk, documentPk, id, projectPk) {
+      return this.makeHeadVersionDocumentHistoryWithHttpInfo(cloudPk, documentPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

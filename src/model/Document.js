@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Folder from './Folder';
 import Tag from './Tag';
 
 /**
@@ -24,6 +25,7 @@ class Document {
      * Constructs a new <code>Document</code>.
      * @alias module:model/Document
      * @param id {Number} 
+     * @param parent {module:model/Folder} 
      * @param project {Number} 
      * @param name {String} Shown name of the file
      * @param file {String} 
@@ -34,9 +36,9 @@ class Document {
      * @param ifcId {Number} DEPRECATED: Use 'model_id' instead.
      * @param userPermission {module:model/Document.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      */
-    constructor(id, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission) { 
+    constructor(id, parent, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission) { 
         
-        Document.initialize(this, id, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission);
+        Document.initialize(this, id, parent, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission);
     }
 
     /**
@@ -44,8 +46,9 @@ class Document {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission) { 
+    static initialize(obj, id, parent, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission) { 
         obj['id'] = id;
+        obj['parent'] = parent;
         obj['project'] = project;
         obj['name'] = name;
         obj['file'] = file;
@@ -72,7 +75,7 @@ class Document {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('parent')) {
-                obj['parent'] = ApiClient.convertToType(data['parent'], 'Number');
+                obj['parent'] = ApiClient.convertToType(data['parent'], Folder);
             }
             if (data.hasOwnProperty('parent_id')) {
                 obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
@@ -129,7 +132,7 @@ class Document {
 Document.prototype['id'] = undefined;
 
 /**
- * @member {Number} parent
+ * @member {module:model/Folder} parent
  */
 Document.prototype['parent'] = undefined;
 

@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(bimdata.PatchedDocumentRequest);
     });
 
-    it('should have the property parent (base name: "parent")', function() {
-      // uncomment below and update the code to test the property parent
-      //var instance = new bimdata.PatchedDocumentRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property parentId (base name: "parent_id")', function() {
       // uncomment below and update the code to test the property parentId
       //var instance = new bimdata.PatchedDocumentRequest();
@@ -110,6 +104,12 @@
 
     it('should have the property ifcSource (base name: "ifc_source")', function() {
       // uncomment below and update the code to test the property ifcSource
+      //var instance = new bimdata.PatchedDocumentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property successorOf (base name: "successor_of")', function() {
+      // uncomment below and update the code to test the property successorOf
       //var instance = new bimdata.PatchedDocumentRequest();
       //expect(instance).to.be();
     });
