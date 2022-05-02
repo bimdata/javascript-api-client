@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [readonly] 
 **parentId** | **Number** |  | [optional] 
-**creator** | **Number** |  | [optional] 
+**createdBy** | [**User**](User.md) |  | [readonly] 
 **project** | **Number** |  | [readonly] 
 **name** | **String** | Shown name of the file | 
 **fileName** | **String** | Full name of the file | [optional] 

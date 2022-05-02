@@ -757,7 +757,6 @@ export default class CollaborationApi {
      * @param {File} file 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.parentId 
-     * @param {Number} opts.creator 
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
      * @param {Number} opts.size Size of the file.
@@ -796,7 +795,6 @@ export default class CollaborationApi {
       };
       let formParams = {
         'parent_id': opts['parentId'],
-        'creator': opts['creator'],
         'name': name,
         'file_name': opts['fileName'],
         'description': opts['description'],
@@ -827,7 +825,6 @@ export default class CollaborationApi {
      * @param {File} file 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.parentId 
-     * @param {Number} opts.creator 
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
      * @param {Number} opts.size Size of the file.

@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import Tag from './Tag';
+import User from './User';
 
 /**
  * The Document model module.
@@ -24,6 +25,7 @@ class Document {
      * Constructs a new <code>Document</code>.
      * @alias module:model/Document
      * @param id {Number} 
+     * @param createdBy {module:model/User} 
      * @param project {Number} 
      * @param name {String} Shown name of the file
      * @param file {String} 
@@ -34,9 +36,9 @@ class Document {
      * @param ifcId {Number} DEPRECATED: Use 'model_id' instead.
      * @param userPermission {module:model/Document.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      */
-    constructor(id, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission) { 
+    constructor(id, createdBy, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission) { 
         
-        Document.initialize(this, id, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission);
+        Document.initialize(this, id, createdBy, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission);
     }
 
     /**
@@ -44,8 +46,9 @@ class Document {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission) { 
+    static initialize(obj, id, createdBy, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission) { 
         obj['id'] = id;
+        obj['created_by'] = createdBy;
         obj['project'] = project;
         obj['name'] = name;
         obj['file'] = file;
@@ -74,8 +77,8 @@ class Document {
             if (data.hasOwnProperty('parent_id')) {
                 obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
             }
-            if (data.hasOwnProperty('creator')) {
-                obj['creator'] = ApiClient.convertToType(data['creator'], 'Number');
+            if (data.hasOwnProperty('created_by')) {
+                obj['created_by'] = ApiClient.convertToType(data['created_by'], User);
             }
             if (data.hasOwnProperty('project')) {
                 obj['project'] = ApiClient.convertToType(data['project'], 'Number');
@@ -131,9 +134,9 @@ Document.prototype['id'] = undefined;
 Document.prototype['parent_id'] = undefined;
 
 /**
- * @member {Number} creator
+ * @member {module:model/User} created_by
  */
-Document.prototype['creator'] = undefined;
+Document.prototype['created_by'] = undefined;
 
 /**
  * @member {Number} project

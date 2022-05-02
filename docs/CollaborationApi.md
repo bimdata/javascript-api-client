@@ -855,7 +855,6 @@ let name = "name_example"; // String | Shown name of the file
 let file = "/path/to/file"; // File | 
 let opts = {
   'parentId': 56, // Number | 
-  'creator': 56, // Number | 
   'fileName': "fileName_example", // String | Full name of the file
   'description': "description_example", // String | Description of the file
   'size': 789, // Number | Size of the file.
@@ -881,7 +880,6 @@ Name | Type | Description  | Notes
  **name** | **String**| Shown name of the file | 
  **file** | **File**|  | 
  **parentId** | **Number**|  | [optional] 
- **creator** | **Number**|  | [optional] 
  **fileName** | **String**| Full name of the file | [optional] 
  **description** | **String**| Description of the file | [optional] 
  **size** | **Number**| Size of the file. | [optional] 

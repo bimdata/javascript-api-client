@@ -66,8 +66,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property creator (base name: "creator")', function() {
-      // uncomment below and update the code to test the property creator
+    it('should have the property createdBy (base name: "created_by")', function() {
+      // uncomment below and update the code to test the property createdBy
       //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });

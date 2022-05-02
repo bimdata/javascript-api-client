@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **parentId** | **Number** |  | [optional] 
-**creator** | **Number** |  | [optional] 
 **name** | **String** | Shown name of the file | [optional] 
 **fileName** | **String** | Full name of the file | [optional] 
 **description** | **String** | Description of the file | [optional] 

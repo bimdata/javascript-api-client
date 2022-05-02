@@ -60,12 +60,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property creator (base name: "creator")', function() {
-      // uncomment below and update the code to test the property creator
-      //var instance = new bimdata.PatchedDocumentRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instance = new bimdata.PatchedDocumentRequest();

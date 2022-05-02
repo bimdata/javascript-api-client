@@ -50,9 +50,6 @@ class PatchedDocumentRequest {
             if (data.hasOwnProperty('parent_id')) {
                 obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
             }
-            if (data.hasOwnProperty('creator')) {
-                obj['creator'] = ApiClient.convertToType(data['creator'], 'Number');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -88,11 +85,6 @@ class PatchedDocumentRequest {
  * @member {Number} parent_id
  */
 PatchedDocumentRequest.prototype['parent_id'] = undefined;
-
-/**
- * @member {Number} creator
- */
-PatchedDocumentRequest.prototype['creator'] = undefined;
 
 /**
  * Shown name of the file
