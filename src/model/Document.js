@@ -33,12 +33,13 @@ class Document {
      * @param createdAt {Date} Creation date
      * @param updatedAt {Date} Date of the last update
      * @param modelId {Number} 
+     * @param modelType {module:model/Document.ModelTypeEnum} Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, DAE, BFX
      * @param ifcId {Number} DEPRECATED: Use 'model_id' instead.
      * @param userPermission {module:model/Document.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      */
-    constructor(id, createdBy, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission) { 
+    constructor(id, createdBy, project, name, file, tags, createdAt, updatedAt, modelId, modelType, ifcId, userPermission) { 
         
-        Document.initialize(this, id, createdBy, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission);
+        Document.initialize(this, id, createdBy, project, name, file, tags, createdAt, updatedAt, modelId, modelType, ifcId, userPermission);
     }
 
     /**
@@ -46,7 +47,7 @@ class Document {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, createdBy, project, name, file, tags, createdAt, updatedAt, modelId, ifcId, userPermission) { 
+    static initialize(obj, id, createdBy, project, name, file, tags, createdAt, updatedAt, modelId, modelType, ifcId, userPermission) { 
         obj['id'] = id;
         obj['created_by'] = createdBy;
         obj['project'] = project;
@@ -56,6 +57,7 @@ class Document {
         obj['created_at'] = createdAt;
         obj['updated_at'] = updatedAt;
         obj['model_id'] = modelId;
+        obj['model_type'] = modelType;
         obj['ifc_id'] = ifcId;
         obj['user_permission'] = userPermission;
     }
@@ -109,6 +111,9 @@ class Document {
             }
             if (data.hasOwnProperty('model_id')) {
                 obj['model_id'] = ApiClient.convertToType(data['model_id'], 'Number');
+            }
+            if (data.hasOwnProperty('model_type')) {
+                obj['model_type'] = ApiClient.convertToType(data['model_type'], 'String');
             }
             if (data.hasOwnProperty('ifc_id')) {
                 obj['ifc_id'] = ApiClient.convertToType(data['ifc_id'], 'Number');
@@ -195,6 +200,12 @@ Document.prototype['updated_at'] = undefined;
 Document.prototype['model_id'] = undefined;
 
 /**
+ * Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, DAE, BFX
+ * @member {module:model/Document.ModelTypeEnum} model_type
+ */
+Document.prototype['model_type'] = undefined;
+
+/**
  * DEPRECATED: Use 'model_id' instead.
  * @member {Number} ifc_id
  */
@@ -208,6 +219,81 @@ Document.prototype['user_permission'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>model_type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Document['ModelTypeEnum'] = {
+
+    /**
+     * value: "IFC"
+     * @const
+     */
+    "IFC": "IFC",
+
+    /**
+     * value: "DWG"
+     * @const
+     */
+    "DWG": "DWG",
+
+    /**
+     * value: "DXF"
+     * @const
+     */
+    "DXF": "DXF",
+
+    /**
+     * value: "GLTF"
+     * @const
+     */
+    "GLTF": "GLTF",
+
+    /**
+     * value: "PDF"
+     * @const
+     */
+    "PDF": "PDF",
+
+    /**
+     * value: "JPEG"
+     * @const
+     */
+    "JPEG": "JPEG",
+
+    /**
+     * value: "PNG"
+     * @const
+     */
+    "PNG": "PNG",
+
+    /**
+     * value: "OBJ"
+     * @const
+     */
+    "OBJ": "OBJ",
+
+    /**
+     * value: "DAE"
+     * @const
+     */
+    "DAE": "DAE",
+
+    /**
+     * value: "BFX"
+     * @const
+     */
+    "BFX": "BFX",
+
+    /**
+     * value: "null"
+     * @const
+     */
+    "null": "null"
+};
 
 
 /**

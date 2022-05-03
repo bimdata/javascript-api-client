@@ -132,6 +132,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property modelType (base name: "model_type")', function() {
+      // uncomment below and update the code to test the property modelType
+      //var instance = new bimdata.Document();
+      //expect(instance).to.be();
+    });
+
     it('should have the property ifcId (base name: "ifc_id")', function() {
       // uncomment below and update the code to test the property ifcId
       //var instance = new bimdata.Document();
