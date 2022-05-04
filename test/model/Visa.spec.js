@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property documentId (base name: "document_id")', function() {
+      // uncomment below and update the code to test the property documentId
+      //var instance = new bimdata.Visa();
+      //expect(instance).to.be();
+    });
+
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
       //var instance = new bimdata.Visa();

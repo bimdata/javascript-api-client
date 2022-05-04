@@ -29,14 +29,15 @@ class Visa {
      * @param validations {Array.<module:model/VisaValidation>} 
      * @param validationsInError {Array.<Number>} Validation IDs where one or more validators have no longer access to the visa document.
      * @param creator {module:model/UserProject} 
+     * @param documentId {Number} 
      * @param status {module:model/Visa.StatusEnum} 
      * @param comments {Array.<module:model/VisaComment>} 
      * @param createdAt {Date} 
      * @param updatedAt {Date} 
      */
-    constructor(id, validations, validationsInError, creator, status, comments, createdAt, updatedAt) { 
+    constructor(id, validations, validationsInError, creator, documentId, status, comments, createdAt, updatedAt) { 
         
-        Visa.initialize(this, id, validations, validationsInError, creator, status, comments, createdAt, updatedAt);
+        Visa.initialize(this, id, validations, validationsInError, creator, documentId, status, comments, createdAt, updatedAt);
     }
 
     /**
@@ -44,11 +45,12 @@ class Visa {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, validations, validationsInError, creator, status, comments, createdAt, updatedAt) { 
+    static initialize(obj, id, validations, validationsInError, creator, documentId, status, comments, createdAt, updatedAt) { 
         obj['id'] = id;
         obj['validations'] = validations;
         obj['validations_in_error'] = validationsInError;
         obj['creator'] = creator;
+        obj['document_id'] = documentId;
         obj['status'] = status;
         obj['comments'] = comments;
         obj['created_at'] = createdAt;
@@ -77,6 +79,9 @@ class Visa {
             }
             if (data.hasOwnProperty('creator')) {
                 obj['creator'] = ApiClient.convertToType(data['creator'], UserProject);
+            }
+            if (data.hasOwnProperty('document_id')) {
+                obj['document_id'] = ApiClient.convertToType(data['document_id'], 'Number');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -123,6 +128,11 @@ Visa.prototype['validations_in_error'] = undefined;
  * @member {module:model/UserProject} creator
  */
 Visa.prototype['creator'] = undefined;
+
+/**
+ * @member {Number} document_id
+ */
+Visa.prototype['document_id'] = undefined;
 
 /**
  * @member {module:model/Visa.StatusEnum} status

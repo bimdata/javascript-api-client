@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **validations** | [**[VisaValidation]**](VisaValidation.md) |  | [readonly] 
 **validationsInError** | **[Number]** | Validation IDs where one or more validators have no longer access to the visa document. | [readonly] 
 **creator** | [**UserProject**](UserProject.md) |  | [readonly] 
+**documentId** | **Number** |  | [readonly] 
 **status** | **String** |  | [readonly] 
 **description** | **String** | Description of the visa | [optional] 
 **comments** | [**[VisaComment]**](VisaComment.md) |  | [readonly] 
