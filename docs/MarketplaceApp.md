@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **isPublic** | **Boolean** |  | [optional] 
 **tags** | **[String]** |  | [optional] 
 **logo** | **String** |  | [optional] 
+**file** | **String** |  | [optional] 
 **images** | [**[MarketplaceAppImage]**](MarketplaceAppImage.md) |  | [readonly] 
 **organization** | [**PublicOrganization**](PublicOrganization.md) |  | [readonly] 
 

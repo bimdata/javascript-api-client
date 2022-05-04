@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import Tag from './Tag';
 import User from './User';
+import Visa from './Visa';
 
 /**
  * The Document model module.
@@ -30,6 +31,7 @@ class Document {
      * @param name {String} Shown name of the file
      * @param file {String} 
      * @param tags {Array.<module:model/Tag>} 
+     * @param visas {Array.<module:model/Visa>} 
      * @param createdAt {Date} Creation date
      * @param updatedAt {Date} Date of the last update
      * @param modelId {Number} 
@@ -37,9 +39,9 @@ class Document {
      * @param ifcId {Number} DEPRECATED: Use 'model_id' instead.
      * @param userPermission {module:model/Document.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      */
-    constructor(id, createdBy, project, name, file, tags, createdAt, updatedAt, modelId, modelType, ifcId, userPermission) { 
+    constructor(id, createdBy, project, name, file, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission) { 
         
-        Document.initialize(this, id, createdBy, project, name, file, tags, createdAt, updatedAt, modelId, modelType, ifcId, userPermission);
+        Document.initialize(this, id, createdBy, project, name, file, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission);
     }
 
     /**
@@ -47,13 +49,14 @@ class Document {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, createdBy, project, name, file, tags, createdAt, updatedAt, modelId, modelType, ifcId, userPermission) { 
+    static initialize(obj, id, createdBy, project, name, file, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission) { 
         obj['id'] = id;
         obj['created_by'] = createdBy;
         obj['project'] = project;
         obj['name'] = name;
         obj['file'] = file;
         obj['tags'] = tags;
+        obj['visas'] = visas;
         obj['created_at'] = createdAt;
         obj['updated_at'] = updatedAt;
         obj['model_id'] = modelId;
@@ -102,6 +105,9 @@ class Document {
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], [Tag]);
+            }
+            if (data.hasOwnProperty('visas')) {
+                obj['visas'] = ApiClient.convertToType(data['visas'], [Visa]);
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -181,6 +187,11 @@ Document.prototype['size'] = undefined;
  * @member {Array.<module:model/Tag>} tags
  */
 Document.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Visa>} visas
+ */
+Document.prototype['visas'] = undefined;
 
 /**
  * Creation date

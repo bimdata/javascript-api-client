@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **file** | **String** |  | 
 **size** | **Number** | Size of the file. | [optional] 
 **tags** | [**[Tag]**](Tag.md) |  | [readonly] 
+**visas** | [**[Visa]**](Visa.md) |  | [readonly] 
 **createdAt** | **Date** | Creation date | [readonly] 
 **updatedAt** | **Date** | Date of the last update | [readonly] 
 **modelId** | **Number** |  | [readonly] 

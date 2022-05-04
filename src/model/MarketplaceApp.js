@@ -105,6 +105,9 @@ class MarketplaceApp {
             if (data.hasOwnProperty('logo')) {
                 obj['logo'] = ApiClient.convertToType(data['logo'], 'String');
             }
+            if (data.hasOwnProperty('file')) {
+                obj['file'] = ApiClient.convertToType(data['file'], 'String');
+            }
             if (data.hasOwnProperty('images')) {
                 obj['images'] = ApiClient.convertToType(data['images'], [MarketplaceAppImage]);
             }
@@ -183,6 +186,11 @@ MarketplaceApp.prototype['tags'] = undefined;
  * @member {String} logo
  */
 MarketplaceApp.prototype['logo'] = undefined;
+
+/**
+ * @member {String} file
+ */
+MarketplaceApp.prototype['file'] = undefined;
 
 /**
  * @member {Array.<module:model/MarketplaceAppImage>} images

@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import Document from './Document';
 import UserProject from './UserProject';
 import VisaComment from './VisaComment';
 import VisaValidation from './VisaValidation';
@@ -31,14 +30,13 @@ class Visa {
      * @param validationsInError {Array.<Number>} Validation IDs where one or more validators have no longer access to the visa document.
      * @param creator {module:model/UserProject} 
      * @param status {module:model/Visa.StatusEnum} 
-     * @param document {module:model/Document} 
      * @param comments {Array.<module:model/VisaComment>} 
      * @param createdAt {Date} 
      * @param updatedAt {Date} 
      */
-    constructor(id, validations, validationsInError, creator, status, document, comments, createdAt, updatedAt) { 
+    constructor(id, validations, validationsInError, creator, status, comments, createdAt, updatedAt) { 
         
-        Visa.initialize(this, id, validations, validationsInError, creator, status, document, comments, createdAt, updatedAt);
+        Visa.initialize(this, id, validations, validationsInError, creator, status, comments, createdAt, updatedAt);
     }
 
     /**
@@ -46,13 +44,12 @@ class Visa {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, validations, validationsInError, creator, status, document, comments, createdAt, updatedAt) { 
+    static initialize(obj, id, validations, validationsInError, creator, status, comments, createdAt, updatedAt) { 
         obj['id'] = id;
         obj['validations'] = validations;
         obj['validations_in_error'] = validationsInError;
         obj['creator'] = creator;
         obj['status'] = status;
-        obj['document'] = document;
         obj['comments'] = comments;
         obj['created_at'] = createdAt;
         obj['updated_at'] = updatedAt;
@@ -86,9 +83,6 @@ class Visa {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
-            }
-            if (data.hasOwnProperty('document')) {
-                obj['document'] = ApiClient.convertToType(data['document'], Document);
             }
             if (data.hasOwnProperty('comments')) {
                 obj['comments'] = ApiClient.convertToType(data['comments'], [VisaComment]);
@@ -140,11 +134,6 @@ Visa.prototype['status'] = undefined;
  * @member {String} description
  */
 Visa.prototype['description'] = undefined;
-
-/**
- * @member {module:model/Document} document
- */
-Visa.prototype['document'] = undefined;
 
 /**
  * @member {Array.<module:model/VisaComment>} comments

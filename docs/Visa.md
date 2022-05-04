@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **creator** | [**UserProject**](UserProject.md) |  | [readonly] 
 **status** | **String** |  | [readonly] 
 **description** | **String** | Description of the visa | [optional] 
-**document** | [**Document**](Document.md) |  | [readonly] 
 **comments** | [**[VisaComment]**](VisaComment.md) |  | [readonly] 
 **deadline** | **Date** |  | [optional] 
 **createdAt** | **Date** |  | [readonly] 

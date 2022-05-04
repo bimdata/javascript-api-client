@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **isPublic** | **Boolean** |  | [optional] 
 **tags** | **[String]** |  | [optional] 
 **logo** | **File** |  | [optional] 
+**file** | **File** |  | [optional] 
 
 

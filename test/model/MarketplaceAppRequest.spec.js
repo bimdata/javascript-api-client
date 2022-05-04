@@ -120,6 +120,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property file (base name: "file")', function() {
+      // uncomment below and update the code to test the property file
+      //var instance = new bimdata.MarketplaceAppRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

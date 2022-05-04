@@ -90,12 +90,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property document (base name: "document")', function() {
-      // uncomment below and update the code to test the property document
-      //var instance = new bimdata.Visa();
-      //expect(instance).to.be();
-    });
-
     it('should have the property comments (base name: "comments")', function() {
       // uncomment below and update the code to test the property comments
       //var instance = new bimdata.Visa();

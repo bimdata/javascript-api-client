@@ -132,6 +132,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property file (base name: "file")', function() {
+      // uncomment below and update the code to test the property file
+      //var instance = new bimdata.MarketplaceApp();
+      //expect(instance).to.be();
+    });
+
     it('should have the property images (base name: "images")', function() {
       // uncomment below and update the code to test the property images
       //var instance = new bimdata.MarketplaceApp();

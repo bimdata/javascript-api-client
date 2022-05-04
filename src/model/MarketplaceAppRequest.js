@@ -86,6 +86,9 @@ class MarketplaceAppRequest {
             if (data.hasOwnProperty('logo')) {
                 obj['logo'] = ApiClient.convertToType(data['logo'], File);
             }
+            if (data.hasOwnProperty('file')) {
+                obj['file'] = ApiClient.convertToType(data['file'], File);
+            }
         }
         return obj;
     }
@@ -148,6 +151,11 @@ MarketplaceAppRequest.prototype['tags'] = undefined;
  * @member {File} logo
  */
 MarketplaceAppRequest.prototype['logo'] = undefined;
+
+/**
+ * @member {File} file
+ */
+MarketplaceAppRequest.prototype['file'] = undefined;
 
 
 
