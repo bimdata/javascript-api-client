@@ -248,10 +248,10 @@
         done();
       });
     });
-    describe('deleteAllHistory', function() {
-      it('should call deleteAllHistory successfully', function(done) {
-        //uncomment below and update the code to test deleteAllHistory
-        //instance.deleteAllHistory(function(error) {
+    describe('deleteAllDocumentHistory', function() {
+      it('should call deleteAllDocumentHistory successfully', function(done) {
+        //uncomment below and update the code to test deleteAllDocumentHistory
+        //instance.deleteAllDocumentHistory(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

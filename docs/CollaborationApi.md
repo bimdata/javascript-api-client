@@ -24,7 +24,7 @@ Method | HTTP request | Description
 [**createValidation**](CollaborationApi.md#createValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation | Add a validation to a visa
 [**createVisa**](CollaborationApi.md#createVisa) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa | Create a visa
 [**createVisaComment**](CollaborationApi.md#createVisaComment) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment | Add a comment
-[**deleteAllHistory**](CollaborationApi.md#deleteAllHistory) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/delete | Delete all document history
+[**deleteAllDocumentHistory**](CollaborationApi.md#deleteAllDocumentHistory) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/delete | Delete all document history
 [**deleteClassification**](CollaborationApi.md#deleteClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Delete a classification
 [**deleteCloud**](CollaborationApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
 [**deleteCloudUser**](CollaborationApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | Remove a user from a cloud
@@ -1434,13 +1434,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## deleteAllHistory
+## deleteAllDocumentHistory
 
-> deleteAllHistory(cloudPk, documentPk, projectPk)
+> deleteAllDocumentHistory(cloudPk, documentPk, projectPk)
 
 Delete all document history
 
-Delete all document history  Required scopes: document:write
+Delete the document from the head version and all its history  Required scopes: document:write
 
 ### Example
 
@@ -1468,7 +1468,7 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let documentPk = 56; // Number | A unique integer value identifying this document.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.deleteAllHistory(cloudPk, documentPk, projectPk).then(() => {
+apiInstance.deleteAllDocumentHistory(cloudPk, documentPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);

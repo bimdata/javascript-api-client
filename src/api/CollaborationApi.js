@@ -1357,25 +1357,25 @@ export default class CollaborationApi {
 
     /**
      * Delete all document history
-     * Delete all document history  Required scopes: document:write
+     * Delete the document from the head version and all its history  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteAllHistoryWithHttpInfo(cloudPk, documentPk, projectPk) {
+    deleteAllDocumentHistoryWithHttpInfo(cloudPk, documentPk, projectPk) {
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling deleteAllHistory");
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteAllDocumentHistory");
       }
       // verify the required parameter 'documentPk' is set
       if (documentPk === undefined || documentPk === null) {
-        throw new Error("Missing the required parameter 'documentPk' when calling deleteAllHistory");
+        throw new Error("Missing the required parameter 'documentPk' when calling deleteAllDocumentHistory");
       }
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling deleteAllHistory");
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteAllDocumentHistory");
       }
 
       let pathParams = {
@@ -1403,14 +1403,14 @@ export default class CollaborationApi {
 
     /**
      * Delete all document history
-     * Delete all document history  Required scopes: document:write
+     * Delete the document from the head version and all its history  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteAllHistory(cloudPk, documentPk, projectPk) {
-      return this.deleteAllHistoryWithHttpInfo(cloudPk, documentPk, projectPk)
+    deleteAllDocumentHistory(cloudPk, documentPk, projectPk) {
+      return this.deleteAllDocumentHistoryWithHttpInfo(cloudPk, documentPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
