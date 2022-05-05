@@ -244,6 +244,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**createValidation**](docs/CollaborationApi.md#createValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation | Add a validation to a visa
 *bimdata.CollaborationApi* | [**createVisa**](docs/CollaborationApi.md#createVisa) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa | Create a visa
 *bimdata.CollaborationApi* | [**createVisaComment**](docs/CollaborationApi.md#createVisaComment) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment | Add a comment
+*bimdata.CollaborationApi* | [**deleteAllHistory**](docs/CollaborationApi.md#deleteAllHistory) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/delete | Delete all document history
 *bimdata.CollaborationApi* | [**deleteClassification**](docs/CollaborationApi.md#deleteClassification) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Delete a classification
 *bimdata.CollaborationApi* | [**deleteCloud**](docs/CollaborationApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
 *bimdata.CollaborationApi* | [**deleteCloudUser**](docs/CollaborationApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | Remove a user from a cloud

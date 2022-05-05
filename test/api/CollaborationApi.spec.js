@@ -248,6 +248,16 @@
         done();
       });
     });
+    describe('deleteAllHistory', function() {
+      it('should call deleteAllHistory successfully', function(done) {
+        //uncomment below and update the code to test deleteAllHistory
+        //instance.deleteAllHistory(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteClassification', function() {
       it('should call deleteClassification successfully', function(done) {
         //uncomment below and update the code to test deleteClassification

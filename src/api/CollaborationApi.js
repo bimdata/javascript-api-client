@@ -1356,6 +1356,68 @@ export default class CollaborationApi {
 
 
     /**
+     * Delete all document history
+     * Delete all document history  Required scopes: document:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteAllHistoryWithHttpInfo(cloudPk, documentPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteAllHistory");
+      }
+      // verify the required parameter 'documentPk' is set
+      if (documentPk === undefined || documentPk === null) {
+        throw new Error("Missing the required parameter 'documentPk' when calling deleteAllHistory");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteAllHistory");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'document_pk': documentPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/delete', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete all document history
+     * Delete all document history  Required scopes: document:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} documentPk A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteAllHistory(cloudPk, documentPk, projectPk) {
+      return this.deleteAllHistoryWithHttpInfo(cloudPk, documentPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Delete a classification
      * All elements having this classification will lose it  Required scopes: ifc:write, model:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
