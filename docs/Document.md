@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **modelType** | **String** | Model&#39;s type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, DAE, BFX | [readonly] 
 **ifcId** | **Number** | DEPRECATED: Use &#39;model_id&#39; instead. | [readonly] 
 **userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 
+**isHeadVersion** | **Boolean** | Document is a head of version or is owned by another document | [readonly] 
 
 
 

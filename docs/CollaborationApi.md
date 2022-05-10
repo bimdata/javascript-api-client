@@ -29,7 +29,6 @@ Method | HTTP request | Description
 [**deleteCloud**](CollaborationApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
 [**deleteCloudUser**](CollaborationApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | Remove a user from a cloud
 [**deleteDocument**](CollaborationApi.md#deleteDocument) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Delete the document
-[**deleteDocumentHistory**](CollaborationApi.md#deleteDocumentHistory) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id} | Delete the document
 [**deleteDocumentTag**](CollaborationApi.md#deleteDocumentTag) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/tag/{id} | Delete a tag from a document
 [**deleteFolder**](CollaborationApi.md#deleteFolder) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Delete a folder
 [**deleteGroupMember**](CollaborationApi.md#deleteGroupMember) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/group/{group_pk}/member/{id} | Delete a user from a group
@@ -42,7 +41,6 @@ Method | HTTP request | Description
 [**deleteVisa**](CollaborationApi.md#deleteVisa) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Remove a visa
 [**deleteVisaComment**](CollaborationApi.md#deleteVisaComment) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Remove a comment
 [**denyValidation**](CollaborationApi.md#denyValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/deny | Deny a validation
-[**exitVersionDocumentHistory**](CollaborationApi.md#exitVersionDocumentHistory) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id}/exit | Exit of the history version
 [**getClassification**](CollaborationApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Retrieve a classification
 [**getClassifications**](CollaborationApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
 [**getCloud**](CollaborationApi.md#getCloud) | **GET** /cloud/{id} | Retrieve one cloud
@@ -53,7 +51,6 @@ Method | HTTP request | Description
 [**getClouds**](CollaborationApi.md#getClouds) | **GET** /cloud | Retrieve all clouds
 [**getDocument**](CollaborationApi.md#getDocument) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Retrieve a document
 [**getDocumentHistories**](CollaborationApi.md#getDocumentHistories) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history | Retrieve all document histories
-[**getDocumentHistory**](CollaborationApi.md#getDocumentHistory) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id} | Retrieve a document
 [**getDocuments**](CollaborationApi.md#getDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document | Retrieve all documents
 [**getFolder**](CollaborationApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Retrieve a folder
 [**getFolderProjectUsers**](CollaborationApi.md#getFolderProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/user | Retrieve all users in a project with the permission on the folder
@@ -87,6 +84,7 @@ Method | HTTP request | Description
 [**inviteCloudUser**](CollaborationApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | Invite a cloud administrator
 [**inviteProjectUser**](CollaborationApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | Invite a project member
 [**leaveProject**](CollaborationApi.md#leaveProject) | **POST** /cloud/{cloud_pk}/project/{id}/leave | Leave the project
+[**leaveVersionDocumentHistory**](CollaborationApi.md#leaveVersionDocumentHistory) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id}/leave | Leave the history version
 [**makeHeadVersionDocumentHistory**](CollaborationApi.md#makeHeadVersionDocumentHistory) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id}/head-version | Make the head of the version
 [**pauseVisa**](CollaborationApi.md#pauseVisa) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}/pause | Pause a visa of a document
 [**resetValidation**](CollaborationApi.md#resetValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/reset | Reset a validation
@@ -825,7 +823,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-RCreate a document. If the document is an IFC, an IFC model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;DWG&#39;, &#39;IFC&#39;, &#39;GLTF&#39;, &#39;OBJ&#39;, &#39;DXF&#39;, &#39;BFX&#39;, &#39;DAE&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -1753,73 +1751,6 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## deleteDocumentHistory
-
-> deleteDocumentHistory(cloudPk, documentPk, id, projectPk)
-
-Delete the document
-
-Delete the document  Required scopes: document:write
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: ApiKey
-let ApiKey = defaultClient.authentications['ApiKey'];
-ApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = 56; // Number | A unique integer value identifying this cloud.
-let documentPk = 56; // Number | A unique integer value identifying this document.
-let id = 56; // Number | A unique integer value identifying this document.
-let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.deleteDocumentHistory(cloudPk, documentPk, id, projectPk).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
- **documentPk** | **Number**| A unique integer value identifying this document. | 
- **id** | **Number**| A unique integer value identifying this document. | 
- **projectPk** | **Number**| A unique integer value identifying this project. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
 ## deleteDocumentTag
 
 > deleteDocumentTag(cloudPk, documentPk, id, projectPk)
@@ -2616,73 +2547,6 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## exitVersionDocumentHistory
-
-> Document exitVersionDocumentHistory(cloudPk, documentPk, id, projectPk)
-
-Exit of the history version
-
-This will create a new independent document in the same folder  Required scopes: document:write
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: ApiKey
-let ApiKey = defaultClient.authentications['ApiKey'];
-ApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = 56; // Number | A unique integer value identifying this cloud.
-let documentPk = 56; // Number | A unique integer value identifying this document.
-let id = 56; // Number | A unique integer value identifying this document.
-let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.exitVersionDocumentHistory(cloudPk, documentPk, id, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
- **documentPk** | **Number**| A unique integer value identifying this document. | 
- **id** | **Number**| A unique integer value identifying this document. | 
- **projectPk** | **Number**| A unique integer value identifying this project. | 
-
-### Return type
-
-[**Document**](Document.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## getClassification
 
 > Classification getClassification(cloudPk, id, projectPk)
@@ -3304,73 +3168,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[Document]**](Document.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getDocumentHistory
-
-> Document getDocumentHistory(cloudPk, documentPk, id, projectPk)
-
-Retrieve a document
-
-Retrieve a document from the header document history  Required scopes: document:read
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: ApiKey
-let ApiKey = defaultClient.authentications['ApiKey'];
-ApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = 56; // Number | A unique integer value identifying this cloud.
-let documentPk = 56; // Number | A unique integer value identifying this document.
-let id = 56; // Number | A unique integer value identifying this document.
-let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.getDocumentHistory(cloudPk, documentPk, id, projectPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
- **documentPk** | **Number**| A unique integer value identifying this document. | 
- **id** | **Number**| A unique integer value identifying this document. | 
- **projectPk** | **Number**| A unique integer value identifying this project. | 
-
-### Return type
-
-[**Document**](Document.md)
 
 ### Authorization
 
@@ -5493,6 +5290,73 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+
+## leaveVersionDocumentHistory
+
+> Document leaveVersionDocumentHistory(cloudPk, documentPk, id, projectPk)
+
+Leave the history version
+
+This will create a new independent document in the same folder  Required scopes: document:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let documentPk = 56; // Number | A unique integer value identifying this document.
+let id = 56; // Number | A unique integer value identifying this document.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+apiInstance.leaveVersionDocumentHistory(cloudPk, documentPk, id, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **documentPk** | **Number**| A unique integer value identifying this document. | 
+ **id** | **Number**| A unique integer value identifying this document. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+
+### Return type
+
+[**Document**](Document.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## makeHeadVersionDocumentHistory

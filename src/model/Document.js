@@ -38,10 +38,11 @@ class Document {
      * @param modelType {module:model/Document.ModelTypeEnum} Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, DAE, BFX
      * @param ifcId {Number} DEPRECATED: Use 'model_id' instead.
      * @param userPermission {module:model/Document.UserPermissionEnum} Aggregate of group user permissions and folder default permission
+     * @param isHeadVersion {Boolean} Document is a head of version or is owned by another document
      */
-    constructor(id, createdBy, project, name, file, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission) { 
+    constructor(id, createdBy, project, name, file, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission, isHeadVersion) { 
         
-        Document.initialize(this, id, createdBy, project, name, file, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission);
+        Document.initialize(this, id, createdBy, project, name, file, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission, isHeadVersion);
     }
 
     /**
@@ -49,7 +50,7 @@ class Document {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, createdBy, project, name, file, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission) { 
+    static initialize(obj, id, createdBy, project, name, file, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission, isHeadVersion) { 
         obj['id'] = id;
         obj['created_by'] = createdBy;
         obj['project'] = project;
@@ -63,6 +64,7 @@ class Document {
         obj['model_type'] = modelType;
         obj['ifc_id'] = ifcId;
         obj['user_permission'] = userPermission;
+        obj['is_head_version'] = isHeadVersion;
     }
 
     /**
@@ -126,6 +128,9 @@ class Document {
             }
             if (data.hasOwnProperty('user_permission')) {
                 obj['user_permission'] = ApiClient.convertToType(data['user_permission'], 'Number');
+            }
+            if (data.hasOwnProperty('is_head_version')) {
+                obj['is_head_version'] = ApiClient.convertToType(data['is_head_version'], 'Boolean');
             }
         }
         return obj;
@@ -227,6 +232,12 @@ Document.prototype['ifc_id'] = undefined;
  * @member {module:model/Document.UserPermissionEnum} user_permission
  */
 Document.prototype['user_permission'] = undefined;
+
+/**
+ * Document is a head of version or is owned by another document
+ * @member {Boolean} is_head_version
+ */
+Document.prototype['is_head_version'] = undefined;
 
 
 

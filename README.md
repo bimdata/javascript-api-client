@@ -249,7 +249,6 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**deleteCloud**](docs/CollaborationApi.md#deleteCloud) | **DELETE** /cloud/{id} | Delete a cloud
 *bimdata.CollaborationApi* | [**deleteCloudUser**](docs/CollaborationApi.md#deleteCloudUser) | **DELETE** /cloud/{cloud_pk}/user/{id} | Remove a user from a cloud
 *bimdata.CollaborationApi* | [**deleteDocument**](docs/CollaborationApi.md#deleteDocument) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Delete the document
-*bimdata.CollaborationApi* | [**deleteDocumentHistory**](docs/CollaborationApi.md#deleteDocumentHistory) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id} | Delete the document
 *bimdata.CollaborationApi* | [**deleteDocumentTag**](docs/CollaborationApi.md#deleteDocumentTag) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/tag/{id} | Delete a tag from a document
 *bimdata.CollaborationApi* | [**deleteFolder**](docs/CollaborationApi.md#deleteFolder) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Delete a folder
 *bimdata.CollaborationApi* | [**deleteGroupMember**](docs/CollaborationApi.md#deleteGroupMember) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/group/{group_pk}/member/{id} | Delete a user from a group
@@ -262,7 +261,6 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**deleteVisa**](docs/CollaborationApi.md#deleteVisa) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Remove a visa
 *bimdata.CollaborationApi* | [**deleteVisaComment**](docs/CollaborationApi.md#deleteVisaComment) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Remove a comment
 *bimdata.CollaborationApi* | [**denyValidation**](docs/CollaborationApi.md#denyValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/deny | Deny a validation
-*bimdata.CollaborationApi* | [**exitVersionDocumentHistory**](docs/CollaborationApi.md#exitVersionDocumentHistory) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id}/exit | Exit of the history version
 *bimdata.CollaborationApi* | [**getClassification**](docs/CollaborationApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Retrieve a classification
 *bimdata.CollaborationApi* | [**getClassifications**](docs/CollaborationApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
 *bimdata.CollaborationApi* | [**getCloud**](docs/CollaborationApi.md#getCloud) | **GET** /cloud/{id} | Retrieve one cloud
@@ -273,7 +271,6 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getClouds**](docs/CollaborationApi.md#getClouds) | **GET** /cloud | Retrieve all clouds
 *bimdata.CollaborationApi* | [**getDocument**](docs/CollaborationApi.md#getDocument) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Retrieve a document
 *bimdata.CollaborationApi* | [**getDocumentHistories**](docs/CollaborationApi.md#getDocumentHistories) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history | Retrieve all document histories
-*bimdata.CollaborationApi* | [**getDocumentHistory**](docs/CollaborationApi.md#getDocumentHistory) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id} | Retrieve a document
 *bimdata.CollaborationApi* | [**getDocuments**](docs/CollaborationApi.md#getDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document | Retrieve all documents
 *bimdata.CollaborationApi* | [**getFolder**](docs/CollaborationApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Retrieve a folder
 *bimdata.CollaborationApi* | [**getFolderProjectUsers**](docs/CollaborationApi.md#getFolderProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/user | Retrieve all users in a project with the permission on the folder
@@ -307,6 +304,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**inviteCloudUser**](docs/CollaborationApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | Invite a cloud administrator
 *bimdata.CollaborationApi* | [**inviteProjectUser**](docs/CollaborationApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | Invite a project member
 *bimdata.CollaborationApi* | [**leaveProject**](docs/CollaborationApi.md#leaveProject) | **POST** /cloud/{cloud_pk}/project/{id}/leave | Leave the project
+*bimdata.CollaborationApi* | [**leaveVersionDocumentHistory**](docs/CollaborationApi.md#leaveVersionDocumentHistory) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id}/leave | Leave the history version
 *bimdata.CollaborationApi* | [**makeHeadVersionDocumentHistory**](docs/CollaborationApi.md#makeHeadVersionDocumentHistory) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id}/head-version | Make the head of the version
 *bimdata.CollaborationApi* | [**pauseVisa**](docs/CollaborationApi.md#pauseVisa) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}/pause | Pause a visa of a document
 *bimdata.CollaborationApi* | [**resetValidation**](docs/CollaborationApi.md#resetValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/reset | Reset a validation
