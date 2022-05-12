@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **viewerPluginsUrls** | **[String]** |  | [optional] 
 **webhookSecret** | **String** |  | [optional] 
 **settingsUrl** | **String** | this URL will be called with query params ?cloud_id&#x3D; | [optional] 
-**isPublic** | **Boolean** |  | [optional] 
 **tags** | **[String]** |  | [optional] 
 **logo** | **File** |  | [optional] 
 **file** | **File** |  | [optional] 

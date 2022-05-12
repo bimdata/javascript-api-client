@@ -31,12 +31,13 @@ class MarketplaceApp {
      * @param longDescription {String} 
      * @param creator {module:model/User} 
      * @param scopes {Array.<String>} 
+     * @param isPublic {Boolean} 
      * @param images {Array.<module:model/MarketplaceAppImage>} 
      * @param organization {module:model/PublicOrganization} 
      */
-    constructor(id, name, shortDescription, longDescription, creator, scopes, images, organization) { 
+    constructor(id, name, shortDescription, longDescription, creator, scopes, isPublic, images, organization) { 
         
-        MarketplaceApp.initialize(this, id, name, shortDescription, longDescription, creator, scopes, images, organization);
+        MarketplaceApp.initialize(this, id, name, shortDescription, longDescription, creator, scopes, isPublic, images, organization);
     }
 
     /**
@@ -44,13 +45,14 @@ class MarketplaceApp {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, name, shortDescription, longDescription, creator, scopes, images, organization) { 
+    static initialize(obj, id, name, shortDescription, longDescription, creator, scopes, isPublic, images, organization) { 
         obj['id'] = id;
         obj['name'] = name;
         obj['short_description'] = shortDescription;
         obj['long_description'] = longDescription;
         obj['creator'] = creator;
         obj['scopes'] = scopes;
+        obj['is_public'] = isPublic;
         obj['images'] = images;
         obj['organization'] = organization;
     }

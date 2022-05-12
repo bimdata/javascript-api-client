@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **creator** | [**User**](User.md) |  | [readonly] 
 **scopes** | **[String]** |  | [readonly] 
 **settingsUrl** | **String** | this URL will be called with query params ?cloud_id&#x3D; | [optional] 
-**isPublic** | **Boolean** |  | [optional] 
+**isPublic** | **Boolean** |  | [readonly] 
 **tags** | **[String]** |  | [optional] 
 **logo** | **String** |  | [optional] 
 **file** | **String** |  | [optional] 

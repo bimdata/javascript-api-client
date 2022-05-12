@@ -12,7 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
+import Document from './Document';
 import FolderGroupPermission from './FolderGroupPermission';
+import Tag from './Tag';
 import User from './User';
 
 /**
@@ -37,10 +39,12 @@ class RecursiveFolderChildren {
      * @param groupsPermissions {Array.<module:model/FolderGroupPermission>} Groups permissions of folder
      * @param defaultPermission {module:model/RecursiveFolderChildren.DefaultPermissionEnum} Default permissions of folder
      * @param userPermission {module:model/RecursiveFolderChildren.UserPermissionEnum} Aggregate of group user permissions and folder default permission
+     * @param history {Array.<module:model/Document>} History of a document
+     * @param tags {Array.<module:model/Tag>} Tags of a document
      */
-    constructor(id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission) { 
+    constructor(id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, history, tags) { 
         
-        RecursiveFolderChildren.initialize(this, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission);
+        RecursiveFolderChildren.initialize(this, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, history, tags);
     }
 
     /**
@@ -48,7 +52,7 @@ class RecursiveFolderChildren {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission) { 
+    static initialize(obj, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, history, tags) { 
         obj['id'] = id;
         obj['parent_id'] = parentId;
         obj['type'] = type;
@@ -62,6 +66,8 @@ class RecursiveFolderChildren {
         obj['groups_permissions'] = groupsPermissions;
         obj['default_permission'] = defaultPermission;
         obj['user_permission'] = userPermission;
+        obj['history'] = history;
+        obj['tags'] = tags;
     }
 
     /**
@@ -131,6 +137,12 @@ class RecursiveFolderChildren {
             }
             if (data.hasOwnProperty('user_permission')) {
                 obj['user_permission'] = ApiClient.convertToType(data['user_permission'], 'Number');
+            }
+            if (data.hasOwnProperty('history')) {
+                obj['history'] = ApiClient.convertToType(data['history'], [Document]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [Tag]);
             }
             if (data.hasOwnProperty('children')) {
                 obj['children'] = ApiClient.convertToType(data['children'], [RecursiveFolderChildren]);
@@ -243,6 +255,18 @@ RecursiveFolderChildren.prototype['default_permission'] = undefined;
  * @member {module:model/RecursiveFolderChildren.UserPermissionEnum} user_permission
  */
 RecursiveFolderChildren.prototype['user_permission'] = undefined;
+
+/**
+ * History of a document
+ * @member {Array.<module:model/Document>} history
+ */
+RecursiveFolderChildren.prototype['history'] = undefined;
+
+/**
+ * Tags of a document
+ * @member {Array.<module:model/Tag>} tags
+ */
+RecursiveFolderChildren.prototype['tags'] = undefined;
 
 /**
  * @member {Array.<module:model/RecursiveFolderChildren>} children

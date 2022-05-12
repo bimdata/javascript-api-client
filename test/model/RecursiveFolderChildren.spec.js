@@ -168,6 +168,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property history (base name: "history")', function() {
+      // uncomment below and update the code to test the property history
+      //var instance = new bimdata.RecursiveFolderChildren();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
+      //var instance = new bimdata.RecursiveFolderChildren();
+      //expect(instance).to.be();
+    });
+
     it('should have the property children (base name: "children")', function() {
       // uncomment below and update the code to test the property children
       //var instance = new bimdata.RecursiveFolderChildren();

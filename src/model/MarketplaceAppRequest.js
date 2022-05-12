@@ -77,9 +77,6 @@ class MarketplaceAppRequest {
             if (data.hasOwnProperty('settings_url')) {
                 obj['settings_url'] = ApiClient.convertToType(data['settings_url'], 'String');
             }
-            if (data.hasOwnProperty('is_public')) {
-                obj['is_public'] = ApiClient.convertToType(data['is_public'], 'Boolean');
-            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
@@ -136,11 +133,6 @@ MarketplaceAppRequest.prototype['webhook_secret'] = undefined;
  * @member {String} settings_url
  */
 MarketplaceAppRequest.prototype['settings_url'] = undefined;
-
-/**
- * @member {Boolean} is_public
- */
-MarketplaceAppRequest.prototype['is_public'] = undefined;
 
 /**
  * @member {Array.<String>} tags

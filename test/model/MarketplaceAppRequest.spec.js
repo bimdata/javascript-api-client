@@ -102,12 +102,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property isPublic (base name: "is_public")', function() {
-      // uncomment below and update the code to test the property isPublic
-      //var instance = new bimdata.MarketplaceAppRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property tags (base name: "tags")', function() {
       // uncomment below and update the code to test the property tags
       //var instance = new bimdata.MarketplaceAppRequest();

@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **groupsPermissions** | [**[FolderGroupPermission]**](FolderGroupPermission.md) | Groups permissions of folder | [readonly] 
 **defaultPermission** | **Number** | Default permissions of folder | [readonly] 
 **userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 
+**history** | [**[Document]**](Document.md) | History of a document | [readonly] 
+**tags** | [**[Tag]**](Tag.md) | Tags of a document | [readonly] 
 **children** | [**[RecursiveFolderChildren]**](RecursiveFolderChildren.md) |  | [optional] 
 
 
