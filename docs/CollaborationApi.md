@@ -693,11 +693,11 @@ Name | Type | Description  | Notes
 
 ## createDMSTree
 
-> createDMSTree(cloudPk, id, folderRequest)
+> createDMSTree(cloudPk, id, writeFolderRequest)
 
 Create a complete DMS tree
 
- Create a DMS structure of folder Format request :     [{         \&quot;name\&quot;: :name:         \&quot;parent_id\&quot;: :parent_id:                      # optionnal         \&quot;default_permission\&quot;: :default_permission:    # optionnal         \&quot;children\&quot;: [{                                # optionnal             \&quot;name\&quot;: :name:,             \&quot;children\&quot;: []         }]     }],                   Required scopes: org:manage
+ Create a DMS structure of folder Format request : &#x60;&#x60;&#x60; [{     \&quot;name\&quot;: :name:     \&quot;parent_id\&quot;: :parent_id:                      # optionnal     \&quot;default_permission\&quot;: :default_permission:    # optionnal     \&quot;children\&quot;: [{                                # optionnal         \&quot;name\&quot;: :name:,         \&quot;children\&quot;: []     }] }], &#x60;&#x60;&#x60;                   Required scopes: org:manage
 
 ### Example
 
@@ -724,8 +724,8 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this project.
-let folderRequest = new bimdata.FolderRequest(); // FolderRequest | 
-apiInstance.createDMSTree(cloudPk, id, folderRequest).then(() => {
+let writeFolderRequest = new bimdata.WriteFolderRequest(); // WriteFolderRequest | 
+apiInstance.createDMSTree(cloudPk, id, writeFolderRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -740,7 +740,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
- **folderRequest** | [**FolderRequest**](FolderRequest.md)|  | 
+ **writeFolderRequest** | [**WriteFolderRequest**](WriteFolderRequest.md)|  | 
 
 ### Return type
 
@@ -823,7 +823,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;DXF&#39;, &#39;GLTF&#39;, &#39;OBJ&#39;, &#39;IFC&#39;, &#39;DAE&#39;, &#39;BFX&#39;, &#39;DWG&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;DAE&#39;, &#39;GLTF&#39;, &#39;IFC&#39;, &#39;DXF&#39;, &#39;DWG&#39;, &#39;OBJ&#39;, &#39;BFX&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 

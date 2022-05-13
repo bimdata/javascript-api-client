@@ -21,7 +21,6 @@ import CloudInvitationRequest from '../model/CloudInvitationRequest';
 import CloudRequest from '../model/CloudRequest';
 import Document from '../model/Document';
 import Folder from '../model/Folder';
-import FolderRequest from '../model/FolderRequest';
 import FolderUserProject from '../model/FolderUserProject';
 import FolderWithoutChildren from '../model/FolderWithoutChildren';
 import FolderWithoutChildrenRequest from '../model/FolderWithoutChildrenRequest';
@@ -64,6 +63,7 @@ import VisaCommentRequest from '../model/VisaCommentRequest';
 import VisaRequest from '../model/VisaRequest';
 import VisaValidation from '../model/VisaValidation';
 import VisaValidationRequest from '../model/VisaValidationRequest';
+import WriteFolderRequest from '../model/WriteFolderRequest';
 
 /**
 * Collaboration service.
@@ -641,14 +641,14 @@ export default class CollaborationApi {
 
     /**
      * Create a complete DMS tree
-     *  Create a DMS structure of folder Format request :     [{         \"name\": :name:         \"parent_id\": :parent_id:                      # optionnal         \"default_permission\": :default_permission:    # optionnal         \"children\": [{                                # optionnal             \"name\": :name:,             \"children\": []         }]     }],                   Required scopes: org:manage
+     *  Create a DMS structure of folder Format request : ``` [{     \"name\": :name:     \"parent_id\": :parent_id:                      # optionnal     \"default_permission\": :default_permission:    # optionnal     \"children\": [{                                # optionnal         \"name\": :name:,         \"children\": []     }] }], ```                   Required scopes: org:manage
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @param {module:model/FolderRequest} folderRequest 
+     * @param {module:model/WriteFolderRequest} writeFolderRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    createDMSTreeWithHttpInfo(cloudPk, id, folderRequest) {
-      let postBody = folderRequest;
+    createDMSTreeWithHttpInfo(cloudPk, id, writeFolderRequest) {
+      let postBody = writeFolderRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createDMSTree");
@@ -657,9 +657,9 @@ export default class CollaborationApi {
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling createDMSTree");
       }
-      // verify the required parameter 'folderRequest' is set
-      if (folderRequest === undefined || folderRequest === null) {
-        throw new Error("Missing the required parameter 'folderRequest' when calling createDMSTree");
+      // verify the required parameter 'writeFolderRequest' is set
+      if (writeFolderRequest === undefined || writeFolderRequest === null) {
+        throw new Error("Missing the required parameter 'writeFolderRequest' when calling createDMSTree");
       }
 
       let pathParams = {
@@ -686,14 +686,14 @@ export default class CollaborationApi {
 
     /**
      * Create a complete DMS tree
-     *  Create a DMS structure of folder Format request :     [{         \"name\": :name:         \"parent_id\": :parent_id:                      # optionnal         \"default_permission\": :default_permission:    # optionnal         \"children\": [{                                # optionnal             \"name\": :name:,             \"children\": []         }]     }],                   Required scopes: org:manage
+     *  Create a DMS structure of folder Format request : ``` [{     \"name\": :name:     \"parent_id\": :parent_id:                      # optionnal     \"default_permission\": :default_permission:    # optionnal     \"children\": [{                                # optionnal         \"name\": :name:,         \"children\": []     }] }], ```                   Required scopes: org:manage
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @param {module:model/FolderRequest} folderRequest 
+     * @param {module:model/WriteFolderRequest} writeFolderRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    createDMSTree(cloudPk, id, folderRequest) {
-      return this.createDMSTreeWithHttpInfo(cloudPk, id, folderRequest)
+    createDMSTree(cloudPk, id, writeFolderRequest) {
+      return this.createDMSTreeWithHttpInfo(cloudPk, id, writeFolderRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -750,7 +750,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'GLTF', 'OBJ', 'IFC', 'DAE', 'BFX', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DAE', 'GLTF', 'IFC', 'DXF', 'DWG', 'OBJ', 'BFX'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -818,7 +818,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'GLTF', 'OBJ', 'IFC', 'DAE', 'BFX', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DAE', 'GLTF', 'IFC', 'DXF', 'DWG', 'OBJ', 'BFX'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file

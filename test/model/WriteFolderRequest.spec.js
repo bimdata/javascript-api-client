@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.FolderRequest();
+    instance = new bimdata.WriteFolderRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,34 @@
       object[property] = value;
   }
 
-  describe('FolderRequest', function() {
-    it('should create an instance of FolderRequest', function() {
-      // uncomment below and update the code to test FolderRequest
-      //var instance = new bimdata.FolderRequest();
-      //expect(instance).to.be.a(bimdata.FolderRequest);
+  describe('WriteFolderRequest', function() {
+    it('should create an instance of WriteFolderRequest', function() {
+      // uncomment below and update the code to test WriteFolderRequest
+      //var instance = new bimdata.WriteFolderRequest();
+      //expect(instance).to.be.a(bimdata.WriteFolderRequest);
     });
 
     it('should have the property parentId (base name: "parent_id")', function() {
       // uncomment below and update the code to test the property parentId
-      //var instance = new bimdata.FolderRequest();
+      //var instance = new bimdata.WriteFolderRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new bimdata.FolderRequest();
+      //var instance = new bimdata.WriteFolderRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property defaultPermission (base name: "default_permission")', function() {
       // uncomment below and update the code to test the property defaultPermission
-      //var instance = new bimdata.FolderRequest();
+      //var instance = new bimdata.WriteFolderRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property children (base name: "children")', function() {
+      // uncomment below and update the code to test the property children
+      //var instance = new bimdata.WriteFolderRequest();
       //expect(instance).to.be();
     });
 

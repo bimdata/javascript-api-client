@@ -1,4 +1,4 @@
-# bimdata.FolderRequest
+# bimdata.WriteFolderRequest
 
 ## Properties
 
@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **parentId** | **Number** |  | [optional] 
 **name** | **String** | Name of the folder | 
 **defaultPermission** | **Number** | Permission for a Folder | [optional] 
+**children** | [**[WriteFolderRequest]**](WriteFolderRequest.md) |  | [optional] 
 
 
 

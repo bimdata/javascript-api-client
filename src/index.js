@@ -55,7 +55,6 @@ import FeatureRequest from './model/FeatureRequest';
 import Folder from './model/Folder';
 import FolderGroupPermission from './model/FolderGroupPermission';
 import FolderGroupPermissionRequest from './model/FolderGroupPermissionRequest';
-import FolderRequest from './model/FolderRequest';
 import FolderUserProject from './model/FolderUserProject';
 import FolderWithoutChildren from './model/FolderWithoutChildren';
 import FolderWithoutChildrenRequest from './model/FolderWithoutChildrenRequest';
@@ -197,7 +196,6 @@ import RawSystemRequest from './model/RawSystemRequest';
 import RawUnit from './model/RawUnit';
 import RawUnitRequest from './model/RawUnitRequest';
 import RecursiveFolderChildren from './model/RecursiveFolderChildren';
-import RecursiveFolderChildrenRequest from './model/RecursiveFolderChildrenRequest';
 import Rule from './model/Rule';
 import RuleComponent from './model/RuleComponent';
 import RuleComponentRequest from './model/RuleComponentRequest';
@@ -245,6 +243,7 @@ import Visibility from './model/Visibility';
 import VisibilityRequest from './model/VisibilityRequest';
 import WebHook from './model/WebHook';
 import WebHookRequest from './model/WebHookRequest';
+import WriteFolderRequest from './model/WriteFolderRequest';
 import Zone from './model/Zone';
 import ZoneRequest from './model/ZoneRequest';
 import ZoneSpace from './model/ZoneSpace';
@@ -547,12 +546,6 @@ export {
      * @property {module:model/FolderGroupPermissionRequest}
      */
     FolderGroupPermissionRequest,
-
-    /**
-     * The FolderRequest model constructor.
-     * @property {module:model/FolderRequest}
-     */
-    FolderRequest,
 
     /**
      * The FolderUserProject model constructor.
@@ -1401,12 +1394,6 @@ export {
     RecursiveFolderChildren,
 
     /**
-     * The RecursiveFolderChildrenRequest model constructor.
-     * @property {module:model/RecursiveFolderChildrenRequest}
-     */
-    RecursiveFolderChildrenRequest,
-
-    /**
      * The Rule model constructor.
      * @property {module:model/Rule}
      */
@@ -1687,6 +1674,12 @@ export {
      * @property {module:model/WebHookRequest}
      */
     WebHookRequest,
+
+    /**
+     * The WriteFolderRequest model constructor.
+     * @property {module:model/WriteFolderRequest}
+     */
+    WriteFolderRequest,
 
     /**
      * The Zone model constructor.

@@ -47,7 +47,6 @@ docs/FeatureRequest.md
 docs/Folder.md
 docs/FolderGroupPermission.md
 docs/FolderGroupPermissionRequest.md
-docs/FolderRequest.md
 docs/FolderUserProject.md
 docs/FolderWithoutChildren.md
 docs/FolderWithoutChildrenRequest.md
@@ -191,7 +190,6 @@ docs/RawSystemRequest.md
 docs/RawUnit.md
 docs/RawUnitRequest.md
 docs/RecursiveFolderChildren.md
-docs/RecursiveFolderChildrenRequest.md
 docs/Rule.md
 docs/RuleComponent.md
 docs/RuleComponentRequest.md
@@ -241,6 +239,7 @@ docs/VisibilityRequest.md
 docs/WebHook.md
 docs/WebHookRequest.md
 docs/WebhookApi.md
+docs/WriteFolderRequest.md
 docs/Zone.md
 docs/ZoneRequest.md
 docs/ZoneSpace.md
@@ -298,7 +297,6 @@ src/model/FeatureRequest.js
 src/model/Folder.js
 src/model/FolderGroupPermission.js
 src/model/FolderGroupPermissionRequest.js
-src/model/FolderRequest.js
 src/model/FolderUserProject.js
 src/model/FolderWithoutChildren.js
 src/model/FolderWithoutChildrenRequest.js
@@ -440,7 +438,6 @@ src/model/RawSystemRequest.js
 src/model/RawUnit.js
 src/model/RawUnitRequest.js
 src/model/RecursiveFolderChildren.js
-src/model/RecursiveFolderChildrenRequest.js
 src/model/Rule.js
 src/model/RuleComponent.js
 src/model/RuleComponentRequest.js
@@ -488,6 +485,7 @@ src/model/Visibility.js
 src/model/VisibilityRequest.js
 src/model/WebHook.js
 src/model/WebHookRequest.js
+src/model/WriteFolderRequest.js
 src/model/Zone.js
 src/model/ZoneRequest.js
 src/model/ZoneSpace.js
@@ -541,7 +539,6 @@ test/model/FeatureRequest.spec.js
 test/model/Folder.spec.js
 test/model/FolderGroupPermission.spec.js
 test/model/FolderGroupPermissionRequest.spec.js
-test/model/FolderRequest.spec.js
 test/model/FolderUserProject.spec.js
 test/model/FolderWithoutChildren.spec.js
 test/model/FolderWithoutChildrenRequest.spec.js
@@ -683,7 +680,6 @@ test/model/RawSystemRequest.spec.js
 test/model/RawUnit.spec.js
 test/model/RawUnitRequest.spec.js
 test/model/RecursiveFolderChildren.spec.js
-test/model/RecursiveFolderChildrenRequest.spec.js
 test/model/Rule.spec.js
 test/model/RuleComponent.spec.js
 test/model/RuleComponentRequest.spec.js
@@ -731,6 +727,7 @@ test/model/Visibility.spec.js
 test/model/VisibilityRequest.spec.js
 test/model/WebHook.spec.js
 test/model/WebHookRequest.spec.js
+test/model/WriteFolderRequest.spec.js
 test/model/Zone.spec.js
 test/model/ZoneRequest.spec.js
 test/model/ZoneSpace.spec.js
