@@ -50,9 +50,6 @@ class PatchedModelRequest {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
-            }
             if (data.hasOwnProperty('source')) {
                 obj['source'] = ApiClient.convertToType(data['source'], 'String');
             }
@@ -85,11 +82,6 @@ class PatchedModelRequest {
  * @member {String} name
  */
 PatchedModelRequest.prototype['name'] = undefined;
-
-/**
- * @member {String} status
- */
-PatchedModelRequest.prototype['status'] = undefined;
 
 /**
  * @member {module:model/PatchedModelRequest.SourceEnum} source

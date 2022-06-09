@@ -60,6 +60,9 @@ class PatchedViewpointRequest {
             if (data.hasOwnProperty('guid')) {
                 obj['guid'] = ApiClient.convertToType(data['guid'], 'String');
             }
+            if (data.hasOwnProperty('authoring_view')) {
+                obj['authoring_view'] = ApiClient.convertToType(data['authoring_view'], 'String');
+            }
             if (data.hasOwnProperty('orthogonal_camera')) {
                 obj['orthogonal_camera'] = ApiClient.convertToType(data['orthogonal_camera'], OrthogonalCameraRequest);
             }
@@ -100,6 +103,11 @@ PatchedViewpointRequest.prototype['index'] = undefined;
  * @member {String} guid
  */
 PatchedViewpointRequest.prototype['guid'] = undefined;
+
+/**
+ * @member {String} authoring_view
+ */
+PatchedViewpointRequest.prototype['authoring_view'] = undefined;
 
 /**
  * @member {module:model/OrthogonalCameraRequest} orthogonal_camera

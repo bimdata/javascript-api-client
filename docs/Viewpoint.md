@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **index** | **Number** |  | [optional] 
 **guid** | **String** |  | [optional] 
+**authoringView** | **String** |  | [optional] 
 **orthogonalCamera** | [**OrthogonalCamera**](OrthogonalCamera.md) |  | [optional] 
 **perspectiveCamera** | [**PerspectiveCamera**](PerspectiveCamera.md) |  | [optional] 
 **lines** | [**[Line]**](Line.md) |  | [optional] 

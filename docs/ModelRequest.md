@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
-**status** | **String** |  | 
 **source** | **String** |  | [optional] 
 **worldPosition** | **[Number]** | [x,y,z] array of the position of the local_placement in world coordinates | [optional] 
 **sizeRatio** | **Number** | How many meters a unit represents | [optional] 

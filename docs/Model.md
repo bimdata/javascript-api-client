@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **type** | **String** |  | [readonly] 
 **creator** | [**User**](User.md) |  | [readonly] 
-**status** | **String** |  | 
+**status** | **String** |  | [readonly] 
 **source** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [readonly] 
 **updatedAt** | **Date** |  | [readonly] 

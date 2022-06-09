@@ -60,12 +60,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
-      //var instance = new bimdata.ModelRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property source (base name: "source")', function() {
       // uncomment below and update the code to test the property source
       //var instance = new bimdata.ModelRequest();

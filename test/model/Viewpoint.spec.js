@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property authoringView (base name: "authoring_view")', function() {
+      // uncomment below and update the code to test the property authoringView
+      //var instance = new bimdata.Viewpoint();
+      //expect(instance).to.be();
+    });
+
     it('should have the property orthogonalCamera (base name: "orthogonal_camera")', function() {
       // uncomment below and update the code to test the property orthogonalCamera
       //var instance = new bimdata.Viewpoint();

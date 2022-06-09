@@ -60,6 +60,9 @@ class Viewpoint {
             if (data.hasOwnProperty('guid')) {
                 obj['guid'] = ApiClient.convertToType(data['guid'], 'String');
             }
+            if (data.hasOwnProperty('authoring_view')) {
+                obj['authoring_view'] = ApiClient.convertToType(data['authoring_view'], 'String');
+            }
             if (data.hasOwnProperty('orthogonal_camera')) {
                 obj['orthogonal_camera'] = ApiClient.convertToType(data['orthogonal_camera'], OrthogonalCamera);
             }
@@ -97,6 +100,11 @@ Viewpoint.prototype['index'] = undefined;
  * @member {String} guid
  */
 Viewpoint.prototype['guid'] = undefined;
+
+/**
+ * @member {String} authoring_view
+ */
+Viewpoint.prototype['authoring_view'] = undefined;
 
 /**
  * @member {module:model/OrthogonalCamera} orthogonal_camera

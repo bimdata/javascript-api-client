@@ -22,11 +22,10 @@ class ModelRequest {
     /**
      * Constructs a new <code>ModelRequest</code>.
      * @alias module:model/ModelRequest
-     * @param status {String} 
      */
-    constructor(status) { 
+    constructor() { 
         
-        ModelRequest.initialize(this, status);
+        ModelRequest.initialize(this);
     }
 
     /**
@@ -34,8 +33,7 @@ class ModelRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, status) { 
-        obj['status'] = status;
+    static initialize(obj) { 
     }
 
     /**
@@ -51,9 +49,6 @@ class ModelRequest {
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('source')) {
                 obj['source'] = ApiClient.convertToType(data['source'], 'String');
@@ -87,11 +82,6 @@ class ModelRequest {
  * @member {String} name
  */
 ModelRequest.prototype['name'] = undefined;
-
-/**
- * @member {String} status
- */
-ModelRequest.prototype['status'] = undefined;
 
 /**
  * @member {module:model/ModelRequest.SourceEnum} source
