@@ -17,6 +17,7 @@ import ComponentsParent from './ComponentsParent';
 import Line from './Line';
 import OrthogonalCamera from './OrthogonalCamera';
 import PerspectiveCamera from './PerspectiveCamera';
+import Pin from './Pin';
 import Snapshot from './Snapshot';
 
 /**
@@ -82,7 +83,7 @@ class Viewpoint {
                 obj['components'] = ApiClient.convertToType(data['components'], ComponentsParent);
             }
             if (data.hasOwnProperty('pins')) {
-                obj['pins'] = ApiClient.convertToType(data['pins'], [['Number']]);
+                obj['pins'] = ApiClient.convertToType(data['pins'], [Pin]);
             }
         }
         return obj;
@@ -137,8 +138,8 @@ Viewpoint.prototype['snapshot'] = undefined;
 Viewpoint.prototype['components'] = undefined;
 
 /**
- * Non standard field. Pins is a list of points representing annotation positions
- * @member {Array.<Array.<Number>>} pins
+ * Non standard field. Pins (or markers/annotations) are points of interest
+ * @member {Array.<module:model/Pin>} pins
  */
 Viewpoint.prototype['pins'] = undefined;
 

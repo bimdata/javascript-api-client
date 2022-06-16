@@ -17,6 +17,7 @@ import ComponentsParentRequest from './ComponentsParentRequest';
 import LineRequest from './LineRequest';
 import OrthogonalCameraRequest from './OrthogonalCameraRequest';
 import PerspectiveCameraRequest from './PerspectiveCameraRequest';
+import PinRequest from './PinRequest';
 import SnapshotRequest from './SnapshotRequest';
 
 /**
@@ -82,7 +83,7 @@ class ViewpointRequest {
                 obj['components'] = ApiClient.convertToType(data['components'], ComponentsParentRequest);
             }
             if (data.hasOwnProperty('pins')) {
-                obj['pins'] = ApiClient.convertToType(data['pins'], [['Number']]);
+                obj['pins'] = ApiClient.convertToType(data['pins'], [PinRequest]);
             }
             if (data.hasOwnProperty('temp_id')) {
                 obj['temp_id'] = ApiClient.convertToType(data['temp_id'], 'Number');
@@ -140,8 +141,8 @@ ViewpointRequest.prototype['snapshot'] = undefined;
 ViewpointRequest.prototype['components'] = undefined;
 
 /**
- * Non standard field. Pins is a list of points representing annotation positions
- * @member {Array.<Array.<Number>>} pins
+ * Non standard field. Pins (or markers/annotations) are points of interest
+ * @member {Array.<module:model/PinRequest>} pins
  */
 ViewpointRequest.prototype['pins'] = undefined;
 

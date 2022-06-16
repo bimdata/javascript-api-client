@@ -140,6 +140,8 @@ docs/PatchedZoneRequest.md
 docs/PatchedZoneSpaceRequest.md
 docs/PerspectiveCamera.md
 docs/PerspectiveCameraRequest.md
+docs/Pin.md
+docs/PinRequest.md
 docs/Point.md
 docs/PointRequest.md
 docs/PositioningPlan.md
@@ -388,6 +390,8 @@ src/model/PatchedZoneRequest.js
 src/model/PatchedZoneSpaceRequest.js
 src/model/PerspectiveCamera.js
 src/model/PerspectiveCameraRequest.js
+src/model/Pin.js
+src/model/PinRequest.js
 src/model/Point.js
 src/model/PointRequest.js
 src/model/PositioningPlan.js
@@ -630,6 +634,8 @@ test/model/PatchedZoneRequest.spec.js
 test/model/PatchedZoneSpaceRequest.spec.js
 test/model/PerspectiveCamera.spec.js
 test/model/PerspectiveCameraRequest.spec.js
+test/model/Pin.spec.js
+test/model/PinRequest.spec.js
 test/model/Point.spec.js
 test/model/PointRequest.spec.js
 test/model/PositioningPlan.spec.js

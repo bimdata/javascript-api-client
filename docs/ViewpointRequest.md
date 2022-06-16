@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **clippingPlanes** | [**[ClippingPlaneRequest]**](ClippingPlaneRequest.md) |  | [optional] 
 **snapshot** | [**SnapshotRequest**](SnapshotRequest.md) |  | [optional] 
 **components** | [**ComponentsParentRequest**](ComponentsParentRequest.md) |  | [optional] 
-**pins** | **[[Number]]** | Non standard field. Pins is a list of points representing annotation positions | [optional] 
+**pins** | [**[PinRequest]**](PinRequest.md) | Non standard field. Pins (or markers/annotations) are points of interest | [optional] 
 **tempId** | **Number** | Only used when using POST on the full-topic route to bind viewpoint with comment | [optional] 
 
 

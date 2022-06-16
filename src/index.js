@@ -146,6 +146,8 @@ import PatchedZoneRequest from './model/PatchedZoneRequest';
 import PatchedZoneSpaceRequest from './model/PatchedZoneSpaceRequest';
 import PerspectiveCamera from './model/PerspectiveCamera';
 import PerspectiveCameraRequest from './model/PerspectiveCameraRequest';
+import Pin from './model/Pin';
+import PinRequest from './model/PinRequest';
 import Point from './model/Point';
 import PointRequest from './model/PointRequest';
 import PositioningPlan from './model/PositioningPlan';
@@ -1092,6 +1094,18 @@ export {
      * @property {module:model/PerspectiveCameraRequest}
      */
     PerspectiveCameraRequest,
+
+    /**
+     * The Pin model constructor.
+     * @property {module:model/Pin}
+     */
+    Pin,
+
+    /**
+     * The PinRequest model constructor.
+     * @property {module:model/PinRequest}
+     */
+    PinRequest,
 
     /**
      * The Point model constructor.

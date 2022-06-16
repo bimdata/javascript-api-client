@@ -768,6 +768,8 @@ Class | Method | HTTP request | Description
  - [bimdata.PatchedZoneSpaceRequest](docs/PatchedZoneSpaceRequest.md)
  - [bimdata.PerspectiveCamera](docs/PerspectiveCamera.md)
  - [bimdata.PerspectiveCameraRequest](docs/PerspectiveCameraRequest.md)
+ - [bimdata.Pin](docs/Pin.md)
+ - [bimdata.PinRequest](docs/PinRequest.md)
  - [bimdata.Point](docs/Point.md)
  - [bimdata.PointRequest](docs/PointRequest.md)
  - [bimdata.PositioningPlan](docs/PositioningPlan.md)
