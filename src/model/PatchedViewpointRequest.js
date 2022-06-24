@@ -61,8 +61,11 @@ class PatchedViewpointRequest {
             if (data.hasOwnProperty('guid')) {
                 obj['guid'] = ApiClient.convertToType(data['guid'], 'String');
             }
-            if (data.hasOwnProperty('authoring_view')) {
-                obj['authoring_view'] = ApiClient.convertToType(data['authoring_view'], 'String');
+            if (data.hasOwnProperty('originating_system')) {
+                obj['originating_system'] = ApiClient.convertToType(data['originating_system'], 'String');
+            }
+            if (data.hasOwnProperty('authoring_tool_id')) {
+                obj['authoring_tool_id'] = ApiClient.convertToType(data['authoring_tool_id'], 'String');
             }
             if (data.hasOwnProperty('orthogonal_camera')) {
                 obj['orthogonal_camera'] = ApiClient.convertToType(data['orthogonal_camera'], OrthogonalCameraRequest);
@@ -106,9 +109,16 @@ PatchedViewpointRequest.prototype['index'] = undefined;
 PatchedViewpointRequest.prototype['guid'] = undefined;
 
 /**
- * @member {String} authoring_view
+ * Name of the system in which the viewpoint is originated
+ * @member {String} originating_system
  */
-PatchedViewpointRequest.prototype['authoring_view'] = undefined;
+PatchedViewpointRequest.prototype['originating_system'] = undefined;
+
+/**
+ * System specific identifier of the viewpoint in the originating BIM tool
+ * @member {String} authoring_tool_id
+ */
+PatchedViewpointRequest.prototype['authoring_tool_id'] = undefined;
 
 /**
  * @member {module:model/OrthogonalCameraRequest} orthogonal_camera

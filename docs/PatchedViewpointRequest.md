@@ -6,7 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **index** | **Number** |  | [optional] 
 **guid** | **String** |  | [optional] 
-**authoringView** | **String** |  | [optional] 
+**originatingSystem** | **String** | Name of the system in which the viewpoint is originated | [optional] 
+**authoringToolId** | **String** | System specific identifier of the viewpoint in the originating BIM tool | [optional] 
 **orthogonalCamera** | [**OrthogonalCameraRequest**](OrthogonalCameraRequest.md) |  | [optional] 
 **perspectiveCamera** | [**PerspectiveCameraRequest**](PerspectiveCameraRequest.md) |  | [optional] 
 **lines** | [**[LineRequest]**](LineRequest.md) |  | [optional] 

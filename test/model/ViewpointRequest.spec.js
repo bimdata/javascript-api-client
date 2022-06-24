@@ -66,8 +66,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property authoringView (base name: "authoring_view")', function() {
-      // uncomment below and update the code to test the property authoringView
+    it('should have the property originatingSystem (base name: "originating_system")', function() {
+      // uncomment below and update the code to test the property originatingSystem
+      //var instance = new bimdata.ViewpointRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property authoringToolId (base name: "authoring_tool_id")', function() {
+      // uncomment below and update the code to test the property authoringToolId
       //var instance = new bimdata.ViewpointRequest();
       //expect(instance).to.be();
     });
