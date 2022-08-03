@@ -23,7 +23,7 @@ class ProjectAccessToken {
      * Constructs a new <code>ProjectAccessToken</code>.
      * @alias module:model/ProjectAccessToken
      * @param token {String} 
-     * @param scopes {Array.<String>} 
+     * @param scopes {Array.<module:model/ProjectAccessToken.ScopesEnum>} 
      */
     constructor(token, scopes) { 
         
@@ -73,7 +73,7 @@ class ProjectAccessToken {
 ProjectAccessToken.prototype['token'] = undefined;
 
 /**
- * @member {Array.<String>} scopes
+ * @member {Array.<module:model/ProjectAccessToken.ScopesEnum>} scopes
  */
 ProjectAccessToken.prototype['scopes'] = undefined;
 
@@ -84,6 +84,75 @@ ProjectAccessToken.prototype['expires_at'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>scopes</code> property.
+ * @enum {String}
+ * @readonly
+ */
+ProjectAccessToken['ScopesEnum'] = {
+
+    /**
+     * value: "bcf:read"
+     * @const
+     */
+    "bcf:read": "bcf:read",
+
+    /**
+     * value: "bcf:write"
+     * @const
+     */
+    "bcf:write": "bcf:write",
+
+    /**
+     * value: "document:read"
+     * @const
+     */
+    "document:read": "document:read",
+
+    /**
+     * value: "document:write"
+     * @const
+     */
+    "document:write": "document:write",
+
+    /**
+     * value: "ifc:read"
+     * @const
+     */
+    "ifc:read": "ifc:read",
+
+    /**
+     * value: "ifc:write"
+     * @const
+     */
+    "ifc:write": "ifc:write",
+
+    /**
+     * value: "model:read"
+     * @const
+     */
+    "model:read": "model:read",
+
+    /**
+     * value: "model:write"
+     * @const
+     */
+    "model:write": "model:write",
+
+    /**
+     * value: ""
+     * @const
+     */
+    "empty": "",
+
+    /**
+     * value: "null"
+     * @const
+     */
+    "null": "null"
+};
 
 
 

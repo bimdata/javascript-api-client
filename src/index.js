@@ -55,6 +55,7 @@ import FeatureRequest from './model/FeatureRequest';
 import Folder from './model/Folder';
 import FolderGroupPermission from './model/FolderGroupPermission';
 import FolderGroupPermissionRequest from './model/FolderGroupPermissionRequest';
+import FolderTree from './model/FolderTree';
 import FolderUserProject from './model/FolderUserProject';
 import FolderWithoutChildren from './model/FolderWithoutChildren';
 import FolderWithoutChildrenRequest from './model/FolderWithoutChildrenRequest';
@@ -157,6 +158,7 @@ import ProcessorHandler from './model/ProcessorHandler';
 import Project from './model/Project';
 import ProjectAccessToken from './model/ProjectAccessToken';
 import ProjectAccessTokenRequest from './model/ProjectAccessTokenRequest';
+import ProjectFolderTree from './model/ProjectFolderTree';
 import ProjectInvitation from './model/ProjectInvitation';
 import ProjectInvitationRequest from './model/ProjectInvitationRequest';
 import ProjectRequest from './model/ProjectRequest';
@@ -548,6 +550,12 @@ export {
      * @property {module:model/FolderGroupPermissionRequest}
      */
     FolderGroupPermissionRequest,
+
+    /**
+     * The FolderTree model constructor.
+     * @property {module:model/FolderTree}
+     */
+    FolderTree,
 
     /**
      * The FolderUserProject model constructor.
@@ -1160,6 +1168,12 @@ export {
      * @property {module:model/ProjectAccessTokenRequest}
      */
     ProjectAccessTokenRequest,
+
+    /**
+     * The ProjectFolderTree model constructor.
+     * @property {module:model/ProjectFolderTree}
+     */
+    ProjectFolderTree,
 
     /**
      * The ProjectInvitation model constructor.

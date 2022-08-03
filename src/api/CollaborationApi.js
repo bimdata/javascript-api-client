@@ -44,6 +44,7 @@ import PatchedVisaValidationRequest from '../model/PatchedVisaValidationRequest'
 import Project from '../model/Project';
 import ProjectAccessToken from '../model/ProjectAccessToken';
 import ProjectAccessTokenRequest from '../model/ProjectAccessTokenRequest';
+import ProjectFolderTree from '../model/ProjectFolderTree';
 import ProjectInvitation from '../model/ProjectInvitation';
 import ProjectInvitationRequest from '../model/ProjectInvitationRequest';
 import ProjectRequest from '../model/ProjectRequest';
@@ -645,7 +646,7 @@ export default class CollaborationApi {
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {Array.<module:model/WriteFolderRequest>} writeFolderRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Folder>} and HTTP response
      */
     createDMSTreeWithHttpInfo(cloudPk, id, writeFolderRequest) {
       let postBody = writeFolderRequest;
@@ -675,8 +676,8 @@ export default class CollaborationApi {
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
-      let accepts = [];
-      let returnType = null;
+      let accepts = ['application/json'];
+      let returnType = [Folder];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}/dms-tree', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -690,7 +691,7 @@ export default class CollaborationApi {
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {Array.<module:model/WriteFolderRequest>} writeFolderRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Folder>}
      */
     createDMSTree(cloudPk, id, writeFolderRequest) {
       return this.createDMSTreeWithHttpInfo(cloudPk, id, writeFolderRequest)
@@ -750,7 +751,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'IFC', 'DWG', 'OBJ', 'DAE', 'GLTF', 'BFX'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DXF', 'BFX', 'DAE', 'IFC', 'GLTF', 'DWG', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -818,7 +819,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'IFC', 'DWG', 'OBJ', 'DAE', 'GLTF', 'BFX'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DXF', 'BFX', 'DAE', 'IFC', 'GLTF', 'DWG', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -3739,6 +3740,54 @@ export default class CollaborationApi {
 
 
     /**
+     * Retrieve folder tree for all projects
+     * Retrieve folder tree for all projects
+     * @param {Number} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectFolderTree>} and HTTP response
+     */
+    getProjectFolderTreeSerializersWithHttpInfo(cloudPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectFolderTreeSerializers");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [ProjectFolderTree];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/folder-trees', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve folder tree for all projects
+     * Retrieve folder tree for all projects
+     * @param {Number} cloudPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectFolderTree>}
+     */
+    getProjectFolderTreeSerializers(cloudPk) {
+      return this.getProjectFolderTreeSerializersWithHttpInfo(cloudPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve all pending invitations in the project
      * Returns app's invitations only  Required scopes: org:manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -5515,7 +5564,7 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of a folder
-     * Update some fields of a folder. Only project admins can update the `default_permission` field  Required scopes: document:write
+     *  Update some fields of a folder. Only project admins can update the `default_permission` field.  `default_permission` choices are : ``` 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE ``` When this route is used, the permission of all children in the folder will be updated unless a child has already been updated with this route. In this case, if the updated permission is the same as the previously modified child's, the child will lose its \"independence\" and follow the parent's future permission when it is modified again.  Caution: The 'default_permission' field is not applied to users belonging to one or more groups.   Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this folder.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -5564,7 +5613,7 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of a folder
-     * Update some fields of a folder. Only project admins can update the `default_permission` field  Required scopes: document:write
+     *  Update some fields of a folder. Only project admins can update the `default_permission` field.  `default_permission` choices are : ``` 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE ``` When this route is used, the permission of all children in the folder will be updated unless a child has already been updated with this route. In this case, if the updated permission is the same as the previously modified child's, the child will lose its \"independence\" and follow the parent's future permission when it is modified again.  Caution: The 'default_permission' field is not applied to users belonging to one or more groups.   Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this folder.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -5582,7 +5631,7 @@ export default class CollaborationApi {
 
     /**
      * Update the permission of a group on a folder
-     * Update the permission of a group on a folder.             0: ACCESS_DENIED,             50: READ_ONLY,             100: READ_WRTIE               Required scopes: org:manage
+     *  Update the permission of a group on a folder. Permissions choices are : ``` 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE ``` When this route is used, the permission of all children in the folder will be updated unless a child has already been updated with this route. In this case, if the updated permission is the same as the previously modified child's, the child will lose its \"independence\" and follow the parent's future permission when it is modified again.               Required scopes: org:manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} folderPk 
      * @param {Number} id A unique integer value identifying this group folder.
@@ -5637,7 +5686,7 @@ export default class CollaborationApi {
 
     /**
      * Update the permission of a group on a folder
-     * Update the permission of a group on a folder.             0: ACCESS_DENIED,             50: READ_ONLY,             100: READ_WRTIE               Required scopes: org:manage
+     *  Update the permission of a group on a folder. Permissions choices are : ``` 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE ``` When this route is used, the permission of all children in the folder will be updated unless a child has already been updated with this route. In this case, if the updated permission is the same as the previously modified child's, the child will lose its \"independence\" and follow the parent's future permission when it is modified again.               Required scopes: org:manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} folderPk 
      * @param {Number} id A unique integer value identifying this group folder.

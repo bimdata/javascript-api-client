@@ -47,6 +47,7 @@ docs/FeatureRequest.md
 docs/Folder.md
 docs/FolderGroupPermission.md
 docs/FolderGroupPermissionRequest.md
+docs/FolderTree.md
 docs/FolderUserProject.md
 docs/FolderWithoutChildren.md
 docs/FolderWithoutChildrenRequest.md
@@ -151,6 +152,7 @@ docs/ProcessorHandler.md
 docs/Project.md
 docs/ProjectAccessToken.md
 docs/ProjectAccessTokenRequest.md
+docs/ProjectFolderTree.md
 docs/ProjectInvitation.md
 docs/ProjectInvitationRequest.md
 docs/ProjectRequest.md
@@ -299,6 +301,7 @@ src/model/FeatureRequest.js
 src/model/Folder.js
 src/model/FolderGroupPermission.js
 src/model/FolderGroupPermissionRequest.js
+src/model/FolderTree.js
 src/model/FolderUserProject.js
 src/model/FolderWithoutChildren.js
 src/model/FolderWithoutChildrenRequest.js
@@ -401,6 +404,7 @@ src/model/ProcessorHandler.js
 src/model/Project.js
 src/model/ProjectAccessToken.js
 src/model/ProjectAccessTokenRequest.js
+src/model/ProjectFolderTree.js
 src/model/ProjectInvitation.js
 src/model/ProjectInvitationRequest.js
 src/model/ProjectRequest.js
@@ -543,6 +547,7 @@ test/model/FeatureRequest.spec.js
 test/model/Folder.spec.js
 test/model/FolderGroupPermission.spec.js
 test/model/FolderGroupPermissionRequest.spec.js
+test/model/FolderTree.spec.js
 test/model/FolderUserProject.spec.js
 test/model/FolderWithoutChildren.spec.js
 test/model/FolderWithoutChildrenRequest.spec.js
@@ -645,6 +650,7 @@ test/model/ProcessorHandler.spec.js
 test/model/Project.spec.js
 test/model/ProjectAccessToken.spec.js
 test/model/ProjectAccessTokenRequest.spec.js
+test/model/ProjectFolderTree.spec.js
 test/model/ProjectInvitation.spec.js
 test/model/ProjectInvitationRequest.spec.js
 test/model/ProjectRequest.spec.js

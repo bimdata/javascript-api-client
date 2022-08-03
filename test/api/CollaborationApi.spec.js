@@ -648,6 +648,16 @@
         done();
       });
     });
+    describe('getProjectFolderTreeSerializers', function() {
+      it('should call getProjectFolderTreeSerializers successfully', function(done) {
+        //uncomment below and update the code to test getProjectFolderTreeSerializers
+        //instance.getProjectFolderTreeSerializers(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getProjectInvitations', function() {
       it('should call getProjectInvitations successfully', function(done) {
         //uncomment below and update the code to test getProjectInvitations

@@ -64,6 +64,7 @@ Method | HTTP request | Description
 [**getProjectAccessTokens**](CollaborationApi.md#getProjectAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token | Retrieve all tokens created for this project
 [**getProjectCreatorVisas**](CollaborationApi.md#getProjectCreatorVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/visa/creator | List visas created by user
 [**getProjectDMSTree**](CollaborationApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
+[**getProjectFolderTreeSerializers**](CollaborationApi.md#getProjectFolderTreeSerializers) | **GET** /cloud/{cloud_pk}/project/folder-trees | Retrieve folder tree for all projects
 [**getProjectInvitations**](CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
 [**getProjectSize**](CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all model files in the project
 [**getProjectSubTree**](CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
@@ -693,7 +694,7 @@ Name | Type | Description  | Notes
 
 ## createDMSTree
 
-> createDMSTree(cloudPk, id, writeFolderRequest)
+> [Folder] createDMSTree(cloudPk, id, writeFolderRequest)
 
 Create a complete DMS tree
 
@@ -725,8 +726,8 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this project.
 let writeFolderRequest = [new bimdata.WriteFolderRequest()]; // [WriteFolderRequest] | 
-apiInstance.createDMSTree(cloudPk, id, writeFolderRequest).then(() => {
-  console.log('API called successfully.');
+apiInstance.createDMSTree(cloudPk, id, writeFolderRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -744,7 +745,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**[Folder]**](Folder.md)
 
 ### Authorization
 
@@ -753,7 +754,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## createDemo
@@ -823,7 +824,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;DXF&#39;, &#39;IFC&#39;, &#39;DWG&#39;, &#39;OBJ&#39;, &#39;DAE&#39;, &#39;GLTF&#39;, &#39;BFX&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;DXF&#39;, &#39;BFX&#39;, &#39;DAE&#39;, &#39;IFC&#39;, &#39;GLTF&#39;, &#39;DWG&#39;, &#39;OBJ&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -4008,6 +4009,67 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getProjectFolderTreeSerializers
+
+> [ProjectFolderTree] getProjectFolderTreeSerializers(cloudPk)
+
+Retrieve folder tree for all projects
+
+Retrieve folder tree for all projects
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | 
+apiInstance.getProjectFolderTreeSerializers(cloudPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**|  | 
+
+### Return type
+
+[**[ProjectFolderTree]**](ProjectFolderTree.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getProjectInvitations
 
 > [ProjectInvitation] getProjectInvitations(cloudPk, projectPk)
@@ -5905,7 +5967,7 @@ Name | Type | Description  | Notes
 
 Update some fields of a folder
 
-Update some fields of a folder. Only project admins can update the &#x60;default_permission&#x60; field  Required scopes: document:write
+ Update some fields of a folder. Only project admins can update the &#x60;default_permission&#x60; field.  &#x60;default_permission&#x60; choices are : &#x60;&#x60;&#x60; 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE &#x60;&#x60;&#x60; When this route is used, the permission of all children in the folder will be updated unless a child has already been updated with this route. In this case, if the updated permission is the same as the previously modified child&#39;s, the child will lose its \&quot;independence\&quot; and follow the parent&#39;s future permission when it is modified again.  Caution: The &#39;default_permission&#39; field is not applied to users belonging to one or more groups.   Required scopes: document:write
 
 ### Example
 
@@ -5974,7 +6036,7 @@ Name | Type | Description  | Notes
 
 Update the permission of a group on a folder
 
-Update the permission of a group on a folder.             0: ACCESS_DENIED,             50: READ_ONLY,             100: READ_WRTIE               Required scopes: org:manage
+ Update the permission of a group on a folder. Permissions choices are : &#x60;&#x60;&#x60; 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE &#x60;&#x60;&#x60; When this route is used, the permission of all children in the folder will be updated unless a child has already been updated with this route. In this case, if the updated permission is the same as the previously modified child&#39;s, the child will lose its \&quot;independence\&quot; and follow the parent&#39;s future permission when it is modified again.               Required scopes: org:manage
 
 ### Example
 

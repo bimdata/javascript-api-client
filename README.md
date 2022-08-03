@@ -284,6 +284,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getProjectAccessTokens**](docs/CollaborationApi.md#getProjectAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token | Retrieve all tokens created for this project
 *bimdata.CollaborationApi* | [**getProjectCreatorVisas**](docs/CollaborationApi.md#getProjectCreatorVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/visa/creator | List visas created by user
 *bimdata.CollaborationApi* | [**getProjectDMSTree**](docs/CollaborationApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
+*bimdata.CollaborationApi* | [**getProjectFolderTreeSerializers**](docs/CollaborationApi.md#getProjectFolderTreeSerializers) | **GET** /cloud/{cloud_pk}/project/folder-trees | Retrieve folder tree for all projects
 *bimdata.CollaborationApi* | [**getProjectInvitations**](docs/CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
 *bimdata.CollaborationApi* | [**getProjectSize**](docs/CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all model files in the project
 *bimdata.CollaborationApi* | [**getProjectSubTree**](docs/CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
@@ -677,6 +678,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Folder](docs/Folder.md)
  - [bimdata.FolderGroupPermission](docs/FolderGroupPermission.md)
  - [bimdata.FolderGroupPermissionRequest](docs/FolderGroupPermissionRequest.md)
+ - [bimdata.FolderTree](docs/FolderTree.md)
  - [bimdata.FolderUserProject](docs/FolderUserProject.md)
  - [bimdata.FolderWithoutChildren](docs/FolderWithoutChildren.md)
  - [bimdata.FolderWithoutChildrenRequest](docs/FolderWithoutChildrenRequest.md)
@@ -779,6 +781,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Project](docs/Project.md)
  - [bimdata.ProjectAccessToken](docs/ProjectAccessToken.md)
  - [bimdata.ProjectAccessTokenRequest](docs/ProjectAccessTokenRequest.md)
+ - [bimdata.ProjectFolderTree](docs/ProjectFolderTree.md)
  - [bimdata.ProjectInvitation](docs/ProjectInvitation.md)
  - [bimdata.ProjectInvitationRequest](docs/ProjectInvitationRequest.md)
  - [bimdata.ProjectRequest](docs/ProjectRequest.md)
