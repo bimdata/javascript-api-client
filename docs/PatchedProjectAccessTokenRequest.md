@@ -28,10 +28,6 @@ Name | Type | Description | Notes
 
 * `model:write` (value: `"model:write"`)
 
-* `empty` (value: `""`)
-
-* `null` (value: `"null"`)
-
 
 
 

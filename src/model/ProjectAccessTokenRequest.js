@@ -129,19 +129,7 @@ ProjectAccessTokenRequest['ScopesEnum'] = {
      * value: "model:write"
      * @const
      */
-    "model:write": "model:write",
-
-    /**
-     * value: ""
-     * @const
-     */
-    "empty": "",
-
-    /**
-     * value: "null"
-     * @const
-     */
-    "null": "null"
+    "model:write": "model:write"
 };
 
 
