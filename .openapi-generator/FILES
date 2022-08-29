@@ -6,6 +6,7 @@ docs/BcfApi.md
 docs/BcfProject.md
 docs/BcfProjectRequest.md
 docs/Building.md
+docs/BuildingModelPlanRequest.md
 docs/CheckPlan.md
 docs/CheckPlanRequest.md
 docs/CheckerApi.md
@@ -124,6 +125,7 @@ docs/PatchedRuleRequest.md
 docs/PatchedRulesetRequest.md
 docs/PatchedSpaceRequest.md
 docs/PatchedStageRequest.md
+docs/PatchedStoreyBuildingRequest.md
 docs/PatchedSystemRequest.md
 docs/PatchedTagRequest.md
 docs/PatchedTopicRequest.md
@@ -212,6 +214,8 @@ docs/SsoApi.md
 docs/Stage.md
 docs/StageRequest.md
 docs/Storey.md
+docs/StoreyBuildingRequest.md
+docs/StoreyModelPlanRequest.md
 docs/System.md
 docs/SystemRequest.md
 docs/Tag.md
@@ -262,6 +266,7 @@ src/index.js
 src/model/BcfProject.js
 src/model/BcfProjectRequest.js
 src/model/Building.js
+src/model/BuildingModelPlanRequest.js
 src/model/CheckPlan.js
 src/model/CheckPlanRequest.js
 src/model/CheckerResult.js
@@ -376,6 +381,7 @@ src/model/PatchedRuleRequest.js
 src/model/PatchedRulesetRequest.js
 src/model/PatchedSpaceRequest.js
 src/model/PatchedStageRequest.js
+src/model/PatchedStoreyBuildingRequest.js
 src/model/PatchedSystemRequest.js
 src/model/PatchedTagRequest.js
 src/model/PatchedTopicRequest.js
@@ -463,6 +469,8 @@ src/model/SpaceRequest.js
 src/model/Stage.js
 src/model/StageRequest.js
 src/model/Storey.js
+src/model/StoreyBuildingRequest.js
+src/model/StoreyModelPlanRequest.js
 src/model/System.js
 src/model/SystemRequest.js
 src/model/Tag.js
@@ -508,6 +516,7 @@ test/api/WebhookApi.spec.js
 test/model/BcfProject.spec.js
 test/model/BcfProjectRequest.spec.js
 test/model/Building.spec.js
+test/model/BuildingModelPlanRequest.spec.js
 test/model/CheckPlan.spec.js
 test/model/CheckPlanRequest.spec.js
 test/model/CheckerResult.spec.js
@@ -622,6 +631,7 @@ test/model/PatchedRuleRequest.spec.js
 test/model/PatchedRulesetRequest.spec.js
 test/model/PatchedSpaceRequest.spec.js
 test/model/PatchedStageRequest.spec.js
+test/model/PatchedStoreyBuildingRequest.spec.js
 test/model/PatchedSystemRequest.spec.js
 test/model/PatchedTagRequest.spec.js
 test/model/PatchedTopicRequest.spec.js
@@ -709,6 +719,8 @@ test/model/SpaceRequest.spec.js
 test/model/Stage.spec.js
 test/model/StageRequest.spec.js
 test/model/Storey.spec.js
+test/model/StoreyBuildingRequest.spec.js
+test/model/StoreyModelPlanRequest.spec.js
 test/model/System.spec.js
 test/model/SystemRequest.spec.js
 test/model/Tag.spec.js

@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import Building from '../model/Building';
+import BuildingModelPlanRequest from '../model/BuildingModelPlanRequest';
 import CheckerResult from '../model/CheckerResult';
 import CheckerResultRequest from '../model/CheckerResultRequest';
 import Classification from '../model/Classification';
@@ -54,6 +55,7 @@ import PatchedPropertyDefinitionRequest from '../model/PatchedPropertyDefinition
 import PatchedPropertyRequest from '../model/PatchedPropertyRequest';
 import PatchedPropertySetRequest from '../model/PatchedPropertySetRequest';
 import PatchedSpaceRequest from '../model/PatchedSpaceRequest';
+import PatchedStoreyBuildingRequest from '../model/PatchedStoreyBuildingRequest';
 import PatchedSystemRequest from '../model/PatchedSystemRequest';
 import PatchedUnitRequest from '../model/PatchedUnitRequest';
 import PatchedZoneRequest from '../model/PatchedZoneRequest';
@@ -72,6 +74,8 @@ import SimpleElement from '../model/SimpleElement';
 import Space from '../model/Space';
 import SpaceRequest from '../model/SpaceRequest';
 import Storey from '../model/Storey';
+import StoreyBuildingRequest from '../model/StoreyBuildingRequest';
+import StoreyModelPlanRequest from '../model/StoreyModelPlanRequest';
 import System from '../model/System';
 import SystemRequest from '../model/SystemRequest';
 import Unit from '../model/Unit';
@@ -1054,10 +1058,11 @@ export default class IfcApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/StoreyBuildingRequest} storeyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Building} and HTTP response
      */
-    createBuildingDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
+    createBuildingDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, storeyBuildingRequest) {
+      let postBody = storeyBuildingRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createBuildingDeprecated");
@@ -1069,6 +1074,10 @@ export default class IfcApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createBuildingDeprecated");
+      }
+      // verify the required parameter 'storeyBuildingRequest' is set
+      if (storeyBuildingRequest === undefined || storeyBuildingRequest === null) {
+        throw new Error("Missing the required parameter 'storeyBuildingRequest' when calling createBuildingDeprecated");
       }
 
       let pathParams = {
@@ -1084,7 +1093,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Building;
       return this.apiClient.callApi(
@@ -1100,10 +1109,11 @@ export default class IfcApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/StoreyBuildingRequest} storeyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Building}
      */
-    createBuildingDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.createBuildingDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
+    createBuildingDeprecated(cloudPk, ifcPk, projectPk, storeyBuildingRequest) {
+      return this.createBuildingDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, storeyBuildingRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1117,10 +1127,11 @@ export default class IfcApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/BuildingModelPlanRequest} buildingModelPlanRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Building} and HTTP response
      */
-    createBuildingPlanDeprecatedWithHttpInfo(buildingUuid, cloudPk, ifcPk, projectPk) {
-      let postBody = null;
+    createBuildingPlanDeprecatedWithHttpInfo(buildingUuid, cloudPk, ifcPk, projectPk, buildingModelPlanRequest) {
+      let postBody = buildingModelPlanRequest;
       // verify the required parameter 'buildingUuid' is set
       if (buildingUuid === undefined || buildingUuid === null) {
         throw new Error("Missing the required parameter 'buildingUuid' when calling createBuildingPlanDeprecated");
@@ -1137,6 +1148,10 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createBuildingPlanDeprecated");
       }
+      // verify the required parameter 'buildingModelPlanRequest' is set
+      if (buildingModelPlanRequest === undefined || buildingModelPlanRequest === null) {
+        throw new Error("Missing the required parameter 'buildingModelPlanRequest' when calling createBuildingPlanDeprecated");
+      }
 
       let pathParams = {
         'building_uuid': buildingUuid,
@@ -1152,7 +1167,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Building;
       return this.apiClient.callApi(
@@ -1169,10 +1184,11 @@ export default class IfcApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/BuildingModelPlanRequest} buildingModelPlanRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Building}
      */
-    createBuildingPlanDeprecated(buildingUuid, cloudPk, ifcPk, projectPk) {
-      return this.createBuildingPlanDeprecatedWithHttpInfo(buildingUuid, cloudPk, ifcPk, projectPk)
+    createBuildingPlanDeprecated(buildingUuid, cloudPk, ifcPk, projectPk, buildingModelPlanRequest) {
+      return this.createBuildingPlanDeprecatedWithHttpInfo(buildingUuid, cloudPk, ifcPk, projectPk, buildingModelPlanRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2487,10 +2503,11 @@ export default class IfcApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/StoreyBuildingRequest} storeyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
-    createStoreyDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
-      let postBody = null;
+    createStoreyDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, storeyBuildingRequest) {
+      let postBody = storeyBuildingRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createStoreyDeprecated");
@@ -2502,6 +2519,10 @@ export default class IfcApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createStoreyDeprecated");
+      }
+      // verify the required parameter 'storeyBuildingRequest' is set
+      if (storeyBuildingRequest === undefined || storeyBuildingRequest === null) {
+        throw new Error("Missing the required parameter 'storeyBuildingRequest' when calling createStoreyDeprecated");
       }
 
       let pathParams = {
@@ -2517,7 +2538,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Storey;
       return this.apiClient.callApi(
@@ -2533,10 +2554,11 @@ export default class IfcApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/StoreyBuildingRequest} storeyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
-    createStoreyDeprecated(cloudPk, ifcPk, projectPk) {
-      return this.createStoreyDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
+    createStoreyDeprecated(cloudPk, ifcPk, projectPk, storeyBuildingRequest) {
+      return this.createStoreyDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, storeyBuildingRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2550,10 +2572,11 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} storeyUuid 
+     * @param {module:model/StoreyModelPlanRequest} storeyModelPlanRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
-    createStoreyPlanDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, storeyUuid) {
-      let postBody = null;
+    createStoreyPlanDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, storeyUuid, storeyModelPlanRequest) {
+      let postBody = storeyModelPlanRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createStoreyPlanDeprecated");
@@ -2570,6 +2593,10 @@ export default class IfcApi {
       if (storeyUuid === undefined || storeyUuid === null) {
         throw new Error("Missing the required parameter 'storeyUuid' when calling createStoreyPlanDeprecated");
       }
+      // verify the required parameter 'storeyModelPlanRequest' is set
+      if (storeyModelPlanRequest === undefined || storeyModelPlanRequest === null) {
+        throw new Error("Missing the required parameter 'storeyModelPlanRequest' when calling createStoreyPlanDeprecated");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -2585,7 +2612,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Storey;
       return this.apiClient.callApi(
@@ -2602,10 +2629,11 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} storeyUuid 
+     * @param {module:model/StoreyModelPlanRequest} storeyModelPlanRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
-    createStoreyPlanDeprecated(cloudPk, ifcPk, projectPk, storeyUuid) {
-      return this.createStoreyPlanDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, storeyUuid)
+    createStoreyPlanDeprecated(cloudPk, ifcPk, projectPk, storeyUuid, storeyModelPlanRequest) {
+      return this.createStoreyPlanDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, storeyUuid, storeyModelPlanRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9315,10 +9343,13 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedStoreyBuildingRequest} opts.patchedStoreyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Building} and HTTP response
      */
-    updateBuildingDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid) {
-      let postBody = null;
+    updateBuildingDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedStoreyBuildingRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling updateBuildingDeprecated");
@@ -9350,7 +9381,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Building;
       return this.apiClient.callApi(
@@ -9367,10 +9398,12 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedStoreyBuildingRequest} opts.patchedStoreyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Building}
      */
-    updateBuildingDeprecated(cloudPk, ifcPk, projectPk, uuid) {
-      return this.updateBuildingDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
+    updateBuildingDeprecated(cloudPk, ifcPk, projectPk, uuid, opts) {
+      return this.updateBuildingDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -10674,10 +10707,13 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedStoreyBuildingRequest} opts.patchedStoreyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
-    updateStoreyDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid) {
-      let postBody = null;
+    updateStoreyDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedStoreyBuildingRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling updateStoreyDeprecated");
@@ -10709,7 +10745,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Storey;
       return this.apiClient.callApi(
@@ -10726,10 +10762,12 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedStoreyBuildingRequest} opts.patchedStoreyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
-    updateStoreyDeprecated(cloudPk, ifcPk, projectPk, uuid) {
-      return this.updateStoreyDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
+    updateStoreyDeprecated(cloudPk, ifcPk, projectPk, uuid, opts) {
+      return this.updateStoreyDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

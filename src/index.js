@@ -16,6 +16,7 @@ import ApiClient from './ApiClient';
 import BcfProject from './model/BcfProject';
 import BcfProjectRequest from './model/BcfProjectRequest';
 import Building from './model/Building';
+import BuildingModelPlanRequest from './model/BuildingModelPlanRequest';
 import CheckPlan from './model/CheckPlan';
 import CheckPlanRequest from './model/CheckPlanRequest';
 import CheckerResult from './model/CheckerResult';
@@ -130,6 +131,7 @@ import PatchedRuleRequest from './model/PatchedRuleRequest';
 import PatchedRulesetRequest from './model/PatchedRulesetRequest';
 import PatchedSpaceRequest from './model/PatchedSpaceRequest';
 import PatchedStageRequest from './model/PatchedStageRequest';
+import PatchedStoreyBuildingRequest from './model/PatchedStoreyBuildingRequest';
 import PatchedSystemRequest from './model/PatchedSystemRequest';
 import PatchedTagRequest from './model/PatchedTagRequest';
 import PatchedTopicRequest from './model/PatchedTopicRequest';
@@ -217,6 +219,8 @@ import SpaceRequest from './model/SpaceRequest';
 import Stage from './model/Stage';
 import StageRequest from './model/StageRequest';
 import Storey from './model/Storey';
+import StoreyBuildingRequest from './model/StoreyBuildingRequest';
+import StoreyModelPlanRequest from './model/StoreyModelPlanRequest';
 import System from './model/System';
 import SystemRequest from './model/SystemRequest';
 import Tag from './model/Tag';
@@ -316,6 +320,12 @@ export {
      * @property {module:model/Building}
      */
     Building,
+
+    /**
+     * The BuildingModelPlanRequest model constructor.
+     * @property {module:model/BuildingModelPlanRequest}
+     */
+    BuildingModelPlanRequest,
 
     /**
      * The CheckPlan model constructor.
@@ -1002,6 +1012,12 @@ export {
     PatchedStageRequest,
 
     /**
+     * The PatchedStoreyBuildingRequest model constructor.
+     * @property {module:model/PatchedStoreyBuildingRequest}
+     */
+    PatchedStoreyBuildingRequest,
+
+    /**
      * The PatchedSystemRequest model constructor.
      * @property {module:model/PatchedSystemRequest}
      */
@@ -1522,6 +1538,18 @@ export {
      * @property {module:model/Storey}
      */
     Storey,
+
+    /**
+     * The StoreyBuildingRequest model constructor.
+     * @property {module:model/StoreyBuildingRequest}
+     */
+    StoreyBuildingRequest,
+
+    /**
+     * The StoreyModelPlanRequest model constructor.
+     * @property {module:model/StoreyModelPlanRequest}
+     */
+    StoreyModelPlanRequest,
 
     /**
      * The System model constructor.

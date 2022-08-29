@@ -1111,7 +1111,7 @@ Name | Type | Description  | Notes
 
 ## createBuildingDeprecated
 
-> Building createBuildingDeprecated(cloudPk, ifcPk, projectPk)
+> Building createBuildingDeprecated(cloudPk, ifcPk, projectPk, storeyBuildingRequest)
 
 Create a building of a model
 
@@ -1143,7 +1143,8 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.createBuildingDeprecated(cloudPk, ifcPk, projectPk).then((data) => {
+let storeyBuildingRequest = new bimdata.StoreyBuildingRequest(); // StoreyBuildingRequest | 
+apiInstance.createBuildingDeprecated(cloudPk, ifcPk, projectPk, storeyBuildingRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1159,6 +1160,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **storeyBuildingRequest** | [**StoreyBuildingRequest**](StoreyBuildingRequest.md)|  | 
 
 ### Return type
 
@@ -1170,13 +1172,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createBuildingPlanDeprecated
 
-> Building createBuildingPlanDeprecated(buildingUuid, cloudPk, ifcPk, projectPk)
+> Building createBuildingPlanDeprecated(buildingUuid, cloudPk, ifcPk, projectPk, buildingModelPlanRequest)
 
 Create a relation between a 2d model and a building
 
@@ -1209,7 +1211,8 @@ let buildingUuid = "buildingUuid_example"; // String |
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.createBuildingPlanDeprecated(buildingUuid, cloudPk, ifcPk, projectPk).then((data) => {
+let buildingModelPlanRequest = new bimdata.BuildingModelPlanRequest(); // BuildingModelPlanRequest | 
+apiInstance.createBuildingPlanDeprecated(buildingUuid, cloudPk, ifcPk, projectPk, buildingModelPlanRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1226,6 +1229,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **buildingModelPlanRequest** | [**BuildingModelPlanRequest**](BuildingModelPlanRequest.md)|  | 
 
 ### Return type
 
@@ -1237,7 +1241,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
@@ -2485,7 +2489,7 @@ Name | Type | Description  | Notes
 
 ## createStoreyDeprecated
 
-> Storey createStoreyDeprecated(cloudPk, ifcPk, projectPk)
+> Storey createStoreyDeprecated(cloudPk, ifcPk, projectPk, storeyBuildingRequest)
 
 Create a storey of a model
 
@@ -2517,7 +2521,8 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.createStoreyDeprecated(cloudPk, ifcPk, projectPk).then((data) => {
+let storeyBuildingRequest = new bimdata.StoreyBuildingRequest(); // StoreyBuildingRequest | 
+apiInstance.createStoreyDeprecated(cloudPk, ifcPk, projectPk, storeyBuildingRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2533,6 +2538,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **storeyBuildingRequest** | [**StoreyBuildingRequest**](StoreyBuildingRequest.md)|  | 
 
 ### Return type
 
@@ -2544,13 +2550,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createStoreyPlanDeprecated
 
-> Storey createStoreyPlanDeprecated(cloudPk, ifcPk, projectPk, storeyUuid)
+> Storey createStoreyPlanDeprecated(cloudPk, ifcPk, projectPk, storeyUuid, storeyModelPlanRequest)
 
 Create a relation between a 2d model and a storey
 
@@ -2583,7 +2589,8 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let storeyUuid = "storeyUuid_example"; // String | 
-apiInstance.createStoreyPlanDeprecated(cloudPk, ifcPk, projectPk, storeyUuid).then((data) => {
+let storeyModelPlanRequest = new bimdata.StoreyModelPlanRequest(); // StoreyModelPlanRequest | 
+apiInstance.createStoreyPlanDeprecated(cloudPk, ifcPk, projectPk, storeyUuid, storeyModelPlanRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2600,6 +2607,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **storeyUuid** | **String**|  | 
+ **storeyModelPlanRequest** | [**StoreyModelPlanRequest**](StoreyModelPlanRequest.md)|  | 
 
 ### Return type
 
@@ -2611,7 +2619,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
@@ -9050,7 +9058,7 @@ Name | Type | Description  | Notes
 
 ## updateBuildingDeprecated
 
-> Building updateBuildingDeprecated(cloudPk, ifcPk, projectPk, uuid)
+> Building updateBuildingDeprecated(cloudPk, ifcPk, projectPk, uuid, opts)
 
 Update some fields of a building
 
@@ -9083,7 +9091,10 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let uuid = "uuid_example"; // String | 
-apiInstance.updateBuildingDeprecated(cloudPk, ifcPk, projectPk, uuid).then((data) => {
+let opts = {
+  'patchedStoreyBuildingRequest': new bimdata.PatchedStoreyBuildingRequest() // PatchedStoreyBuildingRequest | 
+};
+apiInstance.updateBuildingDeprecated(cloudPk, ifcPk, projectPk, uuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9100,6 +9111,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **uuid** | **String**|  | 
+ **patchedStoreyBuildingRequest** | [**PatchedStoreyBuildingRequest**](PatchedStoreyBuildingRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -9111,7 +9123,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
@@ -10334,7 +10346,7 @@ Name | Type | Description  | Notes
 
 ## updateStoreyDeprecated
 
-> Storey updateStoreyDeprecated(cloudPk, ifcPk, projectPk, uuid)
+> Storey updateStoreyDeprecated(cloudPk, ifcPk, projectPk, uuid, opts)
 
 Update some fields of a storey
 
@@ -10367,7 +10379,10 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let uuid = "uuid_example"; // String | 
-apiInstance.updateStoreyDeprecated(cloudPk, ifcPk, projectPk, uuid).then((data) => {
+let opts = {
+  'patchedStoreyBuildingRequest': new bimdata.PatchedStoreyBuildingRequest() // PatchedStoreyBuildingRequest | 
+};
+apiInstance.updateStoreyDeprecated(cloudPk, ifcPk, projectPk, uuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10384,6 +10399,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **uuid** | **String**|  | 
+ **patchedStoreyBuildingRequest** | [**PatchedStoreyBuildingRequest**](PatchedStoreyBuildingRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -10395,7 +10411,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 

@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import Building from '../model/Building';
+import BuildingModelPlanRequest from '../model/BuildingModelPlanRequest';
 import Classification from '../model/Classification';
 import ClassificationRequest from '../model/ClassificationRequest';
 import CreateBuildingByNameRequest from '../model/CreateBuildingByNameRequest';
@@ -48,6 +49,7 @@ import PatchedPropertyDefinitionRequest from '../model/PatchedPropertyDefinition
 import PatchedPropertyRequest from '../model/PatchedPropertyRequest';
 import PatchedPropertySetRequest from '../model/PatchedPropertySetRequest';
 import PatchedSpaceRequest from '../model/PatchedSpaceRequest';
+import PatchedStoreyBuildingRequest from '../model/PatchedStoreyBuildingRequest';
 import PatchedSystemRequest from '../model/PatchedSystemRequest';
 import PatchedUnitRequest from '../model/PatchedUnitRequest';
 import PatchedZoneRequest from '../model/PatchedZoneRequest';
@@ -66,6 +68,8 @@ import SimpleElement from '../model/SimpleElement';
 import Space from '../model/Space';
 import SpaceRequest from '../model/SpaceRequest';
 import Storey from '../model/Storey';
+import StoreyBuildingRequest from '../model/StoreyBuildingRequest';
+import StoreyModelPlanRequest from '../model/StoreyModelPlanRequest';
 import System from '../model/System';
 import SystemRequest from '../model/SystemRequest';
 import Unit from '../model/Unit';
@@ -1048,10 +1052,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/StoreyBuildingRequest} storeyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Building} and HTTP response
      */
-    createBuildingWithHttpInfo(cloudPk, modelPk, projectPk) {
-      let postBody = null;
+    createBuildingWithHttpInfo(cloudPk, modelPk, projectPk, storeyBuildingRequest) {
+      let postBody = storeyBuildingRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createBuilding");
@@ -1063,6 +1068,10 @@ export default class ModelApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createBuilding");
+      }
+      // verify the required parameter 'storeyBuildingRequest' is set
+      if (storeyBuildingRequest === undefined || storeyBuildingRequest === null) {
+        throw new Error("Missing the required parameter 'storeyBuildingRequest' when calling createBuilding");
       }
 
       let pathParams = {
@@ -1078,7 +1087,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Building;
       return this.apiClient.callApi(
@@ -1094,10 +1103,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/StoreyBuildingRequest} storeyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Building}
      */
-    createBuilding(cloudPk, modelPk, projectPk) {
-      return this.createBuildingWithHttpInfo(cloudPk, modelPk, projectPk)
+    createBuilding(cloudPk, modelPk, projectPk, storeyBuildingRequest) {
+      return this.createBuildingWithHttpInfo(cloudPk, modelPk, projectPk, storeyBuildingRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1111,10 +1121,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/BuildingModelPlanRequest} buildingModelPlanRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Building} and HTTP response
      */
-    createBuildingPlanWithHttpInfo(buildingUuid, cloudPk, modelPk, projectPk) {
-      let postBody = null;
+    createBuildingPlanWithHttpInfo(buildingUuid, cloudPk, modelPk, projectPk, buildingModelPlanRequest) {
+      let postBody = buildingModelPlanRequest;
       // verify the required parameter 'buildingUuid' is set
       if (buildingUuid === undefined || buildingUuid === null) {
         throw new Error("Missing the required parameter 'buildingUuid' when calling createBuildingPlan");
@@ -1131,6 +1142,10 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createBuildingPlan");
       }
+      // verify the required parameter 'buildingModelPlanRequest' is set
+      if (buildingModelPlanRequest === undefined || buildingModelPlanRequest === null) {
+        throw new Error("Missing the required parameter 'buildingModelPlanRequest' when calling createBuildingPlan");
+      }
 
       let pathParams = {
         'building_uuid': buildingUuid,
@@ -1146,7 +1161,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Building;
       return this.apiClient.callApi(
@@ -1163,10 +1178,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/BuildingModelPlanRequest} buildingModelPlanRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Building}
      */
-    createBuildingPlan(buildingUuid, cloudPk, modelPk, projectPk) {
-      return this.createBuildingPlanWithHttpInfo(buildingUuid, cloudPk, modelPk, projectPk)
+    createBuildingPlan(buildingUuid, cloudPk, modelPk, projectPk, buildingModelPlanRequest) {
+      return this.createBuildingPlanWithHttpInfo(buildingUuid, cloudPk, modelPk, projectPk, buildingModelPlanRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2340,10 +2356,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/StoreyBuildingRequest} storeyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
-    createStoreyWithHttpInfo(cloudPk, modelPk, projectPk) {
-      let postBody = null;
+    createStoreyWithHttpInfo(cloudPk, modelPk, projectPk, storeyBuildingRequest) {
+      let postBody = storeyBuildingRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createStorey");
@@ -2355,6 +2372,10 @@ export default class ModelApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createStorey");
+      }
+      // verify the required parameter 'storeyBuildingRequest' is set
+      if (storeyBuildingRequest === undefined || storeyBuildingRequest === null) {
+        throw new Error("Missing the required parameter 'storeyBuildingRequest' when calling createStorey");
       }
 
       let pathParams = {
@@ -2370,7 +2391,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Storey;
       return this.apiClient.callApi(
@@ -2386,10 +2407,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/StoreyBuildingRequest} storeyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
-    createStorey(cloudPk, modelPk, projectPk) {
-      return this.createStoreyWithHttpInfo(cloudPk, modelPk, projectPk)
+    createStorey(cloudPk, modelPk, projectPk, storeyBuildingRequest) {
+      return this.createStoreyWithHttpInfo(cloudPk, modelPk, projectPk, storeyBuildingRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2403,10 +2425,11 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} storeyUuid 
+     * @param {module:model/StoreyModelPlanRequest} storeyModelPlanRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
-    createStoreyPlanWithHttpInfo(cloudPk, modelPk, projectPk, storeyUuid) {
-      let postBody = null;
+    createStoreyPlanWithHttpInfo(cloudPk, modelPk, projectPk, storeyUuid, storeyModelPlanRequest) {
+      let postBody = storeyModelPlanRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createStoreyPlan");
@@ -2423,6 +2446,10 @@ export default class ModelApi {
       if (storeyUuid === undefined || storeyUuid === null) {
         throw new Error("Missing the required parameter 'storeyUuid' when calling createStoreyPlan");
       }
+      // verify the required parameter 'storeyModelPlanRequest' is set
+      if (storeyModelPlanRequest === undefined || storeyModelPlanRequest === null) {
+        throw new Error("Missing the required parameter 'storeyModelPlanRequest' when calling createStoreyPlan");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -2438,7 +2465,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Storey;
       return this.apiClient.callApi(
@@ -2455,10 +2482,11 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} storeyUuid 
+     * @param {module:model/StoreyModelPlanRequest} storeyModelPlanRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
-    createStoreyPlan(cloudPk, modelPk, projectPk, storeyUuid) {
-      return this.createStoreyPlanWithHttpInfo(cloudPk, modelPk, projectPk, storeyUuid)
+    createStoreyPlan(cloudPk, modelPk, projectPk, storeyUuid, storeyModelPlanRequest) {
+      return this.createStoreyPlanWithHttpInfo(cloudPk, modelPk, projectPk, storeyUuid, storeyModelPlanRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8673,10 +8701,13 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedStoreyBuildingRequest} opts.patchedStoreyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Building} and HTTP response
      */
-    updateBuildingWithHttpInfo(cloudPk, modelPk, projectPk, uuid) {
-      let postBody = null;
+    updateBuildingWithHttpInfo(cloudPk, modelPk, projectPk, uuid, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedStoreyBuildingRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling updateBuilding");
@@ -8708,7 +8739,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Building;
       return this.apiClient.callApi(
@@ -8725,10 +8756,12 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedStoreyBuildingRequest} opts.patchedStoreyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Building}
      */
-    updateBuilding(cloudPk, modelPk, projectPk, uuid) {
-      return this.updateBuildingWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
+    updateBuilding(cloudPk, modelPk, projectPk, uuid, opts) {
+      return this.updateBuildingWithHttpInfo(cloudPk, modelPk, projectPk, uuid, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9877,10 +9910,13 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedStoreyBuildingRequest} opts.patchedStoreyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Storey} and HTTP response
      */
-    updateStoreyWithHttpInfo(cloudPk, modelPk, projectPk, uuid) {
-      let postBody = null;
+    updateStoreyWithHttpInfo(cloudPk, modelPk, projectPk, uuid, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedStoreyBuildingRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling updateStorey");
@@ -9912,7 +9948,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Storey;
       return this.apiClient.callApi(
@@ -9929,10 +9965,12 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedStoreyBuildingRequest} opts.patchedStoreyBuildingRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Storey}
      */
-    updateStorey(cloudPk, modelPk, projectPk, uuid) {
-      return this.updateStoreyWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
+    updateStorey(cloudPk, modelPk, projectPk, uuid, opts) {
+      return this.updateStoreyWithHttpInfo(cloudPk, modelPk, projectPk, uuid, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

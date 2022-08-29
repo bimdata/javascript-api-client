@@ -1100,7 +1100,7 @@ Name | Type | Description  | Notes
 
 ## createBuilding
 
-> Building createBuilding(cloudPk, modelPk, projectPk)
+> Building createBuilding(cloudPk, modelPk, projectPk, storeyBuildingRequest)
 
 Create a building of a model
 
@@ -1132,7 +1132,8 @@ let apiInstance = new bimdata.ModelApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.createBuilding(cloudPk, modelPk, projectPk).then((data) => {
+let storeyBuildingRequest = new bimdata.StoreyBuildingRequest(); // StoreyBuildingRequest | 
+apiInstance.createBuilding(cloudPk, modelPk, projectPk, storeyBuildingRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1148,6 +1149,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **storeyBuildingRequest** | [**StoreyBuildingRequest**](StoreyBuildingRequest.md)|  | 
 
 ### Return type
 
@@ -1159,13 +1161,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createBuildingPlan
 
-> Building createBuildingPlan(buildingUuid, cloudPk, modelPk, projectPk)
+> Building createBuildingPlan(buildingUuid, cloudPk, modelPk, projectPk, buildingModelPlanRequest)
 
 Create a relation between a 2d model and a building
 
@@ -1198,7 +1200,8 @@ let buildingUuid = "buildingUuid_example"; // String |
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.createBuildingPlan(buildingUuid, cloudPk, modelPk, projectPk).then((data) => {
+let buildingModelPlanRequest = new bimdata.BuildingModelPlanRequest(); // BuildingModelPlanRequest | 
+apiInstance.createBuildingPlan(buildingUuid, cloudPk, modelPk, projectPk, buildingModelPlanRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1215,6 +1218,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **buildingModelPlanRequest** | [**BuildingModelPlanRequest**](BuildingModelPlanRequest.md)|  | 
 
 ### Return type
 
@@ -1226,7 +1230,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
@@ -2334,7 +2338,7 @@ Name | Type | Description  | Notes
 
 ## createStorey
 
-> Storey createStorey(cloudPk, modelPk, projectPk)
+> Storey createStorey(cloudPk, modelPk, projectPk, storeyBuildingRequest)
 
 Create a storey of a model
 
@@ -2366,7 +2370,8 @@ let apiInstance = new bimdata.ModelApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.createStorey(cloudPk, modelPk, projectPk).then((data) => {
+let storeyBuildingRequest = new bimdata.StoreyBuildingRequest(); // StoreyBuildingRequest | 
+apiInstance.createStorey(cloudPk, modelPk, projectPk, storeyBuildingRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2382,6 +2387,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **storeyBuildingRequest** | [**StoreyBuildingRequest**](StoreyBuildingRequest.md)|  | 
 
 ### Return type
 
@@ -2393,13 +2399,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
 ## createStoreyPlan
 
-> Storey createStoreyPlan(cloudPk, modelPk, projectPk, storeyUuid)
+> Storey createStoreyPlan(cloudPk, modelPk, projectPk, storeyUuid, storeyModelPlanRequest)
 
 Create a relation between a 2d model and a storey
 
@@ -2432,7 +2438,8 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let storeyUuid = "storeyUuid_example"; // String | 
-apiInstance.createStoreyPlan(cloudPk, modelPk, projectPk, storeyUuid).then((data) => {
+let storeyModelPlanRequest = new bimdata.StoreyModelPlanRequest(); // StoreyModelPlanRequest | 
+apiInstance.createStoreyPlan(cloudPk, modelPk, projectPk, storeyUuid, storeyModelPlanRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2449,6 +2456,7 @@ Name | Type | Description  | Notes
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **storeyUuid** | **String**|  | 
+ **storeyModelPlanRequest** | [**StoreyModelPlanRequest**](StoreyModelPlanRequest.md)|  | 
 
 ### Return type
 
@@ -2460,7 +2468,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
@@ -8424,7 +8432,7 @@ Name | Type | Description  | Notes
 
 ## updateBuilding
 
-> Building updateBuilding(cloudPk, modelPk, projectPk, uuid)
+> Building updateBuilding(cloudPk, modelPk, projectPk, uuid, opts)
 
 Update some fields of a building
 
@@ -8457,7 +8465,10 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let uuid = "uuid_example"; // String | 
-apiInstance.updateBuilding(cloudPk, modelPk, projectPk, uuid).then((data) => {
+let opts = {
+  'patchedStoreyBuildingRequest': new bimdata.PatchedStoreyBuildingRequest() // PatchedStoreyBuildingRequest | 
+};
+apiInstance.updateBuilding(cloudPk, modelPk, projectPk, uuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8474,6 +8485,7 @@ Name | Type | Description  | Notes
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **uuid** | **String**|  | 
+ **patchedStoreyBuildingRequest** | [**PatchedStoreyBuildingRequest**](PatchedStoreyBuildingRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -8485,7 +8497,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
@@ -9564,7 +9576,7 @@ Name | Type | Description  | Notes
 
 ## updateStorey
 
-> Storey updateStorey(cloudPk, modelPk, projectPk, uuid)
+> Storey updateStorey(cloudPk, modelPk, projectPk, uuid, opts)
 
 Update some fields of a storey
 
@@ -9597,7 +9609,10 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let uuid = "uuid_example"; // String | 
-apiInstance.updateStorey(cloudPk, modelPk, projectPk, uuid).then((data) => {
+let opts = {
+  'patchedStoreyBuildingRequest': new bimdata.PatchedStoreyBuildingRequest() // PatchedStoreyBuildingRequest | 
+};
+apiInstance.updateStorey(cloudPk, modelPk, projectPk, uuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9614,6 +9629,7 @@ Name | Type | Description  | Notes
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **uuid** | **String**|  | 
+ **patchedStoreyBuildingRequest** | [**PatchedStoreyBuildingRequest**](PatchedStoreyBuildingRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -9625,7 +9641,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
