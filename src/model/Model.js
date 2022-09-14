@@ -379,6 +379,12 @@ Model['TypeEnum'] = {
     "BFX": "BFX",
 
     /**
+     * value: "POINT_CLOUD"
+     * @const
+     */
+    "POINT_CLOUD": "POINT_CLOUD",
+
+    /**
      * value: "METABUILDING"
      * @const
      */

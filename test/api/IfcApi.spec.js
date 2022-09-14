@@ -418,6 +418,16 @@
         done();
       });
     });
+    describe('createTilesetDeprecated', function() {
+      it('should call createTilesetDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createTilesetDeprecated
+        //instance.createTilesetDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createZoneDeprecated', function() {
       it('should call createZoneDeprecated successfully', function(done) {
         //uncomment below and update the code to test createZoneDeprecated
@@ -1162,6 +1172,16 @@
       it('should call getSystemsDeprecated successfully', function(done) {
         //uncomment below and update the code to test getSystemsDeprecated
         //instance.getSystemsDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getTilesetDeprecated', function() {
+      it('should call getTilesetDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getTilesetDeprecated
+        //instance.getTilesetDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

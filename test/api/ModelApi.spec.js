@@ -398,6 +398,16 @@
         done();
       });
     });
+    describe('createTileset', function() {
+      it('should call createTileset successfully', function(done) {
+        //uncomment below and update the code to test createTileset
+        //instance.createTileset(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createZone', function() {
       it('should call createZone successfully', function(done) {
         //uncomment below and update the code to test createZone
@@ -1082,6 +1092,16 @@
       it('should call getSystems successfully', function(done) {
         //uncomment below and update the code to test getSystems
         //instance.getSystems(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getTileset', function() {
+      it('should call getTileset successfully', function(done) {
+        //uncomment below and update the code to test getTileset
+        //instance.getTileset(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

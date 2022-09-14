@@ -35,7 +35,7 @@ class Document {
      * @param createdAt {Date} Creation date
      * @param updatedAt {Date} Date of the last update
      * @param modelId {Number} 
-     * @param modelType {module:model/Document.ModelTypeEnum} Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, DAE, BFX
+     * @param modelType {module:model/Document.ModelTypeEnum} Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, DAE, BFX, POINT_CLOUD
      * @param ifcId {Number} DEPRECATED: Use 'model_id' instead.
      * @param userPermission {module:model/Document.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      * @param isHeadVersion {Boolean} Document is a head of version or is owned by another document
@@ -216,7 +216,7 @@ Document.prototype['updated_at'] = undefined;
 Document.prototype['model_id'] = undefined;
 
 /**
- * Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, DAE, BFX
+ * Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, DAE, BFX, POINT_CLOUD
  * @member {module:model/Document.ModelTypeEnum} model_type
  */
 Document.prototype['model_type'] = undefined;
@@ -309,6 +309,12 @@ Document['ModelTypeEnum'] = {
      * @const
      */
     "BFX": "BFX",
+
+    /**
+     * value: "POINT_CLOUD"
+     * @const
+     */
+    "POINT_CLOUD": "POINT_CLOUD",
 
     /**
      * value: "null"

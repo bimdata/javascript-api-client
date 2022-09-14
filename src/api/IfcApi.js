@@ -2709,6 +2709,68 @@ export default class IfcApi {
 
 
     /**
+     * Create the tileset of the model and upload all files
+     * This route is internaly used by BIMData, you probably don't want to use it  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    createTilesetDeprecatedWithHttpInfo(cloudPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createTilesetDeprecated");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling createTilesetDeprecated");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createTilesetDeprecated");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/tileset', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create the tileset of the model and upload all files
+     * This route is internaly used by BIMData, you probably don't want to use it  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    createTilesetDeprecated(cloudPk, id, projectPk) {
+      return this.createTilesetDeprecatedWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create a zone in the model
      *  Bulk create available. You can either post an object or a list of objects. Is you post a list, the response will be a list (in the same order) of created objects or of errors if any If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file  Required scopes: ifc:write, model:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -7936,6 +7998,74 @@ export default class IfcApi {
      */
     getSystemsDeprecated(cloudPk, ifcPk, projectPk) {
       return this.getSystemsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve the tileset of the model
+     * This is only availble if the model is a POINT_CLOUD  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.tileFormat  (default to 'pnts')
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    getTilesetDeprecatedWithHttpInfo(cloudPk, id, projectPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getTilesetDeprecated");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getTilesetDeprecated");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getTilesetDeprecated");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+        'tile_format': opts['tileFormat']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/tileset', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve the tileset of the model
+     * This is only availble if the model is a POINT_CLOUD  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.tileFormat  (default to 'pnts')
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    getTilesetDeprecated(cloudPk, id, projectPk, opts) {
+      return this.getTilesetDeprecatedWithHttpInfo(cloudPk, id, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

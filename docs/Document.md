@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **createdAt** | **Date** | Creation date | [readonly] 
 **updatedAt** | **Date** | Date of the last update | [readonly] 
 **modelId** | **Number** |  | [readonly] 
-**modelType** | **String** | Model&#39;s type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, DAE, BFX | [readonly] 
+**modelType** | **String** | Model&#39;s type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, DAE, BFX, POINT_CLOUD | [readonly] 
 **ifcId** | **Number** | DEPRECATED: Use &#39;model_id&#39; instead. | [readonly] 
 **userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 
 **isHeadVersion** | **Boolean** | Document is a head of version or is owned by another document | [readonly] 
@@ -47,6 +47,8 @@ Name | Type | Description | Notes
 * `DAE` (value: `"DAE"`)
 
 * `BFX` (value: `"BFX"`)
+
+* `POINT_CLOUD` (value: `"POINT_CLOUD"`)
 
 * `null` (value: `"null"`)
 

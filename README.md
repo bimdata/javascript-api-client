@@ -361,6 +361,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**createStoreyDeprecated**](docs/IfcApi.md#createStoreyDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey | Create a storey of a model
 *bimdata.IfcApi* | [**createStoreyPlanDeprecated**](docs/IfcApi.md#createStoreyPlanDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_uuid}/plan/add | Create a relation between a 2d model and a storey
 *bimdata.IfcApi* | [**createSystemDeprecated**](docs/IfcApi.md#createSystemDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system | Create a system in the model
+*bimdata.IfcApi* | [**createTilesetDeprecated**](docs/IfcApi.md#createTilesetDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/tileset | Create the tileset of the model and upload all files
 *bimdata.IfcApi* | [**createZoneDeprecated**](docs/IfcApi.md#createZoneDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Create a zone in the model
 *bimdata.IfcApi* | [**createZoneSpaceDeprecated**](docs/IfcApi.md#createZoneSpaceDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Create a space in a zone
 *bimdata.IfcApi* | [**deleteAccessTokenDeprecated**](docs/IfcApi.md#deleteAccessTokenDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Delete a token
@@ -436,6 +437,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**getStoreysDeprecated**](docs/IfcApi.md#getStoreysDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey | Retrieve all storeys of a model
 *bimdata.IfcApi* | [**getSystemDeprecated**](docs/IfcApi.md#getSystemDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid} | Retrieve a system of a model
 *bimdata.IfcApi* | [**getSystemsDeprecated**](docs/IfcApi.md#getSystemsDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system | Retrieve all systems of a model
+*bimdata.IfcApi* | [**getTilesetDeprecated**](docs/IfcApi.md#getTilesetDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/tileset | Retrieve the tileset of the model
 *bimdata.IfcApi* | [**getZoneDeprecated**](docs/IfcApi.md#getZoneDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Retrieve one zone of a model
 *bimdata.IfcApi* | [**getZoneSpaceDeprecated**](docs/IfcApi.md#getZoneSpaceDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Retrieve one space of a zone
 *bimdata.IfcApi* | [**getZoneSpacesDeprecated**](docs/IfcApi.md#getZoneSpacesDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Retrieve all spaces of a zone
@@ -513,6 +515,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**createStorey**](docs/ModelApi.md#createStorey) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey | Create a storey of a model
 *bimdata.ModelApi* | [**createStoreyPlan**](docs/ModelApi.md#createStoreyPlan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/add | Create a relation between a 2d model and a storey
 *bimdata.ModelApi* | [**createSystem**](docs/ModelApi.md#createSystem) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system | Create a system in the model
+*bimdata.ModelApi* | [**createTileset**](docs/ModelApi.md#createTileset) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/tileset | Create the tileset of the model and upload all files
 *bimdata.ModelApi* | [**createZone**](docs/ModelApi.md#createZone) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone | Create a zone in the model
 *bimdata.ModelApi* | [**createZoneSpace**](docs/ModelApi.md#createZoneSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space | Create a space in a zone
 *bimdata.ModelApi* | [**deleteAccessToken**](docs/ModelApi.md#deleteAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token} | Delete a token
@@ -582,6 +585,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**getStoreys**](docs/ModelApi.md#getStoreys) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey | Retrieve all storeys of a model
 *bimdata.ModelApi* | [**getSystem**](docs/ModelApi.md#getSystem) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system/{uuid} | Retrieve a system of a model
 *bimdata.ModelApi* | [**getSystems**](docs/ModelApi.md#getSystems) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system | Retrieve all systems of a model
+*bimdata.ModelApi* | [**getTileset**](docs/ModelApi.md#getTileset) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/tileset | Retrieve the tileset of the model
 *bimdata.ModelApi* | [**getZone**](docs/ModelApi.md#getZone) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{id} | Retrieve one zone of a model
 *bimdata.ModelApi* | [**getZoneSpace**](docs/ModelApi.md#getZoneSpace) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space/{id} | Retrieve one space of a zone
 *bimdata.ModelApi* | [**getZoneSpaces**](docs/ModelApi.md#getZoneSpaces) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space | Retrieve all spaces of a zone

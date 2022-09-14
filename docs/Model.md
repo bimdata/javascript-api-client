@@ -56,6 +56,8 @@ Name | Type | Description | Notes
 
 * `BFX` (value: `"BFX"`)
 
+* `POINT_CLOUD` (value: `"POINT_CLOUD"`)
+
 * `METABUILDING` (value: `"METABUILDING"`)
 
 
