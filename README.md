@@ -224,6 +224,7 @@ Class | Method | HTTP request | Description
 *bimdata.CheckerApi* | [**updateRule**](docs/CheckerApi.md#updateRule) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | Update some fields of a Rule
 *bimdata.CheckerApi* | [**updateRuleComponent**](docs/CheckerApi.md#updateRuleComponent) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Update some fields of a RuleComponent
 *bimdata.CheckerApi* | [**updateRuleset**](docs/CheckerApi.md#updateRuleset) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Update some fields of a Ruleset
+*bimdata.CollaborationApi* | [**acceptUserInvitation**](docs/CollaborationApi.md#acceptUserInvitation) | **POST** /user/invitations/{id}/accept | Accept an invitation
 *bimdata.CollaborationApi* | [**acceptValidation**](docs/CollaborationApi.md#acceptValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/accept | Accept a validation
 *bimdata.CollaborationApi* | [**addDocumentTag**](docs/CollaborationApi.md#addDocumentTag) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/tag | Add a tag to a document
 *bimdata.CollaborationApi* | [**addGroupMember**](docs/CollaborationApi.md#addGroupMember) | **POST** /cloud/{cloud_pk}/project/{project_pk}/group/{group_pk}/member | Add a user to a group
@@ -260,6 +261,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**deleteValidation**](docs/CollaborationApi.md#deleteValidation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id} | Remove a validation
 *bimdata.CollaborationApi* | [**deleteVisa**](docs/CollaborationApi.md#deleteVisa) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Remove a visa
 *bimdata.CollaborationApi* | [**deleteVisaComment**](docs/CollaborationApi.md#deleteVisaComment) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Remove a comment
+*bimdata.CollaborationApi* | [**denyUserInvitation**](docs/CollaborationApi.md#denyUserInvitation) | **POST** /user/invitations/{id}/deny | Deny an invitation
 *bimdata.CollaborationApi* | [**denyValidation**](docs/CollaborationApi.md#denyValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/deny | Deny a validation
 *bimdata.CollaborationApi* | [**getClassification**](docs/CollaborationApi.md#getClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification/{id} | Retrieve a classification
 *bimdata.CollaborationApi* | [**getClassifications**](docs/CollaborationApi.md#getClassifications) | **GET** /cloud/{cloud_pk}/project/{project_pk}/classification | Retrieve all classifications
@@ -296,6 +298,8 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getSelfUser**](docs/CollaborationApi.md#getSelfUser) | **GET** /user | Get info about the current user
 *bimdata.CollaborationApi* | [**getTag**](docs/CollaborationApi.md#getTag) | **GET** /cloud/{cloud_pk}/project/{project_pk}/tag/{id} | Retrieve a tag
 *bimdata.CollaborationApi* | [**getTags**](docs/CollaborationApi.md#getTags) | **GET** /cloud/{cloud_pk}/project/{project_pk}/tag | Retrieve all tags
+*bimdata.CollaborationApi* | [**getUserInvitation**](docs/CollaborationApi.md#getUserInvitation) | **GET** /user/invitations/{id} | Retrieve an invitation
+*bimdata.CollaborationApi* | [**getUserInvitations**](docs/CollaborationApi.md#getUserInvitations) | **GET** /user/invitations | List user&#39;s invitations
 *bimdata.CollaborationApi* | [**getValidation**](docs/CollaborationApi.md#getValidation) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id} | Retrieve a validation to a visa
 *bimdata.CollaborationApi* | [**getValidations**](docs/CollaborationApi.md#getValidations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation | List all validations to a visa
 *bimdata.CollaborationApi* | [**getVisa**](docs/CollaborationApi.md#getVisa) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Retrieve a visa of a document

@@ -27,6 +27,7 @@ import FolderWithoutChildrenRequest from '../model/FolderWithoutChildrenRequest'
 import Group from '../model/Group';
 import GroupFolder from '../model/GroupFolder';
 import GroupRequest from '../model/GroupRequest';
+import Invitation from '../model/Invitation';
 import PatchedClassificationRequest from '../model/PatchedClassificationRequest';
 import PatchedCloudRequest from '../model/PatchedCloudRequest';
 import PatchedDocumentRequest from '../model/PatchedDocumentRequest';
@@ -84,6 +85,54 @@ export default class CollaborationApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+
+    /**
+     * Accept an invitation
+     * The user is added to the cloud and projet.  Required scopes: user:write
+     * @param {Number} id A unique integer value identifying this invitation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    acceptUserInvitationWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling acceptUserInvitation");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/user/invitations/{id}/accept', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Accept an invitation
+     * The user is added to the cloud and projet.  Required scopes: user:write
+     * @param {Number} id A unique integer value identifying this invitation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    acceptUserInvitation(id) {
+      return this.acceptUserInvitationWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
 
     /**
@@ -751,7 +800,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'GLTF', 'DWG', 'POINT_CLOUD', 'BFX', 'OBJ', 'IFC', 'DAE', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DXF', 'BFX', 'GLTF', 'DAE', 'OBJ', 'IFC', 'POINT_CLOUD', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -819,7 +868,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'GLTF', 'DWG', 'POINT_CLOUD', 'BFX', 'OBJ', 'IFC', 'DAE', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DXF', 'BFX', 'GLTF', 'DAE', 'OBJ', 'IFC', 'POINT_CLOUD', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -2363,6 +2412,54 @@ export default class CollaborationApi {
      */
     deleteVisaComment(cloudPk, documentPk, id, projectPk, visaPk) {
       return this.deleteVisaCommentWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Deny an invitation
+     * The invitation status change to DENIED and the user is not added to the cloud. You can accept an invitation previously denied  Required scopes: user:write
+     * @param {Number} id A unique integer value identifying this invitation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    denyUserInvitationWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling denyUserInvitation");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/user/invitations/{id}/deny', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Deny an invitation
+     * The invitation status change to DENIED and the user is not added to the cloud. You can accept an invitation previously denied  Required scopes: user:write
+     * @param {Number} id A unique integer value identifying this invitation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    denyUserInvitation(id) {
+      return this.denyUserInvitationWithHttpInfo(id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4366,6 +4463,95 @@ export default class CollaborationApi {
      */
     getTags(cloudPk, projectPk) {
       return this.getTagsWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve an invitation
+     * Retrieve the invitation  Required scopes: user:read
+     * @param {Number} id A unique integer value identifying this invitation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Invitation} and HTTP response
+     */
+    getUserInvitationWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getUserInvitation");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Invitation;
+      return this.apiClient.callApi(
+        '/user/invitations/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve an invitation
+     * Retrieve the invitation  Required scopes: user:read
+     * @param {Number} id A unique integer value identifying this invitation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Invitation}
+     */
+    getUserInvitation(id) {
+      return this.getUserInvitationWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List user's invitations
+     * List all user's invitations  Required scopes: user:read
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Invitation>} and HTTP response
+     */
+    getUserInvitationsWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Invitation];
+      return this.apiClient.callApi(
+        '/user/invitations', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List user's invitations
+     * List all user's invitations  Required scopes: user:read
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Invitation>}
+     */
+    getUserInvitations() {
+      return this.getUserInvitationsWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -48,6 +48,16 @@
   }
 
   describe('CollaborationApi', function() {
+    describe('acceptUserInvitation', function() {
+      it('should call acceptUserInvitation successfully', function(done) {
+        //uncomment below and update the code to test acceptUserInvitation
+        //instance.acceptUserInvitation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('acceptValidation', function() {
       it('should call acceptValidation successfully', function(done) {
         //uncomment below and update the code to test acceptValidation
@@ -408,6 +418,16 @@
         done();
       });
     });
+    describe('denyUserInvitation', function() {
+      it('should call denyUserInvitation successfully', function(done) {
+        //uncomment below and update the code to test denyUserInvitation
+        //instance.denyUserInvitation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('denyValidation', function() {
       it('should call denyValidation successfully', function(done) {
         //uncomment below and update the code to test denyValidation
@@ -762,6 +782,26 @@
       it('should call getTags successfully', function(done) {
         //uncomment below and update the code to test getTags
         //instance.getTags(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserInvitation', function() {
+      it('should call getUserInvitation successfully', function(done) {
+        //uncomment below and update the code to test getUserInvitation
+        //instance.getUserInvitation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getUserInvitations', function() {
+      it('should call getUserInvitations successfully', function(done) {
+        //uncomment below and update the code to test getUserInvitations
+        //instance.getUserInvitations(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
