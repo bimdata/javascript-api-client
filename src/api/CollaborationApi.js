@@ -27,7 +27,6 @@ import FolderWithoutChildrenRequest from '../model/FolderWithoutChildrenRequest'
 import Group from '../model/Group';
 import GroupFolder from '../model/GroupFolder';
 import GroupRequest from '../model/GroupRequest';
-import Invitation from '../model/Invitation';
 import PatchedClassificationRequest from '../model/PatchedClassificationRequest';
 import PatchedCloudRequest from '../model/PatchedCloudRequest';
 import PatchedDocumentRequest from '../model/PatchedDocumentRequest';
@@ -57,6 +56,7 @@ import Tag from '../model/Tag';
 import TagIdRequest from '../model/TagIdRequest';
 import TagRequest from '../model/TagRequest';
 import User from '../model/User';
+import UserInvitation from '../model/UserInvitation';
 import UserProject from '../model/UserProject';
 import UserProjectIdRequest from '../model/UserProjectIdRequest';
 import Visa from '../model/Visa';
@@ -800,7 +800,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'BFX', 'GLTF', 'DAE', 'OBJ', 'IFC', 'POINT_CLOUD', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'BFX', 'DAE', 'DWG', 'DXF', 'GLTF', 'IFC', 'POINT_CLOUD'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -868,7 +868,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'BFX', 'GLTF', 'DAE', 'OBJ', 'IFC', 'POINT_CLOUD', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'BFX', 'DAE', 'DWG', 'DXF', 'GLTF', 'IFC', 'POINT_CLOUD'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -4473,7 +4473,7 @@ export default class CollaborationApi {
      * Retrieve an invitation
      * Retrieve the invitation  Required scopes: user:read
      * @param {Number} id A unique integer value identifying this invitation.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Invitation} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserInvitation} and HTTP response
      */
     getUserInvitationWithHttpInfo(id) {
       let postBody = null;
@@ -4495,7 +4495,7 @@ export default class CollaborationApi {
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Invitation;
+      let returnType = UserInvitation;
       return this.apiClient.callApi(
         '/user/invitations/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4507,7 +4507,7 @@ export default class CollaborationApi {
      * Retrieve an invitation
      * Retrieve the invitation  Required scopes: user:read
      * @param {Number} id A unique integer value identifying this invitation.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Invitation}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserInvitation}
      */
     getUserInvitation(id) {
       return this.getUserInvitationWithHttpInfo(id)
@@ -4520,7 +4520,7 @@ export default class CollaborationApi {
     /**
      * List user's invitations
      * List all user's invitations  Required scopes: user:read
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Invitation>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/UserInvitation>} and HTTP response
      */
     getUserInvitationsWithHttpInfo() {
       let postBody = null;
@@ -4537,7 +4537,7 @@ export default class CollaborationApi {
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Invitation];
+      let returnType = [UserInvitation];
       return this.apiClient.callApi(
         '/user/invitations', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4548,7 +4548,7 @@ export default class CollaborationApi {
     /**
      * List user's invitations
      * List all user's invitations  Required scopes: user:read
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Invitation>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/UserInvitation>}
      */
     getUserInvitations() {
       return this.getUserInvitationsWithHttpInfo()

@@ -235,6 +235,7 @@ import TopicTypeRequest from './model/TopicTypeRequest';
 import Unit from './model/Unit';
 import UnitRequest from './model/UnitRequest';
 import User from './model/User';
+import UserInvitation from './model/UserInvitation';
 import UserProject from './model/UserProject';
 import UserProjectIdRequest from './model/UserProjectIdRequest';
 import ViewSetupHints from './model/ViewSetupHints';
@@ -1634,6 +1635,12 @@ export {
      * @property {module:model/User}
      */
     User,
+
+    /**
+     * The UserInvitation model constructor.
+     * @property {module:model/UserInvitation}
+     */
+    UserInvitation,
 
     /**
      * The UserProject model constructor.

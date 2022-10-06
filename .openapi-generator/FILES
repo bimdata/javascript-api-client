@@ -230,6 +230,7 @@ docs/TopicTypeRequest.md
 docs/Unit.md
 docs/UnitRequest.md
 docs/User.md
+docs/UserInvitation.md
 docs/UserProject.md
 docs/UserProjectIdRequest.md
 docs/ViewSetupHints.md
@@ -485,6 +486,7 @@ src/model/TopicTypeRequest.js
 src/model/Unit.js
 src/model/UnitRequest.js
 src/model/User.js
+src/model/UserInvitation.js
 src/model/UserProject.js
 src/model/UserProjectIdRequest.js
 src/model/ViewSetupHints.js
@@ -735,6 +737,7 @@ test/model/TopicTypeRequest.spec.js
 test/model/Unit.spec.js
 test/model/UnitRequest.spec.js
 test/model/User.spec.js
+test/model/UserInvitation.spec.js
 test/model/UserProject.spec.js
 test/model/UserProjectIdRequest.spec.js
 test/model/ViewSetupHints.spec.js

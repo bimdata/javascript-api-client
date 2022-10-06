@@ -889,7 +889,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;DXF&#39;, &#39;BFX&#39;, &#39;GLTF&#39;, &#39;DAE&#39;, &#39;OBJ&#39;, &#39;IFC&#39;, &#39;POINT_CLOUD&#39;, &#39;DWG&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;OBJ&#39;, &#39;BFX&#39;, &#39;DAE&#39;, &#39;DWG&#39;, &#39;DXF&#39;, &#39;GLTF&#39;, &#39;IFC&#39;, &#39;POINT_CLOUD&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -4887,7 +4887,7 @@ Name | Type | Description  | Notes
 
 ## getUserInvitation
 
-> Invitation getUserInvitation(id)
+> UserInvitation getUserInvitation(id)
 
 Retrieve an invitation
 
@@ -4934,7 +4934,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Invitation**](Invitation.md)
+[**UserInvitation**](UserInvitation.md)
 
 ### Authorization
 
@@ -4948,7 +4948,7 @@ Name | Type | Description  | Notes
 
 ## getUserInvitations
 
-> [Invitation] getUserInvitations()
+> [UserInvitation] getUserInvitations()
 
 List user&#39;s invitations
 
@@ -4991,7 +4991,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[Invitation]**](Invitation.md)
+[**[UserInvitation]**](UserInvitation.md)
 
 ### Authorization
 

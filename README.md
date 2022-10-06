@@ -866,6 +866,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Unit](docs/Unit.md)
  - [bimdata.UnitRequest](docs/UnitRequest.md)
  - [bimdata.User](docs/User.md)
+ - [bimdata.UserInvitation](docs/UserInvitation.md)
  - [bimdata.UserProject](docs/UserProject.md)
  - [bimdata.UserProjectIdRequest](docs/UserProjectIdRequest.md)
  - [bimdata.ViewSetupHints](docs/ViewSetupHints.md)
