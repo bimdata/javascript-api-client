@@ -29,10 +29,11 @@ class UserInvitation {
      * @param cloudName {String} 
      * @param projectId {Number} 
      * @param sender {module:model/User} 
+     * @param createdAt {Date} 
      */
-    constructor(id, redirectUri, cloudId, cloudName, projectId, sender) { 
+    constructor(id, redirectUri, cloudId, cloudName, projectId, sender, createdAt) { 
         
-        UserInvitation.initialize(this, id, redirectUri, cloudId, cloudName, projectId, sender);
+        UserInvitation.initialize(this, id, redirectUri, cloudId, cloudName, projectId, sender, createdAt);
     }
 
     /**
@@ -40,13 +41,14 @@ class UserInvitation {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, redirectUri, cloudId, cloudName, projectId, sender) { 
+    static initialize(obj, id, redirectUri, cloudId, cloudName, projectId, sender, createdAt) { 
         obj['id'] = id;
         obj['redirect_uri'] = redirectUri;
         obj['cloud_id'] = cloudId;
         obj['cloud_name'] = cloudName;
         obj['project_id'] = projectId;
         obj['sender'] = sender;
+        obj['created_at'] = createdAt;
     }
 
     /**
@@ -83,6 +85,12 @@ class UserInvitation {
             }
             if (data.hasOwnProperty('sender')) {
                 obj['sender'] = User.constructFromObject(data['sender']);
+            }
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            }
+            if (data.hasOwnProperty('responded_at')) {
+                obj['responded_at'] = ApiClient.convertToType(data['responded_at'], 'Date');
             }
         }
         return obj;
@@ -132,6 +140,16 @@ UserInvitation.prototype['status'] = undefined;
  * @member {module:model/User} sender
  */
 UserInvitation.prototype['sender'] = undefined;
+
+/**
+ * @member {Date} created_at
+ */
+UserInvitation.prototype['created_at'] = undefined;
+
+/**
+ * @member {Date} responded_at
+ */
+UserInvitation.prototype['responded_at'] = undefined;
 
 
 

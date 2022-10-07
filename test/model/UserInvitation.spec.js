@@ -102,6 +102,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property createdAt (base name: "created_at")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instance = new bimdata.UserInvitation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property respondedAt (base name: "responded_at")', function() {
+      // uncomment below and update the code to test the property respondedAt
+      //var instance = new bimdata.UserInvitation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **projectName** | **String** |  | [optional] 
 **status** | **String** |          A: Accepted         D: Denied         P: Pending          | [optional] 
 **sender** | [**User**](User.md) |  | 
+**createdAt** | **Date** |  | [readonly] 
+**respondedAt** | **Date** |  | [optional] 
 
 
 
