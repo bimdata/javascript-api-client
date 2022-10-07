@@ -66,8 +66,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cloudId (base name: "cloud_id")', function() {
+      // uncomment below and update the code to test the property cloudId
+      //var instance = new bimdata.UserInvitation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property cloudName (base name: "cloud_name")', function() {
       // uncomment below and update the code to test the property cloudName
+      //var instance = new bimdata.UserInvitation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property projectId (base name: "project_id")', function() {
+      // uncomment below and update the code to test the property projectId
       //var instance = new bimdata.UserInvitation();
       //expect(instance).to.be();
     });

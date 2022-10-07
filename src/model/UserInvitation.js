@@ -25,12 +25,14 @@ class UserInvitation {
      * @alias module:model/UserInvitation
      * @param id {Number} 
      * @param redirectUri {String} User will be redirected to this uri when they accept the invitation
+     * @param cloudId {Number} 
      * @param cloudName {String} 
+     * @param projectId {Number} 
      * @param sender {module:model/User} 
      */
-    constructor(id, redirectUri, cloudName, sender) { 
+    constructor(id, redirectUri, cloudId, cloudName, projectId, sender) { 
         
-        UserInvitation.initialize(this, id, redirectUri, cloudName, sender);
+        UserInvitation.initialize(this, id, redirectUri, cloudId, cloudName, projectId, sender);
     }
 
     /**
@@ -38,10 +40,12 @@ class UserInvitation {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, redirectUri, cloudName, sender) { 
+    static initialize(obj, id, redirectUri, cloudId, cloudName, projectId, sender) { 
         obj['id'] = id;
         obj['redirect_uri'] = redirectUri;
+        obj['cloud_id'] = cloudId;
         obj['cloud_name'] = cloudName;
+        obj['project_id'] = projectId;
         obj['sender'] = sender;
     }
 
@@ -62,8 +66,14 @@ class UserInvitation {
             if (data.hasOwnProperty('redirect_uri')) {
                 obj['redirect_uri'] = ApiClient.convertToType(data['redirect_uri'], 'String');
             }
+            if (data.hasOwnProperty('cloud_id')) {
+                obj['cloud_id'] = ApiClient.convertToType(data['cloud_id'], 'Number');
+            }
             if (data.hasOwnProperty('cloud_name')) {
                 obj['cloud_name'] = ApiClient.convertToType(data['cloud_name'], 'String');
+            }
+            if (data.hasOwnProperty('project_id')) {
+                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'Number');
             }
             if (data.hasOwnProperty('project_name')) {
                 obj['project_name'] = ApiClient.convertToType(data['project_name'], 'String');
@@ -93,9 +103,19 @@ UserInvitation.prototype['id'] = undefined;
 UserInvitation.prototype['redirect_uri'] = undefined;
 
 /**
+ * @member {Number} cloud_id
+ */
+UserInvitation.prototype['cloud_id'] = undefined;
+
+/**
  * @member {String} cloud_name
  */
 UserInvitation.prototype['cloud_name'] = undefined;
+
+/**
+ * @member {Number} project_id
+ */
+UserInvitation.prototype['project_id'] = undefined;
 
 /**
  * @member {String} project_name
