@@ -20,6 +20,7 @@ import ClassificationRequest from '../model/ClassificationRequest';
 import CreateBuildingByNameRequest from '../model/CreateBuildingByNameRequest';
 import CreateModelRequest from '../model/CreateModelRequest';
 import Document from '../model/Document';
+import DocumentIdRequest from '../model/DocumentIdRequest';
 import DocumentWithElementList from '../model/DocumentWithElementList';
 import Element from '../model/Element';
 import ElementClassificationRelation from '../model/ElementClassificationRelation';
@@ -7793,10 +7794,11 @@ export default class ModelApi {
      * @param {String} elementUuid 
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<module:model/DocumentIdRequest>} documentIdRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
      */
-    linkDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk) {
-      let postBody = null;
+    linkDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, documentIdRequest) {
+      let postBody = documentIdRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling linkDocumentsOfElement");
@@ -7813,6 +7815,10 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling linkDocumentsOfElement");
       }
+      // verify the required parameter 'documentIdRequest' is set
+      if (documentIdRequest === undefined || documentIdRequest === null) {
+        throw new Error("Missing the required parameter 'documentIdRequest' when calling linkDocumentsOfElement");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -7828,7 +7834,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Document];
       return this.apiClient.callApi(
@@ -7845,10 +7851,11 @@ export default class ModelApi {
      * @param {String} elementUuid 
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<module:model/DocumentIdRequest>} documentIdRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
      */
-    linkDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk) {
-      return this.linkDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk)
+    linkDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk, documentIdRequest) {
+      return this.linkDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, documentIdRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -36,6 +36,7 @@ docs/DetailedExtensions.md
 docs/Direction.md
 docs/DirectionRequest.md
 docs/Document.md
+docs/DocumentIdRequest.md
 docs/DocumentWithElementList.md
 docs/Element.md
 docs/ElementClassificationRelation.md
@@ -295,6 +296,7 @@ src/model/DetailedExtensions.js
 src/model/Direction.js
 src/model/DirectionRequest.js
 src/model/Document.js
+src/model/DocumentIdRequest.js
 src/model/DocumentWithElementList.js
 src/model/Element.js
 src/model/ElementClassificationRelation.js
@@ -546,6 +548,7 @@ test/model/DetailedExtensions.spec.js
 test/model/Direction.spec.js
 test/model/DirectionRequest.spec.js
 test/model/Document.spec.js
+test/model/DocumentIdRequest.spec.js
 test/model/DocumentWithElementList.spec.js
 test/model/Element.spec.js
 test/model/ElementClassificationRelation.spec.js

@@ -7604,7 +7604,7 @@ Name | Type | Description  | Notes
 
 ## linkDocumentsOfElement
 
-> [Document] linkDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk)
+> [Document] linkDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk, documentIdRequest)
 
 Link one or many documents to an element
 
@@ -7637,7 +7637,8 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let elementUuid = "elementUuid_example"; // String | 
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.linkDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk).then((data) => {
+let documentIdRequest = [new bimdata.DocumentIdRequest()]; // [DocumentIdRequest] | 
+apiInstance.linkDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk, documentIdRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7654,6 +7655,7 @@ Name | Type | Description  | Notes
  **elementUuid** | **String**|  | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **documentIdRequest** | [**[DocumentIdRequest]**](DocumentIdRequest.md)|  | 
 
 ### Return type
 
@@ -7665,7 +7667,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 
