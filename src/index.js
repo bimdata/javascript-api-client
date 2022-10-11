@@ -44,7 +44,6 @@ import DetailedExtensions from './model/DetailedExtensions';
 import Direction from './model/Direction';
 import DirectionRequest from './model/DirectionRequest';
 import Document from './model/Document';
-import DocumentIdRequest from './model/DocumentIdRequest';
 import DocumentWithElementList from './model/DocumentWithElementList';
 import Element from './model/Element';
 import ElementClassificationRelation from './model/ElementClassificationRelation';
@@ -490,12 +489,6 @@ export {
      * @property {module:model/Document}
      */
     Document,
-
-    /**
-     * The DocumentIdRequest model constructor.
-     * @property {module:model/DocumentIdRequest}
-     */
-    DocumentIdRequest,
 
     /**
      * The DocumentWithElementList model constructor.

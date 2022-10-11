@@ -20,7 +20,6 @@ import ClassificationRequest from '../model/ClassificationRequest';
 import CreateBuildingByNameRequest from '../model/CreateBuildingByNameRequest';
 import CreateModelRequest from '../model/CreateModelRequest';
 import Document from '../model/Document';
-import DocumentIdRequest from '../model/DocumentIdRequest';
 import DocumentWithElementList from '../model/DocumentWithElementList';
 import Element from '../model/Element';
 import ElementClassificationRelation from '../model/ElementClassificationRelation';
@@ -7794,11 +7793,11 @@ export default class ModelApi {
      * @param {String} elementUuid 
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Array.<module:model/DocumentIdRequest>} documentIdRequest 
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
      */
-    linkDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, documentIdRequest) {
-      let postBody = documentIdRequest;
+    linkDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, requestBody) {
+      let postBody = requestBody;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling linkDocumentsOfElement");
@@ -7815,9 +7814,9 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling linkDocumentsOfElement");
       }
-      // verify the required parameter 'documentIdRequest' is set
-      if (documentIdRequest === undefined || documentIdRequest === null) {
-        throw new Error("Missing the required parameter 'documentIdRequest' when calling linkDocumentsOfElement");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling linkDocumentsOfElement");
       }
 
       let pathParams = {
@@ -7851,11 +7850,11 @@ export default class ModelApi {
      * @param {String} elementUuid 
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Array.<module:model/DocumentIdRequest>} documentIdRequest 
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
      */
-    linkDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk, documentIdRequest) {
-      return this.linkDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, documentIdRequest)
+    linkDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk, requestBody) {
+      return this.linkDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

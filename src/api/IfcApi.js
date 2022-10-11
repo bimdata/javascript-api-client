@@ -22,7 +22,6 @@ import ClassificationRequest from '../model/ClassificationRequest';
 import CreateBuildingByNameRequest from '../model/CreateBuildingByNameRequest';
 import CreateModelRequest from '../model/CreateModelRequest';
 import Document from '../model/Document';
-import DocumentIdRequest from '../model/DocumentIdRequest';
 import DocumentWithElementList from '../model/DocumentWithElementList';
 import Element from '../model/Element';
 import ElementClassificationRelation from '../model/ElementClassificationRelation';
@@ -8436,11 +8435,11 @@ export default class IfcApi {
      * @param {String} elementUuid 
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Array.<module:model/DocumentIdRequest>} documentIdRequest 
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
      */
-    linkDocumentsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, documentIdRequest) {
-      let postBody = documentIdRequest;
+    linkDocumentsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, requestBody) {
+      let postBody = requestBody;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling linkDocumentsOfElementDeprecated");
@@ -8457,9 +8456,9 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling linkDocumentsOfElementDeprecated");
       }
-      // verify the required parameter 'documentIdRequest' is set
-      if (documentIdRequest === undefined || documentIdRequest === null) {
-        throw new Error("Missing the required parameter 'documentIdRequest' when calling linkDocumentsOfElementDeprecated");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling linkDocumentsOfElementDeprecated");
       }
 
       let pathParams = {
@@ -8493,11 +8492,11 @@ export default class IfcApi {
      * @param {String} elementUuid 
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Array.<module:model/DocumentIdRequest>} documentIdRequest 
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
      */
-    linkDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, documentIdRequest) {
-      return this.linkDocumentsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, documentIdRequest)
+    linkDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, requestBody) {
+      return this.linkDocumentsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

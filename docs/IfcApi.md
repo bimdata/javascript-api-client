@@ -8230,7 +8230,7 @@ null (empty response body)
 
 ## linkDocumentsOfElementDeprecated
 
-> [Document] linkDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, documentIdRequest)
+> [Document] linkDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, requestBody)
 
 Link one or many documents to an element
 
@@ -8263,8 +8263,8 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let documentIdRequest = [new bimdata.DocumentIdRequest()]; // [DocumentIdRequest] | 
-apiInstance.linkDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, documentIdRequest).then((data) => {
+let requestBody = [null]; // [Number] | 
+apiInstance.linkDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, requestBody).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8281,7 +8281,7 @@ Name | Type | Description  | Notes
  **elementUuid** | **String**|  | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **documentIdRequest** | [**[DocumentIdRequest]**](DocumentIdRequest.md)|  | 
+ **requestBody** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 

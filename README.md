@@ -675,7 +675,6 @@ Class | Method | HTTP request | Description
  - [bimdata.Direction](docs/Direction.md)
  - [bimdata.DirectionRequest](docs/DirectionRequest.md)
  - [bimdata.Document](docs/Document.md)
- - [bimdata.DocumentIdRequest](docs/DocumentIdRequest.md)
  - [bimdata.DocumentWithElementList](docs/DocumentWithElementList.md)
  - [bimdata.Element](docs/Element.md)
  - [bimdata.ElementClassificationRelation](docs/ElementClassificationRelation.md)
