@@ -47,8 +47,8 @@ class PatchedUserCloudUpdateRequest {
         if (data) {
             obj = obj || new PatchedUserCloudUpdateRequest();
 
-            if (data.hasOwnProperty('role')) {
-                obj['role'] = ApiClient.convertToType(data['role'], 'Number');
+            if (data.hasOwnProperty('cloud_role')) {
+                obj['cloud_role'] = ApiClient.convertToType(data['cloud_role'], 'Number');
             }
         }
         return obj;
@@ -58,21 +58,20 @@ class PatchedUserCloudUpdateRequest {
 }
 
 /**
- * Role of the user in the cloud
- * @member {module:model/PatchedUserCloudUpdateRequest.RoleEnum} role
+ * @member {module:model/PatchedUserCloudUpdateRequest.CloudRoleEnum} cloud_role
  */
-PatchedUserCloudUpdateRequest.prototype['role'] = undefined;
+PatchedUserCloudUpdateRequest.prototype['cloud_role'] = undefined;
 
 
 
 
 
 /**
- * Allowed values for the <code>role</code> property.
+ * Allowed values for the <code>cloud_role</code> property.
  * @enum {Number}
  * @readonly
  */
-PatchedUserCloudUpdateRequest['RoleEnum'] = {
+PatchedUserCloudUpdateRequest['CloudRoleEnum'] = {
 
     /**
      * value: 100

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**role** | **Number** | Role of the user in the cloud | [optional] 
+**cloudRole** | **Number** |  | [optional] 
 
 
 
-## Enum: RoleEnum
+## Enum: CloudRoleEnum
 
 
 * `100` (value: `100`)

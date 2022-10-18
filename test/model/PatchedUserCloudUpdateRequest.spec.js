@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(bimdata.PatchedUserCloudUpdateRequest);
     });
 
-    it('should have the property role (base name: "role")', function() {
-      // uncomment below and update the code to test the property role
+    it('should have the property cloudRole (base name: "cloud_role")', function() {
+      // uncomment below and update the code to test the property cloudRole
       //var instance = new bimdata.PatchedUserCloudUpdateRequest();
       //expect(instance).to.be();
     });
