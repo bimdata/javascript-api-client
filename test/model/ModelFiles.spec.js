@@ -90,8 +90,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property viewer360File (base name: "viewer_360_file")', function() {
-      // uncomment below and update the code to test the property viewer360File
+    it('should have the property previewFile (base name: "preview_file")', function() {
+      // uncomment below and update the code to test the property previewFile
       //var instance = new bimdata.ModelFiles();
       //expect(instance).to.be();
     });

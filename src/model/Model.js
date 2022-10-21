@@ -37,15 +37,16 @@ class Model {
      * @param mapFile {String} 
      * @param gltfFile {String} 
      * @param bvhTreeFile {String} 
-     * @param viewer360File {String} 
+     * @param previewFile {String} 
+     * @param viewer360File {String} DEPRECATED: Use 'preview_file' instead.
      * @param xktFile {String} 
      * @param projectId {Number} 
      * @param errors {Array.<String>} List of errors that happened during IFC processing
      * @param warnings {Array.<String>} List of warnings that happened during IFC processing
      */
-    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, viewer360File, xktFile, projectId, errors, warnings) { 
+    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, previewFile, viewer360File, xktFile, projectId, errors, warnings) { 
         
-        Model.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, viewer360File, xktFile, projectId, errors, warnings);
+        Model.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, previewFile, viewer360File, xktFile, projectId, errors, warnings);
     }
 
     /**
@@ -53,7 +54,7 @@ class Model {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, viewer360File, xktFile, projectId, errors, warnings) { 
+    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, previewFile, viewer360File, xktFile, projectId, errors, warnings) { 
         obj['id'] = id;
         obj['type'] = type;
         obj['creator'] = creator;
@@ -67,6 +68,7 @@ class Model {
         obj['map_file'] = mapFile;
         obj['gltf_file'] = gltfFile;
         obj['bvh_tree_file'] = bvhTreeFile;
+        obj['preview_file'] = previewFile;
         obj['viewer_360_file'] = viewer360File;
         obj['xkt_file'] = xktFile;
         obj['project_id'] = projectId;
@@ -129,6 +131,9 @@ class Model {
             }
             if (data.hasOwnProperty('bvh_tree_file')) {
                 obj['bvh_tree_file'] = ApiClient.convertToType(data['bvh_tree_file'], 'String');
+            }
+            if (data.hasOwnProperty('preview_file')) {
+                obj['preview_file'] = ApiClient.convertToType(data['preview_file'], 'String');
             }
             if (data.hasOwnProperty('viewer_360_file')) {
                 obj['viewer_360_file'] = ApiClient.convertToType(data['viewer_360_file'], 'String');
@@ -246,6 +251,12 @@ Model.prototype['gltf_file'] = undefined;
 Model.prototype['bvh_tree_file'] = undefined;
 
 /**
+ * @member {String} preview_file
+ */
+Model.prototype['preview_file'] = undefined;
+
+/**
+ * DEPRECATED: Use 'preview_file' instead.
  * @member {String} viewer_360_file
  */
 Model.prototype['viewer_360_file'] = undefined;

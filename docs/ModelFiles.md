@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **gltfFile** | **String** |  | [optional] 
 **gltfWithOpeningsFile** | **String** |  | [optional] 
 **bvhTreeFile** | **String** |  | [optional] 
-**viewer360File** | **String** |  | [optional] 
+**previewFile** | **String** |  | [optional] 
 **xktFile** | **String** |  | [optional] 
 
 

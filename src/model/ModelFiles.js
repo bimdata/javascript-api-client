@@ -65,8 +65,8 @@ class ModelFiles {
             if (data.hasOwnProperty('bvh_tree_file')) {
                 obj['bvh_tree_file'] = ApiClient.convertToType(data['bvh_tree_file'], 'String');
             }
-            if (data.hasOwnProperty('viewer_360_file')) {
-                obj['viewer_360_file'] = ApiClient.convertToType(data['viewer_360_file'], 'String');
+            if (data.hasOwnProperty('preview_file')) {
+                obj['preview_file'] = ApiClient.convertToType(data['preview_file'], 'String');
             }
             if (data.hasOwnProperty('xkt_file')) {
                 obj['xkt_file'] = ApiClient.convertToType(data['xkt_file'], 'String');
@@ -109,9 +109,9 @@ ModelFiles.prototype['gltf_with_openings_file'] = undefined;
 ModelFiles.prototype['bvh_tree_file'] = undefined;
 
 /**
- * @member {String} viewer_360_file
+ * @member {String} preview_file
  */
-ModelFiles.prototype['viewer_360_file'] = undefined;
+ModelFiles.prototype['preview_file'] = undefined;
 
 /**
  * @member {String} xkt_file

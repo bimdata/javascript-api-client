@@ -53,6 +53,9 @@ class PatchedModelRequest {
             if (data.hasOwnProperty('source')) {
                 obj['source'] = ApiClient.convertToType(data['source'], 'String');
             }
+            if (data.hasOwnProperty('viewer_360_file')) {
+                obj['viewer_360_file'] = ApiClient.convertToType(data['viewer_360_file'], File);
+            }
             if (data.hasOwnProperty('world_position')) {
                 obj['world_position'] = ApiClient.convertToType(data['world_position'], ['Number']);
             }
@@ -87,6 +90,12 @@ PatchedModelRequest.prototype['name'] = undefined;
  * @member {module:model/PatchedModelRequest.SourceEnum} source
  */
 PatchedModelRequest.prototype['source'] = undefined;
+
+/**
+ * DEPRECATED: Use 'preview_file' instead.
+ * @member {File} viewer_360_file
+ */
+PatchedModelRequest.prototype['viewer_360_file'] = undefined;
 
 /**
  * [x,y,z] array of the position of the local_placement in world coordinates

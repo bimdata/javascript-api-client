@@ -9039,7 +9039,7 @@ let opts = {
   'gltfFile': "/path/to/file", // File | 
   'gltfWithOpeningsFile': "/path/to/file", // File | 
   'bvhTreeFile': "/path/to/file", // File | 
-  'viewer360File': "/path/to/file", // File | 
+  'previewFile': "/path/to/file", // File | 
   'xktFile': "/path/to/file" // File | 
 };
 apiInstance.updateModelFiles(cloudPk, id, projectPk, opts).then((data) => {
@@ -9064,7 +9064,7 @@ Name | Type | Description  | Notes
  **gltfFile** | **File**|  | [optional] 
  **gltfWithOpeningsFile** | **File**|  | [optional] 
  **bvhTreeFile** | **File**|  | [optional] 
- **viewer360File** | **File**|  | [optional] 
+ **previewFile** | **File**|  | [optional] 
  **xktFile** | **File**|  | [optional] 
 
 ### Return type
