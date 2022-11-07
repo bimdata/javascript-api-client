@@ -66,12 +66,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property viewer360File (base name: "viewer_360_file")', function() {
-      // uncomment below and update the code to test the property viewer360File
-      //var instance = new bimdata.ModelRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property worldPosition (base name: "world_position")', function() {
       // uncomment below and update the code to test the property worldPosition
       //var instance = new bimdata.ModelRequest();

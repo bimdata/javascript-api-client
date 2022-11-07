@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **gltfFile** | **String** |  | [readonly] 
 **bvhTreeFile** | **String** |  | [readonly] 
 **previewFile** | **String** |  | [readonly] 
-**viewer360File** | **String** | DEPRECATED: Use &#39;preview_file&#39; instead. | 
+**viewer360File** | **String** | DEPRECATED: Use &#39;preview_file&#39; instead. | [readonly] 
 **xktFile** | **String** |  | [readonly] 
 **projectId** | **Number** |  | [readonly] 
 **worldPosition** | **[Number]** | [x,y,z] array of the position of the local_placement in world coordinates | [optional] 

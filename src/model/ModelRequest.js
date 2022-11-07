@@ -22,11 +22,10 @@ class ModelRequest {
     /**
      * Constructs a new <code>ModelRequest</code>.
      * @alias module:model/ModelRequest
-     * @param viewer360File {File} DEPRECATED: Use 'preview_file' instead.
      */
-    constructor(viewer360File) { 
+    constructor() { 
         
-        ModelRequest.initialize(this, viewer360File);
+        ModelRequest.initialize(this);
     }
 
     /**
@@ -34,8 +33,7 @@ class ModelRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, viewer360File) { 
-        obj['viewer_360_file'] = viewer360File;
+    static initialize(obj) { 
     }
 
     /**
@@ -54,9 +52,6 @@ class ModelRequest {
             }
             if (data.hasOwnProperty('source')) {
                 obj['source'] = ApiClient.convertToType(data['source'], 'String');
-            }
-            if (data.hasOwnProperty('viewer_360_file')) {
-                obj['viewer_360_file'] = ApiClient.convertToType(data['viewer_360_file'], File);
             }
             if (data.hasOwnProperty('world_position')) {
                 obj['world_position'] = ApiClient.convertToType(data['world_position'], ['Number']);
@@ -92,12 +87,6 @@ ModelRequest.prototype['name'] = undefined;
  * @member {module:model/ModelRequest.SourceEnum} source
  */
 ModelRequest.prototype['source'] = undefined;
-
-/**
- * DEPRECATED: Use 'preview_file' instead.
- * @member {File} viewer_360_file
- */
-ModelRequest.prototype['viewer_360_file'] = undefined;
 
 /**
  * [x,y,z] array of the position of the local_placement in world coordinates
