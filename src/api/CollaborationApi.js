@@ -695,7 +695,7 @@ export default class CollaborationApi {
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {Array.<module:model/WriteFolderRequest>} writeFolderRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Folder>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Folder} and HTTP response
      */
     createDMSTreeWithHttpInfo(cloudPk, id, writeFolderRequest) {
       let postBody = writeFolderRequest;
@@ -726,7 +726,7 @@ export default class CollaborationApi {
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
-      let returnType = [Folder];
+      let returnType = Folder;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}/dms-tree', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -740,7 +740,7 @@ export default class CollaborationApi {
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {Array.<module:model/WriteFolderRequest>} writeFolderRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Folder>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Folder}
      */
     createDMSTree(cloudPk, id, writeFolderRequest) {
       return this.createDMSTreeWithHttpInfo(cloudPk, id, writeFolderRequest)
@@ -800,7 +800,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DWG', 'DAE', 'OBJ', 'GLTF', 'POINT_CLOUD', 'BFX', 'DXF', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'POINT_CLOUD', 'DWG', 'DXF', 'DAE', 'OBJ', 'BFX', 'GLTF', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -868,7 +868,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DWG', 'DAE', 'OBJ', 'GLTF', 'POINT_CLOUD', 'BFX', 'DXF', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'POINT_CLOUD', 'DWG', 'DXF', 'DAE', 'OBJ', 'BFX', 'GLTF', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
