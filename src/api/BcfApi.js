@@ -1042,7 +1042,7 @@ export default class BcfApi {
      * This is not a standard route. Export project's topics in bcf-xml format  Required scopes: bcf:read
      * @param {Number} id A unique integer value identifying this project.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.format topic format to export, comma separated. Default = all
+     * @param {String} opts.format topic format to export, comma separated. Default = standard
      * @param {String} opts.topics topic guids to export, comma separated. Default = all
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link File} and HTTP response
      */
@@ -1082,7 +1082,7 @@ export default class BcfApi {
      * This is not a standard route. Export project's topics in bcf-xml format  Required scopes: bcf:read
      * @param {Number} id A unique integer value identifying this project.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.format topic format to export, comma separated. Default = all
+     * @param {String} opts.format topic format to export, comma separated. Default = standard
      * @param {String} opts.topics topic guids to export, comma separated. Default = all
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link File}
      */

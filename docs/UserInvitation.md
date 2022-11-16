@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **projectId** | **Number** |  | [readonly] 
 **projectName** | **String** |  | [optional] 
 **status** | **String** |          A: Accepted         D: Denied         P: Pending          | [optional] 
+**clientName** | **String** |  | 
 **sender** | [**User**](User.md) |  | 
 **createdAt** | **Date** |  | [readonly] 
 **respondedAt** | **Date** |  | [optional] 

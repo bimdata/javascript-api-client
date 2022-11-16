@@ -1185,7 +1185,7 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
 let opts = {
-  'format': "format_example", // String | topic format to export, comma separated. Default = all
+  'format': "format_example", // String | topic format to export, comma separated. Default = standard
   'topics': "topics_example" // String | topic guids to export, comma separated. Default = all
 };
 apiInstance.downloadBcfExport(id, opts).then((data) => {
@@ -1202,7 +1202,7 @@ apiInstance.downloadBcfExport(id, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this project. | 
- **format** | **String**| topic format to export, comma separated. Default &#x3D; all | [optional] 
+ **format** | **String**| topic format to export, comma separated. Default &#x3D; standard | [optional] 
  **topics** | **String**| topic guids to export, comma separated. Default &#x3D; all | [optional] 
 
 ### Return type

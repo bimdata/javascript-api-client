@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property clientName (base name: "client_name")', function() {
+      // uncomment below and update the code to test the property clientName
+      //var instance = new bimdata.UserInvitation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sender (base name: "sender")', function() {
       // uncomment below and update the code to test the property sender
       //var instance = new bimdata.UserInvitation();

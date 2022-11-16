@@ -28,12 +28,13 @@ class UserInvitation {
      * @param cloudId {Number} 
      * @param cloudName {String} 
      * @param projectId {Number} 
+     * @param clientName {String} 
      * @param sender {module:model/User} 
      * @param createdAt {Date} 
      */
-    constructor(id, redirectUri, cloudId, cloudName, projectId, sender, createdAt) { 
+    constructor(id, redirectUri, cloudId, cloudName, projectId, clientName, sender, createdAt) { 
         
-        UserInvitation.initialize(this, id, redirectUri, cloudId, cloudName, projectId, sender, createdAt);
+        UserInvitation.initialize(this, id, redirectUri, cloudId, cloudName, projectId, clientName, sender, createdAt);
     }
 
     /**
@@ -41,12 +42,13 @@ class UserInvitation {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, redirectUri, cloudId, cloudName, projectId, sender, createdAt) { 
+    static initialize(obj, id, redirectUri, cloudId, cloudName, projectId, clientName, sender, createdAt) { 
         obj['id'] = id;
         obj['redirect_uri'] = redirectUri;
         obj['cloud_id'] = cloudId;
         obj['cloud_name'] = cloudName;
         obj['project_id'] = projectId;
+        obj['client_name'] = clientName;
         obj['sender'] = sender;
         obj['created_at'] = createdAt;
     }
@@ -82,6 +84,9 @@ class UserInvitation {
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
+            if (data.hasOwnProperty('client_name')) {
+                obj['client_name'] = ApiClient.convertToType(data['client_name'], 'String');
             }
             if (data.hasOwnProperty('sender')) {
                 obj['sender'] = User.constructFromObject(data['sender']);
@@ -135,6 +140,11 @@ UserInvitation.prototype['project_name'] = undefined;
  * @member {module:model/UserInvitation.StatusEnum} status
  */
 UserInvitation.prototype['status'] = undefined;
+
+/**
+ * @member {String} client_name
+ */
+UserInvitation.prototype['client_name'] = undefined;
 
 /**
  * @member {module:model/User} sender
