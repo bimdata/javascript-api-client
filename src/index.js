@@ -69,7 +69,6 @@ import IfcAccessToken from './model/IfcAccessToken';
 import IfcAccessTokenRequest from './model/IfcAccessTokenRequest';
 import IfcChecker from './model/IfcChecker';
 import IfcCheckerRequest from './model/IfcCheckerRequest';
-import IfcExport from './model/IfcExport';
 import IfcExportRequest from './model/IfcExportRequest';
 import IfcMergeRequest from './model/IfcMergeRequest';
 import IfcOptimizeRequest from './model/IfcOptimizeRequest';
@@ -639,12 +638,6 @@ export {
      * @property {module:model/IfcCheckerRequest}
      */
     IfcCheckerRequest,
-
-    /**
-     * The IfcExport model constructor.
-     * @property {module:model/IfcExport}
-     */
-    IfcExport,
 
     /**
      * The IfcExportRequest model constructor.

@@ -4176,7 +4176,7 @@ null (empty response body)
 
 ## exportIfcDeprecated
 
-> IfcExport exportIfcDeprecated(cloudPk, id, projectPk, ifcExportRequest)
+> exportIfcDeprecated(cloudPk, id, projectPk, ifcExportRequest)
 
 Export IFC
 
@@ -4209,8 +4209,8 @@ let cloudPk = 56; // Number |
 let id = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | 
 let ifcExportRequest = new bimdata.IfcExportRequest(); // IfcExportRequest | 
-apiInstance.exportIfcDeprecated(cloudPk, id, projectPk, ifcExportRequest).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
+apiInstance.exportIfcDeprecated(cloudPk, id, projectPk, ifcExportRequest).then(() => {
+  console.log('API called successfully.');
 }, (error) => {
   console.error(error);
 });
@@ -4229,7 +4229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IfcExport**](IfcExport.md)
+null (empty response body)
 
 ### Authorization
 
@@ -4238,7 +4238,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json
+- **Accept**: Not defined
 
 
 ## fullUpdateElementDeprecated

@@ -28,7 +28,6 @@ import ElementPropertySetRelationRequest from '../model/ElementPropertySetRelati
 import ElementRequest from '../model/ElementRequest';
 import IfcAccessToken from '../model/IfcAccessToken';
 import IfcAccessTokenRequest from '../model/IfcAccessTokenRequest';
-import IfcExport from '../model/IfcExport';
 import IfcExportRequest from '../model/IfcExportRequest';
 import IfcMergeRequest from '../model/IfcMergeRequest';
 import IfcOptimizeRequest from '../model/IfcOptimizeRequest';
@@ -3959,7 +3958,7 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this model.
      * @param {Number} projectPk 
      * @param {module:model/IfcExportRequest} ifcExportRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IfcExport} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     exportIfcWithHttpInfo(cloudPk, id, projectPk, ifcExportRequest) {
       let postBody = ifcExportRequest;
@@ -3994,8 +3993,8 @@ export default class ModelApi {
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
-      let accepts = ['application/json'];
-      let returnType = IfcExport;
+      let accepts = [];
+      let returnType = null;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/model/{id}/export', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4010,7 +4009,7 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this model.
      * @param {Number} projectPk 
      * @param {module:model/IfcExportRequest} ifcExportRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IfcExport}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     exportIfc(cloudPk, id, projectPk, ifcExportRequest) {
       return this.exportIfcWithHttpInfo(cloudPk, id, projectPk, ifcExportRequest)

@@ -62,7 +62,6 @@ docs/IfcAccessTokenRequest.md
 docs/IfcApi.md
 docs/IfcChecker.md
 docs/IfcCheckerRequest.md
-docs/IfcExport.md
 docs/IfcExportRequest.md
 docs/IfcMergeRequest.md
 docs/IfcOptimizeRequest.md
@@ -320,7 +319,6 @@ src/model/IfcAccessToken.js
 src/model/IfcAccessTokenRequest.js
 src/model/IfcChecker.js
 src/model/IfcCheckerRequest.js
-src/model/IfcExport.js
 src/model/IfcExportRequest.js
 src/model/IfcMergeRequest.js
 src/model/IfcOptimizeRequest.js
@@ -571,7 +569,6 @@ test/model/IfcAccessToken.spec.js
 test/model/IfcAccessTokenRequest.spec.js
 test/model/IfcChecker.spec.js
 test/model/IfcCheckerRequest.spec.js
-test/model/IfcExport.spec.js
 test/model/IfcExportRequest.spec.js
 test/model/IfcMergeRequest.spec.js
 test/model/IfcOptimizeRequest.spec.js

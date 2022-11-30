@@ -700,7 +700,6 @@ Class | Method | HTTP request | Description
  - [bimdata.IfcAccessTokenRequest](docs/IfcAccessTokenRequest.md)
  - [bimdata.IfcChecker](docs/IfcChecker.md)
  - [bimdata.IfcCheckerRequest](docs/IfcCheckerRequest.md)
- - [bimdata.IfcExport](docs/IfcExport.md)
  - [bimdata.IfcExportRequest](docs/IfcExportRequest.md)
  - [bimdata.IfcMergeRequest](docs/IfcMergeRequest.md)
  - [bimdata.IfcOptimizeRequest](docs/IfcOptimizeRequest.md)
