@@ -9,6 +9,7 @@ docs/Building.md
 docs/BuildingModelPlanRequest.md
 docs/CheckPlan.md
 docs/CheckPlanRequest.md
+docs/CheckProjectAccess.md
 docs/CheckerApi.md
 docs/CheckerResult.md
 docs/CheckerResultRequest.md
@@ -269,6 +270,7 @@ src/model/Building.js
 src/model/BuildingModelPlanRequest.js
 src/model/CheckPlan.js
 src/model/CheckPlanRequest.js
+src/model/CheckProjectAccess.js
 src/model/CheckerResult.js
 src/model/CheckerResultRequest.js
 src/model/Classification.js
@@ -519,6 +521,7 @@ test/model/Building.spec.js
 test/model/BuildingModelPlanRequest.spec.js
 test/model/CheckPlan.spec.js
 test/model/CheckPlanRequest.spec.js
+test/model/CheckProjectAccess.spec.js
 test/model/CheckerResult.spec.js
 test/model/CheckerResultRequest.spec.js
 test/model/Classification.spec.js

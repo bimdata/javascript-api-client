@@ -118,6 +118,16 @@
         done();
       });
     });
+    describe('checkProjectAccess', function() {
+      it('should call checkProjectAccess successfully', function(done) {
+        //uncomment below and update the code to test checkProjectAccess
+        //instance.checkProjectAccess(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('closeVisa', function() {
       it('should call closeVisa successfully', function(done) {
         //uncomment below and update the code to test closeVisa

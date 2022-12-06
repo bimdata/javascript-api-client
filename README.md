@@ -231,6 +231,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**cancelCloudUserInvitation**](docs/CollaborationApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | Cancel a pending invitation
 *bimdata.CollaborationApi* | [**cancelProjectUserInvitation**](docs/CollaborationApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
 *bimdata.CollaborationApi* | [**checkAccess**](docs/CollaborationApi.md#checkAccess) | **GET** /cloud/{id}/check-access | Check app access from cloud
+*bimdata.CollaborationApi* | [**checkProjectAccess**](docs/CollaborationApi.md#checkProjectAccess) | **GET** /cloud/{cloud_pk}/project/{id}/check-access | Check if the current token has access to the requested project
 *bimdata.CollaborationApi* | [**closeVisa**](docs/CollaborationApi.md#closeVisa) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}/close | Close a visa of a document
 *bimdata.CollaborationApi* | [**createClassification**](docs/CollaborationApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | Create a classification
 *bimdata.CollaborationApi* | [**createCloud**](docs/CollaborationApi.md#createCloud) | **POST** /cloud | Create a cloud
@@ -650,6 +651,7 @@ Class | Method | HTTP request | Description
  - [bimdata.BuildingModelPlanRequest](docs/BuildingModelPlanRequest.md)
  - [bimdata.CheckPlan](docs/CheckPlan.md)
  - [bimdata.CheckPlanRequest](docs/CheckPlanRequest.md)
+ - [bimdata.CheckProjectAccess](docs/CheckProjectAccess.md)
  - [bimdata.CheckerResult](docs/CheckerResult.md)
  - [bimdata.CheckerResultRequest](docs/CheckerResultRequest.md)
  - [bimdata.Classification](docs/Classification.md)

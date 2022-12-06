@@ -19,6 +19,7 @@ import Building from './model/Building';
 import BuildingModelPlanRequest from './model/BuildingModelPlanRequest';
 import CheckPlan from './model/CheckPlan';
 import CheckPlanRequest from './model/CheckPlanRequest';
+import CheckProjectAccess from './model/CheckProjectAccess';
 import CheckerResult from './model/CheckerResult';
 import CheckerResultRequest from './model/CheckerResultRequest';
 import Classification from './model/Classification';
@@ -338,6 +339,12 @@ export {
      * @property {module:model/CheckPlanRequest}
      */
     CheckPlanRequest,
+
+    /**
+     * The CheckProjectAccess model constructor.
+     * @property {module:model/CheckProjectAccess}
+     */
+    CheckProjectAccess,
 
     /**
      * The CheckerResult model constructor.

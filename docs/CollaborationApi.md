@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**cancelCloudUserInvitation**](CollaborationApi.md#cancelCloudUserInvitation) | **DELETE** /cloud/{cloud_pk}/invitation/{id} | Cancel a pending invitation
 [**cancelProjectUserInvitation**](CollaborationApi.md#cancelProjectUserInvitation) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/invitation/{id} | Cancel a pending invitation
 [**checkAccess**](CollaborationApi.md#checkAccess) | **GET** /cloud/{id}/check-access | Check app access from cloud
+[**checkProjectAccess**](CollaborationApi.md#checkProjectAccess) | **GET** /cloud/{cloud_pk}/project/{id}/check-access | Check if the current token has access to the requested project
 [**closeVisa**](CollaborationApi.md#closeVisa) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id}/close | Close a visa of a document
 [**createClassification**](CollaborationApi.md#createClassification) | **POST** /cloud/{cloud_pk}/project/{project_pk}/classification | Create a classification
 [**createCloud**](CollaborationApi.md#createCloud) | **POST** /cloud | Create a cloud
@@ -564,6 +565,69 @@ null (empty response body)
 - **Accept**: Not defined
 
 
+## checkProjectAccess
+
+> CheckProjectAccess checkProjectAccess(cloudPk, id)
+
+Check if the current token has access to the requested project
+
+                 The response gives you details about the right of the user or app, the scopes of the token and the usable scopes (scopes filtered by the right of the user).                 It works with user tokens, app tokens and ProjectAccessToken             
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | 
+let id = 56; // Number | A unique integer value identifying this project.
+apiInstance.checkProjectAccess(cloudPk, id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**|  | 
+ **id** | **Number**| A unique integer value identifying this project. | 
+
+### Return type
+
+[**CheckProjectAccess**](CheckProjectAccess.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## closeVisa
 
 > closeVisa(cloudPk, documentPk, id, projectPk)
@@ -889,7 +953,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;POINT_CLOUD&#39;, &#39;DAE&#39;, &#39;DXF&#39;, &#39;GLTF&#39;, &#39;BFX&#39;, &#39;DWG&#39;, &#39;IFC&#39;, &#39;OBJ&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;DAE&#39;, &#39;DXF&#39;, &#39;DWG&#39;, &#39;POINT_CLOUD&#39;, &#39;BFX&#39;, &#39;IFC&#39;, &#39;GLTF&#39;, &#39;OBJ&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
