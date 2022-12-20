@@ -328,6 +328,16 @@
         done();
       });
     });
+    describe('createMultiPageModel', function() {
+      it('should call createMultiPageModel successfully', function(done) {
+        //uncomment below and update the code to test createMultiPageModel
+        //instance.createMultiPageModel(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createPropertySet', function() {
       it('should call createPropertySet successfully', function(done) {
         //uncomment below and update the code to test createPropertySet

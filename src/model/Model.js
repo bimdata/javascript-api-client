@@ -43,10 +43,12 @@ class Model {
      * @param projectId {Number} 
      * @param errors {Array.<String>} List of errors that happened during IFC processing
      * @param warnings {Array.<String>} List of warnings that happened during IFC processing
+     * @param pageNumber {Number} The page number of the related pdf
+     * @param children {Array.<module:model/Model>} Contains additional pages of a pdf
      */
-    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, previewFile, viewer360File, xktFile, projectId, errors, warnings) { 
+    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, previewFile, viewer360File, xktFile, projectId, errors, warnings, pageNumber, children) { 
         
-        Model.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, previewFile, viewer360File, xktFile, projectId, errors, warnings);
+        Model.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, previewFile, viewer360File, xktFile, projectId, errors, warnings, pageNumber, children);
     }
 
     /**
@@ -54,7 +56,7 @@ class Model {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, previewFile, viewer360File, xktFile, projectId, errors, warnings) { 
+    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, previewFile, viewer360File, xktFile, projectId, errors, warnings, pageNumber, children) { 
         obj['id'] = id;
         obj['type'] = type;
         obj['creator'] = creator;
@@ -74,6 +76,8 @@ class Model {
         obj['project_id'] = projectId;
         obj['errors'] = errors;
         obj['warnings'] = warnings;
+        obj['page_number'] = pageNumber;
+        obj['children'] = children;
     }
 
     /**
@@ -167,6 +171,12 @@ class Model {
             }
             if (data.hasOwnProperty('recommanded_2d_angle')) {
                 obj['recommanded_2d_angle'] = ApiClient.convertToType(data['recommanded_2d_angle'], 'Number');
+            }
+            if (data.hasOwnProperty('page_number')) {
+                obj['page_number'] = ApiClient.convertToType(data['page_number'], 'Number');
+            }
+            if (data.hasOwnProperty('children')) {
+                obj['children'] = ApiClient.convertToType(data['children'], [Model]);
             }
         }
         return obj;
@@ -317,6 +327,18 @@ Model.prototype['north_vector'] = undefined;
  * @member {Number} recommanded_2d_angle
  */
 Model.prototype['recommanded_2d_angle'] = undefined;
+
+/**
+ * The page number of the related pdf
+ * @member {Number} page_number
+ */
+Model.prototype['page_number'] = undefined;
+
+/**
+ * Contains additional pages of a pdf
+ * @member {Array.<module:model/Model>} children
+ */
+Model.prototype['children'] = undefined;
 
 
 

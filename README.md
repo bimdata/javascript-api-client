@@ -360,6 +360,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**createIfcUnitDeprecated**](docs/IfcApi.md#createIfcUnitDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/unit | Create a Unit on a model
 *bimdata.IfcApi* | [**createLayerDeprecated**](docs/IfcApi.md#createLayerDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/layer | Create a layer in the model
 *bimdata.IfcApi* | [**createMetaBuildingDeprecated**](docs/IfcApi.md#createMetaBuildingDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/create-metabuilding | Create an empty 3D Model
+*bimdata.IfcApi* | [**createMultiPageIfcDeprecated**](docs/IfcApi.md#createMultiPageIfcDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/create-multipage-model | Create a multi page model
 *bimdata.IfcApi* | [**createPropertySetDeprecated**](docs/IfcApi.md#createPropertySetDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset | Create one or many PropertySet
 *bimdata.IfcApi* | [**createPropertySetElementRelationsDeprecated**](docs/IfcApi.md#createPropertySetElementRelationsDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertyset-element | Create association between PropertySet and element
 *bimdata.IfcApi* | [**createRawElementsDeprecated**](docs/IfcApi.md#createRawElementsDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/raw | Create elements in an optimized format
@@ -514,6 +515,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**createModel**](docs/ModelApi.md#createModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-model | Make a PDF or Image file a Model
 *bimdata.ModelApi* | [**createModelPropertyDefinition**](docs/ModelApi.md#createModelPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition | Create a PropertyDefinition on the model
 *bimdata.ModelApi* | [**createModelUnit**](docs/ModelApi.md#createModelUnit) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit | Create a Unit on a model
+*bimdata.ModelApi* | [**createMultiPageModel**](docs/ModelApi.md#createMultiPageModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/create-multipage-model | Create a multi page model
 *bimdata.ModelApi* | [**createPropertySet**](docs/ModelApi.md#createPropertySet) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset | Create one or many PropertySet
 *bimdata.ModelApi* | [**createPropertySetElementRelations**](docs/ModelApi.md#createPropertySetElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset-element | Create association between PropertySet and element
 *bimdata.ModelApi* | [**createRawElements**](docs/ModelApi.md#createRawElements) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/raw | Create elements in an optimized format
@@ -674,6 +676,7 @@ Class | Method | HTTP request | Description
  - [bimdata.ComponentsParentRequest](docs/ComponentsParentRequest.md)
  - [bimdata.CreateBuildingByNameRequest](docs/CreateBuildingByNameRequest.md)
  - [bimdata.CreateModelRequest](docs/CreateModelRequest.md)
+ - [bimdata.CreateMultiPageModelRequest](docs/CreateMultiPageModelRequest.md)
  - [bimdata.DetailedExtensions](docs/DetailedExtensions.md)
  - [bimdata.Direction](docs/Direction.md)
  - [bimdata.DirectionRequest](docs/DirectionRequest.md)

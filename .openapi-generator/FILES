@@ -33,6 +33,7 @@ docs/ComponentsParent.md
 docs/ComponentsParentRequest.md
 docs/CreateBuildingByNameRequest.md
 docs/CreateModelRequest.md
+docs/CreateMultiPageModelRequest.md
 docs/DetailedExtensions.md
 docs/Direction.md
 docs/DirectionRequest.md
@@ -293,6 +294,7 @@ src/model/ComponentsParent.js
 src/model/ComponentsParentRequest.js
 src/model/CreateBuildingByNameRequest.js
 src/model/CreateModelRequest.js
+src/model/CreateMultiPageModelRequest.js
 src/model/DetailedExtensions.js
 src/model/Direction.js
 src/model/DirectionRequest.js
@@ -545,6 +547,7 @@ test/model/ComponentsParent.spec.js
 test/model/ComponentsParentRequest.spec.js
 test/model/CreateBuildingByNameRequest.spec.js
 test/model/CreateModelRequest.spec.js
+test/model/CreateMultiPageModelRequest.spec.js
 test/model/DetailedExtensions.spec.js
 test/model/Direction.spec.js
 test/model/DirectionRequest.spec.js

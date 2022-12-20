@@ -21,6 +21,7 @@ import Classification from '../model/Classification';
 import ClassificationRequest from '../model/ClassificationRequest';
 import CreateBuildingByNameRequest from '../model/CreateBuildingByNameRequest';
 import CreateModelRequest from '../model/CreateModelRequest';
+import CreateMultiPageModelRequest from '../model/CreateMultiPageModelRequest';
 import Document from '../model/Document';
 import DocumentWithElementList from '../model/DocumentWithElementList';
 import Element from '../model/Element';
@@ -2218,6 +2219,74 @@ export default class IfcApi {
      */
     createMetaBuildingDeprecated(cloudPk, projectPk, createBuildingByNameRequest) {
       return this.createMetaBuildingDeprecatedWithHttpInfo(cloudPk, projectPk, createBuildingByNameRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a multi page model
+     * Create a multi page model  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {module:model/CreateMultiPageModelRequest} createMultiPageModelRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Model} and HTTP response
+     */
+    createMultiPageIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk, createMultiPageModelRequest) {
+      let postBody = createMultiPageModelRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createMultiPageIfcDeprecated");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling createMultiPageIfcDeprecated");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createMultiPageIfcDeprecated");
+      }
+      // verify the required parameter 'createMultiPageModelRequest' is set
+      if (createMultiPageModelRequest === undefined || createMultiPageModelRequest === null) {
+        throw new Error("Missing the required parameter 'createMultiPageModelRequest' when calling createMultiPageIfcDeprecated");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Model;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/create-multipage-model', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a multi page model
+     * Create a multi page model  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {module:model/CreateMultiPageModelRequest} createMultiPageModelRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Model}
+     */
+    createMultiPageIfcDeprecated(cloudPk, id, projectPk, createMultiPageModelRequest) {
+      return this.createMultiPageIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk, createMultiPageModelRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -348,6 +348,16 @@
         done();
       });
     });
+    describe('createMultiPageIfcDeprecated', function() {
+      it('should call createMultiPageIfcDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createMultiPageIfcDeprecated
+        //instance.createMultiPageIfcDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createPropertySetDeprecated', function() {
       it('should call createPropertySetDeprecated successfully', function(done) {
         //uncomment below and update the code to test createPropertySetDeprecated

@@ -41,6 +41,7 @@ import ComponentsParent from './model/ComponentsParent';
 import ComponentsParentRequest from './model/ComponentsParentRequest';
 import CreateBuildingByNameRequest from './model/CreateBuildingByNameRequest';
 import CreateModelRequest from './model/CreateModelRequest';
+import CreateMultiPageModelRequest from './model/CreateMultiPageModelRequest';
 import DetailedExtensions from './model/DetailedExtensions';
 import Direction from './model/Direction';
 import DirectionRequest from './model/DirectionRequest';
@@ -472,6 +473,12 @@ export {
      * @property {module:model/CreateModelRequest}
      */
     CreateModelRequest,
+
+    /**
+     * The CreateMultiPageModelRequest model constructor.
+     * @property {module:model/CreateMultiPageModelRequest}
+     */
+    CreateMultiPageModelRequest,
 
     /**
      * The DetailedExtensions model constructor.
