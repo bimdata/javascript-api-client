@@ -878,6 +878,16 @@
         done();
       });
     });
+    describe('importManageGroup', function() {
+      it('should call importManageGroup successfully', function(done) {
+        //uncomment below and update the code to test importManageGroup
+        //instance.importManageGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('inviteCloudUser', function() {
       it('should call inviteCloudUser successfully', function(done) {
         //uncomment below and update the code to test inviteCloudUser

@@ -28,6 +28,7 @@ import FolderWithoutChildrenRequest from '../model/FolderWithoutChildrenRequest'
 import Group from '../model/Group';
 import GroupFolder from '../model/GroupFolder';
 import GroupRequest from '../model/GroupRequest';
+import ImportGroupRequest from '../model/ImportGroupRequest';
 import PatchedClassificationRequest from '../model/PatchedClassificationRequest';
 import PatchedCloudRequest from '../model/PatchedCloudRequest';
 import PatchedDocumentRequest from '../model/PatchedDocumentRequest';
@@ -856,7 +857,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DAE', 'DXF', 'DWG', 'POINT_CLOUD', 'BFX', 'IFC', 'GLTF', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'DXF', 'IFC', 'DWG', 'DAE', 'BFX', 'GLTF', 'POINT_CLOUD'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -924,7 +925,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DAE', 'DXF', 'DWG', 'POINT_CLOUD', 'BFX', 'IFC', 'GLTF', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'DXF', 'IFC', 'DWG', 'DAE', 'BFX', 'GLTF', 'POINT_CLOUD'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -5029,6 +5030,67 @@ export default class CollaborationApi {
      */
     getVisas(cloudPk, documentPk, projectPk) {
       return this.getVisasWithHttpInfo(cloudPk, documentPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Import a group from another project
+     * Import a group from another project. Must be an admin of the project  Required scopes: org:manage
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/ImportGroupRequest} importGroupRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Group>} and HTTP response
+     */
+    importManageGroupWithHttpInfo(cloudPk, projectPk, importGroupRequest) {
+      let postBody = importGroupRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling importManageGroup");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling importManageGroup");
+      }
+      // verify the required parameter 'importGroupRequest' is set
+      if (importGroupRequest === undefined || importGroupRequest === null) {
+        throw new Error("Missing the required parameter 'importGroupRequest' when calling importManageGroup");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = [Group];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/group/import', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Import a group from another project
+     * Import a group from another project. Must be an admin of the project  Required scopes: org:manage
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/ImportGroupRequest} importGroupRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Group>}
+     */
+    importManageGroup(cloudPk, projectPk, importGroupRequest) {
+      return this.importManageGroupWithHttpInfo(cloudPk, projectPk, importGroupRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

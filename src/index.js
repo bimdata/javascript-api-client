@@ -73,6 +73,7 @@ import IfcCheckerRequest from './model/IfcCheckerRequest';
 import IfcExportRequest from './model/IfcExportRequest';
 import IfcMergeRequest from './model/IfcMergeRequest';
 import IfcOptimizeRequest from './model/IfcOptimizeRequest';
+import ImportGroupRequest from './model/ImportGroupRequest';
 import Invitation from './model/Invitation';
 import Label from './model/Label';
 import LabelRequest from './model/LabelRequest';
@@ -663,6 +664,12 @@ export {
      * @property {module:model/IfcOptimizeRequest}
      */
     IfcOptimizeRequest,
+
+    /**
+     * The ImportGroupRequest model constructor.
+     * @property {module:model/ImportGroupRequest}
+     */
+    ImportGroupRequest,
 
     /**
      * The Invitation model constructor.

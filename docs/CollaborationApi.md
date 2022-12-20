@@ -87,6 +87,7 @@ Method | HTTP request | Description
 [**getVisaComment**](CollaborationApi.md#getVisaComment) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Retrieve a comment
 [**getVisaComments**](CollaborationApi.md#getVisaComments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment | List all comment of a visa
 [**getVisas**](CollaborationApi.md#getVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa | List all visas of a document
+[**importManageGroup**](CollaborationApi.md#importManageGroup) | **POST** /cloud/{cloud_pk}/project/{project_pk}/group/import | Import a group from another project
 [**inviteCloudUser**](CollaborationApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | Invite a cloud administrator
 [**inviteProjectUser**](CollaborationApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | Invite a project member
 [**leaveProject**](CollaborationApi.md#leaveProject) | **POST** /cloud/{cloud_pk}/project/{id}/leave | Leave the project
@@ -953,7 +954,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;DAE&#39;, &#39;DXF&#39;, &#39;DWG&#39;, &#39;POINT_CLOUD&#39;, &#39;BFX&#39;, &#39;IFC&#39;, &#39;GLTF&#39;, &#39;OBJ&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;OBJ&#39;, &#39;DXF&#39;, &#39;IFC&#39;, &#39;DWG&#39;, &#39;DAE&#39;, &#39;BFX&#39;, &#39;GLTF&#39;, &#39;POINT_CLOUD&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -5468,6 +5469,71 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## importManageGroup
+
+> [Group] importManageGroup(cloudPk, projectPk, importGroupRequest)
+
+Import a group from another project
+
+Import a group from another project. Must be an admin of the project  Required scopes: org:manage
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let importGroupRequest = new bimdata.ImportGroupRequest(); // ImportGroupRequest | 
+apiInstance.importManageGroup(cloudPk, projectPk, importGroupRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **importGroupRequest** | [**ImportGroupRequest**](ImportGroupRequest.md)|  | 
+
+### Return type
+
+[**[Group]**](Group.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: application/json
 
 

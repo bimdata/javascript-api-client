@@ -307,6 +307,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getVisaComment**](docs/CollaborationApi.md#getVisaComment) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Retrieve a comment
 *bimdata.CollaborationApi* | [**getVisaComments**](docs/CollaborationApi.md#getVisaComments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment | List all comment of a visa
 *bimdata.CollaborationApi* | [**getVisas**](docs/CollaborationApi.md#getVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa | List all visas of a document
+*bimdata.CollaborationApi* | [**importManageGroup**](docs/CollaborationApi.md#importManageGroup) | **POST** /cloud/{cloud_pk}/project/{project_pk}/group/import | Import a group from another project
 *bimdata.CollaborationApi* | [**inviteCloudUser**](docs/CollaborationApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | Invite a cloud administrator
 *bimdata.CollaborationApi* | [**inviteProjectUser**](docs/CollaborationApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | Invite a project member
 *bimdata.CollaborationApi* | [**leaveProject**](docs/CollaborationApi.md#leaveProject) | **POST** /cloud/{cloud_pk}/project/{id}/leave | Leave the project
@@ -705,6 +706,7 @@ Class | Method | HTTP request | Description
  - [bimdata.IfcExportRequest](docs/IfcExportRequest.md)
  - [bimdata.IfcMergeRequest](docs/IfcMergeRequest.md)
  - [bimdata.IfcOptimizeRequest](docs/IfcOptimizeRequest.md)
+ - [bimdata.ImportGroupRequest](docs/ImportGroupRequest.md)
  - [bimdata.Invitation](docs/Invitation.md)
  - [bimdata.Label](docs/Label.md)
  - [bimdata.LabelRequest](docs/LabelRequest.md)

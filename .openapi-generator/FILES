@@ -66,6 +66,7 @@ docs/IfcCheckerRequest.md
 docs/IfcExportRequest.md
 docs/IfcMergeRequest.md
 docs/IfcOptimizeRequest.md
+docs/ImportGroupRequest.md
 docs/Invitation.md
 docs/Label.md
 docs/LabelRequest.md
@@ -324,6 +325,7 @@ src/model/IfcCheckerRequest.js
 src/model/IfcExportRequest.js
 src/model/IfcMergeRequest.js
 src/model/IfcOptimizeRequest.js
+src/model/ImportGroupRequest.js
 src/model/Invitation.js
 src/model/Label.js
 src/model/LabelRequest.js
@@ -575,6 +577,7 @@ test/model/IfcCheckerRequest.spec.js
 test/model/IfcExportRequest.spec.js
 test/model/IfcMergeRequest.spec.js
 test/model/IfcOptimizeRequest.spec.js
+test/model/ImportGroupRequest.spec.js
 test/model/Invitation.spec.js
 test/model/Label.spec.js
 test/model/LabelRequest.spec.js
