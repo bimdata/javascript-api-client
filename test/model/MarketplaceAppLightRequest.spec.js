@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.MarketplaceAppImageRequest();
+    instance = new bimdata.MarketplaceAppLightRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,28 @@
       object[property] = value;
   }
 
-  describe('MarketplaceAppImageRequest', function() {
-    it('should create an instance of MarketplaceAppImageRequest', function() {
-      // uncomment below and update the code to test MarketplaceAppImageRequest
-      //var instance = new bimdata.MarketplaceAppImageRequest();
-      //expect(instance).to.be.a(bimdata.MarketplaceAppImageRequest);
+  describe('MarketplaceAppLightRequest', function() {
+    it('should create an instance of MarketplaceAppLightRequest', function() {
+      // uncomment below and update the code to test MarketplaceAppLightRequest
+      //var instance = new bimdata.MarketplaceAppLightRequest();
+      //expect(instance).to.be.a(bimdata.MarketplaceAppLightRequest);
     });
 
-    it('should have the property image (base name: "image")', function() {
-      // uncomment below and update the code to test the property image
-      //var instance = new bimdata.MarketplaceAppImageRequest();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instance = new bimdata.MarketplaceAppLightRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property viewerPluginsUrls (base name: "viewer_plugins_urls")', function() {
+      // uncomment below and update the code to test the property viewerPluginsUrls
+      //var instance = new bimdata.MarketplaceAppLightRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property file (base name: "file")', function() {
+      // uncomment below and update the code to test the property file
+      //var instance = new bimdata.MarketplaceAppLightRequest();
       //expect(instance).to.be();
     });
 

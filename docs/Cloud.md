@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **Number** |  | [readonly] 
 **name** | **String** | Name of the cloud | 
 **features** | [**[Feature]**](Feature.md) |  | [readonly] 
-**marketplaceApps** | [**[MarketplaceApp]**](MarketplaceApp.md) |  | [readonly] 
+**marketplaceApps** | [**[MarketplaceAppLight]**](MarketplaceAppLight.md) |  | [readonly] 
 **organization** | [**Organization**](Organization.md) |  | [readonly] 
 **creator** | [**User**](User.md) |  | [readonly] 
 **creatorApp** | **String** |  | [readonly] 

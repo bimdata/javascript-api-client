@@ -84,10 +84,9 @@ import LayerElementRequest from './model/LayerElementRequest';
 import LayerRequest from './model/LayerRequest';
 import Line from './model/Line';
 import LineRequest from './model/LineRequest';
-import MarketplaceApp from './model/MarketplaceApp';
 import MarketplaceAppImage from './model/MarketplaceAppImage';
-import MarketplaceAppImageRequest from './model/MarketplaceAppImageRequest';
-import MarketplaceAppRequest from './model/MarketplaceAppRequest';
+import MarketplaceAppLight from './model/MarketplaceAppLight';
+import MarketplaceAppLightRequest from './model/MarketplaceAppLightRequest';
 import Material from './model/Material';
 import MaterialListComponent from './model/MaterialListComponent';
 import MaterialListComponentRequest from './model/MaterialListComponentRequest';
@@ -733,28 +732,22 @@ export {
     LineRequest,
 
     /**
-     * The MarketplaceApp model constructor.
-     * @property {module:model/MarketplaceApp}
-     */
-    MarketplaceApp,
-
-    /**
      * The MarketplaceAppImage model constructor.
      * @property {module:model/MarketplaceAppImage}
      */
     MarketplaceAppImage,
 
     /**
-     * The MarketplaceAppImageRequest model constructor.
-     * @property {module:model/MarketplaceAppImageRequest}
+     * The MarketplaceAppLight model constructor.
+     * @property {module:model/MarketplaceAppLight}
      */
-    MarketplaceAppImageRequest,
+    MarketplaceAppLight,
 
     /**
-     * The MarketplaceAppRequest model constructor.
-     * @property {module:model/MarketplaceAppRequest}
+     * The MarketplaceAppLightRequest model constructor.
+     * @property {module:model/MarketplaceAppLightRequest}
      */
-    MarketplaceAppRequest,
+    MarketplaceAppLightRequest,
 
     /**
      * The Material model constructor.

@@ -12,8 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import Document from './Document';
-import FolderGroupPermission from './FolderGroupPermission';
 import Tag from './Tag';
 import User from './User';
 
@@ -36,15 +34,15 @@ class RecursiveFolderChildren {
      * @param updatedAt {Date} 
      * @param modelId {Number} 
      * @param ifcId {Number} DEPRECATED: Use 'model_id' instead
-     * @param groupsPermissions {Array.<module:model/FolderGroupPermission>} Groups permissions of folder
+     * @param groupsPermissions {Boolean} DEPRECATED: This field must be present because of legacy constraints but will always be empty. If you want to see group permissions of a folder, see `getFolder`
      * @param defaultPermission {module:model/RecursiveFolderChildren.DefaultPermissionEnum} Default permissions of folder
      * @param userPermission {module:model/RecursiveFolderChildren.UserPermissionEnum} Aggregate of group user permissions and folder default permission
-     * @param history {Array.<module:model/Document>} History of a document
+     * @param historyCount {Number} Number of previous versions
      * @param tags {Array.<module:model/Tag>} Tags of a document
      */
-    constructor(id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, history, tags) { 
+    constructor(id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags) { 
         
-        RecursiveFolderChildren.initialize(this, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, history, tags);
+        RecursiveFolderChildren.initialize(this, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags);
     }
 
     /**
@@ -52,7 +50,7 @@ class RecursiveFolderChildren {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, history, tags) { 
+    static initialize(obj, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags) { 
         obj['id'] = id;
         obj['parent_id'] = parentId;
         obj['type'] = type;
@@ -66,7 +64,7 @@ class RecursiveFolderChildren {
         obj['groups_permissions'] = groupsPermissions;
         obj['default_permission'] = defaultPermission;
         obj['user_permission'] = userPermission;
-        obj['history'] = history;
+        obj['history_count'] = historyCount;
         obj['tags'] = tags;
     }
 
@@ -130,7 +128,7 @@ class RecursiveFolderChildren {
                 obj['file'] = ApiClient.convertToType(data['file'], 'String');
             }
             if (data.hasOwnProperty('groups_permissions')) {
-                obj['groups_permissions'] = ApiClient.convertToType(data['groups_permissions'], [FolderGroupPermission]);
+                obj['groups_permissions'] = ApiClient.convertToType(data['groups_permissions'], 'Boolean');
             }
             if (data.hasOwnProperty('default_permission')) {
                 obj['default_permission'] = ApiClient.convertToType(data['default_permission'], 'Number');
@@ -138,8 +136,8 @@ class RecursiveFolderChildren {
             if (data.hasOwnProperty('user_permission')) {
                 obj['user_permission'] = ApiClient.convertToType(data['user_permission'], 'Number');
             }
-            if (data.hasOwnProperty('history')) {
-                obj['history'] = ApiClient.convertToType(data['history'], [Document]);
+            if (data.hasOwnProperty('history_count')) {
+                obj['history_count'] = ApiClient.convertToType(data['history_count'], 'Number');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], [Tag]);
@@ -239,8 +237,8 @@ RecursiveFolderChildren.prototype['ifc_id'] = undefined;
 RecursiveFolderChildren.prototype['file'] = undefined;
 
 /**
- * Groups permissions of folder
- * @member {Array.<module:model/FolderGroupPermission>} groups_permissions
+ * DEPRECATED: This field must be present because of legacy constraints but will always be empty. If you want to see group permissions of a folder, see `getFolder`
+ * @member {Boolean} groups_permissions
  */
 RecursiveFolderChildren.prototype['groups_permissions'] = undefined;
 
@@ -257,10 +255,10 @@ RecursiveFolderChildren.prototype['default_permission'] = undefined;
 RecursiveFolderChildren.prototype['user_permission'] = undefined;
 
 /**
- * History of a document
- * @member {Array.<module:model/Document>} history
+ * Number of previous versions
+ * @member {Number} history_count
  */
-RecursiveFolderChildren.prototype['history'] = undefined;
+RecursiveFolderChildren.prototype['history_count'] = undefined;
 
 /**
  * Tags of a document

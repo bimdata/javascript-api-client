@@ -20,10 +20,10 @@ Name | Type | Description | Notes
 **modelId** | **Number** |  | [readonly] 
 **ifcId** | **Number** | DEPRECATED: Use &#39;model_id&#39; instead | [readonly] 
 **file** | **String** |  | [optional] 
-**groupsPermissions** | [**[FolderGroupPermission]**](FolderGroupPermission.md) | Groups permissions of folder | [readonly] 
+**groupsPermissions** | **Boolean** | DEPRECATED: This field must be present because of legacy constraints but will always be empty. If you want to see group permissions of a folder, see &#x60;getFolder&#x60; | [readonly] 
 **defaultPermission** | **Number** | Default permissions of folder | [readonly] 
 **userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 
-**history** | [**[Document]**](Document.md) | History of a document | [readonly] 
+**historyCount** | **Number** | Number of previous versions | [readonly] 
 **tags** | [**[Tag]**](Tag.md) | Tags of a document | [readonly] 
 **children** | [**[RecursiveFolderChildren]**](RecursiveFolderChildren.md) |  | [optional] 
 

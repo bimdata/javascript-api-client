@@ -168,8 +168,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property history (base name: "history")', function() {
-      // uncomment below and update the code to test the property history
+    it('should have the property historyCount (base name: "history_count")', function() {
+      // uncomment below and update the code to test the property historyCount
       //var instance = new bimdata.RecursiveFolderChildren();
       //expect(instance).to.be();
     });

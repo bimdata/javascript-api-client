@@ -13,7 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import Feature from './Feature';
-import MarketplaceApp from './MarketplaceApp';
+import MarketplaceAppLight from './MarketplaceAppLight';
 import Organization from './Organization';
 import User from './User';
 
@@ -29,7 +29,7 @@ class Cloud {
      * @param id {Number} 
      * @param name {String} Name of the cloud
      * @param features {Array.<module:model/Feature>} 
-     * @param marketplaceApps {Array.<module:model/MarketplaceApp>} 
+     * @param marketplaceApps {Array.<module:model/MarketplaceAppLight>} 
      * @param organization {module:model/Organization} 
      * @param creator {module:model/User} 
      * @param creatorApp {String} 
@@ -81,7 +81,7 @@ class Cloud {
                 obj['features'] = ApiClient.convertToType(data['features'], [Feature]);
             }
             if (data.hasOwnProperty('marketplace_apps')) {
-                obj['marketplace_apps'] = ApiClient.convertToType(data['marketplace_apps'], [MarketplaceApp]);
+                obj['marketplace_apps'] = ApiClient.convertToType(data['marketplace_apps'], [MarketplaceAppLight]);
             }
             if (data.hasOwnProperty('organization')) {
                 obj['organization'] = ApiClient.convertToType(data['organization'], Organization);
@@ -128,7 +128,7 @@ Cloud.prototype['name'] = undefined;
 Cloud.prototype['features'] = undefined;
 
 /**
- * @member {Array.<module:model/MarketplaceApp>} marketplace_apps
+ * @member {Array.<module:model/MarketplaceAppLight>} marketplace_apps
  */
 Cloud.prototype['marketplace_apps'] = undefined;
 
