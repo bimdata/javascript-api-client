@@ -21,6 +21,7 @@ import CloudInvitation from '../model/CloudInvitation';
 import CloudInvitationRequest from '../model/CloudInvitationRequest';
 import CloudRequest from '../model/CloudRequest';
 import Document from '../model/Document';
+import DocumentRequest from '../model/DocumentRequest';
 import Folder from '../model/Folder';
 import FolderUserProject from '../model/FolderUserProject';
 import FolderWithoutChildren from '../model/FolderWithoutChildren';
@@ -354,10 +355,11 @@ export default class CollaborationApi {
      * Cancel a pending invitation  Required scopes: org:manage
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this invitation.
+     * @param {module:model/CloudInvitationRequest} cloudInvitationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    cancelCloudUserInvitationWithHttpInfo(cloudPk, id) {
-      let postBody = null;
+    cancelCloudUserInvitationWithHttpInfo(cloudPk, id, cloudInvitationRequest) {
+      let postBody = cloudInvitationRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling cancelCloudUserInvitation");
@@ -365,6 +367,10 @@ export default class CollaborationApi {
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling cancelCloudUserInvitation");
+      }
+      // verify the required parameter 'cloudInvitationRequest' is set
+      if (cloudInvitationRequest === undefined || cloudInvitationRequest === null) {
+        throw new Error("Missing the required parameter 'cloudInvitationRequest' when calling cancelCloudUserInvitation");
       }
 
       let pathParams = {
@@ -379,7 +385,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -394,10 +400,11 @@ export default class CollaborationApi {
      * Cancel a pending invitation  Required scopes: org:manage
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this invitation.
+     * @param {module:model/CloudInvitationRequest} cloudInvitationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    cancelCloudUserInvitation(cloudPk, id) {
-      return this.cancelCloudUserInvitationWithHttpInfo(cloudPk, id)
+    cancelCloudUserInvitation(cloudPk, id, cloudInvitationRequest) {
+      return this.cancelCloudUserInvitationWithHttpInfo(cloudPk, id, cloudInvitationRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -410,10 +417,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this invitation.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/ProjectInvitationRequest} projectInvitationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    cancelProjectUserInvitationWithHttpInfo(cloudPk, id, projectPk) {
-      let postBody = null;
+    cancelProjectUserInvitationWithHttpInfo(cloudPk, id, projectPk, projectInvitationRequest) {
+      let postBody = projectInvitationRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling cancelProjectUserInvitation");
@@ -425,6 +433,10 @@ export default class CollaborationApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling cancelProjectUserInvitation");
+      }
+      // verify the required parameter 'projectInvitationRequest' is set
+      if (projectInvitationRequest === undefined || projectInvitationRequest === null) {
+        throw new Error("Missing the required parameter 'projectInvitationRequest' when calling cancelProjectUserInvitation");
       }
 
       let pathParams = {
@@ -440,7 +452,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -456,10 +468,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this invitation.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/ProjectInvitationRequest} projectInvitationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    cancelProjectUserInvitation(cloudPk, id, projectPk) {
-      return this.cancelProjectUserInvitationWithHttpInfo(cloudPk, id, projectPk)
+    cancelProjectUserInvitation(cloudPk, id, projectPk, projectInvitationRequest) {
+      return this.cancelProjectUserInvitationWithHttpInfo(cloudPk, id, projectPk, projectInvitationRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -857,7 +870,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'BFX', 'DWG', 'DAE', 'GLTF', 'PDF', 'DXF', 'POINT_CLOUD', 'IFC', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DXF', 'POINT_CLOUD', 'IFC', 'PDF', 'DAE', 'GLTF', 'OBJ', 'BFX', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -925,7 +938,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'BFX', 'DWG', 'DAE', 'GLTF', 'PDF', 'DXF', 'POINT_CLOUD', 'IFC', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DXF', 'POINT_CLOUD', 'IFC', 'PDF', 'DAE', 'GLTF', 'OBJ', 'BFX', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -1468,10 +1481,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/DocumentRequest} documentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteAllDocumentHistoryWithHttpInfo(cloudPk, documentPk, projectPk) {
-      let postBody = null;
+    deleteAllDocumentHistoryWithHttpInfo(cloudPk, documentPk, projectPk, documentRequest) {
+      let postBody = documentRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteAllDocumentHistory");
@@ -1483,6 +1497,10 @@ export default class CollaborationApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteAllDocumentHistory");
+      }
+      // verify the required parameter 'documentRequest' is set
+      if (documentRequest === undefined || documentRequest === null) {
+        throw new Error("Missing the required parameter 'documentRequest' when calling deleteAllDocumentHistory");
       }
 
       let pathParams = {
@@ -1498,7 +1516,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -1514,10 +1532,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/DocumentRequest} documentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteAllDocumentHistory(cloudPk, documentPk, projectPk) {
-      return this.deleteAllDocumentHistoryWithHttpInfo(cloudPk, documentPk, projectPk)
+    deleteAllDocumentHistory(cloudPk, documentPk, projectPk, documentRequest) {
+      return this.deleteAllDocumentHistoryWithHttpInfo(cloudPk, documentPk, projectPk, documentRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1530,10 +1549,13 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this classification.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ClassificationRequest} opts.classificationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteClassificationWithHttpInfo(cloudPk, id, projectPk) {
-      let postBody = null;
+    deleteClassificationWithHttpInfo(cloudPk, id, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['classificationRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteClassification");
@@ -1560,7 +1582,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -1576,10 +1598,12 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this classification.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ClassificationRequest} opts.classificationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteClassification(cloudPk, id, projectPk) {
-      return this.deleteClassificationWithHttpInfo(cloudPk, id, projectPk)
+    deleteClassification(cloudPk, id, projectPk, opts) {
+      return this.deleteClassificationWithHttpInfo(cloudPk, id, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1590,13 +1614,18 @@ export default class CollaborationApi {
      * Delete a cloud
      * Delete a cloud  Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
+     * @param {module:model/CloudRequest} cloudRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteCloudWithHttpInfo(id) {
-      let postBody = null;
+    deleteCloudWithHttpInfo(id, cloudRequest) {
+      let postBody = cloudRequest;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteCloud");
+      }
+      // verify the required parameter 'cloudRequest' is set
+      if (cloudRequest === undefined || cloudRequest === null) {
+        throw new Error("Missing the required parameter 'cloudRequest' when calling deleteCloud");
       }
 
       let pathParams = {
@@ -1610,7 +1639,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -1624,10 +1653,11 @@ export default class CollaborationApi {
      * Delete a cloud
      * Delete a cloud  Required scopes: cloud:manage
      * @param {Number} id A unique integer value identifying this cloud.
+     * @param {module:model/CloudRequest} cloudRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteCloud(id) {
-      return this.deleteCloudWithHttpInfo(id)
+    deleteCloud(id, cloudRequest) {
+      return this.deleteCloudWithHttpInfo(id, cloudRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1695,10 +1725,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this document.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/DocumentRequest} documentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteDocumentWithHttpInfo(cloudPk, id, projectPk) {
-      let postBody = null;
+    deleteDocumentWithHttpInfo(cloudPk, id, projectPk, documentRequest) {
+      let postBody = documentRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteDocument");
@@ -1710,6 +1741,10 @@ export default class CollaborationApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteDocument");
+      }
+      // verify the required parameter 'documentRequest' is set
+      if (documentRequest === undefined || documentRequest === null) {
+        throw new Error("Missing the required parameter 'documentRequest' when calling deleteDocument");
       }
 
       let pathParams = {
@@ -1725,7 +1760,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -1741,10 +1776,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this document.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/DocumentRequest} documentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteDocument(cloudPk, id, projectPk) {
-      return this.deleteDocumentWithHttpInfo(cloudPk, id, projectPk)
+    deleteDocument(cloudPk, id, projectPk, documentRequest) {
+      return this.deleteDocumentWithHttpInfo(cloudPk, id, projectPk, documentRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1758,10 +1794,11 @@ export default class CollaborationApi {
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this document.
      * @param {Number} projectPk 
+     * @param {module:model/DocumentRequest} documentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteDocumentTagWithHttpInfo(cloudPk, documentPk, id, projectPk) {
-      let postBody = null;
+    deleteDocumentTagWithHttpInfo(cloudPk, documentPk, id, projectPk, documentRequest) {
+      let postBody = documentRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteDocumentTag");
@@ -1778,6 +1815,10 @@ export default class CollaborationApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteDocumentTag");
       }
+      // verify the required parameter 'documentRequest' is set
+      if (documentRequest === undefined || documentRequest === null) {
+        throw new Error("Missing the required parameter 'documentRequest' when calling deleteDocumentTag");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -1793,7 +1834,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -1810,10 +1851,11 @@ export default class CollaborationApi {
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this document.
      * @param {Number} projectPk 
+     * @param {module:model/DocumentRequest} documentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteDocumentTag(cloudPk, documentPk, id, projectPk) {
-      return this.deleteDocumentTagWithHttpInfo(cloudPk, documentPk, id, projectPk)
+    deleteDocumentTag(cloudPk, documentPk, id, projectPk, documentRequest) {
+      return this.deleteDocumentTagWithHttpInfo(cloudPk, documentPk, id, projectPk, documentRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1826,10 +1868,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this folder.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/FolderWithoutChildrenRequest} folderWithoutChildrenRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteFolderWithHttpInfo(cloudPk, id, projectPk) {
-      let postBody = null;
+    deleteFolderWithHttpInfo(cloudPk, id, projectPk, folderWithoutChildrenRequest) {
+      let postBody = folderWithoutChildrenRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteFolder");
@@ -1841,6 +1884,10 @@ export default class CollaborationApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteFolder");
+      }
+      // verify the required parameter 'folderWithoutChildrenRequest' is set
+      if (folderWithoutChildrenRequest === undefined || folderWithoutChildrenRequest === null) {
+        throw new Error("Missing the required parameter 'folderWithoutChildrenRequest' when calling deleteFolder");
       }
 
       let pathParams = {
@@ -1856,7 +1903,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -1872,10 +1919,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this folder.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/FolderWithoutChildrenRequest} folderWithoutChildrenRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteFolder(cloudPk, id, projectPk) {
-      return this.deleteFolderWithHttpInfo(cloudPk, id, projectPk)
+    deleteFolder(cloudPk, id, projectPk, folderWithoutChildrenRequest) {
+      return this.deleteFolderWithHttpInfo(cloudPk, id, projectPk, folderWithoutChildrenRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1889,10 +1937,11 @@ export default class CollaborationApi {
      * @param {Number} groupPk A unique integer value identifying this group.
      * @param {Number} id A unique integer value identifying this group.
      * @param {Number} projectPk 
+     * @param {module:model/GroupRequest} groupRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteGroupMemberWithHttpInfo(cloudPk, groupPk, id, projectPk) {
-      let postBody = null;
+    deleteGroupMemberWithHttpInfo(cloudPk, groupPk, id, projectPk, groupRequest) {
+      let postBody = groupRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteGroupMember");
@@ -1909,6 +1958,10 @@ export default class CollaborationApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteGroupMember");
       }
+      // verify the required parameter 'groupRequest' is set
+      if (groupRequest === undefined || groupRequest === null) {
+        throw new Error("Missing the required parameter 'groupRequest' when calling deleteGroupMember");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -1924,7 +1977,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -1941,10 +1994,11 @@ export default class CollaborationApi {
      * @param {Number} groupPk A unique integer value identifying this group.
      * @param {Number} id A unique integer value identifying this group.
      * @param {Number} projectPk 
+     * @param {module:model/GroupRequest} groupRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteGroupMember(cloudPk, groupPk, id, projectPk) {
-      return this.deleteGroupMemberWithHttpInfo(cloudPk, groupPk, id, projectPk)
+    deleteGroupMember(cloudPk, groupPk, id, projectPk, groupRequest) {
+      return this.deleteGroupMemberWithHttpInfo(cloudPk, groupPk, id, projectPk, groupRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1957,10 +2011,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this group.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/GroupRequest} groupRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteManageGroupWithHttpInfo(cloudPk, id, projectPk) {
-      let postBody = null;
+    deleteManageGroupWithHttpInfo(cloudPk, id, projectPk, groupRequest) {
+      let postBody = groupRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteManageGroup");
@@ -1972,6 +2027,10 @@ export default class CollaborationApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteManageGroup");
+      }
+      // verify the required parameter 'groupRequest' is set
+      if (groupRequest === undefined || groupRequest === null) {
+        throw new Error("Missing the required parameter 'groupRequest' when calling deleteManageGroup");
       }
 
       let pathParams = {
@@ -1987,7 +2046,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -2003,10 +2062,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this group.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/GroupRequest} groupRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteManageGroup(cloudPk, id, projectPk) {
-      return this.deleteManageGroupWithHttpInfo(cloudPk, id, projectPk)
+    deleteManageGroup(cloudPk, id, projectPk, groupRequest) {
+      return this.deleteManageGroupWithHttpInfo(cloudPk, id, projectPk, groupRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2018,10 +2078,11 @@ export default class CollaborationApi {
      * It can take a long time to respond because we may need to delete all properties of all elements of all models in the project  Required scopes: org:manage
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
+     * @param {module:model/ProjectRequest} projectRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteProjectWithHttpInfo(cloudPk, id) {
-      let postBody = null;
+    deleteProjectWithHttpInfo(cloudPk, id, projectRequest) {
+      let postBody = projectRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteProject");
@@ -2029,6 +2090,10 @@ export default class CollaborationApi {
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteProject");
+      }
+      // verify the required parameter 'projectRequest' is set
+      if (projectRequest === undefined || projectRequest === null) {
+        throw new Error("Missing the required parameter 'projectRequest' when calling deleteProject");
       }
 
       let pathParams = {
@@ -2043,7 +2108,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -2058,10 +2123,11 @@ export default class CollaborationApi {
      * It can take a long time to respond because we may need to delete all properties of all elements of all models in the project  Required scopes: org:manage
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
+     * @param {module:model/ProjectRequest} projectRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteProject(cloudPk, id) {
-      return this.deleteProjectWithHttpInfo(cloudPk, id)
+    deleteProject(cloudPk, id, projectRequest) {
+      return this.deleteProjectWithHttpInfo(cloudPk, id, projectRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2074,10 +2140,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} token 
+     * @param {module:model/ProjectAccessTokenRequest} projectAccessTokenRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token) {
-      let postBody = null;
+    deleteProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token, projectAccessTokenRequest) {
+      let postBody = projectAccessTokenRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteProjectAccessToken");
@@ -2089,6 +2156,10 @@ export default class CollaborationApi {
       // verify the required parameter 'token' is set
       if (token === undefined || token === null) {
         throw new Error("Missing the required parameter 'token' when calling deleteProjectAccessToken");
+      }
+      // verify the required parameter 'projectAccessTokenRequest' is set
+      if (projectAccessTokenRequest === undefined || projectAccessTokenRequest === null) {
+        throw new Error("Missing the required parameter 'projectAccessTokenRequest' when calling deleteProjectAccessToken");
       }
 
       let pathParams = {
@@ -2104,7 +2175,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -2120,10 +2191,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} token 
+     * @param {module:model/ProjectAccessTokenRequest} projectAccessTokenRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteProjectAccessToken(cloudPk, projectPk, token) {
-      return this.deleteProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token)
+    deleteProjectAccessToken(cloudPk, projectPk, token, projectAccessTokenRequest) {
+      return this.deleteProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token, projectAccessTokenRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2198,10 +2270,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this tag.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/TagRequest} tagRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteTagWithHttpInfo(cloudPk, id, projectPk) {
-      let postBody = null;
+    deleteTagWithHttpInfo(cloudPk, id, projectPk, tagRequest) {
+      let postBody = tagRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteTag");
@@ -2213,6 +2286,10 @@ export default class CollaborationApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteTag");
+      }
+      // verify the required parameter 'tagRequest' is set
+      if (tagRequest === undefined || tagRequest === null) {
+        throw new Error("Missing the required parameter 'tagRequest' when calling deleteTag");
       }
 
       let pathParams = {
@@ -2228,7 +2305,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -2244,10 +2321,11 @@ export default class CollaborationApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this tag.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/TagRequest} tagRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteTag(cloudPk, id, projectPk) {
-      return this.deleteTagWithHttpInfo(cloudPk, id, projectPk)
+    deleteTag(cloudPk, id, projectPk, tagRequest) {
+      return this.deleteTagWithHttpInfo(cloudPk, id, projectPk, tagRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2262,10 +2340,11 @@ export default class CollaborationApi {
      * @param {Number} id A unique integer value identifying this visa validation.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} visaPk A unique integer value identifying this visa.
+     * @param {module:model/VisaValidationRequest} visaValidationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk) {
-      let postBody = null;
+    deleteValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk, visaValidationRequest) {
+      let postBody = visaValidationRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteValidation");
@@ -2286,6 +2365,10 @@ export default class CollaborationApi {
       if (visaPk === undefined || visaPk === null) {
         throw new Error("Missing the required parameter 'visaPk' when calling deleteValidation");
       }
+      // verify the required parameter 'visaValidationRequest' is set
+      if (visaValidationRequest === undefined || visaValidationRequest === null) {
+        throw new Error("Missing the required parameter 'visaValidationRequest' when calling deleteValidation");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -2302,7 +2385,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -2320,10 +2403,11 @@ export default class CollaborationApi {
      * @param {Number} id A unique integer value identifying this visa validation.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} visaPk A unique integer value identifying this visa.
+     * @param {module:model/VisaValidationRequest} visaValidationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteValidation(cloudPk, documentPk, id, projectPk, visaPk) {
-      return this.deleteValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk)
+    deleteValidation(cloudPk, documentPk, id, projectPk, visaPk, visaValidationRequest) {
+      return this.deleteValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk, visaValidationRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2337,10 +2421,13 @@ export default class CollaborationApi {
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/VisaRequest} opts.visaRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteVisaWithHttpInfo(cloudPk, documentPk, id, projectPk) {
-      let postBody = null;
+    deleteVisaWithHttpInfo(cloudPk, documentPk, id, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['visaRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteVisa");
@@ -2372,7 +2459,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -2389,10 +2476,12 @@ export default class CollaborationApi {
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/VisaRequest} opts.visaRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteVisa(cloudPk, documentPk, id, projectPk) {
-      return this.deleteVisaWithHttpInfo(cloudPk, documentPk, id, projectPk)
+    deleteVisa(cloudPk, documentPk, id, projectPk, opts) {
+      return this.deleteVisaWithHttpInfo(cloudPk, documentPk, id, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2407,10 +2496,13 @@ export default class CollaborationApi {
      * @param {Number} id A unique integer value identifying this visa comment.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} visaPk A unique integer value identifying this visa.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/VisaCommentRequest} opts.visaCommentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteVisaCommentWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk) {
-      let postBody = null;
+    deleteVisaCommentWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk, opts) {
+      opts = opts || {};
+      let postBody = opts['visaCommentRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteVisaComment");
@@ -2447,7 +2539,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -2465,10 +2557,12 @@ export default class CollaborationApi {
      * @param {Number} id A unique integer value identifying this visa comment.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} visaPk A unique integer value identifying this visa.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/VisaCommentRequest} opts.visaCommentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteVisaComment(cloudPk, documentPk, id, projectPk, visaPk) {
-      return this.deleteVisaCommentWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk)
+    deleteVisaComment(cloudPk, documentPk, id, projectPk, visaPk, opts) {
+      return this.deleteVisaCommentWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

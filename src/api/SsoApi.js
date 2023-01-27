@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import Invitation from '../model/Invitation';
+import SelectUserRequest from '../model/SelectUserRequest';
 
 /**
 * Sso service.
@@ -86,10 +87,15 @@ export default class SsoApi {
     /**
      * Delete user from BIMData
      * Delete the user and all clouds where the user is alone
+     * @param {module:model/SelectUserRequest} selectUserRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteUserWithHttpInfo() {
-      let postBody = null;
+    deleteUserWithHttpInfo(selectUserRequest) {
+      let postBody = selectUserRequest;
+      // verify the required parameter 'selectUserRequest' is set
+      if (selectUserRequest === undefined || selectUserRequest === null) {
+        throw new Error("Missing the required parameter 'selectUserRequest' when calling deleteUser");
+      }
 
       let pathParams = {
       };
@@ -101,7 +107,7 @@ export default class SsoApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -114,10 +120,11 @@ export default class SsoApi {
     /**
      * Delete user from BIMData
      * Delete the user and all clouds where the user is alone
+     * @param {module:model/SelectUserRequest} selectUserRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteUser() {
-      return this.deleteUserWithHttpInfo()
+    deleteUser(selectUserRequest) {
+      return this.deleteUserWithHttpInfo(selectUserRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

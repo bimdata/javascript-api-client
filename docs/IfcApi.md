@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ## bulkDeleteIfcClassificationsDeprecated
 
-> bulkDeleteIfcClassificationsDeprecated(cloudPk, ifcPk, projectPk)
+> bulkDeleteIfcClassificationsDeprecated(cloudPk, ifcPk, projectPk, opts)
 
 Remove all classifications from model&#39;s elements
 
@@ -267,7 +267,10 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = 56; // Number | 
 let ifcPk = 56; // Number | 
 let projectPk = 56; // Number | 
-apiInstance.bulkDeleteIfcClassificationsDeprecated(cloudPk, ifcPk, projectPk).then(() => {
+let opts = {
+  'classificationRequest': new bimdata.ClassificationRequest() // ClassificationRequest | 
+};
+apiInstance.bulkDeleteIfcClassificationsDeprecated(cloudPk, ifcPk, projectPk, opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -283,6 +286,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**|  | 
  **ifcPk** | **Number**|  | 
  **projectPk** | **Number**|  | 
+ **classificationRequest** | [**ClassificationRequest**](ClassificationRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -294,13 +298,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## bulkDeleteIfcPropertiesDeprecated
 
-> bulkDeleteIfcPropertiesDeprecated(cloudPk, ifcPk, projectPk)
+> bulkDeleteIfcPropertiesDeprecated(cloudPk, ifcPk, projectPk, requestBody)
 
 Delete many Property of a model
 
@@ -332,7 +336,8 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.bulkDeleteIfcPropertiesDeprecated(cloudPk, ifcPk, projectPk).then(() => {
+let requestBody = [null]; // [Number] | 
+apiInstance.bulkDeleteIfcPropertiesDeprecated(cloudPk, ifcPk, projectPk, requestBody).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -348,6 +353,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **requestBody** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 
@@ -359,13 +365,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## bulkDeleteIfcPropertyDefinitionsDeprecated
 
-> bulkDeleteIfcPropertyDefinitionsDeprecated(cloudPk, ifcPk, projectPk)
+> bulkDeleteIfcPropertyDefinitionsDeprecated(cloudPk, ifcPk, projectPk, requestBody)
 
 Delete many PropertyDefinitions of a model
 
@@ -397,7 +403,8 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.bulkDeleteIfcPropertyDefinitionsDeprecated(cloudPk, ifcPk, projectPk).then(() => {
+let requestBody = [null]; // [Number] | 
+apiInstance.bulkDeleteIfcPropertyDefinitionsDeprecated(cloudPk, ifcPk, projectPk, requestBody).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -413,6 +420,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **requestBody** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 
@@ -424,13 +432,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## bulkDeleteIfcUnitsDeprecated
 
-> bulkDeleteIfcUnitsDeprecated(cloudPk, ifcPk, projectPk)
+> bulkDeleteIfcUnitsDeprecated(cloudPk, ifcPk, projectPk, requestBody)
 
 Delete many Units of a model
 
@@ -462,7 +470,8 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.bulkDeleteIfcUnitsDeprecated(cloudPk, ifcPk, projectPk).then(() => {
+let requestBody = [null]; // [Number] | 
+apiInstance.bulkDeleteIfcUnitsDeprecated(cloudPk, ifcPk, projectPk, requestBody).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -478,6 +487,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **requestBody** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 
@@ -489,13 +499,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## bulkDeletePropertySetDeprecated
 
-> bulkDeletePropertySetDeprecated(cloudPk, ifcPk, projectPk)
+> bulkDeletePropertySetDeprecated(cloudPk, ifcPk, projectPk, requestBody)
 
 Delete many PropertySet of a model
 
@@ -527,7 +537,8 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.bulkDeletePropertySetDeprecated(cloudPk, ifcPk, projectPk).then(() => {
+let requestBody = [null]; // [Number] | 
+apiInstance.bulkDeletePropertySetDeprecated(cloudPk, ifcPk, projectPk, requestBody).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -543,6 +554,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **requestBody** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 
@@ -554,7 +566,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
@@ -702,7 +714,7 @@ Name | Type | Description  | Notes
 
 ## bulkRemoveClassificationsOfElementDeprecated
 
-> bulkRemoveClassificationsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk)
+> bulkRemoveClassificationsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, requestBody)
 
 Remove many classifications from an element
 
@@ -735,7 +747,8 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.bulkRemoveClassificationsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk).then(() => {
+let requestBody = [null]; // [Number] | 
+apiInstance.bulkRemoveClassificationsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, requestBody).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -752,6 +765,7 @@ Name | Type | Description  | Notes
  **elementUuid** | **String**|  | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **requestBody** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 
@@ -763,13 +777,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## bulkRemoveDocumentsOfElementDeprecated
 
-> bulkRemoveDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk)
+> bulkRemoveDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, requestBody)
 
 Remove many documents from an element
 
@@ -802,7 +816,8 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let elementUuid = "elementUuid_example"; // String | 
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.bulkRemoveDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk).then(() => {
+let requestBody = [null]; // [Number] | 
+apiInstance.bulkRemoveDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, requestBody).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -819,6 +834,7 @@ Name | Type | Description  | Notes
  **elementUuid** | **String**|  | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **requestBody** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 
@@ -830,13 +846,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## bulkRemoveElementsFromClassificationDeprecated
 
-> bulkRemoveElementsFromClassificationDeprecated(cloudPk, ifcPk, modelClassificationPk, projectPk)
+> bulkRemoveElementsFromClassificationDeprecated(cloudPk, ifcPk, modelClassificationPk, projectPk, requestBody)
 
 Remove the classifications from all elements
 
@@ -869,7 +885,8 @@ let cloudPk = 56; // Number |
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let modelClassificationPk = 56; // Number | A unique integer value identifying this classification.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.bulkRemoveElementsFromClassificationDeprecated(cloudPk, ifcPk, modelClassificationPk, projectPk).then(() => {
+let requestBody = [null]; // [Number] | 
+apiInstance.bulkRemoveElementsFromClassificationDeprecated(cloudPk, ifcPk, modelClassificationPk, projectPk, requestBody).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -886,6 +903,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **modelClassificationPk** | **Number**| A unique integer value identifying this classification. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **requestBody** | [**[Number]**](Number.md)|  | 
 
 ### Return type
 
@@ -897,7 +915,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
@@ -2967,7 +2985,7 @@ Name | Type | Description  | Notes
 
 ## deleteAccessTokenDeprecated
 
-> deleteAccessTokenDeprecated(cloudPk, ifcPk, projectPk, token)
+> deleteAccessTokenDeprecated(cloudPk, ifcPk, projectPk, token, opts)
 
 Delete a token
 
@@ -3000,7 +3018,10 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let token = "token_example"; // String | 
-apiInstance.deleteAccessTokenDeprecated(cloudPk, ifcPk, projectPk, token).then(() => {
+let opts = {
+  'ifcAccessTokenRequest': new bimdata.IfcAccessTokenRequest() // IfcAccessTokenRequest | 
+};
+apiInstance.deleteAccessTokenDeprecated(cloudPk, ifcPk, projectPk, token, opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3017,6 +3038,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **token** | **String**|  | 
+ **ifcAccessTokenRequest** | [**IfcAccessTokenRequest**](IfcAccessTokenRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -3028,7 +3050,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
@@ -3170,7 +3192,7 @@ null (empty response body)
 
 ## deleteCheckerDeprecated
 
-> deleteCheckerDeprecated(cloudPk, id, ifcPk, projectPk)
+> deleteCheckerDeprecated(cloudPk, id, ifcPk, projectPk, opts)
 
 Delete a checker of a model
 
@@ -3203,7 +3225,10 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this ifc checker.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.deleteCheckerDeprecated(cloudPk, id, ifcPk, projectPk).then(() => {
+let opts = {
+  'ifcCheckerRequest': new bimdata.IfcCheckerRequest() // IfcCheckerRequest | 
+};
+apiInstance.deleteCheckerDeprecated(cloudPk, id, ifcPk, projectPk, opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3220,6 +3245,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this ifc checker. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **ifcCheckerRequest** | [**IfcCheckerRequest**](IfcCheckerRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -3231,13 +3257,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteCheckerResultDeprecated
 
-> deleteCheckerResultDeprecated(checkerPk, cloudPk, id, ifcPk, projectPk)
+> deleteCheckerResultDeprecated(checkerPk, cloudPk, id, ifcPk, projectPk, opts)
 
 Delete a CheckerResult
 
@@ -3271,7 +3297,10 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this checker result.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.deleteCheckerResultDeprecated(checkerPk, cloudPk, id, ifcPk, projectPk).then(() => {
+let opts = {
+  'checkerResultRequest': new bimdata.CheckerResultRequest() // CheckerResultRequest | 
+};
+apiInstance.deleteCheckerResultDeprecated(checkerPk, cloudPk, id, ifcPk, projectPk, opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3289,6 +3318,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this checker result. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **checkerResultRequest** | [**CheckerResultRequest**](CheckerResultRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -3300,13 +3330,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteElementDeprecated
 
-> deleteElementDeprecated(cloudPk, ifcPk, projectPk, uuid)
+> deleteElementDeprecated(cloudPk, ifcPk, projectPk, uuid, elementRequest)
 
 Delete an element of a model
 
@@ -3339,7 +3369,8 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let uuid = "uuid_example"; // String | 
-apiInstance.deleteElementDeprecated(cloudPk, ifcPk, projectPk, uuid).then(() => {
+let elementRequest = new bimdata.ElementRequest(); // ElementRequest | 
+apiInstance.deleteElementDeprecated(cloudPk, ifcPk, projectPk, uuid, elementRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3356,6 +3387,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **uuid** | **String**|  | 
+ **elementRequest** | [**ElementRequest**](ElementRequest.md)|  | 
 
 ### Return type
 
@@ -3367,13 +3399,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteIfcDeprecated
 
-> deleteIfcDeprecated(cloudPk, id, projectPk)
+> deleteIfcDeprecated(cloudPk, id, projectPk, opts)
 
 Delete a model
 
@@ -3405,7 +3437,10 @@ let apiInstance = new bimdata.IfcApi();
 let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | 
-apiInstance.deleteIfcDeprecated(cloudPk, id, projectPk).then(() => {
+let opts = {
+  'modelRequest': new bimdata.ModelRequest() // ModelRequest | 
+};
+apiInstance.deleteIfcDeprecated(cloudPk, id, projectPk, opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3421,6 +3456,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**|  | 
+ **modelRequest** | [**ModelRequest**](ModelRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -3432,13 +3468,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteIfcPropertyDefinitionDeprecated
 
-> deleteIfcPropertyDefinitionDeprecated(cloudPk, id, ifcPk, projectPk)
+> deleteIfcPropertyDefinitionDeprecated(cloudPk, id, ifcPk, projectPk, opts)
 
 Delete a PropertyDefinitions of a model
 
@@ -3471,7 +3507,10 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this property definition.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.deleteIfcPropertyDefinitionDeprecated(cloudPk, id, ifcPk, projectPk).then(() => {
+let opts = {
+  'propertyDefinitionRequest': new bimdata.PropertyDefinitionRequest() // PropertyDefinitionRequest | 
+};
+apiInstance.deleteIfcPropertyDefinitionDeprecated(cloudPk, id, ifcPk, projectPk, opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3488,6 +3527,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this property definition. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **propertyDefinitionRequest** | [**PropertyDefinitionRequest**](PropertyDefinitionRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -3499,13 +3539,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteIfcPropertyDeprecated
 
-> deleteIfcPropertyDeprecated(cloudPk, id, ifcPk, projectPk)
+> deleteIfcPropertyDeprecated(cloudPk, id, ifcPk, projectPk, propertyRequest)
 
 Delete a Property of a model
 
@@ -3538,7 +3578,8 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this property.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.deleteIfcPropertyDeprecated(cloudPk, id, ifcPk, projectPk).then(() => {
+let propertyRequest = new bimdata.PropertyRequest(); // PropertyRequest | 
+apiInstance.deleteIfcPropertyDeprecated(cloudPk, id, ifcPk, projectPk, propertyRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3555,6 +3596,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this property. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **propertyRequest** | [**PropertyRequest**](PropertyRequest.md)|  | 
 
 ### Return type
 
@@ -3566,13 +3608,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteIfcUnitDeprecated
 
-> deleteIfcUnitDeprecated(cloudPk, id, ifcPk, projectPk)
+> deleteIfcUnitDeprecated(cloudPk, id, ifcPk, projectPk, unitRequest)
 
 Delete a Unit of a model
 
@@ -3605,7 +3647,8 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this unit.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.deleteIfcUnitDeprecated(cloudPk, id, ifcPk, projectPk).then(() => {
+let unitRequest = new bimdata.UnitRequest(); // UnitRequest | 
+apiInstance.deleteIfcUnitDeprecated(cloudPk, id, ifcPk, projectPk, unitRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3622,6 +3665,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this unit. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **unitRequest** | [**UnitRequest**](UnitRequest.md)|  | 
 
 ### Return type
 
@@ -3633,7 +3677,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
@@ -3704,7 +3748,7 @@ null (empty response body)
 
 ## deleteLayerDeprecated
 
-> deleteLayerDeprecated(cloudPk, id, ifcPk, projectPk)
+> deleteLayerDeprecated(cloudPk, id, ifcPk, projectPk, layerRequest)
 
 Delete a layer of a model
 
@@ -3737,7 +3781,8 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this layer.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.deleteLayerDeprecated(cloudPk, id, ifcPk, projectPk).then(() => {
+let layerRequest = new bimdata.LayerRequest(); // LayerRequest | 
+apiInstance.deleteLayerDeprecated(cloudPk, id, ifcPk, projectPk, layerRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3754,6 +3799,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this layer. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **layerRequest** | [**LayerRequest**](LayerRequest.md)|  | 
 
 ### Return type
 
@@ -3765,13 +3811,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deletePropertySetDeprecated
 
-> deletePropertySetDeprecated(cloudPk, id, ifcPk, projectPk)
+> deletePropertySetDeprecated(cloudPk, id, ifcPk, projectPk, opts)
 
 Delete a PropertySet of a model
 
@@ -3804,7 +3850,10 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this property set.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.deletePropertySetDeprecated(cloudPk, id, ifcPk, projectPk).then(() => {
+let opts = {
+  'propertySetRequest': new bimdata.PropertySetRequest() // PropertySetRequest | 
+};
+apiInstance.deletePropertySetDeprecated(cloudPk, id, ifcPk, projectPk, opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3821,6 +3870,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this property set. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **propertySetRequest** | [**PropertySetRequest**](PropertySetRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -3832,13 +3882,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteSpaceDeprecated
 
-> deleteSpaceDeprecated(cloudPk, id, ifcPk, projectPk)
+> deleteSpaceDeprecated(cloudPk, id, ifcPk, projectPk, spaceRequest)
 
 Delete a space
 
@@ -3871,7 +3921,8 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this space.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.deleteSpaceDeprecated(cloudPk, id, ifcPk, projectPk).then(() => {
+let spaceRequest = new bimdata.SpaceRequest(); // SpaceRequest | 
+apiInstance.deleteSpaceDeprecated(cloudPk, id, ifcPk, projectPk, spaceRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3888,6 +3939,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this space. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **spaceRequest** | [**SpaceRequest**](SpaceRequest.md)|  | 
 
 ### Return type
 
@@ -3899,7 +3951,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
@@ -4041,7 +4093,7 @@ null (empty response body)
 
 ## deleteSystemDeprecated
 
-> deleteSystemDeprecated(cloudPk, ifcPk, projectPk, uuid)
+> deleteSystemDeprecated(cloudPk, ifcPk, projectPk, uuid, systemRequest)
 
 Delete a system of a model
 
@@ -4074,7 +4126,8 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let uuid = "uuid_example"; // String | 
-apiInstance.deleteSystemDeprecated(cloudPk, ifcPk, projectPk, uuid).then(() => {
+let systemRequest = new bimdata.SystemRequest(); // SystemRequest | 
+apiInstance.deleteSystemDeprecated(cloudPk, ifcPk, projectPk, uuid, systemRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -4091,6 +4144,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **uuid** | **String**|  | 
+ **systemRequest** | [**SystemRequest**](SystemRequest.md)|  | 
 
 ### Return type
 
@@ -4102,13 +4156,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteZoneDeprecated
 
-> deleteZoneDeprecated(cloudPk, id, ifcPk, projectPk)
+> deleteZoneDeprecated(cloudPk, id, ifcPk, projectPk, zoneRequest)
 
 Delete a zone of a model
 
@@ -4141,7 +4195,8 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this zone.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.deleteZoneDeprecated(cloudPk, id, ifcPk, projectPk).then(() => {
+let zoneRequest = new bimdata.ZoneRequest(); // ZoneRequest | 
+apiInstance.deleteZoneDeprecated(cloudPk, id, ifcPk, projectPk, zoneRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -4158,6 +4213,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this zone. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **zoneRequest** | [**ZoneRequest**](ZoneRequest.md)|  | 
 
 ### Return type
 
@@ -4169,13 +4225,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteZoneSpaceDeprecated
 
-> deleteZoneSpaceDeprecated(cloudPk, id, ifcPk, projectPk, zonePk)
+> deleteZoneSpaceDeprecated(cloudPk, id, ifcPk, projectPk, zonePk, zoneSpaceRequest)
 
 Delete a space of a zone
 
@@ -4209,7 +4265,8 @@ let id = 56; // Number | A unique integer value identifying this space.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let zonePk = 56; // Number | A unique integer value identifying this zone.
-apiInstance.deleteZoneSpaceDeprecated(cloudPk, id, ifcPk, projectPk, zonePk).then(() => {
+let zoneSpaceRequest = new bimdata.ZoneSpaceRequest(); // ZoneSpaceRequest | 
+apiInstance.deleteZoneSpaceDeprecated(cloudPk, id, ifcPk, projectPk, zonePk, zoneSpaceRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -4227,6 +4284,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **zonePk** | **Number**| A unique integer value identifying this zone. | 
+ **zoneSpaceRequest** | [**ZoneSpaceRequest**](ZoneSpaceRequest.md)|  | 
 
 ### Return type
 
@@ -4238,7 +4296,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
@@ -8633,7 +8691,7 @@ null (empty response body)
 
 ## removeClassificationOfElementDeprecated
 
-> removeClassificationOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk)
+> removeClassificationOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, opts)
 
 Remove a classification from an element
 
@@ -8667,7 +8725,10 @@ let elementUuid = "elementUuid_example"; // String |
 let id = 56; // Number | A unique integer value identifying this classification.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.removeClassificationOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk).then(() => {
+let opts = {
+  'classificationRequest': new bimdata.ClassificationRequest() // ClassificationRequest | 
+};
+apiInstance.removeClassificationOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -8685,6 +8746,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this classification. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **classificationRequest** | [**ClassificationRequest**](ClassificationRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -8696,13 +8758,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## removeDocumentOfElementDeprecated
 
-> removeDocumentOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk)
+> removeDocumentOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, documentRequest)
 
 Remove a documents from an element
 
@@ -8736,7 +8798,8 @@ let elementUuid = "elementUuid_example"; // String |
 let id = 56; // Number | A unique integer value identifying this document.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.removeDocumentOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk).then(() => {
+let documentRequest = new bimdata.DocumentRequest(); // DocumentRequest | 
+apiInstance.removeDocumentOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, documentRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -8754,6 +8817,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this document. | 
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **documentRequest** | [**DocumentRequest**](DocumentRequest.md)|  | 
 
 ### Return type
 
@@ -8765,13 +8829,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## removeElementPropertySetDeprecated
 
-> removeElementPropertySetDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk)
+> removeElementPropertySetDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, opts)
 
 Remove a PropertySet from an element
 
@@ -8805,7 +8869,10 @@ let elementUuid = "elementUuid_example"; // String |
 let id = 56; // Number | A unique integer value identifying this property set.
 let ifcPk = 56; // Number | 
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.removeElementPropertySetDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk).then(() => {
+let opts = {
+  'propertySetRequest': new bimdata.PropertySetRequest() // PropertySetRequest | 
+};
+apiInstance.removeElementPropertySetDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -8823,6 +8890,7 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this property set. | 
  **ifcPk** | **Number**|  | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **propertySetRequest** | [**PropertySetRequest**](PropertySetRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -8834,13 +8902,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## removeElementPropertySetPropertyDefinitionDeprecated
 
-> removeElementPropertySetPropertyDefinitionDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk)
+> removeElementPropertySetPropertyDefinitionDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk, opts)
 
 Delete a Definition to a Property
 
@@ -8876,7 +8944,10 @@ let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let propertyPk = 56; // Number | A unique integer value identifying this property.
 let propertysetPk = 56; // Number | A unique integer value identifying this property set.
-apiInstance.removeElementPropertySetPropertyDefinitionDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk).then(() => {
+let opts = {
+  'propertyDefinitionRequest': new bimdata.PropertyDefinitionRequest() // PropertyDefinitionRequest | 
+};
+apiInstance.removeElementPropertySetPropertyDefinitionDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk, opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -8896,6 +8967,7 @@ Name | Type | Description  | Notes
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **propertyPk** | **Number**| A unique integer value identifying this property. | 
  **propertysetPk** | **Number**| A unique integer value identifying this property set. | 
+ **propertyDefinitionRequest** | [**PropertyDefinitionRequest**](PropertyDefinitionRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -8907,13 +8979,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## removeElementPropertySetPropertyDefinitionUnitDeprecated
 
-> removeElementPropertySetPropertyDefinitionUnitDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
+> removeElementPropertySetPropertyDefinitionUnitDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, unitRequest)
 
 Remove a Unit from a Definition
 
@@ -8950,7 +9022,8 @@ let projectPk = 56; // Number | A unique integer value identifying this project.
 let propertyPk = 56; // Number | A unique integer value identifying this property.
 let propertydefinitionPk = 56; // Number | A unique integer value identifying this property definition.
 let propertysetPk = 56; // Number | A unique integer value identifying this property set.
-apiInstance.removeElementPropertySetPropertyDefinitionUnitDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk).then(() => {
+let unitRequest = new bimdata.UnitRequest(); // UnitRequest | 
+apiInstance.removeElementPropertySetPropertyDefinitionUnitDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, unitRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -8971,6 +9044,7 @@ Name | Type | Description  | Notes
  **propertyPk** | **Number**| A unique integer value identifying this property. | 
  **propertydefinitionPk** | **Number**| A unique integer value identifying this property definition. | 
  **propertysetPk** | **Number**| A unique integer value identifying this property set. | 
+ **unitRequest** | [**UnitRequest**](UnitRequest.md)|  | 
 
 ### Return type
 
@@ -8982,13 +9056,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## removeElementPropertySetPropertyDeprecated
 
-> removeElementPropertySetPropertyDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk)
+> removeElementPropertySetPropertyDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, propertyRequest)
 
 Remove a property from a PropertySet
 
@@ -9023,7 +9097,8 @@ let id = 56; // Number | A unique integer value identifying this property.
 let ifcPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let propertysetPk = 56; // Number | A unique integer value identifying this property set.
-apiInstance.removeElementPropertySetPropertyDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk).then(() => {
+let propertyRequest = new bimdata.PropertyRequest(); // PropertyRequest | 
+apiInstance.removeElementPropertySetPropertyDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, propertyRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -9042,6 +9117,7 @@ Name | Type | Description  | Notes
  **ifcPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **propertysetPk** | **Number**| A unique integer value identifying this property set. | 
+ **propertyRequest** | [**PropertyRequest**](PropertyRequest.md)|  | 
 
 ### Return type
 
@@ -9053,13 +9129,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## removeElementsFromClassificationDeprecated
 
-> removeElementsFromClassificationDeprecated(cloudPk, ifcPk, modelClassificationPk, projectPk, uuid)
+> removeElementsFromClassificationDeprecated(cloudPk, ifcPk, modelClassificationPk, projectPk, uuid, elementRequest)
 
 Remove the classification from all elements
 
@@ -9093,7 +9169,8 @@ let ifcPk = 56; // Number | A unique integer value identifying this model.
 let modelClassificationPk = 56; // Number | A unique integer value identifying this classification.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let uuid = "uuid_example"; // String | 
-apiInstance.removeElementsFromClassificationDeprecated(cloudPk, ifcPk, modelClassificationPk, projectPk, uuid).then(() => {
+let elementRequest = new bimdata.ElementRequest(); // ElementRequest | 
+apiInstance.removeElementsFromClassificationDeprecated(cloudPk, ifcPk, modelClassificationPk, projectPk, uuid, elementRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -9111,6 +9188,7 @@ Name | Type | Description  | Notes
  **modelClassificationPk** | **Number**| A unique integer value identifying this classification. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **uuid** | **String**|  | 
+ **elementRequest** | [**ElementRequest**](ElementRequest.md)|  | 
 
 ### Return type
 
@@ -9122,7 +9200,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 

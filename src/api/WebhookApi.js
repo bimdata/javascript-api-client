@@ -96,10 +96,11 @@ export default class WebhookApi {
      * Delete a webhook  Required scopes: webhook:manage
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this web hook.
+     * @param {module:model/WebHookRequest} webHookRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteWebHookWithHttpInfo(cloudPk, id) {
-      let postBody = null;
+    deleteWebHookWithHttpInfo(cloudPk, id, webHookRequest) {
+      let postBody = webHookRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteWebHook");
@@ -107,6 +108,10 @@ export default class WebhookApi {
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteWebHook");
+      }
+      // verify the required parameter 'webHookRequest' is set
+      if (webHookRequest === undefined || webHookRequest === null) {
+        throw new Error("Missing the required parameter 'webHookRequest' when calling deleteWebHook");
       }
 
       let pathParams = {
@@ -121,7 +126,7 @@ export default class WebhookApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -136,10 +141,11 @@ export default class WebhookApi {
      * Delete a webhook  Required scopes: webhook:manage
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this web hook.
+     * @param {module:model/WebHookRequest} webHookRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteWebHook(cloudPk, id) {
-      return this.deleteWebHookWithHttpInfo(cloudPk, id)
+    deleteWebHook(cloudPk, id, webHookRequest) {
+      return this.deleteWebHookWithHttpInfo(cloudPk, id, webHookRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

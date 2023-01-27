@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ## deleteWebHook
 
-> deleteWebHook(cloudPk, id)
+> deleteWebHook(cloudPk, id, webHookRequest)
 
 Delete a webhook
 
@@ -109,7 +109,8 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.WebhookApi();
 let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this web hook.
-apiInstance.deleteWebHook(cloudPk, id).then(() => {
+let webHookRequest = new bimdata.WebHookRequest(); // WebHookRequest | 
+apiInstance.deleteWebHook(cloudPk, id, webHookRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -124,6 +125,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this web hook. | 
+ **webHookRequest** | [**WebHookRequest**](WebHookRequest.md)|  | 
 
 ### Return type
 
@@ -135,7 +137,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 

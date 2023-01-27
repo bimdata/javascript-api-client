@@ -21,6 +21,7 @@ import CreateBuildingByNameRequest from '../model/CreateBuildingByNameRequest';
 import CreateModelRequest from '../model/CreateModelRequest';
 import CreateMultiPageModelRequest from '../model/CreateMultiPageModelRequest';
 import Document from '../model/Document';
+import DocumentRequest from '../model/DocumentRequest';
 import DocumentWithElementList from '../model/DocumentWithElementList';
 import Element from '../model/Element';
 import ElementClassificationRelation from '../model/ElementClassificationRelation';
@@ -39,6 +40,7 @@ import Model from '../model/Model';
 import ModelErrors from '../model/ModelErrors';
 import ModelErrorsRequest from '../model/ModelErrorsRequest';
 import ModelFiles from '../model/ModelFiles';
+import ModelRequest from '../model/ModelRequest';
 import PatchedElementRequest from '../model/PatchedElementRequest';
 import PatchedIfcAccessTokenRequest from '../model/PatchedIfcAccessTokenRequest';
 import PatchedLayerRequest from '../model/PatchedLayerRequest';
@@ -172,10 +174,13 @@ export default class ModelApi {
      * @param {Number} cloudPk 
      * @param {Number} modelPk 
      * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ClassificationRequest} opts.classificationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteModelClassificationsWithHttpInfo(cloudPk, modelPk, projectPk) {
-      let postBody = null;
+    bulkDeleteModelClassificationsWithHttpInfo(cloudPk, modelPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['classificationRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteModelClassifications");
@@ -202,7 +207,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -218,10 +223,12 @@ export default class ModelApi {
      * @param {Number} cloudPk 
      * @param {Number} modelPk 
      * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ClassificationRequest} opts.classificationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteModelClassifications(cloudPk, modelPk, projectPk) {
-      return this.bulkDeleteModelClassificationsWithHttpInfo(cloudPk, modelPk, projectPk)
+    bulkDeleteModelClassifications(cloudPk, modelPk, projectPk, opts) {
+      return this.bulkDeleteModelClassificationsWithHttpInfo(cloudPk, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -234,10 +241,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteModelPropertiesWithHttpInfo(cloudPk, modelPk, projectPk) {
-      let postBody = null;
+    bulkDeleteModelPropertiesWithHttpInfo(cloudPk, modelPk, projectPk, requestBody) {
+      let postBody = requestBody;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteModelProperties");
@@ -249,6 +257,10 @@ export default class ModelApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteModelProperties");
+      }
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling bulkDeleteModelProperties");
       }
 
       let pathParams = {
@@ -264,7 +276,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -280,10 +292,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteModelProperties(cloudPk, modelPk, projectPk) {
-      return this.bulkDeleteModelPropertiesWithHttpInfo(cloudPk, modelPk, projectPk)
+    bulkDeleteModelProperties(cloudPk, modelPk, projectPk, requestBody) {
+      return this.bulkDeleteModelPropertiesWithHttpInfo(cloudPk, modelPk, projectPk, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -296,10 +309,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteModelPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk) {
-      let postBody = null;
+    bulkDeleteModelPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk, requestBody) {
+      let postBody = requestBody;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteModelPropertyDefinitions");
@@ -311,6 +325,10 @@ export default class ModelApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteModelPropertyDefinitions");
+      }
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling bulkDeleteModelPropertyDefinitions");
       }
 
       let pathParams = {
@@ -326,7 +344,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -342,10 +360,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteModelPropertyDefinitions(cloudPk, modelPk, projectPk) {
-      return this.bulkDeleteModelPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk)
+    bulkDeleteModelPropertyDefinitions(cloudPk, modelPk, projectPk, requestBody) {
+      return this.bulkDeleteModelPropertyDefinitionsWithHttpInfo(cloudPk, modelPk, projectPk, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -358,10 +377,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeleteModelUnitsWithHttpInfo(cloudPk, modelPk, projectPk) {
-      let postBody = null;
+    bulkDeleteModelUnitsWithHttpInfo(cloudPk, modelPk, projectPk, requestBody) {
+      let postBody = requestBody;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeleteModelUnits");
@@ -373,6 +393,10 @@ export default class ModelApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkDeleteModelUnits");
+      }
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling bulkDeleteModelUnits");
       }
 
       let pathParams = {
@@ -388,7 +412,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -404,10 +428,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeleteModelUnits(cloudPk, modelPk, projectPk) {
-      return this.bulkDeleteModelUnitsWithHttpInfo(cloudPk, modelPk, projectPk)
+    bulkDeleteModelUnits(cloudPk, modelPk, projectPk, requestBody) {
+      return this.bulkDeleteModelUnitsWithHttpInfo(cloudPk, modelPk, projectPk, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -420,10 +445,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkDeletePropertySetWithHttpInfo(cloudPk, modelPk, projectPk) {
-      let postBody = null;
+    bulkDeletePropertySetWithHttpInfo(cloudPk, modelPk, projectPk, requestBody) {
+      let postBody = requestBody;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkDeletePropertySet");
@@ -435,6 +461,10 @@ export default class ModelApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkDeletePropertySet");
+      }
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling bulkDeletePropertySet");
       }
 
       let pathParams = {
@@ -450,7 +480,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -466,10 +496,11 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkDeletePropertySet(cloudPk, modelPk, projectPk) {
-      return this.bulkDeletePropertySetWithHttpInfo(cloudPk, modelPk, projectPk)
+    bulkDeletePropertySet(cloudPk, modelPk, projectPk, requestBody) {
+      return this.bulkDeletePropertySetWithHttpInfo(cloudPk, modelPk, projectPk, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -631,10 +662,11 @@ export default class ModelApi {
      * @param {String} elementUuid 
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkRemoveClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk) {
-      let postBody = null;
+    bulkRemoveClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, requestBody) {
+      let postBody = requestBody;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkRemoveClassificationsOfElement");
@@ -651,6 +683,10 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveClassificationsOfElement");
       }
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling bulkRemoveClassificationsOfElement");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -666,7 +702,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -683,10 +719,11 @@ export default class ModelApi {
      * @param {String} elementUuid 
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkRemoveClassificationsOfElement(cloudPk, elementUuid, modelPk, projectPk) {
-      return this.bulkRemoveClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk)
+    bulkRemoveClassificationsOfElement(cloudPk, elementUuid, modelPk, projectPk, requestBody) {
+      return this.bulkRemoveClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -700,10 +737,11 @@ export default class ModelApi {
      * @param {String} elementUuid 
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkRemoveDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk) {
-      let postBody = null;
+    bulkRemoveDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, requestBody) {
+      let postBody = requestBody;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkRemoveDocumentsOfElement");
@@ -720,6 +758,10 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveDocumentsOfElement");
       }
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling bulkRemoveDocumentsOfElement");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -735,7 +777,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -752,10 +794,11 @@ export default class ModelApi {
      * @param {String} elementUuid 
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkRemoveDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk) {
-      return this.bulkRemoveDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk)
+    bulkRemoveDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk, requestBody) {
+      return this.bulkRemoveDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -769,10 +812,11 @@ export default class ModelApi {
      * @param {Number} modelClassificationPk A unique integer value identifying this classification.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    bulkRemoveElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk) {
-      let postBody = null;
+    bulkRemoveElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk, requestBody) {
+      let postBody = requestBody;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling bulkRemoveElementsFromClassification");
@@ -789,6 +833,10 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling bulkRemoveElementsFromClassification");
       }
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling bulkRemoveElementsFromClassification");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -804,7 +852,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -821,10 +869,11 @@ export default class ModelApi {
      * @param {Number} modelClassificationPk A unique integer value identifying this classification.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Array.<Number>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    bulkRemoveElementsFromClassification(cloudPk, modelClassificationPk, modelPk, projectPk) {
-      return this.bulkRemoveElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk)
+    bulkRemoveElementsFromClassification(cloudPk, modelClassificationPk, modelPk, projectPk, requestBody) {
+      return this.bulkRemoveElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2847,10 +2896,13 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} token 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/IfcAccessTokenRequest} opts.ifcAccessTokenRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, token) {
-      let postBody = null;
+    deleteAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, token, opts) {
+      opts = opts || {};
+      let postBody = opts['ifcAccessTokenRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteAccessToken");
@@ -2882,7 +2934,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -2899,10 +2951,12 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} token 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/IfcAccessTokenRequest} opts.ifcAccessTokenRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteAccessToken(cloudPk, modelPk, projectPk, token) {
-      return this.deleteAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, token)
+    deleteAccessToken(cloudPk, modelPk, projectPk, token, opts) {
+      return this.deleteAccessTokenWithHttpInfo(cloudPk, modelPk, projectPk, token, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3061,10 +3115,11 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {module:model/ElementRequest} elementRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid) {
-      let postBody = null;
+    deleteElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid, elementRequest) {
+      let postBody = elementRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteElement");
@@ -3081,6 +3136,10 @@ export default class ModelApi {
       if (uuid === undefined || uuid === null) {
         throw new Error("Missing the required parameter 'uuid' when calling deleteElement");
       }
+      // verify the required parameter 'elementRequest' is set
+      if (elementRequest === undefined || elementRequest === null) {
+        throw new Error("Missing the required parameter 'elementRequest' when calling deleteElement");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -3096,7 +3155,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3113,10 +3172,11 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {module:model/ElementRequest} elementRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteElement(cloudPk, modelPk, projectPk, uuid) {
-      return this.deleteElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
+    deleteElement(cloudPk, modelPk, projectPk, uuid, elementRequest) {
+      return this.deleteElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid, elementRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3130,10 +3190,11 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this layer.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/LayerRequest} layerRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteLayerWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
+    deleteLayerWithHttpInfo(cloudPk, id, modelPk, projectPk, layerRequest) {
+      let postBody = layerRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteLayer");
@@ -3150,6 +3211,10 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteLayer");
       }
+      // verify the required parameter 'layerRequest' is set
+      if (layerRequest === undefined || layerRequest === null) {
+        throw new Error("Missing the required parameter 'layerRequest' when calling deleteLayer");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -3165,7 +3230,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3182,10 +3247,11 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this layer.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/LayerRequest} layerRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteLayer(cloudPk, id, modelPk, projectPk) {
-      return this.deleteLayerWithHttpInfo(cloudPk, id, modelPk, projectPk)
+    deleteLayer(cloudPk, id, modelPk, projectPk, layerRequest) {
+      return this.deleteLayerWithHttpInfo(cloudPk, id, modelPk, projectPk, layerRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3198,10 +3264,13 @@ export default class ModelApi {
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this model.
      * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ModelRequest} opts.modelRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteModelWithHttpInfo(cloudPk, id, projectPk) {
-      let postBody = null;
+    deleteModelWithHttpInfo(cloudPk, id, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['modelRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteModel");
@@ -3228,7 +3297,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3244,10 +3313,12 @@ export default class ModelApi {
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this model.
      * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ModelRequest} opts.modelRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteModel(cloudPk, id, projectPk) {
-      return this.deleteModelWithHttpInfo(cloudPk, id, projectPk)
+    deleteModel(cloudPk, id, projectPk, opts) {
+      return this.deleteModelWithHttpInfo(cloudPk, id, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3261,10 +3332,11 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this property.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/PropertyRequest} propertyRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteModelPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
+    deleteModelPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk, propertyRequest) {
+      let postBody = propertyRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteModelProperty");
@@ -3281,6 +3353,10 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteModelProperty");
       }
+      // verify the required parameter 'propertyRequest' is set
+      if (propertyRequest === undefined || propertyRequest === null) {
+        throw new Error("Missing the required parameter 'propertyRequest' when calling deleteModelProperty");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -3296,7 +3372,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3313,10 +3389,11 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this property.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/PropertyRequest} propertyRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteModelProperty(cloudPk, id, modelPk, projectPk) {
-      return this.deleteModelPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk)
+    deleteModelProperty(cloudPk, id, modelPk, projectPk, propertyRequest) {
+      return this.deleteModelPropertyWithHttpInfo(cloudPk, id, modelPk, projectPk, propertyRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3330,10 +3407,13 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this property definition.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PropertyDefinitionRequest} opts.propertyDefinitionRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteModelPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
+    deleteModelPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['propertyDefinitionRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteModelPropertyDefinition");
@@ -3365,7 +3445,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3382,10 +3462,12 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this property definition.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PropertyDefinitionRequest} opts.propertyDefinitionRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteModelPropertyDefinition(cloudPk, id, modelPk, projectPk) {
-      return this.deleteModelPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk)
+    deleteModelPropertyDefinition(cloudPk, id, modelPk, projectPk, opts) {
+      return this.deleteModelPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3399,10 +3481,11 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this unit.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/UnitRequest} unitRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteModelUnitWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
+    deleteModelUnitWithHttpInfo(cloudPk, id, modelPk, projectPk, unitRequest) {
+      let postBody = unitRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteModelUnit");
@@ -3419,6 +3502,10 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteModelUnit");
       }
+      // verify the required parameter 'unitRequest' is set
+      if (unitRequest === undefined || unitRequest === null) {
+        throw new Error("Missing the required parameter 'unitRequest' when calling deleteModelUnit");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -3434,7 +3521,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3451,10 +3538,11 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this unit.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/UnitRequest} unitRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteModelUnit(cloudPk, id, modelPk, projectPk) {
-      return this.deleteModelUnitWithHttpInfo(cloudPk, id, modelPk, projectPk)
+    deleteModelUnit(cloudPk, id, modelPk, projectPk, unitRequest) {
+      return this.deleteModelUnitWithHttpInfo(cloudPk, id, modelPk, projectPk, unitRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3530,10 +3618,13 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this property set.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PropertySetRequest} opts.propertySetRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deletePropertySetWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
+    deletePropertySetWithHttpInfo(cloudPk, id, modelPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['propertySetRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deletePropertySet");
@@ -3565,7 +3656,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3582,10 +3673,12 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this property set.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PropertySetRequest} opts.propertySetRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deletePropertySet(cloudPk, id, modelPk, projectPk) {
-      return this.deletePropertySetWithHttpInfo(cloudPk, id, modelPk, projectPk)
+    deletePropertySet(cloudPk, id, modelPk, projectPk, opts) {
+      return this.deletePropertySetWithHttpInfo(cloudPk, id, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3599,10 +3692,11 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this space.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/SpaceRequest} spaceRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
+    deleteSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, spaceRequest) {
+      let postBody = spaceRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteSpace");
@@ -3619,6 +3713,10 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteSpace");
       }
+      // verify the required parameter 'spaceRequest' is set
+      if (spaceRequest === undefined || spaceRequest === null) {
+        throw new Error("Missing the required parameter 'spaceRequest' when calling deleteSpace");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -3634,7 +3732,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3651,10 +3749,11 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this space.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/SpaceRequest} spaceRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteSpace(cloudPk, id, modelPk, projectPk) {
-      return this.deleteSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk)
+    deleteSpace(cloudPk, id, modelPk, projectPk, spaceRequest) {
+      return this.deleteSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, spaceRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3813,10 +3912,11 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {module:model/SystemRequest} systemRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteSystemWithHttpInfo(cloudPk, modelPk, projectPk, uuid) {
-      let postBody = null;
+    deleteSystemWithHttpInfo(cloudPk, modelPk, projectPk, uuid, systemRequest) {
+      let postBody = systemRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteSystem");
@@ -3833,6 +3933,10 @@ export default class ModelApi {
       if (uuid === undefined || uuid === null) {
         throw new Error("Missing the required parameter 'uuid' when calling deleteSystem");
       }
+      // verify the required parameter 'systemRequest' is set
+      if (systemRequest === undefined || systemRequest === null) {
+        throw new Error("Missing the required parameter 'systemRequest' when calling deleteSystem");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -3848,7 +3952,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3865,10 +3969,11 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {module:model/SystemRequest} systemRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteSystem(cloudPk, modelPk, projectPk, uuid) {
-      return this.deleteSystemWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
+    deleteSystem(cloudPk, modelPk, projectPk, uuid, systemRequest) {
+      return this.deleteSystemWithHttpInfo(cloudPk, modelPk, projectPk, uuid, systemRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3882,10 +3987,11 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this zone.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/ZoneRequest} zoneRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteZoneWithHttpInfo(cloudPk, id, modelPk, projectPk) {
-      let postBody = null;
+    deleteZoneWithHttpInfo(cloudPk, id, modelPk, projectPk, zoneRequest) {
+      let postBody = zoneRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteZone");
@@ -3902,6 +4008,10 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteZone");
       }
+      // verify the required parameter 'zoneRequest' is set
+      if (zoneRequest === undefined || zoneRequest === null) {
+        throw new Error("Missing the required parameter 'zoneRequest' when calling deleteZone");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -3917,7 +4027,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3934,10 +4044,11 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this zone.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/ZoneRequest} zoneRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteZone(cloudPk, id, modelPk, projectPk) {
-      return this.deleteZoneWithHttpInfo(cloudPk, id, modelPk, projectPk)
+    deleteZone(cloudPk, id, modelPk, projectPk, zoneRequest) {
+      return this.deleteZoneWithHttpInfo(cloudPk, id, modelPk, projectPk, zoneRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3952,10 +4063,11 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} zonePk A unique integer value identifying this zone.
+     * @param {module:model/ZoneSpaceRequest} zoneSpaceRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteZoneSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, zonePk) {
-      let postBody = null;
+    deleteZoneSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, zonePk, zoneSpaceRequest) {
+      let postBody = zoneSpaceRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteZoneSpace");
@@ -3976,6 +4088,10 @@ export default class ModelApi {
       if (zonePk === undefined || zonePk === null) {
         throw new Error("Missing the required parameter 'zonePk' when calling deleteZoneSpace");
       }
+      // verify the required parameter 'zoneSpaceRequest' is set
+      if (zoneSpaceRequest === undefined || zoneSpaceRequest === null) {
+        throw new Error("Missing the required parameter 'zoneSpaceRequest' when calling deleteZoneSpace");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -3992,7 +4108,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -4010,10 +4126,11 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} zonePk A unique integer value identifying this zone.
+     * @param {module:model/ZoneSpaceRequest} zoneSpaceRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteZoneSpace(cloudPk, id, modelPk, projectPk, zonePk) {
-      return this.deleteZoneSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, zonePk)
+    deleteZoneSpace(cloudPk, id, modelPk, projectPk, zonePk, zoneSpaceRequest) {
+      return this.deleteZoneSpaceWithHttpInfo(cloudPk, id, modelPk, projectPk, zonePk, zoneSpaceRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8196,10 +8313,13 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this classification.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ClassificationRequest} opts.classificationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeClassificationOfElementWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk) {
-      let postBody = null;
+    removeClassificationOfElementWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['classificationRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeClassificationOfElement");
@@ -8236,7 +8356,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -8254,10 +8374,12 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this classification.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ClassificationRequest} opts.classificationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeClassificationOfElement(cloudPk, elementUuid, id, modelPk, projectPk) {
-      return this.removeClassificationOfElementWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk)
+    removeClassificationOfElement(cloudPk, elementUuid, id, modelPk, projectPk, opts) {
+      return this.removeClassificationOfElementWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8272,10 +8394,11 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this document.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/DocumentRequest} documentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeDocumentOfElementWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk) {
-      let postBody = null;
+    removeDocumentOfElementWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, documentRequest) {
+      let postBody = documentRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeDocumentOfElement");
@@ -8296,6 +8419,10 @@ export default class ModelApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling removeDocumentOfElement");
       }
+      // verify the required parameter 'documentRequest' is set
+      if (documentRequest === undefined || documentRequest === null) {
+        throw new Error("Missing the required parameter 'documentRequest' when calling removeDocumentOfElement");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -8312,7 +8439,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -8330,10 +8457,11 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this document.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/DocumentRequest} documentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeDocumentOfElement(cloudPk, elementUuid, id, modelPk, projectPk) {
-      return this.removeDocumentOfElementWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk)
+    removeDocumentOfElement(cloudPk, elementUuid, id, modelPk, projectPk, documentRequest) {
+      return this.removeDocumentOfElementWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, documentRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8348,10 +8476,13 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this property set.
      * @param {Number} modelPk 
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PropertySetRequest} opts.propertySetRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementPropertySetWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk) {
-      let postBody = null;
+    removeElementPropertySetWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['propertySetRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySet");
@@ -8388,7 +8519,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -8406,10 +8537,12 @@ export default class ModelApi {
      * @param {Number} id A unique integer value identifying this property set.
      * @param {Number} modelPk 
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PropertySetRequest} opts.propertySetRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementPropertySet(cloudPk, elementUuid, id, modelPk, projectPk) {
-      return this.removeElementPropertySetWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk)
+    removeElementPropertySet(cloudPk, elementUuid, id, modelPk, projectPk, opts) {
+      return this.removeElementPropertySetWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8425,10 +8558,11 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} propertysetPk A unique integer value identifying this property set.
+     * @param {module:model/PropertyRequest} propertyRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk) {
-      let postBody = null;
+    removeElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk, propertyRequest) {
+      let postBody = propertyRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetProperty");
@@ -8453,6 +8587,10 @@ export default class ModelApi {
       if (propertysetPk === undefined || propertysetPk === null) {
         throw new Error("Missing the required parameter 'propertysetPk' when calling removeElementPropertySetProperty");
       }
+      // verify the required parameter 'propertyRequest' is set
+      if (propertyRequest === undefined || propertyRequest === null) {
+        throw new Error("Missing the required parameter 'propertyRequest' when calling removeElementPropertySetProperty");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -8470,7 +8608,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -8489,10 +8627,11 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} propertysetPk A unique integer value identifying this property set.
+     * @param {module:model/PropertyRequest} propertyRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementPropertySetProperty(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk) {
-      return this.removeElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk)
+    removeElementPropertySetProperty(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk, propertyRequest) {
+      return this.removeElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk, propertyRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8509,10 +8648,13 @@ export default class ModelApi {
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} propertyPk A unique integer value identifying this property.
      * @param {Number} propertysetPk A unique integer value identifying this property set.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PropertyDefinitionRequest} opts.propertyDefinitionRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementPropertySetPropertyDefinitionWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk) {
-      let postBody = null;
+    removeElementPropertySetPropertyDefinitionWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk, opts) {
+      opts = opts || {};
+      let postBody = opts['propertyDefinitionRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDefinition");
@@ -8559,7 +8701,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -8579,10 +8721,12 @@ export default class ModelApi {
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} propertyPk A unique integer value identifying this property.
      * @param {Number} propertysetPk A unique integer value identifying this property set.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PropertyDefinitionRequest} opts.propertyDefinitionRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk) {
-      return this.removeElementPropertySetPropertyDefinitionWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk)
+    removeElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk, opts) {
+      return this.removeElementPropertySetPropertyDefinitionWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8600,10 +8744,11 @@ export default class ModelApi {
      * @param {Number} propertyPk A unique integer value identifying this property.
      * @param {Number} propertydefinitionPk A unique integer value identifying this property definition.
      * @param {Number} propertysetPk A unique integer value identifying this property set.
+     * @param {module:model/UnitRequest} unitRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementPropertySetPropertyDefinitionUnitWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
-      let postBody = null;
+    removeElementPropertySetPropertyDefinitionUnitWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, unitRequest) {
+      let postBody = unitRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDefinitionUnit");
@@ -8636,6 +8781,10 @@ export default class ModelApi {
       if (propertysetPk === undefined || propertysetPk === null) {
         throw new Error("Missing the required parameter 'propertysetPk' when calling removeElementPropertySetPropertyDefinitionUnit");
       }
+      // verify the required parameter 'unitRequest' is set
+      if (unitRequest === undefined || unitRequest === null) {
+        throw new Error("Missing the required parameter 'unitRequest' when calling removeElementPropertySetPropertyDefinitionUnit");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -8655,7 +8804,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -8676,10 +8825,11 @@ export default class ModelApi {
      * @param {Number} propertyPk A unique integer value identifying this property.
      * @param {Number} propertydefinitionPk A unique integer value identifying this property definition.
      * @param {Number} propertysetPk A unique integer value identifying this property set.
+     * @param {module:model/UnitRequest} unitRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
-      return this.removeElementPropertySetPropertyDefinitionUnitWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
+    removeElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, unitRequest) {
+      return this.removeElementPropertySetPropertyDefinitionUnitWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, unitRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8694,10 +8844,11 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {module:model/ElementRequest} elementRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk, uuid) {
-      let postBody = null;
+    removeElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk, uuid, elementRequest) {
+      let postBody = elementRequest;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeElementsFromClassification");
@@ -8718,6 +8869,10 @@ export default class ModelApi {
       if (uuid === undefined || uuid === null) {
         throw new Error("Missing the required parameter 'uuid' when calling removeElementsFromClassification");
       }
+      // verify the required parameter 'elementRequest' is set
+      if (elementRequest === undefined || elementRequest === null) {
+        throw new Error("Missing the required parameter 'elementRequest' when calling removeElementsFromClassification");
+      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -8734,7 +8889,7 @@ export default class ModelApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -8752,10 +8907,11 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
+     * @param {module:model/ElementRequest} elementRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementsFromClassification(cloudPk, modelClassificationPk, modelPk, projectPk, uuid) {
-      return this.removeElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk, uuid)
+    removeElementsFromClassification(cloudPk, modelClassificationPk, modelPk, projectPk, uuid, elementRequest) {
+      return this.removeElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk, uuid, elementRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -642,7 +642,7 @@ Name | Type | Description  | Notes
 
 ## deleteComment
 
-> deleteComment(guid, projectsPk, topicsGuid)
+> deleteComment(guid, projectsPk, topicsGuid, opts)
 
 Delete a comment
 
@@ -674,7 +674,10 @@ let apiInstance = new bimdata.BcfApi();
 let guid = "guid_example"; // String | 
 let projectsPk = 56; // Number | A unique integer value identifying this project.
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.deleteComment(guid, projectsPk, topicsGuid).then(() => {
+let opts = {
+  'commentRequest': new bimdata.CommentRequest() // CommentRequest | 
+};
+apiInstance.deleteComment(guid, projectsPk, topicsGuid, opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -690,6 +693,7 @@ Name | Type | Description  | Notes
  **guid** | **String**|  | 
  **projectsPk** | **Number**| A unique integer value identifying this project. | 
  **topicsGuid** | **String**|  | 
+ **commentRequest** | [**CommentRequest**](CommentRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -701,13 +705,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteExtensionLabel
 
-> deleteExtensionLabel(id, projectsPk)
+> deleteExtensionLabel(id, projectsPk, labelRequest)
 
 Delete a Label
 
@@ -738,7 +742,8 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this label.
 let projectsPk = 56; // Number | 
-apiInstance.deleteExtensionLabel(id, projectsPk).then(() => {
+let labelRequest = new bimdata.LabelRequest(); // LabelRequest | 
+apiInstance.deleteExtensionLabel(id, projectsPk, labelRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -753,6 +758,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this label. | 
  **projectsPk** | **Number**|  | 
+ **labelRequest** | [**LabelRequest**](LabelRequest.md)|  | 
 
 ### Return type
 
@@ -764,13 +770,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteExtensionPriority
 
-> deleteExtensionPriority(id, projectsPk)
+> deleteExtensionPriority(id, projectsPk, priorityRequest)
 
 Delete a Priority
 
@@ -801,7 +807,8 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this priority.
 let projectsPk = 56; // Number | 
-apiInstance.deleteExtensionPriority(id, projectsPk).then(() => {
+let priorityRequest = new bimdata.PriorityRequest(); // PriorityRequest | 
+apiInstance.deleteExtensionPriority(id, projectsPk, priorityRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -816,6 +823,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this priority. | 
  **projectsPk** | **Number**|  | 
+ **priorityRequest** | [**PriorityRequest**](PriorityRequest.md)|  | 
 
 ### Return type
 
@@ -827,13 +835,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteExtensionStage
 
-> deleteExtensionStage(id, projectsPk)
+> deleteExtensionStage(id, projectsPk, stageRequest)
 
 Delete a Stage
 
@@ -864,7 +872,8 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this stage.
 let projectsPk = 56; // Number | 
-apiInstance.deleteExtensionStage(id, projectsPk).then(() => {
+let stageRequest = new bimdata.StageRequest(); // StageRequest | 
+apiInstance.deleteExtensionStage(id, projectsPk, stageRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -879,6 +888,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this stage. | 
  **projectsPk** | **Number**|  | 
+ **stageRequest** | [**StageRequest**](StageRequest.md)|  | 
 
 ### Return type
 
@@ -890,13 +900,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteExtensionStatus
 
-> deleteExtensionStatus(id, projectsPk)
+> deleteExtensionStatus(id, projectsPk, topicStatusRequest)
 
 Delete a TopicStatus
 
@@ -927,7 +937,8 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this topic status.
 let projectsPk = 56; // Number | 
-apiInstance.deleteExtensionStatus(id, projectsPk).then(() => {
+let topicStatusRequest = new bimdata.TopicStatusRequest(); // TopicStatusRequest | 
+apiInstance.deleteExtensionStatus(id, projectsPk, topicStatusRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -942,6 +953,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this topic status. | 
  **projectsPk** | **Number**|  | 
+ **topicStatusRequest** | [**TopicStatusRequest**](TopicStatusRequest.md)|  | 
 
 ### Return type
 
@@ -953,13 +965,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteExtensionType
 
-> deleteExtensionType(id, projectsPk)
+> deleteExtensionType(id, projectsPk, topicTypeRequest)
 
 Delete a TopicType
 
@@ -990,7 +1002,8 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this topic type.
 let projectsPk = 56; // Number | 
-apiInstance.deleteExtensionType(id, projectsPk).then(() => {
+let topicTypeRequest = new bimdata.TopicTypeRequest(); // TopicTypeRequest | 
+apiInstance.deleteExtensionType(id, projectsPk, topicTypeRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -1005,6 +1018,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this topic type. | 
  **projectsPk** | **Number**|  | 
+ **topicTypeRequest** | [**TopicTypeRequest**](TopicTypeRequest.md)|  | 
 
 ### Return type
 
@@ -1016,13 +1030,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
 ## deleteTopic
 
-> deleteTopic(guid, projectsPk)
+> deleteTopic(guid, projectsPk, topicRequest)
 
 Delete a topic
 
@@ -1053,7 +1067,8 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let guid = "guid_example"; // String | 
 let projectsPk = 56; // Number | 
-apiInstance.deleteTopic(guid, projectsPk).then(() => {
+let topicRequest = new bimdata.TopicRequest(); // TopicRequest | 
+apiInstance.deleteTopic(guid, projectsPk, topicRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -1068,6 +1083,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | **String**|  | 
  **projectsPk** | **Number**|  | 
+ **topicRequest** | [**TopicRequest**](TopicRequest.md)|  | 
 
 ### Return type
 
@@ -1079,7 +1095,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
@@ -1118,7 +1134,8 @@ let guid = "guid_example"; // String |
 let projectsPk = 56; // Number | 
 let topicsGuid = "topicsGuid_example"; // String | 
 let opts = {
-  'imgFormat': "imgFormat_example" // String | All snapshot_data will be returned as url instead of base64
+  'imgFormat': "imgFormat_example", // String | All snapshot_data will be returned as url instead of base64
+  'viewpointRequest': new bimdata.ViewpointRequest() // ViewpointRequest | 
 };
 apiInstance.deleteViewpoint(guid, projectsPk, topicsGuid, opts).then(() => {
   console.log('API called successfully.');
@@ -1137,6 +1154,7 @@ Name | Type | Description  | Notes
  **projectsPk** | **Number**|  | 
  **topicsGuid** | **String**|  | 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
+ **viewpointRequest** | [**ViewpointRequest**](ViewpointRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -1148,7 +1166,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 
