@@ -2,6 +2,7 @@
 .gitignore
 .travis.yml
 README.md
+docs/Auth.md
 docs/BcfApi.md
 docs/BcfProject.md
 docs/BcfProjectRequest.md
@@ -207,6 +208,7 @@ docs/RulesetRequest.md
 docs/SelectUserRequest.md
 docs/SelfBcfUser.md
 docs/SelfUser.md
+docs/ShortUser.md
 docs/SimpleElement.md
 docs/Size.md
 docs/Snapshot.md
@@ -236,6 +238,7 @@ docs/User.md
 docs/UserInvitation.md
 docs/UserProject.md
 docs/UserProjectIdRequest.md
+docs/Version.md
 docs/ViewSetupHints.md
 docs/ViewSetupHintsRequest.md
 docs/Viewpoint.md
@@ -267,6 +270,7 @@ src/api/ModelApi.js
 src/api/SsoApi.js
 src/api/WebhookApi.js
 src/index.js
+src/model/Auth.js
 src/model/BcfProject.js
 src/model/BcfProjectRequest.js
 src/model/Building.js
@@ -467,6 +471,7 @@ src/model/RulesetRequest.js
 src/model/SelectUserRequest.js
 src/model/SelfBcfUser.js
 src/model/SelfUser.js
+src/model/ShortUser.js
 src/model/SimpleElement.js
 src/model/Size.js
 src/model/Snapshot.js
@@ -495,6 +500,7 @@ src/model/User.js
 src/model/UserInvitation.js
 src/model/UserProject.js
 src/model/UserProjectIdRequest.js
+src/model/Version.js
 src/model/ViewSetupHints.js
 src/model/ViewSetupHintsRequest.js
 src/model/Viewpoint.js
@@ -521,6 +527,7 @@ test/api/IfcApi.spec.js
 test/api/ModelApi.spec.js
 test/api/SsoApi.spec.js
 test/api/WebhookApi.spec.js
+test/model/Auth.spec.js
 test/model/BcfProject.spec.js
 test/model/BcfProjectRequest.spec.js
 test/model/Building.spec.js
@@ -721,6 +728,7 @@ test/model/RulesetRequest.spec.js
 test/model/SelectUserRequest.spec.js
 test/model/SelfBcfUser.spec.js
 test/model/SelfUser.spec.js
+test/model/ShortUser.spec.js
 test/model/SimpleElement.spec.js
 test/model/Size.spec.js
 test/model/Snapshot.spec.js
@@ -749,6 +757,7 @@ test/model/User.spec.js
 test/model/UserInvitation.spec.js
 test/model/UserProject.spec.js
 test/model/UserProjectIdRequest.spec.js
+test/model/Version.spec.js
 test/model/ViewSetupHints.spec.js
 test/model/ViewSetupHintsRequest.spec.js
 test/model/Viewpoint.spec.js

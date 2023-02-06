@@ -18,7 +18,6 @@ Name | Type | Description | Notes
 **systemsFile** | **String** |  | [readonly] 
 **mapFile** | **String** |  | [readonly] 
 **gltfFile** | **String** |  | [readonly] 
-**bvhTreeFile** | **String** |  | [readonly] 
 **previewFile** | **String** |  | [readonly] 
 **viewer360File** | **String** | DEPRECATED: Use &#39;preview_file&#39; instead. | [readonly] 
 **xktFile** | **String** |  | [readonly] 

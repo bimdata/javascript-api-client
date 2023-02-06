@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.ModelFiles();
+    instance = new bimdata.Auth();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,46 +47,34 @@
       object[property] = value;
   }
 
-  describe('ModelFiles', function() {
-    it('should create an instance of ModelFiles', function() {
-      // uncomment below and update the code to test ModelFiles
-      //var instance = new bimdata.ModelFiles();
-      //expect(instance).to.be.a(bimdata.ModelFiles);
+  describe('Auth', function() {
+    it('should create an instance of Auth', function() {
+      // uncomment below and update the code to test Auth
+      //var instance = new bimdata.Auth();
+      //expect(instance).to.be.a(bimdata.Auth);
     });
 
-    it('should have the property structureFile (base name: "structure_file")', function() {
-      // uncomment below and update the code to test the property structureFile
-      //var instance = new bimdata.ModelFiles();
+    it('should have the property oauth2AuthUrl (base name: "oauth2_auth_url")', function() {
+      // uncomment below and update the code to test the property oauth2AuthUrl
+      //var instance = new bimdata.Auth();
       //expect(instance).to.be();
     });
 
-    it('should have the property systemsFile (base name: "systems_file")', function() {
-      // uncomment below and update the code to test the property systemsFile
-      //var instance = new bimdata.ModelFiles();
+    it('should have the property oauth2TokenUrl (base name: "oauth2_token_url")', function() {
+      // uncomment below and update the code to test the property oauth2TokenUrl
+      //var instance = new bimdata.Auth();
       //expect(instance).to.be();
     });
 
-    it('should have the property mapFile (base name: "map_file")', function() {
-      // uncomment below and update the code to test the property mapFile
-      //var instance = new bimdata.ModelFiles();
+    it('should have the property httpBasicSupported (base name: "http_basic_supported")', function() {
+      // uncomment below and update the code to test the property httpBasicSupported
+      //var instance = new bimdata.Auth();
       //expect(instance).to.be();
     });
 
-    it('should have the property gltfFile (base name: "gltf_file")', function() {
-      // uncomment below and update the code to test the property gltfFile
-      //var instance = new bimdata.ModelFiles();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property previewFile (base name: "preview_file")', function() {
-      // uncomment below and update the code to test the property previewFile
-      //var instance = new bimdata.ModelFiles();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property xktFile (base name: "xkt_file")', function() {
-      // uncomment below and update the code to test the property xktFile
-      //var instance = new bimdata.ModelFiles();
+    it('should have the property supportedOauth2Flows (base name: "supported_oauth2_flows")', function() {
+      // uncomment below and update the code to test the property supportedOauth2Flows
+      //var instance = new bimdata.Auth();
       //expect(instance).to.be();
     });
 

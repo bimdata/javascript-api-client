@@ -36,7 +36,6 @@ class Model {
      * @param systemsFile {String} 
      * @param mapFile {String} 
      * @param gltfFile {String} 
-     * @param bvhTreeFile {String} 
      * @param previewFile {String} 
      * @param viewer360File {String} DEPRECATED: Use 'preview_file' instead.
      * @param xktFile {String} 
@@ -46,9 +45,9 @@ class Model {
      * @param pageNumber {Number} The page number of the related pdf
      * @param children {Array.<module:model/Model>} Contains additional pages of a pdf
      */
-    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, previewFile, viewer360File, xktFile, projectId, errors, warnings, pageNumber, children) { 
+    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, projectId, errors, warnings, pageNumber, children) { 
         
-        Model.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, previewFile, viewer360File, xktFile, projectId, errors, warnings, pageNumber, children);
+        Model.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, projectId, errors, warnings, pageNumber, children);
     }
 
     /**
@@ -56,7 +55,7 @@ class Model {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, bvhTreeFile, previewFile, viewer360File, xktFile, projectId, errors, warnings, pageNumber, children) { 
+    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, projectId, errors, warnings, pageNumber, children) { 
         obj['id'] = id;
         obj['type'] = type;
         obj['creator'] = creator;
@@ -69,7 +68,6 @@ class Model {
         obj['systems_file'] = systemsFile;
         obj['map_file'] = mapFile;
         obj['gltf_file'] = gltfFile;
-        obj['bvh_tree_file'] = bvhTreeFile;
         obj['preview_file'] = previewFile;
         obj['viewer_360_file'] = viewer360File;
         obj['xkt_file'] = xktFile;
@@ -132,9 +130,6 @@ class Model {
             }
             if (data.hasOwnProperty('gltf_file')) {
                 obj['gltf_file'] = ApiClient.convertToType(data['gltf_file'], 'String');
-            }
-            if (data.hasOwnProperty('bvh_tree_file')) {
-                obj['bvh_tree_file'] = ApiClient.convertToType(data['bvh_tree_file'], 'String');
             }
             if (data.hasOwnProperty('preview_file')) {
                 obj['preview_file'] = ApiClient.convertToType(data['preview_file'], 'String');
@@ -254,11 +249,6 @@ Model.prototype['map_file'] = undefined;
  * @member {String} gltf_file
  */
 Model.prototype['gltf_file'] = undefined;
-
-/**
- * @member {String} bvh_tree_file
- */
-Model.prototype['bvh_tree_file'] = undefined;
 
 /**
  * @member {String} preview_file

@@ -138,12 +138,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property bvhTreeFile (base name: "bvh_tree_file")', function() {
-      // uncomment below and update the code to test the property bvhTreeFile
-      //var instance = new bimdata.Model();
-      //expect(instance).to.be();
-    });
-
     it('should have the property previewFile (base name: "preview_file")', function() {
       // uncomment below and update the code to test the property previewFile
       //var instance = new bimdata.Model();

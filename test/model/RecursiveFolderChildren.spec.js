@@ -72,12 +72,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property creator (base name: "creator")', function() {
-      // uncomment below and update the code to test the property creator
-      //var instance = new bimdata.RecursiveFolderChildren();
-      //expect(instance).to.be();
-    });
-
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
       //var instance = new bimdata.RecursiveFolderChildren();

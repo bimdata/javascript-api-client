@@ -13,6 +13,7 @@
 
 
 import ApiClient from './ApiClient';
+import Auth from './model/Auth';
 import BcfProject from './model/BcfProject';
 import BcfProjectRequest from './model/BcfProjectRequest';
 import Building from './model/Building';
@@ -213,6 +214,7 @@ import RulesetRequest from './model/RulesetRequest';
 import SelectUserRequest from './model/SelectUserRequest';
 import SelfBcfUser from './model/SelfBcfUser';
 import SelfUser from './model/SelfUser';
+import ShortUser from './model/ShortUser';
 import SimpleElement from './model/SimpleElement';
 import Size from './model/Size';
 import Snapshot from './model/Snapshot';
@@ -241,6 +243,7 @@ import User from './model/User';
 import UserInvitation from './model/UserInvitation';
 import UserProject from './model/UserProject';
 import UserProjectIdRequest from './model/UserProjectIdRequest';
+import Version from './model/Version';
 import ViewSetupHints from './model/ViewSetupHints';
 import ViewSetupHintsRequest from './model/ViewSetupHintsRequest';
 import Viewpoint from './model/Viewpoint';
@@ -306,6 +309,12 @@ export {
      * @property {module:ApiClient}
      */
     ApiClient,
+
+    /**
+     * The Auth model constructor.
+     * @property {module:model/Auth}
+     */
+    Auth,
 
     /**
      * The BcfProject model constructor.
@@ -1508,6 +1517,12 @@ export {
     SelfUser,
 
     /**
+     * The ShortUser model constructor.
+     * @property {module:model/ShortUser}
+     */
+    ShortUser,
+
+    /**
      * The SimpleElement model constructor.
      * @property {module:model/SimpleElement}
      */
@@ -1674,6 +1689,12 @@ export {
      * @property {module:model/UserProjectIdRequest}
      */
     UserProjectIdRequest,
+
+    /**
+     * The Version model constructor.
+     * @property {module:model/Version}
+     */
+    Version,
 
     /**
      * The ViewSetupHints model constructor.

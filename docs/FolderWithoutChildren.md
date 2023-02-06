@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **name** | **String** | Name of the folder | 
 **createdAt** | **Date** | Creation date | [readonly] 
 **updatedAt** | **Date** | Date of the last update | [readonly] 
-**createdBy** | [**User**](User.md) |  | [readonly] 
+**createdBy** | [**ShortUser**](ShortUser.md) |  | [readonly] 
 **groupsPermissions** | [**[FolderGroupPermission]**](FolderGroupPermission.md) |  | [readonly] 
 **defaultPermission** | **Number** | Permission for a Folder | [optional] 
 **userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 

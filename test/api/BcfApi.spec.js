@@ -278,6 +278,16 @@
         done();
       });
     });
+    describe('getAuth', function() {
+      it('should call getAuth successfully', function(done) {
+        //uncomment below and update the code to test getAuth
+        //instance.getAuth(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getBcfProject', function() {
       it('should call getBcfProject successfully', function(done) {
         //uncomment below and update the code to test getBcfProject
@@ -422,6 +432,16 @@
       it('should call getUser successfully', function(done) {
         //uncomment below and update the code to test getUser
         //instance.getUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getVersions', function() {
+      it('should call getVersions successfully', function(done) {
+        //uncomment below and update the code to test getVersions
+        //instance.getVersions(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

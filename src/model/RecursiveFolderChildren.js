@@ -12,8 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
+import ShortUser from './ShortUser';
 import Tag from './Tag';
-import User from './User';
 
 /**
  * The RecursiveFolderChildren model module.
@@ -86,10 +86,7 @@ class RecursiveFolderChildren {
                 obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
             }
             if (data.hasOwnProperty('created_by')) {
-                obj['created_by'] = ApiClient.convertToType(data['created_by'], User);
-            }
-            if (data.hasOwnProperty('creator')) {
-                obj['creator'] = ApiClient.convertToType(data['creator'], User);
+                obj['created_by'] = ApiClient.convertToType(data['created_by'], ShortUser);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -163,14 +160,9 @@ RecursiveFolderChildren.prototype['id'] = undefined;
 RecursiveFolderChildren.prototype['parent_id'] = undefined;
 
 /**
- * @member {module:model/User} created_by
+ * @member {module:model/ShortUser} created_by
  */
 RecursiveFolderChildren.prototype['created_by'] = undefined;
-
-/**
- * @member {module:model/User} creator
- */
-RecursiveFolderChildren.prototype['creator'] = undefined;
 
 /**
  * DEPRECATED: Use 'nature' instead. Values can be 'Folder', 'Document' or 'Ifc'. It is usefull to parse the tree and discriminate folders and files

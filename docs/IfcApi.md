@@ -9882,8 +9882,6 @@ let opts = {
   'systemsFile': "/path/to/file", // File | 
   'mapFile': "/path/to/file", // File | 
   'gltfFile': "/path/to/file", // File | 
-  'gltfWithOpeningsFile': "/path/to/file", // File | 
-  'bvhTreeFile': "/path/to/file", // File | 
   'previewFile': "/path/to/file", // File | 
   'xktFile': "/path/to/file" // File | 
 };
@@ -9907,8 +9905,6 @@ Name | Type | Description  | Notes
  **systemsFile** | **File**|  | [optional] 
  **mapFile** | **File**|  | [optional] 
  **gltfFile** | **File**|  | [optional] 
- **gltfWithOpeningsFile** | **File**|  | [optional] 
- **bvhTreeFile** | **File**|  | [optional] 
  **previewFile** | **File**|  | [optional] 
  **xktFile** | **File**|  | [optional] 
 

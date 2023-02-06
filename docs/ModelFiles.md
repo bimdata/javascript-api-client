@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **systemsFile** | **String** |  | [optional] 
 **mapFile** | **String** |  | [optional] 
 **gltfFile** | **String** |  | [optional] 
-**gltfWithOpeningsFile** | **String** |  | [optional] 
-**bvhTreeFile** | **String** |  | [optional] 
 **previewFile** | **String** |  | [optional] 
 **xktFile** | **String** |  | [optional] 
 

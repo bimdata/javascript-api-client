@@ -164,6 +164,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**fullUpdateFullTopic**](docs/BcfApi.md#fullUpdateFullTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update all fields of a topic
 *bimdata.BcfApi* | [**fullUpdateTopic**](docs/BcfApi.md#fullUpdateTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update all fields of a topic
 *bimdata.BcfApi* | [**fullUpdateViewpoint**](docs/BcfApi.md#fullUpdateViewpoint) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Update all fields of a Viewpoint
+*bimdata.BcfApi* | [**getAuth**](docs/BcfApi.md#getAuth) | **GET** /bcf/2.1/auth | Retrieve Authentication Information
 *bimdata.BcfApi* | [**getBcfProject**](docs/BcfApi.md#getBcfProject) | **GET** /bcf/2.1/projects/{id} | Retrieve a BCF project
 *bimdata.BcfApi* | [**getBcfProjects**](docs/BcfApi.md#getBcfProjects) | **GET** /bcf/2.1/projects | Retrieve all BCF projects
 *bimdata.BcfApi* | [**getColorings**](docs/BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/coloring | Retrieve all colorings of a viewpoint
@@ -179,6 +180,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**getTopicViewpoints**](docs/BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/topic-viewpoints | Retrieve all viewpoints attached to the topic
 *bimdata.BcfApi* | [**getTopics**](docs/BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | Retrieve all topics
 *bimdata.BcfApi* | [**getUser**](docs/BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | Get current user info
+*bimdata.BcfApi* | [**getVersions**](docs/BcfApi.md#getVersions) | **GET** /bcf/versions | Retrieve all supported BCF versions by this API
 *bimdata.BcfApi* | [**getViewpoint**](docs/BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Retrieve a Viewpoint
 *bimdata.BcfApi* | [**getViewpoints**](docs/BcfApi.md#getViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints | Retrieve all Viewpoints of a topic
 *bimdata.BcfApi* | [**getVisibilities**](docs/BcfApi.md#getVisibilities) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/visibility | Retrieve all visibilities of a viewpoint
@@ -648,6 +650,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [bimdata.Auth](docs/Auth.md)
  - [bimdata.BcfProject](docs/BcfProject.md)
  - [bimdata.BcfProjectRequest](docs/BcfProjectRequest.md)
  - [bimdata.Building](docs/Building.md)
@@ -848,6 +851,7 @@ Class | Method | HTTP request | Description
  - [bimdata.SelectUserRequest](docs/SelectUserRequest.md)
  - [bimdata.SelfBcfUser](docs/SelfBcfUser.md)
  - [bimdata.SelfUser](docs/SelfUser.md)
+ - [bimdata.ShortUser](docs/ShortUser.md)
  - [bimdata.SimpleElement](docs/SimpleElement.md)
  - [bimdata.Size](docs/Size.md)
  - [bimdata.Snapshot](docs/Snapshot.md)
@@ -876,6 +880,7 @@ Class | Method | HTTP request | Description
  - [bimdata.UserInvitation](docs/UserInvitation.md)
  - [bimdata.UserProject](docs/UserProject.md)
  - [bimdata.UserProjectIdRequest](docs/UserProjectIdRequest.md)
+ - [bimdata.Version](docs/Version.md)
  - [bimdata.ViewSetupHints](docs/ViewSetupHints.md)
  - [bimdata.ViewSetupHintsRequest](docs/ViewSetupHintsRequest.md)
  - [bimdata.Viewpoint](docs/Viewpoint.md)

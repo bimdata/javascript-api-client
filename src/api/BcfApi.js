@@ -13,6 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
+import Auth from '../model/Auth';
 import BcfProject from '../model/BcfProject';
 import BcfProjectRequest from '../model/BcfProjectRequest';
 import Coloring from '../model/Coloring';
@@ -46,6 +47,7 @@ import TopicStatus from '../model/TopicStatus';
 import TopicStatusRequest from '../model/TopicStatusRequest';
 import TopicType from '../model/TopicType';
 import TopicTypeRequest from '../model/TopicTypeRequest';
+import Version from '../model/Version';
 import Viewpoint from '../model/Viewpoint';
 import ViewpointRequest from '../model/ViewpointRequest';
 import Visibility from '../model/Visibility';
@@ -1457,6 +1459,47 @@ export default class BcfApi {
 
 
     /**
+     * Retrieve Authentication Information
+     * oauth2_dynamic_client_reg_url is not supported, http_basic_supported is always set to false, 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Auth>} and HTTP response
+     */
+    getAuthWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Auth];
+      return this.apiClient.callApi(
+        '/bcf/2.1/auth', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve Authentication Information
+     * oauth2_dynamic_client_reg_url is not supported, http_basic_supported is always set to false, 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Auth>}
+     */
+    getAuth() {
+      return this.getAuthWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve a BCF project
      * Retrieve a BCF project  Required scopes: bcf:read
      * @param {Number} id A unique integer value identifying this project.
@@ -2279,6 +2322,47 @@ export default class BcfApi {
      */
     getUser() {
       return this.getUserWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all supported BCF versions by this API
+     * Spoiler: it's only v2.1
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Version>} and HTTP response
+     */
+    getVersionsWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Version];
+      return this.apiClient.callApi(
+        '/bcf/versions', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all supported BCF versions by this API
+     * Spoiler: it's only v2.1
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Version>}
+     */
+    getVersions() {
+      return this.getVersionsWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

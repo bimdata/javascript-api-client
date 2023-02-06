@@ -59,12 +59,6 @@ class ModelFiles {
             if (data.hasOwnProperty('gltf_file')) {
                 obj['gltf_file'] = ApiClient.convertToType(data['gltf_file'], 'String');
             }
-            if (data.hasOwnProperty('gltf_with_openings_file')) {
-                obj['gltf_with_openings_file'] = ApiClient.convertToType(data['gltf_with_openings_file'], 'String');
-            }
-            if (data.hasOwnProperty('bvh_tree_file')) {
-                obj['bvh_tree_file'] = ApiClient.convertToType(data['bvh_tree_file'], 'String');
-            }
             if (data.hasOwnProperty('preview_file')) {
                 obj['preview_file'] = ApiClient.convertToType(data['preview_file'], 'String');
             }
@@ -97,16 +91,6 @@ ModelFiles.prototype['map_file'] = undefined;
  * @member {String} gltf_file
  */
 ModelFiles.prototype['gltf_file'] = undefined;
-
-/**
- * @member {String} gltf_with_openings_file
- */
-ModelFiles.prototype['gltf_with_openings_file'] = undefined;
-
-/**
- * @member {String} bvh_tree_file
- */
-ModelFiles.prototype['bvh_tree_file'] = undefined;
 
 /**
  * @member {String} preview_file

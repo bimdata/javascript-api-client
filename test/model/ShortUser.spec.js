@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.ModelFiles();
+    instance = new bimdata.ShortUser();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,46 +47,40 @@
       object[property] = value;
   }
 
-  describe('ModelFiles', function() {
-    it('should create an instance of ModelFiles', function() {
-      // uncomment below and update the code to test ModelFiles
-      //var instance = new bimdata.ModelFiles();
-      //expect(instance).to.be.a(bimdata.ModelFiles);
+  describe('ShortUser', function() {
+    it('should create an instance of ShortUser', function() {
+      // uncomment below and update the code to test ShortUser
+      //var instance = new bimdata.ShortUser();
+      //expect(instance).to.be.a(bimdata.ShortUser);
     });
 
-    it('should have the property structureFile (base name: "structure_file")', function() {
-      // uncomment below and update the code to test the property structureFile
-      //var instance = new bimdata.ModelFiles();
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instance = new bimdata.ShortUser();
       //expect(instance).to.be();
     });
 
-    it('should have the property systemsFile (base name: "systems_file")', function() {
-      // uncomment below and update the code to test the property systemsFile
-      //var instance = new bimdata.ModelFiles();
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instance = new bimdata.ShortUser();
       //expect(instance).to.be();
     });
 
-    it('should have the property mapFile (base name: "map_file")', function() {
-      // uncomment below and update the code to test the property mapFile
-      //var instance = new bimdata.ModelFiles();
+    it('should have the property firstname (base name: "firstname")', function() {
+      // uncomment below and update the code to test the property firstname
+      //var instance = new bimdata.ShortUser();
       //expect(instance).to.be();
     });
 
-    it('should have the property gltfFile (base name: "gltf_file")', function() {
-      // uncomment below and update the code to test the property gltfFile
-      //var instance = new bimdata.ModelFiles();
+    it('should have the property lastname (base name: "lastname")', function() {
+      // uncomment below and update the code to test the property lastname
+      //var instance = new bimdata.ShortUser();
       //expect(instance).to.be();
     });
 
-    it('should have the property previewFile (base name: "preview_file")', function() {
-      // uncomment below and update the code to test the property previewFile
-      //var instance = new bimdata.ModelFiles();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property xktFile (base name: "xkt_file")', function() {
-      // uncomment below and update the code to test the property xktFile
-      //var instance = new bimdata.ModelFiles();
+    it('should have the property profilePicture (base name: "profile_picture")', function() {
+      // uncomment below and update the code to test the property profilePicture
+      //var instance = new bimdata.ShortUser();
       //expect(instance).to.be();
     });
 

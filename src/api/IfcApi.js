@@ -10256,8 +10256,6 @@ export default class IfcApi {
      * @param {File} opts.systemsFile 
      * @param {File} opts.mapFile 
      * @param {File} opts.gltfFile 
-     * @param {File} opts.gltfWithOpeningsFile 
-     * @param {File} opts.bvhTreeFile 
      * @param {File} opts.previewFile 
      * @param {File} opts.xktFile 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelFiles} and HTTP response
@@ -10292,8 +10290,6 @@ export default class IfcApi {
         'systems_file': opts['systemsFile'],
         'map_file': opts['mapFile'],
         'gltf_file': opts['gltfFile'],
-        'gltf_with_openings_file': opts['gltfWithOpeningsFile'],
-        'bvh_tree_file': opts['bvhTreeFile'],
         'preview_file': opts['previewFile'],
         'xkt_file': opts['xktFile']
       };
@@ -10320,8 +10316,6 @@ export default class IfcApi {
      * @param {File} opts.systemsFile 
      * @param {File} opts.mapFile 
      * @param {File} opts.gltfFile 
-     * @param {File} opts.gltfWithOpeningsFile 
-     * @param {File} opts.bvhTreeFile 
      * @param {File} opts.previewFile 
      * @param {File} opts.xktFile 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelFiles}
