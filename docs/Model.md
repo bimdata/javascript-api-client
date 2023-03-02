@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **previewFile** | **String** |  | [readonly] 
 **viewer360File** | **String** | DEPRECATED: Use &#39;preview_file&#39; instead. | [readonly] 
 **xktFile** | **String** |  | [readonly] 
+**binary2dFile** | **String** |  | [readonly] 
 **projectId** | **Number** |  | [readonly] 
 **worldPosition** | **[Number]** | [x,y,z] array of the position of the local_placement in world coordinates | [optional] 
 **sizeRatio** | **Number** | How many meters a unit represents | [optional] 

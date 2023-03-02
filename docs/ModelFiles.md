@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **gltfFile** | **String** |  | [optional] 
 **previewFile** | **String** |  | [optional] 
 **xktFile** | **String** |  | [optional] 
+**binary2dFile** | **String** |  | [optional] 
 
 

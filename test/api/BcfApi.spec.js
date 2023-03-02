@@ -378,6 +378,16 @@
         done();
       });
     });
+    describe('getRelatedTopics', function() {
+      it('should call getRelatedTopics successfully', function(done) {
+        //uncomment below and update the code to test getRelatedTopics
+        //instance.getRelatedTopics(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getSelections', function() {
       it('should call getSelections successfully', function(done) {
         //uncomment below and update the code to test getSelections
@@ -402,6 +412,16 @@
       it('should call getTopic successfully', function(done) {
         //uncomment below and update the code to test getTopic
         //instance.getTopic(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getTopicDocumentReferences', function() {
+      it('should call getTopicDocumentReferences successfully', function(done) {
+        //uncomment below and update the code to test getTopicDocumentReferences
+        //instance.getTopicDocumentReferences(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

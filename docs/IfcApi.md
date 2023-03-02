@@ -9883,7 +9883,8 @@ let opts = {
   'mapFile': "/path/to/file", // File | 
   'gltfFile': "/path/to/file", // File | 
   'previewFile': "/path/to/file", // File | 
-  'xktFile': "/path/to/file" // File | 
+  'xktFile': "/path/to/file", // File | 
+  'binary2dFile': "/path/to/file" // File | 
 };
 apiInstance.updateIfcFilesDeprecated(cloudPk, id, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -9907,6 +9908,7 @@ Name | Type | Description  | Notes
  **gltfFile** | **File**|  | [optional] 
  **previewFile** | **File**|  | [optional] 
  **xktFile** | **File**|  | [optional] 
+ **binary2dFile** | **File**|  | [optional] 
 
 ### Return type
 

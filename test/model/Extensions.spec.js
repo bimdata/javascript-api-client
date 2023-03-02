@@ -102,6 +102,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property snippetType (base name: "snippet_type")', function() {
+      // uncomment below and update the code to test the property snippetType
+      //var instance = new bimdata.Extensions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property projectActions (base name: "project_actions")', function() {
+      // uncomment below and update the code to test the property projectActions
+      //var instance = new bimdata.Extensions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property topicActions (base name: "topic_actions")', function() {
+      // uncomment below and update the code to test the property topicActions
+      //var instance = new bimdata.Extensions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property commentActions (base name: "comment_actions")', function() {
+      // uncomment below and update the code to test the property commentActions
+      //var instance = new bimdata.Extensions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

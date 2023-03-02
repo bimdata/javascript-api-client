@@ -1988,6 +1988,73 @@ export default class BcfApi {
 
 
     /**
+     * Get all related topics
+     * This feature is not supported yet and will always respond with an empty array  Required scopes: bcf:read
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
+     */
+    getRelatedTopicsWithHttpInfo(guid, projectsPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling getRelatedTopics");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getRelatedTopics");
+      }
+
+      let pathParams = {
+        'guid': guid,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+        'format': opts['format'],
+        'ifcs': this.apiClient.buildCollectionParam(opts['ifcs'], 'multi'),
+        'models': this.apiClient.buildCollectionParam(opts['models'], 'multi')
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ['String'];
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{guid}/related_topics', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get all related topics
+     * This feature is not supported yet and will always respond with an empty array  Required scopes: bcf:read
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
+     */
+    getRelatedTopics(guid, projectsPk, opts) {
+      return this.getRelatedTopicsWithHttpInfo(guid, projectsPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve all selections of a viewpoint
      * Retrieve all selections of a viewpoint  Required scopes: bcf:read
      * @param {String} guid 
@@ -2160,6 +2227,73 @@ export default class BcfApi {
      */
     getTopic(guid, projectsPk) {
       return this.getTopicWithHttpInfo(guid, projectsPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get all related documents
+     * This feature is not supported yet and will always respond with an empty array  Required scopes: bcf:read
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
+     */
+    getTopicDocumentReferencesWithHttpInfo(guid, projectsPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling getTopicDocumentReferences");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getTopicDocumentReferences");
+      }
+
+      let pathParams = {
+        'guid': guid,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+        'format': opts['format'],
+        'ifcs': this.apiClient.buildCollectionParam(opts['ifcs'], 'multi'),
+        'models': this.apiClient.buildCollectionParam(opts['models'], 'multi')
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ['String'];
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get all related documents
+     * This feature is not supported yet and will always respond with an empty array  Required scopes: bcf:read
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
+     */
+    getTopicDocumentReferences(guid, projectsPk, opts) {
+      return this.getTopicDocumentReferencesWithHttpInfo(guid, projectsPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

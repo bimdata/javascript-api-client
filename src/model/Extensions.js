@@ -30,10 +30,14 @@ class Extensions {
      * @param userIdType {Array.<String>} 
      * @param priorityColors {Array.<String>} Non standard field. Arrays of priorities and this array are in the same order.
      * @param topicStatusColors {Array.<String>} Non standard field. Arrays of statuses and this array are in the same order.
+     * @param snippetType {Array.<String>} Snippet are not yet supported. This field will always be null.
+     * @param projectActions {Array.<String>} 
+     * @param topicActions {Array.<String>} 
+     * @param commentActions {Array.<String>} 
      */
-    constructor(topicType, topicStatus, topicLabel, priority, stage, userIdType, priorityColors, topicStatusColors) { 
+    constructor(topicType, topicStatus, topicLabel, priority, stage, userIdType, priorityColors, topicStatusColors, snippetType, projectActions, topicActions, commentActions) { 
         
-        Extensions.initialize(this, topicType, topicStatus, topicLabel, priority, stage, userIdType, priorityColors, topicStatusColors);
+        Extensions.initialize(this, topicType, topicStatus, topicLabel, priority, stage, userIdType, priorityColors, topicStatusColors, snippetType, projectActions, topicActions, commentActions);
     }
 
     /**
@@ -41,7 +45,7 @@ class Extensions {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, topicType, topicStatus, topicLabel, priority, stage, userIdType, priorityColors, topicStatusColors) { 
+    static initialize(obj, topicType, topicStatus, topicLabel, priority, stage, userIdType, priorityColors, topicStatusColors, snippetType, projectActions, topicActions, commentActions) { 
         obj['topic_type'] = topicType;
         obj['topic_status'] = topicStatus;
         obj['topic_label'] = topicLabel;
@@ -50,6 +54,10 @@ class Extensions {
         obj['user_id_type'] = userIdType;
         obj['priority_colors'] = priorityColors;
         obj['topic_status_colors'] = topicStatusColors;
+        obj['snippet_type'] = snippetType;
+        obj['project_actions'] = projectActions;
+        obj['topic_actions'] = topicActions;
+        obj['comment_actions'] = commentActions;
     }
 
     /**
@@ -86,6 +94,18 @@ class Extensions {
             }
             if (data.hasOwnProperty('topic_status_colors')) {
                 obj['topic_status_colors'] = ApiClient.convertToType(data['topic_status_colors'], ['String']);
+            }
+            if (data.hasOwnProperty('snippet_type')) {
+                obj['snippet_type'] = ApiClient.convertToType(data['snippet_type'], ['String']);
+            }
+            if (data.hasOwnProperty('project_actions')) {
+                obj['project_actions'] = ApiClient.convertToType(data['project_actions'], ['String']);
+            }
+            if (data.hasOwnProperty('topic_actions')) {
+                obj['topic_actions'] = ApiClient.convertToType(data['topic_actions'], ['String']);
+            }
+            if (data.hasOwnProperty('comment_actions')) {
+                obj['comment_actions'] = ApiClient.convertToType(data['comment_actions'], ['String']);
             }
         }
         return obj;
@@ -135,6 +155,27 @@ Extensions.prototype['priority_colors'] = undefined;
  * @member {Array.<String>} topic_status_colors
  */
 Extensions.prototype['topic_status_colors'] = undefined;
+
+/**
+ * Snippet are not yet supported. This field will always be null.
+ * @member {Array.<String>} snippet_type
+ */
+Extensions.prototype['snippet_type'] = undefined;
+
+/**
+ * @member {Array.<String>} project_actions
+ */
+Extensions.prototype['project_actions'] = undefined;
+
+/**
+ * @member {Array.<String>} topic_actions
+ */
+Extensions.prototype['topic_actions'] = undefined;
+
+/**
+ * @member {Array.<String>} comment_actions
+ */
+Extensions.prototype['comment_actions'] = undefined;
 
 
 

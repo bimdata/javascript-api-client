@@ -65,6 +65,9 @@ class ModelFiles {
             if (data.hasOwnProperty('xkt_file')) {
                 obj['xkt_file'] = ApiClient.convertToType(data['xkt_file'], 'String');
             }
+            if (data.hasOwnProperty('binary_2d_file')) {
+                obj['binary_2d_file'] = ApiClient.convertToType(data['binary_2d_file'], 'String');
+            }
         }
         return obj;
     }
@@ -101,6 +104,11 @@ ModelFiles.prototype['preview_file'] = undefined;
  * @member {String} xkt_file
  */
 ModelFiles.prototype['xkt_file'] = undefined;
+
+/**
+ * @member {String} binary_2d_file
+ */
+ModelFiles.prototype['binary_2d_file'] = undefined;
 
 
 

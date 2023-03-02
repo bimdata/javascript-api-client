@@ -156,6 +156,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property binary2dFile (base name: "binary_2d_file")', function() {
+      // uncomment below and update the code to test the property binary2dFile
+      //var instance = new bimdata.Model();
+      //expect(instance).to.be();
+    });
+
     it('should have the property projectId (base name: "project_id")', function() {
       // uncomment below and update the code to test the property projectId
       //var instance = new bimdata.Model();

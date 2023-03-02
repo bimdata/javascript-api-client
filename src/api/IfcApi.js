@@ -10258,6 +10258,7 @@ export default class IfcApi {
      * @param {File} opts.gltfFile 
      * @param {File} opts.previewFile 
      * @param {File} opts.xktFile 
+     * @param {File} opts.binary2dFile 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelFiles} and HTTP response
      */
     updateIfcFilesDeprecatedWithHttpInfo(cloudPk, id, projectPk, opts) {
@@ -10291,7 +10292,8 @@ export default class IfcApi {
         'map_file': opts['mapFile'],
         'gltf_file': opts['gltfFile'],
         'preview_file': opts['previewFile'],
-        'xkt_file': opts['xktFile']
+        'xkt_file': opts['xktFile'],
+        'binary_2d_file': opts['binary2dFile']
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
@@ -10318,6 +10320,7 @@ export default class IfcApi {
      * @param {File} opts.gltfFile 
      * @param {File} opts.previewFile 
      * @param {File} opts.xktFile 
+     * @param {File} opts.binary2dFile 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelFiles}
      */
     updateIfcFilesDeprecated(cloudPk, id, projectPk, opts) {
