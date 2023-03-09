@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ## cancelCloudUserInvitation
 
-> cancelCloudUserInvitation(cloudPk, id, cloudInvitationRequest)
+> cancelCloudUserInvitation(cloudPk, id)
 
 Cancel a pending invitation
 
@@ -410,8 +410,7 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this invitation.
-let cloudInvitationRequest = new bimdata.CloudInvitationRequest(); // CloudInvitationRequest | 
-apiInstance.cancelCloudUserInvitation(cloudPk, id, cloudInvitationRequest).then(() => {
+apiInstance.cancelCloudUserInvitation(cloudPk, id).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -426,7 +425,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this invitation. | 
- **cloudInvitationRequest** | [**CloudInvitationRequest**](CloudInvitationRequest.md)|  | 
 
 ### Return type
 
@@ -438,13 +436,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## cancelProjectUserInvitation
 
-> cancelProjectUserInvitation(cloudPk, id, projectPk, projectInvitationRequest)
+> cancelProjectUserInvitation(cloudPk, id, projectPk)
 
 Cancel a pending invitation
 
@@ -476,8 +474,7 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this invitation.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let projectInvitationRequest = new bimdata.ProjectInvitationRequest(); // ProjectInvitationRequest | 
-apiInstance.cancelProjectUserInvitation(cloudPk, id, projectPk, projectInvitationRequest).then(() => {
+apiInstance.cancelProjectUserInvitation(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -493,7 +490,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this invitation. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **projectInvitationRequest** | [**ProjectInvitationRequest**](ProjectInvitationRequest.md)|  | 
 
 ### Return type
 
@@ -505,7 +501,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
@@ -958,7 +954,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;POINT_CLOUD&#39;, &#39;BFX&#39;, &#39;OBJ&#39;, &#39;DAE&#39;, &#39;DXF&#39;, &#39;GLTF&#39;, &#39;DWG&#39;, &#39;IFC&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;OBJ&#39;, &#39;DAE&#39;, &#39;GLTF&#39;, &#39;IFC&#39;, &#39;BFX&#39;, &#39;POINT_CLOUD&#39;, &#39;DWG&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -1569,7 +1565,7 @@ Name | Type | Description  | Notes
 
 ## deleteAllDocumentHistory
 
-> deleteAllDocumentHistory(cloudPk, documentPk, projectPk, documentRequest)
+> deleteAllDocumentHistory(cloudPk, documentPk, projectPk)
 
 Delete all document history
 
@@ -1601,8 +1597,7 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let documentPk = 56; // Number | A unique integer value identifying this document.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let documentRequest = new bimdata.DocumentRequest(); // DocumentRequest | 
-apiInstance.deleteAllDocumentHistory(cloudPk, documentPk, projectPk, documentRequest).then(() => {
+apiInstance.deleteAllDocumentHistory(cloudPk, documentPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -1618,7 +1613,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **documentPk** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **documentRequest** | [**DocumentRequest**](DocumentRequest.md)|  | 
 
 ### Return type
 
@@ -1630,13 +1624,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteClassification
 
-> deleteClassification(cloudPk, id, projectPk, opts)
+> deleteClassification(cloudPk, id, projectPk)
 
 Delete a classification
 
@@ -1668,10 +1662,7 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this classification.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let opts = {
-  'classificationRequest': new bimdata.ClassificationRequest() // ClassificationRequest | 
-};
-apiInstance.deleteClassification(cloudPk, id, projectPk, opts).then(() => {
+apiInstance.deleteClassification(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -1687,7 +1678,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this classification. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **classificationRequest** | [**ClassificationRequest**](ClassificationRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -1699,13 +1689,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteCloud
 
-> deleteCloud(id, cloudRequest)
+> deleteCloud(id)
 
 Delete a cloud
 
@@ -1735,8 +1725,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 let apiInstance = new bimdata.CollaborationApi();
 let id = 56; // Number | A unique integer value identifying this cloud.
-let cloudRequest = new bimdata.CloudRequest(); // CloudRequest | 
-apiInstance.deleteCloud(id, cloudRequest).then(() => {
+apiInstance.deleteCloud(id).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -1750,7 +1739,6 @@ apiInstance.deleteCloud(id, cloudRequest).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this cloud. | 
- **cloudRequest** | [**CloudRequest**](CloudRequest.md)|  | 
 
 ### Return type
 
@@ -1762,7 +1750,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
@@ -1831,7 +1819,7 @@ null (empty response body)
 
 ## deleteDocument
 
-> deleteDocument(cloudPk, id, projectPk, documentRequest)
+> deleteDocument(cloudPk, id, projectPk)
 
 Delete the document
 
@@ -1863,8 +1851,7 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this document.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let documentRequest = new bimdata.DocumentRequest(); // DocumentRequest | 
-apiInstance.deleteDocument(cloudPk, id, projectPk, documentRequest).then(() => {
+apiInstance.deleteDocument(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -1880,7 +1867,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **documentRequest** | [**DocumentRequest**](DocumentRequest.md)|  | 
 
 ### Return type
 
@@ -1892,13 +1878,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteDocumentTag
 
-> deleteDocumentTag(cloudPk, documentPk, id, projectPk, documentRequest)
+> deleteDocumentTag(cloudPk, documentPk, id, projectPk)
 
 Delete a tag from a document
 
@@ -1931,8 +1917,7 @@ let cloudPk = 56; // Number |
 let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this document.
 let projectPk = 56; // Number | 
-let documentRequest = new bimdata.DocumentRequest(); // DocumentRequest | 
-apiInstance.deleteDocumentTag(cloudPk, documentPk, id, projectPk, documentRequest).then(() => {
+apiInstance.deleteDocumentTag(cloudPk, documentPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -1949,7 +1934,6 @@ Name | Type | Description  | Notes
  **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this document. | 
  **projectPk** | **Number**|  | 
- **documentRequest** | [**DocumentRequest**](DocumentRequest.md)|  | 
 
 ### Return type
 
@@ -1961,13 +1945,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteFolder
 
-> deleteFolder(cloudPk, id, projectPk, folderWithoutChildrenRequest)
+> deleteFolder(cloudPk, id, projectPk)
 
 Delete a folder
 
@@ -1999,8 +1983,7 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this folder.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let folderWithoutChildrenRequest = new bimdata.FolderWithoutChildrenRequest(); // FolderWithoutChildrenRequest | 
-apiInstance.deleteFolder(cloudPk, id, projectPk, folderWithoutChildrenRequest).then(() => {
+apiInstance.deleteFolder(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -2016,7 +1999,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this folder. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **folderWithoutChildrenRequest** | [**FolderWithoutChildrenRequest**](FolderWithoutChildrenRequest.md)|  | 
 
 ### Return type
 
@@ -2028,13 +2010,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteGroupMember
 
-> deleteGroupMember(cloudPk, groupPk, id, projectPk, groupRequest)
+> deleteGroupMember(cloudPk, groupPk, id, projectPk)
 
 Delete a user from a group
 
@@ -2067,8 +2049,7 @@ let cloudPk = 56; // Number |
 let groupPk = 56; // Number | A unique integer value identifying this group.
 let id = 56; // Number | A unique integer value identifying this group.
 let projectPk = 56; // Number | 
-let groupRequest = new bimdata.GroupRequest(); // GroupRequest | 
-apiInstance.deleteGroupMember(cloudPk, groupPk, id, projectPk, groupRequest).then(() => {
+apiInstance.deleteGroupMember(cloudPk, groupPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -2085,7 +2066,6 @@ Name | Type | Description  | Notes
  **groupPk** | **Number**| A unique integer value identifying this group. | 
  **id** | **Number**| A unique integer value identifying this group. | 
  **projectPk** | **Number**|  | 
- **groupRequest** | [**GroupRequest**](GroupRequest.md)|  | 
 
 ### Return type
 
@@ -2097,13 +2077,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteManageGroup
 
-> deleteManageGroup(cloudPk, id, projectPk, groupRequest)
+> deleteManageGroup(cloudPk, id, projectPk)
 
 Delete a group
 
@@ -2135,8 +2115,7 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this group.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let groupRequest = new bimdata.GroupRequest(); // GroupRequest | 
-apiInstance.deleteManageGroup(cloudPk, id, projectPk, groupRequest).then(() => {
+apiInstance.deleteManageGroup(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -2152,7 +2131,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this group. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **groupRequest** | [**GroupRequest**](GroupRequest.md)|  | 
 
 ### Return type
 
@@ -2164,13 +2142,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteProject
 
-> deleteProject(cloudPk, id, projectRequest)
+> deleteProject(cloudPk, id)
 
 Delete a project
 
@@ -2201,8 +2179,7 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this project.
-let projectRequest = new bimdata.ProjectRequest(); // ProjectRequest | 
-apiInstance.deleteProject(cloudPk, id, projectRequest).then(() => {
+apiInstance.deleteProject(cloudPk, id).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -2217,7 +2194,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
- **projectRequest** | [**ProjectRequest**](ProjectRequest.md)|  | 
 
 ### Return type
 
@@ -2229,13 +2205,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteProjectAccessToken
 
-> deleteProjectAccessToken(cloudPk, projectPk, token, projectAccessTokenRequest)
+> deleteProjectAccessToken(cloudPk, projectPk, token)
 
 Delete a token
 
@@ -2267,8 +2243,7 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let token = "token_example"; // String | 
-let projectAccessTokenRequest = new bimdata.ProjectAccessTokenRequest(); // ProjectAccessTokenRequest | 
-apiInstance.deleteProjectAccessToken(cloudPk, projectPk, token, projectAccessTokenRequest).then(() => {
+apiInstance.deleteProjectAccessToken(cloudPk, projectPk, token).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -2284,7 +2259,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **token** | **String**|  | 
- **projectAccessTokenRequest** | [**ProjectAccessTokenRequest**](ProjectAccessTokenRequest.md)|  | 
 
 ### Return type
 
@@ -2296,7 +2270,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
@@ -2367,7 +2341,7 @@ null (empty response body)
 
 ## deleteTag
 
-> deleteTag(cloudPk, id, projectPk, tagRequest)
+> deleteTag(cloudPk, id, projectPk)
 
 Delete the tag
 
@@ -2399,8 +2373,7 @@ let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this tag.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let tagRequest = new bimdata.TagRequest(); // TagRequest | 
-apiInstance.deleteTag(cloudPk, id, projectPk, tagRequest).then(() => {
+apiInstance.deleteTag(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -2416,7 +2389,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this tag. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **tagRequest** | [**TagRequest**](TagRequest.md)|  | 
 
 ### Return type
 
@@ -2428,13 +2400,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteValidation
 
-> deleteValidation(cloudPk, documentPk, id, projectPk, visaPk, visaValidationRequest)
+> deleteValidation(cloudPk, documentPk, id, projectPk, visaPk)
 
 Remove a validation
 
@@ -2468,8 +2440,7 @@ let documentPk = 56; // Number | A unique integer value identifying this documen
 let id = 56; // Number | A unique integer value identifying this visa validation.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let visaPk = 56; // Number | A unique integer value identifying this visa.
-let visaValidationRequest = new bimdata.VisaValidationRequest(); // VisaValidationRequest | 
-apiInstance.deleteValidation(cloudPk, documentPk, id, projectPk, visaPk, visaValidationRequest).then(() => {
+apiInstance.deleteValidation(cloudPk, documentPk, id, projectPk, visaPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -2487,7 +2458,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this visa validation. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **visaPk** | **Number**| A unique integer value identifying this visa. | 
- **visaValidationRequest** | [**VisaValidationRequest**](VisaValidationRequest.md)|  | 
 
 ### Return type
 
@@ -2499,13 +2469,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteVisa
 
-> deleteVisa(cloudPk, documentPk, id, projectPk, opts)
+> deleteVisa(cloudPk, documentPk, id, projectPk)
 
 Remove a visa
 
@@ -2538,10 +2508,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let documentPk = 56; // Number | A unique integer value identifying this document.
 let id = 56; // Number | A unique integer value identifying this visa.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let opts = {
-  'visaRequest': new bimdata.VisaRequest() // VisaRequest | 
-};
-apiInstance.deleteVisa(cloudPk, documentPk, id, projectPk, opts).then(() => {
+apiInstance.deleteVisa(cloudPk, documentPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -2558,7 +2525,6 @@ Name | Type | Description  | Notes
  **documentPk** | **Number**| A unique integer value identifying this document. | 
  **id** | **Number**| A unique integer value identifying this visa. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **visaRequest** | [**VisaRequest**](VisaRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -2570,13 +2536,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteVisaComment
 
-> deleteVisaComment(cloudPk, documentPk, id, projectPk, visaPk, opts)
+> deleteVisaComment(cloudPk, documentPk, id, projectPk, visaPk)
 
 Remove a comment
 
@@ -2610,10 +2576,7 @@ let documentPk = 56; // Number | A unique integer value identifying this documen
 let id = 56; // Number | A unique integer value identifying this visa comment.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let visaPk = 56; // Number | A unique integer value identifying this visa.
-let opts = {
-  'visaCommentRequest': new bimdata.VisaCommentRequest() // VisaCommentRequest | 
-};
-apiInstance.deleteVisaComment(cloudPk, documentPk, id, projectPk, visaPk, opts).then(() => {
+apiInstance.deleteVisaComment(cloudPk, documentPk, id, projectPk, visaPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -2631,7 +2594,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this visa comment. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **visaPk** | **Number**| A unique integer value identifying this visa. | 
- **visaCommentRequest** | [**VisaCommentRequest**](VisaCommentRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -2643,7 +2605,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 

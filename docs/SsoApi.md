@@ -75,7 +75,7 @@ null (empty response body)
 
 ## deleteUser
 
-> deleteUser(selectUserRequest)
+> deleteUser()
 
 Delete user from BIMData
 
@@ -104,8 +104,7 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 let apiInstance = new bimdata.SsoApi();
-let selectUserRequest = new bimdata.SelectUserRequest(); // SelectUserRequest | 
-apiInstance.deleteUser(selectUserRequest).then(() => {
+apiInstance.deleteUser().then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -115,10 +114,7 @@ apiInstance.deleteUser(selectUserRequest).then(() => {
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **selectUserRequest** | [**SelectUserRequest**](SelectUserRequest.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -130,7 +126,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 

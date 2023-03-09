@@ -47,7 +47,6 @@ import DetailedExtensions from './model/DetailedExtensions';
 import Direction from './model/Direction';
 import DirectionRequest from './model/DirectionRequest';
 import Document from './model/Document';
-import DocumentRequest from './model/DocumentRequest';
 import DocumentWithElementList from './model/DocumentWithElementList';
 import Element from './model/Element';
 import ElementClassificationRelation from './model/ElementClassificationRelation';
@@ -211,7 +210,6 @@ import RuleComponentRequest from './model/RuleComponentRequest';
 import RuleRequest from './model/RuleRequest';
 import Ruleset from './model/Ruleset';
 import RulesetRequest from './model/RulesetRequest';
-import SelectUserRequest from './model/SelectUserRequest';
 import SelfBcfUser from './model/SelfBcfUser';
 import SelfUser from './model/SelfUser';
 import ShortUser from './model/ShortUser';
@@ -513,12 +511,6 @@ export {
      * @property {module:model/Document}
      */
     Document,
-
-    /**
-     * The DocumentRequest model constructor.
-     * @property {module:model/DocumentRequest}
-     */
-    DocumentRequest,
 
     /**
      * The DocumentWithElementList model constructor.
@@ -1497,12 +1489,6 @@ export {
      * @property {module:model/RulesetRequest}
      */
     RulesetRequest,
-
-    /**
-     * The SelectUserRequest model constructor.
-     * @property {module:model/SelectUserRequest}
-     */
-    SelectUserRequest,
 
     /**
      * The SelfBcfUser model constructor.

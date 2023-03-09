@@ -485,13 +485,10 @@ export default class CheckerApi {
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/IfcCheckerRequest} opts.ifcCheckerRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteCheckerWithHttpInfo(cloudPk, id, modelPk, projectPk, opts) {
-      opts = opts || {};
-      let postBody = opts['ifcCheckerRequest'];
+    deleteCheckerWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteChecker");
@@ -523,7 +520,7 @@ export default class CheckerApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -540,12 +537,10 @@ export default class CheckerApi {
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/IfcCheckerRequest} opts.ifcCheckerRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteChecker(cloudPk, id, modelPk, projectPk, opts) {
-      return this.deleteCheckerWithHttpInfo(cloudPk, id, modelPk, projectPk, opts)
+    deleteChecker(cloudPk, id, modelPk, projectPk) {
+      return this.deleteCheckerWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -560,13 +555,10 @@ export default class CheckerApi {
      * @param {Number} id A unique integer value identifying this checker result.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CheckerResultRequest} opts.checkerResultRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteCheckerResultWithHttpInfo(checkerPk, cloudPk, id, modelPk, projectPk, opts) {
-      opts = opts || {};
-      let postBody = opts['checkerResultRequest'];
+    deleteCheckerResultWithHttpInfo(checkerPk, cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
         throw new Error("Missing the required parameter 'checkerPk' when calling deleteCheckerResult");
@@ -603,7 +595,7 @@ export default class CheckerApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -621,12 +613,10 @@ export default class CheckerApi {
      * @param {Number} id A unique integer value identifying this checker result.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CheckerResultRequest} opts.checkerResultRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk, opts) {
-      return this.deleteCheckerResultWithHttpInfo(checkerPk, cloudPk, id, modelPk, projectPk, opts)
+    deleteCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk) {
+      return this.deleteCheckerResultWithHttpInfo(checkerPk, cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -639,11 +629,10 @@ export default class CheckerApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/CheckPlanRequest} checkPlanRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteCheckplanWithHttpInfo(cloudPk, id, projectPk, checkPlanRequest) {
-      let postBody = checkPlanRequest;
+    deleteCheckplanWithHttpInfo(cloudPk, id, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteCheckplan");
@@ -655,10 +644,6 @@ export default class CheckerApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteCheckplan");
-      }
-      // verify the required parameter 'checkPlanRequest' is set
-      if (checkPlanRequest === undefined || checkPlanRequest === null) {
-        throw new Error("Missing the required parameter 'checkPlanRequest' when calling deleteCheckplan");
       }
 
       let pathParams = {
@@ -674,7 +659,7 @@ export default class CheckerApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -690,11 +675,10 @@ export default class CheckerApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this check plan.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/CheckPlanRequest} checkPlanRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteCheckplan(cloudPk, id, projectPk, checkPlanRequest) {
-      return this.deleteCheckplanWithHttpInfo(cloudPk, id, projectPk, checkPlanRequest)
+    deleteCheckplan(cloudPk, id, projectPk) {
+      return this.deleteCheckplanWithHttpInfo(cloudPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -709,11 +693,10 @@ export default class CheckerApi {
      * @param {Number} id A unique integer value identifying this rule.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} rulesetPk A unique integer value identifying this ruleset.
-     * @param {module:model/RuleRequest} ruleRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteRuleWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetPk, ruleRequest) {
-      let postBody = ruleRequest;
+    deleteRuleWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetPk) {
+      let postBody = null;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
         throw new Error("Missing the required parameter 'checkPlanPk' when calling deleteRule");
@@ -734,10 +717,6 @@ export default class CheckerApi {
       if (rulesetPk === undefined || rulesetPk === null) {
         throw new Error("Missing the required parameter 'rulesetPk' when calling deleteRule");
       }
-      // verify the required parameter 'ruleRequest' is set
-      if (ruleRequest === undefined || ruleRequest === null) {
-        throw new Error("Missing the required parameter 'ruleRequest' when calling deleteRule");
-      }
 
       let pathParams = {
         'check_plan_pk': checkPlanPk,
@@ -754,7 +733,7 @@ export default class CheckerApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -772,11 +751,10 @@ export default class CheckerApi {
      * @param {Number} id A unique integer value identifying this rule.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} rulesetPk A unique integer value identifying this ruleset.
-     * @param {module:model/RuleRequest} ruleRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, ruleRequest) {
-      return this.deleteRuleWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetPk, ruleRequest)
+    deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk) {
+      return this.deleteRuleWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -792,13 +770,10 @@ export default class CheckerApi {
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} rulePk A unique integer value identifying this rule.
      * @param {Number} rulesetPk A unique integer value identifying this ruleset.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/RuleComponentRequest} opts.ruleComponentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteRuleComponentWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, opts) {
-      opts = opts || {};
-      let postBody = opts['ruleComponentRequest'];
+    deleteRuleComponentWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk) {
+      let postBody = null;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
         throw new Error("Missing the required parameter 'checkPlanPk' when calling deleteRuleComponent");
@@ -840,7 +815,7 @@ export default class CheckerApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -859,12 +834,10 @@ export default class CheckerApi {
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} rulePk A unique integer value identifying this rule.
      * @param {Number} rulesetPk A unique integer value identifying this ruleset.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/RuleComponentRequest} opts.ruleComponentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, opts) {
-      return this.deleteRuleComponentWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, opts)
+    deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk) {
+      return this.deleteRuleComponentWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -878,11 +851,10 @@ export default class CheckerApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this ruleset.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/RulesetRequest} rulesetRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteRulesetWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetRequest) {
-      let postBody = rulesetRequest;
+    deleteRulesetWithHttpInfo(checkPlanPk, cloudPk, id, projectPk) {
+      let postBody = null;
       // verify the required parameter 'checkPlanPk' is set
       if (checkPlanPk === undefined || checkPlanPk === null) {
         throw new Error("Missing the required parameter 'checkPlanPk' when calling deleteRuleset");
@@ -899,10 +871,6 @@ export default class CheckerApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteRuleset");
       }
-      // verify the required parameter 'rulesetRequest' is set
-      if (rulesetRequest === undefined || rulesetRequest === null) {
-        throw new Error("Missing the required parameter 'rulesetRequest' when calling deleteRuleset");
-      }
 
       let pathParams = {
         'check_plan_pk': checkPlanPk,
@@ -918,7 +886,7 @@ export default class CheckerApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -935,11 +903,10 @@ export default class CheckerApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this ruleset.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/RulesetRequest} rulesetRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteRuleset(checkPlanPk, cloudPk, id, projectPk, rulesetRequest) {
-      return this.deleteRulesetWithHttpInfo(checkPlanPk, cloudPk, id, projectPk, rulesetRequest)
+    deleteRuleset(checkPlanPk, cloudPk, id, projectPk) {
+      return this.deleteRulesetWithHttpInfo(checkPlanPk, cloudPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

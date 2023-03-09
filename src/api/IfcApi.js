@@ -23,7 +23,6 @@ import CreateBuildingByNameRequest from '../model/CreateBuildingByNameRequest';
 import CreateModelRequest from '../model/CreateModelRequest';
 import CreateMultiPageModelRequest from '../model/CreateMultiPageModelRequest';
 import Document from '../model/Document';
-import DocumentRequest from '../model/DocumentRequest';
 import DocumentWithElementList from '../model/DocumentWithElementList';
 import Element from '../model/Element';
 import ElementClassificationRelation from '../model/ElementClassificationRelation';
@@ -44,7 +43,6 @@ import Model from '../model/Model';
 import ModelErrors from '../model/ModelErrors';
 import ModelErrorsRequest from '../model/ModelErrorsRequest';
 import ModelFiles from '../model/ModelFiles';
-import ModelRequest from '../model/ModelRequest';
 import PatchedCheckerResultRequest from '../model/PatchedCheckerResultRequest';
 import PatchedElementRequest from '../model/PatchedElementRequest';
 import PatchedIfcAccessTokenRequest from '../model/PatchedIfcAccessTokenRequest';
@@ -3043,13 +3041,10 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} token 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/IfcAccessTokenRequest} opts.ifcAccessTokenRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteAccessTokenDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, token, opts) {
-      opts = opts || {};
-      let postBody = opts['ifcAccessTokenRequest'];
+    deleteAccessTokenDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, token) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteAccessTokenDeprecated");
@@ -3081,7 +3076,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3098,12 +3093,10 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} token 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/IfcAccessTokenRequest} opts.ifcAccessTokenRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteAccessTokenDeprecated(cloudPk, ifcPk, projectPk, token, opts) {
-      return this.deleteAccessTokenDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, token, opts)
+    deleteAccessTokenDeprecated(cloudPk, ifcPk, projectPk, token) {
+      return this.deleteAccessTokenDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, token)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3262,13 +3255,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/IfcCheckerRequest} opts.ifcCheckerRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteCheckerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, opts) {
-      opts = opts || {};
-      let postBody = opts['ifcCheckerRequest'];
+    deleteCheckerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteCheckerDeprecated");
@@ -3300,7 +3290,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3317,12 +3307,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this ifc checker.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/IfcCheckerRequest} opts.ifcCheckerRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteCheckerDeprecated(cloudPk, id, ifcPk, projectPk, opts) {
-      return this.deleteCheckerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, opts)
+    deleteCheckerDeprecated(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteCheckerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3337,13 +3325,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this checker result.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CheckerResultRequest} opts.checkerResultRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteCheckerResultDeprecatedWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk, opts) {
-      opts = opts || {};
-      let postBody = opts['checkerResultRequest'];
+    deleteCheckerResultDeprecatedWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'checkerPk' is set
       if (checkerPk === undefined || checkerPk === null) {
         throw new Error("Missing the required parameter 'checkerPk' when calling deleteCheckerResultDeprecated");
@@ -3380,7 +3365,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3398,12 +3383,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this checker result.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CheckerResultRequest} opts.checkerResultRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteCheckerResultDeprecated(checkerPk, cloudPk, id, ifcPk, projectPk, opts) {
-      return this.deleteCheckerResultDeprecatedWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk, opts)
+    deleteCheckerResultDeprecated(checkerPk, cloudPk, id, ifcPk, projectPk) {
+      return this.deleteCheckerResultDeprecatedWithHttpInfo(checkerPk, cloudPk, id, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3417,11 +3400,10 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
-     * @param {module:model/ElementRequest} elementRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, elementRequest) {
-      let postBody = elementRequest;
+    deleteElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteElementDeprecated");
@@ -3438,10 +3420,6 @@ export default class IfcApi {
       if (uuid === undefined || uuid === null) {
         throw new Error("Missing the required parameter 'uuid' when calling deleteElementDeprecated");
       }
-      // verify the required parameter 'elementRequest' is set
-      if (elementRequest === undefined || elementRequest === null) {
-        throw new Error("Missing the required parameter 'elementRequest' when calling deleteElementDeprecated");
-      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -3457,7 +3435,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3474,11 +3452,10 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
-     * @param {module:model/ElementRequest} elementRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteElementDeprecated(cloudPk, ifcPk, projectPk, uuid, elementRequest) {
-      return this.deleteElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, elementRequest)
+    deleteElementDeprecated(cloudPk, ifcPk, projectPk, uuid) {
+      return this.deleteElementDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3491,13 +3468,10 @@ export default class IfcApi {
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this model.
      * @param {Number} projectPk 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ModelRequest} opts.modelRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk, opts) {
-      opts = opts || {};
-      let postBody = opts['modelRequest'];
+    deleteIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcDeprecated");
@@ -3524,7 +3498,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3540,12 +3514,10 @@ export default class IfcApi {
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this model.
      * @param {Number} projectPk 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ModelRequest} opts.modelRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteIfcDeprecated(cloudPk, id, projectPk, opts) {
-      return this.deleteIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk, opts)
+    deleteIfcDeprecated(cloudPk, id, projectPk) {
+      return this.deleteIfcDeprecatedWithHttpInfo(cloudPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3559,13 +3531,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this property definition.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PropertyDefinitionRequest} opts.propertyDefinitionRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteIfcPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, opts) {
-      opts = opts || {};
-      let postBody = opts['propertyDefinitionRequest'];
+    deleteIfcPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcPropertyDefinitionDeprecated");
@@ -3597,7 +3566,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3614,12 +3583,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this property definition.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PropertyDefinitionRequest} opts.propertyDefinitionRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteIfcPropertyDefinitionDeprecated(cloudPk, id, ifcPk, projectPk, opts) {
-      return this.deleteIfcPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, opts)
+    deleteIfcPropertyDefinitionDeprecated(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteIfcPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3633,11 +3600,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this property.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/PropertyRequest} propertyRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteIfcPropertyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, propertyRequest) {
-      let postBody = propertyRequest;
+    deleteIfcPropertyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcPropertyDeprecated");
@@ -3654,10 +3620,6 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcPropertyDeprecated");
       }
-      // verify the required parameter 'propertyRequest' is set
-      if (propertyRequest === undefined || propertyRequest === null) {
-        throw new Error("Missing the required parameter 'propertyRequest' when calling deleteIfcPropertyDeprecated");
-      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -3673,7 +3635,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3690,11 +3652,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this property.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/PropertyRequest} propertyRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteIfcPropertyDeprecated(cloudPk, id, ifcPk, projectPk, propertyRequest) {
-      return this.deleteIfcPropertyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, propertyRequest)
+    deleteIfcPropertyDeprecated(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteIfcPropertyDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3708,11 +3669,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this unit.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/UnitRequest} unitRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteIfcUnitDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, unitRequest) {
-      let postBody = unitRequest;
+    deleteIfcUnitDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteIfcUnitDeprecated");
@@ -3729,10 +3689,6 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteIfcUnitDeprecated");
       }
-      // verify the required parameter 'unitRequest' is set
-      if (unitRequest === undefined || unitRequest === null) {
-        throw new Error("Missing the required parameter 'unitRequest' when calling deleteIfcUnitDeprecated");
-      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -3748,7 +3704,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3765,11 +3721,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this unit.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/UnitRequest} unitRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteIfcUnitDeprecated(cloudPk, id, ifcPk, projectPk, unitRequest) {
-      return this.deleteIfcUnitDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, unitRequest)
+    deleteIfcUnitDeprecated(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteIfcUnitDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3845,11 +3800,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this layer.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/LayerRequest} layerRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteLayerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, layerRequest) {
-      let postBody = layerRequest;
+    deleteLayerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteLayerDeprecated");
@@ -3866,10 +3820,6 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteLayerDeprecated");
       }
-      // verify the required parameter 'layerRequest' is set
-      if (layerRequest === undefined || layerRequest === null) {
-        throw new Error("Missing the required parameter 'layerRequest' when calling deleteLayerDeprecated");
-      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -3885,7 +3835,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3902,11 +3852,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this layer.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/LayerRequest} layerRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteLayerDeprecated(cloudPk, id, ifcPk, projectPk, layerRequest) {
-      return this.deleteLayerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, layerRequest)
+    deleteLayerDeprecated(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteLayerDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3920,13 +3869,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this property set.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PropertySetRequest} opts.propertySetRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deletePropertySetDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, opts) {
-      opts = opts || {};
-      let postBody = opts['propertySetRequest'];
+    deletePropertySetDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deletePropertySetDeprecated");
@@ -3958,7 +3904,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -3975,12 +3921,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this property set.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PropertySetRequest} opts.propertySetRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deletePropertySetDeprecated(cloudPk, id, ifcPk, projectPk, opts) {
-      return this.deletePropertySetDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, opts)
+    deletePropertySetDeprecated(cloudPk, id, ifcPk, projectPk) {
+      return this.deletePropertySetDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3994,11 +3938,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this space.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/SpaceRequest} spaceRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, spaceRequest) {
-      let postBody = spaceRequest;
+    deleteSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteSpaceDeprecated");
@@ -4015,10 +3958,6 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteSpaceDeprecated");
       }
-      // verify the required parameter 'spaceRequest' is set
-      if (spaceRequest === undefined || spaceRequest === null) {
-        throw new Error("Missing the required parameter 'spaceRequest' when calling deleteSpaceDeprecated");
-      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -4034,7 +3973,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -4051,11 +3990,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this space.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/SpaceRequest} spaceRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteSpaceDeprecated(cloudPk, id, ifcPk, projectPk, spaceRequest) {
-      return this.deleteSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, spaceRequest)
+    deleteSpaceDeprecated(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4214,11 +4152,10 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
-     * @param {module:model/SystemRequest} systemRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteSystemDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, systemRequest) {
-      let postBody = systemRequest;
+    deleteSystemDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteSystemDeprecated");
@@ -4235,10 +4172,6 @@ export default class IfcApi {
       if (uuid === undefined || uuid === null) {
         throw new Error("Missing the required parameter 'uuid' when calling deleteSystemDeprecated");
       }
-      // verify the required parameter 'systemRequest' is set
-      if (systemRequest === undefined || systemRequest === null) {
-        throw new Error("Missing the required parameter 'systemRequest' when calling deleteSystemDeprecated");
-      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -4254,7 +4187,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -4271,11 +4204,10 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
-     * @param {module:model/SystemRequest} systemRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteSystemDeprecated(cloudPk, ifcPk, projectPk, uuid, systemRequest) {
-      return this.deleteSystemDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid, systemRequest)
+    deleteSystemDeprecated(cloudPk, ifcPk, projectPk, uuid) {
+      return this.deleteSystemDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, uuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4289,11 +4221,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this zone.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/ZoneRequest} zoneRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteZoneDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, zoneRequest) {
-      let postBody = zoneRequest;
+    deleteZoneDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteZoneDeprecated");
@@ -4310,10 +4241,6 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling deleteZoneDeprecated");
       }
-      // verify the required parameter 'zoneRequest' is set
-      if (zoneRequest === undefined || zoneRequest === null) {
-        throw new Error("Missing the required parameter 'zoneRequest' when calling deleteZoneDeprecated");
-      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -4329,7 +4256,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -4346,11 +4273,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this zone.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/ZoneRequest} zoneRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteZoneDeprecated(cloudPk, id, ifcPk, projectPk, zoneRequest) {
-      return this.deleteZoneDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, zoneRequest)
+    deleteZoneDeprecated(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteZoneDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4365,11 +4291,10 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} zonePk A unique integer value identifying this zone.
-     * @param {module:model/ZoneSpaceRequest} zoneSpaceRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteZoneSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk, zoneSpaceRequest) {
-      let postBody = zoneSpaceRequest;
+    deleteZoneSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling deleteZoneSpaceDeprecated");
@@ -4390,10 +4315,6 @@ export default class IfcApi {
       if (zonePk === undefined || zonePk === null) {
         throw new Error("Missing the required parameter 'zonePk' when calling deleteZoneSpaceDeprecated");
       }
-      // verify the required parameter 'zoneSpaceRequest' is set
-      if (zoneSpaceRequest === undefined || zoneSpaceRequest === null) {
-        throw new Error("Missing the required parameter 'zoneSpaceRequest' when calling deleteZoneSpaceDeprecated");
-      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -4410,7 +4331,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -4428,11 +4349,10 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} zonePk A unique integer value identifying this zone.
-     * @param {module:model/ZoneSpaceRequest} zoneSpaceRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteZoneSpaceDeprecated(cloudPk, id, ifcPk, projectPk, zonePk, zoneSpaceRequest) {
-      return this.deleteZoneSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk, zoneSpaceRequest)
+    deleteZoneSpaceDeprecated(cloudPk, id, ifcPk, projectPk, zonePk) {
+      return this.deleteZoneSpaceDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, zonePk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8965,13 +8885,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this classification.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ClassificationRequest} opts.classificationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeClassificationOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, opts) {
-      opts = opts || {};
-      let postBody = opts['classificationRequest'];
+    removeClassificationOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeClassificationOfElementDeprecated");
@@ -9008,7 +8925,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -9026,12 +8943,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this classification.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ClassificationRequest} opts.classificationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeClassificationOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, opts) {
-      return this.removeClassificationOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, opts)
+    removeClassificationOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk) {
+      return this.removeClassificationOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9046,11 +8961,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this document.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/DocumentRequest} documentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeDocumentOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, documentRequest) {
-      let postBody = documentRequest;
+    removeDocumentOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeDocumentOfElementDeprecated");
@@ -9071,10 +8985,6 @@ export default class IfcApi {
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling removeDocumentOfElementDeprecated");
       }
-      // verify the required parameter 'documentRequest' is set
-      if (documentRequest === undefined || documentRequest === null) {
-        throw new Error("Missing the required parameter 'documentRequest' when calling removeDocumentOfElementDeprecated");
-      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -9091,7 +9001,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -9109,11 +9019,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this document.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {module:model/DocumentRequest} documentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeDocumentOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, documentRequest) {
-      return this.removeDocumentOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, documentRequest)
+    removeDocumentOfElementDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk) {
+      return this.removeDocumentOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9128,13 +9037,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this property set.
      * @param {Number} ifcPk 
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PropertySetRequest} opts.propertySetRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementPropertySetDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, opts) {
-      opts = opts || {};
-      let postBody = opts['propertySetRequest'];
+    removeElementPropertySetDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetDeprecated");
@@ -9171,7 +9077,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -9189,12 +9095,10 @@ export default class IfcApi {
      * @param {Number} id A unique integer value identifying this property set.
      * @param {Number} ifcPk 
      * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PropertySetRequest} opts.propertySetRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementPropertySetDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, opts) {
-      return this.removeElementPropertySetDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, opts)
+    removeElementPropertySetDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk) {
+      return this.removeElementPropertySetDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9211,13 +9115,10 @@ export default class IfcApi {
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} propertyPk A unique integer value identifying this property.
      * @param {Number} propertysetPk A unique integer value identifying this property set.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PropertyDefinitionRequest} opts.propertyDefinitionRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementPropertySetPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk, opts) {
-      opts = opts || {};
-      let postBody = opts['propertyDefinitionRequest'];
+    removeElementPropertySetPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDefinitionDeprecated");
@@ -9264,7 +9165,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -9284,12 +9185,10 @@ export default class IfcApi {
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} propertyPk A unique integer value identifying this property.
      * @param {Number} propertysetPk A unique integer value identifying this property set.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PropertyDefinitionRequest} opts.propertyDefinitionRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementPropertySetPropertyDefinitionDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk, opts) {
-      return this.removeElementPropertySetPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk, opts)
+    removeElementPropertySetPropertyDefinitionDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk) {
+      return this.removeElementPropertySetPropertyDefinitionDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertysetPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9307,11 +9206,10 @@ export default class IfcApi {
      * @param {Number} propertyPk A unique integer value identifying this property.
      * @param {Number} propertydefinitionPk A unique integer value identifying this property definition.
      * @param {Number} propertysetPk A unique integer value identifying this property set.
-     * @param {module:model/UnitRequest} unitRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementPropertySetPropertyDefinitionUnitDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, unitRequest) {
-      let postBody = unitRequest;
+    removeElementPropertySetPropertyDefinitionUnitDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDefinitionUnitDeprecated");
@@ -9344,10 +9242,6 @@ export default class IfcApi {
       if (propertysetPk === undefined || propertysetPk === null) {
         throw new Error("Missing the required parameter 'propertysetPk' when calling removeElementPropertySetPropertyDefinitionUnitDeprecated");
       }
-      // verify the required parameter 'unitRequest' is set
-      if (unitRequest === undefined || unitRequest === null) {
-        throw new Error("Missing the required parameter 'unitRequest' when calling removeElementPropertySetPropertyDefinitionUnitDeprecated");
-      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -9367,7 +9261,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -9388,11 +9282,10 @@ export default class IfcApi {
      * @param {Number} propertyPk A unique integer value identifying this property.
      * @param {Number} propertydefinitionPk A unique integer value identifying this property definition.
      * @param {Number} propertysetPk A unique integer value identifying this property set.
-     * @param {module:model/UnitRequest} unitRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementPropertySetPropertyDefinitionUnitDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, unitRequest) {
-      return this.removeElementPropertySetPropertyDefinitionUnitDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, unitRequest)
+    removeElementPropertySetPropertyDefinitionUnitDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk) {
+      return this.removeElementPropertySetPropertyDefinitionUnitDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9408,11 +9301,10 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} propertysetPk A unique integer value identifying this property set.
-     * @param {module:model/PropertyRequest} propertyRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementPropertySetPropertyDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, propertyRequest) {
-      let postBody = propertyRequest;
+    removeElementPropertySetPropertyDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeElementPropertySetPropertyDeprecated");
@@ -9437,10 +9329,6 @@ export default class IfcApi {
       if (propertysetPk === undefined || propertysetPk === null) {
         throw new Error("Missing the required parameter 'propertysetPk' when calling removeElementPropertySetPropertyDeprecated");
       }
-      // verify the required parameter 'propertyRequest' is set
-      if (propertyRequest === undefined || propertyRequest === null) {
-        throw new Error("Missing the required parameter 'propertyRequest' when calling removeElementPropertySetPropertyDeprecated");
-      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -9458,7 +9346,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -9477,11 +9365,10 @@ export default class IfcApi {
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} propertysetPk A unique integer value identifying this property set.
-     * @param {module:model/PropertyRequest} propertyRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementPropertySetPropertyDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, propertyRequest) {
-      return this.removeElementPropertySetPropertyDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk, propertyRequest)
+    removeElementPropertySetPropertyDeprecated(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk) {
+      return this.removeElementPropertySetPropertyDeprecatedWithHttpInfo(cloudPk, elementUuid, id, ifcPk, projectPk, propertysetPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9496,11 +9383,10 @@ export default class IfcApi {
      * @param {Number} modelClassificationPk A unique integer value identifying this classification.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
-     * @param {module:model/ElementRequest} elementRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    removeElementsFromClassificationDeprecatedWithHttpInfo(cloudPk, ifcPk, modelClassificationPk, projectPk, uuid, elementRequest) {
-      let postBody = elementRequest;
+    removeElementsFromClassificationDeprecatedWithHttpInfo(cloudPk, ifcPk, modelClassificationPk, projectPk, uuid) {
+      let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling removeElementsFromClassificationDeprecated");
@@ -9521,10 +9407,6 @@ export default class IfcApi {
       if (uuid === undefined || uuid === null) {
         throw new Error("Missing the required parameter 'uuid' when calling removeElementsFromClassificationDeprecated");
       }
-      // verify the required parameter 'elementRequest' is set
-      if (elementRequest === undefined || elementRequest === null) {
-        throw new Error("Missing the required parameter 'elementRequest' when calling removeElementsFromClassificationDeprecated");
-      }
 
       let pathParams = {
         'cloud_pk': cloudPk,
@@ -9541,7 +9423,7 @@ export default class IfcApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -9559,11 +9441,10 @@ export default class IfcApi {
      * @param {Number} modelClassificationPk A unique integer value identifying this classification.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} uuid 
-     * @param {module:model/ElementRequest} elementRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    removeElementsFromClassificationDeprecated(cloudPk, ifcPk, modelClassificationPk, projectPk, uuid, elementRequest) {
-      return this.removeElementsFromClassificationDeprecatedWithHttpInfo(cloudPk, ifcPk, modelClassificationPk, projectPk, uuid, elementRequest)
+    removeElementsFromClassificationDeprecated(cloudPk, ifcPk, modelClassificationPk, projectPk, uuid) {
+      return this.removeElementsFromClassificationDeprecatedWithHttpInfo(cloudPk, ifcPk, modelClassificationPk, projectPk, uuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ## deleteChecker
 
-> deleteChecker(cloudPk, id, modelPk, projectPk, opts)
+> deleteChecker(cloudPk, id, modelPk, projectPk)
 
 Delete a checker of a model
 
@@ -487,10 +487,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this ifc checker.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let opts = {
-  'ifcCheckerRequest': new bimdata.IfcCheckerRequest() // IfcCheckerRequest | 
-};
-apiInstance.deleteChecker(cloudPk, id, modelPk, projectPk, opts).then(() => {
+apiInstance.deleteChecker(cloudPk, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -507,7 +504,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this ifc checker. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **ifcCheckerRequest** | [**IfcCheckerRequest**](IfcCheckerRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -519,13 +515,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteCheckerResult
 
-> deleteCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk, opts)
+> deleteCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk)
 
 Delete a CheckerResult
 
@@ -559,10 +555,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this checker result.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let opts = {
-  'checkerResultRequest': new bimdata.CheckerResultRequest() // CheckerResultRequest | 
-};
-apiInstance.deleteCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk, opts).then(() => {
+apiInstance.deleteCheckerResult(checkerPk, cloudPk, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -580,7 +573,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this checker result. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **checkerResultRequest** | [**CheckerResultRequest**](CheckerResultRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -592,13 +584,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteCheckplan
 
-> deleteCheckplan(cloudPk, id, projectPk, checkPlanRequest)
+> deleteCheckplan(cloudPk, id, projectPk)
 
 Delete a Checkplan
 
@@ -630,8 +622,7 @@ let apiInstance = new bimdata.CheckerApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this check plan.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let checkPlanRequest = new bimdata.CheckPlanRequest(); // CheckPlanRequest | 
-apiInstance.deleteCheckplan(cloudPk, id, projectPk, checkPlanRequest).then(() => {
+apiInstance.deleteCheckplan(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -647,7 +638,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this check plan. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **checkPlanRequest** | [**CheckPlanRequest**](CheckPlanRequest.md)|  | 
 
 ### Return type
 
@@ -659,13 +649,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteRule
 
-> deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, ruleRequest)
+> deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk)
 
 Delete a Rule
 
@@ -699,8 +689,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this rule.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let rulesetPk = 56; // Number | A unique integer value identifying this ruleset.
-let ruleRequest = new bimdata.RuleRequest(); // RuleRequest | 
-apiInstance.deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk, ruleRequest).then(() => {
+apiInstance.deleteRule(checkPlanPk, cloudPk, id, projectPk, rulesetPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -718,7 +707,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this rule. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **rulesetPk** | **Number**| A unique integer value identifying this ruleset. | 
- **ruleRequest** | [**RuleRequest**](RuleRequest.md)|  | 
 
 ### Return type
 
@@ -730,13 +718,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteRuleComponent
 
-> deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, opts)
+> deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk)
 
 Delete a RuleComponent
 
@@ -771,10 +759,7 @@ let id = 56; // Number | A unique integer value identifying this rule component.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let rulePk = 56; // Number | A unique integer value identifying this rule.
 let rulesetPk = 56; // Number | A unique integer value identifying this ruleset.
-let opts = {
-  'ruleComponentRequest': new bimdata.RuleComponentRequest() // RuleComponentRequest | 
-};
-apiInstance.deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk, opts).then(() => {
+apiInstance.deleteRuleComponent(checkPlanPk, cloudPk, id, projectPk, rulePk, rulesetPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -793,7 +778,6 @@ Name | Type | Description  | Notes
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **rulePk** | **Number**| A unique integer value identifying this rule. | 
  **rulesetPk** | **Number**| A unique integer value identifying this ruleset. | 
- **ruleComponentRequest** | [**RuleComponentRequest**](RuleComponentRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -805,13 +789,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteRuleset
 
-> deleteRuleset(checkPlanPk, cloudPk, id, projectPk, rulesetRequest)
+> deleteRuleset(checkPlanPk, cloudPk, id, projectPk)
 
 Delete a Ruleset
 
@@ -844,8 +828,7 @@ let checkPlanPk = 56; // Number | A unique integer value identifying this check 
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this ruleset.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let rulesetRequest = new bimdata.RulesetRequest(); // RulesetRequest | 
-apiInstance.deleteRuleset(checkPlanPk, cloudPk, id, projectPk, rulesetRequest).then(() => {
+apiInstance.deleteRuleset(checkPlanPk, cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -862,7 +845,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **id** | **Number**| A unique integer value identifying this ruleset. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **rulesetRequest** | [**RulesetRequest**](RulesetRequest.md)|  | 
 
 ### Return type
 
@@ -874,7 +856,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 

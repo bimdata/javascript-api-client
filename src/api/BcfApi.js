@@ -585,13 +585,10 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {Number} projectsPk A unique integer value identifying this project.
      * @param {String} topicsGuid 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CommentRequest} opts.commentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteCommentWithHttpInfo(guid, projectsPk, topicsGuid, opts) {
-      opts = opts || {};
-      let postBody = opts['commentRequest'];
+    deleteCommentWithHttpInfo(guid, projectsPk, topicsGuid) {
+      let postBody = null;
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
         throw new Error("Missing the required parameter 'guid' when calling deleteComment");
@@ -618,7 +615,7 @@ export default class BcfApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -634,12 +631,10 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {Number} projectsPk A unique integer value identifying this project.
      * @param {String} topicsGuid 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CommentRequest} opts.commentRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteComment(guid, projectsPk, topicsGuid, opts) {
-      return this.deleteCommentWithHttpInfo(guid, projectsPk, topicsGuid, opts)
+    deleteComment(guid, projectsPk, topicsGuid) {
+      return this.deleteCommentWithHttpInfo(guid, projectsPk, topicsGuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -651,11 +646,10 @@ export default class BcfApi {
      * This is not a standard route. Delete a Label. Topics using this label won't be deleted   Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this label.
      * @param {Number} projectsPk 
-     * @param {module:model/LabelRequest} labelRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteExtensionLabelWithHttpInfo(id, projectsPk, labelRequest) {
-      let postBody = labelRequest;
+    deleteExtensionLabelWithHttpInfo(id, projectsPk) {
+      let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteExtensionLabel");
@@ -663,10 +657,6 @@ export default class BcfApi {
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling deleteExtensionLabel");
-      }
-      // verify the required parameter 'labelRequest' is set
-      if (labelRequest === undefined || labelRequest === null) {
-        throw new Error("Missing the required parameter 'labelRequest' when calling deleteExtensionLabel");
       }
 
       let pathParams = {
@@ -681,7 +671,7 @@ export default class BcfApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -696,11 +686,10 @@ export default class BcfApi {
      * This is not a standard route. Delete a Label. Topics using this label won't be deleted   Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this label.
      * @param {Number} projectsPk 
-     * @param {module:model/LabelRequest} labelRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteExtensionLabel(id, projectsPk, labelRequest) {
-      return this.deleteExtensionLabelWithHttpInfo(id, projectsPk, labelRequest)
+    deleteExtensionLabel(id, projectsPk) {
+      return this.deleteExtensionLabelWithHttpInfo(id, projectsPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -712,11 +701,10 @@ export default class BcfApi {
      * This is not a standard route. Delete a Priority. Topics using this priority won't be deleted   Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this priority.
      * @param {Number} projectsPk 
-     * @param {module:model/PriorityRequest} priorityRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteExtensionPriorityWithHttpInfo(id, projectsPk, priorityRequest) {
-      let postBody = priorityRequest;
+    deleteExtensionPriorityWithHttpInfo(id, projectsPk) {
+      let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteExtensionPriority");
@@ -724,10 +712,6 @@ export default class BcfApi {
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling deleteExtensionPriority");
-      }
-      // verify the required parameter 'priorityRequest' is set
-      if (priorityRequest === undefined || priorityRequest === null) {
-        throw new Error("Missing the required parameter 'priorityRequest' when calling deleteExtensionPriority");
       }
 
       let pathParams = {
@@ -742,7 +726,7 @@ export default class BcfApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -757,11 +741,10 @@ export default class BcfApi {
      * This is not a standard route. Delete a Priority. Topics using this priority won't be deleted   Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this priority.
      * @param {Number} projectsPk 
-     * @param {module:model/PriorityRequest} priorityRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteExtensionPriority(id, projectsPk, priorityRequest) {
-      return this.deleteExtensionPriorityWithHttpInfo(id, projectsPk, priorityRequest)
+    deleteExtensionPriority(id, projectsPk) {
+      return this.deleteExtensionPriorityWithHttpInfo(id, projectsPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -773,11 +756,10 @@ export default class BcfApi {
      * This is not a standard route. Delete a Stage. Topics using this stage won't be deleted   Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this stage.
      * @param {Number} projectsPk 
-     * @param {module:model/StageRequest} stageRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteExtensionStageWithHttpInfo(id, projectsPk, stageRequest) {
-      let postBody = stageRequest;
+    deleteExtensionStageWithHttpInfo(id, projectsPk) {
+      let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteExtensionStage");
@@ -785,10 +767,6 @@ export default class BcfApi {
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling deleteExtensionStage");
-      }
-      // verify the required parameter 'stageRequest' is set
-      if (stageRequest === undefined || stageRequest === null) {
-        throw new Error("Missing the required parameter 'stageRequest' when calling deleteExtensionStage");
       }
 
       let pathParams = {
@@ -803,7 +781,7 @@ export default class BcfApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -818,11 +796,10 @@ export default class BcfApi {
      * This is not a standard route. Delete a Stage. Topics using this stage won't be deleted   Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this stage.
      * @param {Number} projectsPk 
-     * @param {module:model/StageRequest} stageRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteExtensionStage(id, projectsPk, stageRequest) {
-      return this.deleteExtensionStageWithHttpInfo(id, projectsPk, stageRequest)
+    deleteExtensionStage(id, projectsPk) {
+      return this.deleteExtensionStageWithHttpInfo(id, projectsPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -834,11 +811,10 @@ export default class BcfApi {
      * This is not a standard route. Delete a TopicStatus. Topics using this status won't be deleted   Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this topic status.
      * @param {Number} projectsPk 
-     * @param {module:model/TopicStatusRequest} topicStatusRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteExtensionStatusWithHttpInfo(id, projectsPk, topicStatusRequest) {
-      let postBody = topicStatusRequest;
+    deleteExtensionStatusWithHttpInfo(id, projectsPk) {
+      let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteExtensionStatus");
@@ -846,10 +822,6 @@ export default class BcfApi {
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling deleteExtensionStatus");
-      }
-      // verify the required parameter 'topicStatusRequest' is set
-      if (topicStatusRequest === undefined || topicStatusRequest === null) {
-        throw new Error("Missing the required parameter 'topicStatusRequest' when calling deleteExtensionStatus");
       }
 
       let pathParams = {
@@ -864,7 +836,7 @@ export default class BcfApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -879,11 +851,10 @@ export default class BcfApi {
      * This is not a standard route. Delete a TopicStatus. Topics using this status won't be deleted   Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this topic status.
      * @param {Number} projectsPk 
-     * @param {module:model/TopicStatusRequest} topicStatusRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteExtensionStatus(id, projectsPk, topicStatusRequest) {
-      return this.deleteExtensionStatusWithHttpInfo(id, projectsPk, topicStatusRequest)
+    deleteExtensionStatus(id, projectsPk) {
+      return this.deleteExtensionStatusWithHttpInfo(id, projectsPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -895,11 +866,10 @@ export default class BcfApi {
      * This is not a standard route. Delete a TopicType. Topics using this type won't be deleted  Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this topic type.
      * @param {Number} projectsPk 
-     * @param {module:model/TopicTypeRequest} topicTypeRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteExtensionTypeWithHttpInfo(id, projectsPk, topicTypeRequest) {
-      let postBody = topicTypeRequest;
+    deleteExtensionTypeWithHttpInfo(id, projectsPk) {
+      let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteExtensionType");
@@ -907,10 +877,6 @@ export default class BcfApi {
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling deleteExtensionType");
-      }
-      // verify the required parameter 'topicTypeRequest' is set
-      if (topicTypeRequest === undefined || topicTypeRequest === null) {
-        throw new Error("Missing the required parameter 'topicTypeRequest' when calling deleteExtensionType");
       }
 
       let pathParams = {
@@ -925,7 +891,7 @@ export default class BcfApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -940,11 +906,10 @@ export default class BcfApi {
      * This is not a standard route. Delete a TopicType. Topics using this type won't be deleted  Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this topic type.
      * @param {Number} projectsPk 
-     * @param {module:model/TopicTypeRequest} topicTypeRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteExtensionType(id, projectsPk, topicTypeRequest) {
-      return this.deleteExtensionTypeWithHttpInfo(id, projectsPk, topicTypeRequest)
+    deleteExtensionType(id, projectsPk) {
+      return this.deleteExtensionTypeWithHttpInfo(id, projectsPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -956,11 +921,10 @@ export default class BcfApi {
      * Delete a topic  Required scopes: bcf:write
      * @param {String} guid 
      * @param {Number} projectsPk 
-     * @param {module:model/TopicRequest} topicRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteTopicWithHttpInfo(guid, projectsPk, topicRequest) {
-      let postBody = topicRequest;
+    deleteTopicWithHttpInfo(guid, projectsPk) {
+      let postBody = null;
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
         throw new Error("Missing the required parameter 'guid' when calling deleteTopic");
@@ -968,10 +932,6 @@ export default class BcfApi {
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling deleteTopic");
-      }
-      // verify the required parameter 'topicRequest' is set
-      if (topicRequest === undefined || topicRequest === null) {
-        throw new Error("Missing the required parameter 'topicRequest' when calling deleteTopic");
       }
 
       let pathParams = {
@@ -986,7 +946,7 @@ export default class BcfApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -1001,11 +961,10 @@ export default class BcfApi {
      * Delete a topic  Required scopes: bcf:write
      * @param {String} guid 
      * @param {Number} projectsPk 
-     * @param {module:model/TopicRequest} topicRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteTopic(guid, projectsPk, topicRequest) {
-      return this.deleteTopicWithHttpInfo(guid, projectsPk, topicRequest)
+    deleteTopic(guid, projectsPk) {
+      return this.deleteTopicWithHttpInfo(guid, projectsPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1020,12 +979,11 @@ export default class BcfApi {
      * @param {String} topicsGuid 
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
-     * @param {module:model/ViewpointRequest} opts.viewpointRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteViewpointWithHttpInfo(guid, projectsPk, topicsGuid, opts) {
       opts = opts || {};
-      let postBody = opts['viewpointRequest'];
+      let postBody = null;
       // verify the required parameter 'guid' is set
       if (guid === undefined || guid === null) {
         throw new Error("Missing the required parameter 'guid' when calling deleteViewpoint");
@@ -1053,7 +1011,7 @@ export default class BcfApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -1071,7 +1029,6 @@ export default class BcfApi {
      * @param {String} topicsGuid 
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
-     * @param {module:model/ViewpointRequest} opts.viewpointRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteViewpoint(guid, projectsPk, topicsGuid, opts) {

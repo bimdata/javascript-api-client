@@ -2834,7 +2834,7 @@ Name | Type | Description  | Notes
 
 ## deleteAccessToken
 
-> deleteAccessToken(cloudPk, modelPk, projectPk, token, opts)
+> deleteAccessToken(cloudPk, modelPk, projectPk, token)
 
 Delete a token
 
@@ -2867,10 +2867,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let token = "token_example"; // String | 
-let opts = {
-  'ifcAccessTokenRequest': new bimdata.IfcAccessTokenRequest() // IfcAccessTokenRequest | 
-};
-apiInstance.deleteAccessToken(cloudPk, modelPk, projectPk, token, opts).then(() => {
+apiInstance.deleteAccessToken(cloudPk, modelPk, projectPk, token).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -2887,7 +2884,6 @@ Name | Type | Description  | Notes
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **token** | **String**|  | 
- **ifcAccessTokenRequest** | [**IfcAccessTokenRequest**](IfcAccessTokenRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -2899,7 +2895,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
@@ -3041,7 +3037,7 @@ null (empty response body)
 
 ## deleteElement
 
-> deleteElement(cloudPk, modelPk, projectPk, uuid, elementRequest)
+> deleteElement(cloudPk, modelPk, projectPk, uuid)
 
 Delete an element of a model
 
@@ -3074,8 +3070,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let uuid = "uuid_example"; // String | 
-let elementRequest = new bimdata.ElementRequest(); // ElementRequest | 
-apiInstance.deleteElement(cloudPk, modelPk, projectPk, uuid, elementRequest).then(() => {
+apiInstance.deleteElement(cloudPk, modelPk, projectPk, uuid).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3092,7 +3087,6 @@ Name | Type | Description  | Notes
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **uuid** | **String**|  | 
- **elementRequest** | [**ElementRequest**](ElementRequest.md)|  | 
 
 ### Return type
 
@@ -3104,13 +3098,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteLayer
 
-> deleteLayer(cloudPk, id, modelPk, projectPk, layerRequest)
+> deleteLayer(cloudPk, id, modelPk, projectPk)
 
 Delete a layer of a model
 
@@ -3143,8 +3137,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this layer.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let layerRequest = new bimdata.LayerRequest(); // LayerRequest | 
-apiInstance.deleteLayer(cloudPk, id, modelPk, projectPk, layerRequest).then(() => {
+apiInstance.deleteLayer(cloudPk, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3161,7 +3154,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this layer. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **layerRequest** | [**LayerRequest**](LayerRequest.md)|  | 
 
 ### Return type
 
@@ -3173,13 +3165,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteModel
 
-> deleteModel(cloudPk, id, projectPk, opts)
+> deleteModel(cloudPk, id, projectPk)
 
 Delete a model
 
@@ -3211,10 +3203,7 @@ let apiInstance = new bimdata.ModelApi();
 let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | 
-let opts = {
-  'modelRequest': new bimdata.ModelRequest() // ModelRequest | 
-};
-apiInstance.deleteModel(cloudPk, id, projectPk, opts).then(() => {
+apiInstance.deleteModel(cloudPk, id, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3230,7 +3219,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**|  | 
- **modelRequest** | [**ModelRequest**](ModelRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -3242,13 +3230,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteModelProperty
 
-> deleteModelProperty(cloudPk, id, modelPk, projectPk, propertyRequest)
+> deleteModelProperty(cloudPk, id, modelPk, projectPk)
 
 Delete a Property of a model
 
@@ -3281,8 +3269,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this property.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let propertyRequest = new bimdata.PropertyRequest(); // PropertyRequest | 
-apiInstance.deleteModelProperty(cloudPk, id, modelPk, projectPk, propertyRequest).then(() => {
+apiInstance.deleteModelProperty(cloudPk, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3299,7 +3286,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this property. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **propertyRequest** | [**PropertyRequest**](PropertyRequest.md)|  | 
 
 ### Return type
 
@@ -3311,13 +3297,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteModelPropertyDefinition
 
-> deleteModelPropertyDefinition(cloudPk, id, modelPk, projectPk, opts)
+> deleteModelPropertyDefinition(cloudPk, id, modelPk, projectPk)
 
 Delete a PropertyDefinitions of a model
 
@@ -3350,10 +3336,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this property definition.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let opts = {
-  'propertyDefinitionRequest': new bimdata.PropertyDefinitionRequest() // PropertyDefinitionRequest | 
-};
-apiInstance.deleteModelPropertyDefinition(cloudPk, id, modelPk, projectPk, opts).then(() => {
+apiInstance.deleteModelPropertyDefinition(cloudPk, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3370,7 +3353,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this property definition. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **propertyDefinitionRequest** | [**PropertyDefinitionRequest**](PropertyDefinitionRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -3382,13 +3364,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteModelUnit
 
-> deleteModelUnit(cloudPk, id, modelPk, projectPk, unitRequest)
+> deleteModelUnit(cloudPk, id, modelPk, projectPk)
 
 Delete a Unit of a model
 
@@ -3421,8 +3403,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this unit.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let unitRequest = new bimdata.UnitRequest(); // UnitRequest | 
-apiInstance.deleteModelUnit(cloudPk, id, modelPk, projectPk, unitRequest).then(() => {
+apiInstance.deleteModelUnit(cloudPk, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3439,7 +3420,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this unit. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **unitRequest** | [**UnitRequest**](UnitRequest.md)|  | 
 
 ### Return type
 
@@ -3451,7 +3431,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
@@ -3522,7 +3502,7 @@ null (empty response body)
 
 ## deletePropertySet
 
-> deletePropertySet(cloudPk, id, modelPk, projectPk, opts)
+> deletePropertySet(cloudPk, id, modelPk, projectPk)
 
 Delete a PropertySet of a model
 
@@ -3555,10 +3535,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this property set.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let opts = {
-  'propertySetRequest': new bimdata.PropertySetRequest() // PropertySetRequest | 
-};
-apiInstance.deletePropertySet(cloudPk, id, modelPk, projectPk, opts).then(() => {
+apiInstance.deletePropertySet(cloudPk, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3575,7 +3552,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this property set. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **propertySetRequest** | [**PropertySetRequest**](PropertySetRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -3587,13 +3563,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteSpace
 
-> deleteSpace(cloudPk, id, modelPk, projectPk, spaceRequest)
+> deleteSpace(cloudPk, id, modelPk, projectPk)
 
 Delete a space
 
@@ -3626,8 +3602,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this space.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let spaceRequest = new bimdata.SpaceRequest(); // SpaceRequest | 
-apiInstance.deleteSpace(cloudPk, id, modelPk, projectPk, spaceRequest).then(() => {
+apiInstance.deleteSpace(cloudPk, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3644,7 +3619,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this space. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **spaceRequest** | [**SpaceRequest**](SpaceRequest.md)|  | 
 
 ### Return type
 
@@ -3656,7 +3630,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
@@ -3798,7 +3772,7 @@ null (empty response body)
 
 ## deleteSystem
 
-> deleteSystem(cloudPk, modelPk, projectPk, uuid, systemRequest)
+> deleteSystem(cloudPk, modelPk, projectPk, uuid)
 
 Delete a system of a model
 
@@ -3831,8 +3805,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let uuid = "uuid_example"; // String | 
-let systemRequest = new bimdata.SystemRequest(); // SystemRequest | 
-apiInstance.deleteSystem(cloudPk, modelPk, projectPk, uuid, systemRequest).then(() => {
+apiInstance.deleteSystem(cloudPk, modelPk, projectPk, uuid).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3849,7 +3822,6 @@ Name | Type | Description  | Notes
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **uuid** | **String**|  | 
- **systemRequest** | [**SystemRequest**](SystemRequest.md)|  | 
 
 ### Return type
 
@@ -3861,13 +3833,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteZone
 
-> deleteZone(cloudPk, id, modelPk, projectPk, zoneRequest)
+> deleteZone(cloudPk, id, modelPk, projectPk)
 
 Delete a zone of a model
 
@@ -3900,8 +3872,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | A unique integer value identifying this zone.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let zoneRequest = new bimdata.ZoneRequest(); // ZoneRequest | 
-apiInstance.deleteZone(cloudPk, id, modelPk, projectPk, zoneRequest).then(() => {
+apiInstance.deleteZone(cloudPk, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3918,7 +3889,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this zone. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **zoneRequest** | [**ZoneRequest**](ZoneRequest.md)|  | 
 
 ### Return type
 
@@ -3930,13 +3900,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## deleteZoneSpace
 
-> deleteZoneSpace(cloudPk, id, modelPk, projectPk, zonePk, zoneSpaceRequest)
+> deleteZoneSpace(cloudPk, id, modelPk, projectPk, zonePk)
 
 Delete a space of a zone
 
@@ -3970,8 +3940,7 @@ let id = 56; // Number | A unique integer value identifying this space.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let zonePk = 56; // Number | A unique integer value identifying this zone.
-let zoneSpaceRequest = new bimdata.ZoneSpaceRequest(); // ZoneSpaceRequest | 
-apiInstance.deleteZoneSpace(cloudPk, id, modelPk, projectPk, zonePk, zoneSpaceRequest).then(() => {
+apiInstance.deleteZoneSpace(cloudPk, id, modelPk, projectPk, zonePk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -3989,7 +3958,6 @@ Name | Type | Description  | Notes
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **zonePk** | **Number**| A unique integer value identifying this zone. | 
- **zoneSpaceRequest** | [**ZoneSpaceRequest**](ZoneSpaceRequest.md)|  | 
 
 ### Return type
 
@@ -4001,7 +3969,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
@@ -8057,7 +8025,7 @@ null (empty response body)
 
 ## removeClassificationOfElement
 
-> removeClassificationOfElement(cloudPk, elementUuid, id, modelPk, projectPk, opts)
+> removeClassificationOfElement(cloudPk, elementUuid, id, modelPk, projectPk)
 
 Remove a classification from an element
 
@@ -8091,10 +8059,7 @@ let elementUuid = "elementUuid_example"; // String |
 let id = 56; // Number | A unique integer value identifying this classification.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let opts = {
-  'classificationRequest': new bimdata.ClassificationRequest() // ClassificationRequest | 
-};
-apiInstance.removeClassificationOfElement(cloudPk, elementUuid, id, modelPk, projectPk, opts).then(() => {
+apiInstance.removeClassificationOfElement(cloudPk, elementUuid, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -8112,7 +8077,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this classification. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **classificationRequest** | [**ClassificationRequest**](ClassificationRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -8124,13 +8088,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## removeDocumentOfElement
 
-> removeDocumentOfElement(cloudPk, elementUuid, id, modelPk, projectPk, documentRequest)
+> removeDocumentOfElement(cloudPk, elementUuid, id, modelPk, projectPk)
 
 Remove a documents from an element
 
@@ -8164,8 +8128,7 @@ let elementUuid = "elementUuid_example"; // String |
 let id = 56; // Number | A unique integer value identifying this document.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let documentRequest = new bimdata.DocumentRequest(); // DocumentRequest | 
-apiInstance.removeDocumentOfElement(cloudPk, elementUuid, id, modelPk, projectPk, documentRequest).then(() => {
+apiInstance.removeDocumentOfElement(cloudPk, elementUuid, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -8183,7 +8146,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this document. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **documentRequest** | [**DocumentRequest**](DocumentRequest.md)|  | 
 
 ### Return type
 
@@ -8195,13 +8157,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## removeElementPropertySet
 
-> removeElementPropertySet(cloudPk, elementUuid, id, modelPk, projectPk, opts)
+> removeElementPropertySet(cloudPk, elementUuid, id, modelPk, projectPk)
 
 Remove a PropertySet from an element
 
@@ -8235,10 +8197,7 @@ let elementUuid = "elementUuid_example"; // String |
 let id = 56; // Number | A unique integer value identifying this property set.
 let modelPk = 56; // Number | 
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let opts = {
-  'propertySetRequest': new bimdata.PropertySetRequest() // PropertySetRequest | 
-};
-apiInstance.removeElementPropertySet(cloudPk, elementUuid, id, modelPk, projectPk, opts).then(() => {
+apiInstance.removeElementPropertySet(cloudPk, elementUuid, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -8256,7 +8215,6 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this property set. | 
  **modelPk** | **Number**|  | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **propertySetRequest** | [**PropertySetRequest**](PropertySetRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -8268,13 +8226,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## removeElementPropertySetProperty
 
-> removeElementPropertySetProperty(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk, propertyRequest)
+> removeElementPropertySetProperty(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk)
 
 Remove a property from a PropertySet
 
@@ -8309,8 +8267,7 @@ let id = 56; // Number | A unique integer value identifying this property.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let propertysetPk = 56; // Number | A unique integer value identifying this property set.
-let propertyRequest = new bimdata.PropertyRequest(); // PropertyRequest | 
-apiInstance.removeElementPropertySetProperty(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk, propertyRequest).then(() => {
+apiInstance.removeElementPropertySetProperty(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -8329,7 +8286,6 @@ Name | Type | Description  | Notes
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **propertysetPk** | **Number**| A unique integer value identifying this property set. | 
- **propertyRequest** | [**PropertyRequest**](PropertyRequest.md)|  | 
 
 ### Return type
 
@@ -8341,13 +8297,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## removeElementPropertySetPropertyDefinition
 
-> removeElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk, opts)
+> removeElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk)
 
 Delete a Definition to a Property
 
@@ -8383,10 +8339,7 @@ let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let propertyPk = 56; // Number | A unique integer value identifying this property.
 let propertysetPk = 56; // Number | A unique integer value identifying this property set.
-let opts = {
-  'propertyDefinitionRequest': new bimdata.PropertyDefinitionRequest() // PropertyDefinitionRequest | 
-};
-apiInstance.removeElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk, opts).then(() => {
+apiInstance.removeElementPropertySetPropertyDefinition(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertysetPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -8406,7 +8359,6 @@ Name | Type | Description  | Notes
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **propertyPk** | **Number**| A unique integer value identifying this property. | 
  **propertysetPk** | **Number**| A unique integer value identifying this property set. | 
- **propertyDefinitionRequest** | [**PropertyDefinitionRequest**](PropertyDefinitionRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -8418,13 +8370,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## removeElementPropertySetPropertyDefinitionUnit
 
-> removeElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, unitRequest)
+> removeElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk)
 
 Remove a Unit from a Definition
 
@@ -8461,8 +8413,7 @@ let projectPk = 56; // Number | A unique integer value identifying this project.
 let propertyPk = 56; // Number | A unique integer value identifying this property.
 let propertydefinitionPk = 56; // Number | A unique integer value identifying this property definition.
 let propertysetPk = 56; // Number | A unique integer value identifying this property set.
-let unitRequest = new bimdata.UnitRequest(); // UnitRequest | 
-apiInstance.removeElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk, unitRequest).then(() => {
+apiInstance.removeElementPropertySetPropertyDefinitionUnit(cloudPk, elementUuid, id, modelPk, projectPk, propertyPk, propertydefinitionPk, propertysetPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -8483,7 +8434,6 @@ Name | Type | Description  | Notes
  **propertyPk** | **Number**| A unique integer value identifying this property. | 
  **propertydefinitionPk** | **Number**| A unique integer value identifying this property definition. | 
  **propertysetPk** | **Number**| A unique integer value identifying this property set. | 
- **unitRequest** | [**UnitRequest**](UnitRequest.md)|  | 
 
 ### Return type
 
@@ -8495,13 +8445,13 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## removeElementsFromClassification
 
-> removeElementsFromClassification(cloudPk, modelClassificationPk, modelPk, projectPk, uuid, elementRequest)
+> removeElementsFromClassification(cloudPk, modelClassificationPk, modelPk, projectPk, uuid)
 
 Remove the classification from all elements
 
@@ -8535,8 +8485,7 @@ let modelClassificationPk = 56; // Number | A unique integer value identifying t
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let uuid = "uuid_example"; // String | 
-let elementRequest = new bimdata.ElementRequest(); // ElementRequest | 
-apiInstance.removeElementsFromClassification(cloudPk, modelClassificationPk, modelPk, projectPk, uuid, elementRequest).then(() => {
+apiInstance.removeElementsFromClassification(cloudPk, modelClassificationPk, modelPk, projectPk, uuid).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -8554,7 +8503,6 @@ Name | Type | Description  | Notes
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **uuid** | **String**|  | 
- **elementRequest** | [**ElementRequest**](ElementRequest.md)|  | 
 
 ### Return type
 
@@ -8566,7 +8514,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
