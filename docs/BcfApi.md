@@ -2150,10 +2150,10 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = 56; // Number | 
 let opts = {
-  'format': "format_example", // String | 
-  'ifcs': [null], // [Number] | 
+  'format': "format_example", // String | format
+  'ifcs': "ifcs_example", // String | ifcs
   'imgFormat': "imgFormat_example", // String | All snapshot_data will be returned as url instead of base64
-  'models': [null] // [Number] | 
+  'models': "models_example" // String | models
 };
 apiInstance.getFullTopics(projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -2169,10 +2169,10 @@ apiInstance.getFullTopics(projectsPk, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **Number**|  | 
- **format** | **String**|  | [optional] 
- **ifcs** | [**[Number]**](Number.md)|  | [optional] 
+ **format** | **String**| format | [optional] 
+ **ifcs** | **String**| ifcs | [optional] 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
- **models** | [**[Number]**](Number.md)|  | [optional] 
+ **models** | **String**| models | [optional] 
 
 ### Return type
 
@@ -2222,9 +2222,9 @@ let apiInstance = new bimdata.BcfApi();
 let guid = "guid_example"; // String | 
 let projectsPk = 56; // Number | 
 let opts = {
-  'format': "format_example", // String | 
-  'ifcs': [null], // [Number] | 
-  'models': [null] // [Number] | 
+  'format': "format_example", // String | format
+  'ifcs': "ifcs_example", // String | ifcs
+  'models': "models_example" // String | models
 };
 apiInstance.getRelatedTopics(guid, projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -2241,9 +2241,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | **String**|  | 
  **projectsPk** | **Number**|  | 
- **format** | **String**|  | [optional] 
- **ifcs** | [**[Number]**](Number.md)|  | [optional] 
- **models** | [**[Number]**](Number.md)|  | [optional] 
+ **format** | **String**| format | [optional] 
+ **ifcs** | **String**| ifcs | [optional] 
+ **models** | **String**| models | [optional] 
 
 ### Return type
 
@@ -2486,9 +2486,9 @@ let apiInstance = new bimdata.BcfApi();
 let guid = "guid_example"; // String | 
 let projectsPk = 56; // Number | 
 let opts = {
-  'format': "format_example", // String | 
-  'ifcs': [null], // [Number] | 
-  'models': [null] // [Number] | 
+  'format': "format_example", // String | format
+  'ifcs': "ifcs_example", // String | ifcs
+  'models': "models_example" // String | models
 };
 apiInstance.getTopicDocumentReferences(guid, projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -2505,9 +2505,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | **String**|  | 
  **projectsPk** | **Number**|  | 
- **format** | **String**|  | [optional] 
- **ifcs** | [**[Number]**](Number.md)|  | [optional] 
- **models** | [**[Number]**](Number.md)|  | [optional] 
+ **format** | **String**| format | [optional] 
+ **ifcs** | **String**| ifcs | [optional] 
+ **models** | **String**| models | [optional] 
 
 ### Return type
 
@@ -2623,9 +2623,9 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = 56; // Number | 
 let opts = {
-  'format': "format_example", // String | 
-  'ifcs': [null], // [Number] | 
-  'models': [null] // [Number] | 
+  'format': "format_example", // String | format
+  'ifcs': "ifcs_example", // String | ifcs
+  'models': "models_example" // String | models
 };
 apiInstance.getTopics(projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -2641,9 +2641,9 @@ apiInstance.getTopics(projectsPk, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **Number**|  | 
- **format** | **String**|  | [optional] 
- **ifcs** | [**[Number]**](Number.md)|  | [optional] 
- **models** | [**[Number]**](Number.md)|  | [optional] 
+ **format** | **String**| format | [optional] 
+ **ifcs** | **String**| ifcs | [optional] 
+ **models** | **String**| models | [optional] 
 
 ### Return type
 

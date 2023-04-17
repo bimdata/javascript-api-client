@@ -24,11 +24,12 @@ class Pin {
      * Constructs a new <code>Pin</code>.
      * Adds nested create feature
      * @alias module:model/Pin
+     * @param id {Number} 
      * @param point {module:model/Point} 
      */
-    constructor(point) { 
+    constructor(id, point) { 
         
-        Pin.initialize(this, point);
+        Pin.initialize(this, id, point);
     }
 
     /**
@@ -36,7 +37,8 @@ class Pin {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, point) { 
+    static initialize(obj, id, point) { 
+        obj['id'] = id;
         obj['point'] = point;
     }
 
@@ -51,6 +53,9 @@ class Pin {
         if (data) {
             obj = obj || new Pin();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -66,6 +71,11 @@ class Pin {
 
 
 }
+
+/**
+ * @member {Number} id
+ */
+Pin.prototype['id'] = undefined;
 
 /**
  * @member {String} name
