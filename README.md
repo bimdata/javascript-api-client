@@ -737,6 +737,7 @@ Class | Method | HTTP request | Description
  - [bimdata.ModelErrorsRequest](docs/ModelErrorsRequest.md)
  - [bimdata.ModelFiles](docs/ModelFiles.md)
  - [bimdata.ModelRequest](docs/ModelRequest.md)
+ - [bimdata.ModelSerializerWithoutChildren](docs/ModelSerializerWithoutChildren.md)
  - [bimdata.ModelWithPositioningPlan](docs/ModelWithPositioningPlan.md)
  - [bimdata.Organization](docs/Organization.md)
  - [bimdata.OrganizationRequest](docs/OrganizationRequest.md)

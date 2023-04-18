@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**isUnsupervised** | **Boolean** |  | [readonly] 
 **managedBy** | **String** |  | 
 **role** | **Number** |  | 
 **totalSize** | **Number** |  | [readonly] 

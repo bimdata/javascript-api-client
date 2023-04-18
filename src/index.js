@@ -98,6 +98,7 @@ import ModelErrors from './model/ModelErrors';
 import ModelErrorsRequest from './model/ModelErrorsRequest';
 import ModelFiles from './model/ModelFiles';
 import ModelRequest from './model/ModelRequest';
+import ModelSerializerWithoutChildren from './model/ModelSerializerWithoutChildren';
 import ModelWithPositioningPlan from './model/ModelWithPositioningPlan';
 import Organization from './model/Organization';
 import OrganizationRequest from './model/OrganizationRequest';
@@ -817,6 +818,12 @@ export {
      * @property {module:model/ModelRequest}
      */
     ModelRequest,
+
+    /**
+     * The ModelSerializerWithoutChildren model constructor.
+     * @property {module:model/ModelSerializerWithoutChildren}
+     */
+    ModelSerializerWithoutChildren,
 
     /**
      * The ModelWithPositioningPlan model constructor.

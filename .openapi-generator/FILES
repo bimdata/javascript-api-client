@@ -92,6 +92,7 @@ docs/ModelErrors.md
 docs/ModelErrorsRequest.md
 docs/ModelFiles.md
 docs/ModelRequest.md
+docs/ModelSerializerWithoutChildren.md
 docs/ModelWithPositioningPlan.md
 docs/Organization.md
 docs/OrganizationRequest.md
@@ -353,6 +354,7 @@ src/model/ModelErrors.js
 src/model/ModelErrorsRequest.js
 src/model/ModelFiles.js
 src/model/ModelRequest.js
+src/model/ModelSerializerWithoutChildren.js
 src/model/ModelWithPositioningPlan.js
 src/model/Organization.js
 src/model/OrganizationRequest.js
@@ -608,6 +610,7 @@ test/model/ModelErrors.spec.js
 test/model/ModelErrorsRequest.spec.js
 test/model/ModelFiles.spec.js
 test/model/ModelRequest.spec.js
+test/model/ModelSerializerWithoutChildren.spec.js
 test/model/ModelWithPositioningPlan.spec.js
 test/model/Organization.spec.js
 test/model/OrganizationRequest.spec.js

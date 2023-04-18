@@ -13,20 +13,19 @@
 
 import ApiClient from '../ApiClient';
 import Document from './Document';
-import ModelSerializerWithoutChildren from './ModelSerializerWithoutChildren';
 import User from './User';
 
 /**
- * The Model model module.
- * @module model/Model
+ * The ModelSerializerWithoutChildren model module.
+ * @module model/ModelSerializerWithoutChildren
  * @version 0.0.0
  */
-class Model {
+class ModelSerializerWithoutChildren {
     /**
-     * Constructs a new <code>Model</code>.
-     * @alias module:model/Model
+     * Constructs a new <code>ModelSerializerWithoutChildren</code>.
+     * @alias module:model/ModelSerializerWithoutChildren
      * @param id {Number} 
-     * @param type {module:model/Model.TypeEnum} 
+     * @param type {module:model/ModelSerializerWithoutChildren.TypeEnum} 
      * @param creator {module:model/User} 
      * @param status {String} 
      * @param createdAt {Date} 
@@ -45,11 +44,10 @@ class Model {
      * @param errors {Array.<String>} List of errors that happened during IFC processing
      * @param warnings {Array.<String>} List of warnings that happened during IFC processing
      * @param pageNumber {Number} The page number of the related pdf
-     * @param children {Array.<module:model/ModelSerializerWithoutChildren>} Contains additional pages of a pdf
      */
-    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, binary2dFile, projectId, errors, warnings, pageNumber, children) { 
+    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, binary2dFile, projectId, errors, warnings, pageNumber) { 
         
-        Model.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, binary2dFile, projectId, errors, warnings, pageNumber, children);
+        ModelSerializerWithoutChildren.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, binary2dFile, projectId, errors, warnings, pageNumber);
     }
 
     /**
@@ -57,7 +55,7 @@ class Model {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, binary2dFile, projectId, errors, warnings, pageNumber, children) { 
+    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, binary2dFile, projectId, errors, warnings, pageNumber) { 
         obj['id'] = id;
         obj['type'] = type;
         obj['creator'] = creator;
@@ -78,19 +76,18 @@ class Model {
         obj['errors'] = errors;
         obj['warnings'] = warnings;
         obj['page_number'] = pageNumber;
-        obj['children'] = children;
     }
 
     /**
-     * Constructs a <code>Model</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ModelSerializerWithoutChildren</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Model} obj Optional instance to populate.
-     * @return {module:model/Model} The populated <code>Model</code> instance.
+     * @param {module:model/ModelSerializerWithoutChildren} obj Optional instance to populate.
+     * @return {module:model/ModelSerializerWithoutChildren} The populated <code>ModelSerializerWithoutChildren</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Model();
+            obj = obj || new ModelSerializerWithoutChildren();
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
@@ -176,9 +173,6 @@ class Model {
             if (data.hasOwnProperty('page_number')) {
                 obj['page_number'] = ApiClient.convertToType(data['page_number'], 'Number');
             }
-            if (data.hasOwnProperty('children')) {
-                obj['children'] = ApiClient.convertToType(data['children'], [ModelSerializerWithoutChildren]);
-            }
         }
         return obj;
     }
@@ -189,157 +183,151 @@ class Model {
 /**
  * @member {Number} id
  */
-Model.prototype['id'] = undefined;
+ModelSerializerWithoutChildren.prototype['id'] = undefined;
 
 /**
  * @member {String} name
  */
-Model.prototype['name'] = undefined;
+ModelSerializerWithoutChildren.prototype['name'] = undefined;
 
 /**
- * @member {module:model/Model.TypeEnum} type
+ * @member {module:model/ModelSerializerWithoutChildren.TypeEnum} type
  */
-Model.prototype['type'] = undefined;
+ModelSerializerWithoutChildren.prototype['type'] = undefined;
 
 /**
  * @member {module:model/User} creator
  */
-Model.prototype['creator'] = undefined;
+ModelSerializerWithoutChildren.prototype['creator'] = undefined;
 
 /**
  * @member {String} status
  */
-Model.prototype['status'] = undefined;
+ModelSerializerWithoutChildren.prototype['status'] = undefined;
 
 /**
- * @member {module:model/Model.SourceEnum} source
+ * @member {module:model/ModelSerializerWithoutChildren.SourceEnum} source
  */
-Model.prototype['source'] = undefined;
+ModelSerializerWithoutChildren.prototype['source'] = undefined;
 
 /**
  * @member {Date} created_at
  */
-Model.prototype['created_at'] = undefined;
+ModelSerializerWithoutChildren.prototype['created_at'] = undefined;
 
 /**
  * @member {Date} updated_at
  */
-Model.prototype['updated_at'] = undefined;
+ModelSerializerWithoutChildren.prototype['updated_at'] = undefined;
 
 /**
  * @member {Number} document_id
  */
-Model.prototype['document_id'] = undefined;
+ModelSerializerWithoutChildren.prototype['document_id'] = undefined;
 
 /**
  * @member {module:model/Document} document
  */
-Model.prototype['document'] = undefined;
+ModelSerializerWithoutChildren.prototype['document'] = undefined;
 
 /**
  * @member {String} structure_file
  */
-Model.prototype['structure_file'] = undefined;
+ModelSerializerWithoutChildren.prototype['structure_file'] = undefined;
 
 /**
  * @member {String} systems_file
  */
-Model.prototype['systems_file'] = undefined;
+ModelSerializerWithoutChildren.prototype['systems_file'] = undefined;
 
 /**
  * @member {String} map_file
  */
-Model.prototype['map_file'] = undefined;
+ModelSerializerWithoutChildren.prototype['map_file'] = undefined;
 
 /**
  * @member {String} gltf_file
  */
-Model.prototype['gltf_file'] = undefined;
+ModelSerializerWithoutChildren.prototype['gltf_file'] = undefined;
 
 /**
  * @member {String} preview_file
  */
-Model.prototype['preview_file'] = undefined;
+ModelSerializerWithoutChildren.prototype['preview_file'] = undefined;
 
 /**
  * DEPRECATED: Use 'preview_file' instead.
  * @member {String} viewer_360_file
  */
-Model.prototype['viewer_360_file'] = undefined;
+ModelSerializerWithoutChildren.prototype['viewer_360_file'] = undefined;
 
 /**
  * @member {String} xkt_file
  */
-Model.prototype['xkt_file'] = undefined;
+ModelSerializerWithoutChildren.prototype['xkt_file'] = undefined;
 
 /**
  * @member {String} binary_2d_file
  */
-Model.prototype['binary_2d_file'] = undefined;
+ModelSerializerWithoutChildren.prototype['binary_2d_file'] = undefined;
 
 /**
  * @member {Number} project_id
  */
-Model.prototype['project_id'] = undefined;
+ModelSerializerWithoutChildren.prototype['project_id'] = undefined;
 
 /**
  * [x,y,z] array of the position of the local_placement in world coordinates
  * @member {Array.<Number>} world_position
  */
-Model.prototype['world_position'] = undefined;
+ModelSerializerWithoutChildren.prototype['world_position'] = undefined;
 
 /**
  * How many meters a unit represents
  * @member {Number} size_ratio
  */
-Model.prototype['size_ratio'] = undefined;
+ModelSerializerWithoutChildren.prototype['size_ratio'] = undefined;
 
 /**
  * List of errors that happened during IFC processing
  * @member {Array.<String>} errors
  */
-Model.prototype['errors'] = undefined;
+ModelSerializerWithoutChildren.prototype['errors'] = undefined;
 
 /**
  * List of warnings that happened during IFC processing
  * @member {Array.<String>} warnings
  */
-Model.prototype['warnings'] = undefined;
+ModelSerializerWithoutChildren.prototype['warnings'] = undefined;
 
 /**
  * @member {Boolean} archived
  */
-Model.prototype['archived'] = undefined;
+ModelSerializerWithoutChildren.prototype['archived'] = undefined;
 
 /**
  * This field is only for information. Updating it won't impact the export.
  * @member {String} version
  */
-Model.prototype['version'] = undefined;
+ModelSerializerWithoutChildren.prototype['version'] = undefined;
 
 /**
  * This field is only for information. Updating it won't impact the export.
  * @member {Array.<Array.<Number>>} north_vector
  */
-Model.prototype['north_vector'] = undefined;
+ModelSerializerWithoutChildren.prototype['north_vector'] = undefined;
 
 /**
  * This is the angle in clockwise degree to apply on the 2D to optimise the horizontality of objects. This field is only for information. Updating it won't impact the export.
  * @member {Number} recommanded_2d_angle
  */
-Model.prototype['recommanded_2d_angle'] = undefined;
+ModelSerializerWithoutChildren.prototype['recommanded_2d_angle'] = undefined;
 
 /**
  * The page number of the related pdf
  * @member {Number} page_number
  */
-Model.prototype['page_number'] = undefined;
-
-/**
- * Contains additional pages of a pdf
- * @member {Array.<module:model/ModelSerializerWithoutChildren>} children
- */
-Model.prototype['children'] = undefined;
+ModelSerializerWithoutChildren.prototype['page_number'] = undefined;
 
 
 
@@ -350,7 +338,7 @@ Model.prototype['children'] = undefined;
  * @enum {String}
  * @readonly
  */
-Model['TypeEnum'] = {
+ModelSerializerWithoutChildren['TypeEnum'] = {
 
     /**
      * value: "IFC"
@@ -431,7 +419,7 @@ Model['TypeEnum'] = {
  * @enum {String}
  * @readonly
  */
-Model['SourceEnum'] = {
+ModelSerializerWithoutChildren['SourceEnum'] = {
 
     /**
      * value: "UPLOAD"
@@ -466,5 +454,5 @@ Model['SourceEnum'] = {
 
 
 
-export default Model;
+export default ModelSerializerWithoutChildren;
 

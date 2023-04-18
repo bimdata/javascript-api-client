@@ -22,7 +22,6 @@ class Size {
     /**
      * Constructs a new <code>Size</code>.
      * @alias module:model/Size
-     * @param isUnsupervised {Boolean} 
      * @param managedBy {module:model/Size.ManagedByEnum} 
      * @param role {module:model/Size.RoleEnum} 
      * @param totalSize {Number} 
@@ -34,9 +33,9 @@ class Size {
      * @param remainingTotalSizePercent {Number} 
      * @param remainingSmartDataSizePercent {Number} 
      */
-    constructor(isUnsupervised, managedBy, role, totalSize, smartDataSize, totalSizeAvailable, smartDataSizeAvailable, remainingTotalSize, remainingSmartDataSize, remainingTotalSizePercent, remainingSmartDataSizePercent) { 
+    constructor(managedBy, role, totalSize, smartDataSize, totalSizeAvailable, smartDataSizeAvailable, remainingTotalSize, remainingSmartDataSize, remainingTotalSizePercent, remainingSmartDataSizePercent) { 
         
-        Size.initialize(this, isUnsupervised, managedBy, role, totalSize, smartDataSize, totalSizeAvailable, smartDataSizeAvailable, remainingTotalSize, remainingSmartDataSize, remainingTotalSizePercent, remainingSmartDataSizePercent);
+        Size.initialize(this, managedBy, role, totalSize, smartDataSize, totalSizeAvailable, smartDataSizeAvailable, remainingTotalSize, remainingSmartDataSize, remainingTotalSizePercent, remainingSmartDataSizePercent);
     }
 
     /**
@@ -44,8 +43,7 @@ class Size {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, isUnsupervised, managedBy, role, totalSize, smartDataSize, totalSizeAvailable, smartDataSizeAvailable, remainingTotalSize, remainingSmartDataSize, remainingTotalSizePercent, remainingSmartDataSizePercent) { 
-        obj['is_unsupervised'] = isUnsupervised;
+    static initialize(obj, managedBy, role, totalSize, smartDataSize, totalSizeAvailable, smartDataSizeAvailable, remainingTotalSize, remainingSmartDataSize, remainingTotalSizePercent, remainingSmartDataSizePercent) { 
         obj['managed_by'] = managedBy;
         obj['role'] = role;
         obj['total_size'] = totalSize;
@@ -69,9 +67,6 @@ class Size {
         if (data) {
             obj = obj || new Size();
 
-            if (data.hasOwnProperty('is_unsupervised')) {
-                obj['is_unsupervised'] = ApiClient.convertToType(data['is_unsupervised'], 'Boolean');
-            }
             if (data.hasOwnProperty('managed_by')) {
                 obj['managed_by'] = ApiClient.convertToType(data['managed_by'], 'String');
             }
@@ -108,11 +103,6 @@ class Size {
 
 
 }
-
-/**
- * @member {Boolean} is_unsupervised
- */
-Size.prototype['is_unsupervised'] = undefined;
 
 /**
  * @member {module:model/Size.ManagedByEnum} managed_by
