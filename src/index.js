@@ -57,8 +57,6 @@ import Extensions from './model/Extensions';
 import Feature from './model/Feature';
 import FeatureRequest from './model/FeatureRequest';
 import Folder from './model/Folder';
-import FolderGroupPermission from './model/FolderGroupPermission';
-import FolderGroupPermissionRequest from './model/FolderGroupPermissionRequest';
 import FolderTree from './model/FolderTree';
 import FolderUserProject from './model/FolderUserProject';
 import FolderWithoutChildren from './model/FolderWithoutChildren';
@@ -67,6 +65,7 @@ import FullTopic from './model/FullTopic';
 import FullTopicRequest from './model/FullTopicRequest';
 import Group from './model/Group';
 import GroupFolder from './model/GroupFolder';
+import GroupFolderRead from './model/GroupFolderRead';
 import GroupRequest from './model/GroupRequest';
 import IfcAccessToken from './model/IfcAccessToken';
 import IfcAccessTokenRequest from './model/IfcAccessTokenRequest';
@@ -574,18 +573,6 @@ export {
     Folder,
 
     /**
-     * The FolderGroupPermission model constructor.
-     * @property {module:model/FolderGroupPermission}
-     */
-    FolderGroupPermission,
-
-    /**
-     * The FolderGroupPermissionRequest model constructor.
-     * @property {module:model/FolderGroupPermissionRequest}
-     */
-    FolderGroupPermissionRequest,
-
-    /**
      * The FolderTree model constructor.
      * @property {module:model/FolderTree}
      */
@@ -632,6 +619,12 @@ export {
      * @property {module:model/GroupFolder}
      */
     GroupFolder,
+
+    /**
+     * The GroupFolderRead model constructor.
+     * @property {module:model/GroupFolderRead}
+     */
+    GroupFolderRead,
 
     /**
      * The GroupRequest model constructor.

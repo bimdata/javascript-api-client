@@ -50,6 +50,9 @@ class PatchedGroupFolderRequest {
             if (data.hasOwnProperty('permission')) {
                 obj['permission'] = ApiClient.convertToType(data['permission'], 'Number');
             }
+            if (data.hasOwnProperty('propagate')) {
+                obj['propagate'] = ApiClient.convertToType(data['propagate'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -58,10 +61,15 @@ class PatchedGroupFolderRequest {
 }
 
 /**
- * Group's permission for a folder
  * @member {module:model/PatchedGroupFolderRequest.PermissionEnum} permission
  */
 PatchedGroupFolderRequest.prototype['permission'] = undefined;
+
+/**
+ * @member {Boolean} propagate
+ * @default false
+ */
+PatchedGroupFolderRequest.prototype['propagate'] = false;
 
 
 
@@ -90,7 +98,13 @@ PatchedGroupFolderRequest['PermissionEnum'] = {
      * value: 100
      * @const
      */
-    "100": 100
+    "100": 100,
+
+    /**
+     * value: null
+     * @const
+     */
+    "null": null
 };
 
 

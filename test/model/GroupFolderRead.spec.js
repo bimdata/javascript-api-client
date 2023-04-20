@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.FolderGroupPermissionRequest();
+    instance = new bimdata.GroupFolderRead();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,22 @@
       object[property] = value;
   }
 
-  describe('FolderGroupPermissionRequest', function() {
-    it('should create an instance of FolderGroupPermissionRequest', function() {
-      // uncomment below and update the code to test FolderGroupPermissionRequest
-      //var instance = new bimdata.FolderGroupPermissionRequest();
-      //expect(instance).to.be.a(bimdata.FolderGroupPermissionRequest);
+  describe('GroupFolderRead', function() {
+    it('should create an instance of GroupFolderRead', function() {
+      // uncomment below and update the code to test GroupFolderRead
+      //var instance = new bimdata.GroupFolderRead();
+      //expect(instance).to.be.a(bimdata.GroupFolderRead);
     });
 
     it('should have the property group (base name: "group")', function() {
       // uncomment below and update the code to test the property group
-      //var instance = new bimdata.FolderGroupPermissionRequest();
+      //var instance = new bimdata.GroupFolderRead();
       //expect(instance).to.be();
     });
 
     it('should have the property permission (base name: "permission")', function() {
       // uncomment below and update the code to test the property permission
-      //var instance = new bimdata.FolderGroupPermissionRequest();
+      //var instance = new bimdata.GroupFolderRead();
       //expect(instance).to.be();
     });
 

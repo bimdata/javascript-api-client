@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **createdAt** | **Date** | Creation date | [readonly] 
 **updatedAt** | **Date** | Date of the last update | [readonly] 
 **createdBy** | [**ShortUser**](ShortUser.md) |  | [readonly] 
-**groupsPermissions** | [**[FolderGroupPermission]**](FolderGroupPermission.md) |  | [readonly] 
+**groupsPermissions** | [**[GroupFolderRead]**](GroupFolderRead.md) | List of group permissions | [readonly] 
 **defaultPermission** | **Number** | Permission for a Folder | [optional] 
 **userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 
 

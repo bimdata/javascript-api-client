@@ -12,25 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import FolderWithoutChildren from './FolderWithoutChildren';
 import Group from './Group';
 
 /**
- * The GroupFolder model module.
- * @module model/GroupFolder
+ * The GroupFolderRead model module.
+ * @module model/GroupFolderRead
  * @version 0.0.0
  */
-class GroupFolder {
+class GroupFolderRead {
     /**
-     * Constructs a new <code>GroupFolder</code>.
-     * @alias module:model/GroupFolder
-     * @param folder {module:model/FolderWithoutChildren} 
+     * Constructs a new <code>GroupFolderRead</code>.
+     * @alias module:model/GroupFolderRead
      * @param group {module:model/Group} 
-     * @param permission {module:model/GroupFolder.PermissionEnum} 
+     * @param permission {module:model/GroupFolderRead.PermissionEnum} 
      */
-    constructor(folder, group, permission) { 
+    constructor(group, permission) { 
         
-        GroupFolder.initialize(this, folder, group, permission);
+        GroupFolderRead.initialize(this, group, permission);
     }
 
     /**
@@ -38,28 +36,24 @@ class GroupFolder {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, folder, group, permission) { 
-        obj['folder'] = folder;
+    static initialize(obj, group, permission) { 
         obj['group'] = group;
         obj['permission'] = permission;
     }
 
     /**
-     * Constructs a <code>GroupFolder</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>GroupFolderRead</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/GroupFolder} obj Optional instance to populate.
-     * @return {module:model/GroupFolder} The populated <code>GroupFolder</code> instance.
+     * @param {module:model/GroupFolderRead} obj Optional instance to populate.
+     * @return {module:model/GroupFolderRead} The populated <code>GroupFolderRead</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new GroupFolder();
+            obj = obj || new GroupFolderRead();
 
-            if (data.hasOwnProperty('folder')) {
-                obj['folder'] = ApiClient.convertToType(data['folder'], FolderWithoutChildren);
-            }
             if (data.hasOwnProperty('group')) {
-                obj['group'] = ApiClient.convertToType(data['group'], Group);
+                obj['group'] = Group.constructFromObject(data['group']);
             }
             if (data.hasOwnProperty('permission')) {
                 obj['permission'] = ApiClient.convertToType(data['permission'], 'Number');
@@ -72,19 +66,14 @@ class GroupFolder {
 }
 
 /**
- * @member {module:model/FolderWithoutChildren} folder
- */
-GroupFolder.prototype['folder'] = undefined;
-
-/**
  * @member {module:model/Group} group
  */
-GroupFolder.prototype['group'] = undefined;
+GroupFolderRead.prototype['group'] = undefined;
 
 /**
- * @member {module:model/GroupFolder.PermissionEnum} permission
+ * @member {module:model/GroupFolderRead.PermissionEnum} permission
  */
-GroupFolder.prototype['permission'] = undefined;
+GroupFolderRead.prototype['permission'] = undefined;
 
 
 
@@ -95,7 +84,7 @@ GroupFolder.prototype['permission'] = undefined;
  * @enum {Number}
  * @readonly
  */
-GroupFolder['PermissionEnum'] = {
+GroupFolderRead['PermissionEnum'] = {
 
     /**
      * value: 1
@@ -124,5 +113,5 @@ GroupFolder['PermissionEnum'] = {
 
 
 
-export default GroupFolder;
+export default GroupFolderRead;
 

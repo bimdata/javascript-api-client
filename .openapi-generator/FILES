@@ -49,8 +49,6 @@ docs/Extensions.md
 docs/Feature.md
 docs/FeatureRequest.md
 docs/Folder.md
-docs/FolderGroupPermission.md
-docs/FolderGroupPermissionRequest.md
 docs/FolderTree.md
 docs/FolderUserProject.md
 docs/FolderWithoutChildren.md
@@ -59,6 +57,7 @@ docs/FullTopic.md
 docs/FullTopicRequest.md
 docs/Group.md
 docs/GroupFolder.md
+docs/GroupFolderRead.md
 docs/GroupRequest.md
 docs/IfcAccessToken.md
 docs/IfcAccessTokenRequest.md
@@ -313,8 +312,6 @@ src/model/Extensions.js
 src/model/Feature.js
 src/model/FeatureRequest.js
 src/model/Folder.js
-src/model/FolderGroupPermission.js
-src/model/FolderGroupPermissionRequest.js
 src/model/FolderTree.js
 src/model/FolderUserProject.js
 src/model/FolderWithoutChildren.js
@@ -323,6 +320,7 @@ src/model/FullTopic.js
 src/model/FullTopicRequest.js
 src/model/Group.js
 src/model/GroupFolder.js
+src/model/GroupFolderRead.js
 src/model/GroupRequest.js
 src/model/IfcAccessToken.js
 src/model/IfcAccessTokenRequest.js
@@ -569,8 +567,6 @@ test/model/Extensions.spec.js
 test/model/Feature.spec.js
 test/model/FeatureRequest.spec.js
 test/model/Folder.spec.js
-test/model/FolderGroupPermission.spec.js
-test/model/FolderGroupPermissionRequest.spec.js
 test/model/FolderTree.spec.js
 test/model/FolderUserProject.spec.js
 test/model/FolderWithoutChildren.spec.js
@@ -579,6 +575,7 @@ test/model/FullTopic.spec.js
 test/model/FullTopicRequest.spec.js
 test/model/Group.spec.js
 test/model/GroupFolder.spec.js
+test/model/GroupFolderRead.spec.js
 test/model/GroupRequest.spec.js
 test/model/IfcAccessToken.spec.js
 test/model/IfcAccessTokenRequest.spec.js

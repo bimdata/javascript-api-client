@@ -325,7 +325,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**updateCloudUser**](docs/CollaborationApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | Change the user role in the cloud
 *bimdata.CollaborationApi* | [**updateDocument**](docs/CollaborationApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update some fields of the document
 *bimdata.CollaborationApi* | [**updateFolder**](docs/CollaborationApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update some fields of a folder
-*bimdata.CollaborationApi* | [**updateGroupFolder**](docs/CollaborationApi.md#updateGroupFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/group/{id} | Update the permission of a group on a folder
+*bimdata.CollaborationApi* | [**updateGroupFolder**](docs/CollaborationApi.md#updateGroupFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/group/{id} | Update the permission of a group on a folder. When propagate is set to True, the permission of all children in the folder will be updated.
 *bimdata.CollaborationApi* | [**updateManageGroup**](docs/CollaborationApi.md#updateManageGroup) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update some fields of a group
 *bimdata.CollaborationApi* | [**updateProject**](docs/CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
 *bimdata.CollaborationApi* | [**updateProjectAccessToken**](docs/CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
@@ -696,8 +696,6 @@ Class | Method | HTTP request | Description
  - [bimdata.Feature](docs/Feature.md)
  - [bimdata.FeatureRequest](docs/FeatureRequest.md)
  - [bimdata.Folder](docs/Folder.md)
- - [bimdata.FolderGroupPermission](docs/FolderGroupPermission.md)
- - [bimdata.FolderGroupPermissionRequest](docs/FolderGroupPermissionRequest.md)
  - [bimdata.FolderTree](docs/FolderTree.md)
  - [bimdata.FolderUserProject](docs/FolderUserProject.md)
  - [bimdata.FolderWithoutChildren](docs/FolderWithoutChildren.md)
@@ -706,6 +704,7 @@ Class | Method | HTTP request | Description
  - [bimdata.FullTopicRequest](docs/FullTopicRequest.md)
  - [bimdata.Group](docs/Group.md)
  - [bimdata.GroupFolder](docs/GroupFolder.md)
+ - [bimdata.GroupFolderRead](docs/GroupFolderRead.md)
  - [bimdata.GroupRequest](docs/GroupRequest.md)
  - [bimdata.IfcAccessToken](docs/IfcAccessToken.md)
  - [bimdata.IfcAccessTokenRequest](docs/IfcAccessTokenRequest.md)

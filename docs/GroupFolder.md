@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **folder** | [**FolderWithoutChildren**](FolderWithoutChildren.md) |  | [readonly] 
 **group** | [**Group**](Group.md) |  | [readonly] 
-**permission** | **Number** | Group&#39;s permission for a folder | [optional] 
+**permission** | **Number** |  | 
 
 
 
@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 * `50` (value: `50`)
 
 * `100` (value: `100`)
+
+* `null` (value: `null`)
 
 
 

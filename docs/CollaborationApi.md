@@ -101,7 +101,7 @@ Method | HTTP request | Description
 [**updateCloudUser**](CollaborationApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | Change the user role in the cloud
 [**updateDocument**](CollaborationApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update some fields of the document
 [**updateFolder**](CollaborationApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update some fields of a folder
-[**updateGroupFolder**](CollaborationApi.md#updateGroupFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/group/{id} | Update the permission of a group on a folder
+[**updateGroupFolder**](CollaborationApi.md#updateGroupFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/group/{id} | Update the permission of a group on a folder. When propagate is set to True, the permission of all children in the folder will be updated.
 [**updateManageGroup**](CollaborationApi.md#updateManageGroup) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update some fields of a group
 [**updateProject**](CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
 [**updateProjectAccessToken**](CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
@@ -954,7 +954,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;DWG&#39;, &#39;POINT_CLOUD&#39;, &#39;DXF&#39;, &#39;OBJ&#39;, &#39;IFC&#39;, &#39;GLTF&#39;, &#39;DAE&#39;, &#39;BFX&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;POINT_CLOUD&#39;, &#39;DAE&#39;, &#39;GLTF&#39;, &#39;IFC&#39;, &#39;OBJ&#39;, &#39;DWG&#39;, &#39;BFX&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -6341,7 +6341,7 @@ Name | Type | Description  | Notes
 
 Update some fields of a folder
 
- Update some fields of a folder. Only project admins can update the &#x60;default_permission&#x60; field.  &#x60;default_permission&#x60; choices are : &#x60;&#x60;&#x60; 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE &#x60;&#x60;&#x60; When this route is used, the permission of all children in the folder will be updated unless a child has already been updated with this route. In this case, if the updated permission is the same as the previously modified child&#39;s, the child will lose its \&quot;independence\&quot; and follow the parent&#39;s future permission when it is modified again.  Caution: The &#39;default_permission&#39; field is not applied to users belonging to one or more groups.   Required scopes: document:write
+ Update some fields of a folder. Only project admins can update the &#x60;default_permission&#x60; field.  &#x60;default_permission&#x60; choices are : &#x60;&#x60;&#x60; 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE &#x60;&#x60;&#x60; When propagate is set to True, the permission of all children in the folder will be updated.  Caution: The &#39;default_permission&#39; field is not applied to users belonging to one or more groups.   Required scopes: document:write
 
 ### Example
 
@@ -6408,9 +6408,9 @@ Name | Type | Description  | Notes
 
 > GroupFolder updateGroupFolder(cloudPk, folderPk, id, projectPk, opts)
 
-Update the permission of a group on a folder
+Update the permission of a group on a folder. When propagate is set to True, the permission of all children in the folder will be updated.
 
- Update the permission of a group on a folder. Permissions choices are : &#x60;&#x60;&#x60; 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE &#x60;&#x60;&#x60; When this route is used, the permission of all children in the folder will be updated unless a child has already been updated with this route. In this case, if the updated permission is the same as the previously modified child&#39;s, the child will lose its \&quot;independence\&quot; and follow the parent&#39;s future permission when it is modified again.               Required scopes: org:manage
+ Update the permission of a group on a folder. Permissions choices are : &#x60;&#x60;&#x60; 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRITE, None: Default value (See the default_permission field of the folder) &#x60;&#x60;&#x60; When propagate is set to True, the permission of all children in the folder will be updated.               Required scopes: org:manage
 
 ### Example
 

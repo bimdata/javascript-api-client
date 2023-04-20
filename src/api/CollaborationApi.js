@@ -857,7 +857,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DWG', 'POINT_CLOUD', 'DXF', 'OBJ', 'IFC', 'GLTF', 'DAE', 'BFX'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'POINT_CLOUD', 'DAE', 'GLTF', 'IFC', 'OBJ', 'DWG', 'BFX', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -925,7 +925,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DWG', 'POINT_CLOUD', 'DXF', 'OBJ', 'IFC', 'GLTF', 'DAE', 'BFX'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'POINT_CLOUD', 'DAE', 'GLTF', 'IFC', 'OBJ', 'DWG', 'BFX', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -5868,7 +5868,7 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of a folder
-     *  Update some fields of a folder. Only project admins can update the `default_permission` field.  `default_permission` choices are : ``` 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE ``` When this route is used, the permission of all children in the folder will be updated unless a child has already been updated with this route. In this case, if the updated permission is the same as the previously modified child's, the child will lose its \"independence\" and follow the parent's future permission when it is modified again.  Caution: The 'default_permission' field is not applied to users belonging to one or more groups.   Required scopes: document:write
+     *  Update some fields of a folder. Only project admins can update the `default_permission` field.  `default_permission` choices are : ``` 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE ``` When propagate is set to True, the permission of all children in the folder will be updated.  Caution: The 'default_permission' field is not applied to users belonging to one or more groups.   Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this folder.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -5917,7 +5917,7 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of a folder
-     *  Update some fields of a folder. Only project admins can update the `default_permission` field.  `default_permission` choices are : ``` 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE ``` When this route is used, the permission of all children in the folder will be updated unless a child has already been updated with this route. In this case, if the updated permission is the same as the previously modified child's, the child will lose its \"independence\" and follow the parent's future permission when it is modified again.  Caution: The 'default_permission' field is not applied to users belonging to one or more groups.   Required scopes: document:write
+     *  Update some fields of a folder. Only project admins can update the `default_permission` field.  `default_permission` choices are : ``` 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE ``` When propagate is set to True, the permission of all children in the folder will be updated.  Caution: The 'default_permission' field is not applied to users belonging to one or more groups.   Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this folder.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -5934,8 +5934,8 @@ export default class CollaborationApi {
 
 
     /**
-     * Update the permission of a group on a folder
-     *  Update the permission of a group on a folder. Permissions choices are : ``` 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE ``` When this route is used, the permission of all children in the folder will be updated unless a child has already been updated with this route. In this case, if the updated permission is the same as the previously modified child's, the child will lose its \"independence\" and follow the parent's future permission when it is modified again.               Required scopes: org:manage
+     * Update the permission of a group on a folder. When propagate is set to True, the permission of all children in the folder will be updated.
+     *  Update the permission of a group on a folder. Permissions choices are : ``` 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRITE, None: Default value (See the default_permission field of the folder) ``` When propagate is set to True, the permission of all children in the folder will be updated.               Required scopes: org:manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} folderPk 
      * @param {Number} id A unique integer value identifying this group folder.
@@ -5989,8 +5989,8 @@ export default class CollaborationApi {
     }
 
     /**
-     * Update the permission of a group on a folder
-     *  Update the permission of a group on a folder. Permissions choices are : ``` 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRTIE ``` When this route is used, the permission of all children in the folder will be updated unless a child has already been updated with this route. In this case, if the updated permission is the same as the previously modified child's, the child will lose its \"independence\" and follow the parent's future permission when it is modified again.               Required scopes: org:manage
+     * Update the permission of a group on a folder. When propagate is set to True, the permission of all children in the folder will be updated.
+     *  Update the permission of a group on a folder. Permissions choices are : ``` 1: ACCESS_DENIED, 50: READ_ONLY, 100: READ_WRITE, None: Default value (See the default_permission field of the folder) ``` When propagate is set to True, the permission of all children in the folder will be updated.               Required scopes: org:manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} folderPk 
      * @param {Number} id A unique integer value identifying this group folder.

@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**permission** | **Number** | Group&#39;s permission for a folder | [optional] 
+**permission** | **Number** |  | [optional] 
+**propagate** | **Boolean** |  | [optional] [default to false]
 
 
 
@@ -16,6 +17,8 @@ Name | Type | Description | Notes
 * `50` (value: `50`)
 
 * `100` (value: `100`)
+
+* `null` (value: `null`)
 
 
 

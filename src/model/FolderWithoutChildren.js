@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import FolderGroupPermission from './FolderGroupPermission';
+import GroupFolderRead from './GroupFolderRead';
 import ShortUser from './ShortUser';
 
 /**
@@ -31,7 +31,7 @@ class FolderWithoutChildren {
      * @param createdAt {Date} Creation date
      * @param updatedAt {Date} Date of the last update
      * @param createdBy {module:model/ShortUser} 
-     * @param groupsPermissions {Array.<module:model/FolderGroupPermission>} 
+     * @param groupsPermissions {Array.<module:model/GroupFolderRead>} List of group permissions
      * @param userPermission {module:model/FolderWithoutChildren.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      */
     constructor(id, type, nature, name, createdAt, updatedAt, createdBy, groupsPermissions, userPermission) { 
@@ -92,7 +92,7 @@ class FolderWithoutChildren {
                 obj['created_by'] = ApiClient.convertToType(data['created_by'], ShortUser);
             }
             if (data.hasOwnProperty('groups_permissions')) {
-                obj['groups_permissions'] = ApiClient.convertToType(data['groups_permissions'], [FolderGroupPermission]);
+                obj['groups_permissions'] = ApiClient.convertToType(data['groups_permissions'], [GroupFolderRead]);
             }
             if (data.hasOwnProperty('default_permission')) {
                 obj['default_permission'] = ApiClient.convertToType(data['default_permission'], 'Number');
@@ -153,7 +153,8 @@ FolderWithoutChildren.prototype['updated_at'] = undefined;
 FolderWithoutChildren.prototype['created_by'] = undefined;
 
 /**
- * @member {Array.<module:model/FolderGroupPermission>} groups_permissions
+ * List of group permissions
+ * @member {Array.<module:model/GroupFolderRead>} groups_permissions
  */
 FolderWithoutChildren.prototype['groups_permissions'] = undefined;
 

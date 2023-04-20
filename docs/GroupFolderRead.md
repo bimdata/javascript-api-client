@@ -1,11 +1,11 @@
-# bimdata.FolderGroupPermissionRequest
+# bimdata.GroupFolderRead
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**group** | [**GroupRequest**](GroupRequest.md) |  | 
-**permission** | **Number** | Group&#39;s permission for a folder | [optional] 
+**group** | [**Group**](Group.md) |  | 
+**permission** | **Number** |  | 
 
 
 
@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 * `50` (value: `50`)
 
 * `100` (value: `100`)
+
+* `null` (value: `null`)
 
 
 
