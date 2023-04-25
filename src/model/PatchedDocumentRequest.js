@@ -62,9 +62,6 @@ class PatchedDocumentRequest {
             if (data.hasOwnProperty('file')) {
                 obj['file'] = ApiClient.convertToType(data['file'], File);
             }
-            if (data.hasOwnProperty('size')) {
-                obj['size'] = ApiClient.convertToType(data['size'], 'Number');
-            }
             if (data.hasOwnProperty('model_source')) {
                 obj['model_source'] = ApiClient.convertToType(data['model_source'], 'String');
             }
@@ -108,12 +105,6 @@ PatchedDocumentRequest.prototype['description'] = undefined;
  * @member {File} file
  */
 PatchedDocumentRequest.prototype['file'] = undefined;
-
-/**
- * Size of the file.
- * @member {Number} size
- */
-PatchedDocumentRequest.prototype['size'] = undefined;
 
 /**
  * Define the model.source field if the upload is a Model (IFC, PDF, DWG...)

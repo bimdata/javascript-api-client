@@ -1038,6 +1038,16 @@
         done();
       });
     });
+    describe('updatePreviewFile', function() {
+      it('should call updatePreviewFile successfully', function(done) {
+        //uncomment below and update the code to test updatePreviewFile
+        //instance.updatePreviewFile(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateProject', function() {
       it('should call updateProject successfully', function(done) {
         //uncomment below and update the code to test updateProject

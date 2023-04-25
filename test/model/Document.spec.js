@@ -162,6 +162,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property officePreview (base name: "office_preview")', function() {
+      // uncomment below and update the code to test the property officePreview
+      //var instance = new bimdata.Document();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -12,16 +12,17 @@ Name | Type | Description | Notes
 **fileName** | **String** | Full name of the file | [optional] 
 **description** | **String** | Description of the file | [optional] 
 **file** | **String** |  | 
-**size** | **Number** | Size of the file. | [optional] 
+**size** | **Number** | Size of the file. | [readonly] 
 **tags** | [**[Tag]**](Tag.md) |  | [readonly] 
 **visas** | [**[Visa]**](Visa.md) |  | [readonly] 
 **createdAt** | **Date** | Creation date | [readonly] 
 **updatedAt** | **Date** | Date of the last update | [readonly] 
 **modelId** | **Number** |  | [readonly] 
-**modelType** | **String** | Model&#39;s type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, DAE, BFX, POINT_CLOUD | [readonly] 
+**modelType** | **String** | Model&#39;s type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD | [readonly] 
 **ifcId** | **Number** | DEPRECATED: Use &#39;model_id&#39; instead. | [readonly] 
 **userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 
 **isHeadVersion** | **Boolean** | Document is a head of version or is owned by another document | [readonly] 
+**officePreview** | **String** | Office files will be converted as pdf to provide a web preview. Supported extensions are .ppt, .pptx, .odp, .xls, .xlsx, .ods, .doc, .docx, .odt | [readonly] 
 
 
 
@@ -43,10 +44,6 @@ Name | Type | Description | Notes
 * `PNG` (value: `"PNG"`)
 
 * `OBJ` (value: `"OBJ"`)
-
-* `DAE` (value: `"DAE"`)
-
-* `BFX` (value: `"BFX"`)
 
 * `POINT_CLOUD` (value: `"POINT_CLOUD"`)
 

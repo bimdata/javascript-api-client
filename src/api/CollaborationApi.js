@@ -21,6 +21,7 @@ import CloudInvitation from '../model/CloudInvitation';
 import CloudInvitationRequest from '../model/CloudInvitationRequest';
 import CloudRequest from '../model/CloudRequest';
 import Document from '../model/Document';
+import DocumentPreviewFile from '../model/DocumentPreviewFile';
 import Folder from '../model/Folder';
 import FolderUserProject from '../model/FolderUserProject';
 import FolderWithoutChildren from '../model/FolderWithoutChildren';
@@ -857,7 +858,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'POINT_CLOUD', 'DAE', 'GLTF', 'IFC', 'OBJ', 'DWG', 'BFX', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'IFC', 'DWG', 'POINT_CLOUD', 'GLTF', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -866,7 +867,6 @@ export default class CollaborationApi {
      * @param {Number} opts.parentId 
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
-     * @param {Number} opts.size Size of the file.
      * @param {module:model/String} opts.modelSource Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
      * @param {module:model/String} opts.ifcSource DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
      * @param {Number} opts.successorOf Old document version to replace. Only for create
@@ -906,7 +906,6 @@ export default class CollaborationApi {
         'file_name': opts['fileName'],
         'description': opts['description'],
         'file': file,
-        'size': opts['size'],
         'model_source': opts['modelSource'],
         'ifc_source': opts['ifcSource'],
         'successor_of': opts['successorOf']
@@ -925,7 +924,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'POINT_CLOUD', 'DAE', 'GLTF', 'IFC', 'OBJ', 'DWG', 'BFX', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'IFC', 'DWG', 'POINT_CLOUD', 'GLTF', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -934,7 +933,6 @@ export default class CollaborationApi {
      * @param {Number} opts.parentId 
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
-     * @param {Number} opts.size Size of the file.
      * @param {module:model/String} opts.modelSource Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
      * @param {module:model/String} opts.ifcSource DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
      * @param {Number} opts.successorOf Old document version to replace. Only for create
@@ -6068,6 +6066,74 @@ export default class CollaborationApi {
      */
     updateManageGroup(cloudPk, id, projectPk, opts) {
       return this.updateManageGroupWithHttpInfo(cloudPk, id, projectPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update preview of the document
+     * Update preview of the document  Required scopes: document:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {File} opts.officePreview Office files will be converted as pdf to provide a web preview. Supported extensions are .ppt, .pptx, .odp, .xls, .xlsx, .ods, .doc, .docx, .odt
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DocumentPreviewFile} and HTTP response
+     */
+    updatePreviewFileWithHttpInfo(cloudPk, id, projectPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updatePreviewFile");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updatePreviewFile");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updatePreviewFile");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+        'office_preview': opts['officePreview']
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
+      let accepts = ['application/json'];
+      let returnType = DocumentPreviewFile;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{id}/preview-file', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update preview of the document
+     * Update preview of the document  Required scopes: document:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {File} opts.officePreview Office files will be converted as pdf to provide a web preview. Supported extensions are .ppt, .pptx, .odp, .xls, .xlsx, .ods, .doc, .docx, .odt
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DocumentPreviewFile}
+     */
+    updatePreviewFile(cloudPk, id, projectPk, opts) {
+      return this.updatePreviewFileWithHttpInfo(cloudPk, id, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

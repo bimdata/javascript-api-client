@@ -401,18 +401,6 @@ Model['TypeEnum'] = {
     "OBJ": "OBJ",
 
     /**
-     * value: "DAE"
-     * @const
-     */
-    "DAE": "DAE",
-
-    /**
-     * value: "BFX"
-     * @const
-     */
-    "BFX": "BFX",
-
-    /**
      * value: "POINT_CLOUD"
      * @const
      */

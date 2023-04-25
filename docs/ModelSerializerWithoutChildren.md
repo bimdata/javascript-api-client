@@ -54,10 +54,6 @@ Name | Type | Description | Notes
 
 * `OBJ` (value: `"OBJ"`)
 
-* `DAE` (value: `"DAE"`)
-
-* `BFX` (value: `"BFX"`)
-
 * `POINT_CLOUD` (value: `"POINT_CLOUD"`)
 
 * `METABUILDING` (value: `"METABUILDING"`)

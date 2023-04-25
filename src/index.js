@@ -47,6 +47,7 @@ import DetailedExtensions from './model/DetailedExtensions';
 import Direction from './model/Direction';
 import DirectionRequest from './model/DirectionRequest';
 import Document from './model/Document';
+import DocumentPreviewFile from './model/DocumentPreviewFile';
 import DocumentWithElementList from './model/DocumentWithElementList';
 import Element from './model/Element';
 import ElementClassificationRelation from './model/ElementClassificationRelation';
@@ -511,6 +512,12 @@ export {
      * @property {module:model/Document}
      */
     Document,
+
+    /**
+     * The DocumentPreviewFile model constructor.
+     * @property {module:model/DocumentPreviewFile}
+     */
+    DocumentPreviewFile,
 
     /**
      * The DocumentWithElementList model constructor.

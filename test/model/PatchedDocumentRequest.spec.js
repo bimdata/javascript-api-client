@@ -84,12 +84,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property size (base name: "size")', function() {
-      // uncomment below and update the code to test the property size
-      //var instance = new bimdata.PatchedDocumentRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property modelSource (base name: "model_source")', function() {
       // uncomment below and update the code to test the property modelSource
       //var instance = new bimdata.PatchedDocumentRequest();

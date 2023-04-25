@@ -327,6 +327,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**updateFolder**](docs/CollaborationApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update some fields of a folder
 *bimdata.CollaborationApi* | [**updateGroupFolder**](docs/CollaborationApi.md#updateGroupFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/group/{id} | Update the permission of a group on a folder. When propagate is set to True, the permission of all children in the folder will be updated.
 *bimdata.CollaborationApi* | [**updateManageGroup**](docs/CollaborationApi.md#updateManageGroup) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update some fields of a group
+*bimdata.CollaborationApi* | [**updatePreviewFile**](docs/CollaborationApi.md#updatePreviewFile) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id}/preview-file | Update preview of the document
 *bimdata.CollaborationApi* | [**updateProject**](docs/CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
 *bimdata.CollaborationApi* | [**updateProjectAccessToken**](docs/CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
 *bimdata.CollaborationApi* | [**updateProjectUser**](docs/CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Change the user role in the cloud
@@ -686,6 +687,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Direction](docs/Direction.md)
  - [bimdata.DirectionRequest](docs/DirectionRequest.md)
  - [bimdata.Document](docs/Document.md)
+ - [bimdata.DocumentPreviewFile](docs/DocumentPreviewFile.md)
  - [bimdata.DocumentWithElementList](docs/DocumentWithElementList.md)
  - [bimdata.Element](docs/Element.md)
  - [bimdata.ElementClassificationRelation](docs/ElementClassificationRelation.md)

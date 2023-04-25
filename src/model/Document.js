@@ -30,19 +30,21 @@ class Document {
      * @param project {Number} 
      * @param name {String} Shown name of the file
      * @param file {String} 
+     * @param size {Number} Size of the file.
      * @param tags {Array.<module:model/Tag>} 
      * @param visas {Array.<module:model/Visa>} 
      * @param createdAt {Date} Creation date
      * @param updatedAt {Date} Date of the last update
      * @param modelId {Number} 
-     * @param modelType {module:model/Document.ModelTypeEnum} Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, DAE, BFX, POINT_CLOUD
+     * @param modelType {module:model/Document.ModelTypeEnum} Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD
      * @param ifcId {Number} DEPRECATED: Use 'model_id' instead.
      * @param userPermission {module:model/Document.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      * @param isHeadVersion {Boolean} Document is a head of version or is owned by another document
+     * @param officePreview {String} Office files will be converted as pdf to provide a web preview. Supported extensions are .ppt, .pptx, .odp, .xls, .xlsx, .ods, .doc, .docx, .odt
      */
-    constructor(id, createdBy, project, name, file, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission, isHeadVersion) { 
+    constructor(id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission, isHeadVersion, officePreview) { 
         
-        Document.initialize(this, id, createdBy, project, name, file, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission, isHeadVersion);
+        Document.initialize(this, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission, isHeadVersion, officePreview);
     }
 
     /**
@@ -50,12 +52,13 @@ class Document {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, createdBy, project, name, file, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission, isHeadVersion) { 
+    static initialize(obj, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission, isHeadVersion, officePreview) { 
         obj['id'] = id;
         obj['created_by'] = createdBy;
         obj['project'] = project;
         obj['name'] = name;
         obj['file'] = file;
+        obj['size'] = size;
         obj['tags'] = tags;
         obj['visas'] = visas;
         obj['created_at'] = createdAt;
@@ -65,6 +68,7 @@ class Document {
         obj['ifc_id'] = ifcId;
         obj['user_permission'] = userPermission;
         obj['is_head_version'] = isHeadVersion;
+        obj['office_preview'] = officePreview;
     }
 
     /**
@@ -131,6 +135,9 @@ class Document {
             }
             if (data.hasOwnProperty('is_head_version')) {
                 obj['is_head_version'] = ApiClient.convertToType(data['is_head_version'], 'Boolean');
+            }
+            if (data.hasOwnProperty('office_preview')) {
+                obj['office_preview'] = ApiClient.convertToType(data['office_preview'], 'String');
             }
         }
         return obj;
@@ -216,7 +223,7 @@ Document.prototype['updated_at'] = undefined;
 Document.prototype['model_id'] = undefined;
 
 /**
- * Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, DAE, BFX, POINT_CLOUD
+ * Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD
  * @member {module:model/Document.ModelTypeEnum} model_type
  */
 Document.prototype['model_type'] = undefined;
@@ -238,6 +245,12 @@ Document.prototype['user_permission'] = undefined;
  * @member {Boolean} is_head_version
  */
 Document.prototype['is_head_version'] = undefined;
+
+/**
+ * Office files will be converted as pdf to provide a web preview. Supported extensions are .ppt, .pptx, .odp, .xls, .xlsx, .ods, .doc, .docx, .odt
+ * @member {String} office_preview
+ */
+Document.prototype['office_preview'] = undefined;
 
 
 
@@ -297,18 +310,6 @@ Document['ModelTypeEnum'] = {
      * @const
      */
     "OBJ": "OBJ",
-
-    /**
-     * value: "DAE"
-     * @const
-     */
-    "DAE": "DAE",
-
-    /**
-     * value: "BFX"
-     * @const
-     */
-    "BFX": "BFX",
 
     /**
      * value: "POINT_CLOUD"

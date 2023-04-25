@@ -103,6 +103,7 @@ Method | HTTP request | Description
 [**updateFolder**](CollaborationApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update some fields of a folder
 [**updateGroupFolder**](CollaborationApi.md#updateGroupFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/group/{id} | Update the permission of a group on a folder. When propagate is set to True, the permission of all children in the folder will be updated.
 [**updateManageGroup**](CollaborationApi.md#updateManageGroup) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update some fields of a group
+[**updatePreviewFile**](CollaborationApi.md#updatePreviewFile) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id}/preview-file | Update preview of the document
 [**updateProject**](CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
 [**updateProjectAccessToken**](CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
 [**updateProjectUser**](CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Change the user role in the cloud
@@ -954,7 +955,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;POINT_CLOUD&#39;, &#39;DAE&#39;, &#39;GLTF&#39;, &#39;IFC&#39;, &#39;OBJ&#39;, &#39;DWG&#39;, &#39;BFX&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;OBJ&#39;, &#39;IFC&#39;, &#39;DWG&#39;, &#39;POINT_CLOUD&#39;, &#39;GLTF&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -987,7 +988,6 @@ let opts = {
   'parentId': 56, // Number | 
   'fileName': "fileName_example", // String | Full name of the file
   'description': "description_example", // String | Description of the file
-  'size': 789, // Number | Size of the file.
   'modelSource': "modelSource_example", // String | Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
   'ifcSource': "ifcSource_example", // String | DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
   'successorOf': 56 // Number | Old document version to replace. Only for create
@@ -1012,7 +1012,6 @@ Name | Type | Description  | Notes
  **parentId** | **Number**|  | [optional] 
  **fileName** | **String**| Full name of the file | [optional] 
  **description** | **String**| Description of the file | [optional] 
- **size** | **Number**| Size of the file. | [optional] 
  **modelSource** | **String**| Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
  **ifcSource** | **String**| DEPRECATED: Use &#39;model_source&#39; instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...) | [optional] 
  **successorOf** | **Number**| Old document version to replace. Only for create | [optional] 
@@ -6541,6 +6540,75 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
+## updatePreviewFile
+
+> DocumentPreviewFile updatePreviewFile(cloudPk, id, projectPk, opts)
+
+Update preview of the document
+
+Update preview of the document  Required scopes: document:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let id = 56; // Number | A unique integer value identifying this document.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let opts = {
+  'officePreview': "/path/to/file" // File | Office files will be converted as pdf to provide a web preview. Supported extensions are .ppt, .pptx, .odp, .xls, .xlsx, .ods, .doc, .docx, .odt
+};
+apiInstance.updatePreviewFile(cloudPk, id, projectPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **id** | **Number**| A unique integer value identifying this document. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **officePreview** | **File**| Office files will be converted as pdf to provide a web preview. Supported extensions are .ppt, .pptx, .odp, .xls, .xlsx, .ods, .doc, .docx, .odt | [optional] 
+
+### Return type
+
+[**DocumentPreviewFile**](DocumentPreviewFile.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 
