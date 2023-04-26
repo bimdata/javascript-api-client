@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **firstname** | **String** |  | [readonly] 
 **lastname** | **String** |  | [readonly] 
 **profilePicture** | **String** |  | [readonly] 
+**sub** | **String** |  | [readonly] 
 **role** | **Number** |  | [readonly] 
 
 

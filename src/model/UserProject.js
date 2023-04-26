@@ -30,11 +30,12 @@ class UserProject {
      * @param firstname {String} 
      * @param lastname {String} 
      * @param profilePicture {String} 
+     * @param sub {String} 
      * @param role {module:model/UserProject.RoleEnum} 
      */
-    constructor(id, userId, invitationId, email, firstname, lastname, profilePicture, role) { 
+    constructor(id, userId, invitationId, email, firstname, lastname, profilePicture, sub, role) { 
         
-        UserProject.initialize(this, id, userId, invitationId, email, firstname, lastname, profilePicture, role);
+        UserProject.initialize(this, id, userId, invitationId, email, firstname, lastname, profilePicture, sub, role);
     }
 
     /**
@@ -42,7 +43,7 @@ class UserProject {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, userId, invitationId, email, firstname, lastname, profilePicture, role) { 
+    static initialize(obj, id, userId, invitationId, email, firstname, lastname, profilePicture, sub, role) { 
         obj['id'] = id;
         obj['user_id'] = userId;
         obj['invitation_id'] = invitationId;
@@ -50,6 +51,7 @@ class UserProject {
         obj['firstname'] = firstname;
         obj['lastname'] = lastname;
         obj['profile_picture'] = profilePicture;
+        obj['sub'] = sub;
         obj['role'] = role;
     }
 
@@ -84,6 +86,9 @@ class UserProject {
             }
             if (data.hasOwnProperty('profile_picture')) {
                 obj['profile_picture'] = ApiClient.convertToType(data['profile_picture'], 'String');
+            }
+            if (data.hasOwnProperty('sub')) {
+                obj['sub'] = ApiClient.convertToType(data['sub'], 'String');
             }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'Number');
@@ -129,6 +134,11 @@ UserProject.prototype['lastname'] = undefined;
  * @member {String} profile_picture
  */
 UserProject.prototype['profile_picture'] = undefined;
+
+/**
+ * @member {String} sub
+ */
+UserProject.prototype['sub'] = undefined;
 
 /**
  * @member {module:model/UserProject.RoleEnum} role

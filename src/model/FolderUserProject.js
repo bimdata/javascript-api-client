@@ -30,12 +30,13 @@ class FolderUserProject {
      * @param firstname {String} 
      * @param lastname {String} 
      * @param profilePicture {String} 
+     * @param sub {String} 
      * @param role {module:model/FolderUserProject.RoleEnum} 
      * @param permission {module:model/FolderUserProject.PermissionEnum} 
      */
-    constructor(id, userId, invitationId, email, firstname, lastname, profilePicture, role, permission) { 
+    constructor(id, userId, invitationId, email, firstname, lastname, profilePicture, sub, role, permission) { 
         
-        FolderUserProject.initialize(this, id, userId, invitationId, email, firstname, lastname, profilePicture, role, permission);
+        FolderUserProject.initialize(this, id, userId, invitationId, email, firstname, lastname, profilePicture, sub, role, permission);
     }
 
     /**
@@ -43,7 +44,7 @@ class FolderUserProject {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, userId, invitationId, email, firstname, lastname, profilePicture, role, permission) { 
+    static initialize(obj, id, userId, invitationId, email, firstname, lastname, profilePicture, sub, role, permission) { 
         obj['id'] = id;
         obj['user_id'] = userId;
         obj['invitation_id'] = invitationId;
@@ -51,6 +52,7 @@ class FolderUserProject {
         obj['firstname'] = firstname;
         obj['lastname'] = lastname;
         obj['profile_picture'] = profilePicture;
+        obj['sub'] = sub;
         obj['role'] = role;
         obj['permission'] = permission;
     }
@@ -86,6 +88,9 @@ class FolderUserProject {
             }
             if (data.hasOwnProperty('profile_picture')) {
                 obj['profile_picture'] = ApiClient.convertToType(data['profile_picture'], 'String');
+            }
+            if (data.hasOwnProperty('sub')) {
+                obj['sub'] = ApiClient.convertToType(data['sub'], 'String');
             }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'Number');
@@ -134,6 +139,11 @@ FolderUserProject.prototype['lastname'] = undefined;
  * @member {String} profile_picture
  */
 FolderUserProject.prototype['profile_picture'] = undefined;
+
+/**
+ * @member {String} sub
+ */
+FolderUserProject.prototype['sub'] = undefined;
 
 /**
  * @member {module:model/FolderUserProject.RoleEnum} role

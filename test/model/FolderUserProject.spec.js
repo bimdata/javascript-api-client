@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sub (base name: "sub")', function() {
+      // uncomment below and update the code to test the property sub
+      //var instance = new bimdata.FolderUserProject();
+      //expect(instance).to.be();
+    });
+
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
       //var instance = new bimdata.FolderUserProject();
