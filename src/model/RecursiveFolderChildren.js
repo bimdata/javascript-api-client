@@ -124,6 +124,9 @@ class RecursiveFolderChildren {
             if (data.hasOwnProperty('file')) {
                 obj['file'] = ApiClient.convertToType(data['file'], 'String');
             }
+            if (data.hasOwnProperty('office_preview')) {
+                obj['office_preview'] = ApiClient.convertToType(data['office_preview'], 'String');
+            }
             if (data.hasOwnProperty('groups_permissions')) {
                 obj['groups_permissions'] = ApiClient.convertToType(data['groups_permissions'], 'Boolean');
             }
@@ -227,6 +230,11 @@ RecursiveFolderChildren.prototype['ifc_id'] = undefined;
  * @member {String} file
  */
 RecursiveFolderChildren.prototype['file'] = undefined;
+
+/**
+ * @member {String} office_preview
+ */
+RecursiveFolderChildren.prototype['office_preview'] = undefined;
 
 /**
  * DEPRECATED: This field must be present because of legacy constraints but will always be empty. If you want to see group permissions of a folder, see `getFolder`

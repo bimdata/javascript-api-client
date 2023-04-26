@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **modelId** | **Number** |  | [readonly] 
 **ifcId** | **Number** | DEPRECATED: Use &#39;model_id&#39; instead | [readonly] 
 **file** | **String** |  | [optional] 
+**officePreview** | **String** |  | [optional] 
 **groupsPermissions** | **Boolean** | DEPRECATED: This field must be present because of legacy constraints but will always be empty. If you want to see group permissions of a folder, see &#x60;getFolder&#x60; | [readonly] 
 **defaultPermission** | **Number** | Default permissions of folder | [readonly] 
 **userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 
