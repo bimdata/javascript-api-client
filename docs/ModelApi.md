@@ -6687,7 +6687,7 @@ Name | Type | Description  | Notes
 
 ## getRawElements
 
-> RawElements getRawElements(cloudPk, modelPk, projectPk)
+> RawElements getRawElements(cloudPk, modelPk, projectPk, opts)
 
 Retrieve all elements in a optimized format
 
@@ -6719,7 +6719,12 @@ let apiInstance = new bimdata.ModelApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.getRawElements(cloudPk, modelPk, projectPk).then((data) => {
+let opts = {
+  'classification': "classification_example", // String | 
+  'classificationNotation': "classificationNotation_example", // String | 
+  'type': "type_example" // String | 
+};
+apiInstance.getRawElements(cloudPk, modelPk, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6735,6 +6740,9 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **classification** | **String**|  | [optional] 
+ **classificationNotation** | **String**|  | [optional] 
+ **type** | **String**|  | [optional] 
 
 ### Return type
 
@@ -6819,7 +6827,7 @@ Name | Type | Description  | Notes
 
 ## getSimpleElements
 
-> SimpleElement getSimpleElements(cloudPk, modelPk, projectPk)
+> SimpleElement getSimpleElements(cloudPk, modelPk, projectPk, opts)
 
 Retrieve all elements of a model with a simple value representation
 
@@ -6851,7 +6859,12 @@ let apiInstance = new bimdata.ModelApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.getSimpleElements(cloudPk, modelPk, projectPk).then((data) => {
+let opts = {
+  'classification': "classification_example", // String | 
+  'classificationNotation': "classificationNotation_example", // String | 
+  'type': "type_example" // String | 
+};
+apiInstance.getSimpleElements(cloudPk, modelPk, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6867,6 +6880,9 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **classification** | **String**|  | [optional] 
+ **classificationNotation** | **String**|  | [optional] 
+ **type** | **String**|  | [optional] 
 
 ### Return type
 

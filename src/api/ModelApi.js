@@ -6895,9 +6895,14 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.classification 
+     * @param {String} opts.classificationNotation 
+     * @param {String} opts.type 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RawElements} and HTTP response
      */
-    getRawElementsWithHttpInfo(cloudPk, modelPk, projectPk) {
+    getRawElementsWithHttpInfo(cloudPk, modelPk, projectPk, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -6918,6 +6923,9 @@ export default class ModelApi {
         'project_pk': projectPk
       };
       let queryParams = {
+        'classification': opts['classification'],
+        'classification__notation': opts['classificationNotation'],
+        'type': opts['type']
       };
       let headerParams = {
       };
@@ -6941,10 +6949,14 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.classification 
+     * @param {String} opts.classificationNotation 
+     * @param {String} opts.type 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RawElements}
      */
-    getRawElements(cloudPk, modelPk, projectPk) {
-      return this.getRawElementsWithHttpInfo(cloudPk, modelPk, projectPk)
+    getRawElements(cloudPk, modelPk, projectPk, opts) {
+      return this.getRawElementsWithHttpInfo(cloudPk, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7026,9 +7038,14 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.classification 
+     * @param {String} opts.classificationNotation 
+     * @param {String} opts.type 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SimpleElement} and HTTP response
      */
-    getSimpleElementsWithHttpInfo(cloudPk, modelPk, projectPk) {
+    getSimpleElementsWithHttpInfo(cloudPk, modelPk, projectPk, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -7049,6 +7066,9 @@ export default class ModelApi {
         'project_pk': projectPk
       };
       let queryParams = {
+        'classification': opts['classification'],
+        'classification__notation': opts['classificationNotation'],
+        'type': opts['type']
       };
       let headerParams = {
       };
@@ -7072,10 +7092,14 @@ export default class ModelApi {
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.classification 
+     * @param {String} opts.classificationNotation 
+     * @param {String} opts.type 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SimpleElement}
      */
-    getSimpleElements(cloudPk, modelPk, projectPk) {
-      return this.getSimpleElementsWithHttpInfo(cloudPk, modelPk, projectPk)
+    getSimpleElements(cloudPk, modelPk, projectPk, opts) {
+      return this.getSimpleElementsWithHttpInfo(cloudPk, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
