@@ -80,6 +80,7 @@ import System from '../model/System';
 import SystemRequest from '../model/SystemRequest';
 import Unit from '../model/Unit';
 import UnitRequest from '../model/UnitRequest';
+import XktFile from '../model/XktFile';
 import Zone from '../model/Zone';
 import ZoneRequest from '../model/ZoneRequest';
 import ZoneSpace from '../model/ZoneSpace';
@@ -1034,7 +1035,7 @@ export default class IfcApi {
 
     /**
      * Create a token for this model
-     * Tokens are read_only by default and are valid 1 day  Required scopes: ifc:token_manage, model:token_manage
+     * DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -1083,7 +1084,7 @@ export default class IfcApi {
 
     /**
      * Create a token for this model
-     * Tokens are read_only by default and are valid 1 day  Required scopes: ifc:token_manage, model:token_manage
+     * DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -2886,6 +2887,82 @@ export default class IfcApi {
 
 
     /**
+     * Create an xkt file for the model. Overrides existing file with same version
+     * This route does not accept JSON, only files as x-www-form-urlencoded  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {Number} version 
+     * @param {File} file 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/XktFile} and HTTP response
+     */
+    createXktFileDeprecatedWithHttpInfo(cloudPk, id, projectPk, version, file) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createXktFileDeprecated");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling createXktFileDeprecated");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createXktFileDeprecated");
+      }
+      // verify the required parameter 'version' is set
+      if (version === undefined || version === null) {
+        throw new Error("Missing the required parameter 'version' when calling createXktFileDeprecated");
+      }
+      // verify the required parameter 'file' is set
+      if (file === undefined || file === null) {
+        throw new Error("Missing the required parameter 'file' when calling createXktFileDeprecated");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+        'version': version,
+        'file': file
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
+      let accepts = ['application/json'];
+      let returnType = XktFile;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/xkt-file', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create an xkt file for the model. Overrides existing file with same version
+     * This route does not accept JSON, only files as x-www-form-urlencoded  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {Number} version 
+     * @param {File} file 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/XktFile}
+     */
+    createXktFileDeprecated(cloudPk, id, projectPk, version, file) {
+      return this.createXktFileDeprecatedWithHttpInfo(cloudPk, id, projectPk, version, file)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create a zone in the model
      *  Bulk create available. You can either post an object or a list of objects. Is you post a list, the response will be a list (in the same order) of created objects or of errors if any If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors  The IFC file will not be updated. The created zone will be accessible over the API and when exporting an IFC file  Required scopes: ifc:write, model:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -3036,7 +3113,7 @@ export default class IfcApi {
 
     /**
      * Delete a token
-     * Deleting a token will revoke it.  Required scopes: ifc:token_manage, model:token_manage
+     * DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -3088,7 +3165,7 @@ export default class IfcApi {
 
     /**
      * Delete a token
-     * Deleting a token will revoke it.  Required scopes: ifc:token_manage, model:token_manage
+     * DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -4504,7 +4581,7 @@ export default class IfcApi {
 
     /**
      * Retrieve one token created for this model
-     * Retrieve one token created for this model  Required scopes: ifc:token_manage, model:token_manage
+     * DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -4556,7 +4633,7 @@ export default class IfcApi {
 
     /**
      * Retrieve one token created for this model
-     * Retrieve one token created for this model  Required scopes: ifc:token_manage, model:token_manage
+     * DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -4573,7 +4650,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all tokens created for this model
-     * Retrieve all tokens created for this model  Required scopes: ifc:token_manage, model:token_manage
+     * DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -4619,7 +4696,7 @@ export default class IfcApi {
 
     /**
      * Retrieve all tokens created for this model
-     * Retrieve all tokens created for this model  Required scopes: ifc:token_manage, model:token_manage
+     * DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -9515,7 +9592,7 @@ export default class IfcApi {
 
     /**
      * Update some fields of a token
-     * You can update the expiration date or the read_only field  Required scopes: ifc:token_manage, model:token_manage
+     * DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -9570,7 +9647,7 @@ export default class IfcApi {
 
     /**
      * Update some fields of a token
-     * You can update the expiration date or the read_only field  Required scopes: ifc:token_manage, model:token_manage
+     * DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} ifcPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -10138,7 +10215,7 @@ export default class IfcApi {
      * @param {File} opts.mapFile 
      * @param {File} opts.gltfFile 
      * @param {File} opts.previewFile 
-     * @param {File} opts.xktFile 
+     * @param {File} opts.xktFile DEPRECATED. xkt file url is now in xkt_files field with its version number
      * @param {File} opts.binary2dFile 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelFiles} and HTTP response
      */
@@ -10200,7 +10277,7 @@ export default class IfcApi {
      * @param {File} opts.mapFile 
      * @param {File} opts.gltfFile 
      * @param {File} opts.previewFile 
-     * @param {File} opts.xktFile 
+     * @param {File} opts.xktFile DEPRECATED. xkt file url is now in xkt_files field with its version number
      * @param {File} opts.binary2dFile 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelFiles}
      */

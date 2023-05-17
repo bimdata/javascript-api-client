@@ -418,6 +418,16 @@
         done();
       });
     });
+    describe('createXktFile', function() {
+      it('should call createXktFile successfully', function(done) {
+        //uncomment below and update the code to test createXktFile
+        //instance.createXktFile(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createZone', function() {
       it('should call createZone successfully', function(done) {
         //uncomment below and update the code to test createZone

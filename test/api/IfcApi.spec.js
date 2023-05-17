@@ -438,6 +438,16 @@
         done();
       });
     });
+    describe('createXktFileDeprecated', function() {
+      it('should call createXktFileDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createXktFileDeprecated
+        //instance.createXktFileDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createZoneDeprecated', function() {
       it('should call createZoneDeprecated successfully', function(done) {
         //uncomment below and update the code to test createZoneDeprecated

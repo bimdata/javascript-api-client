@@ -156,6 +156,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property xktFiles (base name: "xkt_files")', function() {
+      // uncomment below and update the code to test the property xktFiles
+      //var instance = new bimdata.ModelSerializerWithoutChildren();
+      //expect(instance).to.be();
+    });
+
     it('should have the property binary2dFile (base name: "binary_2d_file")', function() {
       // uncomment below and update the code to test the property binary2dFile
       //var instance = new bimdata.ModelSerializerWithoutChildren();

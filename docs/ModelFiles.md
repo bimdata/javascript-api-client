@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **mapFile** | **String** |  | [optional] 
 **gltfFile** | **String** |  | [optional] 
 **previewFile** | **String** |  | [optional] 
-**xktFile** | **String** |  | [optional] 
+**xktFile** | **String** | DEPRECATED. xkt file url is now in xkt_files field with its version number | [optional] 
 **binary2dFile** | **String** |  | [optional] 
 
 

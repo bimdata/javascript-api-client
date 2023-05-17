@@ -258,6 +258,7 @@ import VisibilityRequest from './model/VisibilityRequest';
 import WebHook from './model/WebHook';
 import WebHookRequest from './model/WebHookRequest';
 import WriteFolderRequest from './model/WriteFolderRequest';
+import XktFile from './model/XktFile';
 import Zone from './model/Zone';
 import ZoneRequest from './model/ZoneRequest';
 import ZoneSpace from './model/ZoneSpace';
@@ -1778,6 +1779,12 @@ export {
      * @property {module:model/WriteFolderRequest}
      */
     WriteFolderRequest,
+
+    /**
+     * The XktFile model constructor.
+     * @property {module:model/XktFile}
+     */
+    XktFile,
 
     /**
      * The Zone model constructor.

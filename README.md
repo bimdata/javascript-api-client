@@ -374,6 +374,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**createStoreyPlanDeprecated**](docs/IfcApi.md#createStoreyPlanDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_uuid}/plan/add | Create a relation between a 2d model and a storey
 *bimdata.IfcApi* | [**createSystemDeprecated**](docs/IfcApi.md#createSystemDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system | Create a system in the model
 *bimdata.IfcApi* | [**createTilesetDeprecated**](docs/IfcApi.md#createTilesetDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/tileset | Create the tileset of the model and upload all files
+*bimdata.IfcApi* | [**createXktFileDeprecated**](docs/IfcApi.md#createXktFileDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/xkt-file | Create an xkt file for the model. Overrides existing file with same version
 *bimdata.IfcApi* | [**createZoneDeprecated**](docs/IfcApi.md#createZoneDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Create a zone in the model
 *bimdata.IfcApi* | [**createZoneSpaceDeprecated**](docs/IfcApi.md#createZoneSpaceDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Create a space in a zone
 *bimdata.IfcApi* | [**deleteAccessTokenDeprecated**](docs/IfcApi.md#deleteAccessTokenDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Delete a token
@@ -529,6 +530,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**createStoreyPlan**](docs/ModelApi.md#createStoreyPlan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/add | Create a relation between a 2d model and a storey
 *bimdata.ModelApi* | [**createSystem**](docs/ModelApi.md#createSystem) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system | Create a system in the model
 *bimdata.ModelApi* | [**createTileset**](docs/ModelApi.md#createTileset) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/tileset | Create the tileset of the model and upload all files
+*bimdata.ModelApi* | [**createXktFile**](docs/ModelApi.md#createXktFile) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/xkt-file | Create an xkt file for the model. Overrides existing file with same version
 *bimdata.ModelApi* | [**createZone**](docs/ModelApi.md#createZone) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone | Create a zone in the model
 *bimdata.ModelApi* | [**createZoneSpace**](docs/ModelApi.md#createZoneSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space | Create a space in a zone
 *bimdata.ModelApi* | [**deleteAccessToken**](docs/ModelApi.md#deleteAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token} | Delete a token
@@ -898,6 +900,7 @@ Class | Method | HTTP request | Description
  - [bimdata.WebHook](docs/WebHook.md)
  - [bimdata.WebHookRequest](docs/WebHookRequest.md)
  - [bimdata.WriteFolderRequest](docs/WriteFolderRequest.md)
+ - [bimdata.XktFile](docs/XktFile.md)
  - [bimdata.Zone](docs/Zone.md)
  - [bimdata.ZoneRequest](docs/ZoneRequest.md)
  - [bimdata.ZoneSpace](docs/ZoneSpace.md)

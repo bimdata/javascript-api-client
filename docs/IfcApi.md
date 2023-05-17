@@ -43,6 +43,7 @@ Method | HTTP request | Description
 [**createStoreyPlanDeprecated**](IfcApi.md#createStoreyPlanDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_uuid}/plan/add | Create a relation between a 2d model and a storey
 [**createSystemDeprecated**](IfcApi.md#createSystemDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system | Create a system in the model
 [**createTilesetDeprecated**](IfcApi.md#createTilesetDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/tileset | Create the tileset of the model and upload all files
+[**createXktFileDeprecated**](IfcApi.md#createXktFileDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/xkt-file | Create an xkt file for the model. Overrides existing file with same version
 [**createZoneDeprecated**](IfcApi.md#createZoneDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Create a zone in the model
 [**createZoneSpaceDeprecated**](IfcApi.md#createZoneSpaceDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Create a space in a zone
 [**deleteAccessTokenDeprecated**](IfcApi.md#deleteAccessTokenDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Delete a token
@@ -1067,7 +1068,7 @@ Name | Type | Description  | Notes
 
 Create a token for this model
 
-Tokens are read_only by default and are valid 1 day  Required scopes: ifc:token_manage, model:token_manage
+DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
 
 ### Example
 
@@ -2843,6 +2844,75 @@ null (empty response body)
 - **Accept**: Not defined
 
 
+## createXktFileDeprecated
+
+> XktFile createXktFileDeprecated(cloudPk, id, projectPk, version, file)
+
+Create an xkt file for the model. Overrides existing file with same version
+
+This route does not accept JSON, only files as x-www-form-urlencoded  Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.IfcApi();
+let cloudPk = 56; // Number | 
+let id = 56; // Number | A unique integer value identifying this model.
+let projectPk = 56; // Number | 
+let version = 56; // Number | 
+let file = "/path/to/file"; // File | 
+apiInstance.createXktFileDeprecated(cloudPk, id, projectPk, version, file).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**|  | 
+ **id** | **Number**| A unique integer value identifying this model. | 
+ **projectPk** | **Number**|  | 
+ **version** | **Number**|  | 
+ **file** | **File**|  | 
+
+### Return type
+
+[**XktFile**](XktFile.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
+- **Accept**: application/json
+
+
 ## createZoneDeprecated
 
 > [Zone] createZoneDeprecated(cloudPk, ifcPk, projectPk, zoneRequest, opts)
@@ -2989,7 +3059,7 @@ Name | Type | Description  | Notes
 
 Delete a token
 
-Deleting a token will revoke it.  Required scopes: ifc:token_manage, model:token_manage
+DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
 
 ### Example
 
@@ -4402,7 +4472,7 @@ Name | Type | Description  | Notes
 
 Retrieve one token created for this model
 
-Retrieve one token created for this model  Required scopes: ifc:token_manage, model:token_manage
+DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
 
 ### Example
 
@@ -4469,7 +4539,7 @@ Name | Type | Description  | Notes
 
 Retrieve all tokens created for this model
 
-Retrieve all tokens created for this model  Required scopes: ifc:token_manage, model:token_manage
+DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
 
 ### Example
 
@@ -9215,7 +9285,7 @@ null (empty response body)
 
 Update some fields of a token
 
-You can update the expiration date or the read_only field  Required scopes: ifc:token_manage, model:token_manage
+DEPECRATED: Use ProjectAccessToken instead  Required scopes: ifc:token_manage, model:token_manage
 
 ### Example
 
@@ -9823,7 +9893,7 @@ let opts = {
   'mapFile': "/path/to/file", // File | 
   'gltfFile': "/path/to/file", // File | 
   'previewFile': "/path/to/file", // File | 
-  'xktFile': "/path/to/file", // File | 
+  'xktFile': "/path/to/file", // File | DEPRECATED. xkt file url is now in xkt_files field with its version number
   'binary2dFile': "/path/to/file" // File | 
 };
 apiInstance.updateIfcFilesDeprecated(cloudPk, id, projectPk, opts).then((data) => {
@@ -9847,7 +9917,7 @@ Name | Type | Description  | Notes
  **mapFile** | **File**|  | [optional] 
  **gltfFile** | **File**|  | [optional] 
  **previewFile** | **File**|  | [optional] 
- **xktFile** | **File**|  | [optional] 
+ **xktFile** | **File**| DEPRECATED. xkt file url is now in xkt_files field with its version number | [optional] 
  **binary2dFile** | **File**|  | [optional] 
 
 ### Return type

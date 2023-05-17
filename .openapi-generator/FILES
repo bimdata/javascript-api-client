@@ -254,6 +254,7 @@ docs/WebHook.md
 docs/WebHookRequest.md
 docs/WebhookApi.md
 docs/WriteFolderRequest.md
+docs/XktFile.md
 docs/Zone.md
 docs/ZoneRequest.md
 docs/ZoneSpace.md
@@ -514,6 +515,7 @@ src/model/VisibilityRequest.js
 src/model/WebHook.js
 src/model/WebHookRequest.js
 src/model/WriteFolderRequest.js
+src/model/XktFile.js
 src/model/Zone.js
 src/model/ZoneRequest.js
 src/model/ZoneSpace.js
@@ -770,6 +772,7 @@ test/model/VisibilityRequest.spec.js
 test/model/WebHook.spec.js
 test/model/WebHookRequest.spec.js
 test/model/WriteFolderRequest.spec.js
+test/model/XktFile.spec.js
 test/model/Zone.spec.js
 test/model/ZoneRequest.spec.js
 test/model/ZoneSpace.spec.js

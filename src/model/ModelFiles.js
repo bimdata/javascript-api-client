@@ -101,6 +101,7 @@ ModelFiles.prototype['gltf_file'] = undefined;
 ModelFiles.prototype['preview_file'] = undefined;
 
 /**
+ * DEPRECATED. xkt file url is now in xkt_files field with its version number
  * @member {String} xkt_file
  */
 ModelFiles.prototype['xkt_file'] = undefined;

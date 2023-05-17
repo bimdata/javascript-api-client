@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import Document from './Document';
 import User from './User';
+import XktFile from './XktFile';
 
 /**
  * The ModelSerializerWithoutChildren model module.
@@ -38,16 +39,17 @@ class ModelSerializerWithoutChildren {
      * @param gltfFile {String} 
      * @param previewFile {String} 
      * @param viewer360File {String} DEPRECATED: Use 'preview_file' instead.
-     * @param xktFile {String} 
+     * @param xktFile {String} DEPRECATED: Use 'xkt_files' instead. This field only respond with xkt v6 files
+     * @param xktFiles {Array.<module:model/XktFile>} 
      * @param binary2dFile {String} 
      * @param projectId {Number} 
      * @param errors {Array.<String>} List of errors that happened during IFC processing
      * @param warnings {Array.<String>} List of warnings that happened during IFC processing
      * @param pageNumber {Number} The page number of the related pdf
      */
-    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, binary2dFile, projectId, errors, warnings, pageNumber) { 
+    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, pageNumber) { 
         
-        ModelSerializerWithoutChildren.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, binary2dFile, projectId, errors, warnings, pageNumber);
+        ModelSerializerWithoutChildren.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, pageNumber);
     }
 
     /**
@@ -55,7 +57,7 @@ class ModelSerializerWithoutChildren {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, binary2dFile, projectId, errors, warnings, pageNumber) { 
+    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, pageNumber) { 
         obj['id'] = id;
         obj['type'] = type;
         obj['creator'] = creator;
@@ -71,6 +73,7 @@ class ModelSerializerWithoutChildren {
         obj['preview_file'] = previewFile;
         obj['viewer_360_file'] = viewer360File;
         obj['xkt_file'] = xktFile;
+        obj['xkt_files'] = xktFiles;
         obj['binary_2d_file'] = binary2dFile;
         obj['project_id'] = projectId;
         obj['errors'] = errors;
@@ -139,6 +142,9 @@ class ModelSerializerWithoutChildren {
             }
             if (data.hasOwnProperty('xkt_file')) {
                 obj['xkt_file'] = ApiClient.convertToType(data['xkt_file'], 'String');
+            }
+            if (data.hasOwnProperty('xkt_files')) {
+                obj['xkt_files'] = ApiClient.convertToType(data['xkt_files'], [XktFile]);
             }
             if (data.hasOwnProperty('binary_2d_file')) {
                 obj['binary_2d_file'] = ApiClient.convertToType(data['binary_2d_file'], 'String');
@@ -262,9 +268,15 @@ ModelSerializerWithoutChildren.prototype['preview_file'] = undefined;
 ModelSerializerWithoutChildren.prototype['viewer_360_file'] = undefined;
 
 /**
+ * DEPRECATED: Use 'xkt_files' instead. This field only respond with xkt v6 files
  * @member {String} xkt_file
  */
 ModelSerializerWithoutChildren.prototype['xkt_file'] = undefined;
+
+/**
+ * @member {Array.<module:model/XktFile>} xkt_files
+ */
+ModelSerializerWithoutChildren.prototype['xkt_files'] = undefined;
 
 /**
  * @member {String} binary_2d_file
