@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **folder** | [**FolderWithoutChildren**](FolderWithoutChildren.md) |  | [readonly] 
 **group** | [**Group**](Group.md) |  | [readonly] 
-**permission** | **Number** |  | 
+**permission** | **Number** | * &#x60;1&#x60; - denied * &#x60;50&#x60; - read_only * &#x60;100&#x60; - read_write | 
 
 
 

@@ -25,7 +25,7 @@ class CloudInvitation {
      * @param id {Number} 
      * @param email {String} email of the user to invite
      * @param redirectUri {String} User will be redirected to this uri when they accept the invitation
-     * @param role {module:model/CloudInvitation.RoleEnum} 
+     * @param role {module:model/CloudInvitation.RoleEnum} * `100` - admin * `50` - user
      */
     constructor(id, email, redirectUri, role) { 
         
@@ -92,6 +92,7 @@ CloudInvitation.prototype['email'] = undefined;
 CloudInvitation.prototype['redirect_uri'] = undefined;
 
 /**
+ * * `100` - admin * `50` - user
  * @member {module:model/CloudInvitation.RoleEnum} role
  */
 CloudInvitation.prototype['role'] = undefined;

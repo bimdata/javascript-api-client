@@ -284,7 +284,7 @@ Bearer.apiKey = 'YOUR API KEY';
 
 let apiInstance = new bimdata.SsoApi();
 let opts = {
-  'status': "status_example" // String |          A: Accepted         D: Denied         P: Pending         
+  'status': "status_example" // String |          A: Accepted         D: Denied         P: Pending           * `A` - accepted * `D` - denied * `P` - pending
 };
 apiInstance.getInvitations(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -299,7 +299,7 @@ apiInstance.getInvitations(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **String**|          A: Accepted         D: Denied         P: Pending          | [optional] 
+ **status** | **String**|          A: Accepted         D: Denied         P: Pending           * &#x60;A&#x60; - accepted * &#x60;D&#x60; - denied * &#x60;P&#x60; - pending | [optional] 
 
 ### Return type
 

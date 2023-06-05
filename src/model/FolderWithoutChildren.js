@@ -159,7 +159,7 @@ FolderWithoutChildren.prototype['created_by'] = undefined;
 FolderWithoutChildren.prototype['groups_permissions'] = undefined;
 
 /**
- * Permission for a Folder
+ * Permission for a Folder  * `1` - denied * `50` - read_only * `100` - read_write
  * @member {module:model/FolderWithoutChildren.DefaultPermissionEnum} default_permission
  */
 FolderWithoutChildren.prototype['default_permission'] = undefined;

@@ -68,6 +68,9 @@ class ProjectWithChildren {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
@@ -110,6 +113,12 @@ ProjectWithChildren.prototype['logo'] = undefined;
 ProjectWithChildren.prototype['name'] = undefined;
 
 /**
+ * @member {String} description
+ */
+ProjectWithChildren.prototype['description'] = undefined;
+
+/**
+ * * `A` - active * `D` - deleted
  * @member {module:model/ProjectWithChildren.StatusEnum} status
  */
 ProjectWithChildren.prototype['status'] = undefined;

@@ -24,7 +24,7 @@ class GroupFolderRead {
      * Constructs a new <code>GroupFolderRead</code>.
      * @alias module:model/GroupFolderRead
      * @param group {module:model/Group} 
-     * @param permission {module:model/GroupFolderRead.PermissionEnum} 
+     * @param permission {module:model/GroupFolderRead.PermissionEnum} * `1` - denied * `50` - read_only * `100` - read_write
      */
     constructor(group, permission) { 
         
@@ -71,6 +71,7 @@ class GroupFolderRead {
 GroupFolderRead.prototype['group'] = undefined;
 
 /**
+ * * `1` - denied * `50` - read_only * `100` - read_write
  * @member {module:model/GroupFolderRead.PermissionEnum} permission
  */
 GroupFolderRead.prototype['permission'] = undefined;

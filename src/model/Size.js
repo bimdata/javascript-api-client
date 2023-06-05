@@ -22,8 +22,8 @@ class Size {
     /**
      * Constructs a new <code>Size</code>.
      * @alias module:model/Size
-     * @param managedBy {module:model/Size.ManagedByEnum} 
-     * @param role {module:model/Size.RoleEnum} 
+     * @param managedBy {module:model/Size.ManagedByEnum} * `BIMDATA_PLATFORM` - BIMDATA_PLATFORM * `ORGANIZATION` - ORGANIZATION
+     * @param role {module:model/Size.RoleEnum} * `100` - admin * `50` - user
      * @param totalSize {Number} 
      * @param smartDataSize {Number} 
      * @param totalSizeAvailable {Number} 
@@ -105,11 +105,13 @@ class Size {
 }
 
 /**
+ * * `BIMDATA_PLATFORM` - BIMDATA_PLATFORM * `ORGANIZATION` - ORGANIZATION
  * @member {module:model/Size.ManagedByEnum} managed_by
  */
 Size.prototype['managed_by'] = undefined;
 
 /**
+ * * `100` - admin * `50` - user
  * @member {module:model/Size.RoleEnum} role
  */
 Size.prototype['role'] = undefined;

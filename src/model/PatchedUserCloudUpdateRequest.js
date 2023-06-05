@@ -58,6 +58,7 @@ class PatchedUserCloudUpdateRequest {
 }
 
 /**
+ * * `100` - admin * `50` - user
  * @member {module:model/PatchedUserCloudUpdateRequest.CloudRoleEnum} cloud_role
  */
 PatchedUserCloudUpdateRequest.prototype['cloud_role'] = undefined;

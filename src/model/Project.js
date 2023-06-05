@@ -69,6 +69,9 @@ class Project {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('cloud')) {
                 obj['cloud'] = ApiClient.convertToType(data['cloud'], Cloud);
             }
@@ -111,11 +114,17 @@ Project.prototype['logo'] = undefined;
 Project.prototype['name'] = undefined;
 
 /**
+ * @member {String} description
+ */
+Project.prototype['description'] = undefined;
+
+/**
  * @member {module:model/Cloud} cloud
  */
 Project.prototype['cloud'] = undefined;
 
 /**
+ * * `A` - active * `D` - deleted
  * @member {module:model/Project.StatusEnum} status
  */
 Project.prototype['status'] = undefined;

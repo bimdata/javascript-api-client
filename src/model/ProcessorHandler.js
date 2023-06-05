@@ -81,6 +81,7 @@ ProcessorHandler.prototype['id'] = undefined;
 ProcessorHandler.prototype['worker'] = undefined;
 
 /**
+ * * `C` - completed * `D` - deleted * `P` - pending * `W` - waiting * `I` - in process * `E` - errored * `X` - won't fix
  * @member {module:model/ProcessorHandler.StatusEnum} status
  */
 ProcessorHandler.prototype['status'] = undefined;

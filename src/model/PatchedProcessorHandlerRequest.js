@@ -61,6 +61,7 @@ class PatchedProcessorHandlerRequest {
 }
 
 /**
+ * * `C` - completed * `D` - deleted * `P` - pending * `W` - waiting * `I` - in process * `E` - errored * `X` - won't fix
  * @member {module:model/PatchedProcessorHandlerRequest.StatusEnum} status
  */
 PatchedProcessorHandlerRequest.prototype['status'] = undefined;

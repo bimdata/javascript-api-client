@@ -80,7 +80,7 @@ WriteFolderRequest.prototype['parent_id'] = undefined;
 WriteFolderRequest.prototype['name'] = undefined;
 
 /**
- * Permission for a Folder
+ * Permission for a Folder  * `1` - denied * `50` - read_only * `100` - read_write
  * @member {module:model/WriteFolderRequest.DefaultPermissionEnum} default_permission
  */
 WriteFolderRequest.prototype['default_permission'] = undefined;

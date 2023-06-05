@@ -87,56 +87,56 @@ class IfcExportRequest {
 }
 
 /**
- * Exported IFC will include classifications from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include classifications(NONE)
+ * Exported IFC will include classifications from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include classifications(NONE)  * `ORIGINAL` - ORIGINAL * `UPDATED` - UPDATED * `NONE` - NONE
  * @member {module:model/IfcExportRequest.ClassificationsEnum} classifications
  * @default 'UPDATED'
  */
 IfcExportRequest.prototype['classifications'] = 'UPDATED';
 
 /**
- * Exported IFC will include zones from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include zones(NONE)
+ * Exported IFC will include zones from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include zones(NONE)  * `ORIGINAL` - ORIGINAL * `UPDATED` - UPDATED * `NONE` - NONE
  * @member {module:model/IfcExportRequest.ZonesEnum} zones
  * @default 'UPDATED'
  */
 IfcExportRequest.prototype['zones'] = 'UPDATED';
 
 /**
- * Exported IFC will include properties from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include properties(NONE)
+ * Exported IFC will include properties from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include properties(NONE)  * `ORIGINAL` - ORIGINAL * `UPDATED` - UPDATED * `NONE` - NONE
  * @member {module:model/IfcExportRequest.PropertiesEnum} properties
  * @default 'UPDATED'
  */
 IfcExportRequest.prototype['properties'] = 'UPDATED';
 
 /**
- * Exported IFC will include systems from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include systems(NONE)
+ * Exported IFC will include systems from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include systems(NONE)  * `ORIGINAL` - ORIGINAL * `UPDATED` - UPDATED * `NONE` - NONE
  * @member {module:model/IfcExportRequest.SystemsEnum} systems
  * @default 'UPDATED'
  */
 IfcExportRequest.prototype['systems'] = 'UPDATED';
 
 /**
- * Exported IFC will include layers from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include layers(NONE)
+ * Exported IFC will include layers from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include layers(NONE)  * `ORIGINAL` - ORIGINAL * `UPDATED` - UPDATED * `NONE` - NONE
  * @member {module:model/IfcExportRequest.LayersEnum} layers
  * @default 'UPDATED'
  */
 IfcExportRequest.prototype['layers'] = 'UPDATED';
 
 /**
- * Exported IFC will include materials from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include materials(NONE)
+ * Exported IFC will include materials from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include materials(NONE)  * `ORIGINAL` - ORIGINAL * `UPDATED` - UPDATED * `NONE` - NONE
  * @member {module:model/IfcExportRequest.MaterialsEnum} materials
  * @default 'UPDATED'
  */
 IfcExportRequest.prototype['materials'] = 'UPDATED';
 
 /**
- * Exported IFC will include attributes from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include attributes(NONE)
+ * Exported IFC will include attributes from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include attributes(NONE)  * `ORIGINAL` - ORIGINAL * `UPDATED` - UPDATED * `NONE` - NONE
  * @member {module:model/IfcExportRequest.AttributesEnum} attributes
  * @default 'UPDATED'
  */
 IfcExportRequest.prototype['attributes'] = 'UPDATED';
 
 /**
- * Exported IFC will include the structure from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include structure(NONE)
+ * Exported IFC will include the structure from original IFC file (ORIGINAL), from latest API updates (UPDATED), or won't include structure(NONE)  * `ORIGINAL` - ORIGINAL * `UPDATED` - UPDATED * `NONE` - NONE
  * @member {module:model/IfcExportRequest.StructureEnum} structure
  * @default 'UPDATED'
  */

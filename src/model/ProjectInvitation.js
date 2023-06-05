@@ -25,7 +25,7 @@ class ProjectInvitation {
      * @param id {Number} 
      * @param email {String} email of the user to invite
      * @param redirectUri {String} User will be redirected to this uri when they accept the invitation
-     * @param role {module:model/ProjectInvitation.RoleEnum} 
+     * @param role {module:model/ProjectInvitation.RoleEnum} * `100` - admin * `50` - user * `25` - guest
      */
     constructor(id, email, redirectUri, role) { 
         
@@ -92,6 +92,7 @@ ProjectInvitation.prototype['email'] = undefined;
 ProjectInvitation.prototype['redirect_uri'] = undefined;
 
 /**
+ * * `100` - admin * `50` - user * `25` - guest
  * @member {module:model/ProjectInvitation.RoleEnum} role
  */
 ProjectInvitation.prototype['role'] = undefined;

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **validationsInError** | **[Number]** | Validation IDs where one or more validators have no longer access to the visa document. | [readonly] 
 **creator** | [**UserProject**](UserProject.md) |  | [readonly] 
 **documentId** | **Number** |  | [readonly] 
-**status** | **String** |  | [readonly] 
+**status** | **String** | * &#x60;O&#x60; - opened * &#x60;A&#x60; - paused * &#x60;C&#x60; - closed | [readonly] 
 **description** | **String** | Description of the visa | [optional] 
 **comments** | [**[VisaComment]**](VisaComment.md) |  | [readonly] 
 **deadline** | **Date** |  | [optional] 

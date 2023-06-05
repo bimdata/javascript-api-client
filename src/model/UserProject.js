@@ -31,7 +31,7 @@ class UserProject {
      * @param lastname {String} 
      * @param profilePicture {String} 
      * @param sub {String} 
-     * @param role {module:model/UserProject.RoleEnum} 
+     * @param role {module:model/UserProject.RoleEnum} * `100` - admin * `50` - user * `25` - guest
      */
     constructor(id, userId, invitationId, email, firstname, lastname, profilePicture, sub, role) { 
         
@@ -141,6 +141,7 @@ UserProject.prototype['profile_picture'] = undefined;
 UserProject.prototype['sub'] = undefined;
 
 /**
+ * * `100` - admin * `50` - user * `25` - guest
  * @member {module:model/UserProject.RoleEnum} role
  */
 UserProject.prototype['role'] = undefined;

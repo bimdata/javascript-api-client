@@ -67,6 +67,7 @@ class CheckerResultRequest {
 }
 
 /**
+ * * `C` - completed * `P` - pending * `E` - errored
  * @member {module:model/CheckerResultRequest.StatusEnum} status
  */
 CheckerResultRequest.prototype['status'] = undefined;

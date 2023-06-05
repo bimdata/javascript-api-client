@@ -77,7 +77,7 @@ FolderWithoutChildrenRequest.prototype['parent_id'] = undefined;
 FolderWithoutChildrenRequest.prototype['name'] = undefined;
 
 /**
- * Permission for a Folder
+ * Permission for a Folder  * `1` - denied * `50` - read_only * `100` - read_write
  * @member {module:model/FolderWithoutChildrenRequest.DefaultPermissionEnum} default_permission
  */
 FolderWithoutChildrenRequest.prototype['default_permission'] = undefined;

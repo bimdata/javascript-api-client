@@ -224,7 +224,7 @@ export default class SsoApi {
      * Retrieve all invitations
      * Retrieve all invitations of your identity provider  Required scopes: org:manage
      * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.status          A: Accepted         D: Denied         P: Pending         
+     * @param {module:model/String} opts.status          A: Accepted         D: Denied         P: Pending           * `A` - accepted * `D` - denied * `P` - pending
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Invitation>} and HTTP response
      */
     getInvitationsWithHttpInfo(opts) {
@@ -256,7 +256,7 @@ export default class SsoApi {
      * Retrieve all invitations
      * Retrieve all invitations of your identity provider  Required scopes: org:manage
      * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.status          A: Accepted         D: Denied         P: Pending         
+     * @param {module:model/String} opts.status          A: Accepted         D: Denied         P: Pending           * `A` - accepted * `D` - denied * `P` - pending
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Invitation>}
      */
     getInvitations(opts) {

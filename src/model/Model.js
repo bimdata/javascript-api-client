@@ -27,7 +27,7 @@ class Model {
      * Constructs a new <code>Model</code>.
      * @alias module:model/Model
      * @param id {Number} 
-     * @param type {module:model/Model.TypeEnum} 
+     * @param type {module:model/Model.TypeEnum} * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING
      * @param creator {module:model/User} 
      * @param status {String} 
      * @param createdAt {Date} 
@@ -203,6 +203,7 @@ Model.prototype['id'] = undefined;
 Model.prototype['name'] = undefined;
 
 /**
+ * * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING
  * @member {module:model/Model.TypeEnum} type
  */
 Model.prototype['type'] = undefined;
@@ -218,6 +219,7 @@ Model.prototype['creator'] = undefined;
 Model.prototype['status'] = undefined;
 
 /**
+ * * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
  * @member {module:model/Model.SourceEnum} source
  */
 Model.prototype['source'] = undefined;

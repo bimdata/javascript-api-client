@@ -109,6 +109,7 @@ CheckProjectAccess.prototype['token_scopes'] = undefined;
 CheckProjectAccess.prototype['usable_scopes'] = undefined;
 
 /**
+ * * `100` - admin * `50` - user * `25` - guest
  * @member {module:model/CheckProjectAccess.UserRoleEnum} user_role
  */
 CheckProjectAccess.prototype['user_role'] = undefined;

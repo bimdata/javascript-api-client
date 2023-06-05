@@ -84,6 +84,7 @@ class PatchedModelRequest {
 PatchedModelRequest.prototype['name'] = undefined;
 
 /**
+ * * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
  * @member {module:model/PatchedModelRequest.SourceEnum} source
  */
 PatchedModelRequest.prototype['source'] = undefined;

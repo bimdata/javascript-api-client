@@ -26,7 +26,7 @@ class Invitation {
      * @param clientId {Number} 
      * @param redirectUri {String} User will be redirected to this uri when they accept the invitation
      * @param cloudName {String} 
-     * @param cloudRole {module:model/Invitation.CloudRoleEnum} Role the user will have when they accept the invitation
+     * @param cloudRole {module:model/Invitation.CloudRoleEnum} Role the user will have when they accept the invitation  * `100` - admin * `50` - user
      * @param email {String} email of the user to invite
      */
     constructor(id, clientId, redirectUri, cloudName, cloudRole, email) { 
@@ -118,7 +118,7 @@ Invitation.prototype['redirect_uri'] = undefined;
 Invitation.prototype['cloud_name'] = undefined;
 
 /**
- * Role the user will have when they accept the invitation
+ * Role the user will have when they accept the invitation  * `100` - admin * `50` - user
  * @member {module:model/Invitation.CloudRoleEnum} cloud_role
  */
 Invitation.prototype['cloud_role'] = undefined;
@@ -129,7 +129,7 @@ Invitation.prototype['cloud_role'] = undefined;
 Invitation.prototype['project_name'] = undefined;
 
 /**
- * Role the user will have when they accept the invitation
+ * Role the user will have when they accept the invitation  * `100` - admin * `50` - user * `25` - guest
  * @member {module:model/Invitation.ProjectRoleEnum} project_role
  */
 Invitation.prototype['project_role'] = undefined;
@@ -141,7 +141,7 @@ Invitation.prototype['project_role'] = undefined;
 Invitation.prototype['email'] = undefined;
 
 /**
- *          A: Accepted         D: Denied         P: Pending         
+ *          A: Accepted         D: Denied         P: Pending           * `A` - accepted * `D` - denied * `P` - pending
  * @member {module:model/Invitation.StatusEnum} status
  */
 Invitation.prototype['status'] = undefined;

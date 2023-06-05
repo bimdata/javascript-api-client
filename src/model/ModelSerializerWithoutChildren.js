@@ -26,7 +26,7 @@ class ModelSerializerWithoutChildren {
      * Constructs a new <code>ModelSerializerWithoutChildren</code>.
      * @alias module:model/ModelSerializerWithoutChildren
      * @param id {Number} 
-     * @param type {module:model/ModelSerializerWithoutChildren.TypeEnum} 
+     * @param type {module:model/ModelSerializerWithoutChildren.TypeEnum} * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING
      * @param creator {module:model/User} 
      * @param status {String} 
      * @param createdAt {Date} 
@@ -197,6 +197,7 @@ ModelSerializerWithoutChildren.prototype['id'] = undefined;
 ModelSerializerWithoutChildren.prototype['name'] = undefined;
 
 /**
+ * * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING
  * @member {module:model/ModelSerializerWithoutChildren.TypeEnum} type
  */
 ModelSerializerWithoutChildren.prototype['type'] = undefined;
@@ -212,6 +213,7 @@ ModelSerializerWithoutChildren.prototype['creator'] = undefined;
 ModelSerializerWithoutChildren.prototype['status'] = undefined;
 
 /**
+ * * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
  * @member {module:model/ModelSerializerWithoutChildren.SourceEnum} source
  */
 ModelSerializerWithoutChildren.prototype['source'] = undefined;

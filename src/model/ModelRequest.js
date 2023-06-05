@@ -84,6 +84,7 @@ class ModelRequest {
 ModelRequest.prototype['name'] = undefined;
 
 /**
+ * * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
  * @member {module:model/ModelRequest.SourceEnum} source
  */
 ModelRequest.prototype['source'] = undefined;

@@ -84,6 +84,7 @@ class CheckerResult {
 CheckerResult.prototype['id'] = undefined;
 
 /**
+ * * `C` - completed * `P` - pending * `E` - errored
  * @member {module:model/CheckerResult.StatusEnum} status
  */
 CheckerResult.prototype['status'] = undefined;

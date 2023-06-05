@@ -26,7 +26,7 @@ class VisaValidation {
      * @param id {Number} 
      * @param visaId {Number} 
      * @param validator {module:model/UserProject} 
-     * @param status {module:model/VisaValidation.StatusEnum} 
+     * @param status {module:model/VisaValidation.StatusEnum} * `P` - pending * `A` - accepted * `D` - denied
      * @param hasCommented {Boolean} Return True if validator has commented the visa
      * @param createdAt {Date} 
      * @param updatedAt {Date} 
@@ -106,6 +106,7 @@ VisaValidation.prototype['visa_id'] = undefined;
 VisaValidation.prototype['validator'] = undefined;
 
 /**
+ * * `P` - pending * `A` - accepted * `D` - denied
  * @member {module:model/VisaValidation.StatusEnum} status
  */
 VisaValidation.prototype['status'] = undefined;

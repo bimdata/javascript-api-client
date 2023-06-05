@@ -53,6 +53,9 @@ class PatchedProjectRequest {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
@@ -78,6 +81,12 @@ PatchedProjectRequest.prototype['logo'] = undefined;
 PatchedProjectRequest.prototype['name'] = undefined;
 
 /**
+ * @member {String} description
+ */
+PatchedProjectRequest.prototype['description'] = undefined;
+
+/**
+ * * `A` - active * `D` - deleted
  * @member {module:model/PatchedProjectRequest.StatusEnum} status
  */
 PatchedProjectRequest.prototype['status'] = undefined;

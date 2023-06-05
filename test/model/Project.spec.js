@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instance = new bimdata.Project();
+      //expect(instance).to.be();
+    });
+
     it('should have the property cloud (base name: "cloud")', function() {
       // uncomment below and update the code to test the property cloud
       //var instance = new bimdata.Project();

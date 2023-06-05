@@ -61,6 +61,7 @@ class PatchedGroupFolderRequest {
 }
 
 /**
+ * * `1` - denied * `50` - read_only * `100` - read_write
  * @member {module:model/PatchedGroupFolderRequest.PermissionEnum} permission
  */
 PatchedGroupFolderRequest.prototype['permission'] = undefined;

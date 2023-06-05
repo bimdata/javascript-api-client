@@ -26,7 +26,7 @@ class GroupFolder {
      * @alias module:model/GroupFolder
      * @param folder {module:model/FolderWithoutChildren} 
      * @param group {module:model/Group} 
-     * @param permission {module:model/GroupFolder.PermissionEnum} 
+     * @param permission {module:model/GroupFolder.PermissionEnum} * `1` - denied * `50` - read_only * `100` - read_write
      */
     constructor(folder, group, permission) { 
         
@@ -82,6 +82,7 @@ GroupFolder.prototype['folder'] = undefined;
 GroupFolder.prototype['group'] = undefined;
 
 /**
+ * * `1` - denied * `50` - read_only * `100` - read_write
  * @member {module:model/GroupFolder.PermissionEnum} permission
  */
 GroupFolder.prototype['permission'] = undefined;

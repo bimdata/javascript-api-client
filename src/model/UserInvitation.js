@@ -136,7 +136,7 @@ UserInvitation.prototype['project_id'] = undefined;
 UserInvitation.prototype['project_name'] = undefined;
 
 /**
- *          A: Accepted         D: Denied         P: Pending         
+ *          A: Accepted         D: Denied         P: Pending           * `A` - accepted * `D` - denied * `P` - pending
  * @member {module:model/UserInvitation.StatusEnum} status
  */
 UserInvitation.prototype['status'] = undefined;

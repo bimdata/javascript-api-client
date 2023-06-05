@@ -67,6 +67,7 @@ class PatchedCheckerResultRequest {
 }
 
 /**
+ * * `C` - completed * `P` - pending * `E` - errored
  * @member {module:model/PatchedCheckerResultRequest.StatusEnum} status
  */
 PatchedCheckerResultRequest.prototype['status'] = undefined;

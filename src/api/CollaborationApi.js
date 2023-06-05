@@ -858,7 +858,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'OBJ', 'DWG', 'GLTF', 'IFC', 'POINT_CLOUD'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'GLTF', 'DWG', 'POINT_CLOUD', 'OBJ', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -867,8 +867,8 @@ export default class CollaborationApi {
      * @param {Number} opts.parentId 
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
-     * @param {module:model/String} opts.modelSource Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
-     * @param {module:model/String} opts.ifcSource DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+     * @param {module:model/String} opts.modelSource Define the model.source field if the upload is a Model (IFC, PDF, DWG...)  * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
+     * @param {module:model/String} opts.ifcSource DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)  * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
      * @param {Number} opts.successorOf Old document version to replace. Only for create
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Document} and HTTP response
      */
@@ -924,7 +924,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'OBJ', 'DWG', 'GLTF', 'IFC', 'POINT_CLOUD'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'GLTF', 'DWG', 'POINT_CLOUD', 'OBJ', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -933,8 +933,8 @@ export default class CollaborationApi {
      * @param {Number} opts.parentId 
      * @param {String} opts.fileName Full name of the file
      * @param {String} opts.description Description of the file
-     * @param {module:model/String} opts.modelSource Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
-     * @param {module:model/String} opts.ifcSource DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+     * @param {module:model/String} opts.modelSource Define the model.source field if the upload is a Model (IFC, PDF, DWG...)  * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
+     * @param {module:model/String} opts.ifcSource DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)  * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
      * @param {Number} opts.successorOf Old document version to replace. Only for create
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Document}
      */

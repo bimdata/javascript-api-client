@@ -68,7 +68,7 @@ class CloudRole {
 CloudRole.prototype['cloud'] = undefined;
 
 /**
- * Role of the user in the cloud
+ * Role of the user in the cloud  * `100` - admin * `50` - user
  * @member {module:model/CloudRole.RoleEnum} role
  */
 CloudRole.prototype['role'] = undefined;

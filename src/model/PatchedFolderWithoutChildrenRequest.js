@@ -75,7 +75,7 @@ PatchedFolderWithoutChildrenRequest.prototype['parent_id'] = undefined;
 PatchedFolderWithoutChildrenRequest.prototype['name'] = undefined;
 
 /**
- * Permission for a Folder
+ * Permission for a Folder  * `1` - denied * `50` - read_only * `100` - read_write
  * @member {module:model/PatchedFolderWithoutChildrenRequest.DefaultPermissionEnum} default_permission
  */
 PatchedFolderWithoutChildrenRequest.prototype['default_permission'] = undefined;

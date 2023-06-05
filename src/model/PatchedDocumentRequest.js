@@ -107,13 +107,13 @@ PatchedDocumentRequest.prototype['description'] = undefined;
 PatchedDocumentRequest.prototype['file'] = undefined;
 
 /**
- * Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+ * Define the model.source field if the upload is a Model (IFC, PDF, DWG...)  * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
  * @member {module:model/PatchedDocumentRequest.ModelSourceEnum} model_source
  */
 PatchedDocumentRequest.prototype['model_source'] = undefined;
 
 /**
- * DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)
+ * DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)  * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
  * @member {module:model/PatchedDocumentRequest.IfcSourceEnum} ifc_source
  */
 PatchedDocumentRequest.prototype['ifc_source'] = undefined;

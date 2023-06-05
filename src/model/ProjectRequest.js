@@ -55,6 +55,9 @@ class ProjectRequest {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
@@ -80,6 +83,12 @@ ProjectRequest.prototype['logo'] = undefined;
 ProjectRequest.prototype['name'] = undefined;
 
 /**
+ * @member {String} description
+ */
+ProjectRequest.prototype['description'] = undefined;
+
+/**
+ * * `A` - active * `D` - deleted
  * @member {module:model/ProjectRequest.StatusEnum} status
  */
 ProjectRequest.prototype['status'] = undefined;

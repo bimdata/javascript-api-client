@@ -58,7 +58,7 @@ class PatchedUserProjectUpdateRequest {
 }
 
 /**
- * User's role in the project
+ * User's role in the project  * `100` - admin * `50` - user * `25` - guest
  * @member {module:model/PatchedUserProjectUpdateRequest.RoleEnum} role
  */
 PatchedUserProjectUpdateRequest.prototype['role'] = undefined;

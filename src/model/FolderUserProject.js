@@ -31,8 +31,8 @@ class FolderUserProject {
      * @param lastname {String} 
      * @param profilePicture {String} 
      * @param sub {String} 
-     * @param role {module:model/FolderUserProject.RoleEnum} 
-     * @param permission {module:model/FolderUserProject.PermissionEnum} 
+     * @param role {module:model/FolderUserProject.RoleEnum} * `100` - admin * `50` - user * `25` - guest
+     * @param permission {module:model/FolderUserProject.PermissionEnum} * `1` - denied * `50` - read_only * `100` - read_write
      */
     constructor(id, userId, invitationId, email, firstname, lastname, profilePicture, sub, role, permission) { 
         
@@ -146,11 +146,13 @@ FolderUserProject.prototype['profile_picture'] = undefined;
 FolderUserProject.prototype['sub'] = undefined;
 
 /**
+ * * `100` - admin * `50` - user * `25` - guest
  * @member {module:model/FolderUserProject.RoleEnum} role
  */
 FolderUserProject.prototype['role'] = undefined;
 
 /**
+ * * `1` - denied * `50` - read_only * `100` - read_write
  * @member {module:model/FolderUserProject.PermissionEnum} permission
  */
 FolderUserProject.prototype['permission'] = undefined;

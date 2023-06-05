@@ -165,7 +165,7 @@ Folder.prototype['created_by'] = undefined;
 Folder.prototype['groups_permissions'] = undefined;
 
 /**
- * Permission for a Folder
+ * Permission for a Folder  * `1` - denied * `50` - read_only * `100` - read_write
  * @member {module:model/Folder.DefaultPermissionEnum} default_permission
  */
 Folder.prototype['default_permission'] = undefined;

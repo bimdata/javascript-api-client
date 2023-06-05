@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **lastname** | **String** |  | [readonly] 
 **profilePicture** | **String** |  | [readonly] 
 **sub** | **String** |  | [readonly] 
-**role** | **Number** |  | [readonly] 
-**permission** | **Number** |  | [readonly] 
+**role** | **Number** | * &#x60;100&#x60; - admin * &#x60;50&#x60; - user * &#x60;25&#x60; - guest | [readonly] 
+**permission** | **Number** | * &#x60;1&#x60; - denied * &#x60;50&#x60; - read_only * &#x60;100&#x60; - read_write | [readonly] 
 
 
 

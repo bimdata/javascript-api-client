@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **updatedAt** | **Date** | Date of the last update | [readonly] 
 **createdBy** | [**ShortUser**](ShortUser.md) |  | [readonly] 
 **groupsPermissions** | [**[GroupFolderRead]**](GroupFolderRead.md) | List of group permissions | [readonly] 
-**defaultPermission** | **Number** | Permission for a Folder | [optional] 
+**defaultPermission** | **Number** | Permission for a Folder  * &#x60;1&#x60; - denied * &#x60;50&#x60; - read_only * &#x60;100&#x60; - read_write | [optional] 
 **userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 
 
 

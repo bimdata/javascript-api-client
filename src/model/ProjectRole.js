@@ -68,7 +68,7 @@ class ProjectRole {
 ProjectRole.prototype['project'] = undefined;
 
 /**
- * User's role in the project
+ * User's role in the project  * `100` - admin * `50` - user * `25` - guest
  * @member {module:model/ProjectRole.RoleEnum} role
  */
 ProjectRole.prototype['role'] = undefined;
