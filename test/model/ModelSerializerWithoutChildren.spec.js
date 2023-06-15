@@ -222,6 +222,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property parentId (base name: "parent_id")', function() {
+      // uncomment below and update the code to test the property parentId
+      //var instance = new bimdata.ModelSerializerWithoutChildren();
+      //expect(instance).to.be();
+    });
+
     it('should have the property pageNumber (base name: "page_number")', function() {
       // uncomment below and update the code to test the property pageNumber
       //var instance = new bimdata.ModelSerializerWithoutChildren();

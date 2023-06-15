@@ -45,11 +45,12 @@ class ModelSerializerWithoutChildren {
      * @param projectId {Number} 
      * @param errors {Array.<String>} List of errors that happened during IFC processing
      * @param warnings {Array.<String>} List of warnings that happened during IFC processing
+     * @param parentId {Number} The first page of the pdf
      * @param pageNumber {Number} The page number of the related pdf
      */
-    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, pageNumber) { 
+    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber) { 
         
-        ModelSerializerWithoutChildren.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, pageNumber);
+        ModelSerializerWithoutChildren.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber);
     }
 
     /**
@@ -57,7 +58,7 @@ class ModelSerializerWithoutChildren {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, pageNumber) { 
+    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber) { 
         obj['id'] = id;
         obj['type'] = type;
         obj['creator'] = creator;
@@ -78,6 +79,7 @@ class ModelSerializerWithoutChildren {
         obj['project_id'] = projectId;
         obj['errors'] = errors;
         obj['warnings'] = warnings;
+        obj['parent_id'] = parentId;
         obj['page_number'] = pageNumber;
     }
 
@@ -175,6 +177,9 @@ class ModelSerializerWithoutChildren {
             }
             if (data.hasOwnProperty('recommanded_2d_angle')) {
                 obj['recommanded_2d_angle'] = ApiClient.convertToType(data['recommanded_2d_angle'], 'Number');
+            }
+            if (data.hasOwnProperty('parent_id')) {
+                obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
             }
             if (data.hasOwnProperty('page_number')) {
                 obj['page_number'] = ApiClient.convertToType(data['page_number'], 'Number');
@@ -336,6 +341,12 @@ ModelSerializerWithoutChildren.prototype['north_vector'] = undefined;
  * @member {Number} recommanded_2d_angle
  */
 ModelSerializerWithoutChildren.prototype['recommanded_2d_angle'] = undefined;
+
+/**
+ * The first page of the pdf
+ * @member {Number} parent_id
+ */
+ModelSerializerWithoutChildren.prototype['parent_id'] = undefined;
 
 /**
  * The page number of the related pdf

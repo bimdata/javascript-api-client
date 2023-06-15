@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **version** | **String** | This field is only for information. Updating it won&#39;t impact the export. | [optional] 
 **northVector** | **[[Number]]** | This field is only for information. Updating it won&#39;t impact the export. | [optional] 
 **recommanded2dAngle** | **Number** | This is the angle in clockwise degree to apply on the 2D to optimise the horizontality of objects. This field is only for information. Updating it won&#39;t impact the export. | [optional] 
+**parentId** | **Number** | The first page of the pdf | [readonly] 
 **pageNumber** | **Number** | The page number of the related pdf | [readonly] 
 **children** | [**[ModelSerializerWithoutChildren]**](ModelSerializerWithoutChildren.md) | Contains additional pages of a pdf | [readonly] 
 

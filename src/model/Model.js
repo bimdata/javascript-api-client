@@ -46,12 +46,13 @@ class Model {
      * @param projectId {Number} 
      * @param errors {Array.<String>} List of errors that happened during IFC processing
      * @param warnings {Array.<String>} List of warnings that happened during IFC processing
+     * @param parentId {Number} The first page of the pdf
      * @param pageNumber {Number} The page number of the related pdf
      * @param children {Array.<module:model/ModelSerializerWithoutChildren>} Contains additional pages of a pdf
      */
-    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, pageNumber, children) { 
+    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, children) { 
         
-        Model.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, pageNumber, children);
+        Model.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, children);
     }
 
     /**
@@ -59,7 +60,7 @@ class Model {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, pageNumber, children) { 
+    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, children) { 
         obj['id'] = id;
         obj['type'] = type;
         obj['creator'] = creator;
@@ -80,6 +81,7 @@ class Model {
         obj['project_id'] = projectId;
         obj['errors'] = errors;
         obj['warnings'] = warnings;
+        obj['parent_id'] = parentId;
         obj['page_number'] = pageNumber;
         obj['children'] = children;
     }
@@ -178,6 +180,9 @@ class Model {
             }
             if (data.hasOwnProperty('recommanded_2d_angle')) {
                 obj['recommanded_2d_angle'] = ApiClient.convertToType(data['recommanded_2d_angle'], 'Number');
+            }
+            if (data.hasOwnProperty('parent_id')) {
+                obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
             }
             if (data.hasOwnProperty('page_number')) {
                 obj['page_number'] = ApiClient.convertToType(data['page_number'], 'Number');
@@ -342,6 +347,12 @@ Model.prototype['north_vector'] = undefined;
  * @member {Number} recommanded_2d_angle
  */
 Model.prototype['recommanded_2d_angle'] = undefined;
+
+/**
+ * The first page of the pdf
+ * @member {Number} parent_id
+ */
+Model.prototype['parent_id'] = undefined;
 
 /**
  * The page number of the related pdf
