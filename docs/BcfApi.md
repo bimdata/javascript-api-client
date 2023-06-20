@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**createExtensionStatus**](BcfApi.md#createExtensionStatus) | **POST** /bcf/2.1/projects/{projects_pk}/extension/status | Create a TopicStatus
 [**createExtensionType**](BcfApi.md#createExtensionType) | **POST** /bcf/2.1/projects/{projects_pk}/extension/type | Create a TopicType
 [**createFullTopic**](BcfApi.md#createFullTopic) | **POST** /bcf/2.1/projects/{projects_pk}/full-topic | Create a Topic with viewpoints and comments
+[**createPin**](BcfApi.md#createPin) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin | Create a Pin
 [**createTopic**](BcfApi.md#createTopic) | **POST** /bcf/2.1/projects/{projects_pk}/topics | Create a topic
 [**createViewpoint**](BcfApi.md#createViewpoint) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints | Create a Viewpoint
 [**deleteComment**](BcfApi.md#deleteComment) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Delete a comment
@@ -19,12 +20,14 @@ Method | HTTP request | Description
 [**deleteExtensionStage**](BcfApi.md#deleteExtensionStage) | **DELETE** /bcf/2.1/projects/{projects_pk}/extension/stage/{id} | Delete a Stage
 [**deleteExtensionStatus**](BcfApi.md#deleteExtensionStatus) | **DELETE** /bcf/2.1/projects/{projects_pk}/extension/status/{id} | Delete a TopicStatus
 [**deleteExtensionType**](BcfApi.md#deleteExtensionType) | **DELETE** /bcf/2.1/projects/{projects_pk}/extension/type/{id} | Delete a TopicType
+[**deletePin**](BcfApi.md#deletePin) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Delete a Pin
 [**deleteTopic**](BcfApi.md#deleteTopic) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Delete a topic
 [**deleteViewpoint**](BcfApi.md#deleteViewpoint) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Delete a Viewpoint
 [**downloadBcfExport**](BcfApi.md#downloadBcfExport) | **GET** /bcf/2.1/projects/{id}/export | Export project&#39;s topics in bcf-xml format
 [**fullUpdateBcfProject**](BcfApi.md#fullUpdateBcfProject) | **PUT** /bcf/2.1/projects/{id} | Update all fields of a BCF project
 [**fullUpdateComment**](BcfApi.md#fullUpdateComment) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Update all fields of a comment
 [**fullUpdateFullTopic**](BcfApi.md#fullUpdateFullTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update all fields of a topic
+[**fullUpdatePin**](BcfApi.md#fullUpdatePin) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Update all fields of a Pin
 [**fullUpdateTopic**](BcfApi.md#fullUpdateTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update all fields of a topic
 [**fullUpdateViewpoint**](BcfApi.md#fullUpdateViewpoint) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Update all fields of a Viewpoint
 [**getAuth**](BcfApi.md#getAuth) | **GET** /bcf/2.1/auth | Retrieve Authentication Information
@@ -37,6 +40,7 @@ Method | HTTP request | Description
 [**getExtensions**](BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{id}/extensions | Retrieve project extensions
 [**getFullTopic**](BcfApi.md#getFullTopic) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Retrieve a full topic
 [**getFullTopics**](BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | Retrieve all full topics
+[**getPins**](BcfApi.md#getPins) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin | Retrieve all Pins of a viewpoint
 [**getRelatedTopics**](BcfApi.md#getRelatedTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid}/related_topics | Get all related topics
 [**getSelections**](BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/selection | Retrieve all selections of a viewpoint
 [**getSnapshot**](BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/snapshot | Retrieve the viewpoint&#39; snapshot
@@ -46,6 +50,7 @@ Method | HTTP request | Description
 [**getTopics**](BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | Retrieve all topics
 [**getUser**](BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | Get current user info
 [**getVersions**](BcfApi.md#getVersions) | **GET** /bcf/versions | Retrieve all supported BCF versions by this API
+[**getViewpoinPin**](BcfApi.md#getViewpoinPin) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Retrieve a Pin
 [**getViewpoint**](BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Retrieve a Viewpoint
 [**getViewpoints**](BcfApi.md#getViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints | Retrieve all Viewpoints of a topic
 [**getVisibilities**](BcfApi.md#getVisibilities) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/visibility | Retrieve all visibilities of a viewpoint
@@ -58,6 +63,7 @@ Method | HTTP request | Description
 [**updateExtensionStatus**](BcfApi.md#updateExtensionStatus) | **PATCH** /bcf/2.1/projects/{projects_pk}/extension/status/{id} | Update a TopicStatus
 [**updateExtensionType**](BcfApi.md#updateExtensionType) | **PATCH** /bcf/2.1/projects/{projects_pk}/extension/type/{id} | Update a TopicType
 [**updateFullTopic**](BcfApi.md#updateFullTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update some fields of a topic
+[**updatePin**](BcfApi.md#updatePin) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Update some fields of a Pin
 [**updateTopic**](BcfApi.md#updateTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update some fields of a topic
 [**updateViewpoint**](BcfApi.md#updateViewpoint) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Update some fields of a Viewpoint
 
@@ -501,6 +507,73 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FullTopic**](FullTopic.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
+## createPin
+
+> Pin createPin(projectsPk, topicsGuid, viewpointsGuid, pinRequest)
+
+Create a Pin
+
+This is not a standard route. Create a Pin  Required scopes: bcf:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let projectsPk = 56; // Number | 
+let topicsGuid = "topicsGuid_example"; // String | 
+let viewpointsGuid = "viewpointsGuid_example"; // String | 
+let pinRequest = new bimdata.PinRequest(); // PinRequest | 
+apiInstance.createPin(projectsPk, topicsGuid, viewpointsGuid, pinRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | **String**|  | 
+ **viewpointsGuid** | **String**|  | 
+ **pinRequest** | [**PinRequest**](PinRequest.md)|  | 
+
+### Return type
+
+[**Pin**](Pin.md)
 
 ### Authorization
 
@@ -1024,6 +1097,73 @@ null (empty response body)
 - **Accept**: Not defined
 
 
+## deletePin
+
+> deletePin(guid, projectsPk, topicsGuid, viewpointsGuid)
+
+Delete a Pin
+
+This is not a standard route. Delete a Pin  Required scopes: bcf:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let guid = "guid_example"; // String | 
+let projectsPk = 56; // Number | 
+let topicsGuid = "topicsGuid_example"; // String | 
+let viewpointsGuid = "viewpointsGuid_example"; // String | 
+apiInstance.deletePin(guid, projectsPk, topicsGuid, viewpointsGuid).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **guid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | **String**|  | 
+ **viewpointsGuid** | **String**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
 ## deleteTopic
 
 > deleteTopic(guid, projectsPk)
@@ -1413,6 +1553,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FullTopic**](FullTopic.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
+## fullUpdatePin
+
+> Pin fullUpdatePin(guid, projectsPk, topicsGuid, viewpointsGuid, pinRequest)
+
+Update all fields of a Pin
+
+This is not a standard route. Update all fields of a Pin  Required scopes: bcf:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let guid = "guid_example"; // String | 
+let projectsPk = 56; // Number | 
+let topicsGuid = "topicsGuid_example"; // String | 
+let viewpointsGuid = "viewpointsGuid_example"; // String | 
+let pinRequest = new bimdata.PinRequest(); // PinRequest | 
+apiInstance.fullUpdatePin(guid, projectsPk, topicsGuid, viewpointsGuid, pinRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **guid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | **String**|  | 
+ **viewpointsGuid** | **String**|  | 
+ **pinRequest** | [**PinRequest**](PinRequest.md)|  | 
+
+### Return type
+
+[**Pin**](Pin.md)
 
 ### Authorization
 
@@ -2188,6 +2397,71 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getPins
+
+> [Pin] getPins(projectsPk, topicsGuid, viewpointsGuid)
+
+Retrieve all Pins of a viewpoint
+
+This is not a standard route. Retrieve all Pins of a viewpoint  Required scopes: bcf:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let projectsPk = 56; // Number | 
+let topicsGuid = "topicsGuid_example"; // String | 
+let viewpointsGuid = "viewpointsGuid_example"; // String | 
+apiInstance.getPins(projectsPk, topicsGuid, viewpointsGuid).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | **String**|  | 
+ **viewpointsGuid** | **String**|  | 
+
+### Return type
+
+[**[Pin]**](Pin.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getRelatedTopics
 
 > [String] getRelatedTopics(guid, projectsPk, opts)
@@ -2762,6 +3036,73 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**[Version]**](Version.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getViewpoinPin
+
+> Pin getViewpoinPin(guid, projectsPk, topicsGuid, viewpointsGuid)
+
+Retrieve a Pin
+
+This is not a standard route. Retrieve a Pin  Required scopes: bcf:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let guid = "guid_example"; // String | 
+let projectsPk = 56; // Number | 
+let topicsGuid = "topicsGuid_example"; // String | 
+let viewpointsGuid = "viewpointsGuid_example"; // String | 
+apiInstance.getViewpoinPin(guid, projectsPk, topicsGuid, viewpointsGuid).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **guid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | **String**|  | 
+ **viewpointsGuid** | **String**|  | 
+
+### Return type
+
+[**Pin**](Pin.md)
 
 ### Authorization
 
@@ -3564,6 +3905,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FullTopic**](FullTopic.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
+## updatePin
+
+> Pin updatePin(guid, projectsPk, topicsGuid, viewpointsGuid, opts)
+
+Update some fields of a Pin
+
+This is not a standard route. Update some fields of a Pin  Required scopes: bcf:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let guid = "guid_example"; // String | 
+let projectsPk = 56; // Number | 
+let topicsGuid = "topicsGuid_example"; // String | 
+let viewpointsGuid = "viewpointsGuid_example"; // String | 
+let opts = {
+  'patchedPinRequest': new bimdata.PatchedPinRequest() // PatchedPinRequest | 
+};
+apiInstance.updatePin(guid, projectsPk, topicsGuid, viewpointsGuid, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **guid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | **String**|  | 
+ **viewpointsGuid** | **String**|  | 
+ **patchedPinRequest** | [**PatchedPinRequest**](PatchedPinRequest.md)|  | [optional] 
+
+### Return type
+
+[**Pin**](Pin.md)
 
 ### Authorization
 

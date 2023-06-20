@@ -8,12 +8,7 @@ docs/BcfProject.md
 docs/BcfProjectRequest.md
 docs/Building.md
 docs/BuildingModelPlanRequest.md
-docs/CheckPlan.md
-docs/CheckPlanRequest.md
 docs/CheckProjectAccess.md
-docs/CheckerApi.md
-docs/CheckerResult.md
-docs/CheckerResultRequest.md
 docs/Classification.md
 docs/ClassificationRequest.md
 docs/ClippingPlane.md
@@ -63,8 +58,6 @@ docs/GroupRequest.md
 docs/IfcAccessToken.md
 docs/IfcAccessTokenRequest.md
 docs/IfcApi.md
-docs/IfcChecker.md
-docs/IfcCheckerRequest.md
 docs/IfcExportRequest.md
 docs/IfcMergeRequest.md
 docs/IfcOptimizeRequest.md
@@ -91,7 +84,6 @@ docs/ModelApi.md
 docs/ModelErrors.md
 docs/ModelErrorsRequest.md
 docs/ModelFiles.md
-docs/ModelRequest.md
 docs/ModelSerializerWithoutChildren.md
 docs/ModelWithPositioningPlan.md
 docs/Organization.md
@@ -99,8 +91,6 @@ docs/OrganizationRequest.md
 docs/OrthogonalCamera.md
 docs/OrthogonalCameraRequest.md
 docs/PatchedBcfProjectRequest.md
-docs/PatchedCheckPlanRequest.md
-docs/PatchedCheckerResultRequest.md
 docs/PatchedClassificationRequest.md
 docs/PatchedCloudRequest.md
 docs/PatchedCommentRequest.md
@@ -111,10 +101,10 @@ docs/PatchedFullTopicRequest.md
 docs/PatchedGroupFolderRequest.md
 docs/PatchedGroupRequest.md
 docs/PatchedIfcAccessTokenRequest.md
-docs/PatchedIfcCheckerRequest.md
 docs/PatchedLabelRequest.md
 docs/PatchedLayerRequest.md
 docs/PatchedModelRequest.md
+docs/PatchedPinRequest.md
 docs/PatchedPositioningPlanRequest.md
 docs/PatchedPriorityRequest.md
 docs/PatchedProcessorHandlerRequest.md
@@ -123,9 +113,6 @@ docs/PatchedProjectRequest.md
 docs/PatchedPropertyDefinitionRequest.md
 docs/PatchedPropertyRequest.md
 docs/PatchedPropertySetRequest.md
-docs/PatchedRuleComponentRequest.md
-docs/PatchedRuleRequest.md
-docs/PatchedRulesetRequest.md
 docs/PatchedSpaceRequest.md
 docs/PatchedStageRequest.md
 docs/PatchedStoreyBuildingRequest.md
@@ -199,12 +186,6 @@ docs/RawSystemRequest.md
 docs/RawUnit.md
 docs/RawUnitRequest.md
 docs/RecursiveFolderChildren.md
-docs/Rule.md
-docs/RuleComponent.md
-docs/RuleComponentRequest.md
-docs/RuleRequest.md
-docs/Ruleset.md
-docs/RulesetRequest.md
 docs/SelfBcfUser.md
 docs/SelfUser.md
 docs/ShortUser.md
@@ -263,7 +244,6 @@ git_push.sh
 mocha.opts
 src/ApiClient.js
 src/api/BcfApi.js
-src/api/CheckerApi.js
 src/api/CollaborationApi.js
 src/api/IfcApi.js
 src/api/ModelApi.js
@@ -275,11 +255,7 @@ src/model/BcfProject.js
 src/model/BcfProjectRequest.js
 src/model/Building.js
 src/model/BuildingModelPlanRequest.js
-src/model/CheckPlan.js
-src/model/CheckPlanRequest.js
 src/model/CheckProjectAccess.js
-src/model/CheckerResult.js
-src/model/CheckerResultRequest.js
 src/model/Classification.js
 src/model/ClassificationRequest.js
 src/model/ClippingPlane.js
@@ -327,8 +303,6 @@ src/model/GroupFolderRead.js
 src/model/GroupRequest.js
 src/model/IfcAccessToken.js
 src/model/IfcAccessTokenRequest.js
-src/model/IfcChecker.js
-src/model/IfcCheckerRequest.js
 src/model/IfcExportRequest.js
 src/model/IfcMergeRequest.js
 src/model/IfcOptimizeRequest.js
@@ -354,7 +328,6 @@ src/model/Model.js
 src/model/ModelErrors.js
 src/model/ModelErrorsRequest.js
 src/model/ModelFiles.js
-src/model/ModelRequest.js
 src/model/ModelSerializerWithoutChildren.js
 src/model/ModelWithPositioningPlan.js
 src/model/Organization.js
@@ -362,8 +335,6 @@ src/model/OrganizationRequest.js
 src/model/OrthogonalCamera.js
 src/model/OrthogonalCameraRequest.js
 src/model/PatchedBcfProjectRequest.js
-src/model/PatchedCheckPlanRequest.js
-src/model/PatchedCheckerResultRequest.js
 src/model/PatchedClassificationRequest.js
 src/model/PatchedCloudRequest.js
 src/model/PatchedCommentRequest.js
@@ -374,10 +345,10 @@ src/model/PatchedFullTopicRequest.js
 src/model/PatchedGroupFolderRequest.js
 src/model/PatchedGroupRequest.js
 src/model/PatchedIfcAccessTokenRequest.js
-src/model/PatchedIfcCheckerRequest.js
 src/model/PatchedLabelRequest.js
 src/model/PatchedLayerRequest.js
 src/model/PatchedModelRequest.js
+src/model/PatchedPinRequest.js
 src/model/PatchedPositioningPlanRequest.js
 src/model/PatchedPriorityRequest.js
 src/model/PatchedProcessorHandlerRequest.js
@@ -386,9 +357,6 @@ src/model/PatchedProjectRequest.js
 src/model/PatchedPropertyDefinitionRequest.js
 src/model/PatchedPropertyRequest.js
 src/model/PatchedPropertySetRequest.js
-src/model/PatchedRuleComponentRequest.js
-src/model/PatchedRuleRequest.js
-src/model/PatchedRulesetRequest.js
 src/model/PatchedSpaceRequest.js
 src/model/PatchedStageRequest.js
 src/model/PatchedStoreyBuildingRequest.js
@@ -462,12 +430,6 @@ src/model/RawSystemRequest.js
 src/model/RawUnit.js
 src/model/RawUnitRequest.js
 src/model/RecursiveFolderChildren.js
-src/model/Rule.js
-src/model/RuleComponent.js
-src/model/RuleComponentRequest.js
-src/model/RuleRequest.js
-src/model/Ruleset.js
-src/model/RulesetRequest.js
 src/model/SelfBcfUser.js
 src/model/SelfUser.js
 src/model/ShortUser.js
@@ -521,7 +483,6 @@ src/model/ZoneRequest.js
 src/model/ZoneSpace.js
 src/model/ZoneSpaceRequest.js
 test/api/BcfApi.spec.js
-test/api/CheckerApi.spec.js
 test/api/CollaborationApi.spec.js
 test/api/IfcApi.spec.js
 test/api/ModelApi.spec.js
@@ -532,11 +493,7 @@ test/model/BcfProject.spec.js
 test/model/BcfProjectRequest.spec.js
 test/model/Building.spec.js
 test/model/BuildingModelPlanRequest.spec.js
-test/model/CheckPlan.spec.js
-test/model/CheckPlanRequest.spec.js
 test/model/CheckProjectAccess.spec.js
-test/model/CheckerResult.spec.js
-test/model/CheckerResultRequest.spec.js
 test/model/Classification.spec.js
 test/model/ClassificationRequest.spec.js
 test/model/ClippingPlane.spec.js
@@ -584,8 +541,6 @@ test/model/GroupFolderRead.spec.js
 test/model/GroupRequest.spec.js
 test/model/IfcAccessToken.spec.js
 test/model/IfcAccessTokenRequest.spec.js
-test/model/IfcChecker.spec.js
-test/model/IfcCheckerRequest.spec.js
 test/model/IfcExportRequest.spec.js
 test/model/IfcMergeRequest.spec.js
 test/model/IfcOptimizeRequest.spec.js
@@ -611,7 +566,6 @@ test/model/Model.spec.js
 test/model/ModelErrors.spec.js
 test/model/ModelErrorsRequest.spec.js
 test/model/ModelFiles.spec.js
-test/model/ModelRequest.spec.js
 test/model/ModelSerializerWithoutChildren.spec.js
 test/model/ModelWithPositioningPlan.spec.js
 test/model/Organization.spec.js
@@ -619,8 +573,6 @@ test/model/OrganizationRequest.spec.js
 test/model/OrthogonalCamera.spec.js
 test/model/OrthogonalCameraRequest.spec.js
 test/model/PatchedBcfProjectRequest.spec.js
-test/model/PatchedCheckPlanRequest.spec.js
-test/model/PatchedCheckerResultRequest.spec.js
 test/model/PatchedClassificationRequest.spec.js
 test/model/PatchedCloudRequest.spec.js
 test/model/PatchedCommentRequest.spec.js
@@ -631,10 +583,10 @@ test/model/PatchedFullTopicRequest.spec.js
 test/model/PatchedGroupFolderRequest.spec.js
 test/model/PatchedGroupRequest.spec.js
 test/model/PatchedIfcAccessTokenRequest.spec.js
-test/model/PatchedIfcCheckerRequest.spec.js
 test/model/PatchedLabelRequest.spec.js
 test/model/PatchedLayerRequest.spec.js
 test/model/PatchedModelRequest.spec.js
+test/model/PatchedPinRequest.spec.js
 test/model/PatchedPositioningPlanRequest.spec.js
 test/model/PatchedPriorityRequest.spec.js
 test/model/PatchedProcessorHandlerRequest.spec.js
@@ -643,9 +595,6 @@ test/model/PatchedProjectRequest.spec.js
 test/model/PatchedPropertyDefinitionRequest.spec.js
 test/model/PatchedPropertyRequest.spec.js
 test/model/PatchedPropertySetRequest.spec.js
-test/model/PatchedRuleComponentRequest.spec.js
-test/model/PatchedRuleRequest.spec.js
-test/model/PatchedRulesetRequest.spec.js
 test/model/PatchedSpaceRequest.spec.js
 test/model/PatchedStageRequest.spec.js
 test/model/PatchedStoreyBuildingRequest.spec.js
@@ -719,12 +668,6 @@ test/model/RawSystemRequest.spec.js
 test/model/RawUnit.spec.js
 test/model/RawUnitRequest.spec.js
 test/model/RecursiveFolderChildren.spec.js
-test/model/Rule.spec.js
-test/model/RuleComponent.spec.js
-test/model/RuleComponentRequest.spec.js
-test/model/RuleRequest.spec.js
-test/model/Ruleset.spec.js
-test/model/RulesetRequest.spec.js
 test/model/SelfBcfUser.spec.js
 test/model/SelfUser.spec.js
 test/model/ShortUser.spec.js

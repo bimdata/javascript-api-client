@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **clippingPlanes** | [**[ClippingPlane]**](ClippingPlane.md) |  | [optional] 
 **snapshot** | [**Snapshot**](Snapshot.md) |  | [optional] 
 **components** | [**ComponentsParent**](ComponentsParent.md) |  | [optional] 
-**pins** | [**[Pin]**](Pin.md) | Non standard field. Pins (or markers/annotations) are points of interest | [optional] 
+**pins** | [**[Pin]**](Pin.md) | Non standard field. Pins (or markers/annotations) are points of interest. When creating a Viewpoint you can create pins with the fields &#x60;pins&#x60;, but you can&#39;t edit pins through here. You must use dedicated pin routes. | [optional] 
 
 

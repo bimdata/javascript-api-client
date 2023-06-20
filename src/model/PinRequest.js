@@ -22,7 +22,6 @@ import PointRequest from './PointRequest';
 class PinRequest {
     /**
      * Constructs a new <code>PinRequest</code>.
-     * Adds nested create feature
      * @alias module:model/PinRequest
      * @param point {module:model/PointRequest} 
      */
@@ -51,6 +50,9 @@ class PinRequest {
         if (data) {
             obj = obj || new PinRequest();
 
+            if (data.hasOwnProperty('guid')) {
+                obj['guid'] = ApiClient.convertToType(data['guid'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -60,12 +62,20 @@ class PinRequest {
             if (data.hasOwnProperty('point')) {
                 obj['point'] = PointRequest.constructFromObject(data['point']);
             }
+            if (data.hasOwnProperty('index')) {
+                obj['index'] = ApiClient.convertToType(data['index'], 'Number');
+            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * @member {String} guid
+ */
+PinRequest.prototype['guid'] = undefined;
 
 /**
  * @member {String} name
@@ -81,6 +91,11 @@ PinRequest.prototype['color'] = undefined;
  * @member {module:model/PointRequest} point
  */
 PinRequest.prototype['point'] = undefined;
+
+/**
+ * @member {Number} index
+ */
+PinRequest.prototype['index'] = undefined;
 
 
 

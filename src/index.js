@@ -18,11 +18,7 @@ import BcfProject from './model/BcfProject';
 import BcfProjectRequest from './model/BcfProjectRequest';
 import Building from './model/Building';
 import BuildingModelPlanRequest from './model/BuildingModelPlanRequest';
-import CheckPlan from './model/CheckPlan';
-import CheckPlanRequest from './model/CheckPlanRequest';
 import CheckProjectAccess from './model/CheckProjectAccess';
-import CheckerResult from './model/CheckerResult';
-import CheckerResultRequest from './model/CheckerResultRequest';
 import Classification from './model/Classification';
 import ClassificationRequest from './model/ClassificationRequest';
 import ClippingPlane from './model/ClippingPlane';
@@ -70,8 +66,6 @@ import GroupFolderRead from './model/GroupFolderRead';
 import GroupRequest from './model/GroupRequest';
 import IfcAccessToken from './model/IfcAccessToken';
 import IfcAccessTokenRequest from './model/IfcAccessTokenRequest';
-import IfcChecker from './model/IfcChecker';
-import IfcCheckerRequest from './model/IfcCheckerRequest';
 import IfcExportRequest from './model/IfcExportRequest';
 import IfcMergeRequest from './model/IfcMergeRequest';
 import IfcOptimizeRequest from './model/IfcOptimizeRequest';
@@ -97,7 +91,6 @@ import Model from './model/Model';
 import ModelErrors from './model/ModelErrors';
 import ModelErrorsRequest from './model/ModelErrorsRequest';
 import ModelFiles from './model/ModelFiles';
-import ModelRequest from './model/ModelRequest';
 import ModelSerializerWithoutChildren from './model/ModelSerializerWithoutChildren';
 import ModelWithPositioningPlan from './model/ModelWithPositioningPlan';
 import Organization from './model/Organization';
@@ -105,8 +98,6 @@ import OrganizationRequest from './model/OrganizationRequest';
 import OrthogonalCamera from './model/OrthogonalCamera';
 import OrthogonalCameraRequest from './model/OrthogonalCameraRequest';
 import PatchedBcfProjectRequest from './model/PatchedBcfProjectRequest';
-import PatchedCheckPlanRequest from './model/PatchedCheckPlanRequest';
-import PatchedCheckerResultRequest from './model/PatchedCheckerResultRequest';
 import PatchedClassificationRequest from './model/PatchedClassificationRequest';
 import PatchedCloudRequest from './model/PatchedCloudRequest';
 import PatchedCommentRequest from './model/PatchedCommentRequest';
@@ -117,10 +108,10 @@ import PatchedFullTopicRequest from './model/PatchedFullTopicRequest';
 import PatchedGroupFolderRequest from './model/PatchedGroupFolderRequest';
 import PatchedGroupRequest from './model/PatchedGroupRequest';
 import PatchedIfcAccessTokenRequest from './model/PatchedIfcAccessTokenRequest';
-import PatchedIfcCheckerRequest from './model/PatchedIfcCheckerRequest';
 import PatchedLabelRequest from './model/PatchedLabelRequest';
 import PatchedLayerRequest from './model/PatchedLayerRequest';
 import PatchedModelRequest from './model/PatchedModelRequest';
+import PatchedPinRequest from './model/PatchedPinRequest';
 import PatchedPositioningPlanRequest from './model/PatchedPositioningPlanRequest';
 import PatchedPriorityRequest from './model/PatchedPriorityRequest';
 import PatchedProcessorHandlerRequest from './model/PatchedProcessorHandlerRequest';
@@ -129,9 +120,6 @@ import PatchedProjectRequest from './model/PatchedProjectRequest';
 import PatchedPropertyDefinitionRequest from './model/PatchedPropertyDefinitionRequest';
 import PatchedPropertyRequest from './model/PatchedPropertyRequest';
 import PatchedPropertySetRequest from './model/PatchedPropertySetRequest';
-import PatchedRuleComponentRequest from './model/PatchedRuleComponentRequest';
-import PatchedRuleRequest from './model/PatchedRuleRequest';
-import PatchedRulesetRequest from './model/PatchedRulesetRequest';
 import PatchedSpaceRequest from './model/PatchedSpaceRequest';
 import PatchedStageRequest from './model/PatchedStageRequest';
 import PatchedStoreyBuildingRequest from './model/PatchedStoreyBuildingRequest';
@@ -205,12 +193,6 @@ import RawSystemRequest from './model/RawSystemRequest';
 import RawUnit from './model/RawUnit';
 import RawUnitRequest from './model/RawUnitRequest';
 import RecursiveFolderChildren from './model/RecursiveFolderChildren';
-import Rule from './model/Rule';
-import RuleComponent from './model/RuleComponent';
-import RuleComponentRequest from './model/RuleComponentRequest';
-import RuleRequest from './model/RuleRequest';
-import Ruleset from './model/Ruleset';
-import RulesetRequest from './model/RulesetRequest';
 import SelfBcfUser from './model/SelfBcfUser';
 import SelfUser from './model/SelfUser';
 import ShortUser from './model/ShortUser';
@@ -264,7 +246,6 @@ import ZoneRequest from './model/ZoneRequest';
 import ZoneSpace from './model/ZoneSpace';
 import ZoneSpaceRequest from './model/ZoneSpaceRequest';
 import BcfApi from './api/BcfApi';
-import CheckerApi from './api/CheckerApi';
 import CollaborationApi from './api/CollaborationApi';
 import IfcApi from './api/IfcApi';
 import ModelApi from './api/ModelApi';
@@ -341,34 +322,10 @@ export {
     BuildingModelPlanRequest,
 
     /**
-     * The CheckPlan model constructor.
-     * @property {module:model/CheckPlan}
-     */
-    CheckPlan,
-
-    /**
-     * The CheckPlanRequest model constructor.
-     * @property {module:model/CheckPlanRequest}
-     */
-    CheckPlanRequest,
-
-    /**
      * The CheckProjectAccess model constructor.
      * @property {module:model/CheckProjectAccess}
      */
     CheckProjectAccess,
-
-    /**
-     * The CheckerResult model constructor.
-     * @property {module:model/CheckerResult}
-     */
-    CheckerResult,
-
-    /**
-     * The CheckerResultRequest model constructor.
-     * @property {module:model/CheckerResultRequest}
-     */
-    CheckerResultRequest,
 
     /**
      * The Classification model constructor.
@@ -653,18 +610,6 @@ export {
     IfcAccessTokenRequest,
 
     /**
-     * The IfcChecker model constructor.
-     * @property {module:model/IfcChecker}
-     */
-    IfcChecker,
-
-    /**
-     * The IfcCheckerRequest model constructor.
-     * @property {module:model/IfcCheckerRequest}
-     */
-    IfcCheckerRequest,
-
-    /**
      * The IfcExportRequest model constructor.
      * @property {module:model/IfcExportRequest}
      */
@@ -815,12 +760,6 @@ export {
     ModelFiles,
 
     /**
-     * The ModelRequest model constructor.
-     * @property {module:model/ModelRequest}
-     */
-    ModelRequest,
-
-    /**
      * The ModelSerializerWithoutChildren model constructor.
      * @property {module:model/ModelSerializerWithoutChildren}
      */
@@ -861,18 +800,6 @@ export {
      * @property {module:model/PatchedBcfProjectRequest}
      */
     PatchedBcfProjectRequest,
-
-    /**
-     * The PatchedCheckPlanRequest model constructor.
-     * @property {module:model/PatchedCheckPlanRequest}
-     */
-    PatchedCheckPlanRequest,
-
-    /**
-     * The PatchedCheckerResultRequest model constructor.
-     * @property {module:model/PatchedCheckerResultRequest}
-     */
-    PatchedCheckerResultRequest,
 
     /**
      * The PatchedClassificationRequest model constructor.
@@ -935,12 +862,6 @@ export {
     PatchedIfcAccessTokenRequest,
 
     /**
-     * The PatchedIfcCheckerRequest model constructor.
-     * @property {module:model/PatchedIfcCheckerRequest}
-     */
-    PatchedIfcCheckerRequest,
-
-    /**
      * The PatchedLabelRequest model constructor.
      * @property {module:model/PatchedLabelRequest}
      */
@@ -957,6 +878,12 @@ export {
      * @property {module:model/PatchedModelRequest}
      */
     PatchedModelRequest,
+
+    /**
+     * The PatchedPinRequest model constructor.
+     * @property {module:model/PatchedPinRequest}
+     */
+    PatchedPinRequest,
 
     /**
      * The PatchedPositioningPlanRequest model constructor.
@@ -1005,24 +932,6 @@ export {
      * @property {module:model/PatchedPropertySetRequest}
      */
     PatchedPropertySetRequest,
-
-    /**
-     * The PatchedRuleComponentRequest model constructor.
-     * @property {module:model/PatchedRuleComponentRequest}
-     */
-    PatchedRuleComponentRequest,
-
-    /**
-     * The PatchedRuleRequest model constructor.
-     * @property {module:model/PatchedRuleRequest}
-     */
-    PatchedRuleRequest,
-
-    /**
-     * The PatchedRulesetRequest model constructor.
-     * @property {module:model/PatchedRulesetRequest}
-     */
-    PatchedRulesetRequest,
 
     /**
      * The PatchedSpaceRequest model constructor.
@@ -1463,42 +1372,6 @@ export {
     RecursiveFolderChildren,
 
     /**
-     * The Rule model constructor.
-     * @property {module:model/Rule}
-     */
-    Rule,
-
-    /**
-     * The RuleComponent model constructor.
-     * @property {module:model/RuleComponent}
-     */
-    RuleComponent,
-
-    /**
-     * The RuleComponentRequest model constructor.
-     * @property {module:model/RuleComponentRequest}
-     */
-    RuleComponentRequest,
-
-    /**
-     * The RuleRequest model constructor.
-     * @property {module:model/RuleRequest}
-     */
-    RuleRequest,
-
-    /**
-     * The Ruleset model constructor.
-     * @property {module:model/Ruleset}
-     */
-    Ruleset,
-
-    /**
-     * The RulesetRequest model constructor.
-     * @property {module:model/RulesetRequest}
-     */
-    RulesetRequest,
-
-    /**
      * The SelfBcfUser model constructor.
      * @property {module:model/SelfBcfUser}
      */
@@ -1815,12 +1688,6 @@ export {
     * @property {module:api/BcfApi}
     */
     BcfApi,
-
-    /**
-    * The CheckerApi service constructor.
-    * @property {module:api/CheckerApi}
-    */
-    CheckerApi,
 
     /**
     * The CollaborationApi service constructor.

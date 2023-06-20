@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Rule();
+    instance = new bimdata.PatchedPinRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,40 +47,40 @@
       object[property] = value;
   }
 
-  describe('Rule', function() {
-    it('should create an instance of Rule', function() {
-      // uncomment below and update the code to test Rule
-      //var instance = new bimdata.Rule();
-      //expect(instance).to.be.a(bimdata.Rule);
+  describe('PatchedPinRequest', function() {
+    it('should create an instance of PatchedPinRequest', function() {
+      // uncomment below and update the code to test PatchedPinRequest
+      //var instance = new bimdata.PatchedPinRequest();
+      //expect(instance).to.be.a(bimdata.PatchedPinRequest);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new bimdata.Rule();
+    it('should have the property guid (base name: "guid")', function() {
+      // uncomment below and update the code to test the property guid
+      //var instance = new bimdata.PatchedPinRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new bimdata.Rule();
+      //var instance = new bimdata.PatchedPinRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property condition (base name: "condition")', function() {
-      // uncomment below and update the code to test the property condition
-      //var instance = new bimdata.Rule();
+    it('should have the property color (base name: "color")', function() {
+      // uncomment below and update the code to test the property color
+      //var instance = new bimdata.PatchedPinRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property ruleComponents (base name: "rule_components")', function() {
-      // uncomment below and update the code to test the property ruleComponents
-      //var instance = new bimdata.Rule();
+    it('should have the property point (base name: "point")', function() {
+      // uncomment below and update the code to test the property point
+      //var instance = new bimdata.PatchedPinRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property on (base name: "on")', function() {
-      // uncomment below and update the code to test the property on
-      //var instance = new bimdata.Rule();
+    it('should have the property index (base name: "index")', function() {
+      // uncomment below and update the code to test the property index
+      //var instance = new bimdata.PatchedPinRequest();
       //expect(instance).to.be();
     });
 

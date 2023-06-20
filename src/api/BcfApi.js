@@ -30,12 +30,15 @@ import PatchedBcfProjectRequest from '../model/PatchedBcfProjectRequest';
 import PatchedCommentRequest from '../model/PatchedCommentRequest';
 import PatchedFullTopicRequest from '../model/PatchedFullTopicRequest';
 import PatchedLabelRequest from '../model/PatchedLabelRequest';
+import PatchedPinRequest from '../model/PatchedPinRequest';
 import PatchedPriorityRequest from '../model/PatchedPriorityRequest';
 import PatchedStageRequest from '../model/PatchedStageRequest';
 import PatchedTopicRequest from '../model/PatchedTopicRequest';
 import PatchedTopicStatusRequest from '../model/PatchedTopicStatusRequest';
 import PatchedTopicTypeRequest from '../model/PatchedTopicTypeRequest';
 import PatchedViewpointRequest from '../model/PatchedViewpointRequest';
+import Pin from '../model/Pin';
+import PinRequest from '../model/PinRequest';
 import Priority from '../model/Priority';
 import PriorityRequest from '../model/PriorityRequest';
 import SelfBcfUser from '../model/SelfBcfUser';
@@ -456,6 +459,74 @@ export default class BcfApi {
      */
     createFullTopic(projectsPk, fullTopicRequest, opts) {
       return this.createFullTopicWithHttpInfo(projectsPk, fullTopicRequest, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a Pin
+     * This is not a standard route. Create a Pin  Required scopes: bcf:write
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {String} viewpointsGuid 
+     * @param {module:model/PinRequest} pinRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pin} and HTTP response
+     */
+    createPinWithHttpInfo(projectsPk, topicsGuid, viewpointsGuid, pinRequest) {
+      let postBody = pinRequest;
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createPin");
+      }
+      // verify the required parameter 'topicsGuid' is set
+      if (topicsGuid === undefined || topicsGuid === null) {
+        throw new Error("Missing the required parameter 'topicsGuid' when calling createPin");
+      }
+      // verify the required parameter 'viewpointsGuid' is set
+      if (viewpointsGuid === undefined || viewpointsGuid === null) {
+        throw new Error("Missing the required parameter 'viewpointsGuid' when calling createPin");
+      }
+      // verify the required parameter 'pinRequest' is set
+      if (pinRequest === undefined || pinRequest === null) {
+        throw new Error("Missing the required parameter 'pinRequest' when calling createPin");
+      }
+
+      let pathParams = {
+        'projects_pk': projectsPk,
+        'topics_guid': topicsGuid,
+        'viewpoints_guid': viewpointsGuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Pin;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a Pin
+     * This is not a standard route. Create a Pin  Required scopes: bcf:write
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {String} viewpointsGuid 
+     * @param {module:model/PinRequest} pinRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pin}
+     */
+    createPin(projectsPk, topicsGuid, viewpointsGuid, pinRequest) {
+      return this.createPinWithHttpInfo(projectsPk, topicsGuid, viewpointsGuid, pinRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -917,6 +988,75 @@ export default class BcfApi {
 
 
     /**
+     * Delete a Pin
+     * This is not a standard route. Delete a Pin  Required scopes: bcf:write
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {String} viewpointsGuid 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deletePinWithHttpInfo(guid, projectsPk, topicsGuid, viewpointsGuid) {
+      let postBody = null;
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling deletePin");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling deletePin");
+      }
+      // verify the required parameter 'topicsGuid' is set
+      if (topicsGuid === undefined || topicsGuid === null) {
+        throw new Error("Missing the required parameter 'topicsGuid' when calling deletePin");
+      }
+      // verify the required parameter 'viewpointsGuid' is set
+      if (viewpointsGuid === undefined || viewpointsGuid === null) {
+        throw new Error("Missing the required parameter 'viewpointsGuid' when calling deletePin");
+      }
+
+      let pathParams = {
+        'guid': guid,
+        'projects_pk': projectsPk,
+        'topics_guid': topicsGuid,
+        'viewpoints_guid': viewpointsGuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a Pin
+     * This is not a standard route. Delete a Pin  Required scopes: bcf:write
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {String} viewpointsGuid 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deletePin(guid, projectsPk, topicsGuid, viewpointsGuid) {
+      return this.deletePinWithHttpInfo(guid, projectsPk, topicsGuid, viewpointsGuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Delete a topic
      * Delete a topic  Required scopes: bcf:write
      * @param {String} guid 
@@ -1278,6 +1418,81 @@ export default class BcfApi {
      */
     fullUpdateFullTopic(guid, projectsPk, fullTopicRequest, opts) {
       return this.fullUpdateFullTopicWithHttpInfo(guid, projectsPk, fullTopicRequest, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update all fields of a Pin
+     * This is not a standard route. Update all fields of a Pin  Required scopes: bcf:write
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {String} viewpointsGuid 
+     * @param {module:model/PinRequest} pinRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pin} and HTTP response
+     */
+    fullUpdatePinWithHttpInfo(guid, projectsPk, topicsGuid, viewpointsGuid, pinRequest) {
+      let postBody = pinRequest;
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling fullUpdatePin");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdatePin");
+      }
+      // verify the required parameter 'topicsGuid' is set
+      if (topicsGuid === undefined || topicsGuid === null) {
+        throw new Error("Missing the required parameter 'topicsGuid' when calling fullUpdatePin");
+      }
+      // verify the required parameter 'viewpointsGuid' is set
+      if (viewpointsGuid === undefined || viewpointsGuid === null) {
+        throw new Error("Missing the required parameter 'viewpointsGuid' when calling fullUpdatePin");
+      }
+      // verify the required parameter 'pinRequest' is set
+      if (pinRequest === undefined || pinRequest === null) {
+        throw new Error("Missing the required parameter 'pinRequest' when calling fullUpdatePin");
+      }
+
+      let pathParams = {
+        'guid': guid,
+        'projects_pk': projectsPk,
+        'topics_guid': topicsGuid,
+        'viewpoints_guid': viewpointsGuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Pin;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update all fields of a Pin
+     * This is not a standard route. Update all fields of a Pin  Required scopes: bcf:write
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {String} viewpointsGuid 
+     * @param {module:model/PinRequest} pinRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pin}
+     */
+    fullUpdatePin(guid, projectsPk, topicsGuid, viewpointsGuid, pinRequest) {
+      return this.fullUpdatePinWithHttpInfo(guid, projectsPk, topicsGuid, viewpointsGuid, pinRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1945,6 +2160,68 @@ export default class BcfApi {
 
 
     /**
+     * Retrieve all Pins of a viewpoint
+     * This is not a standard route. Retrieve all Pins of a viewpoint  Required scopes: bcf:read
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {String} viewpointsGuid 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Pin>} and HTTP response
+     */
+    getPinsWithHttpInfo(projectsPk, topicsGuid, viewpointsGuid) {
+      let postBody = null;
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getPins");
+      }
+      // verify the required parameter 'topicsGuid' is set
+      if (topicsGuid === undefined || topicsGuid === null) {
+        throw new Error("Missing the required parameter 'topicsGuid' when calling getPins");
+      }
+      // verify the required parameter 'viewpointsGuid' is set
+      if (viewpointsGuid === undefined || viewpointsGuid === null) {
+        throw new Error("Missing the required parameter 'viewpointsGuid' when calling getPins");
+      }
+
+      let pathParams = {
+        'projects_pk': projectsPk,
+        'topics_guid': topicsGuid,
+        'viewpoints_guid': viewpointsGuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Pin];
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all Pins of a viewpoint
+     * This is not a standard route. Retrieve all Pins of a viewpoint  Required scopes: bcf:read
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {String} viewpointsGuid 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Pin>}
+     */
+    getPins(projectsPk, topicsGuid, viewpointsGuid) {
+      return this.getPinsWithHttpInfo(projectsPk, topicsGuid, viewpointsGuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Get all related topics
      * This feature is not supported yet and will always respond with an empty array  Required scopes: bcf:read
      * @param {String} guid 
@@ -2454,6 +2731,75 @@ export default class BcfApi {
      */
     getVersions() {
       return this.getVersionsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a Pin
+     * This is not a standard route. Retrieve a Pin  Required scopes: bcf:read
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {String} viewpointsGuid 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pin} and HTTP response
+     */
+    getViewpoinPinWithHttpInfo(guid, projectsPk, topicsGuid, viewpointsGuid) {
+      let postBody = null;
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling getViewpoinPin");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getViewpoinPin");
+      }
+      // verify the required parameter 'topicsGuid' is set
+      if (topicsGuid === undefined || topicsGuid === null) {
+        throw new Error("Missing the required parameter 'topicsGuid' when calling getViewpoinPin");
+      }
+      // verify the required parameter 'viewpointsGuid' is set
+      if (viewpointsGuid === undefined || viewpointsGuid === null) {
+        throw new Error("Missing the required parameter 'viewpointsGuid' when calling getViewpoinPin");
+      }
+
+      let pathParams = {
+        'guid': guid,
+        'projects_pk': projectsPk,
+        'topics_guid': topicsGuid,
+        'viewpoints_guid': viewpointsGuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Pin;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a Pin
+     * This is not a standard route. Retrieve a Pin  Required scopes: bcf:read
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {String} viewpointsGuid 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pin}
+     */
+    getViewpoinPin(guid, projectsPk, topicsGuid, viewpointsGuid) {
+      return this.getViewpoinPinWithHttpInfo(guid, projectsPk, topicsGuid, viewpointsGuid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3183,6 +3529,80 @@ export default class BcfApi {
      */
     updateFullTopic(guid, projectsPk, opts) {
       return this.updateFullTopicWithHttpInfo(guid, projectsPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a Pin
+     * This is not a standard route. Update some fields of a Pin  Required scopes: bcf:write
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {String} viewpointsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedPinRequest} opts.patchedPinRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pin} and HTTP response
+     */
+    updatePinWithHttpInfo(guid, projectsPk, topicsGuid, viewpointsGuid, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedPinRequest'];
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling updatePin");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updatePin");
+      }
+      // verify the required parameter 'topicsGuid' is set
+      if (topicsGuid === undefined || topicsGuid === null) {
+        throw new Error("Missing the required parameter 'topicsGuid' when calling updatePin");
+      }
+      // verify the required parameter 'viewpointsGuid' is set
+      if (viewpointsGuid === undefined || viewpointsGuid === null) {
+        throw new Error("Missing the required parameter 'viewpointsGuid' when calling updatePin");
+      }
+
+      let pathParams = {
+        'guid': guid,
+        'projects_pk': projectsPk,
+        'topics_guid': topicsGuid,
+        'viewpoints_guid': viewpointsGuid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Pin;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a Pin
+     * This is not a standard route. Update some fields of a Pin  Required scopes: bcf:write
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {String} viewpointsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedPinRequest} opts.patchedPinRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pin}
+     */
+    updatePin(guid, projectsPk, topicsGuid, viewpointsGuid, opts) {
+      return this.updatePinWithHttpInfo(guid, projectsPk, topicsGuid, viewpointsGuid, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

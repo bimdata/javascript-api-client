@@ -151,7 +151,7 @@ PatchedViewpointRequest.prototype['snapshot'] = undefined;
 PatchedViewpointRequest.prototype['components'] = undefined;
 
 /**
- * Non standard field. Pins (or markers/annotations) are points of interest
+ * Non standard field. Pins (or markers/annotations) are points of interest. When creating a Viewpoint you can create pins with the fields `pins`, but you can't edit pins through here. You must use dedicated pin routes.
  * @member {Array.<module:model/PinRequest>} pins
  */
 PatchedViewpointRequest.prototype['pins'] = undefined;

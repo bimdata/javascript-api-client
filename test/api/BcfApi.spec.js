@@ -118,6 +118,16 @@
         done();
       });
     });
+    describe('createPin', function() {
+      it('should call createPin successfully', function(done) {
+        //uncomment below and update the code to test createPin
+        //instance.createPin(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createTopic', function() {
       it('should call createTopic successfully', function(done) {
         //uncomment below and update the code to test createTopic
@@ -198,6 +208,16 @@
         done();
       });
     });
+    describe('deletePin', function() {
+      it('should call deletePin successfully', function(done) {
+        //uncomment below and update the code to test deletePin
+        //instance.deletePin(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteTopic', function() {
       it('should call deleteTopic successfully', function(done) {
         //uncomment below and update the code to test deleteTopic
@@ -252,6 +272,16 @@
       it('should call fullUpdateFullTopic successfully', function(done) {
         //uncomment below and update the code to test fullUpdateFullTopic
         //instance.fullUpdateFullTopic(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('fullUpdatePin', function() {
+      it('should call fullUpdatePin successfully', function(done) {
+        //uncomment below and update the code to test fullUpdatePin
+        //instance.fullUpdatePin(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -378,6 +408,16 @@
         done();
       });
     });
+    describe('getPins', function() {
+      it('should call getPins successfully', function(done) {
+        //uncomment below and update the code to test getPins
+        //instance.getPins(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getRelatedTopics', function() {
       it('should call getRelatedTopics successfully', function(done) {
         //uncomment below and update the code to test getRelatedTopics
@@ -462,6 +502,16 @@
       it('should call getVersions successfully', function(done) {
         //uncomment below and update the code to test getVersions
         //instance.getVersions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getViewpoinPin', function() {
+      it('should call getViewpoinPin successfully', function(done) {
+        //uncomment below and update the code to test getViewpoinPin
+        //instance.getViewpoinPin(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -582,6 +632,16 @@
       it('should call updateFullTopic successfully', function(done) {
         //uncomment below and update the code to test updateFullTopic
         //instance.updateFullTopic(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updatePin', function() {
+      it('should call updatePin successfully', function(done) {
+        //uncomment below and update the code to test updatePin
+        //instance.updatePin(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

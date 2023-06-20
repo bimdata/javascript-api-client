@@ -148,6 +148,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**createExtensionStatus**](docs/BcfApi.md#createExtensionStatus) | **POST** /bcf/2.1/projects/{projects_pk}/extension/status | Create a TopicStatus
 *bimdata.BcfApi* | [**createExtensionType**](docs/BcfApi.md#createExtensionType) | **POST** /bcf/2.1/projects/{projects_pk}/extension/type | Create a TopicType
 *bimdata.BcfApi* | [**createFullTopic**](docs/BcfApi.md#createFullTopic) | **POST** /bcf/2.1/projects/{projects_pk}/full-topic | Create a Topic with viewpoints and comments
+*bimdata.BcfApi* | [**createPin**](docs/BcfApi.md#createPin) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin | Create a Pin
 *bimdata.BcfApi* | [**createTopic**](docs/BcfApi.md#createTopic) | **POST** /bcf/2.1/projects/{projects_pk}/topics | Create a topic
 *bimdata.BcfApi* | [**createViewpoint**](docs/BcfApi.md#createViewpoint) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints | Create a Viewpoint
 *bimdata.BcfApi* | [**deleteComment**](docs/BcfApi.md#deleteComment) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Delete a comment
@@ -156,12 +157,14 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**deleteExtensionStage**](docs/BcfApi.md#deleteExtensionStage) | **DELETE** /bcf/2.1/projects/{projects_pk}/extension/stage/{id} | Delete a Stage
 *bimdata.BcfApi* | [**deleteExtensionStatus**](docs/BcfApi.md#deleteExtensionStatus) | **DELETE** /bcf/2.1/projects/{projects_pk}/extension/status/{id} | Delete a TopicStatus
 *bimdata.BcfApi* | [**deleteExtensionType**](docs/BcfApi.md#deleteExtensionType) | **DELETE** /bcf/2.1/projects/{projects_pk}/extension/type/{id} | Delete a TopicType
+*bimdata.BcfApi* | [**deletePin**](docs/BcfApi.md#deletePin) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Delete a Pin
 *bimdata.BcfApi* | [**deleteTopic**](docs/BcfApi.md#deleteTopic) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Delete a topic
 *bimdata.BcfApi* | [**deleteViewpoint**](docs/BcfApi.md#deleteViewpoint) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Delete a Viewpoint
 *bimdata.BcfApi* | [**downloadBcfExport**](docs/BcfApi.md#downloadBcfExport) | **GET** /bcf/2.1/projects/{id}/export | Export project&#39;s topics in bcf-xml format
 *bimdata.BcfApi* | [**fullUpdateBcfProject**](docs/BcfApi.md#fullUpdateBcfProject) | **PUT** /bcf/2.1/projects/{id} | Update all fields of a BCF project
 *bimdata.BcfApi* | [**fullUpdateComment**](docs/BcfApi.md#fullUpdateComment) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Update all fields of a comment
 *bimdata.BcfApi* | [**fullUpdateFullTopic**](docs/BcfApi.md#fullUpdateFullTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update all fields of a topic
+*bimdata.BcfApi* | [**fullUpdatePin**](docs/BcfApi.md#fullUpdatePin) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Update all fields of a Pin
 *bimdata.BcfApi* | [**fullUpdateTopic**](docs/BcfApi.md#fullUpdateTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update all fields of a topic
 *bimdata.BcfApi* | [**fullUpdateViewpoint**](docs/BcfApi.md#fullUpdateViewpoint) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Update all fields of a Viewpoint
 *bimdata.BcfApi* | [**getAuth**](docs/BcfApi.md#getAuth) | **GET** /bcf/2.1/auth | Retrieve Authentication Information
@@ -174,6 +177,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**getExtensions**](docs/BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{id}/extensions | Retrieve project extensions
 *bimdata.BcfApi* | [**getFullTopic**](docs/BcfApi.md#getFullTopic) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Retrieve a full topic
 *bimdata.BcfApi* | [**getFullTopics**](docs/BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | Retrieve all full topics
+*bimdata.BcfApi* | [**getPins**](docs/BcfApi.md#getPins) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin | Retrieve all Pins of a viewpoint
 *bimdata.BcfApi* | [**getRelatedTopics**](docs/BcfApi.md#getRelatedTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid}/related_topics | Get all related topics
 *bimdata.BcfApi* | [**getSelections**](docs/BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/selection | Retrieve all selections of a viewpoint
 *bimdata.BcfApi* | [**getSnapshot**](docs/BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/snapshot | Retrieve the viewpoint&#39; snapshot
@@ -183,6 +187,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**getTopics**](docs/BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | Retrieve all topics
 *bimdata.BcfApi* | [**getUser**](docs/BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | Get current user info
 *bimdata.BcfApi* | [**getVersions**](docs/BcfApi.md#getVersions) | **GET** /bcf/versions | Retrieve all supported BCF versions by this API
+*bimdata.BcfApi* | [**getViewpoinPin**](docs/BcfApi.md#getViewpoinPin) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Retrieve a Pin
 *bimdata.BcfApi* | [**getViewpoint**](docs/BcfApi.md#getViewpoint) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Retrieve a Viewpoint
 *bimdata.BcfApi* | [**getViewpoints**](docs/BcfApi.md#getViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints | Retrieve all Viewpoints of a topic
 *bimdata.BcfApi* | [**getVisibilities**](docs/BcfApi.md#getVisibilities) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/visibility | Retrieve all visibilities of a viewpoint
@@ -195,39 +200,9 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**updateExtensionStatus**](docs/BcfApi.md#updateExtensionStatus) | **PATCH** /bcf/2.1/projects/{projects_pk}/extension/status/{id} | Update a TopicStatus
 *bimdata.BcfApi* | [**updateExtensionType**](docs/BcfApi.md#updateExtensionType) | **PATCH** /bcf/2.1/projects/{projects_pk}/extension/type/{id} | Update a TopicType
 *bimdata.BcfApi* | [**updateFullTopic**](docs/BcfApi.md#updateFullTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update some fields of a topic
+*bimdata.BcfApi* | [**updatePin**](docs/BcfApi.md#updatePin) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Update some fields of a Pin
 *bimdata.BcfApi* | [**updateTopic**](docs/BcfApi.md#updateTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update some fields of a topic
 *bimdata.BcfApi* | [**updateViewpoint**](docs/BcfApi.md#updateViewpoint) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Update some fields of a Viewpoint
-*bimdata.CheckerApi* | [**createChecker**](docs/CheckerApi.md#createChecker) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker | Create a checker to a model
-*bimdata.CheckerApi* | [**createCheckerResult**](docs/CheckerApi.md#createCheckerResult) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result | Create a CheckerResult
-*bimdata.CheckerApi* | [**createCheckplan**](docs/CheckerApi.md#createCheckplan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan | Create a Checkplan
-*bimdata.CheckerApi* | [**createRule**](docs/CheckerApi.md#createRule) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule | Create a Rule
-*bimdata.CheckerApi* | [**createRuleComponent**](docs/CheckerApi.md#createRuleComponent) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent | Create a RuleComponent
-*bimdata.CheckerApi* | [**createRuleset**](docs/CheckerApi.md#createRuleset) | **POST** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset | Create a Ruleset
-*bimdata.CheckerApi* | [**deleteChecker**](docs/CheckerApi.md#deleteChecker) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{id} | Delete a checker of a model
-*bimdata.CheckerApi* | [**deleteCheckerResult**](docs/CheckerApi.md#deleteCheckerResult) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result/{id} | Delete a CheckerResult
-*bimdata.CheckerApi* | [**deleteCheckplan**](docs/CheckerApi.md#deleteCheckplan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | Delete a Checkplan
-*bimdata.CheckerApi* | [**deleteRule**](docs/CheckerApi.md#deleteRule) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | Delete a Rule
-*bimdata.CheckerApi* | [**deleteRuleComponent**](docs/CheckerApi.md#deleteRuleComponent) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Delete a RuleComponent
-*bimdata.CheckerApi* | [**deleteRuleset**](docs/CheckerApi.md#deleteRuleset) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Delete a Ruleset
-*bimdata.CheckerApi* | [**getChecker**](docs/CheckerApi.md#getChecker) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{id} | Retrieve a checker of a model
-*bimdata.CheckerApi* | [**getCheckerResult**](docs/CheckerApi.md#getCheckerResult) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result/{id} | Retrieve one CheckerResult
-*bimdata.CheckerApi* | [**getCheckerResults**](docs/CheckerApi.md#getCheckerResults) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result | Retrieve all CheckerResults
-*bimdata.CheckerApi* | [**getCheckers**](docs/CheckerApi.md#getCheckers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker | Retrieve all checkers of a model
-*bimdata.CheckerApi* | [**getCheckplan**](docs/CheckerApi.md#getCheckplan) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | Retrieve one Checkplan
-*bimdata.CheckerApi* | [**getCheckplans**](docs/CheckerApi.md#getCheckplans) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan | Retrieve all Checkplans
-*bimdata.CheckerApi* | [**getRule**](docs/CheckerApi.md#getRule) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | Retrieve one Rule
-*bimdata.CheckerApi* | [**getRuleComponent**](docs/CheckerApi.md#getRuleComponent) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Retrieve one RuleComponent
-*bimdata.CheckerApi* | [**getRuleComponents**](docs/CheckerApi.md#getRuleComponents) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent | Retrieve all RuleComponents
-*bimdata.CheckerApi* | [**getRules**](docs/CheckerApi.md#getRules) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule | Retrieve all Rules
-*bimdata.CheckerApi* | [**getRuleset**](docs/CheckerApi.md#getRuleset) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Retrieve one Ruleset
-*bimdata.CheckerApi* | [**getRulesets**](docs/CheckerApi.md#getRulesets) | **GET** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset | Retrieve all Rulesets
-*bimdata.CheckerApi* | [**launchNewCheck**](docs/CheckerApi.md#launchNewCheck) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{id}/launch-check | Launch a new check on the model
-*bimdata.CheckerApi* | [**updateChecker**](docs/CheckerApi.md#updateChecker) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{id} | Update some fields of a checker of a model
-*bimdata.CheckerApi* | [**updateCheckerResult**](docs/CheckerApi.md#updateCheckerResult) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/checker/{checker_pk}/result/{id} | Update some fields of a CheckerResult
-*bimdata.CheckerApi* | [**updateCheckplan**](docs/CheckerApi.md#updateCheckplan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{id} | Update some fields of a Checkplan
-*bimdata.CheckerApi* | [**updateRule**](docs/CheckerApi.md#updateRule) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{id} | Update some fields of a Rule
-*bimdata.CheckerApi* | [**updateRuleComponent**](docs/CheckerApi.md#updateRuleComponent) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{ruleset_pk}/rule/{rule_pk}/rulecomponent/{id} | Update some fields of a RuleComponent
-*bimdata.CheckerApi* | [**updateRuleset**](docs/CheckerApi.md#updateRuleset) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/checkplan/{check_plan_pk}/ruleset/{id} | Update some fields of a Ruleset
 *bimdata.CollaborationApi* | [**acceptUserInvitation**](docs/CollaborationApi.md#acceptUserInvitation) | **POST** /user/invitations/{id}/accept | Accept an invitation
 *bimdata.CollaborationApi* | [**acceptValidation**](docs/CollaborationApi.md#acceptValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/accept | Accept a validation
 *bimdata.CollaborationApi* | [**addDocumentTag**](docs/CollaborationApi.md#addDocumentTag) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/tag | Add a tag to a document
@@ -351,8 +326,6 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**createAccessTokenDeprecated**](docs/IfcApi.md#createAccessTokenDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token | Create a token for this model
 *bimdata.IfcApi* | [**createBuildingDeprecated**](docs/IfcApi.md#createBuildingDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building | Create a building of a model
 *bimdata.IfcApi* | [**createBuildingPlanDeprecated**](docs/IfcApi.md#createBuildingPlanDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{building_uuid}/plan/add | Create a relation between a 2d model and a building
-*bimdata.IfcApi* | [**createCheckerDeprecated**](docs/IfcApi.md#createCheckerDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker | Create a checker to a model
-*bimdata.IfcApi* | [**createCheckerResultDeprecated**](docs/IfcApi.md#createCheckerResultDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result | Create a CheckerResult
 *bimdata.IfcApi* | [**createClassificationElementRelationsDeprecated**](docs/IfcApi.md#createClassificationElementRelationsDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | Create association between existing classification and existing element
 *bimdata.IfcApi* | [**createClassificationsOfElementDeprecated**](docs/IfcApi.md#createClassificationsOfElementDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Create one or many classifications to an element
 *bimdata.IfcApi* | [**createElementDeprecated**](docs/IfcApi.md#createElementDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element | Create an element in the model
@@ -380,8 +353,6 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**deleteAccessTokenDeprecated**](docs/IfcApi.md#deleteAccessTokenDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Delete a token
 *bimdata.IfcApi* | [**deleteBuildingDeprecated**](docs/IfcApi.md#deleteBuildingDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{uuid} | Delete a building of a model
 *bimdata.IfcApi* | [**deleteBuildingPlanDeprecated**](docs/IfcApi.md#deleteBuildingPlanDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{building_uuid}/plan/{id} | Delete the relation between a 2d model and a building
-*bimdata.IfcApi* | [**deleteCheckerDeprecated**](docs/IfcApi.md#deleteCheckerDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | Delete a checker of a model
-*bimdata.IfcApi* | [**deleteCheckerResultDeprecated**](docs/IfcApi.md#deleteCheckerResultDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | Delete a CheckerResult
 *bimdata.IfcApi* | [**deleteElementDeprecated**](docs/IfcApi.md#deleteElementDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Delete an element of a model
 *bimdata.IfcApi* | [**deleteIfcDeprecated**](docs/IfcApi.md#deleteIfcDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Delete a model
 *bimdata.IfcApi* | [**deleteIfcPropertyDefinitionDeprecated**](docs/IfcApi.md#deleteIfcPropertyDefinitionDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | Delete a PropertyDefinitions of a model
@@ -403,10 +374,6 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**getBuildingDeprecated**](docs/IfcApi.md#getBuildingDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{uuid} | Retrieve a building of a model
 *bimdata.IfcApi* | [**getBuildingPlanPositioningDeprecated**](docs/IfcApi.md#getBuildingPlanPositioningDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{building_uuid}/plan/{id}/positioning | Retrieve the postioning of the plan in the building
 *bimdata.IfcApi* | [**getBuildingsDeprecated**](docs/IfcApi.md#getBuildingsDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building | Retrieve all buildings of a model
-*bimdata.IfcApi* | [**getCheckerDeprecated**](docs/IfcApi.md#getCheckerDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | Retrieve a checker of a model
-*bimdata.IfcApi* | [**getCheckerResultDeprecated**](docs/IfcApi.md#getCheckerResultDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | Retrieve one CheckerResult
-*bimdata.IfcApi* | [**getCheckerResultsDeprecated**](docs/IfcApi.md#getCheckerResultsDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result | Retrieve all CheckerResults
-*bimdata.IfcApi* | [**getCheckersDeprecated**](docs/IfcApi.md#getCheckersDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker | Retrieve all checkers of a model
 *bimdata.IfcApi* | [**getClassificationsOfElementDeprecated**](docs/IfcApi.md#getClassificationsOfElementDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Retrieve all classifications of an element
 *bimdata.IfcApi* | [**getDocumentsOfElementDeprecated**](docs/IfcApi.md#getDocumentsOfElementDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents | Retrieve all documents of an element
 *bimdata.IfcApi* | [**getElementDeprecated**](docs/IfcApi.md#getElementDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Retrieve an element of a model
@@ -455,7 +422,6 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**getZoneSpaceDeprecated**](docs/IfcApi.md#getZoneSpaceDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Retrieve one space of a zone
 *bimdata.IfcApi* | [**getZoneSpacesDeprecated**](docs/IfcApi.md#getZoneSpacesDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space | Retrieve all spaces of a zone
 *bimdata.IfcApi* | [**getZonesDeprecated**](docs/IfcApi.md#getZonesDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone | Retrieve zones of a model
-*bimdata.IfcApi* | [**launchNewCheckDeprecated**](docs/IfcApi.md#launchNewCheckDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id}/launch-check | Launch a new check on the model
 *bimdata.IfcApi* | [**linkDocumentsOfElementDeprecated**](docs/IfcApi.md#linkDocumentsOfElementDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents | Link one or many documents to an element
 *bimdata.IfcApi* | [**listClassificationElementRelationsDeprecated**](docs/IfcApi.md#listClassificationElementRelationsDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | List all associations between classifications and elements
 *bimdata.IfcApi* | [**mergeIfcsDeprecated**](docs/IfcApi.md#mergeIfcsDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/merge | Merge IFC files
@@ -472,8 +438,6 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**updateAccessTokenDeprecated**](docs/IfcApi.md#updateAccessTokenDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Update some fields of a token
 *bimdata.IfcApi* | [**updateBuildingDeprecated**](docs/IfcApi.md#updateBuildingDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{uuid} | Update some fields of a building
 *bimdata.IfcApi* | [**updateBuildingPlanPositioningDeprecated**](docs/IfcApi.md#updateBuildingPlanPositioningDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{building_uuid}/plan/{id}/positioning | Update the postioning of the plan in the building
-*bimdata.IfcApi* | [**updateCheckerDeprecated**](docs/IfcApi.md#updateCheckerDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{id} | Update some fields of a checker of a model
-*bimdata.IfcApi* | [**updateCheckerResultDeprecated**](docs/IfcApi.md#updateCheckerResultDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/checker/{checker_pk}/result/{id} | Update some fields of a CheckerResult
 *bimdata.IfcApi* | [**updateElementDeprecated**](docs/IfcApi.md#updateElementDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update some fields of an element
 *bimdata.IfcApi* | [**updateElementPropertySetPropertyDeprecated**](docs/IfcApi.md#updateElementPropertySetPropertyDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Update a property from an element
 *bimdata.IfcApi* | [**updateIfcDeprecated**](docs/IfcApi.md#updateIfcDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Update some fields of a model
@@ -660,11 +624,7 @@ Class | Method | HTTP request | Description
  - [bimdata.BcfProjectRequest](docs/BcfProjectRequest.md)
  - [bimdata.Building](docs/Building.md)
  - [bimdata.BuildingModelPlanRequest](docs/BuildingModelPlanRequest.md)
- - [bimdata.CheckPlan](docs/CheckPlan.md)
- - [bimdata.CheckPlanRequest](docs/CheckPlanRequest.md)
  - [bimdata.CheckProjectAccess](docs/CheckProjectAccess.md)
- - [bimdata.CheckerResult](docs/CheckerResult.md)
- - [bimdata.CheckerResultRequest](docs/CheckerResultRequest.md)
  - [bimdata.Classification](docs/Classification.md)
  - [bimdata.ClassificationRequest](docs/ClassificationRequest.md)
  - [bimdata.ClippingPlane](docs/ClippingPlane.md)
@@ -712,8 +672,6 @@ Class | Method | HTTP request | Description
  - [bimdata.GroupRequest](docs/GroupRequest.md)
  - [bimdata.IfcAccessToken](docs/IfcAccessToken.md)
  - [bimdata.IfcAccessTokenRequest](docs/IfcAccessTokenRequest.md)
- - [bimdata.IfcChecker](docs/IfcChecker.md)
- - [bimdata.IfcCheckerRequest](docs/IfcCheckerRequest.md)
  - [bimdata.IfcExportRequest](docs/IfcExportRequest.md)
  - [bimdata.IfcMergeRequest](docs/IfcMergeRequest.md)
  - [bimdata.IfcOptimizeRequest](docs/IfcOptimizeRequest.md)
@@ -739,7 +697,6 @@ Class | Method | HTTP request | Description
  - [bimdata.ModelErrors](docs/ModelErrors.md)
  - [bimdata.ModelErrorsRequest](docs/ModelErrorsRequest.md)
  - [bimdata.ModelFiles](docs/ModelFiles.md)
- - [bimdata.ModelRequest](docs/ModelRequest.md)
  - [bimdata.ModelSerializerWithoutChildren](docs/ModelSerializerWithoutChildren.md)
  - [bimdata.ModelWithPositioningPlan](docs/ModelWithPositioningPlan.md)
  - [bimdata.Organization](docs/Organization.md)
@@ -747,8 +704,6 @@ Class | Method | HTTP request | Description
  - [bimdata.OrthogonalCamera](docs/OrthogonalCamera.md)
  - [bimdata.OrthogonalCameraRequest](docs/OrthogonalCameraRequest.md)
  - [bimdata.PatchedBcfProjectRequest](docs/PatchedBcfProjectRequest.md)
- - [bimdata.PatchedCheckPlanRequest](docs/PatchedCheckPlanRequest.md)
- - [bimdata.PatchedCheckerResultRequest](docs/PatchedCheckerResultRequest.md)
  - [bimdata.PatchedClassificationRequest](docs/PatchedClassificationRequest.md)
  - [bimdata.PatchedCloudRequest](docs/PatchedCloudRequest.md)
  - [bimdata.PatchedCommentRequest](docs/PatchedCommentRequest.md)
@@ -759,10 +714,10 @@ Class | Method | HTTP request | Description
  - [bimdata.PatchedGroupFolderRequest](docs/PatchedGroupFolderRequest.md)
  - [bimdata.PatchedGroupRequest](docs/PatchedGroupRequest.md)
  - [bimdata.PatchedIfcAccessTokenRequest](docs/PatchedIfcAccessTokenRequest.md)
- - [bimdata.PatchedIfcCheckerRequest](docs/PatchedIfcCheckerRequest.md)
  - [bimdata.PatchedLabelRequest](docs/PatchedLabelRequest.md)
  - [bimdata.PatchedLayerRequest](docs/PatchedLayerRequest.md)
  - [bimdata.PatchedModelRequest](docs/PatchedModelRequest.md)
+ - [bimdata.PatchedPinRequest](docs/PatchedPinRequest.md)
  - [bimdata.PatchedPositioningPlanRequest](docs/PatchedPositioningPlanRequest.md)
  - [bimdata.PatchedPriorityRequest](docs/PatchedPriorityRequest.md)
  - [bimdata.PatchedProcessorHandlerRequest](docs/PatchedProcessorHandlerRequest.md)
@@ -771,9 +726,6 @@ Class | Method | HTTP request | Description
  - [bimdata.PatchedPropertyDefinitionRequest](docs/PatchedPropertyDefinitionRequest.md)
  - [bimdata.PatchedPropertyRequest](docs/PatchedPropertyRequest.md)
  - [bimdata.PatchedPropertySetRequest](docs/PatchedPropertySetRequest.md)
- - [bimdata.PatchedRuleComponentRequest](docs/PatchedRuleComponentRequest.md)
- - [bimdata.PatchedRuleRequest](docs/PatchedRuleRequest.md)
- - [bimdata.PatchedRulesetRequest](docs/PatchedRulesetRequest.md)
  - [bimdata.PatchedSpaceRequest](docs/PatchedSpaceRequest.md)
  - [bimdata.PatchedStageRequest](docs/PatchedStageRequest.md)
  - [bimdata.PatchedStoreyBuildingRequest](docs/PatchedStoreyBuildingRequest.md)
@@ -847,12 +799,6 @@ Class | Method | HTTP request | Description
  - [bimdata.RawUnit](docs/RawUnit.md)
  - [bimdata.RawUnitRequest](docs/RawUnitRequest.md)
  - [bimdata.RecursiveFolderChildren](docs/RecursiveFolderChildren.md)
- - [bimdata.Rule](docs/Rule.md)
- - [bimdata.RuleComponent](docs/RuleComponent.md)
- - [bimdata.RuleComponentRequest](docs/RuleComponentRequest.md)
- - [bimdata.RuleRequest](docs/RuleRequest.md)
- - [bimdata.Ruleset](docs/Ruleset.md)
- - [bimdata.RulesetRequest](docs/RulesetRequest.md)
  - [bimdata.SelfBcfUser](docs/SelfBcfUser.md)
  - [bimdata.SelfUser](docs/SelfUser.md)
  - [bimdata.ShortUser](docs/ShortUser.md)

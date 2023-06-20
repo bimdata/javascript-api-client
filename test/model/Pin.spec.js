@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(bimdata.Pin);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property guid (base name: "guid")', function() {
+      // uncomment below and update the code to test the property guid
       //var instance = new bimdata.Pin();
       //expect(instance).to.be();
     });
@@ -74,6 +74,12 @@
 
     it('should have the property point (base name: "point")', function() {
       // uncomment below and update the code to test the property point
+      //var instance = new bimdata.Pin();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property index (base name: "index")', function() {
+      // uncomment below and update the code to test the property index
       //var instance = new bimdata.Pin();
       //expect(instance).to.be();
     });

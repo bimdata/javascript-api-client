@@ -12,22 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import Point from './Point';
+import PointRequest from './PointRequest';
 
 /**
- * The Pin model module.
- * @module model/Pin
+ * The PatchedPinRequest model module.
+ * @module model/PatchedPinRequest
  * @version 0.0.0
  */
-class Pin {
+class PatchedPinRequest {
     /**
-     * Constructs a new <code>Pin</code>.
-     * @alias module:model/Pin
-     * @param point {module:model/Point} 
+     * Constructs a new <code>PatchedPinRequest</code>.
+     * @alias module:model/PatchedPinRequest
      */
-    constructor(point) { 
+    constructor() { 
         
-        Pin.initialize(this, point);
+        PatchedPinRequest.initialize(this);
     }
 
     /**
@@ -35,20 +34,19 @@ class Pin {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, point) { 
-        obj['point'] = point;
+    static initialize(obj) { 
     }
 
     /**
-     * Constructs a <code>Pin</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>PatchedPinRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Pin} obj Optional instance to populate.
-     * @return {module:model/Pin} The populated <code>Pin</code> instance.
+     * @param {module:model/PatchedPinRequest} obj Optional instance to populate.
+     * @return {module:model/PatchedPinRequest} The populated <code>PatchedPinRequest</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Pin();
+            obj = obj || new PatchedPinRequest();
 
             if (data.hasOwnProperty('guid')) {
                 obj['guid'] = ApiClient.convertToType(data['guid'], 'String');
@@ -60,7 +58,7 @@ class Pin {
                 obj['color'] = ApiClient.convertToType(data['color'], 'String');
             }
             if (data.hasOwnProperty('point')) {
-                obj['point'] = Point.constructFromObject(data['point']);
+                obj['point'] = PointRequest.constructFromObject(data['point']);
             }
             if (data.hasOwnProperty('index')) {
                 obj['index'] = ApiClient.convertToType(data['index'], 'Number');
@@ -75,32 +73,32 @@ class Pin {
 /**
  * @member {String} guid
  */
-Pin.prototype['guid'] = undefined;
+PatchedPinRequest.prototype['guid'] = undefined;
 
 /**
  * @member {String} name
  */
-Pin.prototype['name'] = undefined;
+PatchedPinRequest.prototype['name'] = undefined;
 
 /**
  * @member {String} color
  */
-Pin.prototype['color'] = undefined;
+PatchedPinRequest.prototype['color'] = undefined;
 
 /**
- * @member {module:model/Point} point
+ * @member {module:model/PointRequest} point
  */
-Pin.prototype['point'] = undefined;
+PatchedPinRequest.prototype['point'] = undefined;
 
 /**
  * @member {Number} index
  */
-Pin.prototype['index'] = undefined;
+PatchedPinRequest.prototype['index'] = undefined;
 
 
 
 
 
 
-export default Pin;
+export default PatchedPinRequest;
 

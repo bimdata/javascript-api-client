@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **clippingPlanes** | [**[ClippingPlaneRequest]**](ClippingPlaneRequest.md) |  | [optional] 
 **snapshot** | [**SnapshotRequest**](SnapshotRequest.md) |  | [optional] 
 **components** | [**ComponentsParentRequest**](ComponentsParentRequest.md) |  | [optional] 
-**pins** | [**[PinRequest]**](PinRequest.md) | Non standard field. Pins (or markers/annotations) are points of interest | [optional] 
+**pins** | [**[PinRequest]**](PinRequest.md) | Non standard field. Pins (or markers/annotations) are points of interest. When creating a Viewpoint you can create pins with the fields &#x60;pins&#x60;, but you can&#39;t edit pins through here. You must use dedicated pin routes. | [optional] 
 **tempId** | **Number** | Only used when using POST on the full-topic route to bind viewpoint with comment | [optional] 
 
 

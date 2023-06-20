@@ -208,26 +208,6 @@
         done();
       });
     });
-    describe('createCheckerDeprecated', function() {
-      it('should call createCheckerDeprecated successfully', function(done) {
-        //uncomment below and update the code to test createCheckerDeprecated
-        //instance.createCheckerDeprecated(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('createCheckerResultDeprecated', function() {
-      it('should call createCheckerResultDeprecated successfully', function(done) {
-        //uncomment below and update the code to test createCheckerResultDeprecated
-        //instance.createCheckerResultDeprecated(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('createClassificationElementRelationsDeprecated', function() {
       it('should call createClassificationElementRelationsDeprecated successfully', function(done) {
         //uncomment below and update the code to test createClassificationElementRelationsDeprecated
@@ -498,26 +478,6 @@
         done();
       });
     });
-    describe('deleteCheckerDeprecated', function() {
-      it('should call deleteCheckerDeprecated successfully', function(done) {
-        //uncomment below and update the code to test deleteCheckerDeprecated
-        //instance.deleteCheckerDeprecated(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteCheckerResultDeprecated', function() {
-      it('should call deleteCheckerResultDeprecated successfully', function(done) {
-        //uncomment below and update the code to test deleteCheckerResultDeprecated
-        //instance.deleteCheckerResultDeprecated(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('deleteElementDeprecated', function() {
       it('should call deleteElementDeprecated successfully', function(done) {
         //uncomment below and update the code to test deleteElementDeprecated
@@ -722,46 +682,6 @@
       it('should call getBuildingsDeprecated successfully', function(done) {
         //uncomment below and update the code to test getBuildingsDeprecated
         //instance.getBuildingsDeprecated(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getCheckerDeprecated', function() {
-      it('should call getCheckerDeprecated successfully', function(done) {
-        //uncomment below and update the code to test getCheckerDeprecated
-        //instance.getCheckerDeprecated(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getCheckerResultDeprecated', function() {
-      it('should call getCheckerResultDeprecated successfully', function(done) {
-        //uncomment below and update the code to test getCheckerResultDeprecated
-        //instance.getCheckerResultDeprecated(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getCheckerResultsDeprecated', function() {
-      it('should call getCheckerResultsDeprecated successfully', function(done) {
-        //uncomment below and update the code to test getCheckerResultsDeprecated
-        //instance.getCheckerResultsDeprecated(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getCheckersDeprecated', function() {
-      it('should call getCheckersDeprecated successfully', function(done) {
-        //uncomment below and update the code to test getCheckersDeprecated
-        //instance.getCheckersDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1248,16 +1168,6 @@
         done();
       });
     });
-    describe('launchNewCheckDeprecated', function() {
-      it('should call launchNewCheckDeprecated successfully', function(done) {
-        //uncomment below and update the code to test launchNewCheckDeprecated
-        //instance.launchNewCheckDeprecated(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('linkDocumentsOfElementDeprecated', function() {
       it('should call linkDocumentsOfElementDeprecated successfully', function(done) {
         //uncomment below and update the code to test linkDocumentsOfElementDeprecated
@@ -1412,26 +1322,6 @@
       it('should call updateBuildingPlanPositioningDeprecated successfully', function(done) {
         //uncomment below and update the code to test updateBuildingPlanPositioningDeprecated
         //instance.updateBuildingPlanPositioningDeprecated(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateCheckerDeprecated', function() {
-      it('should call updateCheckerDeprecated successfully', function(done) {
-        //uncomment below and update the code to test updateCheckerDeprecated
-        //instance.updateCheckerDeprecated(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateCheckerResultDeprecated', function() {
-      it('should call updateCheckerResultDeprecated successfully', function(done) {
-        //uncomment below and update the code to test updateCheckerResultDeprecated
-        //instance.updateCheckerResultDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
