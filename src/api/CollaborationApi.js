@@ -48,6 +48,7 @@ import Project from '../model/Project';
 import ProjectAccessToken from '../model/ProjectAccessToken';
 import ProjectAccessTokenRequest from '../model/ProjectAccessTokenRequest';
 import ProjectFolderTree from '../model/ProjectFolderTree';
+import ProjectImportRequest from '../model/ProjectImportRequest';
 import ProjectInvitation from '../model/ProjectInvitation';
 import ProjectInvitationRequest from '../model/ProjectInvitationRequest';
 import ProjectRequest from '../model/ProjectRequest';
@@ -858,7 +859,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'OBJ', 'IFC', 'POINT_CLOUD', 'GLTF', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'GLTF', 'POINT_CLOUD', 'DWG', 'OBJ', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -924,7 +925,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'OBJ', 'IFC', 'POINT_CLOUD', 'GLTF', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'GLTF', 'POINT_CLOUD', 'DWG', 'OBJ', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -5035,8 +5036,69 @@ export default class CollaborationApi {
 
 
     /**
+     * Import data from a project
+     * Import dms tree and/or the groups from a project  Required scopes: org:manage
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @param {module:model/ProjectImportRequest} projectImportRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     */
+    importFromProjectWithHttpInfo(cloudPk, id, projectImportRequest) {
+      let postBody = projectImportRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling importFromProject");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling importFromProject");
+      }
+      // verify the required parameter 'projectImportRequest' is set
+      if (projectImportRequest === undefined || projectImportRequest === null) {
+        throw new Error("Missing the required parameter 'projectImportRequest' when calling importFromProject");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Project;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{id}/import_from', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Import data from a project
+     * Import dms tree and/or the groups from a project  Required scopes: org:manage
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @param {module:model/ProjectImportRequest} projectImportRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     */
+    importFromProject(cloudPk, id, projectImportRequest) {
+      return this.importFromProjectWithHttpInfo(cloudPk, id, projectImportRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Import a group from another project
-     * Import a group from another project. Must be an admin of the project  Required scopes: org:manage
+     * DEPECRATED: Use ImportFromProject instead  Required scopes: org:manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {module:model/ImportGroupRequest} importGroupRequest 
@@ -5081,7 +5143,7 @@ export default class CollaborationApi {
 
     /**
      * Import a group from another project
-     * Import a group from another project. Must be an admin of the project  Required scopes: org:manage
+     * DEPECRATED: Use ImportFromProject instead  Required scopes: org:manage
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {module:model/ImportGroupRequest} importGroupRequest 

@@ -878,6 +878,16 @@
         done();
       });
     });
+    describe('importFromProject', function() {
+      it('should call importFromProject successfully', function(done) {
+        //uncomment below and update the code to test importFromProject
+        //instance.importFromProject(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('importManageGroup', function() {
       it('should call importManageGroup successfully', function(done) {
         //uncomment below and update the code to test importManageGroup

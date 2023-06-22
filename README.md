@@ -286,6 +286,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getVisaComment**](docs/CollaborationApi.md#getVisaComment) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Retrieve a comment
 *bimdata.CollaborationApi* | [**getVisaComments**](docs/CollaborationApi.md#getVisaComments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment | List all comment of a visa
 *bimdata.CollaborationApi* | [**getVisas**](docs/CollaborationApi.md#getVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa | List all visas of a document
+*bimdata.CollaborationApi* | [**importFromProject**](docs/CollaborationApi.md#importFromProject) | **POST** /cloud/{cloud_pk}/project/{id}/import_from | Import data from a project
 *bimdata.CollaborationApi* | [**importManageGroup**](docs/CollaborationApi.md#importManageGroup) | **POST** /cloud/{cloud_pk}/project/{project_pk}/group/import | Import a group from another project
 *bimdata.CollaborationApi* | [**inviteCloudUser**](docs/CollaborationApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | Invite a cloud administrator
 *bimdata.CollaborationApi* | [**inviteProjectUser**](docs/CollaborationApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | Invite a project member
@@ -758,6 +759,7 @@ Class | Method | HTTP request | Description
  - [bimdata.ProjectAccessToken](docs/ProjectAccessToken.md)
  - [bimdata.ProjectAccessTokenRequest](docs/ProjectAccessTokenRequest.md)
  - [bimdata.ProjectFolderTree](docs/ProjectFolderTree.md)
+ - [bimdata.ProjectImportRequest](docs/ProjectImportRequest.md)
  - [bimdata.ProjectInvitation](docs/ProjectInvitation.md)
  - [bimdata.ProjectInvitationRequest](docs/ProjectInvitationRequest.md)
  - [bimdata.ProjectRequest](docs/ProjectRequest.md)

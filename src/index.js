@@ -152,6 +152,7 @@ import Project from './model/Project';
 import ProjectAccessToken from './model/ProjectAccessToken';
 import ProjectAccessTokenRequest from './model/ProjectAccessTokenRequest';
 import ProjectFolderTree from './model/ProjectFolderTree';
+import ProjectImportRequest from './model/ProjectImportRequest';
 import ProjectInvitation from './model/ProjectInvitation';
 import ProjectInvitationRequest from './model/ProjectInvitationRequest';
 import ProjectRequest from './model/ProjectRequest';
@@ -1124,6 +1125,12 @@ export {
      * @property {module:model/ProjectFolderTree}
      */
     ProjectFolderTree,
+
+    /**
+     * The ProjectImportRequest model constructor.
+     * @property {module:model/ProjectImportRequest}
+     */
+    ProjectImportRequest,
 
     /**
      * The ProjectInvitation model constructor.
