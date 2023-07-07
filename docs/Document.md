@@ -20,8 +20,9 @@ Name | Type | Description | Notes
 **modelId** | **Number** |  | [readonly] 
 **modelType** | **String** | Model&#39;s type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD | [readonly] 
 **ifcId** | **Number** | DEPRECATED: Use &#39;model_id&#39; instead. | [readonly] 
-**userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 
+**headId** | **Number** | Document id of head version | [readonly] 
 **isHeadVersion** | **Boolean** | Document is a head of version or is owned by another document | [readonly] 
+**userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 
 **officePreview** | **String** | Office files will be converted as pdf to provide a web preview. Supported extensions are .ppt, .pptx, .odp, .xls, .xlsx, .ods, .doc, .docx, .odt | [readonly] 
 
 

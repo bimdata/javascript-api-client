@@ -38,13 +38,14 @@ class Document {
      * @param modelId {Number} 
      * @param modelType {module:model/Document.ModelTypeEnum} Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD
      * @param ifcId {Number} DEPRECATED: Use 'model_id' instead.
-     * @param userPermission {module:model/Document.UserPermissionEnum} Aggregate of group user permissions and folder default permission
+     * @param headId {Number} Document id of head version
      * @param isHeadVersion {Boolean} Document is a head of version or is owned by another document
+     * @param userPermission {module:model/Document.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      * @param officePreview {String} Office files will be converted as pdf to provide a web preview. Supported extensions are .ppt, .pptx, .odp, .xls, .xlsx, .ods, .doc, .docx, .odt
      */
-    constructor(id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission, isHeadVersion, officePreview) { 
+    constructor(id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, userPermission, officePreview) { 
         
-        Document.initialize(this, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission, isHeadVersion, officePreview);
+        Document.initialize(this, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, userPermission, officePreview);
     }
 
     /**
@@ -52,7 +53,7 @@ class Document {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, userPermission, isHeadVersion, officePreview) { 
+    static initialize(obj, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, userPermission, officePreview) { 
         obj['id'] = id;
         obj['created_by'] = createdBy;
         obj['project'] = project;
@@ -66,8 +67,9 @@ class Document {
         obj['model_id'] = modelId;
         obj['model_type'] = modelType;
         obj['ifc_id'] = ifcId;
-        obj['user_permission'] = userPermission;
+        obj['head_id'] = headId;
         obj['is_head_version'] = isHeadVersion;
+        obj['user_permission'] = userPermission;
         obj['office_preview'] = officePreview;
     }
 
@@ -130,11 +132,14 @@ class Document {
             if (data.hasOwnProperty('ifc_id')) {
                 obj['ifc_id'] = ApiClient.convertToType(data['ifc_id'], 'Number');
             }
-            if (data.hasOwnProperty('user_permission')) {
-                obj['user_permission'] = ApiClient.convertToType(data['user_permission'], 'Number');
+            if (data.hasOwnProperty('head_id')) {
+                obj['head_id'] = ApiClient.convertToType(data['head_id'], 'Number');
             }
             if (data.hasOwnProperty('is_head_version')) {
                 obj['is_head_version'] = ApiClient.convertToType(data['is_head_version'], 'Boolean');
+            }
+            if (data.hasOwnProperty('user_permission')) {
+                obj['user_permission'] = ApiClient.convertToType(data['user_permission'], 'Number');
             }
             if (data.hasOwnProperty('office_preview')) {
                 obj['office_preview'] = ApiClient.convertToType(data['office_preview'], 'String');
@@ -235,16 +240,22 @@ Document.prototype['model_type'] = undefined;
 Document.prototype['ifc_id'] = undefined;
 
 /**
- * Aggregate of group user permissions and folder default permission
- * @member {module:model/Document.UserPermissionEnum} user_permission
+ * Document id of head version
+ * @member {Number} head_id
  */
-Document.prototype['user_permission'] = undefined;
+Document.prototype['head_id'] = undefined;
 
 /**
  * Document is a head of version or is owned by another document
  * @member {Boolean} is_head_version
  */
 Document.prototype['is_head_version'] = undefined;
+
+/**
+ * Aggregate of group user permissions and folder default permission
+ * @member {module:model/Document.UserPermissionEnum} user_permission
+ */
+Document.prototype['user_permission'] = undefined;
 
 /**
  * Office files will be converted as pdf to provide a web preview. Supported extensions are .ppt, .pptx, .odp, .xls, .xlsx, .ods, .doc, .docx, .odt

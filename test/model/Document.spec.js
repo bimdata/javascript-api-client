@@ -150,14 +150,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property userPermission (base name: "user_permission")', function() {
-      // uncomment below and update the code to test the property userPermission
+    it('should have the property headId (base name: "head_id")', function() {
+      // uncomment below and update the code to test the property headId
       //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
 
     it('should have the property isHeadVersion (base name: "is_head_version")', function() {
       // uncomment below and update the code to test the property isHeadVersion
+      //var instance = new bimdata.Document();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property userPermission (base name: "user_permission")', function() {
+      // uncomment below and update the code to test the property userPermission
       //var instance = new bimdata.Document();
       //expect(instance).to.be();
     });
