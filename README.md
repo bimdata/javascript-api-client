@@ -667,6 +667,8 @@ Class | Method | HTTP request | Description
  - [bimdata.FolderWithoutChildrenRequest](docs/FolderWithoutChildrenRequest.md)
  - [bimdata.FullTopic](docs/FullTopic.md)
  - [bimdata.FullTopicRequest](docs/FullTopicRequest.md)
+ - [bimdata.GeometryPoint](docs/GeometryPoint.md)
+ - [bimdata.GeometryPointRequest](docs/GeometryPointRequest.md)
  - [bimdata.Group](docs/Group.md)
  - [bimdata.GroupFolder](docs/GroupFolder.md)
  - [bimdata.GroupFolderRead](docs/GroupFolderRead.md)

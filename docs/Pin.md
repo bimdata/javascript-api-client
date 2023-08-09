@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **guid** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **color** | **String** |  | [optional] 
-**point** | [**Point**](Point.md) |  | 
+**point** | [**GeometryPoint**](GeometryPoint.md) |  | 
 **index** | **Number** |  | [optional] 
 
 

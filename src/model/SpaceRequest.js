@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import GeometryPointRequest from './GeometryPointRequest';
 
 /**
  * The SpaceRequest model module.
@@ -58,6 +59,9 @@ class SpaceRequest {
             if (data.hasOwnProperty('uuid')) {
                 obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
             }
+            if (data.hasOwnProperty('geometry')) {
+                obj['geometry'] = ApiClient.convertToType(data['geometry'], [GeometryPointRequest]);
+            }
         }
         return obj;
     }
@@ -79,6 +83,11 @@ SpaceRequest.prototype['longname'] = undefined;
  * @member {String} uuid
  */
 SpaceRequest.prototype['uuid'] = undefined;
+
+/**
+ * @member {Array.<module:model/GeometryPointRequest>} geometry
+ */
+SpaceRequest.prototype['geometry'] = undefined;
 
 
 

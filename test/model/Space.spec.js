@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property geometry (base name: "geometry")', function() {
+      // uncomment below and update the code to test the property geometry
+      //var instance = new bimdata.Space();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instance = new bimdata.Space();

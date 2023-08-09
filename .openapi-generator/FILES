@@ -51,6 +51,8 @@ docs/FolderWithoutChildren.md
 docs/FolderWithoutChildrenRequest.md
 docs/FullTopic.md
 docs/FullTopicRequest.md
+docs/GeometryPoint.md
+docs/GeometryPointRequest.md
 docs/Group.md
 docs/GroupFolder.md
 docs/GroupFolderRead.md
@@ -298,6 +300,8 @@ src/model/FolderWithoutChildren.js
 src/model/FolderWithoutChildrenRequest.js
 src/model/FullTopic.js
 src/model/FullTopicRequest.js
+src/model/GeometryPoint.js
+src/model/GeometryPointRequest.js
 src/model/Group.js
 src/model/GroupFolder.js
 src/model/GroupFolderRead.js
@@ -537,6 +541,8 @@ test/model/FolderWithoutChildren.spec.js
 test/model/FolderWithoutChildrenRequest.spec.js
 test/model/FullTopic.spec.js
 test/model/FullTopicRequest.spec.js
+test/model/GeometryPoint.spec.js
+test/model/GeometryPointRequest.spec.js
 test/model/Group.spec.js
 test/model/GroupFolder.spec.js
 test/model/GroupFolderRead.spec.js

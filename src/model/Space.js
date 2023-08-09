@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import GeometryPoint from './GeometryPoint';
 
 /**
  * The Space model module.
@@ -72,6 +73,9 @@ class Space {
             if (data.hasOwnProperty('zone_set')) {
                 obj['zone_set'] = ApiClient.convertToType(data['zone_set'], ['Number']);
             }
+            if (data.hasOwnProperty('geometry')) {
+                obj['geometry'] = ApiClient.convertToType(data['geometry'], [GeometryPoint]);
+            }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
@@ -109,6 +113,11 @@ Space.prototype['uuid'] = undefined;
  * @member {Array.<Number>} zone_set
  */
 Space.prototype['zone_set'] = undefined;
+
+/**
+ * @member {Array.<module:model/GeometryPoint>} geometry
+ */
+Space.prototype['geometry'] = undefined;
 
 /**
  * @member {Date} created_at

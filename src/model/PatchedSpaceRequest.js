@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import GeometryPointRequest from './GeometryPointRequest';
 
 /**
  * The PatchedSpaceRequest model module.
@@ -56,6 +57,9 @@ class PatchedSpaceRequest {
             if (data.hasOwnProperty('uuid')) {
                 obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
             }
+            if (data.hasOwnProperty('geometry')) {
+                obj['geometry'] = ApiClient.convertToType(data['geometry'], [GeometryPointRequest]);
+            }
         }
         return obj;
     }
@@ -77,6 +81,11 @@ PatchedSpaceRequest.prototype['longname'] = undefined;
  * @member {String} uuid
  */
 PatchedSpaceRequest.prototype['uuid'] = undefined;
+
+/**
+ * @member {Array.<module:model/GeometryPointRequest>} geometry
+ */
+PatchedSpaceRequest.prototype['geometry'] = undefined;
 
 
 

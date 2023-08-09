@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import Point from './Point';
+import GeometryPoint from './GeometryPoint';
 
 /**
  * The Pin model module.
@@ -23,7 +23,7 @@ class Pin {
     /**
      * Constructs a new <code>Pin</code>.
      * @alias module:model/Pin
-     * @param point {module:model/Point} 
+     * @param point {module:model/GeometryPoint} 
      */
     constructor(point) { 
         
@@ -60,7 +60,7 @@ class Pin {
                 obj['color'] = ApiClient.convertToType(data['color'], 'String');
             }
             if (data.hasOwnProperty('point')) {
-                obj['point'] = Point.constructFromObject(data['point']);
+                obj['point'] = GeometryPoint.constructFromObject(data['point']);
             }
             if (data.hasOwnProperty('index')) {
                 obj['index'] = ApiClient.convertToType(data['index'], 'Number');
@@ -88,7 +88,7 @@ Pin.prototype['name'] = undefined;
 Pin.prototype['color'] = undefined;
 
 /**
- * @member {module:model/Point} point
+ * @member {module:model/GeometryPoint} point
  */
 Pin.prototype['point'] = undefined;
 

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.PatchedSpaceRequest();
+    instance = new bimdata.GeometryPointRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,22 @@
       object[property] = value;
   }
 
-  describe('PatchedSpaceRequest', function() {
-    it('should create an instance of PatchedSpaceRequest', function() {
-      // uncomment below and update the code to test PatchedSpaceRequest
-      //var instance = new bimdata.PatchedSpaceRequest();
-      //expect(instance).to.be.a(bimdata.PatchedSpaceRequest);
+  describe('GeometryPointRequest', function() {
+    it('should create an instance of GeometryPointRequest', function() {
+      // uncomment below and update the code to test GeometryPointRequest
+      //var instance = new bimdata.GeometryPointRequest();
+      //expect(instance).to.be.a(bimdata.GeometryPointRequest);
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.PatchedSpaceRequest();
+    it('should have the property x (base name: "x")', function() {
+      // uncomment below and update the code to test the property x
+      //var instance = new bimdata.GeometryPointRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property longname (base name: "longname")', function() {
-      // uncomment below and update the code to test the property longname
-      //var instance = new bimdata.PatchedSpaceRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property uuid (base name: "uuid")', function() {
-      // uncomment below and update the code to test the property uuid
-      //var instance = new bimdata.PatchedSpaceRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property geometry (base name: "geometry")', function() {
-      // uncomment below and update the code to test the property geometry
-      //var instance = new bimdata.PatchedSpaceRequest();
+    it('should have the property y (base name: "y")', function() {
+      // uncomment below and update the code to test the property y
+      //var instance = new bimdata.GeometryPointRequest();
       //expect(instance).to.be();
     });
 

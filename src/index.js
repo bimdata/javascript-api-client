@@ -60,6 +60,8 @@ import FolderWithoutChildren from './model/FolderWithoutChildren';
 import FolderWithoutChildrenRequest from './model/FolderWithoutChildrenRequest';
 import FullTopic from './model/FullTopic';
 import FullTopicRequest from './model/FullTopicRequest';
+import GeometryPoint from './model/GeometryPoint';
+import GeometryPointRequest from './model/GeometryPointRequest';
 import Group from './model/Group';
 import GroupFolder from './model/GroupFolder';
 import GroupFolderRead from './model/GroupFolderRead';
@@ -573,6 +575,18 @@ export {
      * @property {module:model/FullTopicRequest}
      */
     FullTopicRequest,
+
+    /**
+     * The GeometryPoint model constructor.
+     * @property {module:model/GeometryPoint}
+     */
+    GeometryPoint,
+
+    /**
+     * The GeometryPointRequest model constructor.
+     * @property {module:model/GeometryPointRequest}
+     */
+    GeometryPointRequest,
 
     /**
      * The Group model constructor.

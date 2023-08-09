@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import PointRequest from './PointRequest';
+import GeometryPointRequest from './GeometryPointRequest';
 
 /**
  * The PatchedPinRequest model module.
@@ -58,7 +58,7 @@ class PatchedPinRequest {
                 obj['color'] = ApiClient.convertToType(data['color'], 'String');
             }
             if (data.hasOwnProperty('point')) {
-                obj['point'] = PointRequest.constructFromObject(data['point']);
+                obj['point'] = GeometryPointRequest.constructFromObject(data['point']);
             }
             if (data.hasOwnProperty('index')) {
                 obj['index'] = ApiClient.convertToType(data['index'], 'Number');
@@ -86,7 +86,7 @@ PatchedPinRequest.prototype['name'] = undefined;
 PatchedPinRequest.prototype['color'] = undefined;
 
 /**
- * @member {module:model/PointRequest} point
+ * @member {module:model/GeometryPointRequest} point
  */
 PatchedPinRequest.prototype['point'] = undefined;
 
