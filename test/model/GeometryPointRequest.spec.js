@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property z (base name: "z")', function() {
+      // uncomment below and update the code to test the property z
+      //var instance = new bimdata.GeometryPointRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

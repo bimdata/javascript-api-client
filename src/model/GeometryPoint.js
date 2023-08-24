@@ -24,10 +24,11 @@ class GeometryPoint {
      * @alias module:model/GeometryPoint
      * @param x {Number} 
      * @param y {Number} 
+     * @param z {Number} 
      */
-    constructor(x, y) { 
+    constructor(x, y, z) { 
         
-        GeometryPoint.initialize(this, x, y);
+        GeometryPoint.initialize(this, x, y, z);
     }
 
     /**
@@ -35,9 +36,10 @@ class GeometryPoint {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, x, y) { 
+    static initialize(obj, x, y, z) { 
         obj['x'] = x;
         obj['y'] = y;
+        obj['z'] = z;
     }
 
     /**
@@ -57,6 +59,9 @@ class GeometryPoint {
             if (data.hasOwnProperty('y')) {
                 obj['y'] = ApiClient.convertToType(data['y'], 'Number');
             }
+            if (data.hasOwnProperty('z')) {
+                obj['z'] = ApiClient.convertToType(data['z'], 'Number');
+            }
         }
         return obj;
     }
@@ -73,6 +78,11 @@ GeometryPoint.prototype['x'] = undefined;
  * @member {Number} y
  */
 GeometryPoint.prototype['y'] = undefined;
+
+/**
+ * @member {Number} z
+ */
+GeometryPoint.prototype['z'] = undefined;
 
 
 
