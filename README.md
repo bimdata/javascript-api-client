@@ -161,6 +161,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**deleteTopic**](docs/BcfApi.md#deleteTopic) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Delete a topic
 *bimdata.BcfApi* | [**deleteViewpoint**](docs/BcfApi.md#deleteViewpoint) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Delete a Viewpoint
 *bimdata.BcfApi* | [**downloadBcfExport**](docs/BcfApi.md#downloadBcfExport) | **GET** /bcf/2.1/projects/{id}/export | Export project&#39;s topics in bcf-xml format
+*bimdata.BcfApi* | [**downloadBcfExportXlsx**](docs/BcfApi.md#downloadBcfExportXlsx) | **GET** /bcf/2.1/projects/{id}/export-xlsx | Export project&#39;s topics in excel format
 *bimdata.BcfApi* | [**fullUpdateBcfProject**](docs/BcfApi.md#fullUpdateBcfProject) | **PUT** /bcf/2.1/projects/{id} | Update all fields of a BCF project
 *bimdata.BcfApi* | [**fullUpdateComment**](docs/BcfApi.md#fullUpdateComment) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Update all fields of a comment
 *bimdata.BcfApi* | [**fullUpdateFullTopic**](docs/BcfApi.md#fullUpdateFullTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update all fields of a topic

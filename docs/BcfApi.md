@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**deleteTopic**](BcfApi.md#deleteTopic) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Delete a topic
 [**deleteViewpoint**](BcfApi.md#deleteViewpoint) | **DELETE** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Delete a Viewpoint
 [**downloadBcfExport**](BcfApi.md#downloadBcfExport) | **GET** /bcf/2.1/projects/{id}/export | Export project&#39;s topics in bcf-xml format
+[**downloadBcfExportXlsx**](BcfApi.md#downloadBcfExportXlsx) | **GET** /bcf/2.1/projects/{id}/export-xlsx | Export project&#39;s topics in excel format
 [**fullUpdateBcfProject**](BcfApi.md#fullUpdateBcfProject) | **PUT** /bcf/2.1/projects/{id} | Update all fields of a BCF project
 [**fullUpdateComment**](BcfApi.md#fullUpdateComment) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Update all fields of a comment
 [**fullUpdateFullTopic**](BcfApi.md#fullUpdateFullTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update all fields of a topic
@@ -1363,6 +1364,67 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## downloadBcfExportXlsx
+
+> BcfProject downloadBcfExportXlsx(id)
+
+Export project&#39;s topics in excel format
+
+This is not a standard route. Export project&#39;s topics in excel format  Required scopes: bcf:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let id = 56; // Number | A unique integer value identifying this project.
+apiInstance.downloadBcfExportXlsx(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Number**| A unique integer value identifying this project. | 
+
+### Return type
+
+[**BcfProject**](BcfProject.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## fullUpdateBcfProject
 
 > BcfProject fullUpdateBcfProject(id, bcfProjectRequest)
@@ -2359,10 +2421,10 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = 56; // Number | 
 let opts = {
-  'format': "format_example", // String | format
-  'ifcs': "ifcs_example", // String | ifcs
+  'format': "format_example", // String | 
+  'ifcs': [null], // [Number] | 
   'imgFormat': "imgFormat_example", // String | All snapshot_data will be returned as url instead of base64
-  'models': "models_example" // String | models
+  'models': [null] // [Number] | 
 };
 apiInstance.getFullTopics(projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -2378,10 +2440,10 @@ apiInstance.getFullTopics(projectsPk, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **Number**|  | 
- **format** | **String**| format | [optional] 
- **ifcs** | **String**| ifcs | [optional] 
+ **format** | **String**|  | [optional] 
+ **ifcs** | [**[Number]**](Number.md)|  | [optional] 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
- **models** | **String**| models | [optional] 
+ **models** | [**[Number]**](Number.md)|  | [optional] 
 
 ### Return type
 
@@ -2496,9 +2558,9 @@ let apiInstance = new bimdata.BcfApi();
 let guid = "guid_example"; // String | 
 let projectsPk = 56; // Number | 
 let opts = {
-  'format': "format_example", // String | format
-  'ifcs': "ifcs_example", // String | ifcs
-  'models': "models_example" // String | models
+  'format': "format_example", // String | 
+  'ifcs': [null], // [Number] | 
+  'models': [null] // [Number] | 
 };
 apiInstance.getRelatedTopics(guid, projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -2515,9 +2577,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | **String**|  | 
  **projectsPk** | **Number**|  | 
- **format** | **String**| format | [optional] 
- **ifcs** | **String**| ifcs | [optional] 
- **models** | **String**| models | [optional] 
+ **format** | **String**|  | [optional] 
+ **ifcs** | [**[Number]**](Number.md)|  | [optional] 
+ **models** | [**[Number]**](Number.md)|  | [optional] 
 
 ### Return type
 
@@ -2760,9 +2822,9 @@ let apiInstance = new bimdata.BcfApi();
 let guid = "guid_example"; // String | 
 let projectsPk = 56; // Number | 
 let opts = {
-  'format': "format_example", // String | format
-  'ifcs': "ifcs_example", // String | ifcs
-  'models': "models_example" // String | models
+  'format': "format_example", // String | 
+  'ifcs': [null], // [Number] | 
+  'models': [null] // [Number] | 
 };
 apiInstance.getTopicDocumentReferences(guid, projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -2779,9 +2841,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | **String**|  | 
  **projectsPk** | **Number**|  | 
- **format** | **String**| format | [optional] 
- **ifcs** | **String**| ifcs | [optional] 
- **models** | **String**| models | [optional] 
+ **format** | **String**|  | [optional] 
+ **ifcs** | [**[Number]**](Number.md)|  | [optional] 
+ **models** | [**[Number]**](Number.md)|  | [optional] 
 
 ### Return type
 
@@ -2897,9 +2959,9 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = 56; // Number | 
 let opts = {
-  'format': "format_example", // String | format
-  'ifcs': "ifcs_example", // String | ifcs
-  'models': "models_example" // String | models
+  'format': "format_example", // String | 
+  'ifcs': [null], // [Number] | 
+  'models': [null] // [Number] | 
 };
 apiInstance.getTopics(projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -2915,9 +2977,9 @@ apiInstance.getTopics(projectsPk, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **Number**|  | 
- **format** | **String**| format | [optional] 
- **ifcs** | **String**| ifcs | [optional] 
- **models** | **String**| models | [optional] 
+ **format** | **String**|  | [optional] 
+ **ifcs** | [**[Number]**](Number.md)|  | [optional] 
+ **models** | [**[Number]**](Number.md)|  | [optional] 
 
 ### Return type
 

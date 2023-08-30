@@ -1237,6 +1237,54 @@ export default class BcfApi {
 
 
     /**
+     * Export project's topics in excel format
+     * This is not a standard route. Export project's topics in excel format  Required scopes: bcf:read
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BcfProject} and HTTP response
+     */
+    downloadBcfExportXlsxWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling downloadBcfExportXlsx");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = BcfProject;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{id}/export-xlsx', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Export project's topics in excel format
+     * This is not a standard route. Export project's topics in excel format  Required scopes: bcf:read
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BcfProject}
+     */
+    downloadBcfExportXlsx(id) {
+      return this.downloadBcfExportXlsxWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update all fields of a BCF project
      * Update all fields of a BCF project  Required scopes: bcf:write
      * @param {Number} id A unique integer value identifying this project.
@@ -2101,10 +2149,10 @@ export default class BcfApi {
      * This is not a standard route. It responds with all topics, their viewpoints and their comments  Required scopes: bcf:read
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.format format
-     * @param {String} opts.ifcs ifcs
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
      * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
-     * @param {String} opts.models models
+     * @param {Array.<Number>} opts.models 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FullTopic>} and HTTP response
      */
     getFullTopicsWithHttpInfo(projectsPk, opts) {
@@ -2120,9 +2168,9 @@ export default class BcfApi {
       };
       let queryParams = {
         'format': opts['format'],
-        'ifcs': opts['ifcs'],
+        'ifcs': this.apiClient.buildCollectionParam(opts['ifcs'], 'multi'),
         'img_format': opts['imgFormat'],
-        'models': opts['models']
+        'models': this.apiClient.buildCollectionParam(opts['models'], 'multi')
       };
       let headerParams = {
       };
@@ -2145,10 +2193,10 @@ export default class BcfApi {
      * This is not a standard route. It responds with all topics, their viewpoints and their comments  Required scopes: bcf:read
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.format format
-     * @param {String} opts.ifcs ifcs
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
      * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
-     * @param {String} opts.models models
+     * @param {Array.<Number>} opts.models 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FullTopic>}
      */
     getFullTopics(projectsPk, opts) {
@@ -2227,9 +2275,9 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.format format
-     * @param {String} opts.ifcs ifcs
-     * @param {String} opts.models models
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
     getRelatedTopicsWithHttpInfo(guid, projectsPk, opts) {
@@ -2250,8 +2298,8 @@ export default class BcfApi {
       };
       let queryParams = {
         'format': opts['format'],
-        'ifcs': opts['ifcs'],
-        'models': opts['models']
+        'ifcs': this.apiClient.buildCollectionParam(opts['ifcs'], 'multi'),
+        'models': this.apiClient.buildCollectionParam(opts['models'], 'multi')
       };
       let headerParams = {
       };
@@ -2275,9 +2323,9 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.format format
-     * @param {String} opts.ifcs ifcs
-     * @param {String} opts.models models
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
     getRelatedTopics(guid, projectsPk, opts) {
@@ -2473,9 +2521,9 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.format format
-     * @param {String} opts.ifcs ifcs
-     * @param {String} opts.models models
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
     getTopicDocumentReferencesWithHttpInfo(guid, projectsPk, opts) {
@@ -2496,8 +2544,8 @@ export default class BcfApi {
       };
       let queryParams = {
         'format': opts['format'],
-        'ifcs': opts['ifcs'],
-        'models': opts['models']
+        'ifcs': this.apiClient.buildCollectionParam(opts['ifcs'], 'multi'),
+        'models': this.apiClient.buildCollectionParam(opts['models'], 'multi')
       };
       let headerParams = {
       };
@@ -2521,9 +2569,9 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.format format
-     * @param {String} opts.ifcs ifcs
-     * @param {String} opts.models models
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
     getTopicDocumentReferences(guid, projectsPk, opts) {
@@ -2600,9 +2648,9 @@ export default class BcfApi {
      * Retrieve all topics  Required scopes: bcf:read
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.format format
-     * @param {String} opts.ifcs ifcs
-     * @param {String} opts.models models
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Topic>} and HTTP response
      */
     getTopicsWithHttpInfo(projectsPk, opts) {
@@ -2618,8 +2666,8 @@ export default class BcfApi {
       };
       let queryParams = {
         'format': opts['format'],
-        'ifcs': opts['ifcs'],
-        'models': opts['models']
+        'ifcs': this.apiClient.buildCollectionParam(opts['ifcs'], 'multi'),
+        'models': this.apiClient.buildCollectionParam(opts['models'], 'multi')
       };
       let headerParams = {
       };
@@ -2642,9 +2690,9 @@ export default class BcfApi {
      * Retrieve all topics  Required scopes: bcf:read
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.format format
-     * @param {String} opts.ifcs ifcs
-     * @param {String} opts.models models
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Topic>}
      */
     getTopics(projectsPk, opts) {

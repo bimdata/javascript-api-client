@@ -248,6 +248,16 @@
         done();
       });
     });
+    describe('downloadBcfExportXlsx', function() {
+      it('should call downloadBcfExportXlsx successfully', function(done) {
+        //uncomment below and update the code to test downloadBcfExportXlsx
+        //instance.downloadBcfExportXlsx(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('fullUpdateBcfProject', function() {
       it('should call fullUpdateBcfProject successfully', function(done) {
         //uncomment below and update the code to test fullUpdateBcfProject
