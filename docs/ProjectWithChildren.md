@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **parentId** | **Number** |  | [optional] 
 **children** | [**[ProjectWithChildren]**](ProjectWithChildren.md) |  | [readonly] 
 **rootFolderId** | **Number** |  | [readonly] 
+**mainModelId** | **Number** | Main model of the project | [readonly] 
 
 
 

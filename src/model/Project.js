@@ -90,6 +90,9 @@ class Project {
             if (data.hasOwnProperty('root_folder_id')) {
                 obj['root_folder_id'] = ApiClient.convertToType(data['root_folder_id'], 'Number');
             }
+            if (data.hasOwnProperty('main_model_id')) {
+                obj['main_model_id'] = ApiClient.convertToType(data['main_model_id'], 'Number');
+            }
         }
         return obj;
     }
@@ -150,6 +153,11 @@ Project.prototype['parent_id'] = undefined;
  * @member {Number} root_folder_id
  */
 Project.prototype['root_folder_id'] = undefined;
+
+/**
+ * @member {Number} main_model_id
+ */
+Project.prototype['main_model_id'] = undefined;
 
 
 

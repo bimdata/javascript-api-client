@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **status** | **String** | * &#x60;A&#x60; - active * &#x60;D&#x60; - deleted | [optional] 
 **parentId** | **Number** |  | [optional] 
+**mainModelId** | **Number** |  | [optional] 
 
 
 

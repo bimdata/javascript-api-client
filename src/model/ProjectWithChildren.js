@@ -28,10 +28,11 @@ class ProjectWithChildren {
      * @param updatedAt {Date} Date of the last update
      * @param children {Array.<module:model/ProjectWithChildren>} 
      * @param rootFolderId {Number} 
+     * @param mainModelId {Number} Main model of the project
      */
-    constructor(id, name, createdAt, updatedAt, children, rootFolderId) { 
+    constructor(id, name, createdAt, updatedAt, children, rootFolderId, mainModelId) { 
         
-        ProjectWithChildren.initialize(this, id, name, createdAt, updatedAt, children, rootFolderId);
+        ProjectWithChildren.initialize(this, id, name, createdAt, updatedAt, children, rootFolderId, mainModelId);
     }
 
     /**
@@ -39,13 +40,14 @@ class ProjectWithChildren {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, name, createdAt, updatedAt, children, rootFolderId) { 
+    static initialize(obj, id, name, createdAt, updatedAt, children, rootFolderId, mainModelId) { 
         obj['id'] = id;
         obj['name'] = name;
         obj['created_at'] = createdAt;
         obj['updated_at'] = updatedAt;
         obj['children'] = children;
         obj['root_folder_id'] = rootFolderId;
+        obj['main_model_id'] = mainModelId;
     }
 
     /**
@@ -88,6 +90,9 @@ class ProjectWithChildren {
             }
             if (data.hasOwnProperty('root_folder_id')) {
                 obj['root_folder_id'] = ApiClient.convertToType(data['root_folder_id'], 'Number');
+            }
+            if (data.hasOwnProperty('main_model_id')) {
+                obj['main_model_id'] = ApiClient.convertToType(data['main_model_id'], 'Number');
             }
         }
         return obj;
@@ -149,6 +154,12 @@ ProjectWithChildren.prototype['children'] = undefined;
  * @member {Number} root_folder_id
  */
 ProjectWithChildren.prototype['root_folder_id'] = undefined;
+
+/**
+ * Main model of the project
+ * @member {Number} main_model_id
+ */
+ProjectWithChildren.prototype['main_model_id'] = undefined;
 
 
 

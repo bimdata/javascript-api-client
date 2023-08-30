@@ -114,6 +114,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property mainModelId (base name: "main_model_id")', function() {
+      // uncomment below and update the code to test the property mainModelId
+      //var instance = new bimdata.Project();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

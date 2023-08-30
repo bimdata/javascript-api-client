@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **updatedAt** | **Date** | Date of the last update | [readonly] 
 **parentId** | **Number** |  | [optional] 
 **rootFolderId** | **Number** |  | [readonly] 
+**mainModelId** | **Number** |  | [optional] 
 
 
 
