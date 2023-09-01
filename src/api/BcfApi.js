@@ -1240,9 +1240,13 @@ export default class BcfApi {
      * Export project's topics in excel format
      * This is not a standard route. Export project's topics in excel format  Required scopes: bcf:read
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BcfProject} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.format topic format to export, comma separated. Default = standard
+     * @param {String} opts.topics topic guids to export, comma separated. Default = all
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link File} and HTTP response
      */
-    downloadBcfExportXlsxWithHttpInfo(id) {
+    downloadBcfExportXlsxWithHttpInfo(id, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -1253,6 +1257,8 @@ export default class BcfApi {
         'id': id
       };
       let queryParams = {
+        'format': opts['format'],
+        'topics': opts['topics']
       };
       let headerParams = {
       };
@@ -1262,7 +1268,7 @@ export default class BcfApi {
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = BcfProject;
+      let returnType = File;
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{id}/export-xlsx', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1274,10 +1280,13 @@ export default class BcfApi {
      * Export project's topics in excel format
      * This is not a standard route. Export project's topics in excel format  Required scopes: bcf:read
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BcfProject}
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.format topic format to export, comma separated. Default = standard
+     * @param {String} opts.topics topic guids to export, comma separated. Default = all
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link File}
      */
-    downloadBcfExportXlsx(id) {
-      return this.downloadBcfExportXlsxWithHttpInfo(id)
+    downloadBcfExportXlsx(id, opts) {
+      return this.downloadBcfExportXlsxWithHttpInfo(id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

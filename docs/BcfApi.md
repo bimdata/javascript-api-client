@@ -1366,7 +1366,7 @@ Name | Type | Description  | Notes
 
 ## downloadBcfExportXlsx
 
-> BcfProject downloadBcfExportXlsx(id)
+> File downloadBcfExportXlsx(id, opts)
 
 Export project&#39;s topics in excel format
 
@@ -1396,7 +1396,11 @@ Bearer.apiKey = 'YOUR API KEY';
 
 let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
-apiInstance.downloadBcfExportXlsx(id).then((data) => {
+let opts = {
+  'format': "format_example", // String | topic format to export, comma separated. Default = standard
+  'topics': "topics_example" // String | topic guids to export, comma separated. Default = all
+};
+apiInstance.downloadBcfExportXlsx(id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1410,10 +1414,12 @@ apiInstance.downloadBcfExportXlsx(id).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this project. | 
+ **format** | **String**| topic format to export, comma separated. Default &#x3D; standard | [optional] 
+ **topics** | **String**| topic guids to export, comma separated. Default &#x3D; all | [optional] 
 
 ### Return type
 
-[**BcfProject**](BcfProject.md)
+**File**
 
 ### Authorization
 
