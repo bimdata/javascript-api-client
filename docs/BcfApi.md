@@ -1398,6 +1398,7 @@ let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this project.
 let opts = {
   'format': "format_example", // String | topic format to export, comma separated. Default = standard
+  'locale': "locale_example", // String | Locale of the exported file. Available locales are 'en' and 'fr'. If set locale is not supported, 'en' will be used
   'topics': "topics_example" // String | topic guids to export, comma separated. Default = all
 };
 apiInstance.downloadBcfExportXlsx(id, opts).then((data) => {
@@ -1415,6 +1416,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this project. | 
  **format** | **String**| topic format to export, comma separated. Default &#x3D; standard | [optional] 
+ **locale** | **String**| Locale of the exported file. Available locales are &#39;en&#39; and &#39;fr&#39;. If set locale is not supported, &#39;en&#39; will be used | [optional] 
  **topics** | **String**| topic guids to export, comma separated. Default &#x3D; all | [optional] 
 
 ### Return type

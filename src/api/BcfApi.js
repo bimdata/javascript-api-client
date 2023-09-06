@@ -1242,6 +1242,7 @@ export default class BcfApi {
      * @param {Number} id A unique integer value identifying this project.
      * @param {Object} opts Optional parameters
      * @param {String} opts.format topic format to export, comma separated. Default = standard
+     * @param {module:model/String} opts.locale Locale of the exported file. Available locales are 'en' and 'fr'. If set locale is not supported, 'en' will be used
      * @param {String} opts.topics topic guids to export, comma separated. Default = all
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link File} and HTTP response
      */
@@ -1258,6 +1259,7 @@ export default class BcfApi {
       };
       let queryParams = {
         'format': opts['format'],
+        'locale': opts['locale'],
         'topics': opts['topics']
       };
       let headerParams = {
@@ -1282,6 +1284,7 @@ export default class BcfApi {
      * @param {Number} id A unique integer value identifying this project.
      * @param {Object} opts Optional parameters
      * @param {String} opts.format topic format to export, comma separated. Default = standard
+     * @param {module:model/String} opts.locale Locale of the exported file. Available locales are 'en' and 'fr'. If set locale is not supported, 'en' will be used
      * @param {String} opts.topics topic guids to export, comma separated. Default = all
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link File}
      */
