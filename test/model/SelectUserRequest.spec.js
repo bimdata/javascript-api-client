@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.ProjectAccessToken();
+    instance = new bimdata.SelectUserRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,16 @@
       object[property] = value;
   }
 
-  describe('ProjectAccessToken', function() {
-    it('should create an instance of ProjectAccessToken', function() {
-      // uncomment below and update the code to test ProjectAccessToken
-      //var instance = new bimdata.ProjectAccessToken();
-      //expect(instance).to.be.a(bimdata.ProjectAccessToken);
+  describe('SelectUserRequest', function() {
+    it('should create an instance of SelectUserRequest', function() {
+      // uncomment below and update the code to test SelectUserRequest
+      //var instance = new bimdata.SelectUserRequest();
+      //expect(instance).to.be.a(bimdata.SelectUserRequest);
     });
 
-    it('should have the property token (base name: "token")', function() {
-      // uncomment below and update the code to test the property token
-      //var instance = new bimdata.ProjectAccessToken();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property scopes (base name: "scopes")', function() {
-      // uncomment below and update the code to test the property scopes
-      //var instance = new bimdata.ProjectAccessToken();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property expiresAt (base name: "expires_at")', function() {
-      // uncomment below and update the code to test the property expiresAt
-      //var instance = new bimdata.ProjectAccessToken();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property emailImpersonation (base name: "email_impersonation")', function() {
-      // uncomment below and update the code to test the property emailImpersonation
-      //var instance = new bimdata.ProjectAccessToken();
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instance = new bimdata.SelectUserRequest();
       //expect(instance).to.be();
     });
 

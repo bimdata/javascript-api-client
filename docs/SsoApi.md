@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**acceptInvitation**](SsoApi.md#acceptInvitation) | **POST** /identity-provider/invitation/{id}/accept | Accept an invitation
+[**createUser**](SsoApi.md#createUser) | **POST** /identity-provider/user | Create a user
 [**deleteUser**](SsoApi.md#deleteUser) | **DELETE** /identity-provider/user | Delete user from BIMData
 [**denyInvitation**](SsoApi.md#denyInvitation) | **POST** /identity-provider/invitation/{id}/deny | Deny an invitation
 [**getInvitation**](SsoApi.md#getInvitation) | **GET** /identity-provider/invitation/{id} | Retrieve an invitation
@@ -73,9 +74,70 @@ null (empty response body)
 - **Accept**: Not defined
 
 
+## createUser
+
+> ShortUser createUser(createUserRequest)
+
+Create a user
+
+Create a user, linked to the provider. This route is only useful when used with &#x60;ProjetAccessToken&#x60;s
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.SsoApi();
+let createUserRequest = new bimdata.CreateUserRequest(); // CreateUserRequest | 
+apiInstance.createUser(createUserRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createUserRequest** | [**CreateUserRequest**](CreateUserRequest.md)|  | 
+
+### Return type
+
+[**ShortUser**](ShortUser.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
 ## deleteUser
 
-> deleteUser()
+> deleteUser(selectUserRequest)
 
 Delete user from BIMData
 
@@ -104,7 +166,8 @@ Bearer.apiKey = 'YOUR API KEY';
 //Bearer.apiKeyPrefix = 'Token';
 
 let apiInstance = new bimdata.SsoApi();
-apiInstance.deleteUser().then(() => {
+let selectUserRequest = new bimdata.SelectUserRequest(); // SelectUserRequest | 
+apiInstance.deleteUser(selectUserRequest).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -114,7 +177,10 @@ apiInstance.deleteUser().then(() => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **selectUserRequest** | [**SelectUserRequest**](SelectUserRequest.md)|  | 
 
 ### Return type
 
@@ -126,7 +192,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
 - **Accept**: Not defined
 
 

@@ -30,6 +30,7 @@ docs/ComponentsParentRequest.md
 docs/CreateBuildingByNameRequest.md
 docs/CreateModelRequest.md
 docs/CreateMultiPageModelRequest.md
+docs/CreateUserRequest.md
 docs/DetailedExtensions.md
 docs/Direction.md
 docs/DirectionRequest.md
@@ -110,7 +111,6 @@ docs/PatchedPinRequest.md
 docs/PatchedPositioningPlanRequest.md
 docs/PatchedPriorityRequest.md
 docs/PatchedProcessorHandlerRequest.md
-docs/PatchedProjectAccessTokenRequest.md
 docs/PatchedProjectRequest.md
 docs/PatchedPropertyDefinitionRequest.md
 docs/PatchedPropertyRequest.md
@@ -189,6 +189,7 @@ docs/RawSystemRequest.md
 docs/RawUnit.md
 docs/RawUnitRequest.md
 docs/RecursiveFolderChildren.md
+docs/SelectUserRequest.md
 docs/SelfBcfUser.md
 docs/SelfUser.md
 docs/ShortUser.md
@@ -279,6 +280,7 @@ src/model/ComponentsParentRequest.js
 src/model/CreateBuildingByNameRequest.js
 src/model/CreateModelRequest.js
 src/model/CreateMultiPageModelRequest.js
+src/model/CreateUserRequest.js
 src/model/DetailedExtensions.js
 src/model/Direction.js
 src/model/DirectionRequest.js
@@ -357,7 +359,6 @@ src/model/PatchedPinRequest.js
 src/model/PatchedPositioningPlanRequest.js
 src/model/PatchedPriorityRequest.js
 src/model/PatchedProcessorHandlerRequest.js
-src/model/PatchedProjectAccessTokenRequest.js
 src/model/PatchedProjectRequest.js
 src/model/PatchedPropertyDefinitionRequest.js
 src/model/PatchedPropertyRequest.js
@@ -436,6 +437,7 @@ src/model/RawSystemRequest.js
 src/model/RawUnit.js
 src/model/RawUnitRequest.js
 src/model/RecursiveFolderChildren.js
+src/model/SelectUserRequest.js
 src/model/SelfBcfUser.js
 src/model/SelfUser.js
 src/model/ShortUser.js
@@ -520,6 +522,7 @@ test/model/ComponentsParentRequest.spec.js
 test/model/CreateBuildingByNameRequest.spec.js
 test/model/CreateModelRequest.spec.js
 test/model/CreateMultiPageModelRequest.spec.js
+test/model/CreateUserRequest.spec.js
 test/model/DetailedExtensions.spec.js
 test/model/Direction.spec.js
 test/model/DirectionRequest.spec.js
@@ -598,7 +601,6 @@ test/model/PatchedPinRequest.spec.js
 test/model/PatchedPositioningPlanRequest.spec.js
 test/model/PatchedPriorityRequest.spec.js
 test/model/PatchedProcessorHandlerRequest.spec.js
-test/model/PatchedProjectAccessTokenRequest.spec.js
 test/model/PatchedProjectRequest.spec.js
 test/model/PatchedPropertyDefinitionRequest.spec.js
 test/model/PatchedPropertyRequest.spec.js
@@ -677,6 +679,7 @@ test/model/RawSystemRequest.spec.js
 test/model/RawUnit.spec.js
 test/model/RawUnitRequest.spec.js
 test/model/RecursiveFolderChildren.spec.js
+test/model/SelectUserRequest.spec.js
 test/model/SelfBcfUser.spec.js
 test/model/SelfUser.spec.js
 test/model/ShortUser.spec.js

@@ -106,7 +106,6 @@ Method | HTTP request | Description
 [**updateManageGroup**](CollaborationApi.md#updateManageGroup) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update some fields of a group
 [**updatePreviewFile**](CollaborationApi.md#updatePreviewFile) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id}/preview-file | Update preview of the document
 [**updateProject**](CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
-[**updateProjectAccessToken**](CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
 [**updateProjectUser**](CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Change the user role in the cloud
 [**updateTag**](CollaborationApi.md#updateTag) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/tag/{id} | Update some fields of the tag
 [**updateValidation**](CollaborationApi.md#updateValidation) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id} | Update the validator of validation
@@ -956,7 +955,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;POINT_CLOUD&#39;, &#39;OBJ&#39;, &#39;DWG&#39;, &#39;IFC&#39;, &#39;DXF&#39;, &#39;GLTF&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;OBJ&#39;, &#39;DWG&#39;, &#39;IFC&#39;, &#39;GLTF&#39;, &#39;DXF&#39;, &#39;POINT_CLOUD&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -6734,75 +6733,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Project**](Project.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json
-
-
-## updateProjectAccessToken
-
-> ProjectAccessToken updateProjectAccessToken(cloudPk, projectPk, token, opts)
-
-Update some fields of a token
-
-You can update the expiration date field  Required scopes: org:manage
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: ApiKey
-let ApiKey = defaultClient.authentications['ApiKey'];
-ApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = 56; // Number | A unique integer value identifying this cloud.
-let projectPk = 56; // Number | A unique integer value identifying this project.
-let token = "token_example"; // String | 
-let opts = {
-  'patchedProjectAccessTokenRequest': new bimdata.PatchedProjectAccessTokenRequest() // PatchedProjectAccessTokenRequest | 
-};
-apiInstance.updateProjectAccessToken(cloudPk, projectPk, token, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
- **projectPk** | **Number**| A unique integer value identifying this project. | 
- **token** | **String**|  | 
- **patchedProjectAccessTokenRequest** | [**PatchedProjectAccessTokenRequest**](PatchedProjectAccessTokenRequest.md)|  | [optional] 
-
-### Return type
-
-[**ProjectAccessToken**](ProjectAccessToken.md)
 
 ### Authorization
 

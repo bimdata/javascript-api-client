@@ -13,7 +13,10 @@
 
 
 import ApiClient from "../ApiClient";
+import CreateUserRequest from '../model/CreateUserRequest';
 import Invitation from '../model/Invitation';
+import SelectUserRequest from '../model/SelectUserRequest';
+import ShortUser from '../model/ShortUser';
 
 /**
 * Sso service.
@@ -84,12 +87,17 @@ export default class SsoApi {
 
 
     /**
-     * Delete user from BIMData
-     * Delete the user and all clouds where the user is alone
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * Create a user
+     * Create a user, linked to the provider. This route is only useful when used with `ProjetAccessToken`s
+     * @param {module:model/CreateUserRequest} createUserRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ShortUser} and HTTP response
      */
-    deleteUserWithHttpInfo() {
-      let postBody = null;
+    createUserWithHttpInfo(createUserRequest) {
+      let postBody = createUserRequest;
+      // verify the required parameter 'createUserRequest' is set
+      if (createUserRequest === undefined || createUserRequest === null) {
+        throw new Error("Missing the required parameter 'createUserRequest' when calling createUser");
+      }
 
       let pathParams = {
       };
@@ -101,7 +109,54 @@ export default class SsoApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = ShortUser;
+      return this.apiClient.callApi(
+        '/identity-provider/user', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a user
+     * Create a user, linked to the provider. This route is only useful when used with `ProjetAccessToken`s
+     * @param {module:model/CreateUserRequest} createUserRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ShortUser}
+     */
+    createUser(createUserRequest) {
+      return this.createUserWithHttpInfo(createUserRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete user from BIMData
+     * Delete the user and all clouds where the user is alone
+     * @param {module:model/SelectUserRequest} selectUserRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteUserWithHttpInfo(selectUserRequest) {
+      let postBody = selectUserRequest;
+      // verify the required parameter 'selectUserRequest' is set
+      if (selectUserRequest === undefined || selectUserRequest === null) {
+        throw new Error("Missing the required parameter 'selectUserRequest' when calling deleteUser");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -114,10 +169,11 @@ export default class SsoApi {
     /**
      * Delete user from BIMData
      * Delete the user and all clouds where the user is alone
+     * @param {module:model/SelectUserRequest} selectUserRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteUser() {
-      return this.deleteUserWithHttpInfo()
+    deleteUser(selectUserRequest) {
+      return this.deleteUserWithHttpInfo(selectUserRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

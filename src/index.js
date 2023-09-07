@@ -39,6 +39,7 @@ import ComponentsParentRequest from './model/ComponentsParentRequest';
 import CreateBuildingByNameRequest from './model/CreateBuildingByNameRequest';
 import CreateModelRequest from './model/CreateModelRequest';
 import CreateMultiPageModelRequest from './model/CreateMultiPageModelRequest';
+import CreateUserRequest from './model/CreateUserRequest';
 import DetailedExtensions from './model/DetailedExtensions';
 import Direction from './model/Direction';
 import DirectionRequest from './model/DirectionRequest';
@@ -117,7 +118,6 @@ import PatchedPinRequest from './model/PatchedPinRequest';
 import PatchedPositioningPlanRequest from './model/PatchedPositioningPlanRequest';
 import PatchedPriorityRequest from './model/PatchedPriorityRequest';
 import PatchedProcessorHandlerRequest from './model/PatchedProcessorHandlerRequest';
-import PatchedProjectAccessTokenRequest from './model/PatchedProjectAccessTokenRequest';
 import PatchedProjectRequest from './model/PatchedProjectRequest';
 import PatchedPropertyDefinitionRequest from './model/PatchedPropertyDefinitionRequest';
 import PatchedPropertyRequest from './model/PatchedPropertyRequest';
@@ -196,6 +196,7 @@ import RawSystemRequest from './model/RawSystemRequest';
 import RawUnit from './model/RawUnit';
 import RawUnitRequest from './model/RawUnitRequest';
 import RecursiveFolderChildren from './model/RecursiveFolderChildren';
+import SelectUserRequest from './model/SelectUserRequest';
 import SelfBcfUser from './model/SelfBcfUser';
 import SelfUser from './model/SelfUser';
 import ShortUser from './model/ShortUser';
@@ -449,6 +450,12 @@ export {
      * @property {module:model/CreateMultiPageModelRequest}
      */
     CreateMultiPageModelRequest,
+
+    /**
+     * The CreateUserRequest model constructor.
+     * @property {module:model/CreateUserRequest}
+     */
+    CreateUserRequest,
 
     /**
      * The DetailedExtensions model constructor.
@@ -919,12 +926,6 @@ export {
     PatchedProcessorHandlerRequest,
 
     /**
-     * The PatchedProjectAccessTokenRequest model constructor.
-     * @property {module:model/PatchedProjectAccessTokenRequest}
-     */
-    PatchedProjectAccessTokenRequest,
-
-    /**
      * The PatchedProjectRequest model constructor.
      * @property {module:model/PatchedProjectRequest}
      */
@@ -1391,6 +1392,12 @@ export {
      * @property {module:model/RecursiveFolderChildren}
      */
     RecursiveFolderChildren,
+
+    /**
+     * The SelectUserRequest model constructor.
+     * @property {module:model/SelectUserRequest}
+     */
+    SelectUserRequest,
 
     /**
      * The SelfBcfUser model constructor.

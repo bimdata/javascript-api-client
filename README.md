@@ -306,7 +306,6 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**updateManageGroup**](docs/CollaborationApi.md#updateManageGroup) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update some fields of a group
 *bimdata.CollaborationApi* | [**updatePreviewFile**](docs/CollaborationApi.md#updatePreviewFile) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id}/preview-file | Update preview of the document
 *bimdata.CollaborationApi* | [**updateProject**](docs/CollaborationApi.md#updateProject) | **PATCH** /cloud/{cloud_pk}/project/{id} | Update some fields of a project
-*bimdata.CollaborationApi* | [**updateProjectAccessToken**](docs/CollaborationApi.md#updateProjectAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/access-token/{token} | Update some fields of a token
 *bimdata.CollaborationApi* | [**updateProjectUser**](docs/CollaborationApi.md#updateProjectUser) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/user/{id} | Change the user role in the cloud
 *bimdata.CollaborationApi* | [**updateTag**](docs/CollaborationApi.md#updateTag) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/tag/{id} | Update some fields of the tag
 *bimdata.CollaborationApi* | [**updateValidation**](docs/CollaborationApi.md#updateValidation) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id} | Update the validator of validation
@@ -607,6 +606,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**updateZone**](docs/ModelApi.md#updateZone) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{id} | Update some fields of a zone
 *bimdata.ModelApi* | [**updateZoneSpace**](docs/ModelApi.md#updateZoneSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space/{id} | Update some fields of a space
 *bimdata.SsoApi* | [**acceptInvitation**](docs/SsoApi.md#acceptInvitation) | **POST** /identity-provider/invitation/{id}/accept | Accept an invitation
+*bimdata.SsoApi* | [**createUser**](docs/SsoApi.md#createUser) | **POST** /identity-provider/user | Create a user
 *bimdata.SsoApi* | [**deleteUser**](docs/SsoApi.md#deleteUser) | **DELETE** /identity-provider/user | Delete user from BIMData
 *bimdata.SsoApi* | [**denyInvitation**](docs/SsoApi.md#denyInvitation) | **POST** /identity-provider/invitation/{id}/deny | Deny an invitation
 *bimdata.SsoApi* | [**getInvitation**](docs/SsoApi.md#getInvitation) | **GET** /identity-provider/invitation/{id} | Retrieve an invitation
@@ -647,6 +647,7 @@ Class | Method | HTTP request | Description
  - [bimdata.CreateBuildingByNameRequest](docs/CreateBuildingByNameRequest.md)
  - [bimdata.CreateModelRequest](docs/CreateModelRequest.md)
  - [bimdata.CreateMultiPageModelRequest](docs/CreateMultiPageModelRequest.md)
+ - [bimdata.CreateUserRequest](docs/CreateUserRequest.md)
  - [bimdata.DetailedExtensions](docs/DetailedExtensions.md)
  - [bimdata.Direction](docs/Direction.md)
  - [bimdata.DirectionRequest](docs/DirectionRequest.md)
@@ -725,7 +726,6 @@ Class | Method | HTTP request | Description
  - [bimdata.PatchedPositioningPlanRequest](docs/PatchedPositioningPlanRequest.md)
  - [bimdata.PatchedPriorityRequest](docs/PatchedPriorityRequest.md)
  - [bimdata.PatchedProcessorHandlerRequest](docs/PatchedProcessorHandlerRequest.md)
- - [bimdata.PatchedProjectAccessTokenRequest](docs/PatchedProjectAccessTokenRequest.md)
  - [bimdata.PatchedProjectRequest](docs/PatchedProjectRequest.md)
  - [bimdata.PatchedPropertyDefinitionRequest](docs/PatchedPropertyDefinitionRequest.md)
  - [bimdata.PatchedPropertyRequest](docs/PatchedPropertyRequest.md)
@@ -804,6 +804,7 @@ Class | Method | HTTP request | Description
  - [bimdata.RawUnit](docs/RawUnit.md)
  - [bimdata.RawUnitRequest](docs/RawUnitRequest.md)
  - [bimdata.RecursiveFolderChildren](docs/RecursiveFolderChildren.md)
+ - [bimdata.SelectUserRequest](docs/SelectUserRequest.md)
  - [bimdata.SelfBcfUser](docs/SelfBcfUser.md)
  - [bimdata.SelfUser](docs/SelfUser.md)
  - [bimdata.ShortUser](docs/ShortUser.md)

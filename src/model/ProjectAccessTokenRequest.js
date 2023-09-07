@@ -55,6 +55,9 @@ class ProjectAccessTokenRequest {
             if (data.hasOwnProperty('expires_at')) {
                 obj['expires_at'] = ApiClient.convertToType(data['expires_at'], 'Date');
             }
+            if (data.hasOwnProperty('email_impersonation')) {
+                obj['email_impersonation'] = ApiClient.convertToType(data['email_impersonation'], 'String');
+            }
         }
         return obj;
     }
@@ -71,6 +74,12 @@ ProjectAccessTokenRequest.prototype['scopes'] = undefined;
  * @member {Date} expires_at
  */
 ProjectAccessTokenRequest.prototype['expires_at'] = undefined;
+
+/**
+ *          If the request is made from an SSO application, you can link the token to a user.         All calls made with the token will populate created_by fields with the user.         If the user don't have access to some data, the token won't have access.         
+ * @member {String} email_impersonation
+ */
+ProjectAccessTokenRequest.prototype['email_impersonation'] = undefined;
 
 
 

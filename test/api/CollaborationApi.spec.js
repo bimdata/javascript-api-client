@@ -1068,16 +1068,6 @@
         done();
       });
     });
-    describe('updateProjectAccessToken', function() {
-      it('should call updateProjectAccessToken successfully', function(done) {
-        //uncomment below and update the code to test updateProjectAccessToken
-        //instance.updateProjectAccessToken(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('updateProjectUser', function() {
       it('should call updateProjectUser successfully', function(done) {
         //uncomment below and update the code to test updateProjectUser

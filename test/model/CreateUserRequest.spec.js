@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.PatchedProjectAccessTokenRequest();
+    instance = new bimdata.CreateUserRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,34 @@
       object[property] = value;
   }
 
-  describe('PatchedProjectAccessTokenRequest', function() {
-    it('should create an instance of PatchedProjectAccessTokenRequest', function() {
-      // uncomment below and update the code to test PatchedProjectAccessTokenRequest
-      //var instance = new bimdata.PatchedProjectAccessTokenRequest();
-      //expect(instance).to.be.a(bimdata.PatchedProjectAccessTokenRequest);
+  describe('CreateUserRequest', function() {
+    it('should create an instance of CreateUserRequest', function() {
+      // uncomment below and update the code to test CreateUserRequest
+      //var instance = new bimdata.CreateUserRequest();
+      //expect(instance).to.be.a(bimdata.CreateUserRequest);
     });
 
-    it('should have the property scopes (base name: "scopes")', function() {
-      // uncomment below and update the code to test the property scopes
-      //var instance = new bimdata.PatchedProjectAccessTokenRequest();
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instance = new bimdata.CreateUserRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property expiresAt (base name: "expires_at")', function() {
-      // uncomment below and update the code to test the property expiresAt
-      //var instance = new bimdata.PatchedProjectAccessTokenRequest();
+    it('should have the property firstname (base name: "firstname")', function() {
+      // uncomment below and update the code to test the property firstname
+      //var instance = new bimdata.CreateUserRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property lastname (base name: "lastname")', function() {
+      // uncomment below and update the code to test the property lastname
+      //var instance = new bimdata.CreateUserRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property profilePicture (base name: "profile_picture")', function() {
+      // uncomment below and update the code to test the property profilePicture
+      //var instance = new bimdata.CreateUserRequest();
       //expect(instance).to.be();
     });
 

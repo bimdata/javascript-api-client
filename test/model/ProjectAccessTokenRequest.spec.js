@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property emailImpersonation (base name: "email_impersonation")', function() {
+      // uncomment below and update the code to test the property emailImpersonation
+      //var instance = new bimdata.ProjectAccessTokenRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -36,7 +36,6 @@ import PatchedDocumentRequest from '../model/PatchedDocumentRequest';
 import PatchedFolderWithoutChildrenRequest from '../model/PatchedFolderWithoutChildrenRequest';
 import PatchedGroupFolderRequest from '../model/PatchedGroupFolderRequest';
 import PatchedGroupRequest from '../model/PatchedGroupRequest';
-import PatchedProjectAccessTokenRequest from '../model/PatchedProjectAccessTokenRequest';
 import PatchedProjectRequest from '../model/PatchedProjectRequest';
 import PatchedTagRequest from '../model/PatchedTagRequest';
 import PatchedUserCloudUpdateRequest from '../model/PatchedUserCloudUpdateRequest';
@@ -859,7 +858,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'POINT_CLOUD', 'OBJ', 'DWG', 'IFC', 'DXF', 'GLTF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'DWG', 'IFC', 'GLTF', 'DXF', 'POINT_CLOUD'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -925,7 +924,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'POINT_CLOUD', 'OBJ', 'DWG', 'IFC', 'DXF', 'GLTF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'DWG', 'IFC', 'GLTF', 'DXF', 'POINT_CLOUD'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -6256,73 +6255,6 @@ export default class CollaborationApi {
      */
     updateProject(cloudPk, id, opts) {
       return this.updateProjectWithHttpInfo(cloudPk, id, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update some fields of a token
-     * You can update the expiration date field  Required scopes: org:manage
-     * @param {Number} cloudPk A unique integer value identifying this cloud.
-     * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {String} token 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PatchedProjectAccessTokenRequest} opts.patchedProjectAccessTokenRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectAccessToken} and HTTP response
-     */
-    updateProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token, opts) {
-      opts = opts || {};
-      let postBody = opts['patchedProjectAccessTokenRequest'];
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling updateProjectAccessToken");
-      }
-      // verify the required parameter 'projectPk' is set
-      if (projectPk === undefined || projectPk === null) {
-        throw new Error("Missing the required parameter 'projectPk' when calling updateProjectAccessToken");
-      }
-      // verify the required parameter 'token' is set
-      if (token === undefined || token === null) {
-        throw new Error("Missing the required parameter 'token' when calling updateProjectAccessToken");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk,
-        'project_pk': projectPk,
-        'token': token
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
-      let accepts = ['application/json'];
-      let returnType = ProjectAccessToken;
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{project_pk}/access-token/{token}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update some fields of a token
-     * You can update the expiration date field  Required scopes: org:manage
-     * @param {Number} cloudPk A unique integer value identifying this cloud.
-     * @param {Number} projectPk A unique integer value identifying this project.
-     * @param {String} token 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PatchedProjectAccessTokenRequest} opts.patchedProjectAccessTokenRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectAccessToken}
-     */
-    updateProjectAccessToken(cloudPk, projectPk, token, opts) {
-      return this.updateProjectAccessTokenWithHttpInfo(cloudPk, projectPk, token, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
