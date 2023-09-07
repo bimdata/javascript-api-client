@@ -40,12 +40,13 @@ class Document {
      * @param ifcId {Number} DEPRECATED: Use 'model_id' instead.
      * @param headId {Number} Document id of head version
      * @param isHeadVersion {Boolean} Document is a head of version or is owned by another document
+     * @param historyCount {Number} Number of previous versions
      * @param userPermission {module:model/Document.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      * @param officePreview {String} Office files will be converted as pdf to provide a web preview. Supported extensions are .ppt, .pptx, .odp, .xls, .xlsx, .ods, .doc, .docx, .odt
      */
-    constructor(id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, userPermission, officePreview) { 
+    constructor(id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview) { 
         
-        Document.initialize(this, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, userPermission, officePreview);
+        Document.initialize(this, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview);
     }
 
     /**
@@ -53,7 +54,7 @@ class Document {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, userPermission, officePreview) { 
+    static initialize(obj, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview) { 
         obj['id'] = id;
         obj['created_by'] = createdBy;
         obj['project'] = project;
@@ -69,6 +70,7 @@ class Document {
         obj['ifc_id'] = ifcId;
         obj['head_id'] = headId;
         obj['is_head_version'] = isHeadVersion;
+        obj['history_count'] = historyCount;
         obj['user_permission'] = userPermission;
         obj['office_preview'] = officePreview;
     }
@@ -137,6 +139,9 @@ class Document {
             }
             if (data.hasOwnProperty('is_head_version')) {
                 obj['is_head_version'] = ApiClient.convertToType(data['is_head_version'], 'Boolean');
+            }
+            if (data.hasOwnProperty('history_count')) {
+                obj['history_count'] = ApiClient.convertToType(data['history_count'], 'Number');
             }
             if (data.hasOwnProperty('user_permission')) {
                 obj['user_permission'] = ApiClient.convertToType(data['user_permission'], 'Number');
@@ -250,6 +255,12 @@ Document.prototype['head_id'] = undefined;
  * @member {Boolean} is_head_version
  */
 Document.prototype['is_head_version'] = undefined;
+
+/**
+ * Number of previous versions
+ * @member {Number} history_count
+ */
+Document.prototype['history_count'] = undefined;
 
 /**
  * Aggregate of group user permissions and folder default permission

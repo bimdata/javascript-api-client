@@ -162,6 +162,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property historyCount (base name: "history_count")', function() {
+      // uncomment below and update the code to test the property historyCount
+      //var instance = new bimdata.Document();
+      //expect(instance).to.be();
+    });
+
     it('should have the property userPermission (base name: "user_permission")', function() {
       // uncomment below and update the code to test the property userPermission
       //var instance = new bimdata.Document();
