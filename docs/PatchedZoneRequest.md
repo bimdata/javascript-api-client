@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **uuid** | **String** |  | [optional] 
 **zones** | [**[ZoneRequest]**](ZoneRequest.md) |  | [optional] 
 **parentId** | **Number** |  | [optional] 
-**spaces** | [**[SpaceRequest]**](SpaceRequest.md) |  | [optional] 
+**spaces** | [**[ZoneSpaceRequest]**](ZoneSpaceRequest.md) |  | [optional] 
 **color** | **String** |  | [optional] 
+**order** | **Number** |  | [optional] 
 
 

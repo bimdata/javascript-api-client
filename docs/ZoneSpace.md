@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **longname** | **String** |  | [optional] 
 **uuid** | **String** |  | 
 **zoneSet** | **[Number]** |  | [readonly] 
+**order** | **Number** |  | [optional] 
 **createdAt** | **Date** |  | [readonly] 
 **updatedAt** | **Date** |  | [readonly] 
 

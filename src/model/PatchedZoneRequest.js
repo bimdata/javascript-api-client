@@ -12,8 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import SpaceRequest from './SpaceRequest';
 import ZoneRequest from './ZoneRequest';
+import ZoneSpaceRequest from './ZoneSpaceRequest';
 
 /**
  * The PatchedZoneRequest model module.
@@ -63,10 +63,13 @@ class PatchedZoneRequest {
                 obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
             }
             if (data.hasOwnProperty('spaces')) {
-                obj['spaces'] = ApiClient.convertToType(data['spaces'], [SpaceRequest]);
+                obj['spaces'] = ApiClient.convertToType(data['spaces'], [ZoneSpaceRequest]);
             }
             if (data.hasOwnProperty('color')) {
                 obj['color'] = ApiClient.convertToType(data['color'], 'String');
+            }
+            if (data.hasOwnProperty('order')) {
+                obj['order'] = ApiClient.convertToType(data['order'], 'Number');
             }
         }
         return obj;
@@ -96,7 +99,7 @@ PatchedZoneRequest.prototype['zones'] = undefined;
 PatchedZoneRequest.prototype['parent_id'] = undefined;
 
 /**
- * @member {Array.<module:model/SpaceRequest>} spaces
+ * @member {Array.<module:model/ZoneSpaceRequest>} spaces
  */
 PatchedZoneRequest.prototype['spaces'] = undefined;
 
@@ -104,6 +107,11 @@ PatchedZoneRequest.prototype['spaces'] = undefined;
  * @member {String} color
  */
 PatchedZoneRequest.prototype['color'] = undefined;
+
+/**
+ * @member {Number} order
+ */
+PatchedZoneRequest.prototype['order'] = undefined;
 
 
 

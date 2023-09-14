@@ -58,6 +58,9 @@ class ZoneSpaceRequest {
             if (data.hasOwnProperty('uuid')) {
                 obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
             }
+            if (data.hasOwnProperty('order')) {
+                obj['order'] = ApiClient.convertToType(data['order'], 'Number');
+            }
         }
         return obj;
     }
@@ -79,6 +82,11 @@ ZoneSpaceRequest.prototype['longname'] = undefined;
  * @member {String} uuid
  */
 ZoneSpaceRequest.prototype['uuid'] = undefined;
+
+/**
+ * @member {Number} order
+ */
+ZoneSpaceRequest.prototype['order'] = undefined;
 
 
 

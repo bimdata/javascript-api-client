@@ -108,6 +108,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property order (base name: "order")', function() {
+      // uncomment below and update the code to test the property order
+      //var instance = new bimdata.Zone();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property order (base name: "order")', function() {
+      // uncomment below and update the code to test the property order
+      //var instance = new bimdata.ZoneSpace();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instance = new bimdata.ZoneSpace();

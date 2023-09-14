@@ -56,6 +56,9 @@ class PatchedZoneSpaceRequest {
             if (data.hasOwnProperty('uuid')) {
                 obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
             }
+            if (data.hasOwnProperty('order')) {
+                obj['order'] = ApiClient.convertToType(data['order'], 'Number');
+            }
         }
         return obj;
     }
@@ -77,6 +80,11 @@ PatchedZoneSpaceRequest.prototype['longname'] = undefined;
  * @member {String} uuid
  */
 PatchedZoneSpaceRequest.prototype['uuid'] = undefined;
+
+/**
+ * @member {Number} order
+ */
+PatchedZoneSpaceRequest.prototype['order'] = undefined;
 
 
 

@@ -9,9 +9,10 @@ Name | Type | Description | Notes
 **uuid** | **String** |  | 
 **zones** | [**[Zone]**](Zone.md) |  | [optional] 
 **parentId** | **Number** |  | [optional] 
-**spaces** | [**[Space]**](Space.md) |  | [optional] 
+**spaces** | [**[ZoneSpace]**](ZoneSpace.md) |  | [optional] 
 **createdAt** | **Date** |  | [readonly] 
 **updatedAt** | **Date** |  | [readonly] 
 **color** | **String** |  | [optional] 
+**order** | **Number** |  | [optional] 
 
 

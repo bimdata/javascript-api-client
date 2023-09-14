@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import Space from './Space';
+import ZoneSpace from './ZoneSpace';
 
 /**
  * The Zone model module.
@@ -73,7 +73,7 @@ class Zone {
                 obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
             }
             if (data.hasOwnProperty('spaces')) {
-                obj['spaces'] = ApiClient.convertToType(data['spaces'], [Space]);
+                obj['spaces'] = ApiClient.convertToType(data['spaces'], [ZoneSpace]);
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -83,6 +83,9 @@ class Zone {
             }
             if (data.hasOwnProperty('color')) {
                 obj['color'] = ApiClient.convertToType(data['color'], 'String');
+            }
+            if (data.hasOwnProperty('order')) {
+                obj['order'] = ApiClient.convertToType(data['order'], 'Number');
             }
         }
         return obj;
@@ -117,7 +120,7 @@ Zone.prototype['zones'] = undefined;
 Zone.prototype['parent_id'] = undefined;
 
 /**
- * @member {Array.<module:model/Space>} spaces
+ * @member {Array.<module:model/ZoneSpace>} spaces
  */
 Zone.prototype['spaces'] = undefined;
 
@@ -135,6 +138,11 @@ Zone.prototype['updated_at'] = undefined;
  * @member {String} color
  */
 Zone.prototype['color'] = undefined;
+
+/**
+ * @member {Number} order
+ */
+Zone.prototype['order'] = undefined;
 
 
 

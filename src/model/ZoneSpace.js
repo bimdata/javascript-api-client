@@ -72,6 +72,9 @@ class ZoneSpace {
             if (data.hasOwnProperty('zone_set')) {
                 obj['zone_set'] = ApiClient.convertToType(data['zone_set'], ['Number']);
             }
+            if (data.hasOwnProperty('order')) {
+                obj['order'] = ApiClient.convertToType(data['order'], 'Number');
+            }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
@@ -109,6 +112,11 @@ ZoneSpace.prototype['uuid'] = undefined;
  * @member {Array.<Number>} zone_set
  */
 ZoneSpace.prototype['zone_set'] = undefined;
+
+/**
+ * @member {Number} order
+ */
+ZoneSpace.prototype['order'] = undefined;
 
 /**
  * @member {Date} created_at

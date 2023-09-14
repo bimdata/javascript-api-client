@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import SpaceRequest from './SpaceRequest';
+import ZoneSpaceRequest from './ZoneSpaceRequest';
 
 /**
  * The ZoneRequest model module.
@@ -64,10 +64,13 @@ class ZoneRequest {
                 obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
             }
             if (data.hasOwnProperty('spaces')) {
-                obj['spaces'] = ApiClient.convertToType(data['spaces'], [SpaceRequest]);
+                obj['spaces'] = ApiClient.convertToType(data['spaces'], [ZoneSpaceRequest]);
             }
             if (data.hasOwnProperty('color')) {
                 obj['color'] = ApiClient.convertToType(data['color'], 'String');
+            }
+            if (data.hasOwnProperty('order')) {
+                obj['order'] = ApiClient.convertToType(data['order'], 'Number');
             }
         }
         return obj;
@@ -97,7 +100,7 @@ ZoneRequest.prototype['zones'] = undefined;
 ZoneRequest.prototype['parent_id'] = undefined;
 
 /**
- * @member {Array.<module:model/SpaceRequest>} spaces
+ * @member {Array.<module:model/ZoneSpaceRequest>} spaces
  */
 ZoneRequest.prototype['spaces'] = undefined;
 
@@ -105,6 +108,11 @@ ZoneRequest.prototype['spaces'] = undefined;
  * @member {String} color
  */
 ZoneRequest.prototype['color'] = undefined;
+
+/**
+ * @member {Number} order
+ */
+ZoneRequest.prototype['order'] = undefined;
 
 
 
