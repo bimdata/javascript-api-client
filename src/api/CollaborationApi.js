@@ -858,7 +858,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'IFC', 'GLTF', 'POINT_CLOUD', 'DWG', 'OBJ', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DXF', 'IFC', 'GLTF', 'OBJ', 'POINT_CLOUD', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -924,7 +924,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'IFC', 'GLTF', 'POINT_CLOUD', 'DWG', 'OBJ', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DXF', 'IFC', 'GLTF', 'OBJ', 'POINT_CLOUD', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -1185,7 +1185,7 @@ export default class CollaborationApi {
 
     /**
      * Create a tag
-     * Create a tag  Required scopes: org:manage
+     * Create a tag  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {module:model/TagRequest} tagRequest 
@@ -1230,7 +1230,7 @@ export default class CollaborationApi {
 
     /**
      * Create a tag
-     * Create a tag  Required scopes: org:manage
+     * Create a tag  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {module:model/TagRequest} tagRequest 
@@ -2192,7 +2192,7 @@ export default class CollaborationApi {
 
     /**
      * Delete the tag
-     * Delete the tag  Required scopes: org:manage
+     * Delete the tag  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this tag.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -2238,7 +2238,7 @@ export default class CollaborationApi {
 
     /**
      * Delete the tag
-     * Delete the tag  Required scopes: org:manage
+     * Delete the tag  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this tag.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -4409,7 +4409,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve a tag
-     * Retrieve a tag in the project  Required scopes: org:manage
+     * Retrieve a tag in the project  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this tag.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -4455,7 +4455,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve a tag
-     * Retrieve a tag in the project  Required scopes: org:manage
+     * Retrieve a tag in the project  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this tag.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -4471,7 +4471,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve all tags
-     * Retrieve all tags in the project  Required scopes: org:manage
+     * Retrieve all tags in the project  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Tag>} and HTTP response
@@ -4511,7 +4511,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve all tags
-     * Retrieve all tags in the project  Required scopes: org:manage
+     * Retrieve all tags in the project  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Tag>}
@@ -6330,7 +6330,7 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of the tag
-     * Update some fields of the tag  Required scopes: org:manage
+     * Update some fields of the tag  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this tag.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -6379,7 +6379,7 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of the tag
-     * Update some fields of the tag  Required scopes: org:manage
+     * Update some fields of the tag  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this tag.
      * @param {Number} projectPk A unique integer value identifying this project.

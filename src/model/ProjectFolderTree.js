@@ -23,12 +23,13 @@ class ProjectFolderTree {
     /**
      * Constructs a new <code>ProjectFolderTree</code>.
      * @alias module:model/ProjectFolderTree
+     * @param id {Number} 
      * @param name {String} 
      * @param folders {Array.<module:model/FolderTree>} 
      */
-    constructor(name, folders) { 
+    constructor(id, name, folders) { 
         
-        ProjectFolderTree.initialize(this, name, folders);
+        ProjectFolderTree.initialize(this, id, name, folders);
     }
 
     /**
@@ -36,7 +37,8 @@ class ProjectFolderTree {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, folders) { 
+    static initialize(obj, id, name, folders) { 
+        obj['id'] = id;
         obj['name'] = name;
         obj['folders'] = folders;
     }
@@ -52,6 +54,9 @@ class ProjectFolderTree {
         if (data) {
             obj = obj || new ProjectFolderTree();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -64,6 +69,11 @@ class ProjectFolderTree {
 
 
 }
+
+/**
+ * @member {Number} id
+ */
+ProjectFolderTree.prototype['id'] = undefined;
 
 /**
  * @member {String} name
