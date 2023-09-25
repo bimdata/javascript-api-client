@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('addZoneSpace', function() {
+      it('should call addZoneSpace successfully', function(done) {
+        //uncomment below and update the code to test addZoneSpace
+        //instance.addZoneSpace(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('bulkDeleteModelClassifications', function() {
       it('should call bulkDeleteModelClassifications successfully', function(done) {
         //uncomment below and update the code to test bulkDeleteModelClassifications

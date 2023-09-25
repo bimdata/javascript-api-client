@@ -312,6 +312,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**updateVisa**](docs/CollaborationApi.md#updateVisa) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{id} | Update some fields of a visa
 *bimdata.CollaborationApi* | [**updateVisaComment**](docs/CollaborationApi.md#updateVisaComment) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/comment/{id} | Update some fields of a comment
 *bimdata.IfcApi* | [**addIfcErrorsDeprecated**](docs/IfcApi.md#addIfcErrorsDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/errors | Add errors to model
+*bimdata.IfcApi* | [**addZoneSpaceDeprecated**](docs/IfcApi.md#addZoneSpaceDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/add | Add a space to a zone
 *bimdata.IfcApi* | [**bulkDeleteIfcClassificationsDeprecated**](docs/IfcApi.md#bulkDeleteIfcClassificationsDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/list_destroy | Remove all classifications from model&#39;s elements
 *bimdata.IfcApi* | [**bulkDeleteIfcPropertiesDeprecated**](docs/IfcApi.md#bulkDeleteIfcPropertiesDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_destroy | Delete many Property of a model
 *bimdata.IfcApi* | [**bulkDeleteIfcPropertyDefinitionsDeprecated**](docs/IfcApi.md#bulkDeleteIfcPropertyDefinitionsDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/bulk_destroy | Delete many PropertyDefinitions of a model
@@ -367,7 +368,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**deleteStoreyPlanDeprecated**](docs/IfcApi.md#deleteStoreyPlanDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_uuid}/plan/{id} | Delete the relation between a 2d model and a storey
 *bimdata.IfcApi* | [**deleteSystemDeprecated**](docs/IfcApi.md#deleteSystemDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid} | Delete a system of a model
 *bimdata.IfcApi* | [**deleteZoneDeprecated**](docs/IfcApi.md#deleteZoneDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Delete a zone of a model
-*bimdata.IfcApi* | [**deleteZoneSpaceDeprecated**](docs/IfcApi.md#deleteZoneSpaceDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Delete a space of a zone
+*bimdata.IfcApi* | [**deleteZoneSpaceDeprecated**](docs/IfcApi.md#deleteZoneSpaceDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Delete the relation between a space and a zone
 *bimdata.IfcApi* | [**exportIfcDeprecated**](docs/IfcApi.md#exportIfcDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/export | Export IFC
 *bimdata.IfcApi* | [**fullUpdateElementDeprecated**](docs/IfcApi.md#fullUpdateElementDeprecated) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update all fields of an element
 *bimdata.IfcApi* | [**getAccessTokenDeprecated**](docs/IfcApi.md#getAccessTokenDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Retrieve one token created for this model
@@ -459,6 +460,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**updateZoneDeprecated**](docs/IfcApi.md#updateZoneDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Update some fields of a zone
 *bimdata.IfcApi* | [**updateZoneSpaceDeprecated**](docs/IfcApi.md#updateZoneSpaceDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Update some fields of a space
 *bimdata.ModelApi* | [**addModelErrors**](docs/ModelApi.md#addModelErrors) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/errors | Add errors to model
+*bimdata.ModelApi* | [**addZoneSpace**](docs/ModelApi.md#addZoneSpace) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space/add | Add a space to a zone
 *bimdata.ModelApi* | [**bulkDeleteModelClassifications**](docs/ModelApi.md#bulkDeleteModelClassifications) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification/list_destroy | Remove all classifications from model&#39;s elements
 *bimdata.ModelApi* | [**bulkDeleteModelProperties**](docs/ModelApi.md#bulkDeleteModelProperties) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/bulk_destroy | Delete many Property of a model
 *bimdata.ModelApi* | [**bulkDeleteModelPropertyDefinitions**](docs/ModelApi.md#bulkDeleteModelPropertyDefinitions) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/bulk_destroy | Delete many PropertyDefinitions of a model
@@ -514,7 +516,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**deleteStoreyPlan**](docs/ModelApi.md#deleteStoreyPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/{id} | Delete the relation between a 2d model and a storey
 *bimdata.ModelApi* | [**deleteSystem**](docs/ModelApi.md#deleteSystem) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system/{uuid} | Delete a system of a model
 *bimdata.ModelApi* | [**deleteZone**](docs/ModelApi.md#deleteZone) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{id} | Delete a zone of a model
-*bimdata.ModelApi* | [**deleteZoneSpace**](docs/ModelApi.md#deleteZoneSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space/{id} | Delete a space of a zone
+*bimdata.ModelApi* | [**deleteZoneSpace**](docs/ModelApi.md#deleteZoneSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space/{id} | Delete the relation between a space and a zone
 *bimdata.ModelApi* | [**exportIfc**](docs/ModelApi.md#exportIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/export | Export IFC
 *bimdata.ModelApi* | [**fullUpdateElement**](docs/ModelApi.md#fullUpdateElement) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Update all fields of an element
 *bimdata.ModelApi* | [**getAccessToken**](docs/ModelApi.md#getAccessToken) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token} | Retrieve one token created for this model
@@ -856,6 +858,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Zone](docs/Zone.md)
  - [bimdata.ZoneRequest](docs/ZoneRequest.md)
  - [bimdata.ZoneSpace](docs/ZoneSpace.md)
+ - [bimdata.ZoneSpaceRelationRequest](docs/ZoneSpaceRelationRequest.md)
  - [bimdata.ZoneSpaceRequest](docs/ZoneSpaceRequest.md)
 
 

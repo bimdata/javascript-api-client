@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('addZoneSpaceDeprecated', function() {
+      it('should call addZoneSpaceDeprecated successfully', function(done) {
+        //uncomment below and update the code to test addZoneSpaceDeprecated
+        //instance.addZoneSpaceDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('bulkDeleteIfcClassificationsDeprecated', function() {
       it('should call bulkDeleteIfcClassificationsDeprecated successfully', function(done) {
         //uncomment below and update the code to test bulkDeleteIfcClassificationsDeprecated

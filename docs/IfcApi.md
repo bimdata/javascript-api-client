@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addIfcErrorsDeprecated**](IfcApi.md#addIfcErrorsDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/errors | Add errors to model
+[**addZoneSpaceDeprecated**](IfcApi.md#addZoneSpaceDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/add | Add a space to a zone
 [**bulkDeleteIfcClassificationsDeprecated**](IfcApi.md#bulkDeleteIfcClassificationsDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification/list_destroy | Remove all classifications from model&#39;s elements
 [**bulkDeleteIfcPropertiesDeprecated**](IfcApi.md#bulkDeleteIfcPropertiesDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/property/bulk_destroy | Delete many Property of a model
 [**bulkDeleteIfcPropertyDefinitionsDeprecated**](IfcApi.md#bulkDeleteIfcPropertyDefinitionsDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/bulk_destroy | Delete many PropertyDefinitions of a model
@@ -60,7 +61,7 @@ Method | HTTP request | Description
 [**deleteStoreyPlanDeprecated**](IfcApi.md#deleteStoreyPlanDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/storey/{storey_uuid}/plan/{id} | Delete the relation between a 2d model and a storey
 [**deleteSystemDeprecated**](IfcApi.md#deleteSystemDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/system/{uuid} | Delete a system of a model
 [**deleteZoneDeprecated**](IfcApi.md#deleteZoneDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{id} | Delete a zone of a model
-[**deleteZoneSpaceDeprecated**](IfcApi.md#deleteZoneSpaceDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Delete a space of a zone
+[**deleteZoneSpaceDeprecated**](IfcApi.md#deleteZoneSpaceDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/{id} | Delete the relation between a space and a zone
 [**exportIfcDeprecated**](IfcApi.md#exportIfcDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id}/export | Export IFC
 [**fullUpdateElementDeprecated**](IfcApi.md#fullUpdateElementDeprecated) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update all fields of an element
 [**getAccessTokenDeprecated**](IfcApi.md#getAccessTokenDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Retrieve one token created for this model
@@ -212,6 +213,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ModelErrors**](ModelErrors.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
+## addZoneSpaceDeprecated
+
+> ZoneSpace addZoneSpaceDeprecated(cloudPk, ifcPk, projectPk, zonePk, zoneSpaceRelationRequest)
+
+Add a space to a zone
+
+Add a space to a zone. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file  Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.IfcApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let ifcPk = 56; // Number | A unique integer value identifying this model.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let zonePk = 56; // Number | A unique integer value identifying this zone.
+let zoneSpaceRelationRequest = new bimdata.ZoneSpaceRelationRequest(); // ZoneSpaceRelationRequest | 
+apiInstance.addZoneSpaceDeprecated(cloudPk, ifcPk, projectPk, zonePk, zoneSpaceRelationRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **ifcPk** | **Number**| A unique integer value identifying this model. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **zonePk** | **Number**| A unique integer value identifying this zone. | 
+ **zoneSpaceRelationRequest** | [**ZoneSpaceRelationRequest**](ZoneSpaceRelationRequest.md)|  | 
+
+### Return type
+
+[**ZoneSpace**](ZoneSpace.md)
 
 ### Authorization
 
@@ -3978,9 +4048,9 @@ null (empty response body)
 
 > deleteZoneSpaceDeprecated(cloudPk, id, ifcPk, projectPk, zonePk)
 
-Delete a space of a zone
+Delete the relation between a space and a zone
 
-The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file  Required scopes: ifc:write, model:write
+Delete the relation between a space and a zone. The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file  Required scopes: ifc:write, model:write
 
 ### Example
 

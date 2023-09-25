@@ -243,6 +243,7 @@ docs/XktFile.md
 docs/Zone.md
 docs/ZoneRequest.md
 docs/ZoneSpace.md
+docs/ZoneSpaceRelationRequest.md
 docs/ZoneSpaceRequest.md
 git_push.sh
 mocha.opts
@@ -489,6 +490,7 @@ src/model/XktFile.js
 src/model/Zone.js
 src/model/ZoneRequest.js
 src/model/ZoneSpace.js
+src/model/ZoneSpaceRelationRequest.js
 src/model/ZoneSpaceRequest.js
 test/api/BcfApi.spec.js
 test/api/CollaborationApi.spec.js
@@ -731,4 +733,5 @@ test/model/XktFile.spec.js
 test/model/Zone.spec.js
 test/model/ZoneRequest.spec.js
 test/model/ZoneSpace.spec.js
+test/model/ZoneSpaceRelationRequest.spec.js
 test/model/ZoneSpaceRequest.spec.js

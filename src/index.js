@@ -248,6 +248,7 @@ import XktFile from './model/XktFile';
 import Zone from './model/Zone';
 import ZoneRequest from './model/ZoneRequest';
 import ZoneSpace from './model/ZoneSpace';
+import ZoneSpaceRelationRequest from './model/ZoneSpaceRelationRequest';
 import ZoneSpaceRequest from './model/ZoneSpaceRequest';
 import BcfApi from './api/BcfApi';
 import CollaborationApi from './api/CollaborationApi';
@@ -1704,6 +1705,12 @@ export {
      * @property {module:model/ZoneSpace}
      */
     ZoneSpace,
+
+    /**
+     * The ZoneSpaceRelationRequest model constructor.
+     * @property {module:model/ZoneSpaceRelationRequest}
+     */
+    ZoneSpaceRelationRequest,
 
     /**
      * The ZoneSpaceRequest model constructor.

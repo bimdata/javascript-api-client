@@ -78,6 +78,7 @@ import XktFile from '../model/XktFile';
 import Zone from '../model/Zone';
 import ZoneRequest from '../model/ZoneRequest';
 import ZoneSpace from '../model/ZoneSpace';
+import ZoneSpaceRelationRequest from '../model/ZoneSpaceRelationRequest';
 import ZoneSpaceRequest from '../model/ZoneSpaceRequest';
 
 /**
@@ -161,6 +162,81 @@ export default class IfcApi {
      */
     addIfcErrorsDeprecated(cloudPk, id, projectPk, opts) {
       return this.addIfcErrorsDeprecatedWithHttpInfo(cloudPk, id, projectPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Add a space to a zone
+     * Add a space to a zone. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} ifcPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Number} zonePk A unique integer value identifying this zone.
+     * @param {module:model/ZoneSpaceRelationRequest} zoneSpaceRelationRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ZoneSpace} and HTTP response
+     */
+    addZoneSpaceDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, zonePk, zoneSpaceRelationRequest) {
+      let postBody = zoneSpaceRelationRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling addZoneSpaceDeprecated");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling addZoneSpaceDeprecated");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling addZoneSpaceDeprecated");
+      }
+      // verify the required parameter 'zonePk' is set
+      if (zonePk === undefined || zonePk === null) {
+        throw new Error("Missing the required parameter 'zonePk' when calling addZoneSpaceDeprecated");
+      }
+      // verify the required parameter 'zoneSpaceRelationRequest' is set
+      if (zoneSpaceRelationRequest === undefined || zoneSpaceRelationRequest === null) {
+        throw new Error("Missing the required parameter 'zoneSpaceRelationRequest' when calling addZoneSpaceDeprecated");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk,
+        'zone_pk': zonePk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = ZoneSpace;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/zone/{zone_pk}/space/add', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Add a space to a zone
+     * Add a space to a zone. The IFC file will not be updated. The created space will be accessible over the API and when exporting an IFC file  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} ifcPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Number} zonePk A unique integer value identifying this zone.
+     * @param {module:model/ZoneSpaceRelationRequest} zoneSpaceRelationRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ZoneSpace}
+     */
+    addZoneSpaceDeprecated(cloudPk, ifcPk, projectPk, zonePk, zoneSpaceRelationRequest) {
+      return this.addZoneSpaceDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, zonePk, zoneSpaceRelationRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4069,8 +4145,8 @@ export default class IfcApi {
 
 
     /**
-     * Delete a space of a zone
-     * The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file  Required scopes: ifc:write, model:write
+     * Delete the relation between a space and a zone
+     * Delete the relation between a space and a zone. The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file  Required scopes: ifc:write, model:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this space.
      * @param {Number} ifcPk A unique integer value identifying this model.
@@ -4127,8 +4203,8 @@ export default class IfcApi {
     }
 
     /**
-     * Delete a space of a zone
-     * The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file  Required scopes: ifc:write, model:write
+     * Delete the relation between a space and a zone
+     * Delete the relation between a space and a zone. The IFC file will not be updated. The remaining spaces are available in API and will be available when exporting an IFC file  Required scopes: ifc:write, model:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} id A unique integer value identifying this space.
      * @param {Number} ifcPk A unique integer value identifying this model.
