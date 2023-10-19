@@ -80,7 +80,7 @@ null (empty response body)
 
 Create a user
 
-Create a user, linked to the provider. This route is only useful when used with &#x60;ProjetAccessToken&#x60;s
+Create a user, linked to the provider. This route is only useful when used with &#x60;ProjetAccessToken&#x60;s. If user already exists, it responds with a 200 instead of a 201
 
 ### Example
 

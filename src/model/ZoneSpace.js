@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import GeometryPoint from './GeometryPoint';
 
 /**
  * The ZoneSpace model module.
@@ -72,6 +73,9 @@ class ZoneSpace {
             if (data.hasOwnProperty('zone_set')) {
                 obj['zone_set'] = ApiClient.convertToType(data['zone_set'], ['Number']);
             }
+            if (data.hasOwnProperty('geometry')) {
+                obj['geometry'] = ApiClient.convertToType(data['geometry'], [GeometryPoint]);
+            }
             if (data.hasOwnProperty('order')) {
                 obj['order'] = ApiClient.convertToType(data['order'], 'Number');
             }
@@ -112,6 +116,11 @@ ZoneSpace.prototype['uuid'] = undefined;
  * @member {Array.<Number>} zone_set
  */
 ZoneSpace.prototype['zone_set'] = undefined;
+
+/**
+ * @member {Array.<module:model/GeometryPoint>} geometry
+ */
+ZoneSpace.prototype['geometry'] = undefined;
 
 /**
  * @member {Number} order

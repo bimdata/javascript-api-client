@@ -88,7 +88,7 @@ export default class SsoApi {
 
     /**
      * Create a user
-     * Create a user, linked to the provider. This route is only useful when used with `ProjetAccessToken`s
+     * Create a user, linked to the provider. This route is only useful when used with `ProjetAccessToken`s. If user already exists, it responds with a 200 instead of a 201
      * @param {module:model/CreateUserRequest} createUserRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ShortUser} and HTTP response
      */
@@ -121,7 +121,7 @@ export default class SsoApi {
 
     /**
      * Create a user
-     * Create a user, linked to the provider. This route is only useful when used with `ProjetAccessToken`s
+     * Create a user, linked to the provider. This route is only useful when used with `ProjetAccessToken`s. If user already exists, it responds with a 200 instead of a 201
      * @param {module:model/CreateUserRequest} createUserRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ShortUser}
      */

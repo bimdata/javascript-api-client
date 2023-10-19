@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **longname** | **String** |  | [optional] 
 **uuid** | **String** |  | 
 **zoneSet** | **[Number]** |  | [readonly] 
+**geometry** | [**[GeometryPoint]**](GeometryPoint.md) |  | [optional] 
 **order** | **Number** |  | [optional] 
 **createdAt** | **Date** |  | [readonly] 
 **updatedAt** | **Date** |  | [readonly] 

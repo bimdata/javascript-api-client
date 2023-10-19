@@ -140,7 +140,7 @@ export default class CollaborationApi {
 
     /**
      * Accept a validation
-     * Accept a validation  Required scopes: document:write
+     * Accept a validation  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa validation.
@@ -198,7 +198,7 @@ export default class CollaborationApi {
 
     /**
      * Accept a validation
-     * Accept a validation  Required scopes: document:write
+     * Accept a validation  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa validation.
@@ -572,7 +572,7 @@ export default class CollaborationApi {
 
     /**
      * Close a visa of a document
-     * Close a visa of a document  Required scopes: document:write
+     * Close a visa of a document  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa.
@@ -624,7 +624,7 @@ export default class CollaborationApi {
 
     /**
      * Close a visa of a document
-     * Close a visa of a document  Required scopes: document:write
+     * Close a visa of a document  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa.
@@ -858,7 +858,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'OBJ', 'IFC', 'GLTF', 'DXF', 'POINT_CLOUD', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'IFC', 'GLTF', 'POINT_CLOUD', 'DXF', 'OBJ', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -924,7 +924,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'OBJ', 'IFC', 'GLTF', 'DXF', 'POINT_CLOUD', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'IFC', 'GLTF', 'POINT_CLOUD', 'DXF', 'OBJ', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -1246,7 +1246,7 @@ export default class CollaborationApi {
 
     /**
      * Add a validation to a visa
-     * Add a validation to a visa  Required scopes: document:write
+     * Add a validation to a visa  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -1303,7 +1303,7 @@ export default class CollaborationApi {
 
     /**
      * Add a validation to a visa
-     * Add a validation to a visa  Required scopes: document:write
+     * Add a validation to a visa  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -1321,7 +1321,7 @@ export default class CollaborationApi {
 
     /**
      * Create a visa
-     * Create a visa  Required scopes: document:write
+     * Create a visa  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -1370,7 +1370,7 @@ export default class CollaborationApi {
 
     /**
      * Create a visa
-     * Create a visa  Required scopes: document:write
+     * Create a visa  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -1388,7 +1388,7 @@ export default class CollaborationApi {
 
     /**
      * Add a comment
-     * Add a comment  Required scopes: document:write
+     * Add a comment  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -1443,7 +1443,7 @@ export default class CollaborationApi {
 
     /**
      * Add a comment
-     * Add a comment  Required scopes: document:write
+     * Add a comment  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -2254,7 +2254,7 @@ export default class CollaborationApi {
 
     /**
      * Remove a validation
-     * Remove a validation  Required scopes: document:write
+     * Remove a validation  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa validation.
@@ -2312,7 +2312,7 @@ export default class CollaborationApi {
 
     /**
      * Remove a validation
-     * Remove a validation  Required scopes: document:write
+     * Remove a validation  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa validation.
@@ -2330,7 +2330,7 @@ export default class CollaborationApi {
 
     /**
      * Remove a visa
-     * Remove a visa  Required scopes: document:write
+     * Remove a visa  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa.
@@ -2382,7 +2382,7 @@ export default class CollaborationApi {
 
     /**
      * Remove a visa
-     * Remove a visa  Required scopes: document:write
+     * Remove a visa  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa.
@@ -2399,7 +2399,7 @@ export default class CollaborationApi {
 
     /**
      * Remove a comment
-     * Remove a comment  Required scopes: document:write
+     * Remove a comment  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa comment.
@@ -2457,7 +2457,7 @@ export default class CollaborationApi {
 
     /**
      * Remove a comment
-     * Remove a comment  Required scopes: document:write
+     * Remove a comment  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa comment.
@@ -2523,7 +2523,7 @@ export default class CollaborationApi {
 
     /**
      * Deny a validation
-     * Deny a validation  Required scopes: document:write
+     * Deny a validation  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa validation.
@@ -2581,7 +2581,7 @@ export default class CollaborationApi {
 
     /**
      * Deny a validation
-     * Deny a validation  Required scopes: document:write
+     * Deny a validation  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa validation.
@@ -5466,7 +5466,7 @@ export default class CollaborationApi {
 
     /**
      * Pause a visa of a document
-     * Pause a visa of a document  Required scopes: document:write
+     * Pause a visa of a document  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa.
@@ -5518,7 +5518,7 @@ export default class CollaborationApi {
 
     /**
      * Pause a visa of a document
-     * Pause a visa of a document  Required scopes: document:write
+     * Pause a visa of a document  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa.
@@ -5535,7 +5535,7 @@ export default class CollaborationApi {
 
     /**
      * Reset a validation
-     * Reset a validation if the validation has been accepted or rejected  Required scopes: document:write
+     * Reset a validation if the validation has been accepted or rejected  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa validation.
@@ -5593,7 +5593,7 @@ export default class CollaborationApi {
 
     /**
      * Reset a validation
-     * Reset a validation if the validation has been accepted or rejected  Required scopes: document:write
+     * Reset a validation if the validation has been accepted or rejected  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa validation.
@@ -5611,7 +5611,7 @@ export default class CollaborationApi {
 
     /**
      * Resume a visa of a document
-     * Resume a visa of a document after a pause  Required scopes: document:write
+     * Resume a visa of a document after a pause  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa.
@@ -5663,7 +5663,7 @@ export default class CollaborationApi {
 
     /**
      * Resume a visa of a document
-     * Resume a visa of a document after a pause  Required scopes: document:write
+     * Resume a visa of a document after a pause  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa.
@@ -6397,7 +6397,7 @@ export default class CollaborationApi {
 
     /**
      * Update the validator of validation
-     * Update the validator of validation. This route is only useful for an App  Required scopes: document:write
+     * Update the validator of validation. This route is only useful for an App  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa validation.
@@ -6458,7 +6458,7 @@ export default class CollaborationApi {
 
     /**
      * Update the validator of validation
-     * Update the validator of validation. This route is only useful for an App  Required scopes: document:write
+     * Update the validator of validation. This route is only useful for an App  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa validation.
@@ -6478,7 +6478,7 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of a visa
-     * Update some fields of a visa  Required scopes: document:write
+     * Update some fields of a visa  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa.
@@ -6533,7 +6533,7 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of a visa
-     * Update some fields of a visa  Required scopes: document:write
+     * Update some fields of a visa  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa.
@@ -6552,7 +6552,7 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of a comment
-     * Update some fields of a comment  Required scopes: document:write
+     * Update some fields of a comment  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa comment.
@@ -6613,7 +6613,7 @@ export default class CollaborationApi {
 
     /**
      * Update some fields of a comment
-     * Update some fields of a comment  Required scopes: document:write
+     * Update some fields of a comment  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa comment.
