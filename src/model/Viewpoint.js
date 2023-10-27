@@ -88,6 +88,9 @@ class Viewpoint {
             if (data.hasOwnProperty('pins')) {
                 obj['pins'] = ApiClient.convertToType(data['pins'], [Pin]);
             }
+            if (data.hasOwnProperty('models')) {
+                obj['models'] = ApiClient.convertToType(data['models'], ['Number']);
+            }
         }
         return obj;
     }
@@ -152,6 +155,11 @@ Viewpoint.prototype['components'] = undefined;
  * @member {Array.<module:model/Pin>} pins
  */
 Viewpoint.prototype['pins'] = undefined;
+
+/**
+ * @member {Array.<Number>} models
+ */
+Viewpoint.prototype['models'] = undefined;
 
 
 

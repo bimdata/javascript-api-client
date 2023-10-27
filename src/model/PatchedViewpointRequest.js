@@ -91,6 +91,9 @@ class PatchedViewpointRequest {
             if (data.hasOwnProperty('temp_id')) {
                 obj['temp_id'] = ApiClient.convertToType(data['temp_id'], 'Number');
             }
+            if (data.hasOwnProperty('models')) {
+                obj['models'] = ApiClient.convertToType(data['models'], ['Number']);
+            }
         }
         return obj;
     }
@@ -161,6 +164,11 @@ PatchedViewpointRequest.prototype['pins'] = undefined;
  * @member {Number} temp_id
  */
 PatchedViewpointRequest.prototype['temp_id'] = undefined;
+
+/**
+ * @member {Array.<Number>} models
+ */
+PatchedViewpointRequest.prototype['models'] = undefined;
 
 
 

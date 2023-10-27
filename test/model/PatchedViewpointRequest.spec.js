@@ -126,6 +126,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property models (base name: "models")', function() {
+      // uncomment below and update the code to test the property models
+      //var instance = new bimdata.PatchedViewpointRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
