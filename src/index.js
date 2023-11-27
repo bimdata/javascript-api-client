@@ -133,6 +133,7 @@ import PatchedTopicTypeRequest from './model/PatchedTopicTypeRequest';
 import PatchedUnitRequest from './model/PatchedUnitRequest';
 import PatchedUserCloudUpdateRequest from './model/PatchedUserCloudUpdateRequest';
 import PatchedUserProjectUpdateRequest from './model/PatchedUserProjectUpdateRequest';
+import PatchedViewpointRequest from './model/PatchedViewpointRequest';
 import PatchedVisaCommentRequest from './model/PatchedVisaCommentRequest';
 import PatchedVisaRequest from './model/PatchedVisaRequest';
 import PatchedVisaValidationRequest from './model/PatchedVisaValidationRequest';
@@ -1014,6 +1015,12 @@ export {
      * @property {module:model/PatchedUserProjectUpdateRequest}
      */
     PatchedUserProjectUpdateRequest,
+
+    /**
+     * The PatchedViewpointRequest model constructor.
+     * @property {module:model/PatchedViewpointRequest}
+     */
+    PatchedViewpointRequest,
 
     /**
      * The PatchedVisaCommentRequest model constructor.

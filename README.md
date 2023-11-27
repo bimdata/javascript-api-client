@@ -202,6 +202,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**updateFullTopic**](docs/BcfApi.md#updateFullTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update some fields of a topic
 *bimdata.BcfApi* | [**updatePin**](docs/BcfApi.md#updatePin) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Update some fields of a Pin
 *bimdata.BcfApi* | [**updateTopic**](docs/BcfApi.md#updateTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update some fields of a topic
+*bimdata.BcfApi* | [**updateViewpoint**](docs/BcfApi.md#updateViewpoint) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Update some fields of a Viewpoint
 *bimdata.CollaborationApi* | [**acceptUserInvitation**](docs/CollaborationApi.md#acceptUserInvitation) | **POST** /user/invitations/{id}/accept | Accept an invitation
 *bimdata.CollaborationApi* | [**acceptValidation**](docs/CollaborationApi.md#acceptValidation) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/accept | Accept a validation
 *bimdata.CollaborationApi* | [**addDocumentTag**](docs/CollaborationApi.md#addDocumentTag) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/tag | Add a tag to a document
@@ -741,6 +742,7 @@ Class | Method | HTTP request | Description
  - [bimdata.PatchedUnitRequest](docs/PatchedUnitRequest.md)
  - [bimdata.PatchedUserCloudUpdateRequest](docs/PatchedUserCloudUpdateRequest.md)
  - [bimdata.PatchedUserProjectUpdateRequest](docs/PatchedUserProjectUpdateRequest.md)
+ - [bimdata.PatchedViewpointRequest](docs/PatchedViewpointRequest.md)
  - [bimdata.PatchedVisaCommentRequest](docs/PatchedVisaCommentRequest.md)
  - [bimdata.PatchedVisaRequest](docs/PatchedVisaRequest.md)
  - [bimdata.PatchedVisaValidationRequest](docs/PatchedVisaValidationRequest.md)

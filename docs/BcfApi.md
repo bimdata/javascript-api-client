@@ -65,6 +65,7 @@ Method | HTTP request | Description
 [**updateFullTopic**](BcfApi.md#updateFullTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update some fields of a topic
 [**updatePin**](BcfApi.md#updatePin) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Update some fields of a Pin
 [**updateTopic**](BcfApi.md#updateTopic) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update some fields of a topic
+[**updateViewpoint**](BcfApi.md#updateViewpoint) | **PATCH** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid} | Update some fields of a Viewpoint
 
 
 
@@ -4040,6 +4041,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Topic**](Topic.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
+## updateViewpoint
+
+> Viewpoint updateViewpoint(guid, projectsPk, topicsGuid, opts)
+
+Update some fields of a Viewpoint
+
+This is not a standard route. Update some fields of a Viewpoint  Required scopes: bcf:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let guid = "guid_example"; // String | 
+let projectsPk = 56; // Number | 
+let topicsGuid = "topicsGuid_example"; // String | 
+let opts = {
+  'imgFormat': "imgFormat_example", // String | All snapshot_data will be returned as url instead of base64
+  'patchedViewpointRequest': new bimdata.PatchedViewpointRequest() // PatchedViewpointRequest | 
+};
+apiInstance.updateViewpoint(guid, projectsPk, topicsGuid, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **guid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **topicsGuid** | **String**|  | 
+ **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
+ **patchedViewpointRequest** | [**PatchedViewpointRequest**](PatchedViewpointRequest.md)|  | [optional] 
+
+### Return type
+
+[**Viewpoint**](Viewpoint.md)
 
 ### Authorization
 

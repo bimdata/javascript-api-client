@@ -36,6 +36,7 @@ import PatchedStageRequest from '../model/PatchedStageRequest';
 import PatchedTopicRequest from '../model/PatchedTopicRequest';
 import PatchedTopicStatusRequest from '../model/PatchedTopicStatusRequest';
 import PatchedTopicTypeRequest from '../model/PatchedTopicTypeRequest';
+import PatchedViewpointRequest from '../model/PatchedViewpointRequest';
 import Pin from '../model/Pin';
 import PinRequest from '../model/PinRequest';
 import Priority from '../model/Priority';
@@ -3652,6 +3653,76 @@ export default class BcfApi {
      */
     updateTopic(guid, projectsPk, opts) {
       return this.updateTopicWithHttpInfo(guid, projectsPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a Viewpoint
+     * This is not a standard route. Update some fields of a Viewpoint  Required scopes: bcf:write
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
+     * @param {module:model/PatchedViewpointRequest} opts.patchedViewpointRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Viewpoint} and HTTP response
+     */
+    updateViewpointWithHttpInfo(guid, projectsPk, topicsGuid, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedViewpointRequest'];
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling updateViewpoint");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling updateViewpoint");
+      }
+      // verify the required parameter 'topicsGuid' is set
+      if (topicsGuid === undefined || topicsGuid === null) {
+        throw new Error("Missing the required parameter 'topicsGuid' when calling updateViewpoint");
+      }
+
+      let pathParams = {
+        'guid': guid,
+        'projects_pk': projectsPk,
+        'topics_guid': topicsGuid
+      };
+      let queryParams = {
+        'img_format': opts['imgFormat']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Viewpoint;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a Viewpoint
+     * This is not a standard route. Update some fields of a Viewpoint  Required scopes: bcf:write
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {String} topicsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
+     * @param {module:model/PatchedViewpointRequest} opts.patchedViewpointRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Viewpoint}
+     */
+    updateViewpoint(guid, projectsPk, topicsGuid, opts) {
+      return this.updateViewpointWithHttpInfo(guid, projectsPk, topicsGuid, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

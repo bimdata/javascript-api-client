@@ -658,6 +658,16 @@
         done();
       });
     });
+    describe('updateViewpoint', function() {
+      it('should call updateViewpoint successfully', function(done) {
+        //uncomment below and update the code to test updateViewpoint
+        //instance.updateViewpoint(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));
