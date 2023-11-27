@@ -308,16 +308,6 @@
         done();
       });
     });
-    describe('fullUpdateViewpoint', function() {
-      it('should call fullUpdateViewpoint successfully', function(done) {
-        //uncomment below and update the code to test fullUpdateViewpoint
-        //instance.fullUpdateViewpoint(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getAuth', function() {
       it('should call getAuth successfully', function(done) {
         //uncomment below and update the code to test getAuth
@@ -662,16 +652,6 @@
       it('should call updateTopic successfully', function(done) {
         //uncomment below and update the code to test updateTopic
         //instance.updateTopic(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateViewpoint', function() {
-      it('should call updateViewpoint successfully', function(done) {
-        //uncomment below and update the code to test updateViewpoint
-        //instance.updateViewpoint(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

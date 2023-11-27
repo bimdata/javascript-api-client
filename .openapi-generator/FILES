@@ -126,7 +126,6 @@ docs/PatchedTopicTypeRequest.md
 docs/PatchedUnitRequest.md
 docs/PatchedUserCloudUpdateRequest.md
 docs/PatchedUserProjectUpdateRequest.md
-docs/PatchedViewpointRequest.md
 docs/PatchedVisaCommentRequest.md
 docs/PatchedVisaRequest.md
 docs/PatchedVisaValidationRequest.md
@@ -375,7 +374,6 @@ src/model/PatchedTopicTypeRequest.js
 src/model/PatchedUnitRequest.js
 src/model/PatchedUserCloudUpdateRequest.js
 src/model/PatchedUserProjectUpdateRequest.js
-src/model/PatchedViewpointRequest.js
 src/model/PatchedVisaCommentRequest.js
 src/model/PatchedVisaRequest.js
 src/model/PatchedVisaValidationRequest.js
@@ -618,7 +616,6 @@ test/model/PatchedTopicTypeRequest.spec.js
 test/model/PatchedUnitRequest.spec.js
 test/model/PatchedUserCloudUpdateRequest.spec.js
 test/model/PatchedUserProjectUpdateRequest.spec.js
-test/model/PatchedViewpointRequest.spec.js
 test/model/PatchedVisaCommentRequest.spec.js
 test/model/PatchedVisaRequest.spec.js
 test/model/PatchedVisaValidationRequest.spec.js
