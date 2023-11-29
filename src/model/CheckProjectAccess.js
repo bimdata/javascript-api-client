@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import User from './User';
 
 /**
  * The CheckProjectAccess model module.
@@ -75,6 +76,9 @@ class CheckProjectAccess {
             if (data.hasOwnProperty('user_role')) {
                 obj['user_role'] = ApiClient.convertToType(data['user_role'], 'Number');
             }
+            if (data.hasOwnProperty('user')) {
+                obj['user'] = User.constructFromObject(data['user']);
+            }
         }
         return obj;
     }
@@ -113,6 +117,11 @@ CheckProjectAccess.prototype['usable_scopes'] = undefined;
  * @member {module:model/CheckProjectAccess.UserRoleEnum} user_role
  */
 CheckProjectAccess.prototype['user_role'] = undefined;
+
+/**
+ * @member {module:model/User} user
+ */
+CheckProjectAccess.prototype['user'] = undefined;
 
 
 
