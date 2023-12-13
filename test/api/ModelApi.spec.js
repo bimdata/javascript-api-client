@@ -238,6 +238,16 @@
         done();
       });
     });
+    describe('createDrawing', function() {
+      it('should call createDrawing successfully', function(done) {
+        //uncomment below and update the code to test createDrawing
+        //instance.createDrawing(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createElement', function() {
       it('should call createElement successfully', function(done) {
         //uncomment below and update the code to test createElement
@@ -488,6 +498,16 @@
         done();
       });
     });
+    describe('deleteDrawing', function() {
+      it('should call deleteDrawing successfully', function(done) {
+        //uncomment below and update the code to test deleteDrawing
+        //instance.deleteDrawing(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteElement', function() {
       it('should call deleteElement successfully', function(done) {
         //uncomment below and update the code to test deleteElement
@@ -712,6 +732,26 @@
       it('should call getDocumentsOfElement successfully', function(done) {
         //uncomment below and update the code to test getDocumentsOfElement
         //instance.getDocumentsOfElement(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getDrawing', function() {
+      it('should call getDrawing successfully', function(done) {
+        //uncomment below and update the code to test getDrawing
+        //instance.getDrawing(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getDrawings', function() {
+      it('should call getDrawings successfully', function(done) {
+        //uncomment below and update the code to test getDrawings
+        //instance.getDrawings(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1332,6 +1372,16 @@
       it('should call updateBuildingPlanPositioning successfully', function(done) {
         //uncomment below and update the code to test updateBuildingPlanPositioning
         //instance.updateBuildingPlanPositioning(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateDrawing', function() {
+      it('should call updateDrawing successfully', function(done) {
+        //uncomment below and update the code to test updateDrawing
+        //instance.updateDrawing(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

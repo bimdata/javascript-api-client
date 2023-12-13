@@ -22,6 +22,8 @@ import CreateModelRequest from '../model/CreateModelRequest';
 import CreateMultiPageModelRequest from '../model/CreateMultiPageModelRequest';
 import Document from '../model/Document';
 import DocumentWithElementList from '../model/DocumentWithElementList';
+import Drawing from '../model/Drawing';
+import DrawingRequest from '../model/DrawingRequest';
 import Element from '../model/Element';
 import ElementClassificationRelation from '../model/ElementClassificationRelation';
 import ElementClassificationRelationRequest from '../model/ElementClassificationRelationRequest';
@@ -39,6 +41,7 @@ import Model from '../model/Model';
 import ModelErrors from '../model/ModelErrors';
 import ModelErrorsRequest from '../model/ModelErrorsRequest';
 import ModelFiles from '../model/ModelFiles';
+import PatchedDrawingRequest from '../model/PatchedDrawingRequest';
 import PatchedElementRequest from '../model/PatchedElementRequest';
 import PatchedIfcAccessTokenRequest from '../model/PatchedIfcAccessTokenRequest';
 import PatchedLayerRequest from '../model/PatchedLayerRequest';
@@ -1450,6 +1453,74 @@ export default class IfcApi {
      */
     createClassificationsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk, classificationRequest) {
       return this.createClassificationsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk, classificationRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a drawing in the model
+     * Create a drawing in the model  Required scopes: model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} ifcPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/DrawingRequest} drawingRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Drawing} and HTTP response
+     */
+    createDrawingDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, drawingRequest) {
+      let postBody = drawingRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createDrawingDeprecated");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling createDrawingDeprecated");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createDrawingDeprecated");
+      }
+      // verify the required parameter 'drawingRequest' is set
+      if (drawingRequest === undefined || drawingRequest === null) {
+        throw new Error("Missing the required parameter 'drawingRequest' when calling createDrawingDeprecated");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Drawing;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/drawing', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a drawing in the model
+     * Create a drawing in the model  Required scopes: model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} ifcPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/DrawingRequest} drawingRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Drawing}
+     */
+    createDrawingDeprecated(cloudPk, ifcPk, projectPk, drawingRequest) {
+      return this.createDrawingDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk, drawingRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3255,6 +3326,75 @@ export default class IfcApi {
 
 
     /**
+     * Delete a drawing of a model
+     * Delete a drawing of a model  Required scopes: model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this drawing.
+     * @param {Number} ifcPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteDrawingDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteDrawingDeprecated");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteDrawingDeprecated");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling deleteDrawingDeprecated");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteDrawingDeprecated");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/drawing/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a drawing of a model
+     * Delete a drawing of a model  Required scopes: model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this drawing.
+     * @param {Number} ifcPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteDrawingDeprecated(cloudPk, id, ifcPk, projectPk) {
+      return this.deleteDrawingDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Delete an element of a model
      * The IFC file will not be updated. The remaining elements are available in API and will be available when exporting an IFC file  Required scopes: ifc:write, model:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -4833,6 +4973,137 @@ export default class IfcApi {
      */
     getDocumentsOfElementDeprecated(cloudPk, elementUuid, ifcPk, projectPk) {
       return this.getDocumentsOfElementDeprecatedWithHttpInfo(cloudPk, elementUuid, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a drawing of a model
+     * Retrieve a drawing of a model  Required scopes: model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this drawing.
+     * @param {Number} ifcPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Drawing} and HTTP response
+     */
+    getDrawingDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getDrawingDeprecated");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getDrawingDeprecated");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getDrawingDeprecated");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getDrawingDeprecated");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Drawing;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/drawing/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a drawing of a model
+     * Retrieve a drawing of a model  Required scopes: model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this drawing.
+     * @param {Number} ifcPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Drawing}
+     */
+    getDrawingDeprecated(cloudPk, id, ifcPk, projectPk) {
+      return this.getDrawingDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all drawings of a model
+     * Retrieve all drawings of a model.  Required scopes: model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} ifcPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Drawing>} and HTTP response
+     */
+    getDrawingsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getDrawingsDeprecated");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling getDrawingsDeprecated");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getDrawingsDeprecated");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Drawing];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/drawing', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all drawings of a model
+     * Retrieve all drawings of a model.  Required scopes: model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} ifcPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Drawing>}
+     */
+    getDrawingsDeprecated(cloudPk, ifcPk, projectPk) {
+      return this.getDrawingsDeprecatedWithHttpInfo(cloudPk, ifcPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9247,6 +9518,80 @@ export default class IfcApi {
      */
     updateBuildingPlanPositioningDeprecated(buildingUuid, cloudPk, id, ifcPk, projectPk, opts) {
       return this.updateBuildingPlanPositioningDeprecatedWithHttpInfo(buildingUuid, cloudPk, id, ifcPk, projectPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a drawing
+     * Update some fields of a drawing  Required scopes: model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this drawing.
+     * @param {Number} ifcPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedDrawingRequest} opts.patchedDrawingRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Drawing} and HTTP response
+     */
+    updateDrawingDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedDrawingRequest'];
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateDrawingDeprecated");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateDrawingDeprecated");
+      }
+      // verify the required parameter 'ifcPk' is set
+      if (ifcPk === undefined || ifcPk === null) {
+        throw new Error("Missing the required parameter 'ifcPk' when calling updateDrawingDeprecated");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateDrawingDeprecated");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'ifc_pk': ifcPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Drawing;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/drawing/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a drawing
+     * Update some fields of a drawing  Required scopes: model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this drawing.
+     * @param {Number} ifcPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedDrawingRequest} opts.patchedDrawingRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Drawing}
+     */
+    updateDrawingDeprecated(cloudPk, id, ifcPk, projectPk, opts) {
+      return this.updateDrawingDeprecatedWithHttpInfo(cloudPk, id, ifcPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

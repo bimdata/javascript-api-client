@@ -329,6 +329,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**createBuildingPlanDeprecated**](docs/IfcApi.md#createBuildingPlanDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{building_uuid}/plan/add | Create a relation between a 2d model and a building
 *bimdata.IfcApi* | [**createClassificationElementRelationsDeprecated**](docs/IfcApi.md#createClassificationElementRelationsDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/classification-element | Create association between existing classification and existing element
 *bimdata.IfcApi* | [**createClassificationsOfElementDeprecated**](docs/IfcApi.md#createClassificationsOfElementDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Create one or many classifications to an element
+*bimdata.IfcApi* | [**createDrawingDeprecated**](docs/IfcApi.md#createDrawingDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/drawing | Create a drawing in the model
 *bimdata.IfcApi* | [**createElementDeprecated**](docs/IfcApi.md#createElementDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element | Create an element in the model
 *bimdata.IfcApi* | [**createElementPropertySetDeprecated**](docs/IfcApi.md#createElementPropertySetDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset | Create a PropertySets to an element
 *bimdata.IfcApi* | [**createElementPropertySetPropertyDefinitionDeprecated**](docs/IfcApi.md#createElementPropertySetPropertyDefinitionDeprecated) | **POST** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition | Create a Definition to a Property
@@ -354,6 +355,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**deleteAccessTokenDeprecated**](docs/IfcApi.md#deleteAccessTokenDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Delete a token
 *bimdata.IfcApi* | [**deleteBuildingDeprecated**](docs/IfcApi.md#deleteBuildingDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{uuid} | Delete a building of a model
 *bimdata.IfcApi* | [**deleteBuildingPlanDeprecated**](docs/IfcApi.md#deleteBuildingPlanDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{building_uuid}/plan/{id} | Delete the relation between a 2d model and a building
+*bimdata.IfcApi* | [**deleteDrawingDeprecated**](docs/IfcApi.md#deleteDrawingDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/drawing/{id} | Delete a drawing of a model
 *bimdata.IfcApi* | [**deleteElementDeprecated**](docs/IfcApi.md#deleteElementDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Delete an element of a model
 *bimdata.IfcApi* | [**deleteIfcDeprecated**](docs/IfcApi.md#deleteIfcDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Delete a model
 *bimdata.IfcApi* | [**deleteIfcPropertyDefinitionDeprecated**](docs/IfcApi.md#deleteIfcPropertyDefinitionDeprecated) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/propertydefinition/{id} | Delete a PropertyDefinitions of a model
@@ -377,6 +379,8 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**getBuildingsDeprecated**](docs/IfcApi.md#getBuildingsDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building | Retrieve all buildings of a model
 *bimdata.IfcApi* | [**getClassificationsOfElementDeprecated**](docs/IfcApi.md#getClassificationsOfElementDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/classification | Retrieve all classifications of an element
 *bimdata.IfcApi* | [**getDocumentsOfElementDeprecated**](docs/IfcApi.md#getDocumentsOfElementDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/documents | Retrieve all documents of an element
+*bimdata.IfcApi* | [**getDrawingDeprecated**](docs/IfcApi.md#getDrawingDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/drawing/{id} | Retrieve a drawing of a model
+*bimdata.IfcApi* | [**getDrawingsDeprecated**](docs/IfcApi.md#getDrawingsDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/drawing | Retrieve all drawings of a model
 *bimdata.IfcApi* | [**getElementDeprecated**](docs/IfcApi.md#getElementDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Retrieve an element of a model
 *bimdata.IfcApi* | [**getElementLinkedDocumentsDeprecated**](docs/IfcApi.md#getElementLinkedDocumentsDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/documents | Retrieve all documents linked to any element
 *bimdata.IfcApi* | [**getElementPropertySetDeprecated**](docs/IfcApi.md#getElementPropertySetDeprecated) | **GET** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{id} | Retrieve a PropertySet of an element
@@ -439,6 +443,7 @@ Class | Method | HTTP request | Description
 *bimdata.IfcApi* | [**updateAccessTokenDeprecated**](docs/IfcApi.md#updateAccessTokenDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/access_token/{token} | Update some fields of a token
 *bimdata.IfcApi* | [**updateBuildingDeprecated**](docs/IfcApi.md#updateBuildingDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{uuid} | Update some fields of a building
 *bimdata.IfcApi* | [**updateBuildingPlanPositioningDeprecated**](docs/IfcApi.md#updateBuildingPlanPositioningDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/building/{building_uuid}/plan/{id}/positioning | Update the postioning of the plan in the building
+*bimdata.IfcApi* | [**updateDrawingDeprecated**](docs/IfcApi.md#updateDrawingDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/drawing/{id} | Update some fields of a drawing
 *bimdata.IfcApi* | [**updateElementDeprecated**](docs/IfcApi.md#updateElementDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{uuid} | Update some fields of an element
 *bimdata.IfcApi* | [**updateElementPropertySetPropertyDeprecated**](docs/IfcApi.md#updateElementPropertySetPropertyDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{ifc_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Update a property from an element
 *bimdata.IfcApi* | [**updateIfcDeprecated**](docs/IfcApi.md#updateIfcDeprecated) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/ifc/{id} | Update some fields of a model
@@ -477,6 +482,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**createBuildingPlan**](docs/ModelApi.md#createBuildingPlan) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/add | Create a relation between a 2d model and a building
 *bimdata.ModelApi* | [**createClassificationElementRelations**](docs/ModelApi.md#createClassificationElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification-element | Create association between existing classification and existing element
 *bimdata.ModelApi* | [**createClassificationsOfElement**](docs/ModelApi.md#createClassificationsOfElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/classification | Create one or many classifications to an element
+*bimdata.ModelApi* | [**createDrawing**](docs/ModelApi.md#createDrawing) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing | Create a drawing in the model
 *bimdata.ModelApi* | [**createElement**](docs/ModelApi.md#createElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element | Create an element in the model
 *bimdata.ModelApi* | [**createElementPropertySet**](docs/ModelApi.md#createElementPropertySet) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset | Create a PropertySets to an element
 *bimdata.ModelApi* | [**createElementPropertySetProperty**](docs/ModelApi.md#createElementPropertySetProperty) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property | Create a property to a PropertySet
@@ -502,6 +508,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**deleteAccessToken**](docs/ModelApi.md#deleteAccessToken) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token} | Delete a token
 *bimdata.ModelApi* | [**deleteBuilding**](docs/ModelApi.md#deleteBuilding) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{uuid} | Delete a building of a model
 *bimdata.ModelApi* | [**deleteBuildingPlan**](docs/ModelApi.md#deleteBuildingPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/{id} | Delete the relation between a 2d model and a building
+*bimdata.ModelApi* | [**deleteDrawing**](docs/ModelApi.md#deleteDrawing) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing/{id} | Delete a drawing of a model
 *bimdata.ModelApi* | [**deleteElement**](docs/ModelApi.md#deleteElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Delete an element of a model
 *bimdata.ModelApi* | [**deleteLayer**](docs/ModelApi.md#deleteLayer) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Delete a layer of a model
 *bimdata.ModelApi* | [**deleteModel**](docs/ModelApi.md#deleteModel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id} | Delete a model
@@ -525,6 +532,8 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**getBuildings**](docs/ModelApi.md#getBuildings) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building | Retrieve all buildings of a model
 *bimdata.ModelApi* | [**getClassificationsOfElement**](docs/ModelApi.md#getClassificationsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/classification | Retrieve all classifications of an element
 *bimdata.ModelApi* | [**getDocumentsOfElement**](docs/ModelApi.md#getDocumentsOfElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/documents | Retrieve all documents of an element
+*bimdata.ModelApi* | [**getDrawing**](docs/ModelApi.md#getDrawing) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing/{id} | Retrieve a drawing of a model
+*bimdata.ModelApi* | [**getDrawings**](docs/ModelApi.md#getDrawings) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing | Retrieve all drawings of a model
 *bimdata.ModelApi* | [**getElement**](docs/ModelApi.md#getElement) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Retrieve an element of a model
 *bimdata.ModelApi* | [**getElementLinkedDocuments**](docs/ModelApi.md#getElementLinkedDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/documents | Retrieve all documents linked to any element
 *bimdata.ModelApi* | [**getElementPropertySet**](docs/ModelApi.md#getElementPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{id} | Retrieve a PropertySet of an element
@@ -587,6 +596,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**updateAccessToken**](docs/ModelApi.md#updateAccessToken) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/access_token/{token} | Update some fields of a token
 *bimdata.ModelApi* | [**updateBuilding**](docs/ModelApi.md#updateBuilding) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{uuid} | Update some fields of a building
 *bimdata.ModelApi* | [**updateBuildingPlanPositioning**](docs/ModelApi.md#updateBuildingPlanPositioning) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/{id}/positioning | Update the postioning of the plan in the building
+*bimdata.ModelApi* | [**updateDrawing**](docs/ModelApi.md#updateDrawing) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing/{id} | Update some fields of a drawing
 *bimdata.ModelApi* | [**updateElement**](docs/ModelApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Update some fields of an element
 *bimdata.ModelApi* | [**updateElementPropertySetProperty**](docs/ModelApi.md#updateElementPropertySetProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Update a property from an element
 *bimdata.ModelApi* | [**updateLayer**](docs/ModelApi.md#updateLayer) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Update some fields of a layer
@@ -655,6 +665,8 @@ Class | Method | HTTP request | Description
  - [bimdata.Document](docs/Document.md)
  - [bimdata.DocumentPreviewFile](docs/DocumentPreviewFile.md)
  - [bimdata.DocumentWithElementList](docs/DocumentWithElementList.md)
+ - [bimdata.Drawing](docs/Drawing.md)
+ - [bimdata.DrawingRequest](docs/DrawingRequest.md)
  - [bimdata.Element](docs/Element.md)
  - [bimdata.ElementClassificationRelation](docs/ElementClassificationRelation.md)
  - [bimdata.ElementClassificationRelationRequest](docs/ElementClassificationRelationRequest.md)
@@ -714,6 +726,7 @@ Class | Method | HTTP request | Description
  - [bimdata.PatchedCloudRequest](docs/PatchedCloudRequest.md)
  - [bimdata.PatchedCommentRequest](docs/PatchedCommentRequest.md)
  - [bimdata.PatchedDocumentRequest](docs/PatchedDocumentRequest.md)
+ - [bimdata.PatchedDrawingRequest](docs/PatchedDrawingRequest.md)
  - [bimdata.PatchedElementRequest](docs/PatchedElementRequest.md)
  - [bimdata.PatchedFolderWithoutChildrenRequest](docs/PatchedFolderWithoutChildrenRequest.md)
  - [bimdata.PatchedFullTopicRequest](docs/PatchedFullTopicRequest.md)

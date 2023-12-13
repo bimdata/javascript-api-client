@@ -238,6 +238,16 @@
         done();
       });
     });
+    describe('createDrawingDeprecated', function() {
+      it('should call createDrawingDeprecated successfully', function(done) {
+        //uncomment below and update the code to test createDrawingDeprecated
+        //instance.createDrawingDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createElementDeprecated', function() {
       it('should call createElementDeprecated successfully', function(done) {
         //uncomment below and update the code to test createElementDeprecated
@@ -488,6 +498,16 @@
         done();
       });
     });
+    describe('deleteDrawingDeprecated', function() {
+      it('should call deleteDrawingDeprecated successfully', function(done) {
+        //uncomment below and update the code to test deleteDrawingDeprecated
+        //instance.deleteDrawingDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteElementDeprecated', function() {
       it('should call deleteElementDeprecated successfully', function(done) {
         //uncomment below and update the code to test deleteElementDeprecated
@@ -712,6 +732,26 @@
       it('should call getDocumentsOfElementDeprecated successfully', function(done) {
         //uncomment below and update the code to test getDocumentsOfElementDeprecated
         //instance.getDocumentsOfElementDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getDrawingDeprecated', function() {
+      it('should call getDrawingDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getDrawingDeprecated
+        //instance.getDrawingDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getDrawingsDeprecated', function() {
+      it('should call getDrawingsDeprecated successfully', function(done) {
+        //uncomment below and update the code to test getDrawingsDeprecated
+        //instance.getDrawingsDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1332,6 +1372,16 @@
       it('should call updateBuildingPlanPositioningDeprecated successfully', function(done) {
         //uncomment below and update the code to test updateBuildingPlanPositioningDeprecated
         //instance.updateBuildingPlanPositioningDeprecated(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateDrawingDeprecated', function() {
+      it('should call updateDrawingDeprecated successfully', function(done) {
+        //uncomment below and update the code to test updateDrawingDeprecated
+        //instance.updateDrawingDeprecated(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

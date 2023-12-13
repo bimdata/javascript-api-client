@@ -22,6 +22,8 @@ import CreateModelRequest from '../model/CreateModelRequest';
 import CreateMultiPageModelRequest from '../model/CreateMultiPageModelRequest';
 import Document from '../model/Document';
 import DocumentWithElementList from '../model/DocumentWithElementList';
+import Drawing from '../model/Drawing';
+import DrawingRequest from '../model/DrawingRequest';
 import Element from '../model/Element';
 import ElementClassificationRelation from '../model/ElementClassificationRelation';
 import ElementClassificationRelationRequest from '../model/ElementClassificationRelationRequest';
@@ -39,6 +41,7 @@ import Model from '../model/Model';
 import ModelErrors from '../model/ModelErrors';
 import ModelErrorsRequest from '../model/ModelErrorsRequest';
 import ModelFiles from '../model/ModelFiles';
+import PatchedDrawingRequest from '../model/PatchedDrawingRequest';
 import PatchedElementRequest from '../model/PatchedElementRequest';
 import PatchedIfcAccessTokenRequest from '../model/PatchedIfcAccessTokenRequest';
 import PatchedLayerRequest from '../model/PatchedLayerRequest';
@@ -1450,6 +1453,74 @@ export default class ModelApi {
      */
     createClassificationsOfElement(cloudPk, elementUuid, modelPk, projectPk, classificationRequest) {
       return this.createClassificationsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk, classificationRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a drawing in the model
+     * Create a drawing in the model  Required scopes: model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/DrawingRequest} drawingRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Drawing} and HTTP response
+     */
+    createDrawingWithHttpInfo(cloudPk, modelPk, projectPk, drawingRequest) {
+      let postBody = drawingRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createDrawing");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createDrawing");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createDrawing");
+      }
+      // verify the required parameter 'drawingRequest' is set
+      if (drawingRequest === undefined || drawingRequest === null) {
+        throw new Error("Missing the required parameter 'drawingRequest' when calling createDrawing");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Drawing;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a drawing in the model
+     * Create a drawing in the model  Required scopes: model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/DrawingRequest} drawingRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Drawing}
+     */
+    createDrawing(cloudPk, modelPk, projectPk, drawingRequest) {
+      return this.createDrawingWithHttpInfo(cloudPk, modelPk, projectPk, drawingRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3255,6 +3326,75 @@ export default class ModelApi {
 
 
     /**
+     * Delete a drawing of a model
+     * Delete a drawing of a model  Required scopes: model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this drawing.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteDrawingWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteDrawing");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteDrawing");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteDrawing");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteDrawing");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a drawing of a model
+     * Delete a drawing of a model  Required scopes: model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this drawing.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteDrawing(cloudPk, id, modelPk, projectPk) {
+      return this.deleteDrawingWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Delete an element of a model
      * The IFC file will not be updated. The remaining elements are available in API and will be available when exporting an IFC file  Required scopes: ifc:write, model:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -4833,6 +4973,137 @@ export default class ModelApi {
      */
     getDocumentsOfElement(cloudPk, elementUuid, modelPk, projectPk) {
       return this.getDocumentsOfElementWithHttpInfo(cloudPk, elementUuid, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve a drawing of a model
+     * Retrieve a drawing of a model  Required scopes: model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this drawing.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Drawing} and HTTP response
+     */
+    getDrawingWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getDrawing");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getDrawing");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getDrawing");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getDrawing");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Drawing;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve a drawing of a model
+     * Retrieve a drawing of a model  Required scopes: model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this drawing.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Drawing}
+     */
+    getDrawing(cloudPk, id, modelPk, projectPk) {
+      return this.getDrawingWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all drawings of a model
+     * Retrieve all drawings of a model.  Required scopes: model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Drawing>} and HTTP response
+     */
+    getDrawingsWithHttpInfo(cloudPk, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getDrawings");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getDrawings");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getDrawings");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Drawing];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all drawings of a model
+     * Retrieve all drawings of a model.  Required scopes: model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Drawing>}
+     */
+    getDrawings(cloudPk, modelPk, projectPk) {
+      return this.getDrawingsWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9271,6 +9542,80 @@ export default class ModelApi {
      */
     updateBuildingPlanPositioning(buildingUuid, cloudPk, id, modelPk, projectPk, opts) {
       return this.updateBuildingPlanPositioningWithHttpInfo(buildingUuid, cloudPk, id, modelPk, projectPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a drawing
+     * Update some fields of a drawing  Required scopes: model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this drawing.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedDrawingRequest} opts.patchedDrawingRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Drawing} and HTTP response
+     */
+    updateDrawingWithHttpInfo(cloudPk, id, modelPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedDrawingRequest'];
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateDrawing");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateDrawing");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateDrawing");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateDrawing");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Drawing;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a drawing
+     * Update some fields of a drawing  Required scopes: model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this drawing.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedDrawingRequest} opts.patchedDrawingRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Drawing}
+     */
+    updateDrawing(cloudPk, id, modelPk, projectPk, opts) {
+      return this.updateDrawingWithHttpInfo(cloudPk, id, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
