@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.FolderTree();
+    instance = new bimdata.VisaAttachment();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,16 @@
       object[property] = value;
   }
 
-  describe('FolderTree', function() {
-    it('should create an instance of FolderTree', function() {
-      // uncomment below and update the code to test FolderTree
-      //var instance = new bimdata.FolderTree();
-      //expect(instance).to.be.a(bimdata.FolderTree);
+  describe('VisaAttachment', function() {
+    it('should create an instance of VisaAttachment', function() {
+      // uncomment below and update the code to test VisaAttachment
+      //var instance = new bimdata.VisaAttachment();
+      //expect(instance).to.be.a(bimdata.VisaAttachment);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new bimdata.FolderTree();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.FolderTree();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property children (base name: "children")', function() {
-      // uncomment below and update the code to test the property children
-      //var instance = new bimdata.FolderTree();
+    it('should have the property attachment (base name: "attachment")', function() {
+      // uncomment below and update the code to test the property attachment
+      //var instance = new bimdata.VisaAttachment();
       //expect(instance).to.be();
     });
 

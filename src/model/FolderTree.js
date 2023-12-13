@@ -22,12 +22,13 @@ class FolderTree {
     /**
      * Constructs a new <code>FolderTree</code>.
      * @alias module:model/FolderTree
-     * @param children {Array.<module:model/FolderTree>} 
+     * @param id {Number} 
      * @param name {String} 
+     * @param children {Array.<module:model/FolderTree>} 
      */
-    constructor(children, name) { 
+    constructor(id, name, children) { 
         
-        FolderTree.initialize(this, children, name);
+        FolderTree.initialize(this, id, name, children);
     }
 
     /**
@@ -35,9 +36,10 @@ class FolderTree {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, children, name) { 
-        obj['children'] = children;
+    static initialize(obj, id, name, children) { 
+        obj['id'] = id;
         obj['name'] = name;
+        obj['children'] = children;
     }
 
     /**
@@ -51,11 +53,14 @@ class FolderTree {
         if (data) {
             obj = obj || new FolderTree();
 
-            if (data.hasOwnProperty('children')) {
-                obj['children'] = ApiClient.convertToType(data['children'], [FolderTree]);
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('children')) {
+                obj['children'] = ApiClient.convertToType(data['children'], [FolderTree]);
             }
         }
         return obj;
@@ -65,14 +70,19 @@ class FolderTree {
 }
 
 /**
- * @member {Array.<module:model/FolderTree>} children
+ * @member {Number} id
  */
-FolderTree.prototype['children'] = undefined;
+FolderTree.prototype['id'] = undefined;
 
 /**
  * @member {String} name
  */
 FolderTree.prototype['name'] = undefined;
+
+/**
+ * @member {Array.<module:model/FolderTree>} children
+ */
+FolderTree.prototype['children'] = undefined;
 
 
 

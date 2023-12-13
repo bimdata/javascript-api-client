@@ -237,6 +237,7 @@ import ViewSetupHintsRequest from './model/ViewSetupHintsRequest';
 import Viewpoint from './model/Viewpoint';
 import ViewpointRequest from './model/ViewpointRequest';
 import Visa from './model/Visa';
+import VisaAttachment from './model/VisaAttachment';
 import VisaComment from './model/VisaComment';
 import VisaCommentRequest from './model/VisaCommentRequest';
 import VisaRequest from './model/VisaRequest';
@@ -1642,6 +1643,12 @@ export {
      * @property {module:model/Visa}
      */
     Visa,
+
+    /**
+     * The VisaAttachment model constructor.
+     * @property {module:model/VisaAttachment}
+     */
+    VisaAttachment,
 
     /**
      * The VisaComment model constructor.

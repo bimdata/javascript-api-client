@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**children** | [**[FolderTree]**](FolderTree.md) |  | 
+**id** | **Number** |  | 
 **name** | **String** |  | 
+**children** | [**[FolderTree]**](FolderTree.md) |  | 
 
 

@@ -568,6 +568,16 @@
         done();
       });
     });
+    describe('getFolderDocuments', function() {
+      it('should call getFolderDocuments successfully', function(done) {
+        //uncomment below and update the code to test getFolderDocuments
+        //instance.getFolderDocuments(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getFolderProjectUsers', function() {
       it('should call getFolderProjectUsers successfully', function(done) {
         //uncomment below and update the code to test getFolderProjectUsers
@@ -672,6 +682,16 @@
       it('should call getProjectDMSTree successfully', function(done) {
         //uncomment below and update the code to test getProjectDMSTree
         //instance.getProjectDMSTree(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getProjectFolderTree', function() {
+      it('should call getProjectFolderTree successfully', function(done) {
+        //uncomment below and update the code to test getProjectFolderTree
+        //instance.getProjectFolderTree(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

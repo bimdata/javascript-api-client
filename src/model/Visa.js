@@ -30,7 +30,7 @@ class Visa {
      * @param validationsInError {Array.<Number>} Validation IDs where one or more validators have no longer access to the visa document.
      * @param creator {module:model/UserProject} 
      * @param documentId {Number} 
-     * @param status {module:model/Visa.StatusEnum} * `O` - opened * `A` - paused * `C` - closed
+     * @param status {module:model/Visa.StatusEnum} * `O` - opened * `P` - paused * `C` - closed
      * @param comments {Array.<module:model/VisaComment>} 
      * @param createdAt {Date} 
      * @param updatedAt {Date} 
@@ -135,7 +135,7 @@ Visa.prototype['creator'] = undefined;
 Visa.prototype['document_id'] = undefined;
 
 /**
- * * `O` - opened * `A` - paused * `C` - closed
+ * * `O` - opened * `P` - paused * `C` - closed
  * @member {module:model/Visa.StatusEnum} status
  */
 Visa.prototype['status'] = undefined;
@@ -184,10 +184,10 @@ Visa['StatusEnum'] = {
     "O": "O",
 
     /**
-     * value: "A"
+     * value: "P"
      * @const
      */
-    "A": "A",
+    "P": "P",
 
     /**
      * value: "C"

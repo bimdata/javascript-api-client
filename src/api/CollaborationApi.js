@@ -63,6 +63,7 @@ import UserInvitation from '../model/UserInvitation';
 import UserProject from '../model/UserProject';
 import UserProjectIdRequest from '../model/UserProjectIdRequest';
 import Visa from '../model/Visa';
+import VisaAttachment from '../model/VisaAttachment';
 import VisaComment from '../model/VisaComment';
 import VisaCommentRequest from '../model/VisaCommentRequest';
 import VisaRequest from '../model/VisaRequest';
@@ -146,9 +147,12 @@ export default class CollaborationApi {
      * @param {Number} id A unique integer value identifying this visa validation.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} visaPk A unique integer value identifying this visa.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {File} opts.attachment 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VisaAttachment} and HTTP response
      */
-    acceptValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk) {
+    acceptValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -183,12 +187,13 @@ export default class CollaborationApi {
       let headerParams = {
       };
       let formParams = {
+        'attachment': opts['attachment']
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
+      let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
+      let accepts = ['application/json'];
+      let returnType = VisaAttachment;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/accept', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -204,10 +209,12 @@ export default class CollaborationApi {
      * @param {Number} id A unique integer value identifying this visa validation.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} visaPk A unique integer value identifying this visa.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @param {Object} opts Optional parameters
+     * @param {File} opts.attachment 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VisaAttachment}
      */
-    acceptValidation(cloudPk, documentPk, id, projectPk, visaPk) {
-      return this.acceptValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk)
+    acceptValidation(cloudPk, documentPk, id, projectPk, visaPk, opts) {
+      return this.acceptValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -858,7 +865,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'IFC', 'OBJ', 'POINT_CLOUD', 'GLTF', 'DWG', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'POINT_CLOUD', 'DWG', 'OBJ', 'GLTF', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -924,7 +931,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'IFC', 'OBJ', 'POINT_CLOUD', 'GLTF', 'DWG', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'POINT_CLOUD', 'DWG', 'OBJ', 'GLTF', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -2529,9 +2536,12 @@ export default class CollaborationApi {
      * @param {Number} id A unique integer value identifying this visa validation.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} visaPk A unique integer value identifying this visa.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {File} opts.attachment 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VisaAttachment} and HTTP response
      */
-    denyValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk) {
+    denyValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -2566,12 +2576,13 @@ export default class CollaborationApi {
       let headerParams = {
       };
       let formParams = {
+        'attachment': opts['attachment']
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
+      let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
+      let accepts = ['application/json'];
+      let returnType = VisaAttachment;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa/{visa_pk}/validation/{id}/deny', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2587,10 +2598,12 @@ export default class CollaborationApi {
      * @param {Number} id A unique integer value identifying this visa validation.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Number} visaPk A unique integer value identifying this visa.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @param {Object} opts Optional parameters
+     * @param {File} opts.attachment 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VisaAttachment}
      */
-    denyValidation(cloudPk, documentPk, id, projectPk, visaPk) {
-      return this.denyValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk)
+    denyValidation(cloudPk, documentPk, id, projectPk, visaPk, opts) {
+      return this.denyValidationWithHttpInfo(cloudPk, documentPk, id, projectPk, visaPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3143,12 +3156,38 @@ export default class CollaborationApi {
 
     /**
      * Retrieve all documents
-     * Retrieve all documents in the project  Required scopes: document:read
+     * Retrieve all documents in the project. Filters are case insentive  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.createdAfter 
+     * @param {Date} opts.createdBefore 
+     * @param {String} opts.creatorEmail 
+     * @param {String} opts.description 
+     * @param {String} opts.descriptionContains 
+     * @param {String} opts.descriptionEndswith 
+     * @param {String} opts.descriptionStartswith 
+     * @param {String} opts.fileName 
+     * @param {String} opts.fileNameContains 
+     * @param {String} opts.fileNameEndswith 
+     * @param {String} opts.fileNameStartswith 
+     * @param {String} opts.name 
+     * @param {String} opts.nameContains 
+     * @param {String} opts.nameEndswith 
+     * @param {String} opts.nameStartswith 
+     * @param {Number} opts.sizeMax Size of the file.
+     * @param {Number} opts.sizeMin Size of the file.
+     * @param {Array.<String>} opts.tags Multiple values may be separated by commas.
+     * @param {String} opts.visaCreatorEmail 
+     * @param {Date} opts.visaDeadlineAfter 
+     * @param {Date} opts.visaDeadlineBefore 
+     * @param {module:model/String} opts.visaStatus * `O` - opened * `P` - paused * `C` - closed
+     * @param {String} opts.visaValidationStatus 
+     * @param {String} opts.visaValidatorEmail 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
      */
-    getDocumentsWithHttpInfo(cloudPk, projectPk) {
+    getDocumentsWithHttpInfo(cloudPk, projectPk, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -3164,6 +3203,30 @@ export default class CollaborationApi {
         'project_pk': projectPk
       };
       let queryParams = {
+        'created_after': opts['createdAfter'],
+        'created_before': opts['createdBefore'],
+        'creator_email': opts['creatorEmail'],
+        'description': opts['description'],
+        'description__contains': opts['descriptionContains'],
+        'description__endswith': opts['descriptionEndswith'],
+        'description__startswith': opts['descriptionStartswith'],
+        'file_name': opts['fileName'],
+        'file_name__contains': opts['fileNameContains'],
+        'file_name__endswith': opts['fileNameEndswith'],
+        'file_name__startswith': opts['fileNameStartswith'],
+        'name': opts['name'],
+        'name__contains': opts['nameContains'],
+        'name__endswith': opts['nameEndswith'],
+        'name__startswith': opts['nameStartswith'],
+        'size_max': opts['sizeMax'],
+        'size_min': opts['sizeMin'],
+        'tags': this.apiClient.buildCollectionParam(opts['tags'], 'csv'),
+        'visa__creator_email': opts['visaCreatorEmail'],
+        'visa__deadline_after': opts['visaDeadlineAfter'],
+        'visa__deadline_before': opts['visaDeadlineBefore'],
+        'visa__status': opts['visaStatus'],
+        'visa__validation_status': opts['visaValidationStatus'],
+        'visa__validator_email': opts['visaValidatorEmail']
       };
       let headerParams = {
       };
@@ -3183,13 +3246,38 @@ export default class CollaborationApi {
 
     /**
      * Retrieve all documents
-     * Retrieve all documents in the project  Required scopes: document:read
+     * Retrieve all documents in the project. Filters are case insentive  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.createdAfter 
+     * @param {Date} opts.createdBefore 
+     * @param {String} opts.creatorEmail 
+     * @param {String} opts.description 
+     * @param {String} opts.descriptionContains 
+     * @param {String} opts.descriptionEndswith 
+     * @param {String} opts.descriptionStartswith 
+     * @param {String} opts.fileName 
+     * @param {String} opts.fileNameContains 
+     * @param {String} opts.fileNameEndswith 
+     * @param {String} opts.fileNameStartswith 
+     * @param {String} opts.name 
+     * @param {String} opts.nameContains 
+     * @param {String} opts.nameEndswith 
+     * @param {String} opts.nameStartswith 
+     * @param {Number} opts.sizeMax Size of the file.
+     * @param {Number} opts.sizeMin Size of the file.
+     * @param {Array.<String>} opts.tags Multiple values may be separated by commas.
+     * @param {String} opts.visaCreatorEmail 
+     * @param {Date} opts.visaDeadlineAfter 
+     * @param {Date} opts.visaDeadlineBefore 
+     * @param {module:model/String} opts.visaStatus * `O` - opened * `P` - paused * `C` - closed
+     * @param {String} opts.visaValidationStatus 
+     * @param {String} opts.visaValidatorEmail 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
      */
-    getDocuments(cloudPk, projectPk) {
-      return this.getDocumentsWithHttpInfo(cloudPk, projectPk)
+    getDocuments(cloudPk, projectPk, opts) {
+      return this.getDocumentsWithHttpInfo(cloudPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3252,6 +3340,143 @@ export default class CollaborationApi {
      */
     getFolder(cloudPk, id, projectPk) {
       return this.getFolderWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get all documents of a folder
+     * Get all documents of a folder  Required scopes: document:read
+     * @param {Number} cloudPk 
+     * @param {Number} folderPk 
+     * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.createdAfter 
+     * @param {Date} opts.createdBefore 
+     * @param {String} opts.creatorEmail 
+     * @param {String} opts.description 
+     * @param {String} opts.descriptionContains 
+     * @param {String} opts.descriptionEndswith 
+     * @param {String} opts.descriptionStartswith 
+     * @param {String} opts.fileName 
+     * @param {String} opts.fileNameContains 
+     * @param {String} opts.fileNameEndswith 
+     * @param {String} opts.fileNameStartswith 
+     * @param {String} opts.name 
+     * @param {String} opts.nameContains 
+     * @param {String} opts.nameEndswith 
+     * @param {String} opts.nameStartswith 
+     * @param {Number} opts.sizeMax Size of the file.
+     * @param {Number} opts.sizeMin Size of the file.
+     * @param {Array.<String>} opts.tags Multiple values may be separated by commas.
+     * @param {String} opts.visaCreatorEmail 
+     * @param {Date} opts.visaDeadlineAfter 
+     * @param {Date} opts.visaDeadlineBefore 
+     * @param {module:model/String} opts.visaStatus * `O` - opened * `P` - paused * `C` - closed
+     * @param {String} opts.visaValidationStatus 
+     * @param {String} opts.visaValidatorEmail 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
+     */
+    getFolderDocumentsWithHttpInfo(cloudPk, folderPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getFolderDocuments");
+      }
+      // verify the required parameter 'folderPk' is set
+      if (folderPk === undefined || folderPk === null) {
+        throw new Error("Missing the required parameter 'folderPk' when calling getFolderDocuments");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getFolderDocuments");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'folder_pk': folderPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+        'created_after': opts['createdAfter'],
+        'created_before': opts['createdBefore'],
+        'creator_email': opts['creatorEmail'],
+        'description': opts['description'],
+        'description__contains': opts['descriptionContains'],
+        'description__endswith': opts['descriptionEndswith'],
+        'description__startswith': opts['descriptionStartswith'],
+        'file_name': opts['fileName'],
+        'file_name__contains': opts['fileNameContains'],
+        'file_name__endswith': opts['fileNameEndswith'],
+        'file_name__startswith': opts['fileNameStartswith'],
+        'name': opts['name'],
+        'name__contains': opts['nameContains'],
+        'name__endswith': opts['nameEndswith'],
+        'name__startswith': opts['nameStartswith'],
+        'size_max': opts['sizeMax'],
+        'size_min': opts['sizeMin'],
+        'tags': this.apiClient.buildCollectionParam(opts['tags'], 'csv'),
+        'visa__creator_email': opts['visaCreatorEmail'],
+        'visa__deadline_after': opts['visaDeadlineAfter'],
+        'visa__deadline_before': opts['visaDeadlineBefore'],
+        'visa__status': opts['visaStatus'],
+        'visa__validation_status': opts['visaValidationStatus'],
+        'visa__validator_email': opts['visaValidatorEmail']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Document];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/document', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get all documents of a folder
+     * Get all documents of a folder  Required scopes: document:read
+     * @param {Number} cloudPk 
+     * @param {Number} folderPk 
+     * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.createdAfter 
+     * @param {Date} opts.createdBefore 
+     * @param {String} opts.creatorEmail 
+     * @param {String} opts.description 
+     * @param {String} opts.descriptionContains 
+     * @param {String} opts.descriptionEndswith 
+     * @param {String} opts.descriptionStartswith 
+     * @param {String} opts.fileName 
+     * @param {String} opts.fileNameContains 
+     * @param {String} opts.fileNameEndswith 
+     * @param {String} opts.fileNameStartswith 
+     * @param {String} opts.name 
+     * @param {String} opts.nameContains 
+     * @param {String} opts.nameEndswith 
+     * @param {String} opts.nameStartswith 
+     * @param {Number} opts.sizeMax Size of the file.
+     * @param {Number} opts.sizeMin Size of the file.
+     * @param {Array.<String>} opts.tags Multiple values may be separated by commas.
+     * @param {String} opts.visaCreatorEmail 
+     * @param {Date} opts.visaDeadlineAfter 
+     * @param {Date} opts.visaDeadlineBefore 
+     * @param {module:model/String} opts.visaStatus * `O` - opened * `P` - paused * `C` - closed
+     * @param {String} opts.visaValidationStatus 
+     * @param {String} opts.visaValidatorEmail 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
+     */
+    getFolderDocuments(cloudPk, folderPk, projectPk, opts) {
+      return this.getFolderDocumentsWithHttpInfo(cloudPk, folderPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3885,6 +4110,61 @@ export default class CollaborationApi {
      */
     getProjectDMSTree(cloudPk, id) {
       return this.getProjectDMSTreeWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve folder tree of the project
+     * Retrieve folder tree of the project
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectFolderTree} and HTTP response
+     */
+    getProjectFolderTreeWithHttpInfo(cloudPk, id) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectFolderTree");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getProjectFolderTree");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ProjectFolderTree;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{id}/folder-trees', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve folder tree of the project
+     * Retrieve folder tree of the project
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectFolderTree}
+     */
+    getProjectFolderTree(cloudPk, id) {
+      return this.getProjectFolderTreeWithHttpInfo(cloudPk, id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5535,7 +5815,7 @@ export default class CollaborationApi {
 
     /**
      * Reset a validation
-     * Reset a validation if the validation has been accepted or rejected  Required scopes: document:read
+     * Reset a validation if the validation has been accepted or rejected. The attachment will be removed  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa validation.
@@ -5593,7 +5873,7 @@ export default class CollaborationApi {
 
     /**
      * Reset a validation
-     * Reset a validation if the validation has been accepted or rejected  Required scopes: document:read
+     * Reset a validation if the validation has been accepted or rejected. The attachment will be removed  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} documentPk A unique integer value identifying this document.
      * @param {Number} id A unique integer value identifying this visa validation.

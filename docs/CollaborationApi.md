@@ -56,6 +56,7 @@ Method | HTTP request | Description
 [**getDocumentHistories**](CollaborationApi.md#getDocumentHistories) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history | Retrieve all document histories
 [**getDocuments**](CollaborationApi.md#getDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document | Retrieve all documents
 [**getFolder**](CollaborationApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Retrieve a folder
+[**getFolderDocuments**](CollaborationApi.md#getFolderDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/document | Get all documents of a folder
 [**getFolderProjectUsers**](CollaborationApi.md#getFolderProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/user | Retrieve all users in a project with the permission on the folder
 [**getFolders**](CollaborationApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | Retrieve all folders
 [**getGroup**](CollaborationApi.md#getGroup) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/group/{id} | Retrieve a group
@@ -67,6 +68,7 @@ Method | HTTP request | Description
 [**getProjectAccessTokens**](CollaborationApi.md#getProjectAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token | Retrieve all tokens created for this project
 [**getProjectCreatorVisas**](CollaborationApi.md#getProjectCreatorVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/visa/creator | List visas created by user
 [**getProjectDMSTree**](CollaborationApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
+[**getProjectFolderTree**](CollaborationApi.md#getProjectFolderTree) | **GET** /cloud/{cloud_pk}/project/{id}/folder-trees | Retrieve folder tree of the project
 [**getProjectFolderTreeSerializers**](CollaborationApi.md#getProjectFolderTreeSerializers) | **GET** /cloud/{cloud_pk}/project/folder-trees | Retrieve folder tree for all projects
 [**getProjectInvitations**](CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
 [**getProjectSize**](CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all model files in the project
@@ -177,7 +179,7 @@ null (empty response body)
 
 ## acceptValidation
 
-> acceptValidation(cloudPk, documentPk, id, projectPk, visaPk)
+> VisaAttachment acceptValidation(cloudPk, documentPk, id, projectPk, visaPk, opts)
 
 Accept a validation
 
@@ -211,8 +213,11 @@ let documentPk = 56; // Number | A unique integer value identifying this documen
 let id = 56; // Number | A unique integer value identifying this visa validation.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let visaPk = 56; // Number | A unique integer value identifying this visa.
-apiInstance.acceptValidation(cloudPk, documentPk, id, projectPk, visaPk).then(() => {
-  console.log('API called successfully.');
+let opts = {
+  'attachment': "/path/to/file" // File | 
+};
+apiInstance.acceptValidation(cloudPk, documentPk, id, projectPk, visaPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -229,10 +234,11 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this visa validation. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **visaPk** | **Number**| A unique integer value identifying this visa. | 
+ **attachment** | **File**|  | [optional] 
 
 ### Return type
 
-null (empty response body)
+[**VisaAttachment**](VisaAttachment.md)
 
 ### Authorization
 
@@ -240,8 +246,8 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
+- **Accept**: application/json
 
 
 ## addDocumentTag
@@ -955,7 +961,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;IFC&#39;, &#39;OBJ&#39;, &#39;POINT_CLOUD&#39;, &#39;GLTF&#39;, &#39;DWG&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;POINT_CLOUD&#39;, &#39;DWG&#39;, &#39;OBJ&#39;, &#39;GLTF&#39;, &#39;IFC&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -2671,7 +2677,7 @@ null (empty response body)
 
 ## denyValidation
 
-> denyValidation(cloudPk, documentPk, id, projectPk, visaPk)
+> VisaAttachment denyValidation(cloudPk, documentPk, id, projectPk, visaPk, opts)
 
 Deny a validation
 
@@ -2705,8 +2711,11 @@ let documentPk = 56; // Number | A unique integer value identifying this documen
 let id = 56; // Number | A unique integer value identifying this visa validation.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let visaPk = 56; // Number | A unique integer value identifying this visa.
-apiInstance.denyValidation(cloudPk, documentPk, id, projectPk, visaPk).then(() => {
-  console.log('API called successfully.');
+let opts = {
+  'attachment': "/path/to/file" // File | 
+};
+apiInstance.denyValidation(cloudPk, documentPk, id, projectPk, visaPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -2723,10 +2732,11 @@ Name | Type | Description  | Notes
  **id** | **Number**| A unique integer value identifying this visa validation. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **visaPk** | **Number**| A unique integer value identifying this visa. | 
+ **attachment** | **File**|  | [optional] 
 
 ### Return type
 
-null (empty response body)
+[**VisaAttachment**](VisaAttachment.md)
 
 ### Authorization
 
@@ -2734,8 +2744,8 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
+- **Accept**: application/json
 
 
 ## getClassification
@@ -3372,11 +3382,11 @@ Name | Type | Description  | Notes
 
 ## getDocuments
 
-> [Document] getDocuments(cloudPk, projectPk)
+> [Document] getDocuments(cloudPk, projectPk, opts)
 
 Retrieve all documents
 
-Retrieve all documents in the project  Required scopes: document:read
+Retrieve all documents in the project. Filters are case insentive  Required scopes: document:read
 
 ### Example
 
@@ -3403,7 +3413,33 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.getDocuments(cloudPk, projectPk).then((data) => {
+let opts = {
+  'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'creatorEmail': "creatorEmail_example", // String | 
+  'description': "description_example", // String | 
+  'descriptionContains': "descriptionContains_example", // String | 
+  'descriptionEndswith': "descriptionEndswith_example", // String | 
+  'descriptionStartswith': "descriptionStartswith_example", // String | 
+  'fileName': "fileName_example", // String | 
+  'fileNameContains': "fileNameContains_example", // String | 
+  'fileNameEndswith': "fileNameEndswith_example", // String | 
+  'fileNameStartswith': "fileNameStartswith_example", // String | 
+  'name': "name_example", // String | 
+  'nameContains': "nameContains_example", // String | 
+  'nameEndswith': "nameEndswith_example", // String | 
+  'nameStartswith': "nameStartswith_example", // String | 
+  'sizeMax': 789, // Number | Size of the file.
+  'sizeMin': 789, // Number | Size of the file.
+  'tags': ["null"], // [String] | Multiple values may be separated by commas.
+  'visaCreatorEmail': "visaCreatorEmail_example", // String | 
+  'visaDeadlineAfter': new Date("2013-10-20"), // Date | 
+  'visaDeadlineBefore': new Date("2013-10-20"), // Date | 
+  'visaStatus': "visaStatus_example", // String | * `O` - opened * `P` - paused * `C` - closed
+  'visaValidationStatus': "visaValidationStatus_example", // String | 
+  'visaValidatorEmail': "visaValidatorEmail_example" // String | 
+};
+apiInstance.getDocuments(cloudPk, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3418,6 +3454,30 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **createdAfter** | **Date**|  | [optional] 
+ **createdBefore** | **Date**|  | [optional] 
+ **creatorEmail** | **String**|  | [optional] 
+ **description** | **String**|  | [optional] 
+ **descriptionContains** | **String**|  | [optional] 
+ **descriptionEndswith** | **String**|  | [optional] 
+ **descriptionStartswith** | **String**|  | [optional] 
+ **fileName** | **String**|  | [optional] 
+ **fileNameContains** | **String**|  | [optional] 
+ **fileNameEndswith** | **String**|  | [optional] 
+ **fileNameStartswith** | **String**|  | [optional] 
+ **name** | **String**|  | [optional] 
+ **nameContains** | **String**|  | [optional] 
+ **nameEndswith** | **String**|  | [optional] 
+ **nameStartswith** | **String**|  | [optional] 
+ **sizeMax** | **Number**| Size of the file. | [optional] 
+ **sizeMin** | **Number**| Size of the file. | [optional] 
+ **tags** | [**[String]**](String.md)| Multiple values may be separated by commas. | [optional] 
+ **visaCreatorEmail** | **String**|  | [optional] 
+ **visaDeadlineAfter** | **Date**|  | [optional] 
+ **visaDeadlineBefore** | **Date**|  | [optional] 
+ **visaStatus** | **String**| * &#x60;O&#x60; - opened * &#x60;P&#x60; - paused * &#x60;C&#x60; - closed | [optional] 
+ **visaValidationStatus** | **String**|  | [optional] 
+ **visaValidatorEmail** | **String**|  | [optional] 
 
 ### Return type
 
@@ -3487,6 +3547,121 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FolderWithoutChildren**](FolderWithoutChildren.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getFolderDocuments
+
+> [Document] getFolderDocuments(cloudPk, folderPk, projectPk, opts)
+
+Get all documents of a folder
+
+Get all documents of a folder  Required scopes: document:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | 
+let folderPk = 56; // Number | 
+let projectPk = 56; // Number | 
+let opts = {
+  'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'creatorEmail': "creatorEmail_example", // String | 
+  'description': "description_example", // String | 
+  'descriptionContains': "descriptionContains_example", // String | 
+  'descriptionEndswith': "descriptionEndswith_example", // String | 
+  'descriptionStartswith': "descriptionStartswith_example", // String | 
+  'fileName': "fileName_example", // String | 
+  'fileNameContains': "fileNameContains_example", // String | 
+  'fileNameEndswith': "fileNameEndswith_example", // String | 
+  'fileNameStartswith': "fileNameStartswith_example", // String | 
+  'name': "name_example", // String | 
+  'nameContains': "nameContains_example", // String | 
+  'nameEndswith': "nameEndswith_example", // String | 
+  'nameStartswith': "nameStartswith_example", // String | 
+  'sizeMax': 789, // Number | Size of the file.
+  'sizeMin': 789, // Number | Size of the file.
+  'tags': ["null"], // [String] | Multiple values may be separated by commas.
+  'visaCreatorEmail': "visaCreatorEmail_example", // String | 
+  'visaDeadlineAfter': new Date("2013-10-20"), // Date | 
+  'visaDeadlineBefore': new Date("2013-10-20"), // Date | 
+  'visaStatus': "visaStatus_example", // String | * `O` - opened * `P` - paused * `C` - closed
+  'visaValidationStatus': "visaValidationStatus_example", // String | 
+  'visaValidatorEmail': "visaValidatorEmail_example" // String | 
+};
+apiInstance.getFolderDocuments(cloudPk, folderPk, projectPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**|  | 
+ **folderPk** | **Number**|  | 
+ **projectPk** | **Number**|  | 
+ **createdAfter** | **Date**|  | [optional] 
+ **createdBefore** | **Date**|  | [optional] 
+ **creatorEmail** | **String**|  | [optional] 
+ **description** | **String**|  | [optional] 
+ **descriptionContains** | **String**|  | [optional] 
+ **descriptionEndswith** | **String**|  | [optional] 
+ **descriptionStartswith** | **String**|  | [optional] 
+ **fileName** | **String**|  | [optional] 
+ **fileNameContains** | **String**|  | [optional] 
+ **fileNameEndswith** | **String**|  | [optional] 
+ **fileNameStartswith** | **String**|  | [optional] 
+ **name** | **String**|  | [optional] 
+ **nameContains** | **String**|  | [optional] 
+ **nameEndswith** | **String**|  | [optional] 
+ **nameStartswith** | **String**|  | [optional] 
+ **sizeMax** | **Number**| Size of the file. | [optional] 
+ **sizeMin** | **Number**| Size of the file. | [optional] 
+ **tags** | [**[String]**](String.md)| Multiple values may be separated by commas. | [optional] 
+ **visaCreatorEmail** | **String**|  | [optional] 
+ **visaDeadlineAfter** | **Date**|  | [optional] 
+ **visaDeadlineBefore** | **Date**|  | [optional] 
+ **visaStatus** | **String**| * &#x60;O&#x60; - opened * &#x60;P&#x60; - paused * &#x60;C&#x60; - closed | [optional] 
+ **visaValidationStatus** | **String**|  | [optional] 
+ **visaValidatorEmail** | **String**|  | [optional] 
+
+### Return type
+
+[**[Document]**](Document.md)
 
 ### Authorization
 
@@ -4188,6 +4363,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Folder**](Folder.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getProjectFolderTree
+
+> ProjectFolderTree getProjectFolderTree(cloudPk, id)
+
+Retrieve folder tree of the project
+
+Retrieve folder tree of the project
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | 
+let id = 56; // Number | A unique integer value identifying this project.
+apiInstance.getProjectFolderTree(cloudPk, id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**|  | 
+ **id** | **Number**| A unique integer value identifying this project. | 
+
+### Return type
+
+[**ProjectFolderTree**](ProjectFolderTree.md)
 
 ### Authorization
 
@@ -5999,7 +6237,7 @@ null (empty response body)
 
 Reset a validation
 
-Reset a validation if the validation has been accepted or rejected  Required scopes: document:read
+Reset a validation if the validation has been accepted or rejected. The attachment will be removed  Required scopes: document:read
 
 ### Example
 

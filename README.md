@@ -255,6 +255,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getDocumentHistories**](docs/CollaborationApi.md#getDocumentHistories) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history | Retrieve all document histories
 *bimdata.CollaborationApi* | [**getDocuments**](docs/CollaborationApi.md#getDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document | Retrieve all documents
 *bimdata.CollaborationApi* | [**getFolder**](docs/CollaborationApi.md#getFolder) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Retrieve a folder
+*bimdata.CollaborationApi* | [**getFolderDocuments**](docs/CollaborationApi.md#getFolderDocuments) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/document | Get all documents of a folder
 *bimdata.CollaborationApi* | [**getFolderProjectUsers**](docs/CollaborationApi.md#getFolderProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/user | Retrieve all users in a project with the permission on the folder
 *bimdata.CollaborationApi* | [**getFolders**](docs/CollaborationApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | Retrieve all folders
 *bimdata.CollaborationApi* | [**getGroup**](docs/CollaborationApi.md#getGroup) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/group/{id} | Retrieve a group
@@ -266,6 +267,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getProjectAccessTokens**](docs/CollaborationApi.md#getProjectAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token | Retrieve all tokens created for this project
 *bimdata.CollaborationApi* | [**getProjectCreatorVisas**](docs/CollaborationApi.md#getProjectCreatorVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/visa/creator | List visas created by user
 *bimdata.CollaborationApi* | [**getProjectDMSTree**](docs/CollaborationApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
+*bimdata.CollaborationApi* | [**getProjectFolderTree**](docs/CollaborationApi.md#getProjectFolderTree) | **GET** /cloud/{cloud_pk}/project/{id}/folder-trees | Retrieve folder tree of the project
 *bimdata.CollaborationApi* | [**getProjectFolderTreeSerializers**](docs/CollaborationApi.md#getProjectFolderTreeSerializers) | **GET** /cloud/{cloud_pk}/project/folder-trees | Retrieve folder tree for all projects
 *bimdata.CollaborationApi* | [**getProjectInvitations**](docs/CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
 *bimdata.CollaborationApi* | [**getProjectSize**](docs/CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all model files in the project
@@ -856,6 +858,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Viewpoint](docs/Viewpoint.md)
  - [bimdata.ViewpointRequest](docs/ViewpointRequest.md)
  - [bimdata.Visa](docs/Visa.md)
+ - [bimdata.VisaAttachment](docs/VisaAttachment.md)
  - [bimdata.VisaComment](docs/VisaComment.md)
  - [bimdata.VisaCommentRequest](docs/VisaCommentRequest.md)
  - [bimdata.VisaRequest](docs/VisaRequest.md)
