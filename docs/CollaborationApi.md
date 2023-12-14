@@ -68,7 +68,7 @@ Method | HTTP request | Description
 [**getProjectAccessTokens**](CollaborationApi.md#getProjectAccessTokens) | **GET** /cloud/{cloud_pk}/project/{project_pk}/access-token | Retrieve all tokens created for this project
 [**getProjectCreatorVisas**](CollaborationApi.md#getProjectCreatorVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/visa/creator | List visas created by user
 [**getProjectDMSTree**](CollaborationApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
-[**getProjectFolderTree**](CollaborationApi.md#getProjectFolderTree) | **GET** /cloud/{cloud_pk}/project/{id}/folder-trees | Retrieve folder tree of the project
+[**getProjectFolderTree**](CollaborationApi.md#getProjectFolderTree) | **GET** /cloud/{cloud_pk}/project/{id}/folder-tree | Retrieve folder tree of the project
 [**getProjectFolderTreeSerializers**](CollaborationApi.md#getProjectFolderTreeSerializers) | **GET** /cloud/{cloud_pk}/project/folder-trees | Retrieve folder tree for all projects
 [**getProjectInvitations**](CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
 [**getProjectSize**](CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all model files in the project
@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;POINT_CLOUD&#39;, &#39;DWG&#39;, &#39;OBJ&#39;, &#39;GLTF&#39;, &#39;IFC&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;DWG&#39;, &#39;POINT_CLOUD&#39;, &#39;OBJ&#39;, &#39;GLTF&#39;, &#39;DXF&#39;, &#39;IFC&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 

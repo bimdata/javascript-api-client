@@ -865,7 +865,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'POINT_CLOUD', 'DWG', 'OBJ', 'GLTF', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DWG', 'POINT_CLOUD', 'OBJ', 'GLTF', 'DXF', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -931,7 +931,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'POINT_CLOUD', 'DWG', 'OBJ', 'GLTF', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DWG', 'POINT_CLOUD', 'OBJ', 'GLTF', 'DXF', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -4150,7 +4150,7 @@ export default class CollaborationApi {
       let accepts = ['application/json'];
       let returnType = ProjectFolderTree;
       return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/{id}/folder-trees', 'GET',
+        '/cloud/{cloud_pk}/project/{id}/folder-tree', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
