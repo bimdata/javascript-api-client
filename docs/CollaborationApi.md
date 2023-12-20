@@ -69,7 +69,6 @@ Method | HTTP request | Description
 [**getProjectCreatorVisas**](CollaborationApi.md#getProjectCreatorVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/visa/creator | List visas created by user
 [**getProjectDMSTree**](CollaborationApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
 [**getProjectFolderTree**](CollaborationApi.md#getProjectFolderTree) | **GET** /cloud/{cloud_pk}/project/{id}/folder-tree | Retrieve folder tree of the project
-[**getProjectFolderTreeSerializers**](CollaborationApi.md#getProjectFolderTreeSerializers) | **GET** /cloud/{cloud_pk}/project/folder-trees | Retrieve folder tree for all projects
 [**getProjectInvitations**](CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
 [**getProjectSize**](CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all model files in the project
 [**getProjectSubTree**](CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
@@ -961,7 +960,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;DWG&#39;, &#39;POINT_CLOUD&#39;, &#39;OBJ&#39;, &#39;GLTF&#39;, &#39;DXF&#39;, &#39;IFC&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;OBJ&#39;, &#39;POINT_CLOUD&#39;, &#39;IFC&#39;, &#39;GLTF&#39;, &#39;DWG&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -4376,7 +4375,7 @@ Name | Type | Description  | Notes
 
 ## getProjectFolderTree
 
-> ProjectFolderTree getProjectFolderTree(cloudPk, id)
+> [ProjectFolderTree] getProjectFolderTree(cloudPk, id)
 
 Retrieve folder tree of the project
 
@@ -4422,67 +4421,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this project. | 
-
-### Return type
-
-[**ProjectFolderTree**](ProjectFolderTree.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getProjectFolderTreeSerializers
-
-> [ProjectFolderTree] getProjectFolderTreeSerializers(cloudPk)
-
-Retrieve folder tree for all projects
-
-Retrieve folder tree for all projects
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: ApiKey
-let ApiKey = defaultClient.authentications['ApiKey'];
-ApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-let apiInstance = new bimdata.CollaborationApi();
-let cloudPk = 56; // Number | 
-apiInstance.getProjectFolderTreeSerializers(cloudPk).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cloudPk** | **Number**|  | 
 
 ### Return type
 

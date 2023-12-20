@@ -865,7 +865,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DWG', 'POINT_CLOUD', 'OBJ', 'GLTF', 'DXF', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'POINT_CLOUD', 'IFC', 'GLTF', 'DWG', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -931,7 +931,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DWG', 'POINT_CLOUD', 'OBJ', 'GLTF', 'DXF', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'POINT_CLOUD', 'IFC', 'GLTF', 'DWG', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -4121,7 +4121,7 @@ export default class CollaborationApi {
      * Retrieve folder tree of the project
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectFolderTree} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectFolderTree>} and HTTP response
      */
     getProjectFolderTreeWithHttpInfo(cloudPk, id) {
       let postBody = null;
@@ -4148,7 +4148,7 @@ export default class CollaborationApi {
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ProjectFolderTree;
+      let returnType = [ProjectFolderTree];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}/folder-tree', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4161,58 +4161,10 @@ export default class CollaborationApi {
      * Retrieve folder tree of the project
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectFolderTree}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectFolderTree>}
      */
     getProjectFolderTree(cloudPk, id) {
       return this.getProjectFolderTreeWithHttpInfo(cloudPk, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve folder tree for all projects
-     * Retrieve folder tree for all projects
-     * @param {Number} cloudPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectFolderTree>} and HTTP response
-     */
-    getProjectFolderTreeSerializersWithHttpInfo(cloudPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectFolderTreeSerializers");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [ProjectFolderTree];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/folder-trees', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve folder tree for all projects
-     * Retrieve folder tree for all projects
-     * @param {Number} cloudPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectFolderTree>}
-     */
-    getProjectFolderTreeSerializers(cloudPk) {
-      return this.getProjectFolderTreeSerializersWithHttpInfo(cloudPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

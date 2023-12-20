@@ -268,7 +268,6 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getProjectCreatorVisas**](docs/CollaborationApi.md#getProjectCreatorVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/visa/creator | List visas created by user
 *bimdata.CollaborationApi* | [**getProjectDMSTree**](docs/CollaborationApi.md#getProjectDMSTree) | **GET** /cloud/{cloud_pk}/project/{id}/dms-tree | Retrieve the complete DMS tree
 *bimdata.CollaborationApi* | [**getProjectFolderTree**](docs/CollaborationApi.md#getProjectFolderTree) | **GET** /cloud/{cloud_pk}/project/{id}/folder-tree | Retrieve folder tree of the project
-*bimdata.CollaborationApi* | [**getProjectFolderTreeSerializers**](docs/CollaborationApi.md#getProjectFolderTreeSerializers) | **GET** /cloud/{cloud_pk}/project/folder-trees | Retrieve folder tree for all projects
 *bimdata.CollaborationApi* | [**getProjectInvitations**](docs/CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
 *bimdata.CollaborationApi* | [**getProjectSize**](docs/CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all model files in the project
 *bimdata.CollaborationApi* | [**getProjectSubTree**](docs/CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
