@@ -23,6 +23,7 @@ import CloudRequest from '../model/CloudRequest';
 import Document from '../model/Document';
 import DocumentPreviewFile from '../model/DocumentPreviewFile';
 import Folder from '../model/Folder';
+import FolderTree from '../model/FolderTree';
 import FolderUserProject from '../model/FolderUserProject';
 import FolderWithoutChildren from '../model/FolderWithoutChildren';
 import FolderWithoutChildrenRequest from '../model/FolderWithoutChildrenRequest';
@@ -46,7 +47,6 @@ import PatchedVisaValidationRequest from '../model/PatchedVisaValidationRequest'
 import Project from '../model/Project';
 import ProjectAccessToken from '../model/ProjectAccessToken';
 import ProjectAccessTokenRequest from '../model/ProjectAccessTokenRequest';
-import ProjectFolderTree from '../model/ProjectFolderTree';
 import ProjectImportRequest from '../model/ProjectImportRequest';
 import ProjectInvitation from '../model/ProjectInvitation';
 import ProjectInvitationRequest from '../model/ProjectInvitationRequest';
@@ -865,7 +865,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'OBJ', 'POINT_CLOUD', 'IFC', 'GLTF', 'DWG', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DWG', 'IFC', 'GLTF', 'POINT_CLOUD', 'OBJ', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -931,7 +931,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'OBJ', 'POINT_CLOUD', 'IFC', 'GLTF', 'DWG', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DWG', 'IFC', 'GLTF', 'POINT_CLOUD', 'OBJ', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -4121,7 +4121,7 @@ export default class CollaborationApi {
      * Retrieve folder tree of the project
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectFolderTree>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FolderTree>} and HTTP response
      */
     getProjectFolderTreeWithHttpInfo(cloudPk, id) {
       let postBody = null;
@@ -4148,7 +4148,7 @@ export default class CollaborationApi {
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ProjectFolderTree];
+      let returnType = [FolderTree];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}/folder-tree', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4161,7 +4161,7 @@ export default class CollaborationApi {
      * Retrieve folder tree of the project
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectFolderTree>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FolderTree>}
      */
     getProjectFolderTree(cloudPk, id) {
       return this.getProjectFolderTreeWithHttpInfo(cloudPk, id)

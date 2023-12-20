@@ -149,7 +149,6 @@ docs/ProcessorHandler.md
 docs/Project.md
 docs/ProjectAccessToken.md
 docs/ProjectAccessTokenRequest.md
-docs/ProjectFolderTree.md
 docs/ProjectImportRequest.md
 docs/ProjectInvitation.md
 docs/ProjectInvitationRequest.md
@@ -402,7 +401,6 @@ src/model/ProcessorHandler.js
 src/model/Project.js
 src/model/ProjectAccessToken.js
 src/model/ProjectAccessTokenRequest.js
-src/model/ProjectFolderTree.js
 src/model/ProjectImportRequest.js
 src/model/ProjectInvitation.js
 src/model/ProjectInvitationRequest.js
@@ -649,7 +647,6 @@ test/model/ProcessorHandler.spec.js
 test/model/Project.spec.js
 test/model/ProjectAccessToken.spec.js
 test/model/ProjectAccessTokenRequest.spec.js
-test/model/ProjectFolderTree.spec.js
 test/model/ProjectImportRequest.spec.js
 test/model/ProjectInvitation.spec.js
 test/model/ProjectInvitationRequest.spec.js

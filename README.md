@@ -776,7 +776,6 @@ Class | Method | HTTP request | Description
  - [bimdata.Project](docs/Project.md)
  - [bimdata.ProjectAccessToken](docs/ProjectAccessToken.md)
  - [bimdata.ProjectAccessTokenRequest](docs/ProjectAccessTokenRequest.md)
- - [bimdata.ProjectFolderTree](docs/ProjectFolderTree.md)
  - [bimdata.ProjectImportRequest](docs/ProjectImportRequest.md)
  - [bimdata.ProjectInvitation](docs/ProjectInvitation.md)
  - [bimdata.ProjectInvitationRequest](docs/ProjectInvitationRequest.md)

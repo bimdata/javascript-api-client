@@ -156,7 +156,6 @@ import ProcessorHandler from './model/ProcessorHandler';
 import Project from './model/Project';
 import ProjectAccessToken from './model/ProjectAccessToken';
 import ProjectAccessTokenRequest from './model/ProjectAccessTokenRequest';
-import ProjectFolderTree from './model/ProjectFolderTree';
 import ProjectImportRequest from './model/ProjectImportRequest';
 import ProjectInvitation from './model/ProjectInvitation';
 import ProjectInvitationRequest from './model/ProjectInvitationRequest';
@@ -1157,12 +1156,6 @@ export {
      * @property {module:model/ProjectAccessTokenRequest}
      */
     ProjectAccessTokenRequest,
-
-    /**
-     * The ProjectFolderTree model constructor.
-     * @property {module:model/ProjectFolderTree}
-     */
-    ProjectFolderTree,
 
     /**
      * The ProjectImportRequest model constructor.
