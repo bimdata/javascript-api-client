@@ -31,6 +31,7 @@ import Group from '../model/Group';
 import GroupFolder from '../model/GroupFolder';
 import GroupRequest from '../model/GroupRequest';
 import ImportGroupRequest from '../model/ImportGroupRequest';
+import LogEntry from '../model/LogEntry';
 import PatchedClassificationRequest from '../model/PatchedClassificationRequest';
 import PatchedCloudRequest from '../model/PatchedCloudRequest';
 import PatchedDocumentRequest from '../model/PatchedDocumentRequest';
@@ -865,7 +866,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DWG', 'IFC', 'GLTF', 'POINT_CLOUD', 'OBJ', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'GLTF', 'POINT_CLOUD', 'DWG', 'OBJ', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -931,7 +932,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DWG', 'IFC', 'GLTF', 'POINT_CLOUD', 'OBJ', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'GLTF', 'POINT_CLOUD', 'DWG', 'OBJ', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -3711,6 +3712,61 @@ export default class CollaborationApi {
      */
     getGroups(cloudPk, projectPk) {
       return this.getGroupsWithHttpInfo(cloudPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all logs of the project
+     * Retrieve all logs of the project  Required scopes: logs:read
+     * @param {Number} cloudPk 
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LogEntry>} and HTTP response
+     */
+    getLogsWithHttpInfo(cloudPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getLogs");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getLogs");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [LogEntry];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/logs', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all logs of the project
+     * Retrieve all logs of the project  Required scopes: logs:read
+     * @param {Number} cloudPk 
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LogEntry>}
+     */
+    getLogs(cloudPk, projectPk) {
+      return this.getLogsWithHttpInfo(cloudPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

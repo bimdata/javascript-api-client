@@ -618,6 +618,16 @@
         done();
       });
     });
+    describe('getLogs', function() {
+      it('should call getLogs successfully', function(done) {
+        //uncomment below and update the code to test getLogs
+        //instance.getLogs(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getManageGroup', function() {
       it('should call getManageGroup successfully', function(done) {
         //uncomment below and update the code to test getManageGroup

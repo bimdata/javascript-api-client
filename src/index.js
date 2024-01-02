@@ -84,6 +84,7 @@ import LayerElementRequest from './model/LayerElementRequest';
 import LayerRequest from './model/LayerRequest';
 import Line from './model/Line';
 import LineRequest from './model/LineRequest';
+import LogEntry from './model/LogEntry';
 import MarketplaceAppImage from './model/MarketplaceAppImage';
 import MarketplaceAppLight from './model/MarketplaceAppLight';
 import MarketplaceAppLightRequest from './model/MarketplaceAppLightRequest';
@@ -724,6 +725,12 @@ export {
      * @property {module:model/LineRequest}
      */
     LineRequest,
+
+    /**
+     * The LogEntry model constructor.
+     * @property {module:model/LogEntry}
+     */
+    LogEntry,
 
     /**
      * The MarketplaceAppImage model constructor.

@@ -76,6 +76,7 @@ docs/LayerElementRequest.md
 docs/LayerRequest.md
 docs/Line.md
 docs/LineRequest.md
+docs/LogEntry.md
 docs/MarketplaceAppImage.md
 docs/MarketplaceAppLight.md
 docs/MarketplaceAppLightRequest.md
@@ -329,6 +330,7 @@ src/model/LayerElementRequest.js
 src/model/LayerRequest.js
 src/model/Line.js
 src/model/LineRequest.js
+src/model/LogEntry.js
 src/model/MarketplaceAppImage.js
 src/model/MarketplaceAppLight.js
 src/model/MarketplaceAppLightRequest.js
@@ -575,6 +577,7 @@ test/model/LayerElementRequest.spec.js
 test/model/LayerRequest.spec.js
 test/model/Line.spec.js
 test/model/LineRequest.spec.js
+test/model/LogEntry.spec.js
 test/model/MarketplaceAppImage.spec.js
 test/model/MarketplaceAppLight.spec.js
 test/model/MarketplaceAppLightRequest.spec.js

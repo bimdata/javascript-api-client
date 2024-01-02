@@ -260,6 +260,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getFolders**](docs/CollaborationApi.md#getFolders) | **GET** /cloud/{cloud_pk}/project/{project_pk}/folder | Retrieve all folders
 *bimdata.CollaborationApi* | [**getGroup**](docs/CollaborationApi.md#getGroup) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/group/{id} | Retrieve a group
 *bimdata.CollaborationApi* | [**getGroups**](docs/CollaborationApi.md#getGroups) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/group | Retrieve all groups
+*bimdata.CollaborationApi* | [**getLogs**](docs/CollaborationApi.md#getLogs) | **GET** /cloud/{cloud_pk}/project/{project_pk}/logs | Retrieve all logs of the project
 *bimdata.CollaborationApi* | [**getManageGroup**](docs/CollaborationApi.md#getManageGroup) | **GET** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Retrieve a group
 *bimdata.CollaborationApi* | [**getManageGroups**](docs/CollaborationApi.md#getManageGroups) | **GET** /cloud/{cloud_pk}/project/{project_pk}/group | Retrieve all groups
 *bimdata.CollaborationApi* | [**getProject**](docs/CollaborationApi.md#getProject) | **GET** /cloud/{cloud_pk}/project/{id} | Retrieve a project
@@ -704,6 +705,7 @@ Class | Method | HTTP request | Description
  - [bimdata.LayerRequest](docs/LayerRequest.md)
  - [bimdata.Line](docs/Line.md)
  - [bimdata.LineRequest](docs/LineRequest.md)
+ - [bimdata.LogEntry](docs/LogEntry.md)
  - [bimdata.MarketplaceAppImage](docs/MarketplaceAppImage.md)
  - [bimdata.MarketplaceAppLight](docs/MarketplaceAppLight.md)
  - [bimdata.MarketplaceAppLightRequest](docs/MarketplaceAppLightRequest.md)
