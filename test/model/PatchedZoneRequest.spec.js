@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property storeyUuid (base name: "storey_uuid")', function() {
+      // uncomment below and update the code to test the property storeyUuid
+      //var instance = new bimdata.PatchedZoneRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **spaces** | [**[ZoneSpaceRequest]**](ZoneSpaceRequest.md) |  | [optional] 
 **color** | **String** |  | [optional] 
 **order** | **Number** |  | [optional] 
+**storeyUuid** | **String** | IFC element or element type UUID | [optional] 
 
 

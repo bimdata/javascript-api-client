@@ -71,6 +71,9 @@ class PatchedZoneRequest {
             if (data.hasOwnProperty('order')) {
                 obj['order'] = ApiClient.convertToType(data['order'], 'Number');
             }
+            if (data.hasOwnProperty('storey_uuid')) {
+                obj['storey_uuid'] = ApiClient.convertToType(data['storey_uuid'], 'String');
+            }
         }
         return obj;
     }
@@ -112,6 +115,12 @@ PatchedZoneRequest.prototype['color'] = undefined;
  * @member {Number} order
  */
 PatchedZoneRequest.prototype['order'] = undefined;
+
+/**
+ * IFC element or element type UUID
+ * @member {String} storey_uuid
+ */
+PatchedZoneRequest.prototype['storey_uuid'] = undefined;
 
 
 

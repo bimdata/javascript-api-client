@@ -56,6 +56,9 @@ class PatchedFolderWithoutChildrenRequest {
             if (data.hasOwnProperty('default_permission')) {
                 obj['default_permission'] = ApiClient.convertToType(data['default_permission'], 'Number');
             }
+            if (data.hasOwnProperty('propagate')) {
+                obj['propagate'] = ApiClient.convertToType(data['propagate'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -79,6 +82,12 @@ PatchedFolderWithoutChildrenRequest.prototype['name'] = undefined;
  * @member {module:model/PatchedFolderWithoutChildrenRequest.DefaultPermissionEnum} default_permission
  */
 PatchedFolderWithoutChildrenRequest.prototype['default_permission'] = undefined;
+
+/**
+ * @member {Boolean} propagate
+ * @default false
+ */
+PatchedFolderWithoutChildrenRequest.prototype['propagate'] = false;
 
 
 

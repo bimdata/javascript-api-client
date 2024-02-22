@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property propagate (base name: "propagate")', function() {
+      // uncomment below and update the code to test the property propagate
+      //var instance = new bimdata.PatchedFolderWithoutChildrenRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

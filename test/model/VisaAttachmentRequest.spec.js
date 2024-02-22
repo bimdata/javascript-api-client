@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.FolderWithoutChildrenRequest();
+    instance = new bimdata.VisaAttachmentRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,16 @@
       object[property] = value;
   }
 
-  describe('FolderWithoutChildrenRequest', function() {
-    it('should create an instance of FolderWithoutChildrenRequest', function() {
-      // uncomment below and update the code to test FolderWithoutChildrenRequest
-      //var instance = new bimdata.FolderWithoutChildrenRequest();
-      //expect(instance).to.be.a(bimdata.FolderWithoutChildrenRequest);
+  describe('VisaAttachmentRequest', function() {
+    it('should create an instance of VisaAttachmentRequest', function() {
+      // uncomment below and update the code to test VisaAttachmentRequest
+      //var instance = new bimdata.VisaAttachmentRequest();
+      //expect(instance).to.be.a(bimdata.VisaAttachmentRequest);
     });
 
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
-      //var instance = new bimdata.FolderWithoutChildrenRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.FolderWithoutChildrenRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property defaultPermission (base name: "default_permission")', function() {
-      // uncomment below and update the code to test the property defaultPermission
-      //var instance = new bimdata.FolderWithoutChildrenRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property propagate (base name: "propagate")', function() {
-      // uncomment below and update the code to test the property propagate
-      //var instance = new bimdata.FolderWithoutChildrenRequest();
+    it('should have the property attachment (base name: "attachment")', function() {
+      // uncomment below and update the code to test the property attachment
+      //var instance = new bimdata.VisaAttachmentRequest();
       //expect(instance).to.be();
     });
 

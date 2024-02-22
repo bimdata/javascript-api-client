@@ -72,6 +72,9 @@ class ZoneRequest {
             if (data.hasOwnProperty('order')) {
                 obj['order'] = ApiClient.convertToType(data['order'], 'Number');
             }
+            if (data.hasOwnProperty('storey_uuid')) {
+                obj['storey_uuid'] = ApiClient.convertToType(data['storey_uuid'], 'String');
+            }
         }
         return obj;
     }
@@ -113,6 +116,12 @@ ZoneRequest.prototype['color'] = undefined;
  * @member {Number} order
  */
 ZoneRequest.prototype['order'] = undefined;
+
+/**
+ * IFC element or element type UUID
+ * @member {String} storey_uuid
+ */
+ZoneRequest.prototype['storey_uuid'] = undefined;
 
 
 

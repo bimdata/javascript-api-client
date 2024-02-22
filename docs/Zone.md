@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **updatedAt** | **Date** |  | [readonly] 
 **color** | **String** |  | [optional] 
 **order** | **Number** |  | [optional] 
+**storeyUuid** | **String** | IFC element or element type UUID | [optional] 
 
 

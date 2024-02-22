@@ -859,6 +859,7 @@ Class | Method | HTTP request | Description
  - [bimdata.ViewpointRequest](docs/ViewpointRequest.md)
  - [bimdata.Visa](docs/Visa.md)
  - [bimdata.VisaAttachment](docs/VisaAttachment.md)
+ - [bimdata.VisaAttachmentRequest](docs/VisaAttachmentRequest.md)
  - [bimdata.VisaComment](docs/VisaComment.md)
  - [bimdata.VisaCommentRequest](docs/VisaCommentRequest.md)
  - [bimdata.VisaRequest](docs/VisaRequest.md)

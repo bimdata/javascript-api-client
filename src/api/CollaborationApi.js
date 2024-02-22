@@ -192,7 +192,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
+      let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded', 'application/json'];
       let accepts = ['application/json'];
       let returnType = VisaAttachment;
       return this.apiClient.callApi(
@@ -866,7 +866,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'GLTF', 'POINT_CLOUD', 'DWG', 'OBJ', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'POINT_CLOUD', 'OBJ', 'IFC', 'DXF', 'GLTF', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -932,7 +932,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'GLTF', 'POINT_CLOUD', 'DWG', 'OBJ', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'POINT_CLOUD', 'OBJ', 'IFC', 'DXF', 'GLTF', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -2581,7 +2581,7 @@ export default class CollaborationApi {
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
+      let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded', 'application/json'];
       let accepts = ['application/json'];
       let returnType = VisaAttachment;
       return this.apiClient.callApi(

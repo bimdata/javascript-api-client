@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
+- **Content-Type**: multipart/form-data, application/x-www-form-urlencoded, application/json
 - **Accept**: application/json
 
 
@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;GLTF&#39;, &#39;POINT_CLOUD&#39;, &#39;DWG&#39;, &#39;OBJ&#39;, &#39;IFC&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;POINT_CLOUD&#39;, &#39;OBJ&#39;, &#39;IFC&#39;, &#39;DXF&#39;, &#39;GLTF&#39;, &#39;DWG&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -2744,7 +2744,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
+- **Content-Type**: multipart/form-data, application/x-www-form-urlencoded, application/json
 - **Accept**: application/json
 
 

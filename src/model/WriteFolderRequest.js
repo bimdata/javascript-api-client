@@ -49,11 +49,11 @@ class WriteFolderRequest {
         if (data) {
             obj = obj || new WriteFolderRequest();
 
-            if (data.hasOwnProperty('parent_id')) {
-                obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('parent_id')) {
+                obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
             }
             if (data.hasOwnProperty('default_permission')) {
                 obj['default_permission'] = ApiClient.convertToType(data['default_permission'], 'Number');
@@ -69,15 +69,15 @@ class WriteFolderRequest {
 }
 
 /**
- * @member {Number} parent_id
- */
-WriteFolderRequest.prototype['parent_id'] = undefined;
-
-/**
  * Name of the folder
  * @member {String} name
  */
 WriteFolderRequest.prototype['name'] = undefined;
+
+/**
+ * @member {Number} parent_id
+ */
+WriteFolderRequest.prototype['parent_id'] = undefined;
 
 /**
  * Permission for a Folder  * `1` - denied * `50` - read_only * `100` - read_write

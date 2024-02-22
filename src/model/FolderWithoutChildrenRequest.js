@@ -58,6 +58,9 @@ class FolderWithoutChildrenRequest {
             if (data.hasOwnProperty('default_permission')) {
                 obj['default_permission'] = ApiClient.convertToType(data['default_permission'], 'Number');
             }
+            if (data.hasOwnProperty('propagate')) {
+                obj['propagate'] = ApiClient.convertToType(data['propagate'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -81,6 +84,12 @@ FolderWithoutChildrenRequest.prototype['name'] = undefined;
  * @member {module:model/FolderWithoutChildrenRequest.DefaultPermissionEnum} default_permission
  */
 FolderWithoutChildrenRequest.prototype['default_permission'] = undefined;
+
+/**
+ * @member {Boolean} propagate
+ * @default false
+ */
+FolderWithoutChildrenRequest.prototype['propagate'] = false;
 
 
 

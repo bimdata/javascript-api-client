@@ -232,6 +232,7 @@ docs/Viewpoint.md
 docs/ViewpointRequest.md
 docs/Visa.md
 docs/VisaAttachment.md
+docs/VisaAttachmentRequest.md
 docs/VisaComment.md
 docs/VisaCommentRequest.md
 docs/VisaRequest.md
@@ -484,6 +485,7 @@ src/model/Viewpoint.js
 src/model/ViewpointRequest.js
 src/model/Visa.js
 src/model/VisaAttachment.js
+src/model/VisaAttachmentRequest.js
 src/model/VisaComment.js
 src/model/VisaCommentRequest.js
 src/model/VisaRequest.js
@@ -731,6 +733,7 @@ test/model/Viewpoint.spec.js
 test/model/ViewpointRequest.spec.js
 test/model/Visa.spec.js
 test/model/VisaAttachment.spec.js
+test/model/VisaAttachmentRequest.spec.js
 test/model/VisaComment.spec.js
 test/model/VisaCommentRequest.spec.js
 test/model/VisaRequest.spec.js
