@@ -62,7 +62,6 @@ docs/GroupFolderRead.md
 docs/GroupRequest.md
 docs/IfcAccessToken.md
 docs/IfcAccessTokenRequest.md
-docs/IfcApi.md
 docs/IfcExportRequest.md
 docs/IfcMergeRequest.md
 docs/IfcOptimizeRequest.md
@@ -255,7 +254,6 @@ mocha.opts
 src/ApiClient.js
 src/api/BcfApi.js
 src/api/CollaborationApi.js
-src/api/IfcApi.js
 src/api/ModelApi.js
 src/api/SsoApi.js
 src/api/WebhookApi.js
@@ -504,7 +502,6 @@ src/model/ZoneSpaceRelationRequest.js
 src/model/ZoneSpaceRequest.js
 test/api/BcfApi.spec.js
 test/api/CollaborationApi.spec.js
-test/api/IfcApi.spec.js
 test/api/ModelApi.spec.js
 test/api/SsoApi.spec.js
 test/api/WebhookApi.spec.js

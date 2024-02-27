@@ -257,7 +257,6 @@ import ZoneSpaceRelationRequest from './model/ZoneSpaceRelationRequest';
 import ZoneSpaceRequest from './model/ZoneSpaceRequest';
 import BcfApi from './api/BcfApi';
 import CollaborationApi from './api/CollaborationApi';
-import IfcApi from './api/IfcApi';
 import ModelApi from './api/ModelApi';
 import SsoApi from './api/SsoApi';
 import WebhookApi from './api/WebhookApi';
@@ -1764,12 +1763,6 @@ export {
     * @property {module:api/CollaborationApi}
     */
     CollaborationApi,
-
-    /**
-    * The IfcApi service constructor.
-    * @property {module:api/IfcApi}
-    */
-    IfcApi,
 
     /**
     * The ModelApi service constructor.
