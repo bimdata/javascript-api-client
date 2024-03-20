@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property attachment (base name: "attachment")', function() {
+      // uncomment below and update the code to test the property attachment
+      //var instance = new bimdata.VisaValidation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

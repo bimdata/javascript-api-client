@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **hasCommented** | **Boolean** | Return True if validator has commented the visa | [readonly] 
 **createdAt** | **Date** |  | [readonly] 
 **updatedAt** | **Date** |  | [readonly] 
+**attachment** | **String** |  | [optional] 
 
 
 

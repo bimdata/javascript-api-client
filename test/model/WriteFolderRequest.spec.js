@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(bimdata.WriteFolderRequest);
     });
 
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
+    it('should have the property defaultPermission (base name: "default_permission")', function() {
+      // uncomment below and update the code to test the property defaultPermission
       //var instance = new bimdata.WriteFolderRequest();
       //expect(instance).to.be();
     });
@@ -66,8 +66,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property defaultPermission (base name: "default_permission")', function() {
-      // uncomment below and update the code to test the property defaultPermission
+    it('should have the property parentId (base name: "parent_id")', function() {
+      // uncomment below and update the code to test the property parentId
       //var instance = new bimdata.WriteFolderRequest();
       //expect(instance).to.be();
     });

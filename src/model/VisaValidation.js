@@ -83,6 +83,9 @@ class VisaValidation {
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
+            if (data.hasOwnProperty('attachment')) {
+                obj['attachment'] = ApiClient.convertToType(data['attachment'], 'String');
+            }
         }
         return obj;
     }
@@ -126,6 +129,11 @@ VisaValidation.prototype['created_at'] = undefined;
  * @member {Date} updated_at
  */
 VisaValidation.prototype['updated_at'] = undefined;
+
+/**
+ * @member {String} attachment
+ */
+VisaValidation.prototype['attachment'] = undefined;
 
 
 

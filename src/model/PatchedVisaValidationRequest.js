@@ -50,6 +50,9 @@ class PatchedVisaValidationRequest {
             if (data.hasOwnProperty('validator_id')) {
                 obj['validator_id'] = ApiClient.convertToType(data['validator_id'], 'Number');
             }
+            if (data.hasOwnProperty('attachment')) {
+                obj['attachment'] = ApiClient.convertToType(data['attachment'], File);
+            }
         }
         return obj;
     }
@@ -62,6 +65,11 @@ class PatchedVisaValidationRequest {
  * @member {Number} validator_id
  */
 PatchedVisaValidationRequest.prototype['validator_id'] = undefined;
+
+/**
+ * @member {File} attachment
+ */
+PatchedVisaValidationRequest.prototype['attachment'] = undefined;
 
 
 
