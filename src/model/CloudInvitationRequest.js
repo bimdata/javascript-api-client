@@ -57,6 +57,15 @@ class CloudInvitationRequest {
             if (data.hasOwnProperty('redirect_uri')) {
                 obj['redirect_uri'] = ApiClient.convertToType(data['redirect_uri'], 'String');
             }
+            if (data.hasOwnProperty('role')) {
+                obj['role'] = ApiClient.convertToType(data['role'], 'Number');
+            }
+            if (data.hasOwnProperty('project_role')) {
+                obj['project_role'] = ApiClient.convertToType(data['project_role'], 'Number');
+            }
+            if (data.hasOwnProperty('in_all_projects')) {
+                obj['in_all_projects'] = ApiClient.convertToType(data['in_all_projects'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -76,8 +85,76 @@ CloudInvitationRequest.prototype['email'] = undefined;
  */
 CloudInvitationRequest.prototype['redirect_uri'] = undefined;
 
+/**
+ * * `100` - admin * `50` - user
+ * @member {module:model/CloudInvitationRequest.RoleEnum} role
+ * @default RoleEnum.100
+ */
+CloudInvitationRequest.prototype['role'] = RoleEnum.100;
+
+/**
+ * * `100` - admin * `50` - user * `25` - guest
+ * @member {module:model/CloudInvitationRequest.ProjectRoleEnum} project_role
+ */
+CloudInvitationRequest.prototype['project_role'] = undefined;
+
+/**
+ * When inviting non-admin cloud user, specify if the user will be invited in all existing projects. project_role needs to be specified.
+ * @member {Boolean} in_all_projects
+ * @default false
+ */
+CloudInvitationRequest.prototype['in_all_projects'] = false;
 
 
+
+
+
+/**
+ * Allowed values for the <code>role</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+CloudInvitationRequest['RoleEnum'] = {
+
+    /**
+     * value: 100
+     * @const
+     */
+    "100": 100,
+
+    /**
+     * value: 50
+     * @const
+     */
+    "50": 50
+};
+
+
+/**
+ * Allowed values for the <code>project_role</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+CloudInvitationRequest['ProjectRoleEnum'] = {
+
+    /**
+     * value: 100
+     * @const
+     */
+    "100": 100,
+
+    /**
+     * value: 50
+     * @const
+     */
+    "50": 50,
+
+    /**
+     * value: 25
+     * @const
+     */
+    "25": 25
+};
 
 
 

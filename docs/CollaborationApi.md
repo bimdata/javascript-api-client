@@ -91,7 +91,7 @@ Method | HTTP request | Description
 [**getVisas**](CollaborationApi.md#getVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/visa | List all visas of a document
 [**importFromProject**](CollaborationApi.md#importFromProject) | **POST** /cloud/{cloud_pk}/project/{id}/import_from | Import data from a project
 [**importManageGroup**](CollaborationApi.md#importManageGroup) | **POST** /cloud/{cloud_pk}/project/{project_pk}/group/import | Import a group from another project
-[**inviteCloudUser**](CollaborationApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | Invite a cloud administrator
+[**inviteCloudUser**](CollaborationApi.md#inviteCloudUser) | **POST** /cloud/{cloud_pk}/invitation | Invite a cloud member
 [**inviteProjectUser**](CollaborationApi.md#inviteProjectUser) | **POST** /cloud/{cloud_pk}/project/{project_pk}/invitation | Invite a project member
 [**leaveProject**](CollaborationApi.md#leaveProject) | **POST** /cloud/{cloud_pk}/project/{id}/leave | Leave the project
 [**leaveVersionDocumentHistory**](CollaborationApi.md#leaveVersionDocumentHistory) | **POST** /cloud/{cloud_pk}/project/{project_pk}/document/{document_pk}/history/{id}/leave | Leave the history version
@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;OBJ&#39;, &#39;DWG&#39;, &#39;POINT_CLOUD&#39;, &#39;DXF&#39;, &#39;IFC&#39;, &#39;GLTF&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;OBJ&#39;, &#39;POINT_CLOUD&#39;, &#39;DXF&#39;, &#39;DWG&#39;, &#39;GLTF&#39;, &#39;IFC&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -5845,9 +5845,9 @@ Name | Type | Description  | Notes
 
 > CloudInvitation inviteCloudUser(cloudPk, cloudInvitationRequest)
 
-Invite a cloud administrator
+Invite a cloud member
 
-Invite cloud administrators only. To invite in a project, see inviteProjectUser. You can&#39;t invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object  Required scopes: org:manage
+Invite a cloud member. To invite in a project, see inviteProjectUser. You can&#39;t invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object  Required scopes: org:manage
 
 ### Example
 

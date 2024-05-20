@@ -66,6 +66,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property role (base name: "role")', function() {
+      // uncomment below and update the code to test the property role
+      //var instance = new bimdata.CloudInvitationRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property projectRole (base name: "project_role")', function() {
+      // uncomment below and update the code to test the property projectRole
+      //var instance = new bimdata.CloudInvitationRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property inAllProjects (base name: "in_all_projects")', function() {
+      // uncomment below and update the code to test the property inAllProjects
+      //var instance = new bimdata.CloudInvitationRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

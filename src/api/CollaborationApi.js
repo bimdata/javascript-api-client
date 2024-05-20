@@ -866,7 +866,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'OBJ', 'DWG', 'POINT_CLOUD', 'DXF', 'IFC', 'GLTF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'POINT_CLOUD', 'DXF', 'DWG', 'GLTF', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -932,7 +932,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'OBJ', 'DWG', 'POINT_CLOUD', 'DXF', 'IFC', 'GLTF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'POINT_CLOUD', 'DXF', 'DWG', 'GLTF', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -5445,8 +5445,8 @@ export default class CollaborationApi {
 
 
     /**
-     * Invite a cloud administrator
-     * Invite cloud administrators only. To invite in a project, see inviteProjectUser. You can't invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object  Required scopes: org:manage
+     * Invite a cloud member
+     * Invite a cloud member. To invite in a project, see inviteProjectUser. You can't invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object  Required scopes: org:manage
      * @param {Number} cloudPk 
      * @param {module:model/CloudInvitationRequest} cloudInvitationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CloudInvitation} and HTTP response
@@ -5484,8 +5484,8 @@ export default class CollaborationApi {
     }
 
     /**
-     * Invite a cloud administrator
-     * Invite cloud administrators only. To invite in a project, see inviteProjectUser. You can't invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object  Required scopes: org:manage
+     * Invite a cloud member
+     * Invite a cloud member. To invite in a project, see inviteProjectUser. You can't invite a user already in the cloud. Create multiple invitations of the same email in the same cloud will generate multiple invitation emails but not multiple invitation object  Required scopes: org:manage
      * @param {Number} cloudPk 
      * @param {module:model/CloudInvitationRequest} cloudInvitationRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CloudInvitation}

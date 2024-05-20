@@ -25,11 +25,10 @@ class CloudInvitation {
      * @param id {Number} 
      * @param email {String} email of the user to invite
      * @param redirectUri {String} User will be redirected to this uri when they accept the invitation
-     * @param role {module:model/CloudInvitation.RoleEnum} * `100` - admin * `50` - user
      */
-    constructor(id, email, redirectUri, role) { 
+    constructor(id, email, redirectUri) { 
         
-        CloudInvitation.initialize(this, id, email, redirectUri, role);
+        CloudInvitation.initialize(this, id, email, redirectUri);
     }
 
     /**
@@ -37,11 +36,10 @@ class CloudInvitation {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, email, redirectUri, role) { 
+    static initialize(obj, id, email, redirectUri) { 
         obj['id'] = id;
         obj['email'] = email;
         obj['redirect_uri'] = redirectUri;
-        obj['role'] = role;
     }
 
     /**
@@ -66,6 +64,12 @@ class CloudInvitation {
             }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'Number');
+            }
+            if (data.hasOwnProperty('project_role')) {
+                obj['project_role'] = ApiClient.convertToType(data['project_role'], 'Number');
+            }
+            if (data.hasOwnProperty('in_all_projects')) {
+                obj['in_all_projects'] = ApiClient.convertToType(data['in_all_projects'], 'Boolean');
             }
         }
         return obj;
@@ -94,8 +98,22 @@ CloudInvitation.prototype['redirect_uri'] = undefined;
 /**
  * * `100` - admin * `50` - user
  * @member {module:model/CloudInvitation.RoleEnum} role
+ * @default RoleEnum.100
  */
-CloudInvitation.prototype['role'] = undefined;
+CloudInvitation.prototype['role'] = RoleEnum.100;
+
+/**
+ * * `100` - admin * `50` - user * `25` - guest
+ * @member {module:model/CloudInvitation.ProjectRoleEnum} project_role
+ */
+CloudInvitation.prototype['project_role'] = undefined;
+
+/**
+ * When inviting non-admin cloud user, specify if the user will be invited in all existing projects. project_role needs to be specified.
+ * @member {Boolean} in_all_projects
+ * @default false
+ */
+CloudInvitation.prototype['in_all_projects'] = false;
 
 
 
@@ -119,6 +137,33 @@ CloudInvitation['RoleEnum'] = {
      * @const
      */
     "50": 50
+};
+
+
+/**
+ * Allowed values for the <code>project_role</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+CloudInvitation['ProjectRoleEnum'] = {
+
+    /**
+     * value: 100
+     * @const
+     */
+    "100": 100,
+
+    /**
+     * value: 50
+     * @const
+     */
+    "50": 50,
+
+    /**
+     * value: 25
+     * @const
+     */
+    "25": 25
 };
 
 
