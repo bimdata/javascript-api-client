@@ -866,7 +866,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'POINT_CLOUD', 'DWG', 'IFC', 'DXF', 'GLTF', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'POINT_CLOUD', 'DXF', 'DWG', 'GLTF', 'OBJ', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -932,7 +932,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'POINT_CLOUD', 'DWG', 'IFC', 'DXF', 'GLTF', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'POINT_CLOUD', 'DXF', 'DWG', 'GLTF', 'OBJ', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -3172,6 +3172,7 @@ export default class CollaborationApi {
      * @param {String} opts.fileNameContains 
      * @param {String} opts.fileNameEndswith 
      * @param {String} opts.fileNameStartswith 
+     * @param {Boolean} opts.hasVisa 
      * @param {String} opts.name 
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
@@ -3182,7 +3183,10 @@ export default class CollaborationApi {
      * @param {String} opts.visaCreatorEmail 
      * @param {Date} opts.visaDeadlineAfter 
      * @param {Date} opts.visaDeadlineBefore 
-     * @param {module:model/String} opts.visaStatus * `O` - opened * `P` - paused * `C` - closed
+     * @param {Boolean} opts.visaPastDeadline if True, Get documents that have at least one visa opened with a deadline in past
+     * @param {Boolean} opts.visaPastDeadlineStrict if True, Get documents that *only* have visa opened with a deadline in past
+     * @param {module:model/String} opts.visaStatus Get documents that have at least one visa in the requested status  * `O` - opened * `P` - paused * `C` - closed
+     * @param {module:model/String} opts.visaStatusStrict Get documents that *exclusively* have visa in the requested status  * `O` - opened * `P` - paused * `C` - closed
      * @param {String} opts.visaValidationStatus 
      * @param {String} opts.visaValidatorEmail 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
@@ -3215,6 +3219,7 @@ export default class CollaborationApi {
         'file_name__contains': opts['fileNameContains'],
         'file_name__endswith': opts['fileNameEndswith'],
         'file_name__startswith': opts['fileNameStartswith'],
+        'has__visa': opts['hasVisa'],
         'name': opts['name'],
         'name__contains': opts['nameContains'],
         'name__endswith': opts['nameEndswith'],
@@ -3225,7 +3230,10 @@ export default class CollaborationApi {
         'visa__creator_email': opts['visaCreatorEmail'],
         'visa__deadline_after': opts['visaDeadlineAfter'],
         'visa__deadline_before': opts['visaDeadlineBefore'],
+        'visa__past__deadline': opts['visaPastDeadline'],
+        'visa__past__deadline__strict': opts['visaPastDeadlineStrict'],
         'visa__status': opts['visaStatus'],
+        'visa__status__strict': opts['visaStatusStrict'],
         'visa__validation_status': opts['visaValidationStatus'],
         'visa__validator_email': opts['visaValidatorEmail']
       };
@@ -3262,6 +3270,7 @@ export default class CollaborationApi {
      * @param {String} opts.fileNameContains 
      * @param {String} opts.fileNameEndswith 
      * @param {String} opts.fileNameStartswith 
+     * @param {Boolean} opts.hasVisa 
      * @param {String} opts.name 
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
@@ -3272,7 +3281,10 @@ export default class CollaborationApi {
      * @param {String} opts.visaCreatorEmail 
      * @param {Date} opts.visaDeadlineAfter 
      * @param {Date} opts.visaDeadlineBefore 
-     * @param {module:model/String} opts.visaStatus * `O` - opened * `P` - paused * `C` - closed
+     * @param {Boolean} opts.visaPastDeadline if True, Get documents that have at least one visa opened with a deadline in past
+     * @param {Boolean} opts.visaPastDeadlineStrict if True, Get documents that *only* have visa opened with a deadline in past
+     * @param {module:model/String} opts.visaStatus Get documents that have at least one visa in the requested status  * `O` - opened * `P` - paused * `C` - closed
+     * @param {module:model/String} opts.visaStatusStrict Get documents that *exclusively* have visa in the requested status  * `O` - opened * `P` - paused * `C` - closed
      * @param {String} opts.visaValidationStatus 
      * @param {String} opts.visaValidatorEmail 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
@@ -3365,6 +3377,7 @@ export default class CollaborationApi {
      * @param {String} opts.fileNameContains 
      * @param {String} opts.fileNameEndswith 
      * @param {String} opts.fileNameStartswith 
+     * @param {Boolean} opts.hasVisa 
      * @param {String} opts.name 
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
@@ -3375,7 +3388,10 @@ export default class CollaborationApi {
      * @param {String} opts.visaCreatorEmail 
      * @param {Date} opts.visaDeadlineAfter 
      * @param {Date} opts.visaDeadlineBefore 
-     * @param {module:model/String} opts.visaStatus * `O` - opened * `P` - paused * `C` - closed
+     * @param {Boolean} opts.visaPastDeadline if True, Get documents that have at least one visa opened with a deadline in past
+     * @param {Boolean} opts.visaPastDeadlineStrict if True, Get documents that *only* have visa opened with a deadline in past
+     * @param {module:model/String} opts.visaStatus Get documents that have at least one visa in the requested status  * `O` - opened * `P` - paused * `C` - closed
+     * @param {module:model/String} opts.visaStatusStrict Get documents that *exclusively* have visa in the requested status  * `O` - opened * `P` - paused * `C` - closed
      * @param {String} opts.visaValidationStatus 
      * @param {String} opts.visaValidatorEmail 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Document>} and HTTP response
@@ -3413,6 +3429,7 @@ export default class CollaborationApi {
         'file_name__contains': opts['fileNameContains'],
         'file_name__endswith': opts['fileNameEndswith'],
         'file_name__startswith': opts['fileNameStartswith'],
+        'has__visa': opts['hasVisa'],
         'name': opts['name'],
         'name__contains': opts['nameContains'],
         'name__endswith': opts['nameEndswith'],
@@ -3423,7 +3440,10 @@ export default class CollaborationApi {
         'visa__creator_email': opts['visaCreatorEmail'],
         'visa__deadline_after': opts['visaDeadlineAfter'],
         'visa__deadline_before': opts['visaDeadlineBefore'],
+        'visa__past__deadline': opts['visaPastDeadline'],
+        'visa__past__deadline__strict': opts['visaPastDeadlineStrict'],
         'visa__status': opts['visaStatus'],
+        'visa__status__strict': opts['visaStatusStrict'],
         'visa__validation_status': opts['visaValidationStatus'],
         'visa__validator_email': opts['visaValidatorEmail']
       };
@@ -3461,6 +3481,7 @@ export default class CollaborationApi {
      * @param {String} opts.fileNameContains 
      * @param {String} opts.fileNameEndswith 
      * @param {String} opts.fileNameStartswith 
+     * @param {Boolean} opts.hasVisa 
      * @param {String} opts.name 
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
@@ -3471,7 +3492,10 @@ export default class CollaborationApi {
      * @param {String} opts.visaCreatorEmail 
      * @param {Date} opts.visaDeadlineAfter 
      * @param {Date} opts.visaDeadlineBefore 
-     * @param {module:model/String} opts.visaStatus * `O` - opened * `P` - paused * `C` - closed
+     * @param {Boolean} opts.visaPastDeadline if True, Get documents that have at least one visa opened with a deadline in past
+     * @param {Boolean} opts.visaPastDeadlineStrict if True, Get documents that *only* have visa opened with a deadline in past
+     * @param {module:model/String} opts.visaStatus Get documents that have at least one visa in the requested status  * `O` - opened * `P` - paused * `C` - closed
+     * @param {module:model/String} opts.visaStatusStrict Get documents that *exclusively* have visa in the requested status  * `O` - opened * `P` - paused * `C` - closed
      * @param {String} opts.visaValidationStatus 
      * @param {String} opts.visaValidatorEmail 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Document>}
@@ -4067,9 +4091,16 @@ export default class CollaborationApi {
      * List visas created by user in a project  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.deadlineAfter 
+     * @param {Date} opts.deadlineBefore 
+     * @param {Boolean} opts.hasPastDeadline 
+     * @param {module:model/String} opts.status * `O` - opened * `P` - paused * `C` - closed
+     * @param {String} opts.validationStatus 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Visa>} and HTTP response
      */
-    getProjectCreatorVisasWithHttpInfo(cloudPk, projectPk) {
+    getProjectCreatorVisasWithHttpInfo(cloudPk, projectPk, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -4085,6 +4116,11 @@ export default class CollaborationApi {
         'project_pk': projectPk
       };
       let queryParams = {
+        'deadline_after': opts['deadlineAfter'],
+        'deadline_before': opts['deadlineBefore'],
+        'has__past_deadline': opts['hasPastDeadline'],
+        'status': opts['status'],
+        'validation_status': opts['validationStatus']
       };
       let headerParams = {
       };
@@ -4107,10 +4143,16 @@ export default class CollaborationApi {
      * List visas created by user in a project  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.deadlineAfter 
+     * @param {Date} opts.deadlineBefore 
+     * @param {Boolean} opts.hasPastDeadline 
+     * @param {module:model/String} opts.status * `O` - opened * `P` - paused * `C` - closed
+     * @param {String} opts.validationStatus 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Visa>}
      */
-    getProjectCreatorVisas(cloudPk, projectPk) {
-      return this.getProjectCreatorVisasWithHttpInfo(cloudPk, projectPk)
+    getProjectCreatorVisas(cloudPk, projectPk, opts) {
+      return this.getProjectCreatorVisasWithHttpInfo(cloudPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4515,9 +4557,16 @@ export default class CollaborationApi {
      * List visas where user is a validator in a project  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.deadlineAfter 
+     * @param {Date} opts.deadlineBefore 
+     * @param {Boolean} opts.hasPastDeadline 
+     * @param {module:model/String} opts.status * `O` - opened * `P` - paused * `C` - closed
+     * @param {String} opts.validationStatus 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Visa>} and HTTP response
      */
-    getProjectValidatorVisasWithHttpInfo(cloudPk, projectPk) {
+    getProjectValidatorVisasWithHttpInfo(cloudPk, projectPk, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -4533,6 +4582,11 @@ export default class CollaborationApi {
         'project_pk': projectPk
       };
       let queryParams = {
+        'deadline_after': opts['deadlineAfter'],
+        'deadline_before': opts['deadlineBefore'],
+        'has__past_deadline': opts['hasPastDeadline'],
+        'status': opts['status'],
+        'validation_status': opts['validationStatus']
       };
       let headerParams = {
       };
@@ -4555,10 +4609,16 @@ export default class CollaborationApi {
      * List visas where user is a validator in a project  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.deadlineAfter 
+     * @param {Date} opts.deadlineBefore 
+     * @param {Boolean} opts.hasPastDeadline 
+     * @param {module:model/String} opts.status * `O` - opened * `P` - paused * `C` - closed
+     * @param {String} opts.validationStatus 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Visa>}
      */
-    getProjectValidatorVisas(cloudPk, projectPk) {
-      return this.getProjectValidatorVisasWithHttpInfo(cloudPk, projectPk)
+    getProjectValidatorVisas(cloudPk, projectPk, opts) {
+      return this.getProjectValidatorVisasWithHttpInfo(cloudPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

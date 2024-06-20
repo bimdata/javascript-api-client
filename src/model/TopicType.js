@@ -57,9 +57,6 @@ class TopicType {
             if (data.hasOwnProperty('topic_type')) {
                 obj['topic_type'] = ApiClient.convertToType(data['topic_type'], 'String');
             }
-            if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
-            }
         }
         return obj;
     }
@@ -76,12 +73,6 @@ TopicType.prototype['id'] = undefined;
  * @member {String} topic_type
  */
 TopicType.prototype['topic_type'] = undefined;
-
-/**
- * This field is automatically provided by the route, you don't need to provide it in the body
- * @member {Number} project
- */
-TopicType.prototype['project'] = undefined;
 
 
 

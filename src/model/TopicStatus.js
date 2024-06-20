@@ -60,9 +60,6 @@ class TopicStatus {
             if (data.hasOwnProperty('color')) {
                 obj['color'] = ApiClient.convertToType(data['color'], 'String');
             }
-            if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
-            }
         }
         return obj;
     }
@@ -84,12 +81,6 @@ TopicStatus.prototype['topic_status'] = undefined;
  * @member {String} color
  */
 TopicStatus.prototype['color'] = undefined;
-
-/**
- * This field is automatically provided by the route, you don't need to provide it in the body
- * @member {Number} project
- */
-TopicStatus.prototype['project'] = undefined;
 
 
 

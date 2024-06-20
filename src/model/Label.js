@@ -57,9 +57,6 @@ class Label {
             if (data.hasOwnProperty('label')) {
                 obj['label'] = ApiClient.convertToType(data['label'], 'String');
             }
-            if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
-            }
         }
         return obj;
     }
@@ -76,12 +73,6 @@ Label.prototype['id'] = undefined;
  * @member {String} label
  */
 Label.prototype['label'] = undefined;
-
-/**
- * This field is automatically provided by the route, you don't need to provide it in the body
- * @member {Number} project
- */
-Label.prototype['project'] = undefined;
 
 
 

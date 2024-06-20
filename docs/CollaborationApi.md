@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;POINT_CLOUD&#39;, &#39;DWG&#39;, &#39;IFC&#39;, &#39;DXF&#39;, &#39;GLTF&#39;, &#39;OBJ&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;POINT_CLOUD&#39;, &#39;DXF&#39;, &#39;DWG&#39;, &#39;GLTF&#39;, &#39;OBJ&#39;, &#39;IFC&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -3425,6 +3425,7 @@ let opts = {
   'fileNameContains': "fileNameContains_example", // String | 
   'fileNameEndswith': "fileNameEndswith_example", // String | 
   'fileNameStartswith': "fileNameStartswith_example", // String | 
+  'hasVisa': true, // Boolean | 
   'name': "name_example", // String | 
   'nameContains': "nameContains_example", // String | 
   'nameEndswith': "nameEndswith_example", // String | 
@@ -3435,7 +3436,10 @@ let opts = {
   'visaCreatorEmail': "visaCreatorEmail_example", // String | 
   'visaDeadlineAfter': new Date("2013-10-20"), // Date | 
   'visaDeadlineBefore': new Date("2013-10-20"), // Date | 
-  'visaStatus': "visaStatus_example", // String | * `O` - opened * `P` - paused * `C` - closed
+  'visaPastDeadline': true, // Boolean | if True, Get documents that have at least one visa opened with a deadline in past
+  'visaPastDeadlineStrict': true, // Boolean | if True, Get documents that *only* have visa opened with a deadline in past
+  'visaStatus': "visaStatus_example", // String | Get documents that have at least one visa in the requested status  * `O` - opened * `P` - paused * `C` - closed
+  'visaStatusStrict': "visaStatusStrict_example", // String | Get documents that *exclusively* have visa in the requested status  * `O` - opened * `P` - paused * `C` - closed
   'visaValidationStatus': "visaValidationStatus_example", // String | 
   'visaValidatorEmail': "visaValidatorEmail_example" // String | 
 };
@@ -3465,6 +3469,7 @@ Name | Type | Description  | Notes
  **fileNameContains** | **String**|  | [optional] 
  **fileNameEndswith** | **String**|  | [optional] 
  **fileNameStartswith** | **String**|  | [optional] 
+ **hasVisa** | **Boolean**|  | [optional] 
  **name** | **String**|  | [optional] 
  **nameContains** | **String**|  | [optional] 
  **nameEndswith** | **String**|  | [optional] 
@@ -3475,7 +3480,10 @@ Name | Type | Description  | Notes
  **visaCreatorEmail** | **String**|  | [optional] 
  **visaDeadlineAfter** | **Date**|  | [optional] 
  **visaDeadlineBefore** | **Date**|  | [optional] 
- **visaStatus** | **String**| * &#x60;O&#x60; - opened * &#x60;P&#x60; - paused * &#x60;C&#x60; - closed | [optional] 
+ **visaPastDeadline** | **Boolean**| if True, Get documents that have at least one visa opened with a deadline in past | [optional] 
+ **visaPastDeadlineStrict** | **Boolean**| if True, Get documents that *only* have visa opened with a deadline in past | [optional] 
+ **visaStatus** | **String**| Get documents that have at least one visa in the requested status  * &#x60;O&#x60; - opened * &#x60;P&#x60; - paused * &#x60;C&#x60; - closed | [optional] 
+ **visaStatusStrict** | **String**| Get documents that *exclusively* have visa in the requested status  * &#x60;O&#x60; - opened * &#x60;P&#x60; - paused * &#x60;C&#x60; - closed | [optional] 
  **visaValidationStatus** | **String**|  | [optional] 
  **visaValidatorEmail** | **String**|  | [optional] 
 
@@ -3604,6 +3612,7 @@ let opts = {
   'fileNameContains': "fileNameContains_example", // String | 
   'fileNameEndswith': "fileNameEndswith_example", // String | 
   'fileNameStartswith': "fileNameStartswith_example", // String | 
+  'hasVisa': true, // Boolean | 
   'name': "name_example", // String | 
   'nameContains': "nameContains_example", // String | 
   'nameEndswith': "nameEndswith_example", // String | 
@@ -3614,7 +3623,10 @@ let opts = {
   'visaCreatorEmail': "visaCreatorEmail_example", // String | 
   'visaDeadlineAfter': new Date("2013-10-20"), // Date | 
   'visaDeadlineBefore': new Date("2013-10-20"), // Date | 
-  'visaStatus': "visaStatus_example", // String | * `O` - opened * `P` - paused * `C` - closed
+  'visaPastDeadline': true, // Boolean | if True, Get documents that have at least one visa opened with a deadline in past
+  'visaPastDeadlineStrict': true, // Boolean | if True, Get documents that *only* have visa opened with a deadline in past
+  'visaStatus': "visaStatus_example", // String | Get documents that have at least one visa in the requested status  * `O` - opened * `P` - paused * `C` - closed
+  'visaStatusStrict': "visaStatusStrict_example", // String | Get documents that *exclusively* have visa in the requested status  * `O` - opened * `P` - paused * `C` - closed
   'visaValidationStatus': "visaValidationStatus_example", // String | 
   'visaValidatorEmail': "visaValidatorEmail_example" // String | 
 };
@@ -3645,6 +3657,7 @@ Name | Type | Description  | Notes
  **fileNameContains** | **String**|  | [optional] 
  **fileNameEndswith** | **String**|  | [optional] 
  **fileNameStartswith** | **String**|  | [optional] 
+ **hasVisa** | **Boolean**|  | [optional] 
  **name** | **String**|  | [optional] 
  **nameContains** | **String**|  | [optional] 
  **nameEndswith** | **String**|  | [optional] 
@@ -3655,7 +3668,10 @@ Name | Type | Description  | Notes
  **visaCreatorEmail** | **String**|  | [optional] 
  **visaDeadlineAfter** | **Date**|  | [optional] 
  **visaDeadlineBefore** | **Date**|  | [optional] 
- **visaStatus** | **String**| * &#x60;O&#x60; - opened * &#x60;P&#x60; - paused * &#x60;C&#x60; - closed | [optional] 
+ **visaPastDeadline** | **Boolean**| if True, Get documents that have at least one visa opened with a deadline in past | [optional] 
+ **visaPastDeadlineStrict** | **Boolean**| if True, Get documents that *only* have visa opened with a deadline in past | [optional] 
+ **visaStatus** | **String**| Get documents that have at least one visa in the requested status  * &#x60;O&#x60; - opened * &#x60;P&#x60; - paused * &#x60;C&#x60; - closed | [optional] 
+ **visaStatusStrict** | **String**| Get documents that *exclusively* have visa in the requested status  * &#x60;O&#x60; - opened * &#x60;P&#x60; - paused * &#x60;C&#x60; - closed | [optional] 
  **visaValidationStatus** | **String**|  | [optional] 
  **visaValidatorEmail** | **String**|  | [optional] 
 
@@ -4313,7 +4329,7 @@ Name | Type | Description  | Notes
 
 ## getProjectCreatorVisas
 
-> [Visa] getProjectCreatorVisas(cloudPk, projectPk)
+> [Visa] getProjectCreatorVisas(cloudPk, projectPk, opts)
 
 List visas created by user
 
@@ -4344,7 +4360,14 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.getProjectCreatorVisas(cloudPk, projectPk).then((data) => {
+let opts = {
+  'deadlineAfter': new Date("2013-10-20"), // Date | 
+  'deadlineBefore': new Date("2013-10-20"), // Date | 
+  'hasPastDeadline': true, // Boolean | 
+  'status': "status_example", // String | * `O` - opened * `P` - paused * `C` - closed
+  'validationStatus': "validationStatus_example" // String | 
+};
+apiInstance.getProjectCreatorVisas(cloudPk, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4359,6 +4382,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **deadlineAfter** | **Date**|  | [optional] 
+ **deadlineBefore** | **Date**|  | [optional] 
+ **hasPastDeadline** | **Boolean**|  | [optional] 
+ **status** | **String**| * &#x60;O&#x60; - opened * &#x60;P&#x60; - paused * &#x60;C&#x60; - closed | [optional] 
+ **validationStatus** | **String**|  | [optional] 
 
 ### Return type
 
@@ -4825,7 +4853,7 @@ Name | Type | Description  | Notes
 
 ## getProjectValidatorVisas
 
-> [Visa] getProjectValidatorVisas(cloudPk, projectPk)
+> [Visa] getProjectValidatorVisas(cloudPk, projectPk, opts)
 
 List visas where user is a validator
 
@@ -4856,7 +4884,14 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.CollaborationApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.getProjectValidatorVisas(cloudPk, projectPk).then((data) => {
+let opts = {
+  'deadlineAfter': new Date("2013-10-20"), // Date | 
+  'deadlineBefore': new Date("2013-10-20"), // Date | 
+  'hasPastDeadline': true, // Boolean | 
+  'status': "status_example", // String | * `O` - opened * `P` - paused * `C` - closed
+  'validationStatus': "validationStatus_example" // String | 
+};
+apiInstance.getProjectValidatorVisas(cloudPk, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4871,6 +4906,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **deadlineAfter** | **Date**|  | [optional] 
+ **deadlineBefore** | **Date**|  | [optional] 
+ **hasPastDeadline** | **Boolean**|  | [optional] 
+ **status** | **String**| * &#x60;O&#x60; - opened * &#x60;P&#x60; - paused * &#x60;C&#x60; - closed | [optional] 
+ **validationStatus** | **String**|  | [optional] 
 
 ### Return type
 
