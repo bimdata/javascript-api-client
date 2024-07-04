@@ -180,6 +180,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bimdataViewerLayout (base name: "bimdata_viewer_layout")', function() {
+      // uncomment below and update the code to test the property bimdataViewerLayout
+      //var instance = new bimdata.PatchedFullTopicRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

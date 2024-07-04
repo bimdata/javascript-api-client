@@ -26,5 +26,6 @@ Name | Type | Description | Notes
 **comments** | [**[Comment]**](Comment.md) |  | [optional] 
 **viewpoints** | [**[Viewpoint]**](Viewpoint.md) |  | [optional] 
 **project** | **Number** |  | 
+**bimdataViewerLayout** | **{String: Object}** | Non standard field. JSON describing bimdataViewerLayout. | [optional] 
 
 

@@ -121,6 +121,9 @@ class FullTopic {
             if (data.hasOwnProperty('project')) {
                 obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
+            if (data.hasOwnProperty('bimdata_viewer_layout')) {
+                obj['bimdata_viewer_layout'] = ApiClient.convertToType(data['bimdata_viewer_layout'], {'String': Object});
+            }
         }
         return obj;
     }
@@ -239,6 +242,12 @@ FullTopic.prototype['viewpoints'] = undefined;
  * @member {Number} project
  */
 FullTopic.prototype['project'] = undefined;
+
+/**
+ * Non standard field. JSON describing bimdataViewerLayout.
+ * @member {Object.<String, Object>} bimdata_viewer_layout
+ */
+FullTopic.prototype['bimdata_viewer_layout'] = undefined;
 
 
 

@@ -113,6 +113,9 @@ class Topic {
             if (data.hasOwnProperty('project')) {
                 obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
+            if (data.hasOwnProperty('bimdata_viewer_layout')) {
+                obj['bimdata_viewer_layout'] = ApiClient.convertToType(data['bimdata_viewer_layout'], {'String': Object});
+            }
         }
         return obj;
     }
@@ -221,6 +224,12 @@ Topic.prototype['index'] = undefined;
  * @member {Number} project
  */
 Topic.prototype['project'] = undefined;
+
+/**
+ * Non standard field. JSON describing bimdataViewerLayout.
+ * @member {Object.<String, Object>} bimdata_viewer_layout
+ */
+Topic.prototype['bimdata_viewer_layout'] = undefined;
 
 
 
