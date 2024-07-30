@@ -77,7 +77,7 @@ class CheckProjectAccess {
                 obj['user_role'] = ApiClient.convertToType(data['user_role'], 'Number');
             }
             if (data.hasOwnProperty('user')) {
-                obj['user'] = User.constructFromObject(data['user']);
+                obj['user'] = ApiClient.convertToType(data['user'], User);
             }
         }
         return obj;
@@ -150,7 +150,13 @@ CheckProjectAccess['UserRoleEnum'] = {
      * value: 25
      * @const
      */
-    "25": 25
+    "25": 25,
+
+    /**
+     * value: null
+     * @const
+     */
+    "null": null
 };
 
 
