@@ -82,6 +82,7 @@ import Layer from './model/Layer';
 import LayerElement from './model/LayerElement';
 import LayerElementRequest from './model/LayerElementRequest';
 import LayerRequest from './model/LayerRequest';
+import LightDocument from './model/LightDocument';
 import Line from './model/Line';
 import LineRequest from './model/LineRequest';
 import LogEntry from './model/LogEntry';
@@ -244,6 +245,7 @@ import VisaCommentRequest from './model/VisaCommentRequest';
 import VisaRequest from './model/VisaRequest';
 import VisaValidation from './model/VisaValidation';
 import VisaValidationRequest from './model/VisaValidationRequest';
+import VisaWithDocument from './model/VisaWithDocument';
 import Visibility from './model/Visibility';
 import VisibilityRequest from './model/VisibilityRequest';
 import WebHook from './model/WebHook';
@@ -713,6 +715,12 @@ export {
      * @property {module:model/LayerRequest}
      */
     LayerRequest,
+
+    /**
+     * The LightDocument model constructor.
+     * @property {module:model/LightDocument}
+     */
+    LightDocument,
 
     /**
      * The Line model constructor.
@@ -1685,6 +1693,12 @@ export {
      * @property {module:model/VisaValidationRequest}
      */
     VisaValidationRequest,
+
+    /**
+     * The VisaWithDocument model constructor.
+     * @property {module:model/VisaWithDocument}
+     */
+    VisaWithDocument,
 
     /**
      * The Visibility model constructor.

@@ -73,6 +73,7 @@ docs/Layer.md
 docs/LayerElement.md
 docs/LayerElementRequest.md
 docs/LayerRequest.md
+docs/LightDocument.md
 docs/Line.md
 docs/LineRequest.md
 docs/LogEntry.md
@@ -237,6 +238,7 @@ docs/VisaCommentRequest.md
 docs/VisaRequest.md
 docs/VisaValidation.md
 docs/VisaValidationRequest.md
+docs/VisaWithDocument.md
 docs/Visibility.md
 docs/VisibilityRequest.md
 docs/WebHook.md
@@ -327,6 +329,7 @@ src/model/Layer.js
 src/model/LayerElement.js
 src/model/LayerElementRequest.js
 src/model/LayerRequest.js
+src/model/LightDocument.js
 src/model/Line.js
 src/model/LineRequest.js
 src/model/LogEntry.js
@@ -489,6 +492,7 @@ src/model/VisaCommentRequest.js
 src/model/VisaRequest.js
 src/model/VisaValidation.js
 src/model/VisaValidationRequest.js
+src/model/VisaWithDocument.js
 src/model/Visibility.js
 src/model/VisibilityRequest.js
 src/model/WebHook.js
@@ -574,6 +578,7 @@ test/model/Layer.spec.js
 test/model/LayerElement.spec.js
 test/model/LayerElementRequest.spec.js
 test/model/LayerRequest.spec.js
+test/model/LightDocument.spec.js
 test/model/Line.spec.js
 test/model/LineRequest.spec.js
 test/model/LogEntry.spec.js
@@ -736,6 +741,7 @@ test/model/VisaCommentRequest.spec.js
 test/model/VisaRequest.spec.js
 test/model/VisaValidation.spec.js
 test/model/VisaValidationRequest.spec.js
+test/model/VisaWithDocument.spec.js
 test/model/Visibility.spec.js
 test/model/VisibilityRequest.spec.js
 test/model/WebHook.spec.js

@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;DWG&#39;, &#39;OBJ&#39;, &#39;DXF&#39;, &#39;POINT_CLOUD&#39;, &#39;IFC&#39;, &#39;GLTF&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;POINT_CLOUD&#39;, &#39;GLTF&#39;, &#39;DWG&#39;, &#39;IFC&#39;, &#39;OBJ&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -4329,7 +4329,7 @@ Name | Type | Description  | Notes
 
 ## getProjectCreatorVisas
 
-> [Visa] getProjectCreatorVisas(cloudPk, projectPk, opts)
+> [VisaWithDocument] getProjectCreatorVisas(cloudPk, projectPk, opts)
 
 List visas created by user
 
@@ -4390,7 +4390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Visa]**](Visa.md)
+[**[VisaWithDocument]**](VisaWithDocument.md)
 
 ### Authorization
 
@@ -4853,7 +4853,7 @@ Name | Type | Description  | Notes
 
 ## getProjectValidatorVisas
 
-> [Visa] getProjectValidatorVisas(cloudPk, projectPk, opts)
+> [VisaWithDocument] getProjectValidatorVisas(cloudPk, projectPk, opts)
 
 List visas where user is a validator
 
@@ -4914,7 +4914,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Visa]**](Visa.md)
+[**[VisaWithDocument]**](VisaWithDocument.md)
 
 ### Authorization
 

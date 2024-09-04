@@ -70,6 +70,7 @@ import VisaCommentRequest from '../model/VisaCommentRequest';
 import VisaRequest from '../model/VisaRequest';
 import VisaValidation from '../model/VisaValidation';
 import VisaValidationRequest from '../model/VisaValidationRequest';
+import VisaWithDocument from '../model/VisaWithDocument';
 import WriteFolderRequest from '../model/WriteFolderRequest';
 
 /**
@@ -866,7 +867,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DWG', 'OBJ', 'DXF', 'POINT_CLOUD', 'IFC', 'GLTF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'POINT_CLOUD', 'GLTF', 'DWG', 'IFC', 'OBJ', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -932,7 +933,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DWG', 'OBJ', 'DXF', 'POINT_CLOUD', 'IFC', 'GLTF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'POINT_CLOUD', 'GLTF', 'DWG', 'IFC', 'OBJ', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -4097,7 +4098,7 @@ export default class CollaborationApi {
      * @param {Boolean} opts.hasPastDeadline 
      * @param {module:model/String} opts.status * `O` - opened * `P` - paused * `C` - closed
      * @param {String} opts.validationStatus 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Visa>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VisaWithDocument>} and HTTP response
      */
     getProjectCreatorVisasWithHttpInfo(cloudPk, projectPk, opts) {
       opts = opts || {};
@@ -4130,7 +4131,7 @@ export default class CollaborationApi {
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Visa];
+      let returnType = [VisaWithDocument];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/me/visa/creator', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4149,7 +4150,7 @@ export default class CollaborationApi {
      * @param {Boolean} opts.hasPastDeadline 
      * @param {module:model/String} opts.status * `O` - opened * `P` - paused * `C` - closed
      * @param {String} opts.validationStatus 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Visa>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VisaWithDocument>}
      */
     getProjectCreatorVisas(cloudPk, projectPk, opts) {
       return this.getProjectCreatorVisasWithHttpInfo(cloudPk, projectPk, opts)
@@ -4563,7 +4564,7 @@ export default class CollaborationApi {
      * @param {Boolean} opts.hasPastDeadline 
      * @param {module:model/String} opts.status * `O` - opened * `P` - paused * `C` - closed
      * @param {String} opts.validationStatus 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Visa>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VisaWithDocument>} and HTTP response
      */
     getProjectValidatorVisasWithHttpInfo(cloudPk, projectPk, opts) {
       opts = opts || {};
@@ -4596,7 +4597,7 @@ export default class CollaborationApi {
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Visa];
+      let returnType = [VisaWithDocument];
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{project_pk}/me/visa/validator', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4615,7 +4616,7 @@ export default class CollaborationApi {
      * @param {Boolean} opts.hasPastDeadline 
      * @param {module:model/String} opts.status * `O` - opened * `P` - paused * `C` - closed
      * @param {String} opts.validationStatus 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Visa>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VisaWithDocument>}
      */
     getProjectValidatorVisas(cloudPk, projectPk, opts) {
       return this.getProjectValidatorVisasWithHttpInfo(cloudPk, projectPk, opts)
