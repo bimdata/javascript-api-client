@@ -25,7 +25,7 @@ class Building {
      * @alias module:model/Building
      * @param uuid {String} IFC element or element type UUID
      * @param name {String} Name of the building
-     * @param bimdataElevation {String} Elevation computed by BIMData on storey's objects geometries.
+     * @param bimdataElevation {Number} Elevation computed by BIMData on storey's objects geometries.
      * @param plans {Array.<module:model/ModelWithPositioningPlan>} 
      * @param plansUnreachableCount {Number} 
      */
@@ -65,7 +65,7 @@ class Building {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('bimdata_elevation')) {
-                obj['bimdata_elevation'] = ApiClient.convertToType(data['bimdata_elevation'], 'String');
+                obj['bimdata_elevation'] = ApiClient.convertToType(data['bimdata_elevation'], 'Number');
             }
             if (data.hasOwnProperty('plans')) {
                 obj['plans'] = ApiClient.convertToType(data['plans'], [ModelWithPositioningPlan]);
@@ -94,7 +94,7 @@ Building.prototype['name'] = undefined;
 
 /**
  * Elevation computed by BIMData on storey's objects geometries.
- * @member {String} bimdata_elevation
+ * @member {Number} bimdata_elevation
  */
 Building.prototype['bimdata_elevation'] = undefined;
 
