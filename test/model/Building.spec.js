@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bimdataElevation (base name: "bimdata_elevation")', function() {
+      // uncomment below and update the code to test the property bimdataElevation
+      //var instance = new bimdata.Building();
+      //expect(instance).to.be();
+    });
+
     it('should have the property plans (base name: "plans")', function() {
       // uncomment below and update the code to test the property plans
       //var instance = new bimdata.Building();

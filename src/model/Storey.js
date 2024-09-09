@@ -25,12 +25,13 @@ class Storey {
      * @alias module:model/Storey
      * @param uuid {String} IFC element or element type UUID
      * @param name {String} Name of the storey
+     * @param bimdataElevation {String} Elevation computed by BIMData on storey's objects geometries.
      * @param plans {Array.<module:model/ModelWithPositioningPlan>} 
      * @param plansUnreachableCount {Number} 
      */
-    constructor(uuid, name, plans, plansUnreachableCount) { 
+    constructor(uuid, name, bimdataElevation, plans, plansUnreachableCount) { 
         
-        Storey.initialize(this, uuid, name, plans, plansUnreachableCount);
+        Storey.initialize(this, uuid, name, bimdataElevation, plans, plansUnreachableCount);
     }
 
     /**
@@ -38,9 +39,10 @@ class Storey {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, uuid, name, plans, plansUnreachableCount) { 
+    static initialize(obj, uuid, name, bimdataElevation, plans, plansUnreachableCount) { 
         obj['uuid'] = uuid;
         obj['name'] = name;
+        obj['bimdata_elevation'] = bimdataElevation;
         obj['plans'] = plans;
         obj['plans_unreachable_count'] = plansUnreachableCount;
     }
@@ -61,6 +63,9 @@ class Storey {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('bimdata_elevation')) {
+                obj['bimdata_elevation'] = ApiClient.convertToType(data['bimdata_elevation'], 'String');
             }
             if (data.hasOwnProperty('plans')) {
                 obj['plans'] = ApiClient.convertToType(data['plans'], [ModelWithPositioningPlan]);
@@ -86,6 +91,12 @@ Storey.prototype['uuid'] = undefined;
  * @member {String} name
  */
 Storey.prototype['name'] = undefined;
+
+/**
+ * Elevation computed by BIMData on storey's objects geometries.
+ * @member {String} bimdata_elevation
+ */
+Storey.prototype['bimdata_elevation'] = undefined;
 
 /**
  * @member {Array.<module:model/ModelWithPositioningPlan>} plans

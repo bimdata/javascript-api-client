@@ -50,6 +50,9 @@ class PatchedStoreyBuildingRequest {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('bimdata_elevation')) {
+                obj['bimdata_elevation'] = ApiClient.convertToType(data['bimdata_elevation'], 'Number');
+            }
         }
         return obj;
     }
@@ -61,6 +64,11 @@ class PatchedStoreyBuildingRequest {
  * @member {String} name
  */
 PatchedStoreyBuildingRequest.prototype['name'] = undefined;
+
+/**
+ * @member {Number} bimdata_elevation
+ */
+PatchedStoreyBuildingRequest.prototype['bimdata_elevation'] = undefined;
 
 
 
