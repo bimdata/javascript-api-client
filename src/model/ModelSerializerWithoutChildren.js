@@ -26,7 +26,7 @@ class ModelSerializerWithoutChildren {
      * Constructs a new <code>ModelSerializerWithoutChildren</code>.
      * @alias module:model/ModelSerializerWithoutChildren
      * @param id {Number} 
-     * @param type {module:model/ModelSerializerWithoutChildren.TypeEnum} * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING
+     * @param type {module:model/ModelSerializerWithoutChildren.TypeEnum} * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING * `PHOTOSPHERE` - PHOTOSPHERE * `PHOTOSPHERE_BUILDING` - PHOTOSPHERE_BUILDING
      * @param creator {module:model/User} 
      * @param status {String} 
      * @param createdAt {Date} 
@@ -202,7 +202,7 @@ ModelSerializerWithoutChildren.prototype['id'] = undefined;
 ModelSerializerWithoutChildren.prototype['name'] = undefined;
 
 /**
- * * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING
+ * * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING * `PHOTOSPHERE` - PHOTOSPHERE * `PHOTOSPHERE_BUILDING` - PHOTOSPHERE_BUILDING
  * @member {module:model/ModelSerializerWithoutChildren.TypeEnum} type
  */
 ModelSerializerWithoutChildren.prototype['type'] = undefined;
@@ -423,7 +423,19 @@ ModelSerializerWithoutChildren['TypeEnum'] = {
      * value: "METABUILDING"
      * @const
      */
-    "METABUILDING": "METABUILDING"
+    "METABUILDING": "METABUILDING",
+
+    /**
+     * value: "PHOTOSPHERE"
+     * @const
+     */
+    "PHOTOSPHERE": "PHOTOSPHERE",
+
+    /**
+     * value: "PHOTOSPHERE_BUILDING"
+     * @const
+     */
+    "PHOTOSPHERE_BUILDING": "PHOTOSPHERE_BUILDING"
 };
 
 

@@ -358,6 +358,26 @@
         done();
       });
     });
+    describe('createPhotosphere', function() {
+      it('should call createPhotosphere successfully', function(done) {
+        //uncomment below and update the code to test createPhotosphere
+        //instance.createPhotosphere(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createPhotosphereBuilding', function() {
+      it('should call createPhotosphereBuilding successfully', function(done) {
+        //uncomment below and update the code to test createPhotosphereBuilding
+        //instance.createPhotosphereBuilding(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createPropertySet', function() {
       it('should call createPropertySet successfully', function(done) {
         //uncomment below and update the code to test createPropertySet

@@ -2342,6 +2342,128 @@ export default class ModelApi {
 
 
     /**
+     * Create a photopshere model from an image file
+     * Create a photosphere model to be used in BIMData services  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk 
+     * @param {Number} projectPk 
+     * @param {module:model/CreateModelRequest} createModelRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Model} and HTTP response
+     */
+    createPhotosphereWithHttpInfo(cloudPk, projectPk, createModelRequest) {
+      let postBody = createModelRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createPhotosphere");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createPhotosphere");
+      }
+      // verify the required parameter 'createModelRequest' is set
+      if (createModelRequest === undefined || createModelRequest === null) {
+        throw new Error("Missing the required parameter 'createModelRequest' when calling createPhotosphere");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Model;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/create-photosphere', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a photopshere model from an image file
+     * Create a photosphere model to be used in BIMData services  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk 
+     * @param {Number} projectPk 
+     * @param {module:model/CreateModelRequest} createModelRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Model}
+     */
+    createPhotosphere(cloudPk, projectPk, createModelRequest) {
+      return this.createPhotosphereWithHttpInfo(cloudPk, projectPk, createModelRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create an empty Photosphere Building Model
+     * Create an empty Photosphere Building Model  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk 
+     * @param {Number} projectPk 
+     * @param {module:model/CreateBuildingByNameRequest} createBuildingByNameRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Model} and HTTP response
+     */
+    createPhotosphereBuildingWithHttpInfo(cloudPk, projectPk, createBuildingByNameRequest) {
+      let postBody = createBuildingByNameRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createPhotosphereBuilding");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createPhotosphereBuilding");
+      }
+      // verify the required parameter 'createBuildingByNameRequest' is set
+      if (createBuildingByNameRequest === undefined || createBuildingByNameRequest === null) {
+        throw new Error("Missing the required parameter 'createBuildingByNameRequest' when calling createPhotosphereBuilding");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Model;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/create-photosphere-building', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create an empty Photosphere Building Model
+     * Create an empty Photosphere Building Model  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk 
+     * @param {Number} projectPk 
+     * @param {module:model/CreateBuildingByNameRequest} createBuildingByNameRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Model}
+     */
+    createPhotosphereBuilding(cloudPk, projectPk, createBuildingByNameRequest) {
+      return this.createPhotosphereBuildingWithHttpInfo(cloudPk, projectPk, createBuildingByNameRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create one or many PropertySet
      *  Bulk create available. You can either post an object or a list of objects. Is you post a list, the response will be a list (in the same order) of created objects or of errors if any If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors   Required scopes: ifc:write, model:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -6992,7 +7114,7 @@ export default class ModelApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.source * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
      * @param {Array.<module:model/String>} opts.status * `C` - completed * `D` - deleted * `P` - pending * `W` - waiting * `I` - in process * `E` - errored * `X` - won't fix
-     * @param {Array.<module:model/String>} opts.type * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING
+     * @param {Array.<module:model/String>} opts.type * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING * `PHOTOSPHERE` - PHOTOSPHERE * `PHOTOSPHERE_BUILDING` - PHOTOSPHERE_BUILDING
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Model>} and HTTP response
      */
     getModelsWithHttpInfo(cloudPk, projectPk, opts) {
@@ -7040,7 +7162,7 @@ export default class ModelApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.source * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
      * @param {Array.<module:model/String>} opts.status * `C` - completed * `D` - deleted * `P` - pending * `W` - waiting * `I` - in process * `E` - errored * `X` - won't fix
-     * @param {Array.<module:model/String>} opts.type * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING
+     * @param {Array.<module:model/String>} opts.type * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING * `PHOTOSPHERE` - PHOTOSPHERE * `PHOTOSPHERE_BUILDING` - PHOTOSPHERE_BUILDING
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Model>}
      */
     getModels(cloudPk, projectPk, opts) {

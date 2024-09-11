@@ -343,6 +343,8 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**createModelPropertyDefinition**](docs/ModelApi.md#createModelPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition | Create a PropertyDefinition on the model
 *bimdata.ModelApi* | [**createModelUnit**](docs/ModelApi.md#createModelUnit) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit | Create a Unit on a model
 *bimdata.ModelApi* | [**createMultiPageModel**](docs/ModelApi.md#createMultiPageModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/create-multipage-model | Create a multi page model
+*bimdata.ModelApi* | [**createPhotosphere**](docs/ModelApi.md#createPhotosphere) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-photosphere | Create a photopshere model from an image file
+*bimdata.ModelApi* | [**createPhotosphereBuilding**](docs/ModelApi.md#createPhotosphereBuilding) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-photosphere-building | Create an empty Photosphere Building Model
 *bimdata.ModelApi* | [**createPropertySet**](docs/ModelApi.md#createPropertySet) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset | Create one or many PropertySet
 *bimdata.ModelApi* | [**createPropertySetElementRelations**](docs/ModelApi.md#createPropertySetElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset-element | Create association between PropertySet and element
 *bimdata.ModelApi* | [**createRawElements**](docs/ModelApi.md#createRawElements) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/raw | Create elements in an optimized format
