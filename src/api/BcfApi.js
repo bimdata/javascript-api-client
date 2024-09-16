@@ -1879,9 +1879,13 @@ export default class BcfApi {
      * Retrieve all comments  Required scopes: bcf:read
      * @param {Number} projectsPk A unique integer value identifying this project.
      * @param {String} topicsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.filter OData filters as defined in BCF spec
+     * @param {String} opts.orderby OData orderby as defined in BCF spec
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Comment>} and HTTP response
      */
-    getCommentsWithHttpInfo(projectsPk, topicsGuid) {
+    getCommentsWithHttpInfo(projectsPk, topicsGuid, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
@@ -1897,6 +1901,8 @@ export default class BcfApi {
         'topics_guid': topicsGuid
       };
       let queryParams = {
+        '$filter': opts['filter'],
+        '$orderby': opts['orderby']
       };
       let headerParams = {
       };
@@ -1919,10 +1925,13 @@ export default class BcfApi {
      * Retrieve all comments  Required scopes: bcf:read
      * @param {Number} projectsPk A unique integer value identifying this project.
      * @param {String} topicsGuid 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.filter OData filters as defined in BCF spec
+     * @param {String} opts.orderby OData orderby as defined in BCF spec
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Comment>}
      */
-    getComments(projectsPk, topicsGuid) {
-      return this.getCommentsWithHttpInfo(projectsPk, topicsGuid)
+    getComments(projectsPk, topicsGuid, opts) {
+      return this.getCommentsWithHttpInfo(projectsPk, topicsGuid, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2091,6 +2100,8 @@ export default class BcfApi {
      * This is not a standard route. It responds with all topics, their viewpoints and their comments  Required scopes: bcf:read
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filter OData filters as defined in BCF spec
+     * @param {String} opts.orderby OData orderby as defined in BCF spec
      * @param {String} opts.format 
      * @param {Array.<Number>} opts.ifcs 
      * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
@@ -2109,6 +2120,8 @@ export default class BcfApi {
         'projects_pk': projectsPk
       };
       let queryParams = {
+        '$filter': opts['filter'],
+        '$orderby': opts['orderby'],
         'format': opts['format'],
         'ifcs': this.apiClient.buildCollectionParam(opts['ifcs'], 'multi'),
         'img_format': opts['imgFormat'],
@@ -2135,6 +2148,8 @@ export default class BcfApi {
      * This is not a standard route. It responds with all topics, their viewpoints and their comments  Required scopes: bcf:read
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filter OData filters as defined in BCF spec
+     * @param {String} opts.orderby OData orderby as defined in BCF spec
      * @param {String} opts.format 
      * @param {Array.<Number>} opts.ifcs 
      * @param {module:model/String} opts.imgFormat All snapshot_data will be returned as url instead of base64
@@ -2590,6 +2605,8 @@ export default class BcfApi {
      * Retrieve all topics  Required scopes: bcf:read
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filter OData filters as defined in BCF spec
+     * @param {String} opts.orderby OData orderby as defined in BCF spec
      * @param {String} opts.format 
      * @param {Array.<Number>} opts.ifcs 
      * @param {Array.<Number>} opts.models 
@@ -2607,6 +2624,8 @@ export default class BcfApi {
         'projects_pk': projectsPk
       };
       let queryParams = {
+        '$filter': opts['filter'],
+        '$orderby': opts['orderby'],
         'format': opts['format'],
         'ifcs': this.apiClient.buildCollectionParam(opts['ifcs'], 'multi'),
         'models': this.apiClient.buildCollectionParam(opts['models'], 'multi')
@@ -2632,6 +2651,8 @@ export default class BcfApi {
      * Retrieve all topics  Required scopes: bcf:read
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filter OData filters as defined in BCF spec
+     * @param {String} opts.orderby OData orderby as defined in BCF spec
      * @param {String} opts.format 
      * @param {Array.<Number>} opts.ifcs 
      * @param {Array.<Number>} opts.models 

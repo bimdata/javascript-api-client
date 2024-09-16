@@ -2074,7 +2074,7 @@ Name | Type | Description  | Notes
 
 ## getComments
 
-> [Comment] getComments(projectsPk, topicsGuid)
+> [Comment] getComments(projectsPk, topicsGuid, opts)
 
 Retrieve all comments
 
@@ -2105,7 +2105,11 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = 56; // Number | A unique integer value identifying this project.
 let topicsGuid = "topicsGuid_example"; // String | 
-apiInstance.getComments(projectsPk, topicsGuid).then((data) => {
+let opts = {
+  'filter': "filter_example", // String | OData filters as defined in BCF spec
+  'orderby': "orderby_example" // String | OData orderby as defined in BCF spec
+};
+apiInstance.getComments(projectsPk, topicsGuid, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2120,6 +2124,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **Number**| A unique integer value identifying this project. | 
  **topicsGuid** | **String**|  | 
+ **filter** | **String**| OData filters as defined in BCF spec | [optional] 
+ **orderby** | **String**| OData orderby as defined in BCF spec | [optional] 
 
 ### Return type
 
@@ -2357,6 +2363,8 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = 56; // Number | 
 let opts = {
+  'filter': "filter_example", // String | OData filters as defined in BCF spec
+  'orderby': "orderby_example", // String | OData orderby as defined in BCF spec
   'format': "format_example", // String | 
   'ifcs': [null], // [Number] | 
   'imgFormat': "imgFormat_example", // String | All snapshot_data will be returned as url instead of base64
@@ -2376,6 +2384,8 @@ apiInstance.getFullTopics(projectsPk, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **Number**|  | 
+ **filter** | **String**| OData filters as defined in BCF spec | [optional] 
+ **orderby** | **String**| OData orderby as defined in BCF spec | [optional] 
  **format** | **String**|  | [optional] 
  **ifcs** | [**[Number]**](Number.md)|  | [optional] 
  **imgFormat** | **String**| All snapshot_data will be returned as url instead of base64 | [optional] 
@@ -2895,6 +2905,8 @@ Bearer.apiKey = 'YOUR API KEY';
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = 56; // Number | 
 let opts = {
+  'filter': "filter_example", // String | OData filters as defined in BCF spec
+  'orderby': "orderby_example", // String | OData orderby as defined in BCF spec
   'format': "format_example", // String | 
   'ifcs': [null], // [Number] | 
   'models': [null] // [Number] | 
@@ -2913,6 +2925,8 @@ apiInstance.getTopics(projectsPk, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **Number**|  | 
+ **filter** | **String**| OData filters as defined in BCF spec | [optional] 
+ **orderby** | **String**| OData orderby as defined in BCF spec | [optional] 
  **format** | **String**|  | [optional] 
  **ifcs** | [**[Number]**](Number.md)|  | [optional] 
  **models** | [**[Number]**](Number.md)|  | [optional] 
