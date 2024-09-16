@@ -25,17 +25,13 @@ class Size {
      * @param managedBy {module:model/Size.ManagedByEnum} * `BIMDATA_PLATFORM` - BIMDATA_PLATFORM * `ORGANIZATION` - ORGANIZATION
      * @param role {module:model/Size.RoleEnum} * `100` - admin * `50` - user
      * @param totalSize {Number} 
-     * @param smartDataSize {Number} 
      * @param totalSizeAvailable {Number} 
-     * @param smartDataSizeAvailable {Number} 
      * @param remainingTotalSize {Number} 
-     * @param remainingSmartDataSize {Number} 
      * @param remainingTotalSizePercent {Number} 
-     * @param remainingSmartDataSizePercent {Number} 
      */
-    constructor(managedBy, role, totalSize, smartDataSize, totalSizeAvailable, smartDataSizeAvailable, remainingTotalSize, remainingSmartDataSize, remainingTotalSizePercent, remainingSmartDataSizePercent) { 
+    constructor(managedBy, role, totalSize, totalSizeAvailable, remainingTotalSize, remainingTotalSizePercent) { 
         
-        Size.initialize(this, managedBy, role, totalSize, smartDataSize, totalSizeAvailable, smartDataSizeAvailable, remainingTotalSize, remainingSmartDataSize, remainingTotalSizePercent, remainingSmartDataSizePercent);
+        Size.initialize(this, managedBy, role, totalSize, totalSizeAvailable, remainingTotalSize, remainingTotalSizePercent);
     }
 
     /**
@@ -43,17 +39,13 @@ class Size {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, managedBy, role, totalSize, smartDataSize, totalSizeAvailable, smartDataSizeAvailable, remainingTotalSize, remainingSmartDataSize, remainingTotalSizePercent, remainingSmartDataSizePercent) { 
+    static initialize(obj, managedBy, role, totalSize, totalSizeAvailable, remainingTotalSize, remainingTotalSizePercent) { 
         obj['managed_by'] = managedBy;
         obj['role'] = role;
         obj['total_size'] = totalSize;
-        obj['smart_data_size'] = smartDataSize;
         obj['total_size_available'] = totalSizeAvailable;
-        obj['smart_data_size_available'] = smartDataSizeAvailable;
         obj['remaining_total_size'] = remainingTotalSize;
-        obj['remaining_smart_data_size'] = remainingSmartDataSize;
         obj['remaining_total_size_percent'] = remainingTotalSizePercent;
-        obj['remaining_smart_data_size_percent'] = remainingSmartDataSizePercent;
     }
 
     /**
@@ -76,26 +68,14 @@ class Size {
             if (data.hasOwnProperty('total_size')) {
                 obj['total_size'] = ApiClient.convertToType(data['total_size'], 'Number');
             }
-            if (data.hasOwnProperty('smart_data_size')) {
-                obj['smart_data_size'] = ApiClient.convertToType(data['smart_data_size'], 'Number');
-            }
             if (data.hasOwnProperty('total_size_available')) {
                 obj['total_size_available'] = ApiClient.convertToType(data['total_size_available'], 'Number');
-            }
-            if (data.hasOwnProperty('smart_data_size_available')) {
-                obj['smart_data_size_available'] = ApiClient.convertToType(data['smart_data_size_available'], 'Number');
             }
             if (data.hasOwnProperty('remaining_total_size')) {
                 obj['remaining_total_size'] = ApiClient.convertToType(data['remaining_total_size'], 'Number');
             }
-            if (data.hasOwnProperty('remaining_smart_data_size')) {
-                obj['remaining_smart_data_size'] = ApiClient.convertToType(data['remaining_smart_data_size'], 'Number');
-            }
             if (data.hasOwnProperty('remaining_total_size_percent')) {
                 obj['remaining_total_size_percent'] = ApiClient.convertToType(data['remaining_total_size_percent'], 'Number');
-            }
-            if (data.hasOwnProperty('remaining_smart_data_size_percent')) {
-                obj['remaining_smart_data_size_percent'] = ApiClient.convertToType(data['remaining_smart_data_size_percent'], 'Number');
             }
         }
         return obj;
@@ -122,19 +102,9 @@ Size.prototype['role'] = undefined;
 Size.prototype['total_size'] = undefined;
 
 /**
- * @member {Number} smart_data_size
- */
-Size.prototype['smart_data_size'] = undefined;
-
-/**
  * @member {Number} total_size_available
  */
 Size.prototype['total_size_available'] = undefined;
-
-/**
- * @member {Number} smart_data_size_available
- */
-Size.prototype['smart_data_size_available'] = undefined;
 
 /**
  * @member {Number} remaining_total_size
@@ -142,19 +112,9 @@ Size.prototype['smart_data_size_available'] = undefined;
 Size.prototype['remaining_total_size'] = undefined;
 
 /**
- * @member {Number} remaining_smart_data_size
- */
-Size.prototype['remaining_smart_data_size'] = undefined;
-
-/**
  * @member {Number} remaining_total_size_percent
  */
 Size.prototype['remaining_total_size_percent'] = undefined;
-
-/**
- * @member {Number} remaining_smart_data_size_percent
- */
-Size.prototype['remaining_smart_data_size_percent'] = undefined;
 
 
 

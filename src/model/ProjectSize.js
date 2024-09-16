@@ -23,11 +23,10 @@ class ProjectSize {
      * Constructs a new <code>ProjectSize</code>.
      * @alias module:model/ProjectSize
      * @param totalSize {Number} 
-     * @param smartDataSize {Number} 
      */
-    constructor(totalSize, smartDataSize) { 
+    constructor(totalSize) { 
         
-        ProjectSize.initialize(this, totalSize, smartDataSize);
+        ProjectSize.initialize(this, totalSize);
     }
 
     /**
@@ -35,9 +34,8 @@ class ProjectSize {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, totalSize, smartDataSize) { 
+    static initialize(obj, totalSize) { 
         obj['total_size'] = totalSize;
-        obj['smart_data_size'] = smartDataSize;
     }
 
     /**
@@ -54,9 +52,6 @@ class ProjectSize {
             if (data.hasOwnProperty('total_size')) {
                 obj['total_size'] = ApiClient.convertToType(data['total_size'], 'Number');
             }
-            if (data.hasOwnProperty('smart_data_size')) {
-                obj['smart_data_size'] = ApiClient.convertToType(data['smart_data_size'], 'Number');
-            }
         }
         return obj;
     }
@@ -68,11 +63,6 @@ class ProjectSize {
  * @member {Number} total_size
  */
 ProjectSize.prototype['total_size'] = undefined;
-
-/**
- * @member {Number} smart_data_size
- */
-ProjectSize.prototype['smart_data_size'] = undefined;
 
 
 

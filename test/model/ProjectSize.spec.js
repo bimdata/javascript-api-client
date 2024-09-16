@@ -60,12 +60,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property smartDataSize (base name: "smart_data_size")', function() {
-      // uncomment below and update the code to test the property smartDataSize
-      //var instance = new bimdata.ProjectSize();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));
