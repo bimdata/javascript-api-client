@@ -184,6 +184,9 @@ class ModelSerializerWithoutChildren {
             if (data.hasOwnProperty('page_number')) {
                 obj['page_number'] = ApiClient.convertToType(data['page_number'], 'Number');
             }
+            if (data.hasOwnProperty('layout_name')) {
+                obj['layout_name'] = ApiClient.convertToType(data['layout_name'], 'String');
+            }
         }
         return obj;
     }
@@ -353,6 +356,12 @@ ModelSerializerWithoutChildren.prototype['parent_id'] = undefined;
  * @member {Number} page_number
  */
 ModelSerializerWithoutChildren.prototype['page_number'] = undefined;
+
+/**
+ * The name of the DWG layout (only set when type==DWG)
+ * @member {String} layout_name
+ */
+ModelSerializerWithoutChildren.prototype['layout_name'] = undefined;
 
 
 

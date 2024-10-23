@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property layoutNames (base name: "layout_names")', function() {
+      // uncomment below and update the code to test the property layoutNames
+      //var instance = new bimdata.CreateMultiPageModelRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

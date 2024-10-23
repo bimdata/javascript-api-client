@@ -234,6 +234,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property layoutName (base name: "layout_name")', function() {
+      // uncomment below and update the code to test the property layoutName
+      //var instance = new bimdata.ModelSerializerWithoutChildren();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

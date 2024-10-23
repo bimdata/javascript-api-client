@@ -52,6 +52,9 @@ class CreateMultiPageModelRequest {
             if (data.hasOwnProperty('map_files')) {
                 obj['map_files'] = ApiClient.convertToType(data['map_files'], [File]);
             }
+            if (data.hasOwnProperty('layout_names')) {
+                obj['layout_names'] = ApiClient.convertToType(data['layout_names'], ['String']);
+            }
         }
         return obj;
     }
@@ -63,6 +66,11 @@ class CreateMultiPageModelRequest {
  * @member {Array.<File>} map_files
  */
 CreateMultiPageModelRequest.prototype['map_files'] = undefined;
+
+/**
+ * @member {Array.<String>} layout_names
+ */
+CreateMultiPageModelRequest.prototype['layout_names'] = undefined;
 
 
 

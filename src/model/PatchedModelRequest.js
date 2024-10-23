@@ -71,6 +71,9 @@ class PatchedModelRequest {
             if (data.hasOwnProperty('recommanded_2d_angle')) {
                 obj['recommanded_2d_angle'] = ApiClient.convertToType(data['recommanded_2d_angle'], 'Number');
             }
+            if (data.hasOwnProperty('layout_name')) {
+                obj['layout_name'] = ApiClient.convertToType(data['layout_name'], 'String');
+            }
         }
         return obj;
     }
@@ -123,6 +126,12 @@ PatchedModelRequest.prototype['north_vector'] = undefined;
  * @member {Number} recommanded_2d_angle
  */
 PatchedModelRequest.prototype['recommanded_2d_angle'] = undefined;
+
+/**
+ * The name of the DWG layout (only set when type==DWG)
+ * @member {String} layout_name
+ */
+PatchedModelRequest.prototype['layout_name'] = undefined;
 
 
 
