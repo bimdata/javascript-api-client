@@ -78,12 +78,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
-      //var instance = new bimdata.ProjectRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property mainModelId (base name: "main_model_id")', function() {
       // uncomment below and update the code to test the property mainModelId
       //var instance = new bimdata.ProjectRequest();

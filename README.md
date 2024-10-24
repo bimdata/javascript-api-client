@@ -271,7 +271,6 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**getProjectFolderTree**](docs/CollaborationApi.md#getProjectFolderTree) | **GET** /cloud/{cloud_pk}/project/{id}/folder-tree | Retrieve folder tree of the project
 *bimdata.CollaborationApi* | [**getProjectInvitations**](docs/CollaborationApi.md#getProjectInvitations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/invitation | Retrieve all pending invitations in the project
 *bimdata.CollaborationApi* | [**getProjectSize**](docs/CollaborationApi.md#getProjectSize) | **GET** /cloud/{cloud_pk}/project/{id}/size | Get size of all model files in the project
-*bimdata.CollaborationApi* | [**getProjectSubTree**](docs/CollaborationApi.md#getProjectSubTree) | **GET** /cloud/{cloud_pk}/project/subtree | Retrieve the complete projects tree of the cloud
 *bimdata.CollaborationApi* | [**getProjectTree**](docs/CollaborationApi.md#getProjectTree) | **GET** /cloud/{cloud_pk}/project/{id}/tree | Retrieve the complete DMS tree
 *bimdata.CollaborationApi* | [**getProjectUsers**](docs/CollaborationApi.md#getProjectUsers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/user | Retrieve all users in a project, or a list with a filter by email
 *bimdata.CollaborationApi* | [**getProjectValidatorVisas**](docs/CollaborationApi.md#getProjectValidatorVisas) | **GET** /cloud/{cloud_pk}/project/{project_pk}/me/visa/validator | List visas where user is a validator

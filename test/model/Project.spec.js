@@ -102,12 +102,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
-      //var instance = new bimdata.Project();
-      //expect(instance).to.be();
-    });
-
     it('should have the property rootFolderId (base name: "root_folder_id")', function() {
       // uncomment below and update the code to test the property rootFolderId
       //var instance = new bimdata.Project();

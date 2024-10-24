@@ -82,9 +82,6 @@ class ProjectWithChildren {
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
-            if (data.hasOwnProperty('parent_id')) {
-                obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
-            }
             if (data.hasOwnProperty('children')) {
                 obj['children'] = ApiClient.convertToType(data['children'], [ProjectWithChildren]);
             }
@@ -139,11 +136,6 @@ ProjectWithChildren.prototype['created_at'] = undefined;
  * @member {Date} updated_at
  */
 ProjectWithChildren.prototype['updated_at'] = undefined;
-
-/**
- * @member {Number} parent_id
- */
-ProjectWithChildren.prototype['parent_id'] = undefined;
 
 /**
  * @member {Array.<module:model/ProjectWithChildren>} children

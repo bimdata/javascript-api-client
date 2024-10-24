@@ -84,9 +84,6 @@ class Project {
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
-            if (data.hasOwnProperty('parent_id')) {
-                obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
-            }
             if (data.hasOwnProperty('root_folder_id')) {
                 obj['root_folder_id'] = ApiClient.convertToType(data['root_folder_id'], 'Number');
             }
@@ -143,11 +140,6 @@ Project.prototype['created_at'] = undefined;
  * @member {Date} updated_at
  */
 Project.prototype['updated_at'] = undefined;
-
-/**
- * @member {Number} parent_id
- */
-Project.prototype['parent_id'] = undefined;
 
 /**
  * @member {Number} root_folder_id

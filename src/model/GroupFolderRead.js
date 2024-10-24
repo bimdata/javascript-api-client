@@ -53,7 +53,7 @@ class GroupFolderRead {
             obj = obj || new GroupFolderRead();
 
             if (data.hasOwnProperty('group')) {
-                obj['group'] = Group.constructFromObject(data['group']);
+                obj['group'] = ApiClient.convertToType(data['group'], Group);
             }
             if (data.hasOwnProperty('permission')) {
                 obj['permission'] = ApiClient.convertToType(data['permission'], 'Number');

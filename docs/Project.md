@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **status** | **String** | * &#x60;A&#x60; - active * &#x60;D&#x60; - deleted | [optional] 
 **createdAt** | **Date** | Creation date | [readonly] 
 **updatedAt** | **Date** | Date of the last update | [readonly] 
-**parentId** | **Number** |  | [optional] 
 **rootFolderId** | **Number** |  | [readonly] 
 **mainModelId** | **Number** |  | [optional] 
 

@@ -867,7 +867,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'IFC', 'GLTF', 'OBJ', 'DXF', 'POINT_CLOUD', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DXF', 'IFC', 'POINT_CLOUD', 'GLTF', 'DWG', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -933,7 +933,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'IFC', 'GLTF', 'OBJ', 'DXF', 'POINT_CLOUD', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'DXF', 'IFC', 'POINT_CLOUD', 'GLTF', 'DWG', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -4374,54 +4374,6 @@ export default class CollaborationApi {
      */
     getProjectSize(cloudPk, id) {
       return this.getProjectSizeWithHttpInfo(cloudPk, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Retrieve the complete projects tree of the cloud
-     * Retrieve the complete projects tree of the cloud
-     * @param {Number} cloudPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectWithChildren>} and HTTP response
-     */
-    getProjectSubTreeWithHttpInfo(cloudPk) {
-      let postBody = null;
-      // verify the required parameter 'cloudPk' is set
-      if (cloudPk === undefined || cloudPk === null) {
-        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectSubTree");
-      }
-
-      let pathParams = {
-        'cloud_pk': cloudPk
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [ProjectWithChildren];
-      return this.apiClient.callApi(
-        '/cloud/{cloud_pk}/project/subtree', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Retrieve the complete projects tree of the cloud
-     * Retrieve the complete projects tree of the cloud
-     * @param {Number} cloudPk 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectWithChildren>}
-     */
-    getProjectSubTree(cloudPk) {
-      return this.getProjectSubTreeWithHttpInfo(cloudPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -728,16 +728,6 @@
         done();
       });
     });
-    describe('getProjectSubTree', function() {
-      it('should call getProjectSubTree successfully', function(done) {
-        //uncomment below and update the code to test getProjectSubTree
-        //instance.getProjectSubTree(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getProjectTree', function() {
       it('should call getProjectTree successfully', function(done) {
         //uncomment below and update the code to test getProjectTree

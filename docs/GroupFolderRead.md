@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**group** | [**Group**](Group.md) |  | 
+**group** | [**Group**](Group.md) |  | [readonly] 
 **permission** | **Number** | * &#x60;1&#x60; - denied * &#x60;50&#x60; - read_only * &#x60;100&#x60; - read_write | 
 
 
