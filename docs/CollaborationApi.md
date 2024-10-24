@@ -960,7 +960,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;DXF&#39;, &#39;IFC&#39;, &#39;POINT_CLOUD&#39;, &#39;GLTF&#39;, &#39;DWG&#39;, &#39;OBJ&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;GLTF&#39;, &#39;OBJ&#39;, &#39;IFC&#39;, &#39;DWG&#39;, &#39;DXF&#39;, &#39;POINT_CLOUD&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -4137,7 +4137,7 @@ Name | Type | Description  | Notes
 
 ## getProject
 
-> ProjectWithChildren getProject(cloudPk, id)
+> Project getProject(cloudPk, id)
 
 Retrieve a project
 
@@ -4186,7 +4186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectWithChildren**](ProjectWithChildren.md)
+[**Project**](Project.md)
 
 ### Authorization
 

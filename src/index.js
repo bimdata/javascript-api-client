@@ -164,7 +164,6 @@ import ProjectInvitationRequest from './model/ProjectInvitationRequest';
 import ProjectRequest from './model/ProjectRequest';
 import ProjectRole from './model/ProjectRole';
 import ProjectSize from './model/ProjectSize';
-import ProjectWithChildren from './model/ProjectWithChildren';
 import Property from './model/Property';
 import PropertyDefinition from './model/PropertyDefinition';
 import PropertyDefinitionRequest from './model/PropertyDefinitionRequest';
@@ -1207,12 +1206,6 @@ export {
      * @property {module:model/ProjectSize}
      */
     ProjectSize,
-
-    /**
-     * The ProjectWithChildren model constructor.
-     * @property {module:model/ProjectWithChildren}
-     */
-    ProjectWithChildren,
 
     /**
      * The Property model constructor.

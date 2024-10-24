@@ -633,7 +633,6 @@ Class | Method | HTTP request | Description
  - [bimdata.ProjectRequest](docs/ProjectRequest.md)
  - [bimdata.ProjectRole](docs/ProjectRole.md)
  - [bimdata.ProjectSize](docs/ProjectSize.md)
- - [bimdata.ProjectWithChildren](docs/ProjectWithChildren.md)
  - [bimdata.Property](docs/Property.md)
  - [bimdata.PropertyDefinition](docs/PropertyDefinition.md)
  - [bimdata.PropertyDefinitionRequest](docs/PropertyDefinitionRequest.md)

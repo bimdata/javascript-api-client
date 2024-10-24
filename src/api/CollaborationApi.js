@@ -53,7 +53,6 @@ import ProjectInvitation from '../model/ProjectInvitation';
 import ProjectInvitationRequest from '../model/ProjectInvitationRequest';
 import ProjectRequest from '../model/ProjectRequest';
 import ProjectSize from '../model/ProjectSize';
-import ProjectWithChildren from '../model/ProjectWithChildren';
 import SelfUser from '../model/SelfUser';
 import Size from '../model/Size';
 import Tag from '../model/Tag';
@@ -867,7 +866,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'IFC', 'POINT_CLOUD', 'GLTF', 'DWG', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'GLTF', 'OBJ', 'IFC', 'DWG', 'DXF', 'POINT_CLOUD'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -933,7 +932,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'IFC', 'POINT_CLOUD', 'GLTF', 'DWG', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'GLTF', 'OBJ', 'IFC', 'DWG', 'DXF', 'POINT_CLOUD'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -3920,7 +3919,7 @@ export default class CollaborationApi {
      * Retrieve a project
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectWithChildren} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
     getProjectWithHttpInfo(cloudPk, id) {
       let postBody = null;
@@ -3947,7 +3946,7 @@ export default class CollaborationApi {
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ProjectWithChildren;
+      let returnType = Project;
       return this.apiClient.callApi(
         '/cloud/{cloud_pk}/project/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3960,7 +3959,7 @@ export default class CollaborationApi {
      * Retrieve a project
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectWithChildren}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
     getProject(cloudPk, id) {
       return this.getProjectWithHttpInfo(cloudPk, id)

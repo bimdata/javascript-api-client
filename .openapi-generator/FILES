@@ -156,7 +156,6 @@ docs/ProjectInvitationRequest.md
 docs/ProjectRequest.md
 docs/ProjectRole.md
 docs/ProjectSize.md
-docs/ProjectWithChildren.md
 docs/Property.md
 docs/PropertyDefinition.md
 docs/PropertyDefinitionRequest.md
@@ -411,7 +410,6 @@ src/model/ProjectInvitationRequest.js
 src/model/ProjectRequest.js
 src/model/ProjectRole.js
 src/model/ProjectSize.js
-src/model/ProjectWithChildren.js
 src/model/Property.js
 src/model/PropertyDefinition.js
 src/model/PropertyDefinitionRequest.js
@@ -660,7 +658,6 @@ test/model/ProjectInvitationRequest.spec.js
 test/model/ProjectRequest.spec.js
 test/model/ProjectRole.spec.js
 test/model/ProjectSize.spec.js
-test/model/ProjectWithChildren.spec.js
 test/model/Property.spec.js
 test/model/PropertyDefinition.spec.js
 test/model/PropertyDefinitionRequest.spec.js
