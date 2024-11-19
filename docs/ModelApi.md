@@ -1270,7 +1270,7 @@ Name | Type | Description  | Notes
 
 Create a relation between a 2d model and a building
 
-Create a relation between a 2d model and a building. The model type must be one of : (&#39;DWG&#39;, &#39;DXF&#39;, &#39;PDF&#39;, &#39;JPEG&#39;, &#39;PNG&#39;)  Required scopes: ifc:write, model:write
+Create a relation between a 2d model and a building. The model type must be one of : (&#39;DWG&#39;, &#39;DXF&#39;, &#39;PDF&#39;, &#39;JPEG&#39;, &#39;PNG&#39;, &#39;PHOTOSPHERE&#39;)  Required scopes: ifc:write, model:write
 
 ### Example
 
@@ -2772,7 +2772,7 @@ Name | Type | Description  | Notes
 
 Create a relation between a 2d model and a storey
 
-Create a relation between a 2d model and a storey. The model type must be one of : (&#39;DWG&#39;, &#39;DXF&#39;, &#39;PDF&#39;, &#39;JPEG&#39;, &#39;PNG&#39;)  Required scopes: ifc:write, model:write
+Create a relation between a 2d model and a storey. The model type must be one of : (&#39;DWG&#39;, &#39;DXF&#39;, &#39;PDF&#39;, &#39;JPEG&#39;, &#39;PNG&#39;, &#39;PHOTOSPHERE&#39;)  Required scopes: ifc:write, model:write
 
 ### Example
 

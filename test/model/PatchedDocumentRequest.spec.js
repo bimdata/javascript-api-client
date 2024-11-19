@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property processHint (base name: "process_hint")', function() {
+      // uncomment below and update the code to test the property processHint
+      //var instance = new bimdata.PatchedDocumentRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -71,6 +71,9 @@ class PatchedDocumentRequest {
             if (data.hasOwnProperty('successor_of')) {
                 obj['successor_of'] = ApiClient.convertToType(data['successor_of'], 'Number');
             }
+            if (data.hasOwnProperty('process_hint')) {
+                obj['process_hint'] = ApiClient.convertToType(data['process_hint'], 'String');
+            }
         }
         return obj;
     }
@@ -123,6 +126,12 @@ PatchedDocumentRequest.prototype['ifc_source'] = undefined;
  * @member {Number} successor_of
  */
 PatchedDocumentRequest.prototype['successor_of'] = undefined;
+
+/**
+ * Provide a info about the document in order to customize the way it is processed.  * `PHOTOSPHERE` - PHOTOSPHERE
+ * @member {module:model/PatchedDocumentRequest.ProcessHintEnum} process_hint
+ */
+PatchedDocumentRequest.prototype['process_hint'] = undefined;
 
 
 
@@ -203,6 +212,21 @@ PatchedDocumentRequest['IfcSourceEnum'] = {
      * @const
      */
     "OPTIMIZED": "OPTIMIZED"
+};
+
+
+/**
+ * Allowed values for the <code>process_hint</code> property.
+ * @enum {String}
+ * @readonly
+ */
+PatchedDocumentRequest['ProcessHintEnum'] = {
+
+    /**
+     * value: "PHOTOSPHERE"
+     * @const
+     */
+    "PHOTOSPHERE": "PHOTOSPHERE"
 };
 
 

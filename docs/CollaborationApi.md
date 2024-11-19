@@ -960,7 +960,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;GLTF&#39;, &#39;OBJ&#39;, &#39;IFC&#39;, &#39;DWG&#39;, &#39;DXF&#39;, &#39;POINT_CLOUD&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;OBJ&#39;, &#39;IFC&#39;, &#39;GLTF&#39;, &#39;DXF&#39;, &#39;POINT_CLOUD&#39;, &#39;DWG&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -995,7 +995,8 @@ let opts = {
   'description': "description_example", // String | Description of the file
   'modelSource': "modelSource_example", // String | Define the model.source field if the upload is a Model (IFC, PDF, DWG...)  * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
   'ifcSource': "ifcSource_example", // String | DEPRECATED: Use 'model_source' instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)  * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
-  'successorOf': 56 // Number | Old document version to replace. Only for create
+  'successorOf': 56, // Number | Old document version to replace. Only for create
+  'processHint': "processHint_example" // String | Provide a info about the document in order to customize the way it is processed.  * `PHOTOSPHERE` - PHOTOSPHERE
 };
 apiInstance.createDocument(cloudPk, projectPk, name, file, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -1020,6 +1021,7 @@ Name | Type | Description  | Notes
  **modelSource** | **String**| Define the model.source field if the upload is a Model (IFC, PDF, DWG...)  * &#x60;UPLOAD&#x60; - UPLOAD * &#x60;SPLIT&#x60; - SPLIT * &#x60;MERGE&#x60; - MERGE * &#x60;EXPORT&#x60; - EXPORT * &#x60;OPTIMIZED&#x60; - OPTIMIZED | [optional] 
  **ifcSource** | **String**| DEPRECATED: Use &#39;model_source&#39; instead. Define the model.source field if the upload is a Model (IFC, PDF, DWG...)  * &#x60;UPLOAD&#x60; - UPLOAD * &#x60;SPLIT&#x60; - SPLIT * &#x60;MERGE&#x60; - MERGE * &#x60;EXPORT&#x60; - EXPORT * &#x60;OPTIMIZED&#x60; - OPTIMIZED | [optional] 
  **successorOf** | **Number**| Old document version to replace. Only for create | [optional] 
+ **processHint** | **String**| Provide a info about the document in order to customize the way it is processed.  * &#x60;PHOTOSPHERE&#x60; - PHOTOSPHERE | [optional] 
 
 ### Return type
 

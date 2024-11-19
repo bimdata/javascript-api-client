@@ -1243,7 +1243,7 @@ export default class ModelApi {
 
     /**
      * Create a relation between a 2d model and a building
-     * Create a relation between a 2d model and a building. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG')  Required scopes: ifc:write, model:write
+     * Create a relation between a 2d model and a building. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG', 'PHOTOSPHERE')  Required scopes: ifc:write, model:write
      * @param {String} buildingUuid 
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
@@ -1300,7 +1300,7 @@ export default class ModelApi {
 
     /**
      * Create a relation between a 2d model and a building
-     * Create a relation between a 2d model and a building. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG')  Required scopes: ifc:write, model:write
+     * Create a relation between a 2d model and a building. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG', 'PHOTOSPHERE')  Required scopes: ifc:write, model:write
      * @param {String} buildingUuid 
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
@@ -2805,7 +2805,7 @@ export default class ModelApi {
 
     /**
      * Create a relation between a 2d model and a storey
-     * Create a relation between a 2d model and a storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG')  Required scopes: ifc:write, model:write
+     * Create a relation between a 2d model and a storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG', 'PHOTOSPHERE')  Required scopes: ifc:write, model:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
@@ -2862,7 +2862,7 @@ export default class ModelApi {
 
     /**
      * Create a relation between a 2d model and a storey
-     * Create a relation between a 2d model and a storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG')  Required scopes: ifc:write, model:write
+     * Create a relation between a 2d model and a storey. The model type must be one of : ('DWG', 'DXF', 'PDF', 'JPEG', 'PNG', 'PHOTOSPHERE')  Required scopes: ifc:write, model:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
