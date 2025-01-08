@@ -95,6 +95,8 @@ import MaterialListComponentRequest from './model/MaterialListComponentRequest';
 import MaterialOption from './model/MaterialOption';
 import MaterialRequest from './model/MaterialRequest';
 import Model from './model/Model';
+import ModelDocument from './model/ModelDocument';
+import ModelDocumentRequest from './model/ModelDocumentRequest';
 import ModelErrors from './model/ModelErrors';
 import ModelErrorsRequest from './model/ModelErrorsRequest';
 import ModelFiles from './model/ModelFiles';
@@ -792,6 +794,18 @@ export {
      * @property {module:model/Model}
      */
     Model,
+
+    /**
+     * The ModelDocument model constructor.
+     * @property {module:model/ModelDocument}
+     */
+    ModelDocument,
+
+    /**
+     * The ModelDocumentRequest model constructor.
+     * @property {module:model/ModelDocumentRequest}
+     */
+    ModelDocumentRequest,
 
     /**
      * The ModelErrors model constructor.

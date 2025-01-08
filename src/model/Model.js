@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import Document from './Document';
+import ModelDocument from './ModelDocument';
 import ModelSerializerWithoutChildren from './ModelSerializerWithoutChildren';
 import User from './User';
 import XktFile from './XktFile';
@@ -33,7 +33,7 @@ class Model {
      * @param createdAt {Date} 
      * @param updatedAt {Date} 
      * @param documentId {Number} 
-     * @param document {module:model/Document} 
+     * @param document {module:model/ModelDocument} 
      * @param structureFile {String} 
      * @param systemsFile {String} 
      * @param mapFile {String} 
@@ -125,7 +125,7 @@ class Model {
                 obj['document_id'] = ApiClient.convertToType(data['document_id'], 'Number');
             }
             if (data.hasOwnProperty('document')) {
-                obj['document'] = ApiClient.convertToType(data['document'], Document);
+                obj['document'] = ApiClient.convertToType(data['document'], ModelDocument);
             }
             if (data.hasOwnProperty('structure_file')) {
                 obj['structure_file'] = ApiClient.convertToType(data['structure_file'], 'String');
@@ -248,7 +248,7 @@ Model.prototype['updated_at'] = undefined;
 Model.prototype['document_id'] = undefined;
 
 /**
- * @member {module:model/Document} document
+ * @member {module:model/ModelDocument} document
  */
 Model.prototype['document'] = undefined;
 

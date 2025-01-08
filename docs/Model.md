@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **createdAt** | **Date** |  | [readonly] 
 **updatedAt** | **Date** |  | [readonly] 
 **documentId** | **Number** |  | [readonly] 
-**document** | [**Document**](Document.md) |  | [readonly] 
+**document** | [**ModelDocument**](ModelDocument.md) |  | [readonly] 
 **structureFile** | **String** |  | [readonly] 
 **systemsFile** | **String** |  | [readonly] 
 **mapFile** | **String** |  | [readonly] 

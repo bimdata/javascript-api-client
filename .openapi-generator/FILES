@@ -87,6 +87,8 @@ docs/MaterialOption.md
 docs/MaterialRequest.md
 docs/Model.md
 docs/ModelApi.md
+docs/ModelDocument.md
+docs/ModelDocumentRequest.md
 docs/ModelErrors.md
 docs/ModelErrorsRequest.md
 docs/ModelFiles.md
@@ -341,6 +343,8 @@ src/model/MaterialListComponentRequest.js
 src/model/MaterialOption.js
 src/model/MaterialRequest.js
 src/model/Model.js
+src/model/ModelDocument.js
+src/model/ModelDocumentRequest.js
 src/model/ModelErrors.js
 src/model/ModelErrorsRequest.js
 src/model/ModelFiles.js
@@ -589,6 +593,8 @@ test/model/MaterialListComponentRequest.spec.js
 test/model/MaterialOption.spec.js
 test/model/MaterialRequest.spec.js
 test/model/Model.spec.js
+test/model/ModelDocument.spec.js
+test/model/ModelDocumentRequest.spec.js
 test/model/ModelErrors.spec.js
 test/model/ModelErrorsRequest.spec.js
 test/model/ModelFiles.spec.js

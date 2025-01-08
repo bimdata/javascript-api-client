@@ -564,6 +564,8 @@ Class | Method | HTTP request | Description
  - [bimdata.MaterialOption](docs/MaterialOption.md)
  - [bimdata.MaterialRequest](docs/MaterialRequest.md)
  - [bimdata.Model](docs/Model.md)
+ - [bimdata.ModelDocument](docs/ModelDocument.md)
+ - [bimdata.ModelDocumentRequest](docs/ModelDocumentRequest.md)
  - [bimdata.ModelErrors](docs/ModelErrors.md)
  - [bimdata.ModelErrorsRequest](docs/ModelErrorsRequest.md)
  - [bimdata.ModelFiles](docs/ModelFiles.md)
