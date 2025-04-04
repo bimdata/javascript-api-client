@@ -66,7 +66,7 @@ class Property {
                 obj['definition'] = PropertyDefinition.constructFromObject(data['definition']);
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], {'String': Object});
+                obj['value'] = ApiClient.convertToType(data['value'], Object);
             }
             if (data.hasOwnProperty('property_set_id')) {
                 obj['property_set_id'] = ApiClient.convertToType(data['property_set_id'], 'Number');
@@ -95,7 +95,7 @@ Property.prototype['id'] = undefined;
 Property.prototype['definition'] = undefined;
 
 /**
- * @member {Object.<String, Object>} value
+ * @member {Object} value
  */
 Property.prototype['value'] = undefined;
 

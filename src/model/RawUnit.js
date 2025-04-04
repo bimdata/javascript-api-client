@@ -67,7 +67,7 @@ class RawUnit {
                 obj['prefix'] = ApiClient.convertToType(data['prefix'], 'String');
             }
             if (data.hasOwnProperty('elements')) {
-                obj['elements'] = ApiClient.convertToType(data['elements'], {'String': Object});
+                obj['elements'] = ApiClient.convertToType(data['elements'], Object);
             }
             if (data.hasOwnProperty('conversion_factor')) {
                 obj['conversion_factor'] = ApiClient.convertToType(data['conversion_factor'], 'Number');
@@ -114,7 +114,7 @@ RawUnit.prototype['unit_type'] = undefined;
 RawUnit.prototype['prefix'] = undefined;
 
 /**
- * @member {Object.<String, Object>} elements
+ * @member {Object} elements
  */
 RawUnit.prototype['elements'] = undefined;
 

@@ -1,10 +1,9 @@
-# bimdata.RawPropertyRequest
+# bimdata.ColoringDefinition
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **Object** |  | [optional] 
-**defId** | **Number** |  | 
+**coloring** | [**[Coloring]**](Coloring.md) |  | 
 
 

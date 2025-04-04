@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **definition** | [**PropertyDefinitionRequest**](PropertyDefinitionRequest.md) |  | 
-**value** | **{String: Object}** |  | [optional] 
+**value** | **Object** |  | [optional] 
 
 

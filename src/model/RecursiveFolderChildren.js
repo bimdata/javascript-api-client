@@ -39,10 +39,11 @@ class RecursiveFolderChildren {
      * @param userPermission {module:model/RecursiveFolderChildren.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      * @param historyCount {Number} Number of previous versions
      * @param tags {Array.<module:model/Tag>} Tags of a document
+     * @param children {module:model/RecursiveFolderChildren} 
      */
-    constructor(id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags) { 
+    constructor(id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags, children) { 
         
-        RecursiveFolderChildren.initialize(this, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags);
+        RecursiveFolderChildren.initialize(this, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags, children);
     }
 
     /**
@@ -50,7 +51,7 @@ class RecursiveFolderChildren {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags) { 
+    static initialize(obj, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags, children) { 
         obj['id'] = id;
         obj['parent_id'] = parentId;
         obj['type'] = type;
@@ -66,6 +67,7 @@ class RecursiveFolderChildren {
         obj['user_permission'] = userPermission;
         obj['history_count'] = historyCount;
         obj['tags'] = tags;
+        obj['children'] = children;
     }
 
     /**
@@ -143,7 +145,7 @@ class RecursiveFolderChildren {
                 obj['tags'] = ApiClient.convertToType(data['tags'], [Tag]);
             }
             if (data.hasOwnProperty('children')) {
-                obj['children'] = ApiClient.convertToType(data['children'], [RecursiveFolderChildren]);
+                obj['children'] = ApiClient.convertToType(data['children'], RecursiveFolderChildren);
             }
         }
         return obj;
@@ -267,7 +269,7 @@ RecursiveFolderChildren.prototype['history_count'] = undefined;
 RecursiveFolderChildren.prototype['tags'] = undefined;
 
 /**
- * @member {Array.<module:model/RecursiveFolderChildren>} children
+ * @member {module:model/RecursiveFolderChildren} children
  */
 RecursiveFolderChildren.prototype['children'] = undefined;
 

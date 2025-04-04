@@ -6,6 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | 
 **name** | **String** |  | 
-**children** | [**[FolderTree]**](FolderTree.md) |  | 
+**children** | [**[FolderTree]**](FolderTree.md) |  | [readonly] 
 
 

@@ -55,7 +55,7 @@ class PropertyRequest {
                 obj['definition'] = PropertyDefinitionRequest.constructFromObject(data['definition']);
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], {'String': Object});
+                obj['value'] = ApiClient.convertToType(data['value'], Object);
             }
         }
         return obj;
@@ -70,7 +70,7 @@ class PropertyRequest {
 PropertyRequest.prototype['definition'] = undefined;
 
 /**
- * @member {Object.<String, Object>} value
+ * @member {Object} value
  */
 PropertyRequest.prototype['value'] = undefined;
 

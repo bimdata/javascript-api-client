@@ -29,6 +29,7 @@ import CloudInvitationRequest from './model/CloudInvitationRequest';
 import CloudRequest from './model/CloudRequest';
 import CloudRole from './model/CloudRole';
 import Coloring from './model/Coloring';
+import ColoringDefinition from './model/ColoringDefinition';
 import ColoringRequest from './model/ColoringRequest';
 import Comment from './model/Comment';
 import CommentRequest from './model/CommentRequest';
@@ -202,6 +203,7 @@ import RawUnit from './model/RawUnit';
 import RawUnitRequest from './model/RawUnitRequest';
 import RecursiveFolderChildren from './model/RecursiveFolderChildren';
 import SelectUserRequest from './model/SelectUserRequest';
+import SelectionDefinition from './model/SelectionDefinition';
 import SelfBcfUser from './model/SelfBcfUser';
 import SelfUser from './model/SelfUser';
 import ShortUser from './model/ShortUser';
@@ -248,9 +250,11 @@ import VisaValidation from './model/VisaValidation';
 import VisaValidationRequest from './model/VisaValidationRequest';
 import VisaWithDocument from './model/VisaWithDocument';
 import Visibility from './model/Visibility';
+import VisibilityDefinition from './model/VisibilityDefinition';
 import VisibilityRequest from './model/VisibilityRequest';
 import WebHook from './model/WebHook';
 import WebHookRequest from './model/WebHookRequest';
+import WriteFolder from './model/WriteFolder';
 import WriteFolderRequest from './model/WriteFolderRequest';
 import XktFile from './model/XktFile';
 import Zone from './model/Zone';
@@ -398,6 +402,12 @@ export {
      * @property {module:model/Coloring}
      */
     Coloring,
+
+    /**
+     * The ColoringDefinition model constructor.
+     * @property {module:model/ColoringDefinition}
+     */
+    ColoringDefinition,
 
     /**
      * The ColoringRequest model constructor.
@@ -1438,6 +1448,12 @@ export {
     SelectUserRequest,
 
     /**
+     * The SelectionDefinition model constructor.
+     * @property {module:model/SelectionDefinition}
+     */
+    SelectionDefinition,
+
+    /**
      * The SelfBcfUser model constructor.
      * @property {module:model/SelfBcfUser}
      */
@@ -1714,6 +1730,12 @@ export {
     Visibility,
 
     /**
+     * The VisibilityDefinition model constructor.
+     * @property {module:model/VisibilityDefinition}
+     */
+    VisibilityDefinition,
+
+    /**
      * The VisibilityRequest model constructor.
      * @property {module:model/VisibilityRequest}
      */
@@ -1730,6 +1752,12 @@ export {
      * @property {module:model/WebHookRequest}
      */
     WebHookRequest,
+
+    /**
+     * The WriteFolder model constructor.
+     * @property {module:model/WriteFolder}
+     */
+    WriteFolder,
 
     /**
      * The WriteFolderRequest model constructor.

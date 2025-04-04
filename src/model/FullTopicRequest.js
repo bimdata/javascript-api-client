@@ -117,7 +117,7 @@ class FullTopicRequest {
                 obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
             if (data.hasOwnProperty('bimdata_viewer_layout')) {
-                obj['bimdata_viewer_layout'] = ApiClient.convertToType(data['bimdata_viewer_layout'], {'String': Object});
+                obj['bimdata_viewer_layout'] = ApiClient.convertToType(data['bimdata_viewer_layout'], Object);
             }
         }
         return obj;
@@ -235,7 +235,7 @@ FullTopicRequest.prototype['project'] = undefined;
 
 /**
  * Non standard field. JSON describing bimdataViewerLayout.
- * @member {Object.<String, Object>} bimdata_viewer_layout
+ * @member {Object} bimdata_viewer_layout
  */
 FullTopicRequest.prototype['bimdata_viewer_layout'] = undefined;
 

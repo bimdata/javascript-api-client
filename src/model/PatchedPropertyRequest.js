@@ -53,7 +53,7 @@ class PatchedPropertyRequest {
                 obj['definition'] = PropertyDefinitionRequest.constructFromObject(data['definition']);
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], {'String': Object});
+                obj['value'] = ApiClient.convertToType(data['value'], Object);
             }
         }
         return obj;
@@ -68,7 +68,7 @@ class PatchedPropertyRequest {
 PatchedPropertyRequest.prototype['definition'] = undefined;
 
 /**
- * @member {Object.<String, Object>} value
+ * @member {Object} value
  */
 PatchedPropertyRequest.prototype['value'] = undefined;
 

@@ -16,10 +16,9 @@ import ApiClient from "../ApiClient";
 import Auth from '../model/Auth';
 import BcfProject from '../model/BcfProject';
 import BcfProjectRequest from '../model/BcfProjectRequest';
-import Coloring from '../model/Coloring';
+import ColoringDefinition from '../model/ColoringDefinition';
 import Comment from '../model/Comment';
 import CommentRequest from '../model/CommentRequest';
-import Component from '../model/Component';
 import DetailedExtensions from '../model/DetailedExtensions';
 import Extensions from '../model/Extensions';
 import FullTopic from '../model/FullTopic';
@@ -41,6 +40,7 @@ import Pin from '../model/Pin';
 import PinRequest from '../model/PinRequest';
 import Priority from '../model/Priority';
 import PriorityRequest from '../model/PriorityRequest';
+import SelectionDefinition from '../model/SelectionDefinition';
 import SelfBcfUser from '../model/SelfBcfUser';
 import Stage from '../model/Stage';
 import StageRequest from '../model/StageRequest';
@@ -53,7 +53,7 @@ import TopicTypeRequest from '../model/TopicTypeRequest';
 import Version from '../model/Version';
 import Viewpoint from '../model/Viewpoint';
 import ViewpointRequest from '../model/ViewpointRequest';
-import Visibility from '../model/Visibility';
+import VisibilityDefinition from '../model/VisibilityDefinition';
 
 /**
 * Bcf service.
@@ -1756,7 +1756,7 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {Number} projectsPk 
      * @param {String} topicsGuid 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Coloring>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ColoringDefinition} and HTTP response
      */
     getColoringsWithHttpInfo(guid, projectsPk, topicsGuid) {
       let postBody = null;
@@ -1788,7 +1788,7 @@ export default class BcfApi {
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Coloring];
+      let returnType = ColoringDefinition;
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/coloring', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1802,7 +1802,7 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {Number} projectsPk 
      * @param {String} topicsGuid 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Coloring>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ColoringDefinition}
      */
     getColorings(guid, projectsPk, topicsGuid) {
       return this.getColoringsWithHttpInfo(guid, projectsPk, topicsGuid)
@@ -2299,7 +2299,7 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {Number} projectsPk 
      * @param {String} topicsGuid 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Component>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SelectionDefinition} and HTTP response
      */
     getSelectionsWithHttpInfo(guid, projectsPk, topicsGuid) {
       let postBody = null;
@@ -2331,7 +2331,7 @@ export default class BcfApi {
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Component];
+      let returnType = SelectionDefinition;
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/selection', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2345,7 +2345,7 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {Number} projectsPk 
      * @param {String} topicsGuid 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Component>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SelectionDefinition}
      */
     getSelections(guid, projectsPk, topicsGuid) {
       return this.getSelectionsWithHttpInfo(guid, projectsPk, topicsGuid)
@@ -2952,7 +2952,7 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {Number} projectsPk 
      * @param {String} topicsGuid 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Visibility} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VisibilityDefinition} and HTTP response
      */
     getVisibilitiesWithHttpInfo(guid, projectsPk, topicsGuid) {
       let postBody = null;
@@ -2984,7 +2984,7 @@ export default class BcfApi {
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Visibility;
+      let returnType = VisibilityDefinition;
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/visibility', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2998,7 +2998,7 @@ export default class BcfApi {
      * @param {String} guid 
      * @param {Number} projectsPk 
      * @param {String} topicsGuid 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Visibility}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VisibilityDefinition}
      */
     getVisibilities(guid, projectsPk, topicsGuid) {
       return this.getVisibilitiesWithHttpInfo(guid, projectsPk, topicsGuid)

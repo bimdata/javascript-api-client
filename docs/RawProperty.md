@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [readonly] 
-**value** | **{String: Object}** |  | [optional] 
+**value** | **Object** |  | [optional] 
 **defId** | **Number** |  | 
 
 

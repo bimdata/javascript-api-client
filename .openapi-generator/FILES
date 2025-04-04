@@ -20,6 +20,7 @@ docs/CloudRequest.md
 docs/CloudRole.md
 docs/CollaborationApi.md
 docs/Coloring.md
+docs/ColoringDefinition.md
 docs/ColoringRequest.md
 docs/Comment.md
 docs/CommentRequest.md
@@ -194,6 +195,7 @@ docs/RawUnit.md
 docs/RawUnitRequest.md
 docs/RecursiveFolderChildren.md
 docs/SelectUserRequest.md
+docs/SelectionDefinition.md
 docs/SelfBcfUser.md
 docs/SelfUser.md
 docs/ShortUser.md
@@ -241,10 +243,12 @@ docs/VisaValidation.md
 docs/VisaValidationRequest.md
 docs/VisaWithDocument.md
 docs/Visibility.md
+docs/VisibilityDefinition.md
 docs/VisibilityRequest.md
 docs/WebHook.md
 docs/WebHookRequest.md
 docs/WebhookApi.md
+docs/WriteFolder.md
 docs/WriteFolderRequest.md
 docs/XktFile.md
 docs/Zone.md
@@ -277,6 +281,7 @@ src/model/CloudInvitationRequest.js
 src/model/CloudRequest.js
 src/model/CloudRole.js
 src/model/Coloring.js
+src/model/ColoringDefinition.js
 src/model/ColoringRequest.js
 src/model/Comment.js
 src/model/CommentRequest.js
@@ -450,6 +455,7 @@ src/model/RawUnit.js
 src/model/RawUnitRequest.js
 src/model/RecursiveFolderChildren.js
 src/model/SelectUserRequest.js
+src/model/SelectionDefinition.js
 src/model/SelfBcfUser.js
 src/model/SelfUser.js
 src/model/ShortUser.js
@@ -496,9 +502,11 @@ src/model/VisaValidation.js
 src/model/VisaValidationRequest.js
 src/model/VisaWithDocument.js
 src/model/Visibility.js
+src/model/VisibilityDefinition.js
 src/model/VisibilityRequest.js
 src/model/WebHook.js
 src/model/WebHookRequest.js
+src/model/WriteFolder.js
 src/model/WriteFolderRequest.js
 src/model/XktFile.js
 src/model/Zone.js
@@ -527,6 +535,7 @@ test/model/CloudInvitationRequest.spec.js
 test/model/CloudRequest.spec.js
 test/model/CloudRole.spec.js
 test/model/Coloring.spec.js
+test/model/ColoringDefinition.spec.js
 test/model/ColoringRequest.spec.js
 test/model/Comment.spec.js
 test/model/CommentRequest.spec.js
@@ -700,6 +709,7 @@ test/model/RawUnit.spec.js
 test/model/RawUnitRequest.spec.js
 test/model/RecursiveFolderChildren.spec.js
 test/model/SelectUserRequest.spec.js
+test/model/SelectionDefinition.spec.js
 test/model/SelfBcfUser.spec.js
 test/model/SelfUser.spec.js
 test/model/ShortUser.spec.js
@@ -746,9 +756,11 @@ test/model/VisaValidation.spec.js
 test/model/VisaValidationRequest.spec.js
 test/model/VisaWithDocument.spec.js
 test/model/Visibility.spec.js
+test/model/VisibilityDefinition.spec.js
 test/model/VisibilityRequest.spec.js
 test/model/WebHook.spec.js
 test/model/WebHookRequest.spec.js
+test/model/WriteFolder.spec.js
 test/model/WriteFolderRequest.spec.js
 test/model/XktFile.spec.js
 test/model/Zone.spec.js

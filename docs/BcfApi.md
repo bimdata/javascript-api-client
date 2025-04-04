@@ -1944,7 +1944,7 @@ This endpoint does not need any parameter.
 
 ## getColorings
 
-> [Coloring] getColorings(guid, projectsPk, topicsGuid)
+> ColoringDefinition getColorings(guid, projectsPk, topicsGuid)
 
 Retrieve all colorings of a viewpoint
 
@@ -1995,7 +1995,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Coloring]**](Coloring.md)
+[**ColoringDefinition**](ColoringDefinition.md)
 
 ### Authorization
 
@@ -2543,7 +2543,7 @@ Name | Type | Description  | Notes
 
 ## getSelections
 
-> [Component] getSelections(guid, projectsPk, topicsGuid)
+> SelectionDefinition getSelections(guid, projectsPk, topicsGuid)
 
 Retrieve all selections of a viewpoint
 
@@ -2594,7 +2594,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Component]**](Component.md)
+[**SelectionDefinition**](SelectionDefinition.md)
 
 ### Authorization
 
@@ -3264,7 +3264,7 @@ Name | Type | Description  | Notes
 
 ## getVisibilities
 
-> Visibility getVisibilities(guid, projectsPk, topicsGuid)
+> VisibilityDefinition getVisibilities(guid, projectsPk, topicsGuid)
 
 Retrieve all visibilities of a viewpoint
 
@@ -3315,7 +3315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Visibility**](Visibility.md)
+[**VisibilityDefinition**](VisibilityDefinition.md)
 
 ### Authorization
 

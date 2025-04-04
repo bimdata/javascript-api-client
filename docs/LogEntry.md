@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **projectName** | **String** |  | 
 **date** | **Date** |  | [readonly] 
 **action** | **String** |  | 
-**description** | **{String: Object}** |  | 
+**description** | **Object** |  | 
 
 

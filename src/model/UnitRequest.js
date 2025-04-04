@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Unit from './Unit';
 
 /**
  * The UnitRequest model module.
@@ -69,10 +70,10 @@ class UnitRequest {
                 obj['conversion_factor'] = ApiClient.convertToType(data['conversion_factor'], 'Number');
             }
             if (data.hasOwnProperty('conversion_baseunit')) {
-                obj['conversion_baseunit'] = UnitRequest.constructFromObject(data['conversion_baseunit']);
+                obj['conversion_baseunit'] = Unit.constructFromObject(data['conversion_baseunit']);
             }
             if (data.hasOwnProperty('elements')) {
-                obj['elements'] = ApiClient.convertToType(data['elements'], {'String': Object});
+                obj['elements'] = ApiClient.convertToType(data['elements'], Object);
             }
             if (data.hasOwnProperty('is_default')) {
                 obj['is_default'] = ApiClient.convertToType(data['is_default'], 'Boolean');
@@ -121,13 +122,13 @@ UnitRequest.prototype['dimensions'] = undefined;
 UnitRequest.prototype['conversion_factor'] = undefined;
 
 /**
- * @member {module:model/UnitRequest} conversion_baseunit
+ * @member {module:model/Unit} conversion_baseunit
  */
 UnitRequest.prototype['conversion_baseunit'] = undefined;
 
 /**
  * List of constitutive unit elements by id with corresponding exponent (ex: [meterID/1, secondID/-1] for velocity)
- * @member {Object.<String, Object>} elements
+ * @member {Object} elements
  */
 UnitRequest.prototype['elements'] = undefined;
 

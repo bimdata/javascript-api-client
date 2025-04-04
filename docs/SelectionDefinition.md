@@ -1,10 +1,9 @@
-# bimdata.RawPropertyRequest
+# bimdata.SelectionDefinition
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **Object** |  | [optional] 
-**defId** | **Number** |  | 
+**selection** | [**[Component]**](Component.md) |  | 
 
 

@@ -55,7 +55,7 @@ class RawProperty {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], {'String': Object});
+                obj['value'] = ApiClient.convertToType(data['value'], Object);
             }
             if (data.hasOwnProperty('def_id')) {
                 obj['def_id'] = ApiClient.convertToType(data['def_id'], 'Number');
@@ -73,7 +73,7 @@ class RawProperty {
 RawProperty.prototype['id'] = undefined;
 
 /**
- * @member {Object.<String, Object>} value
+ * @member {Object} value
  */
 RawProperty.prototype['value'] = undefined;
 

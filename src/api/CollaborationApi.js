@@ -757,7 +757,7 @@ export default class CollaborationApi {
 
     /**
      * Create a complete DMS tree
-     *  Create a DMS structure of folder Format request : ``` [{     \"name\": :name:     \"parent_id\": :parent_id:                      # optionnal     \"default_permission\": :default_permission:    # optionnal     \"children\": [{                                # optionnal         \"name\": :name:,         \"children\": []     }] }], ```                   Required scopes: org:manage
+     * Create a DMS structure of folders  Required scopes: org:manage
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {Array.<module:model/WriteFolderRequest>} writeFolderRequest 
@@ -802,7 +802,7 @@ export default class CollaborationApi {
 
     /**
      * Create a complete DMS tree
-     *  Create a DMS structure of folder Format request : ``` [{     \"name\": :name:     \"parent_id\": :parent_id:                      # optionnal     \"default_permission\": :default_permission:    # optionnal     \"children\": [{                                # optionnal         \"name\": :name:,         \"children\": []     }] }], ```                   Required scopes: org:manage
+     * Create a DMS structure of folders  Required scopes: org:manage
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this project.
      * @param {Array.<module:model/WriteFolderRequest>} writeFolderRequest 
@@ -866,7 +866,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'GLTF', 'POINT_CLOUD', 'OBJ', 'DWG', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'GLTF', 'POINT_CLOUD', 'DWG', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -934,7 +934,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'GLTF', 'POINT_CLOUD', 'OBJ', 'DWG', 'IFC'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'GLTF', 'POINT_CLOUD', 'DWG', 'IFC', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file

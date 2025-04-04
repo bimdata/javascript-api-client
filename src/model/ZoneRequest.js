@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Zone from './Zone';
 import ZoneSpaceRequest from './ZoneSpaceRequest';
 
 /**
@@ -58,7 +59,7 @@ class ZoneRequest {
                 obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
             }
             if (data.hasOwnProperty('zones')) {
-                obj['zones'] = ApiClient.convertToType(data['zones'], [ZoneRequest]);
+                obj['zones'] = ApiClient.convertToType(data['zones'], [Zone]);
             }
             if (data.hasOwnProperty('parent_id')) {
                 obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
@@ -93,7 +94,7 @@ ZoneRequest.prototype['name'] = undefined;
 ZoneRequest.prototype['uuid'] = undefined;
 
 /**
- * @member {Array.<module:model/ZoneRequest>} zones
+ * @member {Array.<module:model/Zone>} zones
  */
 ZoneRequest.prototype['zones'] = undefined;
 

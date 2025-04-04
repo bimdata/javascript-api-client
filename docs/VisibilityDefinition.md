@@ -1,10 +1,9 @@
-# bimdata.RawPropertyRequest
+# bimdata.VisibilityDefinition
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **Object** |  | [optional] 
-**defId** | **Number** |  | 
+**visibility** | [**[Visibility]**](Visibility.md) |  | 
 
 

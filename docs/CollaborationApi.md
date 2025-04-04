@@ -834,7 +834,7 @@ Name | Type | Description  | Notes
 
 Create a complete DMS tree
 
- Create a DMS structure of folder Format request : &#x60;&#x60;&#x60; [{     \&quot;name\&quot;: :name:     \&quot;parent_id\&quot;: :parent_id:                      # optionnal     \&quot;default_permission\&quot;: :default_permission:    # optionnal     \&quot;children\&quot;: [{                                # optionnal         \&quot;name\&quot;: :name:,         \&quot;children\&quot;: []     }] }], &#x60;&#x60;&#x60;                   Required scopes: org:manage
+Create a DMS structure of folders  Required scopes: org:manage
 
 ### Example
 
@@ -960,7 +960,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;DXF&#39;, &#39;GLTF&#39;, &#39;POINT_CLOUD&#39;, &#39;OBJ&#39;, &#39;DWG&#39;, &#39;IFC&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;OBJ&#39;, &#39;GLTF&#39;, &#39;POINT_CLOUD&#39;, &#39;DWG&#39;, &#39;IFC&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 

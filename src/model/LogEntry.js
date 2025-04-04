@@ -29,7 +29,7 @@ class LogEntry {
      * @param projectName {String} 
      * @param date {Date} 
      * @param action {String} 
-     * @param description {Object.<String, Object>} 
+     * @param description {Object} 
      */
     constructor(id, userId, userEmail, appName, projectName, date, action, description) { 
         
@@ -85,7 +85,7 @@ class LogEntry {
                 obj['action'] = ApiClient.convertToType(data['action'], 'String');
             }
             if (data.hasOwnProperty('description')) {
-                obj['description'] = ApiClient.convertToType(data['description'], {'String': Object});
+                obj['description'] = ApiClient.convertToType(data['description'], Object);
             }
         }
         return obj;
@@ -130,7 +130,7 @@ LogEntry.prototype['date'] = undefined;
 LogEntry.prototype['action'] = undefined;
 
 /**
- * @member {Object.<String, Object>} description
+ * @member {Object} description
  */
 LogEntry.prototype['description'] = undefined;
 
