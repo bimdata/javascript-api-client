@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Mask2D from './Mask2D';
 import ModelDocument from './ModelDocument';
 import ModelSerializerWithoutChildren from './ModelSerializerWithoutChildren';
 import User from './User';
@@ -48,11 +49,12 @@ class Model {
      * @param warnings {Array.<String>} List of warnings that happened during IFC processing
      * @param parentId {Number} The first page of the pdf
      * @param pageNumber {Number} The page number of the related pdf
+     * @param mask2d {module:model/Mask2D} 
      * @param children {Array.<module:model/ModelSerializerWithoutChildren>} Contains additional pages of a pdf
      */
-    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, children) { 
+    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, mask2d, children) { 
         
-        Model.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, children);
+        Model.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, mask2d, children);
     }
 
     /**
@@ -60,7 +62,7 @@ class Model {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, children) { 
+    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, mask2d, children) { 
         obj['id'] = id;
         obj['type'] = type;
         obj['creator'] = creator;
@@ -83,6 +85,7 @@ class Model {
         obj['warnings'] = warnings;
         obj['parent_id'] = parentId;
         obj['page_number'] = pageNumber;
+        obj['mask_2d'] = mask2d;
         obj['children'] = children;
     }
 
@@ -189,6 +192,9 @@ class Model {
             }
             if (data.hasOwnProperty('layout_name')) {
                 obj['layout_name'] = ApiClient.convertToType(data['layout_name'], 'String');
+            }
+            if (data.hasOwnProperty('mask_2d')) {
+                obj['mask_2d'] = Mask2D.constructFromObject(data['mask_2d']);
             }
             if (data.hasOwnProperty('children')) {
                 obj['children'] = ApiClient.convertToType(data['children'], [ModelSerializerWithoutChildren]);
@@ -368,6 +374,11 @@ Model.prototype['page_number'] = undefined;
  * @member {String} layout_name
  */
 Model.prototype['layout_name'] = undefined;
+
+/**
+ * @member {module:model/Mask2D} mask_2d
+ */
+Model.prototype['mask_2d'] = undefined;
 
 /**
  * Contains additional pages of a pdf

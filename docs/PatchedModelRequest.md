@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **northVector** | **[[Number]]** | This field is only for information. Updating it won&#39;t impact the export. | [optional] 
 **recommanded2dAngle** | **Number** | This is the angle in clockwise degree to apply on the 2D to optimise the horizontality of objects. This field is only for information. Updating it won&#39;t impact the export. | [optional] 
 **layoutName** | **String** | The name of the DWG layout (only set when type&#x3D;&#x3D;DWG) | [optional] 
+**mask2d** | [**Mask2DRequest**](Mask2DRequest.md) |  | [optional] 
 
 
 

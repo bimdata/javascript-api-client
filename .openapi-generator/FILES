@@ -81,6 +81,8 @@ docs/LogEntry.md
 docs/MarketplaceAppImage.md
 docs/MarketplaceAppLight.md
 docs/MarketplaceAppLightRequest.md
+docs/Mask2D.md
+docs/Mask2DRequest.md
 docs/Material.md
 docs/MaterialListComponent.md
 docs/MaterialListComponentRequest.md
@@ -342,6 +344,8 @@ src/model/LogEntry.js
 src/model/MarketplaceAppImage.js
 src/model/MarketplaceAppLight.js
 src/model/MarketplaceAppLightRequest.js
+src/model/Mask2D.js
+src/model/Mask2DRequest.js
 src/model/Material.js
 src/model/MaterialListComponent.js
 src/model/MaterialListComponentRequest.js
@@ -596,6 +600,8 @@ test/model/LogEntry.spec.js
 test/model/MarketplaceAppImage.spec.js
 test/model/MarketplaceAppLight.spec.js
 test/model/MarketplaceAppLightRequest.spec.js
+test/model/Mask2D.spec.js
+test/model/Mask2DRequest.spec.js
 test/model/Material.spec.js
 test/model/MaterialListComponent.spec.js
 test/model/MaterialListComponentRequest.spec.js

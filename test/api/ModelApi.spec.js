@@ -308,6 +308,16 @@
         done();
       });
     });
+    describe('createMask2D', function() {
+      it('should call createMask2D successfully', function(done) {
+        //uncomment below and update the code to test createMask2D
+        //instance.createMask2D(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createMetaBuilding', function() {
       it('should call createMetaBuilding successfully', function(done) {
         //uncomment below and update the code to test createMetaBuilding
@@ -542,6 +552,16 @@
       it('should call deleteLayer successfully', function(done) {
         //uncomment below and update the code to test deleteLayer
         //instance.deleteLayer(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteMask2D', function() {
+      it('should call deleteMask2D successfully', function(done) {
+        //uncomment below and update the code to test deleteMask2D
+        //instance.deleteMask2D(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

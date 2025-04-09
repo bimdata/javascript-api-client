@@ -337,6 +337,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**createElementPropertySetPropertyDefinition**](docs/ModelApi.md#createElementPropertySetPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition | Create a Definition to a Property
 *bimdata.ModelApi* | [**createElementPropertySetPropertyDefinitionUnit**](docs/ModelApi.md#createElementPropertySetPropertyDefinitionUnit) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit | Create a Unit to a Definition
 *bimdata.ModelApi* | [**createLayer**](docs/ModelApi.md#createLayer) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer | Create a layer in the model
+*bimdata.ModelApi* | [**createMask2D**](docs/ModelApi.md#createMask2D) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/mask-2d | Create or update a 2D mask for the model
 *bimdata.ModelApi* | [**createMetaBuilding**](docs/ModelApi.md#createMetaBuilding) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-metabuilding | Create an empty 3D Model
 *bimdata.ModelApi* | [**createModel**](docs/ModelApi.md#createModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-model | Make a PDF or Image file a Model
 *bimdata.ModelApi* | [**createModelPropertyDefinition**](docs/ModelApi.md#createModelPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition | Create a PropertyDefinition on the model
@@ -361,6 +362,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**deleteDrawing**](docs/ModelApi.md#deleteDrawing) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing/{id} | Delete a drawing of a model
 *bimdata.ModelApi* | [**deleteElement**](docs/ModelApi.md#deleteElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Delete an element of a model
 *bimdata.ModelApi* | [**deleteLayer**](docs/ModelApi.md#deleteLayer) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Delete a layer of a model
+*bimdata.ModelApi* | [**deleteMask2D**](docs/ModelApi.md#deleteMask2D) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/mask-2d | Delete the 2D mask for the model
 *bimdata.ModelApi* | [**deleteModel**](docs/ModelApi.md#deleteModel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id} | Delete a model
 *bimdata.ModelApi* | [**deleteModelProperty**](docs/ModelApi.md#deleteModelProperty) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id} | Delete a Property of a model
 *bimdata.ModelApi* | [**deleteModelPropertyDefinition**](docs/ModelApi.md#deleteModelPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Delete a PropertyDefinitions of a model
@@ -559,6 +561,8 @@ Class | Method | HTTP request | Description
  - [bimdata.MarketplaceAppImage](docs/MarketplaceAppImage.md)
  - [bimdata.MarketplaceAppLight](docs/MarketplaceAppLight.md)
  - [bimdata.MarketplaceAppLightRequest](docs/MarketplaceAppLightRequest.md)
+ - [bimdata.Mask2D](docs/Mask2D.md)
+ - [bimdata.Mask2DRequest](docs/Mask2DRequest.md)
  - [bimdata.Material](docs/Material.md)
  - [bimdata.MaterialListComponent](docs/MaterialListComponent.md)
  - [bimdata.MaterialListComponentRequest](docs/MaterialListComponentRequest.md)

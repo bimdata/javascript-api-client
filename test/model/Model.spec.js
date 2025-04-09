@@ -240,6 +240,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property mask2d (base name: "mask_2d")', function() {
+      // uncomment below and update the code to test the property mask2d
+      //var instance = new bimdata.Model();
+      //expect(instance).to.be();
+    });
+
     it('should have the property children (base name: "children")', function() {
       // uncomment below and update the code to test the property children
       //var instance = new bimdata.Model();

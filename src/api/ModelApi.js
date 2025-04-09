@@ -36,6 +36,8 @@ import IfcMergeRequest from '../model/IfcMergeRequest';
 import IfcOptimizeRequest from '../model/IfcOptimizeRequest';
 import Layer from '../model/Layer';
 import LayerRequest from '../model/LayerRequest';
+import Mask2D from '../model/Mask2D';
+import Mask2DRequest from '../model/Mask2DRequest';
 import Material from '../model/Material';
 import Model from '../model/Model';
 import ModelErrors from '../model/ModelErrors';
@@ -2016,6 +2018,74 @@ export default class ModelApi {
 
 
     /**
+     * Create or update a 2D mask for the model
+     * Create or update a 2D mask for the model. Only available for PDF, JPEG and PNG models
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {module:model/Mask2DRequest} mask2DRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Mask2D} and HTTP response
+     */
+    createMask2DWithHttpInfo(cloudPk, id, projectPk, mask2DRequest) {
+      let postBody = mask2DRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createMask2D");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling createMask2D");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createMask2D");
+      }
+      // verify the required parameter 'mask2DRequest' is set
+      if (mask2DRequest === undefined || mask2DRequest === null) {
+        throw new Error("Missing the required parameter 'mask2DRequest' when calling createMask2D");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Mask2D;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}/mask-2d', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create or update a 2D mask for the model
+     * Create or update a 2D mask for the model. Only available for PDF, JPEG and PNG models
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {module:model/Mask2DRequest} mask2DRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Mask2D}
+     */
+    createMask2D(cloudPk, id, projectPk, mask2DRequest) {
+      return this.createMask2DWithHttpInfo(cloudPk, id, projectPk, mask2DRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create an empty 3D Model
      * Create an empty 3D Model to be used in BIMData services  Required scopes: ifc:write, model:write
      * @param {Number} cloudPk 
@@ -3648,6 +3718,68 @@ export default class ModelApi {
      */
     deleteLayer(cloudPk, id, modelPk, projectPk) {
       return this.deleteLayerWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete the 2D mask for the model
+     * Delete the 2D mask for the model.
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteMask2DWithHttpInfo(cloudPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteMask2D");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteMask2D");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteMask2D");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}/mask-2d', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete the 2D mask for the model
+     * Delete the 2D mask for the model.
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteMask2D(cloudPk, id, projectPk) {
+      return this.deleteMask2DWithHttpInfo(cloudPk, id, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

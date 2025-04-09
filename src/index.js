@@ -90,6 +90,8 @@ import LogEntry from './model/LogEntry';
 import MarketplaceAppImage from './model/MarketplaceAppImage';
 import MarketplaceAppLight from './model/MarketplaceAppLight';
 import MarketplaceAppLightRequest from './model/MarketplaceAppLightRequest';
+import Mask2D from './model/Mask2D';
+import Mask2DRequest from './model/Mask2DRequest';
 import Material from './model/Material';
 import MaterialListComponent from './model/MaterialListComponent';
 import MaterialListComponentRequest from './model/MaterialListComponentRequest';
@@ -768,6 +770,18 @@ export {
      * @property {module:model/MarketplaceAppLightRequest}
      */
     MarketplaceAppLightRequest,
+
+    /**
+     * The Mask2D model constructor.
+     * @property {module:model/Mask2D}
+     */
+    Mask2D,
+
+    /**
+     * The Mask2DRequest model constructor.
+     * @property {module:model/Mask2DRequest}
+     */
+    Mask2DRequest,
 
     /**
      * The Material model constructor.
