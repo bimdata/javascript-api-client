@@ -22,11 +22,11 @@ class Mask2DRequest {
     /**
      * Constructs a new <code>Mask2DRequest</code>.
      * @alias module:model/Mask2DRequest
-     * @param viewport {Array.<Array.<Number>>} Viewport of the manually created mask to show only a part of the model.
+     * @param cropPath {Array.<Array.<Number>>} Crop path of the manually created mask to show only a part of the model.
      */
-    constructor(viewport) { 
+    constructor(cropPath) { 
         
-        Mask2DRequest.initialize(this, viewport);
+        Mask2DRequest.initialize(this, cropPath);
     }
 
     /**
@@ -34,8 +34,8 @@ class Mask2DRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, viewport) { 
-        obj['viewport'] = viewport;
+    static initialize(obj, cropPath) { 
+        obj['crop_path'] = cropPath;
     }
 
     /**
@@ -49,8 +49,8 @@ class Mask2DRequest {
         if (data) {
             obj = obj || new Mask2DRequest();
 
-            if (data.hasOwnProperty('viewport')) {
-                obj['viewport'] = ApiClient.convertToType(data['viewport'], [['Number']]);
+            if (data.hasOwnProperty('crop_path')) {
+                obj['crop_path'] = ApiClient.convertToType(data['crop_path'], [['Number']]);
             }
         }
         return obj;
@@ -60,10 +60,10 @@ class Mask2DRequest {
 }
 
 /**
- * Viewport of the manually created mask to show only a part of the model.
- * @member {Array.<Array.<Number>>} viewport
+ * Crop path of the manually created mask to show only a part of the model.
+ * @member {Array.<Array.<Number>>} crop_path
  */
-Mask2DRequest.prototype['viewport'] = undefined;
+Mask2DRequest.prototype['crop_path'] = undefined;
 
 
 

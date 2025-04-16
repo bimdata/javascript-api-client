@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property viewport (base name: "viewport")', function() {
-      // uncomment below and update the code to test the property viewport
+    it('should have the property cropPath (base name: "crop_path")', function() {
+      // uncomment below and update the code to test the property cropPath
       //var instance = new bimdata.Mask2D();
       //expect(instance).to.be();
     });

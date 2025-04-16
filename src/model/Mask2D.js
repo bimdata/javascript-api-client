@@ -23,13 +23,13 @@ class Mask2D {
      * Constructs a new <code>Mask2D</code>.
      * @alias module:model/Mask2D
      * @param id {Number} 
-     * @param viewport {Array.<Array.<Number>>} Viewport of the manually created mask to show only a part of the model.
+     * @param cropPath {Array.<Array.<Number>>} Crop path of the manually created mask to show only a part of the model.
      * @param createdAt {Date} Creation date
      * @param updatedAt {Date} Date of the last update
      */
-    constructor(id, viewport, createdAt, updatedAt) { 
+    constructor(id, cropPath, createdAt, updatedAt) { 
         
-        Mask2D.initialize(this, id, viewport, createdAt, updatedAt);
+        Mask2D.initialize(this, id, cropPath, createdAt, updatedAt);
     }
 
     /**
@@ -37,9 +37,9 @@ class Mask2D {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, viewport, createdAt, updatedAt) { 
+    static initialize(obj, id, cropPath, createdAt, updatedAt) { 
         obj['id'] = id;
-        obj['viewport'] = viewport;
+        obj['crop_path'] = cropPath;
         obj['created_at'] = createdAt;
         obj['updated_at'] = updatedAt;
     }
@@ -58,8 +58,8 @@ class Mask2D {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('viewport')) {
-                obj['viewport'] = ApiClient.convertToType(data['viewport'], [['Number']]);
+            if (data.hasOwnProperty('crop_path')) {
+                obj['crop_path'] = ApiClient.convertToType(data['crop_path'], [['Number']]);
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -80,10 +80,10 @@ class Mask2D {
 Mask2D.prototype['id'] = undefined;
 
 /**
- * Viewport of the manually created mask to show only a part of the model.
- * @member {Array.<Array.<Number>>} viewport
+ * Crop path of the manually created mask to show only a part of the model.
+ * @member {Array.<Array.<Number>>} crop_path
  */
-Mask2D.prototype['viewport'] = undefined;
+Mask2D.prototype['crop_path'] = undefined;
 
 /**
  * Creation date
