@@ -39,11 +39,10 @@ class RecursiveFolderChildren {
      * @param userPermission {module:model/RecursiveFolderChildren.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      * @param historyCount {Number} Number of previous versions
      * @param tags {Array.<module:model/Tag>} Tags of a document
-     * @param children {Array.<module:model/RecursiveFolderChildren>} 
      */
-    constructor(id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags, children) { 
+    constructor(id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags) { 
         
-        RecursiveFolderChildren.initialize(this, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags, children);
+        RecursiveFolderChildren.initialize(this, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags);
     }
 
     /**
@@ -51,7 +50,7 @@ class RecursiveFolderChildren {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags, children) { 
+    static initialize(obj, id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags) { 
         obj['id'] = id;
         obj['parent_id'] = parentId;
         obj['type'] = type;
@@ -67,7 +66,6 @@ class RecursiveFolderChildren {
         obj['user_permission'] = userPermission;
         obj['history_count'] = historyCount;
         obj['tags'] = tags;
-        obj['children'] = children;
     }
 
     /**
