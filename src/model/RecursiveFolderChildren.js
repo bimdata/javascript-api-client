@@ -39,7 +39,7 @@ class RecursiveFolderChildren {
      * @param userPermission {module:model/RecursiveFolderChildren.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      * @param historyCount {Number} Number of previous versions
      * @param tags {Array.<module:model/Tag>} Tags of a document
-     * @param children {module:model/RecursiveFolderChildren} 
+     * @param children {Array.<module:model/RecursiveFolderChildren>} 
      */
     constructor(id, parentId, type, nature, modelType, name, createdAt, updatedAt, modelId, ifcId, groupsPermissions, defaultPermission, userPermission, historyCount, tags, children) { 
         
@@ -145,7 +145,7 @@ class RecursiveFolderChildren {
                 obj['tags'] = ApiClient.convertToType(data['tags'], [Tag]);
             }
             if (data.hasOwnProperty('children')) {
-                obj['children'] = ApiClient.convertToType(data['children'], RecursiveFolderChildren);
+                obj['children'] = ApiClient.convertToType(data['children'], [RecursiveFolderChildren]);
             }
         }
         return obj;
@@ -269,7 +269,7 @@ RecursiveFolderChildren.prototype['history_count'] = undefined;
 RecursiveFolderChildren.prototype['tags'] = undefined;
 
 /**
- * @member {module:model/RecursiveFolderChildren} children
+ * @member {Array.<module:model/RecursiveFolderChildren>} children
  */
 RecursiveFolderChildren.prototype['children'] = undefined;
 

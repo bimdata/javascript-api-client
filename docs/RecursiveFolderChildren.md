@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **userPermission** | **Number** | Aggregate of group user permissions and folder default permission | [readonly] 
 **historyCount** | **Number** | Number of previous versions | [readonly] 
 **tags** | [**[Tag]**](Tag.md) | Tags of a document | [readonly] 
-**children** | [**RecursiveFolderChildren**](RecursiveFolderChildren.md) |  | [readonly] 
+**children** | [**[RecursiveFolderChildren]**](RecursiveFolderChildren.md) |  | [readonly] 
 
 
 
