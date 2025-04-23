@@ -1,11 +1,11 @@
-# bimdata.XktFile
+# bimdata.XktFileRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **version** | **Number** |  | 
-**file** | **String** |  | 
-**chunks** | [**[XktChunk]**](XktChunk.md) |  | [optional] 
+**file** | **File** |  | 
+**chunks** | [**[XktChunkRequest]**](XktChunkRequest.md) |  | [optional] 
 
 

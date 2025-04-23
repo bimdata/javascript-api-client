@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.XktFile();
+    instance = new bimdata.XktChunkRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,16 @@
       object[property] = value;
   }
 
-  describe('XktFile', function() {
-    it('should create an instance of XktFile', function() {
-      // uncomment below and update the code to test XktFile
-      //var instance = new bimdata.XktFile();
-      //expect(instance).to.be.a(bimdata.XktFile);
-    });
-
-    it('should have the property version (base name: "version")', function() {
-      // uncomment below and update the code to test the property version
-      //var instance = new bimdata.XktFile();
-      //expect(instance).to.be();
+  describe('XktChunkRequest', function() {
+    it('should create an instance of XktChunkRequest', function() {
+      // uncomment below and update the code to test XktChunkRequest
+      //var instance = new bimdata.XktChunkRequest();
+      //expect(instance).to.be.a(bimdata.XktChunkRequest);
     });
 
     it('should have the property file (base name: "file")', function() {
       // uncomment below and update the code to test the property file
-      //var instance = new bimdata.XktFile();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property chunks (base name: "chunks")', function() {
-      // uncomment below and update the code to test the property chunks
-      //var instance = new bimdata.XktFile();
+      //var instance = new bimdata.XktChunkRequest();
       //expect(instance).to.be();
     });
 

@@ -252,7 +252,10 @@ docs/WebHookRequest.md
 docs/WebhookApi.md
 docs/WriteFolder.md
 docs/WriteFolderRequest.md
+docs/XktChunk.md
+docs/XktChunkRequest.md
 docs/XktFile.md
+docs/XktFileRequest.md
 docs/Zone.md
 docs/ZoneRequest.md
 docs/ZoneSpace.md
@@ -512,7 +515,10 @@ src/model/WebHook.js
 src/model/WebHookRequest.js
 src/model/WriteFolder.js
 src/model/WriteFolderRequest.js
+src/model/XktChunk.js
+src/model/XktChunkRequest.js
 src/model/XktFile.js
+src/model/XktFileRequest.js
 src/model/Zone.js
 src/model/ZoneRequest.js
 src/model/ZoneSpace.js
@@ -768,7 +774,10 @@ test/model/WebHook.spec.js
 test/model/WebHookRequest.spec.js
 test/model/WriteFolder.spec.js
 test/model/WriteFolderRequest.spec.js
+test/model/XktChunk.spec.js
+test/model/XktChunkRequest.spec.js
 test/model/XktFile.spec.js
+test/model/XktFileRequest.spec.js
 test/model/Zone.spec.js
 test/model/ZoneRequest.spec.js
 test/model/ZoneSpace.spec.js

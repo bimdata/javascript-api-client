@@ -258,7 +258,10 @@ import WebHook from './model/WebHook';
 import WebHookRequest from './model/WebHookRequest';
 import WriteFolder from './model/WriteFolder';
 import WriteFolderRequest from './model/WriteFolderRequest';
+import XktChunk from './model/XktChunk';
+import XktChunkRequest from './model/XktChunkRequest';
 import XktFile from './model/XktFile';
+import XktFileRequest from './model/XktFileRequest';
 import Zone from './model/Zone';
 import ZoneRequest from './model/ZoneRequest';
 import ZoneSpace from './model/ZoneSpace';
@@ -1780,10 +1783,28 @@ export {
     WriteFolderRequest,
 
     /**
+     * The XktChunk model constructor.
+     * @property {module:model/XktChunk}
+     */
+    XktChunk,
+
+    /**
+     * The XktChunkRequest model constructor.
+     * @property {module:model/XktChunkRequest}
+     */
+    XktChunkRequest,
+
+    /**
      * The XktFile model constructor.
      * @property {module:model/XktFile}
      */
     XktFile,
+
+    /**
+     * The XktFileRequest model constructor.
+     * @property {module:model/XktFileRequest}
+     */
+    XktFileRequest,
 
     /**
      * The Zone model constructor.

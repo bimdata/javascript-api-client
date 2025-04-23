@@ -12,23 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import XktChunk from './XktChunk';
 
 /**
- * The XktFile model module.
- * @module model/XktFile
+ * The XktChunk model module.
+ * @module model/XktChunk
  * @version 0.0.0
  */
-class XktFile {
+class XktChunk {
     /**
-     * Constructs a new <code>XktFile</code>.
-     * @alias module:model/XktFile
-     * @param version {Number} 
+     * Constructs a new <code>XktChunk</code>.
+     * @alias module:model/XktChunk
      * @param file {String} 
      */
-    constructor(version, file) { 
+    constructor(file) { 
         
-        XktFile.initialize(this, version, file);
+        XktChunk.initialize(this, file);
     }
 
     /**
@@ -36,30 +34,23 @@ class XktFile {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, version, file) { 
-        obj['version'] = version;
+    static initialize(obj, file) { 
         obj['file'] = file;
     }
 
     /**
-     * Constructs a <code>XktFile</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>XktChunk</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/XktFile} obj Optional instance to populate.
-     * @return {module:model/XktFile} The populated <code>XktFile</code> instance.
+     * @param {module:model/XktChunk} obj Optional instance to populate.
+     * @return {module:model/XktChunk} The populated <code>XktChunk</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new XktFile();
+            obj = obj || new XktChunk();
 
-            if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
-            }
             if (data.hasOwnProperty('file')) {
                 obj['file'] = ApiClient.convertToType(data['file'], 'String');
-            }
-            if (data.hasOwnProperty('chunks')) {
-                obj['chunks'] = ApiClient.convertToType(data['chunks'], [XktChunk]);
             }
         }
         return obj;
@@ -69,24 +60,14 @@ class XktFile {
 }
 
 /**
- * @member {Number} version
- */
-XktFile.prototype['version'] = undefined;
-
-/**
  * @member {String} file
  */
-XktFile.prototype['file'] = undefined;
-
-/**
- * @member {Array.<module:model/XktChunk>} chunks
- */
-XktFile.prototype['chunks'] = undefined;
+XktChunk.prototype['file'] = undefined;
 
 
 
 
 
 
-export default XktFile;
+export default XktChunk;
 

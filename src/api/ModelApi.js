@@ -3086,9 +3086,12 @@ export default class ModelApi {
      * @param {Number} projectPk 
      * @param {Number} version 
      * @param {File} file 
+     * @param {Object} opts Optional parameters
+     * @param {Array.<File>} opts.chunks 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/XktFile} and HTTP response
      */
-    createXktFileWithHttpInfo(cloudPk, id, projectPk, version, file) {
+    createXktFileWithHttpInfo(cloudPk, id, projectPk, version, file, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
@@ -3122,7 +3125,8 @@ export default class ModelApi {
       };
       let formParams = {
         'version': version,
-        'file': file
+        'file': file,
+        'chunks': this.apiClient.buildCollectionParam(opts['chunks'], 'passthrough')
       };
 
       let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
@@ -3144,10 +3148,12 @@ export default class ModelApi {
      * @param {Number} projectPk 
      * @param {Number} version 
      * @param {File} file 
+     * @param {Object} opts Optional parameters
+     * @param {Array.<File>} opts.chunks 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/XktFile}
      */
-    createXktFile(cloudPk, id, projectPk, version, file) {
-      return this.createXktFileWithHttpInfo(cloudPk, id, projectPk, version, file)
+    createXktFile(cloudPk, id, projectPk, version, file, opts) {
+      return this.createXktFileWithHttpInfo(cloudPk, id, projectPk, version, file, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

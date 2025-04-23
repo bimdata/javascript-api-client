@@ -3038,7 +3038,7 @@ null (empty response body)
 
 ## createXktFile
 
-> XktFile createXktFile(cloudPk, id, projectPk, version, file)
+> XktFile createXktFile(cloudPk, id, projectPk, version, file, opts)
 
 Create an xkt file for the model. Overrides existing file with same version
 
@@ -3072,7 +3072,10 @@ let id = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | 
 let version = 56; // Number | 
 let file = "/path/to/file"; // File | 
-apiInstance.createXktFile(cloudPk, id, projectPk, version, file).then((data) => {
+let opts = {
+  'chunks': ["null"] // [File] | 
+};
+apiInstance.createXktFile(cloudPk, id, projectPk, version, file, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3090,6 +3093,7 @@ Name | Type | Description  | Notes
  **projectPk** | **Number**|  | 
  **version** | **Number**|  | 
  **file** | **File**|  | 
+ **chunks** | **[File]**|  | [optional] 
 
 ### Return type
 
