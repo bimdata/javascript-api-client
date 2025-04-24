@@ -474,11 +474,17 @@ Class | Method | HTTP request | Description
 *bimdata.SsoApi* | [**denyInvitation**](docs/SsoApi.md#denyInvitation) | **POST** /identity-provider/invitation/{id}/deny | Deny an invitation
 *bimdata.SsoApi* | [**getInvitation**](docs/SsoApi.md#getInvitation) | **GET** /identity-provider/invitation/{id} | Retrieve an invitation
 *bimdata.SsoApi* | [**getInvitations**](docs/SsoApi.md#getInvitations) | **GET** /identity-provider/invitation | Retrieve all invitations
+*bimdata.WebhookApi* | [**createProjectWebHook**](docs/WebhookApi.md#createProjectWebHook) | **POST** /cloud/{cloud_pk}/project/{project_pk}/webhook | Create a new project Webhook
 *bimdata.WebhookApi* | [**createWebHook**](docs/WebhookApi.md#createWebHook) | **POST** /cloud/{cloud_pk}/webhook | Create a new Webhook
+*bimdata.WebhookApi* | [**deleteProjectWebHook**](docs/WebhookApi.md#deleteProjectWebHook) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/webhook/{id} | Delete a webhook
 *bimdata.WebhookApi* | [**deleteWebHook**](docs/WebhookApi.md#deleteWebHook) | **DELETE** /cloud/{cloud_pk}/webhook/{id} | Delete a webhook
+*bimdata.WebhookApi* | [**getProjectWebHook**](docs/WebhookApi.md#getProjectWebHook) | **GET** /cloud/{cloud_pk}/project/{project_pk}/webhook/{id} | Retrieve one configured project webhook
+*bimdata.WebhookApi* | [**getProjectWebHooks**](docs/WebhookApi.md#getProjectWebHooks) | **GET** /cloud/{cloud_pk}/project/{project_pk}/webhook | Retrieve all configured project webhooks
 *bimdata.WebhookApi* | [**getWebHook**](docs/WebhookApi.md#getWebHook) | **GET** /cloud/{cloud_pk}/webhook/{id} | Retrieve one configured webhook
 *bimdata.WebhookApi* | [**getWebHooks**](docs/WebhookApi.md#getWebHooks) | **GET** /cloud/{cloud_pk}/webhook | Retrieve all configured webhooks
+*bimdata.WebhookApi* | [**pingProjectWebHook**](docs/WebhookApi.md#pingProjectWebHook) | **POST** /cloud/{cloud_pk}/project/{project_pk}/webhook/{id}/ping | Test a project webhook
 *bimdata.WebhookApi* | [**pingWebHook**](docs/WebhookApi.md#pingWebHook) | **POST** /cloud/{cloud_pk}/webhook/{id}/ping | Test a webhook
+*bimdata.WebhookApi* | [**updateProjectWebHook**](docs/WebhookApi.md#updateProjectWebHook) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/webhook/{id} | Update some field of a webhook
 *bimdata.WebhookApi* | [**updateWebHook**](docs/WebhookApi.md#updateWebHook) | **PATCH** /cloud/{cloud_pk}/webhook/{id} | Update some field of a webhook
 
 

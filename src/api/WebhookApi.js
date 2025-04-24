@@ -38,6 +38,67 @@ export default class WebhookApi {
 
 
     /**
+     * Create a new project Webhook
+     * Create a new project Webhook  Required scopes: webhook:manage
+     * @param {Number} cloudPk 
+     * @param {Number} projectPk 
+     * @param {module:model/WebHookRequest} webHookRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
+     */
+    createProjectWebHookWithHttpInfo(cloudPk, projectPk, webHookRequest) {
+      let postBody = webHookRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createProjectWebHook");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createProjectWebHook");
+      }
+      // verify the required parameter 'webHookRequest' is set
+      if (webHookRequest === undefined || webHookRequest === null) {
+        throw new Error("Missing the required parameter 'webHookRequest' when calling createProjectWebHook");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = WebHook;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/webhook', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a new project Webhook
+     * Create a new project Webhook  Required scopes: webhook:manage
+     * @param {Number} cloudPk 
+     * @param {Number} projectPk 
+     * @param {module:model/WebHookRequest} webHookRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
+     */
+    createProjectWebHook(cloudPk, projectPk, webHookRequest) {
+      return this.createProjectWebHookWithHttpInfo(cloudPk, projectPk, webHookRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create a new Webhook
      * Create a new Webhook  Required scopes: webhook:manage
      * @param {Number} cloudPk 
@@ -96,6 +157,68 @@ export default class WebhookApi {
      * Delete a webhook  Required scopes: webhook:manage
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this web hook.
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteProjectWebHookWithHttpInfo(cloudPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteProjectWebHook");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteProjectWebHook");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteProjectWebHook");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/webhook/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a webhook
+     * Delete a webhook  Required scopes: webhook:manage
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this web hook.
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteProjectWebHook(cloudPk, id, projectPk) {
+      return this.deleteProjectWebHookWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a webhook
+     * Delete a webhook  Required scopes: webhook:manage
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this web hook.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteWebHookWithHttpInfo(cloudPk, id) {
@@ -140,6 +263,123 @@ export default class WebhookApi {
      */
     deleteWebHook(cloudPk, id) {
       return this.deleteWebHookWithHttpInfo(cloudPk, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve one configured project webhook
+     * Retrieve one configured project webhook  Required scopes: webhook:manage
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this web hook.
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
+     */
+    getProjectWebHookWithHttpInfo(cloudPk, id, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectWebHook");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getProjectWebHook");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getProjectWebHook");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = WebHook;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/webhook/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve one configured project webhook
+     * Retrieve one configured project webhook  Required scopes: webhook:manage
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this web hook.
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
+     */
+    getProjectWebHook(cloudPk, id, projectPk) {
+      return this.getProjectWebHookWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all configured project webhooks
+     * Retrieve all configured project webhooks  Required scopes: webhook:manage
+     * @param {Number} cloudPk 
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/WebHook>} and HTTP response
+     */
+    getProjectWebHooksWithHttpInfo(cloudPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getProjectWebHooks");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getProjectWebHooks");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [WebHook];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/webhook', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all configured project webhooks
+     * Retrieve all configured project webhooks  Required scopes: webhook:manage
+     * @param {Number} cloudPk 
+     * @param {Number} projectPk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/WebHook>}
+     */
+    getProjectWebHooks(cloudPk, projectPk) {
+      return this.getProjectWebHooksWithHttpInfo(cloudPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -250,6 +490,74 @@ export default class WebhookApi {
 
 
     /**
+     * Test a project webhook
+     * Trigger a Ping Event sending {\"ok\": true} to the webhook URL. Useful to test your app  Required scopes: webhook:manage
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this web hook.
+     * @param {Number} projectPk 
+     * @param {module:model/WebHookRequest} webHookRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
+     */
+    pingProjectWebHookWithHttpInfo(cloudPk, id, projectPk, webHookRequest) {
+      let postBody = webHookRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling pingProjectWebHook");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling pingProjectWebHook");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling pingProjectWebHook");
+      }
+      // verify the required parameter 'webHookRequest' is set
+      if (webHookRequest === undefined || webHookRequest === null) {
+        throw new Error("Missing the required parameter 'webHookRequest' when calling pingProjectWebHook");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = WebHook;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/webhook/{id}/ping', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Test a project webhook
+     * Trigger a Ping Event sending {\"ok\": true} to the webhook URL. Useful to test your app  Required scopes: webhook:manage
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this web hook.
+     * @param {Number} projectPk 
+     * @param {module:model/WebHookRequest} webHookRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
+     */
+    pingProjectWebHook(cloudPk, id, projectPk, webHookRequest) {
+      return this.pingProjectWebHookWithHttpInfo(cloudPk, id, projectPk, webHookRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Test a webhook
      * Trigger a Ping Event sending {\"ok\": true} to the webhook URL. Useful to test your app  Required scopes: webhook:manage
      * @param {Number} cloudPk 
@@ -304,6 +612,73 @@ export default class WebhookApi {
      */
     pingWebHook(cloudPk, id, webHookRequest) {
       return this.pingWebHookWithHttpInfo(cloudPk, id, webHookRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some field of a webhook
+     * Update some field of a webhook  Required scopes: webhook:manage
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this web hook.
+     * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedWebHookRequest} opts.patchedWebHookRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WebHook} and HTTP response
+     */
+    updateProjectWebHookWithHttpInfo(cloudPk, id, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedWebHookRequest'];
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateProjectWebHook");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateProjectWebHook");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateProjectWebHook");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = WebHook;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/webhook/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some field of a webhook
+     * Update some field of a webhook  Required scopes: webhook:manage
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this web hook.
+     * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedWebHookRequest} opts.patchedWebHookRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WebHook}
+     */
+    updateProjectWebHook(cloudPk, id, projectPk, opts) {
+      return this.updateProjectWebHookWithHttpInfo(cloudPk, id, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

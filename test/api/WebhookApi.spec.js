@@ -48,6 +48,16 @@
   }
 
   describe('WebhookApi', function() {
+    describe('createProjectWebHook', function() {
+      it('should call createProjectWebHook successfully', function(done) {
+        //uncomment below and update the code to test createProjectWebHook
+        //instance.createProjectWebHook(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createWebHook', function() {
       it('should call createWebHook successfully', function(done) {
         //uncomment below and update the code to test createWebHook
@@ -58,10 +68,40 @@
         done();
       });
     });
+    describe('deleteProjectWebHook', function() {
+      it('should call deleteProjectWebHook successfully', function(done) {
+        //uncomment below and update the code to test deleteProjectWebHook
+        //instance.deleteProjectWebHook(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteWebHook', function() {
       it('should call deleteWebHook successfully', function(done) {
         //uncomment below and update the code to test deleteWebHook
         //instance.deleteWebHook(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getProjectWebHook', function() {
+      it('should call getProjectWebHook successfully', function(done) {
+        //uncomment below and update the code to test getProjectWebHook
+        //instance.getProjectWebHook(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getProjectWebHooks', function() {
+      it('should call getProjectWebHooks successfully', function(done) {
+        //uncomment below and update the code to test getProjectWebHooks
+        //instance.getProjectWebHooks(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -88,10 +128,30 @@
         done();
       });
     });
+    describe('pingProjectWebHook', function() {
+      it('should call pingProjectWebHook successfully', function(done) {
+        //uncomment below and update the code to test pingProjectWebHook
+        //instance.pingProjectWebHook(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('pingWebHook', function() {
       it('should call pingWebHook successfully', function(done) {
         //uncomment below and update the code to test pingWebHook
         //instance.pingWebHook(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateProjectWebHook', function() {
+      it('should call updateProjectWebHook successfully', function(done) {
+        //uncomment below and update the code to test updateProjectWebHook
+        //instance.updateProjectWebHook(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
