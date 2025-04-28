@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **parentId** | **Number** | The first page of the pdf | [readonly] 
 **pageNumber** | **Number** | The page number of the related pdf | [readonly] 
 **layoutName** | **String** | The name of the DWG layout (only set when type&#x3D;&#x3D;DWG) | [optional] 
-**mask2d** | [**Mask2D**](Mask2D.md) |  | 
+**mask2d** | [**Mask2D**](Mask2D.md) |  | [readonly] 
 
 
 

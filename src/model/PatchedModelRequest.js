@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import Mask2DRequest from './Mask2DRequest';
 
 /**
  * The PatchedModelRequest model module.
@@ -75,9 +74,6 @@ class PatchedModelRequest {
             if (data.hasOwnProperty('layout_name')) {
                 obj['layout_name'] = ApiClient.convertToType(data['layout_name'], 'String');
             }
-            if (data.hasOwnProperty('mask_2d')) {
-                obj['mask_2d'] = Mask2DRequest.constructFromObject(data['mask_2d']);
-            }
         }
         return obj;
     }
@@ -136,11 +132,6 @@ PatchedModelRequest.prototype['recommanded_2d_angle'] = undefined;
  * @member {String} layout_name
  */
 PatchedModelRequest.prototype['layout_name'] = undefined;
-
-/**
- * @member {module:model/Mask2DRequest} mask_2d
- */
-PatchedModelRequest.prototype['mask_2d'] = undefined;
 
 
 

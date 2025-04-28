@@ -108,12 +108,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property mask2d (base name: "mask_2d")', function() {
-      // uncomment below and update the code to test the property mask2d
-      //var instance = new bimdata.PatchedModelRequest();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

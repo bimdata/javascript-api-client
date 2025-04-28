@@ -191,7 +191,7 @@ class ModelSerializerWithoutChildren {
                 obj['layout_name'] = ApiClient.convertToType(data['layout_name'], 'String');
             }
             if (data.hasOwnProperty('mask_2d')) {
-                obj['mask_2d'] = Mask2D.constructFromObject(data['mask_2d']);
+                obj['mask_2d'] = ApiClient.convertToType(data['mask_2d'], Mask2D);
             }
         }
         return obj;
