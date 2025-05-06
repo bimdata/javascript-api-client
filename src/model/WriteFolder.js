@@ -24,19 +24,19 @@ class WriteFolder {
     /**
      * Constructs a new <code>WriteFolder</code>.
      * @alias module:model/WriteFolder
-     * @param nature {String} Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
-     * @param groupsPermissions {Array.<module:model/GroupFolderRead>} List of group permissions
-     * @param createdBy {module:model/ShortUser} 
-     * @param type {String} DEPRECATED: Use 'nature' instead. Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
      * @param userPermission {module:model/WriteFolder.UserPermissionEnum} Aggregate of group user permissions and folder default permission
-     * @param updatedAt {Date} Date of the last update
      * @param id {Number} 
-     * @param name {String} Name of the folder
+     * @param updatedAt {Date} Date of the last update
      * @param createdAt {Date} Creation date
+     * @param createdBy {module:model/ShortUser} 
+     * @param groupsPermissions {Array.<module:model/GroupFolderRead>} List of group permissions
+     * @param name {String} Name of the folder
+     * @param type {String} DEPRECATED: Use 'nature' instead. Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
+     * @param nature {String} Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
      */
-    constructor(nature, groupsPermissions, createdBy, type, userPermission, updatedAt, id, name, createdAt) { 
+    constructor(userPermission, id, updatedAt, createdAt, createdBy, groupsPermissions, name, type, nature) { 
         
-        WriteFolder.initialize(this, nature, groupsPermissions, createdBy, type, userPermission, updatedAt, id, name, createdAt);
+        WriteFolder.initialize(this, userPermission, id, updatedAt, createdAt, createdBy, groupsPermissions, name, type, nature);
     }
 
     /**
@@ -44,16 +44,16 @@ class WriteFolder {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, nature, groupsPermissions, createdBy, type, userPermission, updatedAt, id, name, createdAt) { 
-        obj['nature'] = nature;
-        obj['groups_permissions'] = groupsPermissions;
-        obj['created_by'] = createdBy;
-        obj['type'] = type;
+    static initialize(obj, userPermission, id, updatedAt, createdAt, createdBy, groupsPermissions, name, type, nature) { 
         obj['user_permission'] = userPermission;
-        obj['updated_at'] = updatedAt;
         obj['id'] = id;
-        obj['name'] = name;
+        obj['updated_at'] = updatedAt;
         obj['created_at'] = createdAt;
+        obj['created_by'] = createdBy;
+        obj['groups_permissions'] = groupsPermissions;
+        obj['name'] = name;
+        obj['type'] = type;
+        obj['nature'] = nature;
     }
 
     /**
@@ -67,38 +67,38 @@ class WriteFolder {
         if (data) {
             obj = obj || new WriteFolder();
 
-            if (data.hasOwnProperty('default_permission')) {
-                obj['default_permission'] = ApiClient.convertToType(data['default_permission'], 'Number');
-            }
-            if (data.hasOwnProperty('nature')) {
-                obj['nature'] = ApiClient.convertToType(data['nature'], 'String');
-            }
-            if (data.hasOwnProperty('groups_permissions')) {
-                obj['groups_permissions'] = ApiClient.convertToType(data['groups_permissions'], [GroupFolderRead]);
-            }
-            if (data.hasOwnProperty('created_by')) {
-                obj['created_by'] = ApiClient.convertToType(data['created_by'], ShortUser);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            if (data.hasOwnProperty('parent_id')) {
+                obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
             }
             if (data.hasOwnProperty('user_permission')) {
                 obj['user_permission'] = ApiClient.convertToType(data['user_permission'], 'Number');
             }
-            if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
-            if (data.hasOwnProperty('parent_id')) {
-                obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
+            if (data.hasOwnProperty('created_by')) {
+                obj['created_by'] = ApiClient.convertToType(data['created_by'], ShortUser);
+            }
+            if (data.hasOwnProperty('groups_permissions')) {
+                obj['groups_permissions'] = ApiClient.convertToType(data['groups_permissions'], [GroupFolderRead]);
+            }
+            if (data.hasOwnProperty('default_permission')) {
+                obj['default_permission'] = ApiClient.convertToType(data['default_permission'], 'Number');
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
+            if (data.hasOwnProperty('nature')) {
+                obj['nature'] = ApiClient.convertToType(data['nature'], 'String');
             }
             if (data.hasOwnProperty('children')) {
                 obj['children'] = ApiClient.convertToType(data['children'], [WriteFolder]);
@@ -111,33 +111,9 @@ class WriteFolder {
 }
 
 /**
- * Permission for a Folder  * `1` - denied * `50` - read_only * `100` - read_write
- * @member {module:model/WriteFolder.DefaultPermissionEnum} default_permission
+ * @member {Number} parent_id
  */
-WriteFolder.prototype['default_permission'] = undefined;
-
-/**
- * Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
- * @member {String} nature
- */
-WriteFolder.prototype['nature'] = undefined;
-
-/**
- * List of group permissions
- * @member {Array.<module:model/GroupFolderRead>} groups_permissions
- */
-WriteFolder.prototype['groups_permissions'] = undefined;
-
-/**
- * @member {module:model/ShortUser} created_by
- */
-WriteFolder.prototype['created_by'] = undefined;
-
-/**
- * DEPRECATED: Use 'nature' instead. Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
- * @member {String} type
- */
-WriteFolder.prototype['type'] = undefined;
+WriteFolder.prototype['parent_id'] = undefined;
 
 /**
  * Aggregate of group user permissions and folder default permission
@@ -146,21 +122,15 @@ WriteFolder.prototype['type'] = undefined;
 WriteFolder.prototype['user_permission'] = undefined;
 
 /**
- * Date of the last update
- * @member {Date} updated_at
- */
-WriteFolder.prototype['updated_at'] = undefined;
-
-/**
  * @member {Number} id
  */
 WriteFolder.prototype['id'] = undefined;
 
 /**
- * Name of the folder
- * @member {String} name
+ * Date of the last update
+ * @member {Date} updated_at
  */
-WriteFolder.prototype['name'] = undefined;
+WriteFolder.prototype['updated_at'] = undefined;
 
 /**
  * Creation date
@@ -169,9 +139,39 @@ WriteFolder.prototype['name'] = undefined;
 WriteFolder.prototype['created_at'] = undefined;
 
 /**
- * @member {Number} parent_id
+ * @member {module:model/ShortUser} created_by
  */
-WriteFolder.prototype['parent_id'] = undefined;
+WriteFolder.prototype['created_by'] = undefined;
+
+/**
+ * List of group permissions
+ * @member {Array.<module:model/GroupFolderRead>} groups_permissions
+ */
+WriteFolder.prototype['groups_permissions'] = undefined;
+
+/**
+ * Permission for a Folder  * `1` - denied * `50` - read_only * `100` - read_write
+ * @member {module:model/WriteFolder.DefaultPermissionEnum} default_permission
+ */
+WriteFolder.prototype['default_permission'] = undefined;
+
+/**
+ * Name of the folder
+ * @member {String} name
+ */
+WriteFolder.prototype['name'] = undefined;
+
+/**
+ * DEPRECATED: Use 'nature' instead. Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
+ * @member {String} type
+ */
+WriteFolder.prototype['type'] = undefined;
+
+/**
+ * Value is \"Folder\". It is usefull to parse the tree and discriminate folders and files
+ * @member {String} nature
+ */
+WriteFolder.prototype['nature'] = undefined;
 
 /**
  * @member {Array.<module:model/WriteFolder>} children
@@ -183,11 +183,11 @@ WriteFolder.prototype['children'] = undefined;
 
 
 /**
- * Allowed values for the <code>default_permission</code> property.
+ * Allowed values for the <code>user_permission</code> property.
  * @enum {Number}
  * @readonly
  */
-WriteFolder['DefaultPermissionEnum'] = {
+WriteFolder['UserPermissionEnum'] = {
 
     /**
      * value: 1
@@ -210,11 +210,11 @@ WriteFolder['DefaultPermissionEnum'] = {
 
 
 /**
- * Allowed values for the <code>user_permission</code> property.
+ * Allowed values for the <code>default_permission</code> property.
  * @enum {Number}
  * @readonly
  */
-WriteFolder['UserPermissionEnum'] = {
+WriteFolder['DefaultPermissionEnum'] = {
 
     /**
      * value: 1
