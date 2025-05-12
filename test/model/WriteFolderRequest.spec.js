@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(bimdata.WriteFolderRequest);
     });
 
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instance = new bimdata.WriteFolderRequest();
       //expect(instance).to.be();
     });
@@ -66,8 +66,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property parentId (base name: "parent_id")', function() {
+      // uncomment below and update the code to test the property parentId
       //var instance = new bimdata.WriteFolderRequest();
       //expect(instance).to.be();
     });

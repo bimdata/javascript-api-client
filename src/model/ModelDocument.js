@@ -78,6 +78,9 @@ class ModelDocument {
             if (data.hasOwnProperty('file_name')) {
                 obj['file_name'] = ApiClient.convertToType(data['file_name'], 'String');
             }
+            if (data.hasOwnProperty('parent_id')) {
+                obj['parent_id'] = ApiClient.convertToType(data['parent_id'], 'Number');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -131,6 +134,11 @@ ModelDocument.prototype['name'] = undefined;
  * @member {String} file_name
  */
 ModelDocument.prototype['file_name'] = undefined;
+
+/**
+ * @member {Number} parent_id
+ */
+ModelDocument.prototype['parent_id'] = undefined;
 
 /**
  * Description of the file

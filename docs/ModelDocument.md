@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **Number** |  | [readonly] 
 **name** | **String** | Shown name of the file | 
 **fileName** | **String** | Full name of the file | [optional] 
+**parentId** | **Number** |  | [optional] 
 **description** | **String** | Description of the file | [optional] 
 **file** | **String** |  | 
 **size** | **Number** | Size of the file. | [readonly] 

@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property parentId (base name: "parent_id")', function() {
+      // uncomment below and update the code to test the property parentId
+      //var instance = new bimdata.ModelDocumentRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
       //var instance = new bimdata.ModelDocumentRequest();
