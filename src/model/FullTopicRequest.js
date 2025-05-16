@@ -25,11 +25,10 @@ class FullTopicRequest {
      * Constructs a new <code>FullTopicRequest</code>.
      * @alias module:model/FullTopicRequest
      * @param title {String} 
-     * @param project {Number} 
      */
-    constructor(title, project) { 
+    constructor(title) { 
         
-        FullTopicRequest.initialize(this, title, project);
+        FullTopicRequest.initialize(this, title);
     }
 
     /**
@@ -37,9 +36,8 @@ class FullTopicRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, title, project) { 
+    static initialize(obj, title) { 
         obj['title'] = title;
-        obj['project'] = project;
     }
 
     /**
@@ -112,9 +110,6 @@ class FullTopicRequest {
             }
             if (data.hasOwnProperty('viewpoints')) {
                 obj['viewpoints'] = ApiClient.convertToType(data['viewpoints'], [ViewpointRequest]);
-            }
-            if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
             if (data.hasOwnProperty('bimdata_viewer_layout')) {
                 obj['bimdata_viewer_layout'] = ApiClient.convertToType(data['bimdata_viewer_layout'], Object);
@@ -227,11 +222,6 @@ FullTopicRequest.prototype['comments'] = undefined;
  * @member {Array.<module:model/ViewpointRequest>} viewpoints
  */
 FullTopicRequest.prototype['viewpoints'] = undefined;
-
-/**
- * @member {Number} project
- */
-FullTopicRequest.prototype['project'] = undefined;
 
 /**
  * Non standard field. JSON describing bimdataViewerLayout.

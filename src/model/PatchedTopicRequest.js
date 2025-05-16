@@ -101,9 +101,6 @@ class PatchedTopicRequest {
             if (data.hasOwnProperty('index')) {
                 obj['index'] = ApiClient.convertToType(data['index'], 'Number');
             }
-            if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
-            }
             if (data.hasOwnProperty('bimdata_viewer_layout')) {
                 obj['bimdata_viewer_layout'] = ApiClient.convertToType(data['bimdata_viewer_layout'], Object);
             }
@@ -205,11 +202,6 @@ PatchedTopicRequest.prototype['format'] = undefined;
  * @member {Number} index
  */
 PatchedTopicRequest.prototype['index'] = undefined;
-
-/**
- * @member {Number} project
- */
-PatchedTopicRequest.prototype['project'] = undefined;
 
 /**
  * Non standard field. JSON describing bimdataViewerLayout.

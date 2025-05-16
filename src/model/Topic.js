@@ -24,11 +24,10 @@ class Topic {
      * @alias module:model/Topic
      * @param title {String} 
      * @param modifiedDate {Date} 
-     * @param project {Number} 
      */
-    constructor(title, modifiedDate, project) { 
+    constructor(title, modifiedDate) { 
         
-        Topic.initialize(this, title, modifiedDate, project);
+        Topic.initialize(this, title, modifiedDate);
     }
 
     /**
@@ -36,10 +35,9 @@ class Topic {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, title, modifiedDate, project) { 
+    static initialize(obj, title, modifiedDate) { 
         obj['title'] = title;
         obj['modified_date'] = modifiedDate;
-        obj['project'] = project;
     }
 
     /**
@@ -109,9 +107,6 @@ class Topic {
             }
             if (data.hasOwnProperty('index')) {
                 obj['index'] = ApiClient.convertToType(data['index'], 'Number');
-            }
-            if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
             if (data.hasOwnProperty('bimdata_viewer_layout')) {
                 obj['bimdata_viewer_layout'] = ApiClient.convertToType(data['bimdata_viewer_layout'], Object);
@@ -219,11 +214,6 @@ Topic.prototype['format'] = undefined;
  * @member {Number} index
  */
 Topic.prototype['index'] = undefined;
-
-/**
- * @member {Number} project
- */
-Topic.prototype['project'] = undefined;
 
 /**
  * Non standard field. JSON describing bimdataViewerLayout.

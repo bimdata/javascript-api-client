@@ -56,6 +56,7 @@ import PatchedPropertySetRequest from '../model/PatchedPropertySetRequest';
 import PatchedSpaceRequest from '../model/PatchedSpaceRequest';
 import PatchedStoreyBuildingRequest from '../model/PatchedStoreyBuildingRequest';
 import PatchedSystemRequest from '../model/PatchedSystemRequest';
+import PatchedTransformRequest from '../model/PatchedTransformRequest';
 import PatchedUnitRequest from '../model/PatchedUnitRequest';
 import PatchedZoneRequest from '../model/PatchedZoneRequest';
 import PatchedZoneSpaceRequest from '../model/PatchedZoneSpaceRequest';
@@ -77,6 +78,7 @@ import StoreyBuildingRequest from '../model/StoreyBuildingRequest';
 import StoreyModelPlanRequest from '../model/StoreyModelPlanRequest';
 import System from '../model/System';
 import SystemRequest from '../model/SystemRequest';
+import Transform from '../model/Transform';
 import Unit from '../model/Unit';
 import UnitRequest from '../model/UnitRequest';
 import XktFile from '../model/XktFile';
@@ -10413,6 +10415,73 @@ export default class ModelApi {
      */
     updateModelPropertyDefinition(cloudPk, id, modelPk, projectPk, opts) {
       return this.updateModelPropertyDefinitionWithHttpInfo(cloudPk, id, modelPk, projectPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update model transform
+     * Update model transform (translate, scale, rotate and opacity)  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedTransformRequest} opts.patchedTransformRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Transform} and HTTP response
+     */
+    updateModelTransformWithHttpInfo(cloudPk, id, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedTransformRequest'];
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateModelTransform");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateModelTransform");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateModelTransform");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Transform;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}/transform', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update model transform
+     * Update model transform (translate, scale, rotate and opacity)  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedTransformRequest} opts.patchedTransformRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Transform}
+     */
+    updateModelTransform(cloudPk, id, projectPk, opts) {
+      return this.updateModelTransformWithHttpInfo(cloudPk, id, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

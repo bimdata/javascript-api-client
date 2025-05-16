@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.TopicStatusRequest();
+    instance = new bimdata.TransformRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,34 @@
       object[property] = value;
   }
 
-  describe('TopicStatusRequest', function() {
-    it('should create an instance of TopicStatusRequest', function() {
-      // uncomment below and update the code to test TopicStatusRequest
-      //var instance = new bimdata.TopicStatusRequest();
-      //expect(instance).to.be.a(bimdata.TopicStatusRequest);
+  describe('TransformRequest', function() {
+    it('should create an instance of TransformRequest', function() {
+      // uncomment below and update the code to test TransformRequest
+      //var instance = new bimdata.TransformRequest();
+      //expect(instance).to.be.a(bimdata.TransformRequest);
     });
 
-    it('should have the property topicStatus (base name: "topic_status")', function() {
-      // uncomment below and update the code to test the property topicStatus
-      //var instance = new bimdata.TopicStatusRequest();
+    it('should have the property translate (base name: "translate")', function() {
+      // uncomment below and update the code to test the property translate
+      //var instance = new bimdata.TransformRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property color (base name: "color")', function() {
-      // uncomment below and update the code to test the property color
-      //var instance = new bimdata.TopicStatusRequest();
+    it('should have the property rotate (base name: "rotate")', function() {
+      // uncomment below and update the code to test the property rotate
+      //var instance = new bimdata.TransformRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property scale (base name: "scale")', function() {
+      // uncomment below and update the code to test the property scale
+      //var instance = new bimdata.TransformRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property opacity (base name: "opacity")', function() {
+      // uncomment below and update the code to test the property opacity
+      //var instance = new bimdata.TransformRequest();
       //expect(instance).to.be();
     });
 

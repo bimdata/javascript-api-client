@@ -23,11 +23,10 @@ class TopicRequest {
      * Constructs a new <code>TopicRequest</code>.
      * @alias module:model/TopicRequest
      * @param title {String} 
-     * @param project {Number} 
      */
-    constructor(title, project) { 
+    constructor(title) { 
         
-        TopicRequest.initialize(this, title, project);
+        TopicRequest.initialize(this, title);
     }
 
     /**
@@ -35,9 +34,8 @@ class TopicRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, title, project) { 
+    static initialize(obj, title) { 
         obj['title'] = title;
-        obj['project'] = project;
     }
 
     /**
@@ -104,9 +102,6 @@ class TopicRequest {
             }
             if (data.hasOwnProperty('index')) {
                 obj['index'] = ApiClient.convertToType(data['index'], 'Number');
-            }
-            if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
             if (data.hasOwnProperty('bimdata_viewer_layout')) {
                 obj['bimdata_viewer_layout'] = ApiClient.convertToType(data['bimdata_viewer_layout'], Object);
@@ -209,11 +204,6 @@ TopicRequest.prototype['format'] = undefined;
  * @member {Number} index
  */
 TopicRequest.prototype['index'] = undefined;
-
-/**
- * @member {Number} project
- */
-TopicRequest.prototype['project'] = undefined;
 
 /**
  * Non standard field. JSON describing bimdataViewerLayout.

@@ -456,6 +456,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**updateModelFiles**](docs/ModelApi.md#updateModelFiles) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/files | Update models file (gltf, svg, structure, etc)
 *bimdata.ModelApi* | [**updateModelProperty**](docs/ModelApi.md#updateModelProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id} | Update some fields of a Property
 *bimdata.ModelApi* | [**updateModelPropertyDefinition**](docs/ModelApi.md#updateModelPropertyDefinition) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Update some fields of many PropertyDefinitions of a model
+*bimdata.ModelApi* | [**updateModelTransform**](docs/ModelApi.md#updateModelTransform) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/transform | Update model transform
 *bimdata.ModelApi* | [**updateModelUnit**](docs/ModelApi.md#updateModelUnit) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Update some fields of a Unit of a model
 *bimdata.ModelApi* | [**updateOrderBuildingPlan**](docs/ModelApi.md#updateOrderBuildingPlan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/order | Update order of all plan of a building
 *bimdata.ModelApi* | [**updateOrderStoreyPlan**](docs/ModelApi.md#updateOrderStoreyPlan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/order | Update order of all plan of a storey
@@ -617,6 +618,7 @@ Class | Method | HTTP request | Description
  - [bimdata.PatchedTopicRequest](docs/PatchedTopicRequest.md)
  - [bimdata.PatchedTopicStatusRequest](docs/PatchedTopicStatusRequest.md)
  - [bimdata.PatchedTopicTypeRequest](docs/PatchedTopicTypeRequest.md)
+ - [bimdata.PatchedTransformRequest](docs/PatchedTransformRequest.md)
  - [bimdata.PatchedUnitRequest](docs/PatchedUnitRequest.md)
  - [bimdata.PatchedUserCloudUpdateRequest](docs/PatchedUserCloudUpdateRequest.md)
  - [bimdata.PatchedUserProjectUpdateRequest](docs/PatchedUserProjectUpdateRequest.md)
@@ -708,6 +710,8 @@ Class | Method | HTTP request | Description
  - [bimdata.TopicStatusRequest](docs/TopicStatusRequest.md)
  - [bimdata.TopicType](docs/TopicType.md)
  - [bimdata.TopicTypeRequest](docs/TopicTypeRequest.md)
+ - [bimdata.Transform](docs/Transform.md)
+ - [bimdata.TransformRequest](docs/TransformRequest.md)
  - [bimdata.Unit](docs/Unit.md)
  - [bimdata.UnitRequest](docs/UnitRequest.md)
  - [bimdata.User](docs/User.md)

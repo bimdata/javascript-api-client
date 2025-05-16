@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **pageNumber** | **Number** | The page number of the related pdf | [readonly] 
 **layoutName** | **String** | The name of the DWG layout (only set when type&#x3D;&#x3D;DWG) | [optional] 
 **mask2d** | [**Mask2D**](Mask2D.md) |  | [readonly] 
+**transform** | [**Transform**](Transform.md) |  | [readonly] 
 **children** | [**[ModelSerializerWithoutChildren]**](ModelSerializerWithoutChildren.md) | Contains additional pages of a pdf | [readonly] 
 
 

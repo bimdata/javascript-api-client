@@ -109,9 +109,6 @@ class PatchedFullTopicRequest {
             if (data.hasOwnProperty('viewpoints')) {
                 obj['viewpoints'] = ApiClient.convertToType(data['viewpoints'], [ViewpointRequest]);
             }
-            if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
-            }
             if (data.hasOwnProperty('bimdata_viewer_layout')) {
                 obj['bimdata_viewer_layout'] = ApiClient.convertToType(data['bimdata_viewer_layout'], Object);
             }
@@ -223,11 +220,6 @@ PatchedFullTopicRequest.prototype['comments'] = undefined;
  * @member {Array.<module:model/ViewpointRequest>} viewpoints
  */
 PatchedFullTopicRequest.prototype['viewpoints'] = undefined;
-
-/**
- * @member {Number} project
- */
-PatchedFullTopicRequest.prototype['project'] = undefined;
 
 /**
  * Non standard field. JSON describing bimdataViewerLayout.

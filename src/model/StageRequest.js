@@ -52,9 +52,6 @@ class StageRequest {
             if (data.hasOwnProperty('stage')) {
                 obj['stage'] = ApiClient.convertToType(data['stage'], 'String');
             }
-            if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
-            }
         }
         return obj;
     }
@@ -66,12 +63,6 @@ class StageRequest {
  * @member {String} stage
  */
 StageRequest.prototype['stage'] = undefined;
-
-/**
- * This field is automatically provided by the route, you don't need to provide it in the body
- * @member {Number} project
- */
-StageRequest.prototype['project'] = undefined;
 
 
 

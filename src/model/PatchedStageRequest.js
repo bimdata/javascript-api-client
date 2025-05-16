@@ -50,9 +50,6 @@ class PatchedStageRequest {
             if (data.hasOwnProperty('stage')) {
                 obj['stage'] = ApiClient.convertToType(data['stage'], 'String');
             }
-            if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
-            }
         }
         return obj;
     }
@@ -64,12 +61,6 @@ class PatchedStageRequest {
  * @member {String} stage
  */
 PatchedStageRequest.prototype['stage'] = undefined;
-
-/**
- * This field is automatically provided by the route, you don't need to provide it in the body
- * @member {Number} project
- */
-PatchedStageRequest.prototype['project'] = undefined;
 
 
 

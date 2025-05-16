@@ -26,11 +26,10 @@ class FullTopic {
      * @alias module:model/FullTopic
      * @param modifiedDate {Date} 
      * @param title {String} 
-     * @param project {Number} 
      */
-    constructor(modifiedDate, title, project) { 
+    constructor(modifiedDate, title) { 
         
-        FullTopic.initialize(this, modifiedDate, title, project);
+        FullTopic.initialize(this, modifiedDate, title);
     }
 
     /**
@@ -38,10 +37,9 @@ class FullTopic {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, modifiedDate, title, project) { 
+    static initialize(obj, modifiedDate, title) { 
         obj['modified_date'] = modifiedDate;
         obj['title'] = title;
-        obj['project'] = project;
     }
 
     /**
@@ -117,9 +115,6 @@ class FullTopic {
             }
             if (data.hasOwnProperty('viewpoints')) {
                 obj['viewpoints'] = ApiClient.convertToType(data['viewpoints'], [Viewpoint]);
-            }
-            if (data.hasOwnProperty('project')) {
-                obj['project'] = ApiClient.convertToType(data['project'], 'Number');
             }
             if (data.hasOwnProperty('bimdata_viewer_layout')) {
                 obj['bimdata_viewer_layout'] = ApiClient.convertToType(data['bimdata_viewer_layout'], Object);
@@ -237,11 +232,6 @@ FullTopic.prototype['comments'] = undefined;
  * @member {Array.<module:model/Viewpoint>} viewpoints
  */
 FullTopic.prototype['viewpoints'] = undefined;
-
-/**
- * @member {Number} project
- */
-FullTopic.prototype['project'] = undefined;
 
 /**
  * Non standard field. JSON describing bimdataViewerLayout.

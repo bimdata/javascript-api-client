@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import Mask2D from './Mask2D';
 import ModelDocument from './ModelDocument';
+import Transform from './Transform';
 import User from './User';
 import XktFile from './XktFile';
 
@@ -49,10 +50,11 @@ class ModelSerializerWithoutChildren {
      * @param parentId {Number} The first page of the pdf
      * @param pageNumber {Number} The page number of the related pdf
      * @param mask2d {module:model/Mask2D} 
+     * @param transform {module:model/Transform} 
      */
-    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, mask2d) { 
+    constructor(id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, mask2d, transform) { 
         
-        ModelSerializerWithoutChildren.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, mask2d);
+        ModelSerializerWithoutChildren.initialize(this, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, mask2d, transform);
     }
 
     /**
@@ -60,7 +62,7 @@ class ModelSerializerWithoutChildren {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, mask2d) { 
+    static initialize(obj, id, type, creator, status, createdAt, updatedAt, documentId, document, structureFile, systemsFile, mapFile, gltfFile, previewFile, viewer360File, xktFile, xktFiles, binary2dFile, projectId, errors, warnings, parentId, pageNumber, mask2d, transform) { 
         obj['id'] = id;
         obj['type'] = type;
         obj['creator'] = creator;
@@ -84,6 +86,7 @@ class ModelSerializerWithoutChildren {
         obj['parent_id'] = parentId;
         obj['page_number'] = pageNumber;
         obj['mask_2d'] = mask2d;
+        obj['transform'] = transform;
     }
 
     /**
@@ -192,6 +195,9 @@ class ModelSerializerWithoutChildren {
             }
             if (data.hasOwnProperty('mask_2d')) {
                 obj['mask_2d'] = ApiClient.convertToType(data['mask_2d'], Mask2D);
+            }
+            if (data.hasOwnProperty('transform')) {
+                obj['transform'] = ApiClient.convertToType(data['transform'], Transform);
             }
         }
         return obj;
@@ -373,6 +379,11 @@ ModelSerializerWithoutChildren.prototype['layout_name'] = undefined;
  * @member {module:model/Mask2D} mask_2d
  */
 ModelSerializerWithoutChildren.prototype['mask_2d'] = undefined;
+
+/**
+ * @member {module:model/Transform} transform
+ */
+ModelSerializerWithoutChildren.prototype['transform'] = undefined;
 
 
 

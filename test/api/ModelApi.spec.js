@@ -1498,6 +1498,16 @@
         done();
       });
     });
+    describe('updateModelTransform', function() {
+      it('should call updateModelTransform successfully', function(done) {
+        //uncomment below and update the code to test updateModelTransform
+        //instance.updateModelTransform(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateModelUnit', function() {
       it('should call updateModelUnit successfully', function(done) {
         //uncomment below and update the code to test updateModelUnit

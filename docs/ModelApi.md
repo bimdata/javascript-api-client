@@ -149,6 +149,7 @@ Method | HTTP request | Description
 [**updateModelFiles**](ModelApi.md#updateModelFiles) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/files | Update models file (gltf, svg, structure, etc)
 [**updateModelProperty**](ModelApi.md#updateModelProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id} | Update some fields of a Property
 [**updateModelPropertyDefinition**](ModelApi.md#updateModelPropertyDefinition) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Update some fields of many PropertyDefinitions of a model
+[**updateModelTransform**](ModelApi.md#updateModelTransform) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/transform | Update model transform
 [**updateModelUnit**](ModelApi.md#updateModelUnit) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Update some fields of a Unit of a model
 [**updateOrderBuildingPlan**](ModelApi.md#updateOrderBuildingPlan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/order | Update order of all plan of a building
 [**updateOrderStoreyPlan**](ModelApi.md#updateOrderStoreyPlan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/order | Update order of all plan of a storey
@@ -10064,6 +10065,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PropertyDefinition**](PropertyDefinition.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
+## updateModelTransform
+
+> Transform updateModelTransform(cloudPk, id, projectPk, opts)
+
+Update model transform
+
+Update model transform (translate, scale, rotate and opacity)  Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = 56; // Number | 
+let id = 56; // Number | A unique integer value identifying this model.
+let projectPk = 56; // Number | 
+let opts = {
+  'patchedTransformRequest': new bimdata.PatchedTransformRequest() // PatchedTransformRequest | 
+};
+apiInstance.updateModelTransform(cloudPk, id, projectPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**|  | 
+ **id** | **Number**| A unique integer value identifying this model. | 
+ **projectPk** | **Number**|  | 
+ **patchedTransformRequest** | [**PatchedTransformRequest**](PatchedTransformRequest.md)|  | [optional] 
+
+### Return type
+
+[**Transform**](Transform.md)
 
 ### Authorization
 

@@ -132,6 +132,7 @@ docs/PatchedTagRequest.md
 docs/PatchedTopicRequest.md
 docs/PatchedTopicStatusRequest.md
 docs/PatchedTopicTypeRequest.md
+docs/PatchedTransformRequest.md
 docs/PatchedUnitRequest.md
 docs/PatchedUserCloudUpdateRequest.md
 docs/PatchedUserProjectUpdateRequest.md
@@ -224,6 +225,8 @@ docs/TopicStatus.md
 docs/TopicStatusRequest.md
 docs/TopicType.md
 docs/TopicTypeRequest.md
+docs/Transform.md
+docs/TransformRequest.md
 docs/Unit.md
 docs/UnitRequest.md
 docs/User.md
@@ -397,6 +400,7 @@ src/model/PatchedTagRequest.js
 src/model/PatchedTopicRequest.js
 src/model/PatchedTopicStatusRequest.js
 src/model/PatchedTopicTypeRequest.js
+src/model/PatchedTransformRequest.js
 src/model/PatchedUnitRequest.js
 src/model/PatchedUserCloudUpdateRequest.js
 src/model/PatchedUserProjectUpdateRequest.js
@@ -488,6 +492,8 @@ src/model/TopicStatus.js
 src/model/TopicStatusRequest.js
 src/model/TopicType.js
 src/model/TopicTypeRequest.js
+src/model/Transform.js
+src/model/TransformRequest.js
 src/model/Unit.js
 src/model/UnitRequest.js
 src/model/User.js
@@ -656,6 +662,7 @@ test/model/PatchedTagRequest.spec.js
 test/model/PatchedTopicRequest.spec.js
 test/model/PatchedTopicStatusRequest.spec.js
 test/model/PatchedTopicTypeRequest.spec.js
+test/model/PatchedTransformRequest.spec.js
 test/model/PatchedUnitRequest.spec.js
 test/model/PatchedUserCloudUpdateRequest.spec.js
 test/model/PatchedUserProjectUpdateRequest.spec.js
@@ -747,6 +754,8 @@ test/model/TopicStatus.spec.js
 test/model/TopicStatusRequest.spec.js
 test/model/TopicType.spec.js
 test/model/TopicTypeRequest.spec.js
+test/model/Transform.spec.js
+test/model/TransformRequest.spec.js
 test/model/Unit.spec.js
 test/model/UnitRequest.spec.js
 test/model/User.spec.js

@@ -246,6 +246,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transform (base name: "transform")', function() {
+      // uncomment below and update the code to test the property transform
+      //var instance = new bimdata.ModelSerializerWithoutChildren();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -24,7 +24,6 @@ Name | Type | Description | Notes
 **dueDate** | **Date** |  | [optional] 
 **comments** | [**[CommentRequest]**](CommentRequest.md) |  | [optional] 
 **viewpoints** | [**[ViewpointRequest]**](ViewpointRequest.md) |  | [optional] 
-**project** | **Number** |  | 
 **bimdataViewerLayout** | **Object** | Non standard field. JSON describing bimdataViewerLayout. | [optional] 
 
 

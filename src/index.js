@@ -140,6 +140,7 @@ import PatchedTagRequest from './model/PatchedTagRequest';
 import PatchedTopicRequest from './model/PatchedTopicRequest';
 import PatchedTopicStatusRequest from './model/PatchedTopicStatusRequest';
 import PatchedTopicTypeRequest from './model/PatchedTopicTypeRequest';
+import PatchedTransformRequest from './model/PatchedTransformRequest';
 import PatchedUnitRequest from './model/PatchedUnitRequest';
 import PatchedUserCloudUpdateRequest from './model/PatchedUserCloudUpdateRequest';
 import PatchedUserProjectUpdateRequest from './model/PatchedUserProjectUpdateRequest';
@@ -231,6 +232,8 @@ import TopicStatus from './model/TopicStatus';
 import TopicStatusRequest from './model/TopicStatusRequest';
 import TopicType from './model/TopicType';
 import TopicTypeRequest from './model/TopicTypeRequest';
+import Transform from './model/Transform';
+import TransformRequest from './model/TransformRequest';
 import Unit from './model/Unit';
 import UnitRequest from './model/UnitRequest';
 import User from './model/User';
@@ -1075,6 +1078,12 @@ export {
     PatchedTopicTypeRequest,
 
     /**
+     * The PatchedTransformRequest model constructor.
+     * @property {module:model/PatchedTransformRequest}
+     */
+    PatchedTransformRequest,
+
+    /**
      * The PatchedUnitRequest model constructor.
      * @property {module:model/PatchedUnitRequest}
      */
@@ -1619,6 +1628,18 @@ export {
      * @property {module:model/TopicTypeRequest}
      */
     TopicTypeRequest,
+
+    /**
+     * The Transform model constructor.
+     * @property {module:model/Transform}
+     */
+    Transform,
+
+    /**
+     * The TransformRequest model constructor.
+     * @property {module:model/TransformRequest}
+     */
+    TransformRequest,
 
     /**
      * The Unit model constructor.

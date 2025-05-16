@@ -54,14 +54,8 @@
       //expect(instance).to.be.a(bimdata.WriteFolder);
     });
 
-    it('should have the property updatedAt (base name: "updated_at")', function() {
-      // uncomment below and update the code to test the property updatedAt
-      //var instance = new bimdata.WriteFolder();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property groupsPermissions (base name: "groups_permissions")', function() {
-      // uncomment below and update the code to test the property groupsPermissions
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instance = new bimdata.WriteFolder();
       //expect(instance).to.be();
     });
@@ -72,32 +66,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.WriteFolder();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property nature (base name: "nature")', function() {
-      // uncomment below and update the code to test the property nature
+    it('should have the property defaultPermission (base name: "default_permission")', function() {
+      // uncomment below and update the code to test the property defaultPermission
       //var instance = new bimdata.WriteFolder();
       //expect(instance).to.be();
     });
 
     it('should have the property createdBy (base name: "created_by")', function() {
       // uncomment below and update the code to test the property createdBy
-      //var instance = new bimdata.WriteFolder();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createdAt (base name: "created_at")', function() {
-      // uncomment below and update the code to test the property createdAt
-      //var instance = new bimdata.WriteFolder();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property defaultPermission (base name: "default_permission")', function() {
-      // uncomment below and update the code to test the property defaultPermission
       //var instance = new bimdata.WriteFolder();
       //expect(instance).to.be();
     });
@@ -114,8 +90,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
+    it('should have the property createdAt (base name: "created_at")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instance = new bimdata.WriteFolder();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property groupsPermissions (base name: "groups_permissions")', function() {
+      // uncomment below and update the code to test the property groupsPermissions
+      //var instance = new bimdata.WriteFolder();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property updatedAt (base name: "updated_at")', function() {
+      // uncomment below and update the code to test the property updatedAt
+      //var instance = new bimdata.WriteFolder();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instance = new bimdata.WriteFolder();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property nature (base name: "nature")', function() {
+      // uncomment below and update the code to test the property nature
       //var instance = new bimdata.WriteFolder();
       //expect(instance).to.be();
     });
