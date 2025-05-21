@@ -488,6 +488,16 @@
         done();
       });
     });
+    describe('getTopicsPins', function() {
+      it('should call getTopicsPins successfully', function(done) {
+        //uncomment below and update the code to test getTopicsPins
+        //instance.getTopicsPins(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getUser', function() {
       it('should call getUser successfully', function(done) {
         //uncomment below and update the code to test getUser

@@ -48,6 +48,7 @@ Method | HTTP request | Description
 [**getTopicDocumentReferences**](BcfApi.md#getTopicDocumentReferences) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references | Get all related documents
 [**getTopicViewpoints**](BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/topic-viewpoints | Retrieve all viewpoints attached to the topic
 [**getTopics**](BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | Retrieve all topics
+[**getTopicsPins**](BcfApi.md#getTopicsPins) | **GET** /bcf/2.1/projects/{projects_pk}/topics/pins | Get pins of all or many topics
 [**getUser**](BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | Get current user info
 [**getVersions**](BcfApi.md#getVersions) | **GET** /bcf/versions | Retrieve all supported BCF versions by this API
 [**getViewpoinPin**](BcfApi.md#getViewpoinPin) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Retrieve a Pin
@@ -2934,6 +2935,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[Topic]**](Topic.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getTopicsPins
+
+> [TopicPin] getTopicsPins(projectsPk, opts)
+
+Get pins of all or many topics
+
+This is not a standard route. Get pins of all or many topics  Required scopes: bcf:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let projectsPk = 56; // Number | 
+let opts = {
+  'format': "format_example", // String | 
+  'ifcs': [null], // [Number] | 
+  'models': [null], // [Number] | 
+  'topics': "topics_example" // String | topic guids to include, comma separated. Default = all
+};
+apiInstance.getTopicsPins(projectsPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectsPk** | **Number**|  | 
+ **format** | **String**|  | [optional] 
+ **ifcs** | [**[Number]**](Number.md)|  | [optional] 
+ **models** | [**[Number]**](Number.md)|  | [optional] 
+ **topics** | **String**| topic guids to include, comma separated. Default &#x3D; all | [optional] 
+
+### Return type
+
+[**[TopicPin]**](TopicPin.md)
 
 ### Authorization
 

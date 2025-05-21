@@ -185,6 +185,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**getTopicDocumentReferences**](docs/BcfApi.md#getTopicDocumentReferences) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references | Get all related documents
 *bimdata.BcfApi* | [**getTopicViewpoints**](docs/BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/topic-viewpoints | Retrieve all viewpoints attached to the topic
 *bimdata.BcfApi* | [**getTopics**](docs/BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | Retrieve all topics
+*bimdata.BcfApi* | [**getTopicsPins**](docs/BcfApi.md#getTopicsPins) | **GET** /bcf/2.1/projects/{projects_pk}/topics/pins | Get pins of all or many topics
 *bimdata.BcfApi* | [**getUser**](docs/BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | Get current user info
 *bimdata.BcfApi* | [**getVersions**](docs/BcfApi.md#getVersions) | **GET** /bcf/versions | Retrieve all supported BCF versions by this API
 *bimdata.BcfApi* | [**getViewpoinPin**](docs/BcfApi.md#getViewpoinPin) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Retrieve a Pin
@@ -633,6 +634,7 @@ Class | Method | HTTP request | Description
  - [bimdata.PerspectiveCameraRequest](docs/PerspectiveCameraRequest.md)
  - [bimdata.Pin](docs/Pin.md)
  - [bimdata.PinRequest](docs/PinRequest.md)
+ - [bimdata.PinWithModels](docs/PinWithModels.md)
  - [bimdata.Point](docs/Point.md)
  - [bimdata.PointRequest](docs/PointRequest.md)
  - [bimdata.PositioningPlan](docs/PositioningPlan.md)
@@ -705,6 +707,7 @@ Class | Method | HTTP request | Description
  - [bimdata.TagIdRequest](docs/TagIdRequest.md)
  - [bimdata.TagRequest](docs/TagRequest.md)
  - [bimdata.Topic](docs/Topic.md)
+ - [bimdata.TopicPin](docs/TopicPin.md)
  - [bimdata.TopicRequest](docs/TopicRequest.md)
  - [bimdata.TopicStatus](docs/TopicStatus.md)
  - [bimdata.TopicStatusRequest](docs/TopicStatusRequest.md)

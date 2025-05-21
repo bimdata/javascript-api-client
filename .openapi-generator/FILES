@@ -147,6 +147,7 @@ docs/PerspectiveCamera.md
 docs/PerspectiveCameraRequest.md
 docs/Pin.md
 docs/PinRequest.md
+docs/PinWithModels.md
 docs/Point.md
 docs/PointRequest.md
 docs/PositioningPlan.md
@@ -220,6 +221,7 @@ docs/Tag.md
 docs/TagIdRequest.md
 docs/TagRequest.md
 docs/Topic.md
+docs/TopicPin.md
 docs/TopicRequest.md
 docs/TopicStatus.md
 docs/TopicStatusRequest.md
@@ -415,6 +417,7 @@ src/model/PerspectiveCamera.js
 src/model/PerspectiveCameraRequest.js
 src/model/Pin.js
 src/model/PinRequest.js
+src/model/PinWithModels.js
 src/model/Point.js
 src/model/PointRequest.js
 src/model/PositioningPlan.js
@@ -487,6 +490,7 @@ src/model/Tag.js
 src/model/TagIdRequest.js
 src/model/TagRequest.js
 src/model/Topic.js
+src/model/TopicPin.js
 src/model/TopicRequest.js
 src/model/TopicStatus.js
 src/model/TopicStatusRequest.js
@@ -677,6 +681,7 @@ test/model/PerspectiveCamera.spec.js
 test/model/PerspectiveCameraRequest.spec.js
 test/model/Pin.spec.js
 test/model/PinRequest.spec.js
+test/model/PinWithModels.spec.js
 test/model/Point.spec.js
 test/model/PointRequest.spec.js
 test/model/PositioningPlan.spec.js
@@ -749,6 +754,7 @@ test/model/Tag.spec.js
 test/model/TagIdRequest.spec.js
 test/model/TagRequest.spec.js
 test/model/Topic.spec.js
+test/model/TopicPin.spec.js
 test/model/TopicRequest.spec.js
 test/model/TopicStatus.spec.js
 test/model/TopicStatusRequest.spec.js

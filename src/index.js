@@ -155,6 +155,7 @@ import PerspectiveCamera from './model/PerspectiveCamera';
 import PerspectiveCameraRequest from './model/PerspectiveCameraRequest';
 import Pin from './model/Pin';
 import PinRequest from './model/PinRequest';
+import PinWithModels from './model/PinWithModels';
 import Point from './model/Point';
 import PointRequest from './model/PointRequest';
 import PositioningPlan from './model/PositioningPlan';
@@ -227,6 +228,7 @@ import Tag from './model/Tag';
 import TagIdRequest from './model/TagIdRequest';
 import TagRequest from './model/TagRequest';
 import Topic from './model/Topic';
+import TopicPin from './model/TopicPin';
 import TopicRequest from './model/TopicRequest';
 import TopicStatus from './model/TopicStatus';
 import TopicStatusRequest from './model/TopicStatusRequest';
@@ -1168,6 +1170,12 @@ export {
     PinRequest,
 
     /**
+     * The PinWithModels model constructor.
+     * @property {module:model/PinWithModels}
+     */
+    PinWithModels,
+
+    /**
      * The Point model constructor.
      * @property {module:model/Point}
      */
@@ -1598,6 +1606,12 @@ export {
      * @property {module:model/Topic}
      */
     Topic,
+
+    /**
+     * The TopicPin model constructor.
+     * @property {module:model/TopicPin}
+     */
+    TopicPin,
 
     /**
      * The TopicRequest model constructor.

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.WriteFolderRequest();
+    instance = new bimdata.PinWithModels();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,46 @@
       object[property] = value;
   }
 
-  describe('WriteFolderRequest', function() {
-    it('should create an instance of WriteFolderRequest', function() {
-      // uncomment below and update the code to test WriteFolderRequest
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be.a(bimdata.WriteFolderRequest);
+  describe('PinWithModels', function() {
+    it('should create an instance of PinWithModels', function() {
+      // uncomment below and update the code to test PinWithModels
+      //var instance = new bimdata.PinWithModels();
+      //expect(instance).to.be.a(bimdata.PinWithModels);
     });
 
-    it('should have the property defaultPermission (base name: "default_permission")', function() {
-      // uncomment below and update the code to test the property defaultPermission
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property guid (base name: "guid")', function() {
+      // uncomment below and update the code to test the property guid
+      //var instance = new bimdata.PinWithModels();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new bimdata.WriteFolderRequest();
+      //var instance = new bimdata.PinWithModels();
       //expect(instance).to.be();
     });
 
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property color (base name: "color")', function() {
+      // uncomment below and update the code to test the property color
+      //var instance = new bimdata.PinWithModels();
       //expect(instance).to.be();
     });
 
-    it('should have the property children (base name: "children")', function() {
-      // uncomment below and update the code to test the property children
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property point (base name: "point")', function() {
+      // uncomment below and update the code to test the property point
+      //var instance = new bimdata.PinWithModels();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property index (base name: "index")', function() {
+      // uncomment below and update the code to test the property index
+      //var instance = new bimdata.PinWithModels();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property modelIds (base name: "model_ids")', function() {
+      // uncomment below and update the code to test the property modelIds
+      //var instance = new bimdata.PinWithModels();
       //expect(instance).to.be();
     });
 

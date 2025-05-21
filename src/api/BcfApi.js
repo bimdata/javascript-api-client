@@ -45,6 +45,7 @@ import SelfBcfUser from '../model/SelfBcfUser';
 import Stage from '../model/Stage';
 import StageRequest from '../model/StageRequest';
 import Topic from '../model/Topic';
+import TopicPin from '../model/TopicPin';
 import TopicRequest from '../model/TopicRequest';
 import TopicStatus from '../model/TopicStatus';
 import TopicStatusRequest from '../model/TopicStatusRequest';
@@ -2660,6 +2661,69 @@ export default class BcfApi {
      */
     getTopics(projectsPk, opts) {
       return this.getTopicsWithHttpInfo(projectsPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get pins of all or many topics
+     * This is not a standard route. Get pins of all or many topics  Required scopes: bcf:read
+     * @param {Number} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
+     * @param {String} opts.topics topic guids to include, comma separated. Default = all
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TopicPin>} and HTTP response
+     */
+    getTopicsPinsWithHttpInfo(projectsPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getTopicsPins");
+      }
+
+      let pathParams = {
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+        'format': opts['format'],
+        'ifcs': this.apiClient.buildCollectionParam(opts['ifcs'], 'multi'),
+        'models': this.apiClient.buildCollectionParam(opts['models'], 'multi'),
+        'topics': opts['topics']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [TopicPin];
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/pins', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get pins of all or many topics
+     * This is not a standard route. Get pins of all or many topics  Required scopes: bcf:read
+     * @param {Number} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
+     * @param {String} opts.topics topic guids to include, comma separated. Default = all
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/TopicPin>}
+     */
+    getTopicsPins(projectsPk, opts) {
+      return this.getTopicsPinsWithHttpInfo(projectsPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
