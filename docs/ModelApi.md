@@ -145,6 +145,7 @@ Method | HTTP request | Description
 [**updateElement**](ModelApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Update some fields of an element
 [**updateElementPropertySetProperty**](ModelApi.md#updateElementPropertySetProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Update a property from an element
 [**updateLayer**](ModelApi.md#updateLayer) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Update some fields of a layer
+[**updateMask2D**](ModelApi.md#updateMask2D) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/mask-2d | Partial update of a 2D mask for the model
 [**updateModel**](ModelApi.md#updateModel) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{id} | Update some fields of a model
 [**updateModelFiles**](ModelApi.md#updateModelFiles) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/files | Update models file (gltf, svg, structure, etc)
 [**updateModelProperty**](ModelApi.md#updateModelProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/property/{id} | Update some fields of a Property
@@ -183,12 +184,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -226,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -252,12 +247,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -295,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -321,12 +310,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -364,7 +347,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -390,12 +373,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -431,7 +408,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -457,12 +434,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -498,7 +469,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -524,12 +495,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -565,7 +530,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -591,12 +556,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -632,7 +591,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -658,12 +617,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -707,7 +660,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -733,12 +686,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -774,7 +721,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -800,12 +747,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -843,7 +784,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -869,12 +810,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -912,7 +847,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -938,12 +873,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -981,7 +910,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1007,12 +936,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1056,7 +979,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1082,12 +1005,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1123,7 +1040,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1149,12 +1066,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1192,7 +1103,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1218,12 +1129,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1259,7 +1164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1285,12 +1190,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1328,7 +1227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1354,12 +1253,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1395,7 +1288,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1421,12 +1314,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1464,7 +1351,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1490,12 +1377,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1531,7 +1412,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1557,12 +1438,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1606,7 +1481,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1632,12 +1507,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1677,7 +1546,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1703,12 +1572,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1748,7 +1611,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1774,12 +1637,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1823,7 +1680,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1849,12 +1706,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1898,7 +1749,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1924,12 +1775,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -1965,7 +1810,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1991,12 +1836,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2032,7 +1871,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2058,12 +1897,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2097,7 +1930,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2123,12 +1956,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2162,7 +1989,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2188,12 +2015,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2229,7 +2050,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2255,12 +2076,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2296,7 +2111,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2322,12 +2137,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2363,7 +2172,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2389,12 +2198,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2428,7 +2231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2454,12 +2257,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2493,7 +2290,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2519,12 +2316,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2560,7 +2351,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2586,12 +2377,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2627,7 +2412,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2653,12 +2438,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2694,7 +2473,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2720,12 +2499,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2761,7 +2534,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2787,12 +2560,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2828,7 +2595,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2854,12 +2621,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2897,7 +2658,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2923,12 +2684,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -2964,7 +2719,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -2990,12 +2745,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3029,7 +2778,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3055,12 +2804,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3102,7 +2845,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3128,12 +2871,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3173,7 +2910,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3199,12 +2936,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3242,7 +2973,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3268,12 +2999,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3309,7 +3034,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3335,12 +3060,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3376,7 +3095,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3402,12 +3121,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3445,7 +3158,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3471,12 +3184,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3512,7 +3219,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3538,12 +3245,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3579,7 +3280,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3605,12 +3306,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3646,7 +3341,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3672,12 +3367,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3711,7 +3400,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3737,12 +3426,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3776,7 +3459,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3802,12 +3485,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3843,7 +3520,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3869,12 +3546,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3910,7 +3581,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -3936,12 +3607,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -3977,7 +3642,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4003,12 +3668,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4042,7 +3701,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4068,12 +3727,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4109,7 +3762,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4135,12 +3788,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4176,7 +3823,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4202,12 +3849,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4243,7 +3884,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4269,12 +3910,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4312,7 +3947,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4338,12 +3973,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4379,7 +4008,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4405,12 +4034,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4446,7 +4069,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4472,12 +4095,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4515,7 +4132,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4541,12 +4158,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4582,7 +4193,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4608,12 +4219,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4651,7 +4256,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4677,12 +4282,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4718,7 +4317,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4744,12 +4343,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4783,7 +4376,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4809,12 +4402,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4850,7 +4437,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4876,12 +4463,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4919,7 +4500,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -4945,12 +4526,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -4984,7 +4559,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5010,12 +4585,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5051,7 +4620,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5077,12 +4646,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5118,7 +4681,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5144,12 +4707,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5185,7 +4742,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5211,12 +4768,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5250,7 +4801,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5276,12 +4827,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5317,7 +4862,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5343,12 +4888,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5390,7 +4929,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5416,12 +4955,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5459,7 +4992,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5485,12 +5018,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5528,7 +5055,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5554,12 +5081,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5599,7 +5120,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5625,12 +5146,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5672,7 +5187,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5698,12 +5213,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5747,7 +5256,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5773,12 +5282,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5820,7 +5323,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5846,12 +5349,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5891,7 +5388,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5917,12 +5414,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -5958,7 +5449,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -5984,12 +5475,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6031,7 +5516,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6057,12 +5542,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6098,7 +5577,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6124,12 +5603,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6165,7 +5638,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6191,12 +5664,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6230,7 +5697,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6256,12 +5723,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6299,7 +5760,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6325,12 +5786,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6366,7 +5821,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6392,12 +5847,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6431,7 +5880,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6457,12 +5906,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6496,7 +5939,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6522,12 +5965,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6563,7 +6000,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6589,12 +6026,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6628,7 +6059,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6654,12 +6085,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6693,7 +6118,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6719,12 +6144,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6760,7 +6179,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6786,12 +6205,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6827,7 +6240,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6853,12 +6266,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6892,7 +6299,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6918,12 +6325,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -6959,7 +6360,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -6985,12 +6386,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7024,7 +6419,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7050,12 +6445,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7095,7 +6484,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7121,12 +6510,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7162,7 +6545,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7188,12 +6571,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7227,7 +6604,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7253,12 +6630,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7294,7 +6665,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7320,12 +6691,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7359,7 +6724,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7385,12 +6750,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7432,7 +6791,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7458,12 +6817,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7499,7 +6852,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7525,12 +6878,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7572,7 +6919,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7598,12 +6945,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7639,7 +6980,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7665,12 +7006,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7704,7 +7039,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7730,12 +7065,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7771,7 +7100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7797,12 +7126,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7840,7 +7163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7866,12 +7189,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7905,7 +7222,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7931,12 +7248,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -7972,7 +7283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -7998,12 +7309,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8037,7 +7342,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8063,12 +7368,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8106,7 +7405,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8132,12 +7431,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8173,7 +7466,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8199,12 +7492,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8242,7 +7529,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8268,12 +7555,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8309,7 +7590,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8335,12 +7616,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8378,7 +7653,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8404,12 +7679,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8447,7 +7716,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8473,12 +7742,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8512,7 +7775,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8538,12 +7801,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8577,7 +7834,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8603,12 +7860,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8646,7 +7897,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8672,12 +7923,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8713,7 +7958,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8739,12 +7984,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8782,7 +8021,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8808,12 +8047,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8851,7 +8084,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8877,12 +8110,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8920,7 +8147,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -8946,12 +8173,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -8991,7 +8212,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9017,12 +8238,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9064,7 +8279,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9090,12 +8305,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9139,7 +8348,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9165,12 +8374,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9208,7 +8411,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9234,12 +8437,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9273,7 +8470,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9299,12 +8496,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9344,7 +8535,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9370,12 +8561,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9415,7 +8600,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9441,12 +8626,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9488,7 +8667,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9514,12 +8693,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9559,7 +8732,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9585,12 +8758,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9630,7 +8797,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9656,12 +8823,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9705,7 +8866,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9731,12 +8892,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9776,7 +8931,70 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
+## updateMask2D
+
+> Mask2D updateMask2D(cloudPk, id, projectPk, opts)
+
+Partial update of a 2D mask for the model
+
+Partial update of a 2D mask for the model. Only available for PDF, JPEG and PNG models
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = 56; // Number | 
+let id = 56; // Number | A unique integer value identifying this model.
+let projectPk = 56; // Number | 
+let opts = {
+  'patchedMask2DRequest': new bimdata.PatchedMask2DRequest() // PatchedMask2DRequest | 
+};
+apiInstance.updateMask2D(cloudPk, id, projectPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**|  | 
+ **id** | **Number**| A unique integer value identifying this model. | 
+ **projectPk** | **Number**|  | 
+ **patchedMask2DRequest** | [**PatchedMask2DRequest**](PatchedMask2DRequest.md)|  | [optional] 
+
+### Return type
+
+[**Mask2D**](Mask2D.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9802,12 +9020,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9845,7 +9057,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9871,12 +9083,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9926,7 +9132,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -9952,12 +9158,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -9997,7 +9197,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10023,12 +9223,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10068,7 +9262,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10094,12 +9288,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10137,7 +9325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10163,12 +9351,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10208,7 +9390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10234,12 +9416,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10277,7 +9453,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10303,12 +9479,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10346,7 +9516,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10372,12 +9542,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10413,7 +9577,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10439,12 +9603,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10484,7 +9642,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10510,12 +9668,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10555,7 +9707,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10581,12 +9733,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10626,7 +9772,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10652,12 +9798,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10697,7 +9837,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10723,12 +9863,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10770,7 +9904,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10796,12 +9930,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10841,7 +9969,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10867,12 +9995,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10912,7 +10034,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -10938,12 +10060,6 @@ let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
 // Configure API key authorization: Bearer
 let Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = 'YOUR API KEY';
@@ -10985,7 +10101,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 

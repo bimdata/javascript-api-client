@@ -115,7 +115,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -191,7 +191,7 @@ export default class CollaborationApi {
         'attachment': opts['attachment']
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded', 'application/json'];
       let accepts = ['application/json'];
       let returnType = VisaAttachment;
@@ -262,7 +262,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Document;
@@ -330,7 +330,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = UserProject;
@@ -387,7 +387,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -448,7 +448,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -498,7 +498,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -552,7 +552,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CheckProjectAccess;
@@ -619,7 +619,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -681,7 +681,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Classification];
@@ -730,7 +730,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Cloud;
@@ -789,7 +789,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Folder;
@@ -839,7 +839,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Project;
@@ -866,7 +866,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'DWG', 'POINT_CLOUD', 'OBJ', 'IFC', 'GLTF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'IFC', 'POINT_CLOUD', 'DXF', 'DWG', 'OBJ', 'GLTF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -921,7 +921,7 @@ export default class CollaborationApi {
         'process_hint': opts['processHint']
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
       let returnType = Document;
@@ -934,7 +934,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'DXF', 'DWG', 'POINT_CLOUD', 'OBJ', 'IFC', 'GLTF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'IFC', 'POINT_CLOUD', 'DXF', 'DWG', 'OBJ', 'GLTF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -991,7 +991,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = FolderWithoutChildren;
@@ -1052,7 +1052,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Group;
@@ -1107,7 +1107,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Project;
@@ -1167,7 +1167,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ProjectAccessToken;
@@ -1228,7 +1228,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Tag;
@@ -1301,7 +1301,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = VisaValidation;
@@ -1368,7 +1368,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Visa;
@@ -1441,7 +1441,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = VisaComment;
@@ -1506,7 +1506,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1568,7 +1568,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1618,7 +1618,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1672,7 +1672,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1733,7 +1733,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1801,7 +1801,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1864,7 +1864,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1932,7 +1932,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1995,7 +1995,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2051,7 +2051,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2112,7 +2112,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2174,7 +2174,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2236,7 +2236,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2310,7 +2310,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2380,7 +2380,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2455,7 +2455,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2507,7 +2507,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2583,7 +2583,7 @@ export default class CollaborationApi {
         'attachment': opts['attachment']
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded', 'application/json'];
       let accepts = ['application/json'];
       let returnType = VisaAttachment;
@@ -2649,7 +2649,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Classification;
@@ -2705,7 +2705,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Classification];
@@ -2754,7 +2754,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Cloud;
@@ -2802,7 +2802,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [CloudInvitation];
@@ -2850,7 +2850,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Size;
@@ -2904,7 +2904,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = User;
@@ -2963,7 +2963,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [User];
@@ -3010,7 +3010,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Cloud];
@@ -3069,7 +3069,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Document;
@@ -3131,7 +3131,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Document];
@@ -3245,7 +3245,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Document];
@@ -3335,7 +3335,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = FolderWithoutChildren;
@@ -3455,7 +3455,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Document];
@@ -3546,7 +3546,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [FolderUserProject];
@@ -3602,7 +3602,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [FolderWithoutChildren];
@@ -3663,7 +3663,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Group;
@@ -3719,7 +3719,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Group];
@@ -3774,7 +3774,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [LogEntry];
@@ -3835,7 +3835,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Group;
@@ -3891,7 +3891,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Group];
@@ -3946,7 +3946,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Project;
@@ -4007,7 +4007,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ProjectAccessToken;
@@ -4063,7 +4063,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [ProjectAccessToken];
@@ -4130,7 +4130,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [VisaWithDocument];
@@ -4191,7 +4191,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Folder;
@@ -4246,7 +4246,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [FolderTree];
@@ -4301,7 +4301,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [ProjectInvitation];
@@ -4356,7 +4356,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ProjectSize;
@@ -4411,7 +4411,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Folder;
@@ -4476,7 +4476,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [UserProject];
@@ -4548,7 +4548,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [VisaWithDocument];
@@ -4603,7 +4603,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Project];
@@ -4645,7 +4645,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Project];
@@ -4686,7 +4686,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = SelfUser;
@@ -4745,7 +4745,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Tag;
@@ -4801,7 +4801,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Tag];
@@ -4850,7 +4850,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = UserInvitation;
@@ -4892,7 +4892,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [UserInvitation];
@@ -4963,7 +4963,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = VisaValidation;
@@ -5033,7 +5033,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [VisaValidation];
@@ -5102,7 +5102,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Visa;
@@ -5177,7 +5177,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = VisaComment;
@@ -5247,7 +5247,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [VisaComment];
@@ -5310,7 +5310,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Visa];
@@ -5371,7 +5371,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Project;
@@ -5432,7 +5432,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Group];
@@ -5487,7 +5487,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = CloudInvitation;
@@ -5547,7 +5547,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ProjectInvitation;
@@ -5603,7 +5603,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -5670,7 +5670,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Document;
@@ -5739,7 +5739,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Document;
@@ -5808,7 +5808,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -5883,7 +5883,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -5953,7 +5953,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -6019,7 +6019,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Classification;
@@ -6074,7 +6074,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Cloud;
@@ -6133,7 +6133,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = User;
@@ -6199,7 +6199,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Document;
@@ -6266,7 +6266,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = FolderWithoutChildren;
@@ -6339,7 +6339,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = GroupFolder;
@@ -6407,7 +6407,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Group;
@@ -6475,7 +6475,7 @@ export default class CollaborationApi {
         'office_preview': opts['officePreview']
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
       let returnType = DocumentPreviewFile;
@@ -6536,7 +6536,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Project;
@@ -6602,7 +6602,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = UserProject;
@@ -6669,7 +6669,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Tag;
@@ -6748,7 +6748,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = VisaValidation;
@@ -6823,7 +6823,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Visa;
@@ -6903,7 +6903,7 @@ export default class CollaborationApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = VisaComment;

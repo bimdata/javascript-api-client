@@ -14,22 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The Mask2D model module.
- * @module model/Mask2D
+ * The PatchedMask2DRequest model module.
+ * @module model/PatchedMask2DRequest
  * @version 0.0.0
  */
-class Mask2D {
+class PatchedMask2DRequest {
     /**
-     * Constructs a new <code>Mask2D</code>.
-     * @alias module:model/Mask2D
-     * @param id {Number} 
-     * @param cropPath {Array.<Array.<Number>>} Crop path of the manually created mask to show only a part of the model.
-     * @param createdAt {Date} Creation date
-     * @param updatedAt {Date} Date of the last update
+     * Constructs a new <code>PatchedMask2DRequest</code>.
+     * @alias module:model/PatchedMask2DRequest
      */
-    constructor(id, cropPath, createdAt, updatedAt) { 
+    constructor() { 
         
-        Mask2D.initialize(this, id, cropPath, createdAt, updatedAt);
+        PatchedMask2DRequest.initialize(this);
     }
 
     /**
@@ -37,27 +33,20 @@ class Mask2D {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, cropPath, createdAt, updatedAt) { 
-        obj['id'] = id;
-        obj['crop_path'] = cropPath;
-        obj['created_at'] = createdAt;
-        obj['updated_at'] = updatedAt;
+    static initialize(obj) { 
     }
 
     /**
-     * Constructs a <code>Mask2D</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>PatchedMask2DRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Mask2D} obj Optional instance to populate.
-     * @return {module:model/Mask2D} The populated <code>Mask2D</code> instance.
+     * @param {module:model/PatchedMask2DRequest} obj Optional instance to populate.
+     * @return {module:model/PatchedMask2DRequest} The populated <code>PatchedMask2DRequest</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Mask2D();
+            obj = obj || new PatchedMask2DRequest();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-            }
             if (data.hasOwnProperty('crop_path')) {
                 obj['crop_path'] = ApiClient.convertToType(data['crop_path'], [['Number']]);
             }
@@ -73,12 +62,6 @@ class Mask2D {
             if (data.hasOwnProperty('contrast')) {
                 obj['contrast'] = ApiClient.convertToType(data['contrast'], 'Number');
             }
-            if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
-            }
-            if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
-            }
         }
         return obj;
     }
@@ -87,56 +70,39 @@ class Mask2D {
 }
 
 /**
- * @member {Number} id
- */
-Mask2D.prototype['id'] = undefined;
-
-/**
  * Crop path of the manually created mask to show only a part of the model.
  * @member {Array.<Array.<Number>>} crop_path
  */
-Mask2D.prototype['crop_path'] = undefined;
+PatchedMask2DRequest.prototype['crop_path'] = undefined;
 
 /**
  * Whether the mask is grayscale
  * @member {Boolean} grayscale
  */
-Mask2D.prototype['grayscale'] = undefined;
+PatchedMask2DRequest.prototype['grayscale'] = undefined;
 
 /**
  * Opacity of the mask (0-1)
  * @member {Number} opacity
  */
-Mask2D.prototype['opacity'] = undefined;
+PatchedMask2DRequest.prototype['opacity'] = undefined;
 
 /**
  * Brightness of the mask
  * @member {Number} brightness
  */
-Mask2D.prototype['brightness'] = undefined;
+PatchedMask2DRequest.prototype['brightness'] = undefined;
 
 /**
  * Contrast of the mask
  * @member {Number} contrast
  */
-Mask2D.prototype['contrast'] = undefined;
-
-/**
- * Creation date
- * @member {Date} created_at
- */
-Mask2D.prototype['created_at'] = undefined;
-
-/**
- * Date of the last update
- * @member {Date} updated_at
- */
-Mask2D.prototype['updated_at'] = undefined;
+PatchedMask2DRequest.prototype['contrast'] = undefined;
 
 
 
 
 
 
-export default Mask2D;
+export default PatchedMask2DRequest;
 

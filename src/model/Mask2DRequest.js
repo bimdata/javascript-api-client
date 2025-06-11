@@ -52,6 +52,18 @@ class Mask2DRequest {
             if (data.hasOwnProperty('crop_path')) {
                 obj['crop_path'] = ApiClient.convertToType(data['crop_path'], [['Number']]);
             }
+            if (data.hasOwnProperty('grayscale')) {
+                obj['grayscale'] = ApiClient.convertToType(data['grayscale'], 'Boolean');
+            }
+            if (data.hasOwnProperty('opacity')) {
+                obj['opacity'] = ApiClient.convertToType(data['opacity'], 'Number');
+            }
+            if (data.hasOwnProperty('brightness')) {
+                obj['brightness'] = ApiClient.convertToType(data['brightness'], 'Number');
+            }
+            if (data.hasOwnProperty('contrast')) {
+                obj['contrast'] = ApiClient.convertToType(data['contrast'], 'Number');
+            }
         }
         return obj;
     }
@@ -64,6 +76,30 @@ class Mask2DRequest {
  * @member {Array.<Array.<Number>>} crop_path
  */
 Mask2DRequest.prototype['crop_path'] = undefined;
+
+/**
+ * Whether the mask is grayscale
+ * @member {Boolean} grayscale
+ */
+Mask2DRequest.prototype['grayscale'] = undefined;
+
+/**
+ * Opacity of the mask (0-1)
+ * @member {Number} opacity
+ */
+Mask2DRequest.prototype['opacity'] = undefined;
+
+/**
+ * Brightness of the mask
+ * @member {Number} brightness
+ */
+Mask2DRequest.prototype['brightness'] = undefined;
+
+/**
+ * Contrast of the mask
+ * @member {Number} contrast
+ */
+Mask2DRequest.prototype['contrast'] = undefined;
 
 
 

@@ -115,6 +115,7 @@ docs/PatchedGroupRequest.md
 docs/PatchedIfcAccessTokenRequest.md
 docs/PatchedLabelRequest.md
 docs/PatchedLayerRequest.md
+docs/PatchedMask2DRequest.md
 docs/PatchedModelRequest.md
 docs/PatchedPinRequest.md
 docs/PatchedPositioningPlanRequest.md
@@ -385,6 +386,7 @@ src/model/PatchedGroupRequest.js
 src/model/PatchedIfcAccessTokenRequest.js
 src/model/PatchedLabelRequest.js
 src/model/PatchedLayerRequest.js
+src/model/PatchedMask2DRequest.js
 src/model/PatchedModelRequest.js
 src/model/PatchedPinRequest.js
 src/model/PatchedPositioningPlanRequest.js
@@ -649,6 +651,7 @@ test/model/PatchedGroupRequest.spec.js
 test/model/PatchedIfcAccessTokenRequest.spec.js
 test/model/PatchedLabelRequest.spec.js
 test/model/PatchedLayerRequest.spec.js
+test/model/PatchedMask2DRequest.spec.js
 test/model/PatchedModelRequest.spec.js
 test/model/PatchedPinRequest.spec.js
 test/model/PatchedPositioningPlanRequest.spec.js

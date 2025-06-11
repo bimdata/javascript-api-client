@@ -47,8 +47,6 @@ class ApiClient {
          */
         this.authentications = {
             'ApiKey': {type: 'apiKey', 'in': 'header', name: 'Authorization'},
-            'BIMData_Connect': {type: 'oauth2'},
-            'BIMData_Connect': {type: 'oauth2'},
             'Bearer': {type: 'apiKey', 'in': 'header', name: 'Authorization'}
         }
 

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.WriteFolderRequest();
+    instance = new bimdata.PatchedMask2DRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,40 @@
       object[property] = value;
   }
 
-  describe('WriteFolderRequest', function() {
-    it('should create an instance of WriteFolderRequest', function() {
-      // uncomment below and update the code to test WriteFolderRequest
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be.a(bimdata.WriteFolderRequest);
+  describe('PatchedMask2DRequest', function() {
+    it('should create an instance of PatchedMask2DRequest', function() {
+      // uncomment below and update the code to test PatchedMask2DRequest
+      //var instance = new bimdata.PatchedMask2DRequest();
+      //expect(instance).to.be.a(bimdata.PatchedMask2DRequest);
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property cropPath (base name: "crop_path")', function() {
+      // uncomment below and update the code to test the property cropPath
+      //var instance = new bimdata.PatchedMask2DRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property defaultPermission (base name: "default_permission")', function() {
-      // uncomment below and update the code to test the property defaultPermission
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property grayscale (base name: "grayscale")', function() {
+      // uncomment below and update the code to test the property grayscale
+      //var instance = new bimdata.PatchedMask2DRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property opacity (base name: "opacity")', function() {
+      // uncomment below and update the code to test the property opacity
+      //var instance = new bimdata.PatchedMask2DRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property children (base name: "children")', function() {
-      // uncomment below and update the code to test the property children
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property brightness (base name: "brightness")', function() {
+      // uncomment below and update the code to test the property brightness
+      //var instance = new bimdata.PatchedMask2DRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property contrast (base name: "contrast")', function() {
+      // uncomment below and update the code to test the property contrast
+      //var instance = new bimdata.PatchedMask2DRequest();
       //expect(instance).to.be();
     });
 

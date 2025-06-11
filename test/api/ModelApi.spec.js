@@ -1458,6 +1458,16 @@
         done();
       });
     });
+    describe('updateMask2D', function() {
+      it('should call updateMask2D successfully', function(done) {
+        //uncomment below and update the code to test updateMask2D
+        //instance.updateMask2D(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateModel', function() {
       it('should call updateModel successfully', function(done) {
         //uncomment below and update the code to test updateModel

@@ -60,6 +60,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property grayscale (base name: "grayscale")', function() {
+      // uncomment below and update the code to test the property grayscale
+      //var instance = new bimdata.Mask2DRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property opacity (base name: "opacity")', function() {
+      // uncomment below and update the code to test the property opacity
+      //var instance = new bimdata.Mask2DRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property brightness (base name: "brightness")', function() {
+      // uncomment below and update the code to test the property brightness
+      //var instance = new bimdata.Mask2DRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property contrast (base name: "contrast")', function() {
+      // uncomment below and update the code to test the property contrast
+      //var instance = new bimdata.Mask2DRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

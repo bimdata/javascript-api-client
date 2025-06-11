@@ -123,6 +123,7 @@ import PatchedGroupRequest from './model/PatchedGroupRequest';
 import PatchedIfcAccessTokenRequest from './model/PatchedIfcAccessTokenRequest';
 import PatchedLabelRequest from './model/PatchedLabelRequest';
 import PatchedLayerRequest from './model/PatchedLayerRequest';
+import PatchedMask2DRequest from './model/PatchedMask2DRequest';
 import PatchedModelRequest from './model/PatchedModelRequest';
 import PatchedPinRequest from './model/PatchedPinRequest';
 import PatchedPositioningPlanRequest from './model/PatchedPositioningPlanRequest';
@@ -976,6 +977,12 @@ export {
      * @property {module:model/PatchedLayerRequest}
      */
     PatchedLayerRequest,
+
+    /**
+     * The PatchedMask2DRequest model constructor.
+     * @property {module:model/PatchedMask2DRequest}
+     */
+    PatchedMask2DRequest,
 
     /**
      * The PatchedModelRequest model constructor.

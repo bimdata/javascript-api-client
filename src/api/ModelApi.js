@@ -47,6 +47,7 @@ import PatchedDrawingRequest from '../model/PatchedDrawingRequest';
 import PatchedElementRequest from '../model/PatchedElementRequest';
 import PatchedIfcAccessTokenRequest from '../model/PatchedIfcAccessTokenRequest';
 import PatchedLayerRequest from '../model/PatchedLayerRequest';
+import PatchedMask2DRequest from '../model/PatchedMask2DRequest';
 import PatchedModelRequest from '../model/PatchedModelRequest';
 import PatchedPositioningPlanRequest from '../model/PatchedPositioningPlanRequest';
 import PatchedProcessorHandlerRequest from '../model/PatchedProcessorHandlerRequest';
@@ -146,7 +147,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ModelErrors;
@@ -221,7 +222,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ZoneSpace;
@@ -288,7 +289,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -357,7 +358,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -425,7 +426,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -493,7 +494,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -561,7 +562,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -637,7 +638,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Element];
@@ -709,7 +710,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Property];
@@ -783,7 +784,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -858,7 +859,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -933,7 +934,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -1010,7 +1011,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Element];
@@ -1082,7 +1083,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Property];
@@ -1148,7 +1149,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = IfcAccessToken;
@@ -1217,7 +1218,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Building;
@@ -1291,7 +1292,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Building;
@@ -1360,7 +1361,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -1434,7 +1435,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Classification];
@@ -1503,7 +1504,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Drawing;
@@ -1579,7 +1580,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Element];
@@ -1655,7 +1656,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = PropertySet;
@@ -1737,7 +1738,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Property;
@@ -1823,7 +1824,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = PropertyDefinition;
@@ -1919,7 +1920,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Unit;
@@ -1991,7 +1992,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Layer;
@@ -2059,7 +2060,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Mask2D;
@@ -2121,7 +2122,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Model;
@@ -2182,7 +2183,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Model;
@@ -2249,7 +2250,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [PropertyDefinition];
@@ -2317,7 +2318,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Unit];
@@ -2385,7 +2386,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Model;
@@ -2447,7 +2448,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Model;
@@ -2508,7 +2509,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Model;
@@ -2575,7 +2576,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [PropertySet];
@@ -2643,7 +2644,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -2711,7 +2712,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -2779,7 +2780,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Space];
@@ -2847,7 +2848,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Storey;
@@ -2921,7 +2922,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Storey;
@@ -2990,7 +2991,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = System;
@@ -3053,7 +3054,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3131,7 +3132,7 @@ export default class ModelApi {
         'chunks': this.apiClient.buildCollectionParam(opts['chunks'], 'passthrough')
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
       let returnType = XktFile;
@@ -3206,7 +3207,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Zone];
@@ -3282,7 +3283,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ZoneSpace;
@@ -3352,7 +3353,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3421,7 +3422,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3496,7 +3497,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3566,7 +3567,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3635,7 +3636,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3704,7 +3705,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3767,7 +3768,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3829,7 +3830,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3897,7 +3898,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3966,7 +3967,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4035,7 +4036,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4098,7 +4099,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4166,7 +4167,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4235,7 +4236,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4304,7 +4305,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4379,7 +4380,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4449,7 +4450,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4518,7 +4519,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4593,7 +4594,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4662,7 +4663,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -4736,7 +4737,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Element;
@@ -4806,7 +4807,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = IfcAccessToken;
@@ -4869,7 +4870,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [IfcAccessToken];
@@ -4937,7 +4938,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Building;
@@ -5012,7 +5013,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PositioningPlan;
@@ -5076,7 +5077,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Building];
@@ -5144,7 +5145,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Classification];
@@ -5213,7 +5214,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Document];
@@ -5282,7 +5283,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Drawing;
@@ -5345,7 +5346,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Drawing];
@@ -5413,7 +5414,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Element;
@@ -5484,7 +5485,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [DocumentWithElementList];
@@ -5562,7 +5563,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PropertySet;
@@ -5638,7 +5639,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Property];
@@ -5720,7 +5721,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Property;
@@ -5809,7 +5810,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PropertyDefinition;
@@ -5905,7 +5906,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Unit;
@@ -5996,7 +5997,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Unit];
@@ -6080,7 +6081,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [PropertyDefinition];
@@ -6151,7 +6152,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [PropertySet];
@@ -6222,7 +6223,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Element];
@@ -6294,7 +6295,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Element];
@@ -6363,7 +6364,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Layer;
@@ -6426,7 +6427,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Layer];
@@ -6500,7 +6501,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Material;
@@ -6570,7 +6571,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Material];
@@ -6633,7 +6634,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Model;
@@ -6695,7 +6696,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Classification];
@@ -6763,7 +6764,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Material;
@@ -6826,7 +6827,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Material];
@@ -6888,7 +6889,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Property];
@@ -6956,7 +6957,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Property;
@@ -7025,7 +7026,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PropertyDefinition;
@@ -7088,7 +7089,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [PropertyDefinition];
@@ -7156,7 +7157,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Unit;
@@ -7219,7 +7220,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Unit];
@@ -7283,7 +7284,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Model];
@@ -7354,7 +7355,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ProcessorHandler;
@@ -7417,7 +7418,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [ProcessorHandler];
@@ -7485,7 +7486,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PropertySet;
@@ -7548,7 +7549,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [PropertySet];
@@ -7618,7 +7619,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = RawElements;
@@ -7690,7 +7691,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = SimpleElement;
@@ -7761,7 +7762,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = SimpleElement;
@@ -7833,7 +7834,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Space;
@@ -7896,7 +7897,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Space];
@@ -7964,7 +7965,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Storey;
@@ -8039,7 +8040,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PositioningPlan;
@@ -8103,7 +8104,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Storey];
@@ -8171,7 +8172,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = System;
@@ -8234,7 +8235,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [System];
@@ -8300,7 +8301,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -8370,7 +8371,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Zone;
@@ -8445,7 +8446,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ZoneSpace;
@@ -8515,7 +8516,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [ZoneSpace];
@@ -8582,7 +8583,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Zone];
@@ -8657,7 +8658,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Document];
@@ -8721,7 +8722,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [ElementClassificationRelation];
@@ -8782,7 +8783,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -8847,7 +8848,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = [];
       let returnType = null;
@@ -8917,7 +8918,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -8992,7 +8993,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -9068,7 +9069,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -9144,7 +9145,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -9226,7 +9227,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -9315,7 +9316,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -9411,7 +9412,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -9490,7 +9491,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -9554,7 +9555,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -9625,7 +9626,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = IfcAccessToken;
@@ -9699,7 +9700,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Building;
@@ -9779,7 +9780,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = PositioningPlan;
@@ -9854,7 +9855,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Drawing;
@@ -9928,7 +9929,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Element;
@@ -10014,7 +10015,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Property;
@@ -10090,7 +10091,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Layer;
@@ -10114,6 +10115,73 @@ export default class ModelApi {
      */
     updateLayer(cloudPk, id, modelPk, projectPk, opts) {
       return this.updateLayerWithHttpInfo(cloudPk, id, modelPk, projectPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Partial update of a 2D mask for the model
+     * Partial update of a 2D mask for the model. Only available for PDF, JPEG and PNG models
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedMask2DRequest} opts.patchedMask2DRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Mask2D} and HTTP response
+     */
+    updateMask2DWithHttpInfo(cloudPk, id, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedMask2DRequest'];
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateMask2D");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateMask2D");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateMask2D");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Mask2D;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}/mask-2d', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Partial update of a 2D mask for the model
+     * Partial update of a 2D mask for the model. Only available for PDF, JPEG and PNG models
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedMask2DRequest} opts.patchedMask2DRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Mask2D}
+     */
+    updateMask2D(cloudPk, id, projectPk, opts) {
+      return this.updateMask2DWithHttpInfo(cloudPk, id, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -10158,7 +10226,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Model;
@@ -10238,7 +10306,7 @@ export default class ModelApi {
         'binary_2d_file': opts['binary2dFile']
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['multipart/form-data', 'application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
       let returnType = ModelFiles;
@@ -10317,7 +10385,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Property;
@@ -10391,7 +10459,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = PropertyDefinition;
@@ -10459,7 +10527,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Transform;
@@ -10532,7 +10600,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Unit;
@@ -10608,7 +10676,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Storey;
@@ -10683,7 +10751,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Storey;
@@ -10752,7 +10820,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = [Storey];
@@ -10824,7 +10892,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ProcessorHandler;
@@ -10898,7 +10966,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = PropertySet;
@@ -10972,7 +11040,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Space;
@@ -11046,7 +11114,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Storey;
@@ -11126,7 +11194,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = PositioningPlan;
@@ -11201,7 +11269,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = System;
@@ -11275,7 +11343,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = Zone;
@@ -11355,7 +11423,7 @@ export default class ModelApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = ZoneSpace;
