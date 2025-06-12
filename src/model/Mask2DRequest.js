@@ -22,11 +22,10 @@ class Mask2DRequest {
     /**
      * Constructs a new <code>Mask2DRequest</code>.
      * @alias module:model/Mask2DRequest
-     * @param cropPath {Array.<Array.<Number>>} Crop path of the manually created mask to show only a part of the model.
      */
-    constructor(cropPath) { 
+    constructor() { 
         
-        Mask2DRequest.initialize(this, cropPath);
+        Mask2DRequest.initialize(this);
     }
 
     /**
@@ -34,8 +33,7 @@ class Mask2DRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, cropPath) { 
-        obj['crop_path'] = cropPath;
+    static initialize(obj) { 
     }
 
     /**

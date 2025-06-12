@@ -866,7 +866,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'IFC', 'POINT_CLOUD', 'DXF', 'DWG', 'OBJ', 'GLTF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'GLTF', 'POINT_CLOUD', 'IFC', 'DXF', 'OBJ', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -934,7 +934,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'IFC', 'POINT_CLOUD', 'DXF', 'DWG', 'OBJ', 'GLTF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'GLTF', 'POINT_CLOUD', 'IFC', 'DXF', 'OBJ', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file

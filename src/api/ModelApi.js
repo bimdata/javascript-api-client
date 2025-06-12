@@ -2026,11 +2026,13 @@ export default class ModelApi {
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this model.
      * @param {Number} projectPk 
-     * @param {module:model/Mask2DRequest} mask2DRequest 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/Mask2DRequest} opts.mask2DRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Mask2D} and HTTP response
      */
-    createMask2DWithHttpInfo(cloudPk, id, projectPk, mask2DRequest) {
-      let postBody = mask2DRequest;
+    createMask2DWithHttpInfo(cloudPk, id, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['mask2DRequest'];
       // verify the required parameter 'cloudPk' is set
       if (cloudPk === undefined || cloudPk === null) {
         throw new Error("Missing the required parameter 'cloudPk' when calling createMask2D");
@@ -2042,10 +2044,6 @@ export default class ModelApi {
       // verify the required parameter 'projectPk' is set
       if (projectPk === undefined || projectPk === null) {
         throw new Error("Missing the required parameter 'projectPk' when calling createMask2D");
-      }
-      // verify the required parameter 'mask2DRequest' is set
-      if (mask2DRequest === undefined || mask2DRequest === null) {
-        throw new Error("Missing the required parameter 'mask2DRequest' when calling createMask2D");
       }
 
       let pathParams = {
@@ -2077,11 +2075,12 @@ export default class ModelApi {
      * @param {Number} cloudPk 
      * @param {Number} id A unique integer value identifying this model.
      * @param {Number} projectPk 
-     * @param {module:model/Mask2DRequest} mask2DRequest 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/Mask2DRequest} opts.mask2DRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Mask2D}
      */
-    createMask2D(cloudPk, id, projectPk, mask2DRequest) {
-      return this.createMask2DWithHttpInfo(cloudPk, id, projectPk, mask2DRequest)
+    createMask2D(cloudPk, id, projectPk, opts) {
+      return this.createMask2DWithHttpInfo(cloudPk, id, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -23,13 +23,12 @@ class Mask2D {
      * Constructs a new <code>Mask2D</code>.
      * @alias module:model/Mask2D
      * @param id {Number} 
-     * @param cropPath {Array.<Array.<Number>>} Crop path of the manually created mask to show only a part of the model.
      * @param createdAt {Date} Creation date
      * @param updatedAt {Date} Date of the last update
      */
-    constructor(id, cropPath, createdAt, updatedAt) { 
+    constructor(id, createdAt, updatedAt) { 
         
-        Mask2D.initialize(this, id, cropPath, createdAt, updatedAt);
+        Mask2D.initialize(this, id, createdAt, updatedAt);
     }
 
     /**
@@ -37,9 +36,8 @@ class Mask2D {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, cropPath, createdAt, updatedAt) { 
+    static initialize(obj, id, createdAt, updatedAt) { 
         obj['id'] = id;
-        obj['crop_path'] = cropPath;
         obj['created_at'] = createdAt;
         obj['updated_at'] = updatedAt;
     }

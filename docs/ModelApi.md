@@ -1820,7 +1820,7 @@ Name | Type | Description  | Notes
 
 ## createMask2D
 
-> Mask2D createMask2D(cloudPk, id, projectPk, mask2DRequest)
+> Mask2D createMask2D(cloudPk, id, projectPk, opts)
 
 Create or update a 2D mask for the model
 
@@ -1846,8 +1846,10 @@ let apiInstance = new bimdata.ModelApi();
 let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | 
-let mask2DRequest = new bimdata.Mask2DRequest(); // Mask2DRequest | 
-apiInstance.createMask2D(cloudPk, id, projectPk, mask2DRequest).then((data) => {
+let opts = {
+  'mask2DRequest': new bimdata.Mask2DRequest() // Mask2DRequest | 
+};
+apiInstance.createMask2D(cloudPk, id, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1863,7 +1865,7 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**|  | 
- **mask2DRequest** | [**Mask2DRequest**](Mask2DRequest.md)|  | 
+ **mask2DRequest** | [**Mask2DRequest**](Mask2DRequest.md)|  | [optional] 
 
 ### Return type
 
