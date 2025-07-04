@@ -83,6 +83,7 @@ PinRequest.prototype['guid'] = undefined;
 PinRequest.prototype['name'] = undefined;
 
 /**
+ *              Color of the pin in hexadecimal string without the '#' prefix.             Example: 'fff', 'fff0', '0f0f0f', '0f0f0f00'.         
  * @member {String} color
  */
 PinRequest.prototype['color'] = undefined;

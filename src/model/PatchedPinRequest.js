@@ -81,6 +81,7 @@ PatchedPinRequest.prototype['guid'] = undefined;
 PatchedPinRequest.prototype['name'] = undefined;
 
 /**
+ *              Color of the pin in hexadecimal string without the '#' prefix.             Example: 'fff', 'fff0', '0f0f0f', '0f0f0f00'.         
  * @member {String} color
  */
 PatchedPinRequest.prototype['color'] = undefined;

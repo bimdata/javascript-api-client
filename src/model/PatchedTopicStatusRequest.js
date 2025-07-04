@@ -66,6 +66,7 @@ class PatchedTopicStatusRequest {
 PatchedTopicStatusRequest.prototype['topic_status'] = undefined;
 
 /**
+ *              Color of the topic status in hexadecimal string without the '#' prefix.             Example: 'fff', 'fff0', '0f0f0f', '0f0f0f00'.         
  * @member {String} color
  */
 PatchedTopicStatusRequest.prototype['color'] = undefined;

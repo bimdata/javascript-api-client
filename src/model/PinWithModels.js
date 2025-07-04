@@ -25,7 +25,7 @@ class PinWithModels {
      * @alias module:model/PinWithModels
      * @param guid {String} 
      * @param name {String} 
-     * @param color {String} 
+     * @param color {String}              Color of the pin in hexadecimal string without the '#' prefix.             Example: 'fff', 'fff0', '0f0f0f', '0f0f0f00'.         
      * @param point {module:model/GeometryPoint} 
      * @param index {Number} 
      * @param modelIds {Array.<Number>} 
@@ -96,6 +96,7 @@ PinWithModels.prototype['guid'] = undefined;
 PinWithModels.prototype['name'] = undefined;
 
 /**
+ *              Color of the pin in hexadecimal string without the '#' prefix.             Example: 'fff', 'fff0', '0f0f0f', '0f0f0f00'.         
  * @member {String} color
  */
 PinWithModels.prototype['color'] = undefined;

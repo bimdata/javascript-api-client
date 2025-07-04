@@ -67,6 +67,7 @@ class PatchedTagRequest {
 PatchedTagRequest.prototype['name'] = undefined;
 
 /**
+ *              Color of the Tag status in hexadecimal string without the '#' prefix.             Example: 'fff', 'fff0', '0f0f0f', '0f0f0f00'.         
  * @member {String} color
  */
 PatchedTagRequest.prototype['color'] = undefined;
