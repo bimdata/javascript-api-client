@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.WriteFolderRequest();
+    instance = new bimdata.BcfLabelRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,16 @@
       object[property] = value;
   }
 
-  describe('WriteFolderRequest', function() {
-    it('should create an instance of WriteFolderRequest', function() {
-      // uncomment below and update the code to test WriteFolderRequest
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be.a(bimdata.WriteFolderRequest);
+  describe('BcfLabelRequest', function() {
+    it('should create an instance of BcfLabelRequest', function() {
+      // uncomment below and update the code to test BcfLabelRequest
+      //var instance = new bimdata.BcfLabelRequest();
+      //expect(instance).to.be.a(bimdata.BcfLabelRequest);
     });
 
-    it('should have the property defaultPermission (base name: "default_permission")', function() {
-      // uncomment below and update the code to test the property defaultPermission
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property children (base name: "children")', function() {
-      // uncomment below and update the code to test the property children
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property label (base name: "label")', function() {
+      // uncomment below and update the code to test the property label
+      //var instance = new bimdata.BcfLabelRequest();
       //expect(instance).to.be();
     });
 

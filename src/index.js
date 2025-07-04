@@ -14,6 +14,8 @@
 
 import ApiClient from './ApiClient';
 import Auth from './model/Auth';
+import BcfLabel from './model/BcfLabel';
+import BcfLabelRequest from './model/BcfLabelRequest';
 import BcfProject from './model/BcfProject';
 import BcfProjectRequest from './model/BcfProjectRequest';
 import Building from './model/Building';
@@ -64,6 +66,8 @@ import FolderWithoutChildren from './model/FolderWithoutChildren';
 import FolderWithoutChildrenRequest from './model/FolderWithoutChildrenRequest';
 import FullTopic from './model/FullTopic';
 import FullTopicRequest from './model/FullTopicRequest';
+import Geometry2dPoint from './model/Geometry2dPoint';
+import Geometry2dPointRequest from './model/Geometry2dPointRequest';
 import GeometryPoint from './model/GeometryPoint';
 import GeometryPointRequest from './model/GeometryPointRequest';
 import Group from './model/Group';
@@ -77,8 +81,6 @@ import IfcMergeRequest from './model/IfcMergeRequest';
 import IfcOptimizeRequest from './model/IfcOptimizeRequest';
 import ImportGroupRequest from './model/ImportGroupRequest';
 import Invitation from './model/Invitation';
-import Label from './model/Label';
-import LabelRequest from './model/LabelRequest';
 import Layer from './model/Layer';
 import LayerElement from './model/LayerElement';
 import LayerElementRequest from './model/LayerElementRequest';
@@ -103,12 +105,15 @@ import ModelDocumentRequest from './model/ModelDocumentRequest';
 import ModelErrors from './model/ModelErrors';
 import ModelErrorsRequest from './model/ModelErrorsRequest';
 import ModelFiles from './model/ModelFiles';
+import ModelLabel from './model/ModelLabel';
+import ModelLabelRequest from './model/ModelLabelRequest';
 import ModelSerializerWithoutChildren from './model/ModelSerializerWithoutChildren';
 import ModelWithPositioningPlan from './model/ModelWithPositioningPlan';
 import Organization from './model/Organization';
 import OrganizationRequest from './model/OrganizationRequest';
 import OrthogonalCamera from './model/OrthogonalCamera';
 import OrthogonalCameraRequest from './model/OrthogonalCameraRequest';
+import PatchedBcfLabelRequest from './model/PatchedBcfLabelRequest';
 import PatchedBcfProjectRequest from './model/PatchedBcfProjectRequest';
 import PatchedClassificationRequest from './model/PatchedClassificationRequest';
 import PatchedCloudRequest from './model/PatchedCloudRequest';
@@ -121,9 +126,9 @@ import PatchedFullTopicRequest from './model/PatchedFullTopicRequest';
 import PatchedGroupFolderRequest from './model/PatchedGroupFolderRequest';
 import PatchedGroupRequest from './model/PatchedGroupRequest';
 import PatchedIfcAccessTokenRequest from './model/PatchedIfcAccessTokenRequest';
-import PatchedLabelRequest from './model/PatchedLabelRequest';
 import PatchedLayerRequest from './model/PatchedLayerRequest';
 import PatchedMask2DRequest from './model/PatchedMask2DRequest';
+import PatchedModelLabelRequest from './model/PatchedModelLabelRequest';
 import PatchedModelRequest from './model/PatchedModelRequest';
 import PatchedPinRequest from './model/PatchedPinRequest';
 import PatchedPositioningPlanRequest from './model/PatchedPositioningPlanRequest';
@@ -323,6 +328,18 @@ export {
      * @property {module:model/Auth}
      */
     Auth,
+
+    /**
+     * The BcfLabel model constructor.
+     * @property {module:model/BcfLabel}
+     */
+    BcfLabel,
+
+    /**
+     * The BcfLabelRequest model constructor.
+     * @property {module:model/BcfLabelRequest}
+     */
+    BcfLabelRequest,
 
     /**
      * The BcfProject model constructor.
@@ -625,6 +642,18 @@ export {
     FullTopicRequest,
 
     /**
+     * The Geometry2dPoint model constructor.
+     * @property {module:model/Geometry2dPoint}
+     */
+    Geometry2dPoint,
+
+    /**
+     * The Geometry2dPointRequest model constructor.
+     * @property {module:model/Geometry2dPointRequest}
+     */
+    Geometry2dPointRequest,
+
+    /**
      * The GeometryPoint model constructor.
      * @property {module:model/GeometryPoint}
      */
@@ -701,18 +730,6 @@ export {
      * @property {module:model/Invitation}
      */
     Invitation,
-
-    /**
-     * The Label model constructor.
-     * @property {module:model/Label}
-     */
-    Label,
-
-    /**
-     * The LabelRequest model constructor.
-     * @property {module:model/LabelRequest}
-     */
-    LabelRequest,
 
     /**
      * The Layer model constructor.
@@ -859,6 +876,18 @@ export {
     ModelFiles,
 
     /**
+     * The ModelLabel model constructor.
+     * @property {module:model/ModelLabel}
+     */
+    ModelLabel,
+
+    /**
+     * The ModelLabelRequest model constructor.
+     * @property {module:model/ModelLabelRequest}
+     */
+    ModelLabelRequest,
+
+    /**
      * The ModelSerializerWithoutChildren model constructor.
      * @property {module:model/ModelSerializerWithoutChildren}
      */
@@ -893,6 +922,12 @@ export {
      * @property {module:model/OrthogonalCameraRequest}
      */
     OrthogonalCameraRequest,
+
+    /**
+     * The PatchedBcfLabelRequest model constructor.
+     * @property {module:model/PatchedBcfLabelRequest}
+     */
+    PatchedBcfLabelRequest,
 
     /**
      * The PatchedBcfProjectRequest model constructor.
@@ -967,12 +1002,6 @@ export {
     PatchedIfcAccessTokenRequest,
 
     /**
-     * The PatchedLabelRequest model constructor.
-     * @property {module:model/PatchedLabelRequest}
-     */
-    PatchedLabelRequest,
-
-    /**
      * The PatchedLayerRequest model constructor.
      * @property {module:model/PatchedLayerRequest}
      */
@@ -983,6 +1012,12 @@ export {
      * @property {module:model/PatchedMask2DRequest}
      */
     PatchedMask2DRequest,
+
+    /**
+     * The PatchedModelLabelRequest model constructor.
+     * @property {module:model/PatchedModelLabelRequest}
+     */
+    PatchedModelLabelRequest,
 
     /**
      * The PatchedModelRequest model constructor.

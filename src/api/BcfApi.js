@@ -14,6 +14,8 @@
 
 import ApiClient from "../ApiClient";
 import Auth from '../model/Auth';
+import BcfLabel from '../model/BcfLabel';
+import BcfLabelRequest from '../model/BcfLabelRequest';
 import BcfProject from '../model/BcfProject';
 import BcfProjectRequest from '../model/BcfProjectRequest';
 import ColoringDefinition from '../model/ColoringDefinition';
@@ -23,12 +25,10 @@ import DetailedExtensions from '../model/DetailedExtensions';
 import Extensions from '../model/Extensions';
 import FullTopic from '../model/FullTopic';
 import FullTopicRequest from '../model/FullTopicRequest';
-import Label from '../model/Label';
-import LabelRequest from '../model/LabelRequest';
+import PatchedBcfLabelRequest from '../model/PatchedBcfLabelRequest';
 import PatchedBcfProjectRequest from '../model/PatchedBcfProjectRequest';
 import PatchedCommentRequest from '../model/PatchedCommentRequest';
 import PatchedFullTopicRequest from '../model/PatchedFullTopicRequest';
-import PatchedLabelRequest from '../model/PatchedLabelRequest';
 import PatchedPinRequest from '../model/PatchedPinRequest';
 import PatchedPriorityRequest from '../model/PatchedPriorityRequest';
 import PatchedStageRequest from '../model/PatchedStageRequest';
@@ -140,18 +140,18 @@ export default class BcfApi {
      * Create a Label
      * This is not a standard route. Create a Label available for the project  Required scopes: bcf:write
      * @param {Number} projectsPk 
-     * @param {module:model/LabelRequest} labelRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Label} and HTTP response
+     * @param {module:model/BcfLabelRequest} bcfLabelRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BcfLabel} and HTTP response
      */
-    createExtensionLabelWithHttpInfo(projectsPk, labelRequest) {
-      let postBody = labelRequest;
+    createExtensionLabelWithHttpInfo(projectsPk, bcfLabelRequest) {
+      let postBody = bcfLabelRequest;
       // verify the required parameter 'projectsPk' is set
       if (projectsPk === undefined || projectsPk === null) {
         throw new Error("Missing the required parameter 'projectsPk' when calling createExtensionLabel");
       }
-      // verify the required parameter 'labelRequest' is set
-      if (labelRequest === undefined || labelRequest === null) {
-        throw new Error("Missing the required parameter 'labelRequest' when calling createExtensionLabel");
+      // verify the required parameter 'bcfLabelRequest' is set
+      if (bcfLabelRequest === undefined || bcfLabelRequest === null) {
+        throw new Error("Missing the required parameter 'bcfLabelRequest' when calling createExtensionLabel");
       }
 
       let pathParams = {
@@ -167,7 +167,7 @@ export default class BcfApi {
       let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
-      let returnType = Label;
+      let returnType = BcfLabel;
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/extension/label', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -179,11 +179,11 @@ export default class BcfApi {
      * Create a Label
      * This is not a standard route. Create a Label available for the project  Required scopes: bcf:write
      * @param {Number} projectsPk 
-     * @param {module:model/LabelRequest} labelRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Label}
+     * @param {module:model/BcfLabelRequest} bcfLabelRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BcfLabel}
      */
-    createExtensionLabel(projectsPk, labelRequest) {
-      return this.createExtensionLabelWithHttpInfo(projectsPk, labelRequest)
+    createExtensionLabel(projectsPk, bcfLabelRequest) {
+      return this.createExtensionLabelWithHttpInfo(projectsPk, bcfLabelRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3253,12 +3253,12 @@ export default class BcfApi {
      * @param {Number} id A unique integer value identifying this label.
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
-     * @param {module:model/PatchedLabelRequest} opts.patchedLabelRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Label} and HTTP response
+     * @param {module:model/PatchedBcfLabelRequest} opts.patchedBcfLabelRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BcfLabel} and HTTP response
      */
     updateExtensionLabelWithHttpInfo(id, projectsPk, opts) {
       opts = opts || {};
-      let postBody = opts['patchedLabelRequest'];
+      let postBody = opts['patchedBcfLabelRequest'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling updateExtensionLabel");
@@ -3282,7 +3282,7 @@ export default class BcfApi {
       let authNames = ['ApiKey', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
-      let returnType = Label;
+      let returnType = BcfLabel;
       return this.apiClient.callApi(
         '/bcf/2.1/projects/{projects_pk}/extension/label/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3296,8 +3296,8 @@ export default class BcfApi {
      * @param {Number} id A unique integer value identifying this label.
      * @param {Number} projectsPk 
      * @param {Object} opts Optional parameters
-     * @param {module:model/PatchedLabelRequest} opts.patchedLabelRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Label}
+     * @param {module:model/PatchedBcfLabelRequest} opts.patchedBcfLabelRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BcfLabel}
      */
     updateExtensionLabel(id, projectsPk, opts) {
       return this.updateExtensionLabelWithHttpInfo(id, projectsPk, opts)

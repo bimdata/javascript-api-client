@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import Label from './Label';
+import BcfLabel from './BcfLabel';
 import Priority from './Priority';
 import Stage from './Stage';
 import TopicStatus from './TopicStatus';
@@ -53,7 +53,7 @@ class DetailedExtensions {
             obj = obj || new DetailedExtensions();
 
             if (data.hasOwnProperty('topic_labels')) {
-                obj['topic_labels'] = ApiClient.convertToType(data['topic_labels'], [Label]);
+                obj['topic_labels'] = ApiClient.convertToType(data['topic_labels'], [BcfLabel]);
             }
             if (data.hasOwnProperty('topic_types')) {
                 obj['topic_types'] = ApiClient.convertToType(data['topic_types'], [TopicType]);
@@ -75,7 +75,7 @@ class DetailedExtensions {
 }
 
 /**
- * @member {Array.<module:model/Label>} topic_labels
+ * @member {Array.<module:model/BcfLabel>} topic_labels
  */
 DetailedExtensions.prototype['topic_labels'] = undefined;
 

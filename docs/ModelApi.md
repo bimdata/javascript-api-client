@@ -29,6 +29,7 @@ Method | HTTP request | Description
 [**createElementPropertySetProperty**](ModelApi.md#createElementPropertySetProperty) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property | Create a property to a PropertySet
 [**createElementPropertySetPropertyDefinition**](ModelApi.md#createElementPropertySetPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition | Create a Definition to a Property
 [**createElementPropertySetPropertyDefinitionUnit**](ModelApi.md#createElementPropertySetPropertyDefinitionUnit) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit | Create a Unit to a Definition
+[**createLabel**](ModelApi.md#createLabel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label | Create a label in the model
 [**createLayer**](ModelApi.md#createLayer) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer | Create a layer in the model
 [**createMask2D**](ModelApi.md#createMask2D) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/mask-2d | Create or update a 2D mask for the model
 [**createMetaBuilding**](ModelApi.md#createMetaBuilding) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-metabuilding | Create an empty 3D Model
@@ -54,6 +55,7 @@ Method | HTTP request | Description
 [**deleteBuildingPlan**](ModelApi.md#deleteBuildingPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/{id} | Delete the relation between a 2d model and a building
 [**deleteDrawing**](ModelApi.md#deleteDrawing) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing/{id} | Delete a drawing of a model
 [**deleteElement**](ModelApi.md#deleteElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Delete an element of a model
+[**deleteLabel**](ModelApi.md#deleteLabel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label/{id} | Delete a label
 [**deleteLayer**](ModelApi.md#deleteLayer) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Delete a layer of a model
 [**deleteMask2D**](ModelApi.md#deleteMask2D) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/mask-2d | Delete the 2D mask for the model
 [**deleteModel**](ModelApi.md#deleteModel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id} | Delete a model
@@ -91,6 +93,8 @@ Method | HTTP request | Description
 [**getElementPropertySets**](ModelApi.md#getElementPropertySets) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset | Retrieve all PropertySets of an element
 [**getElements**](ModelApi.md#getElements) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element | Retrieve all elements of a model
 [**getElementsFromClassification**](ModelApi.md#getElementsFromClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification/{model_classification_pk}/element | Retrieve all elements with the classification
+[**getLabel**](ModelApi.md#getLabel) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label/{id} | Retrieve one label of the model
+[**getLabels**](ModelApi.md#getLabels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label | Retrieve all labels of the model
 [**getLayer**](ModelApi.md#getLayer) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Retrieve a layer of a model
 [**getLayers**](ModelApi.md#getLayers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer | Retrieve all layers of a model
 [**getMaterial**](ModelApi.md#getMaterial) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/material/{id} | Retrieve a material of a model
@@ -144,6 +148,7 @@ Method | HTTP request | Description
 [**updateDrawing**](ModelApi.md#updateDrawing) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing/{id} | Update some fields of a drawing
 [**updateElement**](ModelApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Update some fields of an element
 [**updateElementPropertySetProperty**](ModelApi.md#updateElementPropertySetProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Update a property from an element
+[**updateLabel**](ModelApi.md#updateLabel) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label/{id} | Update some fields of a label
 [**updateLayer**](ModelApi.md#updateLayer) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Update some fields of a layer
 [**updateMask2D**](ModelApi.md#updateMask2D) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/mask-2d | Partial update of a 2D mask for the model
 [**updateModel**](ModelApi.md#updateModel) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{id} | Update some fields of a model
@@ -1757,6 +1762,67 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## createLabel
+
+> ModelLabel createLabel(cloudPk, modelPk, projectPk, modelLabelRequest)
+
+Create a label in the model
+
+ Bulk create available. You can either post an object or a list of objects. Is you post a list, the response will be a list (in the same order) of created objects or of errors if any If at least one create succeeded, the status code will be 201. If every create failed, the status code we&#39;ll be 400 with the list of errors   Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let modelPk = 56; // Number | A unique integer value identifying this model.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let modelLabelRequest = new bimdata.ModelLabelRequest(); // ModelLabelRequest | 
+apiInstance.createLabel(cloudPk, modelPk, projectPk, modelLabelRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **modelPk** | **Number**| A unique integer value identifying this model. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **modelLabelRequest** | [**ModelLabelRequest**](ModelLabelRequest.md)|  | 
+
+### Return type
+
+[**ModelLabel**](ModelLabel.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
 ## createLayer
 
 > Layer createLayer(cloudPk, modelPk, projectPk, layerRequest)
@@ -3275,6 +3341,67 @@ Name | Type | Description  | Notes
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **uuid** | **String**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## deleteLabel
+
+> deleteLabel(cloudPk, id, modelPk, projectPk)
+
+Delete a label
+
+Delete on label of the model.  Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let id = 56; // Number | A unique integer value identifying this label.
+let modelPk = 56; // Number | A unique integer value identifying this model.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+apiInstance.deleteLabel(cloudPk, id, modelPk, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **id** | **Number**| A unique integer value identifying this label. | 
+ **modelPk** | **Number**| A unique integer value identifying this model. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -5576,6 +5703,130 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[Element]**](Element.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getLabel
+
+> ModelLabel getLabel(cloudPk, id, modelPk, projectPk)
+
+Retrieve one label of the model
+
+Retrieve one label of the model  Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let id = 56; // Number | A unique integer value identifying this label.
+let modelPk = 56; // Number | A unique integer value identifying this model.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+apiInstance.getLabel(cloudPk, id, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **id** | **Number**| A unique integer value identifying this label. | 
+ **modelPk** | **Number**| A unique integer value identifying this model. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+
+### Return type
+
+[**ModelLabel**](ModelLabel.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getLabels
+
+> [ModelLabel] getLabels(cloudPk, modelPk, projectPk, opts)
+
+Retrieve all labels of the model
+
+Retrieve all labels of the model  Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let modelPk = 56; // Number | A unique integer value identifying this model.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let opts = {
+  'isValidated': true // Boolean | 
+};
+apiInstance.getLabels(cloudPk, modelPk, projectPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **modelPk** | **Number**| A unique integer value identifying this model. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **isValidated** | **Boolean**|  | [optional] 
+
+### Return type
+
+[**[ModelLabel]**](ModelLabel.md)
 
 ### Authorization
 
@@ -8865,6 +9116,71 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Property**](Property.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
+## updateLabel
+
+> ModelLabel updateLabel(cloudPk, id, modelPk, projectPk, opts)
+
+Update some fields of a label
+
+Update some fields of a label.  Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let id = 56; // Number | A unique integer value identifying this label.
+let modelPk = 56; // Number | A unique integer value identifying this model.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let opts = {
+  'patchedModelLabelRequest': new bimdata.PatchedModelLabelRequest() // PatchedModelLabelRequest | 
+};
+apiInstance.updateLabel(cloudPk, id, modelPk, projectPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **id** | **Number**| A unique integer value identifying this label. | 
+ **modelPk** | **Number**| A unique integer value identifying this model. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **patchedModelLabelRequest** | [**PatchedModelLabelRequest**](PatchedModelLabelRequest.md)|  | [optional] 
+
+### Return type
+
+[**ModelLabel**](ModelLabel.md)
 
 ### Authorization
 

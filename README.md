@@ -331,6 +331,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**createElementPropertySetProperty**](docs/ModelApi.md#createElementPropertySetProperty) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property | Create a property to a PropertySet
 *bimdata.ModelApi* | [**createElementPropertySetPropertyDefinition**](docs/ModelApi.md#createElementPropertySetPropertyDefinition) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition | Create a Definition to a Property
 *bimdata.ModelApi* | [**createElementPropertySetPropertyDefinitionUnit**](docs/ModelApi.md#createElementPropertySetPropertyDefinitionUnit) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{property_pk}/propertydefinition/{propertydefinition_pk}/unit | Create a Unit to a Definition
+*bimdata.ModelApi* | [**createLabel**](docs/ModelApi.md#createLabel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label | Create a label in the model
 *bimdata.ModelApi* | [**createLayer**](docs/ModelApi.md#createLayer) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer | Create a layer in the model
 *bimdata.ModelApi* | [**createMask2D**](docs/ModelApi.md#createMask2D) | **PUT** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/mask-2d | Create or update a 2D mask for the model
 *bimdata.ModelApi* | [**createMetaBuilding**](docs/ModelApi.md#createMetaBuilding) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-metabuilding | Create an empty 3D Model
@@ -356,6 +357,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**deleteBuildingPlan**](docs/ModelApi.md#deleteBuildingPlan) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/{id} | Delete the relation between a 2d model and a building
 *bimdata.ModelApi* | [**deleteDrawing**](docs/ModelApi.md#deleteDrawing) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing/{id} | Delete a drawing of a model
 *bimdata.ModelApi* | [**deleteElement**](docs/ModelApi.md#deleteElement) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Delete an element of a model
+*bimdata.ModelApi* | [**deleteLabel**](docs/ModelApi.md#deleteLabel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label/{id} | Delete a label
 *bimdata.ModelApi* | [**deleteLayer**](docs/ModelApi.md#deleteLayer) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Delete a layer of a model
 *bimdata.ModelApi* | [**deleteMask2D**](docs/ModelApi.md#deleteMask2D) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/mask-2d | Delete the 2D mask for the model
 *bimdata.ModelApi* | [**deleteModel**](docs/ModelApi.md#deleteModel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id} | Delete a model
@@ -393,6 +395,8 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**getElementPropertySets**](docs/ModelApi.md#getElementPropertySets) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset | Retrieve all PropertySets of an element
 *bimdata.ModelApi* | [**getElements**](docs/ModelApi.md#getElements) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element | Retrieve all elements of a model
 *bimdata.ModelApi* | [**getElementsFromClassification**](docs/ModelApi.md#getElementsFromClassification) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification/{model_classification_pk}/element | Retrieve all elements with the classification
+*bimdata.ModelApi* | [**getLabel**](docs/ModelApi.md#getLabel) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label/{id} | Retrieve one label of the model
+*bimdata.ModelApi* | [**getLabels**](docs/ModelApi.md#getLabels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label | Retrieve all labels of the model
 *bimdata.ModelApi* | [**getLayer**](docs/ModelApi.md#getLayer) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Retrieve a layer of a model
 *bimdata.ModelApi* | [**getLayers**](docs/ModelApi.md#getLayers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer | Retrieve all layers of a model
 *bimdata.ModelApi* | [**getMaterial**](docs/ModelApi.md#getMaterial) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/material/{id} | Retrieve a material of a model
@@ -446,6 +450,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**updateDrawing**](docs/ModelApi.md#updateDrawing) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/drawing/{id} | Update some fields of a drawing
 *bimdata.ModelApi* | [**updateElement**](docs/ModelApi.md#updateElement) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{uuid} | Update some fields of an element
 *bimdata.ModelApi* | [**updateElementPropertySetProperty**](docs/ModelApi.md#updateElementPropertySetProperty) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/{propertyset_pk}/property/{id} | Update a property from an element
+*bimdata.ModelApi* | [**updateLabel**](docs/ModelApi.md#updateLabel) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label/{id} | Update some fields of a label
 *bimdata.ModelApi* | [**updateLayer**](docs/ModelApi.md#updateLayer) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/layer/{id} | Update some fields of a layer
 *bimdata.ModelApi* | [**updateMask2D**](docs/ModelApi.md#updateMask2D) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/mask-2d | Partial update of a 2D mask for the model
 *bimdata.ModelApi* | [**updateModel**](docs/ModelApi.md#updateModel) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{id} | Update some fields of a model
@@ -488,6 +493,8 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [bimdata.Auth](docs/Auth.md)
+ - [bimdata.BcfLabel](docs/BcfLabel.md)
+ - [bimdata.BcfLabelRequest](docs/BcfLabelRequest.md)
  - [bimdata.BcfProject](docs/BcfProject.md)
  - [bimdata.BcfProjectRequest](docs/BcfProjectRequest.md)
  - [bimdata.Building](docs/Building.md)
@@ -538,6 +545,8 @@ Class | Method | HTTP request | Description
  - [bimdata.FolderWithoutChildrenRequest](docs/FolderWithoutChildrenRequest.md)
  - [bimdata.FullTopic](docs/FullTopic.md)
  - [bimdata.FullTopicRequest](docs/FullTopicRequest.md)
+ - [bimdata.Geometry2dPoint](docs/Geometry2dPoint.md)
+ - [bimdata.Geometry2dPointRequest](docs/Geometry2dPointRequest.md)
  - [bimdata.GeometryPoint](docs/GeometryPoint.md)
  - [bimdata.GeometryPointRequest](docs/GeometryPointRequest.md)
  - [bimdata.Group](docs/Group.md)
@@ -551,8 +560,6 @@ Class | Method | HTTP request | Description
  - [bimdata.IfcOptimizeRequest](docs/IfcOptimizeRequest.md)
  - [bimdata.ImportGroupRequest](docs/ImportGroupRequest.md)
  - [bimdata.Invitation](docs/Invitation.md)
- - [bimdata.Label](docs/Label.md)
- - [bimdata.LabelRequest](docs/LabelRequest.md)
  - [bimdata.Layer](docs/Layer.md)
  - [bimdata.LayerElement](docs/LayerElement.md)
  - [bimdata.LayerElementRequest](docs/LayerElementRequest.md)
@@ -577,12 +584,15 @@ Class | Method | HTTP request | Description
  - [bimdata.ModelErrors](docs/ModelErrors.md)
  - [bimdata.ModelErrorsRequest](docs/ModelErrorsRequest.md)
  - [bimdata.ModelFiles](docs/ModelFiles.md)
+ - [bimdata.ModelLabel](docs/ModelLabel.md)
+ - [bimdata.ModelLabelRequest](docs/ModelLabelRequest.md)
  - [bimdata.ModelSerializerWithoutChildren](docs/ModelSerializerWithoutChildren.md)
  - [bimdata.ModelWithPositioningPlan](docs/ModelWithPositioningPlan.md)
  - [bimdata.Organization](docs/Organization.md)
  - [bimdata.OrganizationRequest](docs/OrganizationRequest.md)
  - [bimdata.OrthogonalCamera](docs/OrthogonalCamera.md)
  - [bimdata.OrthogonalCameraRequest](docs/OrthogonalCameraRequest.md)
+ - [bimdata.PatchedBcfLabelRequest](docs/PatchedBcfLabelRequest.md)
  - [bimdata.PatchedBcfProjectRequest](docs/PatchedBcfProjectRequest.md)
  - [bimdata.PatchedClassificationRequest](docs/PatchedClassificationRequest.md)
  - [bimdata.PatchedCloudRequest](docs/PatchedCloudRequest.md)
@@ -595,9 +605,9 @@ Class | Method | HTTP request | Description
  - [bimdata.PatchedGroupFolderRequest](docs/PatchedGroupFolderRequest.md)
  - [bimdata.PatchedGroupRequest](docs/PatchedGroupRequest.md)
  - [bimdata.PatchedIfcAccessTokenRequest](docs/PatchedIfcAccessTokenRequest.md)
- - [bimdata.PatchedLabelRequest](docs/PatchedLabelRequest.md)
  - [bimdata.PatchedLayerRequest](docs/PatchedLayerRequest.md)
  - [bimdata.PatchedMask2DRequest](docs/PatchedMask2DRequest.md)
+ - [bimdata.PatchedModelLabelRequest](docs/PatchedModelLabelRequest.md)
  - [bimdata.PatchedModelRequest](docs/PatchedModelRequest.md)
  - [bimdata.PatchedPinRequest](docs/PatchedPinRequest.md)
  - [bimdata.PatchedPositioningPlanRequest](docs/PatchedPositioningPlanRequest.md)

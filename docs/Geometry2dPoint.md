@@ -1,9 +1,10 @@
-# bimdata.PatchedLabelRequest
+# bimdata.Geometry2dPoint
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**label** | **String** |  | [optional] 
+**x** | **Number** |  | 
+**y** | **Number** |  | 
 
 

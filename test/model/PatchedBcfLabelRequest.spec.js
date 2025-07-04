@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.Label();
+    instance = new bimdata.PatchedBcfLabelRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,16 @@
       object[property] = value;
   }
 
-  describe('Label', function() {
-    it('should create an instance of Label', function() {
-      // uncomment below and update the code to test Label
-      //var instance = new bimdata.Label();
-      //expect(instance).to.be.a(bimdata.Label);
-    });
-
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new bimdata.Label();
-      //expect(instance).to.be();
+  describe('PatchedBcfLabelRequest', function() {
+    it('should create an instance of PatchedBcfLabelRequest', function() {
+      // uncomment below and update the code to test PatchedBcfLabelRequest
+      //var instance = new bimdata.PatchedBcfLabelRequest();
+      //expect(instance).to.be.a(bimdata.PatchedBcfLabelRequest);
     });
 
     it('should have the property label (base name: "label")', function() {
       // uncomment below and update the code to test the property label
-      //var instance = new bimdata.Label();
+      //var instance = new bimdata.PatchedBcfLabelRequest();
       //expect(instance).to.be();
     });
 

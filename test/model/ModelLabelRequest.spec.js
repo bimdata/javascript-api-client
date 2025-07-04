@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.PatchedLabelRequest();
+    instance = new bimdata.ModelLabelRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,34 @@
       object[property] = value;
   }
 
-  describe('PatchedLabelRequest', function() {
-    it('should create an instance of PatchedLabelRequest', function() {
-      // uncomment below and update the code to test PatchedLabelRequest
-      //var instance = new bimdata.PatchedLabelRequest();
-      //expect(instance).to.be.a(bimdata.PatchedLabelRequest);
+  describe('ModelLabelRequest', function() {
+    it('should create an instance of ModelLabelRequest', function() {
+      // uncomment below and update the code to test ModelLabelRequest
+      //var instance = new bimdata.ModelLabelRequest();
+      //expect(instance).to.be.a(bimdata.ModelLabelRequest);
     });
 
-    it('should have the property label (base name: "label")', function() {
-      // uncomment below and update the code to test the property label
-      //var instance = new bimdata.PatchedLabelRequest();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instance = new bimdata.ModelLabelRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property color (base name: "color")', function() {
+      // uncomment below and update the code to test the property color
+      //var instance = new bimdata.ModelLabelRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property geometry (base name: "geometry")', function() {
+      // uncomment below and update the code to test the property geometry
+      //var instance = new bimdata.ModelLabelRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property humanValidated (base name: "human_validated")', function() {
+      // uncomment below and update the code to test the property humanValidated
+      //var instance = new bimdata.ModelLabelRequest();
       //expect(instance).to.be();
     });
 

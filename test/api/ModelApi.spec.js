@@ -298,6 +298,16 @@
         done();
       });
     });
+    describe('createLabel', function() {
+      it('should call createLabel successfully', function(done) {
+        //uncomment below and update the code to test createLabel
+        //instance.createLabel(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createLayer', function() {
       it('should call createLayer successfully', function(done) {
         //uncomment below and update the code to test createLayer
@@ -542,6 +552,16 @@
       it('should call deleteElement successfully', function(done) {
         //uncomment below and update the code to test deleteElement
         //instance.deleteElement(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteLabel', function() {
+      it('should call deleteLabel successfully', function(done) {
+        //uncomment below and update the code to test deleteLabel
+        //instance.deleteLabel(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -912,6 +932,26 @@
       it('should call getElementsFromClassification successfully', function(done) {
         //uncomment below and update the code to test getElementsFromClassification
         //instance.getElementsFromClassification(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getLabel', function() {
+      it('should call getLabel successfully', function(done) {
+        //uncomment below and update the code to test getLabel
+        //instance.getLabel(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getLabels', function() {
+      it('should call getLabels successfully', function(done) {
+        //uncomment below and update the code to test getLabels
+        //instance.getLabels(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1442,6 +1482,16 @@
       it('should call updateElementPropertySetProperty successfully', function(done) {
         //uncomment below and update the code to test updateElementPropertySetProperty
         //instance.updateElementPropertySetProperty(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateLabel', function() {
+      it('should call updateLabel successfully', function(done) {
+        //uncomment below and update the code to test updateLabel
+        //instance.updateLabel(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.WriteFolderRequest();
+    instance = new bimdata.PatchedModelLabelRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,34 @@
       object[property] = value;
   }
 
-  describe('WriteFolderRequest', function() {
-    it('should create an instance of WriteFolderRequest', function() {
-      // uncomment below and update the code to test WriteFolderRequest
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be.a(bimdata.WriteFolderRequest);
-    });
-
-    it('should have the property defaultPermission (base name: "default_permission")', function() {
-      // uncomment below and update the code to test the property defaultPermission
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be();
+  describe('PatchedModelLabelRequest', function() {
+    it('should create an instance of PatchedModelLabelRequest', function() {
+      // uncomment below and update the code to test PatchedModelLabelRequest
+      //var instance = new bimdata.PatchedModelLabelRequest();
+      //expect(instance).to.be.a(bimdata.PatchedModelLabelRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new bimdata.WriteFolderRequest();
+      //var instance = new bimdata.PatchedModelLabelRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property color (base name: "color")', function() {
+      // uncomment below and update the code to test the property color
+      //var instance = new bimdata.PatchedModelLabelRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property children (base name: "children")', function() {
-      // uncomment below and update the code to test the property children
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property geometry (base name: "geometry")', function() {
+      // uncomment below and update the code to test the property geometry
+      //var instance = new bimdata.PatchedModelLabelRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property humanValidated (base name: "human_validated")', function() {
+      // uncomment below and update the code to test the property humanValidated
+      //var instance = new bimdata.PatchedModelLabelRequest();
       //expect(instance).to.be();
     });
 

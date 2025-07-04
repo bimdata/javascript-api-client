@@ -43,11 +43,14 @@ import Model from '../model/Model';
 import ModelErrors from '../model/ModelErrors';
 import ModelErrorsRequest from '../model/ModelErrorsRequest';
 import ModelFiles from '../model/ModelFiles';
+import ModelLabel from '../model/ModelLabel';
+import ModelLabelRequest from '../model/ModelLabelRequest';
 import PatchedDrawingRequest from '../model/PatchedDrawingRequest';
 import PatchedElementRequest from '../model/PatchedElementRequest';
 import PatchedIfcAccessTokenRequest from '../model/PatchedIfcAccessTokenRequest';
 import PatchedLayerRequest from '../model/PatchedLayerRequest';
 import PatchedMask2DRequest from '../model/PatchedMask2DRequest';
+import PatchedModelLabelRequest from '../model/PatchedModelLabelRequest';
 import PatchedModelRequest from '../model/PatchedModelRequest';
 import PatchedPositioningPlanRequest from '../model/PatchedPositioningPlanRequest';
 import PatchedProcessorHandlerRequest from '../model/PatchedProcessorHandlerRequest';
@@ -1953,6 +1956,74 @@ export default class ModelApi {
 
 
     /**
+     * Create a label in the model
+     *  Bulk create available. You can either post an object or a list of objects. Is you post a list, the response will be a list (in the same order) of created objects or of errors if any If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors   Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/ModelLabelRequest} modelLabelRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelLabel} and HTTP response
+     */
+    createLabelWithHttpInfo(cloudPk, modelPk, projectPk, modelLabelRequest) {
+      let postBody = modelLabelRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createLabel");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createLabel");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createLabel");
+      }
+      // verify the required parameter 'modelLabelRequest' is set
+      if (modelLabelRequest === undefined || modelLabelRequest === null) {
+        throw new Error("Missing the required parameter 'modelLabelRequest' when calling createLabel");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = ModelLabel;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a label in the model
+     *  Bulk create available. You can either post an object or a list of objects. Is you post a list, the response will be a list (in the same order) of created objects or of errors if any If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors   Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/ModelLabelRequest} modelLabelRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelLabel}
+     */
+    createLabel(cloudPk, modelPk, projectPk, modelLabelRequest) {
+      return this.createLabelWithHttpInfo(cloudPk, modelPk, projectPk, modelLabelRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create a layer in the model
      * The IFC file will not be updated. The created layer will be accessible over the API and when exporting an IFC file  Required scopes: ifc:write, model:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -3657,6 +3728,75 @@ export default class ModelApi {
      */
     deleteElement(cloudPk, modelPk, projectPk, uuid) {
       return this.deleteElementWithHttpInfo(cloudPk, modelPk, projectPk, uuid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a label
+     * Delete on label of the model.  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this label.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteLabelWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deleteLabel");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteLabel");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deleteLabel");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deleteLabel");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a label
+     * Delete on label of the model.  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this label.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteLabel(cloudPk, id, modelPk, projectPk) {
+      return this.deleteLabelWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6316,6 +6456,143 @@ export default class ModelApi {
      */
     getElementsFromClassification(cloudPk, modelClassificationPk, modelPk, projectPk) {
       return this.getElementsFromClassificationWithHttpInfo(cloudPk, modelClassificationPk, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve one label of the model
+     * Retrieve one label of the model  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this label.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelLabel} and HTTP response
+     */
+    getLabelWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getLabel");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getLabel");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getLabel");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getLabel");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ModelLabel;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve one label of the model
+     * Retrieve one label of the model  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this label.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelLabel}
+     */
+    getLabel(cloudPk, id, modelPk, projectPk) {
+      return this.getLabelWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all labels of the model
+     * Retrieve all labels of the model  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.isValidated 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ModelLabel>} and HTTP response
+     */
+    getLabelsWithHttpInfo(cloudPk, modelPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getLabels");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getLabels");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getLabels");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+        'is_validated': opts['isValidated']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [ModelLabel];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all labels of the model
+     * Retrieve all labels of the model  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.isValidated 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ModelLabel>}
+     */
+    getLabels(cloudPk, modelPk, projectPk, opts) {
+      return this.getLabelsWithHttpInfo(cloudPk, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -10040,6 +10317,80 @@ export default class ModelApi {
      */
     updateElementPropertySetProperty(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk, opts) {
       return this.updateElementPropertySetPropertyWithHttpInfo(cloudPk, elementUuid, id, modelPk, projectPk, propertysetPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update some fields of a label
+     * Update some fields of a label.  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this label.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedModelLabelRequest} opts.patchedModelLabelRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelLabel} and HTTP response
+     */
+    updateLabelWithHttpInfo(cloudPk, id, modelPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedModelLabelRequest'];
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateLabel");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateLabel");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updateLabel");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateLabel");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = ModelLabel;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/label/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update some fields of a label
+     * Update some fields of a label.  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this label.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedModelLabelRequest} opts.patchedModelLabelRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelLabel}
+     */
+    updateLabel(cloudPk, id, modelPk, projectPk, opts) {
+      return this.updateLabelWithHttpInfo(cloudPk, id, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

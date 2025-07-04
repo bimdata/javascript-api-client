@@ -1,10 +1,9 @@
-# bimdata.Label
+# bimdata.PatchedBcfLabelRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [readonly] 
-**label** | **String** |  | 
+**label** | **String** |  | [optional] 
 
 

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.LabelRequest();
+    instance = new bimdata.Geometry2dPoint();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,22 @@
       object[property] = value;
   }
 
-  describe('LabelRequest', function() {
-    it('should create an instance of LabelRequest', function() {
-      // uncomment below and update the code to test LabelRequest
-      //var instance = new bimdata.LabelRequest();
-      //expect(instance).to.be.a(bimdata.LabelRequest);
+  describe('Geometry2dPoint', function() {
+    it('should create an instance of Geometry2dPoint', function() {
+      // uncomment below and update the code to test Geometry2dPoint
+      //var instance = new bimdata.Geometry2dPoint();
+      //expect(instance).to.be.a(bimdata.Geometry2dPoint);
     });
 
-    it('should have the property label (base name: "label")', function() {
-      // uncomment below and update the code to test the property label
-      //var instance = new bimdata.LabelRequest();
+    it('should have the property x (base name: "x")', function() {
+      // uncomment below and update the code to test the property x
+      //var instance = new bimdata.Geometry2dPoint();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property y (base name: "y")', function() {
+      // uncomment below and update the code to test the property y
+      //var instance = new bimdata.Geometry2dPoint();
       //expect(instance).to.be();
     });
 

@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ## createExtensionLabel
 
-> Label createExtensionLabel(projectsPk, labelRequest)
+> BcfLabel createExtensionLabel(projectsPk, bcfLabelRequest)
 
 Create a Label
 
@@ -157,8 +157,8 @@ Bearer.apiKey = 'YOUR API KEY';
 
 let apiInstance = new bimdata.BcfApi();
 let projectsPk = 56; // Number | 
-let labelRequest = new bimdata.LabelRequest(); // LabelRequest | 
-apiInstance.createExtensionLabel(projectsPk, labelRequest).then((data) => {
+let bcfLabelRequest = new bimdata.BcfLabelRequest(); // BcfLabelRequest | 
+apiInstance.createExtensionLabel(projectsPk, bcfLabelRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -172,11 +172,11 @@ apiInstance.createExtensionLabel(projectsPk, labelRequest).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectsPk** | **Number**|  | 
- **labelRequest** | [**LabelRequest**](LabelRequest.md)|  | 
+ **bcfLabelRequest** | [**BcfLabelRequest**](BcfLabelRequest.md)|  | 
 
 ### Return type
 
-[**Label**](Label.md)
+[**BcfLabel**](BcfLabel.md)
 
 ### Authorization
 
@@ -3274,7 +3274,7 @@ Name | Type | Description  | Notes
 
 ## updateExtensionLabel
 
-> Label updateExtensionLabel(id, projectsPk, opts)
+> BcfLabel updateExtensionLabel(id, projectsPk, opts)
 
 Update a Label
 
@@ -3300,7 +3300,7 @@ let apiInstance = new bimdata.BcfApi();
 let id = 56; // Number | A unique integer value identifying this label.
 let projectsPk = 56; // Number | 
 let opts = {
-  'patchedLabelRequest': new bimdata.PatchedLabelRequest() // PatchedLabelRequest | 
+  'patchedBcfLabelRequest': new bimdata.PatchedBcfLabelRequest() // PatchedBcfLabelRequest | 
 };
 apiInstance.updateExtensionLabel(id, projectsPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -3317,11 +3317,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| A unique integer value identifying this label. | 
  **projectsPk** | **Number**|  | 
- **patchedLabelRequest** | [**PatchedLabelRequest**](PatchedLabelRequest.md)|  | [optional] 
+ **patchedBcfLabelRequest** | [**PatchedBcfLabelRequest**](PatchedBcfLabelRequest.md)|  | [optional] 
 
 ### Return type
 
-[**Label**](Label.md)
+[**BcfLabel**](BcfLabel.md)
 
 ### Authorization
 

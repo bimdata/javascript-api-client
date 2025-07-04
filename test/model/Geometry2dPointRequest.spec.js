@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.WriteFolderRequest();
+    instance = new bimdata.Geometry2dPointRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,22 @@
       object[property] = value;
   }
 
-  describe('WriteFolderRequest', function() {
-    it('should create an instance of WriteFolderRequest', function() {
-      // uncomment below and update the code to test WriteFolderRequest
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be.a(bimdata.WriteFolderRequest);
+  describe('Geometry2dPointRequest', function() {
+    it('should create an instance of Geometry2dPointRequest', function() {
+      // uncomment below and update the code to test Geometry2dPointRequest
+      //var instance = new bimdata.Geometry2dPointRequest();
+      //expect(instance).to.be.a(bimdata.Geometry2dPointRequest);
     });
 
-    it('should have the property defaultPermission (base name: "default_permission")', function() {
-      // uncomment below and update the code to test the property defaultPermission
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property x (base name: "x")', function() {
+      // uncomment below and update the code to test the property x
+      //var instance = new bimdata.Geometry2dPointRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property children (base name: "children")', function() {
-      // uncomment below and update the code to test the property children
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property y (base name: "y")', function() {
+      // uncomment below and update the code to test the property y
+      //var instance = new bimdata.Geometry2dPointRequest();
       //expect(instance).to.be();
     });
 
