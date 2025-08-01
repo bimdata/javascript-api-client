@@ -414,6 +414,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**getModels**](docs/ModelApi.md#getModels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model | Retrieve all models
 *bimdata.ModelApi* | [**getProcessorHandler**](docs/ModelApi.md#getProcessorHandler) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id} | Retrieve a processor handler
 *bimdata.ModelApi* | [**getProcessorHandlers**](docs/ModelApi.md#getProcessorHandlers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler | Get all processor handlers
+*bimdata.ModelApi* | [**getPropertiesTypes**](docs/ModelApi.md#getPropertiesTypes) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/properties | Retrieve all property types and their value type used in this model
 *bimdata.ModelApi* | [**getPropertySet**](docs/ModelApi.md#getPropertySet) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Retrieve a PropertySet of a model
 *bimdata.ModelApi* | [**getPropertySets**](docs/ModelApi.md#getPropertySets) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset | Retrieve all PropertySets of a model
 *bimdata.ModelApi* | [**getRawElements**](docs/ModelApi.md#getRawElements) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/raw | Retrieve all elements in a optimized format
@@ -427,6 +428,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**getSystem**](docs/ModelApi.md#getSystem) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system/{uuid} | Retrieve a system of a model
 *bimdata.ModelApi* | [**getSystems**](docs/ModelApi.md#getSystems) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/system | Retrieve all systems of a model
 *bimdata.ModelApi* | [**getTileset**](docs/ModelApi.md#getTileset) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/tileset | Retrieve the tileset of the model
+*bimdata.ModelApi* | [**getTypes**](docs/ModelApi.md#getTypes) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/types | Retrieve all IFC Types used in this model
 *bimdata.ModelApi* | [**getZone**](docs/ModelApi.md#getZone) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{id} | Retrieve one zone of a model
 *bimdata.ModelApi* | [**getZoneSpace**](docs/ModelApi.md#getZoneSpace) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space/{id} | Retrieve one space of a zone
 *bimdata.ModelApi* | [**getZoneSpaces**](docs/ModelApi.md#getZoneSpaces) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone/{zone_pk}/space | Retrieve all spaces of a zone
@@ -659,6 +661,7 @@ Class | Method | HTTP request | Description
  - [bimdata.Property](docs/Property.md)
  - [bimdata.PropertyDefinition](docs/PropertyDefinition.md)
  - [bimdata.PropertyDefinitionRequest](docs/PropertyDefinitionRequest.md)
+ - [bimdata.PropertyList](docs/PropertyList.md)
  - [bimdata.PropertyRequest](docs/PropertyRequest.md)
  - [bimdata.PropertySet](docs/PropertySet.md)
  - [bimdata.PropertySetRequest](docs/PropertySetRequest.md)

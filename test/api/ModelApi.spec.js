@@ -1128,6 +1128,16 @@
         done();
       });
     });
+    describe('getPropertiesTypes', function() {
+      it('should call getPropertiesTypes successfully', function(done) {
+        //uncomment below and update the code to test getPropertiesTypes
+        //instance.getPropertiesTypes(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getPropertySet', function() {
       it('should call getPropertySet successfully', function(done) {
         //uncomment below and update the code to test getPropertySet
@@ -1252,6 +1262,16 @@
       it('should call getTileset successfully', function(done) {
         //uncomment below and update the code to test getTileset
         //instance.getTileset(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getTypes', function() {
+      it('should call getTypes successfully', function(done) {
+        //uncomment below and update the code to test getTypes
+        //instance.getTypes(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

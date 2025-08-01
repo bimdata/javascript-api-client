@@ -172,6 +172,7 @@ docs/ProjectSize.md
 docs/Property.md
 docs/PropertyDefinition.md
 docs/PropertyDefinitionRequest.md
+docs/PropertyList.md
 docs/PropertyRequest.md
 docs/PropertySet.md
 docs/PropertySetRequest.md
@@ -448,6 +449,7 @@ src/model/ProjectSize.js
 src/model/Property.js
 src/model/PropertyDefinition.js
 src/model/PropertyDefinitionRequest.js
+src/model/PropertyList.js
 src/model/PropertyRequest.js
 src/model/PropertySet.js
 src/model/PropertySetRequest.js
@@ -718,6 +720,7 @@ test/model/ProjectSize.spec.js
 test/model/Property.spec.js
 test/model/PropertyDefinition.spec.js
 test/model/PropertyDefinitionRequest.spec.js
+test/model/PropertyList.spec.js
 test/model/PropertyRequest.spec.js
 test/model/PropertySet.spec.js
 test/model/PropertySetRequest.spec.js

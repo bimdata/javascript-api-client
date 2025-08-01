@@ -180,6 +180,7 @@ import ProjectSize from './model/ProjectSize';
 import Property from './model/Property';
 import PropertyDefinition from './model/PropertyDefinition';
 import PropertyDefinitionRequest from './model/PropertyDefinitionRequest';
+import PropertyList from './model/PropertyList';
 import PropertyRequest from './model/PropertyRequest';
 import PropertySet from './model/PropertySet';
 import PropertySetRequest from './model/PropertySetRequest';
@@ -1324,6 +1325,12 @@ export {
      * @property {module:model/PropertyDefinitionRequest}
      */
     PropertyDefinitionRequest,
+
+    /**
+     * The PropertyList model constructor.
+     * @property {module:model/PropertyList}
+     */
+    PropertyList,
 
     /**
      * The PropertyRequest model constructor.

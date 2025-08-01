@@ -69,6 +69,7 @@ import ProcessorHandler from '../model/ProcessorHandler';
 import Property from '../model/Property';
 import PropertyDefinition from '../model/PropertyDefinition';
 import PropertyDefinitionRequest from '../model/PropertyDefinitionRequest';
+import PropertyList from '../model/PropertyList';
 import PropertyRequest from '../model/PropertyRequest';
 import PropertySet from '../model/PropertySet';
 import PropertySetRequest from '../model/PropertySetRequest';
@@ -7722,6 +7723,80 @@ export default class ModelApi {
 
 
     /**
+     * Retrieve all property types and their value type used in this model
+     * Retrieve all property types and their value type used in this model  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.classification 
+     * @param {String} opts.classificationNotation 
+     * @param {String} opts.type 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyList>} and HTTP response
+     */
+    getPropertiesTypesWithHttpInfo(cloudPk, modelPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getPropertiesTypes");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getPropertiesTypes");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getPropertiesTypes");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+        'classification': opts['classification'],
+        'classification__notation': opts['classificationNotation'],
+        'type': opts['type']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [PropertyList];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/properties', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all property types and their value type used in this model
+     * Retrieve all property types and their value type used in this model  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.classification 
+     * @param {String} opts.classificationNotation 
+     * @param {String} opts.type 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyList>}
+     */
+    getPropertiesTypes(cloudPk, modelPk, projectPk, opts) {
+      return this.getPropertiesTypesWithHttpInfo(cloudPk, modelPk, projectPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve a PropertySet of a model
      * Retrieve a PropertySet of a model  Required scopes: ifc:read, model:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -8600,6 +8675,68 @@ export default class ModelApi {
      */
     getTileset(cloudPk, id, projectPk, opts) {
       return this.getTilesetWithHttpInfo(cloudPk, id, projectPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all IFC Types used in this model
+     * Retrieve all IFC Types used in this model  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
+     */
+    getTypesWithHttpInfo(cloudPk, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getTypes");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getTypes");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getTypes");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ['String'];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/types', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all IFC Types used in this model
+     * Retrieve all IFC Types used in this model  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} modelPk A unique integer value identifying this model.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
+     */
+    getTypes(cloudPk, modelPk, projectPk) {
+      return this.getTypesWithHttpInfo(cloudPk, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
