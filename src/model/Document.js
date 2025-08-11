@@ -43,10 +43,11 @@ class Document {
      * @param historyCount {Number} Number of previous versions
      * @param userPermission {module:model/Document.UserPermissionEnum} Aggregate of group user permissions and folder default permission
      * @param officePreview {String} Office files will be converted as pdf to provide a web preview. Supported extensions are .ppt, .pptx, .odp, .xls, .xlsx, .ods, .doc, .docx, .odt
+     * @param path {String} 
      */
-    constructor(id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview) { 
+    constructor(id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview, path) { 
         
-        Document.initialize(this, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview);
+        Document.initialize(this, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview, path);
     }
 
     /**
@@ -54,7 +55,7 @@ class Document {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview) { 
+    static initialize(obj, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview, path) { 
         obj['id'] = id;
         obj['created_by'] = createdBy;
         obj['project'] = project;
@@ -73,6 +74,7 @@ class Document {
         obj['history_count'] = historyCount;
         obj['user_permission'] = userPermission;
         obj['office_preview'] = officePreview;
+        obj['path'] = path;
     }
 
     /**
@@ -148,6 +150,9 @@ class Document {
             }
             if (data.hasOwnProperty('office_preview')) {
                 obj['office_preview'] = ApiClient.convertToType(data['office_preview'], 'String');
+            }
+            if (data.hasOwnProperty('path')) {
+                obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
         }
         return obj;
@@ -273,6 +278,11 @@ Document.prototype['user_permission'] = undefined;
  * @member {String} office_preview
  */
 Document.prototype['office_preview'] = undefined;
+
+/**
+ * @member {String} path
+ */
+Document.prototype['path'] = undefined;
 
 
 

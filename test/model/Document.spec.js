@@ -180,6 +180,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property path (base name: "path")', function() {
+      // uncomment below and update the code to test the property path
+      //var instance = new bimdata.Document();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
