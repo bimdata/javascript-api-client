@@ -108,6 +108,12 @@ var ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = "YOUR API KEY"
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKey.apiKeyPrefix['Authorization'] = "Token"
+// Configure OAuth2 access token for authorization: BIMData_Connect
+var BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = "YOUR ACCESS TOKEN"
+// Configure OAuth2 access token for authorization: BIMData_Connect
+var BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = "YOUR ACCESS TOKEN"
 // Configure API key authorization: Bearer
 var Bearer = defaultClient.authentications['Bearer'];
 Bearer.apiKey = "YOUR API KEY"
@@ -772,6 +778,26 @@ Class | Method | HTTP request | Description
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+
+
+### BIMData_Connect
+
+
+- **Type**: OAuth
+- **Flow**: implicit
+- **Authorization URL**: http://fakeurl.bimdata.example/auth/realms/bimdata/protocol/openid-connect/auth
+- **Scopes**: N/A
+
+
+
+### BIMData_Connect
+
+
+- **Type**: OAuth
+- **Flow**: application
+- **Authorization URL**: 
+- **Scopes**: N/A
 
 
 

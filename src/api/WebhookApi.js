@@ -71,7 +71,7 @@ export default class WebhookApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = WebHook;
@@ -126,7 +126,7 @@ export default class WebhookApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = WebHook;
@@ -187,7 +187,7 @@ export default class WebhookApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -243,7 +243,7 @@ export default class WebhookApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -304,7 +304,7 @@ export default class WebhookApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = WebHook;
@@ -360,7 +360,7 @@ export default class WebhookApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [WebHook];
@@ -415,7 +415,7 @@ export default class WebhookApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = WebHook;
@@ -464,7 +464,7 @@ export default class WebhookApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [WebHook];
@@ -529,7 +529,7 @@ export default class WebhookApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = WebHook;
@@ -591,7 +591,7 @@ export default class WebhookApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = WebHook;
@@ -656,7 +656,7 @@ export default class WebhookApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = WebHook;
@@ -717,7 +717,7 @@ export default class WebhookApi {
       let formParams = {
       };
 
-      let authNames = ['ApiKey', 'Bearer'];
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = WebHook;
