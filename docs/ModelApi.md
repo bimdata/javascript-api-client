@@ -686,6 +686,7 @@ let elementRequest = [new bimdata.ElementRequest()]; // [ElementRequest] |
 let opts = {
   'classification': "classification_example", // String | 
   'classificationNotation': "classificationNotation_example", // String | 
+  'propertyFilter': "propertyFilter_example", // String | 
   'type': "type_example" // String | 
 };
 apiInstance.bulkFullUpdateElements(cloudPk, modelPk, projectPk, elementRequest, opts).then((data) => {
@@ -707,6 +708,7 @@ Name | Type | Description  | Notes
  **elementRequest** | [**[ElementRequest]**](ElementRequest.md)|  | 
  **classification** | **String**|  | [optional] 
  **classificationNotation** | **String**|  | [optional] 
+ **propertyFilter** | **String**|  | [optional] 
  **type** | **String**|  | [optional] 
 
 ### Return type
@@ -1035,6 +1037,7 @@ let elementRequest = [new bimdata.ElementRequest()]; // [ElementRequest] |
 let opts = {
   'classification': "classification_example", // String | 
   'classificationNotation': "classificationNotation_example", // String | 
+  'propertyFilter': "propertyFilter_example", // String | 
   'type': "type_example" // String | 
 };
 apiInstance.bulkUpdateElements(cloudPk, modelPk, projectPk, elementRequest, opts).then((data) => {
@@ -1056,6 +1059,7 @@ Name | Type | Description  | Notes
  **elementRequest** | [**[ElementRequest]**](ElementRequest.md)|  | 
  **classification** | **String**|  | [optional] 
  **classificationNotation** | **String**|  | [optional] 
+ **propertyFilter** | **String**|  | [optional] 
  **type** | **String**|  | [optional] 
 
 ### Return type
@@ -1585,6 +1589,7 @@ let elementRequest = [new bimdata.ElementRequest()]; // [ElementRequest] |
 let opts = {
   'classification': "classification_example", // String | 
   'classificationNotation': "classificationNotation_example", // String | 
+  'propertyFilter': "propertyFilter_example", // String | 
   'type': "type_example" // String | 
 };
 apiInstance.createElement(cloudPk, modelPk, projectPk, elementRequest, opts).then((data) => {
@@ -1606,6 +1611,7 @@ Name | Type | Description  | Notes
  **elementRequest** | [**[ElementRequest]**](ElementRequest.md)|  | 
  **classification** | **String**|  | [optional] 
  **classificationNotation** | **String**|  | [optional] 
+ **propertyFilter** | **String**|  | [optional] 
  **type** | **String**|  | [optional] 
 
 ### Return type
@@ -5408,7 +5414,7 @@ Name | Type | Description  | Notes
 
 Retrieve an element of a model
 
-Retrieve an element of a model  Required scopes: ifc:read, model:read
+Retrieve an element of a model      &#x60;property_filter&#x60; simple syntax:         {             \&quot;name\&quot;: \&quot;property_name\&quot;,             \&quot;comparator\&quot;: \&quot;contains\&quot; | \&quot;icontains\&quot; | \&quot;exact\&quot; | \&quot;gt\&quot; | \&quot;gte\&quot; | \&quot;lt\&quot; | \&quot;lte\&quot; | \&quot;startswith\&quot; | \&quot;istartswith\&quot; | \&quot;endswith\&quot; | \&quot;iendswith\&quot;,             \&quot;value\&quot;: \&quot;property_value\&quot;         }     &#x60;property_filter&#x60; combinatory syntax:         {             \&quot;operande\&quot;: \&quot;AND\&quot; | \&quot;OR\&quot;,             \&quot;conditions\&quot;: [                 {                     \&quot;operande\&quot;: \&quot;AND\&quot; | \&quot;OR\&quot;,                     \&quot;conditions\&quot;: [...],                 }                 // OR                 {                     \&quot;name\&quot;: \&quot;property_name\&quot;,                     \&quot;comparator\&quot;: \&quot;contains\&quot; | \&quot;icontains\&quot; | \&quot;exact\&quot; | \&quot;gt\&quot; | \&quot;gte\&quot; | \&quot;lt\&quot; | \&quot;lte\&quot; | \&quot;startswith\&quot; | \&quot;istartswith\&quot; | \&quot;endswith\&quot; | \&quot;iendswith\&quot;,                     \&quot;value\&quot;: \&quot;property_value\&quot;                 },                 ...             ]         }       Required scopes: ifc:read, model:read
 
 ### Example
 
@@ -5506,6 +5512,7 @@ let projectPk = 56; // Number | A unique integer value identifying this project.
 let opts = {
   'classification': "classification_example", // String | 
   'classificationNotation': "classificationNotation_example", // String | 
+  'propertyFilter': "propertyFilter_example", // String | 
   'type': "type_example" // String | 
 };
 apiInstance.getElementLinkedDocuments(cloudPk, modelPk, projectPk, opts).then((data) => {
@@ -5526,6 +5533,7 @@ Name | Type | Description  | Notes
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **classification** | **String**|  | [optional] 
  **classificationNotation** | **String**|  | [optional] 
+ **propertyFilter** | **String**|  | [optional] 
  **type** | **String**|  | [optional] 
 
 ### Return type
@@ -6116,7 +6124,7 @@ Name | Type | Description  | Notes
 
 Retrieve all elements of a model
 
-Retrieve all elements of a model. If not filtered, the json may be very large. To efficently retrieve all elements and their data, see getRawElements  Required scopes: ifc:read, model:read
+Retrieve all elements of a model. If not filtered, the json may be very large. To efficently retrieve all elements and their data, see &#x60;getRawElements&#x60; or &#x60;getSimpleElements&#x60;      &#x60;property_filter&#x60; simple syntax:         {             \&quot;name\&quot;: \&quot;property_name\&quot;,             \&quot;comparator\&quot;: \&quot;contains\&quot; | \&quot;icontains\&quot; | \&quot;exact\&quot; | \&quot;gt\&quot; | \&quot;gte\&quot; | \&quot;lt\&quot; | \&quot;lte\&quot; | \&quot;startswith\&quot; | \&quot;istartswith\&quot; | \&quot;endswith\&quot; | \&quot;iendswith\&quot;,             \&quot;value\&quot;: \&quot;property_value\&quot;         }     &#x60;property_filter&#x60; combinatory syntax:         {             \&quot;operande\&quot;: \&quot;AND\&quot; | \&quot;OR\&quot;,             \&quot;conditions\&quot;: [                 {                     \&quot;operande\&quot;: \&quot;AND\&quot; | \&quot;OR\&quot;,                     \&quot;conditions\&quot;: [...],                 }                 // OR                 {                     \&quot;name\&quot;: \&quot;property_name\&quot;,                     \&quot;comparator\&quot;: \&quot;contains\&quot; | \&quot;icontains\&quot; | \&quot;exact\&quot; | \&quot;gt\&quot; | \&quot;gte\&quot; | \&quot;lt\&quot; | \&quot;lte\&quot; | \&quot;startswith\&quot; | \&quot;istartswith\&quot; | \&quot;endswith\&quot; | \&quot;iendswith\&quot;,                     \&quot;value\&quot;: \&quot;property_value\&quot;                 },                 ...             ]         }       Required scopes: ifc:read, model:read
 
 ### Example
 
@@ -6147,6 +6155,7 @@ let projectPk = 56; // Number | A unique integer value identifying this project.
 let opts = {
   'classification': "classification_example", // String | 
   'classificationNotation': "classificationNotation_example", // String | 
+  'propertyFilter': "propertyFilter_example", // String | 
   'type': "type_example" // String | 
 };
 apiInstance.getElements(cloudPk, modelPk, projectPk, opts).then((data) => {
@@ -6167,6 +6176,7 @@ Name | Type | Description  | Notes
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **classification** | **String**|  | [optional] 
  **classificationNotation** | **String**|  | [optional] 
+ **propertyFilter** | **String**|  | [optional] 
  **type** | **String**|  | [optional] 
 
 ### Return type
@@ -7552,6 +7562,7 @@ let projectPk = 56; // Number | A unique integer value identifying this project.
 let opts = {
   'classification': "classification_example", // String | 
   'classificationNotation': "classificationNotation_example", // String | 
+  'propertyFilter': "propertyFilter_example", // String | 
   'type': "type_example" // String | 
 };
 apiInstance.getPropertiesTypes(cloudPk, modelPk, projectPk, opts).then((data) => {
@@ -7572,6 +7583,7 @@ Name | Type | Description  | Notes
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **classification** | **String**|  | [optional] 
  **classificationNotation** | **String**|  | [optional] 
+ **propertyFilter** | **String**|  | [optional] 
  **type** | **String**|  | [optional] 
 
 ### Return type
@@ -7726,7 +7738,7 @@ Name | Type | Description  | Notes
 
 Retrieve all elements in a optimized format
 
-Instead of a nested representation, this route respond with a flat structure and indices pointing to related object. The IFC file will not be updated. The created elements will be accessible over the API and when exporting an IFC file. Returns elements, property_sets, properties, definitions and units in a JSON optimized structure  Required scopes: ifc:read, model:read
+Instead of a nested representation, this route respond with a flat structure and indices pointing to related object. The IFC file will not be updated. The created elements will be accessible over the API and when exporting an IFC file. Returns elements, property_sets, properties, definitions and units in a JSON optimized structure      &#x60;property_filter&#x60; simple syntax:         {             \&quot;name\&quot;: \&quot;property_name\&quot;,             \&quot;comparator\&quot;: \&quot;contains\&quot; | \&quot;icontains\&quot; | \&quot;exact\&quot; | \&quot;gt\&quot; | \&quot;gte\&quot; | \&quot;lt\&quot; | \&quot;lte\&quot; | \&quot;startswith\&quot; | \&quot;istartswith\&quot; | \&quot;endswith\&quot; | \&quot;iendswith\&quot;,             \&quot;value\&quot;: \&quot;property_value\&quot;         }     &#x60;property_filter&#x60; combinatory syntax:         {             \&quot;operande\&quot;: \&quot;AND\&quot; | \&quot;OR\&quot;,             \&quot;conditions\&quot;: [                 {                     \&quot;operande\&quot;: \&quot;AND\&quot; | \&quot;OR\&quot;,                     \&quot;conditions\&quot;: [...],                 }                 // OR                 {                     \&quot;name\&quot;: \&quot;property_name\&quot;,                     \&quot;comparator\&quot;: \&quot;contains\&quot; | \&quot;icontains\&quot; | \&quot;exact\&quot; | \&quot;gt\&quot; | \&quot;gte\&quot; | \&quot;lt\&quot; | \&quot;lte\&quot; | \&quot;startswith\&quot; | \&quot;istartswith\&quot; | \&quot;endswith\&quot; | \&quot;iendswith\&quot;,                     \&quot;value\&quot;: \&quot;property_value\&quot;                 },                 ...             ]         }       Required scopes: ifc:read, model:read
 
 ### Example
 
@@ -7757,6 +7769,7 @@ let projectPk = 56; // Number | A unique integer value identifying this project.
 let opts = {
   'classification': "classification_example", // String | 
   'classificationNotation': "classificationNotation_example", // String | 
+  'propertyFilter': "propertyFilter_example", // String | 
   'type': "type_example" // String | 
 };
 apiInstance.getRawElements(cloudPk, modelPk, projectPk, opts).then((data) => {
@@ -7777,6 +7790,7 @@ Name | Type | Description  | Notes
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **classification** | **String**|  | [optional] 
  **classificationNotation** | **String**|  | [optional] 
+ **propertyFilter** | **String**|  | [optional] 
  **type** | **String**|  | [optional] 
 
 ### Return type
@@ -7866,7 +7880,7 @@ Name | Type | Description  | Notes
 
 Retrieve all elements of a model with a simple value representation
 
-Retrieve all elements of a model with a simple value representation  Required scopes: ifc:read, model:read
+Retrieve all elements of a model with a simple value representation      &#x60;property_filter&#x60; simple syntax:         {             \&quot;name\&quot;: \&quot;property_name\&quot;,             \&quot;comparator\&quot;: \&quot;contains\&quot; | \&quot;icontains\&quot; | \&quot;exact\&quot; | \&quot;gt\&quot; | \&quot;gte\&quot; | \&quot;lt\&quot; | \&quot;lte\&quot; | \&quot;startswith\&quot; | \&quot;istartswith\&quot; | \&quot;endswith\&quot; | \&quot;iendswith\&quot;,             \&quot;value\&quot;: \&quot;property_value\&quot;         }     &#x60;property_filter&#x60; combinatory syntax:         {             \&quot;operande\&quot;: \&quot;AND\&quot; | \&quot;OR\&quot;,             \&quot;conditions\&quot;: [                 {                     \&quot;operande\&quot;: \&quot;AND\&quot; | \&quot;OR\&quot;,                     \&quot;conditions\&quot;: [...],                 }                 // OR                 {                     \&quot;name\&quot;: \&quot;property_name\&quot;,                     \&quot;comparator\&quot;: \&quot;contains\&quot; | \&quot;icontains\&quot; | \&quot;exact\&quot; | \&quot;gt\&quot; | \&quot;gte\&quot; | \&quot;lt\&quot; | \&quot;lte\&quot; | \&quot;startswith\&quot; | \&quot;istartswith\&quot; | \&quot;endswith\&quot; | \&quot;iendswith\&quot;,                     \&quot;value\&quot;: \&quot;property_value\&quot;                 },                 ...             ]         }       Required scopes: ifc:read, model:read
 
 ### Example
 
@@ -7897,6 +7911,7 @@ let projectPk = 56; // Number | A unique integer value identifying this project.
 let opts = {
   'classification': "classification_example", // String | 
   'classificationNotation': "classificationNotation_example", // String | 
+  'propertyFilter': "propertyFilter_example", // String | 
   'type': "type_example" // String | 
 };
 apiInstance.getSimpleElements(cloudPk, modelPk, projectPk, opts).then((data) => {
@@ -7917,6 +7932,7 @@ Name | Type | Description  | Notes
  **projectPk** | **Number**| A unique integer value identifying this project. | 
  **classification** | **String**|  | [optional] 
  **classificationNotation** | **String**|  | [optional] 
+ **propertyFilter** | **String**|  | [optional] 
  **type** | **String**|  | [optional] 
 
 ### Return type

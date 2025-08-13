@@ -54,26 +54,8 @@
       //expect(instance).to.be.a(bimdata.WriteFolder);
     });
 
-    it('should have the property nature (base name: "nature")', function() {
-      // uncomment below and update the code to test the property nature
-      //var instance = new bimdata.WriteFolder();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property updatedAt (base name: "updated_at")', function() {
-      // uncomment below and update the code to test the property updatedAt
-      //var instance = new bimdata.WriteFolder();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createdBy (base name: "created_by")', function() {
-      // uncomment below and update the code to test the property createdBy
-      //var instance = new bimdata.WriteFolder();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property userPermission (base name: "user_permission")', function() {
+      // uncomment below and update the code to test the property userPermission
       //var instance = new bimdata.WriteFolder();
       //expect(instance).to.be();
     });
@@ -90,14 +72,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property userPermission (base name: "user_permission")', function() {
-      // uncomment below and update the code to test the property userPermission
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instance = new bimdata.WriteFolder();
       //expect(instance).to.be();
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instance = new bimdata.WriteFolder();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instance = new bimdata.WriteFolder();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdBy (base name: "created_by")', function() {
+      // uncomment below and update the code to test the property createdBy
+      //var instance = new bimdata.WriteFolder();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property nature (base name: "nature")', function() {
+      // uncomment below and update the code to test the property nature
       //var instance = new bimdata.WriteFolder();
       //expect(instance).to.be();
     });
@@ -108,8 +108,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
+    it('should have the property updatedAt (base name: "updated_at")', function() {
+      // uncomment below and update the code to test the property updatedAt
       //var instance = new bimdata.WriteFolder();
       //expect(instance).to.be();
     });
