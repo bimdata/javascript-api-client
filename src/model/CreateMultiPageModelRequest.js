@@ -55,6 +55,9 @@ class CreateMultiPageModelRequest {
             if (data.hasOwnProperty('layout_names')) {
                 obj['layout_names'] = ApiClient.convertToType(data['layout_names'], ['String']);
             }
+            if (data.hasOwnProperty('size_ratios')) {
+                obj['size_ratios'] = ApiClient.convertToType(data['size_ratios'], ['Number']);
+            }
         }
         return obj;
     }
@@ -71,6 +74,11 @@ CreateMultiPageModelRequest.prototype['map_files'] = undefined;
  * @member {Array.<String>} layout_names
  */
 CreateMultiPageModelRequest.prototype['layout_names'] = undefined;
+
+/**
+ * @member {Array.<Number>} size_ratios
+ */
+CreateMultiPageModelRequest.prototype['size_ratios'] = undefined;
 
 
 

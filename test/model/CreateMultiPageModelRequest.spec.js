@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sizeRatios (base name: "size_ratios")', function() {
+      // uncomment below and update the code to test the property sizeRatios
+      //var instance = new bimdata.CreateMultiPageModelRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

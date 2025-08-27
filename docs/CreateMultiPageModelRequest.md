@@ -6,5 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **mapFiles** | **[File]** |  | 
 **layoutNames** | **[String]** |  | [optional] 
+**sizeRatios** | **[Number]** |  | [optional] 
 
 
