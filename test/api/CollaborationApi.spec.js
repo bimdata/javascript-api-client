@@ -1028,6 +1028,16 @@
         done();
       });
     });
+    describe('updateDocumentText', function() {
+      it('should call updateDocumentText successfully', function(done) {
+        //uncomment below and update the code to test updateDocumentText
+        //instance.updateDocumentText(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateFolder', function() {
       it('should call updateFolder successfully', function(done) {
         //uncomment below and update the code to test updateFolder

@@ -22,6 +22,7 @@ import CloudInvitationRequest from '../model/CloudInvitationRequest';
 import CloudRequest from '../model/CloudRequest';
 import Document from '../model/Document';
 import DocumentPreviewFile from '../model/DocumentPreviewFile';
+import DocumentText from '../model/DocumentText';
 import Folder from '../model/Folder';
 import FolderTree from '../model/FolderTree';
 import FolderUserProject from '../model/FolderUserProject';
@@ -35,6 +36,7 @@ import LogEntry from '../model/LogEntry';
 import PatchedClassificationRequest from '../model/PatchedClassificationRequest';
 import PatchedCloudRequest from '../model/PatchedCloudRequest';
 import PatchedDocumentRequest from '../model/PatchedDocumentRequest';
+import PatchedDocumentTextRequest from '../model/PatchedDocumentTextRequest';
 import PatchedFolderWithoutChildrenRequest from '../model/PatchedFolderWithoutChildrenRequest';
 import PatchedGroupFolderRequest from '../model/PatchedGroupFolderRequest';
 import PatchedGroupRequest from '../model/PatchedGroupRequest';
@@ -866,7 +868,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'GLTF', 'IFC', 'OBJ', 'POINT_CLOUD', 'DXF', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'IFC', 'POINT_CLOUD', 'DWG', 'DXF', 'GLTF', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -934,7 +936,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'GLTF', 'IFC', 'OBJ', 'POINT_CLOUD', 'DXF', 'DWG'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'IFC', 'POINT_CLOUD', 'DWG', 'DXF', 'GLTF', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -3160,7 +3162,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve all documents
-     * Retrieve all documents in the project. Filters are case insentive  Required scopes: document:read
+     * Retrieve all documents in the project. Filters are case insentive. Search filter only works if AI features are enabled.  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Object} opts Optional parameters
@@ -3180,9 +3182,11 @@ export default class CollaborationApi {
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
      * @param {String} opts.nameStartswith 
+     * @param {String} opts.search 
      * @param {Number} opts.sizeMax Size of the file.
      * @param {Number} opts.sizeMin Size of the file.
      * @param {Array.<String>} opts.tags Multiple values may be separated by commas.
+     * @param {Boolean} opts.text If this field is present (with any value), the full text representation of the documents will be added to the response under the field `text`
      * @param {String} opts.visaCreatorEmail 
      * @param {Date} opts.visaDeadlineAfter 
      * @param {Date} opts.visaDeadlineBefore 
@@ -3227,9 +3231,11 @@ export default class CollaborationApi {
         'name__contains': opts['nameContains'],
         'name__endswith': opts['nameEndswith'],
         'name__startswith': opts['nameStartswith'],
+        'search': opts['search'],
         'size_max': opts['sizeMax'],
         'size_min': opts['sizeMin'],
         'tags': this.apiClient.buildCollectionParam(opts['tags'], 'csv'),
+        'text': opts['text'],
         'visa__creator_email': opts['visaCreatorEmail'],
         'visa__deadline_after': opts['visaDeadlineAfter'],
         'visa__deadline_before': opts['visaDeadlineBefore'],
@@ -3258,7 +3264,7 @@ export default class CollaborationApi {
 
     /**
      * Retrieve all documents
-     * Retrieve all documents in the project. Filters are case insentive  Required scopes: document:read
+     * Retrieve all documents in the project. Filters are case insentive. Search filter only works if AI features are enabled.  Required scopes: document:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Object} opts Optional parameters
@@ -3278,9 +3284,11 @@ export default class CollaborationApi {
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
      * @param {String} opts.nameStartswith 
+     * @param {String} opts.search 
      * @param {Number} opts.sizeMax Size of the file.
      * @param {Number} opts.sizeMin Size of the file.
      * @param {Array.<String>} opts.tags Multiple values may be separated by commas.
+     * @param {Boolean} opts.text If this field is present (with any value), the full text representation of the documents will be added to the response under the field `text`
      * @param {String} opts.visaCreatorEmail 
      * @param {Date} opts.visaDeadlineAfter 
      * @param {Date} opts.visaDeadlineBefore 
@@ -3385,6 +3393,7 @@ export default class CollaborationApi {
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
      * @param {String} opts.nameStartswith 
+     * @param {String} opts.search 
      * @param {Number} opts.sizeMax Size of the file.
      * @param {Number} opts.sizeMin Size of the file.
      * @param {Array.<String>} opts.tags Multiple values may be separated by commas.
@@ -3437,6 +3446,7 @@ export default class CollaborationApi {
         'name__contains': opts['nameContains'],
         'name__endswith': opts['nameEndswith'],
         'name__startswith': opts['nameStartswith'],
+        'search': opts['search'],
         'size_max': opts['sizeMax'],
         'size_min': opts['sizeMin'],
         'tags': this.apiClient.buildCollectionParam(opts['tags'], 'csv'),
@@ -3489,6 +3499,7 @@ export default class CollaborationApi {
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
      * @param {String} opts.nameStartswith 
+     * @param {String} opts.search 
      * @param {Number} opts.sizeMax Size of the file.
      * @param {Number} opts.sizeMin Size of the file.
      * @param {Array.<String>} opts.tags Multiple values may be separated by commas.
@@ -6222,6 +6233,73 @@ export default class CollaborationApi {
      */
     updateDocument(cloudPk, id, projectPk, opts) {
       return this.updateDocumentWithHttpInfo(cloudPk, id, projectPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update the text representation of a document
+     * Update the text representation of a document. The document itself will not be changed. It is useful for full text search  Required scopes: document:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedDocumentTextRequest} opts.patchedDocumentTextRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DocumentText} and HTTP response
+     */
+    updateDocumentTextWithHttpInfo(cloudPk, id, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedDocumentTextRequest'];
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updateDocumentText");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateDocumentText");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updateDocumentText");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = DocumentText;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/document/{id}/text', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update the text representation of a document
+     * Update the text representation of a document. The document itself will not be changed. It is useful for full text search  Required scopes: document:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id A unique integer value identifying this document.
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedDocumentTextRequest} opts.patchedDocumentTextRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DocumentText}
+     */
+    updateDocumentText(cloudPk, id, projectPk, opts) {
+      return this.updateDocumentTextWithHttpInfo(cloudPk, id, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

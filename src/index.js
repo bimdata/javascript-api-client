@@ -48,6 +48,7 @@ import Direction from './model/Direction';
 import DirectionRequest from './model/DirectionRequest';
 import Document from './model/Document';
 import DocumentPreviewFile from './model/DocumentPreviewFile';
+import DocumentText from './model/DocumentText';
 import DocumentWithElementList from './model/DocumentWithElementList';
 import Drawing from './model/Drawing';
 import DrawingRequest from './model/DrawingRequest';
@@ -119,6 +120,7 @@ import PatchedClassificationRequest from './model/PatchedClassificationRequest';
 import PatchedCloudRequest from './model/PatchedCloudRequest';
 import PatchedCommentRequest from './model/PatchedCommentRequest';
 import PatchedDocumentRequest from './model/PatchedDocumentRequest';
+import PatchedDocumentTextRequest from './model/PatchedDocumentTextRequest';
 import PatchedDrawingRequest from './model/PatchedDrawingRequest';
 import PatchedElementRequest from './model/PatchedElementRequest';
 import PatchedFolderWithoutChildrenRequest from './model/PatchedFolderWithoutChildrenRequest';
@@ -533,6 +535,12 @@ export {
      * @property {module:model/DocumentPreviewFile}
      */
     DocumentPreviewFile,
+
+    /**
+     * The DocumentText model constructor.
+     * @property {module:model/DocumentText}
+     */
+    DocumentText,
 
     /**
      * The DocumentWithElementList model constructor.
@@ -959,6 +967,12 @@ export {
      * @property {module:model/PatchedDocumentRequest}
      */
     PatchedDocumentRequest,
+
+    /**
+     * The PatchedDocumentTextRequest model constructor.
+     * @property {module:model/PatchedDocumentTextRequest}
+     */
+    PatchedDocumentTextRequest,
 
     /**
      * The PatchedDrawingRequest model constructor.

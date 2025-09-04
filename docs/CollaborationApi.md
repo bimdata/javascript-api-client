@@ -102,6 +102,7 @@ Method | HTTP request | Description
 [**updateCloud**](CollaborationApi.md#updateCloud) | **PATCH** /cloud/{id} | Update some fields of a cloud
 [**updateCloudUser**](CollaborationApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | Change the user role in the cloud
 [**updateDocument**](CollaborationApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update some fields of the document
+[**updateDocumentText**](CollaborationApi.md#updateDocumentText) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id}/text | Update the text representation of a document
 [**updateFolder**](CollaborationApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update some fields of a folder
 [**updateGroupFolder**](CollaborationApi.md#updateGroupFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/group/{id} | Update the permission of a group on a folder. When propagate is set to True, the permission of all children in the folder will be updated.
 [**updateManageGroup**](CollaborationApi.md#updateManageGroup) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update some fields of a group
@@ -960,7 +961,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;GLTF&#39;, &#39;IFC&#39;, &#39;OBJ&#39;, &#39;POINT_CLOUD&#39;, &#39;DXF&#39;, &#39;DWG&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;IFC&#39;, &#39;POINT_CLOUD&#39;, &#39;DWG&#39;, &#39;DXF&#39;, &#39;GLTF&#39;, &#39;OBJ&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -3387,7 +3388,7 @@ Name | Type | Description  | Notes
 
 Retrieve all documents
 
-Retrieve all documents in the project. Filters are case insentive  Required scopes: document:read
+Retrieve all documents in the project. Filters are case insentive. Search filter only works if AI features are enabled.  Required scopes: document:read
 
 ### Example
 
@@ -3431,9 +3432,11 @@ let opts = {
   'nameContains': "nameContains_example", // String | 
   'nameEndswith': "nameEndswith_example", // String | 
   'nameStartswith': "nameStartswith_example", // String | 
+  'search': "search_example", // String | 
   'sizeMax': 789, // Number | Size of the file.
   'sizeMin': 789, // Number | Size of the file.
   'tags': ["null"], // [String] | Multiple values may be separated by commas.
+  'text': true, // Boolean | If this field is present (with any value), the full text representation of the documents will be added to the response under the field `text`
   'visaCreatorEmail': "visaCreatorEmail_example", // String | 
   'visaDeadlineAfter': new Date("2013-10-20"), // Date | 
   'visaDeadlineBefore': new Date("2013-10-20"), // Date | 
@@ -3475,9 +3478,11 @@ Name | Type | Description  | Notes
  **nameContains** | **String**|  | [optional] 
  **nameEndswith** | **String**|  | [optional] 
  **nameStartswith** | **String**|  | [optional] 
+ **search** | **String**|  | [optional] 
  **sizeMax** | **Number**| Size of the file. | [optional] 
  **sizeMin** | **Number**| Size of the file. | [optional] 
  **tags** | [**[String]**](String.md)| Multiple values may be separated by commas. | [optional] 
+ **text** | **Boolean**| If this field is present (with any value), the full text representation of the documents will be added to the response under the field &#x60;text&#x60; | [optional] 
  **visaCreatorEmail** | **String**|  | [optional] 
  **visaDeadlineAfter** | **Date**|  | [optional] 
  **visaDeadlineBefore** | **Date**|  | [optional] 
@@ -3618,6 +3623,7 @@ let opts = {
   'nameContains': "nameContains_example", // String | 
   'nameEndswith': "nameEndswith_example", // String | 
   'nameStartswith': "nameStartswith_example", // String | 
+  'search': "search_example", // String | 
   'sizeMax': 789, // Number | Size of the file.
   'sizeMin': 789, // Number | Size of the file.
   'tags': ["null"], // [String] | Multiple values may be separated by commas.
@@ -3663,6 +3669,7 @@ Name | Type | Description  | Notes
  **nameContains** | **String**|  | [optional] 
  **nameEndswith** | **String**|  | [optional] 
  **nameStartswith** | **String**|  | [optional] 
+ **search** | **String**|  | [optional] 
  **sizeMax** | **Number**| Size of the file. | [optional] 
  **sizeMin** | **Number**| Size of the file. | [optional] 
  **tags** | [**[String]**](String.md)| Multiple values may be separated by commas. | [optional] 
@@ -6608,6 +6615,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Document**](Document.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
+## updateDocumentText
+
+> DocumentText updateDocumentText(cloudPk, id, projectPk, opts)
+
+Update the text representation of a document
+
+Update the text representation of a document. The document itself will not be changed. It is useful for full text search  Required scopes: document:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.CollaborationApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let id = 56; // Number | A unique integer value identifying this document.
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let opts = {
+  'patchedDocumentTextRequest': new bimdata.PatchedDocumentTextRequest() // PatchedDocumentTextRequest | 
+};
+apiInstance.updateDocumentText(cloudPk, id, projectPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **id** | **Number**| A unique integer value identifying this document. | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **patchedDocumentTextRequest** | [**PatchedDocumentTextRequest**](PatchedDocumentTextRequest.md)|  | [optional] 
+
+### Return type
+
+[**DocumentText**](DocumentText.md)
 
 ### Authorization
 

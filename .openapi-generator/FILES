@@ -39,6 +39,7 @@ docs/Direction.md
 docs/DirectionRequest.md
 docs/Document.md
 docs/DocumentPreviewFile.md
+docs/DocumentText.md
 docs/DocumentWithElementList.md
 docs/Drawing.md
 docs/DrawingRequest.md
@@ -111,6 +112,7 @@ docs/PatchedClassificationRequest.md
 docs/PatchedCloudRequest.md
 docs/PatchedCommentRequest.md
 docs/PatchedDocumentRequest.md
+docs/PatchedDocumentTextRequest.md
 docs/PatchedDrawingRequest.md
 docs/PatchedElementRequest.md
 docs/PatchedFolderWithoutChildrenRequest.md
@@ -317,6 +319,7 @@ src/model/Direction.js
 src/model/DirectionRequest.js
 src/model/Document.js
 src/model/DocumentPreviewFile.js
+src/model/DocumentText.js
 src/model/DocumentWithElementList.js
 src/model/Drawing.js
 src/model/DrawingRequest.js
@@ -388,6 +391,7 @@ src/model/PatchedClassificationRequest.js
 src/model/PatchedCloudRequest.js
 src/model/PatchedCommentRequest.js
 src/model/PatchedDocumentRequest.js
+src/model/PatchedDocumentTextRequest.js
 src/model/PatchedDrawingRequest.js
 src/model/PatchedElementRequest.js
 src/model/PatchedFolderWithoutChildrenRequest.js
@@ -588,6 +592,7 @@ test/model/Direction.spec.js
 test/model/DirectionRequest.spec.js
 test/model/Document.spec.js
 test/model/DocumentPreviewFile.spec.js
+test/model/DocumentText.spec.js
 test/model/DocumentWithElementList.spec.js
 test/model/Drawing.spec.js
 test/model/DrawingRequest.spec.js
@@ -659,6 +664,7 @@ test/model/PatchedClassificationRequest.spec.js
 test/model/PatchedCloudRequest.spec.js
 test/model/PatchedCommentRequest.spec.js
 test/model/PatchedDocumentRequest.spec.js
+test/model/PatchedDocumentTextRequest.spec.js
 test/model/PatchedDrawingRequest.spec.js
 test/model/PatchedElementRequest.spec.js
 test/model/PatchedFolderWithoutChildrenRequest.spec.js

@@ -302,6 +302,7 @@ Class | Method | HTTP request | Description
 *bimdata.CollaborationApi* | [**updateCloud**](docs/CollaborationApi.md#updateCloud) | **PATCH** /cloud/{id} | Update some fields of a cloud
 *bimdata.CollaborationApi* | [**updateCloudUser**](docs/CollaborationApi.md#updateCloudUser) | **PATCH** /cloud/{cloud_pk}/user/{id} | Change the user role in the cloud
 *bimdata.CollaborationApi* | [**updateDocument**](docs/CollaborationApi.md#updateDocument) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id} | Update some fields of the document
+*bimdata.CollaborationApi* | [**updateDocumentText**](docs/CollaborationApi.md#updateDocumentText) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/document/{id}/text | Update the text representation of a document
 *bimdata.CollaborationApi* | [**updateFolder**](docs/CollaborationApi.md#updateFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{id} | Update some fields of a folder
 *bimdata.CollaborationApi* | [**updateGroupFolder**](docs/CollaborationApi.md#updateGroupFolder) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/folder/{folder_pk}/group/{id} | Update the permission of a group on a folder. When propagate is set to True, the permission of all children in the folder will be updated.
 *bimdata.CollaborationApi* | [**updateManageGroup**](docs/CollaborationApi.md#updateManageGroup) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/group/{id} | Update some fields of a group
@@ -535,6 +536,7 @@ Class | Method | HTTP request | Description
  - [bimdata.DirectionRequest](docs/DirectionRequest.md)
  - [bimdata.Document](docs/Document.md)
  - [bimdata.DocumentPreviewFile](docs/DocumentPreviewFile.md)
+ - [bimdata.DocumentText](docs/DocumentText.md)
  - [bimdata.DocumentWithElementList](docs/DocumentWithElementList.md)
  - [bimdata.Drawing](docs/Drawing.md)
  - [bimdata.DrawingRequest](docs/DrawingRequest.md)
@@ -606,6 +608,7 @@ Class | Method | HTTP request | Description
  - [bimdata.PatchedCloudRequest](docs/PatchedCloudRequest.md)
  - [bimdata.PatchedCommentRequest](docs/PatchedCommentRequest.md)
  - [bimdata.PatchedDocumentRequest](docs/PatchedDocumentRequest.md)
+ - [bimdata.PatchedDocumentTextRequest](docs/PatchedDocumentTextRequest.md)
  - [bimdata.PatchedDrawingRequest](docs/PatchedDrawingRequest.md)
  - [bimdata.PatchedElementRequest](docs/PatchedElementRequest.md)
  - [bimdata.PatchedFolderWithoutChildrenRequest](docs/PatchedFolderWithoutChildrenRequest.md)
