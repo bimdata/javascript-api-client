@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;GLTF&#39;, &#39;OBJ&#39;, &#39;IFC&#39;, &#39;DWG&#39;, &#39;POINT_CLOUD&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;OBJ&#39;, &#39;DWG&#39;, &#39;IFC&#39;, &#39;GLTF&#39;, &#39;POINT_CLOUD&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -3433,6 +3433,7 @@ let opts = {
   'nameContains': "nameContains_example", // String | 
   'nameEndswith': "nameEndswith_example", // String | 
   'nameStartswith': "nameStartswith_example", // String | 
+  'parentIdIn': [null], // [Number] | Multiple values may be separated by commas.
   'search': "search_example", // String | 
   'sizeMax': 789, // Number | Size of the file.
   'sizeMin': 789, // Number | Size of the file.
@@ -3480,6 +3481,7 @@ Name | Type | Description  | Notes
  **nameContains** | **String**|  | [optional] 
  **nameEndswith** | **String**|  | [optional] 
  **nameStartswith** | **String**|  | [optional] 
+ **parentIdIn** | [**[Number]**](Number.md)| Multiple values may be separated by commas. | [optional] 
  **search** | **String**|  | [optional] 
  **sizeMax** | **Number**| Size of the file. | [optional] 
  **sizeMin** | **Number**| Size of the file. | [optional] 
@@ -3626,6 +3628,7 @@ let opts = {
   'nameContains': "nameContains_example", // String | 
   'nameEndswith': "nameEndswith_example", // String | 
   'nameStartswith': "nameStartswith_example", // String | 
+  'parentIdIn': [null], // [Number] | Multiple values may be separated by commas.
   'search': "search_example", // String | 
   'sizeMax': 789, // Number | Size of the file.
   'sizeMin': 789, // Number | Size of the file.
@@ -3673,6 +3676,7 @@ Name | Type | Description  | Notes
  **nameContains** | **String**|  | [optional] 
  **nameEndswith** | **String**|  | [optional] 
  **nameStartswith** | **String**|  | [optional] 
+ **parentIdIn** | [**[Number]**](Number.md)| Multiple values may be separated by commas. | [optional] 
  **search** | **String**|  | [optional] 
  **sizeMax** | **Number**| Size of the file. | [optional] 
  **sizeMin** | **Number**| Size of the file. | [optional] 

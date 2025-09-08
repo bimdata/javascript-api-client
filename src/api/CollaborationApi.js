@@ -868,7 +868,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'GLTF', 'OBJ', 'IFC', 'DWG', 'POINT_CLOUD', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'DWG', 'IFC', 'GLTF', 'POINT_CLOUD', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -936,7 +936,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'GLTF', 'OBJ', 'IFC', 'DWG', 'POINT_CLOUD', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'OBJ', 'DWG', 'IFC', 'GLTF', 'POINT_CLOUD', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -3183,6 +3183,7 @@ export default class CollaborationApi {
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
      * @param {String} opts.nameStartswith 
+     * @param {Array.<Number>} opts.parentIdIn Multiple values may be separated by commas.
      * @param {String} opts.search 
      * @param {Number} opts.sizeMax Size of the file.
      * @param {Number} opts.sizeMin Size of the file.
@@ -3233,6 +3234,7 @@ export default class CollaborationApi {
         'name__contains': opts['nameContains'],
         'name__endswith': opts['nameEndswith'],
         'name__startswith': opts['nameStartswith'],
+        'parent_id__in': this.apiClient.buildCollectionParam(opts['parentIdIn'], 'csv'),
         'search': opts['search'],
         'size_max': opts['sizeMax'],
         'size_min': opts['sizeMin'],
@@ -3287,6 +3289,7 @@ export default class CollaborationApi {
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
      * @param {String} opts.nameStartswith 
+     * @param {Array.<Number>} opts.parentIdIn Multiple values may be separated by commas.
      * @param {String} opts.search 
      * @param {Number} opts.sizeMax Size of the file.
      * @param {Number} opts.sizeMin Size of the file.
@@ -3397,6 +3400,7 @@ export default class CollaborationApi {
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
      * @param {String} opts.nameStartswith 
+     * @param {Array.<Number>} opts.parentIdIn Multiple values may be separated by commas.
      * @param {String} opts.search 
      * @param {Number} opts.sizeMax Size of the file.
      * @param {Number} opts.sizeMin Size of the file.
@@ -3451,6 +3455,7 @@ export default class CollaborationApi {
         'name__contains': opts['nameContains'],
         'name__endswith': opts['nameEndswith'],
         'name__startswith': opts['nameStartswith'],
+        'parent_id__in': this.apiClient.buildCollectionParam(opts['parentIdIn'], 'csv'),
         'search': opts['search'],
         'size_max': opts['sizeMax'],
         'size_min': opts['sizeMin'],
@@ -3505,6 +3510,7 @@ export default class CollaborationApi {
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
      * @param {String} opts.nameStartswith 
+     * @param {Array.<Number>} opts.parentIdIn Multiple values may be separated by commas.
      * @param {String} opts.search 
      * @param {Number} opts.sizeMax Size of the file.
      * @param {Number} opts.sizeMin Size of the file.
