@@ -868,7 +868,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'IFC', 'POINT_CLOUD', 'DWG', 'DXF', 'GLTF', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'GLTF', 'OBJ', 'IFC', 'DWG', 'POINT_CLOUD', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -936,7 +936,7 @@ export default class CollaborationApi {
 
     /**
      * Create a document
-     * Create a document. If the document is one of {'IFC', 'POINT_CLOUD', 'DWG', 'DXF', 'GLTF', 'OBJ'}, a model will be created and attached to this document  Required scopes: document:write
+     * Create a document. If the document is one of {'GLTF', 'OBJ', 'IFC', 'DWG', 'POINT_CLOUD', 'DXF'}, a model will be created and attached to this document  Required scopes: document:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {String} name Shown name of the file
@@ -3178,6 +3178,7 @@ export default class CollaborationApi {
      * @param {String} opts.fileNameEndswith 
      * @param {String} opts.fileNameStartswith 
      * @param {Boolean} opts.hasVisa 
+     * @param {Array.<Number>} opts.idIn Multiple values may be separated by commas.
      * @param {String} opts.name 
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
@@ -3227,6 +3228,7 @@ export default class CollaborationApi {
         'file_name__endswith': opts['fileNameEndswith'],
         'file_name__startswith': opts['fileNameStartswith'],
         'has__visa': opts['hasVisa'],
+        'id__in': this.apiClient.buildCollectionParam(opts['idIn'], 'csv'),
         'name': opts['name'],
         'name__contains': opts['nameContains'],
         'name__endswith': opts['nameEndswith'],
@@ -3280,6 +3282,7 @@ export default class CollaborationApi {
      * @param {String} opts.fileNameEndswith 
      * @param {String} opts.fileNameStartswith 
      * @param {Boolean} opts.hasVisa 
+     * @param {Array.<Number>} opts.idIn Multiple values may be separated by commas.
      * @param {String} opts.name 
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
@@ -3389,6 +3392,7 @@ export default class CollaborationApi {
      * @param {String} opts.fileNameEndswith 
      * @param {String} opts.fileNameStartswith 
      * @param {Boolean} opts.hasVisa 
+     * @param {Array.<Number>} opts.idIn Multiple values may be separated by commas.
      * @param {String} opts.name 
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 
@@ -3442,6 +3446,7 @@ export default class CollaborationApi {
         'file_name__endswith': opts['fileNameEndswith'],
         'file_name__startswith': opts['fileNameStartswith'],
         'has__visa': opts['hasVisa'],
+        'id__in': this.apiClient.buildCollectionParam(opts['idIn'], 'csv'),
         'name': opts['name'],
         'name__contains': opts['nameContains'],
         'name__endswith': opts['nameEndswith'],
@@ -3495,6 +3500,7 @@ export default class CollaborationApi {
      * @param {String} opts.fileNameEndswith 
      * @param {String} opts.fileNameStartswith 
      * @param {Boolean} opts.hasVisa 
+     * @param {Array.<Number>} opts.idIn Multiple values may be separated by commas.
      * @param {String} opts.name 
      * @param {String} opts.nameContains 
      * @param {String} opts.nameEndswith 

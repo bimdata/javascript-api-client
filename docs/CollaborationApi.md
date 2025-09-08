@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 Create a document
 
-Create a document. If the document is one of {&#39;IFC&#39;, &#39;POINT_CLOUD&#39;, &#39;DWG&#39;, &#39;DXF&#39;, &#39;GLTF&#39;, &#39;OBJ&#39;}, a model will be created and attached to this document  Required scopes: document:write
+Create a document. If the document is one of {&#39;GLTF&#39;, &#39;OBJ&#39;, &#39;IFC&#39;, &#39;DWG&#39;, &#39;POINT_CLOUD&#39;, &#39;DXF&#39;}, a model will be created and attached to this document  Required scopes: document:write
 
 ### Example
 
@@ -3428,6 +3428,7 @@ let opts = {
   'fileNameEndswith': "fileNameEndswith_example", // String | 
   'fileNameStartswith': "fileNameStartswith_example", // String | 
   'hasVisa': true, // Boolean | 
+  'idIn': [null], // [Number] | Multiple values may be separated by commas.
   'name': "name_example", // String | 
   'nameContains': "nameContains_example", // String | 
   'nameEndswith': "nameEndswith_example", // String | 
@@ -3474,6 +3475,7 @@ Name | Type | Description  | Notes
  **fileNameEndswith** | **String**|  | [optional] 
  **fileNameStartswith** | **String**|  | [optional] 
  **hasVisa** | **Boolean**|  | [optional] 
+ **idIn** | [**[Number]**](Number.md)| Multiple values may be separated by commas. | [optional] 
  **name** | **String**|  | [optional] 
  **nameContains** | **String**|  | [optional] 
  **nameEndswith** | **String**|  | [optional] 
@@ -3619,6 +3621,7 @@ let opts = {
   'fileNameEndswith': "fileNameEndswith_example", // String | 
   'fileNameStartswith': "fileNameStartswith_example", // String | 
   'hasVisa': true, // Boolean | 
+  'idIn': [null], // [Number] | Multiple values may be separated by commas.
   'name': "name_example", // String | 
   'nameContains': "nameContains_example", // String | 
   'nameEndswith': "nameEndswith_example", // String | 
@@ -3665,6 +3668,7 @@ Name | Type | Description  | Notes
  **fileNameEndswith** | **String**|  | [optional] 
  **fileNameStartswith** | **String**|  | [optional] 
  **hasVisa** | **Boolean**|  | [optional] 
+ **idIn** | [**[Number]**](Number.md)| Multiple values may be separated by commas. | [optional] 
  **name** | **String**|  | [optional] 
  **nameContains** | **String**|  | [optional] 
  **nameEndswith** | **String**|  | [optional] 
