@@ -48,6 +48,8 @@ import Direction from './model/Direction';
 import DirectionRequest from './model/DirectionRequest';
 import Document from './model/Document';
 import DocumentPreviewFile from './model/DocumentPreviewFile';
+import DocumentReference from './model/DocumentReference';
+import DocumentReferenceRequest from './model/DocumentReferenceRequest';
 import DocumentText from './model/DocumentText';
 import DocumentWithElementList from './model/DocumentWithElementList';
 import Drawing from './model/Drawing';
@@ -535,6 +537,18 @@ export {
      * @property {module:model/DocumentPreviewFile}
      */
     DocumentPreviewFile,
+
+    /**
+     * The DocumentReference model constructor.
+     * @property {module:model/DocumentReference}
+     */
+    DocumentReference,
+
+    /**
+     * The DocumentReferenceRequest model constructor.
+     * @property {module:model/DocumentReferenceRequest}
+     */
+    DocumentReferenceRequest,
 
     /**
      * The DocumentText model constructor.

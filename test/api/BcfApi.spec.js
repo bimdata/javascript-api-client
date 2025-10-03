@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('createDocumentReference', function() {
+      it('should call createDocumentReference successfully', function(done) {
+        //uncomment below and update the code to test createDocumentReference
+        //instance.createDocumentReference(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createExtensionLabel', function() {
       it('should call createExtensionLabel successfully', function(done) {
         //uncomment below and update the code to test createExtensionLabel
@@ -278,6 +288,16 @@
         done();
       });
     });
+    describe('fullUpdateDocumentReference', function() {
+      it('should call fullUpdateDocumentReference successfully', function(done) {
+        //uncomment below and update the code to test fullUpdateDocumentReference
+        //instance.fullUpdateDocumentReference(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('fullUpdateFullTopic', function() {
       it('should call fullUpdateFullTopic successfully', function(done) {
         //uncomment below and update the code to test fullUpdateFullTopic
@@ -378,6 +398,16 @@
         done();
       });
     });
+    describe('getDocumentReferences', function() {
+      it('should call getDocumentReferences successfully', function(done) {
+        //uncomment below and update the code to test getDocumentReferences
+        //instance.getDocumentReferences(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getExtensions', function() {
       it('should call getExtensions successfully', function(done) {
         //uncomment below and update the code to test getExtensions
@@ -452,16 +482,6 @@
       it('should call getTopic successfully', function(done) {
         //uncomment below and update the code to test getTopic
         //instance.getTopic(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getTopicDocumentReferences', function() {
-      it('should call getTopicDocumentReferences successfully', function(done) {
-        //uncomment below and update the code to test getTopicDocumentReferences
-        //instance.getTopicDocumentReferences(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

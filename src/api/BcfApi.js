@@ -22,6 +22,8 @@ import ColoringDefinition from '../model/ColoringDefinition';
 import Comment from '../model/Comment';
 import CommentRequest from '../model/CommentRequest';
 import DetailedExtensions from '../model/DetailedExtensions';
+import DocumentReference from '../model/DocumentReference';
+import DocumentReferenceRequest from '../model/DocumentReferenceRequest';
 import Extensions from '../model/Extensions';
 import FullTopic from '../model/FullTopic';
 import FullTopicRequest from '../model/FullTopicRequest';
@@ -130,6 +132,67 @@ export default class BcfApi {
      */
     createComment(projectsPk, topicsGuid, opts) {
       return this.createCommentWithHttpInfo(projectsPk, topicsGuid, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a reference to a document
+     * Create a reference to a document  Required scopes: bcf:write
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {module:model/DocumentReferenceRequest} documentReferenceRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DocumentReference} and HTTP response
+     */
+    createDocumentReferenceWithHttpInfo(guid, projectsPk, documentReferenceRequest) {
+      let postBody = documentReferenceRequest;
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling createDocumentReference");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling createDocumentReference");
+      }
+      // verify the required parameter 'documentReferenceRequest' is set
+      if (documentReferenceRequest === undefined || documentReferenceRequest === null) {
+        throw new Error("Missing the required parameter 'documentReferenceRequest' when calling createDocumentReference");
+      }
+
+      let pathParams = {
+        'guid': guid,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = DocumentReference;
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a reference to a document
+     * Create a reference to a document  Required scopes: bcf:write
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {module:model/DocumentReferenceRequest} documentReferenceRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DocumentReference}
+     */
+    createDocumentReference(guid, projectsPk, documentReferenceRequest) {
+      return this.createDocumentReferenceWithHttpInfo(guid, projectsPk, documentReferenceRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1419,6 +1482,79 @@ export default class BcfApi {
 
 
     /**
+     * Add or update document references to a topic
+     * This will replace every references by references passed in the body  Required scopes: bcf:write
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {Array.<module:model/DocumentReferenceRequest>} documentReferenceRequest 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DocumentReference>} and HTTP response
+     */
+    fullUpdateDocumentReferenceWithHttpInfo(guid, projectsPk, documentReferenceRequest, opts) {
+      opts = opts || {};
+      let postBody = documentReferenceRequest;
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling fullUpdateDocumentReference");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling fullUpdateDocumentReference");
+      }
+      // verify the required parameter 'documentReferenceRequest' is set
+      if (documentReferenceRequest === undefined || documentReferenceRequest === null) {
+        throw new Error("Missing the required parameter 'documentReferenceRequest' when calling fullUpdateDocumentReference");
+      }
+
+      let pathParams = {
+        'guid': guid,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+        'format': opts['format'],
+        'ifcs': this.apiClient.buildCollectionParam(opts['ifcs'], 'multi'),
+        'models': this.apiClient.buildCollectionParam(opts['models'], 'multi')
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = [DocumentReference];
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Add or update document references to a topic
+     * This will replace every references by references passed in the body  Required scopes: bcf:write
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {Array.<module:model/DocumentReferenceRequest>} documentReferenceRequest 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DocumentReference>}
+     */
+    fullUpdateDocumentReference(guid, projectsPk, documentReferenceRequest, opts) {
+      return this.fullUpdateDocumentReferenceWithHttpInfo(guid, projectsPk, documentReferenceRequest, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update all fields of a topic
      * This is not a standard route. You can update topic, viewpoints and comment is a signle call  Required scopes: bcf:write
      * @param {String} guid 
@@ -1988,6 +2124,73 @@ export default class BcfApi {
 
 
     /**
+     * Retrieve all documents referenced by the topic
+     * Retrieve all documents referenced by the topic  Required scopes: bcf:read
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DocumentReference>} and HTTP response
+     */
+    getDocumentReferencesWithHttpInfo(guid, projectsPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'guid' is set
+      if (guid === undefined || guid === null) {
+        throw new Error("Missing the required parameter 'guid' when calling getDocumentReferences");
+      }
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getDocumentReferences");
+      }
+
+      let pathParams = {
+        'guid': guid,
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+        'format': opts['format'],
+        'ifcs': this.apiClient.buildCollectionParam(opts['ifcs'], 'multi'),
+        'models': this.apiClient.buildCollectionParam(opts['models'], 'multi')
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [DocumentReference];
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all documents referenced by the topic
+     * Retrieve all documents referenced by the topic  Required scopes: bcf:read
+     * @param {String} guid 
+     * @param {Number} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.format 
+     * @param {Array.<Number>} opts.ifcs 
+     * @param {Array.<Number>} opts.models 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DocumentReference>}
+     */
+    getDocumentReferences(guid, projectsPk, opts) {
+      return this.getDocumentReferencesWithHttpInfo(guid, projectsPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve project extensions
      * Retrieve project extensions  Required scopes: bcf:read
      * @param {Number} id A unique integer value identifying this project.
@@ -2467,73 +2670,6 @@ export default class BcfApi {
      */
     getTopic(guid, projectsPk) {
       return this.getTopicWithHttpInfo(guid, projectsPk)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Get all related documents
-     * This feature is not supported yet and will always respond with an empty array  Required scopes: bcf:read
-     * @param {String} guid 
-     * @param {Number} projectsPk 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.format 
-     * @param {Array.<Number>} opts.ifcs 
-     * @param {Array.<Number>} opts.models 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
-     */
-    getTopicDocumentReferencesWithHttpInfo(guid, projectsPk, opts) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'guid' is set
-      if (guid === undefined || guid === null) {
-        throw new Error("Missing the required parameter 'guid' when calling getTopicDocumentReferences");
-      }
-      // verify the required parameter 'projectsPk' is set
-      if (projectsPk === undefined || projectsPk === null) {
-        throw new Error("Missing the required parameter 'projectsPk' when calling getTopicDocumentReferences");
-      }
-
-      let pathParams = {
-        'guid': guid,
-        'projects_pk': projectsPk
-      };
-      let queryParams = {
-        'format': opts['format'],
-        'ifcs': this.apiClient.buildCollectionParam(opts['ifcs'], 'multi'),
-        'models': this.apiClient.buildCollectionParam(opts['models'], 'multi')
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = ['String'];
-      return this.apiClient.callApi(
-        '/bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Get all related documents
-     * This feature is not supported yet and will always respond with an empty array  Required scopes: bcf:read
-     * @param {String} guid 
-     * @param {Number} projectsPk 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.format 
-     * @param {Array.<Number>} opts.ifcs 
-     * @param {Array.<Number>} opts.models 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
-     */
-    getTopicDocumentReferences(guid, projectsPk, opts) {
-      return this.getTopicDocumentReferencesWithHttpInfo(guid, projectsPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

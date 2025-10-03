@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createComment**](BcfApi.md#createComment) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments | Create a comment
+[**createDocumentReference**](BcfApi.md#createDocumentReference) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references | Create a reference to a document
 [**createExtensionLabel**](BcfApi.md#createExtensionLabel) | **POST** /bcf/2.1/projects/{projects_pk}/extension/label | Create a Label
 [**createExtensionPriority**](BcfApi.md#createExtensionPriority) | **POST** /bcf/2.1/projects/{projects_pk}/extension/priority | Create a Priority
 [**createExtensionStage**](BcfApi.md#createExtensionStage) | **POST** /bcf/2.1/projects/{projects_pk}/extension/stage | Create a Stage
@@ -27,6 +28,7 @@ Method | HTTP request | Description
 [**downloadBcfExportXlsx**](BcfApi.md#downloadBcfExportXlsx) | **GET** /bcf/2.1/projects/{id}/export-xlsx | Export project&#39;s topics in excel format
 [**fullUpdateBcfProject**](BcfApi.md#fullUpdateBcfProject) | **PUT** /bcf/2.1/projects/{id} | Update all fields of a BCF project
 [**fullUpdateComment**](BcfApi.md#fullUpdateComment) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Update all fields of a comment
+[**fullUpdateDocumentReference**](BcfApi.md#fullUpdateDocumentReference) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references | Add or update document references to a topic
 [**fullUpdateFullTopic**](BcfApi.md#fullUpdateFullTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update all fields of a topic
 [**fullUpdatePin**](BcfApi.md#fullUpdatePin) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Update all fields of a Pin
 [**fullUpdateTopic**](BcfApi.md#fullUpdateTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update all fields of a topic
@@ -37,6 +39,7 @@ Method | HTTP request | Description
 [**getComment**](BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Retrieve a comment
 [**getComments**](BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments | Retrieve all comments
 [**getDetailedExtensions**](BcfApi.md#getDetailedExtensions) | **GET** /bcf/2.1/projects/{id}/detailed-extensions | Retrieve project detailed extensions
+[**getDocumentReferences**](BcfApi.md#getDocumentReferences) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references | Retrieve all documents referenced by the topic
 [**getExtensions**](BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{id}/extensions | Retrieve project extensions
 [**getFullTopic**](BcfApi.md#getFullTopic) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Retrieve a full topic
 [**getFullTopics**](BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | Retrieve all full topics
@@ -45,7 +48,6 @@ Method | HTTP request | Description
 [**getSelections**](BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/selection | Retrieve all selections of a viewpoint
 [**getSnapshot**](BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/snapshot | Retrieve the viewpoint&#39; snapshot
 [**getTopic**](BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Retrieve a topic
-[**getTopicDocumentReferences**](BcfApi.md#getTopicDocumentReferences) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references | Get all related documents
 [**getTopicViewpoints**](BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/topic-viewpoints | Retrieve all viewpoints attached to the topic
 [**getTopics**](BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | Retrieve all topics
 [**getTopicsPins**](BcfApi.md#getTopicsPins) | **GET** /bcf/2.1/projects/{projects_pk}/topics/pins | Get pins of all or many topics
@@ -126,6 +128,71 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Comment**](Comment.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
+## createDocumentReference
+
+> DocumentReference createDocumentReference(guid, projectsPk, documentReferenceRequest)
+
+Create a reference to a document
+
+Create a reference to a document  Required scopes: bcf:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let guid = "guid_example"; // String | 
+let projectsPk = 56; // Number | 
+let documentReferenceRequest = new bimdata.DocumentReferenceRequest(); // DocumentReferenceRequest | 
+apiInstance.createDocumentReference(guid, projectsPk, documentReferenceRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **guid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **documentReferenceRequest** | [**DocumentReferenceRequest**](DocumentReferenceRequest.md)|  | 
+
+### Return type
+
+[**DocumentReference**](DocumentReference.md)
 
 ### Authorization
 
@@ -1565,6 +1632,79 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## fullUpdateDocumentReference
+
+> [DocumentReference] fullUpdateDocumentReference(guid, projectsPk, documentReferenceRequest, opts)
+
+Add or update document references to a topic
+
+This will replace every references by references passed in the body  Required scopes: bcf:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let guid = "guid_example"; // String | 
+let projectsPk = 56; // Number | 
+let documentReferenceRequest = [new bimdata.DocumentReferenceRequest()]; // [DocumentReferenceRequest] | 
+let opts = {
+  'format': "format_example", // String | 
+  'ifcs': [null], // [Number] | 
+  'models': [null] // [Number] | 
+};
+apiInstance.fullUpdateDocumentReference(guid, projectsPk, documentReferenceRequest, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **guid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **documentReferenceRequest** | [**[DocumentReferenceRequest]**](DocumentReferenceRequest.md)|  | 
+ **format** | **String**|  | [optional] 
+ **ifcs** | [**[Number]**](Number.md)|  | [optional] 
+ **models** | [**[Number]**](Number.md)|  | [optional] 
+
+### Return type
+
+[**[DocumentReference]**](DocumentReference.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
 ## fullUpdateFullTopic
 
 > FullTopic fullUpdateFullTopic(guid, projectsPk, fullTopicRequest, opts)
@@ -2203,6 +2343,77 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getDocumentReferences
+
+> [DocumentReference] getDocumentReferences(guid, projectsPk, opts)
+
+Retrieve all documents referenced by the topic
+
+Retrieve all documents referenced by the topic  Required scopes: bcf:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let guid = "guid_example"; // String | 
+let projectsPk = 56; // Number | 
+let opts = {
+  'format': "format_example", // String | 
+  'ifcs': [null], // [Number] | 
+  'models': [null] // [Number] | 
+};
+apiInstance.getDocumentReferences(guid, projectsPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **guid** | **String**|  | 
+ **projectsPk** | **Number**|  | 
+ **format** | **String**|  | [optional] 
+ **ifcs** | [**[Number]**](Number.md)|  | [optional] 
+ **models** | [**[Number]**](Number.md)|  | [optional] 
+
+### Return type
+
+[**[DocumentReference]**](DocumentReference.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getExtensions
 
 > Extensions getExtensions(id)
@@ -2724,77 +2935,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Topic**](Topic.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getTopicDocumentReferences
-
-> [String] getTopicDocumentReferences(guid, projectsPk, opts)
-
-Get all related documents
-
-This feature is not supported yet and will always respond with an empty array  Required scopes: bcf:read
-
-### Example
-
-```javascript
-import bimdata from '@bimdata/bimdata-api-client';
-let defaultClient = bimdata.ApiClient.instance;
-// Configure API key authorization: ApiKey
-let ApiKey = defaultClient.authentications['ApiKey'];
-ApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure OAuth2 access token for authorization: BIMData_Connect
-let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
-BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
-// Configure API key authorization: Bearer
-let Bearer = defaultClient.authentications['Bearer'];
-Bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.apiKeyPrefix = 'Token';
-
-let apiInstance = new bimdata.BcfApi();
-let guid = "guid_example"; // String | 
-let projectsPk = 56; // Number | 
-let opts = {
-  'format': "format_example", // String | 
-  'ifcs': [null], // [Number] | 
-  'models': [null] // [Number] | 
-};
-apiInstance.getTopicDocumentReferences(guid, projectsPk, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **guid** | **String**|  | 
- **projectsPk** | **Number**|  | 
- **format** | **String**|  | [optional] 
- **ifcs** | [**[Number]**](Number.md)|  | [optional] 
- **models** | [**[Number]**](Number.md)|  | [optional] 
-
-### Return type
-
-**[String]**
 
 ### Authorization
 

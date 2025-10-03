@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.WriteFolderRequest();
+    instance = new bimdata.DocumentReference();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,28 @@
       object[property] = value;
   }
 
-  describe('WriteFolderRequest', function() {
-    it('should create an instance of WriteFolderRequest', function() {
-      // uncomment below and update the code to test WriteFolderRequest
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be.a(bimdata.WriteFolderRequest);
+  describe('DocumentReference', function() {
+    it('should create an instance of DocumentReference', function() {
+      // uncomment below and update the code to test DocumentReference
+      //var instance = new bimdata.DocumentReference();
+      //expect(instance).to.be.a(bimdata.DocumentReference);
     });
 
-    it('should have the property defaultPermission (base name: "default_permission")', function() {
-      // uncomment below and update the code to test the property defaultPermission
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property guid (base name: "guid")', function() {
+      // uncomment below and update the code to test the property guid
+      //var instance = new bimdata.DocumentReference();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property referencedDocument (base name: "referenced_document")', function() {
+      // uncomment below and update the code to test the property referencedDocument
+      //var instance = new bimdata.DocumentReference();
       //expect(instance).to.be();
     });
 
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property children (base name: "children")', function() {
-      // uncomment below and update the code to test the property children
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instance = new bimdata.DocumentReference();
       //expect(instance).to.be();
     });
 

@@ -142,6 +142,7 @@ All URIs are relative to *http://localhost*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *bimdata.BcfApi* | [**createComment**](docs/BcfApi.md#createComment) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments | Create a comment
+*bimdata.BcfApi* | [**createDocumentReference**](docs/BcfApi.md#createDocumentReference) | **POST** /bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references | Create a reference to a document
 *bimdata.BcfApi* | [**createExtensionLabel**](docs/BcfApi.md#createExtensionLabel) | **POST** /bcf/2.1/projects/{projects_pk}/extension/label | Create a Label
 *bimdata.BcfApi* | [**createExtensionPriority**](docs/BcfApi.md#createExtensionPriority) | **POST** /bcf/2.1/projects/{projects_pk}/extension/priority | Create a Priority
 *bimdata.BcfApi* | [**createExtensionStage**](docs/BcfApi.md#createExtensionStage) | **POST** /bcf/2.1/projects/{projects_pk}/extension/stage | Create a Stage
@@ -164,6 +165,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**downloadBcfExportXlsx**](docs/BcfApi.md#downloadBcfExportXlsx) | **GET** /bcf/2.1/projects/{id}/export-xlsx | Export project&#39;s topics in excel format
 *bimdata.BcfApi* | [**fullUpdateBcfProject**](docs/BcfApi.md#fullUpdateBcfProject) | **PUT** /bcf/2.1/projects/{id} | Update all fields of a BCF project
 *bimdata.BcfApi* | [**fullUpdateComment**](docs/BcfApi.md#fullUpdateComment) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Update all fields of a comment
+*bimdata.BcfApi* | [**fullUpdateDocumentReference**](docs/BcfApi.md#fullUpdateDocumentReference) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references | Add or update document references to a topic
 *bimdata.BcfApi* | [**fullUpdateFullTopic**](docs/BcfApi.md#fullUpdateFullTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Update all fields of a topic
 *bimdata.BcfApi* | [**fullUpdatePin**](docs/BcfApi.md#fullUpdatePin) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{viewpoints_guid}/pin/{guid} | Update all fields of a Pin
 *bimdata.BcfApi* | [**fullUpdateTopic**](docs/BcfApi.md#fullUpdateTopic) | **PUT** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Update all fields of a topic
@@ -174,6 +176,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**getComment**](docs/BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Retrieve a comment
 *bimdata.BcfApi* | [**getComments**](docs/BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments | Retrieve all comments
 *bimdata.BcfApi* | [**getDetailedExtensions**](docs/BcfApi.md#getDetailedExtensions) | **GET** /bcf/2.1/projects/{id}/detailed-extensions | Retrieve project detailed extensions
+*bimdata.BcfApi* | [**getDocumentReferences**](docs/BcfApi.md#getDocumentReferences) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references | Retrieve all documents referenced by the topic
 *bimdata.BcfApi* | [**getExtensions**](docs/BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{id}/extensions | Retrieve project extensions
 *bimdata.BcfApi* | [**getFullTopic**](docs/BcfApi.md#getFullTopic) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic/{guid} | Retrieve a full topic
 *bimdata.BcfApi* | [**getFullTopics**](docs/BcfApi.md#getFullTopics) | **GET** /bcf/2.1/projects/{projects_pk}/full-topic | Retrieve all full topics
@@ -182,7 +185,6 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**getSelections**](docs/BcfApi.md#getSelections) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/selection | Retrieve all selections of a viewpoint
 *bimdata.BcfApi* | [**getSnapshot**](docs/BcfApi.md#getSnapshot) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/snapshot | Retrieve the viewpoint&#39; snapshot
 *bimdata.BcfApi* | [**getTopic**](docs/BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Retrieve a topic
-*bimdata.BcfApi* | [**getTopicDocumentReferences**](docs/BcfApi.md#getTopicDocumentReferences) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references | Get all related documents
 *bimdata.BcfApi* | [**getTopicViewpoints**](docs/BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/topic-viewpoints | Retrieve all viewpoints attached to the topic
 *bimdata.BcfApi* | [**getTopics**](docs/BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | Retrieve all topics
 *bimdata.BcfApi* | [**getTopicsPins**](docs/BcfApi.md#getTopicsPins) | **GET** /bcf/2.1/projects/{projects_pk}/topics/pins | Get pins of all or many topics
@@ -536,6 +538,8 @@ Class | Method | HTTP request | Description
  - [bimdata.DirectionRequest](docs/DirectionRequest.md)
  - [bimdata.Document](docs/Document.md)
  - [bimdata.DocumentPreviewFile](docs/DocumentPreviewFile.md)
+ - [bimdata.DocumentReference](docs/DocumentReference.md)
+ - [bimdata.DocumentReferenceRequest](docs/DocumentReferenceRequest.md)
  - [bimdata.DocumentText](docs/DocumentText.md)
  - [bimdata.DocumentWithElementList](docs/DocumentWithElementList.md)
  - [bimdata.Drawing](docs/Drawing.md)

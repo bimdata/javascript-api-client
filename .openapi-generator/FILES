@@ -39,6 +39,8 @@ docs/Direction.md
 docs/DirectionRequest.md
 docs/Document.md
 docs/DocumentPreviewFile.md
+docs/DocumentReference.md
+docs/DocumentReferenceRequest.md
 docs/DocumentText.md
 docs/DocumentWithElementList.md
 docs/Drawing.md
@@ -319,6 +321,8 @@ src/model/Direction.js
 src/model/DirectionRequest.js
 src/model/Document.js
 src/model/DocumentPreviewFile.js
+src/model/DocumentReference.js
+src/model/DocumentReferenceRequest.js
 src/model/DocumentText.js
 src/model/DocumentWithElementList.js
 src/model/Drawing.js
@@ -592,6 +596,8 @@ test/model/Direction.spec.js
 test/model/DirectionRequest.spec.js
 test/model/Document.spec.js
 test/model/DocumentPreviewFile.spec.js
+test/model/DocumentReference.spec.js
+test/model/DocumentReferenceRequest.spec.js
 test/model/DocumentText.spec.js
 test/model/DocumentWithElementList.spec.js
 test/model/Drawing.spec.js
