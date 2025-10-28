@@ -111,6 +111,9 @@ class Topic {
             if (data.hasOwnProperty('bimdata_viewer_layout')) {
                 obj['bimdata_viewer_layout'] = ApiClient.convertToType(data['bimdata_viewer_layout'], Object);
             }
+            if (data.hasOwnProperty('groups')) {
+                obj['groups'] = ApiClient.convertToType(data['groups'], ['Number']);
+            }
         }
         return obj;
     }
@@ -220,6 +223,11 @@ Topic.prototype['index'] = undefined;
  * @member {Object} bimdata_viewer_layout
  */
 Topic.prototype['bimdata_viewer_layout'] = undefined;
+
+/**
+ * @member {Array.<Number>} groups
+ */
+Topic.prototype['groups'] = undefined;
 
 
 

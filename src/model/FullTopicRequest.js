@@ -114,6 +114,9 @@ class FullTopicRequest {
             if (data.hasOwnProperty('bimdata_viewer_layout')) {
                 obj['bimdata_viewer_layout'] = ApiClient.convertToType(data['bimdata_viewer_layout'], Object);
             }
+            if (data.hasOwnProperty('groups')) {
+                obj['groups'] = ApiClient.convertToType(data['groups'], ['Number']);
+            }
         }
         return obj;
     }
@@ -228,6 +231,11 @@ FullTopicRequest.prototype['viewpoints'] = undefined;
  * @member {Object} bimdata_viewer_layout
  */
 FullTopicRequest.prototype['bimdata_viewer_layout'] = undefined;
+
+/**
+ * @member {Array.<Number>} groups
+ */
+FullTopicRequest.prototype['groups'] = undefined;
 
 
 

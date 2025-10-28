@@ -186,6 +186,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property groups (base name: "groups")', function() {
+      // uncomment below and update the code to test the property groups
+      //var instance = new bimdata.FullTopic();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
