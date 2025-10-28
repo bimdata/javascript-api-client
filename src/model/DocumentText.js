@@ -77,7 +77,7 @@ DocumentText.prototype['id'] = undefined;
 DocumentText.prototype['text'] = undefined;
 
 /**
- * * `french` - french * `spanish` - spanish * `german` - german * `italian` - italian * `english` - english
+ * * `english` - english * `spanish` - spanish * `french` - french * `italian` - italian * `german` - german
  * @member {module:model/DocumentText.LanguageEnum} language
  */
 DocumentText.prototype['language'] = undefined;
@@ -94,10 +94,10 @@ DocumentText.prototype['language'] = undefined;
 DocumentText['LanguageEnum'] = {
 
     /**
-     * value: "french"
+     * value: "english"
      * @const
      */
-    "french": "french",
+    "english": "english",
 
     /**
      * value: "spanish"
@@ -106,10 +106,10 @@ DocumentText['LanguageEnum'] = {
     "spanish": "spanish",
 
     /**
-     * value: "german"
+     * value: "french"
      * @const
      */
-    "german": "german",
+    "french": "french",
 
     /**
      * value: "italian"
@@ -118,10 +118,10 @@ DocumentText['LanguageEnum'] = {
     "italian": "italian",
 
     /**
-     * value: "english"
+     * value: "german"
      * @const
      */
-    "english": "english",
+    "german": "german",
 
     /**
      * value: "null"

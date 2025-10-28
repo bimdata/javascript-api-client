@@ -104,7 +104,7 @@ docs/ModelInModelPosition.md
 docs/ModelLabel.md
 docs/ModelLabelRequest.md
 docs/ModelOnModelPosition.md
-docs/ModelOnModelPositionRequest.md
+docs/ModelOnModelPositionCreationRequest.md
 docs/ModelSerializerWithoutChildren.md
 docs/ModelWithPositioningPlan.md
 docs/Organization.md
@@ -389,7 +389,7 @@ src/model/ModelInModelPosition.js
 src/model/ModelLabel.js
 src/model/ModelLabelRequest.js
 src/model/ModelOnModelPosition.js
-src/model/ModelOnModelPositionRequest.js
+src/model/ModelOnModelPositionCreationRequest.js
 src/model/ModelSerializerWithoutChildren.js
 src/model/ModelWithPositioningPlan.js
 src/model/Organization.js
@@ -668,7 +668,7 @@ test/model/ModelInModelPosition.spec.js
 test/model/ModelLabel.spec.js
 test/model/ModelLabelRequest.spec.js
 test/model/ModelOnModelPosition.spec.js
-test/model/ModelOnModelPositionRequest.spec.js
+test/model/ModelOnModelPositionCreationRequest.spec.js
 test/model/ModelSerializerWithoutChildren.spec.js
 test/model/ModelWithPositioningPlan.spec.js
 test/model/Organization.spec.js

@@ -398,10 +398,10 @@
         done();
       });
     });
-    describe('createPostionedModel', function() {
-      it('should call createPostionedModel successfully', function(done) {
-        //uncomment below and update the code to test createPostionedModel
-        //instance.createPostionedModel(function(error) {
+    describe('createPositionedModel', function() {
+      it('should call createPositionedModel successfully', function(done) {
+        //uncomment below and update the code to test createPositionedModel
+        //instance.createPositionedModel(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -648,10 +648,10 @@
         done();
       });
     });
-    describe('deletePostionedModel', function() {
-      it('should call deletePostionedModel successfully', function(done) {
-        //uncomment below and update the code to test deletePostionedModel
-        //instance.deletePostionedModel(function(error) {
+    describe('deletePositionedModel', function() {
+      it('should call deletePositionedModel successfully', function(done) {
+        //uncomment below and update the code to test deletePositionedModel
+        //instance.deletePositionedModel(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1128,20 +1128,20 @@
         done();
       });
     });
-    describe('getPostionedModel', function() {
-      it('should call getPostionedModel successfully', function(done) {
-        //uncomment below and update the code to test getPostionedModel
-        //instance.getPostionedModel(function(error) {
+    describe('getPositionedModel', function() {
+      it('should call getPositionedModel successfully', function(done) {
+        //uncomment below and update the code to test getPositionedModel
+        //instance.getPositionedModel(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getPostionedModels', function() {
-      it('should call getPostionedModels successfully', function(done) {
-        //uncomment below and update the code to test getPostionedModels
-        //instance.getPostionedModels(function(error) {
+    describe('getPositionedModels', function() {
+      it('should call getPositionedModels successfully', function(done) {
+        //uncomment below and update the code to test getPositionedModels
+        //instance.getPositionedModels(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1678,10 +1678,10 @@
         done();
       });
     });
-    describe('updatePostionedModel', function() {
-      it('should call updatePostionedModel successfully', function(done) {
-        //uncomment below and update the code to test updatePostionedModel
-        //instance.updatePostionedModel(function(error) {
+    describe('updatePositionedModel', function() {
+      it('should call updatePositionedModel successfully', function(done) {
+        //uncomment below and update the code to test updatePositionedModel
+        //instance.updatePositionedModel(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

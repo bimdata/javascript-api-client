@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.ModelOnModelPositionRequest();
+    instance = new bimdata.ModelOnModelPositionCreationRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,22 @@
       object[property] = value;
   }
 
-  describe('ModelOnModelPositionRequest', function() {
-    it('should create an instance of ModelOnModelPositionRequest', function() {
-      // uncomment below and update the code to test ModelOnModelPositionRequest
-      //var instance = new bimdata.ModelOnModelPositionRequest();
-      //expect(instance).to.be.a(bimdata.ModelOnModelPositionRequest);
+  describe('ModelOnModelPositionCreationRequest', function() {
+    it('should create an instance of ModelOnModelPositionCreationRequest', function() {
+      // uncomment below and update the code to test ModelOnModelPositionCreationRequest
+      //var instance = new bimdata.ModelOnModelPositionCreationRequest();
+      //expect(instance).to.be.a(bimdata.ModelOnModelPositionCreationRequest);
+    });
+
+    it('should have the property positionedModel (base name: "positioned_model")', function() {
+      // uncomment below and update the code to test the property positionedModel
+      //var instance = new bimdata.ModelOnModelPositionCreationRequest();
+      //expect(instance).to.be();
     });
 
     it('should have the property position (base name: "position")', function() {
       // uncomment below and update the code to test the property position
-      //var instance = new bimdata.ModelOnModelPositionRequest();
+      //var instance = new bimdata.ModelOnModelPositionCreationRequest();
       //expect(instance).to.be();
     });
 

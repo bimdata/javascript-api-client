@@ -112,7 +112,7 @@ import ModelInModelPosition from './model/ModelInModelPosition';
 import ModelLabel from './model/ModelLabel';
 import ModelLabelRequest from './model/ModelLabelRequest';
 import ModelOnModelPosition from './model/ModelOnModelPosition';
-import ModelOnModelPositionRequest from './model/ModelOnModelPositionRequest';
+import ModelOnModelPositionCreationRequest from './model/ModelOnModelPositionCreationRequest';
 import ModelSerializerWithoutChildren from './model/ModelSerializerWithoutChildren';
 import ModelWithPositioningPlan from './model/ModelWithPositioningPlan';
 import Organization from './model/Organization';
@@ -927,10 +927,10 @@ export {
     ModelOnModelPosition,
 
     /**
-     * The ModelOnModelPositionRequest model constructor.
-     * @property {module:model/ModelOnModelPositionRequest}
+     * The ModelOnModelPositionCreationRequest model constructor.
+     * @property {module:model/ModelOnModelPositionCreationRequest}
      */
-    ModelOnModelPositionRequest,
+    ModelOnModelPositionCreationRequest,
 
     /**
      * The ModelSerializerWithoutChildren model constructor.

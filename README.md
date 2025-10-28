@@ -350,7 +350,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**createMultiPageModel**](docs/ModelApi.md#createMultiPageModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/create-multipage-model | Create a multi page model
 *bimdata.ModelApi* | [**createPhotosphere**](docs/ModelApi.md#createPhotosphere) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-photosphere | Create a photopshere model from an image file
 *bimdata.ModelApi* | [**createPhotosphereBuilding**](docs/ModelApi.md#createPhotosphereBuilding) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-photosphere-building | Create an empty Photosphere Building Model
-*bimdata.ModelApi* | [**createPostionedModel**](docs/ModelApi.md#createPostionedModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model | Add a child model and it&#39;s position on the model
+*bimdata.ModelApi* | [**createPositionedModel**](docs/ModelApi.md#createPositionedModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model | Add a child model and it&#39;s position on the model
 *bimdata.ModelApi* | [**createPropertySet**](docs/ModelApi.md#createPropertySet) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset | Create one or many PropertySet
 *bimdata.ModelApi* | [**createPropertySetElementRelations**](docs/ModelApi.md#createPropertySetElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset-element | Create association between PropertySet and element
 *bimdata.ModelApi* | [**createRawElements**](docs/ModelApi.md#createRawElements) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/raw | Create elements in an optimized format
@@ -375,7 +375,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**deleteModelPropertyDefinition**](docs/ModelApi.md#deleteModelPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Delete a PropertyDefinitions of a model
 *bimdata.ModelApi* | [**deleteModelUnit**](docs/ModelApi.md#deleteModelUnit) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Delete a Unit of a model
 *bimdata.ModelApi* | [**deleteModelWithoutDoc**](docs/ModelApi.md#deleteModelWithoutDoc) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/delete-model | Delete the Model without deleting the related document
-*bimdata.ModelApi* | [**deletePostionedModel**](docs/ModelApi.md#deletePostionedModel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Remove a child model and its position from the model
+*bimdata.ModelApi* | [**deletePositionedModel**](docs/ModelApi.md#deletePositionedModel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Remove a child model and its position from the model
 *bimdata.ModelApi* | [**deletePropertySet**](docs/ModelApi.md#deletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Delete a PropertySet of a model
 *bimdata.ModelApi* | [**deleteSpace**](docs/ModelApi.md#deleteSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id} | Delete a space
 *bimdata.ModelApi* | [**deleteStorey**](docs/ModelApi.md#deleteStorey) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{uuid} | Delete a storey of a model
@@ -423,8 +423,8 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**getModelUnit**](docs/ModelApi.md#getModelUnit) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Retrieve a Unit of a model
 *bimdata.ModelApi* | [**getModelUnits**](docs/ModelApi.md#getModelUnits) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit | Retrieve all Units of a model
 *bimdata.ModelApi* | [**getModels**](docs/ModelApi.md#getModels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model | Retrieve all models
-*bimdata.ModelApi* | [**getPostionedModel**](docs/ModelApi.md#getPostionedModel) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Retrieve one specific child model &amp; position on the model
-*bimdata.ModelApi* | [**getPostionedModels**](docs/ModelApi.md#getPostionedModels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model | Retrieve all positioned child model &amp; positions on the model
+*bimdata.ModelApi* | [**getPositionedModel**](docs/ModelApi.md#getPositionedModel) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Retrieve one specific child model &amp; position on the model
+*bimdata.ModelApi* | [**getPositionedModels**](docs/ModelApi.md#getPositionedModels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model | Retrieve all positioned child model &amp; positions on the model
 *bimdata.ModelApi* | [**getProcessorHandler**](docs/ModelApi.md#getProcessorHandler) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id} | Retrieve a processor handler
 *bimdata.ModelApi* | [**getProcessorHandlers**](docs/ModelApi.md#getProcessorHandlers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler | Get all processor handlers
 *bimdata.ModelApi* | [**getPropertiesTypes**](docs/ModelApi.md#getPropertiesTypes) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/properties | Retrieve all property types and their value type used in this model
@@ -478,7 +478,7 @@ Class | Method | HTTP request | Description
 *bimdata.ModelApi* | [**updateOrderBuildingPlan**](docs/ModelApi.md#updateOrderBuildingPlan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/order | Update order of all plan of a building
 *bimdata.ModelApi* | [**updateOrderStoreyPlan**](docs/ModelApi.md#updateOrderStoreyPlan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/order | Update order of all plan of a storey
 *bimdata.ModelApi* | [**updateOrderStoreys**](docs/ModelApi.md#updateOrderStoreys) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/order | Update order of all storey of a model
-*bimdata.ModelApi* | [**updatePostionedModel**](docs/ModelApi.md#updatePostionedModel) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Update the position of a child model on the model
+*bimdata.ModelApi* | [**updatePositionedModel**](docs/ModelApi.md#updatePositionedModel) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Update the position of a child model on the model
 *bimdata.ModelApi* | [**updateProcessorHandler**](docs/ModelApi.md#updateProcessorHandler) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id} | Update the status of a processor handler
 *bimdata.ModelApi* | [**updatePropertySet**](docs/ModelApi.md#updatePropertySet) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Update some fields of a PropertySet
 *bimdata.ModelApi* | [**updateSpace**](docs/ModelApi.md#updateSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id} | Update some fields of a space
@@ -608,7 +608,7 @@ Class | Method | HTTP request | Description
  - [bimdata.ModelLabel](docs/ModelLabel.md)
  - [bimdata.ModelLabelRequest](docs/ModelLabelRequest.md)
  - [bimdata.ModelOnModelPosition](docs/ModelOnModelPosition.md)
- - [bimdata.ModelOnModelPositionRequest](docs/ModelOnModelPositionRequest.md)
+ - [bimdata.ModelOnModelPositionCreationRequest](docs/ModelOnModelPositionCreationRequest.md)
  - [bimdata.ModelSerializerWithoutChildren](docs/ModelSerializerWithoutChildren.md)
  - [bimdata.ModelWithPositioningPlan](docs/ModelWithPositioningPlan.md)
  - [bimdata.Organization](docs/Organization.md)

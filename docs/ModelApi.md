@@ -39,7 +39,7 @@ Method | HTTP request | Description
 [**createMultiPageModel**](ModelApi.md#createMultiPageModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/create-multipage-model | Create a multi page model
 [**createPhotosphere**](ModelApi.md#createPhotosphere) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-photosphere | Create a photopshere model from an image file
 [**createPhotosphereBuilding**](ModelApi.md#createPhotosphereBuilding) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-photosphere-building | Create an empty Photosphere Building Model
-[**createPostionedModel**](ModelApi.md#createPostionedModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model | Add a child model and it&#39;s position on the model
+[**createPositionedModel**](ModelApi.md#createPositionedModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model | Add a child model and it&#39;s position on the model
 [**createPropertySet**](ModelApi.md#createPropertySet) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset | Create one or many PropertySet
 [**createPropertySetElementRelations**](ModelApi.md#createPropertySetElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset-element | Create association between PropertySet and element
 [**createRawElements**](ModelApi.md#createRawElements) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/raw | Create elements in an optimized format
@@ -64,7 +64,7 @@ Method | HTTP request | Description
 [**deleteModelPropertyDefinition**](ModelApi.md#deleteModelPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Delete a PropertyDefinitions of a model
 [**deleteModelUnit**](ModelApi.md#deleteModelUnit) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Delete a Unit of a model
 [**deleteModelWithoutDoc**](ModelApi.md#deleteModelWithoutDoc) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/delete-model | Delete the Model without deleting the related document
-[**deletePostionedModel**](ModelApi.md#deletePostionedModel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Remove a child model and its position from the model
+[**deletePositionedModel**](ModelApi.md#deletePositionedModel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Remove a child model and its position from the model
 [**deletePropertySet**](ModelApi.md#deletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Delete a PropertySet of a model
 [**deleteSpace**](ModelApi.md#deleteSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id} | Delete a space
 [**deleteStorey**](ModelApi.md#deleteStorey) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{uuid} | Delete a storey of a model
@@ -112,8 +112,8 @@ Method | HTTP request | Description
 [**getModelUnit**](ModelApi.md#getModelUnit) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Retrieve a Unit of a model
 [**getModelUnits**](ModelApi.md#getModelUnits) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit | Retrieve all Units of a model
 [**getModels**](ModelApi.md#getModels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model | Retrieve all models
-[**getPostionedModel**](ModelApi.md#getPostionedModel) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Retrieve one specific child model &amp; position on the model
-[**getPostionedModels**](ModelApi.md#getPostionedModels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model | Retrieve all positioned child model &amp; positions on the model
+[**getPositionedModel**](ModelApi.md#getPositionedModel) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Retrieve one specific child model &amp; position on the model
+[**getPositionedModels**](ModelApi.md#getPositionedModels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model | Retrieve all positioned child model &amp; positions on the model
 [**getProcessorHandler**](ModelApi.md#getProcessorHandler) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id} | Retrieve a processor handler
 [**getProcessorHandlers**](ModelApi.md#getProcessorHandlers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler | Get all processor handlers
 [**getPropertiesTypes**](ModelApi.md#getPropertiesTypes) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/properties | Retrieve all property types and their value type used in this model
@@ -167,7 +167,7 @@ Method | HTTP request | Description
 [**updateOrderBuildingPlan**](ModelApi.md#updateOrderBuildingPlan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/order | Update order of all plan of a building
 [**updateOrderStoreyPlan**](ModelApi.md#updateOrderStoreyPlan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/order | Update order of all plan of a storey
 [**updateOrderStoreys**](ModelApi.md#updateOrderStoreys) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/order | Update order of all storey of a model
-[**updatePostionedModel**](ModelApi.md#updatePostionedModel) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Update the position of a child model on the model
+[**updatePositionedModel**](ModelApi.md#updatePositionedModel) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Update the position of a child model on the model
 [**updateProcessorHandler**](ModelApi.md#updateProcessorHandler) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id} | Update the status of a processor handler
 [**updatePropertySet**](ModelApi.md#updatePropertySet) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Update some fields of a PropertySet
 [**updateSpace**](ModelApi.md#updateSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id} | Update some fields of a space
@@ -2590,9 +2590,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## createPostionedModel
+## createPositionedModel
 
-> ModelOnModelPosition createPostionedModel(cloudPk, id, modelPk, projectPk, modelOnModelPositionRequest)
+> ModelOnModelPosition createPositionedModel(cloudPk, modelPk, projectPk, modelOnModelPositionCreationRequest)
 
 Add a child model and it&#39;s position on the model
 
@@ -2622,11 +2622,10 @@ Bearer.apiKey = 'YOUR API KEY';
 
 let apiInstance = new bimdata.ModelApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
-let id = 56; // Number | ID of the positioned model
 let modelPk = 56; // Number | ID of the host model in which {id} is positioned
 let projectPk = 56; // Number | A unique integer value identifying this project.
-let modelOnModelPositionRequest = new bimdata.ModelOnModelPositionRequest(); // ModelOnModelPositionRequest | 
-apiInstance.createPostionedModel(cloudPk, id, modelPk, projectPk, modelOnModelPositionRequest).then((data) => {
+let modelOnModelPositionCreationRequest = new bimdata.ModelOnModelPositionCreationRequest(); // ModelOnModelPositionCreationRequest | 
+apiInstance.createPositionedModel(cloudPk, modelPk, projectPk, modelOnModelPositionCreationRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2640,10 +2639,9 @@ apiInstance.createPostionedModel(cloudPk, id, modelPk, projectPk, modelOnModelPo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
- **id** | **Number**| ID of the positioned model | 
  **modelPk** | **Number**| ID of the host model in which {id} is positioned | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **modelOnModelPositionRequest** | [**ModelOnModelPositionRequest**](ModelOnModelPositionRequest.md)|  | 
+ **modelOnModelPositionCreationRequest** | [**ModelOnModelPositionCreationRequest**](ModelOnModelPositionCreationRequest.md)|  | 
 
 ### Return type
 
@@ -4275,9 +4273,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## deletePostionedModel
+## deletePositionedModel
 
-> deletePostionedModel(cloudPk, id, modelPk, projectPk)
+> deletePositionedModel(cloudPk, id, modelPk, projectPk)
 
 Remove a child model and its position from the model
 
@@ -4307,10 +4305,10 @@ Bearer.apiKey = 'YOUR API KEY';
 
 let apiInstance = new bimdata.ModelApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
-let id = 56; // Number | ID of the positioned model
+let id = 56; // Number | A unique integer value identifying this model on model position.
 let modelPk = 56; // Number | ID of the host model in which {id} is positioned
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.deletePostionedModel(cloudPk, id, modelPk, projectPk).then(() => {
+apiInstance.deletePositionedModel(cloudPk, id, modelPk, projectPk).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -4324,7 +4322,7 @@ apiInstance.deletePostionedModel(cloudPk, id, modelPk, projectPk).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
- **id** | **Number**| ID of the positioned model | 
+ **id** | **Number**| A unique integer value identifying this model on model position. | 
  **modelPk** | **Number**| ID of the host model in which {id} is positioned | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
 
@@ -7535,9 +7533,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getPostionedModel
+## getPositionedModel
 
-> ModelOnModelPosition getPostionedModel(cloudPk, id, modelPk, projectPk)
+> ModelOnModelPosition getPositionedModel(cloudPk, id, modelPk, projectPk)
 
 Retrieve one specific child model &amp; position on the model
 
@@ -7570,7 +7568,7 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let id = 56; // Number | ID of the positioned model
 let modelPk = 56; // Number | ID of the host model in which {id} is positioned
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.getPostionedModel(cloudPk, id, modelPk, projectPk).then((data) => {
+apiInstance.getPositionedModel(cloudPk, id, modelPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7602,13 +7600,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getPostionedModels
+## getPositionedModels
 
-> [ModelOnModelPosition] getPostionedModels(cloudPk, id, modelPk, projectPk)
+> [ModelOnModelPosition] getPositionedModels(cloudPk, modelPk, projectPk)
 
 Retrieve all positioned child model &amp; positions on the model
 
-Retrieve all postitionned child model &amp; positions on the model  Required scopes: ifc:read, model:read
+Retrieve all positioned child model &amp; positions on the model  Required scopes: ifc:read, model:read
 
 ### Example
 
@@ -7634,10 +7632,9 @@ Bearer.apiKey = 'YOUR API KEY';
 
 let apiInstance = new bimdata.ModelApi();
 let cloudPk = 56; // Number | A unique integer value identifying this cloud.
-let id = 56; // Number | ID of the positioned model
 let modelPk = 56; // Number | ID of the host model in which {id} is positioned
 let projectPk = 56; // Number | A unique integer value identifying this project.
-apiInstance.getPostionedModels(cloudPk, id, modelPk, projectPk).then((data) => {
+apiInstance.getPositionedModels(cloudPk, modelPk, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7651,7 +7648,6 @@ apiInstance.getPostionedModels(cloudPk, id, modelPk, projectPk).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
- **id** | **Number**| ID of the positioned model | 
  **modelPk** | **Number**| ID of the host model in which {id} is positioned | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
 
@@ -9232,7 +9228,7 @@ Name | Type | Description  | Notes
 
 ## listModelsPositionedIn
 
-> [ModelInModelPosition] listModelsPositionedIn(cloudPk, id, projectPk, opts)
+> [ModelInModelPosition] listModelsPositionedIn(cloudPk, id, projectPk)
 
 List all models where the model is positioned in
 
@@ -9264,12 +9260,7 @@ let apiInstance = new bimdata.ModelApi();
 let cloudPk = 56; // Number | 
 let id = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | 
-let opts = {
-  'source': "source_example", // String | * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
-  'status': ["null"], // [String] | * `C` - completed * `D` - deleted * `P` - pending * `W` - waiting * `I` - in process * `E` - errored * `X` - won't fix
-  'type': ["null"] // [String] | * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING * `PHOTOSPHERE` - PHOTOSPHERE * `PHOTOSPHERE_BUILDING` - PHOTOSPHERE_BUILDING
-};
-apiInstance.listModelsPositionedIn(cloudPk, id, projectPk, opts).then((data) => {
+apiInstance.listModelsPositionedIn(cloudPk, id, projectPk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9285,9 +9276,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**|  | 
- **source** | **String**| * &#x60;UPLOAD&#x60; - UPLOAD * &#x60;SPLIT&#x60; - SPLIT * &#x60;MERGE&#x60; - MERGE * &#x60;EXPORT&#x60; - EXPORT * &#x60;OPTIMIZED&#x60; - OPTIMIZED | [optional] 
- **status** | [**[String]**](String.md)| * &#x60;C&#x60; - completed * &#x60;D&#x60; - deleted * &#x60;P&#x60; - pending * &#x60;W&#x60; - waiting * &#x60;I&#x60; - in process * &#x60;E&#x60; - errored * &#x60;X&#x60; - won&#39;t fix | [optional] 
- **type** | [**[String]**](String.md)| * &#x60;IFC&#x60; - IFC * &#x60;DWG&#x60; - DWG * &#x60;DXF&#x60; - DXF * &#x60;GLTF&#x60; - GLTF * &#x60;PDF&#x60; - PDF * &#x60;JPEG&#x60; - JPEG * &#x60;PNG&#x60; - PNG * &#x60;OBJ&#x60; - OBJ * &#x60;POINT_CLOUD&#x60; - POINT_CLOUD * &#x60;METABUILDING&#x60; - METABUILDING * &#x60;PHOTOSPHERE&#x60; - PHOTOSPHERE * &#x60;PHOTOSPHERE_BUILDING&#x60; - PHOTOSPHERE_BUILDING | [optional] 
 
 ### Return type
 
@@ -11344,9 +11332,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## updatePostionedModel
+## updatePositionedModel
 
-> ModelOnModelPosition updatePostionedModel(cloudPk, id, modelPk, projectPk, opts)
+> ModelOnModelPosition updatePositionedModel(cloudPk, id, modelPk, projectPk, opts)
 
 Update the position of a child model on the model
 
@@ -11382,7 +11370,7 @@ let projectPk = 56; // Number | A unique integer value identifying this project.
 let opts = {
   'patchedModelOnModelPositionRequest': new bimdata.PatchedModelOnModelPositionRequest() // PatchedModelOnModelPositionRequest | 
 };
-apiInstance.updatePostionedModel(cloudPk, id, modelPk, projectPk, opts).then((data) => {
+apiInstance.updatePositionedModel(cloudPk, id, modelPk, projectPk, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
