@@ -39,6 +39,7 @@ Method | HTTP request | Description
 [**createMultiPageModel**](ModelApi.md#createMultiPageModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/create-multipage-model | Create a multi page model
 [**createPhotosphere**](ModelApi.md#createPhotosphere) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-photosphere | Create a photopshere model from an image file
 [**createPhotosphereBuilding**](ModelApi.md#createPhotosphereBuilding) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/create-photosphere-building | Create an empty Photosphere Building Model
+[**createPostionedModel**](ModelApi.md#createPostionedModel) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model | Add a child model and it&#39;s position on the model
 [**createPropertySet**](ModelApi.md#createPropertySet) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset | Create one or many PropertySet
 [**createPropertySetElementRelations**](ModelApi.md#createPropertySetElementRelations) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset-element | Create association between PropertySet and element
 [**createRawElements**](ModelApi.md#createRawElements) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/raw | Create elements in an optimized format
@@ -63,6 +64,7 @@ Method | HTTP request | Description
 [**deleteModelPropertyDefinition**](ModelApi.md#deleteModelPropertyDefinition) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertydefinition/{id} | Delete a PropertyDefinitions of a model
 [**deleteModelUnit**](ModelApi.md#deleteModelUnit) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Delete a Unit of a model
 [**deleteModelWithoutDoc**](ModelApi.md#deleteModelWithoutDoc) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/delete-model | Delete the Model without deleting the related document
+[**deletePostionedModel**](ModelApi.md#deletePostionedModel) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Remove a child model and its position from the model
 [**deletePropertySet**](ModelApi.md#deletePropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Delete a PropertySet of a model
 [**deleteSpace**](ModelApi.md#deleteSpace) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id} | Delete a space
 [**deleteStorey**](ModelApi.md#deleteStorey) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{uuid} | Delete a storey of a model
@@ -110,6 +112,8 @@ Method | HTTP request | Description
 [**getModelUnit**](ModelApi.md#getModelUnit) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit/{id} | Retrieve a Unit of a model
 [**getModelUnits**](ModelApi.md#getModelUnits) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/unit | Retrieve all Units of a model
 [**getModels**](ModelApi.md#getModels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model | Retrieve all models
+[**getPostionedModel**](ModelApi.md#getPostionedModel) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Retrieve one specific child model &amp; position on the model
+[**getPostionedModels**](ModelApi.md#getPostionedModels) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model | Retrieve all positioned child model &amp; positions on the model
 [**getProcessorHandler**](ModelApi.md#getProcessorHandler) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id} | Retrieve a processor handler
 [**getProcessorHandlers**](ModelApi.md#getProcessorHandlers) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler | Get all processor handlers
 [**getPropertiesTypes**](ModelApi.md#getPropertiesTypes) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/properties | Retrieve all property types and their value type used in this model
@@ -133,6 +137,7 @@ Method | HTTP request | Description
 [**getZones**](ModelApi.md#getZones) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/zone | Retrieve zones of a model
 [**linkDocumentsOfElement**](ModelApi.md#linkDocumentsOfElement) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/documents | Link one or many documents to an element
 [**listClassificationElementRelations**](ModelApi.md#listClassificationElementRelations) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/classification-element | List all associations between classifications and elements
+[**listModelsPositionedIn**](ModelApi.md#listModelsPositionedIn) | **GET** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/positioned-in | List all models where the model is positioned in
 [**mergeIfcs**](ModelApi.md#mergeIfcs) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/merge | Merge IFC files
 [**optimizeIfc**](ModelApi.md#optimizeIfc) | **POST** /cloud/{cloud_pk}/project/{project_pk}/model/{id}/optimize | Optimize the IFC
 [**removeAllElementPropertySet**](ModelApi.md#removeAllElementPropertySet) | **DELETE** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/element/{element_uuid}/propertyset/all | Remove all property sets from element
@@ -162,6 +167,7 @@ Method | HTTP request | Description
 [**updateOrderBuildingPlan**](ModelApi.md#updateOrderBuildingPlan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/building/{building_uuid}/plan/order | Update order of all plan of a building
 [**updateOrderStoreyPlan**](ModelApi.md#updateOrderStoreyPlan) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/{storey_uuid}/plan/order | Update order of all plan of a storey
 [**updateOrderStoreys**](ModelApi.md#updateOrderStoreys) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/storey/order | Update order of all storey of a model
+[**updatePostionedModel**](ModelApi.md#updatePostionedModel) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id} | Update the position of a child model on the model
 [**updateProcessorHandler**](ModelApi.md#updateProcessorHandler) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/processorhandler/{id} | Update the status of a processor handler
 [**updatePropertySet**](ModelApi.md#updatePropertySet) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/propertyset/{id} | Update some fields of a PropertySet
 [**updateSpace**](ModelApi.md#updateSpace) | **PATCH** /cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/space/{id} | Update some fields of a space
@@ -2584,6 +2590,75 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## createPostionedModel
+
+> ModelOnModelPosition createPostionedModel(cloudPk, id, modelPk, projectPk, modelOnModelPositionRequest)
+
+Add a child model and it&#39;s position on the model
+
+Add a child model and it&#39;s position on the model  Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let id = 56; // Number | ID of the positioned model
+let modelPk = 56; // Number | ID of the host model in which {id} is positioned
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let modelOnModelPositionRequest = new bimdata.ModelOnModelPositionRequest(); // ModelOnModelPositionRequest | 
+apiInstance.createPostionedModel(cloudPk, id, modelPk, projectPk, modelOnModelPositionRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **id** | **Number**| ID of the positioned model | 
+ **modelPk** | **Number**| ID of the host model in which {id} is positioned | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **modelOnModelPositionRequest** | [**ModelOnModelPositionRequest**](ModelOnModelPositionRequest.md)|  | 
+
+### Return type
+
+[**ModelOnModelPosition**](ModelOnModelPosition.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
 ## createPropertySet
 
 > [PropertySet] createPropertySet(cloudPk, modelPk, projectPk, propertySetRequest)
@@ -4185,6 +4260,73 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**|  | 
  **id** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## deletePostionedModel
+
+> deletePostionedModel(cloudPk, id, modelPk, projectPk)
+
+Remove a child model and its position from the model
+
+Remove a child model and its position from the model  Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let id = 56; // Number | ID of the positioned model
+let modelPk = 56; // Number | ID of the host model in which {id} is positioned
+let projectPk = 56; // Number | A unique integer value identifying this project.
+apiInstance.deletePostionedModel(cloudPk, id, modelPk, projectPk).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **id** | **Number**| ID of the positioned model | 
+ **modelPk** | **Number**| ID of the host model in which {id} is positioned | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
 
 ### Return type
 
@@ -7393,6 +7535,140 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getPostionedModel
+
+> ModelOnModelPosition getPostionedModel(cloudPk, id, modelPk, projectPk)
+
+Retrieve one specific child model &amp; position on the model
+
+Retrieve one specific child model &amp; position on the model  Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let id = 56; // Number | ID of the positioned model
+let modelPk = 56; // Number | ID of the host model in which {id} is positioned
+let projectPk = 56; // Number | A unique integer value identifying this project.
+apiInstance.getPostionedModel(cloudPk, id, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **id** | **Number**| ID of the positioned model | 
+ **modelPk** | **Number**| ID of the host model in which {id} is positioned | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+
+### Return type
+
+[**ModelOnModelPosition**](ModelOnModelPosition.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getPostionedModels
+
+> [ModelOnModelPosition] getPostionedModels(cloudPk, id, modelPk, projectPk)
+
+Retrieve all positioned child model &amp; positions on the model
+
+Retrieve all postitionned child model &amp; positions on the model  Required scopes: ifc:read, model:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let id = 56; // Number | ID of the positioned model
+let modelPk = 56; // Number | ID of the host model in which {id} is positioned
+let projectPk = 56; // Number | A unique integer value identifying this project.
+apiInstance.getPostionedModels(cloudPk, id, modelPk, projectPk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **id** | **Number**| ID of the positioned model | 
+ **modelPk** | **Number**| ID of the host model in which {id} is positioned | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+
+### Return type
+
+[**[ModelOnModelPosition]**](ModelOnModelPosition.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getProcessorHandler
 
 > ProcessorHandler getProcessorHandler(cloudPk, id, modelPk, projectPk)
@@ -8943,6 +9219,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[ElementClassificationRelation]**](ElementClassificationRelation.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## listModelsPositionedIn
+
+> [ModelInModelPosition] listModelsPositionedIn(cloudPk, id, projectPk, opts)
+
+List all models where the model is positioned in
+
+List all models where the model is positioned in.
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = 56; // Number | 
+let id = 56; // Number | A unique integer value identifying this model.
+let projectPk = 56; // Number | 
+let opts = {
+  'source': "source_example", // String | * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
+  'status': ["null"], // [String] | * `C` - completed * `D` - deleted * `P` - pending * `W` - waiting * `I` - in process * `E` - errored * `X` - won't fix
+  'type': ["null"] // [String] | * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING * `PHOTOSPHERE` - PHOTOSPHERE * `PHOTOSPHERE_BUILDING` - PHOTOSPHERE_BUILDING
+};
+apiInstance.listModelsPositionedIn(cloudPk, id, projectPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**|  | 
+ **id** | **Number**| A unique integer value identifying this model. | 
+ **projectPk** | **Number**|  | 
+ **source** | **String**| * &#x60;UPLOAD&#x60; - UPLOAD * &#x60;SPLIT&#x60; - SPLIT * &#x60;MERGE&#x60; - MERGE * &#x60;EXPORT&#x60; - EXPORT * &#x60;OPTIMIZED&#x60; - OPTIMIZED | [optional] 
+ **status** | [**[String]**](String.md)| * &#x60;C&#x60; - completed * &#x60;D&#x60; - deleted * &#x60;P&#x60; - pending * &#x60;W&#x60; - waiting * &#x60;I&#x60; - in process * &#x60;E&#x60; - errored * &#x60;X&#x60; - won&#39;t fix | [optional] 
+ **type** | [**[String]**](String.md)| * &#x60;IFC&#x60; - IFC * &#x60;DWG&#x60; - DWG * &#x60;DXF&#x60; - DXF * &#x60;GLTF&#x60; - GLTF * &#x60;PDF&#x60; - PDF * &#x60;JPEG&#x60; - JPEG * &#x60;PNG&#x60; - PNG * &#x60;OBJ&#x60; - OBJ * &#x60;POINT_CLOUD&#x60; - POINT_CLOUD * &#x60;METABUILDING&#x60; - METABUILDING * &#x60;PHOTOSPHERE&#x60; - PHOTOSPHERE * &#x60;PHOTOSPHERE_BUILDING&#x60; - PHOTOSPHERE_BUILDING | [optional] 
+
+### Return type
+
+[**[ModelInModelPosition]**](ModelInModelPosition.md)
 
 ### Authorization
 
@@ -10984,6 +11333,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[Storey]**](Storey.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+
+## updatePostionedModel
+
+> ModelOnModelPosition updatePostionedModel(cloudPk, id, modelPk, projectPk, opts)
+
+Update the position of a child model on the model
+
+Update the position of a child model on the model  Required scopes: ifc:write, model:write
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.ModelApi();
+let cloudPk = 56; // Number | A unique integer value identifying this cloud.
+let id = 56; // Number | ID of the positioned model
+let modelPk = 56; // Number | ID of the host model in which {id} is positioned
+let projectPk = 56; // Number | A unique integer value identifying this project.
+let opts = {
+  'patchedModelOnModelPositionRequest': new bimdata.PatchedModelOnModelPositionRequest() // PatchedModelOnModelPositionRequest | 
+};
+apiInstance.updatePostionedModel(cloudPk, id, modelPk, projectPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
+ **id** | **Number**| ID of the positioned model | 
+ **modelPk** | **Number**| ID of the host model in which {id} is positioned | 
+ **projectPk** | **Number**| A unique integer value identifying this project. | 
+ **patchedModelOnModelPositionRequest** | [**PatchedModelOnModelPositionRequest**](PatchedModelOnModelPositionRequest.md)|  | [optional] 
+
+### Return type
+
+[**ModelOnModelPosition**](ModelOnModelPosition.md)
 
 ### Authorization
 

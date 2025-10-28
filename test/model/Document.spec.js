@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fileType (base name: "file_type")', function() {
+      // uncomment below and update the code to test the property fileType
+      //var instance = new bimdata.Document();
+      //expect(instance).to.be();
+    });
+
     it('should have the property size (base name: "size")', function() {
       // uncomment below and update the code to test the property size
       //var instance = new bimdata.Document();

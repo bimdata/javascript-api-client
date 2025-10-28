@@ -398,6 +398,16 @@
         done();
       });
     });
+    describe('createPostionedModel', function() {
+      it('should call createPostionedModel successfully', function(done) {
+        //uncomment below and update the code to test createPostionedModel
+        //instance.createPostionedModel(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createPropertySet', function() {
       it('should call createPropertySet successfully', function(done) {
         //uncomment below and update the code to test createPropertySet
@@ -632,6 +642,16 @@
       it('should call deleteModelWithoutDoc successfully', function(done) {
         //uncomment below and update the code to test deleteModelWithoutDoc
         //instance.deleteModelWithoutDoc(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deletePostionedModel', function() {
+      it('should call deletePostionedModel successfully', function(done) {
+        //uncomment below and update the code to test deletePostionedModel
+        //instance.deletePostionedModel(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1108,6 +1128,26 @@
         done();
       });
     });
+    describe('getPostionedModel', function() {
+      it('should call getPostionedModel successfully', function(done) {
+        //uncomment below and update the code to test getPostionedModel
+        //instance.getPostionedModel(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getPostionedModels', function() {
+      it('should call getPostionedModels successfully', function(done) {
+        //uncomment below and update the code to test getPostionedModels
+        //instance.getPostionedModels(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getProcessorHandler', function() {
       it('should call getProcessorHandler successfully', function(done) {
         //uncomment below and update the code to test getProcessorHandler
@@ -1332,6 +1372,16 @@
       it('should call listClassificationElementRelations successfully', function(done) {
         //uncomment below and update the code to test listClassificationElementRelations
         //instance.listClassificationElementRelations(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listModelsPositionedIn', function() {
+      it('should call listModelsPositionedIn successfully', function(done) {
+        //uncomment below and update the code to test listModelsPositionedIn
+        //instance.listModelsPositionedIn(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -1622,6 +1672,16 @@
       it('should call updateOrderStoreys successfully', function(done) {
         //uncomment below and update the code to test updateOrderStoreys
         //instance.updateOrderStoreys(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updatePostionedModel', function() {
+      it('should call updatePostionedModel successfully', function(done) {
+        //uncomment below and update the code to test updatePostionedModel
+        //instance.updatePostionedModel(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

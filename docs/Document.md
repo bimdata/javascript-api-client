@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **fileName** | **String** | Full name of the file | [optional] 
 **description** | **String** | Description of the file | [optional] 
 **file** | **String** |  | 
+**fileType** | **String** | Lower case file extension | [readonly] 
 **size** | **Number** | Size of the file. | [readonly] 
 **tags** | [**[Tag]**](Tag.md) |  | [readonly] 
 **visas** | [**[Visa]**](Visa.md) |  | [readonly] 

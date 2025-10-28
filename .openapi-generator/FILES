@@ -100,8 +100,11 @@ docs/ModelDocumentRequest.md
 docs/ModelErrors.md
 docs/ModelErrorsRequest.md
 docs/ModelFiles.md
+docs/ModelInModelPosition.md
 docs/ModelLabel.md
 docs/ModelLabelRequest.md
+docs/ModelOnModelPosition.md
+docs/ModelOnModelPositionRequest.md
 docs/ModelSerializerWithoutChildren.md
 docs/ModelWithPositioningPlan.md
 docs/Organization.md
@@ -125,6 +128,7 @@ docs/PatchedIfcAccessTokenRequest.md
 docs/PatchedLayerRequest.md
 docs/PatchedMask2DRequest.md
 docs/PatchedModelLabelRequest.md
+docs/PatchedModelOnModelPositionRequest.md
 docs/PatchedModelRequest.md
 docs/PatchedPinRequest.md
 docs/PatchedPositioningPlanRequest.md
@@ -381,8 +385,11 @@ src/model/ModelDocumentRequest.js
 src/model/ModelErrors.js
 src/model/ModelErrorsRequest.js
 src/model/ModelFiles.js
+src/model/ModelInModelPosition.js
 src/model/ModelLabel.js
 src/model/ModelLabelRequest.js
+src/model/ModelOnModelPosition.js
+src/model/ModelOnModelPositionRequest.js
 src/model/ModelSerializerWithoutChildren.js
 src/model/ModelWithPositioningPlan.js
 src/model/Organization.js
@@ -406,6 +413,7 @@ src/model/PatchedIfcAccessTokenRequest.js
 src/model/PatchedLayerRequest.js
 src/model/PatchedMask2DRequest.js
 src/model/PatchedModelLabelRequest.js
+src/model/PatchedModelOnModelPositionRequest.js
 src/model/PatchedModelRequest.js
 src/model/PatchedPinRequest.js
 src/model/PatchedPositioningPlanRequest.js
@@ -656,8 +664,11 @@ test/model/ModelDocumentRequest.spec.js
 test/model/ModelErrors.spec.js
 test/model/ModelErrorsRequest.spec.js
 test/model/ModelFiles.spec.js
+test/model/ModelInModelPosition.spec.js
 test/model/ModelLabel.spec.js
 test/model/ModelLabelRequest.spec.js
+test/model/ModelOnModelPosition.spec.js
+test/model/ModelOnModelPositionRequest.spec.js
 test/model/ModelSerializerWithoutChildren.spec.js
 test/model/ModelWithPositioningPlan.spec.js
 test/model/Organization.spec.js
@@ -681,6 +692,7 @@ test/model/PatchedIfcAccessTokenRequest.spec.js
 test/model/PatchedLayerRequest.spec.js
 test/model/PatchedMask2DRequest.spec.js
 test/model/PatchedModelLabelRequest.spec.js
+test/model/PatchedModelOnModelPositionRequest.spec.js
 test/model/PatchedModelRequest.spec.js
 test/model/PatchedPinRequest.spec.js
 test/model/PatchedPositioningPlanRequest.spec.js

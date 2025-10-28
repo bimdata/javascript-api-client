@@ -67,7 +67,7 @@ class PatchedDocumentTextRequest {
 PatchedDocumentTextRequest.prototype['text'] = undefined;
 
 /**
- * * `spanish` - spanish * `french` - french * `german` - german * `english` - english * `italian` - italian
+ * * `german` - german * `french` - french * `spanish` - spanish * `italian` - italian * `english` - english
  * @member {module:model/PatchedDocumentTextRequest.LanguageEnum} language
  */
 PatchedDocumentTextRequest.prototype['language'] = undefined;
@@ -84,10 +84,10 @@ PatchedDocumentTextRequest.prototype['language'] = undefined;
 PatchedDocumentTextRequest['LanguageEnum'] = {
 
     /**
-     * value: "spanish"
+     * value: "german"
      * @const
      */
-    "spanish": "spanish",
+    "german": "german",
 
     /**
      * value: "french"
@@ -96,22 +96,22 @@ PatchedDocumentTextRequest['LanguageEnum'] = {
     "french": "french",
 
     /**
-     * value: "german"
+     * value: "spanish"
      * @const
      */
-    "german": "german",
-
-    /**
-     * value: "english"
-     * @const
-     */
-    "english": "english",
+    "spanish": "spanish",
 
     /**
      * value: "italian"
      * @const
      */
     "italian": "italian",
+
+    /**
+     * value: "english"
+     * @const
+     */
+    "english": "english",
 
     /**
      * value: "null"

@@ -108,8 +108,11 @@ import ModelDocumentRequest from './model/ModelDocumentRequest';
 import ModelErrors from './model/ModelErrors';
 import ModelErrorsRequest from './model/ModelErrorsRequest';
 import ModelFiles from './model/ModelFiles';
+import ModelInModelPosition from './model/ModelInModelPosition';
 import ModelLabel from './model/ModelLabel';
 import ModelLabelRequest from './model/ModelLabelRequest';
+import ModelOnModelPosition from './model/ModelOnModelPosition';
+import ModelOnModelPositionRequest from './model/ModelOnModelPositionRequest';
 import ModelSerializerWithoutChildren from './model/ModelSerializerWithoutChildren';
 import ModelWithPositioningPlan from './model/ModelWithPositioningPlan';
 import Organization from './model/Organization';
@@ -133,6 +136,7 @@ import PatchedIfcAccessTokenRequest from './model/PatchedIfcAccessTokenRequest';
 import PatchedLayerRequest from './model/PatchedLayerRequest';
 import PatchedMask2DRequest from './model/PatchedMask2DRequest';
 import PatchedModelLabelRequest from './model/PatchedModelLabelRequest';
+import PatchedModelOnModelPositionRequest from './model/PatchedModelOnModelPositionRequest';
 import PatchedModelRequest from './model/PatchedModelRequest';
 import PatchedPinRequest from './model/PatchedPinRequest';
 import PatchedPositioningPlanRequest from './model/PatchedPositioningPlanRequest';
@@ -899,6 +903,12 @@ export {
     ModelFiles,
 
     /**
+     * The ModelInModelPosition model constructor.
+     * @property {module:model/ModelInModelPosition}
+     */
+    ModelInModelPosition,
+
+    /**
      * The ModelLabel model constructor.
      * @property {module:model/ModelLabel}
      */
@@ -909,6 +919,18 @@ export {
      * @property {module:model/ModelLabelRequest}
      */
     ModelLabelRequest,
+
+    /**
+     * The ModelOnModelPosition model constructor.
+     * @property {module:model/ModelOnModelPosition}
+     */
+    ModelOnModelPosition,
+
+    /**
+     * The ModelOnModelPositionRequest model constructor.
+     * @property {module:model/ModelOnModelPositionRequest}
+     */
+    ModelOnModelPositionRequest,
 
     /**
      * The ModelSerializerWithoutChildren model constructor.
@@ -1047,6 +1069,12 @@ export {
      * @property {module:model/PatchedModelLabelRequest}
      */
     PatchedModelLabelRequest,
+
+    /**
+     * The PatchedModelOnModelPositionRequest model constructor.
+     * @property {module:model/PatchedModelOnModelPositionRequest}
+     */
+    PatchedModelOnModelPositionRequest,
 
     /**
      * The PatchedModelRequest model constructor.

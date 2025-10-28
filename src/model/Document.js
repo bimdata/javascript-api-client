@@ -30,6 +30,7 @@ class Document {
      * @param project {Number} 
      * @param name {String} Shown name of the file
      * @param file {String} 
+     * @param fileType {String} Lower case file extension
      * @param size {Number} Size of the file.
      * @param tags {Array.<module:model/Tag>} 
      * @param visas {Array.<module:model/Visa>} 
@@ -45,9 +46,9 @@ class Document {
      * @param officePreview {String} Office files will be converted as pdf to provide a web preview. Supported extensions are .ppt, .pptx, .odp, .xls, .xlsx, .ods, .doc, .docx, .odt
      * @param path {String} 
      */
-    constructor(id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview, path) { 
+    constructor(id, createdBy, project, name, file, fileType, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview, path) { 
         
-        Document.initialize(this, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview, path);
+        Document.initialize(this, id, createdBy, project, name, file, fileType, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview, path);
     }
 
     /**
@@ -55,12 +56,13 @@ class Document {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, createdBy, project, name, file, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview, path) { 
+    static initialize(obj, id, createdBy, project, name, file, fileType, size, tags, visas, createdAt, updatedAt, modelId, modelType, ifcId, headId, isHeadVersion, historyCount, userPermission, officePreview, path) { 
         obj['id'] = id;
         obj['created_by'] = createdBy;
         obj['project'] = project;
         obj['name'] = name;
         obj['file'] = file;
+        obj['file_type'] = fileType;
         obj['size'] = size;
         obj['tags'] = tags;
         obj['visas'] = visas;
@@ -111,6 +113,9 @@ class Document {
             }
             if (data.hasOwnProperty('file')) {
                 obj['file'] = ApiClient.convertToType(data['file'], 'String');
+            }
+            if (data.hasOwnProperty('file_type')) {
+                obj['file_type'] = ApiClient.convertToType(data['file_type'], 'String');
             }
             if (data.hasOwnProperty('size')) {
                 obj['size'] = ApiClient.convertToType(data['size'], 'Number');
@@ -203,6 +208,12 @@ Document.prototype['description'] = undefined;
  * @member {String} file
  */
 Document.prototype['file'] = undefined;
+
+/**
+ * Lower case file extension
+ * @member {String} file_type
+ */
+Document.prototype['file_type'] = undefined;
 
 /**
  * Size of the file.

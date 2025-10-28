@@ -43,14 +43,18 @@ import Model from '../model/Model';
 import ModelErrors from '../model/ModelErrors';
 import ModelErrorsRequest from '../model/ModelErrorsRequest';
 import ModelFiles from '../model/ModelFiles';
+import ModelInModelPosition from '../model/ModelInModelPosition';
 import ModelLabel from '../model/ModelLabel';
 import ModelLabelRequest from '../model/ModelLabelRequest';
+import ModelOnModelPosition from '../model/ModelOnModelPosition';
+import ModelOnModelPositionRequest from '../model/ModelOnModelPositionRequest';
 import PatchedDrawingRequest from '../model/PatchedDrawingRequest';
 import PatchedElementRequest from '../model/PatchedElementRequest';
 import PatchedIfcAccessTokenRequest from '../model/PatchedIfcAccessTokenRequest';
 import PatchedLayerRequest from '../model/PatchedLayerRequest';
 import PatchedMask2DRequest from '../model/PatchedMask2DRequest';
 import PatchedModelLabelRequest from '../model/PatchedModelLabelRequest';
+import PatchedModelOnModelPositionRequest from '../model/PatchedModelOnModelPositionRequest';
 import PatchedModelRequest from '../model/PatchedModelRequest';
 import PatchedPositioningPlanRequest from '../model/PatchedPositioningPlanRequest';
 import PatchedProcessorHandlerRequest from '../model/PatchedProcessorHandlerRequest';
@@ -2617,6 +2621,81 @@ export default class ModelApi {
 
 
     /**
+     * Add a child model and it's position on the model
+     * Add a child model and it's position on the model  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id ID of the positioned model
+     * @param {Number} modelPk ID of the host model in which {id} is positioned
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/ModelOnModelPositionRequest} modelOnModelPositionRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelOnModelPosition} and HTTP response
+     */
+    createPostionedModelWithHttpInfo(cloudPk, id, modelPk, projectPk, modelOnModelPositionRequest) {
+      let postBody = modelOnModelPositionRequest;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling createPostionedModel");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling createPostionedModel");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling createPostionedModel");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling createPostionedModel");
+      }
+      // verify the required parameter 'modelOnModelPositionRequest' is set
+      if (modelOnModelPositionRequest === undefined || modelOnModelPositionRequest === null) {
+        throw new Error("Missing the required parameter 'modelOnModelPositionRequest' when calling createPostionedModel");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = ModelOnModelPosition;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Add a child model and it's position on the model
+     * Add a child model and it's position on the model  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id ID of the positioned model
+     * @param {Number} modelPk ID of the host model in which {id} is positioned
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {module:model/ModelOnModelPositionRequest} modelOnModelPositionRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelOnModelPosition}
+     */
+    createPostionedModel(cloudPk, id, modelPk, projectPk, modelOnModelPositionRequest) {
+      return this.createPostionedModelWithHttpInfo(cloudPk, id, modelPk, projectPk, modelOnModelPositionRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create one or many PropertySet
      *  Bulk create available. You can either post an object or a list of objects. Is you post a list, the response will be a list (in the same order) of created objects or of errors if any If at least one create succeeded, the status code will be 201. If every create failed, the status code we'll be 400 with the list of errors   Required scopes: ifc:write, model:write
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -4269,6 +4348,75 @@ export default class ModelApi {
      */
     deleteModelWithoutDoc(cloudPk, id, projectPk) {
       return this.deleteModelWithoutDocWithHttpInfo(cloudPk, id, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Remove a child model and its position from the model
+     * Remove a child model and its position from the model  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id ID of the positioned model
+     * @param {Number} modelPk ID of the host model in which {id} is positioned
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deletePostionedModelWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling deletePostionedModel");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deletePostionedModel");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling deletePostionedModel");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling deletePostionedModel");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Remove a child model and its position from the model
+     * Remove a child model and its position from the model  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id ID of the positioned model
+     * @param {Number} modelPk ID of the host model in which {id} is positioned
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deletePostionedModel(cloudPk, id, modelPk, projectPk) {
+      return this.deletePostionedModelWithHttpInfo(cloudPk, id, modelPk, projectPk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7607,6 +7755,144 @@ export default class ModelApi {
 
 
     /**
+     * Retrieve one specific child model & position on the model
+     * Retrieve one specific child model & position on the model  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id ID of the positioned model
+     * @param {Number} modelPk ID of the host model in which {id} is positioned
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelOnModelPosition} and HTTP response
+     */
+    getPostionedModelWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getPostionedModel");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getPostionedModel");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getPostionedModel");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getPostionedModel");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ModelOnModelPosition;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve one specific child model & position on the model
+     * Retrieve one specific child model & position on the model  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id ID of the positioned model
+     * @param {Number} modelPk ID of the host model in which {id} is positioned
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelOnModelPosition}
+     */
+    getPostionedModel(cloudPk, id, modelPk, projectPk) {
+      return this.getPostionedModelWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Retrieve all positioned child model & positions on the model
+     * Retrieve all postitionned child model & positions on the model  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id ID of the positioned model
+     * @param {Number} modelPk ID of the host model in which {id} is positioned
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ModelOnModelPosition>} and HTTP response
+     */
+    getPostionedModelsWithHttpInfo(cloudPk, id, modelPk, projectPk) {
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling getPostionedModels");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getPostionedModels");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling getPostionedModels");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling getPostionedModels");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [ModelOnModelPosition];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Retrieve all positioned child model & positions on the model
+     * Retrieve all postitionned child model & positions on the model  Required scopes: ifc:read, model:read
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id ID of the positioned model
+     * @param {Number} modelPk ID of the host model in which {id} is positioned
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ModelOnModelPosition>}
+     */
+    getPostionedModels(cloudPk, id, modelPk, projectPk) {
+      return this.getPostionedModelsWithHttpInfo(cloudPk, id, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve a processor handler
      * Retrieve a processor handler  Required scopes: ifc:read, model:read
      * @param {Number} cloudPk A unique integer value identifying this cloud.
@@ -9180,6 +9466,80 @@ export default class ModelApi {
      */
     listClassificationElementRelations(cloudPk, modelPk, projectPk) {
       return this.listClassificationElementRelationsWithHttpInfo(cloudPk, modelPk, projectPk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List all models where the model is positioned in
+     * List all models where the model is positioned in.
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.source * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
+     * @param {Array.<module:model/String>} opts.status * `C` - completed * `D` - deleted * `P` - pending * `W` - waiting * `I` - in process * `E` - errored * `X` - won't fix
+     * @param {Array.<module:model/String>} opts.type * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING * `PHOTOSPHERE` - PHOTOSPHERE * `PHOTOSPHERE_BUILDING` - PHOTOSPHERE_BUILDING
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ModelInModelPosition>} and HTTP response
+     */
+    listModelsPositionedInWithHttpInfo(cloudPk, id, projectPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling listModelsPositionedIn");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling listModelsPositionedIn");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling listModelsPositionedIn");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+        'source': opts['source'],
+        'status': this.apiClient.buildCollectionParam(opts['status'], 'multi'),
+        'type': this.apiClient.buildCollectionParam(opts['type'], 'multi')
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [ModelInModelPosition];
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{id}/positioned-in', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List all models where the model is positioned in
+     * List all models where the model is positioned in.
+     * @param {Number} cloudPk 
+     * @param {Number} id A unique integer value identifying this model.
+     * @param {Number} projectPk 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.source * `UPLOAD` - UPLOAD * `SPLIT` - SPLIT * `MERGE` - MERGE * `EXPORT` - EXPORT * `OPTIMIZED` - OPTIMIZED
+     * @param {Array.<module:model/String>} opts.status * `C` - completed * `D` - deleted * `P` - pending * `W` - waiting * `I` - in process * `E` - errored * `X` - won't fix
+     * @param {Array.<module:model/String>} opts.type * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING * `PHOTOSPHERE` - PHOTOSPHERE * `PHOTOSPHERE_BUILDING` - PHOTOSPHERE_BUILDING
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ModelInModelPosition>}
+     */
+    listModelsPositionedIn(cloudPk, id, projectPk, opts) {
+      return this.listModelsPositionedInWithHttpInfo(cloudPk, id, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -11353,6 +11713,80 @@ export default class ModelApi {
      */
     updateOrderStoreys(cloudPk, modelPk, projectPk, requestBody) {
       return this.updateOrderStoreysWithHttpInfo(cloudPk, modelPk, projectPk, requestBody)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update the position of a child model on the model
+     * Update the position of a child model on the model  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id ID of the positioned model
+     * @param {Number} modelPk ID of the host model in which {id} is positioned
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedModelOnModelPositionRequest} opts.patchedModelOnModelPositionRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelOnModelPosition} and HTTP response
+     */
+    updatePostionedModelWithHttpInfo(cloudPk, id, modelPk, projectPk, opts) {
+      opts = opts || {};
+      let postBody = opts['patchedModelOnModelPositionRequest'];
+      // verify the required parameter 'cloudPk' is set
+      if (cloudPk === undefined || cloudPk === null) {
+        throw new Error("Missing the required parameter 'cloudPk' when calling updatePostionedModel");
+      }
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updatePostionedModel");
+      }
+      // verify the required parameter 'modelPk' is set
+      if (modelPk === undefined || modelPk === null) {
+        throw new Error("Missing the required parameter 'modelPk' when calling updatePostionedModel");
+      }
+      // verify the required parameter 'projectPk' is set
+      if (projectPk === undefined || projectPk === null) {
+        throw new Error("Missing the required parameter 'projectPk' when calling updatePostionedModel");
+      }
+
+      let pathParams = {
+        'cloud_pk': cloudPk,
+        'id': id,
+        'model_pk': modelPk,
+        'project_pk': projectPk
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = ModelOnModelPosition;
+      return this.apiClient.callApi(
+        '/cloud/{cloud_pk}/project/{project_pk}/model/{model_pk}/positioned-model/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update the position of a child model on the model
+     * Update the position of a child model on the model  Required scopes: ifc:write, model:write
+     * @param {Number} cloudPk A unique integer value identifying this cloud.
+     * @param {Number} id ID of the positioned model
+     * @param {Number} modelPk ID of the host model in which {id} is positioned
+     * @param {Number} projectPk A unique integer value identifying this project.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchedModelOnModelPositionRequest} opts.patchedModelOnModelPositionRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelOnModelPosition}
+     */
+    updatePostionedModel(cloudPk, id, modelPk, projectPk, opts) {
+      return this.updatePostionedModelWithHttpInfo(cloudPk, id, modelPk, projectPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
