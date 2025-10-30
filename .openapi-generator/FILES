@@ -25,6 +25,8 @@ docs/Coloring.md
 docs/ColoringDefinition.md
 docs/ColoringRequest.md
 docs/Comment.md
+docs/CommentEvent.md
+docs/CommentEventAction.md
 docs/CommentRequest.md
 docs/Component.md
 docs/ComponentRequest.md
@@ -236,6 +238,8 @@ docs/Tag.md
 docs/TagIdRequest.md
 docs/TagRequest.md
 docs/Topic.md
+docs/TopicEvent.md
+docs/TopicEventAction.md
 docs/TopicPin.md
 docs/TopicRequest.md
 docs/TopicStatus.md
@@ -311,6 +315,8 @@ src/model/Coloring.js
 src/model/ColoringDefinition.js
 src/model/ColoringRequest.js
 src/model/Comment.js
+src/model/CommentEvent.js
+src/model/CommentEventAction.js
 src/model/CommentRequest.js
 src/model/Component.js
 src/model/ComponentRequest.js
@@ -520,6 +526,8 @@ src/model/Tag.js
 src/model/TagIdRequest.js
 src/model/TagRequest.js
 src/model/Topic.js
+src/model/TopicEvent.js
+src/model/TopicEventAction.js
 src/model/TopicPin.js
 src/model/TopicRequest.js
 src/model/TopicStatus.js
@@ -590,6 +598,8 @@ test/model/Coloring.spec.js
 test/model/ColoringDefinition.spec.js
 test/model/ColoringRequest.spec.js
 test/model/Comment.spec.js
+test/model/CommentEvent.spec.js
+test/model/CommentEventAction.spec.js
 test/model/CommentRequest.spec.js
 test/model/Component.spec.js
 test/model/ComponentRequest.spec.js
@@ -799,6 +809,8 @@ test/model/Tag.spec.js
 test/model/TagIdRequest.spec.js
 test/model/TagRequest.spec.js
 test/model/Topic.spec.js
+test/model/TopicEvent.spec.js
+test/model/TopicEventAction.spec.js
 test/model/TopicPin.spec.js
 test/model/TopicRequest.spec.js
 test/model/TopicStatus.spec.js

@@ -38,6 +38,7 @@ Method | HTTP request | Description
 [**getColorings**](BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/coloring | Retrieve all colorings of a viewpoint
 [**getComment**](BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Retrieve a comment
 [**getComments**](BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments | Retrieve all comments
+[**getCommentsEvents**](BcfApi.md#getCommentsEvents) | **GET** /bcf/2.1/projects/{projects_pk}/topics/comments/events | Get comments events
 [**getDetailedExtensions**](BcfApi.md#getDetailedExtensions) | **GET** /bcf/2.1/projects/{id}/detailed-extensions | Retrieve project detailed extensions
 [**getDocumentReferences**](BcfApi.md#getDocumentReferences) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references | Retrieve all documents referenced by the topic
 [**getExtensions**](BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{id}/extensions | Retrieve project extensions
@@ -50,6 +51,7 @@ Method | HTTP request | Description
 [**getTopic**](BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Retrieve a topic
 [**getTopicViewpoints**](BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/topic-viewpoints | Retrieve all viewpoints attached to the topic
 [**getTopics**](BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | Retrieve all topics
+[**getTopicsEvents**](BcfApi.md#getTopicsEvents) | **GET** /bcf/2.1/projects/{projects_pk}/topics/events | Get topics events
 [**getTopicsPins**](BcfApi.md#getTopicsPins) | **GET** /bcf/2.1/projects/{projects_pk}/topics/pins | Get pins of all or many topics
 [**getUser**](BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | Get current user info
 [**getVersions**](BcfApi.md#getVersions) | **GET** /bcf/versions | Retrieve all supported BCF versions by this API
@@ -2282,6 +2284,73 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getCommentsEvents
+
+> [CommentEvent] getCommentsEvents(projectsPk, opts)
+
+Get comments events
+
+Get comments events  Required scopes: bcf:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let projectsPk = 56; // Number | 
+let opts = {
+  'filter': "filter_example", // String | OData filters as defined in BCF spec
+  'orderby': "orderby_example" // String | OData orderby as defined in BCF spec
+};
+apiInstance.getCommentsEvents(projectsPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectsPk** | **Number**|  | 
+ **filter** | **String**| OData filters as defined in BCF spec | [optional] 
+ **orderby** | **String**| OData orderby as defined in BCF spec | [optional] 
+
+### Return type
+
+[**[CommentEvent]**](CommentEvent.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getDetailedExtensions
 
 > DetailedExtensions getDetailedExtensions(id)
@@ -3075,6 +3144,73 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[Topic]**](Topic.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [BIMData_Connect](../README.md#BIMData_Connect), [BIMData_Connect](../README.md#BIMData_Connect), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getTopicsEvents
+
+> [TopicEvent] getTopicsEvents(projectsPk, opts)
+
+Get topics events
+
+Get topics events  Required scopes: bcf:read
+
+### Example
+
+```javascript
+import bimdata from '@bimdata/bimdata-api-client';
+let defaultClient = bimdata.ApiClient.instance;
+// Configure API key authorization: ApiKey
+let ApiKey = defaultClient.authentications['ApiKey'];
+ApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: BIMData_Connect
+let BIMData_Connect = defaultClient.authentications['BIMData_Connect'];
+BIMData_Connect.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: Bearer
+let Bearer = defaultClient.authentications['Bearer'];
+Bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new bimdata.BcfApi();
+let projectsPk = 56; // Number | 
+let opts = {
+  'filter': "filter_example", // String | OData filters as defined in BCF spec
+  'orderby': "orderby_example" // String | OData orderby as defined in BCF spec
+};
+apiInstance.getTopicsEvents(projectsPk, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectsPk** | **Number**|  | 
+ **filter** | **String**| OData filters as defined in BCF spec | [optional] 
+ **orderby** | **String**| OData orderby as defined in BCF spec | [optional] 
+
+### Return type
+
+[**[TopicEvent]**](TopicEvent.md)
 
 ### Authorization
 

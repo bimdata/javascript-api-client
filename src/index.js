@@ -34,6 +34,8 @@ import Coloring from './model/Coloring';
 import ColoringDefinition from './model/ColoringDefinition';
 import ColoringRequest from './model/ColoringRequest';
 import Comment from './model/Comment';
+import CommentEvent from './model/CommentEvent';
+import CommentEventAction from './model/CommentEventAction';
 import CommentRequest from './model/CommentRequest';
 import Component from './model/Component';
 import ComponentRequest from './model/ComponentRequest';
@@ -243,6 +245,8 @@ import Tag from './model/Tag';
 import TagIdRequest from './model/TagIdRequest';
 import TagRequest from './model/TagRequest';
 import Topic from './model/Topic';
+import TopicEvent from './model/TopicEvent';
+import TopicEventAction from './model/TopicEventAction';
 import TopicPin from './model/TopicPin';
 import TopicRequest from './model/TopicRequest';
 import TopicStatus from './model/TopicStatus';
@@ -457,6 +461,18 @@ export {
      * @property {module:model/Comment}
      */
     Comment,
+
+    /**
+     * The CommentEvent model constructor.
+     * @property {module:model/CommentEvent}
+     */
+    CommentEvent,
+
+    /**
+     * The CommentEventAction model constructor.
+     * @property {module:model/CommentEventAction}
+     */
+    CommentEventAction,
 
     /**
      * The CommentRequest model constructor.
@@ -1711,6 +1727,18 @@ export {
      * @property {module:model/Topic}
      */
     Topic,
+
+    /**
+     * The TopicEvent model constructor.
+     * @property {module:model/TopicEvent}
+     */
+    TopicEvent,
+
+    /**
+     * The TopicEventAction model constructor.
+     * @property {module:model/TopicEventAction}
+     */
+    TopicEventAction,
 
     /**
      * The TopicPin model constructor.

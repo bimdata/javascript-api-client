@@ -388,6 +388,16 @@
         done();
       });
     });
+    describe('getCommentsEvents', function() {
+      it('should call getCommentsEvents successfully', function(done) {
+        //uncomment below and update the code to test getCommentsEvents
+        //instance.getCommentsEvents(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getDetailedExtensions', function() {
       it('should call getDetailedExtensions successfully', function(done) {
         //uncomment below and update the code to test getDetailedExtensions
@@ -502,6 +512,16 @@
       it('should call getTopics successfully', function(done) {
         //uncomment below and update the code to test getTopics
         //instance.getTopics(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getTopicsEvents', function() {
+      it('should call getTopicsEvents successfully', function(done) {
+        //uncomment below and update the code to test getTopicsEvents
+        //instance.getTopicsEvents(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

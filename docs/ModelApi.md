@@ -7832,9 +7832,6 @@ let cloudPk = 56; // Number | A unique integer value identifying this cloud.
 let modelPk = 56; // Number | A unique integer value identifying this model.
 let projectPk = 56; // Number | A unique integer value identifying this project.
 let opts = {
-  'classification': "classification_example", // String | 
-  'classificationNotation': "classificationNotation_example", // String | 
-  'propertyFilter': "propertyFilter_example", // String | 
   'type': "type_example" // String | Filter by IfcType
 };
 apiInstance.getPropertiesTypes(cloudPk, modelPk, projectPk, opts).then((data) => {
@@ -7853,9 +7850,6 @@ Name | Type | Description  | Notes
  **cloudPk** | **Number**| A unique integer value identifying this cloud. | 
  **modelPk** | **Number**| A unique integer value identifying this model. | 
  **projectPk** | **Number**| A unique integer value identifying this project. | 
- **classification** | **String**|  | [optional] 
- **classificationNotation** | **String**|  | [optional] 
- **propertyFilter** | **String**|  | [optional] 
  **type** | **String**| Filter by IfcType | [optional] 
 
 ### Return type

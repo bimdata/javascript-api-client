@@ -8016,9 +8016,6 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.classification 
-     * @param {String} opts.classificationNotation 
-     * @param {String} opts.propertyFilter 
      * @param {String} opts.type Filter by IfcType
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyList>} and HTTP response
      */
@@ -8044,9 +8041,6 @@ export default class ModelApi {
         'project_pk': projectPk
       };
       let queryParams = {
-        'classification': opts['classification'],
-        'classification__notation': opts['classificationNotation'],
-        'property_filter': opts['propertyFilter'],
         'type': opts['type']
       };
       let headerParams = {
@@ -8072,9 +8066,6 @@ export default class ModelApi {
      * @param {Number} modelPk A unique integer value identifying this model.
      * @param {Number} projectPk A unique integer value identifying this project.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.classification 
-     * @param {String} opts.classificationNotation 
-     * @param {String} opts.propertyFilter 
      * @param {String} opts.type Filter by IfcType
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyList>}
      */

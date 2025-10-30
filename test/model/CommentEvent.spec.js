@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new bimdata.WriteFolderRequest();
+    instance = new bimdata.CommentEvent();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,40 @@
       object[property] = value;
   }
 
-  describe('WriteFolderRequest', function() {
-    it('should create an instance of WriteFolderRequest', function() {
-      // uncomment below and update the code to test WriteFolderRequest
-      //var instance = new bimdata.WriteFolderRequest();
-      //expect(instance).to.be.a(bimdata.WriteFolderRequest);
+  describe('CommentEvent', function() {
+    it('should create an instance of CommentEvent', function() {
+      // uncomment below and update the code to test CommentEvent
+      //var instance = new bimdata.CommentEvent();
+      //expect(instance).to.be.a(bimdata.CommentEvent);
     });
 
-    it('should have the property parentId (base name: "parent_id")', function() {
-      // uncomment below and update the code to test the property parentId
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property topicGuid (base name: "topic_guid")', function() {
+      // uncomment below and update the code to test the property topicGuid
+      //var instance = new bimdata.CommentEvent();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property commentGuid (base name: "comment_guid")', function() {
+      // uncomment below and update the code to test the property commentGuid
+      //var instance = new bimdata.CommentEvent();
       //expect(instance).to.be();
     });
 
-    it('should have the property defaultPermission (base name: "default_permission")', function() {
-      // uncomment below and update the code to test the property defaultPermission
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property author (base name: "author")', function() {
+      // uncomment below and update the code to test the property author
+      //var instance = new bimdata.CommentEvent();
       //expect(instance).to.be();
     });
 
-    it('should have the property children (base name: "children")', function() {
-      // uncomment below and update the code to test the property children
-      //var instance = new bimdata.WriteFolderRequest();
+    it('should have the property date (base name: "date")', function() {
+      // uncomment below and update the code to test the property date
+      //var instance = new bimdata.CommentEvent();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property events (base name: "events")', function() {
+      // uncomment below and update the code to test the property events
+      //var instance = new bimdata.CommentEvent();
       //expect(instance).to.be();
     });
 

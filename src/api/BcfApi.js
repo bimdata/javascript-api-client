@@ -20,6 +20,7 @@ import BcfProject from '../model/BcfProject';
 import BcfProjectRequest from '../model/BcfProjectRequest';
 import ColoringDefinition from '../model/ColoringDefinition';
 import Comment from '../model/Comment';
+import CommentEvent from '../model/CommentEvent';
 import CommentRequest from '../model/CommentRequest';
 import DetailedExtensions from '../model/DetailedExtensions';
 import DocumentReference from '../model/DocumentReference';
@@ -47,6 +48,7 @@ import SelfBcfUser from '../model/SelfBcfUser';
 import Stage from '../model/Stage';
 import StageRequest from '../model/StageRequest';
 import Topic from '../model/Topic';
+import TopicEvent from '../model/TopicEvent';
 import TopicPin from '../model/TopicPin';
 import TopicRequest from '../model/TopicRequest';
 import TopicStatus from '../model/TopicStatus';
@@ -2076,6 +2078,63 @@ export default class BcfApi {
 
 
     /**
+     * Get comments events
+     * Get comments events  Required scopes: bcf:read
+     * @param {Number} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.filter OData filters as defined in BCF spec
+     * @param {String} opts.orderby OData orderby as defined in BCF spec
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CommentEvent>} and HTTP response
+     */
+    getCommentsEventsWithHttpInfo(projectsPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getCommentsEvents");
+      }
+
+      let pathParams = {
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+        '$filter': opts['filter'],
+        '$orderby': opts['orderby']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [CommentEvent];
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/comments/events', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get comments events
+     * Get comments events  Required scopes: bcf:read
+     * @param {Number} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.filter OData filters as defined in BCF spec
+     * @param {String} opts.orderby OData orderby as defined in BCF spec
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CommentEvent>}
+     */
+    getCommentsEvents(projectsPk, opts) {
+      return this.getCommentsEventsWithHttpInfo(projectsPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Retrieve project detailed extensions
      * This is not a standard route. Retrieve project detailed extensions  Required scopes: bcf:read
      * @param {Number} id A unique integer value identifying this project.
@@ -2797,6 +2856,63 @@ export default class BcfApi {
      */
     getTopics(projectsPk, opts) {
       return this.getTopicsWithHttpInfo(projectsPk, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get topics events
+     * Get topics events  Required scopes: bcf:read
+     * @param {Number} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.filter OData filters as defined in BCF spec
+     * @param {String} opts.orderby OData orderby as defined in BCF spec
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TopicEvent>} and HTTP response
+     */
+    getTopicsEventsWithHttpInfo(projectsPk, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'projectsPk' is set
+      if (projectsPk === undefined || projectsPk === null) {
+        throw new Error("Missing the required parameter 'projectsPk' when calling getTopicsEvents");
+      }
+
+      let pathParams = {
+        'projects_pk': projectsPk
+      };
+      let queryParams = {
+        '$filter': opts['filter'],
+        '$orderby': opts['orderby']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['ApiKey', 'BIMData_Connect', 'BIMData_Connect', 'Bearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [TopicEvent];
+      return this.apiClient.callApi(
+        '/bcf/2.1/projects/{projects_pk}/topics/events', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get topics events
+     * Get topics events  Required scopes: bcf:read
+     * @param {Number} projectsPk 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.filter OData filters as defined in BCF spec
+     * @param {String} opts.orderby OData orderby as defined in BCF spec
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/TopicEvent>}
+     */
+    getTopicsEvents(projectsPk, opts) {
+      return this.getTopicsEventsWithHttpInfo(projectsPk, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -175,6 +175,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**getColorings**](docs/BcfApi.md#getColorings) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/viewpoints/{guid}/coloring | Retrieve all colorings of a viewpoint
 *bimdata.BcfApi* | [**getComment**](docs/BcfApi.md#getComment) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments/{guid} | Retrieve a comment
 *bimdata.BcfApi* | [**getComments**](docs/BcfApi.md#getComments) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/comments | Retrieve all comments
+*bimdata.BcfApi* | [**getCommentsEvents**](docs/BcfApi.md#getCommentsEvents) | **GET** /bcf/2.1/projects/{projects_pk}/topics/comments/events | Get comments events
 *bimdata.BcfApi* | [**getDetailedExtensions**](docs/BcfApi.md#getDetailedExtensions) | **GET** /bcf/2.1/projects/{id}/detailed-extensions | Retrieve project detailed extensions
 *bimdata.BcfApi* | [**getDocumentReferences**](docs/BcfApi.md#getDocumentReferences) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid}/document_references | Retrieve all documents referenced by the topic
 *bimdata.BcfApi* | [**getExtensions**](docs/BcfApi.md#getExtensions) | **GET** /bcf/2.1/projects/{id}/extensions | Retrieve project extensions
@@ -187,6 +188,7 @@ Class | Method | HTTP request | Description
 *bimdata.BcfApi* | [**getTopic**](docs/BcfApi.md#getTopic) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{guid} | Retrieve a topic
 *bimdata.BcfApi* | [**getTopicViewpoints**](docs/BcfApi.md#getTopicViewpoints) | **GET** /bcf/2.1/projects/{projects_pk}/topics/{topics_guid}/topic-viewpoints | Retrieve all viewpoints attached to the topic
 *bimdata.BcfApi* | [**getTopics**](docs/BcfApi.md#getTopics) | **GET** /bcf/2.1/projects/{projects_pk}/topics | Retrieve all topics
+*bimdata.BcfApi* | [**getTopicsEvents**](docs/BcfApi.md#getTopicsEvents) | **GET** /bcf/2.1/projects/{projects_pk}/topics/events | Get topics events
 *bimdata.BcfApi* | [**getTopicsPins**](docs/BcfApi.md#getTopicsPins) | **GET** /bcf/2.1/projects/{projects_pk}/topics/pins | Get pins of all or many topics
 *bimdata.BcfApi* | [**getUser**](docs/BcfApi.md#getUser) | **GET** /bcf/2.1/current-user | Get current user info
 *bimdata.BcfApi* | [**getVersions**](docs/BcfApi.md#getVersions) | **GET** /bcf/versions | Retrieve all supported BCF versions by this API
@@ -530,6 +532,8 @@ Class | Method | HTTP request | Description
  - [bimdata.ColoringDefinition](docs/ColoringDefinition.md)
  - [bimdata.ColoringRequest](docs/ColoringRequest.md)
  - [bimdata.Comment](docs/Comment.md)
+ - [bimdata.CommentEvent](docs/CommentEvent.md)
+ - [bimdata.CommentEventAction](docs/CommentEventAction.md)
  - [bimdata.CommentRequest](docs/CommentRequest.md)
  - [bimdata.Component](docs/Component.md)
  - [bimdata.ComponentRequest](docs/ComponentRequest.md)
@@ -739,6 +743,8 @@ Class | Method | HTTP request | Description
  - [bimdata.TagIdRequest](docs/TagIdRequest.md)
  - [bimdata.TagRequest](docs/TagRequest.md)
  - [bimdata.Topic](docs/Topic.md)
+ - [bimdata.TopicEvent](docs/TopicEvent.md)
+ - [bimdata.TopicEventAction](docs/TopicEventAction.md)
  - [bimdata.TopicPin](docs/TopicPin.md)
  - [bimdata.TopicRequest](docs/TopicRequest.md)
  - [bimdata.TopicStatus](docs/TopicStatus.md)
