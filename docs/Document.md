@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **createdAt** | **Date** | Creation date | [readonly] 
 **updatedAt** | **Date** | Date of the last update | [readonly] 
 **modelId** | **Number** |  | [readonly] 
-**modelType** | **String** | Model&#39;s type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD | [readonly] 
+**modelType** | **String** | Model&#39;s type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD, PHOTOSPHERE | [readonly] 
 **ifcId** | **Number** | DEPRECATED: Use &#39;model_id&#39; instead. | [readonly] 
 **headId** | **Number** | Document id of head version | [readonly] 
 **isHeadVersion** | **Boolean** | Document is a head of version or is owned by another document | [readonly] 
@@ -50,6 +50,8 @@ Name | Type | Description | Notes
 * `OBJ` (value: `"OBJ"`)
 
 * `POINT_CLOUD` (value: `"POINT_CLOUD"`)
+
+* `PHOTOSPHERE` (value: `"PHOTOSPHERE"`)
 
 * `null` (value: `"null"`)
 

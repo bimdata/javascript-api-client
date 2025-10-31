@@ -28,7 +28,7 @@ class ModelSerializerWithoutChildren {
      * Constructs a new <code>ModelSerializerWithoutChildren</code>.
      * @alias module:model/ModelSerializerWithoutChildren
      * @param id {Number} 
-     * @param type {module:model/ModelSerializerWithoutChildren.TypeEnum} * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING * `PHOTOSPHERE` - PHOTOSPHERE * `PHOTOSPHERE_BUILDING` - PHOTOSPHERE_BUILDING
+     * @param type {module:model/ModelSerializerWithoutChildren.TypeEnum} * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `PHOTOSPHERE` - PHOTOSPHERE * `METABUILDING` - METABUILDING * `PHOTOSPHERE_BUILDING` - PHOTOSPHERE_BUILDING
      * @param creator {module:model/User} 
      * @param status {String} 
      * @param createdAt {Date} 
@@ -217,7 +217,7 @@ ModelSerializerWithoutChildren.prototype['id'] = undefined;
 ModelSerializerWithoutChildren.prototype['name'] = undefined;
 
 /**
- * * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `METABUILDING` - METABUILDING * `PHOTOSPHERE` - PHOTOSPHERE * `PHOTOSPHERE_BUILDING` - PHOTOSPHERE_BUILDING
+ * * `IFC` - IFC * `DWG` - DWG * `DXF` - DXF * `GLTF` - GLTF * `PDF` - PDF * `JPEG` - JPEG * `PNG` - PNG * `OBJ` - OBJ * `POINT_CLOUD` - POINT_CLOUD * `PHOTOSPHERE` - PHOTOSPHERE * `METABUILDING` - METABUILDING * `PHOTOSPHERE_BUILDING` - PHOTOSPHERE_BUILDING
  * @member {module:model/ModelSerializerWithoutChildren.TypeEnum} type
  */
 ModelSerializerWithoutChildren.prototype['type'] = undefined;
@@ -451,16 +451,16 @@ ModelSerializerWithoutChildren['TypeEnum'] = {
     "POINT_CLOUD": "POINT_CLOUD",
 
     /**
-     * value: "METABUILDING"
-     * @const
-     */
-    "METABUILDING": "METABUILDING",
-
-    /**
      * value: "PHOTOSPHERE"
      * @const
      */
     "PHOTOSPHERE": "PHOTOSPHERE",
+
+    /**
+     * value: "METABUILDING"
+     * @const
+     */
+    "METABUILDING": "METABUILDING",
 
     /**
      * value: "PHOTOSPHERE_BUILDING"

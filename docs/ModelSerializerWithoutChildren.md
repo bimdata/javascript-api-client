@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [readonly] 
 **name** | **String** |  | [optional] 
-**type** | **String** | * &#x60;IFC&#x60; - IFC * &#x60;DWG&#x60; - DWG * &#x60;DXF&#x60; - DXF * &#x60;GLTF&#x60; - GLTF * &#x60;PDF&#x60; - PDF * &#x60;JPEG&#x60; - JPEG * &#x60;PNG&#x60; - PNG * &#x60;OBJ&#x60; - OBJ * &#x60;POINT_CLOUD&#x60; - POINT_CLOUD * &#x60;METABUILDING&#x60; - METABUILDING * &#x60;PHOTOSPHERE&#x60; - PHOTOSPHERE * &#x60;PHOTOSPHERE_BUILDING&#x60; - PHOTOSPHERE_BUILDING | [readonly] 
+**type** | **String** | * &#x60;IFC&#x60; - IFC * &#x60;DWG&#x60; - DWG * &#x60;DXF&#x60; - DXF * &#x60;GLTF&#x60; - GLTF * &#x60;PDF&#x60; - PDF * &#x60;JPEG&#x60; - JPEG * &#x60;PNG&#x60; - PNG * &#x60;OBJ&#x60; - OBJ * &#x60;POINT_CLOUD&#x60; - POINT_CLOUD * &#x60;PHOTOSPHERE&#x60; - PHOTOSPHERE * &#x60;METABUILDING&#x60; - METABUILDING * &#x60;PHOTOSPHERE_BUILDING&#x60; - PHOTOSPHERE_BUILDING | [readonly] 
 **creator** | [**User**](User.md) |  | [readonly] 
 **status** | **String** |  | [readonly] 
 **source** | **String** | * &#x60;UPLOAD&#x60; - UPLOAD * &#x60;SPLIT&#x60; - SPLIT * &#x60;MERGE&#x60; - MERGE * &#x60;EXPORT&#x60; - EXPORT * &#x60;OPTIMIZED&#x60; - OPTIMIZED | [optional] 
@@ -61,9 +61,9 @@ Name | Type | Description | Notes
 
 * `POINT_CLOUD` (value: `"POINT_CLOUD"`)
 
-* `METABUILDING` (value: `"METABUILDING"`)
-
 * `PHOTOSPHERE` (value: `"PHOTOSPHERE"`)
+
+* `METABUILDING` (value: `"METABUILDING"`)
 
 * `PHOTOSPHERE_BUILDING` (value: `"PHOTOSPHERE_BUILDING"`)
 

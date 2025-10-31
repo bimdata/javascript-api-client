@@ -37,7 +37,7 @@ class Document {
      * @param createdAt {Date} Creation date
      * @param updatedAt {Date} Date of the last update
      * @param modelId {Number} 
-     * @param modelType {module:model/Document.ModelTypeEnum} Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD
+     * @param modelType {module:model/Document.ModelTypeEnum} Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD, PHOTOSPHERE
      * @param ifcId {Number} DEPRECATED: Use 'model_id' instead.
      * @param headId {Number} Document id of head version
      * @param isHeadVersion {Boolean} Document is a head of version or is owned by another document
@@ -249,7 +249,7 @@ Document.prototype['updated_at'] = undefined;
 Document.prototype['model_id'] = undefined;
 
 /**
- * Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD
+ * Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD, PHOTOSPHERE
  * @member {module:model/Document.ModelTypeEnum} model_type
  */
 Document.prototype['model_type'] = undefined;
@@ -359,6 +359,12 @@ Document['ModelTypeEnum'] = {
      * @const
      */
     "POINT_CLOUD": "POINT_CLOUD",
+
+    /**
+     * value: "PHOTOSPHERE"
+     * @const
+     */
+    "PHOTOSPHERE": "PHOTOSPHERE",
 
     /**
      * value: "null"

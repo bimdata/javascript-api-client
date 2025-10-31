@@ -28,7 +28,7 @@ class RecursiveFolderChildren {
      * @param parentId {Number} 
      * @param type {module:model/RecursiveFolderChildren.TypeEnum} DEPRECATED: Use 'nature' instead. Values can be 'Folder', 'Document' or 'Ifc'. It is usefull to parse the tree and discriminate folders and files
      * @param nature {module:model/RecursiveFolderChildren.NatureEnum} Values can be 'Folder', 'Document' or 'Model'. It is usefull to parse the tree and discriminate folders and files
-     * @param modelType {module:model/RecursiveFolderChildren.ModelTypeEnum} Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD
+     * @param modelType {module:model/RecursiveFolderChildren.ModelTypeEnum} Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD, PHOTOSPHERE
      * @param name {String} 
      * @param createdAt {Date} 
      * @param updatedAt {Date} 
@@ -180,7 +180,7 @@ RecursiveFolderChildren.prototype['type'] = undefined;
 RecursiveFolderChildren.prototype['nature'] = undefined;
 
 /**
- * Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD
+ * Model's type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD, PHOTOSPHERE
  * @member {module:model/RecursiveFolderChildren.ModelTypeEnum} model_type
  */
 RecursiveFolderChildren.prototype['model_type'] = undefined;
@@ -389,6 +389,12 @@ RecursiveFolderChildren['ModelTypeEnum'] = {
      * @const
      */
     "POINT_CLOUD": "POINT_CLOUD",
+
+    /**
+     * value: "PHOTOSPHERE"
+     * @const
+     */
+    "PHOTOSPHERE": "PHOTOSPHERE",
 
     /**
      * value: "null"

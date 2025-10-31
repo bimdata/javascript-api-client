@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **createdBy** | [**ShortUser**](ShortUser.md) |  | [optional] 
 **type** | **String** | DEPRECATED: Use &#39;nature&#39; instead. Values can be &#39;Folder&#39;, &#39;Document&#39; or &#39;Ifc&#39;. It is usefull to parse the tree and discriminate folders and files | [readonly] 
 **nature** | **String** | Values can be &#39;Folder&#39;, &#39;Document&#39; or &#39;Model&#39;. It is usefull to parse the tree and discriminate folders and files | [readonly] 
-**modelType** | **String** | Model&#39;s type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD | [readonly] 
+**modelType** | **String** | Model&#39;s type. Values can be IFC, DWG, DXF, GLTF, PDF, JPEG, PNG, OBJ, POINT_CLOUD, PHOTOSPHERE | [readonly] 
 **name** | **String** |  | 
 **createdAt** | **Date** |  | 
 **updatedAt** | **Date** |  | 
@@ -75,6 +75,8 @@ Name | Type | Description | Notes
 * `OBJ` (value: `"OBJ"`)
 
 * `POINT_CLOUD` (value: `"POINT_CLOUD"`)
+
+* `PHOTOSPHERE` (value: `"PHOTOSPHERE"`)
 
 * `null` (value: `"null"`)
 
